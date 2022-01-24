@@ -1,0 +1,944 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__keycode_8h" xml:lang="en-US">
+<title>D:/RayTracing/include/SDL_keycode.h File Reference</title>
+<indexterm><primary>D:/RayTracing/include/SDL_keycode.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;SDL_stdinc.h&quot;
+#include &quot;SDL_scancode.h&quot;
+</programlisting><simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__s_d_l__keycode_8h_1ad1ff7a791f8bc7b5c16cd89cf24fa927">SDLK_SCANCODE_MASK</link>   (1&lt;&lt;30)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__keycode_8h_1a5c00698b7cbc9ebe72d77c34fdc5bd3a">SDL_SCANCODE_TO_KEYCODE</link>(X)   (X | <link linkend="__s_d_l__keycode_8h_1ad1ff7a791f8bc7b5c16cd89cf24fa927">SDLK_SCANCODE_MASK</link>)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef <link linkend="__s_d_l__stdinc_8h_1a7a90b941db9d4582e9ad7abb9940ff7e">Sint32</link> <link linkend="__s_d_l__keycode_8h_1ae9265f064f13f0f74dfca26a67875171">SDL_Keycode</link></para>
+
+<para>The SDL virtual key representation. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3d">SDL_KeyCode</link> { 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da5828f82e228c01cd89cbd09eaa120374">SDLK_UNKNOWN</link> = 0
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dafb38b5a4ab44e7f9493f0ebdf5e908ed">SDLK_RETURN</link> = &apos;\r&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dab050f8c23b43c76246a93e599b7b411f">SDLK_ESCAPE</link> = &apos;\x1B&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da17720a5936f7a8207e32f52e2856470f">SDLK_BACKSPACE</link> = &apos;\b&apos;
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da4869f810e4f3fbf9225e9c7e1ab92aec">SDLK_TAB</link> = &apos;\t&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dab312547c153a4069a681029f0f40b1e3">SDLK_SPACE</link> = &apos; &apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da5d247dee4cc7eab9d0a0d9feaef3bf30">SDLK_EXCLAIM</link> = &apos;!&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da99b80dfae0105fb2166da6fe1ed5fb9d">SDLK_QUOTEDBL</link> = &apos;&quot;&apos;
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daafb76a6c678fb7ef3c190a96010feb47">SDLK_HASH</link> = &apos;#&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da09d426b11eec516159fee190a1f439b0">SDLK_PERCENT</link> = &apos;&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da09fae915701b035008c455eeb70024a9">SDLK_DOLLAR</link> = &apos;$&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daec505e862a546b42d1d88d19240d8629">SDLK_AMPERSAND</link> = &apos;&amp;&apos;
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da5008e8099e57a9cb69faf9c24c8f4f6c">SDLK_QUOTE</link> = &apos;\&apos;&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dad779b194ab14b2d63c45b031cea3c110">SDLK_LEFTPAREN</link> = &apos;(&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daf8d24066863028db2c4c9d64f8a576f8">SDLK_RIGHTPAREN</link> = &apos;)&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da87ddb20a7af4cb35ba161eb093826f0d">SDLK_ASTERISK</link> = &apos;*&apos;
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dab365a294c12bb6ada6a1d6b599c3c347">SDLK_PLUS</link> = &apos;+&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da93ebc12c0116504c3fdbdd490035f598">SDLK_COMMA</link> = &apos;,&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da9be91806d4fcb910cddbb1039bbae881">SDLK_MINUS</link> = &apos;-&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da55d6dcd8e71f690f97247736ab126786">SDLK_PERIOD</link> = &apos;.&apos;
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da4d96e397e5eeb9477bec77ac3e768208">SDLK_SLASH</link> = &apos;/&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da094c29259f3614270bbf2cbefde4a61a">SDLK_0</link> = &apos;0&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dab2d0fd307700cde014d1e667a961abd0">SDLK_1</link> = &apos;1&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dafe21df90c08cd10c7a39af823cd222b6">SDLK_2</link> = &apos;2&apos;
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dad4710dda51fdc2d45cd9fc69d8ca5e06">SDLK_3</link> = &apos;3&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daf92899682a9c15cebb79140e9b33d139">SDLK_4</link> = &apos;4&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da5832b1fd38e8dfbae33b7ee8cb1d7787">SDLK_5</link> = &apos;5&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dacf2d6ee15eb6d32580d24ccdfc0fd3bb">SDLK_6</link> = &apos;6&apos;
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dab5f42b5c7be3a80a2f7ab46d59b315b1">SDLK_7</link> = &apos;7&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da452f7dd5e309cb2e61990d9ef0d4f9fa">SDLK_8</link> = &apos;8&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da4129286b6c26edac4a6fc3186ea7ab35">SDLK_9</link> = &apos;9&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daeb67cb2bd38d70cedee4e46f51d190cd">SDLK_COLON</link> = &apos;:&apos;
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da314529e1e27b2378a9b8778ddf74e7d9">SDLK_SEMICOLON</link> = &apos;;&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da09c73dcfc5bf42e5255d11941c84e679">SDLK_LESS</link> = &apos;&lt;&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da2c1e2afada343daf4b3127b1b505f7d8">SDLK_EQUALS</link> = &apos;=&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dad0821344b556c390989fcc289d5bd21e">SDLK_GREATER</link> = &apos;&gt;&apos;
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daf7cd55c794f180492ba98a2619436f69">SDLK_QUESTION</link> = &apos;?&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da8ba06fd8f9d70aa1a8b635c49f007aa2">SDLK_AT</link> = &apos;@&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daa3245af26dd6be917d69690069c042c8">SDLK_LEFTBRACKET</link> = &apos;[&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dac97cc52299426a76f2a0372e727cb334">SDLK_BACKSLASH</link> = &apos;\\&apos;
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da88038c9ddf19f6693c720031317e1a52">SDLK_RIGHTBRACKET</link> = &apos;]&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dab258271455f46346285b00d8ed84431b">SDLK_CARET</link> = &apos;^&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da19bbb60df8c6a622c3fb4c604d6318f8">SDLK_UNDERSCORE</link> = &apos;_&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da7b60e3e194931b2c0e667573c83b473a">SDLK_BACKQUOTE</link> = &apos;`&apos;
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da19fefa6b0a5ecc11084a6e0a1bb76b1e">SDLK_a</link> = &apos;a&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daa04a630bc257cb2f89d1b837ae042b3b">SDLK_b</link> = &apos;b&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da053379c8670a6412b43ad3c83d8a2cd1">SDLK_c</link> = &apos;c&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da9c54cae9053c3b96ee8f14565db66962">SDLK_d</link> = &apos;d&apos;
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da22a89f1629f8f2482ee525f26759bf9b">SDLK_e</link> = &apos;e&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dae39251c5475fdc498d5e3403d215a5ea">SDLK_f</link> = &apos;f&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da004bc597719d05ddc635c39ea3dafb18">SDLK_g</link> = &apos;g&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da1926e45a3fe9452f1af6964267f2d307">SDLK_h</link> = &apos;h&apos;
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da4ab6ecc323391ce647fed43a2ef9bdd7">SDLK_i</link> = &apos;i&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da510499fa01afe688aad7f19ffd90850a">SDLK_j</link> = &apos;j&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da7a76d58dc33309b84e93e6168d47f257">SDLK_k</link> = &apos;k&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daed57a449cdad47ae605653925cf3cf63">SDLK_l</link> = &apos;l&apos;
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daadc74efffa696c71ff356e631476fe79">SDLK_m</link> = &apos;m&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da5687ee3383099d12d2b22f31baf25845">SDLK_n</link> = &apos;n&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dae6990aecac6433075a2415a496dc409d">SDLK_o</link> = &apos;o&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dadae7a130f7b8b480b9d7fc3de108ccf6">SDLK_p</link> = &apos;p&apos;
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dad2252fe3d799e444b25a78aa9df2d0b6">SDLK_q</link> = &apos;q&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da876db2a58663a107a6f9355b48be119d">SDLK_r</link> = &apos;r&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da6f961f84b13b8ff638275207c08a3553">SDLK_s</link> = &apos;s&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daad5f39250f710f60a627c0863672a221">SDLK_t</link> = &apos;t&apos;
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da1334580be2a3364be09763224c85e864">SDLK_u</link> = &apos;u&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da62044290acefdd7524a8c95e6cf84e40">SDLK_v</link> = &apos;v&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da787057c2a5db2b5d6eb29f8e9889f644">SDLK_w</link> = &apos;w&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da98757faac4227e05b33144be9810cd76">SDLK_x</link> = &apos;x&apos;
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da143286d2b9eb9c9f80af004363b34925">SDLK_y</link> = &apos;y&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da5a6434ef304b4bba07f4bea41a14f6b5">SDLK_z</link> = &apos;z&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dac833999c7ac54588f6f52891e1b88340">SDLK_CAPSLOCK</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_CAPSLOCK)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da3229f8fa5f97f84702cd79cbc316acc9">SDLK_F1</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F1)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da1d6da3ff9d5ba0ec172e77b00856441f">SDLK_F2</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F2)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da83f37f6e8621317ea0d13fa75e9f2f59">SDLK_F3</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F3)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da61f08d6263d4786d3323d3e8472990c3">SDLK_F4</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F4)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dab396acc55a0b478d824555696ddfb8ec">SDLK_F5</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F5)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da5277e3beca1accdbce465fc3cd86d3f7">SDLK_F6</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F6)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daa4caa47fb7f4d55235afa1efe8eee43a">SDLK_F7</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F7)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da9873ccdfe47bfd5169e51b70edf32e2e">SDLK_F8</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F8)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da5a36dface55351ce5efbaa8a9c0d0542">SDLK_F9</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F9)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da86f05d7cdf170a99447f24c1a5d8c550">SDLK_F10</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F10)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daa3d804cf57df377bb452fa4c643bdd76">SDLK_F11</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F11)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da21bed536a4450caea3a6d1f7eaa3279c">SDLK_F12</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F12)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da635c4122c4945689eb97287fd7b97088">SDLK_PRINTSCREEN</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_PRINTSCREEN)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dad33d544ec3e5c812d5205d5548f48161">SDLK_SCROLLLOCK</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_SCROLLLOCK)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dab4c1434b824a88ac2ac44a2aa611322c">SDLK_PAUSE</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_PAUSE)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dad37c85d87edbed526c1d45cf01ca11d9">SDLK_INSERT</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_INSERT)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daa2ca78811e847bcc6be1b5f30340338b">SDLK_HOME</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_HOME)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dacc6e09d8fbcd102b97af24219ed079ad">SDLK_PAGEUP</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_PAGEUP)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dabf4996aa2b79791c8080d62b0bc264c9">SDLK_DELETE</link> = &apos;\x7F&apos;
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da3bc1cbe02d3b1513a42b9958b35c7fbc">SDLK_END</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_END)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dae5506343b2f7045b775834ed50528d36">SDLK_PAGEDOWN</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_PAGEDOWN)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dae86d4dd9dfa9fb623c16180e1d041d45">SDLK_RIGHT</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_RIGHT)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dabbc670ea5255b47f240f18486f1b392a">SDLK_LEFT</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_LEFT)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da3ebc3d79795b4748a4f5c6133d9f9e8b">SDLK_DOWN</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_DOWN)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da340386bcedcc83e77b5c6ce98e2551c0">SDLK_UP</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_UP)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da675228e10bfb78455f9be8d6db799e24">SDLK_NUMLOCKCLEAR</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_NUMLOCKCLEAR)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dafcaf9f88a67972f265f30f07ea152d88">SDLK_KP_DIVIDE</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_DIVIDE)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dafd0b0d87e11bbe6ff7cf54670e5ed062">SDLK_KP_MULTIPLY</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_MULTIPLY)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dab1af6b74919e0babc78e654a2d83e649">SDLK_KP_MINUS</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_MINUS)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da74aea4b8d9f634777d73881238f352e4">SDLK_KP_PLUS</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_PLUS)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da434b2378ecce94b47a211c0b5fe10207">SDLK_KP_ENTER</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_ENTER)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daaaf93220499a2238ed25b9157bc00716">SDLK_KP_1</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_1)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dad9d9cf2e6db385a8176b89067e8bc9d0">SDLK_KP_2</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_2)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dacd7fd6e8551f78ec52b29abfa8782805">SDLK_KP_3</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_3)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da3a5df286528f37be0a4c4806f2c561ef">SDLK_KP_4</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_4)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da61feb940ea26615054d459f6a88cbec7">SDLK_KP_5</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_5)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da4b20dc765af3c38bf60fbda495c7f2db">SDLK_KP_6</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_6)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da833c53a99e4c7355df136995fdd5fbdd">SDLK_KP_7</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_7)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da1434b9bc0c5880eab07bec3453c8f6db">SDLK_KP_8</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_8)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da47ea947b07022d4a0e7a626f608b4247">SDLK_KP_9</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_9)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da9fc776881141300074b15b5caea44d59">SDLK_KP_0</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_0)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da651b09e2b80b445005ce63ccb01c6794">SDLK_KP_PERIOD</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_PERIOD)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dadc161933077d4bfd4bdca24d5c8b83aa">SDLK_APPLICATION</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_APPLICATION)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da1d61c81d20c11d672dc48676b6e2f01a">SDLK_POWER</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_POWER)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dac79d1b9fd74f464da4bb65d788385e1d">SDLK_KP_EQUALS</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_EQUALS)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da27de78587382514e7dbd4e33703e21aa">SDLK_F13</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F13)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da9b3e25abc09a95b58988e9e27ed7ac7a">SDLK_F14</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F14)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daec973d2a3ebb91eb052df22966124d75">SDLK_F15</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F15)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da64c24d6731f08bd07cf87ad447ebf819">SDLK_F16</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F16)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da922a6a5d41d871b257da50d987c72f6e">SDLK_F17</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F17)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da5df1370d59ec69144203d19d87b04023">SDLK_F18</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F18)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da3557f89021f2124be85b5d10c09b9fd7">SDLK_F19</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F19)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da51cb691c94db1439bd1ef636a2b372b7">SDLK_F20</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F20)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da619a6ee947615065885735a683f5fe44">SDLK_F21</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F21)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da752cf1f07f804b942b878f8c072bc584">SDLK_F22</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F22)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da239c502cb2c56606aa7eb0a046323bd2">SDLK_F23</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F23)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da59a067f1bce5e7a02965957f40465a22">SDLK_F24</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_F24)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da2a0cf4783a167862f339d343efe35f76">SDLK_EXECUTE</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_EXECUTE)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daed016918566b7c65839b57715a951475">SDLK_HELP</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_HELP)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da7cdf3e288131d7336d73b8b6c4684bf6">SDLK_MENU</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_MENU)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dafd83ec4c2de109552e476fc7a70eac4c">SDLK_SELECT</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_SELECT)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da571a75cbca442ff321b5b17a156d800f">SDLK_STOP</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_STOP)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dac1fb88798aae24fefcbaf4e0d9869393">SDLK_AGAIN</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_AGAIN)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da253616c7afdb7e4bb03d70df6c091f1d">SDLK_UNDO</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_UNDO)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daa97efe7b7d0ce8f6b47902e6cf05f3b3">SDLK_CUT</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_CUT)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da2b978012e7c62cede710a74666e3a93a">SDLK_COPY</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_COPY)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da0fb50c1007d64defa2388b3d98eb6430">SDLK_PASTE</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_PASTE)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da52f0e83f08f332f64ceb04929bb2f539">SDLK_FIND</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_FIND)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da7849bfa297275fa64b86f4d51db0fa60">SDLK_MUTE</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_MUTE)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da13a2616ca025a5c62152992f60ed4423">SDLK_VOLUMEUP</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_VOLUMEUP)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da8f4989889ef6b89540727579fa876723">SDLK_VOLUMEDOWN</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_VOLUMEDOWN)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dacf2bffd9ea773816e295b38596d42c9d">SDLK_KP_COMMA</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_COMMA)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da311f1dc8a5d3324ebe3819dd0b850f28">SDLK_KP_EQUALSAS400</link>
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da8105375c5645eef030525e4307ce4585">SDLK_ALTERASE</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_ALTERASE)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da78f9fbc25395f2cc235985b212b7a34a">SDLK_SYSREQ</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_SYSREQ)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daf75f5b53b2cae47c82b22e13c8f1d559">SDLK_CANCEL</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_CANCEL)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dab4513bc97a304519728ec683780d67ad">SDLK_CLEAR</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_CLEAR)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da38d323836af0c26a4da56dc8fba83cfe">SDLK_PRIOR</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_PRIOR)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da08e8ca849764bbede05202c168184618">SDLK_RETURN2</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_RETURN2)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daa47c264334f4ee7ffdc50f2b9f45de21">SDLK_SEPARATOR</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_SEPARATOR)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da1f94f9f9573cf8954e0fc68eefa9aa61">SDLK_OUT</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_OUT)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dac3e18ac934b9664c0f794c23a0436867">SDLK_OPER</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_OPER)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dab3d4420647d73fa22ea7bb5e418a7a4f">SDLK_CLEARAGAIN</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_CLEARAGAIN)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da6edbe6502eb39b3c581d45a2f50ba9c3">SDLK_CRSEL</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_CRSEL)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daabc59ffead39e3ed730edc1e1e81999f">SDLK_EXSEL</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_EXSEL)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da7a7cf9350ca181b532db73adc83645ed">SDLK_KP_00</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_00)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dab603f3da0696b70a181452cc73c060d3">SDLK_KP_000</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_000)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daac49ea82e7d6475db70c2d8c5e1e552f">SDLK_THOUSANDSSEPARATOR</link>
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da24fb9d1f7a9dae865859db9ffc9db57c">SDLK_DECIMALSEPARATOR</link>
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dac810e97c72ae302ad074424bbb473a0e">SDLK_CURRENCYUNIT</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_CURRENCYUNIT)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da41967c7ac7672fc3dbbf00e39b7867c4">SDLK_CURRENCYSUBUNIT</link>
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da5413060f54cd029d5eb9e9c90fb7edff">SDLK_KP_LEFTPAREN</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_LEFTPAREN)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dad97d5d543ddf253aa7ca8cf31d63b7b8">SDLK_KP_RIGHTPAREN</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_RIGHTPAREN)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dafc5c6c9ed9b3b929cc3292c2aa12d0a8">SDLK_KP_LEFTBRACE</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_LEFTBRACE)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da336325bb87dcd0f52840ce93f75a0957">SDLK_KP_RIGHTBRACE</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_RIGHTBRACE)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daed58b0dd1813ea3ab043dbe4d41665c1">SDLK_KP_TAB</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_TAB)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da6953b6309d58571c0c96585bbae7e23e">SDLK_KP_BACKSPACE</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_BACKSPACE)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da3a748469fd36e8164409aa9a7e335c46">SDLK_KP_A</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_A)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dae367cbc6f3206824405516c7f3e9b022">SDLK_KP_B</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_B)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da2c1382ebedc32ebeeaa5d35fb5b9f78b">SDLK_KP_C</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_C)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da8fb6cc9db269afdf6f0ed66bfd9735c1">SDLK_KP_D</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_D)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da411f531fc0fdc3302e7fdabd23fdc06d">SDLK_KP_E</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_E)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dae0885c072dc8bfce02d4e01bfd53afc2">SDLK_KP_F</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_F)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da51f7927b743302dea4b747b55e4f541e">SDLK_KP_XOR</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_XOR)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da1db56e8e0a0e23f33c31e333b845ac2c">SDLK_KP_POWER</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_POWER)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da5b6a37e59fea5a0fc99205c7eb11d8b8">SDLK_KP_PERCENT</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_PERCENT)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da8e699a8a087d13b04abf889d121b22cb">SDLK_KP_LESS</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_LESS)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daf37fecd672b164c2a51c4d23b6aa6bc8">SDLK_KP_GREATER</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_GREATER)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da16a777589ffb0e69ef3bee4d70f59dbd">SDLK_KP_AMPERSAND</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_AMPERSAND)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daf4138d06519073937b3724c5b271bc47">SDLK_KP_DBLAMPERSAND</link>
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da2fb2c7910886717dcea88d2f8c4f8c39">SDLK_KP_VERTICALBAR</link>
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daf20b0c6eddf4ae6e75edf7cce265af44">SDLK_KP_DBLVERTICALBAR</link>
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dae39e255749770dae86e77b851470f2a4">SDLK_KP_COLON</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_COLON)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da888f500415721a8d9e1a051495b7ab8c">SDLK_KP_HASH</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_HASH)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da3ac2be86a3c83762c98926c31e7a9dfb">SDLK_KP_SPACE</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_SPACE)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daba01a33f8af815b71a357446edb39f58">SDLK_KP_AT</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_AT)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dae31581e04b70ee93fb938cc6f2be981b">SDLK_KP_EXCLAM</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_EXCLAM)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da09c010ea08f9d37f0ce09d07cbf45491">SDLK_KP_MEMSTORE</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_MEMSTORE)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dac7b66c9c41e8566f3ca491aa9b7970ff">SDLK_KP_MEMRECALL</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_MEMRECALL)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daeeef97c81b1b7f7c794cf32d23c32385">SDLK_KP_MEMCLEAR</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_MEMCLEAR)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da7123a6a3029a96e1d8a1952580cbf05f">SDLK_KP_MEMADD</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_MEMADD)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da12786f0d557629d2224d690d6bd25886">SDLK_KP_MEMSUBTRACT</link>
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da490a4bb8e84daf001391f317c2935825">SDLK_KP_MEMMULTIPLY</link>
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da63d960d3666540e57e0f65960929a2a1">SDLK_KP_MEMDIVIDE</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_MEMDIVIDE)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da34e4a6f940e15cf6815adab9d4c4dcf2">SDLK_KP_PLUSMINUS</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_PLUSMINUS)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dafe4d264f326059321d9d51c145061d6a">SDLK_KP_CLEAR</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_CLEAR)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da642f39c3278ba875bbffeeed2d46ebfa">SDLK_KP_CLEARENTRY</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_CLEARENTRY)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da785ef4eab40cc0fa7498223ca62dafd1">SDLK_KP_BINARY</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_BINARY)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da4e93220cf317cc11636a441fd934fca0">SDLK_KP_OCTAL</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_OCTAL)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daf45eeb94013b6b1bdb4d9031996a43ff">SDLK_KP_DECIMAL</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KP_DECIMAL)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da19a01063762db0f2fcd581bbd356e76b">SDLK_KP_HEXADECIMAL</link>
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da95a48d56f776924d2d3b21552eb3860f">SDLK_LCTRL</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_LCTRL)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dac0f725479acb15dbba79c7cf9e84029f">SDLK_LSHIFT</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_LSHIFT)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da0ced0c59633fc7af404dcfbf4204e298">SDLK_LALT</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_LALT)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da0fec35c2299bf306abe6537b2d39a0c2">SDLK_LGUI</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_LGUI)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dae19150bda868459b26e2fed234e236d8">SDLK_RCTRL</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_RCTRL)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da05d8c4d7205cc9ef84b07130c4a92837">SDLK_RSHIFT</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_RSHIFT)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dadb1981de863c3395f0d52f2c8bfc46c1">SDLK_RALT</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_RALT)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daf469a28d3f964242245a2ea000f58513">SDLK_RGUI</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_RGUI)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da3e307b704bf13148d8178d62f3e936fe">SDLK_MODE</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_MODE)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da8531fa93f9da8893db3f8cca9a33bac3">SDLK_AUDIONEXT</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_AUDIONEXT)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da7e5be2c7b9e6c8711f30aeb1ce5cf7cb">SDLK_AUDIOPREV</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_AUDIOPREV)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da33ad4b315cfa0dc2d0875e303fb667fa">SDLK_AUDIOSTOP</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_AUDIOSTOP)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da5fa8b8b93dba509323caa1f0bd0aa33f">SDLK_AUDIOPLAY</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_AUDIOPLAY)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da49bdfd7a9ebce7cb6af5a53cf5897e7c">SDLK_AUDIOMUTE</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_AUDIOMUTE)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da4757a3b2e052795fef62702cf2ec9655">SDLK_MEDIASELECT</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_MEDIASELECT)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da83b73d1c81f04e8e376a93011ffaf8eb">SDLK_WWW</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_WWW)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dae7fe800bc1e8d77c71d36e4553275d9e">SDLK_MAIL</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_MAIL)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dadddc29cd1fbd017bfea5119eb9d3dd4d">SDLK_CALCULATOR</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_CALCULATOR)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da4291d6451d70c3cd19ef0e5885976994">SDLK_COMPUTER</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_COMPUTER)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dabf1f57519d3856237a044772a91e0e3d">SDLK_AC_SEARCH</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_AC_SEARCH)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da3b45a61a74935987532bf3c5c4d7efcd">SDLK_AC_HOME</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_AC_HOME)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da6f4a29191e4b36757789cb138fd9494a">SDLK_AC_BACK</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_AC_BACK)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daf6a6993e4a7bd803131287c3a3747ffa">SDLK_AC_FORWARD</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_AC_FORWARD)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da9a924283b6b87a16c9d0943aeb5c0244">SDLK_AC_STOP</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_AC_STOP)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da59090b39b77aacd91a8d733153dd9475">SDLK_AC_REFRESH</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_AC_REFRESH)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da5746c4213c16c7282b136085221e5bd7">SDLK_AC_BOOKMARKS</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_AC_BOOKMARKS)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da846a2aee75716828e83c8f41bc3a3a45">SDLK_BRIGHTNESSDOWN</link>
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da4c911614b1b12568d5cc3c3bae9f7223">SDLK_BRIGHTNESSUP</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_BRIGHTNESSUP)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da3dfb8e35f8ca498848fd1bd47d748272">SDLK_DISPLAYSWITCH</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_DISPLAYSWITCH)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da9fb0019faea70462ebe779a6376d0367">SDLK_KBDILLUMTOGGLE</link>
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dabfa4a40d8187f641afcdc1c29af3d93b">SDLK_KBDILLUMDOWN</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KBDILLUMDOWN)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da5e0143e072ea09366f13477cdedffdfa">SDLK_KBDILLUMUP</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_KBDILLUMUP)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da98d43b92174abae01f1ca1187c47581a">SDLK_EJECT</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_EJECT)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da884f2e07847c4d8b5e804f6c394c3ac8">SDLK_SLEEP</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_SLEEP)
+, 
+<link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daf120ec2245535ac2f7b1e53a97cd3b68">SDLK_APP1</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_APP1)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da28d63a9eadec3bce957481c306d92a00">SDLK_APP2</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_APP2)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da71c2167778f64021a42c3e7e8748d641">SDLK_AUDIOREWIND</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_AUDIOREWIND)
+, <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da3c979233446ac4ab9b923f24068e1f9b">SDLK_AUDIOFASTFORWARD</link> = SDL_SCANCODE_TO_KEYCODE(SDL_SCANCODE_AUDIOFASTFORWARD)
+ }</para>
+</listitem>
+            <listitem><para>enum <link linkend="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747">SDL_Keymod</link> { 
+<link linkend="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747aa2d41c6c62e14cf49de04828ef2c44b1">KMOD_NONE</link> = 0x0000
+, <link linkend="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747a428cde62c7cf8e088ff2ab3a93f20737">KMOD_LSHIFT</link> = 0x0001
+, <link linkend="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747adffd719ee15b6a254b4117f748a3a2cb">KMOD_RSHIFT</link> = 0x0002
+, <link linkend="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747abbddaee77c72fcb485ffde6e4946a8aa">KMOD_LCTRL</link> = 0x0040
+, 
+<link linkend="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747a8e712ef659944cd4a4026b3cac6d1213">KMOD_RCTRL</link> = 0x0080
+, <link linkend="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747a8ddf20bae28bd670a8a5c529eb228d97">KMOD_LALT</link> = 0x0100
+, <link linkend="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747a3b6792b49146077114f24271663cd4c9">KMOD_RALT</link> = 0x0200
+, <link linkend="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747a7e8df2f49185dbb88254dd02d4463a74">KMOD_LGUI</link> = 0x0400
+, 
+<link linkend="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747ab84bbc34bab5770bdb64b67738165a5f">KMOD_RGUI</link> = 0x0800
+, <link linkend="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747aea8aa1685ef7e4c0652871a0e9fa5c8d">KMOD_NUM</link> = 0x1000
+, <link linkend="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747a8a721ee962efe0d065457991568f2db6">KMOD_CAPS</link> = 0x2000
+, <link linkend="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747a13e0c30a345ae85eb2c4ece47d1d6f12">KMOD_MODE</link> = 0x4000
+, 
+<link linkend="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747ac8b438238f5dd6fd65b7043d73dc17da">KMOD_SCROLL</link> = 0x8000
+, <link linkend="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747aeca64e519d2018bb7d8e8359608df10f">KMOD_CTRL</link> = KMOD_LCTRL | KMOD_RCTRL
+, <link linkend="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747a1ab40aeaee41d33e24b4c317e6a0de20">KMOD_SHIFT</link> = KMOD_LSHIFT | KMOD_RSHIFT
+, <link linkend="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747ae9ba1c0ded08460f9d53bb7f00727196">KMOD_ALT</link> = KMOD_LALT | KMOD_RALT
+, 
+<link linkend="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747a101e3925efb24e29276b49b53cddccdf">KMOD_GUI</link> = KMOD_LGUI | KMOD_RGUI
+, <link linkend="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747a5b6d7336c60fae9c61d906e0a52c94ca">KMOD_RESERVED</link> = KMOD_SCROLL
+ }</para>
+
+<para>Enumeration of valid key mods (possibly OR&apos;d together). </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Defines constants which identify keyboard keys and modifiers. </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__s_d_l__keycode_8h_1a5c00698b7cbc9ebe72d77c34fdc5bd3a"/><section>
+    <title>SDL_SCANCODE_TO_KEYCODE</title>
+<indexterm><primary>SDL_SCANCODE_TO_KEYCODE</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDL_SCANCODE_TO_KEYCODE</secondary></indexterm>
+<para><computeroutput>#define SDL_SCANCODE_TO_KEYCODE( X)   (X | <link linkend="__s_d_l__keycode_8h_1ad1ff7a791f8bc7b5c16cd89cf24fa927">SDLK_SCANCODE_MASK</link>)</computeroutput></para></section>
+<anchor xml:id="__s_d_l__keycode_8h_1ad1ff7a791f8bc7b5c16cd89cf24fa927"/><section>
+    <title>SDLK_SCANCODE_MASK</title>
+<indexterm><primary>SDLK_SCANCODE_MASK</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_SCANCODE_MASK</secondary></indexterm>
+<para><computeroutput>#define SDLK_SCANCODE_MASK   (1&lt;&lt;30)</computeroutput></para></section>
+</section>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="__s_d_l__keycode_8h_1ae9265f064f13f0f74dfca26a67875171"/><section>
+    <title>SDL_Keycode</title>
+<indexterm><primary>SDL_Keycode</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDL_Keycode</secondary></indexterm>
+<para><computeroutput>typedef <link linkend="__s_d_l__stdinc_8h_1a7a90b941db9d4582e9ad7abb9940ff7e">Sint32</link> <link linkend="__s_d_l__keycode_8h_1ae9265f064f13f0f74dfca26a67875171">SDL_Keycode</link></computeroutput></para><para>
+
+<para>The SDL virtual key representation. </para>
+</para>
+
+<para>Values of this type are used to represent keyboard keys using the current layout of the keyboard. These values include Unicode values representing the unmodified character that would be generated by pressing the key, or an SDLK_* constant for those keys that do not generate characters.</para>
+
+<para>A special exception is the number keys at the top of the keyboard which always map to SDLK_0...SDLK_9, regardless of layout. </para>
+</section>
+</section>
+<section>
+<title>Enumeration Type Documentation</title>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3d"/><section>
+    <title>SDL_KeyCode</title>
+<indexterm><primary>SDL_KeyCode</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDL_KeyCode</secondary></indexterm>
+<para><computeroutput>enum <link linkend="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3d">SDL_KeyCode</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SDLK_UNKNOWN</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_UNKNOWN</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da5828f82e228c01cd89cbd09eaa120374"/>SDLK_UNKNOWN</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_RETURN</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_RETURN</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dafb38b5a4ab44e7f9493f0ebdf5e908ed"/>SDLK_RETURN</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_ESCAPE</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_ESCAPE</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dab050f8c23b43c76246a93e599b7b411f"/>SDLK_ESCAPE</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_BACKSPACE</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_BACKSPACE</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da17720a5936f7a8207e32f52e2856470f"/>SDLK_BACKSPACE</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_TAB</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_TAB</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da4869f810e4f3fbf9225e9c7e1ab92aec"/>SDLK_TAB</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_SPACE</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_SPACE</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dab312547c153a4069a681029f0f40b1e3"/>SDLK_SPACE</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_EXCLAIM</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_EXCLAIM</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da5d247dee4cc7eab9d0a0d9feaef3bf30"/>SDLK_EXCLAIM</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_QUOTEDBL</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_QUOTEDBL</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da99b80dfae0105fb2166da6fe1ed5fb9d"/>SDLK_QUOTEDBL</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_HASH</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_HASH</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daafb76a6c678fb7ef3c190a96010feb47"/>SDLK_HASH</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_PERCENT</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_PERCENT</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da09d426b11eec516159fee190a1f439b0"/>SDLK_PERCENT</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_DOLLAR</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_DOLLAR</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da09fae915701b035008c455eeb70024a9"/>SDLK_DOLLAR</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_AMPERSAND</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_AMPERSAND</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daec505e862a546b42d1d88d19240d8629"/>SDLK_AMPERSAND</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_QUOTE</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_QUOTE</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da5008e8099e57a9cb69faf9c24c8f4f6c"/>SDLK_QUOTE</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_LEFTPAREN</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_LEFTPAREN</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dad779b194ab14b2d63c45b031cea3c110"/>SDLK_LEFTPAREN</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_RIGHTPAREN</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_RIGHTPAREN</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daf8d24066863028db2c4c9d64f8a576f8"/>SDLK_RIGHTPAREN</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_ASTERISK</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_ASTERISK</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da87ddb20a7af4cb35ba161eb093826f0d"/>SDLK_ASTERISK</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_PLUS</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_PLUS</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dab365a294c12bb6ada6a1d6b599c3c347"/>SDLK_PLUS</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_COMMA</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_COMMA</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da93ebc12c0116504c3fdbdd490035f598"/>SDLK_COMMA</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_MINUS</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_MINUS</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da9be91806d4fcb910cddbb1039bbae881"/>SDLK_MINUS</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_PERIOD</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_PERIOD</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da55d6dcd8e71f690f97247736ab126786"/>SDLK_PERIOD</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_SLASH</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_SLASH</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da4d96e397e5eeb9477bec77ac3e768208"/>SDLK_SLASH</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_0</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_0</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da094c29259f3614270bbf2cbefde4a61a"/>SDLK_0</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_1</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_1</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dab2d0fd307700cde014d1e667a961abd0"/>SDLK_1</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_2</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_2</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dafe21df90c08cd10c7a39af823cd222b6"/>SDLK_2</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_3</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_3</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dad4710dda51fdc2d45cd9fc69d8ca5e06"/>SDLK_3</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_4</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_4</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daf92899682a9c15cebb79140e9b33d139"/>SDLK_4</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_5</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_5</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da5832b1fd38e8dfbae33b7ee8cb1d7787"/>SDLK_5</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_6</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_6</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dacf2d6ee15eb6d32580d24ccdfc0fd3bb"/>SDLK_6</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_7</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_7</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dab5f42b5c7be3a80a2f7ab46d59b315b1"/>SDLK_7</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_8</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_8</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da452f7dd5e309cb2e61990d9ef0d4f9fa"/>SDLK_8</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_9</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_9</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da4129286b6c26edac4a6fc3186ea7ab35"/>SDLK_9</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_COLON</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_COLON</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daeb67cb2bd38d70cedee4e46f51d190cd"/>SDLK_COLON</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_SEMICOLON</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_SEMICOLON</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da314529e1e27b2378a9b8778ddf74e7d9"/>SDLK_SEMICOLON</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_LESS</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_LESS</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da09c73dcfc5bf42e5255d11941c84e679"/>SDLK_LESS</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_EQUALS</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_EQUALS</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da2c1e2afada343daf4b3127b1b505f7d8"/>SDLK_EQUALS</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_GREATER</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_GREATER</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dad0821344b556c390989fcc289d5bd21e"/>SDLK_GREATER</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_QUESTION</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_QUESTION</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daf7cd55c794f180492ba98a2619436f69"/>SDLK_QUESTION</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_AT</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_AT</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da8ba06fd8f9d70aa1a8b635c49f007aa2"/>SDLK_AT</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_LEFTBRACKET</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_LEFTBRACKET</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daa3245af26dd6be917d69690069c042c8"/>SDLK_LEFTBRACKET</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_BACKSLASH</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_BACKSLASH</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dac97cc52299426a76f2a0372e727cb334"/>SDLK_BACKSLASH</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_RIGHTBRACKET</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_RIGHTBRACKET</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da88038c9ddf19f6693c720031317e1a52"/>SDLK_RIGHTBRACKET</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_CARET</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_CARET</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dab258271455f46346285b00d8ed84431b"/>SDLK_CARET</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_UNDERSCORE</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_UNDERSCORE</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da19bbb60df8c6a622c3fb4c604d6318f8"/>SDLK_UNDERSCORE</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_BACKQUOTE</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_BACKQUOTE</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da7b60e3e194931b2c0e667573c83b473a"/>SDLK_BACKQUOTE</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_a</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_a</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da19fefa6b0a5ecc11084a6e0a1bb76b1e"/>SDLK_a</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_b</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_b</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daa04a630bc257cb2f89d1b837ae042b3b"/>SDLK_b</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_c</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_c</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da053379c8670a6412b43ad3c83d8a2cd1"/>SDLK_c</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_d</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_d</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da9c54cae9053c3b96ee8f14565db66962"/>SDLK_d</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_e</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_e</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da22a89f1629f8f2482ee525f26759bf9b"/>SDLK_e</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_f</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_f</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dae39251c5475fdc498d5e3403d215a5ea"/>SDLK_f</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_g</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_g</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da004bc597719d05ddc635c39ea3dafb18"/>SDLK_g</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_h</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_h</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da1926e45a3fe9452f1af6964267f2d307"/>SDLK_h</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_i</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_i</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da4ab6ecc323391ce647fed43a2ef9bdd7"/>SDLK_i</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_j</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_j</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da510499fa01afe688aad7f19ffd90850a"/>SDLK_j</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_k</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_k</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da7a76d58dc33309b84e93e6168d47f257"/>SDLK_k</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_l</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_l</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daed57a449cdad47ae605653925cf3cf63"/>SDLK_l</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_m</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_m</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daadc74efffa696c71ff356e631476fe79"/>SDLK_m</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_n</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_n</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da5687ee3383099d12d2b22f31baf25845"/>SDLK_n</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_o</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_o</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dae6990aecac6433075a2415a496dc409d"/>SDLK_o</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_p</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_p</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dadae7a130f7b8b480b9d7fc3de108ccf6"/>SDLK_p</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_q</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_q</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dad2252fe3d799e444b25a78aa9df2d0b6"/>SDLK_q</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_r</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_r</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da876db2a58663a107a6f9355b48be119d"/>SDLK_r</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_s</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_s</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da6f961f84b13b8ff638275207c08a3553"/>SDLK_s</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_t</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_t</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daad5f39250f710f60a627c0863672a221"/>SDLK_t</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_u</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_u</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da1334580be2a3364be09763224c85e864"/>SDLK_u</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_v</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_v</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da62044290acefdd7524a8c95e6cf84e40"/>SDLK_v</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_w</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_w</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da787057c2a5db2b5d6eb29f8e9889f644"/>SDLK_w</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_x</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_x</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da98757faac4227e05b33144be9810cd76"/>SDLK_x</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_y</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_y</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da143286d2b9eb9c9f80af004363b34925"/>SDLK_y</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_z</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_z</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da5a6434ef304b4bba07f4bea41a14f6b5"/>SDLK_z</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_CAPSLOCK</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_CAPSLOCK</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dac833999c7ac54588f6f52891e1b88340"/>SDLK_CAPSLOCK</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_F1</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_F1</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da3229f8fa5f97f84702cd79cbc316acc9"/>SDLK_F1</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_F2</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_F2</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da1d6da3ff9d5ba0ec172e77b00856441f"/>SDLK_F2</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_F3</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_F3</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da83f37f6e8621317ea0d13fa75e9f2f59"/>SDLK_F3</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_F4</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_F4</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da61f08d6263d4786d3323d3e8472990c3"/>SDLK_F4</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_F5</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_F5</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dab396acc55a0b478d824555696ddfb8ec"/>SDLK_F5</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_F6</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_F6</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da5277e3beca1accdbce465fc3cd86d3f7"/>SDLK_F6</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_F7</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_F7</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daa4caa47fb7f4d55235afa1efe8eee43a"/>SDLK_F7</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_F8</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_F8</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da9873ccdfe47bfd5169e51b70edf32e2e"/>SDLK_F8</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_F9</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_F9</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da5a36dface55351ce5efbaa8a9c0d0542"/>SDLK_F9</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_F10</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_F10</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da86f05d7cdf170a99447f24c1a5d8c550"/>SDLK_F10</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_F11</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_F11</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daa3d804cf57df377bb452fa4c643bdd76"/>SDLK_F11</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_F12</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_F12</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da21bed536a4450caea3a6d1f7eaa3279c"/>SDLK_F12</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_PRINTSCREEN</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_PRINTSCREEN</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da635c4122c4945689eb97287fd7b97088"/>SDLK_PRINTSCREEN</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_SCROLLLOCK</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_SCROLLLOCK</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dad33d544ec3e5c812d5205d5548f48161"/>SDLK_SCROLLLOCK</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_PAUSE</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_PAUSE</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dab4c1434b824a88ac2ac44a2aa611322c"/>SDLK_PAUSE</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_INSERT</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_INSERT</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dad37c85d87edbed526c1d45cf01ca11d9"/>SDLK_INSERT</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_HOME</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_HOME</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daa2ca78811e847bcc6be1b5f30340338b"/>SDLK_HOME</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_PAGEUP</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_PAGEUP</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dacc6e09d8fbcd102b97af24219ed079ad"/>SDLK_PAGEUP</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_DELETE</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_DELETE</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dabf4996aa2b79791c8080d62b0bc264c9"/>SDLK_DELETE</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_END</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_END</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da3bc1cbe02d3b1513a42b9958b35c7fbc"/>SDLK_END</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_PAGEDOWN</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_PAGEDOWN</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dae5506343b2f7045b775834ed50528d36"/>SDLK_PAGEDOWN</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_RIGHT</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_RIGHT</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dae86d4dd9dfa9fb623c16180e1d041d45"/>SDLK_RIGHT</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_LEFT</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_LEFT</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dabbc670ea5255b47f240f18486f1b392a"/>SDLK_LEFT</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_DOWN</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_DOWN</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da3ebc3d79795b4748a4f5c6133d9f9e8b"/>SDLK_DOWN</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_UP</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_UP</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da340386bcedcc83e77b5c6ce98e2551c0"/>SDLK_UP</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_NUMLOCKCLEAR</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_NUMLOCKCLEAR</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da675228e10bfb78455f9be8d6db799e24"/>SDLK_NUMLOCKCLEAR</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_DIVIDE</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_DIVIDE</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dafcaf9f88a67972f265f30f07ea152d88"/>SDLK_KP_DIVIDE</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_MULTIPLY</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_MULTIPLY</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dafd0b0d87e11bbe6ff7cf54670e5ed062"/>SDLK_KP_MULTIPLY</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_MINUS</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_MINUS</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dab1af6b74919e0babc78e654a2d83e649"/>SDLK_KP_MINUS</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_PLUS</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_PLUS</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da74aea4b8d9f634777d73881238f352e4"/>SDLK_KP_PLUS</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_ENTER</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_ENTER</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da434b2378ecce94b47a211c0b5fe10207"/>SDLK_KP_ENTER</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_1</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_1</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daaaf93220499a2238ed25b9157bc00716"/>SDLK_KP_1</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_2</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_2</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dad9d9cf2e6db385a8176b89067e8bc9d0"/>SDLK_KP_2</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_3</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_3</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dacd7fd6e8551f78ec52b29abfa8782805"/>SDLK_KP_3</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_4</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_4</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da3a5df286528f37be0a4c4806f2c561ef"/>SDLK_KP_4</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_5</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_5</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da61feb940ea26615054d459f6a88cbec7"/>SDLK_KP_5</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_6</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_6</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da4b20dc765af3c38bf60fbda495c7f2db"/>SDLK_KP_6</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_7</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_7</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da833c53a99e4c7355df136995fdd5fbdd"/>SDLK_KP_7</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_8</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_8</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da1434b9bc0c5880eab07bec3453c8f6db"/>SDLK_KP_8</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_9</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_9</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da47ea947b07022d4a0e7a626f608b4247"/>SDLK_KP_9</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_0</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_0</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da9fc776881141300074b15b5caea44d59"/>SDLK_KP_0</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_PERIOD</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_PERIOD</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da651b09e2b80b445005ce63ccb01c6794"/>SDLK_KP_PERIOD</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_APPLICATION</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_APPLICATION</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dadc161933077d4bfd4bdca24d5c8b83aa"/>SDLK_APPLICATION</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_POWER</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_POWER</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da1d61c81d20c11d672dc48676b6e2f01a"/>SDLK_POWER</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_EQUALS</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_EQUALS</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dac79d1b9fd74f464da4bb65d788385e1d"/>SDLK_KP_EQUALS</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_F13</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_F13</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da27de78587382514e7dbd4e33703e21aa"/>SDLK_F13</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_F14</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_F14</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da9b3e25abc09a95b58988e9e27ed7ac7a"/>SDLK_F14</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_F15</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_F15</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daec973d2a3ebb91eb052df22966124d75"/>SDLK_F15</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_F16</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_F16</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da64c24d6731f08bd07cf87ad447ebf819"/>SDLK_F16</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_F17</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_F17</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da922a6a5d41d871b257da50d987c72f6e"/>SDLK_F17</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_F18</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_F18</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da5df1370d59ec69144203d19d87b04023"/>SDLK_F18</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_F19</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_F19</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da3557f89021f2124be85b5d10c09b9fd7"/>SDLK_F19</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_F20</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_F20</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da51cb691c94db1439bd1ef636a2b372b7"/>SDLK_F20</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_F21</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_F21</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da619a6ee947615065885735a683f5fe44"/>SDLK_F21</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_F22</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_F22</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da752cf1f07f804b942b878f8c072bc584"/>SDLK_F22</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_F23</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_F23</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da239c502cb2c56606aa7eb0a046323bd2"/>SDLK_F23</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_F24</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_F24</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da59a067f1bce5e7a02965957f40465a22"/>SDLK_F24</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_EXECUTE</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_EXECUTE</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da2a0cf4783a167862f339d343efe35f76"/>SDLK_EXECUTE</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_HELP</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_HELP</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daed016918566b7c65839b57715a951475"/>SDLK_HELP</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_MENU</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_MENU</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da7cdf3e288131d7336d73b8b6c4684bf6"/>SDLK_MENU</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_SELECT</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_SELECT</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dafd83ec4c2de109552e476fc7a70eac4c"/>SDLK_SELECT</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_STOP</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_STOP</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da571a75cbca442ff321b5b17a156d800f"/>SDLK_STOP</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_AGAIN</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_AGAIN</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dac1fb88798aae24fefcbaf4e0d9869393"/>SDLK_AGAIN</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_UNDO</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_UNDO</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da253616c7afdb7e4bb03d70df6c091f1d"/>SDLK_UNDO</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_CUT</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_CUT</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daa97efe7b7d0ce8f6b47902e6cf05f3b3"/>SDLK_CUT</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_COPY</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_COPY</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da2b978012e7c62cede710a74666e3a93a"/>SDLK_COPY</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_PASTE</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_PASTE</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da0fb50c1007d64defa2388b3d98eb6430"/>SDLK_PASTE</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_FIND</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_FIND</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da52f0e83f08f332f64ceb04929bb2f539"/>SDLK_FIND</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_MUTE</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_MUTE</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da7849bfa297275fa64b86f4d51db0fa60"/>SDLK_MUTE</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_VOLUMEUP</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_VOLUMEUP</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da13a2616ca025a5c62152992f60ed4423"/>SDLK_VOLUMEUP</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_VOLUMEDOWN</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_VOLUMEDOWN</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da8f4989889ef6b89540727579fa876723"/>SDLK_VOLUMEDOWN</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_COMMA</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_COMMA</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dacf2bffd9ea773816e295b38596d42c9d"/>SDLK_KP_COMMA</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_EQUALSAS400</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_EQUALSAS400</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da311f1dc8a5d3324ebe3819dd0b850f28"/>SDLK_KP_EQUALSAS400</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_ALTERASE</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_ALTERASE</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da8105375c5645eef030525e4307ce4585"/>SDLK_ALTERASE</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_SYSREQ</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_SYSREQ</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da78f9fbc25395f2cc235985b212b7a34a"/>SDLK_SYSREQ</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_CANCEL</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_CANCEL</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daf75f5b53b2cae47c82b22e13c8f1d559"/>SDLK_CANCEL</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_CLEAR</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_CLEAR</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dab4513bc97a304519728ec683780d67ad"/>SDLK_CLEAR</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_PRIOR</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_PRIOR</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da38d323836af0c26a4da56dc8fba83cfe"/>SDLK_PRIOR</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_RETURN2</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_RETURN2</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da08e8ca849764bbede05202c168184618"/>SDLK_RETURN2</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_SEPARATOR</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_SEPARATOR</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daa47c264334f4ee7ffdc50f2b9f45de21"/>SDLK_SEPARATOR</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_OUT</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_OUT</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da1f94f9f9573cf8954e0fc68eefa9aa61"/>SDLK_OUT</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_OPER</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_OPER</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dac3e18ac934b9664c0f794c23a0436867"/>SDLK_OPER</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_CLEARAGAIN</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_CLEARAGAIN</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dab3d4420647d73fa22ea7bb5e418a7a4f"/>SDLK_CLEARAGAIN</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_CRSEL</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_CRSEL</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da6edbe6502eb39b3c581d45a2f50ba9c3"/>SDLK_CRSEL</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_EXSEL</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_EXSEL</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daabc59ffead39e3ed730edc1e1e81999f"/>SDLK_EXSEL</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_00</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_00</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da7a7cf9350ca181b532db73adc83645ed"/>SDLK_KP_00</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_000</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_000</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dab603f3da0696b70a181452cc73c060d3"/>SDLK_KP_000</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_THOUSANDSSEPARATOR</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_THOUSANDSSEPARATOR</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daac49ea82e7d6475db70c2d8c5e1e552f"/>SDLK_THOUSANDSSEPARATOR</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_DECIMALSEPARATOR</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_DECIMALSEPARATOR</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da24fb9d1f7a9dae865859db9ffc9db57c"/>SDLK_DECIMALSEPARATOR</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_CURRENCYUNIT</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_CURRENCYUNIT</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dac810e97c72ae302ad074424bbb473a0e"/>SDLK_CURRENCYUNIT</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_CURRENCYSUBUNIT</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_CURRENCYSUBUNIT</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da41967c7ac7672fc3dbbf00e39b7867c4"/>SDLK_CURRENCYSUBUNIT</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_LEFTPAREN</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_LEFTPAREN</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da5413060f54cd029d5eb9e9c90fb7edff"/>SDLK_KP_LEFTPAREN</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_RIGHTPAREN</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_RIGHTPAREN</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dad97d5d543ddf253aa7ca8cf31d63b7b8"/>SDLK_KP_RIGHTPAREN</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_LEFTBRACE</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_LEFTBRACE</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dafc5c6c9ed9b3b929cc3292c2aa12d0a8"/>SDLK_KP_LEFTBRACE</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_RIGHTBRACE</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_RIGHTBRACE</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da336325bb87dcd0f52840ce93f75a0957"/>SDLK_KP_RIGHTBRACE</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_TAB</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_TAB</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daed58b0dd1813ea3ab043dbe4d41665c1"/>SDLK_KP_TAB</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_BACKSPACE</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_BACKSPACE</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da6953b6309d58571c0c96585bbae7e23e"/>SDLK_KP_BACKSPACE</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_A</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_A</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da3a748469fd36e8164409aa9a7e335c46"/>SDLK_KP_A</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_B</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_B</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dae367cbc6f3206824405516c7f3e9b022"/>SDLK_KP_B</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_C</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_C</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da2c1382ebedc32ebeeaa5d35fb5b9f78b"/>SDLK_KP_C</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_D</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_D</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da8fb6cc9db269afdf6f0ed66bfd9735c1"/>SDLK_KP_D</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_E</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_E</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da411f531fc0fdc3302e7fdabd23fdc06d"/>SDLK_KP_E</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_F</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_F</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dae0885c072dc8bfce02d4e01bfd53afc2"/>SDLK_KP_F</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_XOR</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_XOR</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da51f7927b743302dea4b747b55e4f541e"/>SDLK_KP_XOR</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_POWER</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_POWER</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da1db56e8e0a0e23f33c31e333b845ac2c"/>SDLK_KP_POWER</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_PERCENT</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_PERCENT</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da5b6a37e59fea5a0fc99205c7eb11d8b8"/>SDLK_KP_PERCENT</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_LESS</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_LESS</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da8e699a8a087d13b04abf889d121b22cb"/>SDLK_KP_LESS</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_GREATER</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_GREATER</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daf37fecd672b164c2a51c4d23b6aa6bc8"/>SDLK_KP_GREATER</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_AMPERSAND</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_AMPERSAND</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da16a777589ffb0e69ef3bee4d70f59dbd"/>SDLK_KP_AMPERSAND</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_DBLAMPERSAND</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_DBLAMPERSAND</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daf4138d06519073937b3724c5b271bc47"/>SDLK_KP_DBLAMPERSAND</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_VERTICALBAR</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_VERTICALBAR</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da2fb2c7910886717dcea88d2f8c4f8c39"/>SDLK_KP_VERTICALBAR</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_DBLVERTICALBAR</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_DBLVERTICALBAR</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daf20b0c6eddf4ae6e75edf7cce265af44"/>SDLK_KP_DBLVERTICALBAR</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_COLON</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_COLON</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dae39e255749770dae86e77b851470f2a4"/>SDLK_KP_COLON</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_HASH</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_HASH</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da888f500415721a8d9e1a051495b7ab8c"/>SDLK_KP_HASH</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_SPACE</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_SPACE</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da3ac2be86a3c83762c98926c31e7a9dfb"/>SDLK_KP_SPACE</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_AT</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_AT</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daba01a33f8af815b71a357446edb39f58"/>SDLK_KP_AT</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_EXCLAM</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_EXCLAM</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dae31581e04b70ee93fb938cc6f2be981b"/>SDLK_KP_EXCLAM</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_MEMSTORE</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_MEMSTORE</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da09c010ea08f9d37f0ce09d07cbf45491"/>SDLK_KP_MEMSTORE</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_MEMRECALL</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_MEMRECALL</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dac7b66c9c41e8566f3ca491aa9b7970ff"/>SDLK_KP_MEMRECALL</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_MEMCLEAR</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_MEMCLEAR</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daeeef97c81b1b7f7c794cf32d23c32385"/>SDLK_KP_MEMCLEAR</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_MEMADD</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_MEMADD</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da7123a6a3029a96e1d8a1952580cbf05f"/>SDLK_KP_MEMADD</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_MEMSUBTRACT</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_MEMSUBTRACT</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da12786f0d557629d2224d690d6bd25886"/>SDLK_KP_MEMSUBTRACT</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_MEMMULTIPLY</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_MEMMULTIPLY</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da490a4bb8e84daf001391f317c2935825"/>SDLK_KP_MEMMULTIPLY</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_MEMDIVIDE</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_MEMDIVIDE</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da63d960d3666540e57e0f65960929a2a1"/>SDLK_KP_MEMDIVIDE</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_PLUSMINUS</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_PLUSMINUS</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da34e4a6f940e15cf6815adab9d4c4dcf2"/>SDLK_KP_PLUSMINUS</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_CLEAR</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_CLEAR</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dafe4d264f326059321d9d51c145061d6a"/>SDLK_KP_CLEAR</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_CLEARENTRY</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_CLEARENTRY</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da642f39c3278ba875bbffeeed2d46ebfa"/>SDLK_KP_CLEARENTRY</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_BINARY</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_BINARY</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da785ef4eab40cc0fa7498223ca62dafd1"/>SDLK_KP_BINARY</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_OCTAL</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_OCTAL</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da4e93220cf317cc11636a441fd934fca0"/>SDLK_KP_OCTAL</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_DECIMAL</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_DECIMAL</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daf45eeb94013b6b1bdb4d9031996a43ff"/>SDLK_KP_DECIMAL</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KP_HEXADECIMAL</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KP_HEXADECIMAL</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da19a01063762db0f2fcd581bbd356e76b"/>SDLK_KP_HEXADECIMAL</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_LCTRL</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_LCTRL</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da95a48d56f776924d2d3b21552eb3860f"/>SDLK_LCTRL</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_LSHIFT</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_LSHIFT</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dac0f725479acb15dbba79c7cf9e84029f"/>SDLK_LSHIFT</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_LALT</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_LALT</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da0ced0c59633fc7af404dcfbf4204e298"/>SDLK_LALT</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_LGUI</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_LGUI</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da0fec35c2299bf306abe6537b2d39a0c2"/>SDLK_LGUI</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_RCTRL</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_RCTRL</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dae19150bda868459b26e2fed234e236d8"/>SDLK_RCTRL</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_RSHIFT</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_RSHIFT</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da05d8c4d7205cc9ef84b07130c4a92837"/>SDLK_RSHIFT</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_RALT</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_RALT</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dadb1981de863c3395f0d52f2c8bfc46c1"/>SDLK_RALT</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_RGUI</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_RGUI</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daf469a28d3f964242245a2ea000f58513"/>SDLK_RGUI</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_MODE</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_MODE</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da3e307b704bf13148d8178d62f3e936fe"/>SDLK_MODE</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_AUDIONEXT</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_AUDIONEXT</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da8531fa93f9da8893db3f8cca9a33bac3"/>SDLK_AUDIONEXT</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_AUDIOPREV</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_AUDIOPREV</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da7e5be2c7b9e6c8711f30aeb1ce5cf7cb"/>SDLK_AUDIOPREV</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_AUDIOSTOP</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_AUDIOSTOP</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da33ad4b315cfa0dc2d0875e303fb667fa"/>SDLK_AUDIOSTOP</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_AUDIOPLAY</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_AUDIOPLAY</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da5fa8b8b93dba509323caa1f0bd0aa33f"/>SDLK_AUDIOPLAY</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_AUDIOMUTE</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_AUDIOMUTE</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da49bdfd7a9ebce7cb6af5a53cf5897e7c"/>SDLK_AUDIOMUTE</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_MEDIASELECT</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_MEDIASELECT</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da4757a3b2e052795fef62702cf2ec9655"/>SDLK_MEDIASELECT</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_WWW</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_WWW</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da83b73d1c81f04e8e376a93011ffaf8eb"/>SDLK_WWW</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_MAIL</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_MAIL</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dae7fe800bc1e8d77c71d36e4553275d9e"/>SDLK_MAIL</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_CALCULATOR</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_CALCULATOR</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dadddc29cd1fbd017bfea5119eb9d3dd4d"/>SDLK_CALCULATOR</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_COMPUTER</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_COMPUTER</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da4291d6451d70c3cd19ef0e5885976994"/>SDLK_COMPUTER</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_AC_SEARCH</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_AC_SEARCH</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dabf1f57519d3856237a044772a91e0e3d"/>SDLK_AC_SEARCH</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_AC_HOME</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_AC_HOME</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da3b45a61a74935987532bf3c5c4d7efcd"/>SDLK_AC_HOME</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_AC_BACK</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_AC_BACK</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da6f4a29191e4b36757789cb138fd9494a"/>SDLK_AC_BACK</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_AC_FORWARD</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_AC_FORWARD</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daf6a6993e4a7bd803131287c3a3747ffa"/>SDLK_AC_FORWARD</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_AC_STOP</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_AC_STOP</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da9a924283b6b87a16c9d0943aeb5c0244"/>SDLK_AC_STOP</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_AC_REFRESH</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_AC_REFRESH</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da59090b39b77aacd91a8d733153dd9475"/>SDLK_AC_REFRESH</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_AC_BOOKMARKS</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_AC_BOOKMARKS</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da5746c4213c16c7282b136085221e5bd7"/>SDLK_AC_BOOKMARKS</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_BRIGHTNESSDOWN</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_BRIGHTNESSDOWN</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da846a2aee75716828e83c8f41bc3a3a45"/>SDLK_BRIGHTNESSDOWN</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_BRIGHTNESSUP</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_BRIGHTNESSUP</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da4c911614b1b12568d5cc3c3bae9f7223"/>SDLK_BRIGHTNESSUP</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_DISPLAYSWITCH</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_DISPLAYSWITCH</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da3dfb8e35f8ca498848fd1bd47d748272"/>SDLK_DISPLAYSWITCH</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KBDILLUMTOGGLE</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KBDILLUMTOGGLE</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da9fb0019faea70462ebe779a6376d0367"/>SDLK_KBDILLUMTOGGLE</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KBDILLUMDOWN</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KBDILLUMDOWN</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3dabfa4a40d8187f641afcdc1c29af3d93b"/>SDLK_KBDILLUMDOWN</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_KBDILLUMUP</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_KBDILLUMUP</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da5e0143e072ea09366f13477cdedffdfa"/>SDLK_KBDILLUMUP</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_EJECT</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_EJECT</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da98d43b92174abae01f1ca1187c47581a"/>SDLK_EJECT</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_SLEEP</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_SLEEP</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da884f2e07847c4d8b5e804f6c394c3ac8"/>SDLK_SLEEP</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_APP1</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_APP1</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3daf120ec2245535ac2f7b1e53a97cd3b68"/>SDLK_APP1</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_APP2</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_APP2</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da28d63a9eadec3bce957481c306d92a00"/>SDLK_APP2</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_AUDIOREWIND</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_AUDIOREWIND</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da71c2167778f64021a42c3e7e8748d641"/>SDLK_AUDIOREWIND</entry><entry></entry></row><row><entry><indexterm><primary>SDLK_AUDIOFASTFORWARD</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDLK_AUDIOFASTFORWARD</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1a179ce01fa41d35408f06b4b3d1cd9d3da3c979233446ac4ab9b923f24068e1f9b"/>SDLK_AUDIOFASTFORWARD</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+<anchor xml:id="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747"/><section>
+    <title>SDL_Keymod</title>
+<indexterm><primary>SDL_Keymod</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>SDL_Keymod</secondary></indexterm>
+<para><computeroutput>enum <link linkend="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747">SDL_Keymod</link></computeroutput></para><para>
+
+<para>Enumeration of valid key mods (possibly OR&apos;d together). </para>
+</para>
+<informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>KMOD_NONE</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>KMOD_NONE</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747aa2d41c6c62e14cf49de04828ef2c44b1"/>KMOD_NONE</entry><entry></entry></row><row><entry><indexterm><primary>KMOD_LSHIFT</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>KMOD_LSHIFT</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747a428cde62c7cf8e088ff2ab3a93f20737"/>KMOD_LSHIFT</entry><entry></entry></row><row><entry><indexterm><primary>KMOD_RSHIFT</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>KMOD_RSHIFT</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747adffd719ee15b6a254b4117f748a3a2cb"/>KMOD_RSHIFT</entry><entry></entry></row><row><entry><indexterm><primary>KMOD_LCTRL</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>KMOD_LCTRL</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747abbddaee77c72fcb485ffde6e4946a8aa"/>KMOD_LCTRL</entry><entry></entry></row><row><entry><indexterm><primary>KMOD_RCTRL</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>KMOD_RCTRL</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747a8e712ef659944cd4a4026b3cac6d1213"/>KMOD_RCTRL</entry><entry></entry></row><row><entry><indexterm><primary>KMOD_LALT</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>KMOD_LALT</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747a8ddf20bae28bd670a8a5c529eb228d97"/>KMOD_LALT</entry><entry></entry></row><row><entry><indexterm><primary>KMOD_RALT</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>KMOD_RALT</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747a3b6792b49146077114f24271663cd4c9"/>KMOD_RALT</entry><entry></entry></row><row><entry><indexterm><primary>KMOD_LGUI</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>KMOD_LGUI</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747a7e8df2f49185dbb88254dd02d4463a74"/>KMOD_LGUI</entry><entry></entry></row><row><entry><indexterm><primary>KMOD_RGUI</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>KMOD_RGUI</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747ab84bbc34bab5770bdb64b67738165a5f"/>KMOD_RGUI</entry><entry></entry></row><row><entry><indexterm><primary>KMOD_NUM</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>KMOD_NUM</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747aea8aa1685ef7e4c0652871a0e9fa5c8d"/>KMOD_NUM</entry><entry></entry></row><row><entry><indexterm><primary>KMOD_CAPS</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>KMOD_CAPS</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747a8a721ee962efe0d065457991568f2db6"/>KMOD_CAPS</entry><entry></entry></row><row><entry><indexterm><primary>KMOD_MODE</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>KMOD_MODE</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747a13e0c30a345ae85eb2c4ece47d1d6f12"/>KMOD_MODE</entry><entry></entry></row><row><entry><indexterm><primary>KMOD_SCROLL</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>KMOD_SCROLL</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747ac8b438238f5dd6fd65b7043d73dc17da"/>KMOD_SCROLL</entry><entry></entry></row><row><entry><indexterm><primary>KMOD_CTRL</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>KMOD_CTRL</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747aeca64e519d2018bb7d8e8359608df10f"/>KMOD_CTRL</entry><entry></entry></row><row><entry><indexterm><primary>KMOD_SHIFT</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>KMOD_SHIFT</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747a1ab40aeaee41d33e24b4c317e6a0de20"/>KMOD_SHIFT</entry><entry></entry></row><row><entry><indexterm><primary>KMOD_ALT</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>KMOD_ALT</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747ae9ba1c0ded08460f9d53bb7f00727196"/>KMOD_ALT</entry><entry></entry></row><row><entry><indexterm><primary>KMOD_GUI</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>KMOD_GUI</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747a101e3925efb24e29276b49b53cddccdf"/>KMOD_GUI</entry><entry></entry></row><row><entry><indexterm><primary>KMOD_RESERVED</primary><secondary>SDL_keycode.h</secondary></indexterm>
+<indexterm><primary>SDL_keycode.h</primary><secondary>KMOD_RESERVED</secondary></indexterm>
+<anchor xml:id="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747a5b6d7336c60fae9c61d906e0a52c94ca"/>KMOD_RESERVED</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+</section>

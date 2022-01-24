@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_r_t_1_1_simple_material" xml:lang="en-US">
+<title>RT::SimpleMaterial Class Reference</title>
+<indexterm><primary>RT::SimpleMaterial</primary></indexterm>
+<para>
+<computeroutput>#include &lt;simplematerial.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for RT::SimpleMaterial:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_r_t_1_1_simple_material.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_r_t_1_1_simple_material_1a1af9f0fb42b931218787ad09cc6a9f39">SimpleMaterial</link> ()</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_class_r_t_1_1_simple_material_1ae702de698964afca3cf1b9fc2dab493e">~SimpleMaterial</link> () override</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; <link linkend="_class_r_t_1_1_simple_material_1a27119202e1ef25225faa2b425bd681e4">ComputeColor</link> (const std::vector&lt; std::shared_ptr&lt; <link linkend="_class_r_t_1_1_object_base">RT::ObjectBase</link> &gt; &gt; &amp;objectList, const std::vector&lt; std::shared_ptr&lt; <link linkend="_class_r_t_1_1_light_base">RT::LightBase</link> &gt; &gt; &amp;lightList, const std::shared_ptr&lt; <link linkend="_class_r_t_1_1_object_base">RT::ObjectBase</link> &gt; &amp;currentObject, const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp;intPoint, const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp;localNormal, const <link linkend="_class_r_t_1_1_ray">RT::Ray</link> &amp;cameraRay) override</para>
+</listitem>
+            <listitem><para><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; <link linkend="_class_r_t_1_1_simple_material_1aa64e1515ada26e975cdbcc42c2fe3042">ComputeSpecular</link> (const std::vector&lt; std::shared_ptr&lt; <link linkend="_class_r_t_1_1_object_base">RT::ObjectBase</link> &gt; &gt; &amp;objectList, const std::vector&lt; std::shared_ptr&lt; <link linkend="_class_r_t_1_1_light_base">RT::LightBase</link> &gt; &gt; &amp;lightList, const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp;intPoint, const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp;localNormal, const <link linkend="_class_r_t_1_1_ray">RT::Ray</link> &amp;cameraRay)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; <link linkend="_class_r_t_1_1_simple_material_1a62020aa0f4b5958f82ce958901a87bf4">m_baseColor</link> {std::vector&lt;double&gt; {1.0, 0.0, 1.0}}</para>
+</listitem>
+            <listitem><para>double <link linkend="_class_r_t_1_1_simple_material_1a38611deb48380fd60c94e270064a66bc">m_reflectivity</link> = 0.0</para>
+</listitem>
+            <listitem><para>double <link linkend="_class_r_t_1_1_simple_material_1a570216c81c930713e5c22f6b1b6f8e84">m_shininess</link> = 0.0</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_r_t_1_1_simple_material_1a1af9f0fb42b931218787ad09cc6a9f39"/><section>
+    <title>SimpleMaterial()</title>
+<indexterm><primary>SimpleMaterial</primary><secondary>RT::SimpleMaterial</secondary></indexterm>
+<indexterm><primary>RT::SimpleMaterial</primary><secondary>SimpleMaterial</secondary></indexterm>
+<para><computeroutput>RT::SimpleMaterial::SimpleMaterial ( )</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_simple_material_1ae702de698964afca3cf1b9fc2dab493e"/><section>
+    <title>~SimpleMaterial()</title>
+<indexterm><primary>~SimpleMaterial</primary><secondary>RT::SimpleMaterial</secondary></indexterm>
+<indexterm><primary>RT::SimpleMaterial</primary><secondary>~SimpleMaterial</secondary></indexterm>
+<para><computeroutput>RT::SimpleMaterial::~SimpleMaterial ( )<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_r_t_1_1_simple_material_1a27119202e1ef25225faa2b425bd681e4"/><section>
+    <title>ComputeColor()</title>
+<indexterm><primary>ComputeColor</primary><secondary>RT::SimpleMaterial</secondary></indexterm>
+<indexterm><primary>RT::SimpleMaterial</primary><secondary>ComputeColor</secondary></indexterm>
+<para><computeroutput><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; RT::SimpleMaterial::ComputeColor (const std::vector&lt; std::shared_ptr&lt; <link linkend="_class_r_t_1_1_object_base">RT::ObjectBase</link> &gt; &gt; &amp; objectList, const std::vector&lt; std::shared_ptr&lt; <link linkend="_class_r_t_1_1_light_base">RT::LightBase</link> &gt; &gt; &amp; lightList, const std::shared_ptr&lt; <link linkend="_class_r_t_1_1_object_base">RT::ObjectBase</link> &gt; &amp; currentObject, const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp; intPoint, const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp; localNormal, const <link linkend="_class_r_t_1_1_ray">RT::Ray</link> &amp; cameraRay)<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Reimplemented from <link linkend="_class_r_t_1_1_material_base_1aa8b05496fa1fed6988efd524eb5dbe48">RT::MaterialBase</link>.</para>
+</section>
+<anchor xml:id="_class_r_t_1_1_simple_material_1aa64e1515ada26e975cdbcc42c2fe3042"/><section>
+    <title>ComputeSpecular()</title>
+<indexterm><primary>ComputeSpecular</primary><secondary>RT::SimpleMaterial</secondary></indexterm>
+<indexterm><primary>RT::SimpleMaterial</primary><secondary>ComputeSpecular</secondary></indexterm>
+<para><computeroutput><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; RT::SimpleMaterial::ComputeSpecular (const std::vector&lt; std::shared_ptr&lt; <link linkend="_class_r_t_1_1_object_base">RT::ObjectBase</link> &gt; &gt; &amp; objectList, const std::vector&lt; std::shared_ptr&lt; <link linkend="_class_r_t_1_1_light_base">RT::LightBase</link> &gt; &gt; &amp; lightList, const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp; intPoint, const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp; localNormal, const <link linkend="_class_r_t_1_1_ray">RT::Ray</link> &amp; cameraRay)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_r_t_1_1_simple_material_1a62020aa0f4b5958f82ce958901a87bf4"/><section>
+    <title>m_baseColor</title>
+<indexterm><primary>m_baseColor</primary><secondary>RT::SimpleMaterial</secondary></indexterm>
+<indexterm><primary>RT::SimpleMaterial</primary><secondary>m_baseColor</secondary></indexterm>
+<para><computeroutput><link linkend="_classqb_vector">qbVector</link>&lt;double&gt; RT::SimpleMaterial::m_baseColor {std::vector&lt;double&gt; {1.0, 0.0, 1.0}}</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_simple_material_1a38611deb48380fd60c94e270064a66bc"/><section>
+    <title>m_reflectivity</title>
+<indexterm><primary>m_reflectivity</primary><secondary>RT::SimpleMaterial</secondary></indexterm>
+<indexterm><primary>RT::SimpleMaterial</primary><secondary>m_reflectivity</secondary></indexterm>
+<para><computeroutput>double RT::SimpleMaterial::m_reflectivity = 0.0</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_simple_material_1a570216c81c930713e5c22f6b1b6f8e84"/><section>
+    <title>m_shininess</title>
+<indexterm><primary>m_shininess</primary><secondary>RT::SimpleMaterial</secondary></indexterm>
+<indexterm><primary>RT::SimpleMaterial</primary><secondary>m_shininess</secondary></indexterm>
+<para><computeroutput>double RT::SimpleMaterial::m_shininess = 0.0</computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following files:</para>
+D:/RayTracing/RayTrace/Materials/<link linkend="_simplematerial_8h">simplematerial.h</link>D:/RayTracing/RayTrace/Materials/<link linkend="_simplematerial_8cpp">simplematerial.cpp</link></section>
+</section>

@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_lightbase_8h_source" xml:lang="en-US">
+<title>lightbase.h</title>
+<indexterm><primary>D:/RayTracing/RayTrace/Lights/lightbase.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;RAYTRACING_LIGHTBASE_H</emphasis>
+2 <emphasis role="preprocessor">#define&#32;RAYTRACING_LIGHTBASE_H</emphasis>
+3 
+4 
+5 <emphasis role="preprocessor">#include&#32;&lt;memory&gt;</emphasis>
+6 <emphasis role="preprocessor">#include&#32;&quot;../qbLinAlg/qbVector.h&quot;</emphasis>
+7 <emphasis role="preprocessor">#include&#32;&quot;../ray.h&quot;</emphasis>
+8 <emphasis role="preprocessor">#include&#32;&quot;../Primitives/objectbase.h&quot;</emphasis>
+9 
+10 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_r_t">RT</link>&#32;{
+11 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_class_r_t_1_1_light_base">LightBase</link>&#32;{
+12 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+13 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Konstruktor</emphasis>
+14 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_r_t_1_1_light_base_1a4c1a6d7c5758f9331b42248dd1435cf1">LightBase</link>();
+15 
+16 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Destruktor</emphasis>
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_class_r_t_1_1_light_base_1a53e052503c906f9eaf9ee32b11ba53d4">~LightBase</link>();
+18 
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Metoda&#32;do&#32;obliczania&#32;oświetlenia</emphasis>
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_r_t_1_1_light_base_1ae497648bbf44225db5a545e7c152d07a">ComputeIllumination</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;intPoint,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;localNormal,
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;std::vector&lt;std::shared_ptr&lt;RT::ObjectBase&gt;&gt;&#32;&amp;objectList,
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;std::shared_ptr&lt;RT::ObjectBase&gt;&#32;&amp;currentObject,
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;<link linkend="__s_d_l__opengl__glext_8h_1a3ea846f998d64f079b86052b6c4193a8">color</link>,&#32;<emphasis role="keywordtype">double</emphasis>&#32;&amp;intensity);
+24 
+25 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Kolor&#32;światła</emphasis>
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_light_base_1afed58cde187e60119a96761008944268">m_color</link>{3};
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Położenie&#32;światła</emphasis>
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_light_base_1a52255d6980ce013a614bb50d51d6a399">m_location</link>{3};
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Intensywność&#32;światła</emphasis>
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_class_r_t_1_1_light_base_1a322ee3ce9c2e01a1b36d6f8cf280a0f3">m_intensity</link>;
+32 &#32;&#32;&#32;&#32;};
+33 }
+34 
+35 
+36 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//RAYTRACING_LIGHTBASE_H</emphasis>
+</programlisting></section>

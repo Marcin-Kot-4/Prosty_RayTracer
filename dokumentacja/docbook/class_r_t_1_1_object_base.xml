@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_r_t_1_1_object_base" xml:lang="en-US">
+<title>RT::ObjectBase Class Reference</title>
+<indexterm><primary>RT::ObjectBase</primary></indexterm>
+<para>
+<computeroutput>#include &lt;objectbase.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for RT::ObjectBase:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_r_t_1_1_object_base.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_r_t_1_1_object_base_1a2e524afdaa52559af1c9d32b92ab86d7">ObjectBase</link> ()</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_class_r_t_1_1_object_base_1a483e10e0d0096f29b1a19ebcbc9a8daf">~ObjectBase</link> ()</para>
+</listitem>
+            <listitem><para>virtual bool <link linkend="_class_r_t_1_1_object_base_1a1874168fc872f415520ddf7ae05f33a7">TestIntersection</link> (const <link linkend="_class_r_t_1_1_ray">Ray</link> &amp;castRay, <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp;intPoint, <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp;localNormal, <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp;localColor)</para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_class_r_t_1_1_object_base_1ae49d7664053ba8709645e61f417b22a0">SetTransformMatrix</link> (const <link linkend="_class_r_t_1_1_g_tform">RT::GTform</link> &amp;transformMatrix)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_r_t_1_1_object_base_1a3654cf7ddcab4705a656aea8f1156d9c">CloseEnough</link> (const double f1, const double f2)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_r_t_1_1_object_base_1a7d143fe3dc376fa9d03eb023dbfd7fb1">AssignMaterial</link> (const std::shared_ptr&lt; <link linkend="_class_r_t_1_1_material_base">RT::MaterialBase</link> &gt; &amp;objectMaterial)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; <link linkend="_class_r_t_1_1_object_base_1a59a95426585e31a88e38083ec1a72b7b">m_baseColor</link> {3}</para>
+</listitem>
+            <listitem><para><link linkend="_class_r_t_1_1_g_tform">RT::GTform</link> <link linkend="_class_r_t_1_1_object_base_1ac3bdb9ce9f1aace3bc7d008ad3c71f85">m_transformMatrix</link></para>
+</listitem>
+            <listitem><para>std::shared_ptr&lt; <link linkend="_class_r_t_1_1_material_base">RT::MaterialBase</link> &gt; <link linkend="_class_r_t_1_1_object_base_1ae45ec3a9d0cd9f38605dcc8580c65c1c">m_pMaterial</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_r_t_1_1_object_base_1a96be79a468072fa5b3f72b1084a76278">m_hasMaterial</link> = false</para>
+</listitem>
+            <listitem><para><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; <link linkend="_class_r_t_1_1_object_base_1a0453a522f36f23f95638312633cf5d81">m_uvCoords</link> {2}</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_r_t_1_1_object_base_1a2e524afdaa52559af1c9d32b92ab86d7"/><section>
+    <title>ObjectBase()</title>
+<indexterm><primary>ObjectBase</primary><secondary>RT::ObjectBase</secondary></indexterm>
+<indexterm><primary>RT::ObjectBase</primary><secondary>ObjectBase</secondary></indexterm>
+<para><computeroutput>RT::ObjectBase::ObjectBase ( )</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_object_base_1a483e10e0d0096f29b1a19ebcbc9a8daf"/><section>
+    <title>~ObjectBase()</title>
+<indexterm><primary>~ObjectBase</primary><secondary>RT::ObjectBase</secondary></indexterm>
+<indexterm><primary>RT::ObjectBase</primary><secondary>~ObjectBase</secondary></indexterm>
+<para><computeroutput>RT::ObjectBase::~ObjectBase ( )<computeroutput>[virtual]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_r_t_1_1_object_base_1a7d143fe3dc376fa9d03eb023dbfd7fb1"/><section>
+    <title>AssignMaterial()</title>
+<indexterm><primary>AssignMaterial</primary><secondary>RT::ObjectBase</secondary></indexterm>
+<indexterm><primary>RT::ObjectBase</primary><secondary>AssignMaterial</secondary></indexterm>
+<para><computeroutput>bool RT::ObjectBase::AssignMaterial (const std::shared_ptr&lt; <link linkend="_class_r_t_1_1_material_base">RT::MaterialBase</link> &gt; &amp; objectMaterial)</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_object_base_1a3654cf7ddcab4705a656aea8f1156d9c"/><section>
+    <title>CloseEnough()</title>
+<indexterm><primary>CloseEnough</primary><secondary>RT::ObjectBase</secondary></indexterm>
+<indexterm><primary>RT::ObjectBase</primary><secondary>CloseEnough</secondary></indexterm>
+<para><computeroutput>bool RT::ObjectBase::CloseEnough (const double f1, const double f2)</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_object_base_1ae49d7664053ba8709645e61f417b22a0"/><section>
+    <title>SetTransformMatrix()</title>
+<indexterm><primary>SetTransformMatrix</primary><secondary>RT::ObjectBase</secondary></indexterm>
+<indexterm><primary>RT::ObjectBase</primary><secondary>SetTransformMatrix</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> RT::ObjectBase::SetTransformMatrix (const <link linkend="_class_r_t_1_1_g_tform">RT::GTform</link> &amp; transformMatrix)</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_object_base_1a1874168fc872f415520ddf7ae05f33a7"/><section>
+    <title>TestIntersection()</title>
+<indexterm><primary>TestIntersection</primary><secondary>RT::ObjectBase</secondary></indexterm>
+<indexterm><primary>RT::ObjectBase</primary><secondary>TestIntersection</secondary></indexterm>
+<para><computeroutput>bool RT::ObjectBase::TestIntersection (const <link linkend="_class_r_t_1_1_ray">Ray</link> &amp; castRay, <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp; intPoint, <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp; localNormal, <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp; localColor)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Reimplemented in <link linkend="_class_r_t_1_1_cone_1a6df1cffc250d1c629250abf6e6dfb925">RT::Cone</link>, <link linkend="_class_r_t_1_1_cylinder_1af651d28a24101803fc4fe1a12f9d0730">RT::Cylinder</link>, <link linkend="_class_r_t_1_1_obj_plane_1a7bf64e3ec94953a0a6c8c1da14c4e79d">RT::ObjPlane</link>, and <link linkend="_class_r_t_1_1_obj_sphere_1ac61205d4e6dc56ad927e84ada7f3a77b">RT::ObjSphere</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_r_t_1_1_object_base_1a59a95426585e31a88e38083ec1a72b7b"/><section>
+    <title>m_baseColor</title>
+<indexterm><primary>m_baseColor</primary><secondary>RT::ObjectBase</secondary></indexterm>
+<indexterm><primary>RT::ObjectBase</primary><secondary>m_baseColor</secondary></indexterm>
+<para><computeroutput><link linkend="_classqb_vector">qbVector</link>&lt;double&gt; RT::ObjectBase::m_baseColor {3}</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_object_base_1a96be79a468072fa5b3f72b1084a76278"/><section>
+    <title>m_hasMaterial</title>
+<indexterm><primary>m_hasMaterial</primary><secondary>RT::ObjectBase</secondary></indexterm>
+<indexterm><primary>RT::ObjectBase</primary><secondary>m_hasMaterial</secondary></indexterm>
+<para><computeroutput>bool RT::ObjectBase::m_hasMaterial = false</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_object_base_1ae45ec3a9d0cd9f38605dcc8580c65c1c"/><section>
+    <title>m_pMaterial</title>
+<indexterm><primary>m_pMaterial</primary><secondary>RT::ObjectBase</secondary></indexterm>
+<indexterm><primary>RT::ObjectBase</primary><secondary>m_pMaterial</secondary></indexterm>
+<para><computeroutput>std::shared_ptr&lt;<link linkend="_class_r_t_1_1_material_base">RT::MaterialBase</link>&gt; RT::ObjectBase::m_pMaterial</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_object_base_1ac3bdb9ce9f1aace3bc7d008ad3c71f85"/><section>
+    <title>m_transformMatrix</title>
+<indexterm><primary>m_transformMatrix</primary><secondary>RT::ObjectBase</secondary></indexterm>
+<indexterm><primary>RT::ObjectBase</primary><secondary>m_transformMatrix</secondary></indexterm>
+<para><computeroutput><link linkend="_class_r_t_1_1_g_tform">RT::GTform</link> RT::ObjectBase::m_transformMatrix</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_object_base_1a0453a522f36f23f95638312633cf5d81"/><section>
+    <title>m_uvCoords</title>
+<indexterm><primary>m_uvCoords</primary><secondary>RT::ObjectBase</secondary></indexterm>
+<indexterm><primary>RT::ObjectBase</primary><secondary>m_uvCoords</secondary></indexterm>
+<para><computeroutput><link linkend="_classqb_vector">qbVector</link>&lt;double&gt; RT::ObjectBase::m_uvCoords {2}</computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following files:</para>
+D:/RayTracing/RayTrace/Primitives/<link linkend="_objectbase_8h">objectbase.h</link>D:/RayTracing/RayTrace/Primitives/<link linkend="_objectbase_8cpp">objectbase.cpp</link></section>
+</section>

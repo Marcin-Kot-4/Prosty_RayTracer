@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_qb_lin_solve_8h_source" xml:lang="en-US">
+<title>qbLinSolve.h</title>
+<indexterm><primary>D:/RayTracing/RayTrace/qbLinAlg/qbLinSolve.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">//&#32;This&#32;file&#32;is&#32;part&#32;of&#32;the&#32;qbLinAlg&#32;linear&#32;algebra&#32;library.</emphasis>
+2 <emphasis role="comment">//&#32;Copyright&#32;(c)&#32;2021&#32;Michael&#32;Bennett</emphasis>
+3 <emphasis role="comment">//&#32;MIT&#32;license</emphasis>
+4 
+5 <emphasis role="preprocessor">#ifndef&#32;QBLINSOLVE_H</emphasis>
+6 <emphasis role="preprocessor">#define&#32;QBLINESOLVE_H</emphasis>
+7 
+8 <emphasis role="comment">/*&#32;*************************************************************************************************</emphasis>
+9 <emphasis role="comment"></emphasis>
+10 <emphasis role="comment">&#32;&#32;&#32;&#32;qbLinSolve</emphasis>
+11 <emphasis role="comment">&#32;&#32;&#32;&#32;</emphasis>
+12 <emphasis role="comment">&#32;&#32;&#32;&#32;Function&#32;to&#32;solve&#32;a&#32;system&#32;of&#32;linear&#32;equations&#32;in&#32;the&#32;form&#32;of&#32;y&#32;=&#32;X*beta,&#32;where&#32;we</emphasis>
+13 <emphasis role="comment">&#32;&#32;&#32;&#32;want&#32;to&#32;solve&#32;for&#32;beta.</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;***&#32;INPUTS&#32;***</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;</emphasis>
+17 <emphasis role="comment">&#32;&#32;&#32;&#32;aMatrix&#32;&#32;&#32;&#32;&#32;qbMatrix2&lt;T&gt;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;The&#32;matrix&#32;of&#32;independent&#32;variables&#32;(X&#32;in&#32;the&#32;above&#32;equation).</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;bVector&#32;&#32;&#32;&#32;&#32;qbVector&lt;T&gt;&#32;&#32;&#32;&#32;&#32;The&#32;vector&#32;of&#32;dependent&#32;variables&#32;(y&#32;in&#32;the&#32;above&#32;equation).</emphasis>
+19 <emphasis role="comment">&#32;&#32;&#32;&#32;resultVec&#32;&#32;&#32;qbVector&lt;T&gt;&#32;&#32;&#32;&#32;&#32;The&#32;vector&#32;of&#32;unknown&#32;parameters&#32;(beta&#32;in&#32;the&#32;above&#32;equation).</emphasis>
+20 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;The&#32;final&#32;solution&#32;is&#32;returned&#32;in&#32;this&#32;vector.</emphasis>
+21 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;</emphasis>
+22 <emphasis role="comment">&#32;&#32;&#32;&#32;***&#32;OUTPUTS&#32;***</emphasis>
+23 <emphasis role="comment">&#32;&#32;&#32;&#32;</emphasis>
+24 <emphasis role="comment">&#32;&#32;&#32;&#32;INT&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Flag&#32;indicating&#32;success&#32;or&#32;failure&#32;of&#32;the&#32;process.</emphasis>
+25 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;1&#32;Indicates&#32;success.</emphasis>
+26 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-1&#32;indicates&#32;failure&#32;due&#32;to&#32;there&#32;being&#32;no&#32;unique&#32;solution&#32;(infinite&#32;solutions).</emphasis>
+27 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-2&#32;indicates&#32;failure&#32;due&#32;to&#32;there&#32;being&#32;no&#32;solution.</emphasis>
+28 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;</emphasis>
+29 <emphasis role="comment">&#32;&#32;&#32;&#32;Uses&#32;Gaussian&#32;elimination&#32;on&#32;the&#32;augmented&#32;matrix,&#32;followed&#32;by&#32;back&#32;substitution.</emphasis>
+30 <emphasis role="comment"></emphasis>
+31 <emphasis role="comment">&#32;&#32;&#32;&#32;*************************************************************************************************&#32;*/</emphasis>
+32 
+33 <emphasis role="preprocessor">#include&#32;&lt;stdexcept&gt;</emphasis>
+34 <emphasis role="preprocessor">#include&#32;&lt;iostream&gt;</emphasis>
+35 <emphasis role="preprocessor">#include&#32;&lt;iomanip&gt;</emphasis>
+36 <emphasis role="preprocessor">#include&#32;&lt;math.h&gt;</emphasis>
+37 <emphasis role="preprocessor">#include&#32;&lt;vector&gt;</emphasis>
+38 
+39 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_qb_matrix_8h">qbMatrix.h</link>&quot;</emphasis>
+40 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_qb_vector_8h">qbVector.h</link>&quot;</emphasis>
+41 
+42 <emphasis role="comment">//&#32;Define&#32;error&#32;codes.</emphasis>
+43 <emphasis role="keyword">constexpr</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_qb_lin_solve_8h_1a3728df71a7cb43303b5566037629653f">QBLINSOLVE_NOUNIQUESOLUTION</link>&#32;=&#32;-1;
+44 <emphasis role="keyword">constexpr</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_qb_lin_solve_8h_1a9f228e33ff5dd53dfda25e579e85610d">QBLINSOLVE_NOSOLUTIONS</link>&#32;=&#32;-2;
+45 
+46 <emphasis role="comment">//&#32;The&#32;qbLinSolve&#32;function.</emphasis>
+47 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+48 <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_qb_lin_solve_8h_1a8969ab7f6729c05ec6adaca60180e4f5">qbLinSolve</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;&amp;aMatrix,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;&amp;bVector,&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;&amp;resultVec)
+49 {
+50 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Make&#32;a&#32;copy&#32;of&#32;the&#32;input&#32;matrix,&#32;aMatrix.</emphasis>
+51 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;We&#32;will&#32;use&#32;this&#32;to&#32;create&#32;the&#32;augmented&#32;matrix,&#32;so&#32;we&#32;have</emphasis>
+52 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;to&#32;make&#32;a&#32;copy.</emphasis>
+53 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;inputMatrix&#32;=&#32;aMatrix;
+54 &#32;&#32;&#32;&#32;
+55 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;the&#32;rank&#32;of&#32;the&#32;original&#32;matrix.</emphasis>
+56 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;originalRank&#32;=&#32;inputMatrix.<link linkend="_classqb_matrix2_1aa41b896d3d520de3096530845cbbc9b4">Rank</link>();
+57 
+58 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Combine&#32;inputMatrix&#32;and&#32;bVector&#32;together&#32;into&#32;a&#32;single&#32;matrix,</emphasis>
+59 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ready&#32;for&#32;using&#32;Gaussian&#32;elimination&#32;to&#32;reduce&#32;to&#32;</emphasis>
+60 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;row-echelon&#32;form.&#32;*/</emphasis>
+61 &#32;&#32;&#32;&#32;
+62 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Extract&#32;data&#32;from&#32;bVector.</emphasis>
+63 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numDims&#32;=&#32;bVector.<link linkend="_classqb_vector_1a4b1f24a8ae47ef9019109c23c56fc9c4">GetNumDims</link>();
+64 &#32;&#32;&#32;&#32;std::vector&lt;T&gt;&#32;bVecData;
+65 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;numDims;&#32;++i)
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bVecData.push_back(bVector.<link linkend="_classqb_vector_1adadd6ca87273a15f57a5e1d6ae15583b">GetElement</link>(i));
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+68 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Use&#32;this&#32;to&#32;create&#32;a&#32;qbMatrix2&#32;object&#32;with&#32;the&#32;same&#32;data&#32;(nx1).</emphasis>
+69 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;bMatrix(numDims,&#32;1,&#32;bVecData);
+70 &#32;&#32;&#32;&#32;
+71 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Combine&#32;the&#32;two&#32;matrices&#32;together.</emphasis>
+72 &#32;&#32;&#32;&#32;inputMatrix.<link linkend="_classqb_matrix2_1a9ba8140ee2c217ffce544657a1f269b8">Join</link>(bMatrix);
+73 &#32;&#32;&#32;&#32;
+74 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Use&#32;Gaussian&#32;elmination&#32;to&#32;convert&#32;to&#32;row-echelon&#32;form.&#32;*/</emphasis>
+75 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;rowEchelonMatrix&#32;=&#32;inputMatrix.<link linkend="_classqb_matrix2_1a803f108eff983ea5f97cc752c44c1da2">RowEchelon</link>();
+76 &#32;&#32;&#32;&#32;
+77 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Comute&#32;the&#32;rank&#32;of&#32;the&#32;augmented&#32;matrix.</emphasis>
+78 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Note&#32;that&#32;we&#32;do&#32;this&#32;after&#32;performing&#32;Gaussian&#32;elimination&#32;to</emphasis>
+79 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;reduce&#32;the&#32;matrix&#32;to&#32;row&#32;echelon&#32;form&#32;so&#32;that&#32;if&#32;this&#32;was&#32;</emphasis>
+80 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;successful,&#32;there&#32;is&#32;no&#32;need&#32;to&#32;repeat&#32;this&#32;operation&#32;twice.&#32;*/</emphasis>
+81 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;augmentedRank&#32;=&#32;rowEchelonMatrix.<link linkend="_classqb_matrix2_1aa41b896d3d520de3096530845cbbc9b4">Rank</link>();
+82 &#32;&#32;&#32;&#32;
+83 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;*********************************************************************&#32;</emphasis>
+84 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Test&#32;the&#32;two&#32;ranks&#32;to&#32;determine&#32;the&#32;nature&#32;of&#32;the&#32;system&#32;we</emphasis>
+85 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;are&#32;dealing&#32;with.&#32;The&#32;conditions&#32;are&#32;as&#32;follows:</emphasis>
+86 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;</emphasis>
+87 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;n&#32;=&#32;number&#32;of&#32;rows.</emphasis>
+88 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;</emphasis>
+89 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;1)&#32;originalRank&#32;=&#32;augmentedRank&#32;=&#32;n&#32;=&gt;&#32;A&#32;unique&#32;solution&#32;exists.</emphasis>
+90 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;2)&#32;originalRank&#32;=&#32;augmentedRank&#32;&lt;&#32;n&#32;=&gt;&#32;An&#32;infinite&#32;number&#32;of&#32;solutions&#32;exist.</emphasis>
+91 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;3)&#32;originalRank&#32;&lt;&#32;augmentedRank&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&gt;&#32;No&#32;solutions&#32;exist.&#32;&#32;</emphasis>
+92 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*********************************************************************&#32;*/</emphasis>
+93 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;((originalRank&#32;==&#32;augmentedRank)&#32;&amp;&amp;&#32;(originalRank&#32;&lt;&#32;inputMatrix.<link linkend="_classqb_matrix2_1a1626b647c5268a9e64f4651bcc4b8c6e">GetNumRows</link>()))
+94 &#32;&#32;&#32;&#32;{
+95 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_qb_lin_solve_8h_1a3728df71a7cb43303b5566037629653f">QBLINSOLVE_NOUNIQUESOLUTION</link>;
+96 &#32;&#32;&#32;&#32;}
+97 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(originalRank&#32;&lt;&#32;augmentedRank)
+98 &#32;&#32;&#32;&#32;{
+99 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_qb_lin_solve_8h_1a9f228e33ff5dd53dfda25e579e85610d">QBLINSOLVE_NOSOLUTIONS</link>;
+100 &#32;&#32;&#32;&#32;}
+101 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+102 &#32;&#32;&#32;&#32;{
+103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Create&#32;a&#32;qbVector&#32;object&#32;to&#32;store&#32;the&#32;output.&#32;Initially&#32;we&#32;will</emphasis>
+104 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;populate&#32;this&#32;with&#32;the&#32;data&#32;from&#32;bVecData,&#32;but&#32;we&#32;are&#32;going&#32;to&#32;modify</emphasis>
+105 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;the&#32;elements&#32;as&#32;we&#32;compute&#32;them.&#32;*/</emphasis>
+106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;output(bVecData);
+107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;use&#32;back-substitution&#32;to&#32;compute&#32;the&#32;result.</emphasis>
+109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numRows&#32;=&#32;rowEchelonMatrix.<link linkend="_classqb_matrix2_1a1626b647c5268a9e64f4651bcc4b8c6e">GetNumRows</link>();
+110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numCols&#32;=&#32;rowEchelonMatrix.<link linkend="_classqb_matrix2_1ab20362d8fc58a4b8da0910f94c3de2c3">GetNumCols</link>();
+111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;startRow&#32;=&#32;numRows-1;
+112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Loop&#32;over&#32;the&#32;rows,&#32;in&#32;reverse&#32;order.</emphasis>
+114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=startRow;&#32;i&gt;=0;&#32;--i)
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Extract&#32;the&#32;currentResult&#32;for&#32;this&#32;row.</emphasis>
+117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;currentResult&#32;=&#32;rowEchelonMatrix.<link linkend="_classqb_matrix2_1a62ddf209105dffe6133461b273a7309f">GetElement</link>(i,&#32;numCols-1);
+118 &#32;&#32;&#32;&#32;
+119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;the&#32;cumulative&#32;sum.</emphasis>
+120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;cumulativeSum&#32;=&#32;<emphasis role="keyword">static_cast&lt;</emphasis>T<emphasis role="keyword">&gt;</emphasis>(0.0);
+121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j=i+1;&#32;j&lt;numRows;&#32;++j)
+122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cumulativeSum&#32;+=&#32;(rowEchelonMatrix.<link linkend="_classqb_matrix2_1a62ddf209105dffe6133461b273a7309f">GetElement</link>(i,j)&#32;*&#32;output.<link linkend="_classqb_vector_1adadd6ca87273a15f57a5e1d6ae15583b">GetElement</link>(j));
+124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;the&#32;answer.</emphasis>
+127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;finalAnswer&#32;=&#32;(currentResult&#32;-&#32;cumulativeSum)&#32;/&#32;rowEchelonMatrix.<link linkend="_classqb_matrix2_1a62ddf209105dffe6133461b273a7309f">GetElement</link>(i,i);
+128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;And&#32;store.</emphasis>
+130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;output.<link linkend="_classqb_vector_1af828430da5d728b15c70f82f73ff1efd">SetElement</link>(i,&#32;finalAnswer);
+131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Return&#32;the&#32;output.</emphasis>
+135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;resultVec&#32;=&#32;output;
+136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+137 &#32;&#32;&#32;&#32;}
+138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+139 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;1;&#32;&#32;&#32;
+140 }
+141 
+142 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

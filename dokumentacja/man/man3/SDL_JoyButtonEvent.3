@@ -1,0 +1,59 @@
+.TH "SDL_JoyButtonEvent" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SDL_JoyButtonEvent \- Joystick button event structure (event\&.jbutton\&.*)  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SDL_events\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUint32\fP \fBtype\fP"
+.br
+.ti -1c
+.RI "\fBUint32\fP \fBtimestamp\fP"
+.br
+.ti -1c
+.RI "\fBSDL_JoystickID\fP \fBwhich\fP"
+.br
+.ti -1c
+.RI "\fBUint8\fP \fBbutton\fP"
+.br
+.ti -1c
+.RI "\fBUint8\fP \fBstate\fP"
+.br
+.ti -1c
+.RI "\fBUint8\fP \fBpadding1\fP"
+.br
+.ti -1c
+.RI "\fBUint8\fP \fBpadding2\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Joystick button event structure (event\&.jbutton\&.*) 
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBUint8\fP SDL_JoyButtonEvent::button"
+The joystick button index 
+.SS "\fBUint8\fP SDL_JoyButtonEvent::padding1"
+
+.SS "\fBUint8\fP SDL_JoyButtonEvent::padding2"
+
+.SS "\fBUint8\fP SDL_JoyButtonEvent::state"
+\fBSDL_PRESSED\fP or \fBSDL_RELEASED\fP 
+.SS "\fBUint32\fP SDL_JoyButtonEvent::timestamp"
+In milliseconds, populated using \fBSDL_GetTicks()\fP 
+.SS "\fBUint32\fP SDL_JoyButtonEvent::type"
+\fBSDL_JOYBUTTONDOWN\fP or \fBSDL_JOYBUTTONUP\fP 
+.SS "\fBSDL_JoystickID\fP SDL_JoyButtonEvent::which"
+The joystick instance id 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

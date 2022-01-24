@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="md__d___ray_tracing_docs__r_e_a_d_m_e_gesture" kind="page">
+    <compoundname>md_D__RayTracing_docs_README_gesture</compoundname>
+    <title>Dollar Gestures</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>SDL provides an implementation of the $1 gesture recognition system. This allows for recording, saving, loading, and performing single stroke gestures.</para>
+<para>Gestures can be performed with any number of fingers (the centroid of the fingers must follow the path of the gesture), but the number of fingers must be constant (a finger cannot go down in the middle of a gesture). The path of a gesture is considered the path from the time when the final finger went down, to the first time any finger comes up.</para>
+<para>Dollar gestures are assigned an Id based on a hash function. This is guaranteed to remain constant for a given gesture. There is a (small) chance that two different gestures will be assigned the same ID. In this case, simply re-recording one of the gestures should result in a different ID.</para>
+<sect1 id="md__d___ray_tracing_docs__r_e_a_d_m_e_gesture_1autotoc_md35">
+<title>Recording:</title>
+<para>To begin recording on a touch device call: <ref refid="_s_d_l__gesture_8h_1ad06776e2e199d5d48e466a0ecbbb06c3" kindref="member">SDL_RecordGesture(SDL_TouchID touchId)</ref>, where touchId is the id of the touch device you wish to record on, or -1 to record on all connected devices.</para>
+<para>Recording terminates as soon as a finger comes up. Recording is acknowledged by an SDL_DOLLARRECORD event. A SDL_DOLLARRECORD event is a dgesture with the following fields:</para>
+<para><itemizedlist>
+<listitem><para>event.dgesture.touchId - the Id of the touch used to record the gesture.</para>
+</listitem><listitem><para>event.dgesture.gestureId - the unique id of the recorded gesture.</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="md__d___ray_tracing_docs__r_e_a_d_m_e_gesture_1autotoc_md36">
+<title>Performing:</title>
+<para>As long as there is a dollar gesture assigned to a touch, every finger-up event will also cause an SDL_DOLLARGESTURE event with the following fields:</para>
+<para><itemizedlist>
+<listitem><para>event.dgesture.touchId - the Id of the touch which performed the gesture.</para>
+</listitem><listitem><para>event.dgesture.gestureId - the unique id of the closest gesture to the performed stroke.</para>
+</listitem><listitem><para>event.dgesture.error - the difference between the gesture template and the actual performed gesture. Lower error is a better match.</para>
+</listitem><listitem><para>event.dgesture.numFingers - the number of fingers used to draw the stroke.</para>
+</listitem></itemizedlist>
+</para>
+<para>Most programs will want to define an appropriate error threshold and check to be sure that the error of a gesture is not abnormally high (an indicator that no gesture was performed).</para>
+</sect1>
+<sect1 id="md__d___ray_tracing_docs__r_e_a_d_m_e_gesture_1autotoc_md37">
+<title>Saving:</title>
+<para>To save a template, call SDL_SaveDollarTemplate(gestureId, dst) where gestureId is the id of the gesture you want to save, and dst is an <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> pointer to the file where the gesture will be stored.</para>
+<para>To save all currently loaded templates, call SDL_SaveAllDollarTemplates(dst) where dst is an <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> pointer to the file where the gesture will be stored.</para>
+<para>Both functions return the number of gestures successfully saved.</para>
+</sect1>
+<sect1 id="md__d___ray_tracing_docs__r_e_a_d_m_e_gesture_1autotoc_md38">
+<title>Loading:</title>
+<para>To load templates from a file, call SDL_LoadDollarTemplates(touchId,src) where touchId is the id of the touch to load to (or -1 to load to all touch devices), and src is an <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> pointer to a gesture save file.</para>
+<para>SDL_LoadDollarTemplates returns the number of templates successfully loaded.</para>
+<para><hruler/>
+ </para>
+</sect1>
+<sect1 id="md__d___ray_tracing_docs__r_e_a_d_m_e_gesture_1autotoc_md40">
+<title>Multi Gestures</title>
+<para>SDL provides simple support for pinch/rotate/swipe gestures. Every time a finger is moved an SDL_MULTIGESTURE event is sent with the following fields:</para>
+<para><itemizedlist>
+<listitem><para>event.mgesture.touchId - the Id of the touch on which the gesture was performed.</para>
+</listitem><listitem><para>event.mgesture.x - the normalized x coordinate of the gesture. (0..1)</para>
+</listitem><listitem><para>event.mgesture.y - the normalized y coordinate of the gesture. (0..1)</para>
+</listitem><listitem><para>event.mgesture.dTheta - the amount that the fingers rotated during this motion.</para>
+</listitem><listitem><para>event.mgesture.dDist - the amount that the fingers pinched during this motion.</para>
+</listitem><listitem><para>event.mgesture.numFingers - the number of fingers used in the gesture.</para>
+</listitem></itemizedlist>
+</para>
+<para><hruler/>
+ </para>
+</sect1>
+<sect1 id="md__d___ray_tracing_docs__r_e_a_d_m_e_gesture_1autotoc_md42">
+<title>Notes</title>
+<para>For a complete example see test/testgesture.c</para>
+<para>Please direct questions/comments to: <ulink url="mailto:jim.tla+sdl_touch@gmail.com">jim.tla+sdl_touch@gmail.com</ulink> </para>
+</sect1>
+    </detaileddescription>
+    <location file="D:/RayTracing/docs/README-gesture.md"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,223 @@
+.TH "qbMatrix2< T >" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+qbMatrix2< T >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <qbMatrix\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBqbMatrix2\fP ()"
+.br
+.ti -1c
+.RI "\fBqbMatrix2\fP (int nRows, int nCols)"
+.br
+.ti -1c
+.RI "\fBqbMatrix2\fP (int nRows, int nCols, const T *inputData)"
+.br
+.ti -1c
+.RI "\fBqbMatrix2\fP (const \fBqbMatrix2\fP< T > &inputMatrix)"
+.br
+.ti -1c
+.RI "\fBqbMatrix2\fP (int nRows, int nCols, const std::vector< T > &inputData)"
+.br
+.ti -1c
+.RI "\fB~qbMatrix2\fP ()"
+.br
+.ti -1c
+.RI "bool \fBResize\fP (int numRows, int numCols)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBSetToIdentity\fP ()"
+.br
+.ti -1c
+.RI "T \fBGetElement\fP (int \fBrow\fP, int col) const"
+.br
+.ti -1c
+.RI "bool \fBSetElement\fP (int \fBrow\fP, int col, T elementValue)"
+.br
+.ti -1c
+.RI "int \fBGetNumRows\fP () const"
+.br
+.ti -1c
+.RI "int \fBGetNumCols\fP () const"
+.br
+.ti -1c
+.RI "bool \fBInverse\fP ()"
+.br
+.ti -1c
+.RI "\fBqbMatrix2\fP< T > \fBRowEchelon\fP ()"
+.br
+.ti -1c
+.RI "\fBqbMatrix2\fP< T > \fBTranspose\fP () const"
+.br
+.ti -1c
+.RI "T \fBDeterminant\fP ()"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBqbMatrix2\fP< T > &rhs)"
+.br
+.ti -1c
+.RI "bool \fBCompare\fP (const \fBqbMatrix2\fP< T > &matrix1, double tolerance)"
+.br
+.ti -1c
+.RI "\fBqbMatrix2\fP< T > \fBoperator=\fP (const \fBqbMatrix2\fP< T > &rhs)"
+.br
+.ti -1c
+.RI "bool \fBSeparate\fP (\fBqbMatrix2\fP< T > &matrix1, \fBqbMatrix2\fP< T > &matrix2, int colNum)"
+.br
+.ti -1c
+.RI "bool \fBJoin\fP (const \fBqbMatrix2\fP< T > &matrix2)"
+.br
+.ti -1c
+.RI "\fBqbMatrix2\fP< T > \fBFindSubMatrix\fP (int rowNum, int colNum)"
+.br
+.ti -1c
+.RI "int \fBRank\fP ()"
+.br
+.ti -1c
+.RI "bool \fBIsSquare\fP ()"
+.br
+.ti -1c
+.RI "bool \fBIsRowEchelon\fP ()"
+.br
+.ti -1c
+.RI "bool \fBIsNonZero\fP ()"
+.br
+.ti -1c
+.RI "bool \fBIsSymmetric\fP ()"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBPrintMatrix\fP ()"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBPrintMatrix\fP (int \fBprecision\fP)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "template<class U > \fBqbMatrix2\fP< U > \fBoperator+\fP (const \fBqbMatrix2\fP< U > &lhs, const \fBqbMatrix2\fP< U > &rhs)"
+.br
+.ti -1c
+.RI "template<class U > \fBqbMatrix2\fP< U > \fBoperator+\fP (const U &lhs, const \fBqbMatrix2\fP< U > &rhs)"
+.br
+.ti -1c
+.RI "template<class U > \fBqbMatrix2\fP< U > \fBoperator+\fP (const \fBqbMatrix2\fP< U > &lhs, const U &rhs)"
+.br
+.ti -1c
+.RI "template<class U > \fBqbMatrix2\fP< U > \fBoperator\-\fP (const \fBqbMatrix2\fP< U > &lhs, const \fBqbMatrix2\fP< U > &rhs)"
+.br
+.ti -1c
+.RI "template<class U > \fBqbMatrix2\fP< U > \fBoperator\-\fP (const U &lhs, const \fBqbMatrix2\fP< U > &rhs)"
+.br
+.ti -1c
+.RI "template<class U > \fBqbMatrix2\fP< U > \fBoperator\-\fP (const \fBqbMatrix2\fP< U > &lhs, const U &rhs)"
+.br
+.ti -1c
+.RI "template<class U > \fBqbMatrix2\fP< U > \fBoperator*\fP (const \fBqbMatrix2\fP< U > &lhs, const \fBqbMatrix2\fP< U > &rhs)"
+.br
+.ti -1c
+.RI "template<class U > \fBqbMatrix2\fP< U > \fBoperator*\fP (const U &lhs, const \fBqbMatrix2\fP< U > &rhs)"
+.br
+.ti -1c
+.RI "template<class U > \fBqbMatrix2\fP< U > \fBoperator*\fP (const \fBqbMatrix2\fP< U > &lhs, const U &rhs)"
+.br
+.ti -1c
+.RI "template<class U > \fBqbVector\fP< U > \fBoperator*\fP (const \fBqbMatrix2\fP< U > &lhs, const \fBqbVector\fP< U > &rhs)"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class T > \fBqbMatrix2\fP< T >\fB::qbMatrix2\fP"
+
+.SS "template<class T > \fBqbMatrix2\fP< T >\fB::qbMatrix2\fP (int nRows, int nCols)"
+
+.SS "template<class T > \fBqbMatrix2\fP< T >\fB::qbMatrix2\fP (int nRows, int nCols, const T * inputData)"
+
+.SS "template<class T > \fBqbMatrix2\fP< T >\fB::qbMatrix2\fP (const \fBqbMatrix2\fP< T > & inputMatrix)"
+
+.SS "template<class T > \fBqbMatrix2\fP< T >\fB::qbMatrix2\fP (int nRows, int nCols, const std::vector< T > & inputData)"
+
+.SS "template<class T > \fBqbMatrix2\fP< T >::~\fBqbMatrix2\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class T > bool \fBqbMatrix2\fP< T >::Compare (const \fBqbMatrix2\fP< T > & matrix1, double tolerance)"
+
+.SS "template<class T > T \fBqbMatrix2\fP< T >::Determinant"
+
+.SS "template<class T > \fBqbMatrix2\fP< T > \fBqbMatrix2\fP< T >::FindSubMatrix (int rowNum, int colNum)"
+
+.SS "template<class T > T \fBqbMatrix2\fP< T >::GetElement (int row, int col) const"
+
+.SS "template<class T > int \fBqbMatrix2\fP< T >::GetNumCols"
+
+.SS "template<class T > int \fBqbMatrix2\fP< T >::GetNumRows"
+
+.SS "template<class T > bool \fBqbMatrix2\fP< T >::Inverse"
+
+.SS "template<class T > bool \fBqbMatrix2\fP< T >::IsNonZero"
+
+.SS "template<class T > bool \fBqbMatrix2\fP< T >::IsRowEchelon"
+
+.SS "template<class T > bool \fBqbMatrix2\fP< T >::IsSquare"
+
+.SS "template<class T > bool \fBqbMatrix2\fP< T >::IsSymmetric"
+
+.SS "template<class T > bool \fBqbMatrix2\fP< T >::Join (const \fBqbMatrix2\fP< T > & matrix2)"
+
+.SS "template<class T > \fBqbMatrix2\fP< T > \fBqbMatrix2\fP< T >::operator= (const \fBqbMatrix2\fP< T > & rhs)"
+
+.SS "template<class T > bool \fBqbMatrix2\fP< T >::operator== (const \fBqbMatrix2\fP< T > & rhs)"
+
+.SS "template<class T > \fBvoid\fP \fBqbMatrix2\fP< T >::PrintMatrix"
+
+.SS "template<class T > \fBvoid\fP \fBqbMatrix2\fP< T >::PrintMatrix (int precision)"
+
+.SS "template<class T > int \fBqbMatrix2\fP< T >::Rank"
+
+.SS "template<class T > bool \fBqbMatrix2\fP< T >::Resize (int numRows, int numCols)"
+
+.SS "template<class T > \fBqbMatrix2\fP< T > \fBqbMatrix2\fP< T >::RowEchelon"
+
+.SS "template<class T > bool \fBqbMatrix2\fP< T >::Separate (\fBqbMatrix2\fP< T > & matrix1, \fBqbMatrix2\fP< T > & matrix2, int colNum)"
+
+.SS "template<class T > bool \fBqbMatrix2\fP< T >::SetElement (int row, int col, T elementValue)"
+
+.SS "template<class T > \fBvoid\fP \fBqbMatrix2\fP< T >::SetToIdentity"
+
+.SS "template<class T > \fBqbMatrix2\fP< T > \fBqbMatrix2\fP< T >::Transpose"
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "template<class T > template<class U > \fBqbMatrix2\fP< U > operator* (const \fBqbMatrix2\fP< U > & lhs, const \fBqbMatrix2\fP< U > & rhs)\fC [friend]\fP"
+
+.SS "template<class T > template<class U > \fBqbVector\fP< U > operator* (const \fBqbMatrix2\fP< U > & lhs, const \fBqbVector\fP< U > & rhs)\fC [friend]\fP"
+
+.SS "template<class T > template<class U > \fBqbMatrix2\fP< U > operator* (const \fBqbMatrix2\fP< U > & lhs, const U & rhs)\fC [friend]\fP"
+
+.SS "template<class T > template<class U > \fBqbMatrix2\fP< U > operator* (const U & lhs, const \fBqbMatrix2\fP< U > & rhs)\fC [friend]\fP"
+
+.SS "template<class T > template<class U > \fBqbMatrix2\fP< U > operator+ (const \fBqbMatrix2\fP< U > & lhs, const \fBqbMatrix2\fP< U > & rhs)\fC [friend]\fP"
+
+.SS "template<class T > template<class U > \fBqbMatrix2\fP< U > operator+ (const \fBqbMatrix2\fP< U > & lhs, const U & rhs)\fC [friend]\fP"
+
+.SS "template<class T > template<class U > \fBqbMatrix2\fP< U > operator+ (const U & lhs, const \fBqbMatrix2\fP< U > & rhs)\fC [friend]\fP"
+
+.SS "template<class T > template<class U > \fBqbMatrix2\fP< U > operator\- (const \fBqbMatrix2\fP< U > & lhs, const \fBqbMatrix2\fP< U > & rhs)\fC [friend]\fP"
+
+.SS "template<class T > template<class U > \fBqbMatrix2\fP< U > operator\- (const \fBqbMatrix2\fP< U > & lhs, const U & rhs)\fC [friend]\fP"
+
+.SS "template<class T > template<class U > \fBqbMatrix2\fP< U > operator\- (const U & lhs, const \fBqbMatrix2\fP< U > & rhs)\fC [friend]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

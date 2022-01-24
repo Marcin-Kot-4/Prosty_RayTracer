@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e-linux_8md" kind="file" language="Markdown">
+    <compoundname>README-linux.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">Linux</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">By<sp/>default<sp/>SDL<sp/>will<sp/>only<sp/>link<sp/>against<sp/>glibc,<sp/>the<sp/>rest<sp/>of<sp/>the<sp/>features<sp/>will<sp/>be</highlight></codeline>
+<codeline><highlight class="normal">enabled<sp/>dynamically<sp/>at<sp/>runtime<sp/>depending<sp/>on<sp/>the<sp/>available<sp/>features<sp/>on<sp/>the<sp/>target</highlight></codeline>
+<codeline><highlight class="normal">system.<sp/>So,<sp/>for<sp/>example<sp/>if<sp/>you<sp/>built<sp/>SDL<sp/>with<sp/>Xinerama<sp/>support<sp/>and<sp/>the<sp/>target</highlight></codeline>
+<codeline><highlight class="normal">system<sp/>does<sp/>not<sp/>have<sp/>the<sp/>Xinerama<sp/>libraries<sp/>installed,<sp/>it<sp/>will<sp/>be<sp/>disabled</highlight></codeline>
+<codeline><highlight class="normal">at<sp/>runtime,<sp/>and<sp/>you<sp/>won&apos;t<sp/>get<sp/>a<sp/>missing<sp/>library<sp/>error,<sp/>at<sp/>least<sp/>with<sp/>the<sp/></highlight></codeline>
+<codeline><highlight class="normal">default<sp/>configuration<sp/>parameters.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Build<sp/>Dependencies</highlight></codeline>
+<codeline><highlight class="normal">--------------------------------------------------------------------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Ubuntu<sp/>20.04,<sp/>all<sp/>available<sp/>features<sp/>enabled:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>apt-get<sp/>install<sp/>build-essential<sp/>git<sp/>make<sp/>cmake<sp/>autoconf<sp/>automake<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>libtool<sp/>pkg-config<sp/>libasound2-dev<sp/>libpulse-dev<sp/>libaudio-dev<sp/>libjack-dev<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>libx11-dev<sp/>libxext-dev<sp/>libxrandr-dev<sp/>libxcursor-dev<sp/>libxfixes-dev<sp/>libxi-dev<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>libxinerama-dev<sp/>libxxf86vm-dev<sp/>libxss-dev<sp/>libgl1-mesa-dev<sp/>libdbus-1-dev<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>libudev-dev<sp/>libgles2-mesa-dev<sp/>libegl1-mesa-dev<sp/>libibus-1.0-dev<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>fcitx-libs-dev<sp/>libsamplerate0-dev<sp/>libsndio-dev<sp/>libwayland-dev<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>libxkbcommon-dev<sp/>libdrm-dev<sp/>libgbm-dev</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Fedora<sp/>35,<sp/>all<sp/>available<sp/>features<sp/>enabled:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>yum<sp/>install<sp/>gcc<sp/>git-core<sp/>make<sp/>cmake<sp/>autoconf<sp/>automake<sp/>libtool<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>alsa-lib-devel<sp/>pulseaudio-libs-devel<sp/>nas-devel<sp/>pipewire-devel<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>libX11-devel<sp/>libXext-devel<sp/>libXrandr-devel<sp/>libXcursor-devel<sp/>libXfixes-devel<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>libXi-devel<sp/>libXinerama-devel<sp/>libXxf86vm-devel<sp/>libXScrnSaver-devel<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>dbus-devel<sp/>ibus-devel<sp/>fcitx-devel<sp/>systemd-devel<sp/>mesa-libGL-devel<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>libxkbcommon-devel<sp/>mesa-libGLES-devel<sp/>mesa-libEGL-devel<sp/>vulkan-devel<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>wayland-devel<sp/>wayland-protocols-devel<sp/>libdrm-devel<sp/>mesa-libgbm-devel<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>libusb-devel<sp/>pipewire-jack-audio-connection-kit-devel<sp/>libdecor-devel<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>libsamplerate-devel</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">NOTES:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>This<sp/>includes<sp/>all<sp/>the<sp/>audio<sp/>targets<sp/>except<sp/>arts<sp/>and<sp/>esd,<sp/>because<sp/>Ubuntu</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>(and/or<sp/>Debian)<sp/>pulled<sp/>their<sp/>packages,<sp/>but<sp/>in<sp/>theory<sp/>SDL<sp/>still<sp/>supports<sp/>them.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>The<sp/>sndio<sp/>audio<sp/>target<sp/>is<sp/>also<sp/>unavailable<sp/>on<sp/>Fedora.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>libsamplerate0-dev<sp/>lets<sp/>SDL<sp/>optionally<sp/>link<sp/>to<sp/>libresamplerate<sp/>at<sp/>runtime</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>for<sp/>higher-quality<sp/>audio<sp/>resampling.<sp/>SDL<sp/>will<sp/>work<sp/>without<sp/>it<sp/>if<sp/>the<sp/>library</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>is<sp/>missing,<sp/>so<sp/>it&apos;s<sp/>safe<sp/>to<sp/>build<sp/>in<sp/>support<sp/>even<sp/>if<sp/>the<sp/>end<sp/>user<sp/>doesn&apos;t</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>have<sp/>this<sp/>library<sp/>installed.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>DirectFB<sp/>isn&apos;t<sp/>included<sp/>because<sp/>the<sp/>configure<sp/>script<sp/>(currently)<sp/>fails<sp/>to<sp/>find</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>it<sp/>at<sp/>all.<sp/>You<sp/>can<sp/>do<sp/>&quot;sudo<sp/>apt-get<sp/>install<sp/>libdirectfb-dev&quot;<sp/>and<sp/>fix<sp/>the<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>configure<sp/>script<sp/>to<sp/>include<sp/>DirectFB<sp/>support.<sp/>Send<sp/>patches.<sp/><sp/>:)</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Joystick<sp/>does<sp/>not<sp/>work</highlight></codeline>
+<codeline><highlight class="normal">--------------------------------------------------------------------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>compiled<sp/>or<sp/>are<sp/>using<sp/>a<sp/>version<sp/>of<sp/>SDL<sp/>with<sp/>udev<sp/>support<sp/>(and<sp/>you<sp/>should!)</highlight></codeline>
+<codeline><highlight class="normal">there&apos;s<sp/>a<sp/>few<sp/>issues<sp/>that<sp/>may<sp/>cause<sp/>SDL<sp/>to<sp/>fail<sp/>to<sp/>detect<sp/>your<sp/>joystick.<sp/>To</highlight></codeline>
+<codeline><highlight class="normal">debug<sp/>this,<sp/>start<sp/>by<sp/>installing<sp/>the<sp/>evtest<sp/>utility.<sp/>On<sp/>Ubuntu/Debian:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>apt-get<sp/>install<sp/>evtest</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">Then<sp/>run:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>evtest</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">You&apos;ll<sp/>hopefully<sp/>see<sp/>your<sp/>joystick<sp/>listed<sp/>along<sp/>with<sp/>a<sp/>name<sp/>like<sp/>&quot;/dev/input/eventXX&quot;</highlight></codeline>
+<codeline><highlight class="normal">Now<sp/>run:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cat<sp/>/dev/input/event/XX</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>get<sp/>a<sp/>permission<sp/>error,<sp/>you<sp/>need<sp/>to<sp/>set<sp/>a<sp/>udev<sp/>rule<sp/>to<sp/>change<sp/>the<sp/>mode<sp/>of</highlight></codeline>
+<codeline><highlight class="normal">your<sp/>device<sp/>(see<sp/>below)<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">Also,<sp/>try:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>udevadm<sp/>info<sp/>--query=all<sp/>--name=input/eventXX</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>see<sp/>a<sp/>line<sp/>stating<sp/>ID_INPUT_JOYSTICK=1,<sp/>great,<sp/>if<sp/>you<sp/>don&apos;t<sp/>see<sp/>it,</highlight></codeline>
+<codeline><highlight class="normal">you<sp/>need<sp/>to<sp/>set<sp/>up<sp/>an<sp/>udev<sp/>rule<sp/>to<sp/>force<sp/>this<sp/>variable.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A<sp/>combined<sp/>rule<sp/>for<sp/>the<sp/>Saitek<sp/>Pro<sp/>Flight<sp/>Rudder<sp/>Pedals<sp/>to<sp/>fix<sp/>both<sp/>issues<sp/>looks<sp/></highlight></codeline>
+<codeline><highlight class="normal">like:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>SUBSYSTEM==&quot;input&quot;,<sp/>ATTRS{idProduct}==&quot;0763&quot;,<sp/>ATTRS{idVendor}==&quot;06a3&quot;,<sp/>MODE=&quot;0666&quot;,<sp/>ENV{ID_INPUT_JOYSTICK}=&quot;1&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>SUBSYSTEM==&quot;input&quot;,<sp/>ATTRS{idProduct}==&quot;0764&quot;,<sp/>ATTRS{idVendor}==&quot;06a3&quot;,<sp/>MODE=&quot;0666&quot;,<sp/>ENV{ID_INPUT_JOYSTICK}=&quot;1&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>set<sp/>up<sp/>similar<sp/>rules<sp/>for<sp/>your<sp/>device<sp/>by<sp/>changing<sp/>the<sp/>values<sp/>listed<sp/>in</highlight></codeline>
+<codeline><highlight class="normal">idProduct<sp/>and<sp/>idVendor.<sp/>To<sp/>obtain<sp/>these<sp/>values,<sp/>try:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>udevadm<sp/>info<sp/>-a<sp/>--name=input/eventXX<sp/>|<sp/>grep<sp/>idVendor</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>udevadm<sp/>info<sp/>-a<sp/>--name=input/eventXX<sp/>|<sp/>grep<sp/>idProduct</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">If<sp/>multiple<sp/>values<sp/>come<sp/>up<sp/>for<sp/>each<sp/>of<sp/>these,<sp/>the<sp/>one<sp/>you<sp/>want<sp/>is<sp/>the<sp/>first<sp/>one<sp/>of<sp/>each.<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">On<sp/>other<sp/>systems<sp/>which<sp/>ship<sp/>with<sp/>an<sp/>older<sp/>udev<sp/>(such<sp/>as<sp/>CentOS),<sp/>you<sp/>may<sp/>need</highlight></codeline>
+<codeline><highlight class="normal">to<sp/>set<sp/>up<sp/>a<sp/>rule<sp/>such<sp/>as:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>SUBSYSTEM==&quot;input&quot;,<sp/>ENV{ID_CLASS}==&quot;joystick&quot;,<sp/>ENV{ID_INPUT_JOYSTICK}=&quot;1&quot;</highlight></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/docs/README-linux.md"/>
+  </compounddef>
+</doxygen>

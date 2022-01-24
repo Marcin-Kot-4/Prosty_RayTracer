@@ -1,0 +1,82 @@
+.TH "D:/RayTracing/include/SDL_system.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_system.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SDL_stdinc\&.h'\fP
+.br
+\fC#include 'SDL_keyboard\&.h'\fP
+.br
+\fC#include 'SDL_render\&.h'\fP
+.br
+\fC#include 'SDL_video\&.h'\fP
+.br
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP \fBSDL_IsTablet\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_OnApplicationWillTerminate\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_OnApplicationDidReceiveMemoryWarning\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_OnApplicationWillResignActive\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_OnApplicationDidEnterBackground\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_OnApplicationWillEnterForeground\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_OnApplicationDidBecomeActive\fP (\fBvoid\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include file for platform specific SDL API functions 
+.SH "Function Documentation"
+.PP 
+.SS "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP SDL_IsTablet (\fBvoid\fP)"
+Query if the current device is a tablet\&.
+.PP
+If SDL can't determine this, it will return SDL_FALSE\&.
+.PP
+\fBReturns\fP
+.RS 4
+SDL_TRUE if the device is a tablet, SDL_FALSE otherwise\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.9\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_OnApplicationDidBecomeActive (\fBvoid\fP)"
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_OnApplicationDidEnterBackground (\fBvoid\fP)"
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_OnApplicationDidReceiveMemoryWarning (\fBvoid\fP)"
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_OnApplicationWillEnterForeground (\fBvoid\fP)"
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_OnApplicationWillResignActive (\fBvoid\fP)"
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_OnApplicationWillTerminate (\fBvoid\fP)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

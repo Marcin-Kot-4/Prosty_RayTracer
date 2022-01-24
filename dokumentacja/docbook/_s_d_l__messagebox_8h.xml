@@ -1,0 +1,285 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__messagebox_8h" xml:lang="en-US">
+<title>D:/RayTracing/include/SDL_messagebox.h File Reference</title>
+<indexterm><primary>D:/RayTracing/include/SDL_messagebox.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;SDL_stdinc.h&quot;
+#include &quot;SDL_video.h&quot;
+#include &quot;begin_code.h&quot;
+#include &quot;close_code.h&quot;
+</programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_s_d_l___message_box_button_data">SDL_MessageBoxButtonData</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_s_d_l___message_box_color">SDL_MessageBoxColor</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_s_d_l___message_box_color_scheme">SDL_MessageBoxColorScheme</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_s_d_l___message_box_data">SDL_MessageBoxData</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="__s_d_l__messagebox_8h_1a97f06819ac610581044fdb93d81eed37">SDL_MessageBoxFlags</link> { 
+<link linkend="__s_d_l__messagebox_8h_1a97f06819ac610581044fdb93d81eed37a0c3a423a27f14a59ae160a8f145788d6">SDL_MESSAGEBOX_ERROR</link> = 0x00000010
+, <link linkend="__s_d_l__messagebox_8h_1a97f06819ac610581044fdb93d81eed37a90a65bab036b0156ddec9d8c7e41a2ce">SDL_MESSAGEBOX_WARNING</link> = 0x00000020
+, <link linkend="__s_d_l__messagebox_8h_1a97f06819ac610581044fdb93d81eed37aa5c724184320aa258788481e9ad6d814">SDL_MESSAGEBOX_INFORMATION</link> = 0x00000040
+, <link linkend="__s_d_l__messagebox_8h_1a97f06819ac610581044fdb93d81eed37aca1b8c594588c656e940a8447a862d08">SDL_MESSAGEBOX_BUTTONS_LEFT_TO_RIGHT</link> = 0x00000080
+, 
+<link linkend="__s_d_l__messagebox_8h_1a97f06819ac610581044fdb93d81eed37a9786e79c1efa0c7ea96da7a08af9a24d">SDL_MESSAGEBOX_BUTTONS_RIGHT_TO_LEFT</link> = 0x00000100
+ }</para>
+</listitem>
+            <listitem><para>enum <link linkend="__s_d_l__messagebox_8h_1ad21beffe204426be6efbf4990c916ad0">SDL_MessageBoxButtonFlags</link> { <link linkend="__s_d_l__messagebox_8h_1ad21beffe204426be6efbf4990c916ad0a67ea775510f7c29ebf0a6448ed01b842">SDL_MESSAGEBOX_BUTTON_RETURNKEY_DEFAULT</link> = 0x00000001
+, <link linkend="__s_d_l__messagebox_8h_1ad21beffe204426be6efbf4990c916ad0aa4afee827b33dd88c00c00eef9c9b46b">SDL_MESSAGEBOX_BUTTON_ESCAPEKEY_DEFAULT</link> = 0x00000002
+ }</para>
+</listitem>
+            <listitem><para>enum <link linkend="__s_d_l__messagebox_8h_1a75e562d38bc214725e01f4f829bc1567">SDL_MessageBoxColorType</link> { 
+<link linkend="__s_d_l__messagebox_8h_1a75e562d38bc214725e01f4f829bc1567a9a2a6e8259fe737efb5c5fc71e71b67f">SDL_MESSAGEBOX_COLOR_BACKGROUND</link>
+, <link linkend="__s_d_l__messagebox_8h_1a75e562d38bc214725e01f4f829bc1567aa6e69e6abffa48dba8366ca4c343bd37">SDL_MESSAGEBOX_COLOR_TEXT</link>
+, <link linkend="__s_d_l__messagebox_8h_1a75e562d38bc214725e01f4f829bc1567add5517e7916c5aad3f9582d8d9e736ce">SDL_MESSAGEBOX_COLOR_BUTTON_BORDER</link>
+, <link linkend="__s_d_l__messagebox_8h_1a75e562d38bc214725e01f4f829bc1567a864f22d6d76293999a83c0ae29bf04e2">SDL_MESSAGEBOX_COLOR_BUTTON_BACKGROUND</link>
+, 
+<link linkend="__s_d_l__messagebox_8h_1a75e562d38bc214725e01f4f829bc1567a8ed458545a3c4f08ff795015a197f678">SDL_MESSAGEBOX_COLOR_BUTTON_SELECTED</link>
+, <link linkend="__s_d_l__messagebox_8h_1a75e562d38bc214725e01f4f829bc1567a0a575b056603e38e844b141c83a44d89">SDL_MESSAGEBOX_COLOR_MAX</link>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__messagebox_8h_1a5100de0969e90cc8f82c256287136e05">SDL_ShowMessageBox</link> (const <link linkend="_struct_s_d_l___message_box_data">SDL_MessageBoxData</link> *messageboxdata, int *buttonid)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__messagebox_8h_1a34d06cce5c7b8d25812da0306696de32">SDL_ShowSimpleMessageBox</link> (<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="__s_d_l__opengl__glext_8h_1ac7ba7d3cce3d19ca020e056b37231289">flags</link>, const char *title, const char *<link linkend="__s_d_l__opengl__glext_8h_1a7b6161cffb9b8aee272b3b916183d28c">message</link>, <link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link> *window)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Enumeration Type Documentation</title>
+<anchor xml:id="__s_d_l__messagebox_8h_1ad21beffe204426be6efbf4990c916ad0"/><section>
+    <title>SDL_MessageBoxButtonFlags</title>
+<indexterm><primary>SDL_MessageBoxButtonFlags</primary><secondary>SDL_messagebox.h</secondary></indexterm>
+<indexterm><primary>SDL_messagebox.h</primary><secondary>SDL_MessageBoxButtonFlags</secondary></indexterm>
+<para><computeroutput>enum <link linkend="__s_d_l__messagebox_8h_1ad21beffe204426be6efbf4990c916ad0">SDL_MessageBoxButtonFlags</link></computeroutput></para>
+<para>Flags for <link linkend="_struct_s_d_l___message_box_button_data">SDL_MessageBoxButtonData</link>. </para>
+<informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SDL_MESSAGEBOX_BUTTON_RETURNKEY_DEFAULT</primary><secondary>SDL_messagebox.h</secondary></indexterm>
+<indexterm><primary>SDL_messagebox.h</primary><secondary>SDL_MESSAGEBOX_BUTTON_RETURNKEY_DEFAULT</secondary></indexterm>
+<anchor xml:id="__s_d_l__messagebox_8h_1ad21beffe204426be6efbf4990c916ad0a67ea775510f7c29ebf0a6448ed01b842"/>SDL_MESSAGEBOX_BUTTON_RETURNKEY_DEFAULT</entry><entry>
+<para>Marks the default button when return is hit </para>
+</entry></row><row><entry><indexterm><primary>SDL_MESSAGEBOX_BUTTON_ESCAPEKEY_DEFAULT</primary><secondary>SDL_messagebox.h</secondary></indexterm>
+<indexterm><primary>SDL_messagebox.h</primary><secondary>SDL_MESSAGEBOX_BUTTON_ESCAPEKEY_DEFAULT</secondary></indexterm>
+<anchor xml:id="__s_d_l__messagebox_8h_1ad21beffe204426be6efbf4990c916ad0aa4afee827b33dd88c00c00eef9c9b46b"/>SDL_MESSAGEBOX_BUTTON_ESCAPEKEY_DEFAULT</entry><entry>
+<para>Marks the default button when escape is hit </para>
+</entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+<anchor xml:id="__s_d_l__messagebox_8h_1a75e562d38bc214725e01f4f829bc1567"/><section>
+    <title>SDL_MessageBoxColorType</title>
+<indexterm><primary>SDL_MessageBoxColorType</primary><secondary>SDL_messagebox.h</secondary></indexterm>
+<indexterm><primary>SDL_messagebox.h</primary><secondary>SDL_MessageBoxColorType</secondary></indexterm>
+<para><computeroutput>enum <link linkend="__s_d_l__messagebox_8h_1a75e562d38bc214725e01f4f829bc1567">SDL_MessageBoxColorType</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SDL_MESSAGEBOX_COLOR_BACKGROUND</primary><secondary>SDL_messagebox.h</secondary></indexterm>
+<indexterm><primary>SDL_messagebox.h</primary><secondary>SDL_MESSAGEBOX_COLOR_BACKGROUND</secondary></indexterm>
+<anchor xml:id="__s_d_l__messagebox_8h_1a75e562d38bc214725e01f4f829bc1567a9a2a6e8259fe737efb5c5fc71e71b67f"/>SDL_MESSAGEBOX_COLOR_BACKGROUND</entry><entry></entry></row><row><entry><indexterm><primary>SDL_MESSAGEBOX_COLOR_TEXT</primary><secondary>SDL_messagebox.h</secondary></indexterm>
+<indexterm><primary>SDL_messagebox.h</primary><secondary>SDL_MESSAGEBOX_COLOR_TEXT</secondary></indexterm>
+<anchor xml:id="__s_d_l__messagebox_8h_1a75e562d38bc214725e01f4f829bc1567aa6e69e6abffa48dba8366ca4c343bd37"/>SDL_MESSAGEBOX_COLOR_TEXT</entry><entry></entry></row><row><entry><indexterm><primary>SDL_MESSAGEBOX_COLOR_BUTTON_BORDER</primary><secondary>SDL_messagebox.h</secondary></indexterm>
+<indexterm><primary>SDL_messagebox.h</primary><secondary>SDL_MESSAGEBOX_COLOR_BUTTON_BORDER</secondary></indexterm>
+<anchor xml:id="__s_d_l__messagebox_8h_1a75e562d38bc214725e01f4f829bc1567add5517e7916c5aad3f9582d8d9e736ce"/>SDL_MESSAGEBOX_COLOR_BUTTON_BORDER</entry><entry></entry></row><row><entry><indexterm><primary>SDL_MESSAGEBOX_COLOR_BUTTON_BACKGROUND</primary><secondary>SDL_messagebox.h</secondary></indexterm>
+<indexterm><primary>SDL_messagebox.h</primary><secondary>SDL_MESSAGEBOX_COLOR_BUTTON_BACKGROUND</secondary></indexterm>
+<anchor xml:id="__s_d_l__messagebox_8h_1a75e562d38bc214725e01f4f829bc1567a864f22d6d76293999a83c0ae29bf04e2"/>SDL_MESSAGEBOX_COLOR_BUTTON_BACKGROUND</entry><entry></entry></row><row><entry><indexterm><primary>SDL_MESSAGEBOX_COLOR_BUTTON_SELECTED</primary><secondary>SDL_messagebox.h</secondary></indexterm>
+<indexterm><primary>SDL_messagebox.h</primary><secondary>SDL_MESSAGEBOX_COLOR_BUTTON_SELECTED</secondary></indexterm>
+<anchor xml:id="__s_d_l__messagebox_8h_1a75e562d38bc214725e01f4f829bc1567a8ed458545a3c4f08ff795015a197f678"/>SDL_MESSAGEBOX_COLOR_BUTTON_SELECTED</entry><entry></entry></row><row><entry><indexterm><primary>SDL_MESSAGEBOX_COLOR_MAX</primary><secondary>SDL_messagebox.h</secondary></indexterm>
+<indexterm><primary>SDL_messagebox.h</primary><secondary>SDL_MESSAGEBOX_COLOR_MAX</secondary></indexterm>
+<anchor xml:id="__s_d_l__messagebox_8h_1a75e562d38bc214725e01f4f829bc1567a0a575b056603e38e844b141c83a44d89"/>SDL_MESSAGEBOX_COLOR_MAX</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+<anchor xml:id="__s_d_l__messagebox_8h_1a97f06819ac610581044fdb93d81eed37"/><section>
+    <title>SDL_MessageBoxFlags</title>
+<indexterm><primary>SDL_MessageBoxFlags</primary><secondary>SDL_messagebox.h</secondary></indexterm>
+<indexterm><primary>SDL_messagebox.h</primary><secondary>SDL_MessageBoxFlags</secondary></indexterm>
+<para><computeroutput>enum <link linkend="__s_d_l__messagebox_8h_1a97f06819ac610581044fdb93d81eed37">SDL_MessageBoxFlags</link></computeroutput></para>
+<para>SDL_MessageBox flags. If supported will display warning icon, etc. </para>
+<informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SDL_MESSAGEBOX_ERROR</primary><secondary>SDL_messagebox.h</secondary></indexterm>
+<indexterm><primary>SDL_messagebox.h</primary><secondary>SDL_MESSAGEBOX_ERROR</secondary></indexterm>
+<anchor xml:id="__s_d_l__messagebox_8h_1a97f06819ac610581044fdb93d81eed37a0c3a423a27f14a59ae160a8f145788d6"/>SDL_MESSAGEBOX_ERROR</entry><entry>
+<para>error dialog </para>
+</entry></row><row><entry><indexterm><primary>SDL_MESSAGEBOX_WARNING</primary><secondary>SDL_messagebox.h</secondary></indexterm>
+<indexterm><primary>SDL_messagebox.h</primary><secondary>SDL_MESSAGEBOX_WARNING</secondary></indexterm>
+<anchor xml:id="__s_d_l__messagebox_8h_1a97f06819ac610581044fdb93d81eed37a90a65bab036b0156ddec9d8c7e41a2ce"/>SDL_MESSAGEBOX_WARNING</entry><entry>
+<para>warning dialog </para>
+</entry></row><row><entry><indexterm><primary>SDL_MESSAGEBOX_INFORMATION</primary><secondary>SDL_messagebox.h</secondary></indexterm>
+<indexterm><primary>SDL_messagebox.h</primary><secondary>SDL_MESSAGEBOX_INFORMATION</secondary></indexterm>
+<anchor xml:id="__s_d_l__messagebox_8h_1a97f06819ac610581044fdb93d81eed37aa5c724184320aa258788481e9ad6d814"/>SDL_MESSAGEBOX_INFORMATION</entry><entry>
+<para>informational dialog </para>
+</entry></row><row><entry><indexterm><primary>SDL_MESSAGEBOX_BUTTONS_LEFT_TO_RIGHT</primary><secondary>SDL_messagebox.h</secondary></indexterm>
+<indexterm><primary>SDL_messagebox.h</primary><secondary>SDL_MESSAGEBOX_BUTTONS_LEFT_TO_RIGHT</secondary></indexterm>
+<anchor xml:id="__s_d_l__messagebox_8h_1a97f06819ac610581044fdb93d81eed37aca1b8c594588c656e940a8447a862d08"/>SDL_MESSAGEBOX_BUTTONS_LEFT_TO_RIGHT</entry><entry>
+<para>buttons placed left to right </para>
+</entry></row><row><entry><indexterm><primary>SDL_MESSAGEBOX_BUTTONS_RIGHT_TO_LEFT</primary><secondary>SDL_messagebox.h</secondary></indexterm>
+<indexterm><primary>SDL_messagebox.h</primary><secondary>SDL_MESSAGEBOX_BUTTONS_RIGHT_TO_LEFT</secondary></indexterm>
+<anchor xml:id="__s_d_l__messagebox_8h_1a97f06819ac610581044fdb93d81eed37a9786e79c1efa0c7ea96da7a08af9a24d"/>SDL_MESSAGEBOX_BUTTONS_RIGHT_TO_LEFT</entry><entry>
+<para>buttons placed right to left </para>
+</entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__s_d_l__messagebox_8h_1a5100de0969e90cc8f82c256287136e05"/><section>
+    <title>SDL_ShowMessageBox()</title>
+<indexterm><primary>SDL_ShowMessageBox</primary><secondary>SDL_messagebox.h</secondary></indexterm>
+<indexterm><primary>SDL_messagebox.h</primary><secondary>SDL_ShowMessageBox</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_ShowMessageBox (const <link linkend="_struct_s_d_l___message_box_data">SDL_MessageBoxData</link> * messageboxdata, int * buttonid)</computeroutput></para>
+<para>Create a modal message box.</para>
+
+<para>If your needs aren&apos;t complex, it might be easier to use SDL_ShowSimpleMessageBox.</para>
+
+<para>This function should be called on the thread that created the parent window, or on the main thread if the messagebox has no parent. It will block execution of that thread until the user clicks a button or closes the messagebox.</para>
+
+<para>This function may be called at any time, even before <link linkend="__s_d_l_8h_1a8fc8d35348d7c74bad8392d776c937b8">SDL_Init()</link>. This makes it useful for reporting errors like a failure to create a renderer or OpenGL context.</para>
+
+<para>On X11, SDL rolls its own dialog box with X11 primitives instead of a formal toolkit like GTK+ or Qt.</para>
+
+<para>Note that if <link linkend="__s_d_l_8h_1a8fc8d35348d7c74bad8392d776c937b8">SDL_Init()</link> would fail because there isn&apos;t any available video target, this function is likely to fail for the same reasons. If this is a concern, check the return value from this function and fall back to writing to stderr if you can.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>messageboxdata</entry><entry>
+<para>the <link linkend="_struct_s_d_l___message_box_data">SDL_MessageBoxData</link> structure with title, text and other options </para>
+</entry>
+                            </row>
+                            <row>
+<entry>buttonid</entry><entry>
+<para>the pointer to which user id of hit button should be copied </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 on success or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__messagebox_8h_1a34d06cce5c7b8d25812da0306696de32">SDL_ShowSimpleMessageBox</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__messagebox_8h_1a34d06cce5c7b8d25812da0306696de32"/><section>
+    <title>SDL_ShowSimpleMessageBox()</title>
+<indexterm><primary>SDL_ShowSimpleMessageBox</primary><secondary>SDL_messagebox.h</secondary></indexterm>
+<indexterm><primary>SDL_messagebox.h</primary><secondary>SDL_ShowSimpleMessageBox</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_ShowSimpleMessageBox (<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> flags, const char * title, const char * message, <link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link> * window)</computeroutput></para>
+<para>Display a simple modal message box.</para>
+
+<para>If your needs aren&apos;t complex, this function is preferred over SDL_ShowMessageBox.</para>
+
+<para><computeroutput>flags</computeroutput> may be any of the following:</para>
+
+<para><itemizedlist>
+<listitem>
+<para><computeroutput>SDL_MESSAGEBOX_ERROR</computeroutput>: error dialog</para>
+</listitem><listitem>
+<para><computeroutput>SDL_MESSAGEBOX_WARNING</computeroutput>: warning dialog</para>
+</listitem><listitem>
+<para><computeroutput>SDL_MESSAGEBOX_INFORMATION</computeroutput>: informational dialog</para>
+</listitem></itemizedlist>
+</para>
+
+<para>This function should be called on the thread that created the parent window, or on the main thread if the messagebox has no parent. It will block execution of that thread until the user clicks a button or closes the messagebox.</para>
+
+<para>This function may be called at any time, even before <link linkend="__s_d_l_8h_1a8fc8d35348d7c74bad8392d776c937b8">SDL_Init()</link>. This makes it useful for reporting errors like a failure to create a renderer or OpenGL context.</para>
+
+<para>On X11, SDL rolls its own dialog box with X11 primitives instead of a formal toolkit like GTK+ or Qt.</para>
+
+<para>Note that if <link linkend="__s_d_l_8h_1a8fc8d35348d7c74bad8392d776c937b8">SDL_Init()</link> would fail because there isn&apos;t any available video target, this function is likely to fail for the same reasons. If this is a concern, check the return value from this function and fall back to writing to stderr if you can.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>flags</entry><entry>
+<para>an SDL_MessageBoxFlags value </para>
+</entry>
+                            </row>
+                            <row>
+<entry>title</entry><entry>
+<para>UTF-8 title text </para>
+</entry>
+                            </row>
+                            <row>
+<entry>message</entry><entry>
+<para>UTF-8 message text </para>
+</entry>
+                            </row>
+                            <row>
+<entry>window</entry><entry>
+<para>the parent window, or NULL for no parent </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 on success or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__messagebox_8h_1a5100de0969e90cc8f82c256287136e05">SDL_ShowMessageBox</link> </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

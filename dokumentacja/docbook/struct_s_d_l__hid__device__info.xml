@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_s_d_l__hid__device__info" xml:lang="en-US">
+<title>SDL_hid_device_info Struct Reference</title>
+<indexterm><primary>SDL_hid_device_info</primary></indexterm>
+<para>
+
+<para>Information about a connected HID device. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;SDL_hidapi.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>char * <link linkend="_struct_s_d_l__hid__device__info_1aa66ffa58c4a37986285dee7d0adad766">path</link></para>
+</listitem>
+            <listitem><para>unsigned short <link linkend="_struct_s_d_l__hid__device__info_1a7bb9b5c173278a6699b3191953fcfe77">vendor_id</link></para>
+</listitem>
+            <listitem><para>unsigned short <link linkend="_struct_s_d_l__hid__device__info_1a78b8d7cefcc61d786256280da7159dbc">product_id</link></para>
+</listitem>
+            <listitem><para>wchar_t * <link linkend="_struct_s_d_l__hid__device__info_1af60f9bc8de63c26113cca7e60158b91d">serial_number</link></para>
+</listitem>
+            <listitem><para>unsigned short <link linkend="_struct_s_d_l__hid__device__info_1ad6eb1e9cafd756ef89cd427cccc89da8">release_number</link></para>
+</listitem>
+            <listitem><para>wchar_t * <link linkend="_struct_s_d_l__hid__device__info_1ac874d63dbfe581736033f266f08fd51a">manufacturer_string</link></para>
+</listitem>
+            <listitem><para>wchar_t * <link linkend="_struct_s_d_l__hid__device__info_1a80f37d1aaae118285bec4442a8c9b1d0">product_string</link></para>
+</listitem>
+            <listitem><para>unsigned short <link linkend="_struct_s_d_l__hid__device__info_1ace00a62000be5a947106f04d0dd5efc4">usage_page</link></para>
+</listitem>
+            <listitem><para>unsigned short <link linkend="_struct_s_d_l__hid__device__info_1ab5851e5c55c1903b63ecf8bb736c4249">usage</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_s_d_l__hid__device__info_1ae1450dccd0f426357f6b95422645a0e3">interface_number</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_s_d_l__hid__device__info_1a3816985c4cc4210c750da3a9720a28f6">interface_class</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_s_d_l__hid__device__info_1a7dff2f9edbe860f476fdaf5e91614038">interface_subclass</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_s_d_l__hid__device__info_1a7ad2c1748503188c35a8a306a8abd55b">interface_protocol</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_s_d_l__hid__device__info">SDL_hid_device_info</link> * <link linkend="_struct_s_d_l__hid__device__info_1aa8da06646522138690bec6e5fba7540f">next</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Information about a connected HID device. </para>
+
+
+
+<para>hidapi info structure </para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_s_d_l__hid__device__info_1a3816985c4cc4210c750da3a9720a28f6"/><section>
+    <title>interface_class</title>
+<indexterm><primary>interface_class</primary><secondary>SDL_hid_device_info</secondary></indexterm>
+<indexterm><primary>SDL_hid_device_info</primary><secondary>interface_class</secondary></indexterm>
+<para><computeroutput>int SDL_hid_device_info::interface_class</computeroutput></para>
+<para>Additional information about the USB interface. Valid on libusb and Android implementations. </para>
+</section>
+<anchor xml:id="_struct_s_d_l__hid__device__info_1ae1450dccd0f426357f6b95422645a0e3"/><section>
+    <title>interface_number</title>
+<indexterm><primary>interface_number</primary><secondary>SDL_hid_device_info</secondary></indexterm>
+<indexterm><primary>SDL_hid_device_info</primary><secondary>interface_number</secondary></indexterm>
+<para><computeroutput>int SDL_hid_device_info::interface_number</computeroutput></para>
+<para>The USB interface which this logical device represents.</para>
+
+<para>Valid on both Linux implementations in all cases. Valid on the Windows implementation only if the device contains more than one interface. </para>
+</section>
+<anchor xml:id="_struct_s_d_l__hid__device__info_1a7ad2c1748503188c35a8a306a8abd55b"/><section>
+    <title>interface_protocol</title>
+<indexterm><primary>interface_protocol</primary><secondary>SDL_hid_device_info</secondary></indexterm>
+<indexterm><primary>SDL_hid_device_info</primary><secondary>interface_protocol</secondary></indexterm>
+<para><computeroutput>int SDL_hid_device_info::interface_protocol</computeroutput></para></section>
+<anchor xml:id="_struct_s_d_l__hid__device__info_1a7dff2f9edbe860f476fdaf5e91614038"/><section>
+    <title>interface_subclass</title>
+<indexterm><primary>interface_subclass</primary><secondary>SDL_hid_device_info</secondary></indexterm>
+<indexterm><primary>SDL_hid_device_info</primary><secondary>interface_subclass</secondary></indexterm>
+<para><computeroutput>int SDL_hid_device_info::interface_subclass</computeroutput></para></section>
+<anchor xml:id="_struct_s_d_l__hid__device__info_1ac874d63dbfe581736033f266f08fd51a"/><section>
+    <title>manufacturer_string</title>
+<indexterm><primary>manufacturer_string</primary><secondary>SDL_hid_device_info</secondary></indexterm>
+<indexterm><primary>SDL_hid_device_info</primary><secondary>manufacturer_string</secondary></indexterm>
+<para><computeroutput>wchar_t* SDL_hid_device_info::manufacturer_string</computeroutput></para>
+<para>Manufacturer String </para>
+</section>
+<anchor xml:id="_struct_s_d_l__hid__device__info_1aa8da06646522138690bec6e5fba7540f"/><section>
+    <title>next</title>
+<indexterm><primary>next</primary><secondary>SDL_hid_device_info</secondary></indexterm>
+<indexterm><primary>SDL_hid_device_info</primary><secondary>next</secondary></indexterm>
+<para><computeroutput>struct <link linkend="_struct_s_d_l__hid__device__info">SDL_hid_device_info</link>* SDL_hid_device_info::next</computeroutput></para>
+<para>Pointer to the next device </para>
+</section>
+<anchor xml:id="_struct_s_d_l__hid__device__info_1aa66ffa58c4a37986285dee7d0adad766"/><section>
+    <title>path</title>
+<indexterm><primary>path</primary><secondary>SDL_hid_device_info</secondary></indexterm>
+<indexterm><primary>SDL_hid_device_info</primary><secondary>path</secondary></indexterm>
+<para><computeroutput>char* SDL_hid_device_info::path</computeroutput></para>
+<para>Platform-specific device path </para>
+</section>
+<anchor xml:id="_struct_s_d_l__hid__device__info_1a78b8d7cefcc61d786256280da7159dbc"/><section>
+    <title>product_id</title>
+<indexterm><primary>product_id</primary><secondary>SDL_hid_device_info</secondary></indexterm>
+<indexterm><primary>SDL_hid_device_info</primary><secondary>product_id</secondary></indexterm>
+<para><computeroutput>unsigned short SDL_hid_device_info::product_id</computeroutput></para>
+<para>Device Product ID </para>
+</section>
+<anchor xml:id="_struct_s_d_l__hid__device__info_1a80f37d1aaae118285bec4442a8c9b1d0"/><section>
+    <title>product_string</title>
+<indexterm><primary>product_string</primary><secondary>SDL_hid_device_info</secondary></indexterm>
+<indexterm><primary>SDL_hid_device_info</primary><secondary>product_string</secondary></indexterm>
+<para><computeroutput>wchar_t* SDL_hid_device_info::product_string</computeroutput></para>
+<para>Product string </para>
+</section>
+<anchor xml:id="_struct_s_d_l__hid__device__info_1ad6eb1e9cafd756ef89cd427cccc89da8"/><section>
+    <title>release_number</title>
+<indexterm><primary>release_number</primary><secondary>SDL_hid_device_info</secondary></indexterm>
+<indexterm><primary>SDL_hid_device_info</primary><secondary>release_number</secondary></indexterm>
+<para><computeroutput>unsigned short SDL_hid_device_info::release_number</computeroutput></para>
+<para>Device Release Number in binary-coded decimal, also known as Device Version Number </para>
+</section>
+<anchor xml:id="_struct_s_d_l__hid__device__info_1af60f9bc8de63c26113cca7e60158b91d"/><section>
+    <title>serial_number</title>
+<indexterm><primary>serial_number</primary><secondary>SDL_hid_device_info</secondary></indexterm>
+<indexterm><primary>SDL_hid_device_info</primary><secondary>serial_number</secondary></indexterm>
+<para><computeroutput>wchar_t* SDL_hid_device_info::serial_number</computeroutput></para>
+<para>Serial Number </para>
+</section>
+<anchor xml:id="_struct_s_d_l__hid__device__info_1ab5851e5c55c1903b63ecf8bb736c4249"/><section>
+    <title>usage</title>
+<indexterm><primary>usage</primary><secondary>SDL_hid_device_info</secondary></indexterm>
+<indexterm><primary>SDL_hid_device_info</primary><secondary>usage</secondary></indexterm>
+<para><computeroutput>unsigned short SDL_hid_device_info::usage</computeroutput></para>
+<para>Usage for this Device/Interface (Windows/Mac only). </para>
+</section>
+<anchor xml:id="_struct_s_d_l__hid__device__info_1ace00a62000be5a947106f04d0dd5efc4"/><section>
+    <title>usage_page</title>
+<indexterm><primary>usage_page</primary><secondary>SDL_hid_device_info</secondary></indexterm>
+<indexterm><primary>SDL_hid_device_info</primary><secondary>usage_page</secondary></indexterm>
+<para><computeroutput>unsigned short SDL_hid_device_info::usage_page</computeroutput></para>
+<para>Usage Page for this Device/Interface (Windows/Mac only). </para>
+</section>
+<anchor xml:id="_struct_s_d_l__hid__device__info_1a7bb9b5c173278a6699b3191953fcfe77"/><section>
+    <title>vendor_id</title>
+<indexterm><primary>vendor_id</primary><secondary>SDL_hid_device_info</secondary></indexterm>
+<indexterm><primary>SDL_hid_device_info</primary><secondary>vendor_id</secondary></indexterm>
+<para><computeroutput>unsigned short SDL_hid_device_info::vendor_id</computeroutput></para>
+<para>Device Vendor ID </para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+D:/RayTracing/include/<link linkend="__s_d_l__hidapi_8h">SDL_hidapi.h</link></section>
+</section>

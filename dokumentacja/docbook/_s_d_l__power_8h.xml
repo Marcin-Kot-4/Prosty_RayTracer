@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__power_8h" xml:lang="en-US">
+<title>D:/RayTracing/include/SDL_power.h File Reference</title>
+<indexterm><primary>D:/RayTracing/include/SDL_power.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;SDL_stdinc.h&quot;
+#include &quot;begin_code.h&quot;
+#include &quot;close_code.h&quot;
+</programlisting><simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="__s_d_l__power_8h_1aa6d67208a8d30ececf84b158a2ab7eff">SDL_PowerState</link> { 
+<link linkend="__s_d_l__power_8h_1aa6d67208a8d30ececf84b158a2ab7effa5c20e9c8a8c455a9ed9c66167ac2df61">SDL_POWERSTATE_UNKNOWN</link>
+, <link linkend="__s_d_l__power_8h_1aa6d67208a8d30ececf84b158a2ab7effa864da7f4b32af694cb94c9ba58dab985">SDL_POWERSTATE_ON_BATTERY</link>
+, <link linkend="__s_d_l__power_8h_1aa6d67208a8d30ececf84b158a2ab7effa03bcd1ca770f703d834d67756fdafbeb">SDL_POWERSTATE_NO_BATTERY</link>
+, <link linkend="__s_d_l__power_8h_1aa6d67208a8d30ececf84b158a2ab7effa051d2e5681ad1647ff274ef17fc7ca1e">SDL_POWERSTATE_CHARGING</link>
+, 
+<link linkend="__s_d_l__power_8h_1aa6d67208a8d30ececf84b158a2ab7effa320ceff2db32f9bc2e1b8d644d1fb0b4">SDL_POWERSTATE_CHARGED</link>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__power_8h_1aa6d67208a8d30ececf84b158a2ab7eff">SDL_PowerState</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__power_8h_1aed0dded691bb8ec94b119a90a1126049">SDL_GetPowerInfo</link> (int *secs, int *pct)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Header for the SDL power management routines. </para>
+</section>
+<section>
+<title>Enumeration Type Documentation</title>
+<anchor xml:id="__s_d_l__power_8h_1aa6d67208a8d30ececf84b158a2ab7eff"/><section>
+    <title>SDL_PowerState</title>
+<indexterm><primary>SDL_PowerState</primary><secondary>SDL_power.h</secondary></indexterm>
+<indexterm><primary>SDL_power.h</primary><secondary>SDL_PowerState</secondary></indexterm>
+<para><computeroutput>enum <link linkend="__s_d_l__power_8h_1aa6d67208a8d30ececf84b158a2ab7eff">SDL_PowerState</link></computeroutput></para>
+<para>The basic state for the system&apos;s power supply. </para>
+<informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SDL_POWERSTATE_UNKNOWN</primary><secondary>SDL_power.h</secondary></indexterm>
+<indexterm><primary>SDL_power.h</primary><secondary>SDL_POWERSTATE_UNKNOWN</secondary></indexterm>
+<anchor xml:id="__s_d_l__power_8h_1aa6d67208a8d30ececf84b158a2ab7effa5c20e9c8a8c455a9ed9c66167ac2df61"/>SDL_POWERSTATE_UNKNOWN</entry><entry>
+<para>cannot determine power status </para>
+</entry></row><row><entry><indexterm><primary>SDL_POWERSTATE_ON_BATTERY</primary><secondary>SDL_power.h</secondary></indexterm>
+<indexterm><primary>SDL_power.h</primary><secondary>SDL_POWERSTATE_ON_BATTERY</secondary></indexterm>
+<anchor xml:id="__s_d_l__power_8h_1aa6d67208a8d30ececf84b158a2ab7effa864da7f4b32af694cb94c9ba58dab985"/>SDL_POWERSTATE_ON_BATTERY</entry><entry>
+<para>Not plugged in, running on the battery </para>
+</entry></row><row><entry><indexterm><primary>SDL_POWERSTATE_NO_BATTERY</primary><secondary>SDL_power.h</secondary></indexterm>
+<indexterm><primary>SDL_power.h</primary><secondary>SDL_POWERSTATE_NO_BATTERY</secondary></indexterm>
+<anchor xml:id="__s_d_l__power_8h_1aa6d67208a8d30ececf84b158a2ab7effa03bcd1ca770f703d834d67756fdafbeb"/>SDL_POWERSTATE_NO_BATTERY</entry><entry>
+<para>Plugged in, no battery available </para>
+</entry></row><row><entry><indexterm><primary>SDL_POWERSTATE_CHARGING</primary><secondary>SDL_power.h</secondary></indexterm>
+<indexterm><primary>SDL_power.h</primary><secondary>SDL_POWERSTATE_CHARGING</secondary></indexterm>
+<anchor xml:id="__s_d_l__power_8h_1aa6d67208a8d30ececf84b158a2ab7effa051d2e5681ad1647ff274ef17fc7ca1e"/>SDL_POWERSTATE_CHARGING</entry><entry>
+<para>Plugged in, charging battery </para>
+</entry></row><row><entry><indexterm><primary>SDL_POWERSTATE_CHARGED</primary><secondary>SDL_power.h</secondary></indexterm>
+<indexterm><primary>SDL_power.h</primary><secondary>SDL_POWERSTATE_CHARGED</secondary></indexterm>
+<anchor xml:id="__s_d_l__power_8h_1aa6d67208a8d30ececf84b158a2ab7effa320ceff2db32f9bc2e1b8d644d1fb0b4"/>SDL_POWERSTATE_CHARGED</entry><entry>
+<para>Plugged in, battery charged </para>
+</entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__s_d_l__power_8h_1aed0dded691bb8ec94b119a90a1126049"/><section>
+    <title>SDL_GetPowerInfo()</title>
+<indexterm><primary>SDL_GetPowerInfo</primary><secondary>SDL_power.h</secondary></indexterm>
+<indexterm><primary>SDL_power.h</primary><secondary>SDL_GetPowerInfo</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__power_8h_1aa6d67208a8d30ececf84b158a2ab7eff">SDL_PowerState</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GetPowerInfo (int * secs, int * pct)</computeroutput></para>
+<para>Get the current power supply details.</para>
+
+<para>You should never take a battery status as absolute truth. Batteries (especially failing batteries) are delicate hardware, and the values reported here are best estimates based on what that hardware reports. It&apos;s not uncommon for older batteries to lose stored power much faster than it reports, or completely drain when reporting it has 20 percent left, etc.</para>
+
+<para>Battery status can change at any time; if you are concerned with power state, you should call this function frequently, and perhaps ignore changes until they seem to be stable for a few seconds.</para>
+
+<para>It&apos;s possible a platform can only report battery percentage or time left but not both.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>secs</entry><entry>
+<para>seconds of battery life left, you can pass a NULL here if you don&apos;t care, will return -1 if we can&apos;t determine a value, or we&apos;re not running on a battery </para>
+</entry>
+                            </row>
+                            <row>
+<entry>pct</entry><entry>
+<para>percentage of battery life left, between 0 and 100, you can pass a NULL here if you don&apos;t care, will return -1 if we can&apos;t determine a value, or we&apos;re not running on a battery </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>an SDL_PowerState enum representing the current battery state.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0. </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

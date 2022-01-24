@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__scene_8h_source" xml:lang="en-US">
+<title>Scene.h</title>
+<indexterm><primary>D:/RayTracing/RayTrace/Scene.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;RAYTRACING_SCENE_H</emphasis>
+2 <emphasis role="preprocessor">#define&#32;RAYTRACING_SCENE_H</emphasis>
+3 
+4 <emphasis role="preprocessor">#include&#32;&lt;memory&gt;</emphasis>
+5 <emphasis role="preprocessor">#include&#32;&lt;vector&gt;</emphasis>
+6 <emphasis role="preprocessor">#include&#32;&quot;../include/SDL.h&quot;</emphasis>
+7 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__image_8h">Image.h</link>&quot;</emphasis>
+8 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_camera_8h">camera.h</link>&quot;</emphasis>
+9 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_objsphere_8h">Primitives/objsphere.h</link>&quot;</emphasis>
+10 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_objplane_8h">Primitives/objplane.h</link>&quot;</emphasis>
+11 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_cylinder_8h">Primitives/cylinder.h</link>&quot;</emphasis>
+12 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_cone_8h">Primitives/cone.h</link>&quot;</emphasis>
+13 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_pointlight_8h">Lights/pointlight.h</link>&quot;</emphasis>
+14 
+15 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_r_t">RT</link>&#32;{
+16 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_class_r_t_1_1_scene">Scene</link>&#32;{
+17 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+18 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Domyślny&#32;konstruktor</emphasis>
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_r_t_1_1_scene_1a5bc05579d6758fff4f3dc15f55f998bd">Scene</link>();
+20 
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Funkcja&#32;renderująca</emphasis>
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_r_t_1_1_scene_1a75c7c042384cac0d24d1bb66b89da3af">Render</link>(<link linkend="_class_image">Image</link>&#32;&amp;outputImage);
+23 
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Metoda&#32;do&#32;rzucania&#32;promieni&#32;na&#32;scene</emphasis>
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_r_t_1_1_scene_1a45a144d37be643349a7f3623038240b3">CastRay</link>(<link linkend="_class_r_t_1_1_ray">RT::Ray</link>&#32;&amp;castRay,&#32;std::shared_ptr&lt;RT::ObjectBase&gt;&#32;&amp;closestObject,
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;closestIntPoint,&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;closestLocalNormal,
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;closestLocalColor);
+28 
+29 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>:
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Kamera</emphasis>
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_r_t_1_1_camera">RT::Camera</link>&#32;m_camera;
+32 
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Lista&#32;obiektów&#32;na&#32;scenie</emphasis>
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::vector&lt;std::shared_ptr&lt;RT::ObjectBase&gt;&gt;&#32;m_objectList;
+35 
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Lista&#32;źródeł&#32;światła&#32;na&#32;scenie</emphasis>
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::vector&lt;std::shared_ptr&lt;RT::LightBase&gt;&gt;&#32;m_lightList;
+38 &#32;&#32;&#32;&#32;};
+39 }
+40 
+41 
+42 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//RAYTRACING_SCENE_H</emphasis>
+</programlisting></section>

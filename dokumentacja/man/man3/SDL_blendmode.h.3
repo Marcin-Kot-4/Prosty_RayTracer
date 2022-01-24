@@ -1,0 +1,223 @@
+.TH "D:/RayTracing/include/SDL_blendmode.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_blendmode.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSDL_BlendMode\fP { \fBSDL_BLENDMODE_NONE\fP = 0x00000000, \fBSDL_BLENDMODE_BLEND\fP = 0x00000001, \fBSDL_BLENDMODE_ADD\fP = 0x00000002, \fBSDL_BLENDMODE_MOD\fP = 0x00000004, \fBSDL_BLENDMODE_MUL\fP = 0x00000008, \fBSDL_BLENDMODE_INVALID\fP = 0x7FFFFFFF }"
+.br
+.RI "The blend mode used in \fBSDL_RenderCopy()\fP and drawing operations\&. "
+.ti -1c
+.RI "enum \fBSDL_BlendOperation\fP { \fBSDL_BLENDOPERATION_ADD\fP = 0x1, \fBSDL_BLENDOPERATION_SUBTRACT\fP = 0x2, \fBSDL_BLENDOPERATION_REV_SUBTRACT\fP = 0x3, \fBSDL_BLENDOPERATION_MINIMUM\fP = 0x4, \fBSDL_BLENDOPERATION_MAXIMUM\fP = 0x5 }"
+.br
+.RI "The blend operation used when combining source and destination pixel components\&. "
+.ti -1c
+.RI "enum \fBSDL_BlendFactor\fP { \fBSDL_BLENDFACTOR_ZERO\fP = 0x1, \fBSDL_BLENDFACTOR_ONE\fP = 0x2, \fBSDL_BLENDFACTOR_SRC_COLOR\fP = 0x3, \fBSDL_BLENDFACTOR_ONE_MINUS_SRC_COLOR\fP = 0x4, \fBSDL_BLENDFACTOR_SRC_ALPHA\fP = 0x5, \fBSDL_BLENDFACTOR_ONE_MINUS_SRC_ALPHA\fP = 0x6, \fBSDL_BLENDFACTOR_DST_COLOR\fP = 0x7, \fBSDL_BLENDFACTOR_ONE_MINUS_DST_COLOR\fP = 0x8, \fBSDL_BLENDFACTOR_DST_ALPHA\fP = 0x9, \fBSDL_BLENDFACTOR_ONE_MINUS_DST_ALPHA\fP = 0xA }"
+.br
+.RI "The normalized factor used to multiply pixel components\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_BlendMode\fP \fBSDLCALL\fP \fBSDL_ComposeCustomBlendMode\fP (\fBSDL_BlendFactor\fP srcColorFactor, \fBSDL_BlendFactor\fP dstColorFactor, \fBSDL_BlendOperation\fP colorOperation, \fBSDL_BlendFactor\fP srcAlphaFactor, \fBSDL_BlendFactor\fP dstAlphaFactor, \fBSDL_BlendOperation\fP alphaOperation)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Header file declaring the SDL_BlendMode enumeration 
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBSDL_BlendFactor\fP"
+
+.PP
+The normalized factor used to multiply pixel components\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISDL_BLENDFACTOR_ZERO \fP\fP
+0, 0, 0, 0 
+.TP
+\fB\fISDL_BLENDFACTOR_ONE \fP\fP
+1, 1, 1, 1 
+.TP
+\fB\fISDL_BLENDFACTOR_SRC_COLOR \fP\fP
+srcR, srcG, srcB, srcA 
+.TP
+\fB\fISDL_BLENDFACTOR_ONE_MINUS_SRC_COLOR \fP\fP
+1-srcR, 1-srcG, 1-srcB, 1-srcA 
+.TP
+\fB\fISDL_BLENDFACTOR_SRC_ALPHA \fP\fP
+srcA, srcA, srcA, srcA 
+.TP
+\fB\fISDL_BLENDFACTOR_ONE_MINUS_SRC_ALPHA \fP\fP
+1-srcA, 1-srcA, 1-srcA, 1-srcA 
+.TP
+\fB\fISDL_BLENDFACTOR_DST_COLOR \fP\fP
+dstR, dstG, dstB, dstA 
+.TP
+\fB\fISDL_BLENDFACTOR_ONE_MINUS_DST_COLOR \fP\fP
+1-dstR, 1-dstG, 1-dstB, 1-dstA 
+.TP
+\fB\fISDL_BLENDFACTOR_DST_ALPHA \fP\fP
+dstA, dstA, dstA, dstA 
+.TP
+\fB\fISDL_BLENDFACTOR_ONE_MINUS_DST_ALPHA \fP\fP
+1-dstA, 1-dstA, 1-dstA, 1-dstA 
+.SS "enum \fBSDL_BlendMode\fP"
+
+.PP
+The blend mode used in \fBSDL_RenderCopy()\fP and drawing operations\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISDL_BLENDMODE_NONE \fP\fP
+no blending dstRGBA = srcRGBA 
+.TP
+\fB\fISDL_BLENDMODE_BLEND \fP\fP
+alpha blending dstRGB = (srcRGB * srcA) + (dstRGB * (1-srcA)) dstA = srcA + (dstA * (1-srcA)) 
+.TP
+\fB\fISDL_BLENDMODE_ADD \fP\fP
+additive blending dstRGB = (srcRGB * srcA) + dstRGB dstA = dstA 
+.TP
+\fB\fISDL_BLENDMODE_MOD \fP\fP
+color modulate dstRGB = srcRGB * dstRGB dstA = dstA 
+.TP
+\fB\fISDL_BLENDMODE_MUL \fP\fP
+color multiply dstRGB = (srcRGB * dstRGB) + (dstRGB * (1-srcA)) dstA = (srcA * dstA) + (dstA * (1-srcA)) 
+.TP
+\fB\fISDL_BLENDMODE_INVALID \fP\fP
+.SS "enum \fBSDL_BlendOperation\fP"
+
+.PP
+The blend operation used when combining source and destination pixel components\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISDL_BLENDOPERATION_ADD \fP\fP
+dst + src: supported by all renderers 
+.TP
+\fB\fISDL_BLENDOPERATION_SUBTRACT \fP\fP
+dst - src : supported by D3D9, D3D11, OpenGL, OpenGLES 
+.TP
+\fB\fISDL_BLENDOPERATION_REV_SUBTRACT \fP\fP
+src - dst : supported by D3D9, D3D11, OpenGL, OpenGLES 
+.TP
+\fB\fISDL_BLENDOPERATION_MINIMUM \fP\fP
+min(dst, src) : supported by D3D11 
+.TP
+\fB\fISDL_BLENDOPERATION_MAXIMUM \fP\fP
+max(dst, src) : supported by D3D11 
+.SH "Function Documentation"
+.PP 
+.SS "\fBDECLSPEC\fP \fBSDL_BlendMode\fP \fBSDLCALL\fP SDL_ComposeCustomBlendMode (\fBSDL_BlendFactor\fP srcColorFactor, \fBSDL_BlendFactor\fP dstColorFactor, \fBSDL_BlendOperation\fP colorOperation, \fBSDL_BlendFactor\fP srcAlphaFactor, \fBSDL_BlendFactor\fP dstAlphaFactor, \fBSDL_BlendOperation\fP alphaOperation)"
+Compose a custom blend mode for renderers\&.
+.PP
+The functions SDL_SetRenderDrawBlendMode and SDL_SetTextureBlendMode accept the SDL_BlendMode returned by this function if the renderer supports it\&.
+.PP
+A blend mode controls how the pixels from a drawing operation (source) get combined with the pixels from the render target (destination)\&. First, the components of the source and destination pixels get multiplied with their blend factors\&. Then, the blend operation takes the two products and calculates the result that will get stored in the render target\&.
+.PP
+Expressed in pseudocode, it would look like this:
+.PP
+.PP
+.nf
+dstRGB = colorOperation(srcRGB * srcColorFactor, dstRGB * dstColorFactor);
+dstA = alphaOperation(srcA * srcAlphaFactor, dstA * dstAlphaFactor);
+.fi
+.PP
+.PP
+Where the functions \fCcolorOperation(src, dst)\fP and \fCalphaOperation(src,
+dst)\fP can return one of the following:
+.PP
+.IP "\(bu" 2
+\fCsrc + dst\fP
+.IP "\(bu" 2
+\fCsrc - dst\fP
+.IP "\(bu" 2
+\fCdst - src\fP
+.IP "\(bu" 2
+\fCmin(src, dst)\fP
+.IP "\(bu" 2
+\fCmax(src, dst)\fP
+.PP
+.PP
+The red, green, and blue components are always multiplied with the first, second, and third components of the SDL_BlendFactor, respectively\&. The fourth component is not used\&.
+.PP
+The alpha component is always multiplied with the fourth component of the SDL_BlendFactor\&. The other components are not used in the alpha calculation\&.
+.PP
+Support for these blend modes varies for each renderer\&. To check if a specific SDL_BlendMode is supported, create a renderer and pass it to either SDL_SetRenderDrawBlendMode or SDL_SetTextureBlendMode\&. They will return with an error if the blend mode is not supported\&.
+.PP
+This list describes the support of custom blend modes for each renderer in SDL 2\&.0\&.6\&. All renderers support the four blend modes listed in the SDL_BlendMode enumeration\&.
+.PP
+.IP "\(bu" 2
+\fBdirect3d\fP: Supports \fCSDL_BLENDOPERATION_ADD\fP with all factors\&.
+.IP "\(bu" 2
+\fBdirect3d11\fP: Supports all operations with all factors\&. However, some factors produce unexpected results with \fCSDL_BLENDOPERATION_MINIMUM\fP and \fCSDL_BLENDOPERATION_MAXIMUM\fP\&.
+.IP "\(bu" 2
+\fBopengl\fP: Supports the \fCSDL_BLENDOPERATION_ADD\fP operation with all factors\&. OpenGL versions 1\&.1, 1\&.2, and 1\&.3 do not work correctly with SDL 2\&.0\&.6\&.
+.IP "\(bu" 2
+\fBopengles\fP: Supports the \fCSDL_BLENDOPERATION_ADD\fP operation with all factors\&. Color and alpha factors need to be the same\&. OpenGL ES 1 implementation specific: May also support \fCSDL_BLENDOPERATION_SUBTRACT\fP and \fCSDL_BLENDOPERATION_REV_SUBTRACT\fP\&. May support color and alpha operations being different from each other\&. May support color and alpha factors being different from each other\&.
+.IP "\(bu" 2
+\fBopengles2\fP: Supports the \fCSDL_BLENDOPERATION_ADD\fP, \fCSDL_BLENDOPERATION_SUBTRACT\fP, \fCSDL_BLENDOPERATION_REV_SUBTRACT\fP operations with all factors\&.
+.IP "\(bu" 2
+\fBpsp\fP: No custom blend mode support\&.
+.IP "\(bu" 2
+\fBsoftware\fP: No custom blend mode support\&.
+.PP
+.PP
+Some renderers do not provide an alpha component for the default render target\&. The \fCSDL_BLENDFACTOR_DST_ALPHA\fP and \fCSDL_BLENDFACTOR_ONE_MINUS_DST_ALPHA\fP factors do not have an effect in this case\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIsrcColorFactor\fP the SDL_BlendFactor applied to the red, green, and blue components of the source pixels 
+.br
+\fIdstColorFactor\fP the SDL_BlendFactor applied to the red, green, and blue components of the destination pixels 
+.br
+\fIcolorOperation\fP the SDL_BlendOperation used to combine the red, green, and blue components of the source and destination pixels 
+.br
+\fIsrcAlphaFactor\fP the SDL_BlendFactor applied to the alpha component of the source pixels 
+.br
+\fIdstAlphaFactor\fP the SDL_BlendFactor applied to the alpha component of the destination pixels 
+.br
+\fIalphaOperation\fP the SDL_BlendOperation used to combine the alpha component of the source and destination pixels 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+an SDL_BlendMode that represents the chosen factors and operations\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.6\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_SetRenderDrawBlendMode\fP 
+.PP
+\fBSDL_GetRenderDrawBlendMode\fP 
+.PP
+\fBSDL_SetTextureBlendMode\fP 
+.PP
+\fBSDL_GetTextureBlendMode\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

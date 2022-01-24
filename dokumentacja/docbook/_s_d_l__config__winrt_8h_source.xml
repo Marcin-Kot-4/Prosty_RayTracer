@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__config__winrt_8h_source" xml:lang="en-US">
+<title>SDL_config_winrt.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_config_winrt.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2017&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+22 <emphasis role="preprocessor">#ifndef&#32;SDL_config_winrt_h_</emphasis>
+23 <emphasis role="preprocessor">#define&#32;SDL_config_winrt_h_</emphasis>
+24 <emphasis role="preprocessor">#define&#32;SDL_config_h_</emphasis>
+25 
+26 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__platform_8h">SDL_platform.h</link>&quot;</emphasis>
+27 
+28 <emphasis role="comment">/*&#32;Make&#32;sure&#32;the&#32;Windows&#32;SDK&apos;s&#32;NTDDI_VERSION&#32;macro&#32;gets&#32;defined.&#32;&#32;This&#32;is&#32;used</emphasis>
+29 <emphasis role="comment">&#32;&#32;&#32;by&#32;SDL&#32;to&#32;determine&#32;which&#32;version&#32;of&#32;the&#32;Windows&#32;SDK&#32;is&#32;being&#32;used.</emphasis>
+30 <emphasis role="comment">*/</emphasis>
+31 <emphasis role="preprocessor">#include&#32;&lt;sdkddkver.h&gt;</emphasis>
+32 
+33 <emphasis role="comment">/*&#32;Define&#32;possibly-undefined&#32;NTDDI&#32;values&#32;(used&#32;when&#32;compiling&#32;SDL&#32;against</emphasis>
+34 <emphasis role="comment">&#32;&#32;&#32;older&#32;versions&#32;of&#32;the&#32;Windows&#32;SDK.</emphasis>
+35 <emphasis role="comment">*/</emphasis>
+36 <emphasis role="preprocessor">#ifndef&#32;NTDDI_WINBLUE</emphasis>
+37 <emphasis role="preprocessor">#define&#32;NTDDI_WINBLUE&#32;0x06030000</emphasis>
+38 <emphasis role="preprocessor">#endif</emphasis>
+39 <emphasis role="preprocessor">#ifndef&#32;NTDDI_WIN10</emphasis>
+40 <emphasis role="preprocessor">#define&#32;NTDDI_WIN10&#32;0x0A000000</emphasis>
+41 <emphasis role="preprocessor">#endif</emphasis>
+42 
+43 <emphasis role="comment">/*&#32;This&#32;is&#32;a&#32;set&#32;of&#32;defines&#32;to&#32;configure&#32;the&#32;SDL&#32;features&#32;*/</emphasis>
+44 
+45 <emphasis role="preprocessor">#if&#32;!defined(_STDINT_H_)&#32;&amp;&amp;&#32;(!defined(HAVE_STDINT_H)&#32;||&#32;!_HAVE_STDINT_H)</emphasis>
+46 <emphasis role="preprocessor">#if&#32;defined(__GNUC__)&#32;||&#32;defined(__DMC__)&#32;||&#32;defined(__WATCOMC__)</emphasis>
+47 <emphasis role="preprocessor">#define&#32;HAVE_STDINT_H&#32;&#32;&#32;1</emphasis>
+48 <emphasis role="preprocessor">#elif&#32;defined(_MSC_VER)</emphasis>
+49 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">signed</emphasis>&#32;__int8&#32;<link linkend="__s_d_l__config__winrt_8h_1aef44329758059c91c76d334e8fc09700">int8_t</link>;
+50 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;__int8&#32;<link linkend="__s_d_l__config__winrt_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>;
+51 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">signed</emphasis>&#32;__int16&#32;<link linkend="__s_d_l__config__winrt_8h_1a269259c924dce846340ddbb810db2e3c">int16_t</link>;
+52 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;__int16&#32;<link linkend="__s_d_l__config__winrt_8h_1a273cf69d639a59973b6019625df33e30">uint16_t</link>;
+53 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">signed</emphasis>&#32;__int32&#32;<link linkend="__s_d_l__config__winrt_8h_1ab1967d8591af1a4e48c37fd2b0f184d0">int32_t</link>;
+54 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;__int32&#32;<link linkend="__s_d_l__config__winrt_8h_1a435d1572bf3f880d55459d9805097f62">uint32_t</link>;
+55 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">signed</emphasis>&#32;__int64&#32;<link linkend="__s_d_l__config__winrt_8h_1adec1df1b8b51cb32b77e5b86fff46471">int64_t</link>;
+56 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;__int64&#32;<link linkend="__s_d_l__config__winrt_8h_1aaa5d1cd013383c889537491c3cfd9aad">uint64_t</link>;
+57 <emphasis role="preprocessor">#ifndef&#32;_UINTPTR_T_DEFINED</emphasis>
+58 <emphasis role="preprocessor">#ifdef&#32;&#32;_WIN64</emphasis>
+59 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;__int64&#32;<link linkend="__s_d_l__config__winrt_8h_1a728e973c799f206f0151c8a3bd1e5699">uintptr_t</link>;
+60 <emphasis role="preprocessor">#else</emphasis>
+61 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__config__winrt_8h_1a728e973c799f206f0151c8a3bd1e5699">uintptr_t</link>;
+62 <emphasis role="preprocessor">#endif</emphasis>
+63 <emphasis role="preprocessor">#define&#32;_UINTPTR_T_DEFINED</emphasis>
+64 <emphasis role="preprocessor">#endif</emphasis>
+65 <emphasis role="comment">/*&#32;Older&#32;Visual&#32;C++&#32;headers&#32;don&apos;t&#32;have&#32;the&#32;Win64-compatible&#32;typedefs...&#32;*/</emphasis>
+66 <emphasis role="preprocessor">#if&#32;((_MSC_VER&#32;&lt;=&#32;1200)&#32;&amp;&amp;&#32;(!defined(DWORD_PTR)))</emphasis>
+67 <emphasis role="preprocessor">#define&#32;DWORD_PTR&#32;DWORD</emphasis>
+68 <emphasis role="preprocessor">#endif</emphasis>
+69 <emphasis role="preprocessor">#if&#32;((_MSC_VER&#32;&lt;=&#32;1200)&#32;&amp;&amp;&#32;(!defined(LONG_PTR)))</emphasis>
+70 <emphasis role="preprocessor">#define&#32;LONG_PTR&#32;LONG</emphasis>
+71 <emphasis role="preprocessor">#endif</emphasis>
+72 <emphasis role="preprocessor">#else&#32;</emphasis><emphasis role="comment">/*&#32;!__GNUC__&#32;&amp;&amp;&#32;!_MSC_VER&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+73 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">signed</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;<link linkend="__s_d_l__config__winrt_8h_1aef44329758059c91c76d334e8fc09700">int8_t</link>;
+74 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;<link linkend="__s_d_l__config__winrt_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>;
+75 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">signed</emphasis>&#32;<emphasis role="keywordtype">short</emphasis>&#32;<link linkend="__s_d_l__config__winrt_8h_1a269259c924dce846340ddbb810db2e3c">int16_t</link>;
+76 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">short</emphasis>&#32;<link linkend="__s_d_l__config__winrt_8h_1a273cf69d639a59973b6019625df33e30">uint16_t</link>;
+77 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">signed</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__config__winrt_8h_1ab1967d8591af1a4e48c37fd2b0f184d0">int32_t</link>;
+78 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__config__winrt_8h_1a435d1572bf3f880d55459d9805097f62">uint32_t</link>;
+79 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">signed</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;<link linkend="__s_d_l__config__winrt_8h_1adec1df1b8b51cb32b77e5b86fff46471">int64_t</link>;
+80 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;<link linkend="__s_d_l__config__winrt_8h_1aaa5d1cd013383c889537491c3cfd9aad">uint64_t</link>;
+81 <emphasis role="preprocessor">#ifndef&#32;_SIZE_T_DEFINED_</emphasis>
+82 <emphasis role="preprocessor">#define&#32;_SIZE_T_DEFINED_</emphasis>
+83 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__config__winrt_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link>;
+84 <emphasis role="preprocessor">#endif</emphasis>
+85 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__config__winrt_8h_1a728e973c799f206f0151c8a3bd1e5699">uintptr_t</link>;
+86 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;__GNUC__&#32;||&#32;_MSC_VER&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+87 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;!_STDINT_H_&#32;&amp;&amp;&#32;!HAVE_STDINT_H&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+88 
+89 <emphasis role="preprocessor">#ifdef&#32;_WIN64</emphasis>
+90 <emphasis role="preprocessor">#&#32;define&#32;SIZEOF_VOIDP&#32;8</emphasis>
+91 <emphasis role="preprocessor">#else</emphasis>
+92 <emphasis role="preprocessor">#&#32;define&#32;SIZEOF_VOIDP&#32;4</emphasis>
+93 <emphasis role="preprocessor">#endif</emphasis>
+94 
+95 <emphasis role="comment">/*&#32;Useful&#32;headers&#32;*/</emphasis>
+96 <emphasis role="preprocessor">#define&#32;HAVE_DXGI_H&#32;1</emphasis>
+97 <emphasis role="preprocessor">#if&#32;WINAPI_FAMILY&#32;!=&#32;WINAPI_FAMILY_PHONE_APP</emphasis>
+98 <emphasis role="preprocessor">#define&#32;HAVE_XINPUT_H&#32;1</emphasis>
+99 <emphasis role="preprocessor">#endif</emphasis>
+100 <emphasis role="preprocessor">#define&#32;HAVE_LIBC&#32;1</emphasis>
+101 <emphasis role="preprocessor">#define&#32;HAVE_STDIO_H&#32;1</emphasis>
+102 <emphasis role="preprocessor">#define&#32;STDC_HEADERS&#32;1</emphasis>
+103 <emphasis role="preprocessor">#define&#32;HAVE_STRING_H&#32;1</emphasis>
+104 <emphasis role="preprocessor">#define&#32;HAVE_CTYPE_H&#32;1</emphasis>
+105 <emphasis role="preprocessor">#define&#32;HAVE_MATH_H&#32;1</emphasis>
+106 <emphasis role="preprocessor">#define&#32;HAVE_FLOAT_H&#32;1</emphasis>
+107 <emphasis role="preprocessor">#define&#32;HAVE_SIGNAL_H&#32;1</emphasis>
+108 
+109 <emphasis role="comment">/*&#32;C&#32;library&#32;functions&#32;*/</emphasis>
+110 <emphasis role="preprocessor">#define&#32;HAVE_MALLOC&#32;1</emphasis>
+111 <emphasis role="preprocessor">#define&#32;HAVE_CALLOC&#32;1</emphasis>
+112 <emphasis role="preprocessor">#define&#32;HAVE_REALLOC&#32;1</emphasis>
+113 <emphasis role="preprocessor">#define&#32;HAVE_FREE&#32;1</emphasis>
+114 <emphasis role="preprocessor">#define&#32;HAVE_ALLOCA&#32;1</emphasis>
+115 <emphasis role="preprocessor">#define&#32;HAVE_QSORT&#32;1</emphasis>
+116 <emphasis role="preprocessor">#define&#32;HAVE_ABS&#32;1</emphasis>
+117 <emphasis role="preprocessor">#define&#32;HAVE_MEMSET&#32;1</emphasis>
+118 <emphasis role="preprocessor">#define&#32;HAVE_MEMCPY&#32;1</emphasis>
+119 <emphasis role="preprocessor">#define&#32;HAVE_MEMMOVE&#32;1</emphasis>
+120 <emphasis role="preprocessor">#define&#32;HAVE_MEMCMP&#32;1</emphasis>
+121 <emphasis role="preprocessor">#define&#32;HAVE_STRLEN&#32;1</emphasis>
+122 <emphasis role="preprocessor">#define&#32;HAVE__STRREV&#32;1</emphasis>
+123 <emphasis role="preprocessor">#define&#32;HAVE__STRUPR&#32;1</emphasis>
+124 <emphasis role="comment">//#define&#32;HAVE__STRLWR&#32;1&#32;&#32;&#32;&#32;//&#32;TODO,&#32;WinRT:&#32;consider&#32;using&#32;_strlwr_s&#32;instead</emphasis>
+125 <emphasis role="preprocessor">#define&#32;HAVE_STRCHR&#32;1</emphasis>
+126 <emphasis role="preprocessor">#define&#32;HAVE_STRRCHR&#32;1</emphasis>
+127 <emphasis role="preprocessor">#define&#32;HAVE_STRSTR&#32;1</emphasis>
+128 <emphasis role="comment">//#define&#32;HAVE_ITOA&#32;1&#32;&#32;&#32;//&#32;TODO,&#32;WinRT:&#32;consider&#32;using&#32;_itoa_s&#32;instead</emphasis>
+129 <emphasis role="comment">//#define&#32;HAVE__LTOA&#32;1&#32;&#32;//&#32;TODO,&#32;WinRT:&#32;consider&#32;using&#32;_ltoa_s&#32;instead</emphasis>
+130 <emphasis role="comment">//#define&#32;HAVE__ULTOA&#32;1&#32;//&#32;TODO,&#32;WinRT:&#32;consider&#32;using&#32;_ultoa_s&#32;instead</emphasis>
+131 <emphasis role="preprocessor">#define&#32;HAVE_STRTOL&#32;1</emphasis>
+132 <emphasis role="preprocessor">#define&#32;HAVE_STRTOUL&#32;1</emphasis>
+133 <emphasis role="comment">//#define&#32;HAVE_STRTOLL&#32;1</emphasis>
+134 <emphasis role="preprocessor">#define&#32;HAVE_STRTOD&#32;1</emphasis>
+135 <emphasis role="preprocessor">#define&#32;HAVE_ATOI&#32;1</emphasis>
+136 <emphasis role="preprocessor">#define&#32;HAVE_ATOF&#32;1</emphasis>
+137 <emphasis role="preprocessor">#define&#32;HAVE_STRCMP&#32;1</emphasis>
+138 <emphasis role="preprocessor">#define&#32;HAVE_STRNCMP&#32;1</emphasis>
+139 <emphasis role="preprocessor">#define&#32;HAVE__STRICMP&#32;1</emphasis>
+140 <emphasis role="preprocessor">#define&#32;HAVE__STRNICMP&#32;1</emphasis>
+141 <emphasis role="preprocessor">#define&#32;HAVE_VSNPRINTF&#32;1</emphasis>
+142 <emphasis role="comment">//#define&#32;HAVE_SSCANF&#32;1&#32;//&#32;TODO,&#32;WinRT:&#32;consider&#32;using&#32;sscanf_s&#32;instead</emphasis>
+143 <emphasis role="preprocessor">#define&#32;HAVE_M_PI&#32;1</emphasis>
+144 <emphasis role="preprocessor">#define&#32;HAVE_ATAN&#32;1</emphasis>
+145 <emphasis role="preprocessor">#define&#32;HAVE_ATAN2&#32;1</emphasis>
+146 <emphasis role="preprocessor">#define&#32;HAVE_CEIL&#32;1</emphasis>
+147 <emphasis role="preprocessor">#define&#32;HAVE__COPYSIGN&#32;1</emphasis>
+148 <emphasis role="preprocessor">#define&#32;HAVE_COS&#32;1</emphasis>
+149 <emphasis role="preprocessor">#define&#32;HAVE_COSF&#32;1</emphasis>
+150 <emphasis role="preprocessor">#define&#32;HAVE_FABS&#32;1</emphasis>
+151 <emphasis role="preprocessor">#define&#32;HAVE_FLOOR&#32;1</emphasis>
+152 <emphasis role="preprocessor">#define&#32;HAVE_LOG&#32;1</emphasis>
+153 <emphasis role="preprocessor">#define&#32;HAVE_POW&#32;1</emphasis>
+154 <emphasis role="comment">//#define&#32;HAVE_SCALBN&#32;1</emphasis>
+155 <emphasis role="preprocessor">#define&#32;HAVE__SCALB&#32;1</emphasis>
+156 <emphasis role="preprocessor">#define&#32;HAVE_SIN&#32;1</emphasis>
+157 <emphasis role="preprocessor">#define&#32;HAVE_SINF&#32;1</emphasis>
+158 <emphasis role="preprocessor">#define&#32;HAVE_SQRT&#32;1</emphasis>
+159 <emphasis role="preprocessor">#define&#32;HAVE_SQRTF&#32;1</emphasis>
+160 <emphasis role="preprocessor">#define&#32;HAVE_TAN&#32;1</emphasis>
+161 <emphasis role="preprocessor">#define&#32;HAVE_TANF&#32;1</emphasis>
+162 <emphasis role="preprocessor">#define&#32;HAVE__FSEEKI64&#32;1</emphasis>
+163 
+164 <emphasis role="comment">/*&#32;Enable&#32;various&#32;audio&#32;drivers&#32;*/</emphasis>
+165 <emphasis role="preprocessor">#define&#32;SDL_AUDIO_DRIVER_XAUDIO2&#32;&#32;&#32;&#32;1</emphasis>
+166 <emphasis role="preprocessor">#define&#32;SDL_AUDIO_DRIVER_DISK&#32;&#32;&#32;1</emphasis>
+167 <emphasis role="preprocessor">#define&#32;SDL_AUDIO_DRIVER_DUMMY&#32;&#32;1</emphasis>
+168 
+169 <emphasis role="comment">/*&#32;Enable&#32;various&#32;input&#32;drivers&#32;*/</emphasis>
+170 <emphasis role="preprocessor">#if&#32;WINAPI_FAMILY&#32;==&#32;WINAPI_FAMILY_PHONE_APP</emphasis>
+171 <emphasis role="preprocessor">#define&#32;SDL_JOYSTICK_DISABLED&#32;1</emphasis>
+172 <emphasis role="preprocessor">#define&#32;SDL_HAPTIC_DISABLED&#32;1</emphasis>
+173 <emphasis role="preprocessor">#else</emphasis>
+174 <emphasis role="preprocessor">#define&#32;SDL_JOYSTICK_XINPUT&#32;1</emphasis>
+175 <emphasis role="preprocessor">#define&#32;SDL_HAPTIC_XINPUT&#32;&#32;&#32;1</emphasis>
+176 <emphasis role="preprocessor">#endif</emphasis>
+177 
+178 <emphasis role="comment">/*&#32;Enable&#32;various&#32;shared&#32;object&#32;loading&#32;systems&#32;*/</emphasis>
+179 <emphasis role="preprocessor">#define&#32;SDL_LOADSO_WINDOWS&#32;&#32;1</emphasis>
+180 
+181 <emphasis role="comment">/*&#32;Enable&#32;various&#32;threading&#32;systems&#32;*/</emphasis>
+182 <emphasis role="preprocessor">#if&#32;(NTDDI_VERSION&#32;&gt;=&#32;NTDDI_WINBLUE)</emphasis>
+183 <emphasis role="preprocessor">#define&#32;SDL_THREAD_WINDOWS&#32;&#32;1</emphasis>
+184 <emphasis role="preprocessor">#else</emphasis>
+185 <emphasis role="comment">/*&#32;WinRT&#32;on&#32;Windows&#32;8.0&#32;and&#32;Windows&#32;Phone&#32;8.0&#32;don&apos;t&#32;support&#32;CreateThread()&#32;*/</emphasis>
+186 <emphasis role="preprocessor">#define&#32;SDL_THREAD_STDCPP&#32;&#32;&#32;1</emphasis>
+187 <emphasis role="preprocessor">#endif</emphasis>
+188 
+189 <emphasis role="comment">/*&#32;Enable&#32;various&#32;timer&#32;systems&#32;*/</emphasis>
+190 <emphasis role="preprocessor">#define&#32;SDL_TIMER_WINDOWS&#32;&#32;&#32;1</emphasis>
+191 
+192 <emphasis role="comment">/*&#32;Enable&#32;various&#32;video&#32;drivers&#32;*/</emphasis>
+193 <emphasis role="preprocessor">#define&#32;SDL_VIDEO_DRIVER_WINRT&#32;&#32;1</emphasis>
+194 <emphasis role="preprocessor">#define&#32;SDL_VIDEO_DRIVER_DUMMY&#32;&#32;1</emphasis>
+195 
+196 <emphasis role="comment">/*&#32;Enable&#32;OpenGL&#32;ES&#32;2.0&#32;(via&#32;a&#32;modified&#32;ANGLE&#32;library)&#32;*/</emphasis>
+197 <emphasis role="preprocessor">#define&#32;SDL_VIDEO_OPENGL_ES2&#32;1</emphasis>
+198 <emphasis role="preprocessor">#define&#32;SDL_VIDEO_OPENGL_EGL&#32;1</emphasis>
+199 
+200 <emphasis role="comment">/*&#32;Enable&#32;appropriate&#32;renderer(s)&#32;*/</emphasis>
+201 <emphasis role="preprocessor">#define&#32;SDL_VIDEO_RENDER_D3D11&#32;&#32;1</emphasis>
+202 
+203 <emphasis role="preprocessor">#if&#32;SDL_VIDEO_OPENGL_ES2</emphasis>
+204 <emphasis role="preprocessor">#define&#32;SDL_VIDEO_RENDER_OGL_ES2&#32;1</emphasis>
+205 <emphasis role="preprocessor">#endif</emphasis>
+206 
+207 <emphasis role="comment">/*&#32;Enable&#32;system&#32;power&#32;support&#32;*/</emphasis>
+208 <emphasis role="preprocessor">#define&#32;SDL_POWER_WINRT&#32;1</emphasis>
+209 
+210 <emphasis role="comment">/*&#32;Enable&#32;assembly&#32;routines&#32;(Win64&#32;doesn&apos;t&#32;have&#32;inline&#32;asm)&#32;*/</emphasis>
+211 <emphasis role="preprocessor">#ifndef&#32;_WIN64</emphasis>
+212 <emphasis role="preprocessor">#define&#32;SDL_ASSEMBLY_ROUTINES&#32;&#32;&#32;1</emphasis>
+213 <emphasis role="preprocessor">#endif</emphasis>
+214 
+215 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_config_winrt_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+</programlisting></section>

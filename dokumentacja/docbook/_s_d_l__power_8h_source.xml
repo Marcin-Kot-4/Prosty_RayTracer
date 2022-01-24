@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__power_8h_source" xml:lang="en-US">
+<title>SDL_power.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_power.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+22 <emphasis role="preprocessor">#ifndef&#32;SDL_power_h_</emphasis>
+23 <emphasis role="preprocessor">#define&#32;SDL_power_h_</emphasis>
+24 
+31 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__stdinc_8h">SDL_stdinc.h</link>&quot;</emphasis>
+32 
+33 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+34 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+35 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+36 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+37 <emphasis role="preprocessor">#endif</emphasis>
+38 
+42 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+43 {
+44 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__power_8h_1aa6d67208a8d30ececf84b158a2ab7effa5c20e9c8a8c455a9ed9c66167ac2df61">SDL_POWERSTATE_UNKNOWN</link>,&#32;&#32;&#32;&#32;&#32;&#32;
+45 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__power_8h_1aa6d67208a8d30ececf84b158a2ab7effa864da7f4b32af694cb94c9ba58dab985">SDL_POWERSTATE_ON_BATTERY</link>,&#32;&#32;&#32;
+46 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__power_8h_1aa6d67208a8d30ececf84b158a2ab7effa03bcd1ca770f703d834d67756fdafbeb">SDL_POWERSTATE_NO_BATTERY</link>,&#32;&#32;&#32;
+47 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__power_8h_1aa6d67208a8d30ececf84b158a2ab7effa051d2e5681ad1647ff274ef17fc7ca1e">SDL_POWERSTATE_CHARGING</link>,&#32;&#32;&#32;&#32;&#32;
+48 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__power_8h_1aa6d67208a8d30ececf84b158a2ab7effa320ceff2db32f9bc2e1b8d644d1fb0b4">SDL_POWERSTATE_CHARGED</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+49 }&#32;<link linkend="__s_d_l__power_8h_1aa6d67208a8d30ececf84b158a2ab7eff">SDL_PowerState</link>;
+50 
+51 
+78 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__power_8h_1aa6d67208a8d30ececf84b158a2ab7eff">SDL_PowerState</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__power_8h_1aed0dded691bb8ec94b119a90a1126049">SDL_GetPowerInfo</link>(<emphasis role="keywordtype">int</emphasis>&#32;*secs,&#32;<emphasis role="keywordtype">int</emphasis>&#32;*pct);
+79 
+80 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+81 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+82 }
+83 <emphasis role="preprocessor">#endif</emphasis>
+84 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+85 
+86 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_power_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+87 
+88 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

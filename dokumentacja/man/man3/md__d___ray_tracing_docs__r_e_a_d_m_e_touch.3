@@ -1,0 +1,83 @@
+.TH "md__d___ray_tracing_docs__r_e_a_d_m_e_touch" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__d___ray_tracing_docs__r_e_a_d_m_e_touch \- Touch 
+
+.SH "System Specific Notes"
+.PP
+Linux: The linux touch system is currently based off event streams, and proc/bus/devices\&. The active user must be given permissions to read /dev/input/TOUCHDEVICE, where TOUCHDEVICE is the event stream for your device\&. Currently only Wacom tablets are supported\&. If you have an unsupported tablet contact me at jim.tla+sdl_touch@gmail.com and I will help you get support for it\&.
+.PP
+Mac: The Mac and iPhone APIs are pretty\&. If your touch device supports them then you'll be fine\&. If it doesn't, then there isn't much we can do\&.
+.PP
+iPhone: Works out of box\&.
+.PP
+Windows: Unfortunately there is no windows support as of yet\&. Support for Windows 7 is planned, but we currently have no way to test\&. If you have a Windows 7 WM_TOUCH supported device, and are willing to help test please contact me at jim.tla+sdl_touch@gmail.com
+.PP
+.PP
+ 
+.SH "Events"
+.PP
+SDL_FINGERDOWN: Sent when a finger (or stylus) is placed on a touch device\&. Fields:
+.IP "\(bu" 2
+event\&.tfinger\&.touchId - the Id of the touch device\&.
+.IP "\(bu" 2
+event\&.tfinger\&.fingerId - the Id of the finger which just went down\&.
+.IP "\(bu" 2
+event\&.tfinger\&.x - the x coordinate of the touch (0\&.\&.1)
+.IP "\(bu" 2
+event\&.tfinger\&.y - the y coordinate of the touch (0\&.\&.1)
+.IP "\(bu" 2
+event\&.tfinger\&.pressure - the pressure of the touch (0\&.\&.1)
+.PP
+.PP
+SDL_FINGERMOTION: Sent when a finger (or stylus) is moved on the touch device\&. Fields: Same as SDL_FINGERDOWN but with additional:
+.IP "\(bu" 2
+event\&.tfinger\&.dx - change in x coordinate during this motion event\&.
+.IP "\(bu" 2
+event\&.tfinger\&.dy - change in y coordinate during this motion event\&.
+.PP
+.PP
+SDL_FINGERUP: Sent when a finger (or stylus) is lifted from the touch device\&. Fields: Same as SDL_FINGERDOWN\&.
+.PP
+.PP
+ 
+.SH "Functions"
+.PP
+SDL provides the ability to access the underlying \fBSDL_Finger\fP structures\&. These structures should \fInever\fP be modified\&.
+.PP
+The following functions are included from SDL_touch\&.h
+.PP
+To get a SDL_TouchID call \fBSDL_GetTouchDevice(int index)\fP\&. This returns a SDL_TouchID\&. IMPORTANT: If the touch has been removed, or there is no touch with the given index, \fBSDL_GetTouchDevice()\fP will return 0\&. Be sure to check for this!
+.PP
+The number of touch devices can be queried with \fBSDL_GetNumTouchDevices()\fP\&.
+.PP
+A SDL_TouchID may be used to get pointers to \fBSDL_Finger\fP\&.
+.PP
+SDL_GetNumTouchFingers(touchID) may be used to get the number of fingers currently down on the device\&.
+.PP
+The most common reason to access \fBSDL_Finger\fP is to query the fingers outside the event\&. In most cases accessing the fingers is using the event\&. This would be accomplished by code like the following: 
+.PP
+.nf
+  float x = event\&.tfinger\&.x;
+  float y = event\&.tfinger\&.y;
+
+.fi
+.PP
+.PP
+To get a \fBSDL_Finger\fP, call \fBSDL_GetTouchFinger(SDL_TouchID touchID, int index)\fP, where touchID is a SDL_TouchID, and index is the requested finger\&. This returns a \fBSDL_Finger\fP *, or NULL if the finger does not exist, or has been removed\&. A \fBSDL_Finger\fP is guaranteed to be persistent for the duration of a touch, but it will be de-allocated as soon as the finger is removed\&. This occurs when the SDL_FINGERUP event is \fIadded\fP to the event queue, and thus \fIbefore\fP the SDL_FINGERUP event is polled\&. As a result, be very careful to check for NULL return values\&.
+.PP
+A \fBSDL_Finger\fP has the following fields:
+.IP "\(bu" 2
+x, y: The current coordinates of the touch\&.
+.IP "\(bu" 2
+pressure: The pressure of the touch\&.
+.PP
+.PP
+.PP
+ 
+.SH "Notes"
+.PP
+For a complete example see test/testgesture\&.c
+.PP
+Please direct questions/comments to: jim.tla+sdl_touch@gmail.com (original author, API was changed since) 

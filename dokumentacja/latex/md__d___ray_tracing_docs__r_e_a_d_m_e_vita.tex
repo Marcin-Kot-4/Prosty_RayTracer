@@ -1,0 +1,24 @@
+SDL port for the Sony Playstation Vita and Sony Playstation TV
+
+Credit to
+\begin{DoxyItemize}
+\item xerpi and rsn8887 for initial (vita2d) port
+\item vitasdk/dolcesdk devs
+\item CBPS discord (Namely Graphene and Sonic\+Mastr)
+\end{DoxyItemize}\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_vita_autotoc_md118}{}\doxysection{Building}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_vita_autotoc_md118}
+To build for the PSVita, make sure you have vitasdk and cmake installed and run\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake -\/S. -\/Bbuild -\/DCMAKE\_TOOLCHAIN\_FILE=\$\{VITASDK\}/share/vita.toolchain.cmake -\/DCMAKE\_BUILD\_TYPE=Release}
+\DoxyCodeLine{cmake -\/-\/build build}
+\DoxyCodeLine{cmake -\/-\/install build}
+
+\end{DoxyCode}
+\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_vita_autotoc_md119}{}\doxysection{Notes}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_vita_autotoc_md119}
+
+\begin{DoxyItemize}
+\item gles1/gles2 support and renderers are disabled by default and can be enabled by configuring with {\ttfamily -\/DVIDEO\+\_\+\+VITA\+\_\+\+PVR=ON} These renderers support 720p and 1080i resolutions. These can be specified with\+: {\ttfamily SDL\+\_\+setenv(\char`\"{}\+VITA\+\_\+\+RESOLUTION\char`\"{}, \char`\"{}720\char`\"{}, 1);} and {\ttfamily SDL\+\_\+setenv(\char`\"{}\+VITA\+\_\+\+RESOLUTION\char`\"{}, \char`\"{}1080\char`\"{}, 1);}
+\item gles2 support via PIB is disabled by default and can be enabled by configuring with {\ttfamily -\/DVIDEO\+\_\+\+VITA\+\_\+\+PIB=ON}
+\item By default SDL emits mouse events for touch events on every touchscreen. ~\newline
+ Vita has two touchscreens, so it\textquotesingle{}s recommended to use {\ttfamily SDL\+\_\+\+Set\+Hint(SDL\+\_\+\+HINT\+\_\+\+TOUCH\+\_\+\+MOUSE\+\_\+\+EVENTS, \char`\"{}0\char`\"{});} and handle touch events instead. Individual touchscreens can be disabled with\+: {\ttfamily SDL\+\_\+setenv(\char`\"{}\+VITA\+\_\+\+DISABLE\+\_\+\+TOUCH\+\_\+\+FRONT\char`\"{}, \char`\"{}1\char`\"{}, 1);} and {\ttfamily SDL\+\_\+setenv(\char`\"{}\+VITA\+\_\+\+DISABLE\+\_\+\+TOUCH\+\_\+\+BACK\char`\"{}, \char`\"{}1\char`\"{}, 1);}
+\item Support for L2/\+R2/\+R3/\+R3 buttons, haptic feedback and gamepad led only available on PSTV, or when using external ds4 gamepad on vita. 
+\end{DoxyItemize}

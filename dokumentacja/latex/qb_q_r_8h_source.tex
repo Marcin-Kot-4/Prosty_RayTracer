@@ -1,0 +1,153 @@
+\hypertarget{qb_q_r_8h_source}{}\doxysection{qb\+QR.\+h}
+\label{qb_q_r_8h_source}\index{D:/RayTracing/RayTrace/qbLinAlg/qbQR.h@{D:/RayTracing/RayTrace/qbLinAlg/qbQR.h}}
+\mbox{\hyperlink{qb_q_r_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// This file is part of the qbLinAlg linear algebra library.}}
+\DoxyCodeLine{2 \textcolor{comment}{// Copyright (c) 2021 Michael Bennett}}
+\DoxyCodeLine{3 \textcolor{comment}{// MIT license}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef QBQR\_H}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define QBQR\_H}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{comment}{/* *************************************************************************************************}}
+\DoxyCodeLine{9 \textcolor{comment}{}}
+\DoxyCodeLine{10 \textcolor{comment}{    qbQR}}
+\DoxyCodeLine{11 \textcolor{comment}{    }}
+\DoxyCodeLine{12 \textcolor{comment}{    Function to perform QR decomposition on a given input matrix.}}
+\DoxyCodeLine{13 \textcolor{comment}{    }}
+\DoxyCodeLine{14 \textcolor{comment}{    *** INPUTS ***}}
+\DoxyCodeLine{15 \textcolor{comment}{    }}
+\DoxyCodeLine{16 \textcolor{comment}{    A                   qbMatrix2<T>    The matrix on which to perform QR decomposition.}}
+\DoxyCodeLine{17 \textcolor{comment}{    Q                   qbMatrix2<T>    The output Q matrix.}}
+\DoxyCodeLine{18 \textcolor{comment}{    R                   qbMatrix2<T>    The output R matrix.}}
+\DoxyCodeLine{19 \textcolor{comment}{                                                            }}
+\DoxyCodeLine{20 \textcolor{comment}{    *** OUTPUTS ***}}
+\DoxyCodeLine{21 \textcolor{comment}{    }}
+\DoxyCodeLine{22 \textcolor{comment}{    INT             Flag indicating success or failure of the process.}}
+\DoxyCodeLine{23 \textcolor{comment}{                        1 Indicates success.}}
+\DoxyCodeLine{24 \textcolor{comment}{                        -\/1 indicates failure due to a non-\/square input matrix.}}
+\DoxyCodeLine{25 \textcolor{comment}{                                }}
+\DoxyCodeLine{26 \textcolor{comment}{    Uses an implementation of Householder reflections to perform QR decomposition.}}
+\DoxyCodeLine{27 \textcolor{comment}{}}
+\DoxyCodeLine{28 \textcolor{comment}{    ************************************************************************************************* */}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{qb_matrix_8h}{qbMatrix.h}}"{}}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{qb_vector_8h}{qbVector.h}}"{}}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{comment}{// Define error codes.}}
+\DoxyCodeLine{40 \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{qb_q_r_8h_a2ec59b73bc03540c71f7c50c2e9b98c6}{QBQR\_MATRIXNOTSQUARE}} = -\/1;}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{comment}{// The qbQR function.}}
+\DoxyCodeLine{43 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{44 \textcolor{keywordtype}{int} \mbox{\hyperlink{qb_q_r_8h_a6a831083d2a1e9bcb81b882ac01087a9}{qbQR}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \&A, \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \&Q, \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \&R)}
+\DoxyCodeLine{45 \{}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     \textcolor{comment}{// Make a copy of the input matrix.}}
+\DoxyCodeLine{48     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} inputMatrix = A;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     \textcolor{comment}{// Verify that the input matrix is square.}}
+\DoxyCodeLine{51     \textcolor{keywordflow}{if} (!inputMatrix.\mbox{\hyperlink{classqb_matrix2_ae3e42b917e3127cab56b7a48faff25c3}{IsSquare}}())}
+\DoxyCodeLine{52         \textcolor{keywordflow}{return} \mbox{\hyperlink{qb_q_r_8h_a2ec59b73bc03540c71f7c50c2e9b98c6}{QBQR\_MATRIXNOTSQUARE}};}
+\DoxyCodeLine{53         }
+\DoxyCodeLine{54     \textcolor{comment}{// Determine the number of columns (and rows, since the matrix is square).}}
+\DoxyCodeLine{55     \textcolor{keywordtype}{int} numCols = inputMatrix.\mbox{\hyperlink{classqb_matrix2_ab20362d8fc58a4b8da0910f94c3de2c3}{GetNumCols}}();}
+\DoxyCodeLine{56     }
+\DoxyCodeLine{57     \textcolor{comment}{// Create a vector to store the P matrices for each column.}}
+\DoxyCodeLine{58     std::vector<qbMatrix2<T>> Plist;}
+\DoxyCodeLine{59     }
+\DoxyCodeLine{60     \textcolor{comment}{// Loop through each column.}}
+\DoxyCodeLine{61     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j<(numCols-\/1); ++j)}
+\DoxyCodeLine{62     \{}
+\DoxyCodeLine{63         \textcolor{comment}{// Create the a1 and b1 vectors.}}
+\DoxyCodeLine{64         \textcolor{comment}{// a1 is the column vector from A.}}
+\DoxyCodeLine{65         \textcolor{comment}{// b1 is the vector onto which we wish to reflect a1.}}
+\DoxyCodeLine{66         \mbox{\hyperlink{classqb_vector}{qbVector<T>}} a1 (numCols-\/j);}
+\DoxyCodeLine{67         \mbox{\hyperlink{classqb_vector}{qbVector<T>}} b1 (numCols-\/j);}
+\DoxyCodeLine{68         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=j; i<numCols; ++i)}
+\DoxyCodeLine{69         \{}
+\DoxyCodeLine{70             a1.\mbox{\hyperlink{classqb_vector_af828430da5d728b15c70f82f73ff1efd}{SetElement}}(i-\/j, inputMatrix.\mbox{\hyperlink{classqb_matrix2_a62ddf209105dffe6133461b273a7309f}{GetElement}}(i,j));}
+\DoxyCodeLine{71             b1.\mbox{\hyperlink{classqb_vector_af828430da5d728b15c70f82f73ff1efd}{SetElement}}(i-\/j, \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.0));}
+\DoxyCodeLine{72         \}}
+\DoxyCodeLine{73         b1.\mbox{\hyperlink{classqb_vector_af828430da5d728b15c70f82f73ff1efd}{SetElement}}(0, \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1.0));}
+\DoxyCodeLine{74         }
+\DoxyCodeLine{75         \textcolor{comment}{// Compute the norm of the a1 vector.}}
+\DoxyCodeLine{76         T a1norm = a1.\mbox{\hyperlink{classqb_vector_aa2024c900efb9bbbae752f91b59a786c}{norm}}();}
+\DoxyCodeLine{77         }
+\DoxyCodeLine{78         \textcolor{comment}{// Compute the sign we will use.}}
+\DoxyCodeLine{79         \textcolor{keywordtype}{int} sgn = -\/1;}
+\DoxyCodeLine{80         \textcolor{keywordflow}{if} (a1.\mbox{\hyperlink{classqb_vector_adadd6ca87273a15f57a5e1d6ae15583b}{GetElement}}(0) < \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.0))}
+\DoxyCodeLine{81             sgn = 1;}
+\DoxyCodeLine{82             }
+\DoxyCodeLine{83         \textcolor{comment}{// Compute the u-\/vector.}}
+\DoxyCodeLine{84         \mbox{\hyperlink{classqb_vector}{qbVector<T>}} u = a1 -\/ (sgn * a1norm * b1);}
+\DoxyCodeLine{85         }
+\DoxyCodeLine{86         \textcolor{comment}{// Compute the n-\/vector.}}
+\DoxyCodeLine{87         \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_ae2b4646468bc89d0ba646f5cf838e051}{n}} = u.\mbox{\hyperlink{classqb_vector_a30cacb02a659ae4885e16243fd849fb6}{Normalized}}();}
+\DoxyCodeLine{88         }
+\DoxyCodeLine{89         \textcolor{comment}{// Convert n to a matrix so that we can transpose it.}}
+\DoxyCodeLine{90         \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} nMat (numCols-\/j, 1);}
+\DoxyCodeLine{91         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<(numCols-\/j); ++i)}
+\DoxyCodeLine{92             nMat.\mbox{\hyperlink{classqb_matrix2_a1c6693503483942d5a619a0cf470e8b5}{SetElement}}(i, 0, \mbox{\hyperlink{_s_d_l__opengl__glext_8h_ae2b4646468bc89d0ba646f5cf838e051}{n}}.GetElement(i));}
+\DoxyCodeLine{93             }
+\DoxyCodeLine{94         \textcolor{comment}{// Transpose nMat.}}
+\DoxyCodeLine{95         \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} nMatT = nMat.\mbox{\hyperlink{classqb_matrix2_a6235a35daf5fa20a9ebc7ed91d8a94a3}{Transpose}}();}
+\DoxyCodeLine{96         }
+\DoxyCodeLine{97         \textcolor{comment}{// Create an identity matrix of the appropriate size.}}
+\DoxyCodeLine{98         \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} I (numCols-\/j, numCols-\/j);}
+\DoxyCodeLine{99         I.\mbox{\hyperlink{classqb_matrix2_af705ca91a707de5e75c6b074ad152f5e}{SetToIdentity}}();}
+\DoxyCodeLine{100         }
+\DoxyCodeLine{101         \textcolor{comment}{// Compute Ptemp.}}
+\DoxyCodeLine{102         \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} Ptemp = I -\/ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(2.0) * nMat * nMatT;}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104         \textcolor{comment}{// Form the P matrix with the original dimensions.}}
+\DoxyCodeLine{105         \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} P (numCols, numCols);}
+\DoxyCodeLine{106         P.SetToIdentity();}
+\DoxyCodeLine{107         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}}=j; \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}}<numCols; ++\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}})}
+\DoxyCodeLine{108         \{}
+\DoxyCodeLine{109             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} col=j; col<numCols; ++col)}
+\DoxyCodeLine{110             \{}
+\DoxyCodeLine{111                 P.SetElement(\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}}, col, Ptemp.\mbox{\hyperlink{classqb_matrix2_a62ddf209105dffe6133461b273a7309f}{GetElement}}(\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}}-\/j, col-\/j));}
+\DoxyCodeLine{112             \}}
+\DoxyCodeLine{113         \}   }
+\DoxyCodeLine{114         }
+\DoxyCodeLine{115         \textcolor{comment}{// Store the result into the Plist vector.}}
+\DoxyCodeLine{116         Plist.push\_back(P);}
+\DoxyCodeLine{117         }
+\DoxyCodeLine{118         \textcolor{comment}{// Apply this transform matrix to inputMatrix and use this result}}
+\DoxyCodeLine{119         \textcolor{comment}{// next time through the loop.}}
+\DoxyCodeLine{120         inputMatrix = P * inputMatrix;}
+\DoxyCodeLine{121     \}}
+\DoxyCodeLine{122     }
+\DoxyCodeLine{123     \textcolor{comment}{// Compute Q.}}
+\DoxyCodeLine{124     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} Qmat = Plist.at(0);}
+\DoxyCodeLine{125     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=1; i<(numCols-\/1); ++i)}
+\DoxyCodeLine{126     \{}
+\DoxyCodeLine{127         Qmat = Qmat * Plist.at(i).\mbox{\hyperlink{classqb_matrix2_a6235a35daf5fa20a9ebc7ed91d8a94a3}{Transpose}}();}
+\DoxyCodeLine{128     \}}
+\DoxyCodeLine{129     }
+\DoxyCodeLine{130     \textcolor{comment}{// Return the Q matrix.}}
+\DoxyCodeLine{131     Q = Qmat;}
+\DoxyCodeLine{132     }
+\DoxyCodeLine{133     \textcolor{comment}{// Compute R.}}
+\DoxyCodeLine{134     \textcolor{keywordtype}{int} numElements = Plist.size();}
+\DoxyCodeLine{135     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} Rmat = Plist.at(numElements-\/1);}
+\DoxyCodeLine{136     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=(numElements-\/2); i>=0; -\/-\/i)}
+\DoxyCodeLine{137     \{}
+\DoxyCodeLine{138         Rmat = Rmat * Plist.at(i);}
+\DoxyCodeLine{139     \}}
+\DoxyCodeLine{140     Rmat = Rmat * A;}
+\DoxyCodeLine{141     }
+\DoxyCodeLine{142     \textcolor{comment}{// And return the R matrix.}}
+\DoxyCodeLine{143     R = Rmat;}
+\DoxyCodeLine{144     }
+\DoxyCodeLine{145 \}}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,276 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_qb_vector_8h_source" xml:lang="en-US">
+<title>qbVector.h</title>
+<indexterm><primary>D:/RayTracing/RayTrace/qbLinAlg/qbVector.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">//&#32;This&#32;file&#32;is&#32;part&#32;of&#32;the&#32;qbLinAlg&#32;linear&#32;algebra&#32;library.</emphasis>
+2 <emphasis role="comment">//&#32;Copyright&#32;(c)&#32;2021&#32;Michael&#32;Bennett</emphasis>
+3 <emphasis role="comment">//&#32;MIT&#32;license</emphasis>
+4 
+5 <emphasis role="preprocessor">#ifndef&#32;QBVECTOR_H</emphasis>
+6 <emphasis role="preprocessor">#define&#32;QBVECTOR_H</emphasis>
+7 
+8 <emphasis role="comment">/*&#32;*************************************************************************************************</emphasis>
+9 <emphasis role="comment"></emphasis>
+10 <emphasis role="comment">&#32;&#32;&#32;&#32;qbVector</emphasis>
+11 <emphasis role="comment">&#32;&#32;&#32;&#32;</emphasis>
+12 <emphasis role="comment">&#32;&#32;&#32;&#32;Class&#32;to&#32;provide&#32;capability&#32;to&#32;handle&#32;vectors.</emphasis>
+13 <emphasis role="comment"></emphasis>
+14 <emphasis role="comment">*************************************************************************************************&#32;*/</emphasis>
+15 
+16 <emphasis role="preprocessor">#include&#32;&lt;stdexcept&gt;</emphasis>
+17 <emphasis role="preprocessor">#include&#32;&lt;iostream&gt;</emphasis>
+18 <emphasis role="preprocessor">#include&#32;&lt;iomanip&gt;</emphasis>
+19 <emphasis role="preprocessor">#include&#32;&lt;math.h&gt;</emphasis>
+20 <emphasis role="preprocessor">#include&#32;&lt;vector&gt;</emphasis>
+21 
+22 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+23 <emphasis role="keyword">class&#32;</emphasis><link linkend="_classqb_vector">qbVector</link>
+24 {
+25 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Define&#32;the&#32;various&#32;constructors.</emphasis>
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Default.</emphasis>
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector_1a4d3ca712f03d608fd8fa2b765d5af0a3">qbVector</link>();
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;With&#32;a&#32;single&#32;integer&#32;specifying&#32;the&#32;number&#32;of&#32;dimensions.</emphasis>
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector_1abc223bb64e38c0922931c093b2ff99ff">qbVector</link>(<emphasis role="keywordtype">int</emphasis>&#32;numDims);
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;With&#32;input&#32;data&#32;(std::vector).</emphasis>
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector_1aa99293e1abd9fce0f6e376afd3d15dc0">qbVector</link>(std::vector&lt;T&gt;&#32;inputData);
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;And&#32;the&#32;destructor.</emphasis>
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector_1ab167f00d61598de0e5741254f6f6b9ff">~qbVector</link>();&#32;&#32;&#32;&#32;
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Functions&#32;to&#32;return&#32;parameters&#32;of&#32;the&#32;vector.</emphasis>
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_classqb_vector_1a4b1f24a8ae47ef9019109c23c56fc9c4">GetNumDims</link>()&#32;<emphasis role="keyword">const</emphasis>;
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Functions&#32;to&#32;handle&#32;elements&#32;of&#32;the&#32;vector.</emphasis>
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;<link linkend="_classqb_vector_1adadd6ca87273a15f57a5e1d6ae15583b">GetElement</link>(<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a57f14e05b1900f16a2da82ade47d0c6d">index</link>)&#32;<emphasis role="keyword">const</emphasis>;
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classqb_vector_1af828430da5d728b15c70f82f73ff1efd">SetElement</link>(<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a57f14e05b1900f16a2da82ade47d0c6d">index</link>,&#32;T&#32;<link linkend="__s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f">value</link>);
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Functions&#32;to&#32;perform&#32;computations&#32;on&#32;the&#32;vector.</emphasis>
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Return&#32;the&#32;length&#32;of&#32;the&#32;vector.</emphasis>
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;<link linkend="_classqb_vector_1aa2024c900efb9bbbae752f91b59a786c">norm</link>();
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Return&#32;a&#32;normalized&#32;copy&#32;of&#32;the&#32;vector.</emphasis>
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;<link linkend="_classqb_vector_1a30cacb02a659ae4885e16243fd849fb6">Normalized</link>();
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Normalize&#32;the&#32;vector&#32;in&#32;place.</emphasis>
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classqb_vector_1a06cc00476d406a772461fc4acd7e9ea8">Normalize</link>();
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Overloaded&#32;operators.</emphasis>
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;<link linkend="_classqb_vector_1a9f2b081b6d16e78aa749e1a7ac6e77a7">operator+ </link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;&amp;rhs)&#32;<emphasis role="keyword">const</emphasis>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;<link linkend="_classqb_vector_1a3544378181df99c93e4efaafc247ebfe">operator- </link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;&amp;rhs)&#32;<emphasis role="keyword">const</emphasis>;
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;<link linkend="_classqb_vector_1af4cf14f133608188f609dec15f137da1">operator* </link>(<emphasis role="keyword">const</emphasis>&#32;T&#32;&amp;rhs)&#32;<emphasis role="keyword">const</emphasis>;
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Friend&#32;functions.</emphasis>
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;U&gt;&#32;<emphasis role="keyword">friend</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;U&gt;</link>&#32;<link linkend="_classqb_vector_1af4cf14f133608188f609dec15f137da1">operator* </link>(<emphasis role="keyword">const</emphasis>&#32;U&#32;&amp;lhs,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;U&gt;</link>&#32;&amp;rhs);
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Static&#32;functions.</emphasis>
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;T&#32;<link linkend="_classqb_vector_1a8a3c9123ca342c3499c99112a577db8b">dot</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;&amp;<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;&amp;<link linkend="__s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010">b</link>);
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;<link linkend="_classqb_vector_1af77140337a3e04ff051d346599fe4283">cross</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;&amp;<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;&amp;<link linkend="__s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010">b</link>);
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+68 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>:
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::vector&lt;T&gt;&#32;m_vectorData;
+70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;m_nDims;
+71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+72 };
+73 
+74 <emphasis role="comment">/*&#32;**************************************************************************************************</emphasis>
+75 <emphasis role="comment">CONSTRUCTOR&#32;/&#32;DESTRUCTOR&#32;FUNCTIONS</emphasis>
+76 <emphasis role="comment">/*&#32;*************************************************************************************************/</emphasis>
+77 <emphasis role="comment">//&#32;The&#32;default&#32;constructor.</emphasis>
+78 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+79 <link linkend="_classqb_vector_1a4d3ca712f03d608fd8fa2b765d5af0a3">qbVector&lt;T&gt;::qbVector</link>()
+80 {
+81 &#32;&#32;&#32;&#32;m_nDims&#32;=&#32;0;
+82 &#32;&#32;&#32;&#32;m_vectorData&#32;=&#32;std::vector&lt;T&gt;();
+83 }
+84 
+85 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+86 <link linkend="_classqb_vector_1a4d3ca712f03d608fd8fa2b765d5af0a3">qbVector&lt;T&gt;::qbVector</link>(<emphasis role="keywordtype">int</emphasis>&#32;numDims)
+87 {
+88 &#32;&#32;&#32;&#32;m_nDims&#32;=&#32;numDims;
+89 &#32;&#32;&#32;&#32;m_vectorData&#32;=&#32;std::vector&lt;T&gt;(numDims,&#32;<emphasis role="keyword">static_cast&lt;</emphasis>T<emphasis role="keyword">&gt;</emphasis>(0.0));
+90 }
+91 
+92 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+93 <link linkend="_classqb_vector_1a4d3ca712f03d608fd8fa2b765d5af0a3">qbVector&lt;T&gt;::qbVector</link>(std::vector&lt;T&gt;&#32;inputData)
+94 {
+95 &#32;&#32;&#32;&#32;m_nDims&#32;=&#32;inputData.size();
+96 &#32;&#32;&#32;&#32;m_vectorData&#32;=&#32;inputData;
+97 }
+98 
+99 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+100 <link linkend="_classqb_vector_1ab167f00d61598de0e5741254f6f6b9ff">qbVector&lt;T&gt;::~qbVector</link>()
+101 {
+102 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;For&#32;now,&#32;we&#32;don&apos;t&#32;need&#32;to&#32;do&#32;anything&#32;in&#32;the&#32;destructor.</emphasis>
+103 }
+104 
+105 <emphasis role="comment">/*&#32;**************************************************************************************************</emphasis>
+106 <emphasis role="comment">FUNCTIONS&#32;TO&#32;RETURN&#32;PARAMETERS</emphasis>
+107 <emphasis role="comment">/*&#32;*************************************************************************************************/</emphasis>
+108 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+109 <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_classqb_vector_1a4b1f24a8ae47ef9019109c23c56fc9c4">qbVector&lt;T&gt;::GetNumDims</link>()<emphasis role="keyword">&#32;const</emphasis>
+110 <emphasis role="keyword"></emphasis>{
+111 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;m_nDims;
+112 }
+113 
+114 <emphasis role="comment">/*&#32;**************************************************************************************************</emphasis>
+115 <emphasis role="comment">FUNCTIONS&#32;TO&#32;HANDLE&#32;ELEMENTS&#32;OF&#32;THE&#32;VECTOR</emphasis>
+116 <emphasis role="comment">/*&#32;*************************************************************************************************/</emphasis>
+117 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+118 T&#32;<link linkend="_classqb_vector_1adadd6ca87273a15f57a5e1d6ae15583b">qbVector&lt;T&gt;::GetElement</link>(<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a57f14e05b1900f16a2da82ade47d0c6d">index</link>)<emphasis role="keyword">&#32;const</emphasis>
+119 <emphasis role="keyword"></emphasis>{
+120 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;m_vectorData[<link linkend="__s_d_l__opengl__glext_8h_1a57f14e05b1900f16a2da82ade47d0c6d">index</link>];
+121 }
+122 
+123 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+124 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classqb_vector_1af828430da5d728b15c70f82f73ff1efd">qbVector&lt;T&gt;::SetElement</link>(<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a57f14e05b1900f16a2da82ade47d0c6d">index</link>,&#32;T&#32;<link linkend="__s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f">value</link>)
+125 {
+126 &#32;&#32;&#32;&#32;m_vectorData[<link linkend="__s_d_l__opengl__glext_8h_1a57f14e05b1900f16a2da82ade47d0c6d">index</link>]&#32;=&#32;<link linkend="__s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f">value</link>;
+127 }
+128 
+129 <emphasis role="comment">/*&#32;**************************************************************************************************</emphasis>
+130 <emphasis role="comment">FUNCTIONS&#32;TO&#32;PERFORM&#32;COMPUTATIONS&#32;ON&#32;THE&#32;VECTOR</emphasis>
+131 <emphasis role="comment">/*&#32;*************************************************************************************************/</emphasis>
+132 <emphasis role="comment">//&#32;Compute&#32;the&#32;length&#32;of&#32;the&#32;vector,known&#32;as&#32;the&#32;&apos;norm&apos;.</emphasis>
+133 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+134 T&#32;<link linkend="_classqb_vector_1aa2024c900efb9bbbae752f91b59a786c">qbVector&lt;T&gt;::norm</link>()
+135 {
+136 &#32;&#32;&#32;&#32;T&#32;cumulativeSum&#32;=&#32;<emphasis role="keyword">static_cast&lt;</emphasis>T<emphasis role="keyword">&gt;</emphasis>(0.0);
+137 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;m_nDims;&#32;++i)
+138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cumulativeSum&#32;+=&#32;(m_vectorData.at(i)&#32;*&#32;m_vectorData.at(i));
+139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+140 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;sqrt(cumulativeSum);
+141 }
+142 
+143 <emphasis role="comment">//&#32;Return&#32;a&#32;normalized&#32;copy&#32;of&#32;the&#32;vector.</emphasis>
+144 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+145 <link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;<link linkend="_classqb_vector_1a30cacb02a659ae4885e16243fd849fb6">qbVector&lt;T&gt;::Normalized</link>()
+146 {
+147 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;the&#32;vector&#32;norm.</emphasis>
+148 &#32;&#32;&#32;&#32;T&#32;vecNorm&#32;=&#32;this-&gt;norm();
+149 &#32;&#32;&#32;&#32;
+150 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;the&#32;normalized&#32;version&#32;of&#32;the&#32;vector.</emphasis>
+151 &#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>(m_vectorData);
+152 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>&#32;*&#32;(<emphasis role="keyword">static_cast&lt;</emphasis>T<emphasis role="keyword">&gt;</emphasis>(1.0)&#32;/&#32;vecNorm);
+153 }
+154 
+155 <emphasis role="comment">//&#32;Normalize&#32;the&#32;vector&#32;in&#32;place.</emphasis>
+156 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+157 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classqb_vector_1a06cc00476d406a772461fc4acd7e9ea8">qbVector&lt;T&gt;::Normalize</link>()
+158 {
+159 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;the&#32;vector&#32;norm.</emphasis>
+160 &#32;&#32;&#32;&#32;T&#32;vecNorm&#32;=&#32;this-&gt;norm();
+161 &#32;&#32;&#32;&#32;
+162 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;the&#32;elements&#32;of&#32;the&#32;normalized&#32;version&#32;of&#32;the&#32;vector.</emphasis>
+163 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;m_nDims;&#32;++i)
+164 &#32;&#32;&#32;&#32;{
+165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;temp&#32;=&#32;m_vectorData.at(i)&#32;*&#32;(<emphasis role="keyword">static_cast&lt;</emphasis>T<emphasis role="keyword">&gt;</emphasis>(1.0)&#32;/&#32;vecNorm);
+166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;m_vectorData.at(i)&#32;=&#32;temp;
+167 &#32;&#32;&#32;&#32;}
+168 }
+169 
+170 <emphasis role="comment">/*&#32;**************************************************************************************************</emphasis>
+171 <emphasis role="comment">OVERLOADED&#32;OPERATORS</emphasis>
+172 <emphasis role="comment">/*&#32;*************************************************************************************************/</emphasis>
+173 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+174 <link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;<link linkend="_classqb_vector_1a9f2b081b6d16e78aa749e1a7ac6e77a7">qbVector&lt;T&gt;::operator+ </link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;&amp;rhs)<emphasis role="keyword">&#32;const</emphasis>
+175 <emphasis role="keyword"></emphasis>{
+176 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Check&#32;that&#32;the&#32;number&#32;of&#32;dimensions&#32;match.</emphasis>
+177 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(m_nDims&#32;!=&#32;rhs.m_nDims)
+178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::invalid_argument(<emphasis role="stringliteral">&quot;Vector&#32;dimensions&#32;do&#32;not&#32;match.&quot;</emphasis>);
+179 &#32;&#32;&#32;&#32;
+180 &#32;&#32;&#32;&#32;std::vector&lt;T&gt;&#32;resultData;
+181 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;m_nDims;&#32;++i)
+182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;resultData.push_back(m_vectorData.at(i)&#32;+&#32;rhs.m_vectorData.at(i));
+183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+184 &#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>(resultData);
+185 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>;
+186 }
+187 
+188 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+189 <link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;<link linkend="_classqb_vector_1a3544378181df99c93e4efaafc247ebfe">qbVector&lt;T&gt;::operator- </link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;&amp;rhs)<emphasis role="keyword">&#32;const</emphasis>
+190 <emphasis role="keyword"></emphasis>{
+191 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Check&#32;that&#32;the&#32;number&#32;of&#32;dimensions&#32;match.</emphasis>
+192 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(m_nDims&#32;!=&#32;rhs.m_nDims)
+193 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::invalid_argument(<emphasis role="stringliteral">&quot;Vector&#32;dimensions&#32;do&#32;not&#32;match.&quot;</emphasis>);
+194 &#32;&#32;&#32;&#32;
+195 &#32;&#32;&#32;&#32;std::vector&lt;T&gt;&#32;resultData;
+196 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;m_nDims;&#32;++i)
+197 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;resultData.push_back(m_vectorData.at(i)&#32;-&#32;rhs.m_vectorData.at(i));
+198 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+199 &#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>(resultData);
+200 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>;
+201 }
+202 
+203 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+204 <link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;<link linkend="_classqb_vector_1af4cf14f133608188f609dec15f137da1">qbVector&lt;T&gt;::operator* </link>(<emphasis role="keyword">const</emphasis>&#32;T&#32;&amp;rhs)<emphasis role="keyword">&#32;const</emphasis>
+205 <emphasis role="keyword"></emphasis>{
+206 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Perform&#32;scalar&#32;multiplication.</emphasis>
+207 &#32;&#32;&#32;&#32;std::vector&lt;T&gt;&#32;resultData;
+208 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;m_nDims;&#32;++i)
+209 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;resultData.push_back(m_vectorData.at(i)&#32;*&#32;rhs);
+210 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+211 &#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>(resultData);
+212 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>;
+213 }
+214 
+215 <emphasis role="comment">/*&#32;**************************************************************************************************</emphasis>
+216 <emphasis role="comment">FRIEND&#32;FUNCTIONS</emphasis>
+217 <emphasis role="comment">/*&#32;*************************************************************************************************/</emphasis>
+218 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+219 <link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;<link linkend="_qb_vector_8h_1a07b5fd7eea993be47bce40bb0db51b9f">operator* </link>(<emphasis role="keyword">const</emphasis>&#32;T&#32;&amp;lhs,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;&amp;rhs)
+220 {
+221 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Perform&#32;scalar&#32;multiplication.</emphasis>
+222 &#32;&#32;&#32;&#32;std::vector&lt;T&gt;&#32;resultData;
+223 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;rhs.m_nDims;&#32;++i)
+224 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;resultData.push_back(lhs&#32;*&#32;rhs.m_vectorData.at(i));
+225 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+226 &#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>(resultData);
+227 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>;
+228 }
+229 
+230 <emphasis role="comment">/*&#32;**************************************************************************************************</emphasis>
+231 <emphasis role="comment">STATIC&#32;FUNCTIONS</emphasis>
+232 <emphasis role="comment">/*&#32;*************************************************************************************************/</emphasis>
+233 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+234 T&#32;<link linkend="_classqb_vector_1a8a3c9123ca342c3499c99112a577db8b">qbVector&lt;T&gt;::dot</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;&amp;<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;&amp;<link linkend="__s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010">b</link>)
+235 {
+236 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Check&#32;that&#32;the&#32;number&#32;of&#32;dimensions&#32;match.</emphasis>
+237 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>.m_nDims&#32;!=&#32;<link linkend="__s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010">b</link>.m_nDims)
+238 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::invalid_argument(<emphasis role="stringliteral">&quot;Vector&#32;dimensions&#32;must&#32;match&#32;for&#32;the&#32;dot-product&#32;to&#32;be&#32;computed.&quot;</emphasis>);
+239 &#32;&#32;&#32;&#32;
+240 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;the&#32;dot&#32;product.</emphasis>
+241 &#32;&#32;&#32;&#32;T&#32;cumulativeSum&#32;=&#32;<emphasis role="keyword">static_cast&lt;</emphasis>T<emphasis role="keyword">&gt;</emphasis>(0.0);
+242 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>.m_nDims;&#32;++i)
+243 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cumulativeSum&#32;+=&#32;<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>.m_vectorData.at(i)&#32;*&#32;<link linkend="__s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010">b</link>.m_vectorData.at(i);
+244 &#32;&#32;&#32;&#32;
+245 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;cumulativeSum;
+246 }
+247 
+248 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+249 <link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;<link linkend="_classqb_vector_1af77140337a3e04ff051d346599fe4283">qbVector&lt;T&gt;::cross</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;&amp;<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;&amp;<link linkend="__s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010">b</link>)
+250 {
+251 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Check&#32;that&#32;the&#32;number&#32;of&#32;dimensions&#32;match.</emphasis>
+252 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>.m_nDims&#32;!=&#32;<link linkend="__s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010">b</link>.m_nDims)
+253 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::invalid_argument(<emphasis role="stringliteral">&quot;Vector&#32;dimensions&#32;must&#32;match&#32;for&#32;the&#32;cross-product&#32;to&#32;be&#32;computed.&quot;</emphasis>);
+254 &#32;&#32;&#32;&#32;
+255 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Check&#32;that&#32;the&#32;number&#32;of&#32;dimensions&#32;is&#32;3.</emphasis>
+256 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Although&#32;the&#32;cross-product&#32;is&#32;also&#32;defined&#32;for&#32;7&#32;dimensions,&#32;we&#32;are</emphasis>
+257 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;not&#32;going&#32;to&#32;consider&#32;that&#32;case&#32;at&#32;this&#32;time.&#32;*/</emphasis>
+258 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>.m_nDims&#32;!=&#32;3)
+259 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::invalid_argument(<emphasis role="stringliteral">&quot;The&#32;cross-product&#32;can&#32;only&#32;be&#32;computed&#32;for&#32;three-dimensional&#32;vectors.&quot;</emphasis>);
+260 &#32;&#32;&#32;&#32;
+261 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;the&#32;cross&#32;product.</emphasis>
+262 &#32;&#32;&#32;&#32;std::vector&lt;T&gt;&#32;resultData;
+263 &#32;&#32;&#32;&#32;resultData.push_back((<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>.m_vectorData.at(1)&#32;*&#32;<link linkend="__s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010">b</link>.m_vectorData.at(2))&#32;-&#32;(<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>.m_vectorData.at(2)&#32;*&#32;<link linkend="__s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010">b</link>.m_vectorData.at(1)));
+264 &#32;&#32;&#32;&#32;resultData.push_back(-((<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>.m_vectorData.at(0)&#32;*&#32;<link linkend="__s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010">b</link>.m_vectorData.at(2))&#32;-&#32;(<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>.m_vectorData.at(2)&#32;*&#32;<link linkend="__s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010">b</link>.m_vectorData.at(0))));
+265 &#32;&#32;&#32;&#32;resultData.push_back((<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>.m_vectorData.at(0)&#32;*&#32;<link linkend="__s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010">b</link>.m_vectorData.at(1))&#32;-&#32;(<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>.m_vectorData.at(1)&#32;*&#32;<link linkend="__s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010">b</link>.m_vectorData.at(0)));
+266 
+267 &#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>(resultData);
+268 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>;
+269 }
+270 
+271 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

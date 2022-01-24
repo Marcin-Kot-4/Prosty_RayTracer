@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['v_0',['v',['../_s_d_l__opengl_8h.html#a10a82eabcb59d2fcd74acee063775f90',1,'v():&#160;SDL_opengl.h'],['../_s_d_l__opengl__glext_8h.html#a1940912a5bd64dc19d3ef39f8b15217f',1,'v():&#160;SDL_opengl_glext.h']]],
+  ['v0_1',['v0',['../_s_d_l__opengl__glext_8h.html#a7062a23d1d434121d4a88f530703d06a',1,'SDL_opengl_glext.h']]],
+  ['v1_2',['v1',['../_s_d_l__opengl__glext_8h.html#a435c176a02c061b43e19bdf7c86cceae',1,'SDL_opengl_glext.h']]],
+  ['v2_3',['v2',['../_s_d_l__opengl__glext_8h.html#a0928f6d0f0f794ba000a21dfae422136',1,'SDL_opengl_glext.h']]],
+  ['v3_4',['v3',['../_s_d_l__opengl__glext_8h.html#acc806b31cbf466ceba6555983d8b814d',1,'SDL_opengl_glext.h']]],
+  ['val_5',['val',['../_s_d_l__opengl__glext_8h.html#a26942fd2ed566ef553eae82d2c109c8f',1,'SDL_opengl_glext.h']]],
+  ['value_6',['value',['../struct_s_d_l__atomic__t.html#a0d09ddf3cc5798c709edb7cea104203a',1,'SDL_atomic_t::value()'],['../struct_s_d_l___joy_axis_event.html#a53ee73e7c367934dd6edb69963be5556',1,'SDL_JoyAxisEvent::value()'],['../struct_s_d_l___joy_hat_event.html#a52b179a34407449941b61d988ca72ef4',1,'SDL_JoyHatEvent::value()'],['../struct_s_d_l___controller_axis_event.html#a1ed7f14255ed01b982d40a38791d475a',1,'SDL_ControllerAxisEvent::value()'],['../struct_s_d_l___game_controller_button_bind.html#a38624b1d6a3cf52caf5bad289e811cfa',1,'SDL_GameControllerButtonBind::value()'],['../_s_d_l__opengl__glext_8h.html#a8ad81492d410ff2ac11f754f4042150f',1,'value():&#160;SDL_opengl_glext.h'],['../_s_d_l__opengles2__gl2ext_8h.html#ace6b50af3cde7818d86034a4da396a03',1,'value():&#160;SDL_opengles2_gl2ext.h']]],
+  ['values_7',['values',['../_s_d_l__opengl__glext_8h.html#a0aa8cf39c79d294b1d9f4daef5020bec',1,'values():&#160;SDL_opengl_glext.h'],['../_s_d_l__opengles2__gl2ext_8h.html#ae545debabe0f0f4d3ca9331981dbaf6b',1,'values():&#160;SDL_opengles2_gl2ext.h']]],
+  ['variable_8',['variable',['../_s_d_l__opengl__glext_8h.html#aac5473f0a0d0d38841ea8d37c5ca032d',1,'SDL_opengl_glext.h']]],
+  ['varyings_9',['varyings',['../_s_d_l__opengl__glext_8h.html#a1a2579a465d7882b428754626c6ddd9b',1,'SDL_opengl_glext.h']]],
+  ['vendor_5fid_10',['vendor_id',['../struct_s_d_l__hid__device__info.html#a7bb9b5c173278a6699b3191953fcfe77',1,'SDL_hid_device_info']]],
+  ['verbose_11',['verbose',['../struct_s_d_l_test___common_state.html#aad4b8ebf6277cd9d3608d2e1b48e4678',1,'SDLTest_CommonState']]],
+  ['verbose_5faudio_12',['VERBOSE_AUDIO',['../_s_d_l__test__common_8h.html#ab607cbf4694150235976fc1ef6e68387',1,'SDL_test_common.h']]],
+  ['verbose_5fevent_13',['VERBOSE_EVENT',['../_s_d_l__test__common_8h.html#a3e5a47c9aaa54a2b134b0066f48b4e0c',1,'SDL_test_common.h']]],
+  ['verbose_5fmodes_14',['VERBOSE_MODES',['../_s_d_l__test__common_8h.html#a3a535ac3889907ff97e556a3cae117cc',1,'SDL_test_common.h']]],
+  ['verbose_5frender_15',['VERBOSE_RENDER',['../_s_d_l__test__common_8h.html#a7bdcd39423e8261d05407ab758feb037',1,'SDL_test_common.h']]],
+  ['verbose_5fvideo_16',['VERBOSE_VIDEO',['../_s_d_l__test__common_8h.html#ab5d2ba75c3cd702f1a269c406902ddcb',1,'SDL_test_common.h']]],
+  ['version_17',['version',['../struct_s_d_l___palette.html#a5b8d45519f6850a32f13f1602ce37a8e',1,'SDL_Palette::version()'],['../struct_s_d_l___sys_w_mmsg.html#a95f9aae58d18ee8fac556416b322a5fb',1,'SDL_SysWMmsg::version()'],['../struct_s_d_l___sys_w_minfo.html#ac3a70af022d4849e9ff546595e94627f',1,'SDL_SysWMinfo::version()']]],
+  ['vertexbuffercount_18',['vertexBufferCount',['../_s_d_l__opengl__glext_8h.html#ad10c97121f6fa659693bd204d26fc4fa',1,'SDL_opengl_glext.h']]],
+  ['videodriver_19',['videodriver',['../struct_s_d_l_test___common_state.html#ab3face917946465c60dc0f38f179534d',1,'SDLTest_CommonState']]],
+  ['vk_5fdefine_5fhandle_20',['VK_DEFINE_HANDLE',['../_s_d_l__vulkan_8h.html#a2c83a74883be356d314441ccc41e7768',1,'SDL_vulkan.h']]],
+  ['vk_5fdefine_5fnon_5fdispatchable_5fhandle_21',['VK_DEFINE_NON_DISPATCHABLE_HANDLE',['../_s_d_l__vulkan_8h.html#a04d8504e79be7e7ff48e313ed88a54ad',1,'SDL_vulkan.h']]],
+  ['void_22',['void',['../_s_d_l__audio_8h.html#aa5cb90967788ada2711894ca158ece01',1,'void(SDLCALL *SDL_AudioFilter)(struct SDL_AudioCVT *cvt:&#160;SDL_audio.h'],['../_s_d_l__opengl_8h.html#a46df6112013cf583e82b25cebd5cb499',1,'void(APIENTRYP PFNGLDRAWRANGEELEMENTSPROC)(GLenum mode:&#160;SDL_opengl.h'],['../_s_d_l__opengl__glext_8h.html#a46df6112013cf583e82b25cebd5cb499',1,'void(APIENTRYP PFNGLDRAWRANGEELEMENTSPROC)(GLenum mode:&#160;SDL_opengl_glext.h'],['../_s_d_l__opengles2__gl2ext_8h.html#ae5d8fa23ad07c48bb609509eae494c95',1,'void(GL_APIENTRYP GLDEBUGPROCKHR)(GLenum source:&#160;SDL_opengles2_gl2ext.h']]],
+  ['vorder_23',['vorder',['../_s_d_l__opengl__glext_8h.html#a8d88201263c9c43d2d53f877df9c49b6',1,'SDL_opengl_glext.h']]],
+  ['vstride_24',['vstride',['../_s_d_l__opengl__glext_8h.html#a5a7772f7703473eb7376ccb182a0c960',1,'SDL_opengl_glext.h']]]
+];

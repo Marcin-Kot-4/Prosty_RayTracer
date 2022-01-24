@@ -1,0 +1,81 @@
+.TH "SDL_AudioCVT" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SDL_AudioCVT \- A structure to hold a set of audio conversion filters and buffers\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SDL_audio\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBneeded\fP"
+.br
+.ti -1c
+.RI "\fBSDL_AudioFormat\fP \fBsrc_format\fP"
+.br
+.ti -1c
+.RI "\fBSDL_AudioFormat\fP \fBdst_format\fP"
+.br
+.ti -1c
+.RI "double \fBrate_incr\fP"
+.br
+.ti -1c
+.RI "\fBUint8\fP * \fBbuf\fP"
+.br
+.ti -1c
+.RI "int \fBlen\fP"
+.br
+.ti -1c
+.RI "int \fBlen_cvt\fP"
+.br
+.ti -1c
+.RI "int \fBlen_mult\fP"
+.br
+.ti -1c
+.RI "double \fBlen_ratio\fP"
+.br
+.ti -1c
+.RI "SDL_AudioFilter \fBfilters\fP [\fBSDL_AUDIOCVT_MAX_FILTERS\fP+1]"
+.br
+.ti -1c
+.RI "int \fBfilter_index\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A structure to hold a set of audio conversion filters and buffers\&. 
+
+Note that various parts of the conversion pipeline can take advantage of SIMD operations (like SSE2, for example)\&. \fBSDL_AudioCVT\fP doesn't require you to pass it aligned data, but can possibly run much faster if you set both its (buf) field to a pointer that is aligned to 16 bytes, and its (len) field to something that's a multiple of 16, if possible\&. 
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBUint8\fP* SDL_AudioCVT::buf"
+Buffer to hold entire audio data 
+.SS "\fBSDL_AudioFormat\fP SDL_AudioCVT::dst_format"
+Target audio format 
+.SS "int SDL_AudioCVT::filter_index"
+Current audio conversion function 
+.SS "SDL_AudioFilter SDL_AudioCVT::filters[\fBSDL_AUDIOCVT_MAX_FILTERS\fP+1]"
+NULL-terminated list of filter functions 
+.SS "int SDL_AudioCVT::len"
+Length of original audio buffer 
+.SS "int SDL_AudioCVT::len_cvt"
+Length of converted audio buffer 
+.SS "int SDL_AudioCVT::len_mult"
+buffer must be len*len_mult big 
+.SS "double SDL_AudioCVT::len_ratio"
+Given len, final size is len*len_ratio 
+.SS "int SDL_AudioCVT::needed"
+Set to 1 if conversion possible 
+.SS "double SDL_AudioCVT::rate_incr"
+Rate conversion increment 
+.SS "\fBSDL_AudioFormat\fP SDL_AudioCVT::src_format"
+Source audio format 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

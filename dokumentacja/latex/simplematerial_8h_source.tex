@@ -1,0 +1,46 @@
+\hypertarget{simplematerial_8h_source}{}\doxysection{simplematerial.\+h}
+\label{simplematerial_8h_source}\index{D:/RayTracing/RayTrace/Materials/simplematerial.h@{D:/RayTracing/RayTrace/Materials/simplematerial.h}}
+\mbox{\hyperlink{simplematerial_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef RAYTRACING\_SIMPLEMATERIAL\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define RAYTRACING\_SIMPLEMATERIAL\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{materialbase_8h}{materialbase.h}}"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_r_t}{RT}}}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9     \textcolor{keyword}{class }\mbox{\hyperlink{class_r_t_1_1_simple_material}{SimpleMaterial}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_r_t_1_1_material_base}{MaterialBase}}}
+\DoxyCodeLine{10     \{}
+\DoxyCodeLine{11     \textcolor{keyword}{public}:}
+\DoxyCodeLine{12         \textcolor{comment}{// Konstruktor}}
+\DoxyCodeLine{13         \mbox{\hyperlink{class_r_t_1_1_simple_material_a1af9f0fb42b931218787ad09cc6a9f39}{SimpleMaterial}}();}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15         \textcolor{comment}{// Destruktor}}
+\DoxyCodeLine{16         \textcolor{keyword}{virtual} \mbox{\hyperlink{class_r_t_1_1_simple_material_ae702de698964afca3cf1b9fc2dab493e}{\string~SimpleMaterial}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18         \textcolor{comment}{// Zwróć kolor obiektu}}
+\DoxyCodeLine{19         \textcolor{keyword}{virtual} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \mbox{\hyperlink{class_r_t_1_1_simple_material_a27119202e1ef25225faa2b425bd681e4}{ComputeColor}}(  \textcolor{keyword}{const} std::vector<std::shared\_ptr<RT::ObjectBase>> \&objectList,}
+\DoxyCodeLine{20                                                   \textcolor{keyword}{const} std::vector<std::shared\_ptr<RT::LightBase>> \&lightList,}
+\DoxyCodeLine{21                                                   \textcolor{keyword}{const} std::shared\_ptr<RT::ObjectBase> \&currentObject,}
+\DoxyCodeLine{22                                                   \textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&intPoint, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&localNormal,}
+\DoxyCodeLine{23                                                   \textcolor{keyword}{const} \mbox{\hyperlink{class_r_t_1_1_ray}{RT::Ray}} \&cameraRay) \textcolor{keyword}{override};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25         \textcolor{comment}{// Metoda do obliczania refleksów}}
+\DoxyCodeLine{26         \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \mbox{\hyperlink{class_r_t_1_1_simple_material_aa64e1515ada26e975cdbcc42c2fe3042}{ComputeSpecular}}(    \textcolor{keyword}{const} std::vector<std::shared\_ptr<RT::ObjectBase>> \&objectList,}
+\DoxyCodeLine{27                                              \textcolor{keyword}{const} std::vector<std::shared\_ptr<RT::LightBase>> \&lightList,}
+\DoxyCodeLine{28                                              \textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&intPoint, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&localNormal,}
+\DoxyCodeLine{29                                              \textcolor{keyword}{const} \mbox{\hyperlink{class_r_t_1_1_ray}{RT::Ray}} \&cameraRay);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \textcolor{keyword}{public}:}
+\DoxyCodeLine{32         \textcolor{comment}{// Kolor tworzywa}}
+\DoxyCodeLine{33         \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \mbox{\hyperlink{class_r_t_1_1_simple_material_a62020aa0f4b5958f82ce958901a87bf4}{m\_baseColor}} \{std::vector<double> \{1.0, 0.0, 1.0\}\};}
+\DoxyCodeLine{34         \textcolor{keywordtype}{double} \mbox{\hyperlink{class_r_t_1_1_simple_material_a38611deb48380fd60c94e270064a66bc}{m\_reflectivity}} = 0.0;}
+\DoxyCodeLine{35         \textcolor{keywordtype}{double} \mbox{\hyperlink{class_r_t_1_1_simple_material_a570216c81c930713e5c22f6b1b6f8e84}{m\_shininess}} = 0.0;}
+\DoxyCodeLine{36     \};}
+\DoxyCodeLine{37 \}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//RAYTRACING\_SIMPLEMATERIAL\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,48 @@
+\hypertarget{textureimage_8h_source}{}\doxysection{textureimage.\+h}
+\label{textureimage_8h_source}\index{D:/RayTracing/RayTrace/Textures/textureimage.h@{D:/RayTracing/RayTrace/Textures/textureimage.h}}
+\mbox{\hyperlink{textureimage_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#ifndef RAYTRACING\_TEXTUREIMAGE\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#define RAYTRACING\_TEXTUREIMAGE\_H}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{texturebase_8h}{texturebase.h}}"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}../../include/SDL.h"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_r_t}{RT}}}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11     \textcolor{keyword}{namespace }Texture}
+\DoxyCodeLine{12     \{}
+\DoxyCodeLine{13         \textcolor{keyword}{class }\mbox{\hyperlink{class_r_t_1_1_texture_1_1_image}{Image}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_r_t_1_1_texture_1_1_texture_base}{TextureBase}}}
+\DoxyCodeLine{14         \{}
+\DoxyCodeLine{15         \textcolor{keyword}{public}:}
+\DoxyCodeLine{16             \textcolor{comment}{// Konstruktor}}
+\DoxyCodeLine{17             \mbox{\hyperlink{class_r_t_1_1_texture_1_1_image_a58edd1c45b4faeb5f789b0d036d02313}{Image}}();}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19             \textcolor{comment}{// Destruktor}}
+\DoxyCodeLine{20             \textcolor{keyword}{virtual} \mbox{\hyperlink{class_r_t_1_1_texture_1_1_image_a7b0235b2b5784ae92262dc7fd6c84c84}{\string~Image}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22             \textcolor{comment}{// Funkcja zwracająca kolor}}
+\DoxyCodeLine{23             \textcolor{keyword}{virtual} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \mbox{\hyperlink{class_r_t_1_1_texture_1_1_image_a5a1347445b86ee91c4393488da5b50d0}{GetColor}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&uvCoords) \textcolor{keyword}{override};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25             \textcolor{comment}{// Funkcja wczytująca obraz}}
+\DoxyCodeLine{26             \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_r_t_1_1_texture_1_1_image_a29cf0bdcfd2c7046d0a783d38159d9d3}{LoadImage}}(\mbox{\hyperlink{_s_d_l__opengl__glext_8h_ae84541b4f3d8e1ea24ec0f466a8c568b}{std::string}} fileName);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28         \textcolor{keyword}{private}:}
+\DoxyCodeLine{29             \mbox{\hyperlink{_s_d_l__opengl__glext_8h_ae84541b4f3d8e1ea24ec0f466a8c568b}{std::string}} m\_fileName;}
+\DoxyCodeLine{30             \mbox{\hyperlink{struct_s_d_l___surface}{SDL\_Surface}} *m\_imageSurface;}
+\DoxyCodeLine{31             \mbox{\hyperlink{struct_s_d_l___pixel_format}{SDL\_PixelFormat}} *m\_pixelFormat;}
+\DoxyCodeLine{32             \textcolor{keywordtype}{bool} m\_imageLoaded = \textcolor{keyword}{false};}
+\DoxyCodeLine{33             \textcolor{keywordtype}{int} m\_xSize, m\_ySize, m\_pitch;}
+\DoxyCodeLine{34             \mbox{\hyperlink{_s_d_l__config_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} m\_bytesPerPixel;}
+\DoxyCodeLine{35             \mbox{\hyperlink{_s_d_l__config_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}} m\_rMask, m\_gMask, m\_bMask, m\_aMask;}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37         \};}
+\DoxyCodeLine{38     \}}
+\DoxyCodeLine{39 \}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//RAYTRACING\_TEXTUREIMAGE\_H}}
+
+\end{DoxyCode}

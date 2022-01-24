@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_r_t_1_1_g_tform" xml:lang="en-US">
+<title>RT::GTform Class Reference</title>
+<indexterm><primary>RT::GTform</primary></indexterm>
+<para>
+<computeroutput>#include &lt;gtfm.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_r_t_1_1_g_tform_1af4a85301e8377010585ab3b9be09b73e">GTform</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_r_t_1_1_g_tform_1ac52387dbc170335f4648b5ba6994834d">~GTform</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_r_t_1_1_g_tform_1a7e4e554e38330d47571b60b408525536">GTform</link> (const <link linkend="_classqb_matrix2">qbMatrix2</link>&lt; double &gt; &amp;fwd, const <link linkend="_classqb_matrix2">qbMatrix2</link>&lt; double &gt; &amp;bck)</para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_class_r_t_1_1_g_tform_1a54c87058d14d7cf321230ea13523f622">SetTransform</link> (const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp;translation, const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp;rotation, const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp;<link linkend="__s_d_l__opengl__glext_8h_1a281421b881aa7a1266842b73a3bc7655">scale</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_classqb_matrix2">qbMatrix2</link>&lt; double &gt; <link linkend="_class_r_t_1_1_g_tform_1a115fa0452dcb2c3fd97577f044986d80">GetForward</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classqb_matrix2">qbMatrix2</link>&lt; double &gt; <link linkend="_class_r_t_1_1_g_tform_1adcf5e1799ce160c0793f6ac243cd4cde">GetBackward</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_r_t_1_1_ray">RT::Ray</link> <link linkend="_class_r_t_1_1_g_tform_1a77ea09e51153e6eca97750c38e520eef">Apply</link> (const <link linkend="_class_r_t_1_1_ray">RT::Ray</link> &amp;inputRay, bool dirFlag)</para>
+</listitem>
+            <listitem><para><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; <link linkend="_class_r_t_1_1_g_tform_1aefa4034fcc6e1ff530708f1a810940cd">Apply</link> (const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp;inputVector, bool dirFlag)</para>
+</listitem>
+            <listitem><para><link linkend="_class_r_t_1_1_g_tform">GTform</link> <link linkend="_class_r_t_1_1_g_tform_1a809b7029a456b68e49a109c97a07afa2">operator=</link> (const <link linkend="_class_r_t_1_1_g_tform">GTform</link> &amp;rhs)</para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_class_r_t_1_1_g_tform_1a2169f46803d51938b059da7eb9fa08fb">PrintMatrix</link> (bool dirFlag)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_class_r_t_1_1_g_tform_1a7ed83f7c30e352f5639dd7af0afbfe37">PrintVector</link> (const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp;vector)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Friends    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_r_t_1_1_g_tform">GTform</link> <link linkend="_class_r_t_1_1_g_tform_1a8b8700192cec8d25c73f40b6e787c77c">operator*</link> (const <link linkend="_class_r_t_1_1_g_tform">RT::GTform</link> &amp;lhs, const <link linkend="_class_r_t_1_1_g_tform">RT::GTform</link> &amp;rhs)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_r_t_1_1_g_tform_1af4a85301e8377010585ab3b9be09b73e"/><section>
+    <title>GTform()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>GTform</primary><secondary>RT::GTform</secondary></indexterm>
+<indexterm><primary>RT::GTform</primary><secondary>GTform</secondary></indexterm>
+<para><computeroutput>RT::GTform::GTform ( )</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_g_tform_1ac52387dbc170335f4648b5ba6994834d"/><section>
+    <title>~GTform()</title>
+<indexterm><primary>~GTform</primary><secondary>RT::GTform</secondary></indexterm>
+<indexterm><primary>RT::GTform</primary><secondary>~GTform</secondary></indexterm>
+<para><computeroutput>RT::GTform::~GTform ( )</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_g_tform_1a7e4e554e38330d47571b60b408525536"/><section>
+    <title>GTform()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>GTform</primary><secondary>RT::GTform</secondary></indexterm>
+<indexterm><primary>RT::GTform</primary><secondary>GTform</secondary></indexterm>
+<para><computeroutput>RT::GTform::GTform (const <link linkend="_classqb_matrix2">qbMatrix2</link>&lt; double &gt; &amp; fwd, const <link linkend="_classqb_matrix2">qbMatrix2</link>&lt; double &gt; &amp; bck)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_r_t_1_1_g_tform_1aefa4034fcc6e1ff530708f1a810940cd"/><section>
+    <title>Apply()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>Apply</primary><secondary>RT::GTform</secondary></indexterm>
+<indexterm><primary>RT::GTform</primary><secondary>Apply</secondary></indexterm>
+<para><computeroutput><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; RT::GTform::Apply (const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp; inputVector, bool dirFlag)</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_g_tform_1a77ea09e51153e6eca97750c38e520eef"/><section>
+    <title>Apply()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>Apply</primary><secondary>RT::GTform</secondary></indexterm>
+<indexterm><primary>RT::GTform</primary><secondary>Apply</secondary></indexterm>
+<para><computeroutput><link linkend="_class_r_t_1_1_ray">RT::Ray</link> RT::GTform::Apply (const <link linkend="_class_r_t_1_1_ray">RT::Ray</link> &amp; inputRay, bool dirFlag)</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_g_tform_1adcf5e1799ce160c0793f6ac243cd4cde"/><section>
+    <title>GetBackward()</title>
+<indexterm><primary>GetBackward</primary><secondary>RT::GTform</secondary></indexterm>
+<indexterm><primary>RT::GTform</primary><secondary>GetBackward</secondary></indexterm>
+<para><computeroutput><link linkend="_classqb_matrix2">qbMatrix2</link>&lt; double &gt; RT::GTform::GetBackward ( )</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_g_tform_1a115fa0452dcb2c3fd97577f044986d80"/><section>
+    <title>GetForward()</title>
+<indexterm><primary>GetForward</primary><secondary>RT::GTform</secondary></indexterm>
+<indexterm><primary>RT::GTform</primary><secondary>GetForward</secondary></indexterm>
+<para><computeroutput><link linkend="_classqb_matrix2">qbMatrix2</link>&lt; double &gt; RT::GTform::GetForward ( )</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_g_tform_1a809b7029a456b68e49a109c97a07afa2"/><section>
+    <title>operator=()</title>
+<indexterm><primary>operator=</primary><secondary>RT::GTform</secondary></indexterm>
+<indexterm><primary>RT::GTform</primary><secondary>operator=</secondary></indexterm>
+<para><computeroutput><link linkend="_class_r_t_1_1_g_tform">RT::GTform</link> RT::GTform::operator= (const <link linkend="_class_r_t_1_1_g_tform">GTform</link> &amp; rhs)</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_g_tform_1a2169f46803d51938b059da7eb9fa08fb"/><section>
+    <title>PrintMatrix()</title>
+<indexterm><primary>PrintMatrix</primary><secondary>RT::GTform</secondary></indexterm>
+<indexterm><primary>RT::GTform</primary><secondary>PrintMatrix</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> RT::GTform::PrintMatrix (bool dirFlag)</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_g_tform_1a7ed83f7c30e352f5639dd7af0afbfe37"/><section>
+    <title>PrintVector()</title>
+<indexterm><primary>PrintVector</primary><secondary>RT::GTform</secondary></indexterm>
+<indexterm><primary>RT::GTform</primary><secondary>PrintVector</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> RT::GTform::PrintVector (const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp; vector)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_g_tform_1a54c87058d14d7cf321230ea13523f622"/><section>
+    <title>SetTransform()</title>
+<indexterm><primary>SetTransform</primary><secondary>RT::GTform</secondary></indexterm>
+<indexterm><primary>RT::GTform</primary><secondary>SetTransform</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> RT::GTform::SetTransform (const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp; translation, const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp; rotation, const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp; scale)</computeroutput></para></section>
+</section>
+<section>
+<title>Friends And Related Function Documentation</title>
+<anchor xml:id="_class_r_t_1_1_g_tform_1a8b8700192cec8d25c73f40b6e787c77c"/><section>
+    <title>operator*</title>
+<indexterm><primary>operator*</primary><secondary>RT::GTform</secondary></indexterm>
+<indexterm><primary>RT::GTform</primary><secondary>operator*</secondary></indexterm>
+<para><computeroutput><link linkend="_class_r_t_1_1_g_tform">GTform</link> operator* (const <link linkend="_class_r_t_1_1_g_tform">RT::GTform</link> &amp; lhs, const <link linkend="_class_r_t_1_1_g_tform">RT::GTform</link> &amp; rhs)<computeroutput>[friend]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following files:</para>
+D:/RayTracing/RayTrace/<link linkend="_gtfm_8h">gtfm.h</link>D:/RayTracing/RayTrace/<link linkend="_gtfm_8cpp">gtfm.cpp</link></section>
+</section>

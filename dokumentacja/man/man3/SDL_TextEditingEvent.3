@@ -1,0 +1,54 @@
+.TH "SDL_TextEditingEvent" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SDL_TextEditingEvent \- Keyboard text editing event structure (event\&.edit\&.*)  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SDL_events\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUint32\fP \fBtype\fP"
+.br
+.ti -1c
+.RI "\fBUint32\fP \fBtimestamp\fP"
+.br
+.ti -1c
+.RI "\fBUint32\fP \fBwindowID\fP"
+.br
+.ti -1c
+.RI "char \fBtext\fP [\fBSDL_TEXTEDITINGEVENT_TEXT_SIZE\fP]"
+.br
+.ti -1c
+.RI "\fBSint32\fP \fBstart\fP"
+.br
+.ti -1c
+.RI "\fBSint32\fP \fBlength\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Keyboard text editing event structure (event\&.edit\&.*) 
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBSint32\fP SDL_TextEditingEvent::length"
+The length of selected editing text 
+.SS "\fBSint32\fP SDL_TextEditingEvent::start"
+The start cursor of selected editing text 
+.SS "char SDL_TextEditingEvent::text[\fBSDL_TEXTEDITINGEVENT_TEXT_SIZE\fP]"
+The editing text 
+.SS "\fBUint32\fP SDL_TextEditingEvent::timestamp"
+In milliseconds, populated using \fBSDL_GetTicks()\fP 
+.SS "\fBUint32\fP SDL_TextEditingEvent::type"
+\fBSDL_TEXTEDITING\fP 
+.SS "\fBUint32\fP SDL_TextEditingEvent::windowID"
+The window with keyboard focus, if any 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

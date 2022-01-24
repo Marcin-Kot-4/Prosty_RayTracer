@@ -1,0 +1,125 @@
+\hypertarget{class_r_t_1_1_object_base}{}\doxysection{RT\+::Object\+Base Class Reference}
+\label{class_r_t_1_1_object_base}\index{RT::ObjectBase@{RT::ObjectBase}}
+
+
+{\ttfamily \#include $<$objectbase.\+h$>$}
+
+Inheritance diagram for RT\+::Object\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_r_t_1_1_object_base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_r_t_1_1_object_base_a2e524afdaa52559af1c9d32b92ab86d7}{Object\+Base}} ()
+\item 
+virtual \mbox{\hyperlink{class_r_t_1_1_object_base_a483e10e0d0096f29b1a19ebcbc9a8daf}{$\sim$\+Object\+Base}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_r_t_1_1_object_base_a1874168fc872f415520ddf7ae05f33a7}{Test\+Intersection}} (const \mbox{\hyperlink{class_r_t_1_1_ray}{Ray}} \&cast\+Ray, \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&int\+Point, \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&local\+Normal, \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&local\+Color)
+\item 
+\mbox{\hyperlink{_s_d_l__opengles2__gl2ext_8h_ae5d8fa23ad07c48bb609509eae494c95}{void}} \mbox{\hyperlink{class_r_t_1_1_object_base_ae49d7664053ba8709645e61f417b22a0}{Set\+Transform\+Matrix}} (const \mbox{\hyperlink{class_r_t_1_1_g_tform}{RT\+::\+GTform}} \&transform\+Matrix)
+\item 
+bool \mbox{\hyperlink{class_r_t_1_1_object_base_a3654cf7ddcab4705a656aea8f1156d9c}{Close\+Enough}} (const double f1, const double f2)
+\item 
+bool \mbox{\hyperlink{class_r_t_1_1_object_base_a7d143fe3dc376fa9d03eb023dbfd7fb1}{Assign\+Material}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_material_base}{RT\+::\+Material\+Base}} $>$ \&object\+Material)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \mbox{\hyperlink{class_r_t_1_1_object_base_a59a95426585e31a88e38083ec1a72b7b}{m\+\_\+base\+Color}} \{3\}
+\item 
+\mbox{\hyperlink{class_r_t_1_1_g_tform}{RT\+::\+GTform}} \mbox{\hyperlink{class_r_t_1_1_object_base_ac3bdb9ce9f1aace3bc7d008ad3c71f85}{m\+\_\+transform\+Matrix}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_material_base}{RT\+::\+Material\+Base}} $>$ \mbox{\hyperlink{class_r_t_1_1_object_base_ae45ec3a9d0cd9f38605dcc8580c65c1c}{m\+\_\+p\+Material}}
+\item 
+bool \mbox{\hyperlink{class_r_t_1_1_object_base_a96be79a468072fa5b3f72b1084a76278}{m\+\_\+has\+Material}} = false
+\item 
+\mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \mbox{\hyperlink{class_r_t_1_1_object_base_a0453a522f36f23f95638312633cf5d81}{m\+\_\+uv\+Coords}} \{2\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_r_t_1_1_object_base_a2e524afdaa52559af1c9d32b92ab86d7}\label{class_r_t_1_1_object_base_a2e524afdaa52559af1c9d32b92ab86d7}} 
+\index{RT::ObjectBase@{RT::ObjectBase}!ObjectBase@{ObjectBase}}
+\index{ObjectBase@{ObjectBase}!RT::ObjectBase@{RT::ObjectBase}}
+\doxysubsubsection{\texorpdfstring{ObjectBase()}{ObjectBase()}}
+{\footnotesize\ttfamily RT\+::\+Object\+Base\+::\+Object\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_r_t_1_1_object_base_a483e10e0d0096f29b1a19ebcbc9a8daf}\label{class_r_t_1_1_object_base_a483e10e0d0096f29b1a19ebcbc9a8daf}} 
+\index{RT::ObjectBase@{RT::ObjectBase}!````~ObjectBase@{$\sim$ObjectBase}}
+\index{````~ObjectBase@{$\sim$ObjectBase}!RT::ObjectBase@{RT::ObjectBase}}
+\doxysubsubsection{\texorpdfstring{$\sim$ObjectBase()}{~ObjectBase()}}
+{\footnotesize\ttfamily RT\+::\+Object\+Base\+::$\sim$\+Object\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_r_t_1_1_object_base_a7d143fe3dc376fa9d03eb023dbfd7fb1}\label{class_r_t_1_1_object_base_a7d143fe3dc376fa9d03eb023dbfd7fb1}} 
+\index{RT::ObjectBase@{RT::ObjectBase}!AssignMaterial@{AssignMaterial}}
+\index{AssignMaterial@{AssignMaterial}!RT::ObjectBase@{RT::ObjectBase}}
+\doxysubsubsection{\texorpdfstring{AssignMaterial()}{AssignMaterial()}}
+{\footnotesize\ttfamily bool RT\+::\+Object\+Base\+::\+Assign\+Material (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_material_base}{RT\+::\+Material\+Base}} $>$ \&}]{object\+Material }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_r_t_1_1_object_base_a3654cf7ddcab4705a656aea8f1156d9c}\label{class_r_t_1_1_object_base_a3654cf7ddcab4705a656aea8f1156d9c}} 
+\index{RT::ObjectBase@{RT::ObjectBase}!CloseEnough@{CloseEnough}}
+\index{CloseEnough@{CloseEnough}!RT::ObjectBase@{RT::ObjectBase}}
+\doxysubsubsection{\texorpdfstring{CloseEnough()}{CloseEnough()}}
+{\footnotesize\ttfamily bool RT\+::\+Object\+Base\+::\+Close\+Enough (\begin{DoxyParamCaption}\item[{const double}]{f1,  }\item[{const double}]{f2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_r_t_1_1_object_base_ae49d7664053ba8709645e61f417b22a0}\label{class_r_t_1_1_object_base_ae49d7664053ba8709645e61f417b22a0}} 
+\index{RT::ObjectBase@{RT::ObjectBase}!SetTransformMatrix@{SetTransformMatrix}}
+\index{SetTransformMatrix@{SetTransformMatrix}!RT::ObjectBase@{RT::ObjectBase}}
+\doxysubsubsection{\texorpdfstring{SetTransformMatrix()}{SetTransformMatrix()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__opengles2__gl2ext_8h_ae5d8fa23ad07c48bb609509eae494c95}{void}} RT\+::\+Object\+Base\+::\+Set\+Transform\+Matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_r_t_1_1_g_tform}{RT\+::\+GTform}} \&}]{transform\+Matrix }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_r_t_1_1_object_base_a1874168fc872f415520ddf7ae05f33a7}\label{class_r_t_1_1_object_base_a1874168fc872f415520ddf7ae05f33a7}} 
+\index{RT::ObjectBase@{RT::ObjectBase}!TestIntersection@{TestIntersection}}
+\index{TestIntersection@{TestIntersection}!RT::ObjectBase@{RT::ObjectBase}}
+\doxysubsubsection{\texorpdfstring{TestIntersection()}{TestIntersection()}}
+{\footnotesize\ttfamily bool RT\+::\+Object\+Base\+::\+Test\+Intersection (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_r_t_1_1_ray}{Ray}} \&}]{cast\+Ray,  }\item[{\mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&}]{int\+Point,  }\item[{\mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&}]{local\+Normal,  }\item[{\mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&}]{local\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_r_t_1_1_cone_a6df1cffc250d1c629250abf6e6dfb925}{RT\+::\+Cone}}, \mbox{\hyperlink{class_r_t_1_1_cylinder_af651d28a24101803fc4fe1a12f9d0730}{RT\+::\+Cylinder}}, \mbox{\hyperlink{class_r_t_1_1_obj_plane_a7bf64e3ec94953a0a6c8c1da14c4e79d}{RT\+::\+Obj\+Plane}}, and \mbox{\hyperlink{class_r_t_1_1_obj_sphere_ac61205d4e6dc56ad927e84ada7f3a77b}{RT\+::\+Obj\+Sphere}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_r_t_1_1_object_base_a59a95426585e31a88e38083ec1a72b7b}\label{class_r_t_1_1_object_base_a59a95426585e31a88e38083ec1a72b7b}} 
+\index{RT::ObjectBase@{RT::ObjectBase}!m\_baseColor@{m\_baseColor}}
+\index{m\_baseColor@{m\_baseColor}!RT::ObjectBase@{RT::ObjectBase}}
+\doxysubsubsection{\texorpdfstring{m\_baseColor}{m\_baseColor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$double$>$ RT\+::\+Object\+Base\+::m\+\_\+base\+Color \{3\}}
+
+\mbox{\Hypertarget{class_r_t_1_1_object_base_a96be79a468072fa5b3f72b1084a76278}\label{class_r_t_1_1_object_base_a96be79a468072fa5b3f72b1084a76278}} 
+\index{RT::ObjectBase@{RT::ObjectBase}!m\_hasMaterial@{m\_hasMaterial}}
+\index{m\_hasMaterial@{m\_hasMaterial}!RT::ObjectBase@{RT::ObjectBase}}
+\doxysubsubsection{\texorpdfstring{m\_hasMaterial}{m\_hasMaterial}}
+{\footnotesize\ttfamily bool RT\+::\+Object\+Base\+::m\+\_\+has\+Material = false}
+
+\mbox{\Hypertarget{class_r_t_1_1_object_base_ae45ec3a9d0cd9f38605dcc8580c65c1c}\label{class_r_t_1_1_object_base_ae45ec3a9d0cd9f38605dcc8580c65c1c}} 
+\index{RT::ObjectBase@{RT::ObjectBase}!m\_pMaterial@{m\_pMaterial}}
+\index{m\_pMaterial@{m\_pMaterial}!RT::ObjectBase@{RT::ObjectBase}}
+\doxysubsubsection{\texorpdfstring{m\_pMaterial}{m\_pMaterial}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_r_t_1_1_material_base}{RT\+::\+Material\+Base}}$>$ RT\+::\+Object\+Base\+::m\+\_\+p\+Material}
+
+\mbox{\Hypertarget{class_r_t_1_1_object_base_ac3bdb9ce9f1aace3bc7d008ad3c71f85}\label{class_r_t_1_1_object_base_ac3bdb9ce9f1aace3bc7d008ad3c71f85}} 
+\index{RT::ObjectBase@{RT::ObjectBase}!m\_transformMatrix@{m\_transformMatrix}}
+\index{m\_transformMatrix@{m\_transformMatrix}!RT::ObjectBase@{RT::ObjectBase}}
+\doxysubsubsection{\texorpdfstring{m\_transformMatrix}{m\_transformMatrix}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_r_t_1_1_g_tform}{RT\+::\+GTform}} RT\+::\+Object\+Base\+::m\+\_\+transform\+Matrix}
+
+\mbox{\Hypertarget{class_r_t_1_1_object_base_a0453a522f36f23f95638312633cf5d81}\label{class_r_t_1_1_object_base_a0453a522f36f23f95638312633cf5d81}} 
+\index{RT::ObjectBase@{RT::ObjectBase}!m\_uvCoords@{m\_uvCoords}}
+\index{m\_uvCoords@{m\_uvCoords}!RT::ObjectBase@{RT::ObjectBase}}
+\doxysubsubsection{\texorpdfstring{m\_uvCoords}{m\_uvCoords}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$double$>$ RT\+::\+Object\+Base\+::m\+\_\+uv\+Coords \{2\}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Ray\+Tracing/\+Ray\+Trace/\+Primitives/\mbox{\hyperlink{objectbase_8h}{objectbase.\+h}}\item 
+D\+:/\+Ray\+Tracing/\+Ray\+Trace/\+Primitives/\mbox{\hyperlink{objectbase_8cpp}{objectbase.\+cpp}}\end{DoxyCompactItemize}

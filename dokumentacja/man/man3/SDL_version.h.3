@@ -1,0 +1,220 @@
+.TH "D:/RayTracing/include/SDL_version.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_version.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SDL_stdinc\&.h'\fP
+.br
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBSDL_version\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSDL_MAJOR_VERSION\fP   2"
+.br
+.ti -1c
+.RI "#define \fBSDL_MINOR_VERSION\fP   0"
+.br
+.ti -1c
+.RI "#define \fBSDL_PATCHLEVEL\fP   20"
+.br
+.ti -1c
+.RI "#define \fBSDL_VERSION\fP(\fBx\fP)"
+.br
+.ti -1c
+.RI "#define \fBSDL_VERSIONNUM\fP(X,  Y,  Z)       ((X)*1000 + (Y)*100 + (Z))"
+.br
+.ti -1c
+.RI "#define \fBSDL_COMPILEDVERSION\fP       \fBSDL_VERSIONNUM\fP(\fBSDL_MAJOR_VERSION\fP, \fBSDL_MINOR_VERSION\fP, \fBSDL_PATCHLEVEL\fP)"
+.br
+.ti -1c
+.RI "#define \fBSDL_VERSION_ATLEAST\fP(X,  Y,  Z)       (\fBSDL_COMPILEDVERSION\fP >= \fBSDL_VERSIONNUM\fP(X, Y, Z))"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBSDL_version\fP \fBSDL_version\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_GetVersion\fP (\fBSDL_version\fP *ver)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP const char *\fBSDLCALL\fP \fBSDL_GetRevision\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBSDL_DEPRECATED\fP \fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_GetRevisionNumber\fP (\fBvoid\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This header defines the current SDL version\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define SDL_COMPILEDVERSION       \fBSDL_VERSIONNUM\fP(\fBSDL_MAJOR_VERSION\fP, \fBSDL_MINOR_VERSION\fP, \fBSDL_PATCHLEVEL\fP)"
+This is the version number macro for the current SDL version\&. 
+.SS "#define SDL_MAJOR_VERSION   2"
+
+.SS "#define SDL_MINOR_VERSION   0"
+
+.SS "#define SDL_PATCHLEVEL   20"
+
+.SS "#define SDL_VERSION(\fBx\fP)"
+\fBValue:\fP
+.PP
+.nf
+{                                   \
+    (x)->major = SDL_MAJOR_VERSION;                 \
+    (x)->minor = SDL_MINOR_VERSION;                 \
+    (x)->patch = SDL_PATCHLEVEL;                    \
+}
+.fi
+Macro to determine SDL version program was compiled against\&.
+.PP
+This macro fills in a \fBSDL_version\fP structure with the version of the library you compiled against\&. This is determined by what header the compiler uses\&. Note that if you dynamically linked the library, you might have a slightly newer or older version at runtime\&. That version can be determined with \fBSDL_GetVersion()\fP, which, unlike \fBSDL_VERSION()\fP, is not a macro\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP A pointer to a \fBSDL_version\fP struct to initialize\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_version\fP 
+.PP
+\fBSDL_GetVersion\fP 
+.RE
+.PP
+
+.SS "#define SDL_VERSION_ATLEAST(X, Y, Z)       (\fBSDL_COMPILEDVERSION\fP >= \fBSDL_VERSIONNUM\fP(X, Y, Z))"
+This macro will evaluate to true if compiled with SDL at least X\&.Y\&.Z\&. 
+.SS "#define SDL_VERSIONNUM(X, Y, Z)       ((X)*1000 + (Y)*100 + (Z))"
+This macro turns the version numbers into a numeric value: 
+.PP
+.nf
+(1,2,3) -> (1203)
+
+.fi
+.PP
+.PP
+This assumes that there will never be more than 100 patchlevels\&. 
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBSDL_version\fP \fBSDL_version\fP"
+Information about the version of SDL in use\&.
+.PP
+Represents the library's version as three levels: major revision (increments with massive changes, additions, and enhancements), minor revision (increments with backwards-compatible changes to the major revision), and patchlevel (increments with fixes to the minor revision)\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_VERSION\fP 
+.PP
+\fBSDL_GetVersion\fP 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBDECLSPEC\fP const char *\fBSDLCALL\fP SDL_GetRevision (\fBvoid\fP)"
+Get the code revision of SDL that is linked against your program\&.
+.PP
+This value is the revision of the code you are linked with and may be different from the code you are compiling with, which is found in the constant SDL_REVISION\&.
+.PP
+The revision is arbitrary string (a hash value) uniquely identifying the exact revision of the SDL library in use, and is only useful in comparing against other revisions\&. It is NOT an incrementing number\&.
+.PP
+If SDL wasn't built from a git repository with the appropriate tools, this will return an empty string\&.
+.PP
+Prior to SDL 2\&.0\&.16, before development moved to GitHub, this returned a hash for a Mercurial repository\&.
+.PP
+You shouldn't use this function for anything but logging it for debugging purposes\&. The string is not intended to be reliable in any way\&.
+.PP
+\fBReturns\fP
+.RS 4
+an arbitrary string, uniquely identifying the exact revision of the SDL library in use\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GetVersion\fP 
+.RE
+.PP
+
+.SS "\fBSDL_DEPRECATED\fP \fBDECLSPEC\fP int \fBSDLCALL\fP SDL_GetRevisionNumber (\fBvoid\fP)"
+Obsolete function, do not use\&.
+.PP
+When SDL was hosted in a Mercurial repository, and was built carefully, this would return the revision number that the build was created from\&. This number was not reliable for several reasons, but more importantly, SDL is now hosted in a git repository, which does not offer numbers at all, only hashes\&. This function only ever returns zero now\&. Don't use it\&.
+.PP
+Before SDL 2\&.0\&.16, this might have returned an unreliable, but non-zero number\&.
+.PP
+\fBDeprecated\fP
+.RS 4
+Use \fBSDL_GetRevision()\fP instead; if SDL was carefully built, it will return a git hash\&.
+.RE
+.PP
+.PP
+\fBReturns\fP
+.RS 4
+zero, always, in modern SDL releases\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GetRevision\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_GetVersion (\fBSDL_version\fP * ver)"
+Get the version of SDL that is linked against your program\&.
+.PP
+If you are linking to SDL dynamically, then it is possible that the current version will be different than the version you compiled against\&. This function returns the current version, while \fBSDL_VERSION()\fP is a macro that tells you what version you compiled with\&.
+.PP
+This function may be called safely at any time, even before \fBSDL_Init()\fP\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIver\fP the \fBSDL_version\fP structure that contains the version information
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GetRevision\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

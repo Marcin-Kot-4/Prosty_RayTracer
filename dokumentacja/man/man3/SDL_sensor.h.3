@@ -1,0 +1,431 @@
+.TH "D:/RayTracing/include/SDL_sensor.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_sensor.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SDL_stdinc\&.h'\fP
+.br
+\fC#include 'SDL_error\&.h'\fP
+.br
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSDL_STANDARD_GRAVITY\fP   9\&.80665\fBf\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct _SDL_Sensor \fBSDL_Sensor\fP"
+.br
+.ti -1c
+.RI "typedef \fBSint32\fP \fBSDL_SensorID\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSDL_SensorType\fP { \fBSDL_SENSOR_INVALID\fP = -1, \fBSDL_SENSOR_UNKNOWN\fP, \fBSDL_SENSOR_ACCEL\fP, \fBSDL_SENSOR_GYRO\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_LockSensors\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_UnlockSensors\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_NumSensors\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP const char *\fBSDLCALL\fP \fBSDL_SensorGetDeviceName\fP (int device_index)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_SensorType\fP \fBSDLCALL\fP \fBSDL_SensorGetDeviceType\fP (int device_index)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_SensorGetDeviceNonPortableType\fP (int device_index)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_SensorID\fP \fBSDLCALL\fP \fBSDL_SensorGetDeviceInstanceID\fP (int device_index)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_Sensor\fP *\fBSDLCALL\fP \fBSDL_SensorOpen\fP (int device_index)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_Sensor\fP *\fBSDLCALL\fP \fBSDL_SensorFromInstanceID\fP (\fBSDL_SensorID\fP instance_id)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP const char *\fBSDLCALL\fP \fBSDL_SensorGetName\fP (\fBSDL_Sensor\fP *sensor)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_SensorType\fP \fBSDLCALL\fP \fBSDL_SensorGetType\fP (\fBSDL_Sensor\fP *sensor)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_SensorGetNonPortableType\fP (\fBSDL_Sensor\fP *sensor)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_SensorID\fP \fBSDLCALL\fP \fBSDL_SensorGetInstanceID\fP (\fBSDL_Sensor\fP *sensor)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_SensorGetData\fP (\fBSDL_Sensor\fP *sensor, float *\fBdata\fP, int num_values)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_SensorClose\fP (\fBSDL_Sensor\fP *sensor)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_SensorUpdate\fP (\fBvoid\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include file for SDL sensor event handling 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define SDL_STANDARD_GRAVITY   9\&.80665\fBf\fP"
+Accelerometer sensor
+.PP
+The accelerometer returns the current acceleration in SI meters per second squared\&. This measurement includes the force of gravity, so a device at rest will have an value of SDL_STANDARD_GRAVITY away from the center of the earth\&.
+.PP
+values[0]: Acceleration on the x axis values[1]: Acceleration on the y axis values[2]: Acceleration on the z axis
+.PP
+For phones held in portrait mode and game controllers held in front of you, the axes are defined as follows: -X \&.\&.\&. +X : left \&.\&.\&. right -Y \&.\&.\&. +Y : bottom \&.\&.\&. top -Z \&.\&.\&. +Z : farther \&.\&.\&. closer
+.PP
+The axis data is not changed when the phone is rotated\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GetDisplayOrientation()\fP 
+.RE
+.PP
+
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct _SDL_Sensor \fBSDL_Sensor\fP"
+
+.SS "typedef \fBSint32\fP \fBSDL_SensorID\fP"
+This is a unique ID for a sensor for the time it is connected to the system, and is never reused for the lifetime of the application\&.
+.PP
+The ID value starts at 0 and increments from there\&. The value -1 is an invalid ID\&. 
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBSDL_SensorType\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISDL_SENSOR_INVALID \fP\fP
+Returned for an invalid sensor 
+.TP
+\fB\fISDL_SENSOR_UNKNOWN \fP\fP
+Unknown sensor type 
+.TP
+\fB\fISDL_SENSOR_ACCEL \fP\fP
+Accelerometer 
+.TP
+\fB\fISDL_SENSOR_GYRO \fP\fP
+Gyroscope 
+.SH "Function Documentation"
+.PP 
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_LockSensors (\fBvoid\fP)"
+Gyroscope sensor
+.PP
+The gyroscope returns the current rate of rotation in radians per second\&. The rotation is positive in the counter-clockwise direction\&. That is, an observer looking from a positive location on one of the axes would see positive rotation on that axis when it appeared to be rotating counter-clockwise\&.
+.PP
+values[0]: Angular speed around the x axis (pitch) values[1]: Angular speed around the y axis (yaw) values[2]: Angular speed around the z axis (roll)
+.PP
+For phones held in portrait mode and game controllers held in front of you, the axes are defined as follows: -X \&.\&.\&. +X : left \&.\&.\&. right -Y \&.\&.\&. +Y : bottom \&.\&.\&. top -Z \&.\&.\&. +Z : farther \&.\&.\&. closer
+.PP
+The axis data is not changed when the phone or controller is rotated\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GetDisplayOrientation()\fP Locking for multi-threaded \fBaccess\fP to the sensor API
+.RE
+.PP
+If you are using the sensor API or handling events from multiple threads you should use these locking functions to protect access to the sensors\&.
+.PP
+In particular, you are guaranteed that the sensor list won't change, so the API functions that take a sensor index will be valid, and sensor events will not be delivered\&.
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.14\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_NumSensors (\fBvoid\fP)"
+Count the number of sensors attached to the system right now\&.
+.PP
+\fBReturns\fP
+.RS 4
+the number of sensors detected\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.9\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_SensorClose (\fBSDL_Sensor\fP * sensor)"
+Close a sensor previously opened with \fBSDL_SensorOpen()\fP\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIsensor\fP The SDL_Sensor object to close
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.9\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_Sensor\fP *\fBSDLCALL\fP SDL_SensorFromInstanceID (\fBSDL_SensorID\fP instance_id)"
+Return the SDL_Sensor associated with an instance id\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIinstance_id\fP The sensor from instance id 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+an SDL_Sensor object\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.9\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_SensorGetData (\fBSDL_Sensor\fP * sensor, float * data, int num_values)"
+Get the current state of an opened sensor\&.
+.PP
+The number of values and interpretation of the data is sensor dependent\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIsensor\fP The SDL_Sensor object to query 
+.br
+\fIdata\fP A pointer filled with the current sensor state 
+.br
+\fInum_values\fP The number of values to write to data 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 or -1 if an error occurred\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.9\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_SensorID\fP \fBSDLCALL\fP SDL_SensorGetDeviceInstanceID (int device_index)"
+Get the instance ID of a sensor\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIdevice_index\fP The sensor to get instance id from 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the sensor instance ID, or -1 if \fCdevice_index\fP is out of range\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.9\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP const char *\fBSDLCALL\fP SDL_SensorGetDeviceName (int device_index)"
+Get the implementation dependent name of a sensor\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIdevice_index\fP The sensor to obtain name from 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the sensor name, or NULL if \fCdevice_index\fP is out of range\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.9\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_SensorGetDeviceNonPortableType (int device_index)"
+Get the platform dependent type of a sensor\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIdevice_index\fP The sensor to check 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the sensor platform dependent type, or -1 if \fCdevice_index\fP is out of range\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.9\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_SensorType\fP \fBSDLCALL\fP SDL_SensorGetDeviceType (int device_index)"
+Get the type of a sensor\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIdevice_index\fP The sensor to get the type from 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the SDL_SensorType, or \fCSDL_SENSOR_INVALID\fP if \fCdevice_index\fP is out of range\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.9\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_SensorID\fP \fBSDLCALL\fP SDL_SensorGetInstanceID (\fBSDL_Sensor\fP * sensor)"
+Get the instance ID of a sensor\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIsensor\fP The SDL_Sensor object to inspect 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the sensor instance ID, or -1 if \fCsensor\fP is NULL\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.9\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP const char *\fBSDLCALL\fP SDL_SensorGetName (\fBSDL_Sensor\fP * sensor)"
+Get the implementation dependent name of a sensor
+.PP
+\fBParameters\fP
+.RS 4
+\fIsensor\fP The SDL_Sensor object 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the sensor name, or NULL if \fCsensor\fP is NULL\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.9\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_SensorGetNonPortableType (\fBSDL_Sensor\fP * sensor)"
+Get the platform dependent type of a sensor\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIsensor\fP The SDL_Sensor object to inspect 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the sensor platform dependent type, or -1 if \fCsensor\fP is NULL\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.9\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_SensorType\fP \fBSDLCALL\fP SDL_SensorGetType (\fBSDL_Sensor\fP * sensor)"
+Get the type of a sensor\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIsensor\fP The SDL_Sensor object to inspect 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the SDL_SensorType type, or \fCSDL_SENSOR_INVALID\fP if \fCsensor\fP is NULL\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.9\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_Sensor\fP *\fBSDLCALL\fP SDL_SensorOpen (int device_index)"
+Open a sensor for use\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIdevice_index\fP The sensor to open 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+an SDL_Sensor sensor object, or NULL if an error occurred\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.9\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_SensorUpdate (\fBvoid\fP)"
+Update the current state of the open sensors\&.
+.PP
+This is called automatically by the event loop if sensor events are enabled\&.
+.PP
+This needs to be called from the thread that initialized the sensor subsystem\&.
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.9\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_UnlockSensors (\fBvoid\fP)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

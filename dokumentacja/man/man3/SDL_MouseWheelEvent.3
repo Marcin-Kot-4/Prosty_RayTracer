@@ -1,0 +1,69 @@
+.TH "SDL_MouseWheelEvent" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SDL_MouseWheelEvent \- Mouse wheel event structure (event\&.wheel\&.*)  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SDL_events\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUint32\fP \fBtype\fP"
+.br
+.ti -1c
+.RI "\fBUint32\fP \fBtimestamp\fP"
+.br
+.ti -1c
+.RI "\fBUint32\fP \fBwindowID\fP"
+.br
+.ti -1c
+.RI "\fBUint32\fP \fBwhich\fP"
+.br
+.ti -1c
+.RI "\fBSint32\fP \fBx\fP"
+.br
+.ti -1c
+.RI "\fBSint32\fP \fBy\fP"
+.br
+.ti -1c
+.RI "\fBUint32\fP \fBdirection\fP"
+.br
+.ti -1c
+.RI "float \fBpreciseX\fP"
+.br
+.ti -1c
+.RI "float \fBpreciseY\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Mouse wheel event structure (event\&.wheel\&.*) 
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBUint32\fP SDL_MouseWheelEvent::direction"
+Set to one of the SDL_MOUSEWHEEL_* defines\&. When FLIPPED the values in X and Y will be opposite\&. Multiply by -1 to change them back 
+.SS "float SDL_MouseWheelEvent::preciseX"
+The amount scrolled horizontally, positive to the right and negative to the left, with float precision (added in 2\&.0\&.18) 
+.SS "float SDL_MouseWheelEvent::preciseY"
+The amount scrolled vertically, positive away from the user and negative toward the user, with float precision (added in 2\&.0\&.18) 
+.SS "\fBUint32\fP SDL_MouseWheelEvent::timestamp"
+In milliseconds, populated using \fBSDL_GetTicks()\fP 
+.SS "\fBUint32\fP SDL_MouseWheelEvent::type"
+\fBSDL_MOUSEWHEEL\fP 
+.SS "\fBUint32\fP SDL_MouseWheelEvent::which"
+The mouse instance id, or SDL_TOUCH_MOUSEID 
+.SS "\fBUint32\fP SDL_MouseWheelEvent::windowID"
+The window with mouse focus, if any 
+.SS "\fBSint32\fP SDL_MouseWheelEvent::x"
+The amount scrolled horizontally, positive to the right and negative to the left 
+.SS "\fBSint32\fP SDL_MouseWheelEvent::y"
+The amount scrolled vertically, positive away from the user and negative toward the user 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

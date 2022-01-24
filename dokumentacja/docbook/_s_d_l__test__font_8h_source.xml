@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__test__font_8h_source" xml:lang="en-US">
+<title>SDL_test_font.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_test_font.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+30 <emphasis role="preprocessor">#ifndef&#32;SDL_test_font_h_</emphasis>
+31 <emphasis role="preprocessor">#define&#32;SDL_test_font_h_</emphasis>
+32 
+33 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+34 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+35 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+36 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+37 <emphasis role="preprocessor">#endif</emphasis>
+38 
+39 <emphasis role="comment">/*&#32;Function&#32;prototypes&#32;*/</emphasis>
+40 
+41 <emphasis role="preprocessor">#define&#32;FONT_CHARACTER_SIZE&#32;&#32;8</emphasis>
+42 
+53 <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__test__font_8h_1aa7dc58388352aa14c537ac959220aa89">SDLTest_DrawCharacter</link>(<link linkend="__s_d_l__render_8h_1aaf0bf7d020754fc614fe06552ea4d5d4">SDL_Renderer</link>&#32;*renderer,&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl_8h_1a1675d9d7bb68e1657ff028643b4037e3">y</link>,&#32;<emphasis role="keywordtype">char</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a1f2d7f8147412c43ba2303a56f97ee73">c</link>);
+54 
+65 <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__test__font_8h_1ac5ece4b232de5964c2565360a7318a77">SDLTest_DrawString</link>(<link linkend="__s_d_l__render_8h_1aaf0bf7d020754fc614fe06552ea4d5d4">SDL_Renderer</link>&#32;*renderer,&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl_8h_1a1675d9d7bb68e1657ff028643b4037e3">y</link>,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="__s_d_l__opengl_8h_1a4af680a6c683f88ed67b76f207f2e6e4">s</link>);
+66 
+67 
+71 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__s_d_l__test__font_8h_1aeec32d6261ad6e10e8b0d2f714a10aef">SDLTest_CleanupTextDrawing</link>(<emphasis role="keywordtype">void</emphasis>);
+72 
+73 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+74 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+75 }
+76 <emphasis role="preprocessor">#endif</emphasis>
+77 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+78 
+79 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_test_font_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+80 
+81 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

@@ -1,0 +1,260 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="texturebase_8h" kind="file" language="C++">
+    <compoundname>texturebase.h</compoundname>
+    <includes local="no">memory</includes>
+    <includes refid="qb_matrix_8h" local="yes">../qbLinAlg/qbMatrix.h</includes>
+    <includes refid="qb_vector_8h" local="yes">../qbLinAlg/qbVector.h</includes>
+    <includes refid="ray_8h" local="yes">../ray.h</includes>
+    <includedby refid="materialbase_8h" local="yes">D:/RayTracing/RayTrace/Materials/materialbase.h</includedby>
+    <includedby refid="checker_8h" local="yes">D:/RayTracing/RayTrace/Textures/checker.h</includedby>
+    <includedby refid="flat_8h" local="yes">D:/RayTracing/RayTrace/Textures/flat.h</includedby>
+    <includedby refid="texturebase_8cpp" local="yes">D:/RayTracing/RayTrace/Textures/texturebase.cpp</includedby>
+    <includedby refid="textureimage_8h" local="yes">D:/RayTracing/RayTrace/Textures/textureimage.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>D:/RayTracing/RayTrace/Textures/texturebase.h</label>
+        <link refid="texturebase_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>../qbLinAlg/qbMatrix.h</label>
+        <link refid="qb_matrix_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>qbVector.h</label>
+        <link refid="qb_vector_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>../ray.h</label>
+        <link refid="ray_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>exception</label>
+      </node>
+      <node id="6">
+        <label>iomanip</label>
+      </node>
+      <node id="5">
+        <label>iostream</label>
+      </node>
+      <node id="7">
+        <label>math.h</label>
+      </node>
+      <node id="2">
+        <label>memory</label>
+      </node>
+      <node id="4">
+        <label>stdexcept</label>
+      </node>
+      <node id="8">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="11">
+        <label>D:/RayTracing/CApp.cpp</label>
+        <link refid="_c_app_8cpp"/>
+      </node>
+      <node id="10">
+        <label>D:/RayTracing/CApp.h</label>
+        <link refid="_c_app_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>D:/RayTracing/RayTrace/Materials/materialbase.cpp</label>
+        <link refid="materialbase_8cpp"/>
+      </node>
+      <node id="2">
+        <label>D:/RayTracing/RayTrace/Materials/materialbase.h</label>
+        <link refid="materialbase_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>D:/RayTracing/RayTrace/Materials/simplematerial.cpp</label>
+        <link refid="simplematerial_8cpp"/>
+      </node>
+      <node id="4">
+        <label>D:/RayTracing/RayTrace/Materials/simplematerial.h</label>
+        <link refid="simplematerial_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>D:/RayTracing/RayTrace/Materials/simplerefractive.cpp</label>
+        <link refid="simplerefractive_8cpp"/>
+      </node>
+      <node id="7">
+        <label>D:/RayTracing/RayTrace/Materials/simplerefractive.h</label>
+        <link refid="simplerefractive_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>D:/RayTracing/RayTrace/Scene.cpp</label>
+        <link refid="_scene_8cpp"/>
+      </node>
+      <node id="13">
+        <label>D:/RayTracing/RayTrace/Textures/checker.cpp</label>
+        <link refid="checker_8cpp"/>
+      </node>
+      <node id="9">
+        <label>D:/RayTracing/RayTrace/Textures/checker.h</label>
+        <link refid="checker_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>D:/RayTracing/RayTrace/Textures/flat.cpp</label>
+        <link refid="flat_8cpp"/>
+      </node>
+      <node id="14">
+        <label>D:/RayTracing/RayTrace/Textures/flat.h</label>
+        <link refid="flat_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>D:/RayTracing/RayTrace/Textures/texturebase.cpp</label>
+        <link refid="texturebase_8cpp"/>
+      </node>
+      <node id="1">
+        <label>D:/RayTracing/RayTrace/Textures/texturebase.h</label>
+        <link refid="texturebase_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>D:/RayTracing/RayTrace/Textures/textureimage.cpp</label>
+        <link refid="textureimage_8cpp"/>
+      </node>
+      <node id="17">
+        <label>D:/RayTracing/RayTrace/Textures/textureimage.h</label>
+        <link refid="textureimage_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>D:/RayTracing/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_r_t_1_1_texture_1_1_texture_base" prot="public">RT::Texture::TextureBase</innerclass>
+    <innernamespace refid="namespace_r_t">RT</innernamespace>
+    <innernamespace refid="namespace_r_t_1_1_texture">RT::Texture</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>RAYTRACING_TEXTUREBASE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RAYTRACING_TEXTUREBASE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../qbLinAlg/qbMatrix.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../qbLinAlg/qbVector.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../ray.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_r_t" kindref="compound">RT</ref></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Texture</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="14" refid="class_r_t_1_1_texture_1_1_texture_base" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_r_t_1_1_texture_1_1_texture_base" kindref="compound">TextureBase</ref></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Konstruktor<sp/>domyślny</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_r_t_1_1_texture_1_1_texture_base_1ae046182c6617ac3b962a1c452b398277" kindref="member">TextureBase</ref>();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Destruktor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_texture_1_1_texture_base_1a560385094ebf77878884bdeddf37bf81" kindref="member">~TextureBase</ref>();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Metoda<sp/>zwracająca<sp/>kolor<sp/>w<sp/>podanym<sp/>punkcie<sp/>systemu<sp/>współrzędnych<sp/>(u,v)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Zwracany<sp/>kolor<sp/>to<sp/>4-wymiarowy<sp/>wektor<sp/>(RGBA)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/><ref refid="class_r_t_1_1_texture_1_1_texture_base_1ac25b90bf7dac218a2840c998ffbd5512" kindref="member">GetColor</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>&amp;uvCoords);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Metoda<sp/>do<sp/>ustawiania<sp/>przekształcenia<sp/>tekstury</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_texture_1_1_texture_base_1a55a425e9fce5762c95ecb59728b1b870" kindref="member">SetTransform</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>&amp;translation,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>&amp;rotation,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>&amp;<ref refid="_s_d_l__opengl__glext_8h_1a281421b881aa7a1266842b73a3bc7655" kindref="member">scale</ref>);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Metoda<sp/>mieszająca<sp/>kolory<sp/>RGBA<sp/>i<sp/>zwracająca<sp/>3-wymiarowy<sp/>kolor<sp/>(RGB)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/><ref refid="class_r_t_1_1_texture_1_1_texture_base_1a909e3180400fc19655abab504790cb06" kindref="member">BlendColors</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;<ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>&gt;<sp/>&amp;inputColorList);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Metoda<sp/>zastosowująca<sp/>lokalne<sp/>przekształcenie<sp/>dla<sp/>otrzymanego<sp/>wektora<sp/>wejściowego</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/><ref refid="class_r_t_1_1_texture_1_1_texture_base_1a97805aaa693a5caf219f30b0ee53b530" kindref="member">ApplyTransform</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>&amp;inputVector);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Inicjalizacja<sp/>macierzy<sp/>transformacji<sp/>jako<sp/>macierzy<sp/>identyczności</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_matrix2" kindref="compound">qbMatrix2&lt;double&gt;</ref><sp/>m_transformMatrix<sp/>{3,<sp/>3,<sp/>std::vector&lt;double&gt;{1.0,<sp/>0.0,<sp/>0.0,<sp/>0.0,<sp/>1.0,<sp/>0.0,<sp/>0.0,<sp/>0.0,<sp/>1.0}};</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//RAYTRACING_TEXTUREBASE_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/RayTrace/Textures/texturebase.h"/>
+  </compounddef>
+</doxygen>

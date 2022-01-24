@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_s_d_l__opengles2_8h" kind="file" language="C++">
+    <compoundname>SDL_opengles2.h</compoundname>
+    <includes refid="_s_d_l__config_8h" local="yes">SDL_config.h</includes>
+    <includes local="no">GLES2/gl2platform.h</includes>
+    <includes local="no">GLES2/gl2.h</includes>
+    <includes local="no">GLES2/gl2ext.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>SDL_config.h</label>
+        <link refid="_s_d_l__config_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/RayTracing/include/SDL_opengles2.h</label>
+        <link refid="_s_d_l__opengles2_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>SDL_platform.h</label>
+        <link refid="_s_d_l__platform_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>begin_code.h</label>
+        <link refid="begin__code_8h"/>
+      </node>
+      <node id="5">
+        <label>close_code.h</label>
+        <link refid="close__code_8h"/>
+      </node>
+      <node id="7">
+        <label>GLES2/gl2.h</label>
+      </node>
+      <node id="8">
+        <label>GLES2/gl2ext.h</label>
+      </node>
+      <node id="6">
+        <label>GLES2/gl2platform.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_s_d_l__opengles2_8h_1a428a91acf2c2439dc1a257708ee1f805" prot="public" static="no">
+        <name>APIENTRY</name>
+        <initializer><ref refid="_s_d_l__opengles2__gl2platform_8h_1a7a364076ac927b6b486258d0a8dbeb84" kindref="member">GL_APIENTRY</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_opengles2.h" line="51" column="9" bodyfile="D:/RayTracing/include/SDL_opengles2.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>This is a simple file to encapsulate the OpenGL ES 2.0 API headers. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/>Simple<sp/>DirectMedia<sp/>Layer</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/>Copyright<sp/>(C)<sp/>1997-2022<sp/>Sam<sp/>Lantinga<sp/>&lt;slouken@libsdl.org&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/>This<sp/>software<sp/>is<sp/>provided<sp/>&apos;as-is&apos;,<sp/>without<sp/>any<sp/>express<sp/>or<sp/>implied</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/>warranty.<sp/><sp/>In<sp/>no<sp/>event<sp/>will<sp/>the<sp/>authors<sp/>be<sp/>held<sp/>liable<sp/>for<sp/>any<sp/>damages</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/>arising<sp/>from<sp/>the<sp/>use<sp/>of<sp/>this<sp/>software.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/>Permission<sp/>is<sp/>granted<sp/>to<sp/>anyone<sp/>to<sp/>use<sp/>this<sp/>software<sp/>for<sp/>any<sp/>purpose,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/>including<sp/>commercial<sp/>applications,<sp/>and<sp/>to<sp/>alter<sp/>it<sp/>and<sp/>redistribute<sp/>it</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/>freely,<sp/>subject<sp/>to<sp/>the<sp/>following<sp/>restrictions:</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"></highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/>1.<sp/>The<sp/>origin<sp/>of<sp/>this<sp/>software<sp/>must<sp/>not<sp/>be<sp/>misrepresented;<sp/>you<sp/>must<sp/>not</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>claim<sp/>that<sp/>you<sp/>wrote<sp/>the<sp/>original<sp/>software.<sp/>If<sp/>you<sp/>use<sp/>this<sp/>software</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>in<sp/>a<sp/>product,<sp/>an<sp/>acknowledgment<sp/>in<sp/>the<sp/>product<sp/>documentation<sp/>would<sp/>be</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>appreciated<sp/>but<sp/>is<sp/>not<sp/>required.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/>2.<sp/>Altered<sp/>source<sp/>versions<sp/>must<sp/>be<sp/>plainly<sp/>marked<sp/>as<sp/>such,<sp/>and<sp/>must<sp/>not<sp/>be</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>misrepresented<sp/>as<sp/>being<sp/>the<sp/>original<sp/>software.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/>3.<sp/>This<sp/>notice<sp/>may<sp/>not<sp/>be<sp/>removed<sp/>or<sp/>altered<sp/>from<sp/>any<sp/>source<sp/>distribution.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_s_d_l__config_8h" kindref="compound">SDL_config.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(_MSC_VER)<sp/>&amp;&amp;<sp/>!defined(SDL_USE_BUILTIN_OPENGL_DEFINITIONS)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__IPHONEOS__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;OpenGLES/ES2/gl.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;OpenGLES/ES2/glext.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;GLES2/gl2platform.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;GLES2/gl2.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;GLES2/gl2ext.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/></highlight><highlight class="comment">/*<sp/>_MSC_VER<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>OpenGL<sp/>ES2<sp/>headers<sp/>for<sp/>Visual<sp/>Studio<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_s_d_l__opengles2__khrplatform_8h" kindref="compound">SDL_opengles2_khrplatform.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_s_d_l__opengles2__gl2platform_8h" kindref="compound">SDL_opengles2_gl2platform.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_s_d_l__opengles2__gl2_8h" kindref="compound">SDL_opengles2_gl2.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_s_d_l__opengles2__gl2ext_8h" kindref="compound">SDL_opengles2_gl2ext.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_MSC_VER<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>APIENTRY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="_s_d_l__opengles2_8h_1a428a91acf2c2439dc1a257708ee1f805" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>APIENTRY<sp/>GL_APIENTRY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/include/SDL_opengles2.h"/>
+  </compounddef>
+</doxygen>

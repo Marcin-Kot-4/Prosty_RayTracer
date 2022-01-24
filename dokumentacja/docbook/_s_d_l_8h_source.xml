@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l_8h_source" xml:lang="en-US">
+<title>SDL.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+29 <emphasis role="preprocessor">#ifndef&#32;SDL_h_</emphasis>
+30 <emphasis role="preprocessor">#define&#32;SDL_h_</emphasis>
+31 
+32 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__main_8h">SDL_main.h</link>&quot;</emphasis>
+33 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__stdinc_8h">SDL_stdinc.h</link>&quot;</emphasis>
+34 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__assert_8h">SDL_assert.h</link>&quot;</emphasis>
+35 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__atomic_8h">SDL_atomic.h</link>&quot;</emphasis>
+36 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__audio_8h">SDL_audio.h</link>&quot;</emphasis>
+37 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__clipboard_8h">SDL_clipboard.h</link>&quot;</emphasis>
+38 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__cpuinfo_8h">SDL_cpuinfo.h</link>&quot;</emphasis>
+39 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__endian_8h">SDL_endian.h</link>&quot;</emphasis>
+40 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__error_8h">SDL_error.h</link>&quot;</emphasis>
+41 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__events_8h">SDL_events.h</link>&quot;</emphasis>
+42 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__filesystem_8h">SDL_filesystem.h</link>&quot;</emphasis>
+43 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__gamecontroller_8h">SDL_gamecontroller.h</link>&quot;</emphasis>
+44 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__haptic_8h">SDL_haptic.h</link>&quot;</emphasis>
+45 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__hidapi_8h">SDL_hidapi.h</link>&quot;</emphasis>
+46 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__hints_8h">SDL_hints.h</link>&quot;</emphasis>
+47 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__joystick_8h">SDL_joystick.h</link>&quot;</emphasis>
+48 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__loadso_8h">SDL_loadso.h</link>&quot;</emphasis>
+49 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__log_8h">SDL_log.h</link>&quot;</emphasis>
+50 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__messagebox_8h">SDL_messagebox.h</link>&quot;</emphasis>
+51 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__metal_8h">SDL_metal.h</link>&quot;</emphasis>
+52 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__mutex_8h">SDL_mutex.h</link>&quot;</emphasis>
+53 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__power_8h">SDL_power.h</link>&quot;</emphasis>
+54 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__render_8h">SDL_render.h</link>&quot;</emphasis>
+55 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__rwops_8h">SDL_rwops.h</link>&quot;</emphasis>
+56 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__sensor_8h">SDL_sensor.h</link>&quot;</emphasis>
+57 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__shape_8h">SDL_shape.h</link>&quot;</emphasis>
+58 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__system_8h">SDL_system.h</link>&quot;</emphasis>
+59 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__thread_8h">SDL_thread.h</link>&quot;</emphasis>
+60 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__timer_8h">SDL_timer.h</link>&quot;</emphasis>
+61 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__version_8h">SDL_version.h</link>&quot;</emphasis>
+62 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__video_8h">SDL_video.h</link>&quot;</emphasis>
+63 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__locale_8h">SDL_locale.h</link>&quot;</emphasis>
+64 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__misc_8h">SDL_misc.h</link>&quot;</emphasis>
+65 
+66 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+67 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+68 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+69 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+70 <emphasis role="preprocessor">#endif</emphasis>
+71 
+72 <emphasis role="comment">/*&#32;As&#32;of&#32;version&#32;0.5,&#32;SDL&#32;is&#32;loaded&#32;dynamically&#32;into&#32;the&#32;application&#32;*/</emphasis>
+73 
+80 <emphasis role="comment">/*&#32;@{&#32;*/</emphasis>
+81 <emphasis role="preprocessor">#define&#32;SDL_INIT_TIMER&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x00000001u</emphasis>
+82 <emphasis role="preprocessor">#define&#32;SDL_INIT_AUDIO&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x00000010u</emphasis>
+83 <emphasis role="preprocessor">#define&#32;SDL_INIT_VIDEO&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x00000020u&#32;&#32;</emphasis>
+84 <emphasis role="preprocessor">#define&#32;SDL_INIT_JOYSTICK&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x00000200u&#32;&#32;</emphasis>
+85 <emphasis role="preprocessor">#define&#32;SDL_INIT_HAPTIC&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x00001000u</emphasis>
+86 <emphasis role="preprocessor">#define&#32;SDL_INIT_GAMECONTROLLER&#32;0x00002000u&#32;&#32;</emphasis>
+87 <emphasis role="preprocessor">#define&#32;SDL_INIT_EVENTS&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x00004000u</emphasis>
+88 <emphasis role="preprocessor">#define&#32;SDL_INIT_SENSOR&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x00008000u</emphasis>
+89 <emphasis role="preprocessor">#define&#32;SDL_INIT_NOPARACHUTE&#32;&#32;&#32;&#32;0x00100000u&#32;&#32;</emphasis>
+90 <emphasis role="preprocessor">#define&#32;SDL_INIT_EVERYTHING&#32;(&#32;\</emphasis>
+91 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SDL_INIT_TIMER&#32;|&#32;SDL_INIT_AUDIO&#32;|&#32;SDL_INIT_VIDEO&#32;|&#32;SDL_INIT_EVENTS&#32;|&#32;\</emphasis>
+92 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SDL_INIT_JOYSTICK&#32;|&#32;SDL_INIT_HAPTIC&#32;|&#32;SDL_INIT_GAMECONTROLLER&#32;|&#32;SDL_INIT_SENSOR&#32;\</emphasis>
+93 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;)</emphasis>
+94 <emphasis role="comment">/*&#32;@}&#32;*/</emphasis>
+95 
+143 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l_8h_1a8fc8d35348d7c74bad8392d776c937b8">SDL_Init</link>(<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1ac7ba7d3cce3d19ca020e056b37231289">flags</link>);
+144 
+160 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l_8h_1adfbfddc0ec609b5e5e5cb1c89298e4db">SDL_InitSubSystem</link>(<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1ac7ba7d3cce3d19ca020e056b37231289">flags</link>);
+161 
+182 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l_8h_1a14e9091982e09097985e10e3ca65debb">SDL_QuitSubSystem</link>(<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1ac7ba7d3cce3d19ca020e056b37231289">flags</link>);
+183 
+198 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l_8h_1a04dc570990c697eed95681216801710d">SDL_WasInit</link>(<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1ac7ba7d3cce3d19ca020e056b37231289">flags</link>);
+199 
+222 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l_8h_1afdabaf714781099083592051f2d9ac11">SDL_Quit</link>(<emphasis role="keywordtype">void</emphasis>);
+223 
+224 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+225 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+226 }
+227 <emphasis role="preprocessor">#endif</emphasis>
+228 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+229 
+230 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+231 
+232 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

@@ -1,0 +1,134 @@
+.TH "D:/RayTracing/include/SDL_test_assert.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_test_assert.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBASSERT_FAIL\fP   0"
+.br
+.RI "Fails the assert\&. "
+.ti -1c
+.RI "#define \fBASSERT_PASS\fP   1"
+.br
+.RI "Passes the assert\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBvoid\fP \fBSDLTest_Assert\fP (int assertCondition, \fBSDL_PRINTF_FORMAT_STRING\fP const char *assertDescription,\&.\&.\&.) \fBSDL_PRINTF_VARARG_FUNC\fP(2)"
+.br
+.RI "Assert that logs and break execution flow on failures\&. "
+.ti -1c
+.RI "int \fBSDLTest_AssertCheck\fP (int assertCondition, \fBSDL_PRINTF_FORMAT_STRING\fP const char *assertDescription,\&.\&.\&.) \fBSDL_PRINTF_VARARG_FUNC\fP(2)"
+.br
+.RI "Assert for test cases that logs but does not break execution flow on failures\&. Updates assertion counters\&. "
+.ti -1c
+.RI "\fBvoid\fP \fBSDLTest_AssertPass\fP (\fBSDL_PRINTF_FORMAT_STRING\fP const char *assertDescription,\&.\&.\&.) \fBSDL_PRINTF_VARARG_FUNC\fP(1)"
+.br
+.RI "Explicitly pass without checking an assertion condition\&. Updates assertion counter\&. "
+.ti -1c
+.RI "\fBvoid\fP \fBSDLTest_ResetAssertSummary\fP (\fBvoid\fP)"
+.br
+.RI "Resets the assert summary counters to zero\&. "
+.ti -1c
+.RI "\fBvoid\fP \fBSDLTest_LogAssertSummary\fP (\fBvoid\fP)"
+.br
+.RI "Logs summary of all assertions (total, pass, fail) since last reset as INFO or ERROR\&. "
+.ti -1c
+.RI "int \fBSDLTest_AssertSummaryToTestResult\fP (\fBvoid\fP)"
+.br
+.RI "Converts the current assert summary state to a test result\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include file for SDL test framework\&.
+.PP
+This code is a part of the SDL2_test library, not the main SDL library\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ASSERT_FAIL   0"
+
+.PP
+Fails the assert\&. 
+.SS "#define ASSERT_PASS   1"
+
+.PP
+Passes the assert\&. 
+.SH "Function Documentation"
+.PP 
+.SS "\fBvoid\fP SDLTest_Assert (int assertCondition, \fBSDL_PRINTF_FORMAT_STRING\fP const char * assertDescription,  \&.\&.\&.)"
+
+.PP
+Assert that logs and break execution flow on failures\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIassertCondition\fP Evaluated condition or variable to assert; fail (==0) or pass (!=0)\&. 
+.br
+\fIassertDescription\fP Message to log with the assert describing it\&. 
+.RE
+.PP
+
+.SS "int SDLTest_AssertCheck (int assertCondition, \fBSDL_PRINTF_FORMAT_STRING\fP const char * assertDescription,  \&.\&.\&.)"
+
+.PP
+Assert for test cases that logs but does not break execution flow on failures\&. Updates assertion counters\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIassertCondition\fP Evaluated condition or variable to assert; fail (==0) or pass (!=0)\&. 
+.br
+\fIassertDescription\fP Message to log with the assert describing it\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the assertCondition so it can be used to externally to break execution flow if desired\&. 
+.RE
+.PP
+
+.SS "\fBvoid\fP SDLTest_AssertPass (\fBSDL_PRINTF_FORMAT_STRING\fP const char * assertDescription,  \&.\&.\&.)"
+
+.PP
+Explicitly pass without checking an assertion condition\&. Updates assertion counter\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIassertDescription\fP Message to log with the assert describing it\&. 
+.RE
+.PP
+
+.SS "int SDLTest_AssertSummaryToTestResult (\fBvoid\fP)"
+
+.PP
+Converts the current assert summary state to a test result\&. 
+.PP
+\fBReturns\fP
+.RS 4
+TEST_RESULT_PASSED, TEST_RESULT_FAILED, or TEST_RESULT_NO_ASSERT 
+.RE
+.PP
+
+.SS "\fBvoid\fP SDLTest_LogAssertSummary (\fBvoid\fP)"
+
+.PP
+Logs summary of all assertions (total, pass, fail) since last reset as INFO or ERROR\&. 
+.SS "\fBvoid\fP SDLTest_ResetAssertSummary (\fBvoid\fP)"
+
+.PP
+Resets the assert summary counters to zero\&. 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

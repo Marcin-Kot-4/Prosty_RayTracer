@@ -1,0 +1,306 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="qb_lin_solve_8h" kind="file" language="C++">
+    <compoundname>qbLinSolve.h</compoundname>
+    <includes local="no">stdexcept</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">iomanip</includes>
+    <includes local="no">math.h</includes>
+    <includes local="no">vector</includes>
+    <includes refid="qb_matrix_8h" local="yes">qbMatrix.h</includes>
+    <includes refid="qb_vector_8h" local="yes">qbVector.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>D:/RayTracing/RayTrace/qbLinAlg/qbLinSolve.h</label>
+        <link refid="qb_lin_solve_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>qbMatrix.h</label>
+        <link refid="qb_matrix_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>qbVector.h</label>
+        <link refid="qb_vector_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>exception</label>
+      </node>
+      <node id="4">
+        <label>iomanip</label>
+      </node>
+      <node id="3">
+        <label>iostream</label>
+      </node>
+      <node id="5">
+        <label>math.h</label>
+      </node>
+      <node id="2">
+        <label>stdexcept</label>
+      </node>
+      <node id="6">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="qb_lin_solve_8h_1a1ba1aafd04920743fda65443be0ce049" prot="public" static="no">
+        <name>QBLINESOLVE_H</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/qbLinAlg/qbLinSolve.h" line="6" column="9" bodyfile="D:/RayTracing/RayTrace/qbLinAlg/qbLinSolve.h" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="qb_lin_solve_8h_1a3728df71a7cb43303b5566037629653f" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr int</type>
+        <definition>constexpr int QBLINSOLVE_NOUNIQUESOLUTION</definition>
+        <argsstring></argsstring>
+        <name>QBLINSOLVE_NOUNIQUESOLUTION</name>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/qbLinAlg/qbLinSolve.h" line="43" column="15" bodyfile="D:/RayTracing/RayTrace/qbLinAlg/qbLinSolve.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="qb_lin_solve_8h_1a9f228e33ff5dd53dfda25e579e85610d" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>constexpr int</type>
+        <definition>constexpr int QBLINSOLVE_NOSOLUTIONS</definition>
+        <argsstring></argsstring>
+        <name>QBLINSOLVE_NOSOLUTIONS</name>
+        <initializer>= -2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/qbLinAlg/qbLinSolve.h" line="44" column="15" bodyfile="D:/RayTracing/RayTrace/qbLinAlg/qbLinSolve.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="qb_lin_solve_8h_1a8969ab7f6729c05ec6adaca60180e4f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>int</type>
+        <definition>int qbLinSolve</definition>
+        <argsstring>(const qbMatrix2&lt; T &gt; &amp;aMatrix, const qbVector&lt; T &gt; &amp;bVector, qbVector&lt; T &gt; &amp;resultVec)</argsstring>
+        <name>qbLinSolve</name>
+        <param>
+          <type>const <ref refid="classqb_matrix2" kindref="compound">qbMatrix2</ref>&lt; T &gt; &amp;</type>
+          <declname>aMatrix</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; T &gt; &amp;</type>
+          <declname>bVector</declname>
+        </param>
+        <param>
+          <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; T &gt; &amp;</type>
+          <declname>resultVec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/qbLinAlg/qbLinSolve.h" line="48" column="5" bodyfile="D:/RayTracing/RayTrace/qbLinAlg/qbLinSolve.h" bodystart="48" bodyend="140"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>qbLinAlg<sp/>linear<sp/>algebra<sp/>library.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2021<sp/>Michael<sp/>Bennett</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>MIT<sp/>license</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>QBLINSOLVE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="qb_lin_solve_8h_1a1ba1aafd04920743fda65443be0ce049" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>QBLINESOLVE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>*************************************************************************************************</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"></highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/><sp/><sp/>qbLinSolve</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/><sp/><sp/><sp/>Function<sp/>to<sp/>solve<sp/>a<sp/>system<sp/>of<sp/>linear<sp/>equations<sp/>in<sp/>the<sp/>form<sp/>of<sp/>y<sp/>=<sp/>X*beta,<sp/>where<sp/>we</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/><sp/><sp/>want<sp/>to<sp/>solve<sp/>for<sp/>beta.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/>***<sp/>INPUTS<sp/>***</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/><sp/><sp/>aMatrix<sp/><sp/><sp/><sp/><sp/>qbMatrix2&lt;T&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>matrix<sp/>of<sp/>independent<sp/>variables<sp/>(X<sp/>in<sp/>the<sp/>above<sp/>equation).</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/><sp/>bVector<sp/><sp/><sp/><sp/><sp/>qbVector&lt;T&gt;<sp/><sp/><sp/><sp/><sp/>The<sp/>vector<sp/>of<sp/>dependent<sp/>variables<sp/>(y<sp/>in<sp/>the<sp/>above<sp/>equation).</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/><sp/><sp/>resultVec<sp/><sp/><sp/>qbVector&lt;T&gt;<sp/><sp/><sp/><sp/><sp/>The<sp/>vector<sp/>of<sp/>unknown<sp/>parameters<sp/>(beta<sp/>in<sp/>the<sp/>above<sp/>equation).</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>final<sp/>solution<sp/>is<sp/>returned<sp/>in<sp/>this<sp/>vector.</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/><sp/><sp/><sp/>***<sp/>OUTPUTS<sp/>***</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/><sp/><sp/><sp/>INT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Flag<sp/>indicating<sp/>success<sp/>or<sp/>failure<sp/>of<sp/>the<sp/>process.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/>Indicates<sp/>success.</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-1<sp/>indicates<sp/>failure<sp/>due<sp/>to<sp/>there<sp/>being<sp/>no<sp/>unique<sp/>solution<sp/>(infinite<sp/>solutions).</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-2<sp/>indicates<sp/>failure<sp/>due<sp/>to<sp/>there<sp/>being<sp/>no<sp/>solution.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/><sp/><sp/><sp/>Uses<sp/>Gaussian<sp/>elimination<sp/>on<sp/>the<sp/>augmented<sp/>matrix,<sp/>followed<sp/>by<sp/>back<sp/>substitution.</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"></highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/><sp/><sp/><sp/>*************************************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdexcept&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iomanip&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="qb_matrix_8h" kindref="compound">qbMatrix.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="qb_vector_8h" kindref="compound">qbVector.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Define<sp/>error<sp/>codes.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="qb_lin_solve_8h_1a3728df71a7cb43303b5566037629653f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="qb_lin_solve_8h_1a3728df71a7cb43303b5566037629653f" kindref="member">QBLINSOLVE_NOUNIQUESOLUTION</ref><sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="44" refid="qb_lin_solve_8h_1a9f228e33ff5dd53dfda25e579e85610d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="qb_lin_solve_8h_1a9f228e33ff5dd53dfda25e579e85610d" kindref="member">QBLINSOLVE_NOSOLUTIONS</ref><sp/>=<sp/>-2;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>qbLinSolve<sp/>function.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="48" refid="qb_lin_solve_8h_1a8969ab7f6729c05ec6adaca60180e4f5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="qb_lin_solve_8h_1a8969ab7f6729c05ec6adaca60180e4f5" kindref="member">qbLinSolve</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classqb_matrix2" kindref="compound">qbMatrix2&lt;T&gt;</ref><sp/>&amp;aMatrix,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;T&gt;</ref><sp/>&amp;bVector,<sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;T&gt;</ref><sp/>&amp;resultVec)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Make<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>input<sp/>matrix,<sp/>aMatrix.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>will<sp/>use<sp/>this<sp/>to<sp/>create<sp/>the<sp/>augmented<sp/>matrix,<sp/>so<sp/>we<sp/>have</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>to<sp/>make<sp/>a<sp/>copy.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classqb_matrix2" kindref="compound">qbMatrix2&lt;T&gt;</ref><sp/>inputMatrix<sp/>=<sp/>aMatrix;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Compute<sp/>the<sp/>rank<sp/>of<sp/>the<sp/>original<sp/>matrix.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>originalRank<sp/>=<sp/>inputMatrix.<ref refid="classqb_matrix2_1aa41b896d3d520de3096530845cbbc9b4" kindref="member">Rank</ref>();</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Combine<sp/>inputMatrix<sp/>and<sp/>bVector<sp/>together<sp/>into<sp/>a<sp/>single<sp/>matrix,</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ready<sp/>for<sp/>using<sp/>Gaussian<sp/>elimination<sp/>to<sp/>reduce<sp/>to<sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>row-echelon<sp/>form.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Extract<sp/>data<sp/>from<sp/>bVector.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numDims<sp/>=<sp/>bVector.<ref refid="classqb_vector_1a4b1f24a8ae47ef9019109c23c56fc9c4" kindref="member">GetNumDims</ref>();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;T&gt;<sp/>bVecData;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i&lt;numDims;<sp/>++i)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bVecData.push_back(bVector.<ref refid="classqb_vector_1adadd6ca87273a15f57a5e1d6ae15583b" kindref="member">GetElement</ref>(i));</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Use<sp/>this<sp/>to<sp/>create<sp/>a<sp/>qbMatrix2<sp/>object<sp/>with<sp/>the<sp/>same<sp/>data<sp/>(nx1).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classqb_matrix2" kindref="compound">qbMatrix2&lt;T&gt;</ref><sp/>bMatrix(numDims,<sp/>1,<sp/>bVecData);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Combine<sp/>the<sp/>two<sp/>matrices<sp/>together.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>inputMatrix.<ref refid="classqb_matrix2_1a9ba8140ee2c217ffce544657a1f269b8" kindref="member">Join</ref>(bMatrix);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Use<sp/>Gaussian<sp/>elmination<sp/>to<sp/>convert<sp/>to<sp/>row-echelon<sp/>form.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classqb_matrix2" kindref="compound">qbMatrix2&lt;T&gt;</ref><sp/>rowEchelonMatrix<sp/>=<sp/>inputMatrix.<ref refid="classqb_matrix2_1a803f108eff983ea5f97cc752c44c1da2" kindref="member">RowEchelon</ref>();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Comute<sp/>the<sp/>rank<sp/>of<sp/>the<sp/>augmented<sp/>matrix.</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Note<sp/>that<sp/>we<sp/>do<sp/>this<sp/>after<sp/>performing<sp/>Gaussian<sp/>elimination<sp/>to</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reduce<sp/>the<sp/>matrix<sp/>to<sp/>row<sp/>echelon<sp/>form<sp/>so<sp/>that<sp/>if<sp/>this<sp/>was<sp/></highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>successful,<sp/>there<sp/>is<sp/>no<sp/>need<sp/>to<sp/>repeat<sp/>this<sp/>operation<sp/>twice.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>augmentedRank<sp/>=<sp/>rowEchelonMatrix.<ref refid="classqb_matrix2_1aa41b896d3d520de3096530845cbbc9b4" kindref="member">Rank</ref>();</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>*********************************************************************<sp/></highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Test<sp/>the<sp/>two<sp/>ranks<sp/>to<sp/>determine<sp/>the<sp/>nature<sp/>of<sp/>the<sp/>system<sp/>we</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>are<sp/>dealing<sp/>with.<sp/>The<sp/>conditions<sp/>are<sp/>as<sp/>follows:</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>n<sp/>=<sp/>number<sp/>of<sp/>rows.</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1)<sp/>originalRank<sp/>=<sp/>augmentedRank<sp/>=<sp/>n<sp/>=&gt;<sp/>A<sp/>unique<sp/>solution<sp/>exists.</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2)<sp/>originalRank<sp/>=<sp/>augmentedRank<sp/>&lt;<sp/>n<sp/>=&gt;<sp/>An<sp/>infinite<sp/>number<sp/>of<sp/>solutions<sp/>exist.</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3)<sp/>originalRank<sp/>&lt;<sp/>augmentedRank<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/>No<sp/>solutions<sp/>exist.<sp/><sp/></highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*********************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((originalRank<sp/>==<sp/>augmentedRank)<sp/>&amp;&amp;<sp/>(originalRank<sp/>&lt;<sp/>inputMatrix.<ref refid="classqb_matrix2_1a1626b647c5268a9e64f4651bcc4b8c6e" kindref="member">GetNumRows</ref>()))</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="qb_lin_solve_8h_1a3728df71a7cb43303b5566037629653f" kindref="member">QBLINSOLVE_NOUNIQUESOLUTION</ref>;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(originalRank<sp/>&lt;<sp/>augmentedRank)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="qb_lin_solve_8h_1a9f228e33ff5dd53dfda25e579e85610d" kindref="member">QBLINSOLVE_NOSOLUTIONS</ref>;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Create<sp/>a<sp/>qbVector<sp/>object<sp/>to<sp/>store<sp/>the<sp/>output.<sp/>Initially<sp/>we<sp/>will</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>populate<sp/>this<sp/>with<sp/>the<sp/>data<sp/>from<sp/>bVecData,<sp/>but<sp/>we<sp/>are<sp/>going<sp/>to<sp/>modify</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the<sp/>elements<sp/>as<sp/>we<sp/>compute<sp/>them.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;T&gt;</ref><sp/>output(bVecData);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Now<sp/>use<sp/>back-substitution<sp/>to<sp/>compute<sp/>the<sp/>result.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numRows<sp/>=<sp/>rowEchelonMatrix.<ref refid="classqb_matrix2_1a1626b647c5268a9e64f4651bcc4b8c6e" kindref="member">GetNumRows</ref>();</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numCols<sp/>=<sp/>rowEchelonMatrix.<ref refid="classqb_matrix2_1ab20362d8fc58a4b8da0910f94c3de2c3" kindref="member">GetNumCols</ref>();</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>startRow<sp/>=<sp/>numRows-1;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Loop<sp/>over<sp/>the<sp/>rows,<sp/>in<sp/>reverse<sp/>order.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=startRow;<sp/>i&gt;=0;<sp/>--i)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Extract<sp/>the<sp/>currentResult<sp/>for<sp/>this<sp/>row.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/>currentResult<sp/>=<sp/>rowEchelonMatrix.<ref refid="classqb_matrix2_1a62ddf209105dffe6133461b273a7309f" kindref="member">GetElement</ref>(i,<sp/>numCols-1);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Compute<sp/>the<sp/>cumulative<sp/>sum.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/>cumulativeSum<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">T</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(0.0);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j=i+1;<sp/>j&lt;numRows;<sp/>++j)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cumulativeSum<sp/>+=<sp/>(rowEchelonMatrix.<ref refid="classqb_matrix2_1a62ddf209105dffe6133461b273a7309f" kindref="member">GetElement</ref>(i,j)<sp/>*<sp/>output.<ref refid="classqb_vector_1adadd6ca87273a15f57a5e1d6ae15583b" kindref="member">GetElement</ref>(j));</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Compute<sp/>the<sp/>answer.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/>finalAnswer<sp/>=<sp/>(currentResult<sp/>-<sp/>cumulativeSum)<sp/>/<sp/>rowEchelonMatrix.<ref refid="classqb_matrix2_1a62ddf209105dffe6133461b273a7309f" kindref="member">GetElement</ref>(i,i);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>And<sp/>store.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>output.<ref refid="classqb_vector_1af828430da5d728b15c70f82f73ff1efd" kindref="member">SetElement</ref>(i,<sp/>finalAnswer);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>the<sp/>output.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>resultVec<sp/>=<sp/>output;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="140"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/RayTrace/qbLinAlg/qbLinSolve.h"/>
+  </compounddef>
+</doxygen>

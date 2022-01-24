@@ -1,0 +1,52 @@
+\hypertarget{texturebase_8h_source}{}\doxysection{texturebase.\+h}
+\label{texturebase_8h_source}\index{D:/RayTracing/RayTrace/Textures/texturebase.h@{D:/RayTracing/RayTrace/Textures/texturebase.h}}
+\mbox{\hyperlink{texturebase_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef RAYTRACING\_TEXTUREBASE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define RAYTRACING\_TEXTUREBASE\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}../qbLinAlg/qbMatrix.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}../qbLinAlg/qbVector.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}../ray.h"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_r_t}{RT}}}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12     \textcolor{keyword}{namespace }Texture}
+\DoxyCodeLine{13     \{}
+\DoxyCodeLine{14         \textcolor{keyword}{class }\mbox{\hyperlink{class_r_t_1_1_texture_1_1_texture_base}{TextureBase}}}
+\DoxyCodeLine{15         \{}
+\DoxyCodeLine{16         \textcolor{keyword}{public}:}
+\DoxyCodeLine{17             \textcolor{comment}{// Konstruktor domyślny}}
+\DoxyCodeLine{18             \mbox{\hyperlink{class_r_t_1_1_texture_1_1_texture_base_ae046182c6617ac3b962a1c452b398277}{TextureBase}}();}
+\DoxyCodeLine{19             \textcolor{comment}{// Destruktor}}
+\DoxyCodeLine{20             \textcolor{keyword}{virtual} \mbox{\hyperlink{class_r_t_1_1_texture_1_1_texture_base_a560385094ebf77878884bdeddf37bf81}{\string~TextureBase}}();}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22             \textcolor{comment}{// Metoda zwracająca kolor w podanym punkcie systemu współrzędnych (u,v)}}
+\DoxyCodeLine{23             \textcolor{comment}{// Zwracany kolor to 4-\/wymiarowy wektor (RGBA)}}
+\DoxyCodeLine{24             \textcolor{keyword}{virtual} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \mbox{\hyperlink{class_r_t_1_1_texture_1_1_texture_base_ac25b90bf7dac218a2840c998ffbd5512}{GetColor}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&uvCoords);}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26             \textcolor{comment}{// Metoda do ustawiania przekształcenia tekstury}}
+\DoxyCodeLine{27             \textcolor{keywordtype}{void} \mbox{\hyperlink{class_r_t_1_1_texture_1_1_texture_base_a55a425e9fce5762c95ecb59728b1b870}{SetTransform}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&translation, \textcolor{keyword}{const} \textcolor{keywordtype}{double} \&rotation, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a281421b881aa7a1266842b73a3bc7655}{scale}});}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29             \textcolor{comment}{// Metoda mieszająca kolory RGBA i zwracająca 3-\/wymiarowy kolor (RGB)}}
+\DoxyCodeLine{30             \textcolor{keyword}{static} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \mbox{\hyperlink{class_r_t_1_1_texture_1_1_texture_base_a909e3180400fc19655abab504790cb06}{BlendColors}}(\textcolor{keyword}{const} std::vector<\mbox{\hyperlink{classqb_vector}{qbVector<double>}}> \&inputColorList);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32             \textcolor{comment}{// Metoda zastosowująca lokalne przekształcenie dla otrzymanego wektora wejściowego}}
+\DoxyCodeLine{33             \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \mbox{\hyperlink{class_r_t_1_1_texture_1_1_texture_base_a97805aaa693a5caf219f30b0ee53b530}{ApplyTransform}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&inputVector);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35         \textcolor{keyword}{private}:}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37         \textcolor{keyword}{private}:}
+\DoxyCodeLine{38             \textcolor{comment}{// Inicjalizacja macierzy transformacji jako macierzy identyczności}}
+\DoxyCodeLine{39             \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<double>}} m\_transformMatrix \{3, 3, std::vector<double>\{1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0\}\};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41         \};}
+\DoxyCodeLine{42     \}}
+\DoxyCodeLine{43 \}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//RAYTRACING\_TEXTUREBASE\_H}}
+
+\end{DoxyCode}

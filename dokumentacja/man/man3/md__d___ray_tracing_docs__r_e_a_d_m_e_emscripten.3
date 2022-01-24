@@ -1,0 +1,54 @@
+.TH "md__d___ray_tracing_docs__r_e_a_d_m_e_emscripten" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__d___ray_tracing_docs__r_e_a_d_m_e_emscripten \- Emscripten 
+Build: 
+.PP
+.nf
+$ mkdir build
+$ cd build
+$ emconfigure \&.\&./configure --host=asmjs-unknown-emscripten --disable-assembly --disable-threads --disable-cpuinfo CFLAGS='-O2'
+$ emmake make
+
+.fi
+.PP
+ Or with cmake: 
+.PP
+.nf
+$ mkdir build
+$ cd build
+$ emcmake cmake \&.\&.
+$ emmake make
+
+.fi
+.PP
+ To build one of the tests: 
+.PP
+.nf
+$ cd test/
+$ emcc -O2 --js-opts 0 -g4 testdraw2\&.c -I\&.\&./include \&.\&./build/\&.libs/libSDL2\&.a \&.\&./build/libSDL2_test\&.a -o a\&.html
+
+.fi
+.PP
+ Uses GLES2 renderer or software
+.PP
+Some other SDL2 libraries can be easily built (assuming SDL2 is installed somewhere):
+.PP
+SDL_mixer (http://www.libsdl.org/projects/SDL_mixer/): 
+.PP
+.nf
+$ EMCONFIGURE_JS=1 emconfigure \&.\&./configure
+build as usual\&.\&.\&.
+
+.fi
+.PP
+ SDL_gfx (http://cms.ferzkopp.net/index.php/software/13-sdl-gfx): 
+.PP
+.nf
+$ EMCONFIGURE_JS=1 emconfigure \&.\&./configure --disable-mmx
+build as usual\&.\&.\&.
+
+.fi
+.PP
+ 

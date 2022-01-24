@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__vulkan_8h_source" xml:lang="en-US">
+<title>SDL_vulkan.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_vulkan.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;2017,&#32;Mark&#32;Callow</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+28 <emphasis role="preprocessor">#ifndef&#32;SDL_vulkan_h_</emphasis>
+29 <emphasis role="preprocessor">#define&#32;SDL_vulkan_h_</emphasis>
+30 
+31 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__video_8h">SDL_video.h</link>&quot;</emphasis>
+32 
+33 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+34 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+35 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+36 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+37 <emphasis role="preprocessor">#endif</emphasis>
+38 
+39 <emphasis role="comment">/*&#32;Avoid&#32;including&#32;vulkan.h,&#32;don&apos;t&#32;define&#32;VkInstance&#32;if&#32;it&apos;s&#32;already&#32;included&#32;*/</emphasis>
+40 <emphasis role="preprocessor">#ifdef&#32;VULKAN_H_</emphasis>
+41 <emphasis role="preprocessor">#define&#32;NO_SDL_VULKAN_TYPEDEFS</emphasis>
+42 <emphasis role="preprocessor">#endif</emphasis>
+43 <emphasis role="preprocessor">#ifndef&#32;NO_SDL_VULKAN_TYPEDEFS</emphasis>
+44 <emphasis role="preprocessor">#define&#32;VK_DEFINE_HANDLE(object)&#32;typedef&#32;struct&#32;object##_T*&#32;object;</emphasis>
+45 
+46 <emphasis role="preprocessor">#if&#32;defined(__LP64__)&#32;||&#32;defined(_WIN64)&#32;||&#32;defined(__x86_64__)&#32;||&#32;defined(_M_X64)&#32;||&#32;defined(__ia64)&#32;||&#32;defined&#32;(_M_IA64)&#32;||&#32;defined(__aarch64__)&#32;||&#32;defined(__powerpc64__)</emphasis>
+47 <emphasis role="preprocessor">#define&#32;VK_DEFINE_NON_DISPATCHABLE_HANDLE(object)&#32;typedef&#32;struct&#32;object##_T&#32;*object;</emphasis>
+48 <emphasis role="preprocessor">#else</emphasis>
+49 <emphasis role="preprocessor">#define&#32;VK_DEFINE_NON_DISPATCHABLE_HANDLE(object)&#32;typedef&#32;uint64_t&#32;object;</emphasis>
+50 <emphasis role="preprocessor">#endif</emphasis>
+51 
+52 <link linkend="__s_d_l__vulkan_8h_1a2c83a74883be356d314441ccc41e7768">VK_DEFINE_HANDLE</link>(VkInstance)
+53 <link linkend="__s_d_l__vulkan_8h_1a04d8504e79be7e7ff48e313ed88a54ad">VK_DEFINE_NON_DISPATCHABLE_HANDLE</link>(VkSurfaceKHR)
+54 
+55 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;!NO_SDL_VULKAN_TYPEDEFS&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+56 
+57 <emphasis role="keyword">typedef</emphasis>&#32;VkInstance&#32;<link linkend="__s_d_l__vulkan_8h_1a8e23cebc65f7965cf8e90ae275bc8808">SDL_vulkanInstance</link>;
+58 <emphasis role="keyword">typedef</emphasis>&#32;VkSurfaceKHR&#32;<link linkend="__s_d_l__vulkan_8h_1a974edccc428069558c705abf6d302dee">SDL_vulkanSurface</link>;&#32;<emphasis role="comment">/*&#32;for&#32;compatibility&#32;with&#32;Tizen&#32;*/</emphasis>
+59 
+66 <emphasis role="comment">/*&#32;@{&#32;*/</emphasis>
+67 
+109 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__vulkan_8h_1a9fcc0942c8eaa67c3eff2e3526304b5b">SDL_Vulkan_LoadLibrary</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1ab25d8cd967ccbd19b630d7100ff8f67e">path</link>);
+110 
+121 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__vulkan_8h_1ad44f46b6b48f2f58d08e0f7894d02667">SDL_Vulkan_GetVkGetInstanceProcAddr</link>(<emphasis role="keywordtype">void</emphasis>);
+122 
+130 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__vulkan_8h_1a92970fb6bc833a8cc65217638d599ff2">SDL_Vulkan_UnloadLibrary</link>(<emphasis role="keywordtype">void</emphasis>);
+131 
+160 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__vulkan_8h_1a46d6b686f9154e972d6254fc3757bd0d">SDL_Vulkan_GetInstanceExtensions</link>(<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link>&#32;*window,
+161 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;*pCount,
+162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;**pNames);
+163 
+182 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__vulkan_8h_1a1613884948ea2b2671cea8f43462642b">SDL_Vulkan_CreateSurface</link>(<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link>&#32;*window,
+183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;VkInstance&#32;instance,
+184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;VkSurfaceKHR*&#32;surface);
+185 
+204 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__vulkan_8h_1a170ea51b623cbda9f945b37c037d7974">SDL_Vulkan_GetDrawableSize</link>(<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link>&#32;*&#32;window,
+205 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1a6ee8f168a7ab6785a9bb57c6715dad99">w</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1afa0fb1b5e976920c0abeff2dca3ed774">h</link>);
+206 
+207 <emphasis role="comment">/*&#32;@}&#32;*/</emphasis><emphasis role="comment">/*&#32;Vulkan&#32;support&#32;functions&#32;*/</emphasis>
+208 
+209 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+210 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+211 }
+212 <emphasis role="preprocessor">#endif</emphasis>
+213 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+214 
+215 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_vulkan_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+</programlisting></section>

@@ -1,0 +1,337 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__vulkan_8h" xml:lang="en-US">
+<title>D:/RayTracing/include/SDL_vulkan.h File Reference</title>
+<indexterm><primary>D:/RayTracing/include/SDL_vulkan.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;SDL_video.h&quot;
+#include &quot;begin_code.h&quot;
+#include &quot;close_code.h&quot;
+</programlisting><simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__s_d_l__vulkan_8h_1a2c83a74883be356d314441ccc41e7768">VK_DEFINE_HANDLE</link>(<link linkend="__s_d_l__opengl__glext_8h_1ab49790263c78300fbf05719e38246198">object</link>)   typedef struct <link linkend="__s_d_l__opengl__glext_8h_1ab49790263c78300fbf05719e38246198">object</link>##_T* <link linkend="__s_d_l__opengl__glext_8h_1ab49790263c78300fbf05719e38246198">object</link>;</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__vulkan_8h_1a04d8504e79be7e7ff48e313ed88a54ad">VK_DEFINE_NON_DISPATCHABLE_HANDLE</link>(<link linkend="__s_d_l__opengl__glext_8h_1ab49790263c78300fbf05719e38246198">object</link>)   typedef <link linkend="__s_d_l__config_8h_1aaa5d1cd013383c889537491c3cfd9aad">uint64_t</link> <link linkend="__s_d_l__opengl__glext_8h_1ab49790263c78300fbf05719e38246198">object</link>;</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef VkInstance <link linkend="__s_d_l__vulkan_8h_1a8e23cebc65f7965cf8e90ae275bc8808">SDL_vulkanInstance</link></para>
+</listitem>
+            <listitem><para>typedef VkSurfaceKHR <link linkend="__s_d_l__vulkan_8h_1a974edccc428069558c705abf6d302dee">SDL_vulkanSurface</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+<simplesect><title>Vulkan support functions</title>
+
+<para><note><title>Note</title>
+
+<para>SDL_Vulkan_GetInstanceExtensions &amp; SDL_Vulkan_CreateSurface API is compatable with Tizen&apos;s implementation of Vulkan in SDL. </para>
+</note>
+</para>
+        <itemizedlist>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__vulkan_8h_1a9fcc0942c8eaa67c3eff2e3526304b5b">SDL_Vulkan_LoadLibrary</link> (const char *<link linkend="__s_d_l__opengl__glext_8h_1ab25d8cd967ccbd19b630d7100ff8f67e">path</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__vulkan_8h_1ad44f46b6b48f2f58d08e0f7894d02667">SDL_Vulkan_GetVkGetInstanceProcAddr</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__vulkan_8h_1a92970fb6bc833a8cc65217638d599ff2">SDL_Vulkan_UnloadLibrary</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__vulkan_8h_1a46d6b686f9154e972d6254fc3757bd0d">SDL_Vulkan_GetInstanceExtensions</link> (<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link> *window, unsigned int *pCount, const char **pNames)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__vulkan_8h_1a1613884948ea2b2671cea8f43462642b">SDL_Vulkan_CreateSurface</link> (<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link> *window, VkInstance instance, VkSurfaceKHR *surface)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__vulkan_8h_1a170ea51b623cbda9f945b37c037d7974">SDL_Vulkan_GetDrawableSize</link> (<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link> *window, int *<link linkend="__s_d_l__opengl__glext_8h_1a6ee8f168a7ab6785a9bb57c6715dad99">w</link>, int *<link linkend="__s_d_l__opengl__glext_8h_1afa0fb1b5e976920c0abeff2dca3ed774">h</link>)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Header file for functions to creating Vulkan surfaces on SDL windows. </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__s_d_l__vulkan_8h_1a2c83a74883be356d314441ccc41e7768"/><section>
+    <title>VK_DEFINE_HANDLE</title>
+<indexterm><primary>VK_DEFINE_HANDLE</primary><secondary>SDL_vulkan.h</secondary></indexterm>
+<indexterm><primary>SDL_vulkan.h</primary><secondary>VK_DEFINE_HANDLE</secondary></indexterm>
+<para><computeroutput>#define VK_DEFINE_HANDLE( <link linkend="__s_d_l__opengl__glext_8h_1ab49790263c78300fbf05719e38246198">object</link>)   typedef struct <link linkend="__s_d_l__opengl__glext_8h_1ab49790263c78300fbf05719e38246198">object</link>##_T* <link linkend="__s_d_l__opengl__glext_8h_1ab49790263c78300fbf05719e38246198">object</link>;</computeroutput></para></section>
+<anchor xml:id="__s_d_l__vulkan_8h_1a04d8504e79be7e7ff48e313ed88a54ad"/><section>
+    <title>VK_DEFINE_NON_DISPATCHABLE_HANDLE</title>
+<indexterm><primary>VK_DEFINE_NON_DISPATCHABLE_HANDLE</primary><secondary>SDL_vulkan.h</secondary></indexterm>
+<indexterm><primary>SDL_vulkan.h</primary><secondary>VK_DEFINE_NON_DISPATCHABLE_HANDLE</secondary></indexterm>
+<para><computeroutput>#define VK_DEFINE_NON_DISPATCHABLE_HANDLE( <link linkend="__s_d_l__opengl__glext_8h_1ab49790263c78300fbf05719e38246198">object</link>)   typedef <link linkend="__s_d_l__config_8h_1aaa5d1cd013383c889537491c3cfd9aad">uint64_t</link> <link linkend="__s_d_l__opengl__glext_8h_1ab49790263c78300fbf05719e38246198">object</link>;</computeroutput></para></section>
+</section>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="__s_d_l__vulkan_8h_1a8e23cebc65f7965cf8e90ae275bc8808"/><section>
+    <title>SDL_vulkanInstance</title>
+<indexterm><primary>SDL_vulkanInstance</primary><secondary>SDL_vulkan.h</secondary></indexterm>
+<indexterm><primary>SDL_vulkan.h</primary><secondary>SDL_vulkanInstance</secondary></indexterm>
+<para><computeroutput>typedef VkInstance <link linkend="__s_d_l__vulkan_8h_1a8e23cebc65f7965cf8e90ae275bc8808">SDL_vulkanInstance</link></computeroutput></para></section>
+<anchor xml:id="__s_d_l__vulkan_8h_1a974edccc428069558c705abf6d302dee"/><section>
+    <title>SDL_vulkanSurface</title>
+<indexterm><primary>SDL_vulkanSurface</primary><secondary>SDL_vulkan.h</secondary></indexterm>
+<indexterm><primary>SDL_vulkan.h</primary><secondary>SDL_vulkanSurface</secondary></indexterm>
+<para><computeroutput>typedef VkSurfaceKHR <link linkend="__s_d_l__vulkan_8h_1a974edccc428069558c705abf6d302dee">SDL_vulkanSurface</link></computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__s_d_l__vulkan_8h_1a1613884948ea2b2671cea8f43462642b"/><section>
+    <title>SDL_Vulkan_CreateSurface()</title>
+<indexterm><primary>SDL_Vulkan_CreateSurface</primary><secondary>SDL_vulkan.h</secondary></indexterm>
+<indexterm><primary>SDL_vulkan.h</primary><secondary>SDL_Vulkan_CreateSurface</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_Vulkan_CreateSurface (<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link> * window, VkInstance instance, VkSurfaceKHR * surface)</computeroutput></para>
+<para>Create a Vulkan rendering surface for a window.</para>
+
+<para>The <computeroutput>window</computeroutput> must have been created with the <computeroutput>SDL_WINDOW_VULKAN</computeroutput> flag and <computeroutput>instance</computeroutput> must have been created with extensions returned by <link linkend="__s_d_l__vulkan_8h_1a46d6b686f9154e972d6254fc3757bd0d">SDL_Vulkan_GetInstanceExtensions()</link> enabled.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>window</entry><entry>
+<para>The window to which to attach the Vulkan surface </para>
+</entry>
+                            </row>
+                            <row>
+<entry>instance</entry><entry>
+<para>The Vulkan instance handle </para>
+</entry>
+                            </row>
+                            <row>
+<entry>surface</entry><entry>
+<para>A pointer to a VkSurfaceKHR handle to output the newly created surface </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE on success, SDL_FALSE on error.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.6.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__vulkan_8h_1a46d6b686f9154e972d6254fc3757bd0d">SDL_Vulkan_GetInstanceExtensions</link> </para>
+
+<para><link linkend="__s_d_l__vulkan_8h_1a170ea51b623cbda9f945b37c037d7974">SDL_Vulkan_GetDrawableSize</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__vulkan_8h_1a170ea51b623cbda9f945b37c037d7974"/><section>
+    <title>SDL_Vulkan_GetDrawableSize()</title>
+<indexterm><primary>SDL_Vulkan_GetDrawableSize</primary><secondary>SDL_vulkan.h</secondary></indexterm>
+<indexterm><primary>SDL_vulkan.h</primary><secondary>SDL_Vulkan_GetDrawableSize</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_Vulkan_GetDrawableSize (<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link> * window, int * w, int * h)</computeroutput></para>
+<para>Get the size of the window&apos;s underlying drawable dimensions in pixels.</para>
+
+<para>This may differ from <link linkend="__s_d_l__video_8h_1a5cbfffcfec91c22a7ca95fd1d5163db5">SDL_GetWindowSize()</link> if we&apos;re rendering to a high-DPI drawable, i.e. the window was created with <computeroutput>SDL_WINDOW_ALLOW_HIGHDPI</computeroutput> on a platform with high-DPI support (Apple calls this &quot;Retina&quot;), and not disabled by the <computeroutput>SDL_HINT_VIDEO_HIGHDPI_DISABLED</computeroutput> hint.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>window</entry><entry>
+<para>an SDL_Window for which the size is to be queried </para>
+</entry>
+                            </row>
+                            <row>
+<entry>w</entry><entry>
+<para>Pointer to the variable to write the width to or NULL </para>
+</entry>
+                            </row>
+                            <row>
+<entry>h</entry><entry>
+<para>Pointer to the variable to write the height to or NULL</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.6.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__video_8h_1a5cbfffcfec91c22a7ca95fd1d5163db5">SDL_GetWindowSize</link> </para>
+
+<para><link linkend="__s_d_l__video_8h_1a841edb930dc7cb2c1ec64f831d3abba6">SDL_CreateWindow</link> </para>
+
+<para><link linkend="__s_d_l__vulkan_8h_1a1613884948ea2b2671cea8f43462642b">SDL_Vulkan_CreateSurface</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__vulkan_8h_1a46d6b686f9154e972d6254fc3757bd0d"/><section>
+    <title>SDL_Vulkan_GetInstanceExtensions()</title>
+<indexterm><primary>SDL_Vulkan_GetInstanceExtensions</primary><secondary>SDL_vulkan.h</secondary></indexterm>
+<indexterm><primary>SDL_vulkan.h</primary><secondary>SDL_Vulkan_GetInstanceExtensions</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_Vulkan_GetInstanceExtensions (<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link> * window, unsigned int * pCount, const char ** pNames)</computeroutput></para>
+<para>Get the names of the Vulkan instance extensions needed to create a surface with SDL_Vulkan_CreateSurface.</para>
+
+<para>If <computeroutput>pNames</computeroutput> is NULL, then the number of required Vulkan instance extensions is returned in <computeroutput>pCount</computeroutput>. Otherwise, <computeroutput>pCount</computeroutput> must point to a variable set to the number of elements in the <computeroutput>pNames</computeroutput> array, and on return the variable is overwritten with the number of names actually written to <computeroutput>pNames</computeroutput>. If <computeroutput>pCount</computeroutput> is less than the number of required extensions, at most <computeroutput>pCount</computeroutput> structures will be written. If <computeroutput>pCount</computeroutput> is smaller than the number of required extensions, SDL_FALSE will be returned instead of SDL_TRUE, to indicate that not all the required extensions were returned.</para>
+
+<para>The <computeroutput>window</computeroutput> parameter is currently needed to be valid as of SDL 2.0.8, however, this parameter will likely be removed in future releases</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>window</entry><entry>
+<para>A window for which the required Vulkan instance extensions should be retrieved (will be deprecated in a future release) </para>
+</entry>
+                            </row>
+                            <row>
+<entry>pCount</entry><entry>
+<para>A pointer to an unsigned int corresponding to the number of extensions to be returned </para>
+</entry>
+                            </row>
+                            <row>
+<entry>pNames</entry><entry>
+<para>NULL or a pointer to an array to be filled with required Vulkan instance extensions </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE on success, SDL_FALSE on error.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.6.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__vulkan_8h_1a1613884948ea2b2671cea8f43462642b">SDL_Vulkan_CreateSurface</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__vulkan_8h_1ad44f46b6b48f2f58d08e0f7894d02667"/><section>
+    <title>SDL_Vulkan_GetVkGetInstanceProcAddr()</title>
+<indexterm><primary>SDL_Vulkan_GetVkGetInstanceProcAddr</primary><secondary>SDL_vulkan.h</secondary></indexterm>
+<indexterm><primary>SDL_vulkan.h</primary><secondary>SDL_Vulkan_GetVkGetInstanceProcAddr</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_Vulkan_GetVkGetInstanceProcAddr (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para>
+<para>Get the address of the <computeroutput>vkGetInstanceProcAddr</computeroutput> function.</para>
+
+<para>This should be called after either calling <link linkend="__s_d_l__vulkan_8h_1a9fcc0942c8eaa67c3eff2e3526304b5b">SDL_Vulkan_LoadLibrary()</link> or creating an SDL_Window with the <computeroutput>SDL_WINDOW_VULKAN</computeroutput> flag.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the function pointer for <computeroutput>vkGetInstanceProcAddr</computeroutput> or NULL on error.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.6. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__vulkan_8h_1a9fcc0942c8eaa67c3eff2e3526304b5b"/><section>
+    <title>SDL_Vulkan_LoadLibrary()</title>
+<indexterm><primary>SDL_Vulkan_LoadLibrary</primary><secondary>SDL_vulkan.h</secondary></indexterm>
+<indexterm><primary>SDL_vulkan.h</primary><secondary>SDL_Vulkan_LoadLibrary</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_Vulkan_LoadLibrary (const char * path)</computeroutput></para>
+<para>Dynamically load the Vulkan loader library.</para>
+
+<para>This should be called after initializing the video driver, but before creating any Vulkan windows. If no Vulkan loader library is loaded, the default library will be loaded upon creation of the first Vulkan window.</para>
+
+<para>It is fairly common for Vulkan applications to link with libvulkan instead of explicitly loading it at run time. This will work with SDL provided the application links to a dynamic library and both it and SDL use the same search path.</para>
+
+<para>If you specify a non-NULL <computeroutput>path</computeroutput>, an application should retrieve all of the Vulkan functions it uses from the dynamic library using SDL_Vulkan_GetVkGetInstanceProcAddr unless you can guarantee <computeroutput>path</computeroutput> points to the same vulkan loader library the application linked to.</para>
+
+<para>On Apple devices, if <computeroutput>path</computeroutput> is NULL, SDL will attempt to find the <computeroutput>vkGetInstanceProcAddr</computeroutput> address within all the Mach-O images of the current process. This is because it is fairly common for Vulkan applications to link with libvulkan (and historically MoltenVK was provided as a static library). If it is not found, on macOS, SDL will attempt to load <computeroutput>vulkan.framework/vulkan</computeroutput>, <computeroutput>libvulkan.1.dylib</computeroutput>, <computeroutput>MoltenVK.framework/MoltenVK</computeroutput>, and <computeroutput>libMoltenVK.dylib</computeroutput>, in that order. On iOS, SDL will attempt to load <computeroutput>libMoltenVK.dylib</computeroutput>. Applications using a dynamic framework or .dylib must ensure it is included in its application bundle.</para>
+
+<para>On non-Apple devices, application linking with a static libvulkan is not supported. Either do not link to the Vulkan loader or link to a dynamic library version.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>path</entry><entry>
+<para>The platform dependent Vulkan loader library name or NULL </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 on success or -1 if the library couldn&apos;t be loaded; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.6.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para>SDL_Vulkan_GetVkInstanceProcAddr </para>
+
+<para><link linkend="__s_d_l__vulkan_8h_1a92970fb6bc833a8cc65217638d599ff2">SDL_Vulkan_UnloadLibrary</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__vulkan_8h_1a92970fb6bc833a8cc65217638d599ff2"/><section>
+    <title>SDL_Vulkan_UnloadLibrary()</title>
+<indexterm><primary>SDL_Vulkan_UnloadLibrary</primary><secondary>SDL_vulkan.h</secondary></indexterm>
+<indexterm><primary>SDL_vulkan.h</primary><secondary>SDL_Vulkan_UnloadLibrary</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_Vulkan_UnloadLibrary (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para>
+<para>Unload the Vulkan library previously loaded by <link linkend="__s_d_l__vulkan_8h_1a9fcc0942c8eaa67c3eff2e3526304b5b">SDL_Vulkan_LoadLibrary()</link></para>
+
+<para><formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.6.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__vulkan_8h_1a9fcc0942c8eaa67c3eff2e3526304b5b">SDL_Vulkan_LoadLibrary</link> </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

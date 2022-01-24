@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__thread_8h_source" xml:lang="en-US">
+<title>SDL_thread.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_thread.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+22 <emphasis role="preprocessor">#ifndef&#32;SDL_thread_h_</emphasis>
+23 <emphasis role="preprocessor">#define&#32;SDL_thread_h_</emphasis>
+24 
+31 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__stdinc_8h">SDL_stdinc.h</link>&quot;</emphasis>
+32 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__error_8h">SDL_error.h</link>&quot;</emphasis>
+33 
+34 <emphasis role="comment">/*&#32;Thread&#32;synchronization&#32;primitives&#32;*/</emphasis>
+35 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__atomic_8h">SDL_atomic.h</link>&quot;</emphasis>
+36 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__mutex_8h">SDL_mutex.h</link>&quot;</emphasis>
+37 
+38 <emphasis role="preprocessor">#if&#32;defined(__WIN32__)</emphasis>
+39 <emphasis role="preprocessor">#include&#32;&lt;process.h&gt;</emphasis>&#32;<emphasis role="comment">/*&#32;_beginthreadex()&#32;and&#32;_endthreadex()&#32;*/</emphasis>
+40 <emphasis role="preprocessor">#endif</emphasis>
+41 <emphasis role="preprocessor">#if&#32;defined(__OS2__)&#32;</emphasis><emphasis role="comment">/*&#32;for&#32;_beginthread()&#32;and&#32;_endthread()&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+42 <emphasis role="preprocessor">#ifndef&#32;__EMX__</emphasis>
+43 <emphasis role="preprocessor">#include&#32;&lt;process.h&gt;</emphasis>
+44 <emphasis role="preprocessor">#else</emphasis>
+45 <emphasis role="preprocessor">#include&#32;&lt;stdlib.h&gt;</emphasis>
+46 <emphasis role="preprocessor">#endif</emphasis>
+47 <emphasis role="preprocessor">#endif</emphasis>
+48 
+49 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+50 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+51 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+52 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+53 <emphasis role="preprocessor">#endif</emphasis>
+54 
+55 <emphasis role="comment">/*&#32;The&#32;SDL&#32;thread&#32;structure,&#32;defined&#32;in&#32;SDL_thread.c&#32;*/</emphasis>
+56 <emphasis role="keyword">struct&#32;</emphasis><link linkend="__s_d_l__thread_8h_1a97cd1dc60cea74b74273affb1a974db5">SDL_Thread</link>;
+57 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="__s_d_l__thread_8h_1a97cd1dc60cea74b74273affb1a974db5">SDL_Thread</link>&#32;<link linkend="__s_d_l__thread_8h_1a97cd1dc60cea74b74273affb1a974db5">SDL_Thread</link>;
+58 
+59 <emphasis role="comment">/*&#32;The&#32;SDL&#32;thread&#32;ID&#32;*/</emphasis>
+60 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;<link linkend="__s_d_l__thread_8h_1ac4db699531ce9f18f5a8547aa988b88e">SDL_threadID</link>;
+61 
+62 <emphasis role="comment">/*&#32;Thread&#32;local&#32;storage&#32;ID,&#32;0&#32;is&#32;the&#32;invalid&#32;ID&#32;*/</emphasis>
+63 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__thread_8h_1a07ce005c35ad6ac377d6124db7296026">SDL_TLSID</link>;
+64 
+75 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>&#32;{
+76 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__thread_8h_1acce8dea56f6b307fadd2949b64e3ebdaa48d887edbfc7842abdabcec6900d3878">SDL_THREAD_PRIORITY_LOW</link>,
+77 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__thread_8h_1acce8dea56f6b307fadd2949b64e3ebdaac3a2f7a29f4c8fe11dca0ea258b07dae">SDL_THREAD_PRIORITY_NORMAL</link>,
+78 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__thread_8h_1acce8dea56f6b307fadd2949b64e3ebdaaac5ff8423acdebf3b43c279b8ec2ae0d">SDL_THREAD_PRIORITY_HIGH</link>,
+79 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__thread_8h_1acce8dea56f6b307fadd2949b64e3ebdaa334bcf64dc27f8dbc1aa661a494ee8ca">SDL_THREAD_PRIORITY_TIME_CRITICAL</link>
+80 }&#32;<link linkend="__s_d_l__thread_8h_1acce8dea56f6b307fadd2949b64e3ebda">SDL_ThreadPriority</link>;
+81 
+88 <emphasis role="keyword">typedef</emphasis>&#32;int&#32;(<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;*&#32;<link linkend="__s_d_l__thread_8h_1a35d10c50423c326b20abea6a486f53e0">SDL_ThreadFunction</link>)&#32;(<emphasis role="keywordtype">void</emphasis>&#32;*<link linkend="__s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a">data</link>);
+89 
+90 
+91 <emphasis role="preprocessor">#if&#32;defined(__WIN32__)</emphasis>
+112 <emphasis role="preprocessor">#define&#32;SDL_PASSED_BEGINTHREAD_ENDTHREAD</emphasis>
+113 
+114 <emphasis role="keyword">typedef</emphasis>&#32;<link linkend="__s_d_l__config_8h_1a728e973c799f206f0151c8a3bd1e5699">uintptr_t</link>&#32;(__cdecl&#32;*&#32;pfnSDL_CurrentBeginThread)
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(<emphasis role="keywordtype">void</emphasis>&#32;*,&#32;unsigned,&#32;unsigned&#32;(__stdcall&#32;*<link linkend="__s_d_l__opengl__glext_8h_1a18ae3ab36a07e388833b568cfdfa90c8">func</link>)(<emphasis role="keywordtype">void</emphasis>&#32;*),
+116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;*&#32;<emphasis role="comment">/*arg*/</emphasis>,&#32;<emphasis role="keywordtype">unsigned</emphasis>,&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;*&#32;<emphasis role="comment">/*&#32;threadID&#32;*/</emphasis>);
+117 <emphasis role="keyword">typedef</emphasis>&#32;<link linkend="__s_d_l__audio_8h_1aa5cb90967788ada2711894ca158ece01">void</link>&#32;(__cdecl&#32;*&#32;pfnSDL_CurrentEndThread)&#32;(<emphasis role="keywordtype">unsigned</emphasis>&#32;code);
+118 
+119 <emphasis role="preprocessor">#ifndef&#32;SDL_beginthread</emphasis>
+120 <emphasis role="preprocessor">#define&#32;SDL_beginthread&#32;_beginthreadex</emphasis>
+121 <emphasis role="preprocessor">#endif</emphasis>
+122 <emphasis role="preprocessor">#ifndef&#32;SDL_endthread</emphasis>
+123 <emphasis role="preprocessor">#define&#32;SDL_endthread&#32;_endthreadex</emphasis>
+124 <emphasis role="preprocessor">#endif</emphasis>
+125 
+126 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__thread_8h_1a97cd1dc60cea74b74273affb1a974db5">SDL_Thread</link>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>
+127 <link linkend="__s_d_l__thread_8h_1ac36c70a33975a8c9399962f8ac310377">SDL_CreateThread</link>(<link linkend="__s_d_l__thread_8h_1a35d10c50423c326b20abea6a486f53e0">SDL_ThreadFunction</link>&#32;fn,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1aaced7cfc21e7d37775d6921bb8177239">name</link>,&#32;<emphasis role="keywordtype">void</emphasis>&#32;*<link linkend="__s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a">data</link>,
+128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pfnSDL_CurrentBeginThread&#32;pfnBeginThread,
+129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pfnSDL_CurrentEndThread&#32;pfnEndThread);
+130 
+131 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__thread_8h_1a97cd1dc60cea74b74273affb1a974db5">SDL_Thread</link>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>
+132 <link linkend="__s_d_l__thread_8h_1a9ab0d63052abb2afdbb14042cee4dbdf">SDL_CreateThreadWithStackSize</link>(<emphasis role="keywordtype">int</emphasis>&#32;(<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;*&#32;fn)&#32;(<emphasis role="keywordtype">void</emphasis>&#32;*),
+133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1aaced7cfc21e7d37775d6921bb8177239">name</link>,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;stacksize,&#32;<emphasis role="keywordtype">void</emphasis>&#32;*<link linkend="__s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a">data</link>,
+134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pfnSDL_CurrentBeginThread&#32;pfnBeginThread,
+135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pfnSDL_CurrentEndThread&#32;pfnEndThread);
+136 
+137 
+138 <emphasis role="preprocessor">#if&#32;defined(SDL_CreateThread)&#32;&amp;&amp;&#32;SDL_DYNAMIC_API</emphasis>
+139 <emphasis role="preprocessor">#undef&#32;SDL_CreateThread</emphasis>
+140 <emphasis role="preprocessor">#define&#32;SDL_CreateThread(fn,&#32;name,&#32;data)&#32;SDL_CreateThread_REAL(fn,&#32;name,&#32;data,&#32;(pfnSDL_CurrentBeginThread)SDL_beginthread,&#32;(pfnSDL_CurrentEndThread)SDL_endthread)</emphasis>
+141 <emphasis role="preprocessor">#undef&#32;SDL_CreateThreadWithStackSize</emphasis>
+142 <emphasis role="preprocessor">#define&#32;SDL_CreateThreadWithStackSize(fn,&#32;name,&#32;stacksize,&#32;data)&#32;SDL_CreateThreadWithStackSize_REAL(fn,&#32;name,&#32;stacksize,&#32;data,&#32;(pfnSDL_CurrentBeginThread)SDL_beginthread,&#32;(pfnSDL_CurrentEndThread)SDL_endthread)</emphasis>
+143 <emphasis role="preprocessor">#else</emphasis>
+144 <emphasis role="preprocessor">#define&#32;SDL_CreateThread(fn,&#32;name,&#32;data)&#32;SDL_CreateThread(fn,&#32;name,&#32;data,&#32;(pfnSDL_CurrentBeginThread)SDL_beginthread,&#32;(pfnSDL_CurrentEndThread)SDL_endthread)</emphasis>
+145 <emphasis role="preprocessor">#define&#32;SDL_CreateThreadWithStackSize(fn,&#32;name,&#32;stacksize,&#32;data)&#32;SDL_CreateThreadWithStackSize(fn,&#32;name,&#32;data,&#32;(pfnSDL_CurrentBeginThread)_beginthreadex,&#32;(pfnSDL_CurrentEndThread)SDL_endthread)</emphasis>
+146 <emphasis role="preprocessor">#endif</emphasis>
+147 
+148 <emphasis role="preprocessor">#elif&#32;defined(__OS2__)</emphasis>
+149 <emphasis role="comment">/*</emphasis>
+150 <emphasis role="comment">&#32;*&#32;just&#32;like&#32;the&#32;windows&#32;case&#32;above:&#32;&#32;We&#32;compile&#32;SDL2</emphasis>
+151 <emphasis role="comment">&#32;*&#32;into&#32;a&#32;dll&#32;with&#32;Watcom&apos;s&#32;runtime&#32;statically&#32;linked.</emphasis>
+152 <emphasis role="comment">&#32;*/</emphasis>
+153 <emphasis role="preprocessor">#define&#32;SDL_PASSED_BEGINTHREAD_ENDTHREAD</emphasis>
+154 
+155 <emphasis role="keyword">typedef</emphasis>&#32;int&#32;(*pfnSDL_CurrentBeginThread)(<link linkend="__s_d_l__audio_8h_1aa5cb90967788ada2711894ca158ece01">void</link>&#32;(*<link linkend="__s_d_l__opengl__glext_8h_1a18ae3ab36a07e388833b568cfdfa90c8">func</link>)(<emphasis role="keywordtype">void</emphasis>&#32;*),&#32;<emphasis role="keywordtype">void</emphasis>&#32;*,&#32;<emphasis role="keywordtype">unsigned</emphasis>,&#32;<emphasis role="keywordtype">void</emphasis>&#32;*&#32;<emphasis role="comment">/*arg*/</emphasis>);
+156 <emphasis role="keyword">typedef</emphasis>&#32;<link linkend="__s_d_l__audio_8h_1aa5cb90967788ada2711894ca158ece01">void</link>&#32;(*pfnSDL_CurrentEndThread)(<link linkend="__s_d_l__audio_8h_1aa5cb90967788ada2711894ca158ece01">void</link>);
+157 
+158 <emphasis role="preprocessor">#ifndef&#32;SDL_beginthread</emphasis>
+159 <emphasis role="preprocessor">#define&#32;SDL_beginthread&#32;_beginthread</emphasis>
+160 <emphasis role="preprocessor">#endif</emphasis>
+161 <emphasis role="preprocessor">#ifndef&#32;SDL_endthread</emphasis>
+162 <emphasis role="preprocessor">#define&#32;SDL_endthread&#32;_endthread</emphasis>
+163 <emphasis role="preprocessor">#endif</emphasis>
+164 
+165 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__thread_8h_1a97cd1dc60cea74b74273affb1a974db5">SDL_Thread</link>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>
+166 <link linkend="__s_d_l__thread_8h_1ac36c70a33975a8c9399962f8ac310377">SDL_CreateThread</link>(<link linkend="__s_d_l__thread_8h_1a35d10c50423c326b20abea6a486f53e0">SDL_ThreadFunction</link>&#32;fn,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1aaced7cfc21e7d37775d6921bb8177239">name</link>,&#32;<emphasis role="keywordtype">void</emphasis>&#32;*<link linkend="__s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a">data</link>,
+167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pfnSDL_CurrentBeginThread&#32;pfnBeginThread,
+168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pfnSDL_CurrentEndThread&#32;pfnEndThread);
+169 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__thread_8h_1a97cd1dc60cea74b74273affb1a974db5">SDL_Thread</link>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>
+170 <link linkend="__s_d_l__thread_8h_1a9ab0d63052abb2afdbb14042cee4dbdf">SDL_CreateThreadWithStackSize</link>(<link linkend="__s_d_l__thread_8h_1a35d10c50423c326b20abea6a486f53e0">SDL_ThreadFunction</link>&#32;fn,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1aaced7cfc21e7d37775d6921bb8177239">name</link>,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;stacksize,&#32;<emphasis role="keywordtype">void</emphasis>&#32;*<link linkend="__s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a">data</link>,
+171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pfnSDL_CurrentBeginThread&#32;pfnBeginThread,
+172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pfnSDL_CurrentEndThread&#32;pfnEndThread);
+173 
+174 <emphasis role="preprocessor">#if&#32;defined(SDL_CreateThread)&#32;&amp;&amp;&#32;SDL_DYNAMIC_API</emphasis>
+175 <emphasis role="preprocessor">#undef&#32;SDL_CreateThread</emphasis>
+176 <emphasis role="preprocessor">#define&#32;SDL_CreateThread(fn,&#32;name,&#32;data)&#32;SDL_CreateThread_REAL(fn,&#32;name,&#32;data,&#32;(pfnSDL_CurrentBeginThread)SDL_beginthread,&#32;(pfnSDL_CurrentEndThread)SDL_endthread)</emphasis>
+177 <emphasis role="preprocessor">#undef&#32;SDL_CreateThreadWithStackSize</emphasis>
+178 <emphasis role="preprocessor">#define&#32;SDL_CreateThreadWithStackSize(fn,&#32;name,&#32;stacksize,&#32;data)&#32;SDL_CreateThreadWithStackSize_REAL(fn,&#32;name,&#32;data,&#32;(pfnSDL_CurrentBeginThread)SDL_beginthread,&#32;(pfnSDL_CurrentEndThread)SDL_endthread)</emphasis>
+179 <emphasis role="preprocessor">#else</emphasis>
+180 <emphasis role="preprocessor">#define&#32;SDL_CreateThread(fn,&#32;name,&#32;data)&#32;SDL_CreateThread(fn,&#32;name,&#32;data,&#32;(pfnSDL_CurrentBeginThread)SDL_beginthread,&#32;(pfnSDL_CurrentEndThread)SDL_endthread)</emphasis>
+181 <emphasis role="preprocessor">#define&#32;SDL_CreateThreadWithStackSize(fn,&#32;name,&#32;stacksize,&#32;data)&#32;SDL_CreateThreadWithStackSize(fn,&#32;name,&#32;stacksize,&#32;data,&#32;(pfnSDL_CurrentBeginThread)SDL_beginthread,&#32;(pfnSDL_CurrentEndThread)SDL_endthread)</emphasis>
+182 <emphasis role="preprocessor">#endif</emphasis>
+183 
+184 <emphasis role="preprocessor">#else</emphasis>
+185 
+207 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__thread_8h_1a97cd1dc60cea74b74273affb1a974db5">SDL_Thread</link>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>
+208 <link linkend="__s_d_l__thread_8h_1ac36c70a33975a8c9399962f8ac310377">SDL_CreateThread</link>(<link linkend="__s_d_l__thread_8h_1a35d10c50423c326b20abea6a486f53e0">SDL_ThreadFunction</link>&#32;fn,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1aaced7cfc21e7d37775d6921bb8177239">name</link>,&#32;<emphasis role="keywordtype">void</emphasis>&#32;*<link linkend="__s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a">data</link>);
+209 
+253 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__thread_8h_1a97cd1dc60cea74b74273affb1a974db5">SDL_Thread</link>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>
+254 <link linkend="__s_d_l__thread_8h_1a9ab0d63052abb2afdbb14042cee4dbdf">SDL_CreateThreadWithStackSize</link>(<link linkend="__s_d_l__thread_8h_1a35d10c50423c326b20abea6a486f53e0">SDL_ThreadFunction</link>&#32;fn,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1aaced7cfc21e7d37775d6921bb8177239">name</link>,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;stacksize,&#32;<emphasis role="keywordtype">void</emphasis>&#32;*<link linkend="__s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a">data</link>);
+255 
+256 <emphasis role="preprocessor">#endif</emphasis>
+257 
+272 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__thread_8h_1a5c1e3618f2be2e3af69d615055defa5a">SDL_GetThreadName</link>(<link linkend="__s_d_l__thread_8h_1a97cd1dc60cea74b74273affb1a974db5">SDL_Thread</link>&#32;*thread);
+273 
+290 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__thread_8h_1ac4db699531ce9f18f5a8547aa988b88e">SDL_threadID</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__thread_8h_1a341933eef1470789de20b05c1392b9ae">SDL_ThreadID</link>(<emphasis role="keywordtype">void</emphasis>);
+291 
+307 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__thread_8h_1ac4db699531ce9f18f5a8547aa988b88e">SDL_threadID</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__thread_8h_1a0bf5d93ed5cb25ea59307472c62c66db">SDL_GetThreadID</link>(<link linkend="__s_d_l__thread_8h_1a97cd1dc60cea74b74273affb1a974db5">SDL_Thread</link>&#32;*&#32;thread);
+308 
+322 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__thread_8h_1adf4da9c0e6a6833bef9741344b09699d">SDL_SetThreadPriority</link>(<link linkend="__s_d_l__thread_8h_1acce8dea56f6b307fadd2949b64e3ebda">SDL_ThreadPriority</link>&#32;priority);
+323 
+357 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__thread_8h_1ac96743626ed21d2cdb0868a23cca9705">SDL_WaitThread</link>(<link linkend="__s_d_l__thread_8h_1a97cd1dc60cea74b74273affb1a974db5">SDL_Thread</link>&#32;*&#32;thread,&#32;<emphasis role="keywordtype">int</emphasis>&#32;*status);
+358 
+393 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__thread_8h_1af90602c51ef5a62f26ed9931af484906">SDL_DetachThread</link>(<link linkend="__s_d_l__thread_8h_1a97cd1dc60cea74b74273affb1a974db5">SDL_Thread</link>&#32;*&#32;thread);
+394 
+408 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__thread_8h_1a07ce005c35ad6ac377d6124db7296026">SDL_TLSID</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__thread_8h_1ac7ed1ec8dec5b902da25b60da2b728fa">SDL_TLSCreate</link>(<emphasis role="keywordtype">void</emphasis>);
+409 
+422 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;*&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__thread_8h_1a1915755c7215e59e1b218b9b94dbf8fd">SDL_TLSGet</link>(<link linkend="__s_d_l__thread_8h_1a07ce005c35ad6ac377d6124db7296026">SDL_TLSID</link>&#32;<emphasis role="keywordtype">id</emphasis>);
+423 
+447 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__thread_8h_1a807c8306201205c7c3ac0cb34ac7cd77">SDL_TLSSet</link>(<link linkend="__s_d_l__thread_8h_1a07ce005c35ad6ac377d6124db7296026">SDL_TLSID</link>&#32;<emphasis role="keywordtype">id</emphasis>,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f">value</link>,&#32;<emphasis role="keywordtype">void</emphasis>&#32;(<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;*destructor)(<emphasis role="keywordtype">void</emphasis>*));
+448 
+454 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__thread_8h_1addd72a8ba431ef92685bbc9c89c5c67c">SDL_TLSCleanup</link>(<emphasis role="keywordtype">void</emphasis>);
+455 
+456 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+457 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+458 }
+459 <emphasis role="preprocessor">#endif</emphasis>
+460 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+461 
+462 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_thread_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+463 
+464 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

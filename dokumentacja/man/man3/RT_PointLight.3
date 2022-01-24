@@ -1,0 +1,42 @@
+.TH "RT::PointLight" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RT::PointLight
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <pointlight\&.h>\fP
+.PP
+Inherits \fBRT::LightBase\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPointLight\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~PointLight\fP () override"
+.br
+.ti -1c
+.RI "virtual bool \fBComputeIllumination\fP (const \fBqbVector\fP< double > &intPoint, const \fBqbVector\fP< double > &localNormal, const std::vector< std::shared_ptr< \fBRT::ObjectBase\fP > > &objectList, const std::shared_ptr< \fBRT::ObjectBase\fP > &currentObject, \fBqbVector\fP< double > &\fBcolor\fP, double &intensity) override"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RT::PointLight::PointLight ()"
+
+.SS "RT::PointLight::~PointLight ()\fC [override]\fP, \fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool RT::PointLight::ComputeIllumination (const \fBqbVector\fP< double > & intPoint, const \fBqbVector\fP< double > & localNormal, const std::vector< std::shared_ptr< \fBRT::ObjectBase\fP > > & objectList, const std::shared_ptr< \fBRT::ObjectBase\fP > & currentObject, \fBqbVector\fP< double > & color, double & intensity)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBRT::LightBase\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

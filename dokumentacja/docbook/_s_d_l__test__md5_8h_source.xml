@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__test__md5_8h_source" xml:lang="en-US">
+<title>SDL_test_md5.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_test_md5.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+30 <emphasis role="comment">/*</emphasis>
+31 <emphasis role="comment">&#32;***********************************************************************</emphasis>
+32 <emphasis role="comment">&#32;**&#32;Header&#32;file&#32;for&#32;implementation&#32;of&#32;MD5&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;**</emphasis>
+33 <emphasis role="comment">&#32;**&#32;RSA&#32;Data&#32;Security,&#32;Inc.&#32;MD5&#32;Message-Digest&#32;Algorithm&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;**</emphasis>
+34 <emphasis role="comment">&#32;**&#32;Created:&#32;2/17/90&#32;RLR&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;**</emphasis>
+35 <emphasis role="comment">&#32;**&#32;Revised:&#32;12/27/90&#32;SRD,AJ,BSK,JT&#32;Reference&#32;C&#32;version&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;**</emphasis>
+36 <emphasis role="comment">&#32;**&#32;Revised&#32;(for&#32;MD5):&#32;RLR&#32;4/27/91&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;**</emphasis>
+37 <emphasis role="comment">&#32;**&#32;&#32;&#32;--&#32;G&#32;modified&#32;to&#32;have&#32;y&amp;~z&#32;instead&#32;of&#32;y&amp;z&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;**</emphasis>
+38 <emphasis role="comment">&#32;**&#32;&#32;&#32;--&#32;FF,&#32;GG,&#32;HH&#32;modified&#32;to&#32;add&#32;in&#32;last&#32;register&#32;done&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;**</emphasis>
+39 <emphasis role="comment">&#32;**&#32;&#32;&#32;--&#32;Access&#32;pattern:&#32;round&#32;2&#32;works&#32;mod&#32;5,&#32;round&#32;3&#32;works&#32;mod&#32;3&#32;&#32;&#32;&#32;&#32;**</emphasis>
+40 <emphasis role="comment">&#32;**&#32;&#32;&#32;--&#32;distinct&#32;additive&#32;constant&#32;for&#32;each&#32;step&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;**</emphasis>
+41 <emphasis role="comment">&#32;**&#32;&#32;&#32;--&#32;round&#32;4&#32;added,&#32;working&#32;mod&#32;7&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;**</emphasis>
+42 <emphasis role="comment">&#32;***********************************************************************</emphasis>
+43 <emphasis role="comment">*/</emphasis>
+44 
+45 <emphasis role="comment">/*</emphasis>
+46 <emphasis role="comment">&#32;***********************************************************************</emphasis>
+47 <emphasis role="comment">&#32;**&#32;&#32;Message-digest&#32;routines:&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;**</emphasis>
+48 <emphasis role="comment">&#32;**&#32;&#32;To&#32;form&#32;the&#32;message&#32;digest&#32;for&#32;a&#32;message&#32;M&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;**</emphasis>
+49 <emphasis role="comment">&#32;**&#32;&#32;&#32;&#32;(1)&#32;Initialize&#32;a&#32;context&#32;buffer&#32;mdContext&#32;using&#32;MD5Init&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;**</emphasis>
+50 <emphasis role="comment">&#32;**&#32;&#32;&#32;&#32;(2)&#32;Call&#32;MD5Update&#32;on&#32;mdContext&#32;and&#32;M&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;**</emphasis>
+51 <emphasis role="comment">&#32;**&#32;&#32;&#32;&#32;(3)&#32;Call&#32;MD5Final&#32;on&#32;mdContext&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;**</emphasis>
+52 <emphasis role="comment">&#32;**&#32;&#32;The&#32;message&#32;digest&#32;is&#32;now&#32;in&#32;mdContext-&gt;digest[0...15]&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;**</emphasis>
+53 <emphasis role="comment">&#32;***********************************************************************</emphasis>
+54 <emphasis role="comment">*/</emphasis>
+55 
+56 <emphasis role="preprocessor">#ifndef&#32;SDL_test_md5_h_</emphasis>
+57 <emphasis role="preprocessor">#define&#32;SDL_test_md5_h_</emphasis>
+58 
+59 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+60 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+61 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+62 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+63 <emphasis role="preprocessor">#endif</emphasis>
+64 
+65 <emphasis role="comment">/*&#32;------------&#32;Definitions&#32;---------&#32;*/</emphasis>
+66 
+67 <emphasis role="comment">/*&#32;typedef&#32;a&#32;32-bit&#32;type&#32;*/</emphasis>
+68 &#32;&#32;<emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__test__md5_8h_1a2bdcfd1b3373be8191c70eb4a7cb84c6">MD5UINT4</link>;
+69 
+70 <emphasis role="comment">/*&#32;Data&#32;structure&#32;for&#32;MD5&#32;(Message-Digest)&#32;computation&#32;*/</emphasis>
+71 &#32;&#32;<emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis>{
+72 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__test__md5_8h_1a2bdcfd1b3373be8191c70eb4a7cb84c6">MD5UINT4</link>&#32;&#32;i[2];&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;number&#32;of&#32;_bits_&#32;handled&#32;mod&#32;2^64&#32;*/</emphasis>
+73 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__test__md5_8h_1a2bdcfd1b3373be8191c70eb4a7cb84c6">MD5UINT4</link>&#32;&#32;<link linkend="__s_d_l__opengl__glext_8h_1aa3b73d9ca9f2e2396cbeae1ce6ce14be">buf</link>[4];&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;scratch&#32;buffer&#32;*/</emphasis>
+74 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a83ad0ee7f1e06b59c90271716e689080">in</link>[64];&#32;&#32;&#32;<emphasis role="comment">/*&#32;input&#32;buffer&#32;*/</emphasis>
+75 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;digest[16];&#32;&#32;&#32;<emphasis role="comment">/*&#32;actual&#32;digest&#32;after&#32;Md5Final&#32;call&#32;*/</emphasis>
+76 &#32;&#32;}&#32;<link linkend="_struct_s_d_l_test___md5_context">SDLTest_Md5Context</link>;
+77 
+78 <emphasis role="comment">/*&#32;----------&#32;Function&#32;Prototypes&#32;-------------&#32;*/</emphasis>
+79 
+89 &#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__s_d_l__test__md5_8h_1add801a5f4162ed3bb0211d0e7b5829ec">SDLTest_Md5Init</link>(<link linkend="_struct_s_d_l_test___md5_context">SDLTest_Md5Context</link>&#32;*&#32;mdContext);
+90 
+91 
+104 &#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__s_d_l__test__md5_8h_1a435607e2ee1bf1ce09686ef97c21a7d5">SDLTest_Md5Update</link>(<link linkend="_struct_s_d_l_test___md5_context">SDLTest_Md5Context</link>&#32;*&#32;mdContext,&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*inBuf,
+105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;inLen);
+106 
+107 
+118 &#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__s_d_l__test__md5_8h_1a3f0bd1fb177aea21d09b3ff7b3323e77">SDLTest_Md5Final</link>(<link linkend="_struct_s_d_l_test___md5_context">SDLTest_Md5Context</link>&#32;*&#32;mdContext);
+119 
+120 
+121 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+122 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+123 }
+124 <emphasis role="preprocessor">#endif</emphasis>
+125 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+126 
+127 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_test_md5_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+128 
+129 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

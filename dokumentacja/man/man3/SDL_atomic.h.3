@@ -1,0 +1,445 @@
+.TH "D:/RayTracing/include/SDL_atomic.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_atomic.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SDL_stdinc\&.h'\fP
+.br
+\fC#include 'SDL_platform\&.h'\fP
+.br
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBSDL_atomic_t\fP"
+.br
+.RI "A type representing an atomic integer value\&. It is a struct so people don't accidentally use numeric operations on it\&. "
+.in -1c
+.SS "SDL AtomicLock"
+The atomic locks are efficient spinlocks using CPU instructions, but are vulnerable to starvation and can spin forever if a thread holding a lock has been terminated\&. For this reason you should minimize the code executed inside an atomic lock and never do expensive things like API or system calls while holding them\&.
+.PP
+The atomic locks are not safe to lock recursively\&.
+.PP
+Porting Note: The spin lock functions and type are required and can not be emulated because they are used in the atomic emulation code\&. 
+.in +1c
+.ti -1c
+.RI "#define \fBSDL_CompilerBarrier\fP()   { \fBSDL_SpinLock\fP _tmp = 0; \fBSDL_AtomicLock\fP(&_tmp); \fBSDL_AtomicUnlock\fP(&_tmp); }"
+.br
+.ti -1c
+.RI "#define \fBSDL_MemoryBarrierRelease\fP()   \fBSDL_CompilerBarrier\fP()"
+.br
+.ti -1c
+.RI "#define \fBSDL_MemoryBarrierAcquire\fP()   \fBSDL_CompilerBarrier\fP()"
+.br
+.ti -1c
+.RI "#define \fBSDL_AtomicIncRef\fP(\fBa\fP)   \fBSDL_AtomicAdd\fP(\fBa\fP, 1)"
+.br
+.RI "Increment an atomic variable used as a reference count\&. "
+.ti -1c
+.RI "#define \fBSDL_AtomicDecRef\fP(\fBa\fP)   (\fBSDL_AtomicAdd\fP(\fBa\fP, \-1) == 1)"
+.br
+.RI "Decrement an atomic variable used as a reference count\&. "
+.ti -1c
+.RI "typedef int \fBSDL_SpinLock\fP"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP \fBSDL_AtomicTryLock\fP (\fBSDL_SpinLock\fP *lock)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_AtomicLock\fP (\fBSDL_SpinLock\fP *lock)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_AtomicUnlock\fP (\fBSDL_SpinLock\fP *lock)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_MemoryBarrierReleaseFunction\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_MemoryBarrierAcquireFunction\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP \fBSDL_AtomicCAS\fP (\fBSDL_atomic_t\fP *\fBa\fP, int oldval, int newval)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_AtomicSet\fP (\fBSDL_atomic_t\fP *\fBa\fP, int \fBv\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_AtomicGet\fP (\fBSDL_atomic_t\fP *\fBa\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_AtomicAdd\fP (\fBSDL_atomic_t\fP *\fBa\fP, int \fBv\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP \fBSDL_AtomicCASPtr\fP (\fBvoid\fP **\fBa\fP, \fBvoid\fP *oldval, \fBvoid\fP *newval)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP *\fBSDLCALL\fP \fBSDL_AtomicSetPtr\fP (\fBvoid\fP **\fBa\fP, \fBvoid\fP *\fBv\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP *\fBSDLCALL\fP \fBSDL_AtomicGetPtr\fP (\fBvoid\fP **\fBa\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Atomic operations\&.
+.PP
+IMPORTANT: If you are not an expert in concurrent lockless programming, you should only be using the atomic lock and reference counting functions in this file\&. In all other cases you should be protecting your data structures with full mutexes\&.
+.PP
+The list of 'safe' functions to use are: \fBSDL_AtomicLock()\fP \fBSDL_AtomicUnlock()\fP \fBSDL_AtomicIncRef()\fP \fBSDL_AtomicDecRef()\fP
+.PP
+Seriously, here be dragons! ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.PP
+You can find out a little more about lockless programming and the subtle issues that can arise here: http://msdn.microsoft.com/en-us/library/ee418650%28v=vs.85%29.aspx
+.PP
+There's also lots of good information here: http://www.1024cores.net/home/lock-free-algorithms http://preshing.com/
+.PP
+These operations may or may not actually be implemented using processor specific atomic operations\&. When possible they are implemented as true processor specific atomic operations\&. When that is not possible the are implemented using locks that \fIdo\fP use the available atomic operations\&.
+.PP
+All of the atomic operations that modify memory are full memory barriers\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define SDL_AtomicDecRef(\fBa\fP)   (\fBSDL_AtomicAdd\fP(\fBa\fP, \-1) == 1)"
+
+.PP
+Decrement an atomic variable used as a reference count\&. 
+.PP
+\fBReturns\fP
+.RS 4
+SDL_TRUE if the variable reached zero after decrementing, SDL_FALSE otherwise 
+.RE
+.PP
+
+.SS "#define SDL_AtomicIncRef(\fBa\fP)   \fBSDL_AtomicAdd\fP(\fBa\fP, 1)"
+
+.PP
+Increment an atomic variable used as a reference count\&. 
+.SS "#define SDL_CompilerBarrier()   { \fBSDL_SpinLock\fP _tmp = 0; \fBSDL_AtomicLock\fP(&_tmp); \fBSDL_AtomicUnlock\fP(&_tmp); }"
+The compiler barrier prevents the compiler from reordering reads and writes to globally visible variables across the call\&. 
+.SS "#define SDL_MemoryBarrierAcquire()   \fBSDL_CompilerBarrier\fP()"
+
+.SS "#define SDL_MemoryBarrierRelease()   \fBSDL_CompilerBarrier\fP()"
+
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef int \fBSDL_SpinLock\fP"
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_AtomicAdd (\fBSDL_atomic_t\fP * a, int v)"
+Add to an atomic variable\&.
+.PP
+This function also acts as a full memory barrier\&.
+.PP
+\fI\fBNote: If you don't know what this function is for, you shouldn't use it!\fP\fP
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP a pointer to an \fBSDL_atomic_t\fP variable to be modified 
+.br
+\fIv\fP the desired value to add 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the previous value of the atomic variable\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.2\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_AtomicDecRef\fP 
+.PP
+\fBSDL_AtomicIncRef\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP SDL_AtomicCAS (\fBSDL_atomic_t\fP * a, int oldval, int newval)"
+Set an atomic variable to a new value if it is currently an old value\&.
+.PP
+\fI\fBNote: If you don't know what this function is for, you shouldn't use it!\fP\fP
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP a pointer to an \fBSDL_atomic_t\fP variable to be modified 
+.br
+\fIoldval\fP the old value 
+.br
+\fInewval\fP the new value 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+SDL_TRUE if the atomic variable was set, SDL_FALSE otherwise\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_AtomicCASPtr\fP 
+.PP
+\fBSDL_AtomicGet\fP 
+.PP
+\fBSDL_AtomicSet\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP SDL_AtomicCASPtr (\fBvoid\fP ** a, \fBvoid\fP * oldval, \fBvoid\fP * newval)"
+Set a pointer to a new value if it is currently an old value\&.
+.PP
+\fI\fBNote: If you don't know what this function is for, you shouldn't use it!\fP\fP
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP a pointer to a pointer 
+.br
+\fIoldval\fP the old pointer value 
+.br
+\fInewval\fP the new pointer value 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+SDL_TRUE if the pointer was set, SDL_FALSE otherwise\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_AtomicCAS\fP 
+.PP
+\fBSDL_AtomicGetPtr\fP 
+.PP
+\fBSDL_AtomicSetPtr\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_AtomicGet (\fBSDL_atomic_t\fP * a)"
+Get the value of an atomic variable\&.
+.PP
+\fI\fBNote: If you don't know what this function is for, you shouldn't use it!\fP\fP
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP a pointer to an \fBSDL_atomic_t\fP variable 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the current value of an atomic variable\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.2\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_AtomicSet\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP *\fBSDLCALL\fP SDL_AtomicGetPtr (\fBvoid\fP ** a)"
+Get the value of a pointer atomically\&.
+.PP
+\fI\fBNote: If you don't know what this function is for, you shouldn't use it!\fP\fP
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP a pointer to a pointer 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the current value of a pointer\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.2\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_AtomicCASPtr\fP 
+.PP
+\fBSDL_AtomicSetPtr\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_AtomicLock (\fBSDL_SpinLock\fP * lock)"
+Lock a spin lock by setting it to a non-zero value\&.
+.PP
+\fI\fBPlease note that spinlocks are dangerous if you don't know what you're doing\&. Please be careful using any sort of spinlock!\fP\fP
+.PP
+\fBParameters\fP
+.RS 4
+\fIlock\fP a pointer to a lock variable
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_AtomicTryLock\fP 
+.PP
+\fBSDL_AtomicUnlock\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_AtomicSet (\fBSDL_atomic_t\fP * a, int v)"
+Set an atomic variable to a value\&.
+.PP
+This function also acts as a full memory barrier\&.
+.PP
+\fI\fBNote: If you don't know what this function is for, you shouldn't use it!\fP\fP
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP a pointer to an \fBSDL_atomic_t\fP variable to be modified 
+.br
+\fIv\fP the desired value 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the previous value of the atomic variable\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.2\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_AtomicGet\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP *\fBSDLCALL\fP SDL_AtomicSetPtr (\fBvoid\fP ** a, \fBvoid\fP * v)"
+Set a pointer to a value atomically\&.
+.PP
+\fI\fBNote: If you don't know what this function is for, you shouldn't use it!\fP\fP
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP a pointer to a pointer 
+.br
+\fIv\fP the desired pointer value 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the previous value of the pointer\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.2\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_AtomicCASPtr\fP 
+.PP
+\fBSDL_AtomicGetPtr\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP SDL_AtomicTryLock (\fBSDL_SpinLock\fP * lock)"
+Try to lock a spin lock by setting it to a non-zero value\&.
+.PP
+\fI\fBPlease note that spinlocks are dangerous if you don't know what you're doing\&. Please be careful using any sort of spinlock!\fP\fP
+.PP
+\fBParameters\fP
+.RS 4
+\fIlock\fP a pointer to a lock variable 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+SDL_TRUE if the lock succeeded, SDL_FALSE if the lock is already held\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_AtomicLock\fP 
+.PP
+\fBSDL_AtomicUnlock\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_AtomicUnlock (\fBSDL_SpinLock\fP * lock)"
+Unlock a spin lock by setting it to 0\&.
+.PP
+Always returns immediately\&.
+.PP
+\fI\fBPlease note that spinlocks are dangerous if you don't know what you're doing\&. Please be careful using any sort of spinlock!\fP\fP
+.PP
+\fBParameters\fP
+.RS 4
+\fIlock\fP a pointer to a lock variable
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_AtomicLock\fP 
+.PP
+\fBSDL_AtomicTryLock\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_MemoryBarrierAcquireFunction (\fBvoid\fP)"
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_MemoryBarrierReleaseFunction (\fBvoid\fP)"
+Memory barriers are designed to prevent reads and writes from being reordered by the compiler and being seen out of order on multi-core CPUs\&.
+.PP
+A typical pattern would be for thread A to write some data and a flag, and for thread B to read the flag and get the data\&. In this case you would insert a release barrier between writing the data and the flag, guaranteeing that the data write completes no later than the flag is written, and you would insert an acquire barrier between reading the flag and reading the data, to ensure that all the reads associated with the flag have completed\&.
+.PP
+In this pattern you should always see a release barrier paired with an acquire barrier and you should gate the data reads/writes with a single flag variable\&.
+.PP
+For more information on these semantics, take a look at the blog post: http://preshing.com/20120913/acquire-and-release-semantics
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.6\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

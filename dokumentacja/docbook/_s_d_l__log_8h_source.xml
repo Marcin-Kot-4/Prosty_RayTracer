@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__log_8h_source" xml:lang="en-US">
+<title>SDL_log.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_log.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+37 <emphasis role="preprocessor">#ifndef&#32;SDL_log_h_</emphasis>
+38 <emphasis role="preprocessor">#define&#32;SDL_log_h_</emphasis>
+39 
+40 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__stdinc_8h">SDL_stdinc.h</link>&quot;</emphasis>
+41 
+42 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+43 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+44 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+45 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+46 <emphasis role="preprocessor">#endif</emphasis>
+47 
+48 
+54 <emphasis role="preprocessor">#define&#32;SDL_MAX_LOG_MESSAGE&#32;4096</emphasis>
+55 
+64 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+65 {
+66 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039dad935a8d66d570a56f5602656bf5ab86f">SDL_LOG_CATEGORY_APPLICATION</link>,
+67 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da4f1ff7aab71e227c136cd79bdf4f95d7">SDL_LOG_CATEGORY_ERROR</link>,
+68 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039daf4cea58981b24a0f46f42d331f903262">SDL_LOG_CATEGORY_ASSERT</link>,
+69 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039daa003de08bde1c358f3337e0467d9d137">SDL_LOG_CATEGORY_SYSTEM</link>,
+70 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039dadb323c0430f6f2c9ad01122c8e93e2e8">SDL_LOG_CATEGORY_AUDIO</link>,
+71 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039dafe90f10726bb6003c2be3774c2e6364e">SDL_LOG_CATEGORY_VIDEO</link>,
+72 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da64898138eb04f896c8dfdfc26c744f01">SDL_LOG_CATEGORY_RENDER</link>,
+73 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da830125a18166ebf0f2be7322bbbc8023">SDL_LOG_CATEGORY_INPUT</link>,
+74 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da835639e029589fca6bca492621aa50ca">SDL_LOG_CATEGORY_TEST</link>,
+75 
+76 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Reserved&#32;for&#32;future&#32;SDL&#32;library&#32;use&#32;*/</emphasis>
+77 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da272bbcb6018cdf75f17e2735f61ea865">SDL_LOG_CATEGORY_RESERVED1</link>,
+78 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039daff302253b31dd0a7d1a77600e0c0002e">SDL_LOG_CATEGORY_RESERVED2</link>,
+79 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da8146d078adbd8ddaecd03189e05f3985">SDL_LOG_CATEGORY_RESERVED3</link>,
+80 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039dac029542e8e6a0fcfe875dd45ba57c4cf">SDL_LOG_CATEGORY_RESERVED4</link>,
+81 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da7cff610f08ff2d574a2a1c97540f41d1">SDL_LOG_CATEGORY_RESERVED5</link>,
+82 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da489fcde9c542f04d596bcf4ef89f5543">SDL_LOG_CATEGORY_RESERVED6</link>,
+83 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039daf23a00f3f22b1d783bd8fd34ca81a623">SDL_LOG_CATEGORY_RESERVED7</link>,
+84 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da3e1df5ba911ba1fe13d90e958da08197">SDL_LOG_CATEGORY_RESERVED8</link>,
+85 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da8b9783fc555d653f8a86e944ec5c8ecd">SDL_LOG_CATEGORY_RESERVED9</link>,
+86 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039daa18a8bb3b4281419c45368d4d3be87ce">SDL_LOG_CATEGORY_RESERVED10</link>,
+87 
+88 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Beyond&#32;this&#32;point&#32;is&#32;reserved&#32;for&#32;application&#32;use,&#32;e.g.</emphasis>
+89 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;enum&#32;{</emphasis>
+90 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;MYAPP_CATEGORY_AWESOME1&#32;=&#32;SDL_LOG_CATEGORY_CUSTOM,</emphasis>
+91 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;MYAPP_CATEGORY_AWESOME2,</emphasis>
+92 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;MYAPP_CATEGORY_AWESOME3,</emphasis>
+93 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;...</emphasis>
+94 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;};</emphasis>
+95 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;*/</emphasis>
+96 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da1d20eb92f25c3221dc1caefeb90e886c">SDL_LOG_CATEGORY_CUSTOM</link>
+97 }&#32;<link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039d">SDL_LogCategory</link>;
+98 
+102 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+103 {
+104 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946a7332e05c3849e0e163a4f87c9c355197">SDL_LOG_PRIORITY_VERBOSE</link>&#32;=&#32;1,
+105 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946aaffb80b31616030c5be9c54d089bf700">SDL_LOG_PRIORITY_DEBUG</link>,
+106 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946a515f0b6ce5ae9a09c1cd57f0a9b78f2c">SDL_LOG_PRIORITY_INFO</link>,
+107 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946af3a97eb566d09e2c1faef406c587bf5b">SDL_LOG_PRIORITY_WARN</link>,
+108 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946ae1dfd82ebd75e1b9fd437882ed5e319b">SDL_LOG_PRIORITY_ERROR</link>,
+109 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946a66c3a67e6e152703bc986b8600b2e471">SDL_LOG_PRIORITY_CRITICAL</link>,
+110 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946a3ccd64f96923e7168bcb731326abcd18">SDL_NUM_LOG_PRIORITIES</link>
+111 }&#32;<link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</link>;
+112 
+113 
+123 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__log_8h_1a8f54656094d10994fdb5399f271906ef">SDL_LogSetAllPriority</link>(<link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</link>&#32;priority);
+124 
+136 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__log_8h_1a9a4809ac7942e029d0bf17f380d23f73">SDL_LogSetPriority</link>(<emphasis role="keywordtype">int</emphasis>&#32;category,
+137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</link>&#32;priority);
+138 
+149 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__log_8h_1a26f0cff24dadd97d09808b6aaad3f5f4">SDL_LogGetPriority</link>(<emphasis role="keywordtype">int</emphasis>&#32;category);
+150 
+161 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__log_8h_1acf17b4ea6a83e308c815fd4d50544eba">SDL_LogResetPriorities</link>(<emphasis role="keywordtype">void</emphasis>);
+162 
+182 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__log_8h_1a712dc42164c67b7f9e23dc0e3b15bd92">SDL_Log</link>(<link linkend="__s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</link>&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*fmt,&#32;...)&#32;<link linkend="__s_d_l__stdinc_8h_1ab974676e45d9edeef6598d601d4fdd6a">SDL_PRINTF_VARARG_FUNC</link>(1);
+183 
+203 extern&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__log_8h_1a34a7d9211a9ced1c1a6db4be0f3fbb7e">SDL_LogVerbose</link>(<emphasis role="keywordtype">int</emphasis>&#32;category,&#32;<link linkend="__s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</link>&#32;const&#32;<emphasis role="keywordtype">char</emphasis>&#32;*fmt,&#32;...)&#32;<link linkend="__s_d_l__stdinc_8h_1ab974676e45d9edeef6598d601d4fdd6a">SDL_PRINTF_VARARG_FUNC</link>(2);
+204 
+224 extern&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__log_8h_1a0749fe47180b98c04bd82aca7235d703">SDL_LogDebug</link>(<emphasis role="keywordtype">int</emphasis>&#32;category,&#32;<link linkend="__s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</link>&#32;const&#32;<emphasis role="keywordtype">char</emphasis>&#32;*fmt,&#32;...)&#32;<link linkend="__s_d_l__stdinc_8h_1ab974676e45d9edeef6598d601d4fdd6a">SDL_PRINTF_VARARG_FUNC</link>(2);
+225 
+245 extern&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__log_8h_1a81c8956ea1a84ad325c3f5ecd2094515">SDL_LogInfo</link>(<emphasis role="keywordtype">int</emphasis>&#32;category,&#32;<link linkend="__s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</link>&#32;const&#32;<emphasis role="keywordtype">char</emphasis>&#32;*fmt,&#32;...)&#32;<link linkend="__s_d_l__stdinc_8h_1ab974676e45d9edeef6598d601d4fdd6a">SDL_PRINTF_VARARG_FUNC</link>(2);
+246 
+266 extern&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__log_8h_1a91a7a09fec470638f028138626b3d126">SDL_LogWarn</link>(<emphasis role="keywordtype">int</emphasis>&#32;category,&#32;<link linkend="__s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</link>&#32;const&#32;<emphasis role="keywordtype">char</emphasis>&#32;*fmt,&#32;...)&#32;<link linkend="__s_d_l__stdinc_8h_1ab974676e45d9edeef6598d601d4fdd6a">SDL_PRINTF_VARARG_FUNC</link>(2);
+267 
+287 extern&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__log_8h_1acabe956be51b7a4c877dbfcb0489a02f">SDL_LogError</link>(<emphasis role="keywordtype">int</emphasis>&#32;category,&#32;<link linkend="__s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</link>&#32;const&#32;<emphasis role="keywordtype">char</emphasis>&#32;*fmt,&#32;...)&#32;<link linkend="__s_d_l__stdinc_8h_1ab974676e45d9edeef6598d601d4fdd6a">SDL_PRINTF_VARARG_FUNC</link>(2);
+288 
+308 extern&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__log_8h_1a3600cf500a030f892d41a61d9d30de19">SDL_LogCritical</link>(<emphasis role="keywordtype">int</emphasis>&#32;category,&#32;<link linkend="__s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</link>&#32;const&#32;<emphasis role="keywordtype">char</emphasis>&#32;*fmt,&#32;...)&#32;<link linkend="__s_d_l__stdinc_8h_1ab974676e45d9edeef6598d601d4fdd6a">SDL_PRINTF_VARARG_FUNC</link>(2);
+309 
+330 extern&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__log_8h_1a7fcfeca9c95069b6432bf1cdb01d0ba4">SDL_LogMessage</link>(<emphasis role="keywordtype">int</emphasis>&#32;category,
+331 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</link>&#32;priority,
+332 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</link>&#32;const&#32;<emphasis role="keywordtype">char</emphasis>&#32;*fmt,&#32;...)&#32;<link linkend="__s_d_l__stdinc_8h_1ab974676e45d9edeef6598d601d4fdd6a">SDL_PRINTF_VARARG_FUNC</link>(3);
+333 
+353 extern&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__log_8h_1a2cacafd4d8e6d258da40e97a3cb3f80b">SDL_LogMessageV</link>(<emphasis role="keywordtype">int</emphasis>&#32;category,
+354 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</link>&#32;priority,
+355 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;const&#32;<emphasis role="keywordtype">char</emphasis>&#32;*fmt,&#32;va_list&#32;ap);
+356 
+367 typedef&#32;<emphasis role="keywordtype">void</emphasis>&#32;(<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;*<link linkend="__s_d_l__log_8h_1a11c2a5b3bbfd910cf18fbc70cf513e24">SDL_LogOutputFunction</link>)(<emphasis role="keywordtype">void</emphasis>&#32;*userdata,&#32;<emphasis role="keywordtype">int</emphasis>&#32;category,&#32;<link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</link>&#32;priority,&#32;const&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1a7b6161cffb9b8aee272b3b916183d28c">message</link>);
+368 
+381 extern&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__log_8h_1a074ce8cf644b09454ec112084f9f399e">SDL_LogGetOutputFunction</link>(<link linkend="__s_d_l__log_8h_1a11c2a5b3bbfd910cf18fbc70cf513e24">SDL_LogOutputFunction</link>&#32;*callback,&#32;<emphasis role="keywordtype">void</emphasis>&#32;**userdata);
+382 
+393 extern&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__log_8h_1a229eb1fdf797f548b20ee98ca8acaac6">SDL_LogSetOutputFunction</link>(<link linkend="__s_d_l__log_8h_1a11c2a5b3bbfd910cf18fbc70cf513e24">SDL_LogOutputFunction</link>&#32;callback,&#32;<emphasis role="keywordtype">void</emphasis>&#32;*userdata);
+394 
+395 
+396 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+397 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+398 }
+399 <emphasis role="preprocessor">#endif</emphasis>
+400 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+401 
+402 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_log_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+403 
+404 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

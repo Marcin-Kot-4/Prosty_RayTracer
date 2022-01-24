@@ -1,0 +1,38 @@
+\hypertarget{checker_8h_source}{}\doxysection{checker.\+h}
+\label{checker_8h_source}\index{D:/RayTracing/RayTrace/Textures/checker.h@{D:/RayTracing/RayTrace/Textures/checker.h}}
+\mbox{\hyperlink{checker_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef RAYTRACING\_CHECKER\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define RAYTRACING\_CHECKER\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{texturebase_8h}{texturebase.h}}"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_r_t}{RT}} \{}
+\DoxyCodeLine{8     \textcolor{keyword}{namespace }Texture \{}
+\DoxyCodeLine{9         \textcolor{keyword}{class }\mbox{\hyperlink{class_r_t_1_1_texture_1_1_checker}{Checker}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_r_t_1_1_texture_1_1_texture_base}{TextureBase}} \{}
+\DoxyCodeLine{10         \textcolor{keyword}{public}:}
+\DoxyCodeLine{11             \textcolor{comment}{// Konstruktor}}
+\DoxyCodeLine{12             \mbox{\hyperlink{class_r_t_1_1_texture_1_1_checker_a0d20aa11211a9fe0d7c5912124eaa350}{Checker}}();}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14             \textcolor{comment}{// Destruktor}}
+\DoxyCodeLine{15             \textcolor{keyword}{virtual} \mbox{\hyperlink{class_r_t_1_1_texture_1_1_checker_a456c4165b0a144a1ef774d5ae1fdfb22}{\string~Checker}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17             \textcolor{comment}{// Metoda zwracająca kolor}}
+\DoxyCodeLine{18             \textcolor{keyword}{virtual} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \mbox{\hyperlink{class_r_t_1_1_texture_1_1_checker_a9faa9a7f9e46523dd2ba34d63207ee2d}{GetColor}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&uvCoords) \textcolor{keyword}{override};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20             \textcolor{comment}{// Metoda ustawiająca kolor}}
+\DoxyCodeLine{21             \textcolor{keywordtype}{void} \mbox{\hyperlink{class_r_t_1_1_texture_1_1_checker_ac1704bc093a56447ea15d42663a30d0a}{SetColor}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&inputColor1, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&inputColor2);}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23         \textcolor{keyword}{private}:}
+\DoxyCodeLine{24             \mbox{\hyperlink{classqb_vector}{qbVector<double>}} m\_color1\{4\};}
+\DoxyCodeLine{25             \mbox{\hyperlink{classqb_vector}{qbVector<double>}} m\_color2\{4\};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27         \};}
+\DoxyCodeLine{28     \}}
+\DoxyCodeLine{29 \}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//RAYTRACING\_CHECKER\_H}}
+
+\end{DoxyCode}

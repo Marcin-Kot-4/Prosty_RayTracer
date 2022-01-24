@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="class_r_t_1_1_texture_1_1_flat" kind="class" language="C++" prot="public">
+    <compoundname>RT::Texture::Flat</compoundname>
+    <basecompoundref refid="class_r_t_1_1_texture_1_1_texture_base" prot="public" virt="non-virtual">RT::Texture::TextureBase</basecompoundref>
+    <includes refid="flat_8h" local="no">flat.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_r_t_1_1_texture_1_1_flat_1ad47a55d65d7fc6c1b8c2b8d817da6dee" prot="private" static="no" mutable="no">
+        <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt;</type>
+        <definition>qbVector&lt;double&gt; RT::Texture::Flat::m_color</definition>
+        <argsstring></argsstring>
+        <name>m_color</name>
+        <qualifiedname>RT::Texture::Flat::m_color</qualifiedname>
+        <initializer>{4}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Textures/flat.h" line="24" column="22" bodyfile="D:/RayTracing/RayTrace/Textures/flat.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_r_t_1_1_texture_1_1_flat_1a54fe014741b2720a2e779de9f38ae1b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RT::Texture::Flat::Flat</definition>
+        <argsstring>()</argsstring>
+        <name>Flat</name>
+        <qualifiedname>RT::Texture::Flat::Flat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Textures/flat.h" line="12" column="13" bodyfile="D:/RayTracing/RayTrace/Textures/flat.cpp" bodystart="4" bodyend="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_texture_1_1_flat_1a4aa04ade3b3c8890c4d24a9dce58f135" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>RT::Texture::Flat::~Flat</definition>
+        <argsstring>() override</argsstring>
+        <name>~Flat</name>
+        <qualifiedname>RT::Texture::Flat::~Flat</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Textures/flat.h" line="15" column="21" bodyfile="D:/RayTracing/RayTrace/Textures/flat.cpp" bodystart="9" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_texture_1_1_flat_1a322a9a935bb8a5699caf544ed0fabd30" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt;</type>
+        <definition>qbVector&lt; double &gt; RT::Texture::Flat::GetColor</definition>
+        <argsstring>(const qbVector&lt; double &gt; &amp;uvCoords) override</argsstring>
+        <name>GetColor</name>
+        <qualifiedname>RT::Texture::Flat::GetColor</qualifiedname>
+        <reimplements refid="class_r_t_1_1_texture_1_1_texture_base_1ac25b90bf7dac218a2840c998ffbd5512">GetColor</reimplements>
+        <param>
+          <type>const <ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>uvCoords</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Textures/flat.h" line="18" column="30" bodyfile="D:/RayTracing/RayTrace/Textures/flat.cpp" bodystart="14" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_texture_1_1_flat_1a88213c83b897ca888cabe71157282753" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        <definition>void RT::Texture::Flat::SetColor</definition>
+        <argsstring>(const qbVector&lt; double &gt; &amp;inputColor)</argsstring>
+        <name>SetColor</name>
+        <qualifiedname>RT::Texture::Flat::SetColor</qualifiedname>
+        <param>
+          <type>const <ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>inputColor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Textures/flat.h" line="21" column="18" bodyfile="D:/RayTracing/RayTrace/Textures/flat.cpp" bodystart="19" bodyend="21"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>RT::Texture::Flat</label>
+        <link refid="class_r_t_1_1_texture_1_1_flat"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>RT::Texture::TextureBase</label>
+        <link refid="class_r_t_1_1_texture_1_1_texture_base"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>RT::Texture::Flat</label>
+        <link refid="class_r_t_1_1_texture_1_1_flat"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>RT::Texture::TextureBase</label>
+        <link refid="class_r_t_1_1_texture_1_1_texture_base"/>
+      </node>
+    </collaborationgraph>
+    <location file="D:/RayTracing/RayTrace/Textures/flat.h" line="9" column="9" bodyfile="D:/RayTracing/RayTrace/Textures/flat.h" bodystart="9" bodyend="26"/>
+    <listofallmembers>
+      <member refid="class_r_t_1_1_texture_1_1_texture_base_1a97805aaa693a5caf219f30b0ee53b530" prot="public" virt="non-virtual"><scope>RT::Texture::Flat</scope><name>ApplyTransform</name></member>
+      <member refid="class_r_t_1_1_texture_1_1_texture_base_1a909e3180400fc19655abab504790cb06" prot="public" virt="non-virtual"><scope>RT::Texture::Flat</scope><name>BlendColors</name></member>
+      <member refid="class_r_t_1_1_texture_1_1_flat_1a54fe014741b2720a2e779de9f38ae1b7" prot="public" virt="non-virtual"><scope>RT::Texture::Flat</scope><name>Flat</name></member>
+      <member refid="class_r_t_1_1_texture_1_1_flat_1a322a9a935bb8a5699caf544ed0fabd30" prot="public" virt="virtual"><scope>RT::Texture::Flat</scope><name>GetColor</name></member>
+      <member refid="class_r_t_1_1_texture_1_1_flat_1ad47a55d65d7fc6c1b8c2b8d817da6dee" prot="private" virt="non-virtual"><scope>RT::Texture::Flat</scope><name>m_color</name></member>
+      <member refid="class_r_t_1_1_texture_1_1_flat_1a88213c83b897ca888cabe71157282753" prot="public" virt="non-virtual"><scope>RT::Texture::Flat</scope><name>SetColor</name></member>
+      <member refid="class_r_t_1_1_texture_1_1_texture_base_1a55a425e9fce5762c95ecb59728b1b870" prot="public" virt="non-virtual"><scope>RT::Texture::Flat</scope><name>SetTransform</name></member>
+      <member refid="class_r_t_1_1_texture_1_1_texture_base_1ae046182c6617ac3b962a1c452b398277" prot="public" virt="non-virtual"><scope>RT::Texture::Flat</scope><name>TextureBase</name></member>
+      <member refid="class_r_t_1_1_texture_1_1_flat_1a4aa04ade3b3c8890c4d24a9dce58f135" prot="public" virt="virtual"><scope>RT::Texture::Flat</scope><name>~Flat</name></member>
+      <member refid="class_r_t_1_1_texture_1_1_texture_base_1a560385094ebf77878884bdeddf37bf81" prot="public" virt="virtual"><scope>RT::Texture::Flat</scope><name>~TextureBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,73 @@
+\hypertarget{qb_e_i_g_8h}{}\doxysection{D\+:/\+Ray\+Tracing/\+Ray\+Trace/qb\+Lin\+Alg/qb\+EIG.h File Reference}
+\label{qb_e_i_g_8h}\index{D:/RayTracing/RayTrace/qbLinAlg/qbEIG.h@{D:/RayTracing/RayTrace/qbLinAlg/qbEIG.h}}
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}qb\+Matrix.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}qb\+Vector.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}qb\+QR.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\int \mbox{\hyperlink{qb_e_i_g_8h_a9212bbed3a221741a725494e8c7367d1}{qb\+Eig\+QR}} (const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&input\+Matrix, std\+::vector$<$ T $>$ \&eigen\+Values)
+\item 
+{\footnotesize template$<$typename T $>$ }\\int \mbox{\hyperlink{qb_e_i_g_8h_a947c6e89bfc37d51c19989d1d5db03b9}{qb\+Inv\+PIt}} (const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&input\+Matrix, const T \&eigen\+Value, \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ T $>$ \&eigen\+Vector)
+\item 
+{\footnotesize template$<$typename T $>$ }\\int \mbox{\hyperlink{qb_e_i_g_8h_aecca96c88b78c9535eb65a9cebe3f5d2}{qb\+EIG\+\_\+\+PIt}} (const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&X, T \&eigen\+Value, \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ T $>$ \&eigen\+Vector)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr int \mbox{\hyperlink{qb_e_i_g_8h_a11d1d7426a4145998cfe6b22c42fb482}{QBEIG\+\_\+\+MATRIXNOTSQUARE}} = -\/1
+\item 
+constexpr int \mbox{\hyperlink{qb_e_i_g_8h_abc41bacc5dd2ce027cd016cfab0fd284}{QBEIG\+\_\+\+MAXITERATIONSEXCEEDED}} = -\/2
+\item 
+constexpr int \mbox{\hyperlink{qb_e_i_g_8h_a4be8e1e3b0be4c2a155cf84b83b78fca}{QBEIG\+\_\+\+MATRIXNOTSYMMETRIC}} = -\/3
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{qb_e_i_g_8h_aecca96c88b78c9535eb65a9cebe3f5d2}\label{qb_e_i_g_8h_aecca96c88b78c9535eb65a9cebe3f5d2}} 
+\index{qbEIG.h@{qbEIG.h}!qbEIG\_PIt@{qbEIG\_PIt}}
+\index{qbEIG\_PIt@{qbEIG\_PIt}!qbEIG.h@{qbEIG.h}}
+\doxysubsubsection{\texorpdfstring{qbEIG\_PIt()}{qbEIG\_PIt()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int qb\+EIG\+\_\+\+PIt (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&}]{X,  }\item[{T \&}]{eigen\+Value,  }\item[{\mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ T $>$ \&}]{eigen\+Vector }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{qb_e_i_g_8h_a9212bbed3a221741a725494e8c7367d1}\label{qb_e_i_g_8h_a9212bbed3a221741a725494e8c7367d1}} 
+\index{qbEIG.h@{qbEIG.h}!qbEigQR@{qbEigQR}}
+\index{qbEigQR@{qbEigQR}!qbEIG.h@{qbEIG.h}}
+\doxysubsubsection{\texorpdfstring{qbEigQR()}{qbEigQR()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int qb\+Eig\+QR (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&}]{input\+Matrix,  }\item[{std\+::vector$<$ T $>$ \&}]{eigen\+Values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{qb_e_i_g_8h_a947c6e89bfc37d51c19989d1d5db03b9}\label{qb_e_i_g_8h_a947c6e89bfc37d51c19989d1d5db03b9}} 
+\index{qbEIG.h@{qbEIG.h}!qbInvPIt@{qbInvPIt}}
+\index{qbInvPIt@{qbInvPIt}!qbEIG.h@{qbEIG.h}}
+\doxysubsubsection{\texorpdfstring{qbInvPIt()}{qbInvPIt()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int qb\+Inv\+PIt (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&}]{input\+Matrix,  }\item[{const T \&}]{eigen\+Value,  }\item[{\mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ T $>$ \&}]{eigen\+Vector }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{qb_e_i_g_8h_a11d1d7426a4145998cfe6b22c42fb482}\label{qb_e_i_g_8h_a11d1d7426a4145998cfe6b22c42fb482}} 
+\index{qbEIG.h@{qbEIG.h}!QBEIG\_MATRIXNOTSQUARE@{QBEIG\_MATRIXNOTSQUARE}}
+\index{QBEIG\_MATRIXNOTSQUARE@{QBEIG\_MATRIXNOTSQUARE}!qbEIG.h@{qbEIG.h}}
+\doxysubsubsection{\texorpdfstring{QBEIG\_MATRIXNOTSQUARE}{QBEIG\_MATRIXNOTSQUARE}}
+{\footnotesize\ttfamily constexpr int QBEIG\+\_\+\+MATRIXNOTSQUARE = -\/1\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{qb_e_i_g_8h_a4be8e1e3b0be4c2a155cf84b83b78fca}\label{qb_e_i_g_8h_a4be8e1e3b0be4c2a155cf84b83b78fca}} 
+\index{qbEIG.h@{qbEIG.h}!QBEIG\_MATRIXNOTSYMMETRIC@{QBEIG\_MATRIXNOTSYMMETRIC}}
+\index{QBEIG\_MATRIXNOTSYMMETRIC@{QBEIG\_MATRIXNOTSYMMETRIC}!qbEIG.h@{qbEIG.h}}
+\doxysubsubsection{\texorpdfstring{QBEIG\_MATRIXNOTSYMMETRIC}{QBEIG\_MATRIXNOTSYMMETRIC}}
+{\footnotesize\ttfamily constexpr int QBEIG\+\_\+\+MATRIXNOTSYMMETRIC = -\/3\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{qb_e_i_g_8h_abc41bacc5dd2ce027cd016cfab0fd284}\label{qb_e_i_g_8h_abc41bacc5dd2ce027cd016cfab0fd284}} 
+\index{qbEIG.h@{qbEIG.h}!QBEIG\_MAXITERATIONSEXCEEDED@{QBEIG\_MAXITERATIONSEXCEEDED}}
+\index{QBEIG\_MAXITERATIONSEXCEEDED@{QBEIG\_MAXITERATIONSEXCEEDED}!qbEIG.h@{qbEIG.h}}
+\doxysubsubsection{\texorpdfstring{QBEIG\_MAXITERATIONSEXCEEDED}{QBEIG\_MAXITERATIONSEXCEEDED}}
+{\footnotesize\ttfamily constexpr int QBEIG\+\_\+\+MAXITERATIONSEXCEEDED = -\/2\hspace{0.3cm}{\ttfamily [constexpr]}}
+

@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__c_app_8h_source" xml:lang="en-US">
+<title>CApp.h</title>
+<indexterm><primary>D:/RayTracing/CApp.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;RAYTRACING_CAPP_H</emphasis>
+2 <emphasis role="preprocessor">#define&#32;RAYTRACING_CAPP_H</emphasis>
+3 
+4 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l_8h">include/SDL.h</link>&quot;</emphasis>
+5 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__image_8h">./RayTrace/Image.h</link>&quot;</emphasis>
+6 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__scene_8h">./RayTrace/Scene.h</link>&quot;</emphasis>
+7 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_camera_8h">./RayTrace/camera.h</link>&quot;</emphasis>
+8 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_flat_8h">./RayTrace/Textures/flat.h</link>&quot;</emphasis>
+9 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_checker_8h">./RayTrace/Textures/checker.h</link>&quot;</emphasis>
+10 
+11 <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_c_app">CApp</link>
+12 {
+13 <emphasis role="keyword">public</emphasis>:
+14 &#32;&#32;&#32;&#32;<link linkend="_class_c_app_1af14ddd76e4c5d54998308e299f2c0af5">CApp</link>();
+15 
+16 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_c_app_1a134439f7f299b9d323d976c787d378ec">OnExecute</link>();
+17 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_c_app_1ac48eeaa86e8be5bbe7d931cb6b5c953b">OnInit</link>();
+18 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_c_app_1a9bdf280ee565d99694a6e28757e08d60">OnEvent</link>(<link linkend="_union_s_d_l___event">SDL_Event</link>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1a03b04a5a978bad576866339075de01f6">event</link>);
+19 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_c_app_1a239d21c890a96a07625c96675c8455ac">OnLoop</link>();
+20 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_c_app_1aa36e15c53011907de9f177a2394c100e">OnRender</link>();
+21 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_c_app_1ab0da2578a987ddb2633420272a5a7284">OnExit</link>();
+22 
+23 <emphasis role="keyword">private</emphasis>:
+24 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Wydrukuj&#32;wektor&#32;do&#32;terminala</emphasis>
+25 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;PrintVector(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;inputVector);
+26 
+27 <emphasis role="keyword">private</emphasis>:
+28 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Instancja&#32;klasy&#32;Image&#32;do&#32;przechowywania&#32;obrazu</emphasis>
+29 &#32;&#32;&#32;&#32;<link linkend="_class_image">Image</link>&#32;m_image;
+30 
+31 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Instancja&#32;klasy&#32;Scene</emphasis>
+32 &#32;&#32;&#32;&#32;<link linkend="_class_r_t_1_1_scene">RT::Scene</link>&#32;m_scene;
+33 
+34 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;SDL2</emphasis>
+35 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;isRunning;
+36 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link>&#32;*pWindow;
+37 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__render_8h_1aaf0bf7d020754fc614fe06552ea4d5d4">SDL_Renderer</link>&#32;*pRenderer;
+38 };
+39 
+40 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//RAYTRACING_CAPP_H</emphasis>
+</programlisting></section>

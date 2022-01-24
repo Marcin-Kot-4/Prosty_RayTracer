@@ -1,0 +1,106 @@
+.TH "D:/RayTracing/include/SDL_clipboard.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_clipboard.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SDL_stdinc\&.h'\fP
+.br
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_SetClipboardText\fP (const char *text)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP char *\fBSDLCALL\fP \fBSDL_GetClipboardText\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP \fBSDL_HasClipboardText\fP (\fBvoid\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include file for SDL clipboard handling 
+.SH "Function Documentation"
+.PP 
+.SS "\fBDECLSPEC\fP char *\fBSDLCALL\fP SDL_GetClipboardText (\fBvoid\fP)"
+Get UTF-8 text from the clipboard, which must be freed with \fBSDL_free()\fP\&.
+.PP
+This functions returns empty string if there was not enough memory left for a copy of the clipboard's content\&.
+.PP
+\fBReturns\fP
+.RS 4
+the clipboard text on success or an empty string on failure; call \fBSDL_GetError()\fP for more information\&. Caller must call \fBSDL_free()\fP on the returned pointer when done with it (even if there was an error)\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_HasClipboardText\fP 
+.PP
+\fBSDL_SetClipboardText\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP SDL_HasClipboardText (\fBvoid\fP)"
+Query whether the clipboard exists and contains a non-empty text string\&.
+.PP
+\fBReturns\fP
+.RS 4
+SDL_TRUE if the clipboard has text, or SDL_FALSE if it does not\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GetClipboardText\fP 
+.PP
+\fBSDL_SetClipboardText\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_SetClipboardText (const char * text)"
+Put UTF-8 text into the clipboard\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fItext\fP the text to store in the clipboard 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 on success or a negative error code on failure; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GetClipboardText\fP 
+.PP
+\fBSDL_HasClipboardText\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

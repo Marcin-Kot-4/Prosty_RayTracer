@@ -1,0 +1,133 @@
+.TH "D:/RayTracing/include/SDL_loadso.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_loadso.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SDL_stdinc\&.h'\fP
+.br
+\fC#include 'SDL_error\&.h'\fP
+.br
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP *\fBSDLCALL\fP \fBSDL_LoadObject\fP (const char *sofile)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP *\fBSDLCALL\fP \fBSDL_LoadFunction\fP (\fBvoid\fP *handle, const char *\fBname\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_UnloadObject\fP (\fBvoid\fP *handle)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+System dependent library loading routines
+.PP
+Some things to keep in mind: 
+.PD 0
+
+.IP "\(bu" 2
+These functions only work on C function names\&. Other languages may have name mangling and intrinsic language support that varies from compiler to compiler\&. 
+.IP "\(bu" 2
+Make sure you declare your function pointers with the same calling convention as the actual library function\&. Your code will crash mysteriously if you do not do this\&. 
+.IP "\(bu" 2
+Avoid namespace collisions\&. If you load a symbol from the library, it is not defined whether or not it goes into the global symbol namespace for the application\&. If it does and it conflicts with symbols in your code or other shared libraries, you will not get the results you expect\&. :) 
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBDECLSPEC\fP \fBvoid\fP *\fBSDLCALL\fP SDL_LoadFunction (\fBvoid\fP * handle, const char * name)"
+Look up the address of the named function in a shared object\&.
+.PP
+This function pointer is no longer valid after calling \fBSDL_UnloadObject()\fP\&.
+.PP
+This function can only look up C function names\&. Other languages may have name mangling and intrinsic language support that varies from compiler to compiler\&.
+.PP
+Make sure you declare your function pointers with the same calling convention as the actual library function\&. Your code will crash mysteriously if you do not do this\&.
+.PP
+If the requested function doesn't exist, NULL is returned\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIhandle\fP a valid shared object handle returned by \fBSDL_LoadObject()\fP 
+.br
+\fIname\fP the name of the function to look up 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a pointer to the function or NULL if there was an error; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_LoadObject\fP 
+.PP
+\fBSDL_UnloadObject\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP *\fBSDLCALL\fP SDL_LoadObject (const char * sofile)"
+Dynamically load a shared object\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIsofile\fP a system-dependent name of the object file 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+an opaque pointer to the object handle or NULL if there was an error; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_LoadFunction\fP 
+.PP
+\fBSDL_UnloadObject\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_UnloadObject (\fBvoid\fP * handle)"
+Unload a shared object from memory\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIhandle\fP a valid shared object handle returned by \fBSDL_LoadObject()\fP
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_LoadFunction\fP 
+.PP
+\fBSDL_LoadObject\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

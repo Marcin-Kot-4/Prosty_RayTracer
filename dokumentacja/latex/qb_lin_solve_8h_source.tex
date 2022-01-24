@@ -1,0 +1,148 @@
+\hypertarget{qb_lin_solve_8h_source}{}\doxysection{qb\+Lin\+Solve.\+h}
+\label{qb_lin_solve_8h_source}\index{D:/RayTracing/RayTrace/qbLinAlg/qbLinSolve.h@{D:/RayTracing/RayTrace/qbLinAlg/qbLinSolve.h}}
+\mbox{\hyperlink{qb_lin_solve_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// This file is part of the qbLinAlg linear algebra library.}}
+\DoxyCodeLine{2 \textcolor{comment}{// Copyright (c) 2021 Michael Bennett}}
+\DoxyCodeLine{3 \textcolor{comment}{// MIT license}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef QBLINSOLVE\_H}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define QBLINESOLVE\_H}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{comment}{/* *************************************************************************************************}}
+\DoxyCodeLine{9 \textcolor{comment}{}}
+\DoxyCodeLine{10 \textcolor{comment}{    qbLinSolve}}
+\DoxyCodeLine{11 \textcolor{comment}{    }}
+\DoxyCodeLine{12 \textcolor{comment}{    Function to solve a system of linear equations in the form of y = X*beta, where we}}
+\DoxyCodeLine{13 \textcolor{comment}{    want to solve for beta.}}
+\DoxyCodeLine{14 \textcolor{comment}{    }}
+\DoxyCodeLine{15 \textcolor{comment}{    *** INPUTS ***}}
+\DoxyCodeLine{16 \textcolor{comment}{    }}
+\DoxyCodeLine{17 \textcolor{comment}{    aMatrix     qbMatrix2<T>        The matrix of independent variables (X in the above equation).}}
+\DoxyCodeLine{18 \textcolor{comment}{    bVector     qbVector<T>     The vector of dependent variables (y in the above equation).}}
+\DoxyCodeLine{19 \textcolor{comment}{    resultVec   qbVector<T>     The vector of unknown parameters (beta in the above equation).}}
+\DoxyCodeLine{20 \textcolor{comment}{                        The final solution is returned in this vector.}}
+\DoxyCodeLine{21 \textcolor{comment}{                                                            }}
+\DoxyCodeLine{22 \textcolor{comment}{    *** OUTPUTS ***}}
+\DoxyCodeLine{23 \textcolor{comment}{    }}
+\DoxyCodeLine{24 \textcolor{comment}{    INT             Flag indicating success or failure of the process.}}
+\DoxyCodeLine{25 \textcolor{comment}{                        1 Indicates success.}}
+\DoxyCodeLine{26 \textcolor{comment}{                        -\/1 indicates failure due to there being no unique solution (infinite solutions).}}
+\DoxyCodeLine{27 \textcolor{comment}{                        -\/2 indicates failure due to there being no solution.}}
+\DoxyCodeLine{28 \textcolor{comment}{                                }}
+\DoxyCodeLine{29 \textcolor{comment}{    Uses Gaussian elimination on the augmented matrix, followed by back substitution.}}
+\DoxyCodeLine{30 \textcolor{comment}{}}
+\DoxyCodeLine{31 \textcolor{comment}{    ************************************************************************************************* */}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{qb_matrix_8h}{qbMatrix.h}}"{}}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{qb_vector_8h}{qbVector.h}}"{}}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{comment}{// Define error codes.}}
+\DoxyCodeLine{43 \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{qb_lin_solve_8h_a3728df71a7cb43303b5566037629653f}{QBLINSOLVE\_NOUNIQUESOLUTION}} = -\/1;}
+\DoxyCodeLine{44 \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{qb_lin_solve_8h_a9f228e33ff5dd53dfda25e579e85610d}{QBLINSOLVE\_NOSOLUTIONS}} = -\/2;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{comment}{// The qbLinSolve function.}}
+\DoxyCodeLine{47 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{48 \textcolor{keywordtype}{int} \mbox{\hyperlink{qb_lin_solve_8h_a8969ab7f6729c05ec6adaca60180e4f5}{qbLinSolve}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \&aMatrix, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \&bVector, \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \&resultVec)}
+\DoxyCodeLine{49 \{}
+\DoxyCodeLine{50     \textcolor{comment}{// Make a copy of the input matrix, aMatrix.}}
+\DoxyCodeLine{51     \textcolor{comment}{// We will use this to create the augmented matrix, so we have}}
+\DoxyCodeLine{52     \textcolor{comment}{// to make a copy.}}
+\DoxyCodeLine{53     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} inputMatrix = aMatrix;}
+\DoxyCodeLine{54     }
+\DoxyCodeLine{55     \textcolor{comment}{// Compute the rank of the original matrix.}}
+\DoxyCodeLine{56     \textcolor{keywordtype}{int} originalRank = inputMatrix.\mbox{\hyperlink{classqb_matrix2_aa41b896d3d520de3096530845cbbc9b4}{Rank}}();}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \textcolor{comment}{/* Combine inputMatrix and bVector together into a single matrix,}}
+\DoxyCodeLine{59 \textcolor{comment}{        ready for using Gaussian elimination to reduce to }}
+\DoxyCodeLine{60 \textcolor{comment}{        row-\/echelon form. */}}
+\DoxyCodeLine{61     }
+\DoxyCodeLine{62     \textcolor{comment}{// Extract data from bVector.}}
+\DoxyCodeLine{63     \textcolor{keywordtype}{int} numDims = bVector.\mbox{\hyperlink{classqb_vector_a4b1f24a8ae47ef9019109c23c56fc9c4}{GetNumDims}}();}
+\DoxyCodeLine{64     std::vector<T> bVecData;}
+\DoxyCodeLine{65     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<numDims; ++i)}
+\DoxyCodeLine{66         bVecData.push\_back(bVector.\mbox{\hyperlink{classqb_vector_adadd6ca87273a15f57a5e1d6ae15583b}{GetElement}}(i));}
+\DoxyCodeLine{67         }
+\DoxyCodeLine{68     \textcolor{comment}{// Use this to create a qbMatrix2 object with the same data (nx1).}}
+\DoxyCodeLine{69     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} bMatrix(numDims, 1, bVecData);}
+\DoxyCodeLine{70     }
+\DoxyCodeLine{71     \textcolor{comment}{// Combine the two matrices together.}}
+\DoxyCodeLine{72     inputMatrix.\mbox{\hyperlink{classqb_matrix2_a9ba8140ee2c217ffce544657a1f269b8}{Join}}(bMatrix);}
+\DoxyCodeLine{73     }
+\DoxyCodeLine{74     \textcolor{comment}{/* Use Gaussian elmination to convert to row-\/echelon form. */}}
+\DoxyCodeLine{75     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} rowEchelonMatrix = inputMatrix.\mbox{\hyperlink{classqb_matrix2_a803f108eff983ea5f97cc752c44c1da2}{RowEchelon}}();}
+\DoxyCodeLine{76     }
+\DoxyCodeLine{77     \textcolor{comment}{/* Comute the rank of the augmented matrix.}}
+\DoxyCodeLine{78 \textcolor{comment}{        Note that we do this after performing Gaussian elimination to}}
+\DoxyCodeLine{79 \textcolor{comment}{        reduce the matrix to row echelon form so that if this was }}
+\DoxyCodeLine{80 \textcolor{comment}{        successful, there is no need to repeat this operation twice. */}}
+\DoxyCodeLine{81     \textcolor{keywordtype}{int} augmentedRank = rowEchelonMatrix.\mbox{\hyperlink{classqb_matrix2_aa41b896d3d520de3096530845cbbc9b4}{Rank}}();}
+\DoxyCodeLine{82     }
+\DoxyCodeLine{83     \textcolor{comment}{/* ********************************************************************* }}
+\DoxyCodeLine{84 \textcolor{comment}{        Test the two ranks to determine the nature of the system we}}
+\DoxyCodeLine{85 \textcolor{comment}{        are dealing with. The conditions are as follows:}}
+\DoxyCodeLine{86 \textcolor{comment}{        }}
+\DoxyCodeLine{87 \textcolor{comment}{        n = number of rows.}}
+\DoxyCodeLine{88 \textcolor{comment}{        }}
+\DoxyCodeLine{89 \textcolor{comment}{        1) originalRank = augmentedRank = n => A unique solution exists.}}
+\DoxyCodeLine{90 \textcolor{comment}{        2) originalRank = augmentedRank < n => An infinite number of solutions exist.}}
+\DoxyCodeLine{91 \textcolor{comment}{        3) originalRank < augmentedRank         => No solutions exist.  }}
+\DoxyCodeLine{92 \textcolor{comment}{        ********************************************************************* */}}
+\DoxyCodeLine{93     \textcolor{keywordflow}{if} ((originalRank == augmentedRank) \&\& (originalRank < inputMatrix.\mbox{\hyperlink{classqb_matrix2_a1626b647c5268a9e64f4651bcc4b8c6e}{GetNumRows}}()))}
+\DoxyCodeLine{94     \{}
+\DoxyCodeLine{95         \textcolor{keywordflow}{return} \mbox{\hyperlink{qb_lin_solve_8h_a3728df71a7cb43303b5566037629653f}{QBLINSOLVE\_NOUNIQUESOLUTION}};}
+\DoxyCodeLine{96     \}}
+\DoxyCodeLine{97     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (originalRank < augmentedRank)}
+\DoxyCodeLine{98     \{}
+\DoxyCodeLine{99         \textcolor{keywordflow}{return} \mbox{\hyperlink{qb_lin_solve_8h_a9f228e33ff5dd53dfda25e579e85610d}{QBLINSOLVE\_NOSOLUTIONS}};}
+\DoxyCodeLine{100     \}}
+\DoxyCodeLine{101     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{102     \{}
+\DoxyCodeLine{103         \textcolor{comment}{/* Create a qbVector object to store the output. Initially we will}}
+\DoxyCodeLine{104 \textcolor{comment}{            populate this with the data from bVecData, but we are going to modify}}
+\DoxyCodeLine{105 \textcolor{comment}{            the elements as we compute them. */}}
+\DoxyCodeLine{106         \mbox{\hyperlink{classqb_vector}{qbVector<T>}} output(bVecData);}
+\DoxyCodeLine{107         }
+\DoxyCodeLine{108         \textcolor{comment}{// Now use back-\/substitution to compute the result.}}
+\DoxyCodeLine{109         \textcolor{keywordtype}{int} numRows = rowEchelonMatrix.\mbox{\hyperlink{classqb_matrix2_a1626b647c5268a9e64f4651bcc4b8c6e}{GetNumRows}}();}
+\DoxyCodeLine{110         \textcolor{keywordtype}{int} numCols = rowEchelonMatrix.\mbox{\hyperlink{classqb_matrix2_ab20362d8fc58a4b8da0910f94c3de2c3}{GetNumCols}}();}
+\DoxyCodeLine{111         \textcolor{keywordtype}{int} startRow = numRows-\/1;}
+\DoxyCodeLine{112         }
+\DoxyCodeLine{113         \textcolor{comment}{// Loop over the rows, in reverse order.}}
+\DoxyCodeLine{114         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=startRow; i>=0; -\/-\/i)}
+\DoxyCodeLine{115         \{}
+\DoxyCodeLine{116             \textcolor{comment}{// Extract the currentResult for this row.}}
+\DoxyCodeLine{117             T currentResult = rowEchelonMatrix.\mbox{\hyperlink{classqb_matrix2_a62ddf209105dffe6133461b273a7309f}{GetElement}}(i, numCols-\/1);}
+\DoxyCodeLine{118     }
+\DoxyCodeLine{119             \textcolor{comment}{// Compute the cumulative sum.}}
+\DoxyCodeLine{120             T cumulativeSum = \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.0);}
+\DoxyCodeLine{121             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=i+1; j<numRows; ++j)}
+\DoxyCodeLine{122             \{}
+\DoxyCodeLine{123                 cumulativeSum += (rowEchelonMatrix.\mbox{\hyperlink{classqb_matrix2_a62ddf209105dffe6133461b273a7309f}{GetElement}}(i,j) * output.\mbox{\hyperlink{classqb_vector_adadd6ca87273a15f57a5e1d6ae15583b}{GetElement}}(j));}
+\DoxyCodeLine{124             \}}
+\DoxyCodeLine{125             }
+\DoxyCodeLine{126             \textcolor{comment}{// Compute the answer.}}
+\DoxyCodeLine{127             T finalAnswer = (currentResult -\/ cumulativeSum) / rowEchelonMatrix.\mbox{\hyperlink{classqb_matrix2_a62ddf209105dffe6133461b273a7309f}{GetElement}}(i,i);}
+\DoxyCodeLine{128             }
+\DoxyCodeLine{129             \textcolor{comment}{// And store.}}
+\DoxyCodeLine{130             output.\mbox{\hyperlink{classqb_vector_af828430da5d728b15c70f82f73ff1efd}{SetElement}}(i, finalAnswer);}
+\DoxyCodeLine{131             }
+\DoxyCodeLine{132         \}}
+\DoxyCodeLine{133         }
+\DoxyCodeLine{134         \textcolor{comment}{// Return the output.}}
+\DoxyCodeLine{135         resultVec = output;}
+\DoxyCodeLine{136         }
+\DoxyCodeLine{137     \}}
+\DoxyCodeLine{138         }
+\DoxyCodeLine{139     \textcolor{keywordflow}{return} 1;   }
+\DoxyCodeLine{140 \}}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

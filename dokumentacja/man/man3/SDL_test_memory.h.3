@@ -1,0 +1,57 @@
+.TH "D:/RayTracing/include/SDL_test_memory.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_test_memory.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBSDLTest_TrackAllocations\fP (\fBvoid\fP)"
+.br
+.RI "Start tracking SDL memory allocations\&. "
+.ti -1c
+.RI "\fBvoid\fP \fBSDLTest_LogAllocations\fP (\fBvoid\fP)"
+.br
+.RI "Print a log of any outstanding allocations\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include file for SDL test framework\&.
+.PP
+This code is a part of the SDL2_test library, not the main SDL library\&. 
+.SH "Function Documentation"
+.PP 
+.SS "\fBvoid\fP SDLTest_LogAllocations (\fBvoid\fP)"
+
+.PP
+Print a log of any outstanding allocations\&. 
+.PP
+\fBNote\fP
+.RS 4
+This can be called after \fBSDL_Quit()\fP 
+.RE
+.PP
+
+.SS "int SDLTest_TrackAllocations (\fBvoid\fP)"
+
+.PP
+Start tracking SDL memory allocations\&. 
+.PP
+\fBNote\fP
+.RS 4
+This should be called before any other SDL functions for complete tracking coverage 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_materialbase_8h_source" xml:lang="en-US">
+<title>materialbase.h</title>
+<indexterm><primary>D:/RayTracing/RayTrace/Materials/materialbase.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;RAYTRACING_MATERIALBASE_H</emphasis>
+2 <emphasis role="preprocessor">#define&#32;RAYTRACING_MATERIALBASE_H</emphasis>
+3 
+4 
+5 <emphasis role="preprocessor">#include&#32;&lt;memory&gt;</emphasis>
+6 <emphasis role="preprocessor">#include&#32;&quot;../Textures/texturebase.h&quot;</emphasis>
+7 <emphasis role="preprocessor">#include&#32;&quot;../Primitives/objectbase.h&quot;</emphasis>
+8 <emphasis role="preprocessor">#include&#32;&quot;../Lights/lightbase.h&quot;</emphasis>
+9 <emphasis role="preprocessor">#include&#32;&quot;../qbLinAlg/qbVector.h&quot;</emphasis>
+10 <emphasis role="preprocessor">#include&#32;&quot;../ray.h&quot;</emphasis>
+11 
+12 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_r_t">RT</link>&#32;{
+13 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_class_r_t_1_1_material_base">MaterialBase</link>&#32;{
+14 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+15 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Konstruktor</emphasis>
+16 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_r_t_1_1_material_base_1afc66df6eff4e978f498e541b1750221c">MaterialBase</link>();
+17 
+18 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Destruktor</emphasis>
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_class_r_t_1_1_material_base_1a68eb6a4d3a0c5fd01f858c4a217e6187">~MaterialBase</link>();
+20 
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Metoda&#32;zwracająca&#32;kolor&#32;tworzywa</emphasis>
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_material_base_1aa8b05496fa1fed6988efd524eb5dbe48">ComputeColor</link>(<emphasis role="keyword">const</emphasis>&#32;std::vector&lt;std::shared_ptr&lt;RT::ObjectBase&gt;&gt;&#32;&amp;objectList,
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;std::vector&lt;std::shared_ptr&lt;RT::LightBase&gt;&gt;&#32;&amp;lightList,
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;std::shared_ptr&lt;RT::ObjectBase&gt;&#32;&amp;currentObject,
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;intPoint,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;localNormal,
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_r_t_1_1_ray">RT::Ray</link>&#32;&amp;cameraRay);
+27 
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Metoda&#32;do&#32;obliczania&#32;koloru&#32;rozproszenia&#32;(kolor&#32;powierzchni&#32;obiektu&#32;jest&#32;ciemniejszy,&#32;w&#32;miejscach,&#32;gdzie</emphasis>
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;kąt&#32;padania&#32;światła&#32;jest&#32;większy)</emphasis>
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_material_base_1a2a8f6d812302097b550388ed3deed6b7">ComputeDiffuseColor</link>(<emphasis role="keyword">const</emphasis>&#32;std::vector&lt;std::shared_ptr&lt;RT::ObjectBase&gt;&gt;&#32;&amp;objectList,
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;std::vector&lt;std::shared_ptr&lt;RT::LightBase&gt;&gt;&#32;&amp;lightList,
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;std::shared_ptr&lt;RT::ObjectBase&gt;&#32;&amp;currentObject,
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;intPoint,
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;localNormal,
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;baseColor);
+36 
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Metoda&#32;do&#32;obliczania&#32;koloru&#32;odbicia</emphasis>
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_material_base_1a5981b94c2858393d5d3308e4fe047768">ComputeReflectionColor</link>(<emphasis role="keyword">const</emphasis>&#32;std::vector&lt;std::shared_ptr&lt;RT::ObjectBase&gt;&gt;&#32;&amp;objectList,
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;std::vector&lt;std::shared_ptr&lt;RT::LightBase&gt;&gt;&#32;&amp;lightList,
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;std::shared_ptr&lt;RT::ObjectBase&gt;&#32;&amp;currentObject,
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;intPoint,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;localNormal,
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_r_t_1_1_ray">RT::Ray</link>&#32;&amp;incidentRay);
+43 
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Metoda&#32;rzucająca&#32;promień&#32;na&#32;scene</emphasis>
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_r_t_1_1_material_base_1ac7549ffbbac551a9e343a3d1a29c30b4">CastRay</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_r_t_1_1_ray">RT::Ray</link>&#32;&amp;castRay,&#32;<emphasis role="keyword">const</emphasis>&#32;std::vector&lt;std::shared_ptr&lt;RT::ObjectBase&gt;&gt;&#32;&amp;objectList,
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;std::shared_ptr&lt;RT::ObjectBase&gt;&#32;&amp;thisObject,
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::shared_ptr&lt;RT::ObjectBase&gt;&#32;&amp;closestObject,
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;closestIntPoint,&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;closestLocalNormal,
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;closestLocalColor);
+50 
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Metoda&#32;do&#32;przypisywania&#32;tekstury</emphasis>
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_r_t_1_1_material_base_1a6a1070eefc722456176a821f447e6ef2">AssignTexture</link>(<emphasis role="keyword">const</emphasis>&#32;std::shared_ptr&lt;RT::Texture::TextureBase&gt;&#32;&amp;inputTexture);
+53 
+54 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Licznik&#32;refleksów</emphasis>
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">inline</emphasis>&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_r_t_1_1_material_base_1a2e2661a371b1689d72d929ca21f8e8eb">m_maxReflectionRays</link>;
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">inline</emphasis>&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_r_t_1_1_material_base_1acb27faf3834b1db091139c8a970ea4bc">m_reflectionRayCount</link>;
+58 
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Oświetlenie&#32;otoczenia</emphasis>
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">inline</emphasis>&#32;<emphasis role="keyword">static</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_material_base_1a97579f592fb17d8077e16e2b48d6e826">m_ambientColor</link>&#32;{std::vector&lt;double&gt;&#32;{1.0,&#32;1.0,&#32;1.0}};
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">inline</emphasis>&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_class_r_t_1_1_material_base_1a6297b836279524bc2772b3a066f1a5d8">m_ambientIntensity</link>&#32;=&#32;0.2;
+62 
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Lista&#32;tekstur&#32;przypisanych&#32;do&#32;tego&#32;tworzywa</emphasis>
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::vector&lt;std::shared_ptr&lt;RT::Texture::TextureBase&gt;&gt;&#32;<link linkend="_class_r_t_1_1_material_base_1a22c94fe436f4b7944381238983ec0472">m_textureList</link>;
+65 
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Flaga&#32;informująca&#32;czy&#32;tworzywo&#32;posiada&#32;przypisaną&#32;teksturę</emphasis>
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_r_t_1_1_material_base_1acbde6abdad78b526022475a8e2b39d2a">m_hasTexture</link>&#32;=&#32;<emphasis role="keyword">false</emphasis>;
+68 
+69 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>:
+70 
+71 &#32;&#32;&#32;&#32;};
+72 }
+73 
+74 
+75 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//RAYTRACING_MATERIALBASE_H</emphasis>
+</programlisting></section>

@@ -1,0 +1,218 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="class_r_t_1_1_simple_material" kind="class" language="C++" prot="public">
+    <compoundname>RT::SimpleMaterial</compoundname>
+    <basecompoundref refid="class_r_t_1_1_material_base" prot="public" virt="non-virtual">RT::MaterialBase</basecompoundref>
+    <includes refid="simplematerial_8h" local="no">simplematerial.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_r_t_1_1_simple_material_1a62020aa0f4b5958f82ce958901a87bf4" prot="public" static="no" mutable="no">
+        <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt;</type>
+        <definition>qbVector&lt;double&gt; RT::SimpleMaterial::m_baseColor</definition>
+        <argsstring></argsstring>
+        <name>m_baseColor</name>
+        <qualifiedname>RT::SimpleMaterial::m_baseColor</qualifiedname>
+        <initializer>{std::vector&lt;double&gt; {1.0, 0.0, 1.0}}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Materials/simplematerial.h" line="33" column="18" bodyfile="D:/RayTracing/RayTrace/Materials/simplematerial.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_r_t_1_1_simple_material_1a38611deb48380fd60c94e270064a66bc" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double RT::SimpleMaterial::m_reflectivity</definition>
+        <argsstring></argsstring>
+        <name>m_reflectivity</name>
+        <qualifiedname>RT::SimpleMaterial::m_reflectivity</qualifiedname>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Materials/simplematerial.h" line="34" column="16" bodyfile="D:/RayTracing/RayTrace/Materials/simplematerial.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_r_t_1_1_simple_material_1a570216c81c930713e5c22f6b1b6f8e84" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double RT::SimpleMaterial::m_shininess</definition>
+        <argsstring></argsstring>
+        <name>m_shininess</name>
+        <qualifiedname>RT::SimpleMaterial::m_shininess</qualifiedname>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Materials/simplematerial.h" line="35" column="16" bodyfile="D:/RayTracing/RayTrace/Materials/simplematerial.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_r_t_1_1_simple_material_1a1af9f0fb42b931218787ad09cc6a9f39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RT::SimpleMaterial::SimpleMaterial</definition>
+        <argsstring>()</argsstring>
+        <name>SimpleMaterial</name>
+        <qualifiedname>RT::SimpleMaterial::SimpleMaterial</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Materials/simplematerial.h" line="13" column="9" bodyfile="D:/RayTracing/RayTrace/Materials/simplematerial.cpp" bodystart="4" bodyend="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_simple_material_1ae702de698964afca3cf1b9fc2dab493e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>RT::SimpleMaterial::~SimpleMaterial</definition>
+        <argsstring>() override</argsstring>
+        <name>~SimpleMaterial</name>
+        <qualifiedname>RT::SimpleMaterial::~SimpleMaterial</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Materials/simplematerial.h" line="16" column="17" bodyfile="D:/RayTracing/RayTrace/Materials/simplematerial.cpp" bodystart="9" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_simple_material_1a27119202e1ef25225faa2b425bd681e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt;</type>
+        <definition>qbVector&lt; double &gt; RT::SimpleMaterial::ComputeColor</definition>
+        <argsstring>(const std::vector&lt; std::shared_ptr&lt; RT::ObjectBase &gt; &gt; &amp;objectList, const std::vector&lt; std::shared_ptr&lt; RT::LightBase &gt; &gt; &amp;lightList, const std::shared_ptr&lt; RT::ObjectBase &gt; &amp;currentObject, const qbVector&lt; double &gt; &amp;intPoint, const qbVector&lt; double &gt; &amp;localNormal, const RT::Ray &amp;cameraRay) override</argsstring>
+        <name>ComputeColor</name>
+        <qualifiedname>RT::SimpleMaterial::ComputeColor</qualifiedname>
+        <reimplements refid="class_r_t_1_1_material_base_1aa8b05496fa1fed6988efd524eb5dbe48">ComputeColor</reimplements>
+        <param>
+          <type>const std::vector&lt; std::shared_ptr&lt; <ref refid="class_r_t_1_1_object_base" kindref="compound">RT::ObjectBase</ref> &gt; &gt; &amp;</type>
+          <declname>objectList</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::shared_ptr&lt; <ref refid="class_r_t_1_1_light_base" kindref="compound">RT::LightBase</ref> &gt; &gt; &amp;</type>
+          <declname>lightList</declname>
+        </param>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_r_t_1_1_object_base" kindref="compound">RT::ObjectBase</ref> &gt; &amp;</type>
+          <declname>currentObject</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>intPoint</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>localNormal</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_r_t_1_1_ray" kindref="compound">RT::Ray</ref> &amp;</type>
+          <declname>cameraRay</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Materials/simplematerial.h" line="19" column="26" bodyfile="D:/RayTracing/RayTrace/Materials/simplematerial.cpp" bodystart="14" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_simple_material_1aa64e1515ada26e975cdbcc42c2fe3042" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt;</type>
+        <definition>qbVector&lt; double &gt; RT::SimpleMaterial::ComputeSpecular</definition>
+        <argsstring>(const std::vector&lt; std::shared_ptr&lt; RT::ObjectBase &gt; &gt; &amp;objectList, const std::vector&lt; std::shared_ptr&lt; RT::LightBase &gt; &gt; &amp;lightList, const qbVector&lt; double &gt; &amp;intPoint, const qbVector&lt; double &gt; &amp;localNormal, const RT::Ray &amp;cameraRay)</argsstring>
+        <name>ComputeSpecular</name>
+        <qualifiedname>RT::SimpleMaterial::ComputeSpecular</qualifiedname>
+        <param>
+          <type>const std::vector&lt; std::shared_ptr&lt; <ref refid="class_r_t_1_1_object_base" kindref="compound">RT::ObjectBase</ref> &gt; &gt; &amp;</type>
+          <declname>objectList</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::shared_ptr&lt; <ref refid="class_r_t_1_1_light_base" kindref="compound">RT::LightBase</ref> &gt; &gt; &amp;</type>
+          <declname>lightList</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>intPoint</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>localNormal</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_r_t_1_1_ray" kindref="compound">RT::Ray</ref> &amp;</type>
+          <declname>cameraRay</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Materials/simplematerial.h" line="26" column="18" bodyfile="D:/RayTracing/RayTrace/Materials/simplematerial.cpp" bodystart="51" bodyend="113"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>RT::MaterialBase</label>
+        <link refid="class_r_t_1_1_material_base"/>
+      </node>
+      <node id="1">
+        <label>RT::SimpleMaterial</label>
+        <link refid="class_r_t_1_1_simple_material"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>RT::MaterialBase</label>
+        <link refid="class_r_t_1_1_material_base"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_ambientColor</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>RT::SimpleMaterial</label>
+        <link refid="class_r_t_1_1_simple_material"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_baseColor</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>qbVector&lt; double &gt;</label>
+        <link refid="classqb_vector"/>
+      </node>
+    </collaborationgraph>
+    <location file="D:/RayTracing/RayTrace/Materials/simplematerial.h" line="9" column="5" bodyfile="D:/RayTracing/RayTrace/Materials/simplematerial.h" bodystart="10" bodyend="36"/>
+    <listofallmembers>
+      <member refid="class_r_t_1_1_material_base_1a6a1070eefc722456176a821f447e6ef2" prot="public" virt="non-virtual"><scope>RT::SimpleMaterial</scope><name>AssignTexture</name></member>
+      <member refid="class_r_t_1_1_material_base_1ac7549ffbbac551a9e343a3d1a29c30b4" prot="public" virt="non-virtual"><scope>RT::SimpleMaterial</scope><name>CastRay</name></member>
+      <member refid="class_r_t_1_1_simple_material_1a27119202e1ef25225faa2b425bd681e4" prot="public" virt="virtual"><scope>RT::SimpleMaterial</scope><name>ComputeColor</name></member>
+      <member refid="class_r_t_1_1_material_base_1a2a8f6d812302097b550388ed3deed6b7" prot="public" virt="non-virtual"><scope>RT::SimpleMaterial</scope><name>ComputeDiffuseColor</name></member>
+      <member refid="class_r_t_1_1_material_base_1a5981b94c2858393d5d3308e4fe047768" prot="public" virt="non-virtual"><scope>RT::SimpleMaterial</scope><name>ComputeReflectionColor</name></member>
+      <member refid="class_r_t_1_1_simple_material_1aa64e1515ada26e975cdbcc42c2fe3042" prot="public" virt="non-virtual"><scope>RT::SimpleMaterial</scope><name>ComputeSpecular</name></member>
+      <member refid="class_r_t_1_1_material_base_1a97579f592fb17d8077e16e2b48d6e826" prot="public" virt="non-virtual"><scope>RT::SimpleMaterial</scope><name>m_ambientColor</name></member>
+      <member refid="class_r_t_1_1_material_base_1a6297b836279524bc2772b3a066f1a5d8" prot="public" virt="non-virtual"><scope>RT::SimpleMaterial</scope><name>m_ambientIntensity</name></member>
+      <member refid="class_r_t_1_1_simple_material_1a62020aa0f4b5958f82ce958901a87bf4" prot="public" virt="non-virtual"><scope>RT::SimpleMaterial</scope><name>m_baseColor</name></member>
+      <member refid="class_r_t_1_1_material_base_1acbde6abdad78b526022475a8e2b39d2a" prot="public" virt="non-virtual"><scope>RT::SimpleMaterial</scope><name>m_hasTexture</name></member>
+      <member refid="class_r_t_1_1_material_base_1a2e2661a371b1689d72d929ca21f8e8eb" prot="public" virt="non-virtual"><scope>RT::SimpleMaterial</scope><name>m_maxReflectionRays</name></member>
+      <member refid="class_r_t_1_1_material_base_1acb27faf3834b1db091139c8a970ea4bc" prot="public" virt="non-virtual"><scope>RT::SimpleMaterial</scope><name>m_reflectionRayCount</name></member>
+      <member refid="class_r_t_1_1_simple_material_1a38611deb48380fd60c94e270064a66bc" prot="public" virt="non-virtual"><scope>RT::SimpleMaterial</scope><name>m_reflectivity</name></member>
+      <member refid="class_r_t_1_1_simple_material_1a570216c81c930713e5c22f6b1b6f8e84" prot="public" virt="non-virtual"><scope>RT::SimpleMaterial</scope><name>m_shininess</name></member>
+      <member refid="class_r_t_1_1_material_base_1a22c94fe436f4b7944381238983ec0472" prot="public" virt="non-virtual"><scope>RT::SimpleMaterial</scope><name>m_textureList</name></member>
+      <member refid="class_r_t_1_1_material_base_1afc66df6eff4e978f498e541b1750221c" prot="public" virt="non-virtual"><scope>RT::SimpleMaterial</scope><name>MaterialBase</name></member>
+      <member refid="class_r_t_1_1_simple_material_1a1af9f0fb42b931218787ad09cc6a9f39" prot="public" virt="non-virtual"><scope>RT::SimpleMaterial</scope><name>SimpleMaterial</name></member>
+      <member refid="class_r_t_1_1_material_base_1a68eb6a4d3a0c5fd01f858c4a217e6187" prot="public" virt="virtual"><scope>RT::SimpleMaterial</scope><name>~MaterialBase</name></member>
+      <member refid="class_r_t_1_1_simple_material_1ae702de698964afca3cf1b9fc2dab493e" prot="public" virt="virtual"><scope>RT::SimpleMaterial</scope><name>~SimpleMaterial</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

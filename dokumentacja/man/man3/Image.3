@@ -1,0 +1,57 @@
+.TH "Image" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Image
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Image\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBImage\fP ()"
+.br
+.ti -1c
+.RI "\fB~Image\fP ()"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBInitialize\fP (const int xSize, const int ySize, \fBSDL_Renderer\fP *pRenderer)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBSetPixel\fP (const int \fBx\fP, const int \fBy\fP, const double red, const double \fBgreen\fP, const double \fBblue\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBDisplay\fP ()"
+.br
+.ti -1c
+.RI "int \fBGetXSize\fP ()"
+.br
+.ti -1c
+.RI "int \fBGetYSize\fP ()"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Image::Image ()"
+
+.SS "Image::~Image ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBvoid\fP Image::Display ()"
+
+.SS "int Image::GetXSize ()"
+
+.SS "int Image::GetYSize ()"
+
+.SS "\fBvoid\fP Image::Initialize (const int xSize, const int ySize, \fBSDL_Renderer\fP * pRenderer)"
+
+.SS "\fBvoid\fP Image::SetPixel (const int x, const int y, const double red, const double green, const double blue)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

@@ -1,0 +1,139 @@
+.TH "D:/RayTracing/include/SDL_metal.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_metal.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SDL_video\&.h'\fP
+.br
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBvoid\fP * \fBSDL_MetalView\fP"
+.br
+.RI "A handle to a CAMetalLayer-backed NSView (macOS) or UIView (iOS/tvOS)\&. "
+.in -1c
+.SS "Functions"
+
+.PP
+.RI "\fBMetal support functions\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_MetalView\fP \fBSDLCALL\fP \fBSDL_Metal_CreateView\fP (\fBSDL_Window\fP *window)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_Metal_DestroyView\fP (\fBSDL_MetalView\fP view)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP *\fBSDLCALL\fP \fBSDL_Metal_GetLayer\fP (\fBSDL_MetalView\fP view)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_Metal_GetDrawableSize\fP (\fBSDL_Window\fP *window, int *\fBw\fP, int *\fBh\fP)"
+.br
+.in -1c
+.in -1c
+.SH "Detailed Description"
+.PP 
+Header file for functions to creating Metal layers and views on SDL windows\&. 
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBvoid\fP* \fBSDL_MetalView\fP"
+
+.PP
+A handle to a CAMetalLayer-backed NSView (macOS) or UIView (iOS/tvOS)\&. 
+.PP
+\fBNote\fP
+.RS 4
+This can be cast directly to an NSView or UIView\&. 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBDECLSPEC\fP \fBSDL_MetalView\fP \fBSDLCALL\fP SDL_Metal_CreateView (\fBSDL_Window\fP * window)"
+Create a CAMetalLayer-backed NSView/UIView and attach it to the specified window\&.
+.PP
+On macOS, this does \fInot\fP associate a MTLDevice with the CAMetalLayer on its own\&. It is up to user code to do that\&.
+.PP
+The returned handle can be casted directly to a NSView or UIView\&. To access the backing CAMetalLayer, call \fBSDL_Metal_GetLayer()\fP\&.
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.12\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_Metal_DestroyView\fP 
+.PP
+\fBSDL_Metal_GetLayer\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_Metal_DestroyView (\fBSDL_MetalView\fP view)"
+Destroy an existing SDL_MetalView object\&.
+.PP
+This should be called before SDL_DestroyWindow, if SDL_Metal_CreateView was called after SDL_CreateWindow\&.
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.12\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_Metal_CreateView\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_Metal_GetDrawableSize (\fBSDL_Window\fP * window, int * w, int * h)"
+Get the size of a window's underlying drawable in pixels (for use with setting viewport, scissor & etc)\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIwindow\fP SDL_Window from which the drawable size should be queried 
+.br
+\fIw\fP Pointer to variable for storing the width in pixels, may be NULL
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.14\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GetWindowSize\fP 
+.PP
+\fBSDL_CreateWindow\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP *\fBSDLCALL\fP SDL_Metal_GetLayer (\fBSDL_MetalView\fP view)"
+Get a pointer to the backing CAMetalLayer for the given view\&.
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.14\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+SDL_MetalCreateView 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

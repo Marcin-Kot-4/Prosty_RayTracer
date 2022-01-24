@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__test__compare_8h" xml:lang="en-US">
+<title>D:/RayTracing/include/SDL_test_compare.h File Reference</title>
+<indexterm><primary>D:/RayTracing/include/SDL_test_compare.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;SDL.h&quot;
+#include &quot;SDL_test_images.h&quot;
+#include &quot;begin_code.h&quot;
+#include &quot;close_code.h&quot;
+</programlisting><simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="__s_d_l__test__compare_8h_1a3921b6606c5897e6fcb46c6a4ab5fec2">SDLTest_CompareSurfaces</link> (<link linkend="_struct_s_d_l___surface">SDL_Surface</link> *surface, <link linkend="_struct_s_d_l___surface">SDL_Surface</link> *referenceSurface, int allowable_error)</para>
+
+<para>Compares a surface and with reference image data for equality. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Include file for SDL test framework.</para>
+
+<para>This code is a part of the SDL2_test library, not the main SDL library. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__s_d_l__test__compare_8h_1a3921b6606c5897e6fcb46c6a4ab5fec2"/><section>
+    <title>SDLTest_CompareSurfaces()</title>
+<indexterm><primary>SDLTest_CompareSurfaces</primary><secondary>SDL_test_compare.h</secondary></indexterm>
+<indexterm><primary>SDL_test_compare.h</primary><secondary>SDLTest_CompareSurfaces</secondary></indexterm>
+<para><computeroutput>int SDLTest_CompareSurfaces (<link linkend="_struct_s_d_l___surface">SDL_Surface</link> * surface, <link linkend="_struct_s_d_l___surface">SDL_Surface</link> * referenceSurface, int allowable_error)</computeroutput></para><para>
+
+<para>Compares a surface and with reference image data for equality. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>surface</entry><entry>
+<para>Surface used in comparison </para>
+</entry>
+                            </row>
+                            <row>
+<entry>referenceSurface</entry><entry>
+<para>Test Surface used in comparison </para>
+</entry>
+                            </row>
+                            <row>
+<entry>allowable_error</entry><entry>
+<para>Allowable difference (=sum of squared difference for each RGB component) in blending accuracy.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 if comparison succeeded, &gt;0 (=number of pixels for which the comparison failed) if comparison failed, -1 if any of the surfaces were NULL, -2 if the surface sizes differ. </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

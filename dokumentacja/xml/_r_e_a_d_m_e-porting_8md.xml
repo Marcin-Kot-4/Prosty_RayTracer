@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e-porting_8md" kind="file" language="Markdown">
+    <compoundname>README-porting.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">Porting</highlight></codeline>
+<codeline><highlight class="normal">=======</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>Porting<sp/>To<sp/>A<sp/>New<sp/>Platform</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>The<sp/>first<sp/>thing<sp/>you<sp/>have<sp/>to<sp/>do<sp/>when<sp/>porting<sp/>to<sp/>a<sp/>new<sp/>platform,<sp/>is<sp/>look<sp/>at</highlight></codeline>
+<codeline><highlight class="normal">include/SDL_platform.h<sp/>and<sp/>create<sp/>an<sp/>entry<sp/>there<sp/>for<sp/>your<sp/>operating<sp/>system.</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>standard<sp/>format<sp/>is<sp/>&quot;__PLATFORM__&quot;,<sp/>where<sp/>PLATFORM<sp/>is<sp/>the<sp/>name<sp/>of<sp/>the<sp/>OS.</highlight></codeline>
+<codeline><highlight class="normal">Ideally<sp/>SDL_platform.h<sp/>will<sp/>be<sp/>able<sp/>to<sp/>auto-detect<sp/>the<sp/>system<sp/>it&apos;s<sp/>building</highlight></codeline>
+<codeline><highlight class="normal">on<sp/>based<sp/>on<sp/>C<sp/>preprocessor<sp/>symbols.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">There<sp/>are<sp/>two<sp/>basic<sp/>ways<sp/>of<sp/>building<sp/>SDL<sp/>at<sp/>the<sp/>moment:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>The<sp/>&quot;UNIX&quot;<sp/>way:<sp/><sp/>./configure;<sp/>make;<sp/>make<sp/>install</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>If<sp/>you<sp/>have<sp/>a<sp/>GNUish<sp/>system,<sp/>then<sp/>you<sp/>might<sp/>try<sp/>this.<sp/><sp/>Edit<sp/>configure.ac,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>take<sp/>a<sp/>look<sp/>at<sp/>the<sp/>large<sp/>section<sp/>labelled:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;Set<sp/>up<sp/>the<sp/>configuration<sp/>based<sp/>on<sp/>the<sp/>host<sp/>platform!&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>Add<sp/>a<sp/>section<sp/>for<sp/>your<sp/>platform,<sp/>and<sp/>then<sp/>re-run<sp/>autogen.sh<sp/>and<sp/>build!</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">2.<sp/>Using<sp/>an<sp/>IDE:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>If<sp/>you&apos;re<sp/>using<sp/>an<sp/>IDE<sp/>or<sp/>other<sp/>non-configure<sp/>build<sp/>system,<sp/>you&apos;ll<sp/>probably</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>want<sp/>to<sp/>create<sp/>a<sp/>custom<sp/>SDL_config.h<sp/>for<sp/>your<sp/>platform.<sp/><sp/>Edit<sp/>SDL_config.h,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>add<sp/>a<sp/>section<sp/>for<sp/>your<sp/>platform,<sp/>and<sp/>create<sp/>a<sp/>custom<sp/>SDL_config_{platform}.h,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>based<sp/>on<sp/>SDL_config_minimal.h<sp/>and<sp/>SDL_config.h.in</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>Add<sp/>the<sp/>top<sp/>level<sp/>include<sp/>directory<sp/>to<sp/>the<sp/>header<sp/>search<sp/>path,<sp/>and<sp/>then<sp/>add</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>the<sp/>following<sp/>sources<sp/>to<sp/>the<sp/>project:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>src/*.c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>src/atomic/*.c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>src/audio/*.c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>src/cpuinfo/*.c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>src/events/*.c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>src/file/*.c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>src/haptic/*.c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>src/joystick/*.c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>src/power/*.c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>src/render/*.c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>src/render/software/*.c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>src/stdlib/*.c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>src/thread/*.c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>src/timer/*.c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>src/video/*.c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>src/audio/disk/*.c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>src/audio/dummy/*.c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>src/filesystem/dummy/*.c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>src/video/dummy/*.c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>src/haptic/dummy/*.c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>src/joystick/dummy/*.c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>src/main/dummy/*.c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>src/thread/generic/*.c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>src/timer/dummy/*.c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>src/loadso/dummy/*.c</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Once<sp/>you<sp/>have<sp/>a<sp/>working<sp/>library<sp/>without<sp/>any<sp/>drivers,<sp/>you<sp/>can<sp/>go<sp/>back<sp/>to<sp/>each</highlight></codeline>
+<codeline><highlight class="normal">of<sp/>the<sp/>major<sp/>subsystems<sp/>and<sp/>start<sp/>implementing<sp/>drivers<sp/>for<sp/>your<sp/>platform.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>have<sp/>any<sp/>questions,<sp/>don&apos;t<sp/>hesitate<sp/>to<sp/>ask<sp/>on<sp/>the<sp/>SDL<sp/>mailing<sp/>list:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>http://www.libsdl.org/mailing-list.php</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Enjoy!</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Sam<sp/>Lantinga<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(slouken@libsdl.org)</highlight></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/docs/README-porting.md"/>
+  </compounddef>
+</doxygen>

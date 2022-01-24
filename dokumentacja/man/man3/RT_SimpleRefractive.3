@@ -1,0 +1,83 @@
+.TH "RT::SimpleRefractive" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RT::SimpleRefractive
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <simplerefractive\&.h>\fP
+.PP
+Inherits \fBRT::MaterialBase\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSimpleRefractive\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~SimpleRefractive\fP () override"
+.br
+.ti -1c
+.RI "virtual \fBqbVector\fP< double > \fBComputeColor\fP (const std::vector< std::shared_ptr< \fBRT::ObjectBase\fP > > &objectList, const std::vector< std::shared_ptr< \fBRT::LightBase\fP > > &lightList, const std::shared_ptr< \fBRT::ObjectBase\fP > &currentObject, const \fBqbVector\fP< double > &intPoint, const \fBqbVector\fP< double > &localNormal, const \fBRT::Ray\fP &cameraRay) override"
+.br
+.ti -1c
+.RI "\fBqbVector\fP< double > \fBComputeSpecular\fP (const std::vector< std::shared_ptr< \fBRT::ObjectBase\fP > > &objectList, const std::vector< std::shared_ptr< \fBRT::LightBase\fP > > &lightList, const \fBqbVector\fP< double > &intPoint, const \fBqbVector\fP< double > &localNormal, const \fBRT::Ray\fP &cameraRay)"
+.br
+.ti -1c
+.RI "\fBqbVector\fP< double > \fBComputeTranslucency\fP (const std::vector< std::shared_ptr< \fBRT::ObjectBase\fP > > &objectList, const std::vector< std::shared_ptr< \fBRT::LightBase\fP > > &lightList, const std::shared_ptr< \fBRT::ObjectBase\fP > &currentObject, const \fBqbVector\fP< double > &intPoint, const \fBqbVector\fP< double > &localNormal, const \fBRT::Ray\fP &incidentRay)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBqbVector\fP< double > \fBm_baseColor\fP {std::vector < double > {1\&.0, 0\&.0, 1\&.0}}"
+.br
+.ti -1c
+.RI "double \fBm_reflectivity\fP = 0\&.0"
+.br
+.ti -1c
+.RI "double \fBm_shininess\fP = 0\&.0"
+.br
+.ti -1c
+.RI "double \fBm_translucency\fP = 0\&.0"
+.br
+.ti -1c
+.RI "double \fBm_ior\fP = 1\&.0"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RT::SimpleRefractive::SimpleRefractive ()"
+
+.SS "RT::SimpleRefractive::~SimpleRefractive ()\fC [override]\fP, \fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBqbVector\fP< double > RT::SimpleRefractive::ComputeColor (const std::vector< std::shared_ptr< \fBRT::ObjectBase\fP > > & objectList, const std::vector< std::shared_ptr< \fBRT::LightBase\fP > > & lightList, const std::shared_ptr< \fBRT::ObjectBase\fP > & currentObject, const \fBqbVector\fP< double > & intPoint, const \fBqbVector\fP< double > & localNormal, const \fBRT::Ray\fP & cameraRay)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBRT::MaterialBase\fP\&.
+.SS "\fBqbVector\fP< double > RT::SimpleRefractive::ComputeSpecular (const std::vector< std::shared_ptr< \fBRT::ObjectBase\fP > > & objectList, const std::vector< std::shared_ptr< \fBRT::LightBase\fP > > & lightList, const \fBqbVector\fP< double > & intPoint, const \fBqbVector\fP< double > & localNormal, const \fBRT::Ray\fP & cameraRay)"
+
+.SS "\fBqbVector\fP< double > RT::SimpleRefractive::ComputeTranslucency (const std::vector< std::shared_ptr< \fBRT::ObjectBase\fP > > & objectList, const std::vector< std::shared_ptr< \fBRT::LightBase\fP > > & lightList, const std::shared_ptr< \fBRT::ObjectBase\fP > & currentObject, const \fBqbVector\fP< double > & intPoint, const \fBqbVector\fP< double > & localNormal, const \fBRT::Ray\fP & incidentRay)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBqbVector\fP<double> RT::SimpleRefractive::m_baseColor {std::vector < double > {1\&.0, 0\&.0, 1\&.0}}"
+
+.SS "double RT::SimpleRefractive::m_ior = 1\&.0"
+
+.SS "double RT::SimpleRefractive::m_reflectivity = 0\&.0"
+
+.SS "double RT::SimpleRefractive::m_shininess = 0\&.0"
+
+.SS "double RT::SimpleRefractive::m_translucency = 0\&.0"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

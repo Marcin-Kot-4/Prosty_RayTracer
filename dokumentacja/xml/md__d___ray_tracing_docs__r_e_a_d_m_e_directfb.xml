@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="md__d___ray_tracing_docs__r_e_a_d_m_e_directfb" kind="page">
+    <compoundname>md_D__RayTracing_docs_README_directfb</compoundname>
+    <title>DirectFB</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Supports:</para>
+<para><itemizedlist>
+<listitem><para>Hardware YUV overlays</para>
+</listitem><listitem><para>OpenGL - software only</para>
+</listitem><listitem><para>2D/3D accelerations (depends on directfb driver)</para>
+</listitem><listitem><para>multiple displays</para>
+</listitem><listitem><para>windows</para>
+</listitem></itemizedlist>
+</para>
+<para>What you need:</para>
+<para><itemizedlist>
+<listitem><para>DirectFB 1.0.1, 1.2.x, 1.3.0</para>
+</listitem><listitem><para>Kernel-Framebuffer support: required: vesafb, radeonfb ....</para>
+</listitem><listitem><para>Mesa 7.0.x - optional for OpenGL</para>
+</listitem></itemizedlist>
+</para>
+<para>/etc/directfbrc</para>
+<para>This file should contain the following lines to make </para>
+<sect1 id="md__d___ray_tracing_docs__r_e_a_d_m_e_directfb_1autotoc_md24">
+<title>your joystick work and avoid crashes:</title>
+<para>disable-module=joystick disable-module=cle266 disable-module=cyber5k </para>
+</sect1>
+<sect1 id="md__d___ray_tracing_docs__r_e_a_d_m_e_directfb_1autotoc_md25">
+<title>no-linux-input-grab</title>
+<para>To disable to use x11 backend when DISPLAY variable is found use</para>
+<para>export SDL_DIRECTFB_X11_CHECK=0</para>
+<para>To disable the use of linux input devices, i.e. multimice/multikeyboard support, use</para>
+<para>export SDL_DIRECTFB_LINUX_INPUT=0</para>
+<para>To use hardware accelerated YUV-overlays for YUV-textures, use:</para>
+<para>export SDL_DIRECTFB_YUV_DIRECT=1</para>
+<para>This is disabled by default. It will only support one YUV texture, namely the first. Every other YUV texture will be rendered in software.</para>
+<para>In addition, you may use (directfb-1.2.x)</para>
+<para>export SDL_DIRECTFB_YUV_UNDERLAY=1</para>
+<para>to make the YUV texture an underlay. This will make the cursor to be shown.</para>
+</sect1>
+<sect1 id="md__d___ray_tracing_docs__r_e_a_d_m_e_directfb_1autotoc_md26">
+<title>Simple Window Manager</title>
+<para>The driver has support for a very, very basic window manager you may want to use when running with &quot;wm=default&quot;. Use</para>
+<para>export SDL_DIRECTFB_WM=1</para>
+<para>to enable basic window borders. In order to have the window title rendered, you need to have the following font installed:</para>
+<para>/usr/share/fonts/truetype/freefont/FreeSans.ttf</para>
+</sect1>
+<sect1 id="md__d___ray_tracing_docs__r_e_a_d_m_e_directfb_1autotoc_md27">
+<title>OpenGL Support</title>
+<para>The following instructions will give you <emphasis>software</emphasis> OpenGL. However this works at least on all directfb supported platforms.</para>
+<para>As of this writing 20100802 you need to pull Mesa from git and do the following:</para>
+<para><hruler/>
+ git clone git://anongit.freedesktop.org/git/mesa/mesa cd mesa </para>
+<sect2 id="md__d___ray_tracing_docs__r_e_a_d_m_e_directfb_1autotoc_md29">
+<title>git checkout 2c9fdaf7292423c157fc79b5ce43f0f199dd753a</title>
+</sect2>
+<sect2 id="md__d___ray_tracing_docs__r_e_a_d_m_e_directfb_1autotoc_md30">
+<title>Edit configs/linux-directfb so that the Directories-section looks like</title>
+</sect2>
+</sect1>
+<sect1 id="md__d___ray_tracing_docs__r_e_a_d_m_e_directfb_1autotoc_md31">
+<title>Directories</title>
+<para>SRC_DIRS = mesa glu GLU_DIRS = sgi DRIVER_DIRS = directfb </para>
+<sect2 id="md__d___ray_tracing_docs__r_e_a_d_m_e_directfb_1autotoc_md32">
+<title>PROGRAM_DIRS =</title>
+<para>make linux-directfb make</para>
+<para>echo Installing - please enter sudo pw.</para>
+<para>sudo make install INSTALL_DIR=/usr/local/dfb_GL cd src/mesa/drivers/directfb make </para>
+</sect2>
+<sect2 id="md__d___ray_tracing_docs__r_e_a_d_m_e_directfb_1autotoc_md33">
+<title>sudo make install INSTALL_DIR=/usr/local/dfb_GL</title>
+<para>To run the SDL - testprograms:</para>
+<para>export SDL_VIDEODRIVER=directfb export LD_LIBRARY_PATH=/usr/local/dfb_GL/lib export LD_PRELOAD=/usr/local/dfb_GL/libGL.so.7</para>
+<para>./testgl </para>
+</sect2>
+</sect1>
+    </detaileddescription>
+    <location file="D:/RayTracing/docs/README-directfb.md"/>
+  </compounddef>
+</doxygen>

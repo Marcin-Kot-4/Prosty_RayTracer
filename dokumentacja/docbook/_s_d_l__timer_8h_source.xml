@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__timer_8h_source" xml:lang="en-US">
+<title>SDL_timer.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_timer.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+22 <emphasis role="preprocessor">#ifndef&#32;SDL_timer_h_</emphasis>
+23 <emphasis role="preprocessor">#define&#32;SDL_timer_h_</emphasis>
+24 
+31 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__stdinc_8h">SDL_stdinc.h</link>&quot;</emphasis>
+32 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__error_8h">SDL_error.h</link>&quot;</emphasis>
+33 
+34 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+35 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+36 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+37 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+38 <emphasis role="preprocessor">#endif</emphasis>
+39 
+58 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__timer_8h_1a0b9bc71d6287e0ffafdc3419760fe2b3">SDL_GetTicks</link>(<emphasis role="keywordtype">void</emphasis>);
+59 
+82 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__timer_8h_1abf49cb0e55ee7685699893d251468861">SDL_GetTicks64</link>(<emphasis role="keywordtype">void</emphasis>);
+83 
+106 <emphasis role="preprocessor">#define&#32;SDL_TICKS_PASSED(A,&#32;B)&#32;&#32;((Sint32)((B)&#32;-&#32;(A))&#32;&lt;=&#32;0)</emphasis>
+107 
+123 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__timer_8h_1a2dbeb63c4f0564811a4adf3938808977">SDL_GetPerformanceCounter</link>(<emphasis role="keywordtype">void</emphasis>);
+124 
+134 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__timer_8h_1a507ebea12e31dacc9f85f7d9febe0efb">SDL_GetPerformanceFrequency</link>(<emphasis role="keywordtype">void</emphasis>);
+135 
+147 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__timer_8h_1ae8050b95373b95249064467592ab4e21">SDL_Delay</link>(<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;ms);
+148 
+157 <emphasis role="keyword">typedef</emphasis>&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;(<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;*&#32;<link linkend="__s_d_l__timer_8h_1a3c5c867db975d245e4a82fcf0cd7de80">SDL_TimerCallback</link>)&#32;(<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;interval,&#32;<emphasis role="keywordtype">void</emphasis>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1ac7c896d55e93a6cf7ff8524005b4e7b4">param</link>);
+158 
+162 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__timer_8h_1a412e8ff8a6c89615ba8f9486b292213a">SDL_TimerID</link>;
+163 
+196 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__timer_8h_1a412e8ff8a6c89615ba8f9486b292213a">SDL_TimerID</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__timer_8h_1a56ceea49587e3fa5796b2e4bf85603b8">SDL_AddTimer</link>(<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;interval,
+197 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__timer_8h_1a3c5c867db975d245e4a82fcf0cd7de80">SDL_TimerCallback</link>&#32;callback,
+198 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1ac7c896d55e93a6cf7ff8524005b4e7b4">param</link>);
+199 
+211 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__timer_8h_1afe8d418e59a24ae6ad820b92137ab9b2">SDL_RemoveTimer</link>(<link linkend="__s_d_l__timer_8h_1a412e8ff8a6c89615ba8f9486b292213a">SDL_TimerID</link>&#32;<emphasis role="keywordtype">id</emphasis>);
+212 
+213 
+214 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+215 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+216 }
+217 <emphasis role="preprocessor">#endif</emphasis>
+218 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+219 
+220 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_timer_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+221 
+222 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

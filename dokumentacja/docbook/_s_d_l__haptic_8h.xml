@@ -1,0 +1,2441 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__haptic_8h" xml:lang="en-US">
+<title>D:/RayTracing/include/SDL_haptic.h File Reference</title>
+<indexterm><primary>D:/RayTracing/include/SDL_haptic.h</primary></indexterm>
+<para>
+
+<para>The SDL haptic subsystem allows you to control haptic (force feedback) devices. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;SDL_stdinc.h&quot;
+#include &quot;SDL_error.h&quot;
+#include &quot;SDL_joystick.h&quot;
+#include &quot;begin_code.h&quot;
+#include &quot;close_code.h&quot;
+</programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_s_d_l___haptic_direction">SDL_HapticDirection</link></para>
+
+<para>Structure that represents a haptic direction. </para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_s_d_l___haptic_constant">SDL_HapticConstant</link></para>
+
+<para>A structure containing a template for a Constant effect. </para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_s_d_l___haptic_periodic">SDL_HapticPeriodic</link></para>
+
+<para>A structure containing a template for a Periodic effect. </para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_s_d_l___haptic_condition">SDL_HapticCondition</link></para>
+
+<para>A structure containing a template for a Condition effect. </para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_s_d_l___haptic_ramp">SDL_HapticRamp</link></para>
+
+<para>A structure containing a template for a Ramp effect. </para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_s_d_l___haptic_left_right">SDL_HapticLeftRight</link></para>
+
+<para>A structure containing a template for a Left/Right effect. </para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_s_d_l___haptic_custom">SDL_HapticCustom</link></para>
+
+<para>A structure containing a template for the <link linkend="__s_d_l__haptic_8h_1a8a18c4de1076ac9bebd718329d16db29">SDL_HAPTIC_CUSTOM</link> effect. </para>
+</listitem>
+            <listitem><para>union <link linkend="_union_s_d_l___haptic_effect">SDL_HapticEffect</link></para>
+
+<para>The generic template for any haptic effect. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+<simplesect><title>Haptic effects</title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__s_d_l__haptic_8h_1a955fb9f680dcf9cc72a3d5263e85b80a">SDL_HAPTIC_CONSTANT</link>   (1u&lt;&lt;0)</para>
+
+<para>Constant effect supported. </para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__haptic_8h_1aa6d75adbfcdda5075078e7a2849da5c0">SDL_HAPTIC_SINE</link>   (1u&lt;&lt;1)</para>
+
+<para>Sine wave effect supported. </para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__haptic_8h_1ae047624d8458ff6400887c37a36f86d3">SDL_HAPTIC_LEFTRIGHT</link>   (1u&lt;&lt;2)</para>
+
+<para>Left/Right effect supported. </para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__haptic_8h_1ae8123eaa51511507375ba6ef9220fa46">SDL_HAPTIC_TRIANGLE</link>   (1u&lt;&lt;3)</para>
+
+<para>Triangle wave effect supported. </para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__haptic_8h_1ab8e3f40f3c2bcee8905d13b634363c3f">SDL_HAPTIC_SAWTOOTHUP</link>   (1u&lt;&lt;4)</para>
+
+<para>Sawtoothup wave effect supported. </para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__haptic_8h_1afd64aa747034a7ccf4b55f6246525701">SDL_HAPTIC_SAWTOOTHDOWN</link>   (1u&lt;&lt;5)</para>
+
+<para>Sawtoothdown wave effect supported. </para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__haptic_8h_1af10eb937a64a8f602e9c46682ac0d868">SDL_HAPTIC_RAMP</link>   (1u&lt;&lt;6)</para>
+
+<para>Ramp effect supported. </para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__haptic_8h_1a3b52d4700380085e2b5d87bb20320fb1">SDL_HAPTIC_SPRING</link>   (1u&lt;&lt;7)</para>
+
+<para>Spring effect supported - uses axes position. </para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__haptic_8h_1a69522f261973e3ea4273486141320a87">SDL_HAPTIC_DAMPER</link>   (1u&lt;&lt;8)</para>
+
+<para>Damper effect supported - uses axes velocity. </para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__haptic_8h_1a14b807471589120395aec28293cf6642">SDL_HAPTIC_INERTIA</link>   (1u&lt;&lt;9)</para>
+
+<para>Inertia effect supported - uses axes acceleration. </para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__haptic_8h_1a98a5011311168d63921aaac21403a4d8">SDL_HAPTIC_FRICTION</link>   (1u&lt;&lt;10)</para>
+
+<para>Friction effect supported - uses axes movement. </para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__haptic_8h_1a8a18c4de1076ac9bebd718329d16db29">SDL_HAPTIC_CUSTOM</link>   (1u&lt;&lt;11)</para>
+
+<para>Custom effect is supported. </para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__haptic_8h_1a3afe54582bd5c184109f3f61b6c84c6c">SDL_HAPTIC_GAIN</link>   (1u&lt;&lt;12)</para>
+
+<para>Device can set global gain. </para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__haptic_8h_1a28aa71e231fbf5b88bce7906bf2f4e70">SDL_HAPTIC_AUTOCENTER</link>   (1u&lt;&lt;13)</para>
+
+<para>Device can set autocenter. </para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__haptic_8h_1abfbc9fa0d65f4b5632788945080cc71b">SDL_HAPTIC_STATUS</link>   (1u&lt;&lt;14)</para>
+
+<para>Device can be queried for effect status. </para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__haptic_8h_1a6baee8978ccc97add8457388801d7782">SDL_HAPTIC_PAUSE</link>   (1u&lt;&lt;15)</para>
+
+<para>Device can be paused. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef struct _SDL_Haptic <link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link></para>
+
+<para>The haptic structure used to identify an SDL haptic. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Direction encodings    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__s_d_l__haptic_8h_1acdc35e97e5525472054a67b76e518f3b">SDL_HAPTIC_POLAR</link>   0</para>
+
+<para>Uses polar coordinates for the direction. </para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__haptic_8h_1af8b2430a363a968de2a5b64c8f663d3b">SDL_HAPTIC_CARTESIAN</link>   1</para>
+
+<para>Uses cartesian coordinates for the direction. </para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__haptic_8h_1a1fcf7cb0eaf3c39b16ba266054e25aff">SDL_HAPTIC_SPHERICAL</link>   2</para>
+
+<para>Uses spherical coordinates for the direction. </para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__haptic_8h_1a9efacbecc0a1b7a13684ee822b18062c">SDL_HAPTIC_STEERING_AXIS</link>   3</para>
+
+<para>Use this value to play an effect on the steering wheel axis. This provides better compatibility across platforms and devices as SDL will guess the correct axis. </para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__haptic_8h_1a648896e9e14cb27fa8a4b6632d3f3882">SDL_HAPTIC_INFINITY</link>   4294967295U</para>
+
+<para>Used to play a device an infinite number of times. </para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_s_d_l___haptic_direction">SDL_HapticDirection</link> <link linkend="__s_d_l__haptic_8h_1a67e1c7124fcd0d6c6bc775ab0758b4ad">SDL_HapticDirection</link></para>
+
+<para>Structure that represents a haptic direction. </para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_s_d_l___haptic_constant">SDL_HapticConstant</link> <link linkend="__s_d_l__haptic_8h_1ad90d0e292edba72fdb696a1e7b9560cd">SDL_HapticConstant</link></para>
+
+<para>A structure containing a template for a Constant effect. </para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_s_d_l___haptic_periodic">SDL_HapticPeriodic</link> <link linkend="__s_d_l__haptic_8h_1a0ebf54334ce8dbdd0f8711ca70f141a7">SDL_HapticPeriodic</link></para>
+
+<para>A structure containing a template for a Periodic effect. </para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_s_d_l___haptic_condition">SDL_HapticCondition</link> <link linkend="__s_d_l__haptic_8h_1af4d7e7825bf98ca5a5aa8194b77b0754">SDL_HapticCondition</link></para>
+
+<para>A structure containing a template for a Condition effect. </para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_s_d_l___haptic_ramp">SDL_HapticRamp</link> <link linkend="__s_d_l__haptic_8h_1af967093786a8e460fc42c9b502472d85">SDL_HapticRamp</link></para>
+
+<para>A structure containing a template for a Ramp effect. </para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_s_d_l___haptic_left_right">SDL_HapticLeftRight</link> <link linkend="__s_d_l__haptic_8h_1adf5073b6a3b2129da7820e5506321542">SDL_HapticLeftRight</link></para>
+
+<para>A structure containing a template for a Left/Right effect. </para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_s_d_l___haptic_custom">SDL_HapticCustom</link> <link linkend="__s_d_l__haptic_8h_1ace902fac5855f399ea16edbc2d28c8f1">SDL_HapticCustom</link></para>
+
+<para>A structure containing a template for the <link linkend="__s_d_l__haptic_8h_1a8a18c4de1076ac9bebd718329d16db29">SDL_HAPTIC_CUSTOM</link> effect. </para>
+</listitem>
+            <listitem><para>typedef union <link linkend="_union_s_d_l___haptic_effect">SDL_HapticEffect</link> <link linkend="__s_d_l__haptic_8h_1a7a4688cc52c09110c97e65c2f11072ee">SDL_HapticEffect</link></para>
+
+<para>The generic template for any haptic effect. </para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__haptic_8h_1a6f538063a9f1d790882c0d3a81c302cd">SDL_NumHaptics</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__haptic_8h_1ac471a69170328585193066cc9d9ff482">SDL_HapticName</link> (int device_index)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__haptic_8h_1aa075e2777c811ecdd2ca53d49288555e">SDL_HapticOpen</link> (int device_index)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__haptic_8h_1a24d8f221d4b2eae5c3c663752fc0d66a">SDL_HapticOpened</link> (int device_index)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__haptic_8h_1aacee621c474cda53e56f4a2233c65407">SDL_HapticIndex</link> (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> *haptic)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__haptic_8h_1a8fcc0fb333baed629004bd8c0c66bd76">SDL_MouseIsHaptic</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__haptic_8h_1a303d13b149b6dc4cabe07fb799333581">SDL_HapticOpenFromMouse</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__haptic_8h_1a8a2966d363cba55ffdfeff42e4204ef1">SDL_JoystickIsHaptic</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__haptic_8h_1a865ecbbf4869868e401c182952994ea0">SDL_HapticOpenFromJoystick</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__haptic_8h_1a671599fd69f5a08cdd2ba7e3f1ae456a">SDL_HapticClose</link> (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> *haptic)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__haptic_8h_1afc6e5a5701fe80004d529d762132ad6b">SDL_HapticNumEffects</link> (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> *haptic)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__haptic_8h_1a255e1e6fc27489080bcbbd3c7fadc6db">SDL_HapticNumEffectsPlaying</link> (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> *haptic)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> unsigned int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__haptic_8h_1a8192e1220a834e708959539fa1c3f490">SDL_HapticQuery</link> (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> *haptic)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__haptic_8h_1ad6705645197f6df4eeeea32392462483">SDL_HapticNumAxes</link> (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> *haptic)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__haptic_8h_1ae333ef77753ba700875fa20858b9021d">SDL_HapticEffectSupported</link> (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> *haptic, <link linkend="_union_s_d_l___haptic_effect">SDL_HapticEffect</link> *effect)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__haptic_8h_1a176c52ff4b77b63cb94ea83f8f4183ad">SDL_HapticNewEffect</link> (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> *haptic, <link linkend="_union_s_d_l___haptic_effect">SDL_HapticEffect</link> *effect)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__haptic_8h_1a4c212cbdb3487dd8d72882d355a19472">SDL_HapticUpdateEffect</link> (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> *haptic, int effect, <link linkend="_union_s_d_l___haptic_effect">SDL_HapticEffect</link> *<link linkend="__s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a">data</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__haptic_8h_1a1cd1294768bb00f35b77f67031a8a9cb">SDL_HapticRunEffect</link> (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> *haptic, int effect, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> iterations)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__haptic_8h_1a27b35e361aaafa830561e98328c98c8e">SDL_HapticStopEffect</link> (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> *haptic, int effect)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__haptic_8h_1a0bb35fea7c4c08c9bcb80e0bcfa1799f">SDL_HapticDestroyEffect</link> (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> *haptic, int effect)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__haptic_8h_1ae2185c0814f107dd5851dd743e9ea71c">SDL_HapticGetEffectStatus</link> (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> *haptic, int effect)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__haptic_8h_1a2a90e7cefab3fdecf37e2f1b956a9e73">SDL_HapticSetGain</link> (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> *haptic, int gain)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__haptic_8h_1a0b0d63aa4513fc1b12939500cb3f8a76">SDL_HapticSetAutocenter</link> (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> *haptic, int autocenter)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__haptic_8h_1af0181e59ecd14c6aecd1fd3c5099330a">SDL_HapticPause</link> (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> *haptic)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__haptic_8h_1a3593eed87aee3b9caa1c25927002c5ae">SDL_HapticUnpause</link> (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> *haptic)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__haptic_8h_1aad427170295d6b88a5a94cd6a491797a">SDL_HapticStopAll</link> (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> *haptic)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__haptic_8h_1aa0754b11e2aed38bc955750c7a6a6c73">SDL_HapticRumbleSupported</link> (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> *haptic)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__haptic_8h_1af44cbecefe14da5a7476013ce06f38b9">SDL_HapticRumbleInit</link> (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> *haptic)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__haptic_8h_1a971b5651414202f89a8c6eed640e990d">SDL_HapticRumblePlay</link> (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> *haptic, float strength, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="__s_d_l__opengl__glext_8h_1ab9c919755bde3b34349e23a32b4e0fa7">length</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__haptic_8h_1a9e11ff3ae40f59c04be3bae98d8d05ba">SDL_HapticRumbleStop</link> (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> *haptic)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>The SDL haptic subsystem allows you to control haptic (force feedback) devices. </para>
+
+<para>The basic usage is as follows:<itemizedlist>
+<listitem>
+<para>Initialize the subsystem (<link linkend="__s_d_l_8h_1adfd88189fec07574cae461b9dea75a85">SDL_INIT_HAPTIC</link>).</para>
+</listitem><listitem>
+<para>Open a haptic device.<itemizedlist>
+<listitem>
+<para><link linkend="__s_d_l__haptic_8h_1aa075e2777c811ecdd2ca53d49288555e">SDL_HapticOpen()</link> to open from index.</para>
+</listitem><listitem>
+<para><link linkend="__s_d_l__haptic_8h_1a865ecbbf4869868e401c182952994ea0">SDL_HapticOpenFromJoystick()</link> to open from an existing joystick.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem>
+<para>Create an effect (<link linkend="_union_s_d_l___haptic_effect">SDL_HapticEffect</link>).</para>
+</listitem><listitem>
+<para>Upload the effect with <link linkend="__s_d_l__haptic_8h_1a176c52ff4b77b63cb94ea83f8f4183ad">SDL_HapticNewEffect()</link>.</para>
+</listitem><listitem>
+<para>Run the effect with <link linkend="__s_d_l__haptic_8h_1a1cd1294768bb00f35b77f67031a8a9cb">SDL_HapticRunEffect()</link>.</para>
+</listitem><listitem>
+<para>(optional) Free the effect with <link linkend="__s_d_l__haptic_8h_1a0bb35fea7c4c08c9bcb80e0bcfa1799f">SDL_HapticDestroyEffect()</link>.</para>
+</listitem><listitem>
+<para>Close the haptic device with <link linkend="__s_d_l__haptic_8h_1a671599fd69f5a08cdd2ba7e3f1ae456a">SDL_HapticClose()</link>.</para>
+</listitem></itemizedlist>
+</para>
+
+<para><formalpara>
+<title>Simple rumble example:</title>
+<para><literallayout><computeroutput><link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link>&#32;*haptic;
+
+<emphasis role="comment">//&#32;Open&#32;the&#32;device</emphasis>
+haptic&#32;=&#32;<link linkend="__s_d_l__haptic_8h_1aa075e2777c811ecdd2ca53d49288555e">SDL_HapticOpen</link>(&#32;0&#32;);
+<emphasis role="keywordflow">if</emphasis>&#32;(haptic&#32;==&#32;<link linkend="_begin__code_8h_1a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</link>)
+&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+
+<emphasis role="comment">//&#32;Initialize&#32;simple&#32;rumble</emphasis>
+<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="__s_d_l__haptic_8h_1af44cbecefe14da5a7476013ce06f38b9">SDL_HapticRumbleInit</link>(&#32;haptic&#32;)&#32;!=&#32;0)
+&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+
+<emphasis role="comment">//&#32;Play&#32;effect&#32;at&#32;50%&#32;strength&#32;for&#32;2&#32;seconds</emphasis>
+<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="__s_d_l__haptic_8h_1a971b5651414202f89a8c6eed640e990d">SDL_HapticRumblePlay</link>(&#32;haptic,&#32;0.5,&#32;2000&#32;)&#32;!=&#32;0)
+&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+<link linkend="__s_d_l__timer_8h_1ae8050b95373b95249064467592ab4e21">SDL_Delay</link>(&#32;2000&#32;);
+
+<emphasis role="comment">//&#32;Clean&#32;up</emphasis>
+<link linkend="__s_d_l__haptic_8h_1a671599fd69f5a08cdd2ba7e3f1ae456a">SDL_HapticClose</link>(&#32;haptic&#32;);
+</computeroutput></literallayout></para>
+</formalpara>
+<formalpara>
+<title>Complete example:</title>
+<para><literallayout><computeroutput><emphasis role="keywordtype">int</emphasis>&#32;test_haptic(&#32;<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*&#32;joystick&#32;)&#32;{
+&#32;&#32;&#32;<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link>&#32;*haptic;
+&#32;&#32;&#32;<link linkend="_union_s_d_l___haptic_effect">SDL_HapticEffect</link>&#32;effect;
+&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;effect_id;
+
+&#32;&#32;&#32;<emphasis role="comment">//&#32;Open&#32;the&#32;device</emphasis>
+&#32;&#32;&#32;haptic&#32;=&#32;<link linkend="__s_d_l__haptic_8h_1a865ecbbf4869868e401c182952994ea0">SDL_HapticOpenFromJoystick</link>(&#32;joystick&#32;);
+&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(haptic&#32;==&#32;<link linkend="_begin__code_8h_1a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</link>)&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;&#32;<emphasis role="comment">//&#32;Most&#32;likely&#32;joystick&#32;isn&apos;t&#32;haptic</emphasis>
+
+&#32;&#32;&#32;<emphasis role="comment">//&#32;See&#32;if&#32;it&#32;can&#32;do&#32;sine&#32;waves</emphasis>
+&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;((<link linkend="__s_d_l__haptic_8h_1a8192e1220a834e708959539fa1c3f490">SDL_HapticQuery</link>(haptic)&#32;&amp;&#32;<link linkend="__s_d_l__haptic_8h_1aa6d75adbfcdda5075078e7a2849da5c0">SDL_HAPTIC_SINE</link>)==0)&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__haptic_8h_1a671599fd69f5a08cdd2ba7e3f1ae456a">SDL_HapticClose</link>(haptic);&#32;<emphasis role="comment">//&#32;No&#32;sine&#32;effect</emphasis>
+&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+&#32;&#32;&#32;}
+
+&#32;&#32;&#32;<emphasis role="comment">//&#32;Create&#32;the&#32;effect</emphasis>
+&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1ae175db0d44cd740e2fa1072b71e5f1a4">SDL_memset</link>(&#32;&amp;effect,&#32;0,&#32;<emphasis role="keyword">sizeof</emphasis>(<link linkend="_union_s_d_l___haptic_effect">SDL_HapticEffect</link>)&#32;);&#32;<emphasis role="comment">//&#32;0&#32;is&#32;safe&#32;default</emphasis>
+&#32;&#32;&#32;effect.<link linkend="_union_s_d_l___haptic_effect_1a5ff6cfd8da91537091e9a6c2108cb179">type</link>&#32;=&#32;<link linkend="__s_d_l__haptic_8h_1aa6d75adbfcdda5075078e7a2849da5c0">SDL_HAPTIC_SINE</link>;
+&#32;&#32;&#32;effect.<link linkend="_union_s_d_l___haptic_effect_1a8320ec4db6ec1dc1d30feb62ee2a2f04">periodic</link>.<link linkend="_struct_s_d_l___haptic_periodic_1a2c4f27d4583187a7a994e79ad49083d3">direction</link>.<link linkend="_struct_s_d_l___haptic_direction_1acd6830ad68c4ba2af16057fa418087cc">type</link>&#32;=&#32;<link linkend="__s_d_l__haptic_8h_1acdc35e97e5525472054a67b76e518f3b">SDL_HAPTIC_POLAR</link>;&#32;<emphasis role="comment">//&#32;Polar&#32;coordinates</emphasis>
+&#32;&#32;&#32;effect.<link linkend="_union_s_d_l___haptic_effect_1a8320ec4db6ec1dc1d30feb62ee2a2f04">periodic</link>.<link linkend="_struct_s_d_l___haptic_periodic_1a2c4f27d4583187a7a994e79ad49083d3">direction</link>.<link linkend="_struct_s_d_l___haptic_direction_1a6cebd8118a3e61e36bd0c503ae020362">dir</link>[0]&#32;=&#32;18000;&#32;<emphasis role="comment">//&#32;Force&#32;comes&#32;from&#32;south</emphasis>
+&#32;&#32;&#32;effect.<link linkend="_union_s_d_l___haptic_effect_1a8320ec4db6ec1dc1d30feb62ee2a2f04">periodic</link>.<link linkend="_struct_s_d_l___haptic_periodic_1a0e7e105b96308129b248d52b56a2a839">period</link>&#32;=&#32;1000;&#32;<emphasis role="comment">//&#32;1000&#32;ms</emphasis>
+&#32;&#32;&#32;effect.<link linkend="_union_s_d_l___haptic_effect_1a8320ec4db6ec1dc1d30feb62ee2a2f04">periodic</link>.<link linkend="_struct_s_d_l___haptic_periodic_1aad0ad2b00c7e6959da627663d91f7b94">magnitude</link>&#32;=&#32;20000;&#32;<emphasis role="comment">//&#32;20000/32767&#32;strength</emphasis>
+&#32;&#32;&#32;effect.<link linkend="_union_s_d_l___haptic_effect_1a8320ec4db6ec1dc1d30feb62ee2a2f04">periodic</link>.<link linkend="_struct_s_d_l___haptic_periodic_1a0ef0b17c54aaa5c99886c2a618444026">length</link>&#32;=&#32;5000;&#32;<emphasis role="comment">//&#32;5&#32;seconds&#32;long</emphasis>
+&#32;&#32;&#32;effect.<link linkend="_union_s_d_l___haptic_effect_1a8320ec4db6ec1dc1d30feb62ee2a2f04">periodic</link>.<link linkend="_struct_s_d_l___haptic_periodic_1ab35eedce7107edc75640586159fe75bb">attack_length</link>&#32;=&#32;1000;&#32;<emphasis role="comment">//&#32;Takes&#32;1&#32;second&#32;to&#32;get&#32;max&#32;strength</emphasis>
+&#32;&#32;&#32;effect.<link linkend="_union_s_d_l___haptic_effect_1a8320ec4db6ec1dc1d30feb62ee2a2f04">periodic</link>.<link linkend="_struct_s_d_l___haptic_periodic_1ae1c186d02304eae142a62dca72f50fa8">fade_length</link>&#32;=&#32;1000;&#32;<emphasis role="comment">//&#32;Takes&#32;1&#32;second&#32;to&#32;fade&#32;away</emphasis>
+
+&#32;&#32;&#32;<emphasis role="comment">//&#32;Upload&#32;the&#32;effect</emphasis>
+&#32;&#32;&#32;effect_id&#32;=&#32;<link linkend="__s_d_l__haptic_8h_1a176c52ff4b77b63cb94ea83f8f4183ad">SDL_HapticNewEffect</link>(&#32;haptic,&#32;&amp;effect&#32;);
+
+&#32;&#32;&#32;<emphasis role="comment">//&#32;Test&#32;the&#32;effect</emphasis>
+&#32;&#32;&#32;<link linkend="__s_d_l__haptic_8h_1a1cd1294768bb00f35b77f67031a8a9cb">SDL_HapticRunEffect</link>(&#32;haptic,&#32;effect_id,&#32;1&#32;);
+&#32;&#32;&#32;<link linkend="__s_d_l__timer_8h_1ae8050b95373b95249064467592ab4e21">SDL_Delay</link>(&#32;5000);&#32;<emphasis role="comment">//&#32;Wait&#32;for&#32;the&#32;effect&#32;to&#32;finish</emphasis>
+
+&#32;&#32;&#32;<emphasis role="comment">//&#32;We&#32;destroy&#32;the&#32;effect,&#32;although&#32;closing&#32;the&#32;device&#32;also&#32;does&#32;this</emphasis>
+&#32;&#32;&#32;<link linkend="__s_d_l__haptic_8h_1a0bb35fea7c4c08c9bcb80e0bcfa1799f">SDL_HapticDestroyEffect</link>(&#32;haptic,&#32;effect_id&#32;);
+
+&#32;&#32;&#32;<emphasis role="comment">//&#32;Close&#32;the&#32;device</emphasis>
+&#32;&#32;&#32;<link linkend="__s_d_l__haptic_8h_1a671599fd69f5a08cdd2ba7e3f1ae456a">SDL_HapticClose</link>(haptic);
+
+&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;&#32;<emphasis role="comment">//&#32;Success</emphasis>
+}
+</computeroutput></literallayout> </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__s_d_l__haptic_8h_1a28aa71e231fbf5b88bce7906bf2f4e70"/><section>
+    <title>SDL_HAPTIC_AUTOCENTER</title>
+<indexterm><primary>SDL_HAPTIC_AUTOCENTER</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HAPTIC_AUTOCENTER</secondary></indexterm>
+<para><computeroutput>#define SDL_HAPTIC_AUTOCENTER   (1u&lt;&lt;13)</computeroutput></para><para>
+
+<para>Device can set autocenter. </para>
+</para>
+
+<para>Device supports setting autocenter.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1a0b0d63aa4513fc1b12939500cb3f8a76">SDL_HapticSetAutocenter</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1af8b2430a363a968de2a5b64c8f663d3b"/><section>
+    <title>SDL_HAPTIC_CARTESIAN</title>
+<indexterm><primary>SDL_HAPTIC_CARTESIAN</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HAPTIC_CARTESIAN</secondary></indexterm>
+<para><computeroutput>#define SDL_HAPTIC_CARTESIAN   1</computeroutput></para><para>
+
+<para>Uses cartesian coordinates for the direction. </para>
+</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_struct_s_d_l___haptic_direction">SDL_HapticDirection</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a955fb9f680dcf9cc72a3d5263e85b80a"/><section>
+    <title>SDL_HAPTIC_CONSTANT</title>
+<indexterm><primary>SDL_HAPTIC_CONSTANT</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HAPTIC_CONSTANT</secondary></indexterm>
+<para><computeroutput>#define SDL_HAPTIC_CONSTANT   (1u&lt;&lt;0)</computeroutput></para><para>
+
+<para>Constant effect supported. </para>
+</para>
+
+<para>Constant haptic effect.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_struct_s_d_l___haptic_condition">SDL_HapticCondition</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a8a18c4de1076ac9bebd718329d16db29"/><section>
+    <title>SDL_HAPTIC_CUSTOM</title>
+<indexterm><primary>SDL_HAPTIC_CUSTOM</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HAPTIC_CUSTOM</secondary></indexterm>
+<para><computeroutput>#define SDL_HAPTIC_CUSTOM   (1u&lt;&lt;11)</computeroutput></para><para>
+
+<para>Custom effect is supported. </para>
+</para>
+
+<para>User defined custom haptic effect. </para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a69522f261973e3ea4273486141320a87"/><section>
+    <title>SDL_HAPTIC_DAMPER</title>
+<indexterm><primary>SDL_HAPTIC_DAMPER</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HAPTIC_DAMPER</secondary></indexterm>
+<para><computeroutput>#define SDL_HAPTIC_DAMPER   (1u&lt;&lt;8)</computeroutput></para><para>
+
+<para>Damper effect supported - uses axes velocity. </para>
+</para>
+
+<para>Condition haptic effect that simulates dampening. Effect is based on the axes velocity.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_struct_s_d_l___haptic_condition">SDL_HapticCondition</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a98a5011311168d63921aaac21403a4d8"/><section>
+    <title>SDL_HAPTIC_FRICTION</title>
+<indexterm><primary>SDL_HAPTIC_FRICTION</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HAPTIC_FRICTION</secondary></indexterm>
+<para><computeroutput>#define SDL_HAPTIC_FRICTION   (1u&lt;&lt;10)</computeroutput></para><para>
+
+<para>Friction effect supported - uses axes movement. </para>
+</para>
+
+<para>Condition haptic effect that simulates friction. Effect is based on the axes movement.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_struct_s_d_l___haptic_condition">SDL_HapticCondition</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a3afe54582bd5c184109f3f61b6c84c6c"/><section>
+    <title>SDL_HAPTIC_GAIN</title>
+<indexterm><primary>SDL_HAPTIC_GAIN</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HAPTIC_GAIN</secondary></indexterm>
+<para><computeroutput>#define SDL_HAPTIC_GAIN   (1u&lt;&lt;12)</computeroutput></para><para>
+
+<para>Device can set global gain. </para>
+</para>
+
+<para>Device supports setting the global gain.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1a2a90e7cefab3fdecf37e2f1b956a9e73">SDL_HapticSetGain</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a14b807471589120395aec28293cf6642"/><section>
+    <title>SDL_HAPTIC_INERTIA</title>
+<indexterm><primary>SDL_HAPTIC_INERTIA</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HAPTIC_INERTIA</secondary></indexterm>
+<para><computeroutput>#define SDL_HAPTIC_INERTIA   (1u&lt;&lt;9)</computeroutput></para><para>
+
+<para>Inertia effect supported - uses axes acceleration. </para>
+</para>
+
+<para>Condition haptic effect that simulates inertia. Effect is based on the axes acceleration.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_struct_s_d_l___haptic_condition">SDL_HapticCondition</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a648896e9e14cb27fa8a4b6632d3f3882"/><section>
+    <title>SDL_HAPTIC_INFINITY</title>
+<indexterm><primary>SDL_HAPTIC_INFINITY</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HAPTIC_INFINITY</secondary></indexterm>
+<para><computeroutput>#define SDL_HAPTIC_INFINITY   4294967295U</computeroutput></para><para>
+
+<para>Used to play a device an infinite number of times. </para>
+</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1a1cd1294768bb00f35b77f67031a8a9cb">SDL_HapticRunEffect</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1ae047624d8458ff6400887c37a36f86d3"/><section>
+    <title>SDL_HAPTIC_LEFTRIGHT</title>
+<indexterm><primary>SDL_HAPTIC_LEFTRIGHT</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HAPTIC_LEFTRIGHT</secondary></indexterm>
+<para><computeroutput>#define SDL_HAPTIC_LEFTRIGHT   (1u&lt;&lt;2)</computeroutput></para><para>
+
+<para>Left/Right effect supported. </para>
+</para>
+
+<para>Haptic effect for direct control over high/low frequency motors.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_struct_s_d_l___haptic_left_right">SDL_HapticLeftRight</link> </para>
+</formalpara>
+<warning><title>Warning</title>
+
+<para>this value was SDL_HAPTIC_SQUARE right before 2.0.0 shipped. Sorry, we ran out of bits, and this is important for XInput devices. </para>
+</warning>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a6baee8978ccc97add8457388801d7782"/><section>
+    <title>SDL_HAPTIC_PAUSE</title>
+<indexterm><primary>SDL_HAPTIC_PAUSE</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HAPTIC_PAUSE</secondary></indexterm>
+<para><computeroutput>#define SDL_HAPTIC_PAUSE   (1u&lt;&lt;15)</computeroutput></para><para>
+
+<para>Device can be paused. </para>
+</para>
+
+<para>Devices supports being paused.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1af0181e59ecd14c6aecd1fd3c5099330a">SDL_HapticPause</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a3593eed87aee3b9caa1c25927002c5ae">SDL_HapticUnpause</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1acdc35e97e5525472054a67b76e518f3b"/><section>
+    <title>SDL_HAPTIC_POLAR</title>
+<indexterm><primary>SDL_HAPTIC_POLAR</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HAPTIC_POLAR</secondary></indexterm>
+<para><computeroutput>#define SDL_HAPTIC_POLAR   0</computeroutput></para><para>
+
+<para>Uses polar coordinates for the direction. </para>
+</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_struct_s_d_l___haptic_direction">SDL_HapticDirection</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1af10eb937a64a8f602e9c46682ac0d868"/><section>
+    <title>SDL_HAPTIC_RAMP</title>
+<indexterm><primary>SDL_HAPTIC_RAMP</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HAPTIC_RAMP</secondary></indexterm>
+<para><computeroutput>#define SDL_HAPTIC_RAMP   (1u&lt;&lt;6)</computeroutput></para><para>
+
+<para>Ramp effect supported. </para>
+</para>
+
+<para>Ramp haptic effect.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_struct_s_d_l___haptic_ramp">SDL_HapticRamp</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1afd64aa747034a7ccf4b55f6246525701"/><section>
+    <title>SDL_HAPTIC_SAWTOOTHDOWN</title>
+<indexterm><primary>SDL_HAPTIC_SAWTOOTHDOWN</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HAPTIC_SAWTOOTHDOWN</secondary></indexterm>
+<para><computeroutput>#define SDL_HAPTIC_SAWTOOTHDOWN   (1u&lt;&lt;5)</computeroutput></para><para>
+
+<para>Sawtoothdown wave effect supported. </para>
+</para>
+
+<para>Periodic haptic effect that simulates saw tooth down waves.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_struct_s_d_l___haptic_periodic">SDL_HapticPeriodic</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1ab8e3f40f3c2bcee8905d13b634363c3f"/><section>
+    <title>SDL_HAPTIC_SAWTOOTHUP</title>
+<indexterm><primary>SDL_HAPTIC_SAWTOOTHUP</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HAPTIC_SAWTOOTHUP</secondary></indexterm>
+<para><computeroutput>#define SDL_HAPTIC_SAWTOOTHUP   (1u&lt;&lt;4)</computeroutput></para><para>
+
+<para>Sawtoothup wave effect supported. </para>
+</para>
+
+<para>Periodic haptic effect that simulates saw tooth up waves.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_struct_s_d_l___haptic_periodic">SDL_HapticPeriodic</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1aa6d75adbfcdda5075078e7a2849da5c0"/><section>
+    <title>SDL_HAPTIC_SINE</title>
+<indexterm><primary>SDL_HAPTIC_SINE</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HAPTIC_SINE</secondary></indexterm>
+<para><computeroutput>#define SDL_HAPTIC_SINE   (1u&lt;&lt;1)</computeroutput></para><para>
+
+<para>Sine wave effect supported. </para>
+</para>
+
+<para>Periodic haptic effect that simulates sine waves.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_struct_s_d_l___haptic_periodic">SDL_HapticPeriodic</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a1fcf7cb0eaf3c39b16ba266054e25aff"/><section>
+    <title>SDL_HAPTIC_SPHERICAL</title>
+<indexterm><primary>SDL_HAPTIC_SPHERICAL</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HAPTIC_SPHERICAL</secondary></indexterm>
+<para><computeroutput>#define SDL_HAPTIC_SPHERICAL   2</computeroutput></para><para>
+
+<para>Uses spherical coordinates for the direction. </para>
+</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_struct_s_d_l___haptic_direction">SDL_HapticDirection</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a3b52d4700380085e2b5d87bb20320fb1"/><section>
+    <title>SDL_HAPTIC_SPRING</title>
+<indexterm><primary>SDL_HAPTIC_SPRING</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HAPTIC_SPRING</secondary></indexterm>
+<para><computeroutput>#define SDL_HAPTIC_SPRING   (1u&lt;&lt;7)</computeroutput></para><para>
+
+<para>Spring effect supported - uses axes position. </para>
+</para>
+
+<para>Condition haptic effect that simulates a spring. Effect is based on the axes position.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_struct_s_d_l___haptic_condition">SDL_HapticCondition</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1abfbc9fa0d65f4b5632788945080cc71b"/><section>
+    <title>SDL_HAPTIC_STATUS</title>
+<indexterm><primary>SDL_HAPTIC_STATUS</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HAPTIC_STATUS</secondary></indexterm>
+<para><computeroutput>#define SDL_HAPTIC_STATUS   (1u&lt;&lt;14)</computeroutput></para><para>
+
+<para>Device can be queried for effect status. </para>
+</para>
+
+<para>Device supports querying effect status.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1ae2185c0814f107dd5851dd743e9ea71c">SDL_HapticGetEffectStatus</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a9efacbecc0a1b7a13684ee822b18062c"/><section>
+    <title>SDL_HAPTIC_STEERING_AXIS</title>
+<indexterm><primary>SDL_HAPTIC_STEERING_AXIS</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HAPTIC_STEERING_AXIS</secondary></indexterm>
+<para><computeroutput>#define SDL_HAPTIC_STEERING_AXIS   3</computeroutput></para><para>
+
+<para>Use this value to play an effect on the steering wheel axis. This provides better compatibility across platforms and devices as SDL will guess the correct axis. </para>
+</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_struct_s_d_l___haptic_direction">SDL_HapticDirection</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1ae8123eaa51511507375ba6ef9220fa46"/><section>
+    <title>SDL_HAPTIC_TRIANGLE</title>
+<indexterm><primary>SDL_HAPTIC_TRIANGLE</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HAPTIC_TRIANGLE</secondary></indexterm>
+<para><computeroutput>#define SDL_HAPTIC_TRIANGLE   (1u&lt;&lt;3)</computeroutput></para><para>
+
+<para>Triangle wave effect supported. </para>
+</para>
+
+<para>Periodic haptic effect that simulates triangular waves.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_struct_s_d_l___haptic_periodic">SDL_HapticPeriodic</link> </para>
+</formalpara>
+</para>
+</section>
+</section>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29"/><section>
+    <title>SDL_Haptic</title>
+<indexterm><primary>SDL_Haptic</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_Haptic</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link></computeroutput></para><para>
+
+<para>The haptic structure used to identify an SDL haptic. </para>
+</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1aa075e2777c811ecdd2ca53d49288555e">SDL_HapticOpen</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a865ecbbf4869868e401c182952994ea0">SDL_HapticOpenFromJoystick</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a671599fd69f5a08cdd2ba7e3f1ae456a">SDL_HapticClose</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1af4d7e7825bf98ca5a5aa8194b77b0754"/><section>
+    <title>SDL_HapticCondition</title>
+<indexterm><primary>SDL_HapticCondition</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticCondition</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_s_d_l___haptic_condition">SDL_HapticCondition</link> <link linkend="_struct_s_d_l___haptic_condition">SDL_HapticCondition</link></computeroutput></para><para>
+
+<para>A structure containing a template for a Condition effect. </para>
+</para>
+
+<para>The struct handles the following effects:<itemizedlist>
+<listitem>
+<para><link linkend="__s_d_l__haptic_8h_1a3b52d4700380085e2b5d87bb20320fb1">SDL_HAPTIC_SPRING</link>: Effect based on axes position.</para>
+</listitem><listitem>
+<para><link linkend="__s_d_l__haptic_8h_1a69522f261973e3ea4273486141320a87">SDL_HAPTIC_DAMPER</link>: Effect based on axes velocity.</para>
+</listitem><listitem>
+<para><link linkend="__s_d_l__haptic_8h_1a14b807471589120395aec28293cf6642">SDL_HAPTIC_INERTIA</link>: Effect based on axes acceleration.</para>
+</listitem><listitem>
+<para><link linkend="__s_d_l__haptic_8h_1a98a5011311168d63921aaac21403a4d8">SDL_HAPTIC_FRICTION</link>: Effect based on axes movement.</para>
+</listitem></itemizedlist>
+</para>
+
+<para>Direction is handled by condition internals instead of a direction member. The condition effect specific members have three parameters. The first refers to the X axis, the second refers to the Y axis and the third refers to the Z axis. The right terms refer to the positive side of the axis and the left terms refer to the negative side of the axis. Please refer to the <link linkend="_struct_s_d_l___haptic_direction">SDL_HapticDirection</link> diagram for which side is positive and which is negative.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_struct_s_d_l___haptic_direction">SDL_HapticDirection</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a3b52d4700380085e2b5d87bb20320fb1">SDL_HAPTIC_SPRING</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a69522f261973e3ea4273486141320a87">SDL_HAPTIC_DAMPER</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a14b807471589120395aec28293cf6642">SDL_HAPTIC_INERTIA</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a98a5011311168d63921aaac21403a4d8">SDL_HAPTIC_FRICTION</link> </para>
+
+<para><link linkend="_union_s_d_l___haptic_effect">SDL_HapticEffect</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1ad90d0e292edba72fdb696a1e7b9560cd"/><section>
+    <title>SDL_HapticConstant</title>
+<indexterm><primary>SDL_HapticConstant</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticConstant</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_s_d_l___haptic_constant">SDL_HapticConstant</link> <link linkend="_struct_s_d_l___haptic_constant">SDL_HapticConstant</link></computeroutput></para><para>
+
+<para>A structure containing a template for a Constant effect. </para>
+</para>
+
+<para>This struct is exclusively for the <link linkend="__s_d_l__haptic_8h_1a955fb9f680dcf9cc72a3d5263e85b80a">SDL_HAPTIC_CONSTANT</link> effect.</para>
+
+<para>A constant effect applies a constant force in the specified direction to the joystick.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1a955fb9f680dcf9cc72a3d5263e85b80a">SDL_HAPTIC_CONSTANT</link> </para>
+
+<para><link linkend="_union_s_d_l___haptic_effect">SDL_HapticEffect</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1ace902fac5855f399ea16edbc2d28c8f1"/><section>
+    <title>SDL_HapticCustom</title>
+<indexterm><primary>SDL_HapticCustom</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticCustom</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_s_d_l___haptic_custom">SDL_HapticCustom</link> <link linkend="_struct_s_d_l___haptic_custom">SDL_HapticCustom</link></computeroutput></para><para>
+
+<para>A structure containing a template for the <link linkend="__s_d_l__haptic_8h_1a8a18c4de1076ac9bebd718329d16db29">SDL_HAPTIC_CUSTOM</link> effect. </para>
+</para>
+
+<para>This struct is exclusively for the <link linkend="__s_d_l__haptic_8h_1a8a18c4de1076ac9bebd718329d16db29">SDL_HAPTIC_CUSTOM</link> effect.</para>
+
+<para>A custom force feedback effect is much like a periodic effect, where the application can define its exact shape. You will have to allocate the data yourself. Data should consist of channels * samples Uint16 samples.</para>
+
+<para>If channels is one, the effect is rotated using the defined direction. Otherwise it uses the samples in data for the different axes.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1a8a18c4de1076ac9bebd718329d16db29">SDL_HAPTIC_CUSTOM</link> </para>
+
+<para><link linkend="_union_s_d_l___haptic_effect">SDL_HapticEffect</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a67e1c7124fcd0d6c6bc775ab0758b4ad"/><section>
+    <title>SDL_HapticDirection</title>
+<indexterm><primary>SDL_HapticDirection</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticDirection</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_s_d_l___haptic_direction">SDL_HapticDirection</link> <link linkend="_struct_s_d_l___haptic_direction">SDL_HapticDirection</link></computeroutput></para><para>
+
+<para>Structure that represents a haptic direction. </para>
+</para>
+
+<para>This is the direction where the force comes from, instead of the direction in which the force is exerted.</para>
+
+<para>Directions can be specified by:<itemizedlist>
+<listitem>
+<para><link linkend="__s_d_l__haptic_8h_1acdc35e97e5525472054a67b76e518f3b">SDL_HAPTIC_POLAR</link> : Specified by polar coordinates.</para>
+</listitem><listitem>
+<para><link linkend="__s_d_l__haptic_8h_1af8b2430a363a968de2a5b64c8f663d3b">SDL_HAPTIC_CARTESIAN</link> : Specified by cartesian coordinates.</para>
+</listitem><listitem>
+<para><link linkend="__s_d_l__haptic_8h_1a1fcf7cb0eaf3c39b16ba266054e25aff">SDL_HAPTIC_SPHERICAL</link> : Specified by spherical coordinates.</para>
+</listitem></itemizedlist>
+</para>
+
+<para>Cardinal directions of the haptic device are relative to the positioning of the device. North is considered to be away from the user.</para>
+
+<para>The following diagram represents the cardinal directions: <literallayout><computeroutput>              .--.
+              |__| .-------.
+              |=.| |.-----.|
+              |--| ||     ||
+              |  | |&apos;-----&apos;|
+              |__|~&apos;)_____(&apos;
+                [ COMPUTER ]
+
+
+                  North (0,-1)
+                      ^
+                      |
+                      |
+(-1,0)  West &lt;----[ HAPTIC ]----&gt; East (1,0)
+                      |
+                      |
+                      v
+                   South (0,1)
+
+
+                   [ USER ]
+                     \|||/
+                     (o o)
+               ---ooO-(_)-Ooo---</computeroutput></literallayout></para>
+
+<para>If type is <link linkend="__s_d_l__haptic_8h_1acdc35e97e5525472054a67b76e518f3b">SDL_HAPTIC_POLAR</link>, direction is encoded by hundredths of a degree starting north and turning clockwise. <link linkend="__s_d_l__haptic_8h_1acdc35e97e5525472054a67b76e518f3b">SDL_HAPTIC_POLAR</link> only uses the first <computeroutput>dir</computeroutput> parameter. The cardinal directions would be:<itemizedlist>
+<listitem>
+<para>North: 0 (0 degrees)</para>
+</listitem><listitem>
+<para>East: 9000 (90 degrees)</para>
+</listitem><listitem>
+<para>South: 18000 (180 degrees)</para>
+</listitem><listitem>
+<para>West: 27000 (270 degrees)</para>
+</listitem></itemizedlist>
+</para>
+
+<para>If type is <link linkend="__s_d_l__haptic_8h_1af8b2430a363a968de2a5b64c8f663d3b">SDL_HAPTIC_CARTESIAN</link>, direction is encoded by three positions (X axis, Y axis and Z axis (with 3 axes)). <link linkend="__s_d_l__haptic_8h_1af8b2430a363a968de2a5b64c8f663d3b">SDL_HAPTIC_CARTESIAN</link> uses the first three <computeroutput>dir</computeroutput> parameters. The cardinal directions would be:<itemizedlist>
+<listitem>
+<para>North: 0,-1, 0</para>
+</listitem><listitem>
+<para>East: 1, 0, 0</para>
+</listitem><listitem>
+<para>South: 0, 1, 0</para>
+</listitem><listitem>
+<para>West: -1, 0, 0</para>
+</listitem></itemizedlist>
+</para>
+
+<para>The Z axis represents the height of the effect if supported, otherwise it&apos;s unused. In cartesian encoding (1, 2) would be the same as (2, 4), you can use any multiple you want, only the direction matters.</para>
+
+<para>If type is <link linkend="__s_d_l__haptic_8h_1a1fcf7cb0eaf3c39b16ba266054e25aff">SDL_HAPTIC_SPHERICAL</link>, direction is encoded by two rotations. The first two <computeroutput>dir</computeroutput> parameters are used. The <computeroutput>dir</computeroutput> parameters are as follows (all values are in hundredths of degrees):<itemizedlist>
+<listitem>
+<para>Degrees from (1, 0) rotated towards (0, 1).</para>
+</listitem><listitem>
+<para>Degrees towards (0, 0, 1) (device needs at least 3 axes).</para>
+</listitem></itemizedlist>
+</para>
+
+<para>Example of force coming from the south with all encodings (force coming from the south means the user will have to pull the stick to counteract): <literallayout><computeroutput><link linkend="_struct_s_d_l___haptic_direction">SDL_HapticDirection</link>&#32;direction;
+
+<emphasis role="comment">//&#32;Cartesian&#32;directions</emphasis>
+direction.<link linkend="_struct_s_d_l___haptic_direction_1acd6830ad68c4ba2af16057fa418087cc">type</link>&#32;=&#32;<link linkend="__s_d_l__haptic_8h_1af8b2430a363a968de2a5b64c8f663d3b">SDL_HAPTIC_CARTESIAN</link>;&#32;<emphasis role="comment">//&#32;Using&#32;cartesian&#32;direction&#32;encoding.</emphasis>
+direction.<link linkend="_struct_s_d_l___haptic_direction_1a6cebd8118a3e61e36bd0c503ae020362">dir</link>[0]&#32;=&#32;0;&#32;<emphasis role="comment">//&#32;X&#32;position</emphasis>
+direction.<link linkend="_struct_s_d_l___haptic_direction_1a6cebd8118a3e61e36bd0c503ae020362">dir</link>[1]&#32;=&#32;1;&#32;<emphasis role="comment">//&#32;Y&#32;position</emphasis>
+<emphasis role="comment">//&#32;Assuming&#32;the&#32;device&#32;has&#32;2&#32;axes,&#32;we&#32;don&apos;t&#32;need&#32;to&#32;specify&#32;third&#32;parameter.</emphasis>
+
+<emphasis role="comment">//&#32;Polar&#32;directions</emphasis>
+direction.<link linkend="_struct_s_d_l___haptic_direction_1acd6830ad68c4ba2af16057fa418087cc">type</link>&#32;=&#32;<link linkend="__s_d_l__haptic_8h_1acdc35e97e5525472054a67b76e518f3b">SDL_HAPTIC_POLAR</link>;&#32;<emphasis role="comment">//&#32;We&apos;ll&#32;be&#32;using&#32;polar&#32;direction&#32;encoding.</emphasis>
+direction.<link linkend="_struct_s_d_l___haptic_direction_1a6cebd8118a3e61e36bd0c503ae020362">dir</link>[0]&#32;=&#32;18000;&#32;<emphasis role="comment">//&#32;Polar&#32;only&#32;uses&#32;first&#32;parameter</emphasis>
+
+<emphasis role="comment">//&#32;Spherical&#32;coordinates</emphasis>
+direction.<link linkend="_struct_s_d_l___haptic_direction_1acd6830ad68c4ba2af16057fa418087cc">type</link>&#32;=&#32;<link linkend="__s_d_l__haptic_8h_1a1fcf7cb0eaf3c39b16ba266054e25aff">SDL_HAPTIC_SPHERICAL</link>;&#32;<emphasis role="comment">//&#32;Spherical&#32;encoding</emphasis>
+direction.<link linkend="_struct_s_d_l___haptic_direction_1a6cebd8118a3e61e36bd0c503ae020362">dir</link>[0]&#32;=&#32;9000;&#32;<emphasis role="comment">//&#32;Since&#32;we&#32;only&#32;have&#32;two&#32;axes&#32;we&#32;don&apos;t&#32;need&#32;more&#32;parameters.</emphasis>
+</computeroutput></literallayout></para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1acdc35e97e5525472054a67b76e518f3b">SDL_HAPTIC_POLAR</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1af8b2430a363a968de2a5b64c8f663d3b">SDL_HAPTIC_CARTESIAN</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a1fcf7cb0eaf3c39b16ba266054e25aff">SDL_HAPTIC_SPHERICAL</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a9efacbecc0a1b7a13684ee822b18062c">SDL_HAPTIC_STEERING_AXIS</link> </para>
+
+<para><link linkend="_union_s_d_l___haptic_effect">SDL_HapticEffect</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1ad6705645197f6df4eeeea32392462483">SDL_HapticNumAxes</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a7a4688cc52c09110c97e65c2f11072ee"/><section>
+    <title>SDL_HapticEffect</title>
+<indexterm><primary>SDL_HapticEffect</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticEffect</secondary></indexterm>
+<para><computeroutput>typedef union <link linkend="_union_s_d_l___haptic_effect">SDL_HapticEffect</link> <link linkend="_union_s_d_l___haptic_effect">SDL_HapticEffect</link></computeroutput></para><para>
+
+<para>The generic template for any haptic effect. </para>
+</para>
+
+<para>All values max at 32767 (0x7FFF). Signed values also can be negative. Time values unless specified otherwise are in milliseconds.</para>
+
+<para>You can also pass <link linkend="__s_d_l__haptic_8h_1a648896e9e14cb27fa8a4b6632d3f3882">SDL_HAPTIC_INFINITY</link> to length instead of a 0-32767 value. Neither delay, interval, attack_length nor fade_length support <link linkend="__s_d_l__haptic_8h_1a648896e9e14cb27fa8a4b6632d3f3882">SDL_HAPTIC_INFINITY</link>. Fade will also not be used since effect never ends.</para>
+
+<para>Additionally, the <link linkend="__s_d_l__haptic_8h_1af10eb937a64a8f602e9c46682ac0d868">SDL_HAPTIC_RAMP</link> effect does not support a duration of <link linkend="__s_d_l__haptic_8h_1a648896e9e14cb27fa8a4b6632d3f3882">SDL_HAPTIC_INFINITY</link>.</para>
+
+<para>Button triggers may not be supported on all devices, it is advised to not use them if possible. Buttons start at index 1 instead of index 0 like the joystick.</para>
+
+<para>If both attack_length and fade_level are 0, the envelope is not used, otherwise both values are used.</para>
+
+<para>Common parts: <literallayout><computeroutput><emphasis role="comment">//&#32;Replay&#32;-&#32;All&#32;effects&#32;have&#32;this</emphasis>
+<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1ab9c919755bde3b34349e23a32b4e0fa7">length</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Duration&#32;of&#32;effect&#32;(ms).</emphasis>
+<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;delay;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Delay&#32;before&#32;starting&#32;effect.</emphasis>
+
+<emphasis role="comment">//&#32;Trigger&#32;-&#32;All&#32;effects&#32;have&#32;this</emphasis>
+<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;button;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Button&#32;that&#32;triggers&#32;effect.</emphasis>
+<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;interval;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;How&#32;soon&#32;before&#32;effect&#32;can&#32;be&#32;triggered&#32;again.</emphasis>
+
+<emphasis role="comment">//&#32;Envelope&#32;-&#32;All&#32;effects&#32;except&#32;condition&#32;effects&#32;have&#32;this</emphasis>
+<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;attack_length;&#32;<emphasis role="comment">//&#32;Duration&#32;of&#32;the&#32;attack&#32;(ms).</emphasis>
+<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;attack_level;&#32;&#32;<emphasis role="comment">//&#32;Level&#32;at&#32;the&#32;start&#32;of&#32;the&#32;attack.</emphasis>
+<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;fade_length;&#32;&#32;&#32;<emphasis role="comment">//&#32;Duration&#32;of&#32;the&#32;fade&#32;out&#32;(ms).</emphasis>
+<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;fade_level;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Level&#32;at&#32;the&#32;end&#32;of&#32;the&#32;fade.</emphasis>
+</computeroutput></literallayout></para>
+
+<para>Here we have an example of a constant effect evolution in time: <literallayout><computeroutput>Strength
+^
+|
+|    effect level --&gt;  _________________
+|                     /                 \
+|                    /                   \
+|                   /                     \
+|                  /                       \
+| attack_level --&gt; |                        \
+|                  |                        |  &lt;---  fade_level
+|
++--------------------------------------------------&gt; Time
+                   [--]                 [---]
+                   attack_length        fade_length
+
+[------------------][-----------------------]
+delay               length
+</computeroutput></literallayout></para>
+
+<para>Note either the attack_level or the fade_level may be above the actual effect level.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_struct_s_d_l___haptic_constant">SDL_HapticConstant</link> </para>
+
+<para><link linkend="_struct_s_d_l___haptic_periodic">SDL_HapticPeriodic</link> </para>
+
+<para><link linkend="_struct_s_d_l___haptic_condition">SDL_HapticCondition</link> </para>
+
+<para><link linkend="_struct_s_d_l___haptic_ramp">SDL_HapticRamp</link> </para>
+
+<para><link linkend="_struct_s_d_l___haptic_left_right">SDL_HapticLeftRight</link> </para>
+
+<para><link linkend="_struct_s_d_l___haptic_custom">SDL_HapticCustom</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1adf5073b6a3b2129da7820e5506321542"/><section>
+    <title>SDL_HapticLeftRight</title>
+<indexterm><primary>SDL_HapticLeftRight</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticLeftRight</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_s_d_l___haptic_left_right">SDL_HapticLeftRight</link> <link linkend="_struct_s_d_l___haptic_left_right">SDL_HapticLeftRight</link></computeroutput></para><para>
+
+<para>A structure containing a template for a Left/Right effect. </para>
+</para>
+
+<para>This struct is exclusively for the <link linkend="__s_d_l__haptic_8h_1ae047624d8458ff6400887c37a36f86d3">SDL_HAPTIC_LEFTRIGHT</link> effect.</para>
+
+<para>The Left/Right effect is used to explicitly control the large and small motors, commonly found in modern game controllers. The small (right) motor is high frequency, and the large (left) motor is low frequency.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1ae047624d8458ff6400887c37a36f86d3">SDL_HAPTIC_LEFTRIGHT</link> </para>
+
+<para><link linkend="_union_s_d_l___haptic_effect">SDL_HapticEffect</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a0ebf54334ce8dbdd0f8711ca70f141a7"/><section>
+    <title>SDL_HapticPeriodic</title>
+<indexterm><primary>SDL_HapticPeriodic</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticPeriodic</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_s_d_l___haptic_periodic">SDL_HapticPeriodic</link> <link linkend="_struct_s_d_l___haptic_periodic">SDL_HapticPeriodic</link></computeroutput></para><para>
+
+<para>A structure containing a template for a Periodic effect. </para>
+</para>
+
+<para>The struct handles the following effects:<itemizedlist>
+<listitem>
+<para><link linkend="__s_d_l__haptic_8h_1aa6d75adbfcdda5075078e7a2849da5c0">SDL_HAPTIC_SINE</link></para>
+</listitem><listitem>
+<para><link linkend="__s_d_l__haptic_8h_1ae047624d8458ff6400887c37a36f86d3">SDL_HAPTIC_LEFTRIGHT</link></para>
+</listitem><listitem>
+<para><link linkend="__s_d_l__haptic_8h_1ae8123eaa51511507375ba6ef9220fa46">SDL_HAPTIC_TRIANGLE</link></para>
+</listitem><listitem>
+<para><link linkend="__s_d_l__haptic_8h_1ab8e3f40f3c2bcee8905d13b634363c3f">SDL_HAPTIC_SAWTOOTHUP</link></para>
+</listitem><listitem>
+<para><link linkend="__s_d_l__haptic_8h_1afd64aa747034a7ccf4b55f6246525701">SDL_HAPTIC_SAWTOOTHDOWN</link></para>
+</listitem></itemizedlist>
+</para>
+
+<para>A periodic effect consists in a wave-shaped effect that repeats itself over time. The type determines the shape of the wave and the parameters determine the dimensions of the wave.</para>
+
+<para>Phase is given by hundredth of a degree meaning that giving the phase a value of 9000 will displace it 25% of its period. Here are sample values:<itemizedlist>
+<listitem>
+<para>0: No phase displacement.</para>
+</listitem><listitem>
+<para>9000: Displaced 25% of its period.</para>
+</listitem><listitem>
+<para>18000: Displaced 50% of its period.</para>
+</listitem><listitem>
+<para>27000: Displaced 75% of its period.</para>
+</listitem><listitem>
+<para>36000: Displaced 100% of its period, same as 0, but 0 is preferred.</para>
+</listitem></itemizedlist>
+</para>
+
+<para>Examples: <literallayout><computeroutput>SDL_HAPTIC_SINE
+  __      __      __      __
+ /  \    /  \    /  \    /
+/    \__/    \__/    \__/
+
+SDL_HAPTIC_SQUARE
+ __    __    __    __    __
+|  |  |  |  |  |  |  |  |  |
+|  |__|  |__|  |__|  |__|  |
+
+SDL_HAPTIC_TRIANGLE
+  /\    /\    /\    /\    /\
+ /  \  /  \  /  \  /  \  /
+/    \/    \/    \/    \/
+
+SDL_HAPTIC_SAWTOOTHUP
+  /|  /|  /|  /|  /|  /|  /|
+ / | / | / | / | / | / | / |
+/  |/  |/  |/  |/  |/  |/  |
+
+SDL_HAPTIC_SAWTOOTHDOWN
+\  |\  |\  |\  |\  |\  |\  |
+ \ | \ | \ | \ | \ | \ | \ |
+  \|  \|  \|  \|  \|  \|  \|
+</computeroutput></literallayout></para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1aa6d75adbfcdda5075078e7a2849da5c0">SDL_HAPTIC_SINE</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1ae047624d8458ff6400887c37a36f86d3">SDL_HAPTIC_LEFTRIGHT</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1ae8123eaa51511507375ba6ef9220fa46">SDL_HAPTIC_TRIANGLE</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1ab8e3f40f3c2bcee8905d13b634363c3f">SDL_HAPTIC_SAWTOOTHUP</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1afd64aa747034a7ccf4b55f6246525701">SDL_HAPTIC_SAWTOOTHDOWN</link> </para>
+
+<para><link linkend="_union_s_d_l___haptic_effect">SDL_HapticEffect</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1af967093786a8e460fc42c9b502472d85"/><section>
+    <title>SDL_HapticRamp</title>
+<indexterm><primary>SDL_HapticRamp</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticRamp</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_s_d_l___haptic_ramp">SDL_HapticRamp</link> <link linkend="_struct_s_d_l___haptic_ramp">SDL_HapticRamp</link></computeroutput></para><para>
+
+<para>A structure containing a template for a Ramp effect. </para>
+</para>
+
+<para>This struct is exclusively for the <link linkend="__s_d_l__haptic_8h_1af10eb937a64a8f602e9c46682ac0d868">SDL_HAPTIC_RAMP</link> effect.</para>
+
+<para>The ramp effect starts at start strength and ends at end strength. It augments in linear fashion. If you use attack and fade with a ramp the effects get added to the ramp effect making the effect become quadratic instead of linear.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1af10eb937a64a8f602e9c46682ac0d868">SDL_HAPTIC_RAMP</link> </para>
+
+<para><link linkend="_union_s_d_l___haptic_effect">SDL_HapticEffect</link> </para>
+</formalpara>
+</para>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__s_d_l__haptic_8h_1a671599fd69f5a08cdd2ba7e3f1ae456a"/><section>
+    <title>SDL_HapticClose()</title>
+<indexterm><primary>SDL_HapticClose</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticClose</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_HapticClose (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> * haptic)</computeroutput></para>
+<para>Close a haptic device previously opened with <link linkend="__s_d_l__haptic_8h_1aa075e2777c811ecdd2ca53d49288555e">SDL_HapticOpen()</link>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>haptic</entry><entry>
+<para>the SDL_Haptic device to close</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1aa075e2777c811ecdd2ca53d49288555e">SDL_HapticOpen</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a0bb35fea7c4c08c9bcb80e0bcfa1799f"/><section>
+    <title>SDL_HapticDestroyEffect()</title>
+<indexterm><primary>SDL_HapticDestroyEffect</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticDestroyEffect</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_HapticDestroyEffect (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> * haptic, int effect)</computeroutput></para>
+<para>Destroy a haptic effect on the device.</para>
+
+<para>This will stop the effect if it&apos;s running. Effects are automatically destroyed when the device is closed.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>haptic</entry><entry>
+<para>the SDL_Haptic device to destroy the effect on </para>
+</entry>
+                            </row>
+                            <row>
+<entry>effect</entry><entry>
+<para>the ID of the haptic effect to destroy</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1a176c52ff4b77b63cb94ea83f8f4183ad">SDL_HapticNewEffect</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1ae333ef77753ba700875fa20858b9021d"/><section>
+    <title>SDL_HapticEffectSupported()</title>
+<indexterm><primary>SDL_HapticEffectSupported</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticEffectSupported</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_HapticEffectSupported (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> * haptic, <link linkend="_union_s_d_l___haptic_effect">SDL_HapticEffect</link> * effect)</computeroutput></para>
+<para>Check to see if an effect is supported by a haptic device.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>haptic</entry><entry>
+<para>the SDL_Haptic device to query </para>
+</entry>
+                            </row>
+                            <row>
+<entry>effect</entry><entry>
+<para>the desired effect to query </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE if effect is supported, SDL_FALSE if it isn&apos;t, or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1a176c52ff4b77b63cb94ea83f8f4183ad">SDL_HapticNewEffect</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a8192e1220a834e708959539fa1c3f490">SDL_HapticQuery</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1ae2185c0814f107dd5851dd743e9ea71c"/><section>
+    <title>SDL_HapticGetEffectStatus()</title>
+<indexterm><primary>SDL_HapticGetEffectStatus</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticGetEffectStatus</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_HapticGetEffectStatus (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> * haptic, int effect)</computeroutput></para>
+<para>Get the status of the current effect on the specified haptic device.</para>
+
+<para>Device must support the SDL_HAPTIC_STATUS feature.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>haptic</entry><entry>
+<para>the SDL_Haptic device to query for the effect status on </para>
+</entry>
+                            </row>
+                            <row>
+<entry>effect</entry><entry>
+<para>the ID of the haptic effect to query its status </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 if it isn&apos;t playing, 1 if it is playing, or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1a1cd1294768bb00f35b77f67031a8a9cb">SDL_HapticRunEffect</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a27b35e361aaafa830561e98328c98c8e">SDL_HapticStopEffect</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1aacee621c474cda53e56f4a2233c65407"/><section>
+    <title>SDL_HapticIndex()</title>
+<indexterm><primary>SDL_HapticIndex</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticIndex</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_HapticIndex (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> * haptic)</computeroutput></para>
+<para>Get the index of a haptic device.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>haptic</entry><entry>
+<para>the SDL_Haptic device to query </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the index of the specified haptic device or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1aa075e2777c811ecdd2ca53d49288555e">SDL_HapticOpen</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a24d8f221d4b2eae5c3c663752fc0d66a">SDL_HapticOpened</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1ac471a69170328585193066cc9d9ff482"/><section>
+    <title>SDL_HapticName()</title>
+<indexterm><primary>SDL_HapticName</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticName</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_HapticName (int device_index)</computeroutput></para>
+<para>Get the implementation dependent name of a haptic device.</para>
+
+<para>This can be called before any joysticks are opened. If no name can be found, this function returns NULL.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>device_index</entry><entry>
+<para>index of the device to query. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the name of the device or NULL on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1a6f538063a9f1d790882c0d3a81c302cd">SDL_NumHaptics</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a176c52ff4b77b63cb94ea83f8f4183ad"/><section>
+    <title>SDL_HapticNewEffect()</title>
+<indexterm><primary>SDL_HapticNewEffect</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticNewEffect</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_HapticNewEffect (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> * haptic, <link linkend="_union_s_d_l___haptic_effect">SDL_HapticEffect</link> * effect)</computeroutput></para>
+<para>Create a new haptic effect on a specified device.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>haptic</entry><entry>
+<para>an SDL_Haptic device to create the effect on </para>
+</entry>
+                            </row>
+                            <row>
+<entry>effect</entry><entry>
+<para>an <link linkend="_union_s_d_l___haptic_effect">SDL_HapticEffect</link> structure containing the properties of the effect to create </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the ID of the effect on success or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1a0bb35fea7c4c08c9bcb80e0bcfa1799f">SDL_HapticDestroyEffect</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a1cd1294768bb00f35b77f67031a8a9cb">SDL_HapticRunEffect</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a4c212cbdb3487dd8d72882d355a19472">SDL_HapticUpdateEffect</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1ad6705645197f6df4eeeea32392462483"/><section>
+    <title>SDL_HapticNumAxes()</title>
+<indexterm><primary>SDL_HapticNumAxes</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticNumAxes</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_HapticNumAxes (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> * haptic)</computeroutput></para>
+<para>Get the number of haptic axes the device has.</para>
+
+<para>The number of haptic axes might be useful if working with the <link linkend="_struct_s_d_l___haptic_direction">SDL_HapticDirection</link> effect.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>haptic</entry><entry>
+<para>the SDL_Haptic device to query </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the number of axes on success or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1afc6e5a5701fe80004d529d762132ad6b"/><section>
+    <title>SDL_HapticNumEffects()</title>
+<indexterm><primary>SDL_HapticNumEffects</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticNumEffects</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_HapticNumEffects (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> * haptic)</computeroutput></para>
+<para>Get the number of effects a haptic device can store.</para>
+
+<para>On some platforms this isn&apos;t fully supported, and therefore is an approximation. Always check to see if your created effect was actually created and do not rely solely on <link linkend="__s_d_l__haptic_8h_1afc6e5a5701fe80004d529d762132ad6b">SDL_HapticNumEffects()</link>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>haptic</entry><entry>
+<para>the SDL_Haptic device to query </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the number of effects the haptic device can store or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1a255e1e6fc27489080bcbbd3c7fadc6db">SDL_HapticNumEffectsPlaying</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a8192e1220a834e708959539fa1c3f490">SDL_HapticQuery</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a255e1e6fc27489080bcbbd3c7fadc6db"/><section>
+    <title>SDL_HapticNumEffectsPlaying()</title>
+<indexterm><primary>SDL_HapticNumEffectsPlaying</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticNumEffectsPlaying</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_HapticNumEffectsPlaying (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> * haptic)</computeroutput></para>
+<para>Get the number of effects a haptic device can play at the same time.</para>
+
+<para>This is not supported on all platforms, but will always return a value.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>haptic</entry><entry>
+<para>the SDL_Haptic device to query maximum playing effects </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the number of effects the haptic device can play at the same time or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1afc6e5a5701fe80004d529d762132ad6b">SDL_HapticNumEffects</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a8192e1220a834e708959539fa1c3f490">SDL_HapticQuery</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1aa075e2777c811ecdd2ca53d49288555e"/><section>
+    <title>SDL_HapticOpen()</title>
+<indexterm><primary>SDL_HapticOpen</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticOpen</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_HapticOpen (int device_index)</computeroutput></para>
+<para>Open a haptic device for use.</para>
+
+<para>The index passed as an argument refers to the N&apos;th haptic device on this system.</para>
+
+<para>When opening a haptic device, its gain will be set to maximum and autocenter will be disabled. To modify these values use <link linkend="__s_d_l__haptic_8h_1a2a90e7cefab3fdecf37e2f1b956a9e73">SDL_HapticSetGain()</link> and <link linkend="__s_d_l__haptic_8h_1a0b0d63aa4513fc1b12939500cb3f8a76">SDL_HapticSetAutocenter()</link>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>device_index</entry><entry>
+<para>index of the device to open </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the device identifier or NULL on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1a671599fd69f5a08cdd2ba7e3f1ae456a">SDL_HapticClose</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1aacee621c474cda53e56f4a2233c65407">SDL_HapticIndex</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a865ecbbf4869868e401c182952994ea0">SDL_HapticOpenFromJoystick</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a303d13b149b6dc4cabe07fb799333581">SDL_HapticOpenFromMouse</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1af0181e59ecd14c6aecd1fd3c5099330a">SDL_HapticPause</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a0b0d63aa4513fc1b12939500cb3f8a76">SDL_HapticSetAutocenter</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a2a90e7cefab3fdecf37e2f1b956a9e73">SDL_HapticSetGain</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1aad427170295d6b88a5a94cd6a491797a">SDL_HapticStopAll</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a24d8f221d4b2eae5c3c663752fc0d66a"/><section>
+    <title>SDL_HapticOpened()</title>
+<indexterm><primary>SDL_HapticOpened</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticOpened</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_HapticOpened (int device_index)</computeroutput></para>
+<para>Check if the haptic device at the designated index has been opened.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>device_index</entry><entry>
+<para>the index of the device to query </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>1 if it has been opened, 0 if it hasn&apos;t or on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1aacee621c474cda53e56f4a2233c65407">SDL_HapticIndex</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1aa075e2777c811ecdd2ca53d49288555e">SDL_HapticOpen</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a865ecbbf4869868e401c182952994ea0"/><section>
+    <title>SDL_HapticOpenFromJoystick()</title>
+<indexterm><primary>SDL_HapticOpenFromJoystick</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticOpenFromJoystick</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_HapticOpenFromJoystick (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick)</computeroutput></para>
+<para>Open a haptic device for use from a joystick device.</para>
+
+<para>You must still close the haptic device separately. It will not be closed with the joystick.</para>
+
+<para>When opened from a joystick you should first close the haptic device before closing the joystick device. If not, on some implementations the haptic device will also get unallocated and you&apos;ll be unable to use force feedback on that device.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>the SDL_Joystick to create a haptic device from </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a valid haptic device identifier on success or NULL on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1a671599fd69f5a08cdd2ba7e3f1ae456a">SDL_HapticClose</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1aa075e2777c811ecdd2ca53d49288555e">SDL_HapticOpen</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a8a2966d363cba55ffdfeff42e4204ef1">SDL_JoystickIsHaptic</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a303d13b149b6dc4cabe07fb799333581"/><section>
+    <title>SDL_HapticOpenFromMouse()</title>
+<indexterm><primary>SDL_HapticOpenFromMouse</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticOpenFromMouse</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_HapticOpenFromMouse (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para>
+<para>Try to open a haptic device from the current mouse.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the haptic device identifier or NULL on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1aa075e2777c811ecdd2ca53d49288555e">SDL_HapticOpen</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a8fcc0fb333baed629004bd8c0c66bd76">SDL_MouseIsHaptic</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1af0181e59ecd14c6aecd1fd3c5099330a"/><section>
+    <title>SDL_HapticPause()</title>
+<indexterm><primary>SDL_HapticPause</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticPause</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_HapticPause (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> * haptic)</computeroutput></para>
+<para>Pause a haptic device.</para>
+
+<para>Device must support the <computeroutput>SDL_HAPTIC_PAUSE</computeroutput> feature. Call <link linkend="__s_d_l__haptic_8h_1a3593eed87aee3b9caa1c25927002c5ae">SDL_HapticUnpause()</link> to resume playback.</para>
+
+<para>Do not modify the effects nor add new ones while the device is paused. That can cause all sorts of weird errors.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>haptic</entry><entry>
+<para>the SDL_Haptic device to pause </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 on success or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1a3593eed87aee3b9caa1c25927002c5ae">SDL_HapticUnpause</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a8192e1220a834e708959539fa1c3f490"/><section>
+    <title>SDL_HapticQuery()</title>
+<indexterm><primary>SDL_HapticQuery</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticQuery</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> unsigned int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_HapticQuery (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> * haptic)</computeroutput></para>
+<para>Get the haptic device&apos;s supported features in bitwise manner.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>haptic</entry><entry>
+<para>the SDL_Haptic device to query </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a list of supported haptic features in bitwise manner (OR&apos;d), or 0 on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1ae333ef77753ba700875fa20858b9021d">SDL_HapticEffectSupported</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1afc6e5a5701fe80004d529d762132ad6b">SDL_HapticNumEffects</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1af44cbecefe14da5a7476013ce06f38b9"/><section>
+    <title>SDL_HapticRumbleInit()</title>
+<indexterm><primary>SDL_HapticRumbleInit</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticRumbleInit</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_HapticRumbleInit (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> * haptic)</computeroutput></para>
+<para>Initialize a haptic device for simple rumble playback.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>haptic</entry><entry>
+<para>the haptic device to initialize for simple rumble playback </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 on success or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1aa075e2777c811ecdd2ca53d49288555e">SDL_HapticOpen</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a971b5651414202f89a8c6eed640e990d">SDL_HapticRumblePlay</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a9e11ff3ae40f59c04be3bae98d8d05ba">SDL_HapticRumbleStop</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1aa0754b11e2aed38bc955750c7a6a6c73">SDL_HapticRumbleSupported</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a971b5651414202f89a8c6eed640e990d"/><section>
+    <title>SDL_HapticRumblePlay()</title>
+<indexterm><primary>SDL_HapticRumblePlay</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticRumblePlay</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_HapticRumblePlay (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> * haptic, float strength, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> length)</computeroutput></para>
+<para>Run a simple rumble effect on a haptic device.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>haptic</entry><entry>
+<para>the haptic device to play the rumble effect on </para>
+</entry>
+                            </row>
+                            <row>
+<entry>strength</entry><entry>
+<para>strength of the rumble to play as a 0-1 float value </para>
+</entry>
+                            </row>
+                            <row>
+<entry>length</entry><entry>
+<para>length of the rumble to play in milliseconds </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 on success or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1af44cbecefe14da5a7476013ce06f38b9">SDL_HapticRumbleInit</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a9e11ff3ae40f59c04be3bae98d8d05ba">SDL_HapticRumbleStop</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1aa0754b11e2aed38bc955750c7a6a6c73">SDL_HapticRumbleSupported</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a9e11ff3ae40f59c04be3bae98d8d05ba"/><section>
+    <title>SDL_HapticRumbleStop()</title>
+<indexterm><primary>SDL_HapticRumbleStop</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticRumbleStop</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_HapticRumbleStop (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> * haptic)</computeroutput></para>
+<para>Stop the simple rumble on a haptic device.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>haptic</entry><entry>
+<para>the haptic device to stop the rumble effect on </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 on success or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1af44cbecefe14da5a7476013ce06f38b9">SDL_HapticRumbleInit</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a971b5651414202f89a8c6eed640e990d">SDL_HapticRumblePlay</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1aa0754b11e2aed38bc955750c7a6a6c73">SDL_HapticRumbleSupported</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1aa0754b11e2aed38bc955750c7a6a6c73"/><section>
+    <title>SDL_HapticRumbleSupported()</title>
+<indexterm><primary>SDL_HapticRumbleSupported</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticRumbleSupported</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_HapticRumbleSupported (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> * haptic)</computeroutput></para>
+<para>Check whether rumble is supported on a haptic device.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>haptic</entry><entry>
+<para>haptic device to check for rumble support </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE if effect is supported, SDL_FALSE if it isn&apos;t, or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1af44cbecefe14da5a7476013ce06f38b9">SDL_HapticRumbleInit</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a971b5651414202f89a8c6eed640e990d">SDL_HapticRumblePlay</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a9e11ff3ae40f59c04be3bae98d8d05ba">SDL_HapticRumbleStop</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a1cd1294768bb00f35b77f67031a8a9cb"/><section>
+    <title>SDL_HapticRunEffect()</title>
+<indexterm><primary>SDL_HapticRunEffect</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticRunEffect</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_HapticRunEffect (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> * haptic, int effect, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> iterations)</computeroutput></para>
+<para>Run the haptic effect on its associated haptic device.</para>
+
+<para>To repeat the effect over and over indefinitely, set <computeroutput>iterations</computeroutput> to <computeroutput>SDL_HAPTIC_INFINITY</computeroutput>. (Repeats the envelope - attack and fade.) To make one instance of the effect last indefinitely (so the effect does not fade), set the effect&apos;s <computeroutput>length</computeroutput> in its structure/union to <computeroutput>SDL_HAPTIC_INFINITY</computeroutput> instead.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>haptic</entry><entry>
+<para>the SDL_Haptic device to run the effect on </para>
+</entry>
+                            </row>
+                            <row>
+<entry>effect</entry><entry>
+<para>the ID of the haptic effect to run </para>
+</entry>
+                            </row>
+                            <row>
+<entry>iterations</entry><entry>
+<para>the number of iterations to run the effect; use <computeroutput>SDL_HAPTIC_INFINITY</computeroutput> to repeat forever </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 on success or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1a0bb35fea7c4c08c9bcb80e0bcfa1799f">SDL_HapticDestroyEffect</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1ae2185c0814f107dd5851dd743e9ea71c">SDL_HapticGetEffectStatus</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a27b35e361aaafa830561e98328c98c8e">SDL_HapticStopEffect</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a0b0d63aa4513fc1b12939500cb3f8a76"/><section>
+    <title>SDL_HapticSetAutocenter()</title>
+<indexterm><primary>SDL_HapticSetAutocenter</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticSetAutocenter</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_HapticSetAutocenter (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> * haptic, int autocenter)</computeroutput></para>
+<para>Set the global autocenter of the device.</para>
+
+<para>Autocenter should be between 0 and 100. Setting it to 0 will disable autocentering.</para>
+
+<para>Device must support the SDL_HAPTIC_AUTOCENTER feature.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>haptic</entry><entry>
+<para>the SDL_Haptic device to set autocentering on </para>
+</entry>
+                            </row>
+                            <row>
+<entry>autocenter</entry><entry>
+<para>value to set autocenter to (0-100) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 on success or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1a8192e1220a834e708959539fa1c3f490">SDL_HapticQuery</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a2a90e7cefab3fdecf37e2f1b956a9e73"/><section>
+    <title>SDL_HapticSetGain()</title>
+<indexterm><primary>SDL_HapticSetGain</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticSetGain</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_HapticSetGain (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> * haptic, int gain)</computeroutput></para>
+<para>Set the global gain of the specified haptic device.</para>
+
+<para>Device must support the SDL_HAPTIC_GAIN feature.</para>
+
+<para>The user may specify the maximum gain by setting the environment variable <computeroutput>SDL_HAPTIC_GAIN_MAX</computeroutput> which should be between 0 and 100. All calls to <link linkend="__s_d_l__haptic_8h_1a2a90e7cefab3fdecf37e2f1b956a9e73">SDL_HapticSetGain()</link> will scale linearly using <computeroutput>SDL_HAPTIC_GAIN_MAX</computeroutput> as the maximum.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>haptic</entry><entry>
+<para>the SDL_Haptic device to set the gain on </para>
+</entry>
+                            </row>
+                            <row>
+<entry>gain</entry><entry>
+<para>value to set the gain to, should be between 0 and 100 (0 - 100) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 on success or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1a8192e1220a834e708959539fa1c3f490">SDL_HapticQuery</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1aad427170295d6b88a5a94cd6a491797a"/><section>
+    <title>SDL_HapticStopAll()</title>
+<indexterm><primary>SDL_HapticStopAll</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticStopAll</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_HapticStopAll (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> * haptic)</computeroutput></para>
+<para>Stop all the currently playing effects on a haptic device.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>haptic</entry><entry>
+<para>the SDL_Haptic device to stop </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 on success or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a27b35e361aaafa830561e98328c98c8e"/><section>
+    <title>SDL_HapticStopEffect()</title>
+<indexterm><primary>SDL_HapticStopEffect</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticStopEffect</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_HapticStopEffect (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> * haptic, int effect)</computeroutput></para>
+<para>Stop the haptic effect on its associated haptic device.</para>
+
+<para><itemizedlist>
+<listitem>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>haptic</entry><entry>
+<para>the SDL_Haptic device to stop the effect on </para>
+</entry>
+                            </row>
+                            <row>
+<entry>effect</entry><entry>
+<para>the ID of the haptic effect to stop </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 on success or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1a0bb35fea7c4c08c9bcb80e0bcfa1799f">SDL_HapticDestroyEffect</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a1cd1294768bb00f35b77f67031a8a9cb">SDL_HapticRunEffect</link> </para>
+</formalpara>
+</para>
+</listitem></itemizedlist>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a3593eed87aee3b9caa1c25927002c5ae"/><section>
+    <title>SDL_HapticUnpause()</title>
+<indexterm><primary>SDL_HapticUnpause</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticUnpause</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_HapticUnpause (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> * haptic)</computeroutput></para>
+<para>Unpause a haptic device.</para>
+
+<para>Call to unpause after <link linkend="__s_d_l__haptic_8h_1af0181e59ecd14c6aecd1fd3c5099330a">SDL_HapticPause()</link>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>haptic</entry><entry>
+<para>the SDL_Haptic device to unpause </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 on success or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1af0181e59ecd14c6aecd1fd3c5099330a">SDL_HapticPause</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a4c212cbdb3487dd8d72882d355a19472"/><section>
+    <title>SDL_HapticUpdateEffect()</title>
+<indexterm><primary>SDL_HapticUpdateEffect</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_HapticUpdateEffect</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_HapticUpdateEffect (<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link> * haptic, int effect, <link linkend="_union_s_d_l___haptic_effect">SDL_HapticEffect</link> * data)</computeroutput></para>
+<para>Update the properties of an effect.</para>
+
+<para>Can be used dynamically, although behavior when dynamically changing direction may be strange. Specifically the effect may re-upload itself and start playing from the start. You also cannot change the type either when running <link linkend="__s_d_l__haptic_8h_1a4c212cbdb3487dd8d72882d355a19472">SDL_HapticUpdateEffect()</link>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>haptic</entry><entry>
+<para>the SDL_Haptic device that has the effect </para>
+</entry>
+                            </row>
+                            <row>
+<entry>effect</entry><entry>
+<para>the identifier of the effect to update </para>
+</entry>
+                            </row>
+                            <row>
+<entry>data</entry><entry>
+<para>an <link linkend="_union_s_d_l___haptic_effect">SDL_HapticEffect</link> structure containing the new effect properties to use </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 on success or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1a0bb35fea7c4c08c9bcb80e0bcfa1799f">SDL_HapticDestroyEffect</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a176c52ff4b77b63cb94ea83f8f4183ad">SDL_HapticNewEffect</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a1cd1294768bb00f35b77f67031a8a9cb">SDL_HapticRunEffect</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a8a2966d363cba55ffdfeff42e4204ef1"/><section>
+    <title>SDL_JoystickIsHaptic()</title>
+<indexterm><primary>SDL_JoystickIsHaptic</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_JoystickIsHaptic</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickIsHaptic (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick)</computeroutput></para>
+<para>Query if a joystick has haptic features.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>the SDL_Joystick to test for haptic capabilities </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE if the joystick is haptic, SDL_FALSE if it isn&apos;t, or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1a865ecbbf4869868e401c182952994ea0">SDL_HapticOpenFromJoystick</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a8fcc0fb333baed629004bd8c0c66bd76"/><section>
+    <title>SDL_MouseIsHaptic()</title>
+<indexterm><primary>SDL_MouseIsHaptic</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_MouseIsHaptic</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_MouseIsHaptic (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para>
+<para>Query whether or not the current mouse has haptic capabilities.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>SDL_TRUE if the mouse is haptic or SDL_FALSE if it isn&apos;t.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1a303d13b149b6dc4cabe07fb799333581">SDL_HapticOpenFromMouse</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__haptic_8h_1a6f538063a9f1d790882c0d3a81c302cd"/><section>
+    <title>SDL_NumHaptics()</title>
+<indexterm><primary>SDL_NumHaptics</primary><secondary>SDL_haptic.h</secondary></indexterm>
+<indexterm><primary>SDL_haptic.h</primary><secondary>SDL_NumHaptics</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_NumHaptics (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para>
+<para>Count the number of haptic devices attached to the system.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the number of haptic devices detected on the system or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__haptic_8h_1ac471a69170328585193066cc9d9ff482">SDL_HapticName</link> </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

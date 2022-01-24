@@ -1,0 +1,277 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="class_r_t_1_1_object_base" kind="class" language="C++" prot="public">
+    <compoundname>RT::ObjectBase</compoundname>
+    <derivedcompoundref refid="class_r_t_1_1_cone" prot="public" virt="non-virtual">RT::Cone</derivedcompoundref>
+    <derivedcompoundref refid="class_r_t_1_1_cylinder" prot="public" virt="non-virtual">RT::Cylinder</derivedcompoundref>
+    <derivedcompoundref refid="class_r_t_1_1_obj_plane" prot="public" virt="non-virtual">RT::ObjPlane</derivedcompoundref>
+    <derivedcompoundref refid="class_r_t_1_1_obj_sphere" prot="public" virt="non-virtual">RT::ObjSphere</derivedcompoundref>
+    <includes refid="objectbase_8h" local="no">objectbase.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_r_t_1_1_object_base_1a59a95426585e31a88e38083ec1a72b7b" prot="public" static="no" mutable="no">
+        <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt;</type>
+        <definition>qbVector&lt;double&gt; RT::ObjectBase::m_baseColor</definition>
+        <argsstring></argsstring>
+        <name>m_baseColor</name>
+        <qualifiedname>RT::ObjectBase::m_baseColor</qualifiedname>
+        <initializer>{3}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Primitives/objectbase.h" line="38" column="18" bodyfile="D:/RayTracing/RayTrace/Primitives/objectbase.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_r_t_1_1_object_base_1ac3bdb9ce9f1aace3bc7d008ad3c71f85" prot="public" static="no" mutable="no">
+        <type><ref refid="class_r_t_1_1_g_tform" kindref="compound">RT::GTform</ref></type>
+        <definition>RT::GTform RT::ObjectBase::m_transformMatrix</definition>
+        <argsstring></argsstring>
+        <name>m_transformMatrix</name>
+        <qualifiedname>RT::ObjectBase::m_transformMatrix</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Primitives/objectbase.h" line="41" column="20" bodyfile="D:/RayTracing/RayTrace/Primitives/objectbase.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_r_t_1_1_object_base_1ae45ec3a9d0cd9f38605dcc8580c65c1c" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="class_r_t_1_1_material_base" kindref="compound">RT::MaterialBase</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;RT::MaterialBase&gt; RT::ObjectBase::m_pMaterial</definition>
+        <argsstring></argsstring>
+        <name>m_pMaterial</name>
+        <qualifiedname>RT::ObjectBase::m_pMaterial</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Primitives/objectbase.h" line="44" column="25" bodyfile="D:/RayTracing/RayTrace/Primitives/objectbase.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_r_t_1_1_object_base_1a96be79a468072fa5b3f72b1084a76278" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RT::ObjectBase::m_hasMaterial</definition>
+        <argsstring></argsstring>
+        <name>m_hasMaterial</name>
+        <qualifiedname>RT::ObjectBase::m_hasMaterial</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Primitives/objectbase.h" line="47" column="14" bodyfile="D:/RayTracing/RayTrace/Primitives/objectbase.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_r_t_1_1_object_base_1a0453a522f36f23f95638312633cf5d81" prot="public" static="no" mutable="no">
+        <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt;</type>
+        <definition>qbVector&lt;double&gt; RT::ObjectBase::m_uvCoords</definition>
+        <argsstring></argsstring>
+        <name>m_uvCoords</name>
+        <qualifiedname>RT::ObjectBase::m_uvCoords</qualifiedname>
+        <initializer>{2}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Primitives/objectbase.h" line="50" column="18" bodyfile="D:/RayTracing/RayTrace/Primitives/objectbase.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_r_t_1_1_object_base_1a2e524afdaa52559af1c9d32b92ab86d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RT::ObjectBase::ObjectBase</definition>
+        <argsstring>()</argsstring>
+        <name>ObjectBase</name>
+        <qualifiedname>RT::ObjectBase::ObjectBase</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Primitives/objectbase.h" line="17" column="9" bodyfile="D:/RayTracing/RayTrace/Primitives/objectbase.cpp" bodystart="7" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_object_base_1a483e10e0d0096f29b1a19ebcbc9a8daf" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>RT::ObjectBase::~ObjectBase</definition>
+        <argsstring>()</argsstring>
+        <name>~ObjectBase</name>
+        <qualifiedname>RT::ObjectBase::~ObjectBase</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Primitives/objectbase.h" line="20" column="17" bodyfile="D:/RayTracing/RayTrace/Primitives/objectbase.cpp" bodystart="12" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_object_base_1a1874168fc872f415520ddf7ae05f33a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool RT::ObjectBase::TestIntersection</definition>
+        <argsstring>(const Ray &amp;castRay, qbVector&lt; double &gt; &amp;intPoint, qbVector&lt; double &gt; &amp;localNormal, qbVector&lt; double &gt; &amp;localColor)</argsstring>
+        <name>TestIntersection</name>
+        <qualifiedname>RT::ObjectBase::TestIntersection</qualifiedname>
+        <reimplementedby refid="class_r_t_1_1_cone_1a6df1cffc250d1c629250abf6e6dfb925">TestIntersection</reimplementedby>
+        <reimplementedby refid="class_r_t_1_1_cylinder_1af651d28a24101803fc4fe1a12f9d0730">TestIntersection</reimplementedby>
+        <reimplementedby refid="class_r_t_1_1_obj_plane_1a7bf64e3ec94953a0a6c8c1da14c4e79d">TestIntersection</reimplementedby>
+        <reimplementedby refid="class_r_t_1_1_obj_sphere_1ac61205d4e6dc56ad927e84ada7f3a77b">TestIntersection</reimplementedby>
+        <param>
+          <type>const <ref refid="class_r_t_1_1_ray" kindref="compound">Ray</ref> &amp;</type>
+          <declname>castRay</declname>
+        </param>
+        <param>
+          <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>intPoint</declname>
+        </param>
+        <param>
+          <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>localNormal</declname>
+        </param>
+        <param>
+          <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>localColor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Primitives/objectbase.h" line="23" column="22" bodyfile="D:/RayTracing/RayTrace/Primitives/objectbase.cpp" bodystart="17" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_object_base_1ae49d7664053ba8709645e61f417b22a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        <definition>void RT::ObjectBase::SetTransformMatrix</definition>
+        <argsstring>(const RT::GTform &amp;transformMatrix)</argsstring>
+        <name>SetTransformMatrix</name>
+        <qualifiedname>RT::ObjectBase::SetTransformMatrix</qualifiedname>
+        <param>
+          <type>const <ref refid="class_r_t_1_1_g_tform" kindref="compound">RT::GTform</ref> &amp;</type>
+          <declname>transformMatrix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Primitives/objectbase.h" line="27" column="14" bodyfile="D:/RayTracing/RayTrace/Primitives/objectbase.cpp" bodystart="23" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_object_base_1a3654cf7ddcab4705a656aea8f1156d9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool RT::ObjectBase::CloseEnough</definition>
+        <argsstring>(const double f1, const double f2)</argsstring>
+        <name>CloseEnough</name>
+        <qualifiedname>RT::ObjectBase::CloseEnough</qualifiedname>
+        <param>
+          <type>const double</type>
+          <declname>f1</declname>
+        </param>
+        <param>
+          <type>const double</type>
+          <declname>f2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Primitives/objectbase.h" line="30" column="14" bodyfile="D:/RayTracing/RayTrace/Primitives/objectbase.cpp" bodystart="37" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_object_base_1a7d143fe3dc376fa9d03eb023dbfd7fb1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool RT::ObjectBase::AssignMaterial</definition>
+        <argsstring>(const std::shared_ptr&lt; RT::MaterialBase &gt; &amp;objectMaterial)</argsstring>
+        <name>AssignMaterial</name>
+        <qualifiedname>RT::ObjectBase::AssignMaterial</qualifiedname>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_r_t_1_1_material_base" kindref="compound">RT::MaterialBase</ref> &gt; &amp;</type>
+          <declname>objectMaterial</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Primitives/objectbase.h" line="33" column="14" bodyfile="D:/RayTracing/RayTrace/Primitives/objectbase.cpp" bodystart="29" bodyend="34"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>RT::Cone</label>
+        <link refid="class_r_t_1_1_cone"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>RT::Cylinder</label>
+        <link refid="class_r_t_1_1_cylinder"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>RT::ObjPlane</label>
+        <link refid="class_r_t_1_1_obj_plane"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>RT::ObjSphere</label>
+        <link refid="class_r_t_1_1_obj_sphere"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>RT::ObjectBase</label>
+        <link refid="class_r_t_1_1_object_base"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>RT::GTform</label>
+        <link refid="class_r_t_1_1_g_tform"/>
+      </node>
+      <node id="1">
+        <label>RT::ObjectBase</label>
+        <link refid="class_r_t_1_1_object_base"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_baseColor</edgelabel>
+          <edgelabel>m_uvCoords</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_transformMatrix</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>qbVector&lt; double &gt;</label>
+        <link refid="classqb_vector"/>
+      </node>
+    </collaborationgraph>
+    <location file="D:/RayTracing/RayTrace/Primitives/objectbase.h" line="14" column="5" bodyfile="D:/RayTracing/RayTrace/Primitives/objectbase.h" bodystart="14" bodyend="51"/>
+    <listofallmembers>
+      <member refid="class_r_t_1_1_object_base_1a7d143fe3dc376fa9d03eb023dbfd7fb1" prot="public" virt="non-virtual"><scope>RT::ObjectBase</scope><name>AssignMaterial</name></member>
+      <member refid="class_r_t_1_1_object_base_1a3654cf7ddcab4705a656aea8f1156d9c" prot="public" virt="non-virtual"><scope>RT::ObjectBase</scope><name>CloseEnough</name></member>
+      <member refid="class_r_t_1_1_object_base_1a59a95426585e31a88e38083ec1a72b7b" prot="public" virt="non-virtual"><scope>RT::ObjectBase</scope><name>m_baseColor</name></member>
+      <member refid="class_r_t_1_1_object_base_1a96be79a468072fa5b3f72b1084a76278" prot="public" virt="non-virtual"><scope>RT::ObjectBase</scope><name>m_hasMaterial</name></member>
+      <member refid="class_r_t_1_1_object_base_1ae45ec3a9d0cd9f38605dcc8580c65c1c" prot="public" virt="non-virtual"><scope>RT::ObjectBase</scope><name>m_pMaterial</name></member>
+      <member refid="class_r_t_1_1_object_base_1ac3bdb9ce9f1aace3bc7d008ad3c71f85" prot="public" virt="non-virtual"><scope>RT::ObjectBase</scope><name>m_transformMatrix</name></member>
+      <member refid="class_r_t_1_1_object_base_1a0453a522f36f23f95638312633cf5d81" prot="public" virt="non-virtual"><scope>RT::ObjectBase</scope><name>m_uvCoords</name></member>
+      <member refid="class_r_t_1_1_object_base_1a2e524afdaa52559af1c9d32b92ab86d7" prot="public" virt="non-virtual"><scope>RT::ObjectBase</scope><name>ObjectBase</name></member>
+      <member refid="class_r_t_1_1_object_base_1ae49d7664053ba8709645e61f417b22a0" prot="public" virt="non-virtual"><scope>RT::ObjectBase</scope><name>SetTransformMatrix</name></member>
+      <member refid="class_r_t_1_1_object_base_1a1874168fc872f415520ddf7ae05f33a7" prot="public" virt="virtual"><scope>RT::ObjectBase</scope><name>TestIntersection</name></member>
+      <member refid="class_r_t_1_1_object_base_1a483e10e0d0096f29b1a19ebcbc9a8daf" prot="public" virt="virtual"><scope>RT::ObjectBase</scope><name>~ObjectBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

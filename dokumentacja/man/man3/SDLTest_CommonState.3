@@ -1,0 +1,285 @@
+.TH "SDLTest_CommonState" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SDLTest_CommonState
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SDL_test_common\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "char ** \fBargv\fP"
+.br
+.ti -1c
+.RI "\fBUint32\fP \fBflags\fP"
+.br
+.ti -1c
+.RI "\fBUint32\fP \fBverbose\fP"
+.br
+.ti -1c
+.RI "const char * \fBvideodriver\fP"
+.br
+.ti -1c
+.RI "int \fBdisplay\fP"
+.br
+.ti -1c
+.RI "const char * \fBwindow_title\fP"
+.br
+.ti -1c
+.RI "const char * \fBwindow_icon\fP"
+.br
+.ti -1c
+.RI "\fBUint32\fP \fBwindow_flags\fP"
+.br
+.ti -1c
+.RI "\fBSDL_bool\fP \fBflash_on_focus_loss\fP"
+.br
+.ti -1c
+.RI "int \fBwindow_x\fP"
+.br
+.ti -1c
+.RI "int \fBwindow_y\fP"
+.br
+.ti -1c
+.RI "int \fBwindow_w\fP"
+.br
+.ti -1c
+.RI "int \fBwindow_h\fP"
+.br
+.ti -1c
+.RI "int \fBwindow_minW\fP"
+.br
+.ti -1c
+.RI "int \fBwindow_minH\fP"
+.br
+.ti -1c
+.RI "int \fBwindow_maxW\fP"
+.br
+.ti -1c
+.RI "int \fBwindow_maxH\fP"
+.br
+.ti -1c
+.RI "int \fBlogical_w\fP"
+.br
+.ti -1c
+.RI "int \fBlogical_h\fP"
+.br
+.ti -1c
+.RI "float \fBscale\fP"
+.br
+.ti -1c
+.RI "int \fBdepth\fP"
+.br
+.ti -1c
+.RI "int \fBrefresh_rate\fP"
+.br
+.ti -1c
+.RI "int \fBnum_windows\fP"
+.br
+.ti -1c
+.RI "\fBSDL_Window\fP ** \fBwindows\fP"
+.br
+.ti -1c
+.RI "const char * \fBrenderdriver\fP"
+.br
+.ti -1c
+.RI "\fBUint32\fP \fBrender_flags\fP"
+.br
+.ti -1c
+.RI "\fBSDL_bool\fP \fBskip_renderer\fP"
+.br
+.ti -1c
+.RI "\fBSDL_Renderer\fP ** \fBrenderers\fP"
+.br
+.ti -1c
+.RI "\fBSDL_Texture\fP ** \fBtargets\fP"
+.br
+.ti -1c
+.RI "const char * \fBaudiodriver\fP"
+.br
+.ti -1c
+.RI "\fBSDL_AudioSpec\fP \fBaudiospec\fP"
+.br
+.ti -1c
+.RI "int \fBgl_red_size\fP"
+.br
+.ti -1c
+.RI "int \fBgl_green_size\fP"
+.br
+.ti -1c
+.RI "int \fBgl_blue_size\fP"
+.br
+.ti -1c
+.RI "int \fBgl_alpha_size\fP"
+.br
+.ti -1c
+.RI "int \fBgl_buffer_size\fP"
+.br
+.ti -1c
+.RI "int \fBgl_depth_size\fP"
+.br
+.ti -1c
+.RI "int \fBgl_stencil_size\fP"
+.br
+.ti -1c
+.RI "int \fBgl_double_buffer\fP"
+.br
+.ti -1c
+.RI "int \fBgl_accum_red_size\fP"
+.br
+.ti -1c
+.RI "int \fBgl_accum_green_size\fP"
+.br
+.ti -1c
+.RI "int \fBgl_accum_blue_size\fP"
+.br
+.ti -1c
+.RI "int \fBgl_accum_alpha_size\fP"
+.br
+.ti -1c
+.RI "int \fBgl_stereo\fP"
+.br
+.ti -1c
+.RI "int \fBgl_multisamplebuffers\fP"
+.br
+.ti -1c
+.RI "int \fBgl_multisamplesamples\fP"
+.br
+.ti -1c
+.RI "int \fBgl_retained_backing\fP"
+.br
+.ti -1c
+.RI "int \fBgl_accelerated\fP"
+.br
+.ti -1c
+.RI "int \fBgl_major_version\fP"
+.br
+.ti -1c
+.RI "int \fBgl_minor_version\fP"
+.br
+.ti -1c
+.RI "int \fBgl_debug\fP"
+.br
+.ti -1c
+.RI "int \fBgl_profile_mask\fP"
+.br
+.ti -1c
+.RI "\fBSDL_Rect\fP \fBconfine\fP"
+.br
+.in -1c
+.SH "Member Data Documentation"
+.PP 
+.SS "char** SDLTest_CommonState::argv"
+
+.SS "const char* SDLTest_CommonState::audiodriver"
+
+.SS "\fBSDL_AudioSpec\fP SDLTest_CommonState::audiospec"
+
+.SS "\fBSDL_Rect\fP SDLTest_CommonState::confine"
+
+.SS "int SDLTest_CommonState::depth"
+
+.SS "int SDLTest_CommonState::display"
+
+.SS "\fBUint32\fP SDLTest_CommonState::flags"
+
+.SS "\fBSDL_bool\fP SDLTest_CommonState::flash_on_focus_loss"
+
+.SS "int SDLTest_CommonState::gl_accelerated"
+
+.SS "int SDLTest_CommonState::gl_accum_alpha_size"
+
+.SS "int SDLTest_CommonState::gl_accum_blue_size"
+
+.SS "int SDLTest_CommonState::gl_accum_green_size"
+
+.SS "int SDLTest_CommonState::gl_accum_red_size"
+
+.SS "int SDLTest_CommonState::gl_alpha_size"
+
+.SS "int SDLTest_CommonState::gl_blue_size"
+
+.SS "int SDLTest_CommonState::gl_buffer_size"
+
+.SS "int SDLTest_CommonState::gl_debug"
+
+.SS "int SDLTest_CommonState::gl_depth_size"
+
+.SS "int SDLTest_CommonState::gl_double_buffer"
+
+.SS "int SDLTest_CommonState::gl_green_size"
+
+.SS "int SDLTest_CommonState::gl_major_version"
+
+.SS "int SDLTest_CommonState::gl_minor_version"
+
+.SS "int SDLTest_CommonState::gl_multisamplebuffers"
+
+.SS "int SDLTest_CommonState::gl_multisamplesamples"
+
+.SS "int SDLTest_CommonState::gl_profile_mask"
+
+.SS "int SDLTest_CommonState::gl_red_size"
+
+.SS "int SDLTest_CommonState::gl_retained_backing"
+
+.SS "int SDLTest_CommonState::gl_stencil_size"
+
+.SS "int SDLTest_CommonState::gl_stereo"
+
+.SS "int SDLTest_CommonState::logical_h"
+
+.SS "int SDLTest_CommonState::logical_w"
+
+.SS "int SDLTest_CommonState::num_windows"
+
+.SS "int SDLTest_CommonState::refresh_rate"
+
+.SS "\fBUint32\fP SDLTest_CommonState::render_flags"
+
+.SS "const char* SDLTest_CommonState::renderdriver"
+
+.SS "\fBSDL_Renderer\fP** SDLTest_CommonState::renderers"
+
+.SS "float SDLTest_CommonState::scale"
+
+.SS "\fBSDL_bool\fP SDLTest_CommonState::skip_renderer"
+
+.SS "\fBSDL_Texture\fP** SDLTest_CommonState::targets"
+
+.SS "\fBUint32\fP SDLTest_CommonState::verbose"
+
+.SS "const char* SDLTest_CommonState::videodriver"
+
+.SS "\fBUint32\fP SDLTest_CommonState::window_flags"
+
+.SS "int SDLTest_CommonState::window_h"
+
+.SS "const char* SDLTest_CommonState::window_icon"
+
+.SS "int SDLTest_CommonState::window_maxH"
+
+.SS "int SDLTest_CommonState::window_maxW"
+
+.SS "int SDLTest_CommonState::window_minH"
+
+.SS "int SDLTest_CommonState::window_minW"
+
+.SS "const char* SDLTest_CommonState::window_title"
+
+.SS "int SDLTest_CommonState::window_w"
+
+.SS "int SDLTest_CommonState::window_x"
+
+.SS "int SDLTest_CommonState::window_y"
+
+.SS "\fBSDL_Window\fP** SDLTest_CommonState::windows"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

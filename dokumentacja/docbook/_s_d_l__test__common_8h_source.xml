@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__test__common_8h_source" xml:lang="en-US">
+<title>SDL_test_common.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_test_common.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+30 <emphasis role="comment">/*&#32;Ported&#32;from&#32;original&#32;test\common.h&#32;file.&#32;*/</emphasis>
+31 
+32 <emphasis role="preprocessor">#ifndef&#32;SDL_test_common_h_</emphasis>
+33 <emphasis role="preprocessor">#define&#32;SDL_test_common_h_</emphasis>
+34 
+35 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l_8h">SDL.h</link>&quot;</emphasis>
+36 
+37 <emphasis role="preprocessor">#if&#32;defined(__PSP__)</emphasis>
+38 <emphasis role="preprocessor">#define&#32;DEFAULT_WINDOW_WIDTH&#32;&#32;480</emphasis>
+39 <emphasis role="preprocessor">#define&#32;DEFAULT_WINDOW_HEIGHT&#32;272</emphasis>
+40 <emphasis role="preprocessor">#elif&#32;defined(__VITA__)</emphasis>
+41 <emphasis role="preprocessor">#define&#32;DEFAULT_WINDOW_WIDTH&#32;&#32;960</emphasis>
+42 <emphasis role="preprocessor">#define&#32;DEFAULT_WINDOW_HEIGHT&#32;544</emphasis>
+43 <emphasis role="preprocessor">#else</emphasis>
+44 <emphasis role="preprocessor">#define&#32;DEFAULT_WINDOW_WIDTH&#32;&#32;640</emphasis>
+45 <emphasis role="preprocessor">#define&#32;DEFAULT_WINDOW_HEIGHT&#32;480</emphasis>
+46 <emphasis role="preprocessor">#endif</emphasis>
+47 
+48 <emphasis role="preprocessor">#define&#32;VERBOSE_VIDEO&#32;&#32;&#32;0x00000001</emphasis>
+49 <emphasis role="preprocessor">#define&#32;VERBOSE_MODES&#32;&#32;&#32;0x00000002</emphasis>
+50 <emphasis role="preprocessor">#define&#32;VERBOSE_RENDER&#32;&#32;0x00000004</emphasis>
+51 <emphasis role="preprocessor">#define&#32;VERBOSE_EVENT&#32;&#32;&#32;0x00000008</emphasis>
+52 <emphasis role="preprocessor">#define&#32;VERBOSE_AUDIO&#32;&#32;&#32;0x00000010</emphasis>
+53 
+54 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct</emphasis>
+55 {
+56 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;SDL&#32;init&#32;flags&#32;*/</emphasis>
+57 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;**<link linkend="_struct_s_d_l_test___common_state_1a6db840410b86ab7c6807763fd8bcb081">argv</link>;
+58 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="_struct_s_d_l_test___common_state_1a97272d03558f1f74e579ec8a5cdabc5e">flags</link>;
+59 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="_struct_s_d_l_test___common_state_1aad4b8ebf6277cd9d3608d2e1b48e4678">verbose</link>;
+60 
+61 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Video&#32;info&#32;*/</emphasis>
+62 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="_struct_s_d_l_test___common_state_1ab3face917946465c60dc0f38f179534d">videodriver</link>;
+63 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1addb3de8e2b278deed8d2309bafd30758">display</link>;
+64 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="_struct_s_d_l_test___common_state_1a86640ebac0afe0c504c3c324d84dcc37">window_title</link>;
+65 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="_struct_s_d_l_test___common_state_1ac9e981b2b60a59f995153c74242d9d43">window_icon</link>;
+66 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="_struct_s_d_l_test___common_state_1a9e38339b34b483087ff8d52d44a80809">window_flags</link>;
+67 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_struct_s_d_l_test___common_state_1a9a2f378b9d27573757c371dfdf684942">flash_on_focus_loss</link>;
+68 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1a5413ab562164642b3e6ee97ab5d938bf">window_x</link>;
+69 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1a1fcd61cbe37c2bb563e7b2f1c6853d29">window_y</link>;
+70 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1adc94ae1febd2aa3fa4b190cd0f8cb546">window_w</link>;
+71 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1a9357085bdb80f4d9452b73d8f5cebc47">window_h</link>;
+72 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1a34b3dccdaec98232fa01274d6842f534">window_minW</link>;
+73 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1a918001b474c4ca034db3e1aba96df7c1">window_minH</link>;
+74 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1acecd147641f8d6a0f137e669bbe5c48b">window_maxW</link>;
+75 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1a0f792d6f2c15c60567bc4641e9f44f70">window_maxH</link>;
+76 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1a8a90266f8d6dc7846fbd3368426caec1">logical_w</link>;
+77 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1af2ba89b260406782607ad1dd22676a5b">logical_h</link>;
+78 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1ad2d2821689008f2fd65034eb8040fb3c">scale</link>;
+79 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1a6ab7d5f81b55c29594f9ba3e018632fe">depth</link>;
+80 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1a7a2505f4f99be07db7bc76743ac6b5f9">refresh_rate</link>;
+81 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1a4f8020400392b1ae374c066b45a56538">num_windows</link>;
+82 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link>&#32;**<link linkend="_struct_s_d_l_test___common_state_1a0a054f0c45eb9d21f9561d701e721106">windows</link>;
+83 
+84 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Renderer&#32;info&#32;*/</emphasis>
+85 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="_struct_s_d_l_test___common_state_1ad63f8a231467f2aad4494220b3bb3752">renderdriver</link>;
+86 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="_struct_s_d_l_test___common_state_1a71e8797902cdb8f5c621ddcaf37d7e35">render_flags</link>;
+87 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_struct_s_d_l_test___common_state_1a41527c9f496fb3326802de595aa0f306">skip_renderer</link>;
+88 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__render_8h_1aaf0bf7d020754fc614fe06552ea4d5d4">SDL_Renderer</link>&#32;**<link linkend="_struct_s_d_l_test___common_state_1aeb35b7f12f63256c92a9813e682043c1">renderers</link>;
+89 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__render_8h_1a17850d7f1f5de457727cb3cf66b3a7f5">SDL_Texture</link>&#32;**<link linkend="_struct_s_d_l_test___common_state_1a3fcf7d8f0f8d2f2351a75b5966cf9fe4">targets</link>;
+90 
+91 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Audio&#32;info&#32;*/</emphasis>
+92 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="_struct_s_d_l_test___common_state_1ae51671cdec7979ca844f19b650b75300">audiodriver</link>;
+93 &#32;&#32;&#32;&#32;<link linkend="_struct_s_d_l___audio_spec">SDL_AudioSpec</link>&#32;<link linkend="_struct_s_d_l_test___common_state_1a2f73162e6bfe149141192fa49717d805">audiospec</link>;
+94 
+95 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;GL&#32;settings&#32;*/</emphasis>
+96 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1a33772305944410d726908efb5e0663ce">gl_red_size</link>;
+97 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1a716c97e5b80ee96018b014afec2d19ff">gl_green_size</link>;
+98 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1aff43a763af98b8eb651c41ec931e5d93">gl_blue_size</link>;
+99 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1a2b6e86fd695d84f12db148dcf3b2fcb5">gl_alpha_size</link>;
+100 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1a7e7ea32a3ba51db836b3aa7f31163921">gl_buffer_size</link>;
+101 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1a9a16800e0ec09d4b9b55e9e6bb973abc">gl_depth_size</link>;
+102 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1af27830ef5d5ed9cc8e90088a69f4d78f">gl_stencil_size</link>;
+103 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1a74c88cb0dcd1e968db763152e0b1e068">gl_double_buffer</link>;
+104 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1ae9d55cebbc3f4e486f4f77a35de4e4dd">gl_accum_red_size</link>;
+105 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1a4c20729a710f51ed67bdd1910da1a16b">gl_accum_green_size</link>;
+106 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1a3d23ac90e722af5098e7869a7302c119">gl_accum_blue_size</link>;
+107 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1ab6dddf75a40c53343199fe724a2af32b">gl_accum_alpha_size</link>;
+108 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1a39177b165c6a9c2164937c82402e2d4f">gl_stereo</link>;
+109 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1a083f7381809b23f0ac3a9a8de562f70c">gl_multisamplebuffers</link>;
+110 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1a96718b47862d4962e4a7ae9a62ce4a30">gl_multisamplesamples</link>;
+111 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1a5fa59e7aa6210fcde02940536eea9c12">gl_retained_backing</link>;
+112 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1a2dca523be403a9ff6fe2dd7b1808baba">gl_accelerated</link>;
+113 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1a766e471516e0a39d0bb8c14ea2042bdf">gl_major_version</link>;
+114 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1a5a50c65004454c791da21a3473388608">gl_minor_version</link>;
+115 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1a2710657ef2a0c8aabebc5fceb01c71b5">gl_debug</link>;
+116 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___common_state_1aa923ff5f227c35523a4e491863a7d907">gl_profile_mask</link>;
+117 
+118 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Additional&#32;fields&#32;added&#32;in&#32;2.0.18&#32;*/</emphasis>
+119 &#32;&#32;&#32;&#32;<link linkend="_struct_s_d_l___rect">SDL_Rect</link>&#32;<link linkend="_struct_s_d_l_test___common_state_1a501eff715371dedcff65da16b43b62be">confine</link>;
+120 
+121 }&#32;<link linkend="_struct_s_d_l_test___common_state">SDLTest_CommonState</link>;
+122 
+123 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+124 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+125 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+126 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+127 <emphasis role="preprocessor">#endif</emphasis>
+128 
+129 <emphasis role="comment">/*&#32;Function&#32;prototypes&#32;*/</emphasis>
+130 
+139 <link linkend="_struct_s_d_l_test___common_state">SDLTest_CommonState</link>&#32;*<link linkend="__s_d_l__test__common_8h_1a5a4834fbafe98dbe44df0c56b1848132">SDLTest_CommonCreateState</link>(<emphasis role="keywordtype">char</emphasis>&#32;**argv,&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1ac7ba7d3cce3d19ca020e056b37231289">flags</link>);
+140 
+149 <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__test__common_8h_1a6ffe001ae2299720a92b80812dbc48b9">SDLTest_CommonArg</link>(<link linkend="_struct_s_d_l_test___common_state">SDLTest_CommonState</link>&#32;*&#32;state,&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a57f14e05b1900f16a2da82ade47d0c6d">index</link>);
+150 
+151 
+164 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__s_d_l__test__common_8h_1aa048e9175cca826d9dbd6c5d72284e38">SDLTest_CommonLogUsage</link>(<link linkend="_struct_s_d_l_test___common_state">SDLTest_CommonState</link>&#32;*&#32;state,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*argv0,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;**options);
+165 
+177 <emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="__s_d_l__test__common_8h_1ad5d87db3b58b35581f99e41540512c69">SDLTest_CommonUsage</link>(<link linkend="_struct_s_d_l_test___common_state">SDLTest_CommonState</link>&#32;*&#32;state);
+178 
+186 <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="__s_d_l__test__common_8h_1a7405405819a77e317a1edda6be974187">SDLTest_CommonInit</link>(<link linkend="_struct_s_d_l_test___common_state">SDLTest_CommonState</link>&#32;*&#32;state);
+187 
+197 <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="__s_d_l__test__common_8h_1a39a960ca01f07491d42008a137db6f1c">SDLTest_CommonDefaultArgs</link>(<link linkend="_struct_s_d_l_test___common_state">SDLTest_CommonState</link>&#32;*&#32;state,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;argc,&#32;<emphasis role="keywordtype">char</emphasis>&#32;**argv);
+198 
+207 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__s_d_l__test__common_8h_1a5fb0eb864d62d6d9f6d932c9abccd1f4">SDLTest_CommonEvent</link>(<link linkend="_struct_s_d_l_test___common_state">SDLTest_CommonState</link>&#32;*&#32;state,&#32;<link linkend="_union_s_d_l___event">SDL_Event</link>&#32;*&#32;<link linkend="__s_d_l__opengl__glext_8h_1a03b04a5a978bad576866339075de01f6">event</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;*done);
+208 
+215 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__s_d_l__test__common_8h_1a2d24c255140a7e90c753eb363ef4d96e">SDLTest_CommonQuit</link>(<link linkend="_struct_s_d_l_test___common_state">SDLTest_CommonState</link>&#32;*&#32;state);
+216 
+225 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__s_d_l__test__common_8h_1a2ec5c6d6329602f002d441de8edfdad2">SDLTest_CommonDrawWindowInfo</link>(<link linkend="__s_d_l__render_8h_1aaf0bf7d020754fc614fe06552ea4d5d4">SDL_Renderer</link>&#32;*&#32;renderer,&#32;<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link>&#32;*&#32;window,&#32;<emphasis role="keywordtype">int</emphasis>&#32;*&#32;usedHeight);
+226 
+227 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+228 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+229 }
+230 <emphasis role="preprocessor">#endif</emphasis>
+231 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+232 
+233 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_test_common_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+234 
+235 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

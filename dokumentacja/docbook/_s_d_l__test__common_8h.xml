@@ -1,0 +1,476 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__test__common_8h" xml:lang="en-US">
+<title>D:/RayTracing/include/SDL_test_common.h File Reference</title>
+<indexterm><primary>D:/RayTracing/include/SDL_test_common.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;SDL.h&quot;
+#include &quot;begin_code.h&quot;
+#include &quot;close_code.h&quot;
+</programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_s_d_l_test___common_state">SDLTest_CommonState</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__s_d_l__test__common_8h_1a6ca4df6b9e1495a80a2929a5187cb9b9">DEFAULT_WINDOW_WIDTH</link>   640</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__test__common_8h_1a030ebc610fddb0a18d62829ab376bf85">DEFAULT_WINDOW_HEIGHT</link>   480</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__test__common_8h_1ab5d2ba75c3cd702f1a269c406902ddcb">VERBOSE_VIDEO</link>   0x00000001</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__test__common_8h_1a3a535ac3889907ff97e556a3cae117cc">VERBOSE_MODES</link>   0x00000002</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__test__common_8h_1a7bdcd39423e8261d05407ab758feb037">VERBOSE_RENDER</link>   0x00000004</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__test__common_8h_1a3e5a47c9aaa54a2b134b0066f48b4e0c">VERBOSE_EVENT</link>   0x00000008</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__test__common_8h_1ab607cbf4694150235976fc1ef6e68387">VERBOSE_AUDIO</link>   0x00000010</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_s_d_l_test___common_state">SDLTest_CommonState</link> * <link linkend="__s_d_l__test__common_8h_1a5a4834fbafe98dbe44df0c56b1848132">SDLTest_CommonCreateState</link> (char **argv, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="__s_d_l__opengl__glext_8h_1ac7ba7d3cce3d19ca020e056b37231289">flags</link>)</para>
+
+<para>Parse command line parameters and create common state. </para>
+</listitem>
+            <listitem><para>int <link linkend="__s_d_l__test__common_8h_1a6ffe001ae2299720a92b80812dbc48b9">SDLTest_CommonArg</link> (<link linkend="_struct_s_d_l_test___common_state">SDLTest_CommonState</link> *state, int <link linkend="__s_d_l__opengl__glext_8h_1a57f14e05b1900f16a2da82ade47d0c6d">index</link>)</para>
+
+<para>Process one common argument. </para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="__s_d_l__test__common_8h_1aa048e9175cca826d9dbd6c5d72284e38">SDLTest_CommonLogUsage</link> (<link linkend="_struct_s_d_l_test___common_state">SDLTest_CommonState</link> *state, const char *argv0, const char **options)</para>
+
+<para>Logs command line usage info. </para>
+</listitem>
+            <listitem><para>const char * <link linkend="__s_d_l__test__common_8h_1ad5d87db3b58b35581f99e41540512c69">SDLTest_CommonUsage</link> (<link linkend="_struct_s_d_l_test___common_state">SDLTest_CommonState</link> *state)</para>
+
+<para>Returns common usage information. </para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="__s_d_l__test__common_8h_1a7405405819a77e317a1edda6be974187">SDLTest_CommonInit</link> (<link linkend="_struct_s_d_l_test___common_state">SDLTest_CommonState</link> *state)</para>
+
+<para>Open test window. </para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="__s_d_l__test__common_8h_1a39a960ca01f07491d42008a137db6f1c">SDLTest_CommonDefaultArgs</link> (<link linkend="_struct_s_d_l_test___common_state">SDLTest_CommonState</link> *state, const int argc, char **argv)</para>
+
+<para>Easy argument handling when test app doesn&apos;t need any custom args. </para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="__s_d_l__test__common_8h_1a5fb0eb864d62d6d9f6d932c9abccd1f4">SDLTest_CommonEvent</link> (<link linkend="_struct_s_d_l_test___common_state">SDLTest_CommonState</link> *state, <link linkend="_union_s_d_l___event">SDL_Event</link> *<link linkend="__s_d_l__opengl__glext_8h_1a03b04a5a978bad576866339075de01f6">event</link>, int *done)</para>
+
+<para>Common event handler for test windows. </para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="__s_d_l__test__common_8h_1a2d24c255140a7e90c753eb363ef4d96e">SDLTest_CommonQuit</link> (<link linkend="_struct_s_d_l_test___common_state">SDLTest_CommonState</link> *state)</para>
+
+<para>Close test window. </para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="__s_d_l__test__common_8h_1a2ec5c6d6329602f002d441de8edfdad2">SDLTest_CommonDrawWindowInfo</link> (<link linkend="__s_d_l__render_8h_1aaf0bf7d020754fc614fe06552ea4d5d4">SDL_Renderer</link> *renderer, <link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link> *window, int *usedHeight)</para>
+
+<para>Draws various window information (position, size, etc.) to the renderer. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Include file for SDL test framework.</para>
+
+<para>This code is a part of the SDL2_test library, not the main SDL library. </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__s_d_l__test__common_8h_1a030ebc610fddb0a18d62829ab376bf85"/><section>
+    <title>DEFAULT_WINDOW_HEIGHT</title>
+<indexterm><primary>DEFAULT_WINDOW_HEIGHT</primary><secondary>SDL_test_common.h</secondary></indexterm>
+<indexterm><primary>SDL_test_common.h</primary><secondary>DEFAULT_WINDOW_HEIGHT</secondary></indexterm>
+<para><computeroutput>#define DEFAULT_WINDOW_HEIGHT   480</computeroutput></para></section>
+<anchor xml:id="__s_d_l__test__common_8h_1a6ca4df6b9e1495a80a2929a5187cb9b9"/><section>
+    <title>DEFAULT_WINDOW_WIDTH</title>
+<indexterm><primary>DEFAULT_WINDOW_WIDTH</primary><secondary>SDL_test_common.h</secondary></indexterm>
+<indexterm><primary>SDL_test_common.h</primary><secondary>DEFAULT_WINDOW_WIDTH</secondary></indexterm>
+<para><computeroutput>#define DEFAULT_WINDOW_WIDTH   640</computeroutput></para></section>
+<anchor xml:id="__s_d_l__test__common_8h_1ab607cbf4694150235976fc1ef6e68387"/><section>
+    <title>VERBOSE_AUDIO</title>
+<indexterm><primary>VERBOSE_AUDIO</primary><secondary>SDL_test_common.h</secondary></indexterm>
+<indexterm><primary>SDL_test_common.h</primary><secondary>VERBOSE_AUDIO</secondary></indexterm>
+<para><computeroutput>#define VERBOSE_AUDIO   0x00000010</computeroutput></para></section>
+<anchor xml:id="__s_d_l__test__common_8h_1a3e5a47c9aaa54a2b134b0066f48b4e0c"/><section>
+    <title>VERBOSE_EVENT</title>
+<indexterm><primary>VERBOSE_EVENT</primary><secondary>SDL_test_common.h</secondary></indexterm>
+<indexterm><primary>SDL_test_common.h</primary><secondary>VERBOSE_EVENT</secondary></indexterm>
+<para><computeroutput>#define VERBOSE_EVENT   0x00000008</computeroutput></para></section>
+<anchor xml:id="__s_d_l__test__common_8h_1a3a535ac3889907ff97e556a3cae117cc"/><section>
+    <title>VERBOSE_MODES</title>
+<indexterm><primary>VERBOSE_MODES</primary><secondary>SDL_test_common.h</secondary></indexterm>
+<indexterm><primary>SDL_test_common.h</primary><secondary>VERBOSE_MODES</secondary></indexterm>
+<para><computeroutput>#define VERBOSE_MODES   0x00000002</computeroutput></para></section>
+<anchor xml:id="__s_d_l__test__common_8h_1a7bdcd39423e8261d05407ab758feb037"/><section>
+    <title>VERBOSE_RENDER</title>
+<indexterm><primary>VERBOSE_RENDER</primary><secondary>SDL_test_common.h</secondary></indexterm>
+<indexterm><primary>SDL_test_common.h</primary><secondary>VERBOSE_RENDER</secondary></indexterm>
+<para><computeroutput>#define VERBOSE_RENDER   0x00000004</computeroutput></para></section>
+<anchor xml:id="__s_d_l__test__common_8h_1ab5d2ba75c3cd702f1a269c406902ddcb"/><section>
+    <title>VERBOSE_VIDEO</title>
+<indexterm><primary>VERBOSE_VIDEO</primary><secondary>SDL_test_common.h</secondary></indexterm>
+<indexterm><primary>SDL_test_common.h</primary><secondary>VERBOSE_VIDEO</secondary></indexterm>
+<para><computeroutput>#define VERBOSE_VIDEO   0x00000001</computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__s_d_l__test__common_8h_1a6ffe001ae2299720a92b80812dbc48b9"/><section>
+    <title>SDLTest_CommonArg()</title>
+<indexterm><primary>SDLTest_CommonArg</primary><secondary>SDL_test_common.h</secondary></indexterm>
+<indexterm><primary>SDL_test_common.h</primary><secondary>SDLTest_CommonArg</secondary></indexterm>
+<para><computeroutput>int SDLTest_CommonArg (<link linkend="_struct_s_d_l_test___common_state">SDLTest_CommonState</link> * state, int index)</computeroutput></para><para>
+
+<para>Process one common argument. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>state</entry><entry>
+<para>The common state describing the test window to create. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>index</entry><entry>
+<para>The index of the argument to process in argv[].</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the number of arguments processed (i.e. 1 for &#8211;fullscreen, 2 for &#8211;video [videodriver], or -1 on error. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__test__common_8h_1a5a4834fbafe98dbe44df0c56b1848132"/><section>
+    <title>SDLTest_CommonCreateState()</title>
+<indexterm><primary>SDLTest_CommonCreateState</primary><secondary>SDL_test_common.h</secondary></indexterm>
+<indexterm><primary>SDL_test_common.h</primary><secondary>SDLTest_CommonCreateState</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_s_d_l_test___common_state">SDLTest_CommonState</link> * SDLTest_CommonCreateState (char ** argv, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> flags)</computeroutput></para><para>
+
+<para>Parse command line parameters and create common state. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>argv</entry><entry>
+<para>Array of command line parameters </para>
+</entry>
+                            </row>
+                            <row>
+<entry>flags</entry><entry>
+<para>Flags indicating which subsystem to initialize (i.e. SDL_INIT_VIDEO | SDL_INIT_AUDIO)</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a newly allocated common state object. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__test__common_8h_1a39a960ca01f07491d42008a137db6f1c"/><section>
+    <title>SDLTest_CommonDefaultArgs()</title>
+<indexterm><primary>SDLTest_CommonDefaultArgs</primary><secondary>SDL_test_common.h</secondary></indexterm>
+<indexterm><primary>SDL_test_common.h</primary><secondary>SDLTest_CommonDefaultArgs</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> SDLTest_CommonDefaultArgs (<link linkend="_struct_s_d_l_test___common_state">SDLTest_CommonState</link> * state, const int argc, char ** argv)</computeroutput></para><para>
+
+<para>Easy argument handling when test app doesn&apos;t need any custom args. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>state</entry><entry>
+<para>The common state describing the test window to create. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>argc</entry><entry>
+<para>argc, as supplied to SDL_main </para>
+</entry>
+                            </row>
+                            <row>
+<entry>argv</entry><entry>
+<para>argv, as supplied to SDL_main</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_FALSE if app should quit, true otherwise. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__test__common_8h_1a2ec5c6d6329602f002d441de8edfdad2"/><section>
+    <title>SDLTest_CommonDrawWindowInfo()</title>
+<indexterm><primary>SDLTest_CommonDrawWindowInfo</primary><secondary>SDL_test_common.h</secondary></indexterm>
+<indexterm><primary>SDL_test_common.h</primary><secondary>SDLTest_CommonDrawWindowInfo</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> SDLTest_CommonDrawWindowInfo (<link linkend="__s_d_l__render_8h_1aaf0bf7d020754fc614fe06552ea4d5d4">SDL_Renderer</link> * renderer, <link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link> * window, int * usedHeight)</computeroutput></para><para>
+
+<para>Draws various window information (position, size, etc.) to the renderer. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>renderer</entry><entry>
+<para>The renderer to draw to. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>window</entry><entry>
+<para>The window whose information should be displayed. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>usedHeight</entry><entry>
+<para>Returns the height used, so the caller can draw more below. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="__s_d_l__test__common_8h_1a5fb0eb864d62d6d9f6d932c9abccd1f4"/><section>
+    <title>SDLTest_CommonEvent()</title>
+<indexterm><primary>SDLTest_CommonEvent</primary><secondary>SDL_test_common.h</secondary></indexterm>
+<indexterm><primary>SDL_test_common.h</primary><secondary>SDLTest_CommonEvent</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> SDLTest_CommonEvent (<link linkend="_struct_s_d_l_test___common_state">SDLTest_CommonState</link> * state, <link linkend="_union_s_d_l___event">SDL_Event</link> * event, int * done)</computeroutput></para><para>
+
+<para>Common event handler for test windows. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>state</entry><entry>
+<para>The common state used to create test window. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>event</entry><entry>
+<para>The event to handle. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>done</entry><entry>
+<para>Flag indicating we are done. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="__s_d_l__test__common_8h_1a7405405819a77e317a1edda6be974187"/><section>
+    <title>SDLTest_CommonInit()</title>
+<indexterm><primary>SDLTest_CommonInit</primary><secondary>SDL_test_common.h</secondary></indexterm>
+<indexterm><primary>SDL_test_common.h</primary><secondary>SDLTest_CommonInit</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> SDLTest_CommonInit (<link linkend="_struct_s_d_l_test___common_state">SDLTest_CommonState</link> * state)</computeroutput></para><para>
+
+<para>Open test window. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>state</entry><entry>
+<para>The common state describing the test window to create.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE if initialization succeeded, false otherwise </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__test__common_8h_1aa048e9175cca826d9dbd6c5d72284e38"/><section>
+    <title>SDLTest_CommonLogUsage()</title>
+<indexterm><primary>SDLTest_CommonLogUsage</primary><secondary>SDL_test_common.h</secondary></indexterm>
+<indexterm><primary>SDL_test_common.h</primary><secondary>SDLTest_CommonLogUsage</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> SDLTest_CommonLogUsage (<link linkend="_struct_s_d_l_test___common_state">SDLTest_CommonState</link> * state, const char * argv0, const char ** options)</computeroutput></para><para>
+
+<para>Logs command line usage info. </para>
+</para>
+
+<para>This logs the appropriate command line options for the subsystems in use plus other common options, and then any application-specific options. This uses the <link linkend="__s_d_l__log_8h_1a712dc42164c67b7f9e23dc0e3b15bd92">SDL_Log()</link> function and splits up output to be friendly to 80-character-wide terminals.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>state</entry><entry>
+<para>The common state describing the test window for the app. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>argv0</entry><entry>
+<para>argv[0], as passed to main/SDL_main. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>options</entry><entry>
+<para>an array of strings for application specific options. The last element of the array should be NULL. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="__s_d_l__test__common_8h_1a2d24c255140a7e90c753eb363ef4d96e"/><section>
+    <title>SDLTest_CommonQuit()</title>
+<indexterm><primary>SDLTest_CommonQuit</primary><secondary>SDL_test_common.h</secondary></indexterm>
+<indexterm><primary>SDL_test_common.h</primary><secondary>SDLTest_CommonQuit</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> SDLTest_CommonQuit (<link linkend="_struct_s_d_l_test___common_state">SDLTest_CommonState</link> * state)</computeroutput></para><para>
+
+<para>Close test window. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>state</entry><entry>
+<para>The common state used to create test window. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="__s_d_l__test__common_8h_1ad5d87db3b58b35581f99e41540512c69"/><section>
+    <title>SDLTest_CommonUsage()</title>
+<indexterm><primary>SDLTest_CommonUsage</primary><secondary>SDL_test_common.h</secondary></indexterm>
+<indexterm><primary>SDL_test_common.h</primary><secondary>SDLTest_CommonUsage</secondary></indexterm>
+<para><computeroutput>const char * SDLTest_CommonUsage (<link linkend="_struct_s_d_l_test___common_state">SDLTest_CommonState</link> * state)</computeroutput></para><para>
+
+<para>Returns common usage information. </para>
+</para>
+
+<para>You should (probably) be using <link linkend="__s_d_l__test__common_8h_1aa048e9175cca826d9dbd6c5d72284e38">SDLTest_CommonLogUsage()</link> instead, but this function remains for binary compatibility. Strings returned from this function are valid until <link linkend="__s_d_l__test__common_8h_1a2d24c255140a7e90c753eb363ef4d96e">SDLTest_CommonQuit()</link> is called, in which case those strings&apos; memory is freed and can no longer be used.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>state</entry><entry>
+<para>The common state describing the test window to create. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a string with usage information </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

@@ -1,0 +1,683 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__thread_8h" xml:lang="en-US">
+<title>D:/RayTracing/include/SDL_thread.h File Reference</title>
+<indexterm><primary>D:/RayTracing/include/SDL_thread.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;SDL_stdinc.h&quot;
+#include &quot;SDL_error.h&quot;
+#include &quot;SDL_atomic.h&quot;
+#include &quot;SDL_mutex.h&quot;
+#include &quot;begin_code.h&quot;
+#include &quot;close_code.h&quot;
+</programlisting><simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef struct <link linkend="__s_d_l__thread_8h_1a97cd1dc60cea74b74273affb1a974db5">SDL_Thread</link> <link linkend="__s_d_l__thread_8h_1a97cd1dc60cea74b74273affb1a974db5">SDL_Thread</link></para>
+</listitem>
+            <listitem><para>typedef unsigned long <link linkend="__s_d_l__thread_8h_1ac4db699531ce9f18f5a8547aa988b88e">SDL_threadID</link></para>
+</listitem>
+            <listitem><para>typedef unsigned int <link linkend="__s_d_l__thread_8h_1a07ce005c35ad6ac377d6124db7296026">SDL_TLSID</link></para>
+</listitem>
+            <listitem><para>typedef int(<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> * <link linkend="__s_d_l__thread_8h_1a35d10c50423c326b20abea6a486f53e0">SDL_ThreadFunction</link>) (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *<link linkend="__s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a">data</link>)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="__s_d_l__thread_8h_1acce8dea56f6b307fadd2949b64e3ebda">SDL_ThreadPriority</link> { <link linkend="__s_d_l__thread_8h_1acce8dea56f6b307fadd2949b64e3ebdaa48d887edbfc7842abdabcec6900d3878">SDL_THREAD_PRIORITY_LOW</link>
+, <link linkend="__s_d_l__thread_8h_1acce8dea56f6b307fadd2949b64e3ebdaac3a2f7a29f4c8fe11dca0ea258b07dae">SDL_THREAD_PRIORITY_NORMAL</link>
+, <link linkend="__s_d_l__thread_8h_1acce8dea56f6b307fadd2949b64e3ebdaaac5ff8423acdebf3b43c279b8ec2ae0d">SDL_THREAD_PRIORITY_HIGH</link>
+, <link linkend="__s_d_l__thread_8h_1acce8dea56f6b307fadd2949b64e3ebdaa334bcf64dc27f8dbc1aa661a494ee8ca">SDL_THREAD_PRIORITY_TIME_CRITICAL</link>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__thread_8h_1a97cd1dc60cea74b74273affb1a974db5">SDL_Thread</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__thread_8h_1ac36c70a33975a8c9399962f8ac310377">SDL_CreateThread</link> (<link linkend="__s_d_l__thread_8h_1a35d10c50423c326b20abea6a486f53e0">SDL_ThreadFunction</link> fn, const char *<link linkend="__s_d_l__opengl__glext_8h_1aaced7cfc21e7d37775d6921bb8177239">name</link>, <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *<link linkend="__s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a">data</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__thread_8h_1a97cd1dc60cea74b74273affb1a974db5">SDL_Thread</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__thread_8h_1a9ab0d63052abb2afdbb14042cee4dbdf">SDL_CreateThreadWithStackSize</link> (<link linkend="__s_d_l__thread_8h_1a35d10c50423c326b20abea6a486f53e0">SDL_ThreadFunction</link> fn, const char *<link linkend="__s_d_l__opengl__glext_8h_1aaced7cfc21e7d37775d6921bb8177239">name</link>, const <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> stacksize, <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *<link linkend="__s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a">data</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__thread_8h_1a5c1e3618f2be2e3af69d615055defa5a">SDL_GetThreadName</link> (<link linkend="__s_d_l__thread_8h_1a97cd1dc60cea74b74273affb1a974db5">SDL_Thread</link> *thread)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__thread_8h_1ac4db699531ce9f18f5a8547aa988b88e">SDL_threadID</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__thread_8h_1a341933eef1470789de20b05c1392b9ae">SDL_ThreadID</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__thread_8h_1ac4db699531ce9f18f5a8547aa988b88e">SDL_threadID</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__thread_8h_1a0bf5d93ed5cb25ea59307472c62c66db">SDL_GetThreadID</link> (<link linkend="__s_d_l__thread_8h_1a97cd1dc60cea74b74273affb1a974db5">SDL_Thread</link> *thread)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__thread_8h_1adf4da9c0e6a6833bef9741344b09699d">SDL_SetThreadPriority</link> (<link linkend="__s_d_l__thread_8h_1acce8dea56f6b307fadd2949b64e3ebda">SDL_ThreadPriority</link> priority)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__thread_8h_1ac96743626ed21d2cdb0868a23cca9705">SDL_WaitThread</link> (<link linkend="__s_d_l__thread_8h_1a97cd1dc60cea74b74273affb1a974db5">SDL_Thread</link> *thread, int *status)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__thread_8h_1af90602c51ef5a62f26ed9931af484906">SDL_DetachThread</link> (<link linkend="__s_d_l__thread_8h_1a97cd1dc60cea74b74273affb1a974db5">SDL_Thread</link> *thread)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__thread_8h_1a07ce005c35ad6ac377d6124db7296026">SDL_TLSID</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__thread_8h_1ac7ed1ec8dec5b902da25b60da2b728fa">SDL_TLSCreate</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__thread_8h_1a1915755c7215e59e1b218b9b94dbf8fd">SDL_TLSGet</link> (<link linkend="__s_d_l__thread_8h_1a07ce005c35ad6ac377d6124db7296026">SDL_TLSID</link> <link linkend="__s_d_l__opengl__glext_8h_1a58c2a664503e14ffb8f21012aabff3e9">id</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__thread_8h_1a807c8306201205c7c3ac0cb34ac7cd77">SDL_TLSSet</link> (<link linkend="__s_d_l__thread_8h_1a07ce005c35ad6ac377d6124db7296026">SDL_TLSID</link> <link linkend="__s_d_l__opengl__glext_8h_1a58c2a664503e14ffb8f21012aabff3e9">id</link>, const <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *<link linkend="__s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f">value</link>, <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>(<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> *destructor)(<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *))</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__thread_8h_1addd72a8ba431ef92685bbc9c89c5c67c">SDL_TLSCleanup</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Header for the SDL thread management routines. </para>
+</section>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="__s_d_l__thread_8h_1a97cd1dc60cea74b74273affb1a974db5"/><section>
+    <title>SDL_Thread</title>
+<indexterm><primary>SDL_Thread</primary><secondary>SDL_thread.h</secondary></indexterm>
+<indexterm><primary>SDL_thread.h</primary><secondary>SDL_Thread</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="__s_d_l__thread_8h_1a97cd1dc60cea74b74273affb1a974db5">SDL_Thread</link> <link linkend="__s_d_l__thread_8h_1a97cd1dc60cea74b74273affb1a974db5">SDL_Thread</link></computeroutput></para></section>
+<anchor xml:id="__s_d_l__thread_8h_1a35d10c50423c326b20abea6a486f53e0"/><section>
+    <title>SDL_ThreadFunction</title>
+<indexterm><primary>SDL_ThreadFunction</primary><secondary>SDL_thread.h</secondary></indexterm>
+<indexterm><primary>SDL_thread.h</primary><secondary>SDL_ThreadFunction</secondary></indexterm>
+<para><computeroutput>typedef int(<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> * SDL_ThreadFunction) (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *<link linkend="__s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a">data</link>)</computeroutput></para>
+<para>The function passed to <link linkend="__s_d_l__thread_8h_1ac36c70a33975a8c9399962f8ac310377">SDL_CreateThread()</link>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>data</entry><entry>
+<para>what was passed as <computeroutput>data</computeroutput> to <link linkend="__s_d_l__thread_8h_1ac36c70a33975a8c9399962f8ac310377">SDL_CreateThread()</link> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a value that can be reported through <link linkend="__s_d_l__thread_8h_1ac96743626ed21d2cdb0868a23cca9705">SDL_WaitThread()</link>. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__thread_8h_1ac4db699531ce9f18f5a8547aa988b88e"/><section>
+    <title>SDL_threadID</title>
+<indexterm><primary>SDL_threadID</primary><secondary>SDL_thread.h</secondary></indexterm>
+<indexterm><primary>SDL_thread.h</primary><secondary>SDL_threadID</secondary></indexterm>
+<para><computeroutput>typedef unsigned long <link linkend="__s_d_l__thread_8h_1ac4db699531ce9f18f5a8547aa988b88e">SDL_threadID</link></computeroutput></para></section>
+<anchor xml:id="__s_d_l__thread_8h_1a07ce005c35ad6ac377d6124db7296026"/><section>
+    <title>SDL_TLSID</title>
+<indexterm><primary>SDL_TLSID</primary><secondary>SDL_thread.h</secondary></indexterm>
+<indexterm><primary>SDL_thread.h</primary><secondary>SDL_TLSID</secondary></indexterm>
+<para><computeroutput>typedef unsigned int <link linkend="__s_d_l__thread_8h_1a07ce005c35ad6ac377d6124db7296026">SDL_TLSID</link></computeroutput></para></section>
+</section>
+<section>
+<title>Enumeration Type Documentation</title>
+<anchor xml:id="__s_d_l__thread_8h_1acce8dea56f6b307fadd2949b64e3ebda"/><section>
+    <title>SDL_ThreadPriority</title>
+<indexterm><primary>SDL_ThreadPriority</primary><secondary>SDL_thread.h</secondary></indexterm>
+<indexterm><primary>SDL_thread.h</primary><secondary>SDL_ThreadPriority</secondary></indexterm>
+<para><computeroutput>enum <link linkend="__s_d_l__thread_8h_1acce8dea56f6b307fadd2949b64e3ebda">SDL_ThreadPriority</link></computeroutput></para>
+<para>The SDL thread priority.</para>
+
+<para>SDL will make system changes as necessary in order to apply the thread priority. Code which attempts to control thread state related to priority should be aware that calling SDL_SetThreadPriority may alter such state. SDL_HINT_THREAD_PRIORITY_POLICY can be used to control aspects of this behavior.</para>
+
+<para><note><title>Note</title>
+
+<para>On many systems you require special privileges to set high or time critical priority. </para>
+</note>
+</para>
+<informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SDL_THREAD_PRIORITY_LOW</primary><secondary>SDL_thread.h</secondary></indexterm>
+<indexterm><primary>SDL_thread.h</primary><secondary>SDL_THREAD_PRIORITY_LOW</secondary></indexterm>
+<anchor xml:id="__s_d_l__thread_8h_1acce8dea56f6b307fadd2949b64e3ebdaa48d887edbfc7842abdabcec6900d3878"/>SDL_THREAD_PRIORITY_LOW</entry><entry></entry></row><row><entry><indexterm><primary>SDL_THREAD_PRIORITY_NORMAL</primary><secondary>SDL_thread.h</secondary></indexterm>
+<indexterm><primary>SDL_thread.h</primary><secondary>SDL_THREAD_PRIORITY_NORMAL</secondary></indexterm>
+<anchor xml:id="__s_d_l__thread_8h_1acce8dea56f6b307fadd2949b64e3ebdaac3a2f7a29f4c8fe11dca0ea258b07dae"/>SDL_THREAD_PRIORITY_NORMAL</entry><entry></entry></row><row><entry><indexterm><primary>SDL_THREAD_PRIORITY_HIGH</primary><secondary>SDL_thread.h</secondary></indexterm>
+<indexterm><primary>SDL_thread.h</primary><secondary>SDL_THREAD_PRIORITY_HIGH</secondary></indexterm>
+<anchor xml:id="__s_d_l__thread_8h_1acce8dea56f6b307fadd2949b64e3ebdaaac5ff8423acdebf3b43c279b8ec2ae0d"/>SDL_THREAD_PRIORITY_HIGH</entry><entry></entry></row><row><entry><indexterm><primary>SDL_THREAD_PRIORITY_TIME_CRITICAL</primary><secondary>SDL_thread.h</secondary></indexterm>
+<indexterm><primary>SDL_thread.h</primary><secondary>SDL_THREAD_PRIORITY_TIME_CRITICAL</secondary></indexterm>
+<anchor xml:id="__s_d_l__thread_8h_1acce8dea56f6b307fadd2949b64e3ebdaa334bcf64dc27f8dbc1aa661a494ee8ca"/>SDL_THREAD_PRIORITY_TIME_CRITICAL</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__s_d_l__thread_8h_1ac36c70a33975a8c9399962f8ac310377"/><section>
+    <title>SDL_CreateThread()</title>
+<indexterm><primary>SDL_CreateThread</primary><secondary>SDL_thread.h</secondary></indexterm>
+<indexterm><primary>SDL_thread.h</primary><secondary>SDL_CreateThread</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__thread_8h_1a97cd1dc60cea74b74273affb1a974db5">SDL_Thread</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_CreateThread (<link linkend="__s_d_l__thread_8h_1a35d10c50423c326b20abea6a486f53e0">SDL_ThreadFunction</link> fn, const char * name, <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> * data)</computeroutput></para>
+<para>Create a new thread with a default stack size.</para>
+
+<para>This is equivalent to calling:</para>
+
+<para><literallayout><computeroutput><link linkend="__s_d_l__thread_8h_1a9ab0d63052abb2afdbb14042cee4dbdf">SDL_CreateThreadWithStackSize</link>(fn,&#32;<link linkend="__s_d_l__opengl__glext_8h_1aaced7cfc21e7d37775d6921bb8177239">name</link>,&#32;0,&#32;<link linkend="__s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a">data</link>);
+</computeroutput></literallayout></para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>fn</entry><entry>
+<para>the SDL_ThreadFunction function to call in the new thread </para>
+</entry>
+                            </row>
+                            <row>
+<entry>name</entry><entry>
+<para>the name of the thread </para>
+</entry>
+                            </row>
+                            <row>
+<entry>data</entry><entry>
+<para>a pointer that is passed to <computeroutput>fn</computeroutput> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>an opaque pointer to the new thread object on success, NULL if the new thread could not be created; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__thread_8h_1a9ab0d63052abb2afdbb14042cee4dbdf">SDL_CreateThreadWithStackSize</link> </para>
+
+<para><link linkend="__s_d_l__thread_8h_1ac96743626ed21d2cdb0868a23cca9705">SDL_WaitThread</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__thread_8h_1a9ab0d63052abb2afdbb14042cee4dbdf"/><section>
+    <title>SDL_CreateThreadWithStackSize()</title>
+<indexterm><primary>SDL_CreateThreadWithStackSize</primary><secondary>SDL_thread.h</secondary></indexterm>
+<indexterm><primary>SDL_thread.h</primary><secondary>SDL_CreateThreadWithStackSize</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__thread_8h_1a97cd1dc60cea74b74273affb1a974db5">SDL_Thread</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_CreateThreadWithStackSize (<link linkend="__s_d_l__thread_8h_1a35d10c50423c326b20abea6a486f53e0">SDL_ThreadFunction</link> fn, const char * name, const <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> stacksize, <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> * data)</computeroutput></para>
+<para>Create a new thread with a specific stack size.</para>
+
+<para>SDL makes an attempt to report <computeroutput>name</computeroutput> to the system, so that debuggers can display it. Not all platforms support this.</para>
+
+<para>Thread naming is a little complicated: Most systems have very small limits for the string length (Haiku has 32 bytes, Linux currently has 16, Visual C++ 6.0 has <emphasis>nine</emphasis>!), and possibly other arbitrary rules. You&apos;ll have to see what happens with your system&apos;s debugger. The name should be UTF-8 (but using the naming limits of C identifiers is a better bet). There are no requirements for thread naming conventions, so long as the string is null-terminated UTF-8, but these guidelines are helpful in choosing a name:</para>
+
+<para><link xlink:href="https://stackoverflow.com/questions/149932/naming-conventions-for-threads">https://stackoverflow.com/questions/149932/naming-conventions-for-threads</link></para>
+
+<para>If a system imposes requirements, SDL will try to munge the string for it (truncate, etc), but the original string contents will be available from <link linkend="__s_d_l__thread_8h_1a5c1e3618f2be2e3af69d615055defa5a">SDL_GetThreadName()</link>.</para>
+
+<para>The size (in bytes) of the new stack can be specified. Zero means &quot;use the
+system default&quot; which might be wildly different between platforms. x86 Linux generally defaults to eight megabytes, an embedded device might be a few kilobytes instead. You generally need to specify a stack that is a multiple of the system&apos;s page size (in many cases, this is 4 kilobytes, but check your system documentation).</para>
+
+<para>In SDL 2.1, stack size will be folded into the original SDL_CreateThread function, but for backwards compatibility, this is currently a separate function.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>fn</entry><entry>
+<para>the SDL_ThreadFunction function to call in the new thread </para>
+</entry>
+                            </row>
+                            <row>
+<entry>name</entry><entry>
+<para>the name of the thread </para>
+</entry>
+                            </row>
+                            <row>
+<entry>stacksize</entry><entry>
+<para>the size, in bytes, to allocate for the new thread stack. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>data</entry><entry>
+<para>a pointer that is passed to <computeroutput>fn</computeroutput> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>an opaque pointer to the new thread object on success, NULL if the new thread could not be created; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.9.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__thread_8h_1ac96743626ed21d2cdb0868a23cca9705">SDL_WaitThread</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__thread_8h_1af90602c51ef5a62f26ed9931af484906"/><section>
+    <title>SDL_DetachThread()</title>
+<indexterm><primary>SDL_DetachThread</primary><secondary>SDL_thread.h</secondary></indexterm>
+<indexterm><primary>SDL_thread.h</primary><secondary>SDL_DetachThread</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_DetachThread (<link linkend="__s_d_l__thread_8h_1a97cd1dc60cea74b74273affb1a974db5">SDL_Thread</link> * thread)</computeroutput></para>
+<para>Let a thread clean up on exit without intervention.</para>
+
+<para>A thread may be &quot;detached&quot; to signify that it should not remain until another thread has called <link linkend="__s_d_l__thread_8h_1ac96743626ed21d2cdb0868a23cca9705">SDL_WaitThread()</link> on it. Detaching a thread is useful for long-running threads that nothing needs to synchronize with or further manage. When a detached thread is done, it simply goes away.</para>
+
+<para>There is no way to recover the return code of a detached thread. If you need this, don&apos;t detach the thread and instead use <link linkend="__s_d_l__thread_8h_1ac96743626ed21d2cdb0868a23cca9705">SDL_WaitThread()</link>.</para>
+
+<para>Once a thread is detached, you should usually assume the SDL_Thread isn&apos;t safe to reference again, as it will become invalid immediately upon the detached thread&apos;s exit, instead of remaining until someone has called <link linkend="__s_d_l__thread_8h_1ac96743626ed21d2cdb0868a23cca9705">SDL_WaitThread()</link> to finally clean it up. As such, don&apos;t detach the same thread more than once.</para>
+
+<para>If a thread has already exited when passed to <link linkend="__s_d_l__thread_8h_1af90602c51ef5a62f26ed9931af484906">SDL_DetachThread()</link>, it will stop waiting for a call to <link linkend="__s_d_l__thread_8h_1ac96743626ed21d2cdb0868a23cca9705">SDL_WaitThread()</link> and clean up immediately. It is not safe to detach a thread that might be used with <link linkend="__s_d_l__thread_8h_1ac96743626ed21d2cdb0868a23cca9705">SDL_WaitThread()</link>.</para>
+
+<para>You may not call <link linkend="__s_d_l__thread_8h_1ac96743626ed21d2cdb0868a23cca9705">SDL_WaitThread()</link> on a thread that has been detached. Use either that function or this one, but not both, or behavior is undefined.</para>
+
+<para>It is safe to pass NULL to this function; it is a no-op.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>thread</entry><entry>
+<para>the SDL_Thread pointer that was returned from the <link linkend="__s_d_l__thread_8h_1ac36c70a33975a8c9399962f8ac310377">SDL_CreateThread()</link> call that started this thread</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.2.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__thread_8h_1ac36c70a33975a8c9399962f8ac310377">SDL_CreateThread</link> </para>
+
+<para><link linkend="__s_d_l__thread_8h_1ac96743626ed21d2cdb0868a23cca9705">SDL_WaitThread</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__thread_8h_1a0bf5d93ed5cb25ea59307472c62c66db"/><section>
+    <title>SDL_GetThreadID()</title>
+<indexterm><primary>SDL_GetThreadID</primary><secondary>SDL_thread.h</secondary></indexterm>
+<indexterm><primary>SDL_thread.h</primary><secondary>SDL_GetThreadID</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__thread_8h_1ac4db699531ce9f18f5a8547aa988b88e">SDL_threadID</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GetThreadID (<link linkend="__s_d_l__thread_8h_1a97cd1dc60cea74b74273affb1a974db5">SDL_Thread</link> * thread)</computeroutput></para>
+<para>Get the thread identifier for the specified thread.</para>
+
+<para>This thread identifier is as reported by the underlying operating system. If SDL is running on a platform that does not support threads the return value will always be zero.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>thread</entry><entry>
+<para>the thread to query </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the ID of the specified thread, or the ID of the current thread if <computeroutput>thread</computeroutput> is NULL.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__thread_8h_1a341933eef1470789de20b05c1392b9ae">SDL_ThreadID</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__thread_8h_1a5c1e3618f2be2e3af69d615055defa5a"/><section>
+    <title>SDL_GetThreadName()</title>
+<indexterm><primary>SDL_GetThreadName</primary><secondary>SDL_thread.h</secondary></indexterm>
+<indexterm><primary>SDL_thread.h</primary><secondary>SDL_GetThreadName</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GetThreadName (<link linkend="__s_d_l__thread_8h_1a97cd1dc60cea74b74273affb1a974db5">SDL_Thread</link> * thread)</computeroutput></para>
+<para>Get the thread name as it was specified in <link linkend="__s_d_l__thread_8h_1ac36c70a33975a8c9399962f8ac310377">SDL_CreateThread()</link>.</para>
+
+<para>This is internal memory, not to be freed by the caller, and remains valid until the specified thread is cleaned up by <link linkend="__s_d_l__thread_8h_1ac96743626ed21d2cdb0868a23cca9705">SDL_WaitThread()</link>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>thread</entry><entry>
+<para>the thread to query </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a pointer to a UTF-8 string that names the specified thread, or NULL if it doesn&apos;t have a name.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__thread_8h_1ac36c70a33975a8c9399962f8ac310377">SDL_CreateThread</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__thread_8h_1adf4da9c0e6a6833bef9741344b09699d"/><section>
+    <title>SDL_SetThreadPriority()</title>
+<indexterm><primary>SDL_SetThreadPriority</primary><secondary>SDL_thread.h</secondary></indexterm>
+<indexterm><primary>SDL_thread.h</primary><secondary>SDL_SetThreadPriority</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_SetThreadPriority (<link linkend="__s_d_l__thread_8h_1acce8dea56f6b307fadd2949b64e3ebda">SDL_ThreadPriority</link> priority)</computeroutput></para>
+<para>Set the priority for the current thread.</para>
+
+<para>Note that some platforms will not let you alter the priority (or at least, promote the thread to a higher priority) at all, and some require you to be an administrator account. Be prepared for this to fail.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>priority</entry><entry>
+<para>the SDL_ThreadPriority to set </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 on success or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__thread_8h_1a341933eef1470789de20b05c1392b9ae"/><section>
+    <title>SDL_ThreadID()</title>
+<indexterm><primary>SDL_ThreadID</primary><secondary>SDL_thread.h</secondary></indexterm>
+<indexterm><primary>SDL_thread.h</primary><secondary>SDL_ThreadID</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__thread_8h_1ac4db699531ce9f18f5a8547aa988b88e">SDL_threadID</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_ThreadID (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para>
+<para>Get the thread identifier for the current thread.</para>
+
+<para>This thread identifier is as reported by the underlying operating system. If SDL is running on a platform that does not support threads the return value will always be zero.</para>
+
+<para>This function also returns a valid thread ID when called from the main thread.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the ID of the current thread.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__thread_8h_1a0bf5d93ed5cb25ea59307472c62c66db">SDL_GetThreadID</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__thread_8h_1addd72a8ba431ef92685bbc9c89c5c67c"/><section>
+    <title>SDL_TLSCleanup()</title>
+<indexterm><primary>SDL_TLSCleanup</primary><secondary>SDL_thread.h</secondary></indexterm>
+<indexterm><primary>SDL_thread.h</primary><secondary>SDL_TLSCleanup</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_TLSCleanup (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para>
+<para>Cleanup all TLS data for this thread.</para>
+
+<para><formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.16. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__thread_8h_1ac7ed1ec8dec5b902da25b60da2b728fa"/><section>
+    <title>SDL_TLSCreate()</title>
+<indexterm><primary>SDL_TLSCreate</primary><secondary>SDL_thread.h</secondary></indexterm>
+<indexterm><primary>SDL_thread.h</primary><secondary>SDL_TLSCreate</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__thread_8h_1a07ce005c35ad6ac377d6124db7296026">SDL_TLSID</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_TLSCreate (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para>
+<para>Create a piece of thread-local storage.</para>
+
+<para>This creates an identifier that is globally visible to all threads but refers to data that is thread-specific.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the newly created thread local storage identifier or 0 on error.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__thread_8h_1a1915755c7215e59e1b218b9b94dbf8fd">SDL_TLSGet</link> </para>
+
+<para><link linkend="__s_d_l__thread_8h_1a807c8306201205c7c3ac0cb34ac7cd77">SDL_TLSSet</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__thread_8h_1a1915755c7215e59e1b218b9b94dbf8fd"/><section>
+    <title>SDL_TLSGet()</title>
+<indexterm><primary>SDL_TLSGet</primary><secondary>SDL_thread.h</secondary></indexterm>
+<indexterm><primary>SDL_thread.h</primary><secondary>SDL_TLSGet</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_TLSGet (<link linkend="__s_d_l__thread_8h_1a07ce005c35ad6ac377d6124db7296026">SDL_TLSID</link> id)</computeroutput></para>
+<para>Get the current thread&apos;s value associated with a thread local storage ID.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>id</entry><entry>
+<para>the thread local storage ID </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the value associated with the ID for the current thread or NULL if no value has been set; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__thread_8h_1ac7ed1ec8dec5b902da25b60da2b728fa">SDL_TLSCreate</link> </para>
+
+<para><link linkend="__s_d_l__thread_8h_1a807c8306201205c7c3ac0cb34ac7cd77">SDL_TLSSet</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__thread_8h_1a807c8306201205c7c3ac0cb34ac7cd77"/><section>
+    <title>SDL_TLSSet()</title>
+<indexterm><primary>SDL_TLSSet</primary><secondary>SDL_thread.h</secondary></indexterm>
+<indexterm><primary>SDL_thread.h</primary><secondary>SDL_TLSSet</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_TLSSet (<link linkend="__s_d_l__thread_8h_1a07ce005c35ad6ac377d6124db7296026">SDL_TLSID</link> id, const <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> * value, <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>(<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> *destructor)(<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *) )</computeroutput></para>
+<para>Set the current thread&apos;s value associated with a thread local storage ID.</para>
+
+<para>The function prototype for <computeroutput>destructor</computeroutput> is:</para>
+
+<para><literallayout><computeroutput><emphasis role="keywordtype">void</emphasis>&#32;destructor(<emphasis role="keywordtype">void</emphasis>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f">value</link>)
+</computeroutput></literallayout></para>
+
+<para>where its parameter <computeroutput>value</computeroutput> is what was passed as <computeroutput>value</computeroutput> to <link linkend="__s_d_l__thread_8h_1a807c8306201205c7c3ac0cb34ac7cd77">SDL_TLSSet()</link>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>id</entry><entry>
+<para>the thread local storage ID </para>
+</entry>
+                            </row>
+                            <row>
+<entry>value</entry><entry>
+<para>the value to associate with the ID for the current thread </para>
+</entry>
+                            </row>
+                            <row>
+<entry>destructor</entry><entry>
+<para>a function called when the thread exits, to free the value </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 on success or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__thread_8h_1ac7ed1ec8dec5b902da25b60da2b728fa">SDL_TLSCreate</link> </para>
+
+<para><link linkend="__s_d_l__thread_8h_1a1915755c7215e59e1b218b9b94dbf8fd">SDL_TLSGet</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__thread_8h_1ac96743626ed21d2cdb0868a23cca9705"/><section>
+    <title>SDL_WaitThread()</title>
+<indexterm><primary>SDL_WaitThread</primary><secondary>SDL_thread.h</secondary></indexterm>
+<indexterm><primary>SDL_thread.h</primary><secondary>SDL_WaitThread</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_WaitThread (<link linkend="__s_d_l__thread_8h_1a97cd1dc60cea74b74273affb1a974db5">SDL_Thread</link> * thread, int * status)</computeroutput></para>
+<para>Wait for a thread to finish.</para>
+
+<para>Threads that haven&apos;t been detached will remain (as a &quot;zombie&quot;) until this function cleans them up. Not doing so is a resource leak.</para>
+
+<para>Once a thread has been cleaned up through this function, the SDL_Thread that references it becomes invalid and should not be referenced again. As such, only one thread may call <link linkend="__s_d_l__thread_8h_1ac96743626ed21d2cdb0868a23cca9705">SDL_WaitThread()</link> on another.</para>
+
+<para>The return code for the thread function is placed in the area pointed to by <computeroutput>status</computeroutput>, if <computeroutput>status</computeroutput> is not NULL.</para>
+
+<para>You may not wait on a thread that has been used in a call to <link linkend="__s_d_l__thread_8h_1af90602c51ef5a62f26ed9931af484906">SDL_DetachThread()</link>. Use either that function or this one, but not both, or behavior is undefined.</para>
+
+<para>It is safe to pass a NULL thread to this function; it is a no-op.</para>
+
+<para>Note that the thread pointer is freed by this function and is not valid afterward.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>thread</entry><entry>
+<para>the SDL_Thread pointer that was returned from the <link linkend="__s_d_l__thread_8h_1ac36c70a33975a8c9399962f8ac310377">SDL_CreateThread()</link> call that started this thread </para>
+</entry>
+                            </row>
+                            <row>
+<entry>status</entry><entry>
+<para>pointer to an integer that will receive the value returned from the thread function by its &apos;return&apos;, or NULL to not receive such value back.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__thread_8h_1ac36c70a33975a8c9399962f8ac310377">SDL_CreateThread</link> </para>
+
+<para><link linkend="__s_d_l__thread_8h_1af90602c51ef5a62f26ed9931af484906">SDL_DetachThread</link> </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

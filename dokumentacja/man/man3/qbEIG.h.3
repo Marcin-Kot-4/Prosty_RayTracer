@@ -1,0 +1,70 @@
+.TH "D:/RayTracing/RayTrace/qbLinAlg/qbEIG.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/RayTrace/qbLinAlg/qbEIG.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdexcept>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <iomanip>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include 'qbMatrix\&.h'\fP
+.br
+\fC#include 'qbVector\&.h'\fP
+.br
+\fC#include 'qbQR\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename T > int \fBqbEigQR\fP (const \fBqbMatrix2\fP< T > &inputMatrix, std::vector< T > &eigenValues)"
+.br
+.ti -1c
+.RI "template<typename T > int \fBqbInvPIt\fP (const \fBqbMatrix2\fP< T > &inputMatrix, const T &eigenValue, \fBqbVector\fP< T > &eigenVector)"
+.br
+.ti -1c
+.RI "template<typename T > int \fBqbEIG_PIt\fP (const \fBqbMatrix2\fP< T > &X, T &eigenValue, \fBqbVector\fP< T > &eigenVector)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "constexpr int \fBQBEIG_MATRIXNOTSQUARE\fP = \-1"
+.br
+.ti -1c
+.RI "constexpr int \fBQBEIG_MAXITERATIONSEXCEEDED\fP = \-2"
+.br
+.ti -1c
+.RI "constexpr int \fBQBEIG_MATRIXNOTSYMMETRIC\fP = \-3"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "template<typename T > int qbEIG_PIt (const \fBqbMatrix2\fP< T > & X, T & eigenValue, \fBqbVector\fP< T > & eigenVector)"
+
+.SS "template<typename T > int qbEigQR (const \fBqbMatrix2\fP< T > & inputMatrix, std::vector< T > & eigenValues)"
+
+.SS "template<typename T > int qbInvPIt (const \fBqbMatrix2\fP< T > & inputMatrix, const T & eigenValue, \fBqbVector\fP< T > & eigenVector)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "constexpr int QBEIG_MATRIXNOTSQUARE = \-1\fC [constexpr]\fP"
+
+.SS "constexpr int QBEIG_MATRIXNOTSYMMETRIC = \-3\fC [constexpr]\fP"
+
+.SS "constexpr int QBEIG_MAXITERATIONSEXCEEDED = \-2\fC [constexpr]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

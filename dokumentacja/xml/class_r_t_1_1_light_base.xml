@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="class_r_t_1_1_light_base" kind="class" language="C++" prot="public">
+    <compoundname>RT::LightBase</compoundname>
+    <derivedcompoundref refid="class_r_t_1_1_point_light" prot="public" virt="non-virtual">RT::PointLight</derivedcompoundref>
+    <includes refid="lightbase_8h" local="no">lightbase.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_r_t_1_1_light_base_1afed58cde187e60119a96761008944268" prot="public" static="no" mutable="no">
+        <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt;</type>
+        <definition>qbVector&lt;double&gt; RT::LightBase::m_color</definition>
+        <argsstring></argsstring>
+        <name>m_color</name>
+        <qualifiedname>RT::LightBase::m_color</qualifiedname>
+        <initializer>{3}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Lights/lightbase.h" line="27" column="18" bodyfile="D:/RayTracing/RayTrace/Lights/lightbase.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_r_t_1_1_light_base_1a52255d6980ce013a614bb50d51d6a399" prot="public" static="no" mutable="no">
+        <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt;</type>
+        <definition>qbVector&lt;double&gt; RT::LightBase::m_location</definition>
+        <argsstring></argsstring>
+        <name>m_location</name>
+        <qualifiedname>RT::LightBase::m_location</qualifiedname>
+        <initializer>{3}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Lights/lightbase.h" line="29" column="18" bodyfile="D:/RayTracing/RayTrace/Lights/lightbase.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_r_t_1_1_light_base_1a322ee3ce9c2e01a1b36d6f8cf280a0f3" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double RT::LightBase::m_intensity</definition>
+        <argsstring></argsstring>
+        <name>m_intensity</name>
+        <qualifiedname>RT::LightBase::m_intensity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Lights/lightbase.h" line="31" column="16" bodyfile="D:/RayTracing/RayTrace/Lights/lightbase.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_r_t_1_1_light_base_1a4c1a6d7c5758f9331b42248dd1435cf1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RT::LightBase::LightBase</definition>
+        <argsstring>()</argsstring>
+        <name>LightBase</name>
+        <qualifiedname>RT::LightBase::LightBase</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Lights/lightbase.h" line="14" column="9" bodyfile="D:/RayTracing/RayTrace/Lights/lightbase.cpp" bodystart="5" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_light_base_1a53e052503c906f9eaf9ee32b11ba53d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>RT::LightBase::~LightBase</definition>
+        <argsstring>()</argsstring>
+        <name>~LightBase</name>
+        <qualifiedname>RT::LightBase::~LightBase</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Lights/lightbase.h" line="17" column="17" bodyfile="D:/RayTracing/RayTrace/Lights/lightbase.cpp" bodystart="10" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_light_base_1ae497648bbf44225db5a545e7c152d07a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool RT::LightBase::ComputeIllumination</definition>
+        <argsstring>(const qbVector&lt; double &gt; &amp;intPoint, const qbVector&lt; double &gt; &amp;localNormal, const std::vector&lt; std::shared_ptr&lt; RT::ObjectBase &gt; &gt; &amp;objectList, const std::shared_ptr&lt; RT::ObjectBase &gt; &amp;currentObject, qbVector&lt; double &gt; &amp;color, double &amp;intensity)</argsstring>
+        <name>ComputeIllumination</name>
+        <qualifiedname>RT::LightBase::ComputeIllumination</qualifiedname>
+        <reimplementedby refid="class_r_t_1_1_point_light_1a589d51d6e3aecfcaf2a6690ed97e888e">ComputeIllumination</reimplementedby>
+        <param>
+          <type>const <ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>intPoint</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>localNormal</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::shared_ptr&lt; <ref refid="class_r_t_1_1_object_base" kindref="compound">RT::ObjectBase</ref> &gt; &gt; &amp;</type>
+          <declname>objectList</declname>
+        </param>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_r_t_1_1_object_base" kindref="compound">RT::ObjectBase</ref> &gt; &amp;</type>
+          <declname>currentObject</declname>
+        </param>
+        <param>
+          <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>color</declname>
+        </param>
+        <param>
+          <type>double &amp;</type>
+          <declname>intensity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Lights/lightbase.h" line="20" column="22" bodyfile="D:/RayTracing/RayTrace/Lights/lightbase.cpp" bodystart="15" bodyend="20"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>RT::LightBase</label>
+        <link refid="class_r_t_1_1_light_base"/>
+      </node>
+      <node id="2">
+        <label>RT::PointLight</label>
+        <link refid="class_r_t_1_1_point_light"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>RT::LightBase</label>
+        <link refid="class_r_t_1_1_light_base"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_color</edgelabel>
+          <edgelabel>m_location</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>qbVector&lt; double &gt;</label>
+        <link refid="classqb_vector"/>
+      </node>
+    </collaborationgraph>
+    <location file="D:/RayTracing/RayTrace/Lights/lightbase.h" line="11" column="5" bodyfile="D:/RayTracing/RayTrace/Lights/lightbase.h" bodystart="11" bodyend="32"/>
+    <listofallmembers>
+      <member refid="class_r_t_1_1_light_base_1ae497648bbf44225db5a545e7c152d07a" prot="public" virt="virtual"><scope>RT::LightBase</scope><name>ComputeIllumination</name></member>
+      <member refid="class_r_t_1_1_light_base_1a4c1a6d7c5758f9331b42248dd1435cf1" prot="public" virt="non-virtual"><scope>RT::LightBase</scope><name>LightBase</name></member>
+      <member refid="class_r_t_1_1_light_base_1afed58cde187e60119a96761008944268" prot="public" virt="non-virtual"><scope>RT::LightBase</scope><name>m_color</name></member>
+      <member refid="class_r_t_1_1_light_base_1a322ee3ce9c2e01a1b36d6f8cf280a0f3" prot="public" virt="non-virtual"><scope>RT::LightBase</scope><name>m_intensity</name></member>
+      <member refid="class_r_t_1_1_light_base_1a52255d6980ce013a614bb50d51d6a399" prot="public" virt="non-virtual"><scope>RT::LightBase</scope><name>m_location</name></member>
+      <member refid="class_r_t_1_1_light_base_1a53e052503c906f9eaf9ee32b11ba53d4" prot="public" virt="virtual"><scope>RT::LightBase</scope><name>~LightBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

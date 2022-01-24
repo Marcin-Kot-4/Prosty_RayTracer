@@ -1,0 +1,99 @@
+.TH "D:/RayTracing/include/SDL_test_random.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_test_random.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBSDLTest_RandomContext\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSDLTest_RandomInt\fP(\fBc\fP)   ((int)\fBSDLTest_Random\fP(\fBc\fP))"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBvoid\fP \fBSDLTest_RandomInit\fP (\fBSDLTest_RandomContext\fP *rndContext, unsigned int xi, unsigned int ci)"
+.br
+.RI "Initialize random number generator with two integers\&. "
+.ti -1c
+.RI "\fBvoid\fP \fBSDLTest_RandomInitTime\fP (\fBSDLTest_RandomContext\fP *rndContext)"
+.br
+.RI "Initialize random number generator based on current system time\&. "
+.ti -1c
+.RI "unsigned int \fBSDLTest_Random\fP (\fBSDLTest_RandomContext\fP *rndContext)"
+.br
+.RI "Initialize random number generator based on current system time\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include file for SDL test framework\&.
+.PP
+This code is a part of the SDL2_test library, not the main SDL library\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define SDLTest_RandomInt(\fBc\fP)   ((int)\fBSDLTest_Random\fP(\fBc\fP))"
+
+.SH "Function Documentation"
+.PP 
+.SS "unsigned int SDLTest_Random (\fBSDLTest_RandomContext\fP * rndContext)"
+
+.PP
+Initialize random number generator based on current system time\&. Note: \&.\&.\&.RandomInit() or \&.\&.\&.RandomInitTime() must have been called before using this function\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIrndContext\fP pointer to context structure
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a random number (32bit unsigned integer) 
+.RE
+.PP
+
+.SS "\fBvoid\fP SDLTest_RandomInit (\fBSDLTest_RandomContext\fP * rndContext, unsigned int xi, unsigned int ci)"
+
+.PP
+Initialize random number generator with two integers\&. Note: The random sequence of numbers returned by \&.\&.\&.Random() is the same for the same two integers and has a period of 2^31\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIrndContext\fP pointer to context structure 
+.br
+\fIxi\fP integer that defines the random sequence 
+.br
+\fIci\fP integer that defines the random sequence 
+.RE
+.PP
+
+.SS "\fBvoid\fP SDLTest_RandomInitTime (\fBSDLTest_RandomContext\fP * rndContext)"
+
+.PP
+Initialize random number generator based on current system time\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIrndContext\fP pointer to context structure 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="md__d___ray_tracing_docs__r_e_a_d_m_e_macos" kind="page">
+    <compoundname>md_D__RayTracing_docs_README_macos</compoundname>
+    <title>Mac OS X (aka macOS).</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>These instructions are for people using Apple&apos;s Mac OS X (pronounced &quot;ten&quot;), which in newer versions is just referred to as &quot;macOS&quot;.</para>
+<para>From the developer&apos;s point of view, macOS is a sort of hybrid Mac and Unix system, and you have the option of using either traditional command line tools or Apple&apos;s IDE Xcode.</para>
+<sect1 id="md__d___ray_tracing_docs__r_e_a_d_m_e_macos_1autotoc_md62">
+<title>Command Line Build</title>
+<para>To build SDL using the command line, use the standard configure and make process:</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">mkdir<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">../configure</highlight></codeline>
+<codeline><highlight class="normal">make</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>make<sp/>install</highlight></codeline>
+</programlisting></para>
+<para>CMake is also known to work, although it continues to be a work in progress:</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">mkdir<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>-DCMAKE_BUILD_TYPE=Release<sp/>..</highlight></codeline>
+<codeline><highlight class="normal">make</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>make<sp/>install</highlight></codeline>
+</programlisting></para>
+<para>You can also build SDL as a Universal library (a single binary for both 64-bit Intel and ARM architectures), by using the build-scripts/clang-fat.sh script.</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">mkdir<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">CC=$PWD/../build-scripts/clang-fat.sh<sp/>../configure</highlight></codeline>
+<codeline><highlight class="normal">make</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>make<sp/>install</highlight></codeline>
+</programlisting></para>
+<para>This script builds SDL with 10.6 ABI compatibility on 64-bit Intel and 11.0 ABI compatibility on ARM64 architectures. For best compatibility you should compile your application the same way.</para>
+<para>Please note that building SDL requires at least Xcode 4.6 and the 10.7 SDK (even if you target back to 10.6 systems). PowerPC support for Mac OS X has been officially dropped as of SDL 2.0.2. 32-bit Intel, using an older Xcode release, is still supported at the time of this writing, but current Xcode releases no longer support it, and eventually neither will SDL.</para>
+<para>To use the library once it&apos;s built, you essential have two possibilities: use the traditional autoconf/automake/make method, or use Xcode.</para>
+</sect1>
+<sect1 id="md__d___ray_tracing_docs__r_e_a_d_m_e_macos_1autotoc_md63">
+<title>Caveats for using SDL with Mac OS X</title>
+<para>If you register your own NSApplicationDelegate (using [NSApp setDelegate:]), SDL will not register its own. This means that SDL will not terminate using SDL_Quit if it receives a termination request, it will terminate like a normal app, and it will not send a SDL_DROPFILE when you request to open a file with the app. To solve these issues, put the following code in your NSApplicationDelegate implementation:</para>
+<para><programlisting filename=".objc"><codeline><highlight class="normal">-<sp/>(NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication<sp/>*)sender</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(SDL_GetEventState(SDL_QUIT)<sp/>==<sp/>SDL_ENABLE)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_Event<sp/>event;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>event.type<sp/>=<sp/>SDL_QUIT;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_PushEvent(&amp;event);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>NSTerminateCancel;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">-<sp/>(BOOL)application:(NSApplication<sp/>*)theApplication<sp/>openFile:(NSString<sp/>*)filename</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(SDL_GetEventState(SDL_DROPFILE)<sp/>==<sp/>SDL_ENABLE)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_Event<sp/>event;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>event.type<sp/>=<sp/>SDL_DROPFILE;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>event.drop.file<sp/>=<sp/>SDL_strdup([filename<sp/>UTF8String]);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>(SDL_PushEvent(&amp;event)<sp/>&gt;<sp/>0);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>NO;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</sect1>
+<sect1 id="md__d___ray_tracing_docs__r_e_a_d_m_e_macos_1autotoc_md64">
+<title>Using the Simple DirectMedia Layer with a traditional Makefile</title>
+<para>An existing autoconf/automake build system for your SDL app has good chances to work almost unchanged on macOS. However, to produce a &quot;real&quot; Mac binary that you can distribute to users, you need to put the generated binary into a so called &quot;bundle&quot;, which is basically a fancy folder with a name like &quot;MyCoolGame.app&quot;.</para>
+<para>To get this build automatically, add something like the following rule to your Makefile.am:</para>
+<para><programlisting filename=".make"><codeline><highlight class="normal">bundle_contents<sp/>=<sp/>APP_NAME.app/Contents</highlight></codeline>
+<codeline><highlight class="normal">APP_NAME_bundle:<sp/>EXE_NAME</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mkdir<sp/>-p<sp/>$(bundle_contents)/MacOS</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mkdir<sp/>-p<sp/>$(bundle_contents)/Resources</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/>&quot;APPL????&quot;<sp/>&gt;<sp/>$(bundle_contents)/PkgInfo</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$(INSTALL_PROGRAM)<sp/>$&lt;<sp/>$(bundle_contents)/MacOS/</highlight></codeline>
+</programlisting></para>
+<para>You should replace <computeroutput>EXE_NAME</computeroutput> with the name of the executable. <computeroutput>APP_NAME</computeroutput> is what will be visible to the user in the Finder. Usually it will be the same as <computeroutput>EXE_NAME</computeroutput> but capitalized. E.g. if <computeroutput>EXE_NAME</computeroutput> is &quot;testgame&quot; then <computeroutput>APP_NAME</computeroutput> usually is &quot;TestGame&quot;. You might also want to use <computeroutput>@PACKAGE@</computeroutput> to use the package name as specified in your configure.ac file.</para>
+<para>If your project builds more than one application, you will have to do a bit more. For each of your target applications, you need a separate rule.</para>
+<para>If you want the created bundles to be installed, you may want to add this rule to your Makefile.am:</para>
+<para><programlisting filename=".make"><codeline><highlight class="normal">install-exec-hook:<sp/>APP_NAME_bundle</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>rm<sp/>-rf<sp/>$(DESTDIR)$(prefix)/Applications/APP_NAME.app</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mkdir<sp/>-p<sp/>$(DESTDIR)$(prefix)/Applications/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cp<sp/>-r<sp/>$&lt;<sp/>/$(DESTDIR)$(prefix)Applications/</highlight></codeline>
+</programlisting></para>
+<para>This rule takes the Bundle created by the rule from step 3 and installs them into &quot;$(DESTDIR)$(prefix)/Applications/&quot;.</para>
+<para>Again, if you want to install multiple applications, you will have to augment the make rule accordingly.</para>
+<para>But beware! That is only part of the story! With the above, you end up with a barebones .app bundle, which is double-clickable from the Finder. But there are some more things you should do before shipping your product...</para>
+<para><orderedlist>
+<listitem><para>The bundle right now probably is dynamically linked against SDL. That means that when you copy it to another computer, <emphasis>it will not run</emphasis>, unless you also install SDL on that other computer. A good solution for this dilemma is to static link against SDL. On OS X, you can achieve that by linking against the libraries listed by</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">sdl-config<sp/>--static-libs</highlight></codeline>
+</programlisting></para>
+<para>instead of those listed by</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">sdl-config<sp/>--libs</highlight></codeline>
+</programlisting></para>
+<para>Depending on how exactly SDL is integrated into your build systems, the way to achieve that varies, so I won&apos;t describe it here in detail</para>
+</listitem><listitem><para>Add an &apos;Info.plist&apos; to your application. That is a special XML file which contains some meta-information about your application (like some copyright information, the version of your app, the name of an optional icon file, and other things). Part of that information is displayed by the Finder when you click on the .app, or if you look at the &quot;Get Info&quot; window. More information about Info.plist files can be found on Apple&apos;s homepage.</para>
+</listitem></orderedlist>
+</para>
+<para>As a final remark, let me add that I use some of the techniques (and some variations of them) in <ulink url="https://github.com/exult/exult">Exult</ulink> and <ulink url="https://github.com/scummvm/scummvm">ScummVM</ulink>; both are available in source on the net, so feel free to take a peek at them for inspiration!</para>
+</sect1>
+<sect1 id="md__d___ray_tracing_docs__r_e_a_d_m_e_macos_1autotoc_md65">
+<title>Using the Simple DirectMedia Layer with Xcode</title>
+<para>These instructions are for using Apple&apos;s Xcode IDE to build SDL applications.</para>
+<sect2 id="md__d___ray_tracing_docs__r_e_a_d_m_e_macos_1autotoc_md66">
+<title>First steps</title>
+<para>The first thing to do is to unpack the Xcode.tar.gz archive in the top level SDL directory (where the Xcode.tar.gz archive resides). Because Stuffit Expander will unpack the archive into a subdirectory, you should unpack the archive manually from the command line:</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">cd<sp/>[path_to_SDL_source]</highlight></codeline>
+<codeline><highlight class="normal">tar<sp/>zxf<sp/>Xcode.tar.gz</highlight></codeline>
+</programlisting></para>
+<para>This will create a new folder called Xcode, which you can browse normally from the Finder.</para>
+</sect2>
+<sect2 id="md__d___ray_tracing_docs__r_e_a_d_m_e_macos_1autotoc_md67">
+<title>Building the Framework</title>
+<para>The SDL Library is packaged as a framework bundle, an organized relocatable folder hierarchy of executable code, interface headers, and additional resources. For practical purposes, you can think of a framework as a more user and system-friendly shared library, whose library file behaves more or less like a standard UNIX shared library.</para>
+<para>To build the framework, simply open the framework project and build it. By default, the framework bundle &quot;SDL.framework&quot; is installed in /Library/Frameworks. Therefore, the testers and project stationary expect it to be located there. However, it will function the same in any of the following locations:</para>
+<para><itemizedlist>
+<listitem><para>~/Library/Frameworks</para>
+</listitem><listitem><para>/Local/Library/Frameworks</para>
+</listitem><listitem><para>/System/Library/Frameworks</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md__d___ray_tracing_docs__r_e_a_d_m_e_macos_1autotoc_md68">
+<title>Build Options</title>
+<para>There are two &quot;Build Styles&quot; (See the &quot;Targets&quot; tab) for SDL. &quot;Deployment&quot; should be used if you aren&apos;t tweaking the SDL library. &quot;Development&quot; should be used to debug SDL apps or the library itself.</para>
+</sect2>
+<sect2 id="md__d___ray_tracing_docs__r_e_a_d_m_e_macos_1autotoc_md69">
+<title>Building the Testers</title>
+<para>Open the SDLTest project and build away!</para>
+</sect2>
+<sect2 id="md__d___ray_tracing_docs__r_e_a_d_m_e_macos_1autotoc_md70">
+<title>Using the Project Stationary</title>
+<para>Copy the stationary to the indicated folders to access it from the &quot;New Project&quot; and &quot;Add target&quot; menus. What could be easier?</para>
+</sect2>
+<sect2 id="md__d___ray_tracing_docs__r_e_a_d_m_e_macos_1autotoc_md71">
+<title>Setting up a new project by hand</title>
+<para>Some of you won&apos;t want to use the Stationary so I&apos;ll give some tips:</para>
+<para>(this is accurate as of Xcode 12.5.)</para>
+<para><itemizedlist>
+<listitem><para>Click &quot;File&quot; -&gt; &quot;New&quot; -&gt; &quot;Project...
+* Choose &quot;macOS&quot; and then &quot;App&quot; from the &quot;Application&quot; section.
+* Fill out the options in the next window. User interface is &quot;XIB&quot; and
+  Language is &quot;Objective-C&quot;.
+* Remove &quot;main.m&quot; from your project
+* Remove &quot;MainMenu.xib&quot; from your project
+* Remove &quot;AppDelegates.*&quot; from your project
+* Add &quot;$(HOME)/Library/Frameworks/SDL.framework/Headers&quot; to include path
+* Add &quot;$(HOME)/Library/Frameworks&quot; to the frameworks search path
+* Add &quot;-framework SDL -framework Foundation -framework AppKit&quot; to &quot;OTHER_LDFLAGS&quot;
+* Add your files
+* Clean and build
+
+@subsection autotoc_md72 Building from command line
+
+Use &lt;tt&gt;xcode-build&lt;/tt&gt; in the same directory as your .pbxproj file
+
+@subsection autotoc_md73 Running your app
+
+You can send command line args to your app by either invoking it from
+the command line (in *.app/Contents/MacOS) or by entering them in the
+Executables&quot; panel of the target settings.</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+</sect1>
+<sect1 id="md__d___ray_tracing_docs__r_e_a_d_m_e_macos_1autotoc_md74">
+<title>Implementation Notes</title>
+<para>Some things that may be of interest about how it all works...</para>
+<sect2 id="md__d___ray_tracing_docs__r_e_a_d_m_e_macos_1autotoc_md75">
+<title>Working directory</title>
+<para>In SDL 1.2, the working directory of your SDL app is by default set to its parent, but this is no longer the case in SDL 2.0. SDL2 does change the working directory, which means it&apos;ll be whatever the command line prompt that launched the program was using, or if launched by double-clicking in the finger, it will be &quot;/&quot;, the <emphasis>root of the filesystem</emphasis>. Plan accordingly! You can use <ref refid="_s_d_l__filesystem_8h_1af4bb772b30931388d2efcbfe30bf99e9" kindref="member">SDL_GetBasePath()</ref> to find where the program is running from and chdir() there directly.</para>
+</sect2>
+<sect2 id="md__d___ray_tracing_docs__r_e_a_d_m_e_macos_1autotoc_md76">
+<title>You have a Cocoa App!</title>
+<para>Your SDL app is essentially a Cocoa application. When your app starts up and the libraries finish loading, a Cocoa procedure is called, which sets up the working directory and calls your <ref refid="_c_make_c_compiler_id_8c_1a0ddf1224851353fc92bfbff6f499fa97" kindref="member">main()</ref> method. You are free to modify your Cocoa app with generally no consequence to SDL. You cannot, however, easily change the SDL window itself. Functionality may be added in the future to help this.</para>
+</sect2>
+</sect1>
+<sect1 id="md__d___ray_tracing_docs__r_e_a_d_m_e_macos_1autotoc_md77">
+<title>Bug reports</title>
+<para>Bugs are tracked at <ulink url="https://github.com/libsdl-org/SDL/issues/">the GitHub issue tracker</ulink>. Please feel free to report bugs there! </para>
+</sect1>
+    </detaileddescription>
+    <location file="D:/RayTracing/docs/README-macos.md"/>
+  </compounddef>
+</doxygen>

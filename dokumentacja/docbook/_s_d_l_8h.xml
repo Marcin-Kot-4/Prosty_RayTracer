@@ -1,0 +1,389 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l_8h" xml:lang="en-US">
+<title>D:/RayTracing/include/SDL.h File Reference</title>
+<indexterm><primary>D:/RayTracing/include/SDL.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;SDL_main.h&quot;
+#include &quot;SDL_stdinc.h&quot;
+#include &quot;SDL_assert.h&quot;
+#include &quot;SDL_atomic.h&quot;
+#include &quot;SDL_audio.h&quot;
+#include &quot;SDL_clipboard.h&quot;
+#include &quot;SDL_cpuinfo.h&quot;
+#include &quot;SDL_endian.h&quot;
+#include &quot;SDL_error.h&quot;
+#include &quot;SDL_events.h&quot;
+#include &quot;SDL_filesystem.h&quot;
+#include &quot;SDL_gamecontroller.h&quot;
+#include &quot;SDL_haptic.h&quot;
+#include &quot;SDL_hidapi.h&quot;
+#include &quot;SDL_hints.h&quot;
+#include &quot;SDL_joystick.h&quot;
+#include &quot;SDL_loadso.h&quot;
+#include &quot;SDL_log.h&quot;
+#include &quot;SDL_messagebox.h&quot;
+#include &quot;SDL_metal.h&quot;
+#include &quot;SDL_mutex.h&quot;
+#include &quot;SDL_power.h&quot;
+#include &quot;SDL_render.h&quot;
+#include &quot;SDL_rwops.h&quot;
+#include &quot;SDL_sensor.h&quot;
+#include &quot;SDL_shape.h&quot;
+#include &quot;SDL_system.h&quot;
+#include &quot;SDL_thread.h&quot;
+#include &quot;SDL_timer.h&quot;
+#include &quot;SDL_version.h&quot;
+#include &quot;SDL_video.h&quot;
+#include &quot;SDL_locale.h&quot;
+#include &quot;SDL_misc.h&quot;
+#include &quot;begin_code.h&quot;
+#include &quot;close_code.h&quot;
+</programlisting><simplesect>
+    <title>SDL_INIT_*    </title>
+
+<para><anchor xml:id="__1amgrpa6fe3a8ae2ad7bed5edc588e6bb0b7fb"/>These are the flags which may be passed to <link linkend="__s_d_l_8h_1a8fc8d35348d7c74bad8392d776c937b8">SDL_Init()</link>. You should specify the subsystems which you will be using in your application. </para>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__s_d_l_8h_1aadfaf3382d6e136b5944d1d5e7e50290">SDL_INIT_TIMER</link>   0x00000001u</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l_8h_1abeceb02c19508655cb05cc8e64206333">SDL_INIT_AUDIO</link>   0x00000010u</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l_8h_1afc988e510ed522628ffeb7c76f80c233">SDL_INIT_VIDEO</link>   0x00000020u</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l_8h_1ad6b47d785eaa00d9c48e6c1cff4aef4b">SDL_INIT_JOYSTICK</link>   0x00000200u</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l_8h_1adfd88189fec07574cae461b9dea75a85">SDL_INIT_HAPTIC</link>   0x00001000u</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l_8h_1ac224a9aa4208de0e9b03948ff9b5fe0a">SDL_INIT_GAMECONTROLLER</link>   0x00002000u</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l_8h_1addad89db9e13b46ebcd46a0db8ba0382">SDL_INIT_EVENTS</link>   0x00004000u</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l_8h_1a25711177b046dd1ccd2fcc2f123f117b">SDL_INIT_SENSOR</link>   0x00008000u</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l_8h_1ab848174dfbc69cb2cc7bbf06a6e5c584">SDL_INIT_NOPARACHUTE</link>   0x00100000u</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l_8h_1a574afd93f30161d6e87449f675081fb5">SDL_INIT_EVERYTHING</link></para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l_8h_1a8fc8d35348d7c74bad8392d776c937b8">SDL_Init</link> (<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="__s_d_l__opengl__glext_8h_1ac7ba7d3cce3d19ca020e056b37231289">flags</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l_8h_1adfbfddc0ec609b5e5e5cb1c89298e4db">SDL_InitSubSystem</link> (<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="__s_d_l__opengl__glext_8h_1ac7ba7d3cce3d19ca020e056b37231289">flags</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l_8h_1a14e9091982e09097985e10e3ca65debb">SDL_QuitSubSystem</link> (<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="__s_d_l__opengl__glext_8h_1ac7ba7d3cce3d19ca020e056b37231289">flags</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l_8h_1a04dc570990c697eed95681216801710d">SDL_WasInit</link> (<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="__s_d_l__opengl__glext_8h_1ac7ba7d3cce3d19ca020e056b37231289">flags</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l_8h_1afdabaf714781099083592051f2d9ac11">SDL_Quit</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Main include header for the SDL library </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__s_d_l_8h_1abeceb02c19508655cb05cc8e64206333"/><section>
+    <title>SDL_INIT_AUDIO</title>
+<indexterm><primary>SDL_INIT_AUDIO</primary><secondary>SDL.h</secondary></indexterm>
+<indexterm><primary>SDL.h</primary><secondary>SDL_INIT_AUDIO</secondary></indexterm>
+<para><computeroutput>#define SDL_INIT_AUDIO   0x00000010u</computeroutput></para></section>
+<anchor xml:id="__s_d_l_8h_1addad89db9e13b46ebcd46a0db8ba0382"/><section>
+    <title>SDL_INIT_EVENTS</title>
+<indexterm><primary>SDL_INIT_EVENTS</primary><secondary>SDL.h</secondary></indexterm>
+<indexterm><primary>SDL.h</primary><secondary>SDL_INIT_EVENTS</secondary></indexterm>
+<para><computeroutput>#define SDL_INIT_EVENTS   0x00004000u</computeroutput></para></section>
+<anchor xml:id="__s_d_l_8h_1a574afd93f30161d6e87449f675081fb5"/><section>
+    <title>SDL_INIT_EVERYTHING</title>
+<indexterm><primary>SDL_INIT_EVERYTHING</primary><secondary>SDL.h</secondary></indexterm>
+<indexterm><primary>SDL.h</primary><secondary>SDL_INIT_EVERYTHING</secondary></indexterm>
+<para><computeroutput>#define SDL_INIT_EVERYTHING</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SDL_INIT_TIMER&#32;|&#32;<link linkend="__s_d_l_8h_1abeceb02c19508655cb05cc8e64206333">SDL_INIT_AUDIO</link>&#32;|&#32;<link linkend="__s_d_l_8h_1afc988e510ed522628ffeb7c76f80c233">SDL_INIT_VIDEO</link>&#32;|&#32;<link linkend="__s_d_l_8h_1addad89db9e13b46ebcd46a0db8ba0382">SDL_INIT_EVENTS</link>&#32;|&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SDL_INIT_JOYSTICK&#32;|&#32;<link linkend="__s_d_l_8h_1adfd88189fec07574cae461b9dea75a85">SDL_INIT_HAPTIC</link>&#32;|&#32;<link linkend="__s_d_l_8h_1ac224a9aa4208de0e9b03948ff9b5fe0a">SDL_INIT_GAMECONTROLLER</link>&#32;|&#32;<link linkend="__s_d_l_8h_1a25711177b046dd1ccd2fcc2f123f117b">SDL_INIT_SENSOR</link>&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;)
+</programlisting></section>
+<anchor xml:id="__s_d_l_8h_1ac224a9aa4208de0e9b03948ff9b5fe0a"/><section>
+    <title>SDL_INIT_GAMECONTROLLER</title>
+<indexterm><primary>SDL_INIT_GAMECONTROLLER</primary><secondary>SDL.h</secondary></indexterm>
+<indexterm><primary>SDL.h</primary><secondary>SDL_INIT_GAMECONTROLLER</secondary></indexterm>
+<para><computeroutput>#define SDL_INIT_GAMECONTROLLER   0x00002000u</computeroutput></para>
+<para>SDL_INIT_GAMECONTROLLER implies SDL_INIT_JOYSTICK </para>
+</section>
+<anchor xml:id="__s_d_l_8h_1adfd88189fec07574cae461b9dea75a85"/><section>
+    <title>SDL_INIT_HAPTIC</title>
+<indexterm><primary>SDL_INIT_HAPTIC</primary><secondary>SDL.h</secondary></indexterm>
+<indexterm><primary>SDL.h</primary><secondary>SDL_INIT_HAPTIC</secondary></indexterm>
+<para><computeroutput>#define SDL_INIT_HAPTIC   0x00001000u</computeroutput></para></section>
+<anchor xml:id="__s_d_l_8h_1ad6b47d785eaa00d9c48e6c1cff4aef4b"/><section>
+    <title>SDL_INIT_JOYSTICK</title>
+<indexterm><primary>SDL_INIT_JOYSTICK</primary><secondary>SDL.h</secondary></indexterm>
+<indexterm><primary>SDL.h</primary><secondary>SDL_INIT_JOYSTICK</secondary></indexterm>
+<para><computeroutput>#define SDL_INIT_JOYSTICK   0x00000200u</computeroutput></para>
+<para>SDL_INIT_JOYSTICK implies SDL_INIT_EVENTS </para>
+</section>
+<anchor xml:id="__s_d_l_8h_1ab848174dfbc69cb2cc7bbf06a6e5c584"/><section>
+    <title>SDL_INIT_NOPARACHUTE</title>
+<indexterm><primary>SDL_INIT_NOPARACHUTE</primary><secondary>SDL.h</secondary></indexterm>
+<indexterm><primary>SDL.h</primary><secondary>SDL_INIT_NOPARACHUTE</secondary></indexterm>
+<para><computeroutput>#define SDL_INIT_NOPARACHUTE   0x00100000u</computeroutput></para>
+<para>compatibility; this flag is ignored. </para>
+</section>
+<anchor xml:id="__s_d_l_8h_1a25711177b046dd1ccd2fcc2f123f117b"/><section>
+    <title>SDL_INIT_SENSOR</title>
+<indexterm><primary>SDL_INIT_SENSOR</primary><secondary>SDL.h</secondary></indexterm>
+<indexterm><primary>SDL.h</primary><secondary>SDL_INIT_SENSOR</secondary></indexterm>
+<para><computeroutput>#define SDL_INIT_SENSOR   0x00008000u</computeroutput></para></section>
+<anchor xml:id="__s_d_l_8h_1aadfaf3382d6e136b5944d1d5e7e50290"/><section>
+    <title>SDL_INIT_TIMER</title>
+<indexterm><primary>SDL_INIT_TIMER</primary><secondary>SDL.h</secondary></indexterm>
+<indexterm><primary>SDL.h</primary><secondary>SDL_INIT_TIMER</secondary></indexterm>
+<para><computeroutput>#define SDL_INIT_TIMER   0x00000001u</computeroutput></para></section>
+<anchor xml:id="__s_d_l_8h_1afc988e510ed522628ffeb7c76f80c233"/><section>
+    <title>SDL_INIT_VIDEO</title>
+<indexterm><primary>SDL_INIT_VIDEO</primary><secondary>SDL.h</secondary></indexterm>
+<indexterm><primary>SDL.h</primary><secondary>SDL_INIT_VIDEO</secondary></indexterm>
+<para><computeroutput>#define SDL_INIT_VIDEO   0x00000020u</computeroutput></para>
+<para>SDL_INIT_VIDEO implies SDL_INIT_EVENTS </para>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__s_d_l_8h_1a8fc8d35348d7c74bad8392d776c937b8"/><section>
+    <title>SDL_Init()</title>
+<indexterm><primary>SDL_Init</primary><secondary>SDL.h</secondary></indexterm>
+<indexterm><primary>SDL.h</primary><secondary>SDL_Init</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_Init (<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> flags)</computeroutput></para>
+<para>Initialize the SDL library.</para>
+
+<para><link linkend="__s_d_l_8h_1a8fc8d35348d7c74bad8392d776c937b8">SDL_Init()</link> simply forwards to calling <link linkend="__s_d_l_8h_1adfbfddc0ec609b5e5e5cb1c89298e4db">SDL_InitSubSystem()</link>. Therefore, the two may be used interchangeably. Though for readability of your code <link linkend="__s_d_l_8h_1adfbfddc0ec609b5e5e5cb1c89298e4db">SDL_InitSubSystem()</link> might be preferred.</para>
+
+<para>The file I/O (for example: SDL_RWFromFile) and threading (SDL_CreateThread) subsystems are initialized by default. Message boxes (SDL_ShowSimpleMessageBox) also attempt to work without initializing the video subsystem, in hopes of being useful in showing an error dialog when SDL_Init fails. You must specifically initialize other subsystems if you use them in your application.</para>
+
+<para>Logging (such as SDL_Log) works without initialization, too.</para>
+
+<para><computeroutput>flags</computeroutput> may be any of the following OR&apos;d together:</para>
+
+<para><itemizedlist>
+<listitem>
+<para><computeroutput>SDL_INIT_TIMER</computeroutput>: timer subsystem</para>
+</listitem><listitem>
+<para><computeroutput>SDL_INIT_AUDIO</computeroutput>: audio subsystem</para>
+</listitem><listitem>
+<para><computeroutput>SDL_INIT_VIDEO</computeroutput>: video subsystem; automatically initializes the events subsystem</para>
+</listitem><listitem>
+<para><computeroutput>SDL_INIT_JOYSTICK</computeroutput>: joystick subsystem; automatically initializes the events subsystem</para>
+</listitem><listitem>
+<para><computeroutput>SDL_INIT_HAPTIC</computeroutput>: haptic (force feedback) subsystem</para>
+</listitem><listitem>
+<para><computeroutput>SDL_INIT_GAMECONTROLLER</computeroutput>: controller subsystem; automatically initializes the joystick subsystem</para>
+</listitem><listitem>
+<para><computeroutput>SDL_INIT_EVENTS</computeroutput>: events subsystem</para>
+</listitem><listitem>
+<para><computeroutput>SDL_INIT_EVERYTHING</computeroutput>: all of the above subsystems</para>
+</listitem><listitem>
+<para><computeroutput>SDL_INIT_NOPARACHUTE</computeroutput>: compatibility; this flag is ignored</para>
+</listitem></itemizedlist>
+</para>
+
+<para>Subsystem initialization is ref-counted, you must call <link linkend="__s_d_l_8h_1a14e9091982e09097985e10e3ca65debb">SDL_QuitSubSystem()</link> for each <link linkend="__s_d_l_8h_1adfbfddc0ec609b5e5e5cb1c89298e4db">SDL_InitSubSystem()</link> to correctly shutdown a subsystem manually (or call <link linkend="__s_d_l_8h_1afdabaf714781099083592051f2d9ac11">SDL_Quit()</link> to force shutdown). If a subsystem is already loaded then this call will increase the ref-count and return.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>flags</entry><entry>
+<para>subsystem initialization flags </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 on success or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l_8h_1adfbfddc0ec609b5e5e5cb1c89298e4db">SDL_InitSubSystem</link> </para>
+
+<para><link linkend="__s_d_l_8h_1afdabaf714781099083592051f2d9ac11">SDL_Quit</link> </para>
+
+<para><link linkend="__s_d_l__main_8h_1a6a4bb5ffb489bf0956bc1b813397306d">SDL_SetMainReady</link> </para>
+
+<para><link linkend="__s_d_l_8h_1a04dc570990c697eed95681216801710d">SDL_WasInit</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l_8h_1adfbfddc0ec609b5e5e5cb1c89298e4db"/><section>
+    <title>SDL_InitSubSystem()</title>
+<indexterm><primary>SDL_InitSubSystem</primary><secondary>SDL.h</secondary></indexterm>
+<indexterm><primary>SDL.h</primary><secondary>SDL_InitSubSystem</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_InitSubSystem (<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> flags)</computeroutput></para>
+<para>Compatibility function to initialize the SDL library.</para>
+
+<para>In SDL2, this function and <link linkend="__s_d_l_8h_1a8fc8d35348d7c74bad8392d776c937b8">SDL_Init()</link> are interchangeable.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>flags</entry><entry>
+<para>any of the flags used by <link linkend="__s_d_l_8h_1a8fc8d35348d7c74bad8392d776c937b8">SDL_Init()</link>; see SDL_Init for details. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 on success or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l_8h_1a8fc8d35348d7c74bad8392d776c937b8">SDL_Init</link> </para>
+
+<para><link linkend="__s_d_l_8h_1afdabaf714781099083592051f2d9ac11">SDL_Quit</link> </para>
+
+<para><link linkend="__s_d_l_8h_1a14e9091982e09097985e10e3ca65debb">SDL_QuitSubSystem</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l_8h_1afdabaf714781099083592051f2d9ac11"/><section>
+    <title>SDL_Quit()</title>
+<indexterm><primary>SDL_Quit</primary><secondary>SDL.h</secondary></indexterm>
+<indexterm><primary>SDL.h</primary><secondary>SDL_Quit</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_Quit (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para>
+<para>Clean up all initialized subsystems.</para>
+
+<para>You should call this function even if you have already shutdown each initialized subsystem with <link linkend="__s_d_l_8h_1a14e9091982e09097985e10e3ca65debb">SDL_QuitSubSystem()</link>. It is safe to call this function even in the case of errors in initialization.</para>
+
+<para>If you start a subsystem using a call to that subsystem&apos;s init function (for example <link linkend="__s_d_l__video_8h_1a05244b30716f0339dcd140c6f92017b7">SDL_VideoInit()</link>) instead of <link linkend="__s_d_l_8h_1a8fc8d35348d7c74bad8392d776c937b8">SDL_Init()</link> or <link linkend="__s_d_l_8h_1adfbfddc0ec609b5e5e5cb1c89298e4db">SDL_InitSubSystem()</link>, then you must use that subsystem&apos;s quit function (<link linkend="__s_d_l__video_8h_1ade5fc4847320fb235f17265b683fa013">SDL_VideoQuit()</link>) to shut it down before calling <link linkend="__s_d_l_8h_1afdabaf714781099083592051f2d9ac11">SDL_Quit()</link>. But generally, you should not be using those functions directly anyhow; use <link linkend="__s_d_l_8h_1a8fc8d35348d7c74bad8392d776c937b8">SDL_Init()</link> instead.</para>
+
+<para>You can use this function with atexit() to ensure that it is run when your application is shutdown, but it is not wise to do this from a library or other dynamically loaded code.</para>
+
+<para><formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l_8h_1a8fc8d35348d7c74bad8392d776c937b8">SDL_Init</link> </para>
+
+<para><link linkend="__s_d_l_8h_1a14e9091982e09097985e10e3ca65debb">SDL_QuitSubSystem</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l_8h_1a14e9091982e09097985e10e3ca65debb"/><section>
+    <title>SDL_QuitSubSystem()</title>
+<indexterm><primary>SDL_QuitSubSystem</primary><secondary>SDL.h</secondary></indexterm>
+<indexterm><primary>SDL.h</primary><secondary>SDL_QuitSubSystem</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_QuitSubSystem (<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> flags)</computeroutput></para>
+<para>Shut down specific SDL subsystems.</para>
+
+<para>If you start a subsystem using a call to that subsystem&apos;s init function (for example <link linkend="__s_d_l__video_8h_1a05244b30716f0339dcd140c6f92017b7">SDL_VideoInit()</link>) instead of <link linkend="__s_d_l_8h_1a8fc8d35348d7c74bad8392d776c937b8">SDL_Init()</link> or <link linkend="__s_d_l_8h_1adfbfddc0ec609b5e5e5cb1c89298e4db">SDL_InitSubSystem()</link>, <link linkend="__s_d_l_8h_1a14e9091982e09097985e10e3ca65debb">SDL_QuitSubSystem()</link> and <link linkend="__s_d_l_8h_1a04dc570990c697eed95681216801710d">SDL_WasInit()</link> will not work. You will need to use that subsystem&apos;s quit function (<link linkend="__s_d_l__video_8h_1ade5fc4847320fb235f17265b683fa013">SDL_VideoQuit()</link>) directly instead. But generally, you should not be using those functions directly anyhow; use <link linkend="__s_d_l_8h_1a8fc8d35348d7c74bad8392d776c937b8">SDL_Init()</link> instead.</para>
+
+<para>You still need to call <link linkend="__s_d_l_8h_1afdabaf714781099083592051f2d9ac11">SDL_Quit()</link> even if you close all open subsystems with <link linkend="__s_d_l_8h_1a14e9091982e09097985e10e3ca65debb">SDL_QuitSubSystem()</link>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>flags</entry><entry>
+<para>any of the flags used by <link linkend="__s_d_l_8h_1a8fc8d35348d7c74bad8392d776c937b8">SDL_Init()</link>; see SDL_Init for details.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l_8h_1adfbfddc0ec609b5e5e5cb1c89298e4db">SDL_InitSubSystem</link> </para>
+
+<para><link linkend="__s_d_l_8h_1afdabaf714781099083592051f2d9ac11">SDL_Quit</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l_8h_1a04dc570990c697eed95681216801710d"/><section>
+    <title>SDL_WasInit()</title>
+<indexterm><primary>SDL_WasInit</primary><secondary>SDL.h</secondary></indexterm>
+<indexterm><primary>SDL.h</primary><secondary>SDL_WasInit</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_WasInit (<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> flags)</computeroutput></para>
+<para>Get a mask of the specified subsystems which are currently initialized.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>flags</entry><entry>
+<para>any of the flags used by <link linkend="__s_d_l_8h_1a8fc8d35348d7c74bad8392d776c937b8">SDL_Init()</link>; see SDL_Init for details. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a mask of all initialized subsystems if <computeroutput>flags</computeroutput> is 0, otherwise it returns the initialization status of the specified subsystems.</para>
+</formalpara>
+The return value does not include SDL_INIT_NOPARACHUTE.</para>
+
+<para><formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l_8h_1a8fc8d35348d7c74bad8392d776c937b8">SDL_Init</link> </para>
+
+<para><link linkend="__s_d_l_8h_1adfbfddc0ec609b5e5e5cb1c89298e4db">SDL_InitSubSystem</link> </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_r_t_1_1_light_base" xml:lang="en-US">
+<title>RT::LightBase Class Reference</title>
+<indexterm><primary>RT::LightBase</primary></indexterm>
+<para>
+<computeroutput>#include &lt;lightbase.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for RT::LightBase:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_r_t_1_1_light_base.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_r_t_1_1_light_base_1a4c1a6d7c5758f9331b42248dd1435cf1">LightBase</link> ()</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_class_r_t_1_1_light_base_1a53e052503c906f9eaf9ee32b11ba53d4">~LightBase</link> ()</para>
+</listitem>
+            <listitem><para>virtual bool <link linkend="_class_r_t_1_1_light_base_1ae497648bbf44225db5a545e7c152d07a">ComputeIllumination</link> (const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp;intPoint, const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp;localNormal, const std::vector&lt; std::shared_ptr&lt; <link linkend="_class_r_t_1_1_object_base">RT::ObjectBase</link> &gt; &gt; &amp;objectList, const std::shared_ptr&lt; <link linkend="_class_r_t_1_1_object_base">RT::ObjectBase</link> &gt; &amp;currentObject, <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp;<link linkend="__s_d_l__opengl__glext_8h_1a3ea846f998d64f079b86052b6c4193a8">color</link>, double &amp;intensity)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; <link linkend="_class_r_t_1_1_light_base_1afed58cde187e60119a96761008944268">m_color</link> {3}</para>
+</listitem>
+            <listitem><para><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; <link linkend="_class_r_t_1_1_light_base_1a52255d6980ce013a614bb50d51d6a399">m_location</link> {3}</para>
+</listitem>
+            <listitem><para>double <link linkend="_class_r_t_1_1_light_base_1a322ee3ce9c2e01a1b36d6f8cf280a0f3">m_intensity</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_r_t_1_1_light_base_1a4c1a6d7c5758f9331b42248dd1435cf1"/><section>
+    <title>LightBase()</title>
+<indexterm><primary>LightBase</primary><secondary>RT::LightBase</secondary></indexterm>
+<indexterm><primary>RT::LightBase</primary><secondary>LightBase</secondary></indexterm>
+<para><computeroutput>RT::LightBase::LightBase ( )</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_light_base_1a53e052503c906f9eaf9ee32b11ba53d4"/><section>
+    <title>~LightBase()</title>
+<indexterm><primary>~LightBase</primary><secondary>RT::LightBase</secondary></indexterm>
+<indexterm><primary>RT::LightBase</primary><secondary>~LightBase</secondary></indexterm>
+<para><computeroutput>RT::LightBase::~LightBase ( )<computeroutput>[virtual]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_r_t_1_1_light_base_1ae497648bbf44225db5a545e7c152d07a"/><section>
+    <title>ComputeIllumination()</title>
+<indexterm><primary>ComputeIllumination</primary><secondary>RT::LightBase</secondary></indexterm>
+<indexterm><primary>RT::LightBase</primary><secondary>ComputeIllumination</secondary></indexterm>
+<para><computeroutput>bool RT::LightBase::ComputeIllumination (const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp; intPoint, const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp; localNormal, const std::vector&lt; std::shared_ptr&lt; <link linkend="_class_r_t_1_1_object_base">RT::ObjectBase</link> &gt; &gt; &amp; objectList, const std::shared_ptr&lt; <link linkend="_class_r_t_1_1_object_base">RT::ObjectBase</link> &gt; &amp; currentObject, <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp; color, double &amp; intensity)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Reimplemented in <link linkend="_class_r_t_1_1_point_light_1a589d51d6e3aecfcaf2a6690ed97e888e">RT::PointLight</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_r_t_1_1_light_base_1afed58cde187e60119a96761008944268"/><section>
+    <title>m_color</title>
+<indexterm><primary>m_color</primary><secondary>RT::LightBase</secondary></indexterm>
+<indexterm><primary>RT::LightBase</primary><secondary>m_color</secondary></indexterm>
+<para><computeroutput><link linkend="_classqb_vector">qbVector</link>&lt;double&gt; RT::LightBase::m_color {3}</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_light_base_1a322ee3ce9c2e01a1b36d6f8cf280a0f3"/><section>
+    <title>m_intensity</title>
+<indexterm><primary>m_intensity</primary><secondary>RT::LightBase</secondary></indexterm>
+<indexterm><primary>RT::LightBase</primary><secondary>m_intensity</secondary></indexterm>
+<para><computeroutput>double RT::LightBase::m_intensity</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_light_base_1a52255d6980ce013a614bb50d51d6a399"/><section>
+    <title>m_location</title>
+<indexterm><primary>m_location</primary><secondary>RT::LightBase</secondary></indexterm>
+<indexterm><primary>RT::LightBase</primary><secondary>m_location</secondary></indexterm>
+<para><computeroutput><link linkend="_classqb_vector">qbVector</link>&lt;double&gt; RT::LightBase::m_location {3}</computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following files:</para>
+D:/RayTracing/RayTrace/Lights/<link linkend="_lightbase_8h">lightbase.h</link>D:/RayTracing/RayTrace/Lights/<link linkend="_lightbase_8cpp">lightbase.cpp</link></section>
+</section>

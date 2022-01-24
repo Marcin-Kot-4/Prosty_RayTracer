@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_s_d_l___sys_w_m_event" kind="struct" language="C++" prot="public">
+    <compoundname>SDL_SysWMEvent</compoundname>
+    <includes refid="_s_d_l__events_8h" local="no">SDL_events.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_s_d_l___sys_w_m_event_1a84697e96cb16bf6a570e10b5bfdcd392" prot="public" static="no" mutable="no">
+        <type><ref refid="_s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d" kindref="member">Uint32</ref></type>
+        <definition>Uint32 SDL_SysWMEvent::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>SDL_SysWMEvent::type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="_s_d_l__events_8h_1a3b589e89be6b35c02e0dd34a55f3fccaa73749d735a18ce6ef17a09ee70d5dbe7" kindref="member">SDL_SYSWMEVENT</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_events.h" line="588" column="12" bodyfile="D:/RayTracing/include/SDL_events.h" bodystart="588" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_l___sys_w_m_event_1a5d3cb97006d99b620c2671c27bd82c06" prot="public" static="no" mutable="no">
+        <type><ref refid="_s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d" kindref="member">Uint32</ref></type>
+        <definition>Uint32 SDL_SysWMEvent::timestamp</definition>
+        <argsstring></argsstring>
+        <name>timestamp</name>
+        <qualifiedname>SDL_SysWMEvent::timestamp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>In milliseconds, populated using <ref refid="_s_d_l__timer_8h_1a0b9bc71d6287e0ffafdc3419760fe2b3" kindref="member">SDL_GetTicks()</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_events.h" line="589" column="12" bodyfile="D:/RayTracing/include/SDL_events.h" bodystart="589" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_l___sys_w_m_event_1ad5e3dc68aa15582cd0641847d41c74e8" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_s_d_l___sys_w_mmsg" kindref="compound">SDL_SysWMmsg</ref> *</type>
+        <definition>SDL_SysWMmsg* SDL_SysWMEvent::msg</definition>
+        <argsstring></argsstring>
+        <name>msg</name>
+        <qualifiedname>SDL_SysWMEvent::msg</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>driver dependent data, defined in SDL_syswm.h </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_events.h" line="590" column="18" bodyfile="D:/RayTracing/include/SDL_events.h" bodystart="590" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A video driver dependent system event (event.syswm.*) This event is disabled by default, you can enable it with <ref refid="_s_d_l__events_8h_1afb772893e1c46f186fa39a4defe76df3" kindref="member">SDL_EventState()</ref> </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="note"><para>If you want to use this event, you should include SDL_syswm.h. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>SDL_SysWMEvent</label>
+        <link refid="struct_s_d_l___sys_w_m_event"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>msg</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SDL_SysWMmsg</label>
+        <link refid="struct_s_d_l___sys_w_mmsg"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>version</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>SDL_version</label>
+        <link refid="struct_s_d_l__version"/>
+      </node>
+    </collaborationgraph>
+    <location file="D:/RayTracing/include/SDL_events.h" line="586" column="1" bodyfile="D:/RayTracing/include/SDL_events.h" bodystart="587" bodyend="591"/>
+    <listofallmembers>
+      <member refid="struct_s_d_l___sys_w_m_event_1ad5e3dc68aa15582cd0641847d41c74e8" prot="public" virt="non-virtual"><scope>SDL_SysWMEvent</scope><name>msg</name></member>
+      <member refid="struct_s_d_l___sys_w_m_event_1a5d3cb97006d99b620c2671c27bd82c06" prot="public" virt="non-virtual"><scope>SDL_SysWMEvent</scope><name>timestamp</name></member>
+      <member refid="struct_s_d_l___sys_w_m_event_1a84697e96cb16bf6a570e10b5bfdcd392" prot="public" virt="non-virtual"><scope>SDL_SysWMEvent</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,295 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__touch_8h" xml:lang="en-US">
+<title>D:/RayTracing/include/SDL_touch.h File Reference</title>
+<indexterm><primary>D:/RayTracing/include/SDL_touch.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;SDL_stdinc.h&quot;
+#include &quot;SDL_error.h&quot;
+#include &quot;SDL_video.h&quot;
+#include &quot;begin_code.h&quot;
+#include &quot;close_code.h&quot;
+</programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_s_d_l___finger">SDL_Finger</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__s_d_l__touch_8h_1ac24e2ec23c2ac1675fec8f327ef45efe">SDL_TOUCH_MOUSEID</link>   ((<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>)-1)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__touch_8h_1a014b4d4442ccb50ec471a7a6081b75d0">SDL_MOUSE_TOUCHID</link>   ((<link linkend="__s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</link>)-1)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef <link linkend="__s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</link> <link linkend="__s_d_l__touch_8h_1a10f5f86abe4ea8308a8706bd5d3b337a">SDL_TouchID</link></para>
+</listitem>
+            <listitem><para>typedef <link linkend="__s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</link> <link linkend="__s_d_l__touch_8h_1a5fa58141f78415ca09645af359ad2250">SDL_FingerID</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_s_d_l___finger">SDL_Finger</link> <link linkend="__s_d_l__touch_8h_1ab870bc362a74d92227b8bc9c9654d25e">SDL_Finger</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="__s_d_l__touch_8h_1a63f6b605841f681e036a96d9b2790cff">SDL_TouchDeviceType</link> { <link linkend="__s_d_l__touch_8h_1a63f6b605841f681e036a96d9b2790cffae544a4f823bceaa24188c6ab960da300">SDL_TOUCH_DEVICE_INVALID</link> = -1
+, <link linkend="__s_d_l__touch_8h_1a63f6b605841f681e036a96d9b2790cffab39ea53b15fce0d49c796c8ca5515863">SDL_TOUCH_DEVICE_DIRECT</link>
+, <link linkend="__s_d_l__touch_8h_1a63f6b605841f681e036a96d9b2790cffa0715f9019e2a5180a76eb3a8f90d4f5e">SDL_TOUCH_DEVICE_INDIRECT_ABSOLUTE</link>
+, <link linkend="__s_d_l__touch_8h_1a63f6b605841f681e036a96d9b2790cffad8c3585eabc32e6dcccc7726f4c99505">SDL_TOUCH_DEVICE_INDIRECT_RELATIVE</link>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__touch_8h_1a14a41a2964ddf868a180e42ccfd441d1">SDL_GetNumTouchDevices</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__touch_8h_1a10f5f86abe4ea8308a8706bd5d3b337a">SDL_TouchID</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__touch_8h_1af23f09dc79eace93cdc8dd770eed0d0a">SDL_GetTouchDevice</link> (int <link linkend="__s_d_l__opengl__glext_8h_1a57f14e05b1900f16a2da82ade47d0c6d">index</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__touch_8h_1a63f6b605841f681e036a96d9b2790cff">SDL_TouchDeviceType</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__touch_8h_1acb47d9bf9103c6c039127cea040d89a7">SDL_GetTouchDeviceType</link> (<link linkend="__s_d_l__touch_8h_1a10f5f86abe4ea8308a8706bd5d3b337a">SDL_TouchID</link> touchID)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__touch_8h_1a7dcd1494c8dd433b7ef7b24c2926e721">SDL_GetNumTouchFingers</link> (<link linkend="__s_d_l__touch_8h_1a10f5f86abe4ea8308a8706bd5d3b337a">SDL_TouchID</link> touchID)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="_struct_s_d_l___finger">SDL_Finger</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__touch_8h_1a51f8b790d3c82f53215796d9a043ef90">SDL_GetTouchFinger</link> (<link linkend="__s_d_l__touch_8h_1a10f5f86abe4ea8308a8706bd5d3b337a">SDL_TouchID</link> touchID, int <link linkend="__s_d_l__opengl__glext_8h_1a57f14e05b1900f16a2da82ade47d0c6d">index</link>)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Include file for SDL touch event handling. </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__s_d_l__touch_8h_1a014b4d4442ccb50ec471a7a6081b75d0"/><section>
+    <title>SDL_MOUSE_TOUCHID</title>
+<indexterm><primary>SDL_MOUSE_TOUCHID</primary><secondary>SDL_touch.h</secondary></indexterm>
+<indexterm><primary>SDL_touch.h</primary><secondary>SDL_MOUSE_TOUCHID</secondary></indexterm>
+<para><computeroutput>#define SDL_MOUSE_TOUCHID   ((<link linkend="__s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</link>)-1)</computeroutput></para></section>
+<anchor xml:id="__s_d_l__touch_8h_1ac24e2ec23c2ac1675fec8f327ef45efe"/><section>
+    <title>SDL_TOUCH_MOUSEID</title>
+<indexterm><primary>SDL_TOUCH_MOUSEID</primary><secondary>SDL_touch.h</secondary></indexterm>
+<indexterm><primary>SDL_touch.h</primary><secondary>SDL_TOUCH_MOUSEID</secondary></indexterm>
+<para><computeroutput>#define SDL_TOUCH_MOUSEID   ((<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>)-1)</computeroutput></para></section>
+</section>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="__s_d_l__touch_8h_1ab870bc362a74d92227b8bc9c9654d25e"/><section>
+    <title>SDL_Finger</title>
+<indexterm><primary>SDL_Finger</primary><secondary>SDL_touch.h</secondary></indexterm>
+<indexterm><primary>SDL_touch.h</primary><secondary>SDL_Finger</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_s_d_l___finger">SDL_Finger</link> <link linkend="_struct_s_d_l___finger">SDL_Finger</link></computeroutput></para></section>
+<anchor xml:id="__s_d_l__touch_8h_1a5fa58141f78415ca09645af359ad2250"/><section>
+    <title>SDL_FingerID</title>
+<indexterm><primary>SDL_FingerID</primary><secondary>SDL_touch.h</secondary></indexterm>
+<indexterm><primary>SDL_touch.h</primary><secondary>SDL_FingerID</secondary></indexterm>
+<para><computeroutput>typedef <link linkend="__s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</link> <link linkend="__s_d_l__touch_8h_1a5fa58141f78415ca09645af359ad2250">SDL_FingerID</link></computeroutput></para></section>
+<anchor xml:id="__s_d_l__touch_8h_1a10f5f86abe4ea8308a8706bd5d3b337a"/><section>
+    <title>SDL_TouchID</title>
+<indexterm><primary>SDL_TouchID</primary><secondary>SDL_touch.h</secondary></indexterm>
+<indexterm><primary>SDL_touch.h</primary><secondary>SDL_TouchID</secondary></indexterm>
+<para><computeroutput>typedef <link linkend="__s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</link> <link linkend="__s_d_l__touch_8h_1a10f5f86abe4ea8308a8706bd5d3b337a">SDL_TouchID</link></computeroutput></para></section>
+</section>
+<section>
+<title>Enumeration Type Documentation</title>
+<anchor xml:id="__s_d_l__touch_8h_1a63f6b605841f681e036a96d9b2790cff"/><section>
+    <title>SDL_TouchDeviceType</title>
+<indexterm><primary>SDL_TouchDeviceType</primary><secondary>SDL_touch.h</secondary></indexterm>
+<indexterm><primary>SDL_touch.h</primary><secondary>SDL_TouchDeviceType</secondary></indexterm>
+<para><computeroutput>enum <link linkend="__s_d_l__touch_8h_1a63f6b605841f681e036a96d9b2790cff">SDL_TouchDeviceType</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SDL_TOUCH_DEVICE_INVALID</primary><secondary>SDL_touch.h</secondary></indexterm>
+<indexterm><primary>SDL_touch.h</primary><secondary>SDL_TOUCH_DEVICE_INVALID</secondary></indexterm>
+<anchor xml:id="__s_d_l__touch_8h_1a63f6b605841f681e036a96d9b2790cffae544a4f823bceaa24188c6ab960da300"/>SDL_TOUCH_DEVICE_INVALID</entry><entry></entry></row><row><entry><indexterm><primary>SDL_TOUCH_DEVICE_DIRECT</primary><secondary>SDL_touch.h</secondary></indexterm>
+<indexterm><primary>SDL_touch.h</primary><secondary>SDL_TOUCH_DEVICE_DIRECT</secondary></indexterm>
+<anchor xml:id="__s_d_l__touch_8h_1a63f6b605841f681e036a96d9b2790cffab39ea53b15fce0d49c796c8ca5515863"/>SDL_TOUCH_DEVICE_DIRECT</entry><entry></entry></row><row><entry><indexterm><primary>SDL_TOUCH_DEVICE_INDIRECT_ABSOLUTE</primary><secondary>SDL_touch.h</secondary></indexterm>
+<indexterm><primary>SDL_touch.h</primary><secondary>SDL_TOUCH_DEVICE_INDIRECT_ABSOLUTE</secondary></indexterm>
+<anchor xml:id="__s_d_l__touch_8h_1a63f6b605841f681e036a96d9b2790cffa0715f9019e2a5180a76eb3a8f90d4f5e"/>SDL_TOUCH_DEVICE_INDIRECT_ABSOLUTE</entry><entry></entry></row><row><entry><indexterm><primary>SDL_TOUCH_DEVICE_INDIRECT_RELATIVE</primary><secondary>SDL_touch.h</secondary></indexterm>
+<indexterm><primary>SDL_touch.h</primary><secondary>SDL_TOUCH_DEVICE_INDIRECT_RELATIVE</secondary></indexterm>
+<anchor xml:id="__s_d_l__touch_8h_1a63f6b605841f681e036a96d9b2790cffad8c3585eabc32e6dcccc7726f4c99505"/>SDL_TOUCH_DEVICE_INDIRECT_RELATIVE</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__s_d_l__touch_8h_1a14a41a2964ddf868a180e42ccfd441d1"/><section>
+    <title>SDL_GetNumTouchDevices()</title>
+<indexterm><primary>SDL_GetNumTouchDevices</primary><secondary>SDL_touch.h</secondary></indexterm>
+<indexterm><primary>SDL_touch.h</primary><secondary>SDL_GetNumTouchDevices</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GetNumTouchDevices (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para>
+<para>Get the number of registered touch devices.</para>
+
+<para>On some platforms SDL first sees the touch device if it was actually used. Therefore <link linkend="__s_d_l__touch_8h_1a14a41a2964ddf868a180e42ccfd441d1">SDL_GetNumTouchDevices()</link> may return 0 although devices are available. After using all devices at least once the number will be correct.</para>
+
+<para>This was fixed for Android in SDL 2.0.1.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the number of registered touch devices.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__touch_8h_1af23f09dc79eace93cdc8dd770eed0d0a">SDL_GetTouchDevice</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__touch_8h_1a7dcd1494c8dd433b7ef7b24c2926e721"/><section>
+    <title>SDL_GetNumTouchFingers()</title>
+<indexterm><primary>SDL_GetNumTouchFingers</primary><secondary>SDL_touch.h</secondary></indexterm>
+<indexterm><primary>SDL_touch.h</primary><secondary>SDL_GetNumTouchFingers</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GetNumTouchFingers (<link linkend="__s_d_l__touch_8h_1a10f5f86abe4ea8308a8706bd5d3b337a">SDL_TouchID</link> touchID)</computeroutput></para>
+<para>Get the number of active fingers for a given touch device.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>touchID</entry><entry>
+<para>the ID of a touch device </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the number of active fingers for a given touch device on success or 0 on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__touch_8h_1a51f8b790d3c82f53215796d9a043ef90">SDL_GetTouchFinger</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__touch_8h_1af23f09dc79eace93cdc8dd770eed0d0a"/><section>
+    <title>SDL_GetTouchDevice()</title>
+<indexterm><primary>SDL_GetTouchDevice</primary><secondary>SDL_touch.h</secondary></indexterm>
+<indexterm><primary>SDL_touch.h</primary><secondary>SDL_GetTouchDevice</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__touch_8h_1a10f5f86abe4ea8308a8706bd5d3b337a">SDL_TouchID</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GetTouchDevice (int index)</computeroutput></para>
+<para>Get the touch ID with the given index.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>index</entry><entry>
+<para>the touch device index </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the touch ID with the given index on success or 0 if the index is invalid; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__touch_8h_1a14a41a2964ddf868a180e42ccfd441d1">SDL_GetNumTouchDevices</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__touch_8h_1acb47d9bf9103c6c039127cea040d89a7"/><section>
+    <title>SDL_GetTouchDeviceType()</title>
+<indexterm><primary>SDL_GetTouchDeviceType</primary><secondary>SDL_touch.h</secondary></indexterm>
+<indexterm><primary>SDL_touch.h</primary><secondary>SDL_GetTouchDeviceType</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__touch_8h_1a63f6b605841f681e036a96d9b2790cff">SDL_TouchDeviceType</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GetTouchDeviceType (<link linkend="__s_d_l__touch_8h_1a10f5f86abe4ea8308a8706bd5d3b337a">SDL_TouchID</link> touchID)</computeroutput></para>
+<para>Get the type of the given touch device.</para>
+
+<para><formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.10. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__touch_8h_1a51f8b790d3c82f53215796d9a043ef90"/><section>
+    <title>SDL_GetTouchFinger()</title>
+<indexterm><primary>SDL_GetTouchFinger</primary><secondary>SDL_touch.h</secondary></indexterm>
+<indexterm><primary>SDL_touch.h</primary><secondary>SDL_GetTouchFinger</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="_struct_s_d_l___finger">SDL_Finger</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GetTouchFinger (<link linkend="__s_d_l__touch_8h_1a10f5f86abe4ea8308a8706bd5d3b337a">SDL_TouchID</link> touchID, int index)</computeroutput></para>
+<para>Get the finger object for specified touch device ID and finger index.</para>
+
+<para>The returned resource is owned by SDL and should not be deallocated.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>touchID</entry><entry>
+<para>the ID of the requested touch device </para>
+</entry>
+                            </row>
+                            <row>
+<entry>index</entry><entry>
+<para>the index of the requested finger </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a pointer to the <link linkend="_struct_s_d_l___finger">SDL_Finger</link> object or NULL if no object at the given ID and index could be found.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__gesture_8h_1ad06776e2e199d5d48e466a0ecbbb06c3">SDL_RecordGesture</link> </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

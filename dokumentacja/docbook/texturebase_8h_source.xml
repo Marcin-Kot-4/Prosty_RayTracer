@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_texturebase_8h_source" xml:lang="en-US">
+<title>texturebase.h</title>
+<indexterm><primary>D:/RayTracing/RayTrace/Textures/texturebase.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;RAYTRACING_TEXTUREBASE_H</emphasis>
+2 <emphasis role="preprocessor">#define&#32;RAYTRACING_TEXTUREBASE_H</emphasis>
+3 
+4 
+5 <emphasis role="preprocessor">#include&#32;&lt;memory&gt;</emphasis>
+6 <emphasis role="preprocessor">#include&#32;&quot;../qbLinAlg/qbMatrix.h&quot;</emphasis>
+7 <emphasis role="preprocessor">#include&#32;&quot;../qbLinAlg/qbVector.h&quot;</emphasis>
+8 <emphasis role="preprocessor">#include&#32;&quot;../ray.h&quot;</emphasis>
+9 
+10 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_r_t">RT</link>
+11 {
+12 &#32;&#32;&#32;&#32;<emphasis role="keyword">namespace&#32;</emphasis>Texture
+13 &#32;&#32;&#32;&#32;{
+14 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_class_r_t_1_1_texture_1_1_texture_base">TextureBase</link>
+15 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+16 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Konstruktor&#32;domyślny</emphasis>
+18 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_r_t_1_1_texture_1_1_texture_base_1ae046182c6617ac3b962a1c452b398277">TextureBase</link>();
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Destruktor</emphasis>
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_class_r_t_1_1_texture_1_1_texture_base_1a560385094ebf77878884bdeddf37bf81">~TextureBase</link>();
+21 
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Metoda&#32;zwracająca&#32;kolor&#32;w&#32;podanym&#32;punkcie&#32;systemu&#32;współrzędnych&#32;(u,v)</emphasis>
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Zwracany&#32;kolor&#32;to&#32;4-wymiarowy&#32;wektor&#32;(RGBA)</emphasis>
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_texture_1_1_texture_base_1ac25b90bf7dac218a2840c998ffbd5512">GetColor</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;uvCoords);
+25 
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Metoda&#32;do&#32;ustawiania&#32;przekształcenia&#32;tekstury</emphasis>
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_r_t_1_1_texture_1_1_texture_base_1a55a425e9fce5762c95ecb59728b1b870">SetTransform</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;translation,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">double</emphasis>&#32;&amp;rotation,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;<link linkend="__s_d_l__opengl__glext_8h_1a281421b881aa7a1266842b73a3bc7655">scale</link>);
+28 
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Metoda&#32;mieszająca&#32;kolory&#32;RGBA&#32;i&#32;zwracająca&#32;3-wymiarowy&#32;kolor&#32;(RGB)</emphasis>
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_texture_1_1_texture_base_1a909e3180400fc19655abab504790cb06">BlendColors</link>(<emphasis role="keyword">const</emphasis>&#32;std::vector&lt;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&gt;&#32;&amp;inputColorList);
+31 
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Metoda&#32;zastosowująca&#32;lokalne&#32;przekształcenie&#32;dla&#32;otrzymanego&#32;wektora&#32;wejściowego</emphasis>
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_texture_1_1_texture_base_1a97805aaa693a5caf219f30b0ee53b530">ApplyTransform</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;inputVector);
+34 
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>:
+36 
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>:
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Inicjalizacja&#32;macierzy&#32;transformacji&#32;jako&#32;macierzy&#32;identyczności</emphasis>
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;double&gt;</link>&#32;m_transformMatrix&#32;{3,&#32;3,&#32;std::vector&lt;double&gt;{1.0,&#32;0.0,&#32;0.0,&#32;0.0,&#32;1.0,&#32;0.0,&#32;0.0,&#32;0.0,&#32;1.0}};
+40 
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+42 &#32;&#32;&#32;&#32;}
+43 }
+44 
+45 
+46 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//RAYTRACING_TEXTUREBASE_H</emphasis>
+</programlisting></section>

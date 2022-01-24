@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__test__crc32_8h_source" xml:lang="en-US">
+<title>SDL_test_crc32.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_test_crc32.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+30 <emphasis role="comment">/*</emphasis>
+31 <emphasis role="comment"></emphasis>
+32 <emphasis role="comment">&#32;Implements&#32;CRC32&#32;calculations&#32;(default&#32;output&#32;is&#32;Perl&#32;String::CRC32&#32;compatible).</emphasis>
+33 <emphasis role="comment"></emphasis>
+34 <emphasis role="comment">*/</emphasis>
+35 
+36 <emphasis role="preprocessor">#ifndef&#32;SDL_test_crc32_h_</emphasis>
+37 <emphasis role="preprocessor">#define&#32;SDL_test_crc32_h_</emphasis>
+38 
+39 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+40 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+41 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+42 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+43 <emphasis role="preprocessor">#endif</emphasis>
+44 
+45 
+46 <emphasis role="comment">/*&#32;------------&#32;Definitions&#32;---------&#32;*/</emphasis>
+47 
+48 <emphasis role="comment">/*&#32;Definition&#32;shared&#32;by&#32;all&#32;CRC&#32;routines&#32;*/</emphasis>
+49 
+50 <emphasis role="preprocessor">#ifndef&#32;CrcUint32</emphasis>
+51 <emphasis role="preprocessor">&#32;#define&#32;CrcUint32&#32;&#32;unsigned&#32;int</emphasis>
+52 <emphasis role="preprocessor">#endif</emphasis>
+53 <emphasis role="preprocessor">#ifndef&#32;CrcUint8</emphasis>
+54 <emphasis role="preprocessor">&#32;#define&#32;CrcUint8&#32;&#32;&#32;unsigned&#32;char</emphasis>
+55 <emphasis role="preprocessor">#endif</emphasis>
+56 
+57 <emphasis role="preprocessor">#ifdef&#32;ORIGINAL_METHOD</emphasis>
+58 <emphasis role="preprocessor">&#32;#define&#32;CRC32_POLY&#32;0x04c11db7&#32;&#32;&#32;</emphasis><emphasis role="comment">/*&#32;AUTODIN&#32;II,&#32;Ethernet,&#32;&amp;&#32;FDDI&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+59 <emphasis role="preprocessor">#else</emphasis>
+60 <emphasis role="preprocessor">&#32;#define&#32;CRC32_POLY&#32;0xEDB88320&#32;&#32;&#32;</emphasis><emphasis role="comment">/*&#32;Perl&#32;String::CRC32&#32;compatible&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+61 <emphasis role="preprocessor">#endif</emphasis>
+62 
+66 &#32;&#32;<emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis>{
+67 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__test__crc32_8h_1ac0e8fe38fa91e9aa4b32957420795387">CrcUint32</link>&#32;&#32;&#32;&#32;crc32_table[256];&#32;<emphasis role="comment">/*&#32;CRC&#32;table&#32;*/</emphasis>
+68 &#32;&#32;}&#32;<link linkend="_struct_s_d_l_test___crc32_context">SDLTest_Crc32Context</link>;
+69 
+70 <emphasis role="comment">/*&#32;----------&#32;Function&#32;Prototypes&#32;-------------&#32;*/</emphasis>
+71 
+82 &#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__test__crc32_8h_1a06655d4056d1992fa85a1849b4f3eeeb">SDLTest_Crc32Init</link>(<link linkend="_struct_s_d_l_test___crc32_context">SDLTest_Crc32Context</link>&#32;*&#32;crcContext);
+83 
+84 
+96 <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__test__crc32_8h_1a0397333489338ed3fca5dc0f892070cd">SDLTest_Crc32Calc</link>(<link linkend="_struct_s_d_l_test___crc32_context">SDLTest_Crc32Context</link>&#32;*&#32;crcContext,&#32;<link linkend="__s_d_l__test__crc32_8h_1a8f6936196be4a985dadbb0c0549aacf2">CrcUint8</link>&#32;*inBuf,&#32;<link linkend="__s_d_l__test__crc32_8h_1ac0e8fe38fa91e9aa4b32957420795387">CrcUint32</link>&#32;inLen,&#32;<link linkend="__s_d_l__test__crc32_8h_1ac0e8fe38fa91e9aa4b32957420795387">CrcUint32</link>&#32;*crc32);
+97 
+98 <emphasis role="comment">/*&#32;Same&#32;routine&#32;broken&#32;down&#32;into&#32;three&#32;steps&#32;*/</emphasis>
+99 <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__test__crc32_8h_1a4f78079f5b6871a22dc955b3593731d0">SDLTest_Crc32CalcStart</link>(<link linkend="_struct_s_d_l_test___crc32_context">SDLTest_Crc32Context</link>&#32;*&#32;crcContext,&#32;<link linkend="__s_d_l__test__crc32_8h_1ac0e8fe38fa91e9aa4b32957420795387">CrcUint32</link>&#32;*crc32);
+100 <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__test__crc32_8h_1a8e41b3f8fe2e0d8ff591f6a492c6d5b8">SDLTest_Crc32CalcEnd</link>(<link linkend="_struct_s_d_l_test___crc32_context">SDLTest_Crc32Context</link>&#32;*&#32;crcContext,&#32;<link linkend="__s_d_l__test__crc32_8h_1ac0e8fe38fa91e9aa4b32957420795387">CrcUint32</link>&#32;*crc32);
+101 <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__test__crc32_8h_1a19e6816b8d3c2d11214308a301c7164f">SDLTest_Crc32CalcBuffer</link>(<link linkend="_struct_s_d_l_test___crc32_context">SDLTest_Crc32Context</link>&#32;*&#32;crcContext,&#32;<link linkend="__s_d_l__test__crc32_8h_1a8f6936196be4a985dadbb0c0549aacf2">CrcUint8</link>&#32;*inBuf,&#32;<link linkend="__s_d_l__test__crc32_8h_1ac0e8fe38fa91e9aa4b32957420795387">CrcUint32</link>&#32;inLen,&#32;<link linkend="__s_d_l__test__crc32_8h_1ac0e8fe38fa91e9aa4b32957420795387">CrcUint32</link>&#32;*crc32);
+102 
+103 
+113 <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__test__crc32_8h_1a020b58aa3d188466b41b7c9e526c18ec">SDLTest_Crc32Done</link>(<link linkend="_struct_s_d_l_test___crc32_context">SDLTest_Crc32Context</link>&#32;*&#32;crcContext);
+114 
+115 
+116 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+117 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+118 }
+119 <emphasis role="preprocessor">#endif</emphasis>
+120 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+121 
+122 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_test_crc32_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+123 
+124 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

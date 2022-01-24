@@ -1,0 +1,42 @@
+.TH "qbPCA" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+qbPCA
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename T > std::vector< T > \fBComputeColumnMeans\fP (const \fBqbMatrix2\fP< T > &inputData)"
+.br
+.ti -1c
+.RI "template<typename T > \fBvoid\fP \fBSubtractColumnMeans\fP (\fBqbMatrix2\fP< T > &inputData, std::vector< T > &columnMeans)"
+.br
+.ti -1c
+.RI "template<typename T > \fBqbMatrix2\fP< T > \fBComputeCovariance\fP (const \fBqbMatrix2\fP< T > &X)"
+.br
+.ti -1c
+.RI "template<typename T > int \fBComputeEigenvectors\fP (const \fBqbMatrix2\fP< T > &covarianceMatrix, \fBqbMatrix2\fP< T > &eigenvectors)"
+.br
+.ti -1c
+.RI "template<typename T > int \fBqbPCA\fP (const \fBqbMatrix2\fP< T > &inputData, \fBqbMatrix2\fP< T > &outputComponents)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "template<typename T > std::vector< T > qbPCA::ComputeColumnMeans (const \fBqbMatrix2\fP< T > & inputData)"
+
+.SS "template<typename T > \fBqbMatrix2\fP< T > qbPCA::ComputeCovariance (const \fBqbMatrix2\fP< T > & X)"
+
+.SS "template<typename T > int qbPCA::ComputeEigenvectors (const \fBqbMatrix2\fP< T > & covarianceMatrix, \fBqbMatrix2\fP< T > & eigenvectors)"
+
+.SS "template<typename T > int qbPCA::qbPCA (const \fBqbMatrix2\fP< T > & inputData, \fBqbMatrix2\fP< T > & outputComponents)"
+
+.SS "template<typename T > \fBvoid\fP qbPCA::SubtractColumnMeans (\fBqbMatrix2\fP< T > & inputData, std::vector< T > & columnMeans)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

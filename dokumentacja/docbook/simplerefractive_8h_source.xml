@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_simplerefractive_8h_source" xml:lang="en-US">
+<title>simplerefractive.h</title>
+<indexterm><primary>D:/RayTracing/RayTrace/Materials/simplerefractive.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;RAYTRACING_SIMPLEREFRACTIVE_H</emphasis>
+2 <emphasis role="preprocessor">#define&#32;RAYTRACING_SIMPLEREFRACTIVE_H</emphasis>
+3 
+4 
+5 <emphasis role="preprocessor">#include&#32;&lt;vector&gt;</emphasis>
+6 <emphasis role="preprocessor">#include&#32;&lt;memory&gt;</emphasis>
+7 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_materialbase_8h">materialbase.h</link>&quot;</emphasis>
+8 
+9 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_r_t">RT</link>&#32;{
+10 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_class_r_t_1_1_simple_refractive">SimpleRefractive</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_class_r_t_1_1_material_base">MaterialBase</link>&#32;{
+11 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+12 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Konstruktor</emphasis>
+13 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_r_t_1_1_simple_refractive_1aac5b29fd159aa8a7dc0ccef01509f5c5">SimpleRefractive</link>();
+14 
+15 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Destruktor</emphasis>
+16 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_class_r_t_1_1_simple_refractive_1a8d59f1bd70c33c5144ae5f90d839a40c">~SimpleRefractive</link>()&#32;<emphasis role="keyword">override</emphasis>;
+17 
+18 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Metoda&#32;zwracająca&#32;kolor</emphasis>
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_simple_refractive_1a988530ca94a0cf72b9035f74c4527f96">ComputeColor</link>(<emphasis role="keyword">const</emphasis>&#32;std::vector&#32;&lt;std::shared_ptr&lt;RT::ObjectBase&gt;&gt;&#32;&amp;objectList,
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;std::vector&#32;&lt;std::shared_ptr&lt;RT::LightBase&gt;&gt;&#32;&amp;lightList,
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;std::shared_ptr&#32;&lt;RT::ObjectBase&gt;&#32;&amp;currentObject,
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;intPoint,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;localNormal,
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_r_t_1_1_ray">RT::Ray</link>&#32;&amp;cameraRay)&#32;<emphasis role="keyword">override</emphasis>;
+24 
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Metoda&#32;obliczająca&#32;połysk</emphasis>
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_simple_refractive_1a9f62cb48d9ca6bba4425ad0b9a6a570d">ComputeSpecular</link>(<emphasis role="keyword">const</emphasis>&#32;std::vector&#32;&lt;std::shared_ptr&lt;RT::ObjectBase&gt;&gt;&#32;&amp;objectList,
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;std::vector&#32;&lt;std::shared_ptr&lt;RT::LightBase&gt;&gt;&#32;&amp;lightList,
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;intPoint,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;localNormal,
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_r_t_1_1_ray">RT::Ray</link>&#32;&amp;cameraRay);
+30 
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Metoda&#32;obliczająca&#32;przezroczystość</emphasis>
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_simple_refractive_1a37c12415266512f2872cda06d371a5ef">ComputeTranslucency</link>(<emphasis role="keyword">const</emphasis>&#32;std::vector&#32;&lt;std::shared_ptr&lt;RT::ObjectBase&gt;&gt;&#32;&amp;objectList,
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;std::vector&#32;&lt;std::shared_ptr&lt;RT::LightBase&gt;&gt;&#32;&amp;lightList,
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;std::shared_ptr&#32;&lt;RT::ObjectBase&gt;&#32;&amp;currentObject,
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;intPoint,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;localNormal,
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_r_t_1_1_ray">RT::Ray</link>&#32;&amp;incidentRay);
+37 
+38 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_simple_refractive_1a6f9238bb78392356c462686dd7abe34d">m_baseColor</link>{std::vector&#32;&lt;&#32;double&#32;&gt;&#32;{1.0,&#32;0.0,&#32;1.0}};
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_class_r_t_1_1_simple_refractive_1ac34ea618840abeaeebc8db3c7026893a">m_reflectivity</link>&#32;=&#32;0.0;
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_class_r_t_1_1_simple_refractive_1adc4c409f615d47f4685da63ff81be3e7">m_shininess</link>&#32;=&#32;0.0;
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_class_r_t_1_1_simple_refractive_1a89bcff2b1ad242c6c38e97c702ad6500">m_translucency</link>&#32;=&#32;0.0;
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;index&#32;of&#32;refraction&#32;(współczynnik&#32;załamania&#32;światła)</emphasis>
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_class_r_t_1_1_simple_refractive_1a64d4ca05e7d5f500baebef4f094d580a">m_ior</link>&#32;=&#32;1.0;
+45 
+46 &#32;&#32;&#32;&#32;};
+47 }
+48 
+49 
+50 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//RAYTRACING_SIMPLEREFRACTIVE_H</emphasis>
+</programlisting></section>

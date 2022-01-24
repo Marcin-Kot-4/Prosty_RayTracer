@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__touch_8h_source" xml:lang="en-US">
+<title>SDL_touch.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_touch.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+28 <emphasis role="preprocessor">#ifndef&#32;SDL_touch_h_</emphasis>
+29 <emphasis role="preprocessor">#define&#32;SDL_touch_h_</emphasis>
+30 
+31 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__stdinc_8h">SDL_stdinc.h</link>&quot;</emphasis>
+32 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__error_8h">SDL_error.h</link>&quot;</emphasis>
+33 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__video_8h">SDL_video.h</link>&quot;</emphasis>
+34 
+35 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+36 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+37 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+38 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+39 <emphasis role="preprocessor">#endif</emphasis>
+40 
+41 <emphasis role="keyword">typedef</emphasis>&#32;<link linkend="__s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</link>&#32;<link linkend="__s_d_l__touch_8h_1a10f5f86abe4ea8308a8706bd5d3b337a">SDL_TouchID</link>;
+42 <emphasis role="keyword">typedef</emphasis>&#32;<link linkend="__s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</link>&#32;<link linkend="__s_d_l__touch_8h_1a5fa58141f78415ca09645af359ad2250">SDL_FingerID</link>;
+43 
+44 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+45 {
+46 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__touch_8h_1a63f6b605841f681e036a96d9b2790cffae544a4f823bceaa24188c6ab960da300">SDL_TOUCH_DEVICE_INVALID</link>&#32;=&#32;-1,
+47 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__touch_8h_1a63f6b605841f681e036a96d9b2790cffab39ea53b15fce0d49c796c8ca5515863">SDL_TOUCH_DEVICE_DIRECT</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;touch&#32;screen&#32;with&#32;window-relative&#32;coordinates&#32;*/</emphasis>
+48 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__touch_8h_1a63f6b605841f681e036a96d9b2790cffa0715f9019e2a5180a76eb3a8f90d4f5e">SDL_TOUCH_DEVICE_INDIRECT_ABSOLUTE</link>,&#32;<emphasis role="comment">/*&#32;trackpad&#32;with&#32;absolute&#32;device&#32;coordinates&#32;*/</emphasis>
+49 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__touch_8h_1a63f6b605841f681e036a96d9b2790cffad8c3585eabc32e6dcccc7726f4c99505">SDL_TOUCH_DEVICE_INDIRECT_RELATIVE</link>&#32;&#32;<emphasis role="comment">/*&#32;trackpad&#32;with&#32;screen&#32;cursor-relative&#32;coordinates&#32;*/</emphasis>
+50 }&#32;<link linkend="__s_d_l__touch_8h_1a63f6b605841f681e036a96d9b2790cff">SDL_TouchDeviceType</link>;
+51 
+52 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_s_d_l___finger">SDL_Finger</link>
+53 {
+54 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__touch_8h_1a5fa58141f78415ca09645af359ad2250">SDL_FingerID</link>&#32;<link linkend="_struct_s_d_l___finger_1a3cec630146eeec5bd6299a9387a6f16a">id</link>;
+55 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_struct_s_d_l___finger_1ab91dfbd03c3215560457fef44e1c7755">x</link>;
+56 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_struct_s_d_l___finger_1a0a2c7a06ae641940111e03801c672cf9">y</link>;
+57 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_struct_s_d_l___finger_1a0ecb50c7fd699d59899ac60c941bdee6">pressure</link>;
+58 }&#32;<link linkend="__s_d_l__touch_8h_1ab870bc362a74d92227b8bc9c9654d25e">SDL_Finger</link>;
+59 
+60 <emphasis role="comment">/*&#32;Used&#32;as&#32;the&#32;device&#32;ID&#32;for&#32;mouse&#32;events&#32;simulated&#32;with&#32;touch&#32;input&#32;*/</emphasis>
+61 <emphasis role="preprocessor">#define&#32;SDL_TOUCH_MOUSEID&#32;((Uint32)-1)</emphasis>
+62 
+63 <emphasis role="comment">/*&#32;Used&#32;as&#32;the&#32;SDL_TouchID&#32;for&#32;touch&#32;events&#32;simulated&#32;with&#32;mouse&#32;input&#32;*/</emphasis>
+64 <emphasis role="preprocessor">#define&#32;SDL_MOUSE_TOUCHID&#32;((Sint64)-1)</emphasis>
+65 
+66 
+83 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__touch_8h_1a14a41a2964ddf868a180e42ccfd441d1">SDL_GetNumTouchDevices</link>(<emphasis role="keywordtype">void</emphasis>);
+84 
+96 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__touch_8h_1a10f5f86abe4ea8308a8706bd5d3b337a">SDL_TouchID</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__touch_8h_1af23f09dc79eace93cdc8dd770eed0d0a">SDL_GetTouchDevice</link>(<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a57f14e05b1900f16a2da82ade47d0c6d">index</link>);
+97 
+103 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__touch_8h_1a63f6b605841f681e036a96d9b2790cff">SDL_TouchDeviceType</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__touch_8h_1acb47d9bf9103c6c039127cea040d89a7">SDL_GetTouchDeviceType</link>(<link linkend="__s_d_l__touch_8h_1a10f5f86abe4ea8308a8706bd5d3b337a">SDL_TouchID</link>&#32;touchID);
+104 
+116 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__touch_8h_1a7dcd1494c8dd433b7ef7b24c2926e721">SDL_GetNumTouchFingers</link>(<link linkend="__s_d_l__touch_8h_1a10f5f86abe4ea8308a8706bd5d3b337a">SDL_TouchID</link>&#32;touchID);
+117 
+132 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="_struct_s_d_l___finger">SDL_Finger</link>&#32;*&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__touch_8h_1a51f8b790d3c82f53215796d9a043ef90">SDL_GetTouchFinger</link>(<link linkend="__s_d_l__touch_8h_1a10f5f86abe4ea8308a8706bd5d3b337a">SDL_TouchID</link>&#32;touchID,&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a57f14e05b1900f16a2da82ade47d0c6d">index</link>);
+133 
+134 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+135 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+136 }
+137 <emphasis role="preprocessor">#endif</emphasis>
+138 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+139 
+140 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_touch_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+141 
+142 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

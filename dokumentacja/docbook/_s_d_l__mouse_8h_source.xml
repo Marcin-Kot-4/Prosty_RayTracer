@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__mouse_8h_source" xml:lang="en-US">
+<title>SDL_mouse.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_mouse.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+28 <emphasis role="preprocessor">#ifndef&#32;SDL_mouse_h_</emphasis>
+29 <emphasis role="preprocessor">#define&#32;SDL_mouse_h_</emphasis>
+30 
+31 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__stdinc_8h">SDL_stdinc.h</link>&quot;</emphasis>
+32 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__error_8h">SDL_error.h</link>&quot;</emphasis>
+33 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__video_8h">SDL_video.h</link>&quot;</emphasis>
+34 
+35 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+36 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+37 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+38 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+39 <emphasis role="preprocessor">#endif</emphasis>
+40 
+41 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="__s_d_l__mouse_8h_1a63b6e9cd23bbe26b8fa00dc8fba7623d">SDL_Cursor</link>&#32;<link linkend="__s_d_l__mouse_8h_1a63b6e9cd23bbe26b8fa00dc8fba7623d">SDL_Cursor</link>;&#32;&#32;&#32;
+46 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+47 {
+48 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__mouse_8h_1a3e8083d1d8ce4c5a1ba76bfc2be8e732a0ea5055b7ef96598a39570abf365b9f9">SDL_SYSTEM_CURSOR_ARROW</link>,&#32;&#32;&#32;&#32;&#32;
+49 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__mouse_8h_1a3e8083d1d8ce4c5a1ba76bfc2be8e732a5f3b85170a85ffb62aa477f9c31987fb">SDL_SYSTEM_CURSOR_IBEAM</link>,&#32;&#32;&#32;&#32;&#32;
+50 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__mouse_8h_1a3e8083d1d8ce4c5a1ba76bfc2be8e732a8ce5ae38a754042575234c8da72417e6">SDL_SYSTEM_CURSOR_WAIT</link>,&#32;&#32;&#32;&#32;&#32;&#32;
+51 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__mouse_8h_1a3e8083d1d8ce4c5a1ba76bfc2be8e732ae18ee52eb9724301950db552c953e48e">SDL_SYSTEM_CURSOR_CROSSHAIR</link>,&#32;
+52 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__mouse_8h_1a3e8083d1d8ce4c5a1ba76bfc2be8e732a71fe25cd68c411ca52370bacc40b2764">SDL_SYSTEM_CURSOR_WAITARROW</link>,&#32;
+53 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__mouse_8h_1a3e8083d1d8ce4c5a1ba76bfc2be8e732a0eb8a498162417265c0ec79c1eacb30e">SDL_SYSTEM_CURSOR_SIZENWSE</link>,&#32;&#32;
+54 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__mouse_8h_1a3e8083d1d8ce4c5a1ba76bfc2be8e732a5b70e5fee565ccf9a6a99f92c571b4ed">SDL_SYSTEM_CURSOR_SIZENESW</link>,&#32;&#32;
+55 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__mouse_8h_1a3e8083d1d8ce4c5a1ba76bfc2be8e732aa2f663333ca851ce0f40f8f8d2c2a731">SDL_SYSTEM_CURSOR_SIZEWE</link>,&#32;&#32;&#32;&#32;
+56 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__mouse_8h_1a3e8083d1d8ce4c5a1ba76bfc2be8e732a04d6abe3f01b1c4b8d77af1b2ef5e4e9">SDL_SYSTEM_CURSOR_SIZENS</link>,&#32;&#32;&#32;&#32;
+57 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__mouse_8h_1a3e8083d1d8ce4c5a1ba76bfc2be8e732a88849f7320ea2bf629e05a06c6ff8e20">SDL_SYSTEM_CURSOR_SIZEALL</link>,&#32;&#32;&#32;
+58 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__mouse_8h_1a3e8083d1d8ce4c5a1ba76bfc2be8e732a70a8b0dec44a0f63d7af72e649de3b62">SDL_SYSTEM_CURSOR_NO</link>,&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+59 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__mouse_8h_1a3e8083d1d8ce4c5a1ba76bfc2be8e732a09cd11742bffaafbd1073afeea03f7bc">SDL_SYSTEM_CURSOR_HAND</link>,&#32;&#32;&#32;&#32;&#32;&#32;
+60 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__mouse_8h_1a3e8083d1d8ce4c5a1ba76bfc2be8e732aa19cf5bcb79a35e1c34beb243f9a7a7b">SDL_NUM_SYSTEM_CURSORS</link>
+61 }&#32;<link linkend="__s_d_l__mouse_8h_1a3e8083d1d8ce4c5a1ba76bfc2be8e732">SDL_SystemCursor</link>;
+62 
+66 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+67 {
+68 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__mouse_8h_1ac65151e54bea0e005902790c68e738f3a8778fa74ec64be00b8b6c48d10f6e984">SDL_MOUSEWHEEL_NORMAL</link>,&#32;&#32;&#32;&#32;
+69 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__mouse_8h_1ac65151e54bea0e005902790c68e738f3a8e744c7abe1563a5fb219d32f413af1a">SDL_MOUSEWHEEL_FLIPPED</link>&#32;&#32;&#32;&#32;
+70 }&#32;<link linkend="__s_d_l__mouse_8h_1ac65151e54bea0e005902790c68e738f3">SDL_MouseWheelDirection</link>;
+71 
+72 <emphasis role="comment">/*&#32;Function&#32;prototypes&#32;*/</emphasis>
+73 
+81 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link>&#32;*&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mouse_8h_1a1ca19fb9815f7b80ab15ab597e2eef06">SDL_GetMouseFocus</link>(<emphasis role="keywordtype">void</emphasis>);
+82 
+104 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mouse_8h_1a1561f413546c0e4f5f44a8f094926575">SDL_GetMouseState</link>(<emphasis role="keywordtype">int</emphasis>&#32;*<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;*<link linkend="__s_d_l__opengl_8h_1a1675d9d7bb68e1657ff028643b4037e3">y</link>);
+105 
+133 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mouse_8h_1ab0f5adcf42e5074315b8a01f325d8f53">SDL_GetGlobalMouseState</link>(<emphasis role="keywordtype">int</emphasis>&#32;*<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;*<link linkend="__s_d_l__opengl_8h_1a1675d9d7bb68e1657ff028643b4037e3">y</link>);
+134 
+152 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mouse_8h_1a8cf9b519050e3e871f5e59f03b38b6e1">SDL_GetRelativeMouseState</link>(<emphasis role="keywordtype">int</emphasis>&#32;*<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;*<link linkend="__s_d_l__opengl_8h_1a1675d9d7bb68e1657ff028643b4037e3">y</link>);
+153 
+171 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mouse_8h_1a2f2259cdf30272b3c4cc1e3236cb8071">SDL_WarpMouseInWindow</link>(<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link>&#32;*&#32;window,
+172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl_8h_1a1675d9d7bb68e1657ff028643b4037e3">y</link>);
+173 
+194 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mouse_8h_1a200c3d105a0a30fb465760ab870b3ce3">SDL_WarpMouseGlobal</link>(<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl_8h_1a1675d9d7bb68e1657ff028643b4037e3">y</link>);
+195 
+219 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mouse_8h_1ad7b3533784e0aa34cdf1c5f232817206">SDL_SetRelativeMouseMode</link>(<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a0455a397ab5468d21c3021f2efa6dd3c">enabled</link>);
+220 
+256 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mouse_8h_1a8829359c04d0d7835b4330dd21fdd051">SDL_CaptureMouse</link>(<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a0455a397ab5468d21c3021f2efa6dd3c">enabled</link>);
+257 
+267 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mouse_8h_1ae97aaf1682b3a6b62214dda1dda9b212">SDL_GetRelativeMouseMode</link>(<emphasis role="keywordtype">void</emphasis>);
+268 
+310 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__mouse_8h_1a63b6e9cd23bbe26b8fa00dc8fba7623d">SDL_Cursor</link>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mouse_8h_1a15e754481ab3bb8e94a36ea33829a4ba">SDL_CreateCursor</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link>&#32;*&#32;<link linkend="__s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a">data</link>,
+311 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link>&#32;*&#32;<link linkend="__s_d_l__opengl__glext_8h_1a2e8825c19147a8250013df8e4275f5b6">mask</link>,
+312 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a6ee8f168a7ab6785a9bb57c6715dad99">w</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1afa0fb1b5e976920c0abeff2dca3ed774">h</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;hot_x,
+313 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;hot_y);
+314 
+329 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__mouse_8h_1a63b6e9cd23bbe26b8fa00dc8fba7623d">SDL_Cursor</link>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mouse_8h_1aa875cf002af55d61daa50d1c4eadd8ca">SDL_CreateColorCursor</link>(<link linkend="_struct_s_d_l___surface">SDL_Surface</link>&#32;*surface,
+330 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;hot_x,
+331 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;hot_y);
+332 
+344 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__mouse_8h_1a63b6e9cd23bbe26b8fa00dc8fba7623d">SDL_Cursor</link>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mouse_8h_1aa3c78c8d7501b33db7839a49d3d6eb38">SDL_CreateSystemCursor</link>(<link linkend="__s_d_l__mouse_8h_1a3e8083d1d8ce4c5a1ba76bfc2be8e732">SDL_SystemCursor</link>&#32;<emphasis role="keywordtype">id</emphasis>);
+345 
+362 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mouse_8h_1a7c2971901f9a772be22152420aee275c">SDL_SetCursor</link>(<link linkend="__s_d_l__mouse_8h_1a63b6e9cd23bbe26b8fa00dc8fba7623d">SDL_Cursor</link>&#32;*&#32;cursor);
+363 
+376 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__mouse_8h_1a63b6e9cd23bbe26b8fa00dc8fba7623d">SDL_Cursor</link>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mouse_8h_1a98d7b811cebffcdd9afb3b65288d715c">SDL_GetCursor</link>(<emphasis role="keywordtype">void</emphasis>);
+377 
+387 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__mouse_8h_1a63b6e9cd23bbe26b8fa00dc8fba7623d">SDL_Cursor</link>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mouse_8h_1a395cc3d18523a9240cb132f1c5d0034a">SDL_GetDefaultCursor</link>(<emphasis role="keywordtype">void</emphasis>);
+388 
+403 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mouse_8h_1ac17a8282f93d9d31e8e087236f0ecdd8">SDL_FreeCursor</link>(<link linkend="__s_d_l__mouse_8h_1a63b6e9cd23bbe26b8fa00dc8fba7623d">SDL_Cursor</link>&#32;*&#32;cursor);
+404 
+425 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mouse_8h_1a00286ec15cd56dee1fd71ed4e6e7a585">SDL_ShowCursor</link>(<emphasis role="keywordtype">int</emphasis>&#32;toggle);
+426 
+434 <emphasis role="preprocessor">#define&#32;SDL_BUTTON(X)&#32;&#32;&#32;&#32;&#32;&#32;&#32;(1&#32;&lt;&lt;&#32;((X)-1))</emphasis>
+435 <emphasis role="preprocessor">#define&#32;SDL_BUTTON_LEFT&#32;&#32;&#32;&#32;&#32;1</emphasis>
+436 <emphasis role="preprocessor">#define&#32;SDL_BUTTON_MIDDLE&#32;&#32;&#32;2</emphasis>
+437 <emphasis role="preprocessor">#define&#32;SDL_BUTTON_RIGHT&#32;&#32;&#32;&#32;3</emphasis>
+438 <emphasis role="preprocessor">#define&#32;SDL_BUTTON_X1&#32;&#32;&#32;&#32;&#32;&#32;&#32;4</emphasis>
+439 <emphasis role="preprocessor">#define&#32;SDL_BUTTON_X2&#32;&#32;&#32;&#32;&#32;&#32;&#32;5</emphasis>
+440 <emphasis role="preprocessor">#define&#32;SDL_BUTTON_LMASK&#32;&#32;&#32;&#32;SDL_BUTTON(SDL_BUTTON_LEFT)</emphasis>
+441 <emphasis role="preprocessor">#define&#32;SDL_BUTTON_MMASK&#32;&#32;&#32;&#32;SDL_BUTTON(SDL_BUTTON_MIDDLE)</emphasis>
+442 <emphasis role="preprocessor">#define&#32;SDL_BUTTON_RMASK&#32;&#32;&#32;&#32;SDL_BUTTON(SDL_BUTTON_RIGHT)</emphasis>
+443 <emphasis role="preprocessor">#define&#32;SDL_BUTTON_X1MASK&#32;&#32;&#32;SDL_BUTTON(SDL_BUTTON_X1)</emphasis>
+444 <emphasis role="preprocessor">#define&#32;SDL_BUTTON_X2MASK&#32;&#32;&#32;SDL_BUTTON(SDL_BUTTON_X2)</emphasis>
+445 
+446 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+447 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+448 }
+449 <emphasis role="preprocessor">#endif</emphasis>
+450 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+451 
+452 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_mouse_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+453 
+454 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

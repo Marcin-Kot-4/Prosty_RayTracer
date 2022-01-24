@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="objsphere_8h" kind="file" language="C++">
+    <compoundname>objsphere.h</compoundname>
+    <includes refid="objectbase_8h" local="yes">objectbase.h</includes>
+    <includes refid="gtfm_8h" local="yes">../gtfm.h</includes>
+    <includedby refid="objsphere_8cpp" local="yes">D:/RayTracing/RayTrace/Primitives/objsphere.cpp</includedby>
+    <includedby refid="_scene_8h" local="yes">D:/RayTracing/RayTrace/Scene.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>objectbase.h</label>
+        <link refid="objectbase_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/RayTracing/RayTrace/Primitives/objsphere.h</label>
+        <link refid="objsphere_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>../gtfm.h</label>
+        <link refid="gtfm_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>./qbLinAlg/qbMatrix.h</label>
+        <link refid="qb_matrix_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>../qbLinAlg/qbVector.h</label>
+        <link refid="qb_vector_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>../ray.h</label>
+        <link refid="ray_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>exception</label>
+      </node>
+      <node id="7">
+        <label>iomanip</label>
+      </node>
+      <node id="6">
+        <label>iostream</label>
+      </node>
+      <node id="8">
+        <label>math.h</label>
+      </node>
+      <node id="3">
+        <label>memory</label>
+      </node>
+      <node id="5">
+        <label>stdexcept</label>
+      </node>
+      <node id="9">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5">
+        <label>D:/RayTracing/CApp.cpp</label>
+        <link refid="_c_app_8cpp"/>
+      </node>
+      <node id="4">
+        <label>D:/RayTracing/CApp.h</label>
+        <link refid="_c_app_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>D:/RayTracing/RayTrace/Primitives/objsphere.cpp</label>
+        <link refid="objsphere_8cpp"/>
+      </node>
+      <node id="1">
+        <label>D:/RayTracing/RayTrace/Primitives/objsphere.h</label>
+        <link refid="objsphere_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>D:/RayTracing/RayTrace/Scene.cpp</label>
+        <link refid="_scene_8cpp"/>
+      </node>
+      <node id="3">
+        <label>D:/RayTracing/RayTrace/Scene.h</label>
+        <link refid="_scene_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>D:/RayTracing/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_r_t_1_1_obj_sphere" prot="public">RT::ObjSphere</innerclass>
+    <innernamespace refid="namespace_r_t">RT</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>RAYTRACING_OBJSPHERE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RAYTRACING_OBJSPHERE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="objectbase_8h" kindref="compound">objectbase.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../gtfm.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_r_t" kindref="compound">RT</ref><sp/>{</highlight></codeline>
+<codeline lineno="9" refid="class_r_t_1_1_obj_sphere" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_r_t_1_1_obj_sphere" kindref="compound">ObjSphere</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_object_base" kindref="compound">ObjectBase</ref><sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Domyślny<sp/>konstruktor.<sp/>Utworzy<sp/>sferę<sp/>w<sp/>środku<sp/>układu</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_r_t_1_1_obj_sphere_1acebbd30c9598b1e97f3372d7f0d87e74" kindref="member">ObjSphere</ref>();</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Nadpisanie<sp/>destruktora</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_obj_sphere_1a91db8fe9bbd7ad278d7899221204f300" kindref="member">~ObjSphere</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Nadpisanie<sp/>metody<sp/>odpowiedzialnej<sp/>za<sp/>sprawdzanie<sp/>przecięcia<sp/>się<sp/>promienia<sp/>z<sp/>powierzchnią<sp/>obiektu</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_obj_sphere_1ac61205d4e6dc56ad927e84ada7f3a77b" kindref="member">TestIntersection</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_ray" kindref="compound">RT::Ray</ref><sp/>&amp;castRay,<sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>&amp;intPoint,<sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>&amp;localNormal,</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>&amp;localColor)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//RAYTRACING_OBJSPHERE_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/RayTrace/Primitives/objsphere.h"/>
+  </compounddef>
+</doxygen>

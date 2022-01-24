@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="namespaceqb_p_c_a" kind="namespace" language="C++">
+    <compoundname>qbPCA</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceqb_p_c_a_1ade6a2d48ed6e5d5bbd7db9dc515fbfa2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; T &gt;</type>
+        <definition>std::vector&lt; T &gt; qbPCA::ComputeColumnMeans</definition>
+        <argsstring>(const qbMatrix2&lt; T &gt; &amp;inputData)</argsstring>
+        <name>ComputeColumnMeans</name>
+        <qualifiedname>qbPCA::ComputeColumnMeans</qualifiedname>
+        <param>
+          <type>const <ref refid="classqb_matrix2" kindref="compound">qbMatrix2</ref>&lt; T &gt; &amp;</type>
+          <declname>inputData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/qbLinAlg/qbPCA.h" line="28" column="13" bodyfile="D:/RayTracing/RayTrace/qbLinAlg/qbPCA.h" bodystart="28" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqb_p_c_a_1a5a22357f0fe78194175135e2adc1045e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        <definition>void qbPCA::SubtractColumnMeans</definition>
+        <argsstring>(qbMatrix2&lt; T &gt; &amp;inputData, std::vector&lt; T &gt; &amp;columnMeans)</argsstring>
+        <name>SubtractColumnMeans</name>
+        <qualifiedname>qbPCA::SubtractColumnMeans</qualifiedname>
+        <param>
+          <type><ref refid="classqb_matrix2" kindref="compound">qbMatrix2</ref>&lt; T &gt; &amp;</type>
+          <declname>inputData</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; T &gt; &amp;</type>
+          <declname>columnMeans</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/qbLinAlg/qbPCA.h" line="52" column="6" bodyfile="D:/RayTracing/RayTrace/qbLinAlg/qbPCA.h" bodystart="52" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqb_p_c_a_1a393fa03dff91c84ac6c53aa8bd4141b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classqb_matrix2" kindref="compound">qbMatrix2</ref>&lt; T &gt;</type>
+        <definition>qbMatrix2&lt; T &gt; qbPCA::ComputeCovariance</definition>
+        <argsstring>(const qbMatrix2&lt; T &gt; &amp;X)</argsstring>
+        <name>ComputeCovariance</name>
+        <qualifiedname>qbPCA::ComputeCovariance</qualifiedname>
+        <param>
+          <type>const <ref refid="classqb_matrix2" kindref="compound">qbMatrix2</ref>&lt; T &gt; &amp;</type>
+          <declname>X</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/qbLinAlg/qbPCA.h" line="68" column="11" bodyfile="D:/RayTracing/RayTrace/qbLinAlg/qbPCA.h" bodystart="68" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqb_p_c_a_1aa00b5e4dee58ccfa5ce763a873b96c2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>int</type>
+        <definition>int qbPCA::ComputeEigenvectors</definition>
+        <argsstring>(const qbMatrix2&lt; T &gt; &amp;covarianceMatrix, qbMatrix2&lt; T &gt; &amp;eigenvectors)</argsstring>
+        <name>ComputeEigenvectors</name>
+        <qualifiedname>qbPCA::ComputeEigenvectors</qualifiedname>
+        <param>
+          <type>const <ref refid="classqb_matrix2" kindref="compound">qbMatrix2</ref>&lt; T &gt; &amp;</type>
+          <declname>covarianceMatrix</declname>
+        </param>
+        <param>
+          <type><ref refid="classqb_matrix2" kindref="compound">qbMatrix2</ref>&lt; T &gt; &amp;</type>
+          <declname>eigenvectors</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/qbLinAlg/qbPCA.h" line="84" column="5" bodyfile="D:/RayTracing/RayTrace/qbLinAlg/qbPCA.h" bodystart="84" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceqb_p_c_a_1aa99d4f272173791d49b268a9dd151fc6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>int</type>
+        <definition>int qbPCA::qbPCA</definition>
+        <argsstring>(const qbMatrix2&lt; T &gt; &amp;inputData, qbMatrix2&lt; T &gt; &amp;outputComponents)</argsstring>
+        <name>qbPCA</name>
+        <qualifiedname>qbPCA::qbPCA</qualifiedname>
+        <param>
+          <type>const <ref refid="classqb_matrix2" kindref="compound">qbMatrix2</ref>&lt; T &gt; &amp;</type>
+          <declname>inputData</declname>
+        </param>
+        <param>
+          <type><ref refid="classqb_matrix2" kindref="compound">qbMatrix2</ref>&lt; T &gt; &amp;</type>
+          <declname>outputComponents</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/qbLinAlg/qbPCA.h" line="125" column="5" bodyfile="D:/RayTracing/RayTrace/qbLinAlg/qbPCA.h" bodystart="125" bodyend="147"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/RayTracing/RayTrace/qbLinAlg/qbPCA.h" line="23" column="1"/>
+  </compounddef>
+</doxygen>

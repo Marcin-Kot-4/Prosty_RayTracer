@@ -1,0 +1,197 @@
+.TH "D:/RayTracing/include/SDL_messagebox.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_messagebox.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SDL_stdinc\&.h'\fP
+.br
+\fC#include 'SDL_video\&.h'\fP
+.br
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBSDL_MessageBoxButtonData\fP"
+.br
+.ti -1c
+.RI "struct \fBSDL_MessageBoxColor\fP"
+.br
+.ti -1c
+.RI "struct \fBSDL_MessageBoxColorScheme\fP"
+.br
+.ti -1c
+.RI "struct \fBSDL_MessageBoxData\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSDL_MessageBoxFlags\fP { \fBSDL_MESSAGEBOX_ERROR\fP = 0x00000010, \fBSDL_MESSAGEBOX_WARNING\fP = 0x00000020, \fBSDL_MESSAGEBOX_INFORMATION\fP = 0x00000040, \fBSDL_MESSAGEBOX_BUTTONS_LEFT_TO_RIGHT\fP = 0x00000080, \fBSDL_MESSAGEBOX_BUTTONS_RIGHT_TO_LEFT\fP = 0x00000100 }"
+.br
+.ti -1c
+.RI "enum \fBSDL_MessageBoxButtonFlags\fP { \fBSDL_MESSAGEBOX_BUTTON_RETURNKEY_DEFAULT\fP = 0x00000001, \fBSDL_MESSAGEBOX_BUTTON_ESCAPEKEY_DEFAULT\fP = 0x00000002 }"
+.br
+.ti -1c
+.RI "enum \fBSDL_MessageBoxColorType\fP { \fBSDL_MESSAGEBOX_COLOR_BACKGROUND\fP, \fBSDL_MESSAGEBOX_COLOR_TEXT\fP, \fBSDL_MESSAGEBOX_COLOR_BUTTON_BORDER\fP, \fBSDL_MESSAGEBOX_COLOR_BUTTON_BACKGROUND\fP, \fBSDL_MESSAGEBOX_COLOR_BUTTON_SELECTED\fP, \fBSDL_MESSAGEBOX_COLOR_MAX\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_ShowMessageBox\fP (const \fBSDL_MessageBoxData\fP *messageboxdata, int *buttonid)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_ShowSimpleMessageBox\fP (\fBUint32\fP \fBflags\fP, const char *title, const char *\fBmessage\fP, \fBSDL_Window\fP *window)"
+.br
+.in -1c
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBSDL_MessageBoxButtonFlags\fP"
+Flags for \fBSDL_MessageBoxButtonData\fP\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISDL_MESSAGEBOX_BUTTON_RETURNKEY_DEFAULT \fP\fP
+Marks the default button when return is hit 
+.TP
+\fB\fISDL_MESSAGEBOX_BUTTON_ESCAPEKEY_DEFAULT \fP\fP
+Marks the default button when escape is hit 
+.SS "enum \fBSDL_MessageBoxColorType\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISDL_MESSAGEBOX_COLOR_BACKGROUND \fP\fP
+.TP
+\fB\fISDL_MESSAGEBOX_COLOR_TEXT \fP\fP
+.TP
+\fB\fISDL_MESSAGEBOX_COLOR_BUTTON_BORDER \fP\fP
+.TP
+\fB\fISDL_MESSAGEBOX_COLOR_BUTTON_BACKGROUND \fP\fP
+.TP
+\fB\fISDL_MESSAGEBOX_COLOR_BUTTON_SELECTED \fP\fP
+.TP
+\fB\fISDL_MESSAGEBOX_COLOR_MAX \fP\fP
+.SS "enum \fBSDL_MessageBoxFlags\fP"
+SDL_MessageBox flags\&. If supported will display warning icon, etc\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISDL_MESSAGEBOX_ERROR \fP\fP
+error dialog 
+.TP
+\fB\fISDL_MESSAGEBOX_WARNING \fP\fP
+warning dialog 
+.TP
+\fB\fISDL_MESSAGEBOX_INFORMATION \fP\fP
+informational dialog 
+.TP
+\fB\fISDL_MESSAGEBOX_BUTTONS_LEFT_TO_RIGHT \fP\fP
+buttons placed left to right 
+.TP
+\fB\fISDL_MESSAGEBOX_BUTTONS_RIGHT_TO_LEFT \fP\fP
+buttons placed right to left 
+.SH "Function Documentation"
+.PP 
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_ShowMessageBox (const \fBSDL_MessageBoxData\fP * messageboxdata, int * buttonid)"
+Create a modal message box\&.
+.PP
+If your needs aren't complex, it might be easier to use SDL_ShowSimpleMessageBox\&.
+.PP
+This function should be called on the thread that created the parent window, or on the main thread if the messagebox has no parent\&. It will block execution of that thread until the user clicks a button or closes the messagebox\&.
+.PP
+This function may be called at any time, even before \fBSDL_Init()\fP\&. This makes it useful for reporting errors like a failure to create a renderer or OpenGL context\&.
+.PP
+On X11, SDL rolls its own dialog box with X11 primitives instead of a formal toolkit like GTK+ or Qt\&.
+.PP
+Note that if \fBSDL_Init()\fP would fail because there isn't any available video target, this function is likely to fail for the same reasons\&. If this is a concern, check the return value from this function and fall back to writing to stderr if you can\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImessageboxdata\fP the \fBSDL_MessageBoxData\fP structure with title, text and other options 
+.br
+\fIbuttonid\fP the pointer to which user id of hit button should be copied 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 on success or a negative error code on failure; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_ShowSimpleMessageBox\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_ShowSimpleMessageBox (\fBUint32\fP flags, const char * title, const char * message, \fBSDL_Window\fP * window)"
+Display a simple modal message box\&.
+.PP
+If your needs aren't complex, this function is preferred over SDL_ShowMessageBox\&.
+.PP
+\fCflags\fP may be any of the following:
+.PP
+.IP "\(bu" 2
+\fCSDL_MESSAGEBOX_ERROR\fP: error dialog
+.IP "\(bu" 2
+\fCSDL_MESSAGEBOX_WARNING\fP: warning dialog
+.IP "\(bu" 2
+\fCSDL_MESSAGEBOX_INFORMATION\fP: informational dialog
+.PP
+.PP
+This function should be called on the thread that created the parent window, or on the main thread if the messagebox has no parent\&. It will block execution of that thread until the user clicks a button or closes the messagebox\&.
+.PP
+This function may be called at any time, even before \fBSDL_Init()\fP\&. This makes it useful for reporting errors like a failure to create a renderer or OpenGL context\&.
+.PP
+On X11, SDL rolls its own dialog box with X11 primitives instead of a formal toolkit like GTK+ or Qt\&.
+.PP
+Note that if \fBSDL_Init()\fP would fail because there isn't any available video target, this function is likely to fail for the same reasons\&. If this is a concern, check the return value from this function and fall back to writing to stderr if you can\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIflags\fP an SDL_MessageBoxFlags value 
+.br
+\fItitle\fP UTF-8 title text 
+.br
+\fImessage\fP UTF-8 message text 
+.br
+\fIwindow\fP the parent window, or NULL for no parent 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 on success or a negative error code on failure; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_ShowMessageBox\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

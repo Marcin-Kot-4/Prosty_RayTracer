@@ -1,0 +1,341 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__haptic_8h_source" xml:lang="en-US">
+<title>SDL_haptic.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_haptic.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+107 <emphasis role="preprocessor">#ifndef&#32;SDL_haptic_h_</emphasis>
+108 <emphasis role="preprocessor">#define&#32;SDL_haptic_h_</emphasis>
+109 
+110 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__stdinc_8h">SDL_stdinc.h</link>&quot;</emphasis>
+111 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__error_8h">SDL_error.h</link>&quot;</emphasis>
+112 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__joystick_8h">SDL_joystick.h</link>&quot;</emphasis>
+113 
+114 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+115 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+116 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+117 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+118 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;__cplusplus&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+119 
+120 <emphasis role="comment">/*&#32;FIXME:&#32;For&#32;SDL&#32;2.1,&#32;adjust&#32;all&#32;the&#32;magnitude&#32;variables&#32;to&#32;be&#32;Uint16&#32;(0xFFFF).</emphasis>
+121 <emphasis role="comment">&#32;*</emphasis>
+122 <emphasis role="comment">&#32;*&#32;At&#32;the&#32;moment&#32;the&#32;magnitude&#32;variables&#32;are&#32;mixed&#32;between&#32;signed/unsigned,&#32;and</emphasis>
+123 <emphasis role="comment">&#32;*&#32;it&#32;is&#32;also&#32;not&#32;made&#32;clear&#32;that&#32;ALL&#32;of&#32;those&#32;variables&#32;expect&#32;a&#32;max&#32;of&#32;0x7FFF.</emphasis>
+124 <emphasis role="comment">&#32;*</emphasis>
+125 <emphasis role="comment">&#32;*&#32;Some&#32;platforms&#32;may&#32;have&#32;higher&#32;precision&#32;than&#32;that&#32;(Linux&#32;FF,&#32;Windows&#32;XInput)</emphasis>
+126 <emphasis role="comment">&#32;*&#32;so&#32;we&#32;should&#32;fix&#32;the&#32;inconsistency&#32;in&#32;favor&#32;of&#32;higher&#32;possible&#32;precision,</emphasis>
+127 <emphasis role="comment">&#32;*&#32;adjusting&#32;for&#32;platforms&#32;that&#32;use&#32;different&#32;scales.</emphasis>
+128 <emphasis role="comment">&#32;*&#32;-flibit</emphasis>
+129 <emphasis role="comment">&#32;*/</emphasis>
+130 
+140 <emphasis role="keyword">struct&#32;</emphasis>_SDL_Haptic;
+141 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis>_SDL_Haptic&#32;<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link>;
+142 
+143 
+149 <emphasis role="comment">/*&#32;@{&#32;*/</emphasis>
+150 
+154 <emphasis role="comment">/*&#32;@{&#32;*/</emphasis>
+155 
+163 <emphasis role="preprocessor">#define&#32;SDL_HAPTIC_CONSTANT&#32;&#32;&#32;(1u&lt;&lt;0)</emphasis>
+164 
+172 <emphasis role="preprocessor">#define&#32;SDL_HAPTIC_SINE&#32;&#32;&#32;&#32;&#32;&#32;&#32;(1u&lt;&lt;1)</emphasis>
+173 
+183 <emphasis role="preprocessor">#define&#32;SDL_HAPTIC_LEFTRIGHT&#32;&#32;&#32;&#32;&#32;(1u&lt;&lt;2)</emphasis>
+184 
+185 <emphasis role="comment">/*&#32;!!!&#32;FIXME:&#32;put&#32;this&#32;back&#32;when&#32;we&#32;have&#32;more&#32;bits&#32;in&#32;2.1&#32;*/</emphasis>
+186 <emphasis role="comment">/*&#32;#define&#32;SDL_HAPTIC_SQUARE&#32;&#32;&#32;&#32;&#32;(1&lt;&lt;2)&#32;*/</emphasis>
+187 
+195 <emphasis role="preprocessor">#define&#32;SDL_HAPTIC_TRIANGLE&#32;&#32;&#32;(1u&lt;&lt;3)</emphasis>
+196 
+204 <emphasis role="preprocessor">#define&#32;SDL_HAPTIC_SAWTOOTHUP&#32;(1u&lt;&lt;4)</emphasis>
+205 
+213 <emphasis role="preprocessor">#define&#32;SDL_HAPTIC_SAWTOOTHDOWN&#32;(1u&lt;&lt;5)</emphasis>
+214 
+222 <emphasis role="preprocessor">#define&#32;SDL_HAPTIC_RAMP&#32;&#32;&#32;&#32;&#32;&#32;&#32;(1u&lt;&lt;6)</emphasis>
+223 
+232 <emphasis role="preprocessor">#define&#32;SDL_HAPTIC_SPRING&#32;&#32;&#32;&#32;&#32;(1u&lt;&lt;7)</emphasis>
+233 
+242 <emphasis role="preprocessor">#define&#32;SDL_HAPTIC_DAMPER&#32;&#32;&#32;&#32;&#32;(1u&lt;&lt;8)</emphasis>
+243 
+252 <emphasis role="preprocessor">#define&#32;SDL_HAPTIC_INERTIA&#32;&#32;&#32;&#32;(1u&lt;&lt;9)</emphasis>
+253 
+262 <emphasis role="preprocessor">#define&#32;SDL_HAPTIC_FRICTION&#32;&#32;&#32;(1u&lt;&lt;10)</emphasis>
+263 
+269 <emphasis role="preprocessor">#define&#32;SDL_HAPTIC_CUSTOM&#32;&#32;&#32;&#32;&#32;(1u&lt;&lt;11)</emphasis>
+270 
+271 <emphasis role="comment">/*&#32;@}&#32;*/</emphasis><emphasis role="comment">/*&#32;Haptic&#32;effects&#32;*/</emphasis>
+272 
+273 <emphasis role="comment">/*&#32;These&#32;last&#32;few&#32;are&#32;features&#32;the&#32;device&#32;has,&#32;not&#32;effects&#32;*/</emphasis>
+274 
+282 <emphasis role="preprocessor">#define&#32;SDL_HAPTIC_GAIN&#32;&#32;&#32;&#32;&#32;&#32;&#32;(1u&lt;&lt;12)</emphasis>
+283 
+291 <emphasis role="preprocessor">#define&#32;SDL_HAPTIC_AUTOCENTER&#32;(1u&lt;&lt;13)</emphasis>
+292 
+300 <emphasis role="preprocessor">#define&#32;SDL_HAPTIC_STATUS&#32;&#32;&#32;&#32;&#32;(1u&lt;&lt;14)</emphasis>
+301 
+310 <emphasis role="preprocessor">#define&#32;SDL_HAPTIC_PAUSE&#32;&#32;&#32;&#32;&#32;&#32;(1u&lt;&lt;15)</emphasis>
+311 
+312 
+316 <emphasis role="comment">/*&#32;@{&#32;*/</emphasis>
+317 
+323 <emphasis role="preprocessor">#define&#32;SDL_HAPTIC_POLAR&#32;&#32;&#32;&#32;&#32;&#32;0</emphasis>
+324 
+330 <emphasis role="preprocessor">#define&#32;SDL_HAPTIC_CARTESIAN&#32;&#32;1</emphasis>
+331 
+337 <emphasis role="preprocessor">#define&#32;SDL_HAPTIC_SPHERICAL&#32;&#32;2</emphasis>
+338 
+345 <emphasis role="preprocessor">#define&#32;SDL_HAPTIC_STEERING_AXIS&#32;3</emphasis>
+346 
+347 <emphasis role="comment">/*&#32;@}&#32;*/</emphasis><emphasis role="comment">/*&#32;Direction&#32;encodings&#32;*/</emphasis>
+348 
+349 <emphasis role="comment">/*&#32;@}&#32;*/</emphasis><emphasis role="comment">/*&#32;Haptic&#32;features&#32;*/</emphasis>
+350 
+351 <emphasis role="comment">/*</emphasis>
+352 <emphasis role="comment">&#32;*&#32;Misc&#32;defines.</emphasis>
+353 <emphasis role="comment">&#32;*/</emphasis>
+354 
+360 <emphasis role="preprocessor">#define&#32;SDL_HAPTIC_INFINITY&#32;&#32;&#32;4294967295U</emphasis>
+361 
+362 
+459 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_s_d_l___haptic_direction">SDL_HapticDirection</link>
+460 {
+461 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link>&#32;<link linkend="_struct_s_d_l___haptic_direction_1acd6830ad68c4ba2af16057fa418087cc">type</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+462 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a7a90b941db9d4582e9ad7abb9940ff7e">Sint32</link>&#32;<link linkend="_struct_s_d_l___haptic_direction_1a6cebd8118a3e61e36bd0c503ae020362">dir</link>[3];&#32;&#32;&#32;&#32;&#32;&#32;
+463 }&#32;<link linkend="__s_d_l__haptic_8h_1a67e1c7124fcd0d6c6bc775ab0758b4ad">SDL_HapticDirection</link>;
+464 
+465 
+477 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_s_d_l___haptic_constant">SDL_HapticConstant</link>
+478 {
+479 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Header&#32;*/</emphasis>
+480 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_constant_1a5cb31202803a8bc1be95fcede5ac8afb">type</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+481 &#32;&#32;&#32;&#32;<link linkend="_struct_s_d_l___haptic_direction">SDL_HapticDirection</link>&#32;<link linkend="_struct_s_d_l___haptic_constant_1a3e871debf4e57c35960f019d2605d84f">direction</link>;&#32;&#32;
+483 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Replay&#32;*/</emphasis>
+484 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="_struct_s_d_l___haptic_constant_1aeb994c356b1d236b060f277d157e98ec">length</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+485 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_constant_1a16a751009893f5412201e3ce91146b25">delay</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+487 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Trigger&#32;*/</emphasis>
+488 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_constant_1aa65321f1b002adaab6e629d5bed556e9">button</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+489 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_constant_1ab1f7f0df856f4cf1fdf937cb886226b4">interval</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+491 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Constant&#32;*/</emphasis>
+492 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5">Sint16</link>&#32;<link linkend="_struct_s_d_l___haptic_constant_1a5b095eea77464623ed57af15f29f4ca6">level</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+494 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Envelope&#32;*/</emphasis>
+495 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_constant_1a907bade68ab53fb24e7d2651d19b767f">attack_length</link>;&#32;&#32;&#32;
+496 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_constant_1a0928a37f3fab0e5b7daffc7a1d65744c">attack_level</link>;&#32;&#32;&#32;&#32;
+497 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_constant_1a647a6b761ac6ba16160d0892a12806bc">fade_length</link>;&#32;&#32;&#32;&#32;&#32;
+498 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_constant_1a49f6499c89f3e494efbe92f12277c949">fade_level</link>;&#32;&#32;&#32;&#32;&#32;&#32;
+499 }&#32;<link linkend="__s_d_l__haptic_8h_1ad90d0e292edba72fdb696a1e7b9560cd">SDL_HapticConstant</link>;
+500 
+558 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_s_d_l___haptic_periodic">SDL_HapticPeriodic</link>
+559 {
+560 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Header&#32;*/</emphasis>
+561 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_periodic_1ac53c5725e8cff012e9b90e01b7110869">type</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+564 &#32;&#32;&#32;&#32;<link linkend="_struct_s_d_l___haptic_direction">SDL_HapticDirection</link>&#32;<link linkend="_struct_s_d_l___haptic_periodic_1a2c4f27d4583187a7a994e79ad49083d3">direction</link>;&#32;&#32;
+566 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Replay&#32;*/</emphasis>
+567 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="_struct_s_d_l___haptic_periodic_1a0ef0b17c54aaa5c99886c2a618444026">length</link>;&#32;&#32;&#32;&#32;&#32;&#32;
+568 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_periodic_1a8688d1c7ee6270ed290f6b474aef5ec9">delay</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+570 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Trigger&#32;*/</emphasis>
+571 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_periodic_1a9e0177354f4a285b8c98e4a31cd31752">button</link>;&#32;&#32;&#32;&#32;&#32;&#32;
+572 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_periodic_1a076d266e917098d89b2385b631629162">interval</link>;&#32;&#32;&#32;&#32;
+574 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Periodic&#32;*/</emphasis>
+575 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_periodic_1a0e7e105b96308129b248d52b56a2a839">period</link>;&#32;&#32;&#32;&#32;&#32;&#32;
+576 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5">Sint16</link>&#32;<link linkend="_struct_s_d_l___haptic_periodic_1aad0ad2b00c7e6959da627663d91f7b94">magnitude</link>;&#32;&#32;&#32;
+577 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5">Sint16</link>&#32;<link linkend="_struct_s_d_l___haptic_periodic_1abc7aa9e9c0d546cb54189a7812fbe554">offset</link>;&#32;&#32;&#32;&#32;&#32;&#32;
+578 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_periodic_1a25e8c6aebc78bd74b9343fa228d25d8f">phase</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+580 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Envelope&#32;*/</emphasis>
+581 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_periodic_1ab35eedce7107edc75640586159fe75bb">attack_length</link>;&#32;&#32;&#32;
+582 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_periodic_1a79fc2217fea6db6ab3d89ad905d52ccb">attack_level</link>;&#32;&#32;&#32;&#32;
+583 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_periodic_1ae1c186d02304eae142a62dca72f50fa8">fade_length</link>;&#32;
+584 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_periodic_1afa7713fc264959873f2a852fca4174fd">fade_level</link>;&#32;&#32;
+585 }&#32;<link linkend="__s_d_l__haptic_8h_1a0ebf54334ce8dbdd0f8711ca70f141a7">SDL_HapticPeriodic</link>;
+586 
+611 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_s_d_l___haptic_condition">SDL_HapticCondition</link>
+612 {
+613 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Header&#32;*/</emphasis>
+614 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_condition_1a7be55a9a86c05dd1a54a3006781cfa6f">type</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+616 &#32;&#32;&#32;&#32;<link linkend="_struct_s_d_l___haptic_direction">SDL_HapticDirection</link>&#32;<link linkend="_struct_s_d_l___haptic_condition_1a728507d30d18998949313de3a25e5581">direction</link>;&#32;&#32;
+618 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Replay&#32;*/</emphasis>
+619 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="_struct_s_d_l___haptic_condition_1ad0efb0a6ddc20f058e87199eaaa95978">length</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+620 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_condition_1aad40417980530ca8d80c62ba864a090b">delay</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+622 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Trigger&#32;*/</emphasis>
+623 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_condition_1acd35a9d432ad122bf7824b16974eac7a">button</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+624 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_condition_1aafc182abea1078bed7e9cf5d0e713ea2">interval</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+626 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Condition&#32;*/</emphasis>
+627 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_condition_1a90427a1e0d464b4b53abc1d419c97b2e">right_sat</link>[3];&#32;&#32;&#32;&#32;
+628 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_condition_1a953448774c40818a4f47c6efea21124d">left_sat</link>[3];&#32;&#32;&#32;&#32;&#32;
+629 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5">Sint16</link>&#32;<link linkend="_struct_s_d_l___haptic_condition_1a3de7f164ef88841255535387d0f100b6">right_coeff</link>[3];&#32;&#32;
+630 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5">Sint16</link>&#32;<link linkend="_struct_s_d_l___haptic_condition_1a2adf52c32f60f0b6826b1e3add2eae7a">left_coeff</link>[3];&#32;&#32;&#32;
+631 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_condition_1af684c8eeeb719739a32723c00c5a2bbd">deadband</link>[3];&#32;&#32;&#32;&#32;&#32;
+632 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5">Sint16</link>&#32;<link linkend="_struct_s_d_l___haptic_condition_1a8a71ec28ff5ab85246cbc59736aa2c53">center</link>[3];&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+633 }&#32;<link linkend="__s_d_l__haptic_8h_1af4d7e7825bf98ca5a5aa8194b77b0754">SDL_HapticCondition</link>;
+634 
+648 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_s_d_l___haptic_ramp">SDL_HapticRamp</link>
+649 {
+650 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Header&#32;*/</emphasis>
+651 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_ramp_1aca1c2349372433822ab62f60976640aa">type</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+652 &#32;&#32;&#32;&#32;<link linkend="_struct_s_d_l___haptic_direction">SDL_HapticDirection</link>&#32;<link linkend="_struct_s_d_l___haptic_ramp_1a6fb6c67ccf262b8f3ec08bcdf08f9965">direction</link>;&#32;&#32;
+654 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Replay&#32;*/</emphasis>
+655 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="_struct_s_d_l___haptic_ramp_1a57e75237507701405af2a3caf34cdb5a">length</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+656 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_ramp_1ac9471016f41919b4a1c786bbd649a777">delay</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+658 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Trigger&#32;*/</emphasis>
+659 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_ramp_1a2027c6fd88f1ebe652c90c71410ee0bf">button</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+660 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_ramp_1a4b89d108cfa7e96ea58b58771334c33d">interval</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+662 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Ramp&#32;*/</emphasis>
+663 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5">Sint16</link>&#32;<link linkend="_struct_s_d_l___haptic_ramp_1acc0e813ac6399290fd4a788d2471e8d4">start</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+664 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5">Sint16</link>&#32;<link linkend="_struct_s_d_l___haptic_ramp_1a16dd3ee307795248e21ee45ba8fb4c6c">end</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+666 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Envelope&#32;*/</emphasis>
+667 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_ramp_1adbcd7ffb05016d442c73e81cc0fcbbd2">attack_length</link>;&#32;&#32;&#32;
+668 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_ramp_1a755933bbda14ae9b53c574b9fe6291a0">attack_level</link>;&#32;&#32;&#32;&#32;
+669 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_ramp_1ad58a8f7cfdf659b45f0503fc56db7436">fade_length</link>;&#32;&#32;&#32;&#32;&#32;
+670 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_ramp_1a66b586f2e6a23a085a7b2854f61752c5">fade_level</link>;&#32;&#32;&#32;&#32;&#32;&#32;
+671 }&#32;<link linkend="__s_d_l__haptic_8h_1af967093786a8e460fc42c9b502472d85">SDL_HapticRamp</link>;
+672 
+685 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_s_d_l___haptic_left_right">SDL_HapticLeftRight</link>
+686 {
+687 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Header&#32;*/</emphasis>
+688 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_left_right_1abef79eeb482a8e623e512f0c9635e1a1">type</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+690 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Replay&#32;*/</emphasis>
+691 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="_struct_s_d_l___haptic_left_right_1a5b942fee53f1ec77d3fb91a6e89b0196">length</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+693 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Rumble&#32;*/</emphasis>
+694 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_left_right_1a8cd16fe2200ef10cc4f3b4209adef959">large_magnitude</link>;&#32;
+695 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_left_right_1aaa1f2c1e767a780e447d82efce6cd1cf">small_magnitude</link>;&#32;
+696 }&#32;<link linkend="__s_d_l__haptic_8h_1adf5073b6a3b2129da7820e5506321542">SDL_HapticLeftRight</link>;
+697 
+713 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_s_d_l___haptic_custom">SDL_HapticCustom</link>
+714 {
+715 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Header&#32;*/</emphasis>
+716 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_custom_1a98a8995c94492069dc007502ed97eed2">type</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+717 &#32;&#32;&#32;&#32;<link linkend="_struct_s_d_l___haptic_direction">SDL_HapticDirection</link>&#32;<link linkend="_struct_s_d_l___haptic_custom_1ad7eb84f59404d9e0da07570b4b57dd43">direction</link>;&#32;&#32;
+719 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Replay&#32;*/</emphasis>
+720 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="_struct_s_d_l___haptic_custom_1ad70e8bc2cff74b99d704a757c16b363f">length</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+721 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_custom_1a094229466ff4cf695860db664100a2b0">delay</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+723 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Trigger&#32;*/</emphasis>
+724 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_custom_1aa4fbaf7220f3197aa6631b3e64ad6562">button</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+725 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_custom_1afdeb26b1709254545e00a59a0a6c360c">interval</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+727 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Custom&#32;*/</emphasis>
+728 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link>&#32;<link linkend="_struct_s_d_l___haptic_custom_1a560215762e9096d583d75867d9227cf5">channels</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+729 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_custom_1aba7fafa808e90baddef25f009b8f4817">period</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+730 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_custom_1a5905ea1b6182da846535ca8c80b4fa33">samples</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+731 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;*<link linkend="_struct_s_d_l___haptic_custom_1ad5a034f97e1699eacbe3f478538537c5">data</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+733 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Envelope&#32;*/</emphasis>
+734 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_custom_1a018b35d89398c26e10d1fb4315d1dda1">attack_length</link>;&#32;&#32;&#32;
+735 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_custom_1ad6e394e3775372af3eb9e02823987405">attack_level</link>;&#32;&#32;&#32;&#32;
+736 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_custom_1ab47fac94baeba28a3acd6c706e0b6a5c">fade_length</link>;&#32;&#32;&#32;&#32;&#32;
+737 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___haptic_custom_1a73a522581eb514d032e500ec6294fe50">fade_level</link>;&#32;&#32;&#32;&#32;&#32;&#32;
+738 }&#32;<link linkend="__s_d_l__haptic_8h_1ace902fac5855f399ea16edbc2d28c8f1">SDL_HapticCustom</link>;
+739 
+809 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">union&#32;</emphasis><link linkend="_union_s_d_l___haptic_effect">SDL_HapticEffect</link>
+810 {
+811 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Common&#32;for&#32;all&#32;force&#32;feedback&#32;effects&#32;*/</emphasis>
+812 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_union_s_d_l___haptic_effect_1a5ff6cfd8da91537091e9a6c2108cb179">type</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+813 &#32;&#32;&#32;&#32;<link linkend="_struct_s_d_l___haptic_constant">SDL_HapticConstant</link>&#32;<link linkend="_union_s_d_l___haptic_effect_1ac435275e9683d6cc5d65b9c7cc2ec659">constant</link>;&#32;&#32;&#32;&#32;
+814 &#32;&#32;&#32;&#32;<link linkend="_struct_s_d_l___haptic_periodic">SDL_HapticPeriodic</link>&#32;<link linkend="_union_s_d_l___haptic_effect_1a8320ec4db6ec1dc1d30feb62ee2a2f04">periodic</link>;&#32;&#32;&#32;&#32;
+815 &#32;&#32;&#32;&#32;<link linkend="_struct_s_d_l___haptic_condition">SDL_HapticCondition</link>&#32;<link linkend="_union_s_d_l___haptic_effect_1aa8fdd1ba202ccd7e61f48ef9977080d2">condition</link>;&#32;&#32;
+816 &#32;&#32;&#32;&#32;<link linkend="_struct_s_d_l___haptic_ramp">SDL_HapticRamp</link>&#32;<link linkend="_union_s_d_l___haptic_effect_1a1d32ef4c2d1cc89dc938b392f6ad81bd">ramp</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+817 &#32;&#32;&#32;&#32;<link linkend="_struct_s_d_l___haptic_left_right">SDL_HapticLeftRight</link>&#32;<link linkend="_union_s_d_l___haptic_effect_1a3c254b81c1ff41c7888eee0cd0076a12">leftright</link>;&#32;&#32;
+818 &#32;&#32;&#32;&#32;<link linkend="_struct_s_d_l___haptic_custom">SDL_HapticCustom</link>&#32;<link linkend="_union_s_d_l___haptic_effect_1a0b2d2af28c515cc39896b2b7c23019d2">custom</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+819 }&#32;<link linkend="__s_d_l__haptic_8h_1a7a4688cc52c09110c97e65c2f11072ee">SDL_HapticEffect</link>;
+820 
+821 
+822 <emphasis role="comment">/*&#32;Function&#32;prototypes&#32;*/</emphasis>
+823 
+834 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__haptic_8h_1a6f538063a9f1d790882c0d3a81c302cd">SDL_NumHaptics</link>(<emphasis role="keywordtype">void</emphasis>);
+835 
+850 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__haptic_8h_1ac471a69170328585193066cc9d9ff482">SDL_HapticName</link>(<emphasis role="keywordtype">int</emphasis>&#32;device_index);
+851 
+877 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__haptic_8h_1aa075e2777c811ecdd2ca53d49288555e">SDL_HapticOpen</link>(<emphasis role="keywordtype">int</emphasis>&#32;device_index);
+878 
+891 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__haptic_8h_1a24d8f221d4b2eae5c3c663752fc0d66a">SDL_HapticOpened</link>(<emphasis role="keywordtype">int</emphasis>&#32;device_index);
+892 
+905 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__haptic_8h_1aacee621c474cda53e56f4a2233c65407">SDL_HapticIndex</link>(<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link>&#32;*&#32;haptic);
+906 
+916 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__haptic_8h_1a8fcc0fb333baed629004bd8c0c66bd76">SDL_MouseIsHaptic</link>(<emphasis role="keywordtype">void</emphasis>);
+917 
+929 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__haptic_8h_1a303d13b149b6dc4cabe07fb799333581">SDL_HapticOpenFromMouse</link>(<emphasis role="keywordtype">void</emphasis>);
+930 
+943 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__haptic_8h_1a8a2966d363cba55ffdfeff42e4204ef1">SDL_JoystickIsHaptic</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*&#32;joystick);
+944 
+966 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__haptic_8h_1a865ecbbf4869868e401c182952994ea0">SDL_HapticOpenFromJoystick</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*
+967 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;joystick);
+968 
+978 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__haptic_8h_1a671599fd69f5a08cdd2ba7e3f1ae456a">SDL_HapticClose</link>(<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link>&#32;*&#32;haptic);
+979 
+996 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__haptic_8h_1afc6e5a5701fe80004d529d762132ad6b">SDL_HapticNumEffects</link>(<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link>&#32;*&#32;haptic);
+997 
+1013 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__haptic_8h_1a255e1e6fc27489080bcbbd3c7fadc6db">SDL_HapticNumEffectsPlaying</link>(<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link>&#32;*&#32;haptic);
+1014 
+1027 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__haptic_8h_1a8192e1220a834e708959539fa1c3f490">SDL_HapticQuery</link>(<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link>&#32;*&#32;haptic);
+1028 
+1029 
+1042 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__haptic_8h_1ad6705645197f6df4eeeea32392462483">SDL_HapticNumAxes</link>(<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link>&#32;*&#32;haptic);
+1043 
+1058 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__haptic_8h_1ae333ef77753ba700875fa20858b9021d">SDL_HapticEffectSupported</link>(<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link>&#32;*&#32;haptic,
+1059 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_union_s_d_l___haptic_effect">SDL_HapticEffect</link>&#32;*
+1060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;effect);
+1061 
+1077 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__haptic_8h_1a176c52ff4b77b63cb94ea83f8f4183ad">SDL_HapticNewEffect</link>(<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link>&#32;*&#32;haptic,
+1078 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_union_s_d_l___haptic_effect">SDL_HapticEffect</link>&#32;*&#32;effect);
+1079 
+1101 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__haptic_8h_1a4c212cbdb3487dd8d72882d355a19472">SDL_HapticUpdateEffect</link>(<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link>&#32;*&#32;haptic,
+1102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;effect,
+1103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_union_s_d_l___haptic_effect">SDL_HapticEffect</link>&#32;*&#32;<link linkend="__s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a">data</link>);
+1104 
+1127 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__haptic_8h_1a1cd1294768bb00f35b77f67031a8a9cb">SDL_HapticRunEffect</link>(<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link>&#32;*&#32;haptic,
+1128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;effect,
+1129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;iterations);
+1130 
+1146 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__haptic_8h_1a27b35e361aaafa830561e98328c98c8e">SDL_HapticStopEffect</link>(<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link>&#32;*&#32;haptic,
+1147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;effect);
+1148 
+1162 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__haptic_8h_1a0bb35fea7c4c08c9bcb80e0bcfa1799f">SDL_HapticDestroyEffect</link>(<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link>&#32;*&#32;haptic,
+1163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;effect);
+1164 
+1180 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__haptic_8h_1ae2185c0814f107dd5851dd743e9ea71c">SDL_HapticGetEffectStatus</link>(<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link>&#32;*&#32;haptic,
+1181 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;effect);
+1182 
+1202 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__haptic_8h_1a2a90e7cefab3fdecf37e2f1b956a9e73">SDL_HapticSetGain</link>(<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link>&#32;*&#32;haptic,&#32;<emphasis role="keywordtype">int</emphasis>&#32;gain);
+1203 
+1221 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__haptic_8h_1a0b0d63aa4513fc1b12939500cb3f8a76">SDL_HapticSetAutocenter</link>(<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link>&#32;*&#32;haptic,
+1222 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;autocenter);
+1223 
+1241 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__haptic_8h_1af0181e59ecd14c6aecd1fd3c5099330a">SDL_HapticPause</link>(<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link>&#32;*&#32;haptic);
+1242 
+1256 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__haptic_8h_1a3593eed87aee3b9caa1c25927002c5ae">SDL_HapticUnpause</link>(<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link>&#32;*&#32;haptic);
+1257 
+1267 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__haptic_8h_1aad427170295d6b88a5a94cd6a491797a">SDL_HapticStopAll</link>(<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link>&#32;*&#32;haptic);
+1268 
+1283 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__haptic_8h_1aa0754b11e2aed38bc955750c7a6a6c73">SDL_HapticRumbleSupported</link>(<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link>&#32;*&#32;haptic);
+1284 
+1299 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__haptic_8h_1af44cbecefe14da5a7476013ce06f38b9">SDL_HapticRumbleInit</link>(<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link>&#32;*&#32;haptic);
+1300 
+1316 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__haptic_8h_1a971b5651414202f89a8c6eed640e990d">SDL_HapticRumblePlay</link>(<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link>&#32;*&#32;haptic,&#32;<emphasis role="keywordtype">float</emphasis>&#32;strength,&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1ab9c919755bde3b34349e23a32b4e0fa7">length</link>&#32;);
+1317 
+1331 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__haptic_8h_1a9e11ff3ae40f59c04be3bae98d8d05ba">SDL_HapticRumbleStop</link>(<link linkend="__s_d_l__haptic_8h_1a79db098a0e8cb102db6c2339a2422e29">SDL_Haptic</link>&#32;*&#32;haptic);
+1332 
+1333 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+1334 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+1335 }
+1336 <emphasis role="preprocessor">#endif</emphasis>
+1337 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+1338 
+1339 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_haptic_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+1340 
+1341 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

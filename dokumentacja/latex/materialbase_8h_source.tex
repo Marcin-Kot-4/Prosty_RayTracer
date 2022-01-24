@@ -1,0 +1,81 @@
+\hypertarget{materialbase_8h_source}{}\doxysection{materialbase.\+h}
+\label{materialbase_8h_source}\index{D:/RayTracing/RayTrace/Materials/materialbase.h@{D:/RayTracing/RayTrace/Materials/materialbase.h}}
+\mbox{\hyperlink{materialbase_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef RAYTRACING\_MATERIALBASE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define RAYTRACING\_MATERIALBASE\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}../Textures/texturebase.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}../Primitives/objectbase.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}../Lights/lightbase.h"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}../qbLinAlg/qbVector.h"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}../ray.h"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_r_t}{RT}} \{}
+\DoxyCodeLine{13     \textcolor{keyword}{class }\mbox{\hyperlink{class_r_t_1_1_material_base}{MaterialBase}} \{}
+\DoxyCodeLine{14     \textcolor{keyword}{public}:}
+\DoxyCodeLine{15         \textcolor{comment}{// Konstruktor}}
+\DoxyCodeLine{16         \mbox{\hyperlink{class_r_t_1_1_material_base_afc66df6eff4e978f498e541b1750221c}{MaterialBase}}();}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18         \textcolor{comment}{// Destruktor}}
+\DoxyCodeLine{19         \textcolor{keyword}{virtual} \mbox{\hyperlink{class_r_t_1_1_material_base_a68eb6a4d3a0c5fd01f858c4a217e6187}{\string~MaterialBase}}();}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21         \textcolor{comment}{// Metoda zwracająca kolor tworzywa}}
+\DoxyCodeLine{22         \textcolor{keyword}{virtual} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \mbox{\hyperlink{class_r_t_1_1_material_base_aa8b05496fa1fed6988efd524eb5dbe48}{ComputeColor}}(\textcolor{keyword}{const} std::vector<std::shared\_ptr<RT::ObjectBase>> \&objectList,}
+\DoxyCodeLine{23                                               \textcolor{keyword}{const} std::vector<std::shared\_ptr<RT::LightBase>> \&lightList,}
+\DoxyCodeLine{24                                               \textcolor{keyword}{const} std::shared\_ptr<RT::ObjectBase> \&currentObject,}
+\DoxyCodeLine{25                                               \textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&intPoint, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&localNormal,}
+\DoxyCodeLine{26                                               \textcolor{keyword}{const} \mbox{\hyperlink{class_r_t_1_1_ray}{RT::Ray}} \&cameraRay);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28         \textcolor{comment}{// Metoda do obliczania koloru rozproszenia (kolor powierzchni obiektu jest ciemniejszy, w miejscach, gdzie}}
+\DoxyCodeLine{29         \textcolor{comment}{// kąt padania światła jest większy)}}
+\DoxyCodeLine{30         \textcolor{keyword}{static} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \mbox{\hyperlink{class_r_t_1_1_material_base_a2a8f6d812302097b550388ed3deed6b7}{ComputeDiffuseColor}}(\textcolor{keyword}{const} std::vector<std::shared\_ptr<RT::ObjectBase>> \&objectList,}
+\DoxyCodeLine{31                                                     \textcolor{keyword}{const} std::vector<std::shared\_ptr<RT::LightBase>> \&lightList,}
+\DoxyCodeLine{32                                                     \textcolor{keyword}{const} std::shared\_ptr<RT::ObjectBase> \&currentObject,}
+\DoxyCodeLine{33                                                     \textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&intPoint,}
+\DoxyCodeLine{34                                                     \textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&localNormal,}
+\DoxyCodeLine{35                                                     \textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&baseColor);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37         \textcolor{comment}{// Metoda do obliczania koloru odbicia}}
+\DoxyCodeLine{38         \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \mbox{\hyperlink{class_r_t_1_1_material_base_a5981b94c2858393d5d3308e4fe047768}{ComputeReflectionColor}}(\textcolor{keyword}{const} std::vector<std::shared\_ptr<RT::ObjectBase>> \&objectList,}
+\DoxyCodeLine{39                                                 \textcolor{keyword}{const} std::vector<std::shared\_ptr<RT::LightBase>> \&lightList,}
+\DoxyCodeLine{40                                                 \textcolor{keyword}{const} std::shared\_ptr<RT::ObjectBase> \&currentObject,}
+\DoxyCodeLine{41                                                 \textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&intPoint, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&localNormal,}
+\DoxyCodeLine{42                                                 \textcolor{keyword}{const} \mbox{\hyperlink{class_r_t_1_1_ray}{RT::Ray}} \&incidentRay);}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44         \textcolor{comment}{// Metoda rzucająca promień na scene}}
+\DoxyCodeLine{45         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_r_t_1_1_material_base_ac7549ffbbac551a9e343a3d1a29c30b4}{CastRay}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_r_t_1_1_ray}{RT::Ray}} \&castRay, \textcolor{keyword}{const} std::vector<std::shared\_ptr<RT::ObjectBase>> \&objectList,}
+\DoxyCodeLine{46                      \textcolor{keyword}{const} std::shared\_ptr<RT::ObjectBase> \&thisObject,}
+\DoxyCodeLine{47                      std::shared\_ptr<RT::ObjectBase> \&closestObject,}
+\DoxyCodeLine{48                      \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&closestIntPoint, \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&closestLocalNormal,}
+\DoxyCodeLine{49                      \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&closestLocalColor);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51         \textcolor{comment}{// Metoda do przypisywania tekstury}}
+\DoxyCodeLine{52         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_r_t_1_1_material_base_a6a1070eefc722456176a821f447e6ef2}{AssignTexture}}(\textcolor{keyword}{const} std::shared\_ptr<RT::Texture::TextureBase> \&inputTexture);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{keyword}{public}:}
+\DoxyCodeLine{55         \textcolor{comment}{// Licznik refleksów}}
+\DoxyCodeLine{56         \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_r_t_1_1_material_base_a2e2661a371b1689d72d929ca21f8e8eb}{m\_maxReflectionRays}};}
+\DoxyCodeLine{57         \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_r_t_1_1_material_base_acb27faf3834b1db091139c8a970ea4bc}{m\_reflectionRayCount}};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59         \textcolor{comment}{// Oświetlenie otoczenia}}
+\DoxyCodeLine{60         \textcolor{keyword}{inline} \textcolor{keyword}{static} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \mbox{\hyperlink{class_r_t_1_1_material_base_a97579f592fb17d8077e16e2b48d6e826}{m\_ambientColor}} \{std::vector<double> \{1.0, 1.0, 1.0\}\};}
+\DoxyCodeLine{61         \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_r_t_1_1_material_base_a6297b836279524bc2772b3a066f1a5d8}{m\_ambientIntensity}} = 0.2;}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63         \textcolor{comment}{// Lista tekstur przypisanych do tego tworzywa}}
+\DoxyCodeLine{64         std::vector<std::shared\_ptr<RT::Texture::TextureBase>> \mbox{\hyperlink{class_r_t_1_1_material_base_a22c94fe436f4b7944381238983ec0472}{m\_textureList}};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66         \textcolor{comment}{// Flaga informująca czy tworzywo posiada przypisaną teksturę}}
+\DoxyCodeLine{67         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_r_t_1_1_material_base_acbde6abdad78b526022475a8e2b39d2a}{m\_hasTexture}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69     \textcolor{keyword}{private}:}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     \};}
+\DoxyCodeLine{72 \}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//RAYTRACING\_MATERIALBASE\_H}}
+
+\end{DoxyCode}

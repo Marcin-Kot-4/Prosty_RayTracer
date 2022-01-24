@@ -1,0 +1,1407 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__pixels_8h" xml:lang="en-US">
+<title>D:/RayTracing/include/SDL_pixels.h File Reference</title>
+<indexterm><primary>D:/RayTracing/include/SDL_pixels.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;SDL_stdinc.h&quot;
+#include &quot;SDL_endian.h&quot;
+#include &quot;begin_code.h&quot;
+#include &quot;close_code.h&quot;
+</programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_s_d_l___color">SDL_Color</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_s_d_l___palette">SDL_Palette</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_s_d_l___pixel_format">SDL_PixelFormat</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Transparency definitions    </title>
+
+<para><anchor xml:id="__1amgrpcb6efa569c1e9d1565c23131eb8303ef"/>These define alpha as the opacity of a surface. </para>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__s_d_l__pixels_8h_1a5d933eb0233ca33d598800f33ef43376">SDL_ALPHA_OPAQUE</link>   255</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__pixels_8h_1a604d4b3b28add80eb4824ffd083d3ef4">SDL_ALPHA_TRANSPARENT</link>   0</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__pixels_8h_1a7dc1903b18ca972a3676628782873f71">SDL_DEFINE_PIXELFOURCC</link>(A,  B,  C,  D)   <link linkend="__s_d_l__stdinc_8h_1af482df3379ebfd4c3cfe44e6e0db7628">SDL_FOURCC</link>(A, B, C, D)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__pixels_8h_1a99163b258b6b49ab19845cf800a803f8">SDL_DEFINE_PIXELFORMAT</link>(<link linkend="__s_d_l__opengl_8h_1ad5ddf6fca7b585646515660e810e0188">type</link>,  <link linkend="__s_d_l__opengl__glext_8h_1ac64a59f91026a137ab3ce387f6c7e4a7">order</link>,  layout,  <link linkend="__s_d_l__opengl__glext_8h_1a8dc2cc80c52413d48ac45732e90d3a66">bits</link>,  bytes)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__pixels_8h_1a11eb1848a5ecbc9033855a3d7fabcf83">SDL_PIXELFLAG</link>(X)   (((X) &gt;&gt; 28) &amp; 0x0F)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__pixels_8h_1a9a13feff26a3bed0e04a74f503b0397e">SDL_PIXELTYPE</link>(X)   (((X) &gt;&gt; 24) &amp; 0x0F)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__pixels_8h_1a38b57b9e01151753588d55a4e2438856">SDL_PIXELORDER</link>(X)   (((X) &gt;&gt; 20) &amp; 0x0F)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__pixels_8h_1a850007b089215fe1d5e0efa5e4e73d72">SDL_PIXELLAYOUT</link>(X)   (((X) &gt;&gt; 16) &amp; 0x0F)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__pixels_8h_1a4637c50b3383aa176eac2d267684e75d">SDL_BITSPERPIXEL</link>(X)   (((X) &gt;&gt; 8) &amp; 0xFF)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__pixels_8h_1a0a65fc19d5122dd3c544f283553ad42c">SDL_BYTESPERPIXEL</link>(X)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__pixels_8h_1a8bbf98a12987b0b22864743efb4b136e">SDL_ISPIXELFORMAT_INDEXED</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__pixels_8h_1a29855dc8b3cd34b288ec4ba50fd4ca0c">SDL_ISPIXELFORMAT_PACKED</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__pixels_8h_1a8f842c1384f7d6bc17fa2b33738e9b4b">SDL_ISPIXELFORMAT_ARRAY</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__pixels_8h_1a4d4ef3b8864a55ebc83539a6d0c6b15d">SDL_ISPIXELFORMAT_ALPHA</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__pixels_8h_1ac2a8124d1f6842ddf7ef5cc01c760818">SDL_ISPIXELFORMAT_FOURCC</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)       ((<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>) &amp;&amp; (<link linkend="__s_d_l__pixels_8h_1a11eb1848a5ecbc9033855a3d7fabcf83">SDL_PIXELFLAG</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>) != 1))</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__pixels_8h_1aceb6cb42789d5646f5206f02a07a36dc">SDL_Colour</link>   <link linkend="_struct_s_d_l___color">SDL_Color</link></para>
+</listitem>
+            <listitem><para>enum <link linkend="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44">SDL_PixelType</link> { 
+<link linkend="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44a398eb1cc76c533c659297ef9dcd28d74">SDL_PIXELTYPE_UNKNOWN</link>
+, <link linkend="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44ade25cc1a26df209cf12e93ca07e74458">SDL_PIXELTYPE_INDEX1</link>
+, <link linkend="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44a9590874ac903170e329ffadb857bc890">SDL_PIXELTYPE_INDEX4</link>
+, <link linkend="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44ae9a20b4782210f1f013cd5e2b1801c7b">SDL_PIXELTYPE_INDEX8</link>
+, 
+<link linkend="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44ac2e1a757fe0978ab4760a4907caadf2b">SDL_PIXELTYPE_PACKED8</link>
+, <link linkend="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44af76568442ef30ddfb7c07fbf586120cf">SDL_PIXELTYPE_PACKED16</link>
+, <link linkend="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44a77cb3159b4926b3c234bb6e2bc99a83a">SDL_PIXELTYPE_PACKED32</link>
+, <link linkend="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44a824001fa3058d020c50d9d658d38e409">SDL_PIXELTYPE_ARRAYU8</link>
+, 
+<link linkend="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44a67c5722471c0b2eaf7f029967559a1fd">SDL_PIXELTYPE_ARRAYU16</link>
+, <link linkend="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44ad9e6a31927faee05f84d29ee6e7a917b">SDL_PIXELTYPE_ARRAYU32</link>
+, <link linkend="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44ad0eb38c8e11972b7a177a74a86834d36">SDL_PIXELTYPE_ARRAYF16</link>
+, <link linkend="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44ae72c674ca5ed225b5d5bf25832efdbda">SDL_PIXELTYPE_ARRAYF32</link>
+ }</para>
+</listitem>
+            <listitem><para>enum <link linkend="__s_d_l__pixels_8h_1a59d2ee19b4701f488577d065629a4f19">SDL_BitmapOrder</link> { <link linkend="__s_d_l__pixels_8h_1a59d2ee19b4701f488577d065629a4f19ad6c8e0e291f2fe47506415ec225bb729">SDL_BITMAPORDER_NONE</link>
+, <link linkend="__s_d_l__pixels_8h_1a59d2ee19b4701f488577d065629a4f19aeae245974c9a0639e4df3dfffe5f8501">SDL_BITMAPORDER_4321</link>
+, <link linkend="__s_d_l__pixels_8h_1a59d2ee19b4701f488577d065629a4f19a07ac5a0b70f2f74124b25e33d553502d">SDL_BITMAPORDER_1234</link>
+ }</para>
+</listitem>
+            <listitem><para>enum <link linkend="__s_d_l__pixels_8h_1ab40e48e4f36aa469249d415e76f057f0">SDL_PackedOrder</link> { 
+<link linkend="__s_d_l__pixels_8h_1ab40e48e4f36aa469249d415e76f057f0a333096f8ca6960d8b61197c1b2bb093b">SDL_PACKEDORDER_NONE</link>
+, <link linkend="__s_d_l__pixels_8h_1ab40e48e4f36aa469249d415e76f057f0af1f73f0922f2913663ab4c8ab9d19247">SDL_PACKEDORDER_XRGB</link>
+, <link linkend="__s_d_l__pixels_8h_1ab40e48e4f36aa469249d415e76f057f0a461e1e08900d7d4a09a840e5815e4131">SDL_PACKEDORDER_RGBX</link>
+, <link linkend="__s_d_l__pixels_8h_1ab40e48e4f36aa469249d415e76f057f0afce512bdf9b5ff268555c44f3335b35d">SDL_PACKEDORDER_ARGB</link>
+, 
+<link linkend="__s_d_l__pixels_8h_1ab40e48e4f36aa469249d415e76f057f0a9f41767253b7c5031426efff09982d9d">SDL_PACKEDORDER_RGBA</link>
+, <link linkend="__s_d_l__pixels_8h_1ab40e48e4f36aa469249d415e76f057f0a98c3a86b3ad6a98c30409018660eb219">SDL_PACKEDORDER_XBGR</link>
+, <link linkend="__s_d_l__pixels_8h_1ab40e48e4f36aa469249d415e76f057f0a672b3e9e7424ff0f3291a16d524e7ab9">SDL_PACKEDORDER_BGRX</link>
+, <link linkend="__s_d_l__pixels_8h_1ab40e48e4f36aa469249d415e76f057f0ab99ff7a29a50c901d1175b9202120201">SDL_PACKEDORDER_ABGR</link>
+, 
+<link linkend="__s_d_l__pixels_8h_1ab40e48e4f36aa469249d415e76f057f0adc2cc1300afd0059b9fa85cb4e81c593">SDL_PACKEDORDER_BGRA</link>
+ }</para>
+</listitem>
+            <listitem><para>enum <link linkend="__s_d_l__pixels_8h_1a7e63896f019e17267a4c30ac3abdfd68">SDL_ArrayOrder</link> { 
+<link linkend="__s_d_l__pixels_8h_1a7e63896f019e17267a4c30ac3abdfd68a6483b65b5f263a7d532ac4cdb43cc81f">SDL_ARRAYORDER_NONE</link>
+, <link linkend="__s_d_l__pixels_8h_1a7e63896f019e17267a4c30ac3abdfd68a4f2bee468847169766cc10d81ff2e14d">SDL_ARRAYORDER_RGB</link>
+, <link linkend="__s_d_l__pixels_8h_1a7e63896f019e17267a4c30ac3abdfd68aba44a30cc2795e22129c2d4cced0ee4d">SDL_ARRAYORDER_RGBA</link>
+, <link linkend="__s_d_l__pixels_8h_1a7e63896f019e17267a4c30ac3abdfd68a6987309c17192e33ddbab7ff1bf50c07">SDL_ARRAYORDER_ARGB</link>
+, 
+<link linkend="__s_d_l__pixels_8h_1a7e63896f019e17267a4c30ac3abdfd68ac91a2038a1c5da19b1be797f3205245b">SDL_ARRAYORDER_BGR</link>
+, <link linkend="__s_d_l__pixels_8h_1a7e63896f019e17267a4c30ac3abdfd68a6afd261ccd8b84e6209a0d532139062a">SDL_ARRAYORDER_BGRA</link>
+, <link linkend="__s_d_l__pixels_8h_1a7e63896f019e17267a4c30ac3abdfd68a8e9413ffade49428e6914b6fe701346f">SDL_ARRAYORDER_ABGR</link>
+ }</para>
+</listitem>
+            <listitem><para>enum <link linkend="__s_d_l__pixels_8h_1a53908f8e47e506d3c25529cde6800f78">SDL_PackedLayout</link> { 
+<link linkend="__s_d_l__pixels_8h_1a53908f8e47e506d3c25529cde6800f78a2ef492900c1e7f4b3141346da89365e1">SDL_PACKEDLAYOUT_NONE</link>
+, <link linkend="__s_d_l__pixels_8h_1a53908f8e47e506d3c25529cde6800f78a80e92a3d185f911424f311e9ed9b1133">SDL_PACKEDLAYOUT_332</link>
+, <link linkend="__s_d_l__pixels_8h_1a53908f8e47e506d3c25529cde6800f78af186084b057632bf806c5c67c47c60cc">SDL_PACKEDLAYOUT_4444</link>
+, <link linkend="__s_d_l__pixels_8h_1a53908f8e47e506d3c25529cde6800f78aca8b94e25710c91c4059244134dbd6e7">SDL_PACKEDLAYOUT_1555</link>
+, 
+<link linkend="__s_d_l__pixels_8h_1a53908f8e47e506d3c25529cde6800f78a99c982b03457719a09f097d191a4d9e1">SDL_PACKEDLAYOUT_5551</link>
+, <link linkend="__s_d_l__pixels_8h_1a53908f8e47e506d3c25529cde6800f78a7292800d58468f8b4fb3e1eb3d1b99c6">SDL_PACKEDLAYOUT_565</link>
+, <link linkend="__s_d_l__pixels_8h_1a53908f8e47e506d3c25529cde6800f78a35b93a8c2dd3d57c9fdecc28ee9be3fe">SDL_PACKEDLAYOUT_8888</link>
+, <link linkend="__s_d_l__pixels_8h_1a53908f8e47e506d3c25529cde6800f78afe5ef9aa7d0b94f110ba64e30b9988f3">SDL_PACKEDLAYOUT_2101010</link>
+, 
+<link linkend="__s_d_l__pixels_8h_1a53908f8e47e506d3c25529cde6800f78a5a4286d01f6bdda886a28c8b7a891036">SDL_PACKEDLAYOUT_1010102</link>
+ }</para>
+</listitem>
+            <listitem><para>enum <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111">SDL_PixelFormatEnum</link> { 
+<link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111aefbbcf431d1a05d22a40b34806786474">SDL_PIXELFORMAT_UNKNOWN</link>
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a17f32fac120912cb1e446a8ba1639501">SDL_PIXELFORMAT_INDEX1LSB</link>
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111acec87c94faecec8ea938d50305883047">SDL_PIXELFORMAT_INDEX1MSB</link>
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111ad1d5538b9926d96c78d13e6084637a92">SDL_PIXELFORMAT_INDEX4LSB</link>
+, 
+<link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a334db41d84302efc61f8174403fd7497">SDL_PIXELFORMAT_INDEX4MSB</link>
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a611c64e434d87ee02182b8f28d6a2609">SDL_PIXELFORMAT_INDEX8</link>
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a11b359bdfb891a4de0f34a8d18a6dce2">SDL_PIXELFORMAT_RGB332</link>
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111ab1eca459c885fa0fa0a54536308a372f">SDL_PIXELFORMAT_XRGB4444</link>
+, 
+<link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a3fe69232eb9a6788ea4b778a273ee1a1">SDL_PIXELFORMAT_RGB444</link> = SDL_PIXELFORMAT_XRGB4444
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a58a3bc445d1c8ea2963ee0d4ad7e1a55">SDL_PIXELFORMAT_XBGR4444</link>
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a1e4bf353a8276629590d1c0e0fc64491">SDL_PIXELFORMAT_BGR444</link> = SDL_PIXELFORMAT_XBGR4444
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111ada4fdf86a2d639e0fa78aba9cb83e777">SDL_PIXELFORMAT_XRGB1555</link>
+, 
+<link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a3f60cf6ce8112a98495d4e45535aafe0">SDL_PIXELFORMAT_RGB555</link> = SDL_PIXELFORMAT_XRGB1555
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111aadfb8f7faf27b84ddca4bc7117883d14">SDL_PIXELFORMAT_XBGR1555</link>
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111aef651a80f09dcdc497f96710105cb584">SDL_PIXELFORMAT_BGR555</link> = SDL_PIXELFORMAT_XBGR1555
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111ab52e97ddebc15cf79a198141e9cecc14">SDL_PIXELFORMAT_ARGB4444</link>
+, 
+<link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111afd40d32ef4fdcb9d1ec971dd296af78e">SDL_PIXELFORMAT_RGBA4444</link>
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a2c9207472b1b3aa3282bd94844de8a64">SDL_PIXELFORMAT_ABGR4444</link>
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a2df4b29f7813a7fd3b5941adae143981">SDL_PIXELFORMAT_BGRA4444</link>
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a5786f6e1f93c0fe523b2a51287d861a0">SDL_PIXELFORMAT_ARGB1555</link>
+, 
+<link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a538ce8ca2c51dc3ddec1e4155070a9e9">SDL_PIXELFORMAT_RGBA5551</link>
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a95c4786803478073eaea20b8706d87a2">SDL_PIXELFORMAT_ABGR1555</link>
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111ad6a12430b3bd4f18494ab1d571284da9">SDL_PIXELFORMAT_BGRA5551</link>
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111ade05879f9a65e717b83ca59a47f17925">SDL_PIXELFORMAT_RGB565</link>
+, 
+<link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a09d7ca37de44ba6f3109658e7ffecec4">SDL_PIXELFORMAT_BGR565</link>
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a77578f760e0e79b9c5a4fed9999a8df3">SDL_PIXELFORMAT_RGB24</link>
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a2f319eb2650f24957af424078e3d2beb">SDL_PIXELFORMAT_BGR24</link>
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a693c82e67f2ad9a49006356fba3c793d">SDL_PIXELFORMAT_XRGB8888</link>
+, 
+<link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a7d5a23707b3cb74049dbc1df52b33980">SDL_PIXELFORMAT_RGB888</link> = SDL_PIXELFORMAT_XRGB8888
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111ad68a80c7c50a536322dde7d0071f383a">SDL_PIXELFORMAT_RGBX8888</link>
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111ade966848942c4a4ac0fc63f6e9b3c140">SDL_PIXELFORMAT_XBGR8888</link>
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a7025ec96e63dac466f35a0546c6e3313">SDL_PIXELFORMAT_BGR888</link> = SDL_PIXELFORMAT_XBGR8888
+, 
+<link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a731d1f25bd98d31d90481090aed5a503">SDL_PIXELFORMAT_BGRX8888</link>
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a9db26de13e57924f212ced00857dacf4">SDL_PIXELFORMAT_ARGB8888</link>
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a4fc90afd4b57d5e7dd679545c3b37d2e">SDL_PIXELFORMAT_RGBA8888</link>
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a8151776ecaf269802b5f7e26e78fc3c7">SDL_PIXELFORMAT_ABGR8888</link>
+, 
+<link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a9155c50698dd07b54c2f88394a7bc45e">SDL_PIXELFORMAT_BGRA8888</link>
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111ae06059ab5ee1fedded8c15aafe0e8fda">SDL_PIXELFORMAT_ARGB2101010</link>
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111abad72c6319a76d25926ab6495cc7d460">SDL_PIXELFORMAT_RGBA32</link> = SDL_PIXELFORMAT_ABGR8888
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a94fa5e67fcd2615e45a91f6d8cbdffad">SDL_PIXELFORMAT_ARGB32</link> = SDL_PIXELFORMAT_BGRA8888
+, 
+<link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a3d7cd57731f65ebad8f13c9f1b9b4122">SDL_PIXELFORMAT_BGRA32</link> = SDL_PIXELFORMAT_ARGB8888
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a731ce76d4b986f72d45d2255997447b2">SDL_PIXELFORMAT_ABGR32</link> = SDL_PIXELFORMAT_RGBA8888
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a706edeff2993aaabae0e8a85dd456d23">SDL_PIXELFORMAT_YV12</link>
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a9d5d930c6560d21d02be1d3738160e08">SDL_PIXELFORMAT_IYUV</link>
+, 
+<link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a87d182ad80264610243c4bdbba13b456">SDL_PIXELFORMAT_YUY2</link>
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a69bd11cf739b7e762d5103555fe85094">SDL_PIXELFORMAT_UYVY</link>
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a0fba10d58b6af54319f3653724a54a29">SDL_PIXELFORMAT_YVYU</link>
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a8fa8e4c226ea2918366e68b239921099">SDL_PIXELFORMAT_NV12</link>
+, 
+<link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a97f2d6c51817862e1927e462960e7052">SDL_PIXELFORMAT_NV21</link>
+, <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a0d8d7ba67039174e96fc561962d3b0f7">SDL_PIXELFORMAT_EXTERNAL_OES</link> =
+ }</para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_s_d_l___color">SDL_Color</link> <link linkend="__s_d_l__pixels_8h_1aefb2a1d044dcf564bcd0d6894d0e8c04">SDL_Color</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_s_d_l___palette">SDL_Palette</link> <link linkend="__s_d_l__pixels_8h_1a8f8bd5ba6e48d2a6eaf6c94a8f460083">SDL_Palette</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_s_d_l___pixel_format">SDL_PixelFormat</link> <link linkend="__s_d_l__pixels_8h_1a03a9dee95b581ed5a268cc45a316db65">SDL_PixelFormat</link></para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__pixels_8h_1acc6e37cc608c9d6d3a62e1427b5d442a">SDL_GetPixelFormatName</link> (<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__pixels_8h_1aabce46ecd37dd031b6b9a1b2d64f962b">SDL_PixelFormatEnumToMasks</link> (<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>, int *bpp, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> *Rmask, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> *Gmask, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> *Bmask, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> *Amask)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__pixels_8h_1a60fede85fba7bdca549f46b3f6372593">SDL_MasksToPixelFormatEnum</link> (int bpp, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> Rmask, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> Gmask, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> Bmask, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> Amask)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="_struct_s_d_l___pixel_format">SDL_PixelFormat</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__pixels_8h_1af047e43ec12651a6a7a2d74d3ec8a3e5">SDL_AllocFormat</link> (<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> pixel_format)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__pixels_8h_1a6b40e44d9a48dfecde34428a78648f8a">SDL_FreeFormat</link> (<link linkend="_struct_s_d_l___pixel_format">SDL_PixelFormat</link> *<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="_struct_s_d_l___palette">SDL_Palette</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__pixels_8h_1a91ec51057269117f5c56088ef490a492">SDL_AllocPalette</link> (int ncolors)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__pixels_8h_1ae7835e283254c53bed7e7b3d2287d3b6">SDL_SetPixelFormatPalette</link> (<link linkend="_struct_s_d_l___pixel_format">SDL_PixelFormat</link> *<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>, <link linkend="_struct_s_d_l___palette">SDL_Palette</link> *palette)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__pixels_8h_1a51164f5ac7a7b2b4117ff0e0f256eaff">SDL_SetPaletteColors</link> (<link linkend="_struct_s_d_l___palette">SDL_Palette</link> *palette, const <link linkend="_struct_s_d_l___color">SDL_Color</link> *colors, int firstcolor, int ncolors)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__pixels_8h_1a31d328d11619b5f5ed0a14612cbb429a">SDL_FreePalette</link> (<link linkend="_struct_s_d_l___palette">SDL_Palette</link> *palette)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__pixels_8h_1a157cf64c250c578722b939ea11a85b39">SDL_MapRGB</link> (const <link linkend="_struct_s_d_l___pixel_format">SDL_PixelFormat</link> *<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> <link linkend="__s_d_l__opengl_8h_1a42ce7cdc612e53abee15043f80220d97">r</link>, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> <link linkend="__s_d_l__opengl__glext_8h_1acaceb3a655ff28b75259860bcb868f9f">g</link>, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> <link linkend="__s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010">b</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__pixels_8h_1a8cc5000a066e052d4d36070ea91ac942">SDL_MapRGBA</link> (const <link linkend="_struct_s_d_l___pixel_format">SDL_PixelFormat</link> *<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> <link linkend="__s_d_l__opengl_8h_1a42ce7cdc612e53abee15043f80220d97">r</link>, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> <link linkend="__s_d_l__opengl__glext_8h_1acaceb3a655ff28b75259860bcb868f9f">g</link>, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> <link linkend="__s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010">b</link>, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> <link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__pixels_8h_1a26dc44b5dac11825abb4b59ac5af76e3">SDL_GetRGB</link> (<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> pixel, const <link linkend="_struct_s_d_l___pixel_format">SDL_PixelFormat</link> *<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> *<link linkend="__s_d_l__opengl_8h_1a42ce7cdc612e53abee15043f80220d97">r</link>, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> *<link linkend="__s_d_l__opengl__glext_8h_1acaceb3a655ff28b75259860bcb868f9f">g</link>, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> *<link linkend="__s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010">b</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__pixels_8h_1a02d675543e9c5bb72232a08a529ae64e">SDL_GetRGBA</link> (<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> pixel, const <link linkend="_struct_s_d_l___pixel_format">SDL_PixelFormat</link> *<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> *<link linkend="__s_d_l__opengl_8h_1a42ce7cdc612e53abee15043f80220d97">r</link>, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> *<link linkend="__s_d_l__opengl__glext_8h_1acaceb3a655ff28b75259860bcb868f9f">g</link>, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> *<link linkend="__s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010">b</link>, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> *<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__pixels_8h_1a768b7ed72549e36a26a36267772906fb">SDL_CalculateGammaRamp</link> (float gamma, <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> *ramp)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Header for the enumerated pixel format definitions. </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__s_d_l__pixels_8h_1a5d933eb0233ca33d598800f33ef43376"/><section>
+    <title>SDL_ALPHA_OPAQUE</title>
+<indexterm><primary>SDL_ALPHA_OPAQUE</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_ALPHA_OPAQUE</secondary></indexterm>
+<para><computeroutput>#define SDL_ALPHA_OPAQUE   255</computeroutput></para></section>
+<anchor xml:id="__s_d_l__pixels_8h_1a604d4b3b28add80eb4824ffd083d3ef4"/><section>
+    <title>SDL_ALPHA_TRANSPARENT</title>
+<indexterm><primary>SDL_ALPHA_TRANSPARENT</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_ALPHA_TRANSPARENT</secondary></indexterm>
+<para><computeroutput>#define SDL_ALPHA_TRANSPARENT   0</computeroutput></para></section>
+<anchor xml:id="__s_d_l__pixels_8h_1a4637c50b3383aa176eac2d267684e75d"/><section>
+    <title>SDL_BITSPERPIXEL</title>
+<indexterm><primary>SDL_BITSPERPIXEL</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_BITSPERPIXEL</secondary></indexterm>
+<para><computeroutput>#define SDL_BITSPERPIXEL( X)   (((X) &gt;&gt; 8) &amp; 0xFF)</computeroutput></para></section>
+<anchor xml:id="__s_d_l__pixels_8h_1a0a65fc19d5122dd3c544f283553ad42c"/><section>
+    <title>SDL_BYTESPERPIXEL</title>
+<indexterm><primary>SDL_BYTESPERPIXEL</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_BYTESPERPIXEL</secondary></indexterm>
+<para><computeroutput>#define SDL_BYTESPERPIXEL( X)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;(<link linkend="__s_d_l__pixels_8h_1ac2a8124d1f6842ddf7ef5cc01c760818">SDL_ISPIXELFORMAT_FOURCC</link>(X)&#32;?&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;((((X)&#32;==&#32;<link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a87d182ad80264610243c4bdbba13b456">SDL_PIXELFORMAT_YUY2</link>)&#32;||&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;((X)&#32;==&#32;<link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a69bd11cf739b7e762d5103555fe85094">SDL_PIXELFORMAT_UYVY</link>)&#32;||&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;((X)&#32;==&#32;<link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a0fba10d58b6af54319f3653724a54a29">SDL_PIXELFORMAT_YVYU</link>))&#32;?&#32;2&#32;:&#32;1)&#32;:&#32;(((X)&#32;&gt;&gt;&#32;0)&#32;&amp;&#32;0xFF))
+</programlisting></section>
+<anchor xml:id="__s_d_l__pixels_8h_1aceb6cb42789d5646f5206f02a07a36dc"/><section>
+    <title>SDL_Colour</title>
+<indexterm><primary>SDL_Colour</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_Colour</secondary></indexterm>
+<para><computeroutput>#define SDL_Colour   <link linkend="_struct_s_d_l___color">SDL_Color</link></computeroutput></para></section>
+<anchor xml:id="__s_d_l__pixels_8h_1a99163b258b6b49ab19845cf800a803f8"/><section>
+    <title>SDL_DEFINE_PIXELFORMAT</title>
+<indexterm><primary>SDL_DEFINE_PIXELFORMAT</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_DEFINE_PIXELFORMAT</secondary></indexterm>
+<para><computeroutput>#define SDL_DEFINE_PIXELFORMAT( <link linkend="__s_d_l__opengl_8h_1ad5ddf6fca7b585646515660e810e0188">type</link>,  <link linkend="__s_d_l__opengl__glext_8h_1ac64a59f91026a137ab3ce387f6c7e4a7">order</link>,  layout,  <link linkend="__s_d_l__opengl__glext_8h_1a8dc2cc80c52413d48ac45732e90d3a66">bits</link>,  bytes)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;((1&#32;&lt;&lt;&#32;28)&#32;|&#32;((<link linkend="__s_d_l__opengl_8h_1ad5ddf6fca7b585646515660e810e0188">type</link>)&#32;&lt;&lt;&#32;24)&#32;|&#32;((<link linkend="__s_d_l__opengl__glext_8h_1ac64a59f91026a137ab3ce387f6c7e4a7">order</link>)&#32;&lt;&lt;&#32;20)&#32;|&#32;((layout)&#32;&lt;&lt;&#32;16)&#32;|&#32;\
+&#32;&#32;&#32;&#32;&#32;((<link linkend="__s_d_l__opengl__glext_8h_1a8dc2cc80c52413d48ac45732e90d3a66">bits</link>)&#32;&lt;&lt;&#32;8)&#32;|&#32;((bytes)&#32;&lt;&lt;&#32;0))
+</programlisting></section>
+<anchor xml:id="__s_d_l__pixels_8h_1a7dc1903b18ca972a3676628782873f71"/><section>
+    <title>SDL_DEFINE_PIXELFOURCC</title>
+<indexterm><primary>SDL_DEFINE_PIXELFOURCC</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_DEFINE_PIXELFOURCC</secondary></indexterm>
+<para><computeroutput>#define SDL_DEFINE_PIXELFOURCC( A,  B,  C,  D)   <link linkend="__s_d_l__stdinc_8h_1af482df3379ebfd4c3cfe44e6e0db7628">SDL_FOURCC</link>(A, B, C, D)</computeroutput></para></section>
+<anchor xml:id="__s_d_l__pixels_8h_1a4d4ef3b8864a55ebc83539a6d0c6b15d"/><section>
+    <title>SDL_ISPIXELFORMAT_ALPHA</title>
+<indexterm><primary>SDL_ISPIXELFORMAT_ALPHA</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_ISPIXELFORMAT_ALPHA</secondary></indexterm>
+<para><computeroutput>#define SDL_ISPIXELFORMAT_ALPHA( <link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;((<link linkend="__s_d_l__pixels_8h_1a29855dc8b3cd34b288ec4ba50fd4ca0c">SDL_ISPIXELFORMAT_PACKED</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)&#32;&amp;&amp;&#32;\
+&#32;&#32;&#32;&#32;&#32;((<link linkend="__s_d_l__pixels_8h_1a38b57b9e01151753588d55a4e2438856">SDL_PIXELORDER</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)&#32;==&#32;<link linkend="__s_d_l__pixels_8h_1ab40e48e4f36aa469249d415e76f057f0afce512bdf9b5ff268555c44f3335b35d">SDL_PACKEDORDER_ARGB</link>)&#32;||&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;(<link linkend="__s_d_l__pixels_8h_1a38b57b9e01151753588d55a4e2438856">SDL_PIXELORDER</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)&#32;==&#32;<link linkend="__s_d_l__pixels_8h_1ab40e48e4f36aa469249d415e76f057f0a9f41767253b7c5031426efff09982d9d">SDL_PACKEDORDER_RGBA</link>)&#32;||&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;(<link linkend="__s_d_l__pixels_8h_1a38b57b9e01151753588d55a4e2438856">SDL_PIXELORDER</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)&#32;==&#32;<link linkend="__s_d_l__pixels_8h_1ab40e48e4f36aa469249d415e76f057f0ab99ff7a29a50c901d1175b9202120201">SDL_PACKEDORDER_ABGR</link>)&#32;||&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;(<link linkend="__s_d_l__pixels_8h_1a38b57b9e01151753588d55a4e2438856">SDL_PIXELORDER</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)&#32;==&#32;<link linkend="__s_d_l__pixels_8h_1ab40e48e4f36aa469249d415e76f057f0adc2cc1300afd0059b9fa85cb4e81c593">SDL_PACKEDORDER_BGRA</link>)))&#32;||&#32;\
+&#32;&#32;&#32;&#32;(<link linkend="__s_d_l__pixels_8h_1a8f842c1384f7d6bc17fa2b33738e9b4b">SDL_ISPIXELFORMAT_ARRAY</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)&#32;&amp;&amp;&#32;\
+&#32;&#32;&#32;&#32;&#32;((<link linkend="__s_d_l__pixels_8h_1a38b57b9e01151753588d55a4e2438856">SDL_PIXELORDER</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)&#32;==&#32;<link linkend="__s_d_l__pixels_8h_1a7e63896f019e17267a4c30ac3abdfd68a6987309c17192e33ddbab7ff1bf50c07">SDL_ARRAYORDER_ARGB</link>)&#32;||&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;(<link linkend="__s_d_l__pixels_8h_1a38b57b9e01151753588d55a4e2438856">SDL_PIXELORDER</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)&#32;==&#32;<link linkend="__s_d_l__pixels_8h_1a7e63896f019e17267a4c30ac3abdfd68aba44a30cc2795e22129c2d4cced0ee4d">SDL_ARRAYORDER_RGBA</link>)&#32;||&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;(<link linkend="__s_d_l__pixels_8h_1a38b57b9e01151753588d55a4e2438856">SDL_PIXELORDER</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)&#32;==&#32;<link linkend="__s_d_l__pixels_8h_1a7e63896f019e17267a4c30ac3abdfd68a8e9413ffade49428e6914b6fe701346f">SDL_ARRAYORDER_ABGR</link>)&#32;||&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;(<link linkend="__s_d_l__pixels_8h_1a38b57b9e01151753588d55a4e2438856">SDL_PIXELORDER</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)&#32;==&#32;<link linkend="__s_d_l__pixels_8h_1a7e63896f019e17267a4c30ac3abdfd68a6afd261ccd8b84e6209a0d532139062a">SDL_ARRAYORDER_BGRA</link>))))
+</programlisting></section>
+<anchor xml:id="__s_d_l__pixels_8h_1a8f842c1384f7d6bc17fa2b33738e9b4b"/><section>
+    <title>SDL_ISPIXELFORMAT_ARRAY</title>
+<indexterm><primary>SDL_ISPIXELFORMAT_ARRAY</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_ISPIXELFORMAT_ARRAY</secondary></indexterm>
+<para><computeroutput>#define SDL_ISPIXELFORMAT_ARRAY( <link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;(!<link linkend="__s_d_l__pixels_8h_1ac2a8124d1f6842ddf7ef5cc01c760818">SDL_ISPIXELFORMAT_FOURCC</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)&#32;&amp;&amp;&#32;\
+&#32;&#32;&#32;&#32;&#32;((<link linkend="__s_d_l__pixels_8h_1a9a13feff26a3bed0e04a74f503b0397e">SDL_PIXELTYPE</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)&#32;==&#32;<link linkend="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44a824001fa3058d020c50d9d658d38e409">SDL_PIXELTYPE_ARRAYU8</link>)&#32;||&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;(<link linkend="__s_d_l__pixels_8h_1a9a13feff26a3bed0e04a74f503b0397e">SDL_PIXELTYPE</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)&#32;==&#32;<link linkend="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44a67c5722471c0b2eaf7f029967559a1fd">SDL_PIXELTYPE_ARRAYU16</link>)&#32;||&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;(<link linkend="__s_d_l__pixels_8h_1a9a13feff26a3bed0e04a74f503b0397e">SDL_PIXELTYPE</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)&#32;==&#32;<link linkend="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44ad9e6a31927faee05f84d29ee6e7a917b">SDL_PIXELTYPE_ARRAYU32</link>)&#32;||&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;(<link linkend="__s_d_l__pixels_8h_1a9a13feff26a3bed0e04a74f503b0397e">SDL_PIXELTYPE</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)&#32;==&#32;<link linkend="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44ad0eb38c8e11972b7a177a74a86834d36">SDL_PIXELTYPE_ARRAYF16</link>)&#32;||&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;(<link linkend="__s_d_l__pixels_8h_1a9a13feff26a3bed0e04a74f503b0397e">SDL_PIXELTYPE</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)&#32;==&#32;<link linkend="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44ae72c674ca5ed225b5d5bf25832efdbda">SDL_PIXELTYPE_ARRAYF32</link>)))
+</programlisting></section>
+<anchor xml:id="__s_d_l__pixels_8h_1ac2a8124d1f6842ddf7ef5cc01c760818"/><section>
+    <title>SDL_ISPIXELFORMAT_FOURCC</title>
+<indexterm><primary>SDL_ISPIXELFORMAT_FOURCC</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_ISPIXELFORMAT_FOURCC</secondary></indexterm>
+<para><computeroutput>#define SDL_ISPIXELFORMAT_FOURCC( <link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)       ((<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>) &amp;&amp; (<link linkend="__s_d_l__pixels_8h_1a11eb1848a5ecbc9033855a3d7fabcf83">SDL_PIXELFLAG</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>) != 1))</computeroutput></para></section>
+<anchor xml:id="__s_d_l__pixels_8h_1a8bbf98a12987b0b22864743efb4b136e"/><section>
+    <title>SDL_ISPIXELFORMAT_INDEXED</title>
+<indexterm><primary>SDL_ISPIXELFORMAT_INDEXED</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_ISPIXELFORMAT_INDEXED</secondary></indexterm>
+<para><computeroutput>#define SDL_ISPIXELFORMAT_INDEXED( <link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;(!<link linkend="__s_d_l__pixels_8h_1ac2a8124d1f6842ddf7ef5cc01c760818">SDL_ISPIXELFORMAT_FOURCC</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)&#32;&amp;&amp;&#32;\
+&#32;&#32;&#32;&#32;&#32;((<link linkend="__s_d_l__pixels_8h_1a9a13feff26a3bed0e04a74f503b0397e">SDL_PIXELTYPE</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)&#32;==&#32;<link linkend="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44ade25cc1a26df209cf12e93ca07e74458">SDL_PIXELTYPE_INDEX1</link>)&#32;||&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;(<link linkend="__s_d_l__pixels_8h_1a9a13feff26a3bed0e04a74f503b0397e">SDL_PIXELTYPE</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)&#32;==&#32;<link linkend="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44a9590874ac903170e329ffadb857bc890">SDL_PIXELTYPE_INDEX4</link>)&#32;||&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;(<link linkend="__s_d_l__pixels_8h_1a9a13feff26a3bed0e04a74f503b0397e">SDL_PIXELTYPE</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)&#32;==&#32;<link linkend="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44ae9a20b4782210f1f013cd5e2b1801c7b">SDL_PIXELTYPE_INDEX8</link>)))
+</programlisting></section>
+<anchor xml:id="__s_d_l__pixels_8h_1a29855dc8b3cd34b288ec4ba50fd4ca0c"/><section>
+    <title>SDL_ISPIXELFORMAT_PACKED</title>
+<indexterm><primary>SDL_ISPIXELFORMAT_PACKED</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_ISPIXELFORMAT_PACKED</secondary></indexterm>
+<para><computeroutput>#define SDL_ISPIXELFORMAT_PACKED( <link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;(!<link linkend="__s_d_l__pixels_8h_1ac2a8124d1f6842ddf7ef5cc01c760818">SDL_ISPIXELFORMAT_FOURCC</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)&#32;&amp;&amp;&#32;\
+&#32;&#32;&#32;&#32;&#32;((<link linkend="__s_d_l__pixels_8h_1a9a13feff26a3bed0e04a74f503b0397e">SDL_PIXELTYPE</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)&#32;==&#32;<link linkend="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44ac2e1a757fe0978ab4760a4907caadf2b">SDL_PIXELTYPE_PACKED8</link>)&#32;||&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;(<link linkend="__s_d_l__pixels_8h_1a9a13feff26a3bed0e04a74f503b0397e">SDL_PIXELTYPE</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)&#32;==&#32;<link linkend="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44af76568442ef30ddfb7c07fbf586120cf">SDL_PIXELTYPE_PACKED16</link>)&#32;||&#32;\
+&#32;&#32;&#32;&#32;&#32;&#32;(<link linkend="__s_d_l__pixels_8h_1a9a13feff26a3bed0e04a74f503b0397e">SDL_PIXELTYPE</link>(<link linkend="__s_d_l__audio_8h_1a71a65ffd977afe9c3fef116a5bc9ee27">format</link>)&#32;==&#32;<link linkend="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44a77cb3159b4926b3c234bb6e2bc99a83a">SDL_PIXELTYPE_PACKED32</link>)))
+</programlisting></section>
+<anchor xml:id="__s_d_l__pixels_8h_1a11eb1848a5ecbc9033855a3d7fabcf83"/><section>
+    <title>SDL_PIXELFLAG</title>
+<indexterm><primary>SDL_PIXELFLAG</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFLAG</secondary></indexterm>
+<para><computeroutput>#define SDL_PIXELFLAG( X)   (((X) &gt;&gt; 28) &amp; 0x0F)</computeroutput></para></section>
+<anchor xml:id="__s_d_l__pixels_8h_1a850007b089215fe1d5e0efa5e4e73d72"/><section>
+    <title>SDL_PIXELLAYOUT</title>
+<indexterm><primary>SDL_PIXELLAYOUT</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELLAYOUT</secondary></indexterm>
+<para><computeroutput>#define SDL_PIXELLAYOUT( X)   (((X) &gt;&gt; 16) &amp; 0x0F)</computeroutput></para></section>
+<anchor xml:id="__s_d_l__pixels_8h_1a38b57b9e01151753588d55a4e2438856"/><section>
+    <title>SDL_PIXELORDER</title>
+<indexterm><primary>SDL_PIXELORDER</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELORDER</secondary></indexterm>
+<para><computeroutput>#define SDL_PIXELORDER( X)   (((X) &gt;&gt; 20) &amp; 0x0F)</computeroutput></para></section>
+<anchor xml:id="__s_d_l__pixels_8h_1a9a13feff26a3bed0e04a74f503b0397e"/><section>
+    <title>SDL_PIXELTYPE</title>
+<indexterm><primary>SDL_PIXELTYPE</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELTYPE</secondary></indexterm>
+<para><computeroutput>#define SDL_PIXELTYPE( X)   (((X) &gt;&gt; 24) &amp; 0x0F)</computeroutput></para></section>
+</section>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="__s_d_l__pixels_8h_1aefb2a1d044dcf564bcd0d6894d0e8c04"/><section>
+    <title>SDL_Color</title>
+<indexterm><primary>SDL_Color</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_Color</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_s_d_l___color">SDL_Color</link> <link linkend="_struct_s_d_l___color">SDL_Color</link></computeroutput></para>
+<para>The bits of this structure can be directly reinterpreted as an integer-packed color which uses the SDL_PIXELFORMAT_RGBA32 format (SDL_PIXELFORMAT_ABGR8888 on little-endian systems and SDL_PIXELFORMAT_RGBA8888 on big-endian systems). </para>
+</section>
+<anchor xml:id="__s_d_l__pixels_8h_1a8f8bd5ba6e48d2a6eaf6c94a8f460083"/><section>
+    <title>SDL_Palette</title>
+<indexterm><primary>SDL_Palette</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_Palette</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_s_d_l___palette">SDL_Palette</link> <link linkend="_struct_s_d_l___palette">SDL_Palette</link></computeroutput></para></section>
+<anchor xml:id="__s_d_l__pixels_8h_1a03a9dee95b581ed5a268cc45a316db65"/><section>
+    <title>SDL_PixelFormat</title>
+<indexterm><primary>SDL_PixelFormat</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PixelFormat</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_s_d_l___pixel_format">SDL_PixelFormat</link> <link linkend="_struct_s_d_l___pixel_format">SDL_PixelFormat</link></computeroutput></para>
+<para><note><title>Note</title>
+
+<para>Everything in the pixel format structure is read-only. </para>
+</note>
+</para>
+</section>
+</section>
+<section>
+<title>Enumeration Type Documentation</title>
+<anchor xml:id="__s_d_l__pixels_8h_1a7e63896f019e17267a4c30ac3abdfd68"/><section>
+    <title>SDL_ArrayOrder</title>
+<indexterm><primary>SDL_ArrayOrder</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_ArrayOrder</secondary></indexterm>
+<para><computeroutput>enum <link linkend="__s_d_l__pixels_8h_1a7e63896f019e17267a4c30ac3abdfd68">SDL_ArrayOrder</link></computeroutput></para>
+<para>Array component order, low byte -&gt; high byte. </para>
+<informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SDL_ARRAYORDER_NONE</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_ARRAYORDER_NONE</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a7e63896f019e17267a4c30ac3abdfd68a6483b65b5f263a7d532ac4cdb43cc81f"/>SDL_ARRAYORDER_NONE</entry><entry></entry></row><row><entry><indexterm><primary>SDL_ARRAYORDER_RGB</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_ARRAYORDER_RGB</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a7e63896f019e17267a4c30ac3abdfd68a4f2bee468847169766cc10d81ff2e14d"/>SDL_ARRAYORDER_RGB</entry><entry></entry></row><row><entry><indexterm><primary>SDL_ARRAYORDER_RGBA</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_ARRAYORDER_RGBA</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a7e63896f019e17267a4c30ac3abdfd68aba44a30cc2795e22129c2d4cced0ee4d"/>SDL_ARRAYORDER_RGBA</entry><entry></entry></row><row><entry><indexterm><primary>SDL_ARRAYORDER_ARGB</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_ARRAYORDER_ARGB</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a7e63896f019e17267a4c30ac3abdfd68a6987309c17192e33ddbab7ff1bf50c07"/>SDL_ARRAYORDER_ARGB</entry><entry></entry></row><row><entry><indexterm><primary>SDL_ARRAYORDER_BGR</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_ARRAYORDER_BGR</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a7e63896f019e17267a4c30ac3abdfd68ac91a2038a1c5da19b1be797f3205245b"/>SDL_ARRAYORDER_BGR</entry><entry></entry></row><row><entry><indexterm><primary>SDL_ARRAYORDER_BGRA</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_ARRAYORDER_BGRA</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a7e63896f019e17267a4c30ac3abdfd68a6afd261ccd8b84e6209a0d532139062a"/>SDL_ARRAYORDER_BGRA</entry><entry></entry></row><row><entry><indexterm><primary>SDL_ARRAYORDER_ABGR</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_ARRAYORDER_ABGR</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a7e63896f019e17267a4c30ac3abdfd68a8e9413ffade49428e6914b6fe701346f"/>SDL_ARRAYORDER_ABGR</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+<anchor xml:id="__s_d_l__pixels_8h_1a59d2ee19b4701f488577d065629a4f19"/><section>
+    <title>SDL_BitmapOrder</title>
+<indexterm><primary>SDL_BitmapOrder</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_BitmapOrder</secondary></indexterm>
+<para><computeroutput>enum <link linkend="__s_d_l__pixels_8h_1a59d2ee19b4701f488577d065629a4f19">SDL_BitmapOrder</link></computeroutput></para>
+<para>Bitmap pixel order, high bit -&gt; low bit. </para>
+<informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SDL_BITMAPORDER_NONE</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_BITMAPORDER_NONE</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a59d2ee19b4701f488577d065629a4f19ad6c8e0e291f2fe47506415ec225bb729"/>SDL_BITMAPORDER_NONE</entry><entry></entry></row><row><entry><indexterm><primary>SDL_BITMAPORDER_4321</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_BITMAPORDER_4321</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a59d2ee19b4701f488577d065629a4f19aeae245974c9a0639e4df3dfffe5f8501"/>SDL_BITMAPORDER_4321</entry><entry></entry></row><row><entry><indexterm><primary>SDL_BITMAPORDER_1234</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_BITMAPORDER_1234</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a59d2ee19b4701f488577d065629a4f19a07ac5a0b70f2f74124b25e33d553502d"/>SDL_BITMAPORDER_1234</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+<anchor xml:id="__s_d_l__pixels_8h_1a53908f8e47e506d3c25529cde6800f78"/><section>
+    <title>SDL_PackedLayout</title>
+<indexterm><primary>SDL_PackedLayout</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PackedLayout</secondary></indexterm>
+<para><computeroutput>enum <link linkend="__s_d_l__pixels_8h_1a53908f8e47e506d3c25529cde6800f78">SDL_PackedLayout</link></computeroutput></para>
+<para>Packed component layout. </para>
+<informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SDL_PACKEDLAYOUT_NONE</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PACKEDLAYOUT_NONE</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a53908f8e47e506d3c25529cde6800f78a2ef492900c1e7f4b3141346da89365e1"/>SDL_PACKEDLAYOUT_NONE</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PACKEDLAYOUT_332</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PACKEDLAYOUT_332</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a53908f8e47e506d3c25529cde6800f78a80e92a3d185f911424f311e9ed9b1133"/>SDL_PACKEDLAYOUT_332</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PACKEDLAYOUT_4444</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PACKEDLAYOUT_4444</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a53908f8e47e506d3c25529cde6800f78af186084b057632bf806c5c67c47c60cc"/>SDL_PACKEDLAYOUT_4444</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PACKEDLAYOUT_1555</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PACKEDLAYOUT_1555</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a53908f8e47e506d3c25529cde6800f78aca8b94e25710c91c4059244134dbd6e7"/>SDL_PACKEDLAYOUT_1555</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PACKEDLAYOUT_5551</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PACKEDLAYOUT_5551</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a53908f8e47e506d3c25529cde6800f78a99c982b03457719a09f097d191a4d9e1"/>SDL_PACKEDLAYOUT_5551</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PACKEDLAYOUT_565</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PACKEDLAYOUT_565</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a53908f8e47e506d3c25529cde6800f78a7292800d58468f8b4fb3e1eb3d1b99c6"/>SDL_PACKEDLAYOUT_565</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PACKEDLAYOUT_8888</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PACKEDLAYOUT_8888</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a53908f8e47e506d3c25529cde6800f78a35b93a8c2dd3d57c9fdecc28ee9be3fe"/>SDL_PACKEDLAYOUT_8888</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PACKEDLAYOUT_2101010</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PACKEDLAYOUT_2101010</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a53908f8e47e506d3c25529cde6800f78afe5ef9aa7d0b94f110ba64e30b9988f3"/>SDL_PACKEDLAYOUT_2101010</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PACKEDLAYOUT_1010102</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PACKEDLAYOUT_1010102</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a53908f8e47e506d3c25529cde6800f78a5a4286d01f6bdda886a28c8b7a891036"/>SDL_PACKEDLAYOUT_1010102</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+<anchor xml:id="__s_d_l__pixels_8h_1ab40e48e4f36aa469249d415e76f057f0"/><section>
+    <title>SDL_PackedOrder</title>
+<indexterm><primary>SDL_PackedOrder</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PackedOrder</secondary></indexterm>
+<para><computeroutput>enum <link linkend="__s_d_l__pixels_8h_1ab40e48e4f36aa469249d415e76f057f0">SDL_PackedOrder</link></computeroutput></para>
+<para>Packed component order, high bit -&gt; low bit. </para>
+<informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SDL_PACKEDORDER_NONE</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PACKEDORDER_NONE</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1ab40e48e4f36aa469249d415e76f057f0a333096f8ca6960d8b61197c1b2bb093b"/>SDL_PACKEDORDER_NONE</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PACKEDORDER_XRGB</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PACKEDORDER_XRGB</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1ab40e48e4f36aa469249d415e76f057f0af1f73f0922f2913663ab4c8ab9d19247"/>SDL_PACKEDORDER_XRGB</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PACKEDORDER_RGBX</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PACKEDORDER_RGBX</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1ab40e48e4f36aa469249d415e76f057f0a461e1e08900d7d4a09a840e5815e4131"/>SDL_PACKEDORDER_RGBX</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PACKEDORDER_ARGB</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PACKEDORDER_ARGB</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1ab40e48e4f36aa469249d415e76f057f0afce512bdf9b5ff268555c44f3335b35d"/>SDL_PACKEDORDER_ARGB</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PACKEDORDER_RGBA</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PACKEDORDER_RGBA</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1ab40e48e4f36aa469249d415e76f057f0a9f41767253b7c5031426efff09982d9d"/>SDL_PACKEDORDER_RGBA</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PACKEDORDER_XBGR</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PACKEDORDER_XBGR</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1ab40e48e4f36aa469249d415e76f057f0a98c3a86b3ad6a98c30409018660eb219"/>SDL_PACKEDORDER_XBGR</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PACKEDORDER_BGRX</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PACKEDORDER_BGRX</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1ab40e48e4f36aa469249d415e76f057f0a672b3e9e7424ff0f3291a16d524e7ab9"/>SDL_PACKEDORDER_BGRX</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PACKEDORDER_ABGR</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PACKEDORDER_ABGR</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1ab40e48e4f36aa469249d415e76f057f0ab99ff7a29a50c901d1175b9202120201"/>SDL_PACKEDORDER_ABGR</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PACKEDORDER_BGRA</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PACKEDORDER_BGRA</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1ab40e48e4f36aa469249d415e76f057f0adc2cc1300afd0059b9fa85cb4e81c593"/>SDL_PACKEDORDER_BGRA</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111"/><section>
+    <title>SDL_PixelFormatEnum</title>
+<indexterm><primary>SDL_PixelFormatEnum</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PixelFormatEnum</secondary></indexterm>
+<para><computeroutput>enum <link linkend="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111">SDL_PixelFormatEnum</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SDL_PIXELFORMAT_UNKNOWN</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_UNKNOWN</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111aefbbcf431d1a05d22a40b34806786474"/>SDL_PIXELFORMAT_UNKNOWN</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_INDEX1LSB</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_INDEX1LSB</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a17f32fac120912cb1e446a8ba1639501"/>SDL_PIXELFORMAT_INDEX1LSB</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_INDEX1MSB</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_INDEX1MSB</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111acec87c94faecec8ea938d50305883047"/>SDL_PIXELFORMAT_INDEX1MSB</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_INDEX4LSB</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_INDEX4LSB</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111ad1d5538b9926d96c78d13e6084637a92"/>SDL_PIXELFORMAT_INDEX4LSB</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_INDEX4MSB</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_INDEX4MSB</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a334db41d84302efc61f8174403fd7497"/>SDL_PIXELFORMAT_INDEX4MSB</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_INDEX8</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_INDEX8</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a611c64e434d87ee02182b8f28d6a2609"/>SDL_PIXELFORMAT_INDEX8</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_RGB332</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_RGB332</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a11b359bdfb891a4de0f34a8d18a6dce2"/>SDL_PIXELFORMAT_RGB332</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_XRGB4444</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_XRGB4444</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111ab1eca459c885fa0fa0a54536308a372f"/>SDL_PIXELFORMAT_XRGB4444</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_RGB444</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_RGB444</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a3fe69232eb9a6788ea4b778a273ee1a1"/>SDL_PIXELFORMAT_RGB444</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_XBGR4444</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_XBGR4444</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a58a3bc445d1c8ea2963ee0d4ad7e1a55"/>SDL_PIXELFORMAT_XBGR4444</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_BGR444</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_BGR444</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a1e4bf353a8276629590d1c0e0fc64491"/>SDL_PIXELFORMAT_BGR444</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_XRGB1555</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_XRGB1555</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111ada4fdf86a2d639e0fa78aba9cb83e777"/>SDL_PIXELFORMAT_XRGB1555</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_RGB555</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_RGB555</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a3f60cf6ce8112a98495d4e45535aafe0"/>SDL_PIXELFORMAT_RGB555</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_XBGR1555</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_XBGR1555</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111aadfb8f7faf27b84ddca4bc7117883d14"/>SDL_PIXELFORMAT_XBGR1555</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_BGR555</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_BGR555</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111aef651a80f09dcdc497f96710105cb584"/>SDL_PIXELFORMAT_BGR555</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_ARGB4444</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_ARGB4444</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111ab52e97ddebc15cf79a198141e9cecc14"/>SDL_PIXELFORMAT_ARGB4444</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_RGBA4444</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_RGBA4444</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111afd40d32ef4fdcb9d1ec971dd296af78e"/>SDL_PIXELFORMAT_RGBA4444</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_ABGR4444</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_ABGR4444</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a2c9207472b1b3aa3282bd94844de8a64"/>SDL_PIXELFORMAT_ABGR4444</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_BGRA4444</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_BGRA4444</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a2df4b29f7813a7fd3b5941adae143981"/>SDL_PIXELFORMAT_BGRA4444</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_ARGB1555</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_ARGB1555</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a5786f6e1f93c0fe523b2a51287d861a0"/>SDL_PIXELFORMAT_ARGB1555</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_RGBA5551</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_RGBA5551</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a538ce8ca2c51dc3ddec1e4155070a9e9"/>SDL_PIXELFORMAT_RGBA5551</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_ABGR1555</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_ABGR1555</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a95c4786803478073eaea20b8706d87a2"/>SDL_PIXELFORMAT_ABGR1555</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_BGRA5551</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_BGRA5551</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111ad6a12430b3bd4f18494ab1d571284da9"/>SDL_PIXELFORMAT_BGRA5551</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_RGB565</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_RGB565</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111ade05879f9a65e717b83ca59a47f17925"/>SDL_PIXELFORMAT_RGB565</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_BGR565</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_BGR565</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a09d7ca37de44ba6f3109658e7ffecec4"/>SDL_PIXELFORMAT_BGR565</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_RGB24</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_RGB24</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a77578f760e0e79b9c5a4fed9999a8df3"/>SDL_PIXELFORMAT_RGB24</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_BGR24</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_BGR24</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a2f319eb2650f24957af424078e3d2beb"/>SDL_PIXELFORMAT_BGR24</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_XRGB8888</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_XRGB8888</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a693c82e67f2ad9a49006356fba3c793d"/>SDL_PIXELFORMAT_XRGB8888</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_RGB888</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_RGB888</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a7d5a23707b3cb74049dbc1df52b33980"/>SDL_PIXELFORMAT_RGB888</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_RGBX8888</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_RGBX8888</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111ad68a80c7c50a536322dde7d0071f383a"/>SDL_PIXELFORMAT_RGBX8888</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_XBGR8888</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_XBGR8888</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111ade966848942c4a4ac0fc63f6e9b3c140"/>SDL_PIXELFORMAT_XBGR8888</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_BGR888</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_BGR888</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a7025ec96e63dac466f35a0546c6e3313"/>SDL_PIXELFORMAT_BGR888</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_BGRX8888</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_BGRX8888</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a731d1f25bd98d31d90481090aed5a503"/>SDL_PIXELFORMAT_BGRX8888</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_ARGB8888</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_ARGB8888</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a9db26de13e57924f212ced00857dacf4"/>SDL_PIXELFORMAT_ARGB8888</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_RGBA8888</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_RGBA8888</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a4fc90afd4b57d5e7dd679545c3b37d2e"/>SDL_PIXELFORMAT_RGBA8888</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_ABGR8888</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_ABGR8888</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a8151776ecaf269802b5f7e26e78fc3c7"/>SDL_PIXELFORMAT_ABGR8888</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_BGRA8888</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_BGRA8888</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a9155c50698dd07b54c2f88394a7bc45e"/>SDL_PIXELFORMAT_BGRA8888</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_ARGB2101010</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_ARGB2101010</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111ae06059ab5ee1fedded8c15aafe0e8fda"/>SDL_PIXELFORMAT_ARGB2101010</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_RGBA32</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_RGBA32</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111abad72c6319a76d25926ab6495cc7d460"/>SDL_PIXELFORMAT_RGBA32</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_ARGB32</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_ARGB32</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a94fa5e67fcd2615e45a91f6d8cbdffad"/>SDL_PIXELFORMAT_ARGB32</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_BGRA32</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_BGRA32</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a3d7cd57731f65ebad8f13c9f1b9b4122"/>SDL_PIXELFORMAT_BGRA32</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_ABGR32</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_ABGR32</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a731ce76d4b986f72d45d2255997447b2"/>SDL_PIXELFORMAT_ABGR32</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_YV12</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_YV12</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a706edeff2993aaabae0e8a85dd456d23"/>SDL_PIXELFORMAT_YV12</entry><entry>
+<para>Planar mode: Y + V + U (3 planes) </para>
+</entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_IYUV</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_IYUV</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a9d5d930c6560d21d02be1d3738160e08"/>SDL_PIXELFORMAT_IYUV</entry><entry>
+<para>Planar mode: Y + U + V (3 planes) </para>
+</entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_YUY2</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_YUY2</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a87d182ad80264610243c4bdbba13b456"/>SDL_PIXELFORMAT_YUY2</entry><entry>
+<para>Packed mode: Y0+U0+Y1+V0 (1 plane) </para>
+</entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_UYVY</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_UYVY</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a69bd11cf739b7e762d5103555fe85094"/>SDL_PIXELFORMAT_UYVY</entry><entry>
+<para>Packed mode: U0+Y0+V0+Y1 (1 plane) </para>
+</entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_YVYU</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_YVYU</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a0fba10d58b6af54319f3653724a54a29"/>SDL_PIXELFORMAT_YVYU</entry><entry>
+<para>Packed mode: Y0+V0+Y1+U0 (1 plane) </para>
+</entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_NV12</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_NV12</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a8fa8e4c226ea2918366e68b239921099"/>SDL_PIXELFORMAT_NV12</entry><entry>
+<para>Planar mode: Y + U/V interleaved (2 planes) </para>
+</entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_NV21</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_NV21</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a97f2d6c51817862e1927e462960e7052"/>SDL_PIXELFORMAT_NV21</entry><entry>
+<para>Planar mode: Y + V/U interleaved (2 planes) </para>
+</entry></row><row><entry><indexterm><primary>SDL_PIXELFORMAT_EXTERNAL_OES</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELFORMAT_EXTERNAL_OES</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a95821d38f8029ed06c258e9be3dfc111a0d8d7ba67039174e96fc561962d3b0f7"/>SDL_PIXELFORMAT_EXTERNAL_OES</entry><entry>
+<para>Android video texture format </para>
+</entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+<anchor xml:id="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44"/><section>
+    <title>SDL_PixelType</title>
+<indexterm><primary>SDL_PixelType</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PixelType</secondary></indexterm>
+<para><computeroutput>enum <link linkend="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44">SDL_PixelType</link></computeroutput></para>
+<para>Pixel type. </para>
+<informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SDL_PIXELTYPE_UNKNOWN</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELTYPE_UNKNOWN</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44a398eb1cc76c533c659297ef9dcd28d74"/>SDL_PIXELTYPE_UNKNOWN</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELTYPE_INDEX1</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELTYPE_INDEX1</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44ade25cc1a26df209cf12e93ca07e74458"/>SDL_PIXELTYPE_INDEX1</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELTYPE_INDEX4</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELTYPE_INDEX4</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44a9590874ac903170e329ffadb857bc890"/>SDL_PIXELTYPE_INDEX4</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELTYPE_INDEX8</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELTYPE_INDEX8</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44ae9a20b4782210f1f013cd5e2b1801c7b"/>SDL_PIXELTYPE_INDEX8</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELTYPE_PACKED8</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELTYPE_PACKED8</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44ac2e1a757fe0978ab4760a4907caadf2b"/>SDL_PIXELTYPE_PACKED8</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELTYPE_PACKED16</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELTYPE_PACKED16</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44af76568442ef30ddfb7c07fbf586120cf"/>SDL_PIXELTYPE_PACKED16</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELTYPE_PACKED32</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELTYPE_PACKED32</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44a77cb3159b4926b3c234bb6e2bc99a83a"/>SDL_PIXELTYPE_PACKED32</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELTYPE_ARRAYU8</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELTYPE_ARRAYU8</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44a824001fa3058d020c50d9d658d38e409"/>SDL_PIXELTYPE_ARRAYU8</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELTYPE_ARRAYU16</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELTYPE_ARRAYU16</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44a67c5722471c0b2eaf7f029967559a1fd"/>SDL_PIXELTYPE_ARRAYU16</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELTYPE_ARRAYU32</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELTYPE_ARRAYU32</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44ad9e6a31927faee05f84d29ee6e7a917b"/>SDL_PIXELTYPE_ARRAYU32</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELTYPE_ARRAYF16</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELTYPE_ARRAYF16</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44ad0eb38c8e11972b7a177a74a86834d36"/>SDL_PIXELTYPE_ARRAYF16</entry><entry></entry></row><row><entry><indexterm><primary>SDL_PIXELTYPE_ARRAYF32</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PIXELTYPE_ARRAYF32</secondary></indexterm>
+<anchor xml:id="__s_d_l__pixels_8h_1a355a9ed42dcc4f61e525ca4a5987fe44ae72c674ca5ed225b5d5bf25832efdbda"/>SDL_PIXELTYPE_ARRAYF32</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__s_d_l__pixels_8h_1af047e43ec12651a6a7a2d74d3ec8a3e5"/><section>
+    <title>SDL_AllocFormat()</title>
+<indexterm><primary>SDL_AllocFormat</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_AllocFormat</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="_struct_s_d_l___pixel_format">SDL_PixelFormat</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_AllocFormat (<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> pixel_format)</computeroutput></para>
+<para>Create an <link linkend="_struct_s_d_l___pixel_format">SDL_PixelFormat</link> structure corresponding to a pixel format.</para>
+
+<para>Returned structure may come from a shared global cache (i.e. not newly allocated), and hence should not be modified, especially the palette. Weird errors such as <computeroutput>Blit combination not supported</computeroutput> may occur.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pixel_format</entry><entry>
+<para>one of the SDL_PixelFormatEnum values </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the new <link linkend="_struct_s_d_l___pixel_format">SDL_PixelFormat</link> structure or NULL on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__pixels_8h_1a6b40e44d9a48dfecde34428a78648f8a">SDL_FreeFormat</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__pixels_8h_1a91ec51057269117f5c56088ef490a492"/><section>
+    <title>SDL_AllocPalette()</title>
+<indexterm><primary>SDL_AllocPalette</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_AllocPalette</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="_struct_s_d_l___palette">SDL_Palette</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_AllocPalette (int ncolors)</computeroutput></para>
+<para>Create a palette structure with the specified number of color entries.</para>
+
+<para>The palette entries are initialized to white.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>ncolors</entry><entry>
+<para>represents the number of color entries in the color palette </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a new <link linkend="_struct_s_d_l___palette">SDL_Palette</link> structure on success or NULL on failure (e.g. if there wasn&apos;t enough memory); call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__pixels_8h_1a31d328d11619b5f5ed0a14612cbb429a">SDL_FreePalette</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__pixels_8h_1a768b7ed72549e36a26a36267772906fb"/><section>
+    <title>SDL_CalculateGammaRamp()</title>
+<indexterm><primary>SDL_CalculateGammaRamp</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_CalculateGammaRamp</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_CalculateGammaRamp (float gamma, <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> * ramp)</computeroutput></para>
+<para>Calculate a 256 entry gamma ramp for a gamma value.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamma</entry><entry>
+<para>a gamma value where 0.0 is black and 1.0 is identity </para>
+</entry>
+                            </row>
+                            <row>
+<entry>ramp</entry><entry>
+<para>an array of 256 values filled in with the gamma ramp</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__video_8h_1a6799acf235454f519ac209ccf14caa67">SDL_SetWindowGammaRamp</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__pixels_8h_1a6b40e44d9a48dfecde34428a78648f8a"/><section>
+    <title>SDL_FreeFormat()</title>
+<indexterm><primary>SDL_FreeFormat</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_FreeFormat</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_FreeFormat (<link linkend="_struct_s_d_l___pixel_format">SDL_PixelFormat</link> * format)</computeroutput></para>
+<para>Free an <link linkend="_struct_s_d_l___pixel_format">SDL_PixelFormat</link> structure allocated by <link linkend="__s_d_l__pixels_8h_1af047e43ec12651a6a7a2d74d3ec8a3e5">SDL_AllocFormat()</link>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>format</entry><entry>
+<para>the <link linkend="_struct_s_d_l___pixel_format">SDL_PixelFormat</link> structure to free</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__pixels_8h_1af047e43ec12651a6a7a2d74d3ec8a3e5">SDL_AllocFormat</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__pixels_8h_1a31d328d11619b5f5ed0a14612cbb429a"/><section>
+    <title>SDL_FreePalette()</title>
+<indexterm><primary>SDL_FreePalette</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_FreePalette</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_FreePalette (<link linkend="_struct_s_d_l___palette">SDL_Palette</link> * palette)</computeroutput></para>
+<para>Free a palette created with <link linkend="__s_d_l__pixels_8h_1a91ec51057269117f5c56088ef490a492">SDL_AllocPalette()</link>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>palette</entry><entry>
+<para>the <link linkend="_struct_s_d_l___palette">SDL_Palette</link> structure to be freed</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__pixels_8h_1a91ec51057269117f5c56088ef490a492">SDL_AllocPalette</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__pixels_8h_1acc6e37cc608c9d6d3a62e1427b5d442a"/><section>
+    <title>SDL_GetPixelFormatName()</title>
+<indexterm><primary>SDL_GetPixelFormatName</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_GetPixelFormatName</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GetPixelFormatName (<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> format)</computeroutput></para>
+<para>Get the human readable name of a pixel format.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>format</entry><entry>
+<para>the pixel format to query </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the human readable name of the specified pixel format or <computeroutput>SDL_PIXELFORMAT_UNKNOWN</computeroutput> if the format isn&apos;t recognized.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__pixels_8h_1a26dc44b5dac11825abb4b59ac5af76e3"/><section>
+    <title>SDL_GetRGB()</title>
+<indexterm><primary>SDL_GetRGB</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_GetRGB</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GetRGB (<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> pixel, const <link linkend="_struct_s_d_l___pixel_format">SDL_PixelFormat</link> * format, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> * r, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> * g, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> * b)</computeroutput></para>
+<para>Get RGB values from a pixel in the specified format.</para>
+
+<para>This function uses the entire 8-bit [0..255] range when converting color components from pixel formats with less than 8-bits per RGB component (e.g., a completely white pixel in 16-bit RGB565 format would return [0xff, 0xff, 0xff] not [0xf8, 0xfc, 0xf8]).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pixel</entry><entry>
+<para>a pixel value </para>
+</entry>
+                            </row>
+                            <row>
+<entry>format</entry><entry>
+<para>an <link linkend="_struct_s_d_l___pixel_format">SDL_PixelFormat</link> structure describing the format of the pixel </para>
+</entry>
+                            </row>
+                            <row>
+<entry>r</entry><entry>
+<para>a pointer filled in with the red component </para>
+</entry>
+                            </row>
+                            <row>
+<entry>g</entry><entry>
+<para>a pointer filled in with the green component </para>
+</entry>
+                            </row>
+                            <row>
+<entry>b</entry><entry>
+<para>a pointer filled in with the blue component</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__pixels_8h_1a02d675543e9c5bb72232a08a529ae64e">SDL_GetRGBA</link> </para>
+
+<para><link linkend="__s_d_l__pixels_8h_1a157cf64c250c578722b939ea11a85b39">SDL_MapRGB</link> </para>
+
+<para><link linkend="__s_d_l__pixels_8h_1a8cc5000a066e052d4d36070ea91ac942">SDL_MapRGBA</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__pixels_8h_1a02d675543e9c5bb72232a08a529ae64e"/><section>
+    <title>SDL_GetRGBA()</title>
+<indexterm><primary>SDL_GetRGBA</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_GetRGBA</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GetRGBA (<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> pixel, const <link linkend="_struct_s_d_l___pixel_format">SDL_PixelFormat</link> * format, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> * r, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> * g, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> * b, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> * a)</computeroutput></para>
+<para>Get RGBA values from a pixel in the specified format.</para>
+
+<para>This function uses the entire 8-bit [0..255] range when converting color components from pixel formats with less than 8-bits per RGB component (e.g., a completely white pixel in 16-bit RGB565 format would return [0xff, 0xff, 0xff] not [0xf8, 0xfc, 0xf8]).</para>
+
+<para>If the surface has no alpha component, the alpha will be returned as 0xff (100% opaque).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pixel</entry><entry>
+<para>a pixel value </para>
+</entry>
+                            </row>
+                            <row>
+<entry>format</entry><entry>
+<para>an <link linkend="_struct_s_d_l___pixel_format">SDL_PixelFormat</link> structure describing the format of the pixel </para>
+</entry>
+                            </row>
+                            <row>
+<entry>r</entry><entry>
+<para>a pointer filled in with the red component </para>
+</entry>
+                            </row>
+                            <row>
+<entry>g</entry><entry>
+<para>a pointer filled in with the green component </para>
+</entry>
+                            </row>
+                            <row>
+<entry>b</entry><entry>
+<para>a pointer filled in with the blue component </para>
+</entry>
+                            </row>
+                            <row>
+<entry>a</entry><entry>
+<para>a pointer filled in with the alpha component</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__pixels_8h_1a26dc44b5dac11825abb4b59ac5af76e3">SDL_GetRGB</link> </para>
+
+<para><link linkend="__s_d_l__pixels_8h_1a157cf64c250c578722b939ea11a85b39">SDL_MapRGB</link> </para>
+
+<para><link linkend="__s_d_l__pixels_8h_1a8cc5000a066e052d4d36070ea91ac942">SDL_MapRGBA</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__pixels_8h_1a157cf64c250c578722b939ea11a85b39"/><section>
+    <title>SDL_MapRGB()</title>
+<indexterm><primary>SDL_MapRGB</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_MapRGB</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_MapRGB (const <link linkend="_struct_s_d_l___pixel_format">SDL_PixelFormat</link> * format, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> r, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> g, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> b)</computeroutput></para>
+<para>Map an RGB triple to an opaque pixel value for a given pixel format.</para>
+
+<para>This function maps the RGB color value to the specified pixel format and returns the pixel value best approximating the given RGB color value for the given pixel format.</para>
+
+<para>If the format has a palette (8-bit) the index of the closest matching color in the palette will be returned.</para>
+
+<para>If the specified pixel format has an alpha component it will be returned as all 1 bits (fully opaque).</para>
+
+<para>If the pixel format bpp (color depth) is less than 32-bpp then the unused upper bits of the return value can safely be ignored (e.g., with a 16-bpp format the return value can be assigned to a Uint16, and similarly a Uint8 for an 8-bpp format).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>format</entry><entry>
+<para>an <link linkend="_struct_s_d_l___pixel_format">SDL_PixelFormat</link> structure describing the pixel format </para>
+</entry>
+                            </row>
+                            <row>
+<entry>r</entry><entry>
+<para>the red component of the pixel in the range 0-255 </para>
+</entry>
+                            </row>
+                            <row>
+<entry>g</entry><entry>
+<para>the green component of the pixel in the range 0-255 </para>
+</entry>
+                            </row>
+                            <row>
+<entry>b</entry><entry>
+<para>the blue component of the pixel in the range 0-255 </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a pixel value</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__pixels_8h_1a26dc44b5dac11825abb4b59ac5af76e3">SDL_GetRGB</link> </para>
+
+<para><link linkend="__s_d_l__pixels_8h_1a02d675543e9c5bb72232a08a529ae64e">SDL_GetRGBA</link> </para>
+
+<para><link linkend="__s_d_l__pixels_8h_1a8cc5000a066e052d4d36070ea91ac942">SDL_MapRGBA</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__pixels_8h_1a8cc5000a066e052d4d36070ea91ac942"/><section>
+    <title>SDL_MapRGBA()</title>
+<indexterm><primary>SDL_MapRGBA</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_MapRGBA</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_MapRGBA (const <link linkend="_struct_s_d_l___pixel_format">SDL_PixelFormat</link> * format, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> r, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> g, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> b, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> a)</computeroutput></para>
+<para>Map an RGBA quadruple to a pixel value for a given pixel format.</para>
+
+<para>This function maps the RGBA color value to the specified pixel format and returns the pixel value best approximating the given RGBA color value for the given pixel format.</para>
+
+<para>If the specified pixel format has no alpha component the alpha value will be ignored (as it will be in formats with a palette).</para>
+
+<para>If the format has a palette (8-bit) the index of the closest matching color in the palette will be returned.</para>
+
+<para>If the pixel format bpp (color depth) is less than 32-bpp then the unused upper bits of the return value can safely be ignored (e.g., with a 16-bpp format the return value can be assigned to a Uint16, and similarly a Uint8 for an 8-bpp format).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>format</entry><entry>
+<para>an <link linkend="_struct_s_d_l___pixel_format">SDL_PixelFormat</link> structure describing the format of the pixel </para>
+</entry>
+                            </row>
+                            <row>
+<entry>r</entry><entry>
+<para>the red component of the pixel in the range 0-255 </para>
+</entry>
+                            </row>
+                            <row>
+<entry>g</entry><entry>
+<para>the green component of the pixel in the range 0-255 </para>
+</entry>
+                            </row>
+                            <row>
+<entry>b</entry><entry>
+<para>the blue component of the pixel in the range 0-255 </para>
+</entry>
+                            </row>
+                            <row>
+<entry>a</entry><entry>
+<para>the alpha component of the pixel in the range 0-255 </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a pixel value</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__pixels_8h_1a26dc44b5dac11825abb4b59ac5af76e3">SDL_GetRGB</link> </para>
+
+<para><link linkend="__s_d_l__pixels_8h_1a02d675543e9c5bb72232a08a529ae64e">SDL_GetRGBA</link> </para>
+
+<para><link linkend="__s_d_l__pixels_8h_1a157cf64c250c578722b939ea11a85b39">SDL_MapRGB</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__pixels_8h_1a60fede85fba7bdca549f46b3f6372593"/><section>
+    <title>SDL_MasksToPixelFormatEnum()</title>
+<indexterm><primary>SDL_MasksToPixelFormatEnum</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_MasksToPixelFormatEnum</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_MasksToPixelFormatEnum (int bpp, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> Rmask, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> Gmask, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> Bmask, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> Amask)</computeroutput></para>
+<para>Convert a bpp value and RGBA masks to an enumerated pixel format.</para>
+
+<para>This will return <computeroutput>SDL_PIXELFORMAT_UNKNOWN</computeroutput> if the conversion wasn&apos;t possible.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>bpp</entry><entry>
+<para>a bits per pixel value; usually 15, 16, or 32 </para>
+</entry>
+                            </row>
+                            <row>
+<entry>Rmask</entry><entry>
+<para>the red mask for the format </para>
+</entry>
+                            </row>
+                            <row>
+<entry>Gmask</entry><entry>
+<para>the green mask for the format </para>
+</entry>
+                            </row>
+                            <row>
+<entry>Bmask</entry><entry>
+<para>the blue mask for the format </para>
+</entry>
+                            </row>
+                            <row>
+<entry>Amask</entry><entry>
+<para>the alpha mask for the format </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>one of the SDL_PixelFormatEnum values</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__pixels_8h_1aabce46ecd37dd031b6b9a1b2d64f962b">SDL_PixelFormatEnumToMasks</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__pixels_8h_1aabce46ecd37dd031b6b9a1b2d64f962b"/><section>
+    <title>SDL_PixelFormatEnumToMasks()</title>
+<indexterm><primary>SDL_PixelFormatEnumToMasks</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_PixelFormatEnumToMasks</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_PixelFormatEnumToMasks (<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> format, int * bpp, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> * Rmask, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> * Gmask, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> * Bmask, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> * Amask)</computeroutput></para>
+<para>Convert one of the enumerated pixel formats to a bpp value and RGBA masks.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>format</entry><entry>
+<para>one of the SDL_PixelFormatEnum values </para>
+</entry>
+                            </row>
+                            <row>
+<entry>bpp</entry><entry>
+<para>a bits per pixel value; usually 15, 16, or 32 </para>
+</entry>
+                            </row>
+                            <row>
+<entry>Rmask</entry><entry>
+<para>a pointer filled in with the red mask for the format </para>
+</entry>
+                            </row>
+                            <row>
+<entry>Gmask</entry><entry>
+<para>a pointer filled in with the green mask for the format </para>
+</entry>
+                            </row>
+                            <row>
+<entry>Bmask</entry><entry>
+<para>a pointer filled in with the blue mask for the format </para>
+</entry>
+                            </row>
+                            <row>
+<entry>Amask</entry><entry>
+<para>a pointer filled in with the alpha mask for the format </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE on success or SDL_FALSE if the conversion wasn&apos;t possible; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__pixels_8h_1a60fede85fba7bdca549f46b3f6372593">SDL_MasksToPixelFormatEnum</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__pixels_8h_1a51164f5ac7a7b2b4117ff0e0f256eaff"/><section>
+    <title>SDL_SetPaletteColors()</title>
+<indexterm><primary>SDL_SetPaletteColors</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_SetPaletteColors</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_SetPaletteColors (<link linkend="_struct_s_d_l___palette">SDL_Palette</link> * palette, const <link linkend="_struct_s_d_l___color">SDL_Color</link> * colors, int firstcolor, int ncolors)</computeroutput></para>
+<para>Set a range of colors in a palette.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>palette</entry><entry>
+<para>the <link linkend="_struct_s_d_l___palette">SDL_Palette</link> structure to modify </para>
+</entry>
+                            </row>
+                            <row>
+<entry>colors</entry><entry>
+<para>an array of <link linkend="_struct_s_d_l___color">SDL_Color</link> structures to copy into the palette </para>
+</entry>
+                            </row>
+                            <row>
+<entry>firstcolor</entry><entry>
+<para>the index of the first palette entry to modify </para>
+</entry>
+                            </row>
+                            <row>
+<entry>ncolors</entry><entry>
+<para>the number of entries to modify </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 on success or a negative error code if not all of the colors could be set; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__pixels_8h_1a91ec51057269117f5c56088ef490a492">SDL_AllocPalette</link> </para>
+
+<para><link linkend="__s_d_l__surface_8h_1a46e9fd3961922c6888a19b0462a75b24">SDL_CreateRGBSurface</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__pixels_8h_1ae7835e283254c53bed7e7b3d2287d3b6"/><section>
+    <title>SDL_SetPixelFormatPalette()</title>
+<indexterm><primary>SDL_SetPixelFormatPalette</primary><secondary>SDL_pixels.h</secondary></indexterm>
+<indexterm><primary>SDL_pixels.h</primary><secondary>SDL_SetPixelFormatPalette</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_SetPixelFormatPalette (<link linkend="_struct_s_d_l___pixel_format">SDL_PixelFormat</link> * format, <link linkend="_struct_s_d_l___palette">SDL_Palette</link> * palette)</computeroutput></para>
+<para>Set the palette for a pixel format structure.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>format</entry><entry>
+<para>the <link linkend="_struct_s_d_l___pixel_format">SDL_PixelFormat</link> structure that will use the palette </para>
+</entry>
+                            </row>
+                            <row>
+<entry>palette</entry><entry>
+<para>the <link linkend="_struct_s_d_l___palette">SDL_Palette</link> structure that will be used </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 on success or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__pixels_8h_1a91ec51057269117f5c56088ef490a492">SDL_AllocPalette</link> </para>
+
+<para><link linkend="__s_d_l__pixels_8h_1a31d328d11619b5f5ed0a14612cbb429a">SDL_FreePalette</link> </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

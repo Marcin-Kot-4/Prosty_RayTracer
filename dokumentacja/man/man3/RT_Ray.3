@@ -1,0 +1,63 @@
+.TH "RT::Ray" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RT::Ray
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ray\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRay\fP ()"
+.br
+.ti -1c
+.RI "\fBRay\fP (const \fBqbVector\fP< double > &point1, const \fBqbVector\fP< double > &point2)"
+.br
+.ti -1c
+.RI "\fBqbVector\fP< double > \fBGetPoint1\fP () const"
+.br
+.ti -1c
+.RI "\fBqbVector\fP< double > \fBGetPoint2\fP () const"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBqbVector\fP< double > \fBm_point1\fP {3}"
+.br
+.ti -1c
+.RI "\fBqbVector\fP< double > \fBm_point2\fP {3}"
+.br
+.ti -1c
+.RI "\fBqbVector\fP< double > \fBm_lab\fP {3}"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RT::Ray::Ray ()"
+
+.SS "RT::Ray::Ray (const \fBqbVector\fP< double > & point1, const \fBqbVector\fP< double > & point2)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBqbVector\fP< double > RT::Ray::GetPoint1 () const"
+
+.SS "\fBqbVector\fP< double > RT::Ray::GetPoint2 () const"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBqbVector\fP<double> RT::Ray::m_lab {3}"
+
+.SS "\fBqbVector\fP<double> RT::Ray::m_point1 {3}"
+
+.SS "\fBqbVector\fP<double> RT::Ray::m_point2 {3}"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

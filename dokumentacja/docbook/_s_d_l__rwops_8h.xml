@@ -1,0 +1,1684 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__rwops_8h" xml:lang="en-US">
+<title>D:/RayTracing/include/SDL_rwops.h File Reference</title>
+<indexterm><primary>D:/RayTracing/include/SDL_rwops.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;SDL_stdinc.h&quot;
+#include &quot;SDL_error.h&quot;
+#include &quot;begin_code.h&quot;
+#include &quot;close_code.h&quot;
+</programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__s_d_l__rwops_8h_1abefd1a35086e97620beffc2c069bd97d">SDL_RWOPS_UNKNOWN</link>   0U</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__rwops_8h_1ad979b58d7905cfd8af0bab9ed97c1685">SDL_RWOPS_WINFILE</link>   1U</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__rwops_8h_1a054a717fd0b1a2f175e2e822e1ecc67d">SDL_RWOPS_STDFILE</link>   2U</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__rwops_8h_1ad1e973a8b9f9c6cae33f2870c9f76b7d">SDL_RWOPS_JNIFILE</link>   3U</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__rwops_8h_1a1120765c20af356803b2beb6709e6749">SDL_RWOPS_MEMORY</link>   4U</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__rwops_8h_1a145dd63b72548f37e2fdd9de8bf15bbc">SDL_RWOPS_MEMORY_RO</link>   5U</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef struct <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> <link linkend="__s_d_l__rwops_8h_1a74ae02b3c98390e2792749c53329cc23">SDL_RWops</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+<simplesect><title>Read endian functions</title>
+
+<para>Read an item of the specified endianness and return in native format. </para>
+        <itemizedlist>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rwops_8h_1ab864094eb6b80fbf0c77d34ecdde7907">SDL_ReadU8</link> (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *<link linkend="__s_d_l__opengl__glext_8h_1a72e0fdf0f845ded60b1fada9e9195cd7">src</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rwops_8h_1a7274f5c4b6f22a6b742ec6ef4f9d390b">SDL_ReadLE16</link> (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *<link linkend="__s_d_l__opengl__glext_8h_1a72e0fdf0f845ded60b1fada9e9195cd7">src</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rwops_8h_1a3cdf85a50e40dc58536930429b7b4d09">SDL_ReadBE16</link> (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *<link linkend="__s_d_l__opengl__glext_8h_1a72e0fdf0f845ded60b1fada9e9195cd7">src</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rwops_8h_1a8320334c299a3631fd6beb9937c30f04">SDL_ReadLE32</link> (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *<link linkend="__s_d_l__opengl__glext_8h_1a72e0fdf0f845ded60b1fada9e9195cd7">src</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rwops_8h_1af023e134e3ae87b1595306e5faeaab76">SDL_ReadBE32</link> (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *<link linkend="__s_d_l__opengl__glext_8h_1a72e0fdf0f845ded60b1fada9e9195cd7">src</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rwops_8h_1af7e5d9b56874b8bd3a8a6a0c5393c33d">SDL_ReadLE64</link> (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *<link linkend="__s_d_l__opengl__glext_8h_1a72e0fdf0f845ded60b1fada9e9195cd7">src</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rwops_8h_1a4917dc584d162bc5f28b63843557214e">SDL_ReadBE64</link> (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *<link linkend="__s_d_l__opengl__glext_8h_1a72e0fdf0f845ded60b1fada9e9195cd7">src</link>)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</simplesect>
+<simplesect><title>Write endian functions</title>
+
+<para>Write an item of native format to the specified endianness. </para>
+        <itemizedlist>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rwops_8h_1a07c817f8360ddc8c8983d12373306555">SDL_WriteU8</link> (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *<link linkend="__s_d_l__opengl__glext_8h_1a92034251bfd455d524a9b5610cddba00">dst</link>, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> <link linkend="__s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f">value</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rwops_8h_1aa4a7df8d967c5751e3f0974743b9c2d4">SDL_WriteLE16</link> (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *<link linkend="__s_d_l__opengl__glext_8h_1a92034251bfd455d524a9b5610cddba00">dst</link>, <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="__s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f">value</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rwops_8h_1ab84ea778a5f8f76cd73a52216c2c08f5">SDL_WriteBE16</link> (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *<link linkend="__s_d_l__opengl__glext_8h_1a92034251bfd455d524a9b5610cddba00">dst</link>, <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="__s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f">value</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rwops_8h_1a84f37961925773fe8b06ea09ed144568">SDL_WriteLE32</link> (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *<link linkend="__s_d_l__opengl__glext_8h_1a92034251bfd455d524a9b5610cddba00">dst</link>, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="__s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f">value</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rwops_8h_1a5debf04eeed819018ddd9a2f70d32c89">SDL_WriteBE32</link> (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *<link linkend="__s_d_l__opengl__glext_8h_1a92034251bfd455d524a9b5610cddba00">dst</link>, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="__s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f">value</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rwops_8h_1ae4f9b45fbb3bf4a40f3f308419307e6b">SDL_WriteLE64</link> (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *<link linkend="__s_d_l__opengl__glext_8h_1a92034251bfd455d524a9b5610cddba00">dst</link>, <link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link> <link linkend="__s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f">value</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rwops_8h_1a0422f79e1889750cf99310e968cb76fc">SDL_WriteBE64</link> (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *<link linkend="__s_d_l__opengl__glext_8h_1a92034251bfd455d524a9b5610cddba00">dst</link>, <link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link> <link linkend="__s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f">value</link>)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>RWFrom functions    </title>
+
+<para><anchor xml:id="__1amgrp62de7a3fffaa5d9dd1e07f650daede2b"/>Functions to create <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> structures from various data streams. </para>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__s_d_l__rwops_8h_1ac028b032bb8230df64bc6284e04789f5">RW_SEEK_SET</link>   0</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__rwops_8h_1aba5f3b60c197def370ffa2ca1ab1348d">RW_SEEK_CUR</link>   1</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__rwops_8h_1a6cf141faabd1b8f2ec3c03cf76eaf553">RW_SEEK_END</link>   2</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rwops_8h_1a898d9ad749f054f6b6780bff411fd33a">SDL_RWFromFile</link> (const char *file, const char *<link linkend="__s_d_l__opengl__glext_8h_1a1e71d9c196e4683cc06c4b54d53f7ef5">mode</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rwops_8h_1ac97cd440488d5985ee24b981169b94c6">SDL_RWFromFP</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *fp, <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> autoclose)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rwops_8h_1a71dcee62581049097e1a6e2966849b85">SDL_RWFromMem</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *mem, int <link linkend="__s_d_l__opengl__glext_8h_1a3d1e3edfcf61ca2d831883e1afbad89e">size</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rwops_8h_1aafa955069a970575dfa1cab7db167c54">SDL_RWFromConstMem</link> (const <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *mem, int <link linkend="__s_d_l__opengl__glext_8h_1a3d1e3edfcf61ca2d831883e1afbad89e">size</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rwops_8h_1a2fa1222f94ca8a89b0719be6ef391856">SDL_AllocRW</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rwops_8h_1ac4c87c7bed186ea1a98531164ff1acfa">SDL_FreeRW</link> (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *area)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rwops_8h_1ab311e9e01e66dde338349b5988008f79">SDL_RWsize</link> (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *context)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rwops_8h_1a2bd3bfec48d375b5e761a5f7f3138766">SDL_RWseek</link> (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *context, <link linkend="__s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</link> <link linkend="__s_d_l__opengl__glext_8h_1ac915cd848f42b26af51745f204a3b9af">offset</link>, int whence)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rwops_8h_1aade1cc6bf5cd0972c64f1bc032bdece6">SDL_RWtell</link> (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *context)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rwops_8h_1a7496ce8759fe964ee40cd6fbfa4b82f9">SDL_RWread</link> (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *context, <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *ptr, <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> <link linkend="__s_d_l__opengl__glext_8h_1a3d1e3edfcf61ca2d831883e1afbad89e">size</link>, <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> maxnum)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rwops_8h_1ada3c6d29d2fc5f0367abdcbfc2f2896a">SDL_RWwrite</link> (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *context, const <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *ptr, <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> <link linkend="__s_d_l__opengl__glext_8h_1a3d1e3edfcf61ca2d831883e1afbad89e">size</link>, <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> <link linkend="__s_d_l__opengl__glext_8h_1abb50fc1ead3a02a46fb52daa2045f95c">num</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rwops_8h_1a4e432d6d008ad176b7653b4797de12e9">SDL_RWclose</link> (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *context)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rwops_8h_1ade6af59bde1d4dd05ee5cff900bd3429">SDL_LoadFile_RW</link> (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *<link linkend="__s_d_l__opengl__glext_8h_1a72e0fdf0f845ded60b1fada9e9195cd7">src</link>, <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> *datasize, int freesrc)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rwops_8h_1a2ba73f182958405663c8511885c0740c">SDL_LoadFile</link> (const char *file, <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> *datasize)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This file provides a general interface for SDL to read and write data streams. It can easily be extended to files, memory, etc. </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__s_d_l__rwops_8h_1aba5f3b60c197def370ffa2ca1ab1348d"/><section>
+    <title>RW_SEEK_CUR</title>
+<indexterm><primary>RW_SEEK_CUR</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>RW_SEEK_CUR</secondary></indexterm>
+<para><computeroutput>#define RW_SEEK_CUR   1</computeroutput></para>
+<para>Seek relative to current read point </para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1a6cf141faabd1b8f2ec3c03cf76eaf553"/><section>
+    <title>RW_SEEK_END</title>
+<indexterm><primary>RW_SEEK_END</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>RW_SEEK_END</secondary></indexterm>
+<para><computeroutput>#define RW_SEEK_END   2</computeroutput></para>
+<para>Seek relative to the end of data </para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1ac028b032bb8230df64bc6284e04789f5"/><section>
+    <title>RW_SEEK_SET</title>
+<indexterm><primary>RW_SEEK_SET</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>RW_SEEK_SET</secondary></indexterm>
+<para><computeroutput>#define RW_SEEK_SET   0</computeroutput></para>
+<para>Seek from the beginning of data </para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1ad1e973a8b9f9c6cae33f2870c9f76b7d"/><section>
+    <title>SDL_RWOPS_JNIFILE</title>
+<indexterm><primary>SDL_RWOPS_JNIFILE</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_RWOPS_JNIFILE</secondary></indexterm>
+<para><computeroutput>#define SDL_RWOPS_JNIFILE   3U</computeroutput></para>
+<para>Android asset </para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1a1120765c20af356803b2beb6709e6749"/><section>
+    <title>SDL_RWOPS_MEMORY</title>
+<indexterm><primary>SDL_RWOPS_MEMORY</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_RWOPS_MEMORY</secondary></indexterm>
+<para><computeroutput>#define SDL_RWOPS_MEMORY   4U</computeroutput></para>
+<para>Memory stream </para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1a145dd63b72548f37e2fdd9de8bf15bbc"/><section>
+    <title>SDL_RWOPS_MEMORY_RO</title>
+<indexterm><primary>SDL_RWOPS_MEMORY_RO</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_RWOPS_MEMORY_RO</secondary></indexterm>
+<para><computeroutput>#define SDL_RWOPS_MEMORY_RO   5U</computeroutput></para>
+<para>Read-Only memory stream </para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1a054a717fd0b1a2f175e2e822e1ecc67d"/><section>
+    <title>SDL_RWOPS_STDFILE</title>
+<indexterm><primary>SDL_RWOPS_STDFILE</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_RWOPS_STDFILE</secondary></indexterm>
+<para><computeroutput>#define SDL_RWOPS_STDFILE   2U</computeroutput></para>
+<para>Stdio file </para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1abefd1a35086e97620beffc2c069bd97d"/><section>
+    <title>SDL_RWOPS_UNKNOWN</title>
+<indexterm><primary>SDL_RWOPS_UNKNOWN</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_RWOPS_UNKNOWN</secondary></indexterm>
+<para><computeroutput>#define SDL_RWOPS_UNKNOWN   0U</computeroutput></para>
+<para>Unknown stream type </para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1ad979b58d7905cfd8af0bab9ed97c1685"/><section>
+    <title>SDL_RWOPS_WINFILE</title>
+<indexterm><primary>SDL_RWOPS_WINFILE</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_RWOPS_WINFILE</secondary></indexterm>
+<para><computeroutput>#define SDL_RWOPS_WINFILE   1U</computeroutput></para>
+<para>Win32 file </para>
+</section>
+</section>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="__s_d_l__rwops_8h_1a74ae02b3c98390e2792749c53329cc23"/><section>
+    <title>SDL_RWops</title>
+<indexterm><primary>SDL_RWops</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_RWops</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link></computeroutput></para>
+<para>This is the read/write operation structure &#8211; very basic. </para>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__s_d_l__rwops_8h_1a2fa1222f94ca8a89b0719be6ef391856"/><section>
+    <title>SDL_AllocRW()</title>
+<indexterm><primary>SDL_AllocRW</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_AllocRW</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_AllocRW (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para>
+<para>Use this function to allocate an empty, unpopulated <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> structure.</para>
+
+<para>Applications do not need to use this function unless they are providing their own <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> implementation. If you just need a <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> to read/write a common data source, you should use the built-in implementations in SDL, like <link linkend="__s_d_l__rwops_8h_1a898d9ad749f054f6b6780bff411fd33a">SDL_RWFromFile()</link> or <link linkend="__s_d_l__rwops_8h_1a71dcee62581049097e1a6e2966849b85">SDL_RWFromMem()</link>, etc.</para>
+
+<para>You must free the returned pointer with <link linkend="__s_d_l__rwops_8h_1ac4c87c7bed186ea1a98531164ff1acfa">SDL_FreeRW()</link>. Depending on your operating system and compiler, there may be a difference between the malloc() and free() your program uses and the versions SDL calls internally. Trying to mix the two can cause crashing such as segmentation faults. Since all <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> must free themselves when their <emphasis role="bold">close</emphasis> method is called, all <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> must be allocated through this function, so they can all be freed correctly with <link linkend="__s_d_l__rwops_8h_1ac4c87c7bed186ea1a98531164ff1acfa">SDL_FreeRW()</link>.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>a pointer to the allocated memory on success, or NULL on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__rwops_8h_1ac4c87c7bed186ea1a98531164ff1acfa">SDL_FreeRW</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1ac4c87c7bed186ea1a98531164ff1acfa"/><section>
+    <title>SDL_FreeRW()</title>
+<indexterm><primary>SDL_FreeRW</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_FreeRW</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_FreeRW (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> * area)</computeroutput></para>
+<para>Use this function to free an <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> structure allocated by <link linkend="__s_d_l__rwops_8h_1a2fa1222f94ca8a89b0719be6ef391856">SDL_AllocRW()</link>.</para>
+
+<para>Applications do not need to use this function unless they are providing their own <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> implementation. If you just need a <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> to read/write a common data source, you should use the built-in implementations in SDL, like <link linkend="__s_d_l__rwops_8h_1a898d9ad749f054f6b6780bff411fd33a">SDL_RWFromFile()</link> or <link linkend="__s_d_l__rwops_8h_1a71dcee62581049097e1a6e2966849b85">SDL_RWFromMem()</link>, etc, and call the <emphasis role="bold">close</emphasis> method on those <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> pointers when you are done with them.</para>
+
+<para>Only use <link linkend="__s_d_l__rwops_8h_1ac4c87c7bed186ea1a98531164ff1acfa">SDL_FreeRW()</link> on pointers returned by <link linkend="__s_d_l__rwops_8h_1a2fa1222f94ca8a89b0719be6ef391856">SDL_AllocRW()</link>. The pointer is invalid as soon as this function returns. Any extra memory allocated during creation of the <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> is not freed by <link linkend="__s_d_l__rwops_8h_1ac4c87c7bed186ea1a98531164ff1acfa">SDL_FreeRW()</link>; the programmer must be responsible for managing that memory in their <emphasis role="bold">close</emphasis> method.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>area</entry><entry>
+<para>the <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> structure to be freed</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__rwops_8h_1a2fa1222f94ca8a89b0719be6ef391856">SDL_AllocRW</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1a2ba73f182958405663c8511885c0740c"/><section>
+    <title>SDL_LoadFile()</title>
+<indexterm><primary>SDL_LoadFile</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_LoadFile</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_LoadFile (const char * file, <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> * datasize)</computeroutput></para>
+<para>Load all the data from a file path.</para>
+
+<para>The data is allocated with a zero byte at the end (null terminated) for convenience. This extra byte is not included in the value reported via <computeroutput>datasize</computeroutput>.</para>
+
+<para>The data should be freed with <link linkend="__s_d_l__stdinc_8h_1a0e4ade894d550ada1fa19dc2d46e88b8">SDL_free()</link>.</para>
+
+<para>Prior to SDL 2.0.10, this function was a macro wrapping around SDL_LoadFile_RW.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>file</entry><entry>
+<para>the path to read all available data from </para>
+</entry>
+                            </row>
+                            <row>
+<entry>datasize</entry><entry>
+<para>if not NULL, will store the number of bytes read </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the data, or NULL if there was an error.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.10. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1ade6af59bde1d4dd05ee5cff900bd3429"/><section>
+    <title>SDL_LoadFile_RW()</title>
+<indexterm><primary>SDL_LoadFile_RW</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_LoadFile_RW</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_LoadFile_RW (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> * src, <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> * datasize, int freesrc)</computeroutput></para>
+<para>Load all the data from an SDL data stream.</para>
+
+<para>The data is allocated with a zero byte at the end (null terminated) for convenience. This extra byte is not included in the value reported via <computeroutput>datasize</computeroutput>.</para>
+
+<para>The data should be freed with <link linkend="__s_d_l__stdinc_8h_1a0e4ade894d550ada1fa19dc2d46e88b8">SDL_free()</link>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>src</entry><entry>
+<para>the <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> to read all available data from </para>
+</entry>
+                            </row>
+                            <row>
+<entry>datasize</entry><entry>
+<para>if not NULL, will store the number of bytes read </para>
+</entry>
+                            </row>
+                            <row>
+<entry>freesrc</entry><entry>
+<para>if non-zero, calls <link linkend="__s_d_l__rwops_8h_1a4e432d6d008ad176b7653b4797de12e9">SDL_RWclose()</link> on <computeroutput>src</computeroutput> before returning </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the data, or NULL if there was an error.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.6. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1a3cdf85a50e40dc58536930429b7b4d09"/><section>
+    <title>SDL_ReadBE16()</title>
+<indexterm><primary>SDL_ReadBE16</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_ReadBE16</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_ReadBE16 (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> * src)</computeroutput></para>
+<para>Use this function to read 16 bits of big-endian data from an <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> and return in native format.</para>
+
+<para>SDL byteswaps the data only if necessary, so the data returned will be in the native byte order.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>src</entry><entry>
+<para>the stream from which to read data </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>16 bits of data in the native byte order of the platform.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__rwops_8h_1a7274f5c4b6f22a6b742ec6ef4f9d390b">SDL_ReadLE16</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1af023e134e3ae87b1595306e5faeaab76"/><section>
+    <title>SDL_ReadBE32()</title>
+<indexterm><primary>SDL_ReadBE32</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_ReadBE32</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_ReadBE32 (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> * src)</computeroutput></para>
+<para>Use this function to read 32 bits of big-endian data from an <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> and return in native format.</para>
+
+<para>SDL byteswaps the data only if necessary, so the data returned will be in the native byte order.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>src</entry><entry>
+<para>the stream from which to read data </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>32 bits of data in the native byte order of the platform.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__rwops_8h_1a8320334c299a3631fd6beb9937c30f04">SDL_ReadLE32</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1a4917dc584d162bc5f28b63843557214e"/><section>
+    <title>SDL_ReadBE64()</title>
+<indexterm><primary>SDL_ReadBE64</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_ReadBE64</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_ReadBE64 (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> * src)</computeroutput></para>
+<para>Use this function to read 64 bits of big-endian data from an <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> and return in native format.</para>
+
+<para>SDL byteswaps the data only if necessary, so the data returned will be in the native byte order.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>src</entry><entry>
+<para>the stream from which to read data </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>64 bits of data in the native byte order of the platform.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__rwops_8h_1af7e5d9b56874b8bd3a8a6a0c5393c33d">SDL_ReadLE64</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1a7274f5c4b6f22a6b742ec6ef4f9d390b"/><section>
+    <title>SDL_ReadLE16()</title>
+<indexterm><primary>SDL_ReadLE16</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_ReadLE16</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_ReadLE16 (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> * src)</computeroutput></para>
+<para>Use this function to read 16 bits of little-endian data from an <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> and return in native format.</para>
+
+<para>SDL byteswaps the data only if necessary, so the data returned will be in the native byte order.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>src</entry><entry>
+<para>the stream from which to read data </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>16 bits of data in the native byte order of the platform.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__rwops_8h_1a3cdf85a50e40dc58536930429b7b4d09">SDL_ReadBE16</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1a8320334c299a3631fd6beb9937c30f04"/><section>
+    <title>SDL_ReadLE32()</title>
+<indexterm><primary>SDL_ReadLE32</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_ReadLE32</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_ReadLE32 (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> * src)</computeroutput></para>
+<para>Use this function to read 32 bits of little-endian data from an <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> and return in native format.</para>
+
+<para>SDL byteswaps the data only if necessary, so the data returned will be in the native byte order.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>src</entry><entry>
+<para>the stream from which to read data </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>32 bits of data in the native byte order of the platform.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__rwops_8h_1af023e134e3ae87b1595306e5faeaab76">SDL_ReadBE32</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1af7e5d9b56874b8bd3a8a6a0c5393c33d"/><section>
+    <title>SDL_ReadLE64()</title>
+<indexterm><primary>SDL_ReadLE64</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_ReadLE64</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_ReadLE64 (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> * src)</computeroutput></para>
+<para>Use this function to read 64 bits of little-endian data from an <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> and return in native format.</para>
+
+<para>SDL byteswaps the data only if necessary, so the data returned will be in the native byte order.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>src</entry><entry>
+<para>the stream from which to read data </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>64 bits of data in the native byte order of the platform.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__rwops_8h_1a4917dc584d162bc5f28b63843557214e">SDL_ReadBE64</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1ab864094eb6b80fbf0c77d34ecdde7907"/><section>
+    <title>SDL_ReadU8()</title>
+<indexterm><primary>SDL_ReadU8</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_ReadU8</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_ReadU8 (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> * src)</computeroutput></para>
+<para>Use this function to read a byte from an <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>src</entry><entry>
+<para>the <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> to read from </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the read byte on success or 0 on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__rwops_8h_1a07c817f8360ddc8c8983d12373306555">SDL_WriteU8</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1a4e432d6d008ad176b7653b4797de12e9"/><section>
+    <title>SDL_RWclose()</title>
+<indexterm><primary>SDL_RWclose</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_RWclose</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_RWclose (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> * context)</computeroutput></para>
+<para>Close and free an allocated <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> structure.</para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a4e432d6d008ad176b7653b4797de12e9">SDL_RWclose()</link> closes and cleans up the <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> stream. It releases any resources used by the stream and frees the <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> itself with <link linkend="__s_d_l__rwops_8h_1ac4c87c7bed186ea1a98531164ff1acfa">SDL_FreeRW()</link>. This returns 0 on success, or -1 if the stream failed to flush to its output (e.g. to disk).</para>
+
+<para>Note that if this fails to flush the stream to disk, this function reports an error, but the <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> is still invalid once this function returns.</para>
+
+<para>Prior to SDL 2.0.10, this function was a macro.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>context</entry><entry>
+<para><link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> structure to close </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 on success or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.10.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__rwops_8h_1aafa955069a970575dfa1cab7db167c54">SDL_RWFromConstMem</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a898d9ad749f054f6b6780bff411fd33a">SDL_RWFromFile</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1ac97cd440488d5985ee24b981169b94c6">SDL_RWFromFP</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a71dcee62581049097e1a6e2966849b85">SDL_RWFromMem</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a7496ce8759fe964ee40cd6fbfa4b82f9">SDL_RWread</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a2bd3bfec48d375b5e761a5f7f3138766">SDL_RWseek</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1ada3c6d29d2fc5f0367abdcbfc2f2896a">SDL_RWwrite</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1aafa955069a970575dfa1cab7db167c54"/><section>
+    <title>SDL_RWFromConstMem()</title>
+<indexterm><primary>SDL_RWFromConstMem</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_RWFromConstMem</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_RWFromConstMem (const <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> * mem, int size)</computeroutput></para>
+<para>Use this function to prepare a read-only memory buffer for use with RWops.</para>
+
+<para>This function sets up an <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> struct based on a memory area of a certain size. It assumes the memory area is not writable.</para>
+
+<para>Attempting to write to this RWops stream will report an error without writing to the memory buffer.</para>
+
+<para>This memory buffer is not copied by the RWops; the pointer you provide must remain valid until you close the stream. Closing the stream will not free the original buffer.</para>
+
+<para>If you need to write to a memory buffer, you should use <link linkend="__s_d_l__rwops_8h_1a71dcee62581049097e1a6e2966849b85">SDL_RWFromMem()</link> with a writable buffer of memory instead.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>mem</entry><entry>
+<para>a pointer to a read-only buffer to feed an <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> stream </para>
+</entry>
+                            </row>
+                            <row>
+<entry>size</entry><entry>
+<para>the buffer size, in bytes </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a pointer to a new <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> structure, or NULL if it fails; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__rwops_8h_1a4e432d6d008ad176b7653b4797de12e9">SDL_RWclose</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1aafa955069a970575dfa1cab7db167c54">SDL_RWFromConstMem</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a898d9ad749f054f6b6780bff411fd33a">SDL_RWFromFile</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1ac97cd440488d5985ee24b981169b94c6">SDL_RWFromFP</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a71dcee62581049097e1a6e2966849b85">SDL_RWFromMem</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a7496ce8759fe964ee40cd6fbfa4b82f9">SDL_RWread</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a2bd3bfec48d375b5e761a5f7f3138766">SDL_RWseek</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1aade1cc6bf5cd0972c64f1bc032bdece6">SDL_RWtell</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1a898d9ad749f054f6b6780bff411fd33a"/><section>
+    <title>SDL_RWFromFile()</title>
+<indexterm><primary>SDL_RWFromFile</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_RWFromFile</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_RWFromFile (const char * file, const char * mode)</computeroutput></para>
+<para>Use this function to create a new <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> structure for reading from and/or writing to a named file.</para>
+
+<para>The <computeroutput>mode</computeroutput> string is treated roughly the same as in a call to the C library&apos;s fopen(), even if SDL doesn&apos;t happen to use fopen() behind the scenes.</para>
+
+<para>Available <computeroutput>mode</computeroutput> strings:</para>
+
+<para><itemizedlist>
+<listitem>
+<para>&quot;r&quot;: Open a file for reading. The file must exist.</para>
+</listitem><listitem>
+<para>&quot;w&quot;: Create an empty file for writing. If a file with the same name already exists its content is erased and the file is treated as a new empty file.</para>
+</listitem><listitem>
+<para>&quot;a&quot;: Append to a file. Writing operations append data at the end of the file. The file is created if it does not exist.</para>
+</listitem><listitem>
+<para>&quot;r+&quot;: Open a file for update both reading and writing. The file must exist.</para>
+</listitem><listitem>
+<para>&quot;w+&quot;: Create an empty file for both reading and writing. If a file with the same name already exists its content is erased and the file is treated as a new empty file.</para>
+</listitem><listitem>
+<para>&quot;a+&quot;: Open a file for reading and appending. All writing operations are performed at the end of the file, protecting the previous content to be overwritten. You can reposition (fseek, rewind) the internal pointer to anywhere in the file for reading, but writing operations will move it back to the end of file. The file is created if it does not exist.</para>
+</listitem></itemizedlist>
+</para>
+
+<para><emphasis role="bold">NOTE</emphasis>: In order to open a file as a binary file, a &quot;b&quot; character has to be included in the <computeroutput>mode</computeroutput> string. This additional &quot;b&quot; character can either be appended at the end of the string (thus making the following compound modes: &quot;rb&quot;, &quot;wb&quot;, &quot;ab&quot;, &quot;r+b&quot;, &quot;w+b&quot;, &quot;a+b&quot;) or be inserted between the letter and the &quot;+&quot; sign for the mixed modes (&quot;rb+&quot;, &quot;wb+&quot;, &quot;ab+&quot;). Additional characters may follow the sequence, although they should have no effect. For example, &quot;t&quot; is sometimes appended to make explicit the file is a text file.</para>
+
+<para>This function supports Unicode filenames, but they must be encoded in UTF-8 format, regardless of the underlying operating system.</para>
+
+<para>As a fallback, <link linkend="__s_d_l__rwops_8h_1a898d9ad749f054f6b6780bff411fd33a">SDL_RWFromFile()</link> will transparently open a matching filename in an Android app&apos;s <computeroutput>assets</computeroutput>.</para>
+
+<para>Closing the <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> will close the file handle SDL is holding internally.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>file</entry><entry>
+<para>a UTF-8 string representing the filename to open </para>
+</entry>
+                            </row>
+                            <row>
+<entry>mode</entry><entry>
+<para>an ASCII string representing the mode to be used for opening the file. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a pointer to the <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> structure that is created, or NULL on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__rwops_8h_1a4e432d6d008ad176b7653b4797de12e9">SDL_RWclose</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1aafa955069a970575dfa1cab7db167c54">SDL_RWFromConstMem</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1ac97cd440488d5985ee24b981169b94c6">SDL_RWFromFP</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a71dcee62581049097e1a6e2966849b85">SDL_RWFromMem</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a7496ce8759fe964ee40cd6fbfa4b82f9">SDL_RWread</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a2bd3bfec48d375b5e761a5f7f3138766">SDL_RWseek</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1aade1cc6bf5cd0972c64f1bc032bdece6">SDL_RWtell</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1ada3c6d29d2fc5f0367abdcbfc2f2896a">SDL_RWwrite</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1ac97cd440488d5985ee24b981169b94c6"/><section>
+    <title>SDL_RWFromFP()</title>
+<indexterm><primary>SDL_RWFromFP</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_RWFromFP</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_RWFromFP (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> * fp, <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> autoclose)</computeroutput></para>
+<para>Use this function to create an <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> structure from a standard I/O file pointer (stdio.h&apos;s <computeroutput>FILE*</computeroutput>).</para>
+
+<para>This function is not available on Windows, since files opened in an application on that platform cannot be used by a dynamically linked library.</para>
+
+<para>On some platforms, the first parameter is a <computeroutput>void*</computeroutput>, on others, it&apos;s a <computeroutput>FILE*</computeroutput>, depending on what system headers are available to SDL. It is always intended to be the <computeroutput>FILE*</computeroutput> type from the C runtime&apos;s stdio.h.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>fp</entry><entry>
+<para>the <computeroutput>FILE*</computeroutput> that feeds the <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> stream </para>
+</entry>
+                            </row>
+                            <row>
+<entry>autoclose</entry><entry>
+<para>SDL_TRUE to close the <computeroutput>FILE*</computeroutput> when closing the <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>, SDL_FALSE to leave the <computeroutput>FILE*</computeroutput> open when the RWops is closed </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a pointer to the <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> structure that is created, or NULL on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__rwops_8h_1a4e432d6d008ad176b7653b4797de12e9">SDL_RWclose</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1aafa955069a970575dfa1cab7db167c54">SDL_RWFromConstMem</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a898d9ad749f054f6b6780bff411fd33a">SDL_RWFromFile</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a71dcee62581049097e1a6e2966849b85">SDL_RWFromMem</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a7496ce8759fe964ee40cd6fbfa4b82f9">SDL_RWread</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a2bd3bfec48d375b5e761a5f7f3138766">SDL_RWseek</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1aade1cc6bf5cd0972c64f1bc032bdece6">SDL_RWtell</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1ada3c6d29d2fc5f0367abdcbfc2f2896a">SDL_RWwrite</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1a71dcee62581049097e1a6e2966849b85"/><section>
+    <title>SDL_RWFromMem()</title>
+<indexterm><primary>SDL_RWFromMem</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_RWFromMem</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_RWFromMem (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> * mem, int size)</computeroutput></para>
+<para>Use this function to prepare a read-write memory buffer for use with <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>.</para>
+
+<para>This function sets up an <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> struct based on a memory area of a certain size, for both read and write access.</para>
+
+<para>This memory buffer is not copied by the RWops; the pointer you provide must remain valid until you close the stream. Closing the stream will not free the original buffer.</para>
+
+<para>If you need to make sure the RWops never writes to the memory buffer, you should use <link linkend="__s_d_l__rwops_8h_1aafa955069a970575dfa1cab7db167c54">SDL_RWFromConstMem()</link> with a read-only buffer of memory instead.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>mem</entry><entry>
+<para>a pointer to a buffer to feed an <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> stream </para>
+</entry>
+                            </row>
+                            <row>
+<entry>size</entry><entry>
+<para>the buffer size, in bytes </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a pointer to a new <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> structure, or NULL if it fails; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__rwops_8h_1a4e432d6d008ad176b7653b4797de12e9">SDL_RWclose</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1aafa955069a970575dfa1cab7db167c54">SDL_RWFromConstMem</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a898d9ad749f054f6b6780bff411fd33a">SDL_RWFromFile</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1ac97cd440488d5985ee24b981169b94c6">SDL_RWFromFP</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a71dcee62581049097e1a6e2966849b85">SDL_RWFromMem</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a7496ce8759fe964ee40cd6fbfa4b82f9">SDL_RWread</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a2bd3bfec48d375b5e761a5f7f3138766">SDL_RWseek</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1aade1cc6bf5cd0972c64f1bc032bdece6">SDL_RWtell</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1ada3c6d29d2fc5f0367abdcbfc2f2896a">SDL_RWwrite</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1a7496ce8759fe964ee40cd6fbfa4b82f9"/><section>
+    <title>SDL_RWread()</title>
+<indexterm><primary>SDL_RWread</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_RWread</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_RWread (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> * context, <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> * ptr, <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> size, <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> maxnum)</computeroutput></para>
+<para>Read from a data source.</para>
+
+<para>This function reads up to <computeroutput>maxnum</computeroutput> objects each of size <computeroutput>size</computeroutput> from the data source to the area pointed at by <computeroutput>ptr</computeroutput>. This function may read less objects than requested. It will return zero when there has been an error or the data stream is completely read.</para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a7496ce8759fe964ee40cd6fbfa4b82f9">SDL_RWread()</link> is actually a function wrapper that calls the <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&apos;s <computeroutput>read</computeroutput> method appropriately, to simplify application development.</para>
+
+<para>Prior to SDL 2.0.10, this function was a macro.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>context</entry><entry>
+<para>a pointer to an <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> structure </para>
+</entry>
+                            </row>
+                            <row>
+<entry>ptr</entry><entry>
+<para>a pointer to a buffer to read data into </para>
+</entry>
+                            </row>
+                            <row>
+<entry>size</entry><entry>
+<para>the size of each object to read, in bytes </para>
+</entry>
+                            </row>
+                            <row>
+<entry>maxnum</entry><entry>
+<para>the maximum number of objects to be read </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the number of objects read, or 0 at error or end of file; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.10.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__rwops_8h_1a4e432d6d008ad176b7653b4797de12e9">SDL_RWclose</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1aafa955069a970575dfa1cab7db167c54">SDL_RWFromConstMem</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a898d9ad749f054f6b6780bff411fd33a">SDL_RWFromFile</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1ac97cd440488d5985ee24b981169b94c6">SDL_RWFromFP</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a71dcee62581049097e1a6e2966849b85">SDL_RWFromMem</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a2bd3bfec48d375b5e761a5f7f3138766">SDL_RWseek</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1ada3c6d29d2fc5f0367abdcbfc2f2896a">SDL_RWwrite</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1a2bd3bfec48d375b5e761a5f7f3138766"/><section>
+    <title>SDL_RWseek()</title>
+<indexterm><primary>SDL_RWseek</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_RWseek</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_RWseek (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> * context, <link linkend="__s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</link> offset, int whence)</computeroutput></para>
+<para>Seek within an <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> data stream.</para>
+
+<para>This function seeks to byte <computeroutput>offset</computeroutput>, relative to <computeroutput>whence</computeroutput>.</para>
+
+<para><computeroutput>whence</computeroutput> may be any of the following values:</para>
+
+<para><itemizedlist>
+<listitem>
+<para><computeroutput>RW_SEEK_SET</computeroutput>: seek from the beginning of data</para>
+</listitem><listitem>
+<para><computeroutput>RW_SEEK_CUR</computeroutput>: seek relative to current read point</para>
+</listitem><listitem>
+<para><computeroutput>RW_SEEK_END</computeroutput>: seek relative to the end of data</para>
+</listitem></itemizedlist>
+</para>
+
+<para>If this stream can not seek, it will return -1.</para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a2bd3bfec48d375b5e761a5f7f3138766">SDL_RWseek()</link> is actually a wrapper function that calls the <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&apos;s <computeroutput>seek</computeroutput> method appropriately, to simplify application development.</para>
+
+<para>Prior to SDL 2.0.10, this function was a macro.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>context</entry><entry>
+<para>a pointer to an <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> structure </para>
+</entry>
+                            </row>
+                            <row>
+<entry>offset</entry><entry>
+<para>an offset in bytes, relative to <emphasis role="bold">whence</emphasis> location; can be negative </para>
+</entry>
+                            </row>
+                            <row>
+<entry>whence</entry><entry>
+<para>any of <computeroutput>RW_SEEK_SET</computeroutput>, <computeroutput>RW_SEEK_CUR</computeroutput>, <computeroutput>RW_SEEK_END</computeroutput> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the final offset in the data stream after the seek or -1 on error.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.10.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__rwops_8h_1a4e432d6d008ad176b7653b4797de12e9">SDL_RWclose</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1aafa955069a970575dfa1cab7db167c54">SDL_RWFromConstMem</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a898d9ad749f054f6b6780bff411fd33a">SDL_RWFromFile</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1ac97cd440488d5985ee24b981169b94c6">SDL_RWFromFP</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a71dcee62581049097e1a6e2966849b85">SDL_RWFromMem</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a7496ce8759fe964ee40cd6fbfa4b82f9">SDL_RWread</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1aade1cc6bf5cd0972c64f1bc032bdece6">SDL_RWtell</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1ada3c6d29d2fc5f0367abdcbfc2f2896a">SDL_RWwrite</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1ab311e9e01e66dde338349b5988008f79"/><section>
+    <title>SDL_RWsize()</title>
+<indexterm><primary>SDL_RWsize</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_RWsize</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_RWsize (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> * context)</computeroutput></para>
+<para>Use this function to get the size of the data stream in an <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>.</para>
+
+<para>Prior to SDL 2.0.10, this function was a macro.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>context</entry><entry>
+<para>the <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> to get the size of the data stream from </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the size of the data stream in the <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> on success, -1 if unknown or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.10. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1aade1cc6bf5cd0972c64f1bc032bdece6"/><section>
+    <title>SDL_RWtell()</title>
+<indexterm><primary>SDL_RWtell</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_RWtell</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_RWtell (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> * context)</computeroutput></para>
+<para>Determine the current read/write offset in an <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> data stream.</para>
+
+<para>SDL_RWtell is actually a wrapper function that calls the <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&apos;s <computeroutput>seek</computeroutput> method, with an offset of 0 bytes from <computeroutput>RW_SEEK_CUR</computeroutput>, to simplify application development.</para>
+
+<para>Prior to SDL 2.0.10, this function was a macro.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>context</entry><entry>
+<para>a <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> data stream object from which to get the current offset </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the current offset in the stream, or -1 if the information can not be determined.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.10.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__rwops_8h_1a4e432d6d008ad176b7653b4797de12e9">SDL_RWclose</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1aafa955069a970575dfa1cab7db167c54">SDL_RWFromConstMem</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a898d9ad749f054f6b6780bff411fd33a">SDL_RWFromFile</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1ac97cd440488d5985ee24b981169b94c6">SDL_RWFromFP</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a71dcee62581049097e1a6e2966849b85">SDL_RWFromMem</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a7496ce8759fe964ee40cd6fbfa4b82f9">SDL_RWread</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a2bd3bfec48d375b5e761a5f7f3138766">SDL_RWseek</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1ada3c6d29d2fc5f0367abdcbfc2f2896a">SDL_RWwrite</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1ada3c6d29d2fc5f0367abdcbfc2f2896a"/><section>
+    <title>SDL_RWwrite()</title>
+<indexterm><primary>SDL_RWwrite</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_RWwrite</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_RWwrite (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> * context, const <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> * ptr, <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> size, <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> num)</computeroutput></para>
+<para>Write to an <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> data stream.</para>
+
+<para>This function writes exactly <computeroutput>num</computeroutput> objects each of size <computeroutput>size</computeroutput> from the area pointed at by <computeroutput>ptr</computeroutput> to the stream. If this fails for any reason, it&apos;ll return less than <computeroutput>num</computeroutput> to demonstrate how far the write progressed. On success, it returns <computeroutput>num</computeroutput>.</para>
+
+<para>SDL_RWwrite is actually a function wrapper that calls the <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&apos;s <computeroutput>write</computeroutput> method appropriately, to simplify application development.</para>
+
+<para>Prior to SDL 2.0.10, this function was a macro.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>context</entry><entry>
+<para>a pointer to an <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> structure </para>
+</entry>
+                            </row>
+                            <row>
+<entry>ptr</entry><entry>
+<para>a pointer to a buffer containing data to write </para>
+</entry>
+                            </row>
+                            <row>
+<entry>size</entry><entry>
+<para>the size of an object to write, in bytes </para>
+</entry>
+                            </row>
+                            <row>
+<entry>num</entry><entry>
+<para>the number of objects to write </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the number of objects written, which will be less than <emphasis role="bold">num</emphasis> on error; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.10.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__rwops_8h_1a4e432d6d008ad176b7653b4797de12e9">SDL_RWclose</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1aafa955069a970575dfa1cab7db167c54">SDL_RWFromConstMem</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a898d9ad749f054f6b6780bff411fd33a">SDL_RWFromFile</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1ac97cd440488d5985ee24b981169b94c6">SDL_RWFromFP</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a71dcee62581049097e1a6e2966849b85">SDL_RWFromMem</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a7496ce8759fe964ee40cd6fbfa4b82f9">SDL_RWread</link> </para>
+
+<para><link linkend="__s_d_l__rwops_8h_1a2bd3bfec48d375b5e761a5f7f3138766">SDL_RWseek</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1ab84ea778a5f8f76cd73a52216c2c08f5"/><section>
+    <title>SDL_WriteBE16()</title>
+<indexterm><primary>SDL_WriteBE16</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_WriteBE16</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_WriteBE16 (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> * dst, <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> value)</computeroutput></para>
+<para>Use this function to write 16 bits in native format to a <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> as big-endian data.</para>
+
+<para>SDL byteswaps the data only if necessary, so the application always specifies native format, and the data written will be in big-endian format.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>dst</entry><entry>
+<para>the stream to which data will be written </para>
+</entry>
+                            </row>
+                            <row>
+<entry>value</entry><entry>
+<para>the data to be written, in native format </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>1 on successful write, 0 on error.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__rwops_8h_1aa4a7df8d967c5751e3f0974743b9c2d4">SDL_WriteLE16</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1a5debf04eeed819018ddd9a2f70d32c89"/><section>
+    <title>SDL_WriteBE32()</title>
+<indexterm><primary>SDL_WriteBE32</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_WriteBE32</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_WriteBE32 (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> * dst, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> value)</computeroutput></para>
+<para>Use this function to write 32 bits in native format to a <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> as big-endian data.</para>
+
+<para>SDL byteswaps the data only if necessary, so the application always specifies native format, and the data written will be in big-endian format.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>dst</entry><entry>
+<para>the stream to which data will be written </para>
+</entry>
+                            </row>
+                            <row>
+<entry>value</entry><entry>
+<para>the data to be written, in native format </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>1 on successful write, 0 on error.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__rwops_8h_1a84f37961925773fe8b06ea09ed144568">SDL_WriteLE32</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1a0422f79e1889750cf99310e968cb76fc"/><section>
+    <title>SDL_WriteBE64()</title>
+<indexterm><primary>SDL_WriteBE64</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_WriteBE64</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_WriteBE64 (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> * dst, <link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link> value)</computeroutput></para>
+<para>Use this function to write 64 bits in native format to a <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> as big-endian data.</para>
+
+<para>SDL byteswaps the data only if necessary, so the application always specifies native format, and the data written will be in big-endian format.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>dst</entry><entry>
+<para>the stream to which data will be written </para>
+</entry>
+                            </row>
+                            <row>
+<entry>value</entry><entry>
+<para>the data to be written, in native format </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>1 on successful write, 0 on error.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__rwops_8h_1ae4f9b45fbb3bf4a40f3f308419307e6b">SDL_WriteLE64</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1aa4a7df8d967c5751e3f0974743b9c2d4"/><section>
+    <title>SDL_WriteLE16()</title>
+<indexterm><primary>SDL_WriteLE16</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_WriteLE16</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_WriteLE16 (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> * dst, <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> value)</computeroutput></para>
+<para>Use this function to write 16 bits in native format to a <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> as little-endian data.</para>
+
+<para>SDL byteswaps the data only if necessary, so the application always specifies native format, and the data written will be in little-endian format.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>dst</entry><entry>
+<para>the stream to which data will be written </para>
+</entry>
+                            </row>
+                            <row>
+<entry>value</entry><entry>
+<para>the data to be written, in native format </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>1 on successful write, 0 on error.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__rwops_8h_1ab84ea778a5f8f76cd73a52216c2c08f5">SDL_WriteBE16</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1a84f37961925773fe8b06ea09ed144568"/><section>
+    <title>SDL_WriteLE32()</title>
+<indexterm><primary>SDL_WriteLE32</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_WriteLE32</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_WriteLE32 (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> * dst, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> value)</computeroutput></para>
+<para>Use this function to write 32 bits in native format to a <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> as little-endian data.</para>
+
+<para>SDL byteswaps the data only if necessary, so the application always specifies native format, and the data written will be in little-endian format.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>dst</entry><entry>
+<para>the stream to which data will be written </para>
+</entry>
+                            </row>
+                            <row>
+<entry>value</entry><entry>
+<para>the data to be written, in native format </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>1 on successful write, 0 on error.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__rwops_8h_1a5debf04eeed819018ddd9a2f70d32c89">SDL_WriteBE32</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1ae4f9b45fbb3bf4a40f3f308419307e6b"/><section>
+    <title>SDL_WriteLE64()</title>
+<indexterm><primary>SDL_WriteLE64</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_WriteLE64</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_WriteLE64 (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> * dst, <link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link> value)</computeroutput></para>
+<para>Use this function to write 64 bits in native format to a <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> as little-endian data.</para>
+
+<para>SDL byteswaps the data only if necessary, so the application always specifies native format, and the data written will be in little-endian format.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>dst</entry><entry>
+<para>the stream to which data will be written </para>
+</entry>
+                            </row>
+                            <row>
+<entry>value</entry><entry>
+<para>the data to be written, in native format </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>1 on successful write, 0 on error.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__rwops_8h_1a0422f79e1889750cf99310e968cb76fc">SDL_WriteBE64</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rwops_8h_1a07c817f8360ddc8c8983d12373306555"/><section>
+    <title>SDL_WriteU8()</title>
+<indexterm><primary>SDL_WriteU8</primary><secondary>SDL_rwops.h</secondary></indexterm>
+<indexterm><primary>SDL_rwops.h</primary><secondary>SDL_WriteU8</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_WriteU8 (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> * dst, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> value)</computeroutput></para>
+<para>Use this function to write a byte to an <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>dst</entry><entry>
+<para>the <link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> to write to </para>
+</entry>
+                            </row>
+                            <row>
+<entry>value</entry><entry>
+<para>the byte value to write </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>1 on success or 0 on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__rwops_8h_1ab864094eb6b80fbf0c77d34ecdde7907">SDL_ReadU8</link> </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

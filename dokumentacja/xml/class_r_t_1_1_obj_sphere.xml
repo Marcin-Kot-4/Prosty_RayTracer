@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="class_r_t_1_1_obj_sphere" kind="class" language="C++" prot="public">
+    <compoundname>RT::ObjSphere</compoundname>
+    <basecompoundref refid="class_r_t_1_1_object_base" prot="public" virt="non-virtual">RT::ObjectBase</basecompoundref>
+    <includes refid="objsphere_8h" local="no">objsphere.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_r_t_1_1_obj_sphere_1acebbd30c9598b1e97f3372d7f0d87e74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RT::ObjSphere::ObjSphere</definition>
+        <argsstring>()</argsstring>
+        <name>ObjSphere</name>
+        <qualifiedname>RT::ObjSphere::ObjSphere</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Primitives/objsphere.h" line="12" column="9" bodyfile="D:/RayTracing/RayTrace/Primitives/objsphere.cpp" bodystart="5" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_obj_sphere_1a91db8fe9bbd7ad278d7899221204f300" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>RT::ObjSphere::~ObjSphere</definition>
+        <argsstring>() override</argsstring>
+        <name>~ObjSphere</name>
+        <qualifiedname>RT::ObjSphere::~ObjSphere</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Primitives/objsphere.h" line="15" column="17" bodyfile="D:/RayTracing/RayTrace/Primitives/objsphere.cpp" bodystart="10" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_obj_sphere_1ac61205d4e6dc56ad927e84ada7f3a77b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool RT::ObjSphere::TestIntersection</definition>
+        <argsstring>(const RT::Ray &amp;castRay, qbVector&lt; double &gt; &amp;intPoint, qbVector&lt; double &gt; &amp;localNormal, qbVector&lt; double &gt; &amp;localColor) override</argsstring>
+        <name>TestIntersection</name>
+        <qualifiedname>RT::ObjSphere::TestIntersection</qualifiedname>
+        <reimplements refid="class_r_t_1_1_object_base_1a1874168fc872f415520ddf7ae05f33a7">TestIntersection</reimplements>
+        <param>
+          <type>const <ref refid="class_r_t_1_1_ray" kindref="compound">RT::Ray</ref> &amp;</type>
+          <declname>castRay</declname>
+        </param>
+        <param>
+          <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>intPoint</declname>
+        </param>
+        <param>
+          <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>localNormal</declname>
+        </param>
+        <param>
+          <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>localColor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Primitives/objsphere.h" line="18" column="22" bodyfile="D:/RayTracing/RayTrace/Primitives/objsphere.cpp" bodystart="15" bodyend="110"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>RT::ObjSphere</label>
+        <link refid="class_r_t_1_1_obj_sphere"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>RT::ObjectBase</label>
+        <link refid="class_r_t_1_1_object_base"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4">
+        <label>RT::GTform</label>
+        <link refid="class_r_t_1_1_g_tform"/>
+      </node>
+      <node id="1">
+        <label>RT::ObjSphere</label>
+        <link refid="class_r_t_1_1_obj_sphere"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>RT::ObjectBase</label>
+        <link refid="class_r_t_1_1_object_base"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_baseColor</edgelabel>
+          <edgelabel>m_uvCoords</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_transformMatrix</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>qbVector&lt; double &gt;</label>
+        <link refid="classqb_vector"/>
+      </node>
+    </collaborationgraph>
+    <location file="D:/RayTracing/RayTrace/Primitives/objsphere.h" line="9" column="5" bodyfile="D:/RayTracing/RayTrace/Primitives/objsphere.h" bodystart="9" bodyend="24"/>
+    <listofallmembers>
+      <member refid="class_r_t_1_1_object_base_1a7d143fe3dc376fa9d03eb023dbfd7fb1" prot="public" virt="non-virtual"><scope>RT::ObjSphere</scope><name>AssignMaterial</name></member>
+      <member refid="class_r_t_1_1_object_base_1a3654cf7ddcab4705a656aea8f1156d9c" prot="public" virt="non-virtual"><scope>RT::ObjSphere</scope><name>CloseEnough</name></member>
+      <member refid="class_r_t_1_1_object_base_1a59a95426585e31a88e38083ec1a72b7b" prot="public" virt="non-virtual"><scope>RT::ObjSphere</scope><name>m_baseColor</name></member>
+      <member refid="class_r_t_1_1_object_base_1a96be79a468072fa5b3f72b1084a76278" prot="public" virt="non-virtual"><scope>RT::ObjSphere</scope><name>m_hasMaterial</name></member>
+      <member refid="class_r_t_1_1_object_base_1ae45ec3a9d0cd9f38605dcc8580c65c1c" prot="public" virt="non-virtual"><scope>RT::ObjSphere</scope><name>m_pMaterial</name></member>
+      <member refid="class_r_t_1_1_object_base_1ac3bdb9ce9f1aace3bc7d008ad3c71f85" prot="public" virt="non-virtual"><scope>RT::ObjSphere</scope><name>m_transformMatrix</name></member>
+      <member refid="class_r_t_1_1_object_base_1a0453a522f36f23f95638312633cf5d81" prot="public" virt="non-virtual"><scope>RT::ObjSphere</scope><name>m_uvCoords</name></member>
+      <member refid="class_r_t_1_1_object_base_1a2e524afdaa52559af1c9d32b92ab86d7" prot="public" virt="non-virtual"><scope>RT::ObjSphere</scope><name>ObjectBase</name></member>
+      <member refid="class_r_t_1_1_obj_sphere_1acebbd30c9598b1e97f3372d7f0d87e74" prot="public" virt="non-virtual"><scope>RT::ObjSphere</scope><name>ObjSphere</name></member>
+      <member refid="class_r_t_1_1_object_base_1ae49d7664053ba8709645e61f417b22a0" prot="public" virt="non-virtual"><scope>RT::ObjSphere</scope><name>SetTransformMatrix</name></member>
+      <member refid="class_r_t_1_1_obj_sphere_1ac61205d4e6dc56ad927e84ada7f3a77b" prot="public" virt="virtual"><scope>RT::ObjSphere</scope><name>TestIntersection</name></member>
+      <member refid="class_r_t_1_1_object_base_1a483e10e0d0096f29b1a19ebcbc9a8daf" prot="public" virt="virtual"><scope>RT::ObjSphere</scope><name>~ObjectBase</name></member>
+      <member refid="class_r_t_1_1_obj_sphere_1a91db8fe9bbd7ad278d7899221204f300" prot="public" virt="virtual"><scope>RT::ObjSphere</scope><name>~ObjSphere</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

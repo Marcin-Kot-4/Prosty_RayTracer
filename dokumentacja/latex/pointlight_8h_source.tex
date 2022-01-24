@@ -1,0 +1,30 @@
+\hypertarget{pointlight_8h_source}{}\doxysection{pointlight.\+h}
+\label{pointlight_8h_source}\index{D:/RayTracing/RayTrace/Lights/pointlight.h@{D:/RayTracing/RayTrace/Lights/pointlight.h}}
+\mbox{\hyperlink{pointlight_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef RAYTRACING\_POINTLIGHT\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define RAYTRACING\_POINTLIGHT\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{lightbase_8h}{lightbase.h}}"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_r_t}{RT}} \{}
+\DoxyCodeLine{8     \textcolor{keyword}{class }\mbox{\hyperlink{class_r_t_1_1_point_light}{PointLight}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_r_t_1_1_light_base}{LightBase}} \{}
+\DoxyCodeLine{9     \textcolor{keyword}{public}:}
+\DoxyCodeLine{10         \textcolor{comment}{// Domyślny konstruktor}}
+\DoxyCodeLine{11         \mbox{\hyperlink{class_r_t_1_1_point_light_a9d77ceb3af9acbc752635005361baae2}{PointLight}}();}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13         \textcolor{comment}{// Nadpisany destruktor}}
+\DoxyCodeLine{14         \textcolor{keyword}{virtual} \mbox{\hyperlink{class_r_t_1_1_point_light_ace94f3e1e1fae29f5ccce3d708b728e3}{\string~PointLight}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16         \textcolor{comment}{// Metoda do obliczania oświetlenia}}
+\DoxyCodeLine{17         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_r_t_1_1_point_light_a589d51d6e3aecfcaf2a6690ed97e888e}{ComputeIllumination}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&intPoint, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&localNormal,}
+\DoxyCodeLine{18                                          \textcolor{keyword}{const} std::vector<std::shared\_ptr<RT::ObjectBase>> \&objectList,}
+\DoxyCodeLine{19                                          \textcolor{keyword}{const} std::shared\_ptr<RT::ObjectBase> \&currentObject,}
+\DoxyCodeLine{20                                          \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3ea846f998d64f079b86052b6c4193a8}{color}}, \textcolor{keywordtype}{double} \&intensity) \textcolor{keyword}{override};}
+\DoxyCodeLine{21     \};}
+\DoxyCodeLine{22 \}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//RAYTRACING\_POINTLIGHT\_H}}
+
+\end{DoxyCode}

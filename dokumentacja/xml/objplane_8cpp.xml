@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="objplane_8cpp" kind="file" language="C++">
+    <compoundname>objplane.cpp</compoundname>
+    <includes refid="objplane_8h" local="yes">objplane.h</includes>
+    <includes local="no">cmath</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>objectbase.h</label>
+        <link refid="objectbase_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/RayTracing/RayTrace/Primitives/objplane.cpp</label>
+        <link refid="objplane_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>objplane.h</label>
+        <link refid="objplane_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>../gtfm.h</label>
+        <link refid="gtfm_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>./qbLinAlg/qbMatrix.h</label>
+        <link refid="qb_matrix_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>../qbLinAlg/qbVector.h</label>
+        <link refid="qb_vector_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>../ray.h</label>
+        <link refid="ray_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>cmath</label>
+      </node>
+      <node id="14">
+        <label>exception</label>
+      </node>
+      <node id="8">
+        <label>iomanip</label>
+      </node>
+      <node id="7">
+        <label>iostream</label>
+      </node>
+      <node id="9">
+        <label>math.h</label>
+      </node>
+      <node id="4">
+        <label>memory</label>
+      </node>
+      <node id="6">
+        <label>stdexcept</label>
+      </node>
+      <node id="10">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="objplane_8h" kindref="compound">objplane.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Domyślny<sp/>konstruktor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><ref refid="class_r_t_1_1_obj_plane_1ae9544dd9451f2bf53fc9dc1c2361e50c" kindref="member">RT::ObjPlane::ObjPlane</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Destruktor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><ref refid="class_r_t_1_1_obj_plane_1a4fa7bd4a0a03c70c2ab79d8118af21e9" kindref="member">RT::ObjPlane::~ObjPlane</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Metoda<sp/>do<sp/>sprawdzania<sp/>przecięć</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_obj_plane_1a7bf64e3ec94953a0a6c8c1da14c4e79d" kindref="member">RT::ObjPlane::TestIntersection</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_ray" kindref="compound">RT::Ray</ref><sp/>&amp;castRay,<sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>&amp;intPoint,</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>&amp;localNormal,<sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>&amp;localColor)<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Przekształcenie<sp/>współrzędnych<sp/>globalnych<sp/>castRay<sp/>na<sp/>współrzędne<sp/>lokalne<sp/>obiektu</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Kopiowanie<sp/>promienia<sp/>i<sp/>zastosowanie<sp/>wstecznej<sp/>transformacji</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Wsteczna<sp/>transformacja<sp/>zwraca<sp/>nam<sp/>lokalne<sp/>współrzędne,<sp/>ponieważ<sp/>po<sp/>transformacji<sp/>obiekt<sp/>jest<sp/>opisany<sp/>przez</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>globalne<sp/>współrzędne</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_r_t_1_1_ray" kindref="compound">RT::Ray</ref><sp/>bckRay<sp/>=<sp/>m_transformMatrix.Apply(castRay,<sp/><ref refid="namespace_r_t_1a6d7c00f7bd41a6734521d58797804e84" kindref="member">RT::BCKTFORM</ref>);<sp/></highlight><highlight class="comment">//<sp/>z<sp/>globalnych<sp/>na<sp/>lokalne</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Skopiuj<sp/>i<sp/>normalizuj<sp/>wektor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>k<sp/>=<sp/>bckRay.<ref refid="class_r_t_1_1_ray_1a3d253c2a4c4dbfe94c6fdac4dee167f7" kindref="member">m_lab</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>k.<ref refid="classqb_vector_1a06cc00476d406a772461fc4acd7e9ea8" kindref="member">Normalize</ref>();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Sprawdź<sp/>czy<sp/>występuje<sp/>przecięcie<sp/>promienia<sp/>z<sp/>obiektem<sp/>i<sp/>czy<sp/>promień<sp/>nie<sp/>jest<sp/>równoległy<sp/>z<sp/>płaszczyzną<sp/>obiektu</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!CloseEnough(k.<ref refid="classqb_vector_1adadd6ca87273a15f57a5e1d6ae15583b" kindref="member">GetElement</ref>(2),<sp/>0.0))<sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Jeśli<sp/>występuje<sp/>przecięcie</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__opengl_8h_1a7d65d00ca3b0630d9b5c52df855b19f5" kindref="member">t</ref><sp/>=<sp/>bckRay.<ref refid="class_r_t_1_1_ray_1a4421d6cade1151cda334b75ba47d7396" kindref="member">m_point1</ref>.<ref refid="classqb_vector_1adadd6ca87273a15f57a5e1d6ae15583b" kindref="member">GetElement</ref>(2)<sp/>/<sp/>-k.<ref refid="classqb_vector_1adadd6ca87273a15f57a5e1d6ae15583b" kindref="member">GetElement</ref>(2);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Jeśli<sp/>t<sp/>jest<sp/>ujemne,<sp/>wówczas<sp/>punkt<sp/>przecięcia<sp/>musi<sp/>znajdować<sp/>się<sp/>za<sp/>kamerą<sp/>więc<sp/>możemy<sp/>go<sp/>zignorować</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="_s_d_l__opengl_8h_1a7d65d00ca3b0630d9b5c52df855b19f5" kindref="member">t</ref><sp/>&gt;<sp/>0.0)<sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Oblicz<sp/>wartości<sp/>dla<sp/>u<sp/>i<sp/>v</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>u<sp/>=<sp/>bckRay.<ref refid="class_r_t_1_1_ray_1a4421d6cade1151cda334b75ba47d7396" kindref="member">m_point1</ref>.<ref refid="classqb_vector_1adadd6ca87273a15f57a5e1d6ae15583b" kindref="member">GetElement</ref>(0)<sp/>+<sp/>(k.<ref refid="classqb_vector_1adadd6ca87273a15f57a5e1d6ae15583b" kindref="member">GetElement</ref>(0)<sp/>*<sp/><ref refid="_s_d_l__opengl_8h_1a7d65d00ca3b0630d9b5c52df855b19f5" kindref="member">t</ref>);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90" kindref="member">v</ref><sp/>=<sp/>bckRay.<ref refid="class_r_t_1_1_ray_1a4421d6cade1151cda334b75ba47d7396" kindref="member">m_point1</ref>.<ref refid="classqb_vector_1adadd6ca87273a15f57a5e1d6ae15583b" kindref="member">GetElement</ref>(1)<sp/>+<sp/>(k.<ref refid="classqb_vector_1adadd6ca87273a15f57a5e1d6ae15583b" kindref="member">GetElement</ref>(1)<sp/>*<sp/><ref refid="_s_d_l__opengl_8h_1a7d65d00ca3b0630d9b5c52df855b19f5" kindref="member">t</ref>);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Jeśli<sp/>wielkość<sp/>u<sp/>i<sp/>v<sp/>jest,<sp/>mniejsza<sp/>niż<sp/>1<sp/>to<sp/>znaczy,<sp/>że<sp/>jesteśmy<sp/>na<sp/>płaszczyźnie</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((abs(u)<sp/>&lt;<sp/>1.0)<sp/>&amp;&amp;<sp/>(abs(<ref refid="_s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90" kindref="member">v</ref>)<sp/>&lt;<sp/>1.0))<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Oblicz<sp/>punkt<sp/>przecięcia</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>poi<sp/>=<sp/>bckRay.<ref refid="class_r_t_1_1_ray_1a4421d6cade1151cda334b75ba47d7396" kindref="member">m_point1</ref><sp/>+<sp/><ref refid="_s_d_l__opengl_8h_1a7d65d00ca3b0630d9b5c52df855b19f5" kindref="member">t</ref><sp/>*<sp/>k;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Przekształć<sp/>punkt<sp/>przecięcia<sp/>na<sp/>globalne<sp/>współrzędne</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>intPoint<sp/>=<sp/>m_transformMatrix.Apply(poi,<sp/><ref refid="namespace_r_t_1aaac17f4135aafa89d5b75f9b48ba61eb" kindref="member">RT::FWDTFORM</ref>);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Oblicz<sp/>normalną<sp/>lokalną</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>localOrigin{std::vector&lt;double&gt;{0.0,<sp/>0.0,<sp/>0.0}};</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>normalVector{std::vector&lt;double&gt;{0.0,<sp/>0.0,<sp/>-1.0}};</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>globalOrigin<sp/>=<sp/>m_transformMatrix.Apply(localOrigin,<sp/><ref refid="namespace_r_t_1aaac17f4135aafa89d5b75f9b48ba61eb" kindref="member">RT::FWDTFORM</ref>);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>localNormal<sp/>=<sp/>m_transformMatrix.Apply(normalVector,<sp/><ref refid="namespace_r_t_1aaac17f4135aafa89d5b75f9b48ba61eb" kindref="member">RT::FWDTFORM</ref>)<sp/>-<sp/>globalOrigin;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>localNormal.<ref refid="classqb_vector_1a06cc00476d406a772461fc4acd7e9ea8" kindref="member">Normalize</ref>();</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Ustaw<sp/>kolor<sp/>piksela<sp/>na<sp/>kolor<sp/>bazowy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>localColor<sp/>=<sp/>m_baseColor;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Zapisz<sp/>współrzędne<sp/>przecięcia<sp/>(u,v)<sp/>do<sp/>późniejszego<sp/>użycia</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_uvCoords.<ref refid="classqb_vector_1af828430da5d728b15c70f82f73ff1efd" kindref="member">SetElement</ref>(0,<sp/>u);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_uvCoords.SetElement(1,<sp/><ref refid="_s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90" kindref="member">v</ref>);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/RayTrace/Primitives/objplane.cpp"/>
+  </compounddef>
+</doxygen>

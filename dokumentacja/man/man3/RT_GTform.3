@@ -1,0 +1,92 @@
+.TH "RT::GTform" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RT::GTform
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <gtfm\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGTform\fP ()"
+.br
+.ti -1c
+.RI "\fB~GTform\fP ()"
+.br
+.ti -1c
+.RI "\fBGTform\fP (const \fBqbMatrix2\fP< double > &fwd, const \fBqbMatrix2\fP< double > &bck)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBSetTransform\fP (const \fBqbVector\fP< double > &translation, const \fBqbVector\fP< double > &rotation, const \fBqbVector\fP< double > &\fBscale\fP)"
+.br
+.ti -1c
+.RI "\fBqbMatrix2\fP< double > \fBGetForward\fP ()"
+.br
+.ti -1c
+.RI "\fBqbMatrix2\fP< double > \fBGetBackward\fP ()"
+.br
+.ti -1c
+.RI "\fBRT::Ray\fP \fBApply\fP (const \fBRT::Ray\fP &inputRay, bool dirFlag)"
+.br
+.ti -1c
+.RI "\fBqbVector\fP< double > \fBApply\fP (const \fBqbVector\fP< double > &inputVector, bool dirFlag)"
+.br
+.ti -1c
+.RI "\fBGTform\fP \fBoperator=\fP (const \fBGTform\fP &rhs)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBPrintMatrix\fP (bool dirFlag)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBvoid\fP \fBPrintVector\fP (const \fBqbVector\fP< double > &vector)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "\fBGTform\fP \fBoperator*\fP (const \fBRT::GTform\fP &lhs, const \fBRT::GTform\fP &rhs)"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RT::GTform::GTform ()"
+
+.SS "RT::GTform::~GTform ()"
+
+.SS "RT::GTform::GTform (const \fBqbMatrix2\fP< double > & fwd, const \fBqbMatrix2\fP< double > & bck)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBqbVector\fP< double > RT::GTform::Apply (const \fBqbVector\fP< double > & inputVector, bool dirFlag)"
+
+.SS "\fBRT::Ray\fP RT::GTform::Apply (const \fBRT::Ray\fP & inputRay, bool dirFlag)"
+
+.SS "\fBqbMatrix2\fP< double > RT::GTform::GetBackward ()"
+
+.SS "\fBqbMatrix2\fP< double > RT::GTform::GetForward ()"
+
+.SS "\fBRT::GTform\fP RT::GTform::operator= (const \fBGTform\fP & rhs)"
+
+.SS "\fBvoid\fP RT::GTform::PrintMatrix (bool dirFlag)"
+
+.SS "\fBvoid\fP RT::GTform::PrintVector (const \fBqbVector\fP< double > & vector)\fC [static]\fP"
+
+.SS "\fBvoid\fP RT::GTform::SetTransform (const \fBqbVector\fP< double > & translation, const \fBqbVector\fP< double > & rotation, const \fBqbVector\fP< double > & scale)"
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "\fBGTform\fP operator* (const \fBRT::GTform\fP & lhs, const \fBRT::GTform\fP & rhs)\fC [friend]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

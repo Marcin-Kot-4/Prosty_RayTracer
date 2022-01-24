@@ -1,0 +1,372 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="ray_8h" kind="file" language="C++">
+    <compoundname>ray.h</compoundname>
+    <includes refid="qb_vector_8h" local="yes">./qbLinAlg/qbVector.h</includes>
+    <includedby refid="lightbase_8h" local="yes">D:/RayTracing/RayTrace/Lights/lightbase.h</includedby>
+    <includedby refid="materialbase_8h" local="yes">D:/RayTracing/RayTrace/Materials/materialbase.h</includedby>
+    <includedby refid="objectbase_8h" local="yes">D:/RayTracing/RayTrace/Primitives/objectbase.h</includedby>
+    <includedby refid="texturebase_8h" local="yes">D:/RayTracing/RayTrace/Textures/texturebase.h</includedby>
+    <includedby refid="camera_8cpp" local="yes">D:/RayTracing/RayTrace/camera.cpp</includedby>
+    <includedby refid="camera_8h" local="yes">D:/RayTracing/RayTrace/camera.h</includedby>
+    <includedby refid="gtfm_8h" local="yes">D:/RayTracing/RayTrace/gtfm.h</includedby>
+    <includedby refid="ray_8cpp" local="yes">D:/RayTracing/RayTrace/ray.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>./qbLinAlg/qbVector.h</label>
+        <link refid="qb_vector_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/RayTracing/RayTrace/ray.h</label>
+        <link refid="ray_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>iomanip</label>
+      </node>
+      <node id="4">
+        <label>iostream</label>
+      </node>
+      <node id="6">
+        <label>math.h</label>
+      </node>
+      <node id="3">
+        <label>stdexcept</label>
+      </node>
+      <node id="7">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="8">
+        <label>D:/RayTracing/CApp.cpp</label>
+        <link refid="_c_app_8cpp"/>
+      </node>
+      <node id="7">
+        <label>D:/RayTracing/CApp.h</label>
+        <link refid="_c_app_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>D:/RayTracing/RayTrace/Lights/lightbase.cpp</label>
+        <link refid="lightbase_8cpp"/>
+      </node>
+      <node id="2">
+        <label>D:/RayTracing/RayTrace/Lights/lightbase.h</label>
+        <link refid="lightbase_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>D:/RayTracing/RayTrace/Lights/pointlight.cpp</label>
+        <link refid="pointlight_8cpp"/>
+      </node>
+      <node id="4">
+        <label>D:/RayTracing/RayTrace/Lights/pointlight.h</label>
+        <link refid="pointlight_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>D:/RayTracing/RayTrace/Materials/materialbase.cpp</label>
+        <link refid="materialbase_8cpp"/>
+      </node>
+      <node id="11">
+        <label>D:/RayTracing/RayTrace/Materials/materialbase.h</label>
+        <link refid="materialbase_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>D:/RayTracing/RayTrace/Materials/simplematerial.cpp</label>
+        <link refid="simplematerial_8cpp"/>
+      </node>
+      <node id="13">
+        <label>D:/RayTracing/RayTrace/Materials/simplematerial.h</label>
+        <link refid="simplematerial_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>D:/RayTracing/RayTrace/Materials/simplerefractive.cpp</label>
+        <link refid="simplerefractive_8cpp"/>
+      </node>
+      <node id="15">
+        <label>D:/RayTracing/RayTrace/Materials/simplerefractive.h</label>
+        <link refid="simplerefractive_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>D:/RayTracing/RayTrace/Primitives/cone.cpp</label>
+        <link refid="cone_8cpp"/>
+      </node>
+      <node id="18">
+        <label>D:/RayTracing/RayTrace/Primitives/cone.h</label>
+        <link refid="cone_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>D:/RayTracing/RayTrace/Primitives/cylinder.cpp</label>
+        <link refid="cylinder_8cpp"/>
+      </node>
+      <node id="20">
+        <label>D:/RayTracing/RayTrace/Primitives/cylinder.h</label>
+        <link refid="cylinder_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>D:/RayTracing/RayTrace/Primitives/objectbase.cpp</label>
+        <link refid="objectbase_8cpp"/>
+      </node>
+      <node id="17">
+        <label>D:/RayTracing/RayTrace/Primitives/objectbase.h</label>
+        <link refid="objectbase_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>D:/RayTracing/RayTrace/Primitives/objplane.cpp</label>
+        <link refid="objplane_8cpp"/>
+      </node>
+      <node id="23">
+        <label>D:/RayTracing/RayTrace/Primitives/objplane.h</label>
+        <link refid="objplane_8h"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>D:/RayTracing/RayTrace/Primitives/objsphere.cpp</label>
+        <link refid="objsphere_8cpp"/>
+      </node>
+      <node id="25">
+        <label>D:/RayTracing/RayTrace/Primitives/objsphere.h</label>
+        <link refid="objsphere_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>D:/RayTracing/RayTrace/Scene.cpp</label>
+        <link refid="_scene_8cpp"/>
+      </node>
+      <node id="6">
+        <label>D:/RayTracing/RayTrace/Scene.h</label>
+        <link refid="_scene_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>D:/RayTracing/RayTrace/Textures/checker.cpp</label>
+        <link refid="checker_8cpp"/>
+      </node>
+      <node id="28">
+        <label>D:/RayTracing/RayTrace/Textures/checker.h</label>
+        <link refid="checker_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>D:/RayTracing/RayTrace/Textures/flat.cpp</label>
+        <link refid="flat_8cpp"/>
+      </node>
+      <node id="30">
+        <label>D:/RayTracing/RayTrace/Textures/flat.h</label>
+        <link refid="flat_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>D:/RayTracing/RayTrace/Textures/texturebase.cpp</label>
+        <link refid="texturebase_8cpp"/>
+      </node>
+      <node id="27">
+        <label>D:/RayTracing/RayTrace/Textures/texturebase.h</label>
+        <link refid="texturebase_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>D:/RayTracing/RayTrace/Textures/textureimage.cpp</label>
+        <link refid="textureimage_8cpp"/>
+      </node>
+      <node id="33">
+        <label>D:/RayTracing/RayTrace/Textures/textureimage.h</label>
+        <link refid="textureimage_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>D:/RayTracing/RayTrace/camera.cpp</label>
+        <link refid="camera_8cpp"/>
+      </node>
+      <node id="36">
+        <label>D:/RayTracing/RayTrace/camera.h</label>
+        <link refid="camera_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>D:/RayTracing/RayTrace/gtfm.cpp</label>
+        <link refid="gtfm_8cpp"/>
+      </node>
+      <node id="37">
+        <label>D:/RayTracing/RayTrace/gtfm.h</label>
+        <link refid="gtfm_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>D:/RayTracing/RayTrace/ray.cpp</label>
+        <link refid="ray_8cpp"/>
+      </node>
+      <node id="1">
+        <label>D:/RayTracing/RayTrace/ray.h</label>
+        <link refid="ray_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>D:/RayTracing/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_r_t_1_1_ray" prot="public">RT::Ray</innerclass>
+    <innernamespace refid="namespace_r_t">RT</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>RAYTRACING_RAY_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RAYTRACING_RAY_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="qb_vector_8h" kindref="compound">./qbLinAlg/qbVector.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_r_t" kindref="compound">RT</ref><sp/>{</highlight></codeline>
+<codeline lineno="7" refid="class_r_t_1_1_ray" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_r_t_1_1_ray" kindref="compound">Ray</ref><sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_r_t_1_1_ray_1a71457f5853a4b7a849b74f49c3c29f77" kindref="member">Ray</ref>();</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Konstruktor.<sp/>Tablice<sp/>zawierające<sp/>dwa<sp/>wektory<sp/>point1<sp/>i<sp/>point2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>qbVector<sp/>klasa<sp/>z<sp/>biblioteki<sp/>liniowej<sp/>algebry:<sp/>qbLinAlg</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_r_t_1_1_ray_1a71457f5853a4b7a849b74f49c3c29f77" kindref="member">Ray</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>&amp;point1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>&amp;point2);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/><ref refid="class_r_t_1_1_ray_1a8e3fc973be827bd72bc89d2940019fe5" kindref="member">GetPoint1</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/><ref refid="class_r_t_1_1_ray_1af4b3be15ef1228f32ba114a475453930" kindref="member">GetPoint2</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Punkt<sp/>początkowy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="class_r_t_1_1_ray_1a4421d6cade1151cda334b75ba47d7396" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/><ref refid="class_r_t_1_1_ray_1a4421d6cade1151cda334b75ba47d7396" kindref="member">m_point1</ref>{3};</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Punkt<sp/>końcowy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="class_r_t_1_1_ray_1aff734d72e41788ae3f6cbc30c63a8b2a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/><ref refid="class_r_t_1_1_ray_1aff734d72e41788ae3f6cbc30c63a8b2a" kindref="member">m_point2</ref>{3};</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Wektor<sp/>od<sp/>punktu<sp/>1<sp/>do<sp/>punktu<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="class_r_t_1_1_ray_1a3d253c2a4c4dbfe94c6fdac4dee167f7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/><ref refid="class_r_t_1_1_ray_1a3d253c2a4c4dbfe94c6fdac4dee167f7" kindref="member">m_lab</ref>{3};</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//RAYTRACING_RAY_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/RayTrace/ray.h"/>
+  </compounddef>
+</doxygen>

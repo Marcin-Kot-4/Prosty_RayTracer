@@ -1,0 +1,1056 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__log_8h" xml:lang="en-US">
+<title>D:/RayTracing/include/SDL_log.h File Reference</title>
+<indexterm><primary>D:/RayTracing/include/SDL_log.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;SDL_stdinc.h&quot;
+#include &quot;begin_code.h&quot;
+#include &quot;close_code.h&quot;
+</programlisting><simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__s_d_l__log_8h_1a06c6de264730f257cdba6188b6aaae12">SDL_MAX_LOG_MESSAGE</link>   4096</para>
+
+<para>The maximum size of a log message. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>(<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> * <link linkend="__s_d_l__log_8h_1a11c2a5b3bbfd910cf18fbc70cf513e24">SDL_LogOutputFunction</link>) (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *userdata, int category, <link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</link> priority, const char *<link linkend="__s_d_l__opengl__glext_8h_1a7b6161cffb9b8aee272b3b916183d28c">message</link>)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039d">SDL_LogCategory</link> { 
+<link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039dad935a8d66d570a56f5602656bf5ab86f">SDL_LOG_CATEGORY_APPLICATION</link>
+, <link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da4f1ff7aab71e227c136cd79bdf4f95d7">SDL_LOG_CATEGORY_ERROR</link>
+, <link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039daf4cea58981b24a0f46f42d331f903262">SDL_LOG_CATEGORY_ASSERT</link>
+, <link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039daa003de08bde1c358f3337e0467d9d137">SDL_LOG_CATEGORY_SYSTEM</link>
+, 
+<link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039dadb323c0430f6f2c9ad01122c8e93e2e8">SDL_LOG_CATEGORY_AUDIO</link>
+, <link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039dafe90f10726bb6003c2be3774c2e6364e">SDL_LOG_CATEGORY_VIDEO</link>
+, <link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da64898138eb04f896c8dfdfc26c744f01">SDL_LOG_CATEGORY_RENDER</link>
+, <link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da830125a18166ebf0f2be7322bbbc8023">SDL_LOG_CATEGORY_INPUT</link>
+, 
+<link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da835639e029589fca6bca492621aa50ca">SDL_LOG_CATEGORY_TEST</link>
+, <link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da272bbcb6018cdf75f17e2735f61ea865">SDL_LOG_CATEGORY_RESERVED1</link>
+, <link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039daff302253b31dd0a7d1a77600e0c0002e">SDL_LOG_CATEGORY_RESERVED2</link>
+, <link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da8146d078adbd8ddaecd03189e05f3985">SDL_LOG_CATEGORY_RESERVED3</link>
+, 
+<link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039dac029542e8e6a0fcfe875dd45ba57c4cf">SDL_LOG_CATEGORY_RESERVED4</link>
+, <link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da7cff610f08ff2d574a2a1c97540f41d1">SDL_LOG_CATEGORY_RESERVED5</link>
+, <link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da489fcde9c542f04d596bcf4ef89f5543">SDL_LOG_CATEGORY_RESERVED6</link>
+, <link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039daf23a00f3f22b1d783bd8fd34ca81a623">SDL_LOG_CATEGORY_RESERVED7</link>
+, 
+<link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da3e1df5ba911ba1fe13d90e958da08197">SDL_LOG_CATEGORY_RESERVED8</link>
+, <link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da8b9783fc555d653f8a86e944ec5c8ecd">SDL_LOG_CATEGORY_RESERVED9</link>
+, <link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039daa18a8bb3b4281419c45368d4d3be87ce">SDL_LOG_CATEGORY_RESERVED10</link>
+, <link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da1d20eb92f25c3221dc1caefeb90e886c">SDL_LOG_CATEGORY_CUSTOM</link>
+ }</para>
+
+<para>The predefined log categories. </para>
+</listitem>
+            <listitem><para>enum <link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</link> { 
+<link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946a7332e05c3849e0e163a4f87c9c355197">SDL_LOG_PRIORITY_VERBOSE</link> = 1
+, <link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946aaffb80b31616030c5be9c54d089bf700">SDL_LOG_PRIORITY_DEBUG</link>
+, <link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946a515f0b6ce5ae9a09c1cd57f0a9b78f2c">SDL_LOG_PRIORITY_INFO</link>
+, <link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946af3a97eb566d09e2c1faef406c587bf5b">SDL_LOG_PRIORITY_WARN</link>
+, 
+<link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946ae1dfd82ebd75e1b9fd437882ed5e319b">SDL_LOG_PRIORITY_ERROR</link>
+, <link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946a66c3a67e6e152703bc986b8600b2e471">SDL_LOG_PRIORITY_CRITICAL</link>
+, <link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946a3ccd64f96923e7168bcb731326abcd18">SDL_NUM_LOG_PRIORITIES</link>
+ }</para>
+
+<para>The predefined log priorities. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__log_8h_1a8f54656094d10994fdb5399f271906ef">SDL_LogSetAllPriority</link> (<link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</link> priority)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__log_8h_1a9a4809ac7942e029d0bf17f380d23f73">SDL_LogSetPriority</link> (int category, <link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</link> priority)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__log_8h_1a26f0cff24dadd97d09808b6aaad3f5f4">SDL_LogGetPriority</link> (int category)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__log_8h_1acf17b4ea6a83e308c815fd4d50544eba">SDL_LogResetPriorities</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__log_8h_1a712dc42164c67b7f9e23dc0e3b15bd92">SDL_Log</link> (<link linkend="__s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</link> const char *fmt,...) <link linkend="__s_d_l__stdinc_8h_1ab974676e45d9edeef6598d601d4fdd6a">SDL_PRINTF_VARARG_FUNC</link>(1)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__log_8h_1a34a7d9211a9ced1c1a6db4be0f3fbb7e">SDL_LogVerbose</link> (int category, <link linkend="__s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</link> const char *fmt,...) <link linkend="__s_d_l__stdinc_8h_1ab974676e45d9edeef6598d601d4fdd6a">SDL_PRINTF_VARARG_FUNC</link>(2)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__log_8h_1a0749fe47180b98c04bd82aca7235d703">SDL_LogDebug</link> (int category, <link linkend="__s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</link> const char *fmt,...) <link linkend="__s_d_l__stdinc_8h_1ab974676e45d9edeef6598d601d4fdd6a">SDL_PRINTF_VARARG_FUNC</link>(2)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__log_8h_1a81c8956ea1a84ad325c3f5ecd2094515">SDL_LogInfo</link> (int category, <link linkend="__s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</link> const char *fmt,...) <link linkend="__s_d_l__stdinc_8h_1ab974676e45d9edeef6598d601d4fdd6a">SDL_PRINTF_VARARG_FUNC</link>(2)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__log_8h_1a91a7a09fec470638f028138626b3d126">SDL_LogWarn</link> (int category, <link linkend="__s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</link> const char *fmt,...) <link linkend="__s_d_l__stdinc_8h_1ab974676e45d9edeef6598d601d4fdd6a">SDL_PRINTF_VARARG_FUNC</link>(2)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__log_8h_1acabe956be51b7a4c877dbfcb0489a02f">SDL_LogError</link> (int category, <link linkend="__s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</link> const char *fmt,...) <link linkend="__s_d_l__stdinc_8h_1ab974676e45d9edeef6598d601d4fdd6a">SDL_PRINTF_VARARG_FUNC</link>(2)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__log_8h_1a3600cf500a030f892d41a61d9d30de19">SDL_LogCritical</link> (int category, <link linkend="__s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</link> const char *fmt,...) <link linkend="__s_d_l__stdinc_8h_1ab974676e45d9edeef6598d601d4fdd6a">SDL_PRINTF_VARARG_FUNC</link>(2)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__log_8h_1a7fcfeca9c95069b6432bf1cdb01d0ba4">SDL_LogMessage</link> (int category, <link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</link> priority, <link linkend="__s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</link> const char *fmt,...) <link linkend="__s_d_l__stdinc_8h_1ab974676e45d9edeef6598d601d4fdd6a">SDL_PRINTF_VARARG_FUNC</link>(3)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__log_8h_1a2cacafd4d8e6d258da40e97a3cb3f80b">SDL_LogMessageV</link> (int category, <link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</link> priority, const char *fmt, va_list ap)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__log_8h_1a074ce8cf644b09454ec112084f9f399e">SDL_LogGetOutputFunction</link> (<link linkend="__s_d_l__log_8h_1a11c2a5b3bbfd910cf18fbc70cf513e24">SDL_LogOutputFunction</link> *callback, <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> **userdata)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__log_8h_1a229eb1fdf797f548b20ee98ca8acaac6">SDL_LogSetOutputFunction</link> (<link linkend="__s_d_l__log_8h_1a11c2a5b3bbfd910cf18fbc70cf513e24">SDL_LogOutputFunction</link> callback, <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *userdata)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Simple log messages with categories and priorities.</para>
+
+<para>By default logs are quiet, but if you&apos;re debugging SDL you might want: <literallayout><computeroutput>SDL_LogSetAllPriority(SDL_LOG_PRIORITY_WARN);
+</computeroutput></literallayout> Here&apos;s where the messages go on different platforms: Windows: debug output stream Android: log output Others: standard error output (stderr) </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__s_d_l__log_8h_1a06c6de264730f257cdba6188b6aaae12"/><section>
+    <title>SDL_MAX_LOG_MESSAGE</title>
+<indexterm><primary>SDL_MAX_LOG_MESSAGE</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_MAX_LOG_MESSAGE</secondary></indexterm>
+<para><computeroutput>#define SDL_MAX_LOG_MESSAGE   4096</computeroutput></para><para>
+
+<para>The maximum size of a log message. </para>
+</para>
+
+<para>Messages longer than the maximum size will be truncated </para>
+</section>
+</section>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="__s_d_l__log_8h_1a11c2a5b3bbfd910cf18fbc70cf513e24"/><section>
+    <title>SDL_LogOutputFunction</title>
+<indexterm><primary>SDL_LogOutputFunction</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LogOutputFunction</secondary></indexterm>
+<para><computeroutput>typedef <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>(<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> * SDL_LogOutputFunction) (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *userdata, int category, <link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</link> priority, const char *<link linkend="__s_d_l__opengl__glext_8h_1a7b6161cffb9b8aee272b3b916183d28c">message</link>)</computeroutput></para>
+<para>The prototype for the log output callback function.</para>
+
+<para>This function is called by SDL when there is new text to be logged.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>userdata</entry><entry>
+<para>what was passed as <computeroutput>userdata</computeroutput> to <link linkend="__s_d_l__log_8h_1a229eb1fdf797f548b20ee98ca8acaac6">SDL_LogSetOutputFunction()</link> </para>
+</entry>
+                            </row>
+                            <row>
+<entry>category</entry><entry>
+<para>the category of the message </para>
+</entry>
+                            </row>
+                            <row>
+<entry>priority</entry><entry>
+<para>the priority of the message </para>
+</entry>
+                            </row>
+                            <row>
+<entry>message</entry><entry>
+<para>the message being output </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+<section>
+<title>Enumeration Type Documentation</title>
+<anchor xml:id="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039d"/><section>
+    <title>SDL_LogCategory</title>
+<indexterm><primary>SDL_LogCategory</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LogCategory</secondary></indexterm>
+<para><computeroutput>enum <link linkend="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039d">SDL_LogCategory</link></computeroutput></para><para>
+
+<para>The predefined log categories. </para>
+</para>
+
+<para>By default the application category is enabled at the INFO level, the assert category is enabled at the WARN level, test is enabled at the VERBOSE level and all other categories are enabled at the CRITICAL level. </para>
+<informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SDL_LOG_CATEGORY_APPLICATION</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LOG_CATEGORY_APPLICATION</secondary></indexterm>
+<anchor xml:id="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039dad935a8d66d570a56f5602656bf5ab86f"/>SDL_LOG_CATEGORY_APPLICATION</entry><entry></entry></row><row><entry><indexterm><primary>SDL_LOG_CATEGORY_ERROR</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LOG_CATEGORY_ERROR</secondary></indexterm>
+<anchor xml:id="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da4f1ff7aab71e227c136cd79bdf4f95d7"/>SDL_LOG_CATEGORY_ERROR</entry><entry></entry></row><row><entry><indexterm><primary>SDL_LOG_CATEGORY_ASSERT</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LOG_CATEGORY_ASSERT</secondary></indexterm>
+<anchor xml:id="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039daf4cea58981b24a0f46f42d331f903262"/>SDL_LOG_CATEGORY_ASSERT</entry><entry></entry></row><row><entry><indexterm><primary>SDL_LOG_CATEGORY_SYSTEM</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LOG_CATEGORY_SYSTEM</secondary></indexterm>
+<anchor xml:id="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039daa003de08bde1c358f3337e0467d9d137"/>SDL_LOG_CATEGORY_SYSTEM</entry><entry></entry></row><row><entry><indexterm><primary>SDL_LOG_CATEGORY_AUDIO</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LOG_CATEGORY_AUDIO</secondary></indexterm>
+<anchor xml:id="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039dadb323c0430f6f2c9ad01122c8e93e2e8"/>SDL_LOG_CATEGORY_AUDIO</entry><entry></entry></row><row><entry><indexterm><primary>SDL_LOG_CATEGORY_VIDEO</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LOG_CATEGORY_VIDEO</secondary></indexterm>
+<anchor xml:id="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039dafe90f10726bb6003c2be3774c2e6364e"/>SDL_LOG_CATEGORY_VIDEO</entry><entry></entry></row><row><entry><indexterm><primary>SDL_LOG_CATEGORY_RENDER</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LOG_CATEGORY_RENDER</secondary></indexterm>
+<anchor xml:id="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da64898138eb04f896c8dfdfc26c744f01"/>SDL_LOG_CATEGORY_RENDER</entry><entry></entry></row><row><entry><indexterm><primary>SDL_LOG_CATEGORY_INPUT</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LOG_CATEGORY_INPUT</secondary></indexterm>
+<anchor xml:id="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da830125a18166ebf0f2be7322bbbc8023"/>SDL_LOG_CATEGORY_INPUT</entry><entry></entry></row><row><entry><indexterm><primary>SDL_LOG_CATEGORY_TEST</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LOG_CATEGORY_TEST</secondary></indexterm>
+<anchor xml:id="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da835639e029589fca6bca492621aa50ca"/>SDL_LOG_CATEGORY_TEST</entry><entry></entry></row><row><entry><indexterm><primary>SDL_LOG_CATEGORY_RESERVED1</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LOG_CATEGORY_RESERVED1</secondary></indexterm>
+<anchor xml:id="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da272bbcb6018cdf75f17e2735f61ea865"/>SDL_LOG_CATEGORY_RESERVED1</entry><entry></entry></row><row><entry><indexterm><primary>SDL_LOG_CATEGORY_RESERVED2</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LOG_CATEGORY_RESERVED2</secondary></indexterm>
+<anchor xml:id="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039daff302253b31dd0a7d1a77600e0c0002e"/>SDL_LOG_CATEGORY_RESERVED2</entry><entry></entry></row><row><entry><indexterm><primary>SDL_LOG_CATEGORY_RESERVED3</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LOG_CATEGORY_RESERVED3</secondary></indexterm>
+<anchor xml:id="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da8146d078adbd8ddaecd03189e05f3985"/>SDL_LOG_CATEGORY_RESERVED3</entry><entry></entry></row><row><entry><indexterm><primary>SDL_LOG_CATEGORY_RESERVED4</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LOG_CATEGORY_RESERVED4</secondary></indexterm>
+<anchor xml:id="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039dac029542e8e6a0fcfe875dd45ba57c4cf"/>SDL_LOG_CATEGORY_RESERVED4</entry><entry></entry></row><row><entry><indexterm><primary>SDL_LOG_CATEGORY_RESERVED5</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LOG_CATEGORY_RESERVED5</secondary></indexterm>
+<anchor xml:id="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da7cff610f08ff2d574a2a1c97540f41d1"/>SDL_LOG_CATEGORY_RESERVED5</entry><entry></entry></row><row><entry><indexterm><primary>SDL_LOG_CATEGORY_RESERVED6</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LOG_CATEGORY_RESERVED6</secondary></indexterm>
+<anchor xml:id="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da489fcde9c542f04d596bcf4ef89f5543"/>SDL_LOG_CATEGORY_RESERVED6</entry><entry></entry></row><row><entry><indexterm><primary>SDL_LOG_CATEGORY_RESERVED7</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LOG_CATEGORY_RESERVED7</secondary></indexterm>
+<anchor xml:id="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039daf23a00f3f22b1d783bd8fd34ca81a623"/>SDL_LOG_CATEGORY_RESERVED7</entry><entry></entry></row><row><entry><indexterm><primary>SDL_LOG_CATEGORY_RESERVED8</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LOG_CATEGORY_RESERVED8</secondary></indexterm>
+<anchor xml:id="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da3e1df5ba911ba1fe13d90e958da08197"/>SDL_LOG_CATEGORY_RESERVED8</entry><entry></entry></row><row><entry><indexterm><primary>SDL_LOG_CATEGORY_RESERVED9</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LOG_CATEGORY_RESERVED9</secondary></indexterm>
+<anchor xml:id="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da8b9783fc555d653f8a86e944ec5c8ecd"/>SDL_LOG_CATEGORY_RESERVED9</entry><entry></entry></row><row><entry><indexterm><primary>SDL_LOG_CATEGORY_RESERVED10</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LOG_CATEGORY_RESERVED10</secondary></indexterm>
+<anchor xml:id="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039daa18a8bb3b4281419c45368d4d3be87ce"/>SDL_LOG_CATEGORY_RESERVED10</entry><entry></entry></row><row><entry><indexterm><primary>SDL_LOG_CATEGORY_CUSTOM</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LOG_CATEGORY_CUSTOM</secondary></indexterm>
+<anchor xml:id="__s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da1d20eb92f25c3221dc1caefeb90e886c"/>SDL_LOG_CATEGORY_CUSTOM</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+<anchor xml:id="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946"/><section>
+    <title>SDL_LogPriority</title>
+<indexterm><primary>SDL_LogPriority</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LogPriority</secondary></indexterm>
+<para><computeroutput>enum <link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</link></computeroutput></para><para>
+
+<para>The predefined log priorities. </para>
+</para>
+<informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SDL_LOG_PRIORITY_VERBOSE</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LOG_PRIORITY_VERBOSE</secondary></indexterm>
+<anchor xml:id="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946a7332e05c3849e0e163a4f87c9c355197"/>SDL_LOG_PRIORITY_VERBOSE</entry><entry></entry></row><row><entry><indexterm><primary>SDL_LOG_PRIORITY_DEBUG</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LOG_PRIORITY_DEBUG</secondary></indexterm>
+<anchor xml:id="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946aaffb80b31616030c5be9c54d089bf700"/>SDL_LOG_PRIORITY_DEBUG</entry><entry></entry></row><row><entry><indexterm><primary>SDL_LOG_PRIORITY_INFO</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LOG_PRIORITY_INFO</secondary></indexterm>
+<anchor xml:id="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946a515f0b6ce5ae9a09c1cd57f0a9b78f2c"/>SDL_LOG_PRIORITY_INFO</entry><entry></entry></row><row><entry><indexterm><primary>SDL_LOG_PRIORITY_WARN</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LOG_PRIORITY_WARN</secondary></indexterm>
+<anchor xml:id="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946af3a97eb566d09e2c1faef406c587bf5b"/>SDL_LOG_PRIORITY_WARN</entry><entry></entry></row><row><entry><indexterm><primary>SDL_LOG_PRIORITY_ERROR</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LOG_PRIORITY_ERROR</secondary></indexterm>
+<anchor xml:id="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946ae1dfd82ebd75e1b9fd437882ed5e319b"/>SDL_LOG_PRIORITY_ERROR</entry><entry></entry></row><row><entry><indexterm><primary>SDL_LOG_PRIORITY_CRITICAL</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LOG_PRIORITY_CRITICAL</secondary></indexterm>
+<anchor xml:id="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946a66c3a67e6e152703bc986b8600b2e471"/>SDL_LOG_PRIORITY_CRITICAL</entry><entry></entry></row><row><entry><indexterm><primary>SDL_NUM_LOG_PRIORITIES</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_NUM_LOG_PRIORITIES</secondary></indexterm>
+<anchor xml:id="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946a3ccd64f96923e7168bcb731326abcd18"/>SDL_NUM_LOG_PRIORITIES</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__s_d_l__log_8h_1a712dc42164c67b7f9e23dc0e3b15bd92"/><section>
+    <title>SDL_Log()</title>
+<indexterm><primary>SDL_Log</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_Log</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_Log (<link linkend="__s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</link> const char * fmt,  ...)</computeroutput></para>
+<para>Log a message with SDL_LOG_CATEGORY_APPLICATION and SDL_LOG_PRIORITY_INFO.</para>
+
+<para>= *
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>fmt</entry><entry>
+<para>a printf() style message format string</para>
+</entry>
+                            </row>
+                            <row>
+<entry>...</entry><entry>
+<para>additional parameters matching % tokens in the <computeroutput>fmt</computeroutput> string, if any</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__log_8h_1a3600cf500a030f892d41a61d9d30de19">SDL_LogCritical</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a0749fe47180b98c04bd82aca7235d703">SDL_LogDebug</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1acabe956be51b7a4c877dbfcb0489a02f">SDL_LogError</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a81c8956ea1a84ad325c3f5ecd2094515">SDL_LogInfo</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a7fcfeca9c95069b6432bf1cdb01d0ba4">SDL_LogMessage</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a2cacafd4d8e6d258da40e97a3cb3f80b">SDL_LogMessageV</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a34a7d9211a9ced1c1a6db4be0f3fbb7e">SDL_LogVerbose</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a91a7a09fec470638f028138626b3d126">SDL_LogWarn</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__log_8h_1a3600cf500a030f892d41a61d9d30de19"/><section>
+    <title>SDL_LogCritical()</title>
+<indexterm><primary>SDL_LogCritical</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LogCritical</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_LogCritical (int category, <link linkend="__s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</link> const char * fmt,  ...)</computeroutput></para>
+<para>Log a message with SDL_LOG_PRIORITY_CRITICAL.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>category</entry><entry>
+<para>the category of the message </para>
+</entry>
+                            </row>
+                            <row>
+<entry>fmt</entry><entry>
+<para>a printf() style message format string </para>
+</entry>
+                            </row>
+                            <row>
+<entry>...</entry><entry>
+<para>additional parameters matching % tokens in the <emphasis role="bold">fmt</emphasis> string, if any</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__log_8h_1a712dc42164c67b7f9e23dc0e3b15bd92">SDL_Log</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a0749fe47180b98c04bd82aca7235d703">SDL_LogDebug</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1acabe956be51b7a4c877dbfcb0489a02f">SDL_LogError</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a81c8956ea1a84ad325c3f5ecd2094515">SDL_LogInfo</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a7fcfeca9c95069b6432bf1cdb01d0ba4">SDL_LogMessage</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a2cacafd4d8e6d258da40e97a3cb3f80b">SDL_LogMessageV</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a34a7d9211a9ced1c1a6db4be0f3fbb7e">SDL_LogVerbose</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a91a7a09fec470638f028138626b3d126">SDL_LogWarn</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__log_8h_1a0749fe47180b98c04bd82aca7235d703"/><section>
+    <title>SDL_LogDebug()</title>
+<indexterm><primary>SDL_LogDebug</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LogDebug</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_LogDebug (int category, <link linkend="__s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</link> const char * fmt,  ...)</computeroutput></para>
+<para>Log a message with SDL_LOG_PRIORITY_DEBUG.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>category</entry><entry>
+<para>the category of the message </para>
+</entry>
+                            </row>
+                            <row>
+<entry>fmt</entry><entry>
+<para>a printf() style message format string </para>
+</entry>
+                            </row>
+                            <row>
+<entry>...</entry><entry>
+<para>additional parameters matching % tokens in the <emphasis role="bold">fmt</emphasis> string, if any</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__log_8h_1a712dc42164c67b7f9e23dc0e3b15bd92">SDL_Log</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a3600cf500a030f892d41a61d9d30de19">SDL_LogCritical</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1acabe956be51b7a4c877dbfcb0489a02f">SDL_LogError</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a81c8956ea1a84ad325c3f5ecd2094515">SDL_LogInfo</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a7fcfeca9c95069b6432bf1cdb01d0ba4">SDL_LogMessage</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a2cacafd4d8e6d258da40e97a3cb3f80b">SDL_LogMessageV</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a34a7d9211a9ced1c1a6db4be0f3fbb7e">SDL_LogVerbose</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a91a7a09fec470638f028138626b3d126">SDL_LogWarn</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__log_8h_1acabe956be51b7a4c877dbfcb0489a02f"/><section>
+    <title>SDL_LogError()</title>
+<indexterm><primary>SDL_LogError</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LogError</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_LogError (int category, <link linkend="__s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</link> const char * fmt,  ...)</computeroutput></para>
+<para>Log a message with SDL_LOG_PRIORITY_ERROR.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>category</entry><entry>
+<para>the category of the message </para>
+</entry>
+                            </row>
+                            <row>
+<entry>fmt</entry><entry>
+<para>a printf() style message format string </para>
+</entry>
+                            </row>
+                            <row>
+<entry>...</entry><entry>
+<para>additional parameters matching % tokens in the <emphasis role="bold">fmt</emphasis> string, if any</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__log_8h_1a712dc42164c67b7f9e23dc0e3b15bd92">SDL_Log</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a3600cf500a030f892d41a61d9d30de19">SDL_LogCritical</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a0749fe47180b98c04bd82aca7235d703">SDL_LogDebug</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a81c8956ea1a84ad325c3f5ecd2094515">SDL_LogInfo</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a7fcfeca9c95069b6432bf1cdb01d0ba4">SDL_LogMessage</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a2cacafd4d8e6d258da40e97a3cb3f80b">SDL_LogMessageV</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a34a7d9211a9ced1c1a6db4be0f3fbb7e">SDL_LogVerbose</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a91a7a09fec470638f028138626b3d126">SDL_LogWarn</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__log_8h_1a074ce8cf644b09454ec112084f9f399e"/><section>
+    <title>SDL_LogGetOutputFunction()</title>
+<indexterm><primary>SDL_LogGetOutputFunction</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LogGetOutputFunction</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_LogGetOutputFunction (<link linkend="__s_d_l__log_8h_1a11c2a5b3bbfd910cf18fbc70cf513e24">SDL_LogOutputFunction</link> * callback, <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> ** userdata)</computeroutput></para>
+<para>Get the current log output function.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>callback</entry><entry>
+<para>an SDL_LogOutputFunction filled in with the current log callback </para>
+</entry>
+                            </row>
+                            <row>
+<entry>userdata</entry><entry>
+<para>a pointer filled in with the pointer that is passed to <computeroutput>callback</computeroutput></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__log_8h_1a229eb1fdf797f548b20ee98ca8acaac6">SDL_LogSetOutputFunction</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__log_8h_1a26f0cff24dadd97d09808b6aaad3f5f4"/><section>
+    <title>SDL_LogGetPriority()</title>
+<indexterm><primary>SDL_LogGetPriority</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LogGetPriority</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_LogGetPriority (int category)</computeroutput></para>
+<para>Get the priority of a particular log category.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>category</entry><entry>
+<para>the category to query </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the SDL_LogPriority for the requested category</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__log_8h_1a9a4809ac7942e029d0bf17f380d23f73">SDL_LogSetPriority</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__log_8h_1a81c8956ea1a84ad325c3f5ecd2094515"/><section>
+    <title>SDL_LogInfo()</title>
+<indexterm><primary>SDL_LogInfo</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LogInfo</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_LogInfo (int category, <link linkend="__s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</link> const char * fmt,  ...)</computeroutput></para>
+<para>Log a message with SDL_LOG_PRIORITY_INFO.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>category</entry><entry>
+<para>the category of the message </para>
+</entry>
+                            </row>
+                            <row>
+<entry>fmt</entry><entry>
+<para>a printf() style message format string </para>
+</entry>
+                            </row>
+                            <row>
+<entry>...</entry><entry>
+<para>additional parameters matching % tokens in the <emphasis role="bold">fmt</emphasis> string, if any</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__log_8h_1a712dc42164c67b7f9e23dc0e3b15bd92">SDL_Log</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a3600cf500a030f892d41a61d9d30de19">SDL_LogCritical</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a0749fe47180b98c04bd82aca7235d703">SDL_LogDebug</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1acabe956be51b7a4c877dbfcb0489a02f">SDL_LogError</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a7fcfeca9c95069b6432bf1cdb01d0ba4">SDL_LogMessage</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a2cacafd4d8e6d258da40e97a3cb3f80b">SDL_LogMessageV</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a34a7d9211a9ced1c1a6db4be0f3fbb7e">SDL_LogVerbose</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a91a7a09fec470638f028138626b3d126">SDL_LogWarn</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__log_8h_1a7fcfeca9c95069b6432bf1cdb01d0ba4"/><section>
+    <title>SDL_LogMessage()</title>
+<indexterm><primary>SDL_LogMessage</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LogMessage</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_LogMessage (int category, <link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</link> priority, <link linkend="__s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</link> const char * fmt,  ...)</computeroutput></para>
+<para>Log a message with the specified category and priority.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>category</entry><entry>
+<para>the category of the message </para>
+</entry>
+                            </row>
+                            <row>
+<entry>priority</entry><entry>
+<para>the priority of the message </para>
+</entry>
+                            </row>
+                            <row>
+<entry>fmt</entry><entry>
+<para>a printf() style message format string </para>
+</entry>
+                            </row>
+                            <row>
+<entry>...</entry><entry>
+<para>additional parameters matching % tokens in the <emphasis role="bold">fmt</emphasis> string, if any</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__log_8h_1a712dc42164c67b7f9e23dc0e3b15bd92">SDL_Log</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a3600cf500a030f892d41a61d9d30de19">SDL_LogCritical</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a0749fe47180b98c04bd82aca7235d703">SDL_LogDebug</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1acabe956be51b7a4c877dbfcb0489a02f">SDL_LogError</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a81c8956ea1a84ad325c3f5ecd2094515">SDL_LogInfo</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a2cacafd4d8e6d258da40e97a3cb3f80b">SDL_LogMessageV</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a34a7d9211a9ced1c1a6db4be0f3fbb7e">SDL_LogVerbose</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a91a7a09fec470638f028138626b3d126">SDL_LogWarn</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__log_8h_1a2cacafd4d8e6d258da40e97a3cb3f80b"/><section>
+    <title>SDL_LogMessageV()</title>
+<indexterm><primary>SDL_LogMessageV</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LogMessageV</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_LogMessageV (int category, <link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</link> priority, const char * fmt, va_list ap)</computeroutput></para>
+<para>Log a message with the specified category and priority.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>category</entry><entry>
+<para>the category of the message </para>
+</entry>
+                            </row>
+                            <row>
+<entry>priority</entry><entry>
+<para>the priority of the message </para>
+</entry>
+                            </row>
+                            <row>
+<entry>fmt</entry><entry>
+<para>a printf() style message format string </para>
+</entry>
+                            </row>
+                            <row>
+<entry>ap</entry><entry>
+<para>a variable argument list</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__log_8h_1a712dc42164c67b7f9e23dc0e3b15bd92">SDL_Log</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a3600cf500a030f892d41a61d9d30de19">SDL_LogCritical</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a0749fe47180b98c04bd82aca7235d703">SDL_LogDebug</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1acabe956be51b7a4c877dbfcb0489a02f">SDL_LogError</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a81c8956ea1a84ad325c3f5ecd2094515">SDL_LogInfo</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a7fcfeca9c95069b6432bf1cdb01d0ba4">SDL_LogMessage</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a34a7d9211a9ced1c1a6db4be0f3fbb7e">SDL_LogVerbose</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a91a7a09fec470638f028138626b3d126">SDL_LogWarn</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__log_8h_1acf17b4ea6a83e308c815fd4d50544eba"/><section>
+    <title>SDL_LogResetPriorities()</title>
+<indexterm><primary>SDL_LogResetPriorities</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LogResetPriorities</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_LogResetPriorities (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para>
+<para>Reset all priorities to default.</para>
+
+<para>This is called by <link linkend="__s_d_l_8h_1afdabaf714781099083592051f2d9ac11">SDL_Quit()</link>.</para>
+
+<para><formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__log_8h_1a8f54656094d10994fdb5399f271906ef">SDL_LogSetAllPriority</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a9a4809ac7942e029d0bf17f380d23f73">SDL_LogSetPriority</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__log_8h_1a8f54656094d10994fdb5399f271906ef"/><section>
+    <title>SDL_LogSetAllPriority()</title>
+<indexterm><primary>SDL_LogSetAllPriority</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LogSetAllPriority</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_LogSetAllPriority (<link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</link> priority)</computeroutput></para>
+<para>Set the priority of all log categories.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>priority</entry><entry>
+<para>the SDL_LogPriority to assign</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__log_8h_1a9a4809ac7942e029d0bf17f380d23f73">SDL_LogSetPriority</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__log_8h_1a229eb1fdf797f548b20ee98ca8acaac6"/><section>
+    <title>SDL_LogSetOutputFunction()</title>
+<indexterm><primary>SDL_LogSetOutputFunction</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LogSetOutputFunction</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_LogSetOutputFunction (<link linkend="__s_d_l__log_8h_1a11c2a5b3bbfd910cf18fbc70cf513e24">SDL_LogOutputFunction</link> callback, <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> * userdata)</computeroutput></para>
+<para>Replace the default log output function with one of your own.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>callback</entry><entry>
+<para>an SDL_LogOutputFunction to call instead of the default </para>
+</entry>
+                            </row>
+                            <row>
+<entry>userdata</entry><entry>
+<para>a pointer that is passed to <computeroutput>callback</computeroutput></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__log_8h_1a074ce8cf644b09454ec112084f9f399e">SDL_LogGetOutputFunction</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__log_8h_1a9a4809ac7942e029d0bf17f380d23f73"/><section>
+    <title>SDL_LogSetPriority()</title>
+<indexterm><primary>SDL_LogSetPriority</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LogSetPriority</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_LogSetPriority (int category, <link linkend="__s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946">SDL_LogPriority</link> priority)</computeroutput></para>
+<para>Set the priority of a particular log category.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>category</entry><entry>
+<para>the category to assign a priority to </para>
+</entry>
+                            </row>
+                            <row>
+<entry>priority</entry><entry>
+<para>the SDL_LogPriority to assign</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__log_8h_1a26f0cff24dadd97d09808b6aaad3f5f4">SDL_LogGetPriority</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a8f54656094d10994fdb5399f271906ef">SDL_LogSetAllPriority</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__log_8h_1a34a7d9211a9ced1c1a6db4be0f3fbb7e"/><section>
+    <title>SDL_LogVerbose()</title>
+<indexterm><primary>SDL_LogVerbose</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LogVerbose</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_LogVerbose (int category, <link linkend="__s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</link> const char * fmt,  ...)</computeroutput></para>
+<para>Log a message with SDL_LOG_PRIORITY_VERBOSE.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>category</entry><entry>
+<para>the category of the message </para>
+</entry>
+                            </row>
+                            <row>
+<entry>fmt</entry><entry>
+<para>a printf() style message format string </para>
+</entry>
+                            </row>
+                            <row>
+<entry>...</entry><entry>
+<para>additional parameters matching % tokens in the <emphasis role="bold">fmt</emphasis> string, if any</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__log_8h_1a712dc42164c67b7f9e23dc0e3b15bd92">SDL_Log</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a3600cf500a030f892d41a61d9d30de19">SDL_LogCritical</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a0749fe47180b98c04bd82aca7235d703">SDL_LogDebug</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1acabe956be51b7a4c877dbfcb0489a02f">SDL_LogError</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a81c8956ea1a84ad325c3f5ecd2094515">SDL_LogInfo</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a7fcfeca9c95069b6432bf1cdb01d0ba4">SDL_LogMessage</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a2cacafd4d8e6d258da40e97a3cb3f80b">SDL_LogMessageV</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a91a7a09fec470638f028138626b3d126">SDL_LogWarn</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__log_8h_1a91a7a09fec470638f028138626b3d126"/><section>
+    <title>SDL_LogWarn()</title>
+<indexterm><primary>SDL_LogWarn</primary><secondary>SDL_log.h</secondary></indexterm>
+<indexterm><primary>SDL_log.h</primary><secondary>SDL_LogWarn</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_LogWarn (int category, <link linkend="__s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</link> const char * fmt,  ...)</computeroutput></para>
+<para>Log a message with SDL_LOG_PRIORITY_WARN.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>category</entry><entry>
+<para>the category of the message </para>
+</entry>
+                            </row>
+                            <row>
+<entry>fmt</entry><entry>
+<para>a printf() style message format string </para>
+</entry>
+                            </row>
+                            <row>
+<entry>...</entry><entry>
+<para>additional parameters matching % tokens in the <emphasis role="bold">fmt</emphasis> string, if any</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__log_8h_1a712dc42164c67b7f9e23dc0e3b15bd92">SDL_Log</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a3600cf500a030f892d41a61d9d30de19">SDL_LogCritical</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a0749fe47180b98c04bd82aca7235d703">SDL_LogDebug</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1acabe956be51b7a4c877dbfcb0489a02f">SDL_LogError</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a81c8956ea1a84ad325c3f5ecd2094515">SDL_LogInfo</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a7fcfeca9c95069b6432bf1cdb01d0ba4">SDL_LogMessage</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a2cacafd4d8e6d258da40e97a3cb3f80b">SDL_LogMessageV</link> </para>
+
+<para><link linkend="__s_d_l__log_8h_1a34a7d9211a9ced1c1a6db4be0f3fbb7e">SDL_LogVerbose</link> </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

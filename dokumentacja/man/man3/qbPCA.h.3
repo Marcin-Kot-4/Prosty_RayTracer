@@ -1,0 +1,72 @@
+.TH "D:/RayTracing/RayTrace/qbLinAlg/qbPCA.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/RayTrace/qbLinAlg/qbPCA.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdexcept>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <iomanip>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <algorithm>\fP
+.br
+\fC#include 'qbMatrix\&.h'\fP
+.br
+\fC#include 'qbVector\&.h'\fP
+.br
+\fC#include 'qbEIG\&.h'\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBqbPCA\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename T > std::vector< T > \fBqbPCA::ComputeColumnMeans\fP (const \fBqbMatrix2\fP< T > &inputData)"
+.br
+.ti -1c
+.RI "template<typename T > \fBvoid\fP \fBqbPCA::SubtractColumnMeans\fP (\fBqbMatrix2\fP< T > &inputData, std::vector< T > &columnMeans)"
+.br
+.ti -1c
+.RI "template<typename T > \fBqbMatrix2\fP< T > \fBqbPCA::ComputeCovariance\fP (const \fBqbMatrix2\fP< T > &X)"
+.br
+.ti -1c
+.RI "template<typename T > int \fBqbPCA::ComputeEigenvectors\fP (const \fBqbMatrix2\fP< T > &covarianceMatrix, \fBqbMatrix2\fP< T > &eigenvectors)"
+.br
+.ti -1c
+.RI "template<typename T > int \fBqbPCA::qbPCA\fP (const \fBqbMatrix2\fP< T > &inputData, \fBqbMatrix2\fP< T > &outputComponents)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "constexpr int \fBQBPCA_MATRIXNOTSQUARE\fP = \-1"
+.br
+.ti -1c
+.RI "constexpr int \fBQBPCA_MATRIXNOTSYMMETRIC\fP = \-2"
+.br
+.in -1c
+.SH "Variable Documentation"
+.PP 
+.SS "constexpr int QBPCA_MATRIXNOTSQUARE = \-1\fC [constexpr]\fP"
+
+.SS "constexpr int QBPCA_MATRIXNOTSYMMETRIC = \-2\fC [constexpr]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

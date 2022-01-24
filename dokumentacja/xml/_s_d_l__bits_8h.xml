@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_s_d_l__bits_8h" kind="file" language="C++">
+    <compoundname>SDL_bits.h</compoundname>
+    <includes refid="_s_d_l__stdinc_8h" local="yes">SDL_stdinc.h</includes>
+    <includes refid="begin__code_8h" local="yes">begin_code.h</includes>
+    <includes refid="close__code_8h" local="yes">close_code.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>D:/RayTracing/include/SDL_bits.h</label>
+        <link refid="_s_d_l__bits_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>SDL_config.h</label>
+        <link refid="_s_d_l__config_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>SDL_platform.h</label>
+        <link refid="_s_d_l__platform_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SDL_stdinc.h</label>
+        <link refid="_s_d_l__stdinc_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>begin_code.h</label>
+        <link refid="begin__code_8h"/>
+      </node>
+      <node id="6">
+        <label>close_code.h</label>
+        <link refid="close__code_8h"/>
+      </node>
+      <node id="8">
+        <label>stdarg.h</label>
+      </node>
+      <node id="7">
+        <label>stddef.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_s_d_l__bits_8h_1ada8cd16089cc635936dfe1a6884729a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1addf1f12c70f89102cc187297860c5961" kindref="member">SDL_FORCE_INLINE</ref> int</type>
+        <definition>SDL_FORCE_INLINE int SDL_MostSignificantBitIndex32</definition>
+        <argsstring>(Uint32 x)</argsstring>
+        <name>SDL_MostSignificantBitIndex32</name>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d" kindref="member">Uint32</ref></type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the index of the most significant bit. Result is undefined when called with 0. This operation can also be stated as &quot;count leading zeroes&quot; and &quot;log base 2&quot;.</para>
+<para><simplesect kind="return"><para>the index of the most significant bit, or -1 if the value is 0. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_bits.h" line="60" column="1" bodyfile="D:/RayTracing/include/SDL_bits.h" bodystart="60" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__bits_8h_1a9ca9ab50814f9cfbce5c1cba379b001d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1addf1f12c70f89102cc187297860c5961" kindref="member">SDL_FORCE_INLINE</ref> <ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b" kindref="member">SDL_bool</ref></type>
+        <definition>SDL_FORCE_INLINE SDL_bool SDL_HasExactlyOneBitSet32</definition>
+        <argsstring>(Uint32 x)</argsstring>
+        <name>SDL_HasExactlyOneBitSet32</name>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d" kindref="member">Uint32</ref></type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_bits.h" line="110" column="1" bodyfile="D:/RayTracing/include/SDL_bits.h" bodystart="110" bodyend="116"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Functions for fiddling with bits and bitmasks.</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/>Simple<sp/>DirectMedia<sp/>Layer</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/>Copyright<sp/>(C)<sp/>1997-2022<sp/>Sam<sp/>Lantinga<sp/>&lt;slouken@libsdl.org&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/>This<sp/>software<sp/>is<sp/>provided<sp/>&apos;as-is&apos;,<sp/>without<sp/>any<sp/>express<sp/>or<sp/>implied</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/>warranty.<sp/><sp/>In<sp/>no<sp/>event<sp/>will<sp/>the<sp/>authors<sp/>be<sp/>held<sp/>liable<sp/>for<sp/>any<sp/>damages</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/>arising<sp/>from<sp/>the<sp/>use<sp/>of<sp/>this<sp/>software.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/>Permission<sp/>is<sp/>granted<sp/>to<sp/>anyone<sp/>to<sp/>use<sp/>this<sp/>software<sp/>for<sp/>any<sp/>purpose,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/>including<sp/>commercial<sp/>applications,<sp/>and<sp/>to<sp/>alter<sp/>it<sp/>and<sp/>redistribute<sp/>it</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/>freely,<sp/>subject<sp/>to<sp/>the<sp/>following<sp/>restrictions:</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"></highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/>1.<sp/>The<sp/>origin<sp/>of<sp/>this<sp/>software<sp/>must<sp/>not<sp/>be<sp/>misrepresented;<sp/>you<sp/>must<sp/>not</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>claim<sp/>that<sp/>you<sp/>wrote<sp/>the<sp/>original<sp/>software.<sp/>If<sp/>you<sp/>use<sp/>this<sp/>software</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>in<sp/>a<sp/>product,<sp/>an<sp/>acknowledgment<sp/>in<sp/>the<sp/>product<sp/>documentation<sp/>would<sp/>be</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>appreciated<sp/>but<sp/>is<sp/>not<sp/>required.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/>2.<sp/>Altered<sp/>source<sp/>versions<sp/>must<sp/>be<sp/>plainly<sp/>marked<sp/>as<sp/>such,<sp/>and<sp/>must<sp/>not<sp/>be</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>misrepresented<sp/>as<sp/>being<sp/>the<sp/>original<sp/>software.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/>3.<sp/>This<sp/>notice<sp/>may<sp/>not<sp/>be<sp/>removed<sp/>or<sp/>altered<sp/>from<sp/>any<sp/>source<sp/>distribution.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SDL_bits_h_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_bits_h_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_s_d_l__stdinc_8h" kindref="compound">SDL_stdinc.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="begin__code_8h" kindref="compound">begin_code.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Set<sp/>up<sp/>for<sp/>C<sp/>function<sp/>definitions,<sp/>even<sp/>when<sp/>using<sp/>C++<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__WATCOMC__)<sp/>&amp;&amp;<sp/>defined(__386__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>__inline<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>_SDL_bsr_watcom(<ref refid="_s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d" kindref="member">Uint32</ref>);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>aux<sp/>_SDL_bsr_watcom<sp/>=<sp/>\</highlight></codeline>
+<codeline lineno="53"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;bsr<sp/>eax,<sp/>eax&quot;</highlight><highlight class="normal"><sp/>\</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>parm<sp/>[eax]<sp/>nomemory<sp/>\</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>value<sp/>[eax]<sp/>\</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>modify<sp/>exact<sp/>[eax]<sp/>nomemory;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><ref refid="begin__code_8h_1addf1f12c70f89102cc187297860c5961" kindref="member">SDL_FORCE_INLINE</ref><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="_s_d_l__bits_8h_1ada8cd16089cc635936dfe1a6884729a4" refkind="member"><highlight class="normal"><ref refid="_s_d_l__bits_8h_1ada8cd16089cc635936dfe1a6884729a4" kindref="member">SDL_MostSignificantBitIndex32</ref>(<ref refid="_s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d" kindref="member">Uint32</ref><sp/><ref refid="_s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47" kindref="member">x</ref>)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__GNUC__)<sp/>&amp;&amp;<sp/>(__GNUC__<sp/>&gt;=<sp/>4<sp/>||<sp/>(__GNUC__<sp/>==<sp/>3<sp/>&amp;&amp;<sp/>__GNUC_MINOR__<sp/>&gt;=<sp/>4))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Count<sp/>Leading<sp/>Zeroes<sp/>builtin<sp/>in<sp/>GCC.</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>http://gcc.gnu.org/onlinedocs/gcc-4.3.4/gcc/Other-Builtins.html</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="_s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47" kindref="member">x</ref><sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>31<sp/>-<sp/>__builtin_clz(<ref refid="_s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47" kindref="member">x</ref>);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__WATCOMC__)<sp/>&amp;&amp;<sp/>defined(__386__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="_s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47" kindref="member">x</ref><sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_SDL_bsr_watcom(<ref refid="_s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47" kindref="member">x</ref>);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(_MSC_VER)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__opengl__glext_8h_1a57f14e05b1900f16a2da82ade47d0c6d" kindref="member">index</ref>;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_BitScanReverse(&amp;<ref refid="_s_d_l__opengl__glext_8h_1a57f14e05b1900f16a2da82ade47d0c6d" kindref="member">index</ref>,<sp/><ref refid="_s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47" kindref="member">x</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__opengl__glext_8h_1a57f14e05b1900f16a2da82ade47d0c6d" kindref="member">index</ref>;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Based<sp/>off<sp/>of<sp/>Bit<sp/>Twiddling<sp/>Hacks<sp/>by<sp/>Sean<sp/>Eron<sp/>Anderson</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>&lt;seander@cs.stanford.edu&gt;,<sp/>released<sp/>in<sp/>the<sp/>public<sp/>domain.</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>http://graphics.stanford.edu/~seander/bithacks.html#IntegerLog</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d" kindref="member">Uint32</ref><sp/><ref refid="_s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010" kindref="member">b</ref>[]<sp/>=<sp/>{0x2,<sp/>0xC,<sp/>0xF0,<sp/>0xFF00,<sp/>0xFFFF0000};</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>S[]<sp/>=<sp/>{1,<sp/>2,<sp/>4,<sp/>8,<sp/>16};</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>msbIndex<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="_s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47" kindref="member">x</ref><sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>4;<sp/>i<sp/>&gt;=<sp/>0;<sp/>i--)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="_s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47" kindref="member">x</ref><sp/>&amp;<sp/><ref refid="_s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010" kindref="member">b</ref>[i])</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47" kindref="member">x</ref><sp/>&gt;&gt;=<sp/>S[i];</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msbIndex<sp/>|=<sp/>S[i];</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>msbIndex;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><ref refid="begin__code_8h_1addf1f12c70f89102cc187297860c5961" kindref="member">SDL_FORCE_INLINE</ref><sp/><ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b" kindref="member">SDL_bool</ref></highlight></codeline>
+<codeline lineno="110" refid="_s_d_l__bits_8h_1a9ca9ab50814f9cfbce5c1cba379b001d" refkind="member"><highlight class="normal"><ref refid="_s_d_l__bits_8h_1a9ca9ab50814f9cfbce5c1cba379b001d" kindref="member">SDL_HasExactlyOneBitSet32</ref>(<ref refid="_s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d" kindref="member">Uint32</ref><sp/><ref refid="_s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47" kindref="member">x</ref>)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="_s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47" kindref="member">x</ref><sp/>&amp;&amp;<sp/>!(<ref refid="_s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47" kindref="member">x</ref><sp/>&amp;<sp/>(<ref refid="_s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47" kindref="member">x</ref><sp/>-<sp/>1)))<sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733ba32efa84cfb0a91b0eee1edf6e941cf74" kindref="member">SDL_TRUE</ref>;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733ba76e680af86c5508ea4ccd9f969eb1ea2" kindref="member">SDL_FALSE</ref>;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Ends<sp/>C<sp/>function<sp/>definitions<sp/>when<sp/>using<sp/>C++<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="close__code_8h" kindref="compound">close_code.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>SDL_bits_h_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>vi:<sp/>set<sp/>ts=4<sp/>sw=4<sp/>expandtab:<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/include/SDL_bits.h"/>
+  </compounddef>
+</doxygen>

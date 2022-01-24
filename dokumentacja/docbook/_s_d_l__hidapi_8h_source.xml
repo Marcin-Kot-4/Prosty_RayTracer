@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__hidapi_8h_source" xml:lang="en-US">
+<title>SDL_hidapi.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_hidapi.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+62 <emphasis role="preprocessor">#ifndef&#32;SDL_hidapi_h_</emphasis>
+63 <emphasis role="preprocessor">#define&#32;SDL_hidapi_h_</emphasis>
+64 
+65 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__stdinc_8h">SDL_stdinc.h</link>&quot;</emphasis>
+66 
+67 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+68 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+69 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+70 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+71 <emphasis role="preprocessor">#endif</emphasis>
+72 
+76 <emphasis role="keyword">struct&#32;</emphasis>SDL_hid_device_;
+77 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis>SDL_hid_device_&#32;<link linkend="__s_d_l__hidapi_8h_1a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</link>;&#32;
+83 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_s_d_l__hid__device__info">SDL_hid_device_info</link>
+84 {
+86 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="_struct_s_d_l__hid__device__info_1aa66ffa58c4a37986285dee7d0adad766">path</link>;
+88 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">short</emphasis>&#32;<link linkend="_struct_s_d_l__hid__device__info_1a7bb9b5c173278a6699b3191953fcfe77">vendor_id</link>;
+90 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">short</emphasis>&#32;<link linkend="_struct_s_d_l__hid__device__info_1a78b8d7cefcc61d786256280da7159dbc">product_id</link>;
+92 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">wchar_t</emphasis>&#32;*<link linkend="_struct_s_d_l__hid__device__info_1af60f9bc8de63c26113cca7e60158b91d">serial_number</link>;
+95 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">short</emphasis>&#32;<link linkend="_struct_s_d_l__hid__device__info_1ad6eb1e9cafd756ef89cd427cccc89da8">release_number</link>;
+97 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">wchar_t</emphasis>&#32;*<link linkend="_struct_s_d_l__hid__device__info_1ac874d63dbfe581736033f266f08fd51a">manufacturer_string</link>;
+99 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">wchar_t</emphasis>&#32;*<link linkend="_struct_s_d_l__hid__device__info_1a80f37d1aaae118285bec4442a8c9b1d0">product_string</link>;
+102 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">short</emphasis>&#32;<link linkend="_struct_s_d_l__hid__device__info_1ace00a62000be5a947106f04d0dd5efc4">usage_page</link>;
+105 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">short</emphasis>&#32;<link linkend="_struct_s_d_l__hid__device__info_1ab5851e5c55c1903b63ecf8bb736c4249">usage</link>;
+112 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l__hid__device__info_1ae1450dccd0f426357f6b95422645a0e3">interface_number</link>;
+113 
+116 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l__hid__device__info_1a3816985c4cc4210c750da3a9720a28f6">interface_class</link>;
+117 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l__hid__device__info_1a7dff2f9edbe860f476fdaf5e91614038">interface_subclass</link>;
+118 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l__hid__device__info_1a7ad2c1748503188c35a8a306a8abd55b">interface_protocol</link>;
+119 
+121 &#32;&#32;&#32;&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_s_d_l__hid__device__info">SDL_hid_device_info</link>&#32;*<link linkend="_struct_s_d_l__hid__device__info_1aa8da06646522138690bec6e5fba7540f">next</link>;
+122 }&#32;<link linkend="__s_d_l__hidapi_8h_1afb328d87ec06aec76ebbca2eab491a70">SDL_hid_device_info</link>;
+123 
+124 
+142 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__hidapi_8h_1afab0dc5913a3e90ed4434bd2778fe1bf">SDL_hid_init</link>(<emphasis role="keywordtype">void</emphasis>);
+143 
+156 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__hidapi_8h_1a795ed5c8ed4410b5962742d1c92774c9">SDL_hid_exit</link>(<emphasis role="keywordtype">void</emphasis>);
+157 
+177 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__hidapi_8h_1a1d7587010cbd25a9fcf77e26682de356">SDL_hid_device_change_count</link>(<emphasis role="keywordtype">void</emphasis>);
+178 
+199 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="_struct_s_d_l__hid__device__info">SDL_hid_device_info</link>&#32;*&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__hidapi_8h_1a5a0a8a98f734167ad2272c0152f51c92">SDL_hid_enumerate</link>(<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">short</emphasis>&#32;<link linkend="_struct_s_d_l__hid__device__info_1a7bb9b5c173278a6699b3191953fcfe77">vendor_id</link>,&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">short</emphasis>&#32;<link linkend="_struct_s_d_l__hid__device__info_1a78b8d7cefcc61d786256280da7159dbc">product_id</link>);
+200 
+211 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__hidapi_8h_1af2f46b6c5b92e35724b2bd3116e2eb1e">SDL_hid_free_enumeration</link>(<link linkend="_struct_s_d_l__hid__device__info">SDL_hid_device_info</link>&#32;*devs);
+212 
+229 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__hidapi_8h_1a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</link>&#32;*&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__hidapi_8h_1ae44777e4b49c6f9887a3d892102bd491">SDL_hid_open</link>(<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">short</emphasis>&#32;<link linkend="_struct_s_d_l__hid__device__info_1a7bb9b5c173278a6699b3191953fcfe77">vendor_id</link>,&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">short</emphasis>&#32;<link linkend="_struct_s_d_l__hid__device__info_1a78b8d7cefcc61d786256280da7159dbc">product_id</link>,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">wchar_t</emphasis>&#32;*<link linkend="_struct_s_d_l__hid__device__info_1af60f9bc8de63c26113cca7e60158b91d">serial_number</link>);
+230 
+243 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__hidapi_8h_1a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</link>&#32;*&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__hidapi_8h_1a8c16ac973dc4dee19687484f97e5bc79">SDL_hid_open_path</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1ab25d8cd967ccbd19b630d7100ff8f67e">path</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;bExclusive&#32;<emphasis role="comment">/*&#32;=&#32;false&#32;*/</emphasis>);
+244 
+269 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__hidapi_8h_1a6f20cc83879d21bad4306f540475dd8f">SDL_hid_write</link>(<link linkend="__s_d_l__hidapi_8h_1a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</link>&#32;*dev,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="__s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a">data</link>,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1ab9c919755bde3b34349e23a32b4e0fa7">length</link>);
+270 
+290 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__hidapi_8h_1a2aa5d9a34cd1200e566d4ec47fc5dc5f">SDL_hid_read_timeout</link>(<link linkend="__s_d_l__hidapi_8h_1a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</link>&#32;*dev,&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="__s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a">data</link>,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1ab9c919755bde3b34349e23a32b4e0fa7">length</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;milliseconds);
+291 
+310 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__hidapi_8h_1a6f41a95bea290df5a73b97e4bf5212a0">SDL_hid_read</link>(<link linkend="__s_d_l__hidapi_8h_1a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</link>&#32;*dev,&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="__s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a">data</link>,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1ab9c919755bde3b34349e23a32b4e0fa7">length</link>);
+311 
+328 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__hidapi_8h_1a1f66ac734a1786884cb4f2b6309a60e7">SDL_hid_set_nonblocking</link>(<link linkend="__s_d_l__hidapi_8h_1a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</link>&#32;*dev,&#32;<emphasis role="keywordtype">int</emphasis>&#32;nonblock);
+329 
+352 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__hidapi_8h_1a5349c62d24338025552c6f244956699f">SDL_hid_send_feature_report</link>(<link linkend="__s_d_l__hidapi_8h_1a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</link>&#32;*dev,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="__s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a">data</link>,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1ab9c919755bde3b34349e23a32b4e0fa7">length</link>);
+353 
+374 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__hidapi_8h_1ab955370e07dc09c62367ab70d1784793">SDL_hid_get_feature_report</link>(<link linkend="__s_d_l__hidapi_8h_1a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</link>&#32;*dev,&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="__s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a">data</link>,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1ab9c919755bde3b34349e23a32b4e0fa7">length</link>);
+375 
+383 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__hidapi_8h_1a0e402a95d523c439b3a55be0c05dd6ba">SDL_hid_close</link>(<link linkend="__s_d_l__hidapi_8h_1a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</link>&#32;*dev);
+384 
+395 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__hidapi_8h_1abc79c19d7d67a361bb39b5ae4704c950">SDL_hid_get_manufacturer_string</link>(<link linkend="__s_d_l__hidapi_8h_1a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</link>&#32;*dev,&#32;<emphasis role="keywordtype">wchar_t</emphasis>&#32;*<emphasis role="keywordtype">string</emphasis>,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;maxlen);
+396 
+407 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__hidapi_8h_1abfc7382b9200805fea25b4483a3cb224">SDL_hid_get_product_string</link>(<link linkend="__s_d_l__hidapi_8h_1a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</link>&#32;*dev,&#32;<emphasis role="keywordtype">wchar_t</emphasis>&#32;*<emphasis role="keywordtype">string</emphasis>,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;maxlen);
+408 
+419 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__hidapi_8h_1a06110655bc7e7c8a3a8e1d43a5af998b">SDL_hid_get_serial_number_string</link>(<link linkend="__s_d_l__hidapi_8h_1a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</link>&#32;*dev,&#32;<emphasis role="keywordtype">wchar_t</emphasis>&#32;*<emphasis role="keywordtype">string</emphasis>,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;maxlen);
+420 
+432 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__hidapi_8h_1a8c58e5c7c4ce4920507e316da2ca07ea">SDL_hid_get_indexed_string</link>(<link linkend="__s_d_l__hidapi_8h_1a01e37a76f52ebe32810eae8de7ffad85">SDL_hid_device</link>&#32;*dev,&#32;<emphasis role="keywordtype">int</emphasis>&#32;string_index,&#32;<emphasis role="keywordtype">wchar_t</emphasis>&#32;*<emphasis role="keywordtype">string</emphasis>,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;maxlen);
+433 
+441 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__hidapi_8h_1a472eb84a7526e0c9fb6b696b2fa7a039">SDL_hid_ble_scan</link>(<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;active);
+442 
+443 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+444 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+445 }
+446 <emphasis role="preprocessor">#endif</emphasis>
+447 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+448 
+449 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_hidapi_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+450 
+451 <emphasis role="comment">/*&#32;vi:&#32;set&#32;sts=4&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

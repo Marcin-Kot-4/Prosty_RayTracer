@@ -1,0 +1,112 @@
+.TH "qbVector< T >" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+qbVector< T >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <qbVector\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBqbVector\fP ()"
+.br
+.ti -1c
+.RI "\fBqbVector\fP (int numDims)"
+.br
+.ti -1c
+.RI "\fBqbVector\fP (std::vector< T > inputData)"
+.br
+.ti -1c
+.RI "\fB~qbVector\fP ()"
+.br
+.ti -1c
+.RI "int \fBGetNumDims\fP () const"
+.br
+.ti -1c
+.RI "T \fBGetElement\fP (int \fBindex\fP) const"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBSetElement\fP (int \fBindex\fP, T \fBvalue\fP)"
+.br
+.ti -1c
+.RI "T \fBnorm\fP ()"
+.br
+.ti -1c
+.RI "\fBqbVector\fP< T > \fBNormalized\fP ()"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBNormalize\fP ()"
+.br
+.ti -1c
+.RI "\fBqbVector\fP< T > \fBoperator+\fP (const \fBqbVector\fP< T > &rhs) const"
+.br
+.ti -1c
+.RI "\fBqbVector\fP< T > \fBoperator\-\fP (const \fBqbVector\fP< T > &rhs) const"
+.br
+.ti -1c
+.RI "\fBqbVector\fP< T > \fBoperator*\fP (const T &rhs) const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static T \fBdot\fP (const \fBqbVector\fP< T > &\fBa\fP, const \fBqbVector\fP< T > &\fBb\fP)"
+.br
+.ti -1c
+.RI "static \fBqbVector\fP< T > \fBcross\fP (const \fBqbVector\fP< T > &\fBa\fP, const \fBqbVector\fP< T > &\fBb\fP)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "template<class U > \fBqbVector\fP< U > \fBoperator*\fP (const U &lhs, const \fBqbVector\fP< U > &rhs)"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class T > \fBqbVector\fP< T >\fB::qbVector\fP"
+
+.SS "template<class T > \fBqbVector\fP< T >\fB::qbVector\fP (int numDims)"
+
+.SS "template<class T > \fBqbVector\fP< T >\fB::qbVector\fP (std::vector< T > inputData)"
+
+.SS "template<class T > \fBqbVector\fP< T >::~\fBqbVector\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class T > \fBqbVector\fP< T > \fBqbVector\fP< T >::cross (const \fBqbVector\fP< T > & a, const \fBqbVector\fP< T > & b)\fC [static]\fP"
+
+.SS "template<class T > T \fBqbVector\fP< T >::dot (const \fBqbVector\fP< T > & a, const \fBqbVector\fP< T > & b)\fC [static]\fP"
+
+.SS "template<class T > T \fBqbVector\fP< T >::GetElement (int index) const"
+
+.SS "template<class T > int \fBqbVector\fP< T >::GetNumDims"
+
+.SS "template<class T > T \fBqbVector\fP< T >::norm"
+
+.SS "template<class T > \fBvoid\fP \fBqbVector\fP< T >::Normalize"
+
+.SS "template<class T > \fBqbVector\fP< T > \fBqbVector\fP< T >::Normalized"
+
+.SS "template<class T > \fBqbVector\fP< T > \fBqbVector\fP< T >::operator* (const T & rhs) const"
+
+.SS "template<class T > \fBqbVector\fP< T > \fBqbVector\fP< T >::operator+ (const \fBqbVector\fP< T > & rhs) const"
+
+.SS "template<class T > \fBqbVector\fP< T > \fBqbVector\fP< T >::operator\- (const \fBqbVector\fP< T > & rhs) const"
+
+.SS "template<class T > \fBvoid\fP \fBqbVector\fP< T >::SetElement (int index, T value)"
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "template<class T > template<class U > \fBqbVector\fP< U > operator* (const U & lhs, const \fBqbVector\fP< U > & rhs)\fC [friend]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

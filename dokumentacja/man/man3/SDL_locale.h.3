@@ -1,0 +1,77 @@
+.TH "D:/RayTracing/include/SDL_locale.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_locale.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SDL_stdinc\&.h'\fP
+.br
+\fC#include 'SDL_error\&.h'\fP
+.br
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBSDL_Locale\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBSDL_Locale\fP \fBSDL_Locale\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_Locale\fP *\fBSDLCALL\fP \fBSDL_GetPreferredLocales\fP (\fBvoid\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include file for SDL locale services 
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBSDL_Locale\fP \fBSDL_Locale\fP"
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBDECLSPEC\fP \fBSDL_Locale\fP *\fBSDLCALL\fP SDL_GetPreferredLocales (\fBvoid\fP)"
+Report the user's preferred locale\&.
+.PP
+This returns an array of \fBSDL_Locale\fP structs, the final item zeroed out\&. When the caller is done with this array, it should call \fBSDL_free()\fP on the returned value; all the memory involved is allocated in a single block, so a single \fBSDL_free()\fP will suffice\&.
+.PP
+Returned language strings are in the format xx, where 'xx' is an ISO-639 language specifier (such as 'en' for English, 'de' for German, etc)\&. Country strings are in the format YY, where 'YY' is an ISO-3166 country code (such as 'US' for the United States, 'CA' for Canada, etc)\&. Country might be NULL if there's no specific guidance on them (so you might get { 'en', 'US' } for American English, but { 'en', NULL } means 'English
+language, generically')\&. Language strings are never NULL, except to terminate the array\&.
+.PP
+Please note that not all of these strings are 2 characters; some are three or more\&.
+.PP
+The returned list of locales are in the order of the user's preference\&. For example, a German citizen that is fluent in US English and knows enough Japanese to navigate around Tokyo might have a list like: { 'de', 'en_US', 'jp', NULL }\&. Someone from England might prefer British English (where 'color' is spelled 'colour', etc), but will settle for anything like it: { 'en_GB', 'en', NULL }\&.
+.PP
+This function returns NULL on error, including when the platform does not supply this information at all\&.
+.PP
+This might be a 'slow' call that has to query the operating system\&. It's best to ask for this once and save the results\&. However, this list can change, usually because the user has changed a system preference outside of your program; SDL will send an SDL_LOCALECHANGED event in this case, if possible, and you can call this function again to get an updated copy of preferred locales\&.
+.PP
+\fBReturns\fP
+.RS 4
+array of locales, terminated with a locale with a NULL language field\&. Will return NULL on error\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.14\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

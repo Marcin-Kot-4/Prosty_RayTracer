@@ -1,0 +1,53 @@
+\hypertarget{namespaceqb_p_c_a}{}\doxysection{qb\+PCA Namespace Reference}
+\label{namespaceqb_p_c_a}\index{qbPCA@{qbPCA}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \mbox{\hyperlink{namespaceqb_p_c_a_ade6a2d48ed6e5d5bbd7db9dc515fbfa2}{Compute\+Column\+Means}} (const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&input\+Data)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{_s_d_l__opengles2__gl2ext_8h_ae5d8fa23ad07c48bb609509eae494c95}{void}} \mbox{\hyperlink{namespaceqb_p_c_a_a5a22357f0fe78194175135e2adc1045e}{Subtract\+Column\+Means}} (\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&input\+Data, std\+::vector$<$ T $>$ \&column\+Means)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \mbox{\hyperlink{namespaceqb_p_c_a_a393fa03dff91c84ac6c53aa8bd4141b7}{Compute\+Covariance}} (const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&X)
+\item 
+{\footnotesize template$<$typename T $>$ }\\int \mbox{\hyperlink{namespaceqb_p_c_a_aa00b5e4dee58ccfa5ce763a873b96c2f}{Compute\+Eigenvectors}} (const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&covariance\+Matrix, \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&eigenvectors)
+\item 
+{\footnotesize template$<$typename T $>$ }\\int \mbox{\hyperlink{namespaceqb_p_c_a_aa99d4f272173791d49b268a9dd151fc6}{qb\+PCA}} (const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&input\+Data, \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&output\+Components)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceqb_p_c_a_ade6a2d48ed6e5d5bbd7db9dc515fbfa2}\label{namespaceqb_p_c_a_ade6a2d48ed6e5d5bbd7db9dc515fbfa2}} 
+\index{qbPCA@{qbPCA}!ComputeColumnMeans@{ComputeColumnMeans}}
+\index{ComputeColumnMeans@{ComputeColumnMeans}!qbPCA@{qbPCA}}
+\doxysubsubsection{\texorpdfstring{ComputeColumnMeans()}{ComputeColumnMeans()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$ T $>$ qb\+PCA\+::\+Compute\+Column\+Means (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&}]{input\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceqb_p_c_a_a393fa03dff91c84ac6c53aa8bd4141b7}\label{namespaceqb_p_c_a_a393fa03dff91c84ac6c53aa8bd4141b7}} 
+\index{qbPCA@{qbPCA}!ComputeCovariance@{ComputeCovariance}}
+\index{ComputeCovariance@{ComputeCovariance}!qbPCA@{qbPCA}}
+\doxysubsubsection{\texorpdfstring{ComputeCovariance()}{ComputeCovariance()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ qb\+PCA\+::\+Compute\+Covariance (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&}]{X }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceqb_p_c_a_aa00b5e4dee58ccfa5ce763a873b96c2f}\label{namespaceqb_p_c_a_aa00b5e4dee58ccfa5ce763a873b96c2f}} 
+\index{qbPCA@{qbPCA}!ComputeEigenvectors@{ComputeEigenvectors}}
+\index{ComputeEigenvectors@{ComputeEigenvectors}!qbPCA@{qbPCA}}
+\doxysubsubsection{\texorpdfstring{ComputeEigenvectors()}{ComputeEigenvectors()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int qb\+PCA\+::\+Compute\+Eigenvectors (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&}]{covariance\+Matrix,  }\item[{\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&}]{eigenvectors }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceqb_p_c_a_aa99d4f272173791d49b268a9dd151fc6}\label{namespaceqb_p_c_a_aa99d4f272173791d49b268a9dd151fc6}} 
+\index{qbPCA@{qbPCA}!qbPCA@{qbPCA}}
+\index{qbPCA@{qbPCA}!qbPCA@{qbPCA}}
+\doxysubsubsection{\texorpdfstring{qbPCA()}{qbPCA()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int qb\+PCA\+::qb\+PCA (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&}]{input\+Data,  }\item[{\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&}]{output\+Components }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceqb_p_c_a_a5a22357f0fe78194175135e2adc1045e}\label{namespaceqb_p_c_a_a5a22357f0fe78194175135e2adc1045e}} 
+\index{qbPCA@{qbPCA}!SubtractColumnMeans@{SubtractColumnMeans}}
+\index{SubtractColumnMeans@{SubtractColumnMeans}!qbPCA@{qbPCA}}
+\doxysubsubsection{\texorpdfstring{SubtractColumnMeans()}{SubtractColumnMeans()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{_s_d_l__opengles2__gl2ext_8h_ae5d8fa23ad07c48bb609509eae494c95}{void}} qb\+PCA\+::\+Subtract\+Column\+Means (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&}]{input\+Data,  }\item[{std\+::vector$<$ T $>$ \&}]{column\+Means }\end{DoxyParamCaption})}
+

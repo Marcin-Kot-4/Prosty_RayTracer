@@ -1,0 +1,176 @@
+These instructions are for people using Apple\textquotesingle{}s Mac OS X (pronounced \char`\"{}ten\char`\"{}), which in newer versions is just referred to as \char`\"{}mac\+OS\char`\"{}.
+
+From the developer\textquotesingle{}s point of view, mac\+OS is a sort of hybrid Mac and Unix system, and you have the option of using either traditional command line tools or Apple\textquotesingle{}s IDE Xcode.\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_macos_autotoc_md62}{}\doxysection{Command Line Build}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_macos_autotoc_md62}
+To build SDL using the command line, use the standard configure and make process\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir build}
+\DoxyCodeLine{cd build}
+\DoxyCodeLine{../configure}
+\DoxyCodeLine{make}
+\DoxyCodeLine{sudo make install}
+
+\end{DoxyCode}
+
+
+CMake is also known to work, although it continues to be a work in progress\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir build}
+\DoxyCodeLine{cd build}
+\DoxyCodeLine{cmake -\/DCMAKE\_BUILD\_TYPE=Release ..}
+\DoxyCodeLine{make}
+\DoxyCodeLine{sudo make install}
+
+\end{DoxyCode}
+
+
+You can also build SDL as a Universal library (a single binary for both 64-\/bit Intel and ARM architectures), by using the build-\/scripts/clang-\/fat.\+sh script.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir build}
+\DoxyCodeLine{cd build}
+\DoxyCodeLine{CC=\$PWD/../build-\/scripts/clang-\/fat.sh ../configure}
+\DoxyCodeLine{make}
+\DoxyCodeLine{sudo make install}
+
+\end{DoxyCode}
+
+
+This script builds SDL with 10.\+6 ABI compatibility on 64-\/bit Intel and 11.\+0 ABI compatibility on ARM64 architectures. For best compatibility you should compile your application the same way.
+
+Please note that building SDL requires at least Xcode 4.\+6 and the 10.\+7 SDK (even if you target back to 10.\+6 systems). Power\+PC support for Mac OS X has been officially dropped as of SDL 2.\+0.\+2. 32-\/bit Intel, using an older Xcode release, is still supported at the time of this writing, but current Xcode releases no longer support it, and eventually neither will SDL.
+
+To use the library once it\textquotesingle{}s built, you essential have two possibilities\+: use the traditional autoconf/automake/make method, or use Xcode.\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_macos_autotoc_md63}{}\doxysection{Caveats for using SDL with Mac OS X}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_macos_autotoc_md63}
+If you register your own NSApplication\+Delegate (using \mbox{[}NSApp set\+Delegate\+:\mbox{]}), SDL will not register its own. This means that SDL will not terminate using SDL\+\_\+\+Quit if it receives a termination request, it will terminate like a normal app, and it will not send a SDL\+\_\+\+DROPFILE when you request to open a file with the app. To solve these issues, put the following code in your NSApplication\+Delegate implementation\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{-\/ (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    if (SDL\_GetEventState(SDL\_QUIT) == SDL\_ENABLE) \{}
+\DoxyCodeLine{        SDL\_Event event;}
+\DoxyCodeLine{        event.type = SDL\_QUIT;}
+\DoxyCodeLine{        SDL\_PushEvent(\&event);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    return NSTerminateCancel;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{    }
+\DoxyCodeLine{-\/ (BOOL)application:(NSApplication *)theApplication openFile:(NSString *)filename}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    if (SDL\_GetEventState(SDL\_DROPFILE) == SDL\_ENABLE) \{}
+\DoxyCodeLine{        SDL\_Event event;}
+\DoxyCodeLine{        event.type = SDL\_DROPFILE;}
+\DoxyCodeLine{        event.drop.file = SDL\_strdup([filename UTF8String]);}
+\DoxyCodeLine{        return (SDL\_PushEvent(\&event) > 0);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    return NO;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_macos_autotoc_md64}{}\doxysection{Using the Simple Direct\+Media Layer with a traditional Makefile}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_macos_autotoc_md64}
+An existing autoconf/automake build system for your SDL app has good chances to work almost unchanged on mac\+OS. However, to produce a \char`\"{}real\char`\"{} Mac binary that you can distribute to users, you need to put the generated binary into a so called \char`\"{}bundle\char`\"{}, which is basically a fancy folder with a name like \char`\"{}\+My\+Cool\+Game.\+app\char`\"{}.
+
+To get this build automatically, add something like the following rule to your Makefile.\+am\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{bundle\_contents = APP\_NAME.app/Contents}
+\DoxyCodeLine{APP\_NAME\_bundle: EXE\_NAME}
+\DoxyCodeLine{    mkdir -\/p \$(bundle\_contents)/MacOS}
+\DoxyCodeLine{    mkdir -\/p \$(bundle\_contents)/Resources}
+\DoxyCodeLine{    echo "{}APPL????"{} > \$(bundle\_contents)/PkgInfo}
+\DoxyCodeLine{    \$(INSTALL\_PROGRAM) \$< \$(bundle\_contents)/MacOS/}
+
+\end{DoxyCode}
+
+
+You should replace {\ttfamily EXE\+\_\+\+NAME} with the name of the executable. {\ttfamily APP\+\_\+\+NAME} is what will be visible to the user in the Finder. Usually it will be the same as {\ttfamily EXE\+\_\+\+NAME} but capitalized. E.\+g. if {\ttfamily EXE\+\_\+\+NAME} is \char`\"{}testgame\char`\"{} then {\ttfamily APP\+\_\+\+NAME} usually is \char`\"{}\+Test\+Game\char`\"{}. You might also want to use {\ttfamily @PACKAGE@} to use the package name as specified in your configure.\+ac file.
+
+If your project builds more than one application, you will have to do a bit more. For each of your target applications, you need a separate rule.
+
+If you want the created bundles to be installed, you may want to add this rule to your Makefile.\+am\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{install-\/exec-\/hook: APP\_NAME\_bundle}
+\DoxyCodeLine{    rm -\/rf \$(DESTDIR)\$(prefix)/Applications/APP\_NAME.app}
+\DoxyCodeLine{    mkdir -\/p \$(DESTDIR)\$(prefix)/Applications/}
+\DoxyCodeLine{    cp -\/r \$< /\$(DESTDIR)\$(prefix)Applications/}
+
+\end{DoxyCode}
+
+
+This rule takes the Bundle created by the rule from step 3 and installs them into \char`\"{}\$(\+DESTDIR)\$(prefix)/\+Applications/\char`\"{}.
+
+Again, if you want to install multiple applications, you will have to augment the make rule accordingly.
+
+But beware! That is only part of the story! With the above, you end up with a barebones .app bundle, which is double-\/clickable from the Finder. But there are some more things you should do before shipping your product...
+
+
+\begin{DoxyEnumerate}
+\item The bundle right now probably is dynamically linked against SDL. That means that when you copy it to another computer, {\itshape it will not run}, unless you also install SDL on that other computer. A good solution for this dilemma is to static link against SDL. On OS X, you can achieve that by linking against the libraries listed by
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sdl-\/config -\/-\/static-\/libs}
+
+\end{DoxyCode}
+
+
+instead of those listed by
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sdl-\/config -\/-\/libs}
+
+\end{DoxyCode}
+
+
+Depending on how exactly SDL is integrated into your build systems, the way to achieve that varies, so I won\textquotesingle{}t describe it here in detail
+\item Add an \textquotesingle{}Info.\+plist\textquotesingle{} to your application. That is a special XML file which contains some meta-\/information about your application (like some copyright information, the version of your app, the name of an optional icon file, and other things). Part of that information is displayed by the Finder when you click on the .app, or if you look at the \char`\"{}\+Get Info\char`\"{} window. More information about Info.\+plist files can be found on Apple\textquotesingle{}s homepage.
+\end{DoxyEnumerate}
+
+As a final remark, let me add that I use some of the techniques (and some variations of them) in \href{https://github.com/exult/exult}{\texttt{ Exult}} and \href{https://github.com/scummvm/scummvm}{\texttt{ Scumm\+VM}}; both are available in source on the net, so feel free to take a peek at them for inspiration!\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_macos_autotoc_md65}{}\doxysection{Using the Simple Direct\+Media Layer with Xcode}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_macos_autotoc_md65}
+These instructions are for using Apple\textquotesingle{}s Xcode IDE to build SDL applications.\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_macos_autotoc_md66}{}\doxysubsection{First steps}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_macos_autotoc_md66}
+The first thing to do is to unpack the Xcode.\+tar.\+gz archive in the top level SDL directory (where the Xcode.\+tar.\+gz archive resides). Because Stuffit Expander will unpack the archive into a subdirectory, you should unpack the archive manually from the command line\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd [path\_to\_SDL\_source]}
+\DoxyCodeLine{tar zxf Xcode.tar.gz}
+
+\end{DoxyCode}
+
+
+This will create a new folder called Xcode, which you can browse normally from the Finder.\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_macos_autotoc_md67}{}\doxysubsection{Building the Framework}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_macos_autotoc_md67}
+The SDL Library is packaged as a framework bundle, an organized relocatable folder hierarchy of executable code, interface headers, and additional resources. For practical purposes, you can think of a framework as a more user and system-\/friendly shared library, whose library file behaves more or less like a standard UNIX shared library.
+
+To build the framework, simply open the framework project and build it. By default, the framework bundle \char`\"{}\+SDL.\+framework\char`\"{} is installed in /\+Library/\+Frameworks. Therefore, the testers and project stationary expect it to be located there. However, it will function the same in any of the following locations\+:
+
+
+\begin{DoxyItemize}
+\item $\sim$/\+Library/\+Frameworks
+\item /\+Local/\+Library/\+Frameworks
+\item /\+System/\+Library/\+Frameworks
+\end{DoxyItemize}\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_macos_autotoc_md68}{}\doxysubsection{Build Options}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_macos_autotoc_md68}
+There are two \char`\"{}\+Build Styles\char`\"{} (See the \char`\"{}\+Targets\char`\"{} tab) for SDL. \char`\"{}\+Deployment\char`\"{} should be used if you aren\textquotesingle{}t tweaking the SDL library. \char`\"{}\+Development\char`\"{} should be used to debug SDL apps or the library itself.\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_macos_autotoc_md69}{}\doxysubsection{Building the Testers}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_macos_autotoc_md69}
+Open the SDLTest project and build away!\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_macos_autotoc_md70}{}\doxysubsection{Using the Project Stationary}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_macos_autotoc_md70}
+Copy the stationary to the indicated folders to access it from the \char`\"{}\+New Project\char`\"{} and \char`\"{}\+Add target\char`\"{} menus. What could be easier?\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_macos_autotoc_md71}{}\doxysubsection{Setting up a new project by hand}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_macos_autotoc_md71}
+Some of you won\textquotesingle{}t want to use the Stationary so I\textquotesingle{}ll give some tips\+:
+
+(this is accurate as of Xcode 12.\+5.)
+
+
+\begin{DoxyItemize}
+\item Click \char`\"{}\+File\char`\"{} -\/\texorpdfstring{$>$}{>} \char`\"{}\+New\char`\"{} -\/\texorpdfstring{$>$}{>} \char`\"{}\+Project... $\ast$ Choose \char`\"{}mac\+OS\char`\"{} and then \char`\"{}App\char`\"{} from the \char`\"{}Application\char`\"{} section. $\ast$ Fill out the options in the next window. User interface is \char`\"{}XIB\char`\"{} and   Language is \char`\"{}Objective-\/C\char`\"{}. $\ast$ Remove \char`\"{}main.\+m\char`\"{} from your project $\ast$ Remove \char`\"{}Main\+Menu.\+xib\char`\"{} from your project $\ast$ Remove \char`\"{}App\+Delegates.$\ast$\char`\"{} from your project $\ast$ Add \char`\"{}\$(HOME)/\+Library/\+Frameworks/\+SDL.framework/\+Headers\char`\"{} to include path $\ast$ Add \char`\"{}\$(HOME)/\+Library/\+Frameworks\char`\"{} to the frameworks search path $\ast$ Add \char`\"{}-\/framework SDL -\/framework Foundation -\/framework App\+Kit\char`\"{} to \char`\"{}OTHER\+\_\+\+LDFLAGS\char`\"{} $\ast$ Add your files $\ast$ Clean and build  @subsection autotoc\+\_\+md72 Building from command line  \+Use $<$tt$>$xcode-\/build$<$/tt$>$ in the same directory as your .\+pbxproj file  @subsection autotoc\+\_\+md73 Running your app  \+You can send command line args to your app by either invoking it from the command line (in $\ast$.\+app/\+Contents/\+Mac\+OS) or by entering them in the \+Executables\char`\"{} panel of the target settings.
+\end{DoxyItemize}\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_macos_autotoc_md74}{}\doxysection{Implementation Notes}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_macos_autotoc_md74}
+Some things that may be of interest about how it all works...\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_macos_autotoc_md75}{}\doxysubsection{Working directory}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_macos_autotoc_md75}
+In SDL 1.\+2, the working directory of your SDL app is by default set to its parent, but this is no longer the case in SDL 2.\+0. SDL2 does change the working directory, which means it\textquotesingle{}ll be whatever the command line prompt that launched the program was using, or if launched by double-\/clicking in the finger, it will be \char`\"{}/\char`\"{}, the {\itshape root of the filesystem}. Plan accordingly! You can use \mbox{\hyperlink{_s_d_l__filesystem_8h_af4bb772b30931388d2efcbfe30bf99e9}{SDL\+\_\+\+Get\+Base\+Path()}} to find where the program is running from and chdir() there directly.\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_macos_autotoc_md76}{}\doxysubsection{You have a Cocoa App!}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_macos_autotoc_md76}
+Your SDL app is essentially a Cocoa application. When your app starts up and the libraries finish loading, a Cocoa procedure is called, which sets up the working directory and calls your \mbox{\hyperlink{_c_make_c_compiler_id_8c_a0ddf1224851353fc92bfbff6f499fa97}{main()}} method. You are free to modify your Cocoa app with generally no consequence to SDL. You cannot, however, easily change the SDL window itself. Functionality may be added in the future to help this.\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_macos_autotoc_md77}{}\doxysection{Bug reports}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_macos_autotoc_md77}
+Bugs are tracked at \href{https://github.com/libsdl-org/SDL/issues/}{\texttt{ the Git\+Hub issue tracker}}. Please feel free to report bugs there! 

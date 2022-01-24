@@ -1,0 +1,331 @@
+.TH "D:/RayTracing/include/SDL_assert.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_assert.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SDL_config\&.h'\fP
+.br
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBSDL_AssertData\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSDL_ASSERT_LEVEL\fP   1"
+.br
+.ti -1c
+.RI "#define \fBSDL_TriggerBreakpoint\fP()"
+.br
+.ti -1c
+.RI "#define \fBSDL_FUNCTION\fP   '???'"
+.br
+.ti -1c
+.RI "#define \fBSDL_FILE\fP   __FILE__"
+.br
+.ti -1c
+.RI "#define \fBSDL_LINE\fP   __LINE__"
+.br
+.ti -1c
+.RI "#define \fBSDL_NULL_WHILE_LOOP_CONDITION\fP   (0)"
+.br
+.ti -1c
+.RI "#define \fBSDL_disabled_assert\fP(\fBcondition\fP)       do { (\fBvoid\fP) sizeof ((\fBcondition\fP)); } while (\fBSDL_NULL_WHILE_LOOP_CONDITION\fP)"
+.br
+.ti -1c
+.RI "#define \fBSDL_enabled_assert\fP(\fBcondition\fP)"
+.br
+.ti -1c
+.RI "#define \fBSDL_assert\fP(\fBcondition\fP)   \fBSDL_disabled_assert\fP(\fBcondition\fP)"
+.br
+.ti -1c
+.RI "#define \fBSDL_assert_release\fP(\fBcondition\fP)   \fBSDL_enabled_assert\fP(\fBcondition\fP)"
+.br
+.ti -1c
+.RI "#define \fBSDL_assert_paranoid\fP(\fBcondition\fP)   \fBSDL_disabled_assert\fP(\fBcondition\fP)"
+.br
+.ti -1c
+.RI "#define \fBSDL_assert_always\fP(\fBcondition\fP)   \fBSDL_enabled_assert\fP(\fBcondition\fP)"
+.br
+.ti -1c
+.RI "#define \fBSDL_assert_state\fP   \fBSDL_AssertState\fP"
+.br
+.ti -1c
+.RI "#define \fBSDL_assert_data\fP   \fBSDL_AssertData\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBSDL_AssertData\fP \fBSDL_AssertData\fP"
+.br
+.ti -1c
+.RI "typedef \fBSDL_AssertState\fP(\fBSDLCALL\fP * \fBSDL_AssertionHandler\fP) (const \fBSDL_AssertData\fP *\fBdata\fP, \fBvoid\fP *userdata)"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSDL_AssertState\fP { \fBSDL_ASSERTION_RETRY\fP, \fBSDL_ASSERTION_BREAK\fP, \fBSDL_ASSERTION_ABORT\fP, \fBSDL_ASSERTION_IGNORE\fP, \fBSDL_ASSERTION_ALWAYS_IGNORE\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_AssertState\fP \fBSDLCALL\fP \fBSDL_ReportAssertion\fP (\fBSDL_AssertData\fP *, const char *, const char *, int)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_SetAssertionHandler\fP (\fBSDL_AssertionHandler\fP handler, \fBvoid\fP *userdata)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_AssertionHandler\fP \fBSDLCALL\fP \fBSDL_GetDefaultAssertionHandler\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_AssertionHandler\fP \fBSDLCALL\fP \fBSDL_GetAssertionHandler\fP (\fBvoid\fP **puserdata)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP const \fBSDL_AssertData\fP *\fBSDLCALL\fP \fBSDL_GetAssertionReport\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_ResetAssertionReport\fP (\fBvoid\fP)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define SDL_assert(\fBcondition\fP)   \fBSDL_disabled_assert\fP(\fBcondition\fP)"
+
+.SS "#define SDL_assert_always(\fBcondition\fP)   \fBSDL_enabled_assert\fP(\fBcondition\fP)"
+
+.SS "#define SDL_assert_data   \fBSDL_AssertData\fP"
+
+.SS "#define SDL_ASSERT_LEVEL   1"
+
+.SS "#define SDL_assert_paranoid(\fBcondition\fP)   \fBSDL_disabled_assert\fP(\fBcondition\fP)"
+
+.SS "#define SDL_assert_release(\fBcondition\fP)   \fBSDL_enabled_assert\fP(\fBcondition\fP)"
+
+.SS "#define SDL_assert_state   \fBSDL_AssertState\fP"
+
+.SS "#define SDL_disabled_assert(\fBcondition\fP)       do { (\fBvoid\fP) sizeof ((\fBcondition\fP)); } while (\fBSDL_NULL_WHILE_LOOP_CONDITION\fP)"
+
+.SS "#define SDL_enabled_assert(\fBcondition\fP)"
+\fBValue:\fP
+.PP
+.nf
+    do { \
+        while ( !(condition) ) { \
+            static struct SDL_AssertData sdl_assert_data = { \
+                0, 0, #condition, 0, 0, 0, 0 \
+            }; \
+            const SDL_AssertState sdl_assert_state = SDL_ReportAssertion(&sdl_assert_data, SDL_FUNCTION, SDL_FILE, SDL_LINE); \
+            if (sdl_assert_state == SDL_ASSERTION_RETRY) { \
+                continue; /* go again\&. */ \
+            } else if (sdl_assert_state == SDL_ASSERTION_BREAK) { \
+                SDL_TriggerBreakpoint(); \
+            } \
+            break; /* not retrying\&. */ \
+        } \
+    } while (SDL_NULL_WHILE_LOOP_CONDITION)
+.fi
+.SS "#define SDL_FILE   __FILE__"
+
+.SS "#define SDL_FUNCTION   '???'"
+
+.SS "#define SDL_LINE   __LINE__"
+
+.SS "#define SDL_NULL_WHILE_LOOP_CONDITION   (0)"
+
+.SS "#define SDL_TriggerBreakpoint()"
+
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBSDL_AssertData\fP \fBSDL_AssertData\fP"
+
+.SS "typedef \fBSDL_AssertState\fP(\fBSDLCALL\fP * SDL_AssertionHandler) (const \fBSDL_AssertData\fP *\fBdata\fP, \fBvoid\fP *userdata)"
+A callback that fires when an SDL assertion fails\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIdata\fP a pointer to the \fBSDL_AssertData\fP structure corresponding to the current assertion 
+.br
+\fIuserdata\fP what was passed as \fCuserdata\fP to \fBSDL_SetAssertionHandler()\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+an SDL_AssertState value indicating how to handle the failure\&. 
+.RE
+.PP
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBSDL_AssertState\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISDL_ASSERTION_RETRY \fP\fP
+Retry the assert immediately\&. 
+.TP
+\fB\fISDL_ASSERTION_BREAK \fP\fP
+Make the debugger trigger a breakpoint\&. 
+.TP
+\fB\fISDL_ASSERTION_ABORT \fP\fP
+Terminate the program\&. 
+.TP
+\fB\fISDL_ASSERTION_IGNORE \fP\fP
+Ignore the assert\&. 
+.TP
+\fB\fISDL_ASSERTION_ALWAYS_IGNORE \fP\fP
+Ignore the assert from now on\&. 
+.SH "Function Documentation"
+.PP 
+.SS "\fBDECLSPEC\fP \fBSDL_AssertionHandler\fP \fBSDLCALL\fP SDL_GetAssertionHandler (\fBvoid\fP ** puserdata)"
+Get the current assertion handler\&.
+.PP
+This returns the function pointer that is called when an assertion is triggered\&. This is either the value last passed to \fBSDL_SetAssertionHandler()\fP, or if no application-specified function is set, is equivalent to calling \fBSDL_GetDefaultAssertionHandler()\fP\&.
+.PP
+The parameter \fCpuserdata\fP is a pointer to a void*, which will store the 'userdata' pointer that was passed to \fBSDL_SetAssertionHandler()\fP\&. This value will always be NULL for the default handler\&. If you don't care about this data, it is safe to pass a NULL pointer to this function to ignore it\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIpuserdata\fP pointer which is filled with the 'userdata' pointer that was passed to \fBSDL_SetAssertionHandler()\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the SDL_AssertionHandler that is called when an assert triggers\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.2\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_SetAssertionHandler\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP const \fBSDL_AssertData\fP *\fBSDLCALL\fP SDL_GetAssertionReport (\fBvoid\fP)"
+Get a list of all assertion failures\&.
+.PP
+This function gets all assertions triggered since the last call to \fBSDL_ResetAssertionReport()\fP, or the start of the program\&.
+.PP
+The proper way to examine this data looks something like this:
+.PP
+.PP
+.nf
+const SDL_AssertData *item = SDL_GetAssertionReport();
+while (item) {
+   printf("'%s', %s (%s:%d), triggered %u times, always ignore: %s\&.\\n",
+          item->condition, item->function, item->filename,
+          item->linenum, item->trigger_count,
+          item->always_ignore ? "yes" : "no");
+   item = item->next;
+}
+.fi
+.PP
+.PP
+\fBReturns\fP
+.RS 4
+a list of all failed assertions or NULL if the list is empty\&. This memory should not be modified or freed by the application\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_ResetAssertionReport\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_AssertionHandler\fP \fBSDLCALL\fP SDL_GetDefaultAssertionHandler (\fBvoid\fP)"
+Get the default assertion handler\&.
+.PP
+This returns the function pointer that is called by default when an assertion is triggered\&. This is an internal function provided by SDL, that is used for assertions when \fBSDL_SetAssertionHandler()\fP hasn't been used to provide a different function\&.
+.PP
+\fBReturns\fP
+.RS 4
+the default SDL_AssertionHandler that is called when an assert triggers\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.2\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GetAssertionHandler\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_AssertState\fP \fBSDLCALL\fP SDL_ReportAssertion (\fBSDL_AssertData\fP *, const char *, const char *, int)"
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_ResetAssertionReport (\fBvoid\fP)"
+Clear the list of all assertion failures\&.
+.PP
+This function will clear the list of all assertions triggered up to that point\&. Immediately following this call, SDL_GetAssertionReport will return no items\&. In addition, any previously-triggered assertions will be reset to a trigger_count of zero, and their always_ignore state will be false\&.
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GetAssertionReport\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_SetAssertionHandler (\fBSDL_AssertionHandler\fP handler, \fBvoid\fP * userdata)"
+Set an application-defined assertion handler\&.
+.PP
+This function allows an application to show its own assertion UI and/or force the response to an assertion failure\&. If the application doesn't provide this, SDL will try to do the right thing, popping up a system-specific GUI dialog, and probably minimizing any fullscreen windows\&.
+.PP
+This callback may fire from any thread, but it runs wrapped in a mutex, so it will only fire from one thread at a time\&.
+.PP
+This callback is NOT reset to SDL's internal handler upon \fBSDL_Quit()\fP!
+.PP
+\fBParameters\fP
+.RS 4
+\fIhandler\fP the SDL_AssertionHandler function to call when an assertion fails or NULL for the default handler 
+.br
+\fIuserdata\fP a pointer that is passed to \fChandler\fP
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GetAssertionHandler\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

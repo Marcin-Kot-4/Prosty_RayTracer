@@ -1,0 +1,219 @@
+\hypertarget{qb_e_i_g_8h_source}{}\doxysection{qb\+EIG.\+h}
+\label{qb_e_i_g_8h_source}\index{D:/RayTracing/RayTrace/qbLinAlg/qbEIG.h@{D:/RayTracing/RayTrace/qbLinAlg/qbEIG.h}}
+\mbox{\hyperlink{qb_e_i_g_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// This file is part of the qbLinAlg linear algebra library.}}
+\DoxyCodeLine{2 \textcolor{comment}{// Copyright (c) 2021 Michael Bennett}}
+\DoxyCodeLine{3 \textcolor{comment}{// MIT license}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef QBEIG\_H}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define QBEIG\_H}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{qb_matrix_8h}{qbMatrix.h}}"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{qb_vector_8h}{qbVector.h}}"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{qb_q_r_8h}{qbQR.h}}"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{comment}{// Define error codes.}}
+\DoxyCodeLine{19 \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{qb_e_i_g_8h_a11d1d7426a4145998cfe6b22c42fb482}{QBEIG\_MATRIXNOTSQUARE}} = -\/1;}
+\DoxyCodeLine{20 \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{qb_e_i_g_8h_abc41bacc5dd2ce027cd016cfab0fd284}{QBEIG\_MAXITERATIONSEXCEEDED}} = -\/2;}
+\DoxyCodeLine{21 \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{qb_e_i_g_8h_a4be8e1e3b0be4c2a155cf84b83b78fca}{QBEIG\_MATRIXNOTSYMMETRIC}} = -\/3;}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{comment}{// Function to estimate (real) eigenvalues using QR decomposition.}}
+\DoxyCodeLine{24 \textcolor{comment}{/* Note that this is only valid for matrices that have ALL real}}
+\DoxyCodeLine{25 \textcolor{comment}{    eigenvalues. The only matrices that are guaranteed to have only}}
+\DoxyCodeLine{26 \textcolor{comment}{    real eigenvalues are symmetric matrices. Therefore, this function}}
+\DoxyCodeLine{27 \textcolor{comment}{    is only guaranteed to work with symmetric matrices. */}}
+\DoxyCodeLine{28 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{29 \textcolor{keywordtype}{int} \mbox{\hyperlink{qb_e_i_g_8h_a9212bbed3a221741a725494e8c7367d1}{qbEigQR}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \&inputMatrix, std::vector<T> \&eigenValues)}
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{31     \textcolor{comment}{// Make a copy of the input matrix.}}
+\DoxyCodeLine{32     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} A = inputMatrix;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{comment}{// Verify that the input matrix is square.}}
+\DoxyCodeLine{35     \textcolor{keywordflow}{if} (!A.\mbox{\hyperlink{classqb_matrix2_ae3e42b917e3127cab56b7a48faff25c3}{IsSquare}}())}
+\DoxyCodeLine{36         \textcolor{keywordflow}{return} \mbox{\hyperlink{qb_e_i_g_8h_a11d1d7426a4145998cfe6b22c42fb482}{QBEIG\_MATRIXNOTSQUARE}};}
+\DoxyCodeLine{37         }
+\DoxyCodeLine{38     \textcolor{comment}{// Verify that the matrix is symmetric.}}
+\DoxyCodeLine{39     \textcolor{keywordflow}{if} (!A.\mbox{\hyperlink{classqb_matrix2_a38c5e541fec532600806ac4fd8afecb2}{IsSymmetric}}())}
+\DoxyCodeLine{40         \textcolor{keywordflow}{return} \mbox{\hyperlink{qb_e_i_g_8h_a4be8e1e3b0be4c2a155cf84b83b78fca}{QBEIG\_MATRIXNOTSYMMETRIC}};        }
+\DoxyCodeLine{41         }
+\DoxyCodeLine{42     \textcolor{comment}{// The number of eigenvalues is equal to the number of rows.}}
+\DoxyCodeLine{43     \textcolor{keywordtype}{int} numRows = A.\mbox{\hyperlink{classqb_matrix2_a1626b647c5268a9e64f4651bcc4b8c6e}{GetNumRows}}();}
+\DoxyCodeLine{44     }
+\DoxyCodeLine{45     \textcolor{comment}{// Create an identity matrix of the same dimensions.}}
+\DoxyCodeLine{46     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} identityMatrix(numRows, numRows);}
+\DoxyCodeLine{47     identityMatrix.\mbox{\hyperlink{classqb_matrix2_af705ca91a707de5e75c6b074ad152f5e}{SetToIdentity}}();}
+\DoxyCodeLine{48     }
+\DoxyCodeLine{49     \textcolor{comment}{// Create matrices to store Q and R.}}
+\DoxyCodeLine{50     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} Q (numRows, numRows);}
+\DoxyCodeLine{51     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} R (numRows, numRows);}
+\DoxyCodeLine{52     }
+\DoxyCodeLine{53     \textcolor{comment}{// Loop through each iteration.}}
+\DoxyCodeLine{54     \textcolor{keywordtype}{int} maxIterations = 10e3;}
+\DoxyCodeLine{55     \textcolor{keywordtype}{int} iterationCount = 0;}
+\DoxyCodeLine{56     \textcolor{keywordtype}{bool} continueFlag = \textcolor{keyword}{true};}
+\DoxyCodeLine{57     \textcolor{keywordflow}{while} ((iterationCount < maxIterations) \&\& continueFlag)}
+\DoxyCodeLine{58     \{}
+\DoxyCodeLine{59         \textcolor{comment}{// Compute the QR decomposition of A.}}
+\DoxyCodeLine{60         \textcolor{keywordtype}{int} returnValue = qbQR<T>(A, Q, R);}
+\DoxyCodeLine{61         }
+\DoxyCodeLine{62         \textcolor{comment}{// Compute the next value of A as the product of R and Q.}}
+\DoxyCodeLine{63         A = R * Q;}
+\DoxyCodeLine{64         }
+\DoxyCodeLine{65         \textcolor{comment}{/* Check if A is now close enough to being upper-\/triangular.}}
+\DoxyCodeLine{66 \textcolor{comment}{            We can do this using the IsRowEchelon() function from the }}
+\DoxyCodeLine{67 \textcolor{comment}{            qbMatrix2 class. */}}
+\DoxyCodeLine{68         \textcolor{keywordflow}{if} (A.\mbox{\hyperlink{classqb_matrix2_a44c85a2d4dcbd33b281ce417156d7431}{IsRowEchelon}}())}
+\DoxyCodeLine{69             continueFlag = \textcolor{keyword}{false};}
+\DoxyCodeLine{70                         }
+\DoxyCodeLine{71         \textcolor{comment}{// Increment iterationCount.}}
+\DoxyCodeLine{72         iterationCount++;}
+\DoxyCodeLine{73     \}}
+\DoxyCodeLine{74     }
+\DoxyCodeLine{75     \textcolor{comment}{// At this point, the eigenvalues should be the diagonal elements of A.}}
+\DoxyCodeLine{76     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<numRows; ++i)}
+\DoxyCodeLine{77         eigenValues.push\_back(A.\mbox{\hyperlink{classqb_matrix2_a62ddf209105dffe6133461b273a7309f}{GetElement}}(i,i));}
+\DoxyCodeLine{78     }
+\DoxyCodeLine{79     \textcolor{comment}{// Set the return status accordingly.}}
+\DoxyCodeLine{80     \textcolor{keywordflow}{if} (iterationCount == maxIterations)}
+\DoxyCodeLine{81         \textcolor{keywordflow}{return} \mbox{\hyperlink{qb_e_i_g_8h_abc41bacc5dd2ce027cd016cfab0fd284}{QBEIG\_MAXITERATIONSEXCEEDED}};}
+\DoxyCodeLine{82     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{83         \textcolor{keywordflow}{return} 0;   }
+\DoxyCodeLine{84     }
+\DoxyCodeLine{85 \}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{comment}{// Function to perform inverse power iteration method.}}
+\DoxyCodeLine{88 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{89 \textcolor{keywordtype}{int} \mbox{\hyperlink{qb_e_i_g_8h_a947c6e89bfc37d51c19989d1d5db03b9}{qbInvPIt}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \&inputMatrix, \textcolor{keyword}{const} T \&eigenValue, \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \&eigenVector)}
+\DoxyCodeLine{90 \{}
+\DoxyCodeLine{91     \textcolor{comment}{// Make a copy of the input matrix.}}
+\DoxyCodeLine{92     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} A = inputMatrix;}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94     \textcolor{comment}{// Verify that the input matrix is square.}}
+\DoxyCodeLine{95     \textcolor{keywordflow}{if} (!A.\mbox{\hyperlink{classqb_matrix2_ae3e42b917e3127cab56b7a48faff25c3}{IsSquare}}())}
+\DoxyCodeLine{96         \textcolor{keywordflow}{return} \mbox{\hyperlink{qb_e_i_g_8h_a11d1d7426a4145998cfe6b22c42fb482}{QBEIG\_MATRIXNOTSQUARE}};}
+\DoxyCodeLine{97         }
+\DoxyCodeLine{98   \textcolor{comment}{// Setup a random number generator.}}
+\DoxyCodeLine{99     std::random\_device myRandomDevice;}
+\DoxyCodeLine{100   std::mt19937 myRandomGenerator(myRandomDevice());}
+\DoxyCodeLine{101     std::uniform\_int\_distribution<int> myDistribution(1.0, 10.0);}
+\DoxyCodeLine{102     }
+\DoxyCodeLine{103     \textcolor{comment}{/* The number of eigenvectors and eigenvalues that we will compute will be}}
+\DoxyCodeLine{104 \textcolor{comment}{        equal to the number of rows in the input matrix. */}}
+\DoxyCodeLine{105     \textcolor{keywordtype}{int} numRows = A.\mbox{\hyperlink{classqb_matrix2_a1626b647c5268a9e64f4651bcc4b8c6e}{GetNumRows}}();}
+\DoxyCodeLine{106     }
+\DoxyCodeLine{107     \textcolor{comment}{// Create an identity matrix of the same dimensions.}}
+\DoxyCodeLine{108     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} identityMatrix(numRows, numRows);}
+\DoxyCodeLine{109     identityMatrix.\mbox{\hyperlink{classqb_matrix2_af705ca91a707de5e75c6b074ad152f5e}{SetToIdentity}}();}
+\DoxyCodeLine{110     }
+\DoxyCodeLine{111     \textcolor{comment}{// Create an initial vector, v.}}
+\DoxyCodeLine{112     \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \mbox{\hyperlink{_s_d_l__opengl_8h_a10a82eabcb59d2fcd74acee063775f90}{v}}(numRows);}
+\DoxyCodeLine{113     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<numRows; ++i)}
+\DoxyCodeLine{114         \mbox{\hyperlink{_s_d_l__opengl_8h_a10a82eabcb59d2fcd74acee063775f90}{v}}.SetElement(i, \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(myDistribution(myRandomGenerator)));}
+\DoxyCodeLine{115         }
+\DoxyCodeLine{116     \textcolor{comment}{// Iterate.}}
+\DoxyCodeLine{117     \textcolor{keywordtype}{int} maxIterations = 100;}
+\DoxyCodeLine{118     \textcolor{keywordtype}{int} iterationCount = 0;}
+\DoxyCodeLine{119     T deltaThreshold = \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1e-\/9);}
+\DoxyCodeLine{120     T delta = \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1e6);}
+\DoxyCodeLine{121     \mbox{\hyperlink{classqb_vector}{qbVector<T>}} prevVector(numRows);}
+\DoxyCodeLine{122     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} tempMatrix(numRows, numRows);}
+\DoxyCodeLine{123     }
+\DoxyCodeLine{124     \textcolor{keywordflow}{while} ((iterationCount < maxIterations) \&\& (delta > deltaThreshold))}
+\DoxyCodeLine{125     \{}
+\DoxyCodeLine{126         \textcolor{comment}{// Store a copy of the current working vector to use for computing delta.}}
+\DoxyCodeLine{127         prevVector = \mbox{\hyperlink{_s_d_l__opengl_8h_a10a82eabcb59d2fcd74acee063775f90}{v}};}
+\DoxyCodeLine{128         }
+\DoxyCodeLine{129         \textcolor{comment}{// Compute the next value of v.}}
+\DoxyCodeLine{130         tempMatrix = A -\/ (eigenValue * identityMatrix);}
+\DoxyCodeLine{131         tempMatrix.\mbox{\hyperlink{classqb_matrix2_aaf71c5642111972501f43b1e225b8a2f}{Inverse}}();}
+\DoxyCodeLine{132         \mbox{\hyperlink{_s_d_l__opengl_8h_a10a82eabcb59d2fcd74acee063775f90}{v}} = tempMatrix * \mbox{\hyperlink{_s_d_l__opengl_8h_a10a82eabcb59d2fcd74acee063775f90}{v}};}
+\DoxyCodeLine{133         \mbox{\hyperlink{_s_d_l__opengl_8h_a10a82eabcb59d2fcd74acee063775f90}{v}}.Normalize();}
+\DoxyCodeLine{134         }
+\DoxyCodeLine{135         \textcolor{comment}{// Compute delta.}}
+\DoxyCodeLine{136         delta = (\mbox{\hyperlink{_s_d_l__opengl_8h_a10a82eabcb59d2fcd74acee063775f90}{v}} -\/ prevVector).norm();}
+\DoxyCodeLine{137         }
+\DoxyCodeLine{138         \textcolor{comment}{// Increment iteration count.}}
+\DoxyCodeLine{139         iterationCount++;}
+\DoxyCodeLine{140     \}}
+\DoxyCodeLine{141     }
+\DoxyCodeLine{142     \textcolor{comment}{// Return the estimated eigenvector.}}
+\DoxyCodeLine{143     eigenVector = \mbox{\hyperlink{_s_d_l__opengl_8h_a10a82eabcb59d2fcd74acee063775f90}{v}};}
+\DoxyCodeLine{144     }
+\DoxyCodeLine{145     \textcolor{comment}{// Set the return status accordingly.}}
+\DoxyCodeLine{146     \textcolor{keywordflow}{if} (iterationCount == maxIterations)}
+\DoxyCodeLine{147         \textcolor{keywordflow}{return} \mbox{\hyperlink{qb_e_i_g_8h_abc41bacc5dd2ce027cd016cfab0fd284}{QBEIG\_MAXITERATIONSEXCEEDED}};}
+\DoxyCodeLine{148     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{149         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{150         }
+\DoxyCodeLine{151 \}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153 \textcolor{comment}{// The qbEIG function (power iteration method).}}
+\DoxyCodeLine{154 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{155 \textcolor{keywordtype}{int} \mbox{\hyperlink{qb_e_i_g_8h_aecca96c88b78c9535eb65a9cebe3f5d2}{qbEIG\_PIt}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \&X, T \&eigenValue, \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \&eigenVector)}
+\DoxyCodeLine{156 \{}
+\DoxyCodeLine{157     \textcolor{comment}{// Make a copy of the input matrix.}}
+\DoxyCodeLine{158     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} inputMatrix = X;}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160     \textcolor{comment}{// Verify that the input matrix is square.}}
+\DoxyCodeLine{161     \textcolor{keywordflow}{if} (!inputMatrix.\mbox{\hyperlink{classqb_matrix2_ae3e42b917e3127cab56b7a48faff25c3}{IsSquare}}())}
+\DoxyCodeLine{162         \textcolor{keywordflow}{return} \mbox{\hyperlink{qb_e_i_g_8h_a11d1d7426a4145998cfe6b22c42fb482}{QBEIG\_MATRIXNOTSQUARE}};}
+\DoxyCodeLine{163     }
+\DoxyCodeLine{164   \textcolor{comment}{// Setup a random number generator.}}
+\DoxyCodeLine{165     std::random\_device myRandomDevice;}
+\DoxyCodeLine{166   std::mt19937 myRandomGenerator(myRandomDevice());}
+\DoxyCodeLine{167     std::uniform\_int\_distribution<int> myDistribution(1.0, 10.0);}
+\DoxyCodeLine{168     }
+\DoxyCodeLine{169     \textcolor{comment}{/* The number of eigenvectors and eigenvalues that we will compute will be}}
+\DoxyCodeLine{170 \textcolor{comment}{        equal to the number of rows in the input matrix. */}}
+\DoxyCodeLine{171     \textcolor{keywordtype}{int} numRows = inputMatrix.\mbox{\hyperlink{classqb_matrix2_a1626b647c5268a9e64f4651bcc4b8c6e}{GetNumRows}}();}
+\DoxyCodeLine{172     }
+\DoxyCodeLine{173     \textcolor{comment}{// Create an identity matrix of the same dimensions.}}
+\DoxyCodeLine{174     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} identityMatrix(numRows, numRows);}
+\DoxyCodeLine{175     identityMatrix.\mbox{\hyperlink{classqb_matrix2_af705ca91a707de5e75c6b074ad152f5e}{SetToIdentity}}();}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177     \textcolor{comment}{/* **************************************************************}}
+\DoxyCodeLine{178 \textcolor{comment}{        Compute the eigenvector.}}
+\DoxyCodeLine{179 \textcolor{comment}{    ************************************************************** */}}
+\DoxyCodeLine{180         }
+\DoxyCodeLine{181     \textcolor{comment}{// Create an initial vector, v.}}
+\DoxyCodeLine{182     \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \mbox{\hyperlink{_s_d_l__opengl_8h_a10a82eabcb59d2fcd74acee063775f90}{v}}(numRows);}
+\DoxyCodeLine{183     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<numRows; ++i)}
+\DoxyCodeLine{184         \mbox{\hyperlink{_s_d_l__opengl_8h_a10a82eabcb59d2fcd74acee063775f90}{v}}.SetElement(i, \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(myDistribution(myRandomGenerator)));}
+\DoxyCodeLine{185         }
+\DoxyCodeLine{186     \textcolor{comment}{// Loop over the required number of iterations.}}
+\DoxyCodeLine{187     \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a435c176a02c061b43e19bdf7c86cceae}{v1}}(numRows);}
+\DoxyCodeLine{188     \textcolor{keywordtype}{int} numIterations = 1000;}
+\DoxyCodeLine{189     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<numIterations; ++i)}
+\DoxyCodeLine{190     \{}
+\DoxyCodeLine{191         \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a435c176a02c061b43e19bdf7c86cceae}{v1}} = inputMatrix * \mbox{\hyperlink{_s_d_l__opengl_8h_a10a82eabcb59d2fcd74acee063775f90}{v}};}
+\DoxyCodeLine{192         \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a435c176a02c061b43e19bdf7c86cceae}{v1}}.Normalize();}
+\DoxyCodeLine{193         \mbox{\hyperlink{_s_d_l__opengl_8h_a10a82eabcb59d2fcd74acee063775f90}{v}} = \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a435c176a02c061b43e19bdf7c86cceae}{v1}};}
+\DoxyCodeLine{194     \}}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196     \textcolor{comment}{// Store this eigenvector.}}
+\DoxyCodeLine{197     eigenVector = \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a435c176a02c061b43e19bdf7c86cceae}{v1}};}
+\DoxyCodeLine{198     }
+\DoxyCodeLine{199     \textcolor{comment}{/* **************************************************************}}
+\DoxyCodeLine{200 \textcolor{comment}{        Compute the eigenvalue corresponding to this eigenvector.}}
+\DoxyCodeLine{201 \textcolor{comment}{    ************************************************************** */}   }
+\DoxyCodeLine{202     }
+\DoxyCodeLine{203     \textcolor{comment}{// Compute the cumulative sum.}}
+\DoxyCodeLine{204     T cumulativeSum = \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.0);}
+\DoxyCodeLine{205     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=1; i<numRows; ++i)}
+\DoxyCodeLine{206         cumulativeSum += inputMatrix.\mbox{\hyperlink{classqb_matrix2_a62ddf209105dffe6133461b273a7309f}{GetElement}}(0,i) * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a435c176a02c061b43e19bdf7c86cceae}{v1}}.GetElement(i);}
+\DoxyCodeLine{207         }
+\DoxyCodeLine{208     eigenValue = (cumulativeSum / \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a435c176a02c061b43e19bdf7c86cceae}{v1}}.GetElement(0)) + inputMatrix.\mbox{\hyperlink{classqb_matrix2_a62ddf209105dffe6133461b273a7309f}{GetElement}}(0,0);}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{211 \}}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

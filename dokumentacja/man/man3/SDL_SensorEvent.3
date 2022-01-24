@@ -1,0 +1,44 @@
+.TH "SDL_SensorEvent" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SDL_SensorEvent \- Sensor event structure (event\&.sensor\&.*)  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SDL_events\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUint32\fP \fBtype\fP"
+.br
+.ti -1c
+.RI "\fBUint32\fP \fBtimestamp\fP"
+.br
+.ti -1c
+.RI "\fBSint32\fP \fBwhich\fP"
+.br
+.ti -1c
+.RI "float \fBdata\fP [6]"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Sensor event structure (event\&.sensor\&.*) 
+.SH "Member Data Documentation"
+.PP 
+.SS "float SDL_SensorEvent::data[6]"
+Up to 6 values from the sensor - additional values can be queried using \fBSDL_SensorGetData()\fP 
+.SS "\fBUint32\fP SDL_SensorEvent::timestamp"
+In milliseconds, populated using \fBSDL_GetTicks()\fP 
+.SS "\fBUint32\fP SDL_SensorEvent::type"
+\fBSDL_SENSORUPDATE\fP 
+.SS "\fBSint32\fP SDL_SensorEvent::which"
+The instance ID of the sensor 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

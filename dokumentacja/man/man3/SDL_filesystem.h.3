@@ -1,0 +1,134 @@
+.TH "D:/RayTracing/include/SDL_filesystem.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_filesystem.h \- Include file for filesystem SDL API functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SDL_stdinc\&.h'\fP
+.br
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDECLSPEC\fP char *\fBSDLCALL\fP \fBSDL_GetBasePath\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP char *\fBSDLCALL\fP \fBSDL_GetPrefPath\fP (const char *org, const char *app)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include file for filesystem SDL API functions\&. 
+
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBDECLSPEC\fP char *\fBSDLCALL\fP SDL_GetBasePath (\fBvoid\fP)"
+Get the directory where the application was run from\&.
+.PP
+This is not necessarily a fast call, so you should call this once near startup and save the string if you need it\&.
+.PP
+\fBMac OS X and iOS Specific Functionality\fP: If the application is in a '\&.app' bundle, this function returns the Resource directory (e\&.g\&. MyApp\&.app/Contents/Resources/)\&. This behaviour can be overridden by adding a property to the Info\&.plist file\&. Adding a string key with the name SDL_FILESYSTEM_BASE_DIR_TYPE with a supported value will change the behaviour\&.
+.PP
+Supported values for the SDL_FILESYSTEM_BASE_DIR_TYPE property (Given an application in /Applications/SDLApp/MyApp\&.app):
+.PP
+.IP "\(bu" 2
+\fCresource\fP: bundle resource directory (the default)\&. For example: \fC/Applications/SDLApp/MyApp\&.app/Contents/Resources\fP
+.IP "\(bu" 2
+\fCbundle\fP: the Bundle directory\&. For example: \fC/Applications/SDLApp/MyApp\&.app/\fP
+.IP "\(bu" 2
+\fCparent\fP: the containing directory of the bundle\&. For example: \fC/Applications/SDLApp/\fP
+.PP
+.PP
+The returned path is guaranteed to end with a path separator ('\\' on Windows, '/' on most other platforms)\&.
+.PP
+The pointer returned is owned by the caller\&. Please call \fBSDL_free()\fP on the pointer when done with it\&.
+.PP
+\fBReturns\fP
+.RS 4
+an absolute path in UTF-8 encoding to the application data directory\&. NULL will be returned on error or when the platform doesn't implement this functionality, call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.1\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GetPrefPath\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP char *\fBSDLCALL\fP SDL_GetPrefPath (const char * org, const char * app)"
+Get the user-and-app-specific path where files can be written\&.
+.PP
+Get the 'pref dir'\&. This is meant to be where users can write personal files (preferences and save games, etc) that are specific to your application\&. This directory is unique per user, per application\&.
+.PP
+This function will decide the appropriate location in the native filesystem, create the directory if necessary, and return a string of the absolute path to the directory in UTF-8 encoding\&.
+.PP
+On Windows, the string might look like:
+.PP
+\fCC:\\\\Users\\\\bob\\\\AppData\\\\Roaming\\\\My Company\\\\My Program Name\\\\\fP
+.PP
+On Linux, the string might look like'
+
+<tt>/home/bob/\&.local/share/My Program Name/</tt>
+
+On Mac OS X, the string might look like:
+
+<tt>/Users/bob/Library/Application Support/My Program Name/</tt>
+
+You should assume the path returned by this function is the only safe place
+to write files (and that SDL_GetBasePath(), while it might be writable, or
+even the parent of the returned path, isn't where you should be writing
+things)\&.
+
+Both the org and app strings may become part of a directory name, so please
+follow these rules:
+
+- Try to use the same org string (<em>including case-sensitivity</em>) for all
+  your applications that use this function\&.
+- Always use a unique app string for each one, and make sure it never
+  changes for an app once you've decided on it\&.
+- Unicode characters are legal, as long as it's UTF-8 encoded, but\&.\&.\&.
+- \&.\&.\&.only use letters, numbers, and spaces\&. Avoid punctuation like 'Game Name 2: Bad Guy's Revenge!' \&.\&.\&. 'Game Name 2" is sufficient\&.
+.PP
+The returned path is guaranteed to end with a path separator ('\\' on Windows, '/' on most other platforms)\&.
+.PP
+The pointer returned is owned by the caller\&. Please call \fBSDL_free()\fP on the pointer when done with it\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIorg\fP the name of your organization 
+.br
+\fIapp\fP the name of your application 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a UTF-8 string of the user directory in platform-dependent notation\&. NULL if there's a problem (creating directory failed, etc\&.)\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.1\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GetBasePath\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

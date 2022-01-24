@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_r_t_1_1_simple_refractive" xml:lang="en-US">
+<title>RT::SimpleRefractive Class Reference</title>
+<indexterm><primary>RT::SimpleRefractive</primary></indexterm>
+<para>
+<computeroutput>#include &lt;simplerefractive.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for RT::SimpleRefractive:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_r_t_1_1_simple_refractive.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_r_t_1_1_simple_refractive_1aac5b29fd159aa8a7dc0ccef01509f5c5">SimpleRefractive</link> ()</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_class_r_t_1_1_simple_refractive_1a8d59f1bd70c33c5144ae5f90d839a40c">~SimpleRefractive</link> () override</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; <link linkend="_class_r_t_1_1_simple_refractive_1a988530ca94a0cf72b9035f74c4527f96">ComputeColor</link> (const std::vector&lt; std::shared_ptr&lt; <link linkend="_class_r_t_1_1_object_base">RT::ObjectBase</link> &gt; &gt; &amp;objectList, const std::vector&lt; std::shared_ptr&lt; <link linkend="_class_r_t_1_1_light_base">RT::LightBase</link> &gt; &gt; &amp;lightList, const std::shared_ptr&lt; <link linkend="_class_r_t_1_1_object_base">RT::ObjectBase</link> &gt; &amp;currentObject, const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp;intPoint, const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp;localNormal, const <link linkend="_class_r_t_1_1_ray">RT::Ray</link> &amp;cameraRay) override</para>
+</listitem>
+            <listitem><para><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; <link linkend="_class_r_t_1_1_simple_refractive_1a9f62cb48d9ca6bba4425ad0b9a6a570d">ComputeSpecular</link> (const std::vector&lt; std::shared_ptr&lt; <link linkend="_class_r_t_1_1_object_base">RT::ObjectBase</link> &gt; &gt; &amp;objectList, const std::vector&lt; std::shared_ptr&lt; <link linkend="_class_r_t_1_1_light_base">RT::LightBase</link> &gt; &gt; &amp;lightList, const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp;intPoint, const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp;localNormal, const <link linkend="_class_r_t_1_1_ray">RT::Ray</link> &amp;cameraRay)</para>
+</listitem>
+            <listitem><para><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; <link linkend="_class_r_t_1_1_simple_refractive_1a37c12415266512f2872cda06d371a5ef">ComputeTranslucency</link> (const std::vector&lt; std::shared_ptr&lt; <link linkend="_class_r_t_1_1_object_base">RT::ObjectBase</link> &gt; &gt; &amp;objectList, const std::vector&lt; std::shared_ptr&lt; <link linkend="_class_r_t_1_1_light_base">RT::LightBase</link> &gt; &gt; &amp;lightList, const std::shared_ptr&lt; <link linkend="_class_r_t_1_1_object_base">RT::ObjectBase</link> &gt; &amp;currentObject, const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp;intPoint, const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp;localNormal, const <link linkend="_class_r_t_1_1_ray">RT::Ray</link> &amp;incidentRay)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; <link linkend="_class_r_t_1_1_simple_refractive_1a6f9238bb78392356c462686dd7abe34d">m_baseColor</link> {std::vector &lt; double &gt; {1.0, 0.0, 1.0}}</para>
+</listitem>
+            <listitem><para>double <link linkend="_class_r_t_1_1_simple_refractive_1ac34ea618840abeaeebc8db3c7026893a">m_reflectivity</link> = 0.0</para>
+</listitem>
+            <listitem><para>double <link linkend="_class_r_t_1_1_simple_refractive_1adc4c409f615d47f4685da63ff81be3e7">m_shininess</link> = 0.0</para>
+</listitem>
+            <listitem><para>double <link linkend="_class_r_t_1_1_simple_refractive_1a89bcff2b1ad242c6c38e97c702ad6500">m_translucency</link> = 0.0</para>
+</listitem>
+            <listitem><para>double <link linkend="_class_r_t_1_1_simple_refractive_1a64d4ca05e7d5f500baebef4f094d580a">m_ior</link> = 1.0</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_r_t_1_1_simple_refractive_1aac5b29fd159aa8a7dc0ccef01509f5c5"/><section>
+    <title>SimpleRefractive()</title>
+<indexterm><primary>SimpleRefractive</primary><secondary>RT::SimpleRefractive</secondary></indexterm>
+<indexterm><primary>RT::SimpleRefractive</primary><secondary>SimpleRefractive</secondary></indexterm>
+<para><computeroutput>RT::SimpleRefractive::SimpleRefractive ( )</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_simple_refractive_1a8d59f1bd70c33c5144ae5f90d839a40c"/><section>
+    <title>~SimpleRefractive()</title>
+<indexterm><primary>~SimpleRefractive</primary><secondary>RT::SimpleRefractive</secondary></indexterm>
+<indexterm><primary>RT::SimpleRefractive</primary><secondary>~SimpleRefractive</secondary></indexterm>
+<para><computeroutput>RT::SimpleRefractive::~SimpleRefractive ( )<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_r_t_1_1_simple_refractive_1a988530ca94a0cf72b9035f74c4527f96"/><section>
+    <title>ComputeColor()</title>
+<indexterm><primary>ComputeColor</primary><secondary>RT::SimpleRefractive</secondary></indexterm>
+<indexterm><primary>RT::SimpleRefractive</primary><secondary>ComputeColor</secondary></indexterm>
+<para><computeroutput><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; RT::SimpleRefractive::ComputeColor (const std::vector&lt; std::shared_ptr&lt; <link linkend="_class_r_t_1_1_object_base">RT::ObjectBase</link> &gt; &gt; &amp; objectList, const std::vector&lt; std::shared_ptr&lt; <link linkend="_class_r_t_1_1_light_base">RT::LightBase</link> &gt; &gt; &amp; lightList, const std::shared_ptr&lt; <link linkend="_class_r_t_1_1_object_base">RT::ObjectBase</link> &gt; &amp; currentObject, const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp; intPoint, const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp; localNormal, const <link linkend="_class_r_t_1_1_ray">RT::Ray</link> &amp; cameraRay)<computeroutput>[override]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Reimplemented from <link linkend="_class_r_t_1_1_material_base_1aa8b05496fa1fed6988efd524eb5dbe48">RT::MaterialBase</link>.</para>
+</section>
+<anchor xml:id="_class_r_t_1_1_simple_refractive_1a9f62cb48d9ca6bba4425ad0b9a6a570d"/><section>
+    <title>ComputeSpecular()</title>
+<indexterm><primary>ComputeSpecular</primary><secondary>RT::SimpleRefractive</secondary></indexterm>
+<indexterm><primary>RT::SimpleRefractive</primary><secondary>ComputeSpecular</secondary></indexterm>
+<para><computeroutput><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; RT::SimpleRefractive::ComputeSpecular (const std::vector&lt; std::shared_ptr&lt; <link linkend="_class_r_t_1_1_object_base">RT::ObjectBase</link> &gt; &gt; &amp; objectList, const std::vector&lt; std::shared_ptr&lt; <link linkend="_class_r_t_1_1_light_base">RT::LightBase</link> &gt; &gt; &amp; lightList, const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp; intPoint, const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp; localNormal, const <link linkend="_class_r_t_1_1_ray">RT::Ray</link> &amp; cameraRay)</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_simple_refractive_1a37c12415266512f2872cda06d371a5ef"/><section>
+    <title>ComputeTranslucency()</title>
+<indexterm><primary>ComputeTranslucency</primary><secondary>RT::SimpleRefractive</secondary></indexterm>
+<indexterm><primary>RT::SimpleRefractive</primary><secondary>ComputeTranslucency</secondary></indexterm>
+<para><computeroutput><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; RT::SimpleRefractive::ComputeTranslucency (const std::vector&lt; std::shared_ptr&lt; <link linkend="_class_r_t_1_1_object_base">RT::ObjectBase</link> &gt; &gt; &amp; objectList, const std::vector&lt; std::shared_ptr&lt; <link linkend="_class_r_t_1_1_light_base">RT::LightBase</link> &gt; &gt; &amp; lightList, const std::shared_ptr&lt; <link linkend="_class_r_t_1_1_object_base">RT::ObjectBase</link> &gt; &amp; currentObject, const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp; intPoint, const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp; localNormal, const <link linkend="_class_r_t_1_1_ray">RT::Ray</link> &amp; incidentRay)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_r_t_1_1_simple_refractive_1a6f9238bb78392356c462686dd7abe34d"/><section>
+    <title>m_baseColor</title>
+<indexterm><primary>m_baseColor</primary><secondary>RT::SimpleRefractive</secondary></indexterm>
+<indexterm><primary>RT::SimpleRefractive</primary><secondary>m_baseColor</secondary></indexterm>
+<para><computeroutput><link linkend="_classqb_vector">qbVector</link>&lt;double&gt; RT::SimpleRefractive::m_baseColor {std::vector &lt; double &gt; {1.0, 0.0, 1.0}}</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_simple_refractive_1a64d4ca05e7d5f500baebef4f094d580a"/><section>
+    <title>m_ior</title>
+<indexterm><primary>m_ior</primary><secondary>RT::SimpleRefractive</secondary></indexterm>
+<indexterm><primary>RT::SimpleRefractive</primary><secondary>m_ior</secondary></indexterm>
+<para><computeroutput>double RT::SimpleRefractive::m_ior = 1.0</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_simple_refractive_1ac34ea618840abeaeebc8db3c7026893a"/><section>
+    <title>m_reflectivity</title>
+<indexterm><primary>m_reflectivity</primary><secondary>RT::SimpleRefractive</secondary></indexterm>
+<indexterm><primary>RT::SimpleRefractive</primary><secondary>m_reflectivity</secondary></indexterm>
+<para><computeroutput>double RT::SimpleRefractive::m_reflectivity = 0.0</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_simple_refractive_1adc4c409f615d47f4685da63ff81be3e7"/><section>
+    <title>m_shininess</title>
+<indexterm><primary>m_shininess</primary><secondary>RT::SimpleRefractive</secondary></indexterm>
+<indexterm><primary>RT::SimpleRefractive</primary><secondary>m_shininess</secondary></indexterm>
+<para><computeroutput>double RT::SimpleRefractive::m_shininess = 0.0</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_simple_refractive_1a89bcff2b1ad242c6c38e97c702ad6500"/><section>
+    <title>m_translucency</title>
+<indexterm><primary>m_translucency</primary><secondary>RT::SimpleRefractive</secondary></indexterm>
+<indexterm><primary>RT::SimpleRefractive</primary><secondary>m_translucency</secondary></indexterm>
+<para><computeroutput>double RT::SimpleRefractive::m_translucency = 0.0</computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following files:</para>
+D:/RayTracing/RayTrace/Materials/<link linkend="_simplerefractive_8h">simplerefractive.h</link>D:/RayTracing/RayTrace/Materials/<link linkend="_simplerefractive_8cpp">simplerefractive.cpp</link></section>
+</section>

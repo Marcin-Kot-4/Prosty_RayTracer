@@ -1,0 +1,1259 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_qb_matrix_8h_source" xml:lang="en-US">
+<title>qbMatrix.h</title>
+<indexterm><primary>D:/RayTracing/RayTrace/qbLinAlg/qbMatrix.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">//&#32;This&#32;file&#32;is&#32;part&#32;of&#32;the&#32;qbLinAlg&#32;linear&#32;algebra&#32;library.</emphasis>
+2 
+3 <emphasis role="preprocessor">#ifndef&#32;QBMATRIX2_H</emphasis>
+4 <emphasis role="preprocessor">#define&#32;QBMATRIX2_H</emphasis>
+5 
+6 <emphasis role="comment">/*&#32;*************************************************************************************************</emphasis>
+7 <emphasis role="comment">&#32;&#32;&#32;&#32;qbMatrix2</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;&#32;&#32;Class&#32;to&#32;provide&#32;capability&#32;to&#32;handle&#32;two-dimensional&#32;matrices.</emphasis>
+10 <emphasis role="comment"></emphasis>
+11 <emphasis role="comment">*************************************************************************************************&#32;*/</emphasis>
+12 
+13 <emphasis role="preprocessor">#include&#32;&lt;stdexcept&gt;</emphasis>
+14 <emphasis role="preprocessor">#include&#32;&lt;iostream&gt;</emphasis>
+15 <emphasis role="preprocessor">#include&#32;&lt;iomanip&gt;</emphasis>
+16 <emphasis role="preprocessor">#include&#32;&lt;math.h&gt;</emphasis>
+17 <emphasis role="preprocessor">#include&#32;&lt;vector&gt;</emphasis>
+18 <emphasis role="preprocessor">#include&#32;&lt;exception&gt;</emphasis>
+19 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_qb_vector_8h">qbVector.h</link>&quot;</emphasis>
+20 
+21 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+22 <emphasis role="keyword">class&#32;</emphasis><link linkend="_classqb_matrix2">qbMatrix2</link>
+23 {
+24 <emphasis role="keyword">public</emphasis>:
+25 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Define&#32;the&#32;various&#32;constructors.</emphasis>
+26 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2_1a43751c898aa61a8544b4c65788be72b8">qbMatrix2</link>();
+27 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2_1a099d5b0ce60f5ba5a1a9be44050240ba">qbMatrix2</link>(<emphasis role="keywordtype">int</emphasis>&#32;nRows,&#32;<emphasis role="keywordtype">int</emphasis>&#32;nCols);
+28 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2_1ab247062b9aa26dfadcb1f3af49cdc30d">qbMatrix2</link>(<emphasis role="keywordtype">int</emphasis>&#32;nRows,&#32;<emphasis role="keywordtype">int</emphasis>&#32;nCols,&#32;<emphasis role="keyword">const</emphasis>&#32;T&#32;*inputData);
+29 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2_1a9c65f821ae157be87c09c9515cad1b20">qbMatrix2</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;&amp;inputMatrix);
+30 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2_1a0e413d7c719f15f2575cd86f927960ed">qbMatrix2</link>(<emphasis role="keywordtype">int</emphasis>&#32;nRows,&#32;<emphasis role="keywordtype">int</emphasis>&#32;nCols,&#32;<emphasis role="keyword">const</emphasis>&#32;std::vector&lt;T&gt;&#32;&amp;inputData);
+31 
+32 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;And&#32;the&#32;destructor.</emphasis>
+33 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2_1ab05e67188c6ae2eebdbffe8682cb0890">~qbMatrix2</link>();
+34 
+35 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Configuration&#32;methods.</emphasis>
+36 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_classqb_matrix2_1aba216f400dda55542b3c06df43cd7c35">Resize</link>(<emphasis role="keywordtype">int</emphasis>&#32;numRows,&#32;<emphasis role="keywordtype">int</emphasis>&#32;numCols);
+37 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classqb_matrix2_1af705ca91a707de5e75c6b074ad152f5e">SetToIdentity</link>();
+38 
+39 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Element&#32;access&#32;methods.</emphasis>
+40 &#32;&#32;&#32;&#32;T&#32;<link linkend="_classqb_matrix2_1a62ddf209105dffe6133461b273a7309f">GetElement</link>(<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;col)&#32;<emphasis role="keyword">const</emphasis>;
+41 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_classqb_matrix2_1a1c6693503483942d5a619a0cf470e8b5">SetElement</link>(<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;col,&#32;T&#32;elementValue);
+42 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_classqb_matrix2_1a1626b647c5268a9e64f4651bcc4b8c6e">GetNumRows</link>()&#32;<emphasis role="keyword">const</emphasis>;
+43 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_classqb_matrix2_1ab20362d8fc58a4b8da0910f94c3de2c3">GetNumCols</link>()&#32;<emphasis role="keyword">const</emphasis>;
+44 
+45 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Manipulation&#32;methods.</emphasis>
+46 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;matrix&#32;inverse.</emphasis>
+47 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_classqb_matrix2_1aaf71c5642111972501f43b1e225b8a2f">Inverse</link>();
+48 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Convert&#32;to&#32;row&#32;echelon&#32;form.</emphasis>
+49 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;<link linkend="_classqb_matrix2_1a803f108eff983ea5f97cc752c44c1da2">RowEchelon</link>();
+50 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Return&#32;the&#32;transpose.</emphasis>
+51 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;<link linkend="_classqb_matrix2_1a6235a35daf5fa20a9ebc7ed91d8a94a3">Transpose</link>()&#32;<emphasis role="keyword">const</emphasis>;
+52 
+53 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;determinant.</emphasis>
+54 &#32;&#32;&#32;&#32;T&#32;<link linkend="_classqb_matrix2_1aeebab890f8c38f112972ffbcaaba422f">Determinant</link>();
+55 
+56 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Overload&#32;==&#32;operator.</emphasis>
+57 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_classqb_matrix2_1aab23890007a5a410c57d43d69a347ea1">operator== </link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&amp;&#32;rhs);
+58 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_classqb_matrix2_1ae9049dba8525b2c3b4f7db1c5a29d06e">Compare</link>&#32;(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&amp;&#32;matrix1,&#32;<emphasis role="keywordtype">double</emphasis>&#32;tolerance);
+59 
+60 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Overload&#32;the&#32;assignment&#32;operator.</emphasis>
+61 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;<link linkend="_classqb_matrix2_1ac6cc3fedd08e2a1bb2ceb097ef4c8e47">operator= </link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;&amp;rhs);
+62 
+63 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Overload&#32;+,&#32;-&#32;and&#32;*&#32;operators&#32;(friends).</emphasis>
+64 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;U&gt;&#32;<emphasis role="keyword">friend</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;U&gt;</link>&#32;<link linkend="_classqb_matrix2_1a1d4315f8c2f967cbf2b25a56201b3591">operator+ </link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;U&gt;</link>&amp;&#32;lhs,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;U&gt;</link>&amp;&#32;rhs);
+65 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;U&gt;&#32;<emphasis role="keyword">friend</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;U&gt;</link>&#32;<link linkend="_classqb_matrix2_1a1d4315f8c2f967cbf2b25a56201b3591">operator+ </link>(<emphasis role="keyword">const</emphasis>&#32;U&amp;&#32;lhs,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;U&gt;</link>&amp;&#32;rhs);
+66 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;U&gt;&#32;<emphasis role="keyword">friend</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;U&gt;</link>&#32;<link linkend="_classqb_matrix2_1a1d4315f8c2f967cbf2b25a56201b3591">operator+ </link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;U&gt;</link>&amp;&#32;lhs,&#32;<emphasis role="keyword">const</emphasis>&#32;U&amp;&#32;rhs);
+67 
+68 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;U&gt;&#32;<emphasis role="keyword">friend</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;U&gt;</link>&#32;<link linkend="_classqb_matrix2_1a0aee7d5dd114c8f8b44438668dc81f8b">operator- </link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;U&gt;</link>&amp;&#32;lhs,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;U&gt;</link>&amp;&#32;rhs);
+69 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;U&gt;&#32;<emphasis role="keyword">friend</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;U&gt;</link>&#32;<link linkend="_classqb_matrix2_1a0aee7d5dd114c8f8b44438668dc81f8b">operator- </link>(<emphasis role="keyword">const</emphasis>&#32;U&amp;&#32;lhs,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;U&gt;</link>&amp;&#32;rhs);
+70 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;U&gt;&#32;<emphasis role="keyword">friend</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;U&gt;</link>&#32;<link linkend="_classqb_matrix2_1a0aee7d5dd114c8f8b44438668dc81f8b">operator- </link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;U&gt;</link>&amp;&#32;lhs,&#32;<emphasis role="keyword">const</emphasis>&#32;U&amp;&#32;rhs);
+71 
+72 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;U&gt;&#32;<emphasis role="keyword">friend</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;U&gt;</link>&#32;<link linkend="_classqb_matrix2_1a8a110a74e2674e2b57d9f651d7a863e6">operator* </link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;U&gt;</link>&amp;&#32;lhs,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;U&gt;</link>&amp;&#32;rhs);
+73 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;U&gt;&#32;<emphasis role="keyword">friend</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;U&gt;</link>&#32;<link linkend="_classqb_matrix2_1a8a110a74e2674e2b57d9f651d7a863e6">operator* </link>(<emphasis role="keyword">const</emphasis>&#32;U&amp;&#32;lhs,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;U&gt;</link>&amp;&#32;rhs);
+74 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;U&gt;&#32;<emphasis role="keyword">friend</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;U&gt;</link>&#32;<link linkend="_classqb_matrix2_1a8a110a74e2674e2b57d9f651d7a863e6">operator* </link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;U&gt;</link>&amp;&#32;lhs,&#32;<emphasis role="keyword">const</emphasis>&#32;U&amp;&#32;rhs);
+75 
+76 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;qbMatrix2&#32;*&#32;qbVector.</emphasis>
+77 &#32;&#32;&#32;&#32;<emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;U&gt;&#32;<emphasis role="keyword">friend</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;U&gt;</link>&#32;<link linkend="_classqb_matrix2_1a8a110a74e2674e2b57d9f651d7a863e6">operator* </link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;U&gt;</link>&amp;&#32;lhs,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;U&gt;</link>&amp;&#32;rhs);
+78 
+79 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_classqb_matrix2_1a3c37c24ae0d265ebf04a8c55a9753ac9">Separate</link>(<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;&amp;matrix1,&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;&amp;matrix2,&#32;<emphasis role="keywordtype">int</emphasis>&#32;colNum);
+80 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_classqb_matrix2_1a9ba8140ee2c217ffce544657a1f269b8">Join</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&amp;&#32;matrix2);
+81 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;<link linkend="_classqb_matrix2_1a1c913b15492558472b2e271f5a856f3b">FindSubMatrix</link>(<emphasis role="keywordtype">int</emphasis>&#32;rowNum,&#32;<emphasis role="keywordtype">int</emphasis>&#32;colNum);
+82 
+83 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Function&#32;to&#32;return&#32;the&#32;rank&#32;of&#32;the&#32;matrix.</emphasis>
+84 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_classqb_matrix2_1aa41b896d3d520de3096530845cbbc9b4">Rank</link>();
+85 
+86 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_classqb_matrix2_1ae3e42b917e3127cab56b7a48faff25c3">IsSquare</link>();
+87 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_classqb_matrix2_1a44c85a2d4dcbd33b281ce417156d7431">IsRowEchelon</link>();
+88 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_classqb_matrix2_1a6a9aab698ac6362495a4421f859b3658">IsNonZero</link>();
+89 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_classqb_matrix2_1a38c5e541fec532600806ac4fd8afecb2">IsSymmetric</link>();
+90 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classqb_matrix2_1a4bd6d0afe13739e2f7566cbd66b006e5">PrintMatrix</link>();
+91 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classqb_matrix2_1aaefe2a08fdad8e89690dd1bddcc154d0">PrintMatrix</link>(<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1ae6165268264b393d031f89082216499d">precision</link>);
+92 
+93 <emphasis role="keyword">private</emphasis>:
+94 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;Sub2Ind(<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;col)&#32;<emphasis role="keyword">const</emphasis>;
+95 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;CloseEnough(T&#32;f1,&#32;T&#32;f2);
+96 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;SwapRow(<emphasis role="keywordtype">int</emphasis>&#32;i,&#32;<emphasis role="keywordtype">int</emphasis>&#32;j);
+97 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;MultAdd(<emphasis role="keywordtype">int</emphasis>&#32;i,&#32;<emphasis role="keywordtype">int</emphasis>&#32;j,&#32;T&#32;multFactor);
+98 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;MultRow(<emphasis role="keywordtype">int</emphasis>&#32;i,&#32;T&#32;multFactor);
+99 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;FindRowWithMaxElement(<emphasis role="keywordtype">int</emphasis>&#32;colNumber,&#32;<emphasis role="keywordtype">int</emphasis>&#32;startingRow);
+100 
+101 <emphasis role="keyword">private</emphasis>:
+102 &#32;&#32;&#32;&#32;T&#32;*m_matrixData;
+103 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;m_nRows,&#32;m_nCols,&#32;m_nElements;
+104 };
+105 
+106 <emphasis role="comment">/*&#32;**************************************************************************************************</emphasis>
+107 <emphasis role="comment">CONSTRUCTOR&#32;/&#32;DESTRUCTOR&#32;FUNCTIONS</emphasis>
+108 <emphasis role="comment">/*&#32;*************************************************************************************************/</emphasis>
+109 <emphasis role="comment">//&#32;The&#32;default&#32;constructor.</emphasis>
+110 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+111 <link linkend="_classqb_matrix2_1a43751c898aa61a8544b4c65788be72b8">qbMatrix2&lt;T&gt;::qbMatrix2</link>()
+112 {
+113 &#32;&#32;&#32;&#32;m_nRows&#32;=&#32;1;
+114 &#32;&#32;&#32;&#32;m_nCols&#32;=&#32;1;
+115 &#32;&#32;&#32;&#32;m_nElements&#32;=&#32;1;
+116 &#32;&#32;&#32;&#32;m_matrixData&#32;=&#32;<emphasis role="keyword">nullptr</emphasis>;
+117 }
+118 
+119 <emphasis role="comment">//&#32;Construct&#32;empty&#32;matrix&#32;(all&#32;elements&#32;0)</emphasis>
+120 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+121 <link linkend="_classqb_matrix2_1a43751c898aa61a8544b4c65788be72b8">qbMatrix2&lt;T&gt;::qbMatrix2</link>(<emphasis role="keywordtype">int</emphasis>&#32;nRows,&#32;<emphasis role="keywordtype">int</emphasis>&#32;nCols)
+122 {
+123 &#32;&#32;&#32;&#32;m_nRows&#32;=&#32;nRows;
+124 &#32;&#32;&#32;&#32;m_nCols&#32;=&#32;nCols;
+125 &#32;&#32;&#32;&#32;m_nElements&#32;=&#32;m_nRows&#32;*&#32;m_nCols;
+126 &#32;&#32;&#32;&#32;m_matrixData&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;T[m_nElements];
+127 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;m_nElements;&#32;i++)
+128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;m_matrixData[i]&#32;=&#32;0.0;
+129 }
+130 
+131 <emphasis role="comment">//&#32;Construct&#32;from&#32;const&#32;linear&#32;array.</emphasis>
+132 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+133 <link linkend="_classqb_matrix2_1a43751c898aa61a8544b4c65788be72b8">qbMatrix2&lt;T&gt;::qbMatrix2</link>(<emphasis role="keywordtype">int</emphasis>&#32;nRows,&#32;<emphasis role="keywordtype">int</emphasis>&#32;nCols,&#32;<emphasis role="keyword">const</emphasis>&#32;T&#32;*inputData)
+134 {
+135 &#32;&#32;&#32;&#32;m_nRows&#32;=&#32;nRows;
+136 &#32;&#32;&#32;&#32;m_nCols&#32;=&#32;nCols;
+137 &#32;&#32;&#32;&#32;m_nElements&#32;=&#32;m_nRows&#32;*&#32;m_nCols;
+138 &#32;&#32;&#32;&#32;m_matrixData&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;T[m_nElements];
+139 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;m_nElements;&#32;i++)
+140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;m_matrixData[i]&#32;=&#32;inputData[i];
+141 }
+142 
+143 <emphasis role="comment">//&#32;The&#32;copy&#32;constructor.</emphasis>
+144 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+145 <link linkend="_classqb_matrix2_1a43751c898aa61a8544b4c65788be72b8">qbMatrix2&lt;T&gt;::qbMatrix2</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;&amp;inputMatrix)
+146 {
+147 &#32;&#32;&#32;&#32;m_nRows&#32;=&#32;inputMatrix.m_nRows;
+148 &#32;&#32;&#32;&#32;m_nCols&#32;=&#32;inputMatrix.m_nCols;
+149 &#32;&#32;&#32;&#32;m_nElements&#32;=&#32;inputMatrix.m_nElements;
+150 
+151 &#32;&#32;&#32;&#32;m_matrixData&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;T[m_nElements];
+152 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;m_nElements;&#32;i++)
+153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;m_matrixData[i]&#32;=&#32;inputMatrix.m_matrixData[i];
+154 }
+155 
+156 <emphasis role="comment">//&#32;Construct&#32;from&#32;std::vector.</emphasis>
+157 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+158 <link linkend="_classqb_matrix2_1a43751c898aa61a8544b4c65788be72b8">qbMatrix2&lt;T&gt;::qbMatrix2</link>(<emphasis role="keywordtype">int</emphasis>&#32;nRows,&#32;<emphasis role="keywordtype">int</emphasis>&#32;nCols,&#32;<emphasis role="keyword">const</emphasis>&#32;std::vector&lt;T&gt;&#32;&amp;inputData)
+159 {
+160 &#32;&#32;&#32;&#32;m_nRows&#32;=&#32;nRows;
+161 &#32;&#32;&#32;&#32;m_nCols&#32;=&#32;nCols;
+162 &#32;&#32;&#32;&#32;m_nElements&#32;=&#32;m_nRows&#32;*&#32;m_nCols;
+163 &#32;&#32;&#32;&#32;m_matrixData&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;T[m_nElements];
+164 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;m_nElements;&#32;++i)
+165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;m_matrixData[i]&#32;=&#32;inputData.at(i);
+166 }
+167 
+168 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+169 <link linkend="_classqb_matrix2_1ab05e67188c6ae2eebdbffe8682cb0890">qbMatrix2&lt;T&gt;::~qbMatrix2</link>()
+170 {
+171 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Destructor.</emphasis>
+172 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(m_matrixData)
+173 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>[]&#32;m_matrixData;
+174 
+175 &#32;&#32;&#32;&#32;m_matrixData&#32;=&#32;<emphasis role="keyword">nullptr</emphasis>;
+176 }
+177 
+178 <emphasis role="comment">/*&#32;**************************************************************************************************</emphasis>
+179 <emphasis role="comment">CONFIGURATION&#32;FUNCTIONS</emphasis>
+180 <emphasis role="comment">/*&#32;*************************************************************************************************/</emphasis>
+181 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+182 <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_classqb_matrix2_1aba216f400dda55542b3c06df43cd7c35">qbMatrix2&lt;T&gt;::Resize</link>(<emphasis role="keywordtype">int</emphasis>&#32;numRows,&#32;<emphasis role="keywordtype">int</emphasis>&#32;numCols)
+183 {
+184 &#32;&#32;&#32;&#32;m_nRows&#32;=&#32;numRows;
+185 &#32;&#32;&#32;&#32;m_nCols&#32;=&#32;numCols;
+186 &#32;&#32;&#32;&#32;m_nElements&#32;=&#32;(m_nRows&#32;*&#32;m_nCols);
+187 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>[]&#32;m_matrixData;
+188 &#32;&#32;&#32;&#32;m_matrixData&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;T[m_nElements];
+189 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(m_matrixData&#32;!=&#32;<emphasis role="keyword">nullptr</emphasis>)
+190 &#32;&#32;&#32;&#32;{
+191 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;m_nElements;&#32;i++)
+192 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;m_matrixData[i]&#32;=&#32;0.0;
+193 
+194 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+195 &#32;&#32;&#32;&#32;}
+196 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+197 &#32;&#32;&#32;&#32;{
+198 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+199 &#32;&#32;&#32;&#32;}
+200 }
+201 
+202 <emphasis role="comment">//&#32;Function&#32;to&#32;convert&#32;the&#32;existing&#32;matrix&#32;into&#32;an&#32;identity&#32;matrix.</emphasis>
+203 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+204 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classqb_matrix2_1af705ca91a707de5e75c6b074ad152f5e">qbMatrix2&lt;T&gt;::SetToIdentity</link>()
+205 {
+206 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!IsSquare())
+207 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::invalid_argument(<emphasis role="stringliteral">&quot;Cannot&#32;form&#32;an&#32;identity&#32;matrix&#32;that&#32;is&#32;not&#32;square.&quot;</emphasis>);
+208 
+209 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>=0;&#32;<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>&lt;m_nRows;&#32;++<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>)
+210 &#32;&#32;&#32;&#32;{
+211 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;col=0;&#32;col&lt;m_nCols;&#32;++col)
+212 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+213 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(col&#32;==&#32;<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>)
+214 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;m_matrixData[Sub2Ind(<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>,col)]&#32;=&#32;1.0;
+215 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+216 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;m_matrixData[Sub2Ind(<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>,col)]&#32;=&#32;0.0;
+217 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+218 &#32;&#32;&#32;&#32;}
+219 }
+220 
+221 <emphasis role="comment">/*&#32;**************************************************************************************************</emphasis>
+222 <emphasis role="comment">ELEMENT&#32;FUNCTIONS</emphasis>
+223 <emphasis role="comment">/*&#32;*************************************************************************************************/</emphasis>
+224 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+225 T&#32;<link linkend="_classqb_matrix2_1a62ddf209105dffe6133461b273a7309f">qbMatrix2&lt;T&gt;::GetElement</link>(<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;col)<emphasis role="keyword">&#32;const</emphasis>
+226 <emphasis role="keyword"></emphasis>{
+227 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;linearIndex&#32;=&#32;Sub2Ind(<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>,&#32;col);
+228 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(linearIndex&#32;&gt;=&#32;0)
+229 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;m_matrixData[linearIndex];
+230 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+231 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0.0;
+232 
+233 }
+234 
+235 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+236 <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_classqb_matrix2_1a1c6693503483942d5a619a0cf470e8b5">qbMatrix2&lt;T&gt;::SetElement</link>(<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;col,&#32;T&#32;elementValue)
+237 {
+238 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;linearIndex&#32;=&#32;Sub2Ind(<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>,&#32;col);
+239 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(linearIndex&#32;&gt;=&#32;0)
+240 &#32;&#32;&#32;&#32;{
+241 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;m_matrixData[linearIndex]&#32;=&#32;elementValue;
+242 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+243 &#32;&#32;&#32;&#32;}
+244 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+245 &#32;&#32;&#32;&#32;{
+246 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+247 &#32;&#32;&#32;&#32;}
+248 }
+249 
+250 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+251 <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_classqb_matrix2_1a1626b647c5268a9e64f4651bcc4b8c6e">qbMatrix2&lt;T&gt;::GetNumRows</link>()<emphasis role="keyword">&#32;const</emphasis>
+252 <emphasis role="keyword"></emphasis>{
+253 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;m_nRows;
+254 }
+255 
+256 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+257 <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_classqb_matrix2_1ab20362d8fc58a4b8da0910f94c3de2c3">qbMatrix2&lt;T&gt;::GetNumCols</link>()<emphasis role="keyword">&#32;const</emphasis>
+258 <emphasis role="keyword"></emphasis>{
+259 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;m_nCols;
+260 }
+261 
+262 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+263 <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_classqb_matrix2_1ae9049dba8525b2c3b4f7db1c5a29d06e">qbMatrix2&lt;T&gt;::Compare</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&amp;&#32;matrix1,&#32;<emphasis role="keywordtype">double</emphasis>&#32;tolerance)
+264 {
+265 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;First,&#32;check&#32;that&#32;the&#32;matrices&#32;have&#32;the&#32;same&#32;dimensions.</emphasis>
+266 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numRows1&#32;=&#32;matrix1.m_nRows;
+267 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numCols1&#32;=&#32;matrix1.m_nCols;
+268 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;((numRows1&#32;!=&#32;m_nRows)&#32;||&#32;(numCols1&#32;!=&#32;m_nCols))
+269 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+270 
+271 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Loop&#32;over&#32;all&#32;the&#32;elements&#32;and&#32;compute&#32;the&#32;sum-of-squared-differences.</emphasis>
+272 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;cumulativeSum&#32;=&#32;0.0;
+273 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;m_nElements;&#32;++i)
+274 &#32;&#32;&#32;&#32;{
+275 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;element1&#32;=&#32;matrix1.m_matrixData[i];
+276 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;element2&#32;=&#32;m_matrixData[i];
+277 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cumulativeSum&#32;+=&#32;((element1&#32;-&#32;element2)&#32;*&#32;(element1&#32;-&#32;element2));
+278 &#32;&#32;&#32;&#32;}
+279 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;finalValue&#32;=&#32;sqrt(cumulativeSum&#32;/&#32;((numRows1&#32;*&#32;numCols1)-1));
+280 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(finalValue&#32;&lt;&#32;tolerance)
+281 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+282 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+283 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+284 }
+285 
+286 <emphasis role="comment">/*&#32;**************************************************************************************************</emphasis>
+287 <emphasis role="comment">OVERLOADED&#32;OPERATOR&#32;FUNCTIONS</emphasis>
+288 <emphasis role="comment">/*&#32;*************************************************************************************************/</emphasis>
+289 
+290 <emphasis role="comment">/*&#32;**************************************************************************************************</emphasis>
+291 <emphasis role="comment">THE&#32;+&#32;OPERATOR</emphasis>
+292 <emphasis role="comment">/*&#32;*************************************************************************************************/</emphasis>
+293 <emphasis role="comment">//&#32;matrix&#32;+&#32;matrx.</emphasis>
+294 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+295 <link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;<link linkend="_qb_matrix_8h_1a3152cb3afeef9951ce6bd5a7b2e6467c">operator+ </link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&amp;&#32;lhs,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&amp;&#32;rhs)
+296 {
+297 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numRows&#32;=&#32;lhs.m_nRows;
+298 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numCols&#32;=&#32;lhs.m_nCols;
+299 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numElements&#32;=&#32;numRows&#32;*&#32;numCols;
+300 &#32;&#32;&#32;&#32;T&#32;*tempResult&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;T[numElements];
+301 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;numElements;&#32;i++)
+302 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tempResult[i]&#32;=&#32;lhs.m_matrixData[i]&#32;+&#32;rhs.m_matrixData[i];
+303 
+304 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>(numRows,&#32;numCols,&#32;tempResult);
+305 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>[]&#32;tempResult;
+306 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>;
+307 }
+308 
+309 <emphasis role="comment">//&#32;scaler&#32;+&#32;matrix</emphasis>
+310 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+311 <link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;<link linkend="_qb_matrix_8h_1a3152cb3afeef9951ce6bd5a7b2e6467c">operator+ </link>(<emphasis role="keyword">const</emphasis>&#32;T&amp;&#32;lhs,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&amp;&#32;rhs)
+312 {
+313 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numRows&#32;=&#32;rhs.m_nRows;
+314 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numCols&#32;=&#32;rhs.m_nCols;
+315 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numElements&#32;=&#32;numRows&#32;*&#32;numCols;
+316 &#32;&#32;&#32;&#32;T&#32;*tempResult&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;T[numElements];
+317 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;numElements;&#32;++i)
+318 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tempResult[i]&#32;=&#32;lhs&#32;+&#32;rhs.m_matrixData[i];
+319 
+320 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>(numRows,&#32;numCols,&#32;tempResult);
+321 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>[]&#32;tempResult;
+322 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>;
+323 }
+324 
+325 <emphasis role="comment">//&#32;matrix&#32;+&#32;scaler</emphasis>
+326 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+327 <link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;<link linkend="_qb_matrix_8h_1a3152cb3afeef9951ce6bd5a7b2e6467c">operator+ </link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&amp;&#32;lhs,&#32;<emphasis role="keyword">const</emphasis>&#32;T&amp;&#32;rhs)
+328 {
+329 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numRows&#32;=&#32;lhs.m_nRows;
+330 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numCols&#32;=&#32;lhs.m_nCols;
+331 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numElements&#32;=&#32;numRows&#32;*&#32;numCols;
+332 &#32;&#32;&#32;&#32;T&#32;*tempResult&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;T[numElements];
+333 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;numElements;&#32;++i)
+334 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tempResult[i]&#32;=&#32;lhs.m_matrixData[i]&#32;+&#32;rhs;
+335 
+336 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>(numRows,&#32;numCols,&#32;tempResult);
+337 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>[]&#32;tempResult;
+338 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>;
+339 }
+340 
+341 <emphasis role="comment">/*&#32;**************************************************************************************************</emphasis>
+342 <emphasis role="comment">THE&#32;-&#32;OPERATOR</emphasis>
+343 <emphasis role="comment">/*&#32;*************************************************************************************************/</emphasis>
+344 <emphasis role="comment">//&#32;matrix&#32;-&#32;matrix</emphasis>
+345 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+346 <link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;<link linkend="_qb_matrix_8h_1aeb426ac1d5ca8a22e8d0d16c5ff80e05">operator- </link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&amp;&#32;lhs,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&amp;&#32;rhs)
+347 {
+348 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numRows&#32;=&#32;lhs.m_nRows;
+349 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numCols&#32;=&#32;lhs.m_nCols;
+350 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numElements&#32;=&#32;numRows&#32;*&#32;numCols;
+351 &#32;&#32;&#32;&#32;T&#32;*tempResult&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;T[numElements];
+352 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;numElements;&#32;i++)
+353 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tempResult[i]&#32;=&#32;lhs.m_matrixData[i]&#32;-&#32;rhs.m_matrixData[i];
+354 
+355 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>(numRows,&#32;numCols,&#32;tempResult);
+356 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>[]&#32;tempResult;
+357 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>;
+358 }
+359 
+360 <emphasis role="comment">//&#32;scaler&#32;-&#32;matrix</emphasis>
+361 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+362 <link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;<link linkend="_qb_matrix_8h_1aeb426ac1d5ca8a22e8d0d16c5ff80e05">operator- </link>(<emphasis role="keyword">const</emphasis>&#32;T&amp;&#32;lhs,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&amp;&#32;rhs)
+363 {
+364 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numRows&#32;=&#32;rhs.m_nRows;
+365 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numCols&#32;=&#32;rhs.m_nCols;
+366 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numElements&#32;=&#32;numRows&#32;*&#32;numCols;
+367 &#32;&#32;&#32;&#32;T&#32;*tempResult&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;T[numElements];
+368 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;numElements;&#32;++i)
+369 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tempResult[i]&#32;=&#32;lhs&#32;-&#32;rhs.m_matrixData[i];
+370 
+371 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>(numRows,&#32;numCols,&#32;tempResult);
+372 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>[]&#32;tempResult;
+373 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>;
+374 }
+375 
+376 <emphasis role="comment">//&#32;matrix&#32;-&#32;scaler</emphasis>
+377 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+378 <link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;<link linkend="_qb_matrix_8h_1aeb426ac1d5ca8a22e8d0d16c5ff80e05">operator- </link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&amp;&#32;lhs,&#32;<emphasis role="keyword">const</emphasis>&#32;T&amp;&#32;rhs)
+379 {
+380 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numRows&#32;=&#32;lhs.m_nRows;
+381 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numCols&#32;=&#32;lhs.m_nCols;
+382 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numElements&#32;=&#32;numRows&#32;*&#32;numCols;
+383 &#32;&#32;&#32;&#32;T&#32;*tempResult&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;T[numElements];
+384 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;numElements;&#32;++i)
+385 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tempResult[i]&#32;=&#32;lhs.m_matrixData[i]&#32;-&#32;rhs;
+386 
+387 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>(numRows,&#32;numCols,&#32;tempResult);
+388 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>[]&#32;tempResult;
+389 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>;
+390 }
+391 
+392 <emphasis role="comment">/*&#32;**************************************************************************************************</emphasis>
+393 <emphasis role="comment">THE&#32;*&#32;OPERATOR</emphasis>
+394 <emphasis role="comment">/*&#32;*************************************************************************************************/</emphasis>
+395 <emphasis role="comment">//&#32;matrix&#32;*&#32;vector</emphasis>
+396 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+397 <link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;<link linkend="_qb_matrix_8h_1a8a8867562937ce308beeef8be2fd0524">operator* </link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&amp;&#32;lhs,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&amp;&#32;rhs)
+398 {
+399 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Verify&#32;the&#32;dimensions&#32;of&#32;the&#32;inputs.</emphasis>
+400 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(lhs.m_nCols&#32;!=&#32;rhs.<link linkend="_classqb_vector_1a4b1f24a8ae47ef9019109c23c56fc9c4">GetNumDims</link>())
+401 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::invalid_argument(<emphasis role="stringliteral">&quot;Number&#32;of&#32;columns&#32;in&#32;matrix&#32;must&#32;equal&#32;number&#32;of&#32;rows&#32;in&#32;vector.&quot;</emphasis>);
+402 
+403 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Setup&#32;the&#32;vector&#32;for&#32;the&#32;output.</emphasis>
+404 &#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>(lhs.m_nRows);
+405 
+406 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Loop&#32;over&#32;rows&#32;and&#32;columns&#32;and&#32;perform&#32;the&#32;multiplication&#32;operation&#32;element-by-element.</emphasis>
+407 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>=0;&#32;<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>&lt;lhs.m_nRows;&#32;++<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>)
+408 &#32;&#32;&#32;&#32;{
+409 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;cumulativeSum&#32;=&#32;<emphasis role="keyword">static_cast&lt;</emphasis>T<emphasis role="keyword">&gt;</emphasis>(0.0);
+410 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;col=0;&#32;col&lt;lhs.m_nCols;&#32;++col)
+411 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+412 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cumulativeSum&#32;+=&#32;(lhs.<link linkend="_classqb_matrix2_1a62ddf209105dffe6133461b273a7309f">GetElement</link>(<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>,col)&#32;*&#32;rhs.<link linkend="_classqb_vector_1adadd6ca87273a15f57a5e1d6ae15583b">GetElement</link>(col));
+413 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+414 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>.SetElement(<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>,&#32;cumulativeSum);
+415 &#32;&#32;&#32;&#32;}
+416 
+417 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>;
+418 }
+419 
+420 <emphasis role="comment">//&#32;scaler&#32;*&#32;matrix</emphasis>
+421 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+422 <link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;<link linkend="_qb_matrix_8h_1a8a8867562937ce308beeef8be2fd0524">operator* </link>(<emphasis role="keyword">const</emphasis>&#32;T&amp;&#32;lhs,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&amp;&#32;rhs)
+423 {
+424 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numRows&#32;=&#32;rhs.m_nRows;
+425 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numCols&#32;=&#32;rhs.m_nCols;
+426 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numElements&#32;=&#32;numRows&#32;*&#32;numCols;
+427 &#32;&#32;&#32;&#32;T&#32;*tempResult&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;T[numElements];
+428 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;numElements;&#32;++i)
+429 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tempResult[i]&#32;=&#32;lhs&#32;*&#32;rhs.m_matrixData[i];
+430 
+431 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>(numRows,&#32;numCols,&#32;tempResult);
+432 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>[]&#32;tempResult;
+433 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>;
+434 }
+435 
+436 <emphasis role="comment">//&#32;matrix&#32;*&#32;scaler</emphasis>
+437 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+438 <link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;<link linkend="_qb_matrix_8h_1a8a8867562937ce308beeef8be2fd0524">operator* </link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&amp;&#32;lhs,&#32;<emphasis role="keyword">const</emphasis>&#32;T&amp;&#32;rhs)
+439 {
+440 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numRows&#32;=&#32;lhs.m_nRows;
+441 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numCols&#32;=&#32;lhs.m_nCols;
+442 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numElements&#32;=&#32;numRows&#32;*&#32;numCols;
+443 &#32;&#32;&#32;&#32;T&#32;*tempResult&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;T[numElements];
+444 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;numElements;&#32;++i)
+445 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tempResult[i]&#32;=&#32;lhs.m_matrixData[i]&#32;*&#32;rhs;
+446 
+447 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>(numRows,&#32;numCols,&#32;tempResult);
+448 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>[]&#32;tempResult;
+449 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>;
+450 }
+451 
+452 <emphasis role="comment">//&#32;matrix&#32;*&#32;matrix</emphasis>
+453 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+454 <link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;<link linkend="_qb_matrix_8h_1a8a8867562937ce308beeef8be2fd0524">operator* </link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&amp;&#32;lhs,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&amp;&#32;rhs)
+455 {
+456 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;r_numRows&#32;=&#32;rhs.m_nRows;
+457 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;r_numCols&#32;=&#32;rhs.m_nCols;
+458 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;l_numRows&#32;=&#32;lhs.m_nRows;
+459 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;l_numCols&#32;=&#32;lhs.m_nCols;
+460 
+461 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(l_numCols&#32;==&#32;r_numRows)
+462 &#32;&#32;&#32;&#32;{
+463 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;This&#32;is&#32;the&#32;standard&#32;matrix&#32;multiplication&#32;condition.</emphasis>
+464 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;The&#32;output&#32;will&#32;be&#32;the&#32;same&#32;size&#32;as&#32;the&#32;RHS.</emphasis>
+465 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;*tempResult&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;T[lhs.m_nRows&#32;*&#32;rhs.m_nCols];
+466 
+467 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Loop&#32;through&#32;each&#32;row&#32;of&#32;the&#32;LHS.</emphasis>
+468 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;lhsRow=0;&#32;lhsRow&lt;l_numRows;&#32;lhsRow++)
+469 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+470 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Loop&#32;through&#32;each&#32;column&#32;on&#32;the&#32;RHS.</emphasis>
+471 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;rhsCol=0;&#32;rhsCol&lt;r_numCols;&#32;rhsCol++)
+472 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+473 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;elementResult&#32;=&#32;<emphasis role="keyword">static_cast&lt;</emphasis>T<emphasis role="keyword">&gt;</emphasis>(0.0);
+474 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Loop&#32;through&#32;each&#32;element&#32;of&#32;this&#32;LHS&#32;row.</emphasis>
+475 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;lhsCol=0;&#32;lhsCol&lt;l_numCols;&#32;lhsCol++)
+476 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+477 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;the&#32;LHS&#32;linear&#32;index.</emphasis>
+478 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;lhsLinearIndex&#32;=&#32;(lhsRow&#32;*&#32;l_numCols)&#32;+&#32;lhsCol;
+479 
+480 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;the&#32;RHS&#32;linear&#32;index&#32;(based&#32;on&#32;LHS&#32;col).</emphasis>
+481 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;rhs&#32;row&#32;number&#32;equal&#32;to&#32;lhs&#32;column&#32;number.</emphasis>
+482 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;rhsLinearIndex&#32;=&#32;(lhsCol&#32;*&#32;r_numCols)&#32;+&#32;rhsCol;
+483 
+484 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Perform&#32;the&#32;calculation&#32;on&#32;these&#32;elements.</emphasis>
+485 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elementResult&#32;+=&#32;(lhs.m_matrixData[lhsLinearIndex]&#32;*&#32;rhs.m_matrixData[rhsLinearIndex]);
+486 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+487 
+488 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Store&#32;the&#32;result.</emphasis>
+489 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;resultLinearIndex&#32;=&#32;(lhsRow&#32;*&#32;r_numCols)&#32;+&#32;rhsCol;
+490 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tempResult[resultLinearIndex]&#32;=&#32;elementResult;
+491 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+492 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+493 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>(l_numRows,&#32;r_numCols,&#32;tempResult);
+494 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>[]&#32;tempResult;
+495 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>;
+496 &#32;&#32;&#32;&#32;}
+497 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+498 &#32;&#32;&#32;&#32;{
+499 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>(1,&#32;1);
+500 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>;
+501 &#32;&#32;&#32;&#32;}
+502 }
+503 
+504 <emphasis role="comment">/*&#32;**************************************************************************************************</emphasis>
+505 <emphasis role="comment">THE&#32;==&#32;OPERATOR</emphasis>
+506 <emphasis role="comment">/*&#32;*************************************************************************************************/</emphasis>
+507 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+508 <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_classqb_matrix2_1aab23890007a5a410c57d43d69a347ea1">qbMatrix2&lt;T&gt;::operator== </link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&amp;&#32;rhs)
+509 {
+510 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Check&#32;if&#32;the&#32;matricies&#32;are&#32;the&#32;same&#32;size,&#32;if&#32;not&#32;return&#32;false.</emphasis>
+511 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;((this-&gt;m_nRows&#32;!=&#32;rhs.m_nRows)&#32;&amp;&amp;&#32;(this-&gt;m_nCols&#32;!=&#32;rhs.m_nCols))
+512 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+513 
+514 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Check&#32;if&#32;the&#32;elements&#32;are&#32;equal.</emphasis>
+515 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;flag&#32;=&#32;<emphasis role="keyword">true</emphasis>;
+516 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;this-&gt;m_nElements;&#32;++i)
+517 &#32;&#32;&#32;&#32;{
+518 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//if&#32;(this-&gt;m_matrixData[i]&#32;!=&#32;rhs.m_matrixData[i])</emphasis>
+519 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!CloseEnough(this-&gt;m_matrixData[i],&#32;rhs.m_matrixData[i]))
+520 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;flag&#32;=&#32;<emphasis role="keyword">false</emphasis>;
+521 &#32;&#32;&#32;&#32;}
+522 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;flag;
+523 }
+524 
+525 <emphasis role="comment">/*&#32;**************************************************************************************************</emphasis>
+526 <emphasis role="comment">THE&#32;ASSIGNMENT&#32;(=)&#32;OPERATOR</emphasis>
+527 <emphasis role="comment">/*&#32;*************************************************************************************************/</emphasis>
+528 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+529 <link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;<link linkend="_classqb_matrix2_1ac6cc3fedd08e2a1bb2ceb097ef4c8e47">qbMatrix2&lt;T&gt;::operator= </link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;&amp;rhs)
+530 {
+531 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Make&#32;sure&#32;we&apos;re&#32;not&#32;assigning&#32;to&#32;ourself.</emphasis>
+532 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<emphasis role="keyword">this</emphasis>&#32;!=&#32;&amp;rhs)
+533 &#32;&#32;&#32;&#32;{
+534 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;m_nRows&#32;=&#32;rhs.m_nRows;
+535 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;m_nCols&#32;=&#32;rhs.m_nCols;
+536 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;m_nElements&#32;=&#32;rhs.m_nElements;
+537 
+538 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(m_matrixData)
+539 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>[]&#32;m_matrixData;
+540 
+541 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;m_matrixData&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;T[m_nElements];
+542 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;m_nElements;&#32;i++)
+543 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;m_matrixData[i]&#32;=&#32;rhs.m_matrixData[i];
+544 &#32;&#32;&#32;&#32;}
+545 
+546 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;*<emphasis role="keyword">this</emphasis>;
+547 }
+548 
+549 <emphasis role="comment">/*&#32;**************************************************************************************************</emphasis>
+550 <emphasis role="comment">SEPARATE&#32;THE&#32;MATRIX&#32;INTO&#32;TWO&#32;PARTS,&#32;AROUND&#32;THE&#32;COLUMN&#32;NUMBER&#32;PROVIDED</emphasis>
+551 <emphasis role="comment">(Note&#32;that&#32;the&#32;output&#32;is&#32;returned&#32;into&#32;the&#32;two&#32;qbMatrix2&lt;T&gt;&#32;pointers&#32;in&#32;the&#32;input&#32;argument&#32;list)</emphasis>
+552 <emphasis role="comment">/*&#32;*************************************************************************************************/</emphasis>
+553 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+554 <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_classqb_matrix2_1a3c37c24ae0d265ebf04a8c55a9753ac9">qbMatrix2&lt;T&gt;::Separate</link>(<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;&amp;matrix1,&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;&amp;matrix2,&#32;<emphasis role="keywordtype">int</emphasis>&#32;colNum)
+555 {
+556 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;the&#32;sizes&#32;of&#32;the&#32;new&#32;matrices.</emphasis>
+557 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numRows&#32;=&#32;m_nRows;
+558 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numCols1&#32;=&#32;colNum;
+559 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numCols2&#32;=&#32;m_nCols&#32;-&#32;colNum;
+560 
+561 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Resize&#32;the&#32;two&#32;matrices&#32;to&#32;the&#32;proper&#32;dimensions.</emphasis>
+562 &#32;&#32;&#32;&#32;matrix1.<link linkend="_classqb_matrix2_1aba216f400dda55542b3c06df43cd7c35">Resize</link>(numRows,&#32;numCols1);
+563 &#32;&#32;&#32;&#32;matrix2.<link linkend="_classqb_matrix2_1aba216f400dda55542b3c06df43cd7c35">Resize</link>(numRows,&#32;numCols1);
+564 
+565 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Loop&#32;over&#32;the&#32;original&#32;matrix&#32;and&#32;store&#32;data&#32;into&#32;the&#32;appropriate&#32;elements&#32;of&#32;the&#32;two</emphasis>
+566 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;output&#32;matrices.</emphasis>
+567 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>=0;&#32;<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>&lt;m_nRows;&#32;++<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>)
+568 &#32;&#32;&#32;&#32;{
+569 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;col=0;&#32;col&lt;m_nCols;&#32;++col)
+570 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+571 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(col&#32;&lt;&#32;colNum)
+572 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+573 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;matrix1.<link linkend="_classqb_matrix2_1a1c6693503483942d5a619a0cf470e8b5">SetElement</link>(<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>,&#32;col,&#32;this-&gt;GetElement(<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>,&#32;col));
+574 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+575 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+576 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+577 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;matrix2.<link linkend="_classqb_matrix2_1a1c6693503483942d5a619a0cf470e8b5">SetElement</link>(<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>,&#32;col-colNum,&#32;this-&gt;GetElement(<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>,&#32;col));
+578 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+579 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+580 &#32;&#32;&#32;&#32;}
+581 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+582 }
+583 
+584 <emphasis role="comment">/*&#32;**************************************************************************************************</emphasis>
+585 <emphasis role="comment">JOIN&#32;TwO&#32;MATRICES&#32;TOGETHER</emphasis>
+586 <emphasis role="comment">/*&#32;*************************************************************************************************/</emphasis>
+587 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+588 <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_classqb_matrix2_1a9ba8140ee2c217ffce544657a1f269b8">qbMatrix2&lt;T&gt;::Join</link>&#32;(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&amp;&#32;matrix2)
+589 {
+590 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Extract&#32;the&#32;information&#32;that&#32;we&#32;need&#32;from&#32;both&#32;matrices</emphasis>
+591 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numRows1&#32;=&#32;m_nRows;
+592 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numRows2&#32;=&#32;matrix2.m_nRows;
+593 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numCols1&#32;=&#32;m_nCols;
+594 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numCols2&#32;=&#32;matrix2.m_nCols;
+595 
+596 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;If&#32;the&#32;matrices&#32;have&#32;different&#32;numbers&#32;of&#32;rows,&#32;then&#32;this&#32;operation&#32;makes&#32;no&#32;sense.</emphasis>
+597 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(numRows1&#32;!=&#32;numRows2)
+598 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::invalid_argument(<emphasis role="stringliteral">&quot;Attempt&#32;to&#32;join&#32;matrices&#32;with&#32;different&#32;numbers&#32;of&#32;rows&#32;is&#32;invalid.&quot;</emphasis>);
+599 
+600 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Allocate&#32;memory&#32;for&#32;the&#32;result.</emphasis>
+601 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Note&#32;that&#32;only&#32;the&#32;number&#32;of&#32;columns&#32;increases.</emphasis>
+602 &#32;&#32;&#32;&#32;T*&#32;newMatrixData&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;T[numRows1*(numCols1+numCols2)];
+603 
+604 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Copy&#32;the&#32;two&#32;matrices&#32;into&#32;the&#32;new&#32;one.</emphasis>
+605 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;linearIndex,&#32;resultLinearIndex;
+606 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;numRows1;&#32;++i)
+607 &#32;&#32;&#32;&#32;{
+608 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j=0;&#32;j&lt;(numCols1+numCols2);&#32;++j)
+609 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+610 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;resultLinearIndex&#32;=&#32;(i&#32;*&#32;(numCols1+numCols2))&#32;+&#32;j;
+611 
+612 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;If&#32;j&#32;is&#32;in&#32;the&#32;left&#32;hand&#32;matrix,&#32;we&#32;get&#32;data&#32;from&#32;there...</emphasis>
+613 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(j&#32;&lt;&#32;numCols1)
+614 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+615 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;linearIndex&#32;=&#32;(i&#32;*&#32;numCols1)&#32;+&#32;j;
+616 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;newMatrixData[resultLinearIndex]&#32;=&#32;m_matrixData[linearIndex];
+617 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+618 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Otherwise,&#32;j&#32;must&#32;be&#32;in&#32;the&#32;right&#32;hand&#32;matrix,&#32;so&#32;we&#32;get&#32;data&#32;from&#32;there...</emphasis>
+619 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+620 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+621 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;linearIndex&#32;=&#32;(i&#32;*&#32;numCols2)&#32;+&#32;(j&#32;-&#32;numCols1);
+622 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;newMatrixData[resultLinearIndex]&#32;=&#32;matrix2.m_matrixData[linearIndex];
+623 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+624 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+625 &#32;&#32;&#32;&#32;}
+626 
+627 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Update&#32;the&#32;stored&#32;data.</emphasis>
+628 &#32;&#32;&#32;&#32;m_nCols&#32;=&#32;numCols1+numCols2;
+629 &#32;&#32;&#32;&#32;m_nElements&#32;=&#32;m_nRows&#32;*&#32;m_nCols;
+630 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>[]&#32;m_matrixData;
+631 &#32;&#32;&#32;&#32;m_matrixData&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;T[m_nElements];
+632 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;m_nElements;&#32;++i)
+633 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;m_matrixData[i]&#32;=&#32;newMatrixData[i];
+634 
+635 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>[]&#32;newMatrixData;
+636 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+637 }
+638 
+639 <emphasis role="comment">/*&#32;**************************************************************************************************</emphasis>
+640 <emphasis role="comment">COMPUTE&#32;MATRIX&#32;DETERMINANT</emphasis>
+641 <emphasis role="comment">/*&#32;*************************************************************************************************/</emphasis>
+642 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+643 T&#32;<link linkend="_classqb_matrix2_1aeebab890f8c38f112972ffbcaaba422f">qbMatrix2&lt;T&gt;::Determinant</link>()
+644 {
+645 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Check&#32;if&#32;the&#32;matrix&#32;is&#32;square.</emphasis>
+646 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!IsSquare())
+647 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::invalid_argument(<emphasis role="stringliteral">&quot;Cannot&#32;compute&#32;the&#32;determinant&#32;of&#32;a&#32;matrix&#32;that&#32;is&#32;not&#32;square.&quot;</emphasis>);
+648 
+649 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;If&#32;the&#32;matrix&#32;is&#32;2x2,&#32;we&#32;can&#32;just&#32;compute&#32;the&#32;determinant&#32;directly.</emphasis>
+650 &#32;&#32;&#32;&#32;T&#32;determinant;
+651 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(m_nRows&#32;==&#32;2)
+652 &#32;&#32;&#32;&#32;{
+653 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;determinant&#32;=&#32;(m_matrixData[0]&#32;*&#32;m_matrixData[3])&#32;-&#32;(m_matrixData[1]&#32;*&#32;m_matrixData[2]);
+654 &#32;&#32;&#32;&#32;}
+655 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+656 &#32;&#32;&#32;&#32;{
+657 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Otherwise&#32;we&#32;extract&#32;the&#32;sub-matrices&#32;and&#32;then&#32;recursively&#32;call&#32;this&#32;function</emphasis>
+658 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;until&#32;we&#32;get&#32;to&#32;2x2&#32;matrices.&#32;*/</emphasis>
+659 
+660 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;We&#32;will&#32;find&#32;the&#32;sub-matrices&#32;for&#32;row&#32;0.</emphasis>
+661 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;So,&#32;loop&#32;over&#32;each&#32;column.</emphasis>
+662 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;cumulativeSum&#32;=&#32;0.0;
+663 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;sign&#32;=&#32;1.0;
+664 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j=0;&#32;j&lt;m_nCols;&#32;++j)
+665 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+666 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;And&#32;find&#32;the&#32;sub-matrix&#32;for&#32;each&#32;element.</emphasis>
+667 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;subMatrix&#32;=&#32;this-&gt;FindSubMatrix(0,&#32;j);
+668 
+669 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Cumulatively&#32;multiply&#32;the&#32;determinant&#32;of&#32;the&#32;sub-matrix&#32;by&#32;the</emphasis>
+670 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;current&#32;element&#32;of&#32;this&#32;matrix&#32;and&#32;the&#32;sign&#32;variable&#32;(note&#32;the</emphasis>
+671 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;recursive&#32;calling&#32;of&#32;the&#32;Determinant()&#32;method).&#32;*/</emphasis>
+672 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cumulativeSum&#32;+=&#32;this-&gt;GetElement(0,&#32;j)&#32;*&#32;subMatrix.<link linkend="_classqb_matrix2_1aeebab890f8c38f112972ffbcaaba422f">Determinant</link>()&#32;*&#32;sign;
+673 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sign&#32;=&#32;-sign;
+674 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+675 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;determinant&#32;=&#32;cumulativeSum;
+676 &#32;&#32;&#32;&#32;}
+677 
+678 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;determinant;
+679 }
+680 
+681 <emphasis role="comment">/*&#32;**************************************************************************************************</emphasis>
+682 <emphasis role="comment">COMPUTE&#32;MATRIX&#32;INVERSE&#32;(USING&#32;GAUSS-JORDAN&#32;ELIMINATION)</emphasis>
+683 <emphasis role="comment">/*&#32;*************************************************************************************************/</emphasis>
+684 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+685 <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_classqb_matrix2_1aaf71c5642111972501f43b1e225b8a2f">qbMatrix2&lt;T&gt;::Inverse</link>()
+686 {
+687 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Check&#32;if&#32;the&#32;matrix&#32;is&#32;square&#32;(we&#32;cannot&#32;compute&#32;the&#32;inverse&#32;if&#32;it&#32;isn&apos;t).</emphasis>
+688 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!IsSquare())
+689 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::invalid_argument(<emphasis role="stringliteral">&quot;Cannot&#32;compute&#32;the&#32;inverse&#32;of&#32;a&#32;matrix&#32;that&#32;is&#32;not&#32;square.&quot;</emphasis>);
+690 
+691 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;If&#32;we&#32;get&#32;to&#32;here,&#32;the&#32;matrix&#32;is&#32;square&#32;so&#32;we&#32;can&#32;continue.</emphasis>
+692 
+693 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Form&#32;an&#32;identity&#32;matrix&#32;with&#32;the&#32;same&#32;dimensions&#32;as&#32;the&#32;matrix&#32;we&#32;wish&#32;to&#32;invert.</emphasis>
+694 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;identityMatrix(m_nRows,&#32;m_nCols);
+695 &#32;&#32;&#32;&#32;identityMatrix.<link linkend="_classqb_matrix2_1af705ca91a707de5e75c6b074ad152f5e">SetToIdentity</link>();
+696 
+697 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Join&#32;the&#32;identity&#32;matrix&#32;to&#32;the&#32;existing&#32;matrix.</emphasis>
+698 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;originalNumCols&#32;=&#32;m_nCols;
+699 &#32;&#32;&#32;&#32;Join(identityMatrix);
+700 
+701 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Begin&#32;the&#32;main&#32;part&#32;of&#32;the&#32;process.</emphasis>
+702 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;cRow,&#32;cCol;
+703 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a76b486a23d5da07752f89495cdaedcf4">maxCount</link>&#32;=&#32;100;
+704 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl_8h_1a619bc20e8198de3bd3f3d7fc34de66b2">count</link>&#32;=&#32;0;
+705 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;completeFlag&#32;=&#32;<emphasis role="keyword">false</emphasis>;
+706 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;((!completeFlag)&#32;&amp;&amp;&#32;(<link linkend="__s_d_l__opengl_8h_1a619bc20e8198de3bd3f3d7fc34de66b2">count</link>&#32;&lt;&#32;<link linkend="__s_d_l__opengl__glext_8h_1a76b486a23d5da07752f89495cdaedcf4">maxCount</link>))
+707 &#32;&#32;&#32;&#32;{
+708 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;diagIndex=0;&#32;diagIndex&lt;m_nRows;&#32;++diagIndex)
+709 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+710 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Loop&#32;over&#32;the&#32;diagonal&#32;of&#32;the&#32;matrix&#32;and&#32;ensure&#32;all&#32;diagonal&#32;elements&#32;are&#32;equal&#32;to&#32;one.</emphasis>
+711 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cRow&#32;=&#32;diagIndex;
+712 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cCol&#32;=&#32;diagIndex;
+713 
+714 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Find&#32;the&#32;index&#32;of&#32;the&#32;maximum&#32;element&#32;in&#32;the&#32;current&#32;column.</emphasis>
+715 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;maxIndex&#32;=&#32;FindRowWithMaxElement(cCol,&#32;cRow);
+716 
+717 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;If&#32;this&#32;isn&apos;t&#32;the&#32;current&#32;row,&#32;then&#32;swap.</emphasis>
+718 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(maxIndex&#32;!=&#32;cRow)
+719 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+720 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//std::cout&#32;&lt;&lt;&#32;&quot;Swap&#32;rows&#32;&quot;&#32;&lt;&lt;&#32;cRow&#32;&lt;&lt;&#32;&quot;&#32;and&#32;&quot;&#32;&lt;&lt;&#32;maxIndex&#32;&lt;&lt;&#32;std::endl;</emphasis>
+721 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SwapRow(cRow,&#32;maxIndex);
+722 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+723 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Make&#32;sure&#32;the&#32;value&#32;at&#32;(cRow,cCol)&#32;is&#32;equal&#32;to&#32;one.</emphasis>
+724 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(m_matrixData[Sub2Ind(cRow,cCol)]&#32;!=&#32;1.0)
+725 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+726 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;multFactor&#32;=&#32;1.0&#32;/&#32;m_matrixData[Sub2Ind(cRow,cCol)];
+727 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;MultRow(cRow,&#32;multFactor);
+728 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//std::cout&#32;&lt;&lt;&#32;&quot;Multiply&#32;row&#32;&quot;&#32;&lt;&lt;&#32;cRow&#32;&lt;&lt;&#32;&quot;&#32;by&#32;&quot;&#32;&lt;&lt;&#32;multFactor&#32;&lt;&lt;&#32;std::endl;</emphasis>
+729 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+730 
+731 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Consider&#32;the&#32;column.</emphasis>
+732 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;rowIndex=cRow+1;&#32;rowIndex&lt;m_nRows;&#32;++rowIndex)
+733 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+734 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;If&#32;the&#32;element&#32;is&#32;already&#32;zero,&#32;move&#32;on.</emphasis>
+735 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!CloseEnough(m_matrixData[Sub2Ind(rowIndex,&#32;cCol)],&#32;0.0))
+736 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+737 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Obtain&#32;the&#32;element&#32;to&#32;work&#32;with&#32;from&#32;the&#32;matrix&#32;diagonal.</emphasis>
+738 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;As&#32;we&#32;aim&#32;to&#32;set&#32;all&#32;the&#32;diagonal&#32;elements&#32;to&#32;one,&#32;this&#32;should</emphasis>
+739 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;always&#32;be&#32;valid&#32;for&#32;a&#32;matrix&#32;that&#32;can&#32;be&#32;inverted.</emphasis>
+740 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;rowOneIndex&#32;=&#32;cCol;
+741 
+742 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Get&#32;the&#32;value&#32;stored&#32;at&#32;the&#32;current&#32;element.</emphasis>
+743 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;currentElementValue&#32;=&#32;m_matrixData[Sub2Ind(rowIndex,&#32;cCol)];
+744 
+745 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Get&#32;the&#32;value&#32;stored&#32;at&#32;(rowOneIndex,&#32;cCol)</emphasis>
+746 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;rowOneValue&#32;=&#32;m_matrixData[Sub2Ind(rowOneIndex,&#32;cCol)];
+747 
+748 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;If&#32;this&#32;is&#32;equal&#32;to&#32;zero,&#32;then&#32;just&#32;move&#32;on.</emphasis>
+749 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!CloseEnough(rowOneValue,&#32;0.0))
+750 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+751 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;the&#32;correction&#32;factor.</emphasis>
+752 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;(required&#32;to&#32;reduce&#32;the&#32;element&#32;at&#32;(rowIndex,&#32;cCol)&#32;to&#32;zero).</emphasis>
+753 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;correctionFactor&#32;=&#32;-(currentElementValue&#32;/&#32;rowOneValue);
+754 
+755 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;MultAdd(rowIndex,&#32;rowOneIndex,&#32;correctionFactor);
+756 
+757 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//std::cout&#32;&lt;&lt;&#32;&quot;Multiply&#32;row&#32;&quot;&#32;&lt;&lt;&#32;rowOneIndex&#32;&lt;&lt;&#32;&quot;&#32;by&#32;&quot;&#32;&lt;&lt;&#32;correctionFactor&#32;&lt;&lt;</emphasis>
+758 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;&quot;&#32;and&#32;add&#32;to&#32;row&#32;&quot;&#32;&lt;&lt;&#32;rowIndex&#32;&lt;&lt;&#32;std::endl;</emphasis>
+759 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+760 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+761 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+762 
+763 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Consider&#32;the&#32;row.</emphasis>
+764 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;colIndex=cCol+1;&#32;colIndex&lt;originalNumCols;&#32;++colIndex)
+765 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+766 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;If&#32;the&#32;element&#32;is&#32;already&#32;zero,&#32;move&#32;on.</emphasis>
+767 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!CloseEnough(m_matrixData[Sub2Ind(cRow,&#32;colIndex)],&#32;0.0))
+768 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+769 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Obtain&#32;the&#32;element&#32;to&#32;work&#32;with&#32;from&#32;the&#32;matrix&#32;diagonal.</emphasis>
+770 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;As&#32;we&#32;aim&#32;to&#32;set&#32;all&#32;the&#32;diagonal&#32;elements&#32;to&#32;one,&#32;this&#32;should</emphasis>
+771 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;always&#32;be&#32;valid&#32;for&#32;a&#32;matrix&#32;that&#32;can&#32;be&#32;inverted.</emphasis>
+772 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;rowOneIndex&#32;=&#32;colIndex;
+773 
+774 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Get&#32;the&#32;value&#32;stored&#32;at&#32;the&#32;current&#32;element.</emphasis>
+775 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;currentElementValue&#32;=&#32;m_matrixData[Sub2Ind(cRow,&#32;colIndex)];
+776 
+777 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Get&#32;the&#32;value&#32;stored&#32;at&#32;(rowOneIndex,&#32;colIndex)</emphasis>
+778 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;rowOneValue&#32;=&#32;m_matrixData[Sub2Ind(rowOneIndex,&#32;colIndex)];
+779 
+780 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;If&#32;this&#32;is&#32;equal&#32;to&#32;zero,&#32;then&#32;just&#32;move&#32;on.</emphasis>
+781 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!CloseEnough(rowOneValue,&#32;0.0))
+782 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+783 
+784 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;the&#32;correction&#32;factor.</emphasis>
+785 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;(required&#32;to&#32;reduce&#32;the&#32;element&#32;at&#32;(cRow,&#32;colIndex)&#32;to&#32;zero).</emphasis>
+786 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;correctionFactor&#32;=&#32;-(currentElementValue&#32;/&#32;rowOneValue);
+787 
+788 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;To&#32;make&#32;this&#32;equal&#32;to&#32;zero,&#32;we&#32;need&#32;to&#32;add&#32;-currentElementValue&#32;multiplied&#32;by</emphasis>
+789 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;the&#32;row&#32;at&#32;rowOneIndex.</emphasis>
+790 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;MultAdd(cRow,&#32;rowOneIndex,&#32;correctionFactor);
+791 
+792 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//std::cout&#32;&lt;&lt;&#32;&quot;Multiply&#32;row&#32;&quot;&#32;&lt;&lt;&#32;rowOneIndex&#32;&lt;&lt;&#32;&quot;&#32;by&#32;&quot;&#32;&lt;&lt;&#32;correctionFactor&#32;&lt;&lt;</emphasis>
+793 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;&quot;&#32;and&#32;add&#32;to&#32;row&#32;&quot;&#32;&lt;&lt;&#32;cRow&#32;&lt;&lt;&#32;std::endl;</emphasis>
+794 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+795 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+796 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+797 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+798 
+799 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Separate&#32;the&#32;result&#32;into&#32;the&#32;left&#32;and&#32;right&#32;halves.</emphasis>
+800 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;leftHalf;
+801 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;rightHalf;
+802 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;Separate(leftHalf,&#32;rightHalf,&#32;originalNumCols);
+803 
+804 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;When&#32;the&#32;process&#32;is&#32;complete,&#32;the&#32;left&#32;half&#32;should&#32;be&#32;the&#32;identity&#32;matrix.</emphasis>
+805 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(leftHalf&#32;==&#32;identityMatrix)
+806 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+807 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Set&#32;completedFlag&#32;to&#32;true&#32;to&#32;indicate&#32;that&#32;the&#32;process&#32;has&#32;completed.</emphasis>
+808 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;completeFlag&#32;=&#32;<emphasis role="keyword">true</emphasis>;
+809 
+810 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Rebuild&#32;the&#32;matrix&#32;with&#32;just&#32;the&#32;right&#32;half,&#32;which&#32;now&#32;contains&#32;the&#32;result.</emphasis>
+811 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;m_nCols&#32;=&#32;originalNumCols;
+812 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;m_nElements&#32;=&#32;m_nRows&#32;*&#32;m_nCols;
+813 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>[]&#32;m_matrixData;
+814 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;m_matrixData&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;T[m_nElements];
+815 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;m_nElements;&#32;++i)
+816 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;m_matrixData[i]&#32;=&#32;rightHalf.m_matrixData[i];
+817 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+818 
+819 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Increment&#32;the&#32;counter.</emphasis>
+820 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__opengl_8h_1a619bc20e8198de3bd3f3d7fc34de66b2">count</link>++;
+821 &#32;&#32;&#32;&#32;}
+822 
+823 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Return&#32;whether&#32;the&#32;process&#32;succeeded&#32;or&#32;not.</emphasis>
+824 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;completeFlag;
+825 }
+826 
+827 <emphasis role="comment">/*&#32;**************************************************************************************************</emphasis>
+828 <emphasis role="comment">COMPUTE&#32;AND&#32;RETURN&#32;THE&#32;TRANSPOSE</emphasis>
+829 <emphasis role="comment">/*&#32;*************************************************************************************************/</emphasis>
+830 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+831 <link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;<link linkend="_classqb_matrix2_1a6235a35daf5fa20a9ebc7ed91d8a94a3">qbMatrix2&lt;T&gt;::Transpose</link>()<emphasis role="keyword">&#32;const</emphasis>
+832 <emphasis role="keyword"></emphasis>{
+833 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Form&#32;the&#32;output&#32;matrix.</emphasis>
+834 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Note&#32;that&#32;we&#32;reverse&#32;the&#32;order&#32;of&#32;rows&#32;and&#32;columns,&#32;as&#32;this&#32;will&#32;be&#32;the&#32;transpose.</emphasis>
+835 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;resultMatrix(m_nCols,&#32;m_nRows);
+836 
+837 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;loop&#32;through&#32;the&#32;elements&#32;and&#32;copy&#32;in&#32;the&#32;appropriate&#32;order.</emphasis>
+838 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;m_nRows;&#32;++i)
+839 &#32;&#32;&#32;&#32;{
+840 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j=0;&#32;j&lt;m_nCols;&#32;++j)
+841 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+842 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;resultMatrix.<link linkend="_classqb_matrix2_1a1c6693503483942d5a619a0cf470e8b5">SetElement</link>(j,&#32;i,&#32;this-&gt;GetElement(i,&#32;j));
+843 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+844 &#32;&#32;&#32;&#32;}
+845 
+846 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;resultMatrix;
+847 }
+848 
+849 <emphasis role="comment">/*&#32;**************************************************************************************************</emphasis>
+850 <emphasis role="comment">CONVERT&#32;TO&#32;ROW&#32;ECHELON&#32;FORM&#32;(USING&#32;GAUSSIAN&#32;ELIMINATION)</emphasis>
+851 <emphasis role="comment">/*&#32;*************************************************************************************************/</emphasis>
+852 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+853 <link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;<link linkend="_classqb_matrix2_1a803f108eff983ea5f97cc752c44c1da2">qbMatrix2&lt;T&gt;::RowEchelon</link>()
+854 {
+855 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;The&#32;current&#32;matrix&#32;must&#32;have&#32;at&#32;least&#32;as&#32;many&#32;columns&#32;as&#32;rows,&#32;but&#32;note&#32;that&#32;we&#32;don&apos;t</emphasis>
+856 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;actually&#32;require&#32;it&#32;to&#32;be&#32;square&#32;since&#32;we&#32;assume&#32;that&#32;the&#32;user&#32;may&#32;have&#32;combined&#32;a</emphasis>
+857 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;square&#32;matrix&#32;with&#32;a&#32;vector.&#32;They&#32;would&#32;do&#32;this,&#32;for&#32;example,&#32;if&#32;they&#32;were&#32;trying&#32;to</emphasis>
+858 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;solve&#32;a&#32;system&#32;of&#32;linear&#32;equations.&#32;*/</emphasis>
+859 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(m_nCols&#32;&lt;&#32;m_nRows)
+860 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">throw</emphasis>&#32;std::invalid_argument(<emphasis role="stringliteral">&quot;The&#32;matrix&#32;must&#32;have&#32;at&#32;least&#32;as&#32;many&#32;columns&#32;as&#32;rows.&quot;</emphasis>);
+861 
+862 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Make&#32;a&#32;copy&#32;of&#32;the&#32;matrix&#32;data&#32;before&#32;we&#32;start.&#32;We&#32;do&#32;this&#32;because&#32;the&#32;procedure&#32;below</emphasis>
+863 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;will&#32;make&#32;changes&#32;to&#32;the&#32;stored&#32;matrix&#32;data&#32;(it&#32;operates&#32;&apos;in&#32;place&apos;)&#32;and&#32;we&#32;don&apos;t&#32;want</emphasis>
+864 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this&#32;behaviour.&#32;Therefore&#32;we&#32;take&#32;a&#32;copy&#32;at&#32;the&#32;beginning&#32;and&#32;then&#32;we&#32;will&#32;replace&#32;the</emphasis>
+865 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;modified&#32;matrix&#32;data&#32;with&#32;this&#32;copied&#32;data&#32;at&#32;the&#32;end,&#32;thus&#32;preserving&#32;the&#32;original.&#32;*/</emphasis>
+866 &#32;&#32;&#32;&#32;T&#32;*tempMatrixData;
+867 &#32;&#32;&#32;&#32;tempMatrixData&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;T[m_nRows&#32;*&#32;m_nCols];
+868 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;(m_nRows*m_nCols);&#32;++i)
+869 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tempMatrixData[i]&#32;=&#32;m_matrixData[i];
+870 
+871 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Begin&#32;the&#32;main&#32;part&#32;of&#32;the&#32;process.</emphasis>
+872 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;cRow,&#32;cCol;
+873 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a76b486a23d5da07752f89495cdaedcf4">maxCount</link>&#32;=&#32;100;
+874 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl_8h_1a619bc20e8198de3bd3f3d7fc34de66b2">count</link>&#32;=&#32;0;
+875 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;completeFlag&#32;=&#32;<emphasis role="keyword">false</emphasis>;
+876 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;((!completeFlag)&#32;&amp;&amp;&#32;(<link linkend="__s_d_l__opengl_8h_1a619bc20e8198de3bd3f3d7fc34de66b2">count</link>&#32;&lt;&#32;<link linkend="__s_d_l__opengl__glext_8h_1a76b486a23d5da07752f89495cdaedcf4">maxCount</link>))
+877 &#32;&#32;&#32;&#32;{
+878 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;diagIndex=0;&#32;diagIndex&lt;m_nRows;&#32;++diagIndex)
+879 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+880 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Loop&#32;over&#32;the&#32;diagonal&#32;of&#32;the&#32;matrix&#32;and&#32;ensure&#32;all&#32;diagonal&#32;elements&#32;are&#32;equal&#32;to&#32;one.</emphasis>
+881 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cRow&#32;=&#32;diagIndex;
+882 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cCol&#32;=&#32;diagIndex;
+883 
+884 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Find&#32;the&#32;index&#32;of&#32;the&#32;maximum&#32;element&#32;in&#32;the&#32;current&#32;column.</emphasis>
+885 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;maxIndex&#32;=&#32;FindRowWithMaxElement(cCol,&#32;cRow);
+886 
+887 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;consider&#32;the&#32;column.</emphasis>
+888 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Our&#32;aim&#32;is&#32;to&#32;set&#32;all&#32;elements&#32;BELOW&#32;the&#32;diagonal&#32;to&#32;zero.</emphasis>
+889 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;rowIndex=cRow+1;&#32;rowIndex&lt;m_nRows;&#32;++rowIndex)
+890 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+891 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;If&#32;the&#32;element&#32;is&#32;already&#32;zero,&#32;move&#32;on.</emphasis>
+892 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!CloseEnough(m_matrixData[Sub2Ind(rowIndex,&#32;cCol)],&#32;0.0))
+893 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+894 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;rowOneIndex&#32;=&#32;cCol;
+895 
+896 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Get&#32;the&#32;value&#32;stored&#32;at&#32;the&#32;current&#32;element.</emphasis>
+897 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;currentElementValue&#32;=&#32;m_matrixData[Sub2Ind(rowIndex,&#32;cCol)];
+898 
+899 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Get&#32;the&#32;value&#32;stored&#32;at&#32;(rowOneIndex,&#32;cCol)</emphasis>
+900 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;rowOneValue&#32;=&#32;m_matrixData[Sub2Ind(rowOneIndex,&#32;cCol)];
+901 
+902 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;If&#32;this&#32;is&#32;equal&#32;to&#32;zero,&#32;then&#32;just&#32;move&#32;on.</emphasis>
+903 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!CloseEnough(rowOneValue,&#32;0.0))
+904 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+905 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;the&#32;correction&#32;factor.</emphasis>
+906 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;(required&#32;to&#32;reduce&#32;the&#32;element&#32;at&#32;(rowIndex,&#32;cCol)&#32;to&#32;zero).</emphasis>
+907 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;correctionFactor&#32;=&#32;-(currentElementValue&#32;/&#32;rowOneValue);
+908 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;MultAdd(rowIndex,&#32;rowOneIndex,&#32;correctionFactor);
+909 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+910 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+911 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+912 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+913 
+914 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Test&#32;whether&#32;we&#32;have&#32;achieved&#32;the&#32;desired&#32;result&#32;of&#32;converting&#32;the</emphasis>
+915 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;matrix&#32;into&#32;row-echelon&#32;form.&#32;*/</emphasis>
+916 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;completeFlag&#32;=&#32;this-&gt;IsRowEchelon();
+917 
+918 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Increment&#32;the&#32;counter.</emphasis>
+919 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__opengl_8h_1a619bc20e8198de3bd3f3d7fc34de66b2">count</link>++;
+920 &#32;&#32;&#32;&#32;}
+921 
+922 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Form&#32;the&#32;output&#32;matrix.</emphasis>
+923 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;outputMatrix(m_nRows,&#32;m_nCols,&#32;m_matrixData);
+924 
+925 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Restore&#32;the&#32;original&#32;matrix&#32;data&#32;from&#32;the&#32;copy.</emphasis>
+926 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;(m_nRows&#32;*&#32;m_nCols);&#32;++i)
+927 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;m_matrixData[i]&#32;=&#32;tempMatrixData[i];
+928 
+929 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Delete&#32;the&#32;copy.</emphasis>
+930 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>[]&#32;tempMatrixData;
+931 
+932 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;outputMatrix;
+933 }
+934 
+935 <emphasis role="comment">/*&#32;**************************************************************************************************</emphasis>
+936 <emphasis role="comment">COMPUTE&#32;THE&#32;RANK&#32;OF&#32;THE&#32;PROVIDED&#32;MATRIX</emphasis>
+937 <emphasis role="comment">/*&#32;*************************************************************************************************/</emphasis>
+938 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+939 <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_classqb_matrix2_1aa41b896d3d520de3096530845cbbc9b4">qbMatrix2&lt;T&gt;::Rank</link>()
+940 {
+941 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Convert&#32;the&#32;matrix&#32;to&#32;row-echelon&#32;form.</emphasis>
+942 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;matrixCopy&#32;=&#32;this-&gt;RowEchelon();
+943 
+944 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;If&#32;this&#32;didn&apos;t&#32;work,&#32;then&#32;we&#32;compute&#32;the&#32;rank&#32;by&#32;finding</emphasis>
+945 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;the&#32;largest&#32;non-zero&#32;sub-matrix&#32;with&#32;a&#32;non-zero&#32;determinant.</emphasis>
+946 <emphasis role="comment"></emphasis>
+947 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Note&#32;that&#32;this&#32;method&#32;is&#32;slower&#32;for&#32;large&#32;matrices&#32;and&#32;therefore</emphasis>
+948 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;it&#32;is&#32;better&#32;to&#32;use&#32;the&#32;RowEchelon&#32;method&#32;if&#32;possible.&#32;*/</emphasis>
+949 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numNonZeroRows&#32;=&#32;0;
+950 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!matrixCopy.<link linkend="_classqb_matrix2_1a44c85a2d4dcbd33b281ce417156d7431">IsRowEchelon</link>())
+951 &#32;&#32;&#32;&#32;{
+952 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Setup&#32;a&#32;std::vector&#32;to&#32;store&#32;the&#32;sub-matrices&#32;as&#32;we&#32;go.</emphasis>
+953 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::vector&lt;qbMatrix2&lt;T&gt;&gt;&#32;subMatrixVector;
+954 
+955 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Store&#32;the&#32;current&#32;matrix&#32;into&#32;the&#32;array&#32;first.</emphasis>
+956 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;subMatrixVector.push_back(*<emphasis role="keyword">this</emphasis>);
+957 
+958 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Loop&#32;through&#32;the&#32;subMatrixVector&#32;until&#32;either&#32;we&#32;have&#32;tested&#32;every</emphasis>
+959 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sub-matrix&#32;or&#32;the&#32;completeFlag&#32;is&#32;set.&#32;*/</emphasis>
+960 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;completeFlag&#32;=&#32;<emphasis role="keyword">false</emphasis>;
+961 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;subMatrixCount&#32;=&#32;0;
+962 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;((subMatrixCount&#32;&lt;&#32;subMatrixVector.size())&#32;&amp;&amp;&#32;(!completeFlag))
+963 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+964 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Extract&#32;the&#32;currentMatrix&#32;to&#32;work&#32;with.</emphasis>
+965 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;currentMatrix&#32;=&#32;subMatrixVector[subMatrixCount];
+966 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;subMatrixCount++;
+967 
+968 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Test&#32;if&#32;this&#32;matrix&#32;is&#32;non-zero.</emphasis>
+969 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(currentMatrix.<link linkend="_classqb_matrix2_1a6a9aab698ac6362495a4421f859b3658">IsNonZero</link>())
+970 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+971 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;If&#32;the&#32;determinant&#32;is&#32;non-zero,&#32;then&#32;we&#32;have&#32;our&#32;result.</emphasis>
+972 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;currentMatrixDet&#32;=&#32;currentMatrix.<link linkend="_classqb_matrix2_1aeebab890f8c38f112972ffbcaaba422f">Determinant</link>();
+973 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!CloseEnough(currentMatrixDet,&#32;0.0))
+974 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+975 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;completeFlag&#32;=&#32;<emphasis role="keyword">true</emphasis>;
+976 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;numNonZeroRows&#32;=&#32;currentMatrix.<link linkend="_classqb_matrix2_1a1626b647c5268a9e64f4651bcc4b8c6e">GetNumRows</link>();
+977 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+978 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+979 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+980 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Extract&#32;and&#32;store&#32;each&#32;sub-matrix&#32;(if&#32;larger&#32;than&#32;2x2).</emphasis>
+981 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;((currentMatrix.<link linkend="_classqb_matrix2_1a1626b647c5268a9e64f4651bcc4b8c6e">GetNumRows</link>()&#32;&gt;&#32;2)&#32;&amp;&amp;&#32;(currentMatrix.<link linkend="_classqb_matrix2_1ab20362d8fc58a4b8da0910f94c3de2c3">GetNumCols</link>()&#32;&gt;&#32;2))
+982 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+983 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;currentMatrix.<link linkend="_classqb_matrix2_1a1626b647c5268a9e64f4651bcc4b8c6e">GetNumRows</link>();&#32;++i)
+984 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+985 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j=0;&#32;j&lt;currentMatrix.<link linkend="_classqb_matrix2_1ab20362d8fc58a4b8da0910f94c3de2c3">GetNumCols</link>();&#32;++j)
+986 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+987 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Extract&#32;this&#32;sub-matrix&#32;and&#32;store.</emphasis>
+988 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;subMatrixVector.push_back(currentMatrix.<link linkend="_classqb_matrix2_1a1c913b15492558472b2e271f5a856f3b">FindSubMatrix</link>(i,j));
+989 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+990 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+991 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+992 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+993 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+994 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+995 &#32;&#32;&#32;&#32;}
+996 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+997 &#32;&#32;&#32;&#32;{
+998 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Converting&#32;to&#32;row&#32;echelon&#32;form&#32;did&#32;work,&#32;so&#32;we&#32;can&#32;simply</emphasis>
+999 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;count&#32;the&#32;number&#32;of&#32;non-zero&#32;rows&#32;to&#32;get&#32;the&#32;rank.&#32;*/</emphasis>
+1000 
+1001 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;If&#32;we&#32;get&#32;to&#32;here,&#32;then&#32;we&#32;can&#32;assume&#32;that&#32;the&#32;matrix&#32;is&#32;now</emphasis>
+1002 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;in&#32;row-echelon&#32;form&#32;and&#32;we&#32;can&#32;compute&#32;the&#32;rank&#32;quite&#32;easily</emphasis>
+1003 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;as&#32;simply&#32;the&#32;number&#32;of&#32;non-zero&#32;rows.&#32;*/</emphasis>
+1004 
+1005 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;nRows&#32;=&#32;matrixCopy.<link linkend="_classqb_matrix2_1a1626b647c5268a9e64f4651bcc4b8c6e">GetNumRows</link>();
+1006 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;nCols&#32;=&#32;matrixCopy.<link linkend="_classqb_matrix2_1ab20362d8fc58a4b8da0910f94c3de2c3">GetNumCols</link>();
+1007 
+1008 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Loop&#32;over&#32;each&#32;row&#32;and&#32;test&#32;whether&#32;it&#32;has&#32;at&#32;least&#32;one&#32;non-zero&#32;element.</emphasis>
+1009 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;nRows;&#32;++i)
+1010 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+1011 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Loop&#32;over&#32;the&#32;columns&#32;of&#32;this&#32;row.</emphasis>
+1012 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;colSum&#32;=&#32;0;
+1013 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j=0;&#32;j&lt;nCols;&#32;++j)
+1014 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+1015 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!CloseEnough(matrixCopy.<link linkend="_classqb_matrix2_1a62ddf209105dffe6133461b273a7309f">GetElement</link>(i,j),&#32;0.0))
+1016 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;colSum++;
+1017 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+1018 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;If&#32;colSum&#32;is&#32;greater&#32;than&#32;zero,&#32;then&#32;increment&#32;numNonZeroRows.</emphasis>
+1019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(colSum&#32;&gt;&#32;0)
+1020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;numNonZeroRows++;
+1021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+1022 
+1023 &#32;&#32;&#32;&#32;}
+1024 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;The&#32;rank&#32;of&#32;the&#32;matrix&#32;is&#32;simply&#32;the&#32;number&#32;of&#32;non-zero&#32;rows.</emphasis>
+1025 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;numNonZeroRows;
+1026 
+1027 }
+1028 
+1029 <emphasis role="comment">/*&#32;**************************************************************************************************</emphasis>
+1030 <emphasis role="comment">PRIVATE&#32;FUNCTIONS</emphasis>
+1031 <emphasis role="comment">/*&#32;*************************************************************************************************/</emphasis>
+1032 <emphasis role="comment">//&#32;Function&#32;to&#32;return&#32;the&#32;linear&#32;index&#32;corresponding&#32;to&#32;the&#32;supplied&#32;row&#32;and&#32;column&#32;values.</emphasis>
+1033 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+1034 <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;::Sub2Ind</link>(<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;col)<emphasis role="keyword">&#32;const</emphasis>
+1035 <emphasis role="keyword"></emphasis>{
+1036 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;((<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>&#32;&lt;&#32;m_nRows)&#32;&amp;&amp;&#32;(<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>&#32;&gt;=&#32;0)&#32;&amp;&amp;&#32;(col&#32;&lt;&#32;m_nCols)&#32;&amp;&amp;&#32;(col&#32;&gt;=&#32;0))
+1037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>&#32;*&#32;m_nCols)&#32;+&#32;col;
+1038 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+1039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+1040 }
+1041 
+1042 <emphasis role="comment">//&#32;Function&#32;to&#32;test&#32;whether&#32;the&#32;matrix&#32;is&#32;square.</emphasis>
+1043 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+1044 <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_classqb_matrix2_1ae3e42b917e3127cab56b7a48faff25c3">qbMatrix2&lt;T&gt;::IsSquare</link>()
+1045 {
+1046 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(m_nCols&#32;==&#32;m_nRows)
+1047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+1048 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+1049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+1050 }
+1051 
+1052 <emphasis role="comment">//&#32;Function&#32;to&#32;test&#32;whether&#32;the&#32;matrix&#32;is&#32;non-zero.</emphasis>
+1053 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+1054 <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_classqb_matrix2_1a6a9aab698ac6362495a4421f859b3658">qbMatrix2&lt;T&gt;::IsNonZero</link>()
+1055 {
+1056 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Loop&#32;over&#32;every&#32;element.</emphasis>
+1057 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numNonZero&#32;=&#32;0;
+1058 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;m_nElements;&#32;++i)
+1059 &#32;&#32;&#32;&#32;{
+1060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;If&#32;this&#32;element&#32;is&#32;close&#32;enough&#32;to&#32;zero,&#32;then</emphasis>
+1061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;increment&#32;our&#32;numNonZero&#32;counter.</emphasis>
+1062 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!CloseEnough(m_matrixData[i],&#32;0.0))
+1063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;numNonZero++;
+1064 &#32;&#32;&#32;&#32;}
+1065 
+1066 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;If&#32;the&#32;numNonZero&#32;counter&#32;is&#32;still&#32;equal&#32;to&#32;zero,&#32;then</emphasis>
+1067 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;the&#32;matrix&#32;must&#32;be&#32;all&#32;zeros,&#32;hence&#32;we&#32;return&#32;false.</emphasis>
+1068 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Otherwise&#32;we&#32;return&#32;true.&#32;*/</emphasis>
+1069 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(numNonZero&#32;!=&#32;0);
+1070 }
+1071 
+1072 <emphasis role="comment">//&#32;Function&#32;to&#32;test&#32;whether&#32;the&#32;matrix&#32;is&#32;in&#32;row-echelon&#32;form.</emphasis>
+1073 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+1074 <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_classqb_matrix2_1a44c85a2d4dcbd33b281ce417156d7431">qbMatrix2&lt;T&gt;::IsRowEchelon</link>()
+1075 {
+1076 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;We&#32;do&#32;this&#32;by&#32;testing&#32;that&#32;the&#32;sum&#32;of&#32;all&#32;the&#32;elements&#32;in&#32;the</emphasis>
+1077 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;lower&#32;triangular&#32;matrix&#32;is&#32;zero.&#32;*/</emphasis>
+1078 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Loop&#32;over&#32;each&#32;row,&#32;except&#32;the&#32;first&#32;one&#32;(which&#32;doesn&apos;t&#32;need&#32;to&#32;have&#32;any&#32;zero&#32;elements).</emphasis>
+1079 &#32;&#32;&#32;&#32;T&#32;cumulativeSum&#32;=&#32;<emphasis role="keyword">static_cast&lt;</emphasis>T<emphasis role="keyword">&gt;</emphasis>(0.0);
+1080 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=1;&#32;i&lt;m_nRows;&#32;++i)
+1081 &#32;&#32;&#32;&#32;{
+1082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Loop&#32;over&#32;the&#32;columns&#32;that&#32;correspond&#32;to&#32;the&#32;lower&#32;triangular</emphasis>
+1083 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;matrix&#32;according&#32;to&#32;the&#32;current&#32;row.&#32;*/</emphasis>
+1084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j=0;&#32;j&lt;i;&#32;++j)
+1085 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+1086 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Add&#32;this&#32;element&#32;to&#32;the&#32;cumulative&#32;sum.</emphasis>
+1087 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cumulativeSum&#32;+=&#32;m_matrixData[Sub2Ind(i,&#32;j)];
+1088 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+1089 &#32;&#32;&#32;&#32;}
+1090 
+1091 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;If&#32;the&#32;matrix&#32;is&#32;in&#32;row-echelon&#32;form,&#32;then&#32;cumulative&#32;sum&#32;should</emphasis>
+1092 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;still&#32;equal&#32;zero,&#32;otherwise&#32;the&#32;matrix&#32;cannot&#32;be&#32;in&#32;row-echelon&#32;form.&#32;*/</emphasis>
+1093 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;CloseEnough(cumulativeSum,&#32;0.0);
+1094 }
+1095 
+1096 <emphasis role="comment">//&#32;Function&#32;to&#32;test&#32;whether&#32;the&#32;matrix&#32;is&#32;symmetric.</emphasis>
+1097 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+1098 <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_classqb_matrix2_1a38c5e541fec532600806ac4fd8afecb2">qbMatrix2&lt;T&gt;::IsSymmetric</link>()
+1099 {
+1100 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;First&#32;test&#32;that&#32;the&#32;matrix&#32;is&#32;square,&#32;if&#32;it&#32;is</emphasis>
+1101 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;not,&#32;then&#32;it&#32;cannot&#32;by&#32;symmetric.&#32;*/</emphasis>
+1102 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!this-&gt;IsSquare())
+1103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+1104 
+1105 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Now&#32;test&#32;for&#32;symmetry&#32;about&#32;the&#32;diagonal.</emphasis>
+1106 &#32;&#32;&#32;&#32;T&#32;currentRowElement&#32;=&#32;<emphasis role="keyword">static_cast&lt;</emphasis>T<emphasis role="keyword">&gt;</emphasis>(0.0);
+1107 &#32;&#32;&#32;&#32;T&#32;currentColElement&#32;=&#32;<emphasis role="keyword">static_cast&lt;</emphasis>T<emphasis role="keyword">&gt;</emphasis>(0.0);
+1108 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;returnFlag&#32;=&#32;<emphasis role="keyword">true</emphasis>;
+1109 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;diagIndex&#32;=&#32;0;
+1110 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;((diagIndex&#32;&lt;&#32;m_nCols)&#32;&amp;&amp;&#32;returnFlag)
+1111 &#32;&#32;&#32;&#32;{
+1112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;rowIndex&#32;=&#32;diagIndex&#32;+&#32;1;
+1113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;((rowIndex&#32;&lt;&#32;m_nRows)&#32;&amp;&amp;&#32;returnFlag)
+1114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+1115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;currentRowElement&#32;=&#32;this-&gt;GetElement(rowIndex,&#32;diagIndex);
+1116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;currentColElement&#32;=&#32;this-&gt;GetElement(diagIndex,&#32;rowIndex);
+1117 
+1118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compare&#32;the&#32;row&#32;and&#32;column&#32;elements.</emphasis>
+1119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!CloseEnough(currentRowElement,&#32;currentColElement))
+1120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;returnFlag&#32;=&#32;<emphasis role="keyword">false</emphasis>;
+1121 
+1122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Increment&#32;row&#32;index.</emphasis>
+1123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rowIndex++;
+1124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+1125 
+1126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Increment&#32;diagIndex.</emphasis>
+1127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;diagIndex++;
+1128 
+1129 &#32;&#32;&#32;&#32;}
+1130 
+1131 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Return&#32;the&#32;result.</emphasis>
+1132 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;returnFlag;
+1133 
+1134 }
+1135 
+1136 <emphasis role="comment">//&#32;Function&#32;to&#32;swap&#32;rows&#32;i&#32;and&#32;j&#32;(in&#32;place).</emphasis>
+1137 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+1138 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;::SwapRow</link>(<emphasis role="keywordtype">int</emphasis>&#32;i,&#32;<emphasis role="keywordtype">int</emphasis>&#32;j)
+1139 {
+1140 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Store&#32;a&#32;tempory&#32;copy&#32;of&#32;row&#32;i.</emphasis>
+1141 &#32;&#32;&#32;&#32;T&#32;*tempRow&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;T[m_nCols];
+1142 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;k=0;&#32;k&lt;m_nCols;&#32;++k)
+1143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tempRow[k]&#32;=&#32;m_matrixData[Sub2Ind(i,k)];
+1144 
+1145 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Replace&#32;row&#32;i&#32;with&#32;row&#32;j.</emphasis>
+1146 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;k=0;&#32;k&lt;m_nCols;&#32;++k)
+1147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;m_matrixData[Sub2Ind(i,k)]&#32;=&#32;m_matrixData[Sub2Ind(j,k)];
+1148 
+1149 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Replace&#32;row&#32;k&#32;with&#32;the&#32;tempory&#32;copy&#32;of&#32;the&#32;original&#32;row&#32;i.</emphasis>
+1150 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;k=0;&#32;k&lt;m_nCols;&#32;++k)
+1151 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;m_matrixData[Sub2Ind(j,k)]&#32;=&#32;tempRow[k];
+1152 
+1153 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Tidy&#32;up&#32;after&#32;ourselves.</emphasis>
+1154 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>[]&#32;tempRow;
+1155 }
+1156 
+1157 <emphasis role="comment">//&#32;Function&#32;to&#32;add&#32;a&#32;multiple&#32;of&#32;row&#32;j&#32;to&#32;row&#32;i&#32;(in&#32;place).</emphasis>
+1158 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+1159 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;::MultAdd</link>(<emphasis role="keywordtype">int</emphasis>&#32;i,&#32;<emphasis role="keywordtype">int</emphasis>&#32;j,&#32;T&#32;multFactor)
+1160 {
+1161 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;k=0;&#32;k&lt;m_nCols;&#32;++k)
+1162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;m_matrixData[Sub2Ind(i,k)]&#32;+=&#32;(m_matrixData[Sub2Ind(j,k)]&#32;*&#32;multFactor);
+1163 }
+1164 
+1165 <emphasis role="comment">//&#32;Function&#32;to&#32;the&#32;find&#32;the&#32;row&#32;with&#32;the&#32;maximum&#32;element&#32;at&#32;the&#32;column&#32;given.</emphasis>
+1166 <emphasis role="comment">//&#32;Returns&#32;the&#32;row&#32;index.</emphasis>
+1167 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+1168 <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;::FindRowWithMaxElement</link>(<emphasis role="keywordtype">int</emphasis>&#32;colNumber,&#32;<emphasis role="keywordtype">int</emphasis>&#32;startingRow)
+1169 {
+1170 &#32;&#32;&#32;&#32;T&#32;tempValue&#32;=&#32;m_matrixData[Sub2Ind(startingRow,&#32;colNumber)];
+1171 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;rowIndex&#32;=&#32;startingRow;
+1172 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;k=startingRow+1;&#32;k&lt;m_nRows;&#32;++k)
+1173 &#32;&#32;&#32;&#32;{
+1174 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(fabs(m_matrixData[Sub2Ind(k,&#32;colNumber)])&#32;&gt;&#32;fabs(tempValue))
+1175 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+1176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rowIndex&#32;=&#32;k;
+1177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tempValue&#32;=&#32;m_matrixData[Sub2Ind(k,&#32;colNumber)];
+1178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+1179 &#32;&#32;&#32;&#32;}
+1180 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;rowIndex;
+1181 }
+1182 
+1183 <emphasis role="comment">//&#32;Function&#32;to&#32;multiply&#32;a&#32;row&#32;by&#32;the&#32;given&#32;value.</emphasis>
+1184 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+1185 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;::MultRow</link>(<emphasis role="keywordtype">int</emphasis>&#32;i,&#32;T&#32;multFactor)
+1186 {
+1187 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;k=0;&#32;k&lt;m_nCols;&#32;++k)
+1188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;m_matrixData[Sub2Ind(i,k)]&#32;*=&#32;multFactor;
+1189 }
+1190 
+1191 <emphasis role="comment">//&#32;A&#32;simple&#32;function&#32;to&#32;print&#32;a&#32;matrix&#32;to&#32;stdout.</emphasis>
+1192 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+1193 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classqb_matrix2_1a4bd6d0afe13739e2f7566cbd66b006e5">qbMatrix2&lt;T&gt;::PrintMatrix</link>()
+1194 {
+1195 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;nRows&#32;=&#32;this-&gt;GetNumRows();
+1196 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;nCols&#32;=&#32;this-&gt;GetNumCols();
+1197 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>&#32;=&#32;0;&#32;<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>&lt;nRows;&#32;++<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>)
+1198 &#32;&#32;&#32;&#32;{
+1199 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;col&#32;=&#32;0;&#32;col&lt;nCols;&#32;++col)
+1200 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+1201 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;std::fixed&#32;&lt;&lt;&#32;std::setprecision(3)&#32;&lt;&lt;&#32;this-&gt;GetElement(<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>,&#32;col)&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&#32;&quot;</emphasis>;
+1202 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+1203 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;std::endl;
+1204 &#32;&#32;&#32;&#32;}
+1205 }
+1206 
+1207 <emphasis role="comment">//&#32;A&#32;simple&#32;function&#32;to&#32;print&#32;a&#32;matrix&#32;to&#32;stdout,&#32;with&#32;specified&#32;precision.</emphasis>
+1208 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+1209 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classqb_matrix2_1a4bd6d0afe13739e2f7566cbd66b006e5">qbMatrix2&lt;T&gt;::PrintMatrix</link>(<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1ae6165268264b393d031f89082216499d">precision</link>)
+1210 {
+1211 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;nRows&#32;=&#32;this-&gt;GetNumRows();
+1212 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;nCols&#32;=&#32;this-&gt;GetNumCols();
+1213 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>&#32;=&#32;0;&#32;<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>&lt;nRows;&#32;++<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>)
+1214 &#32;&#32;&#32;&#32;{
+1215 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;col&#32;=&#32;0;&#32;col&lt;nCols;&#32;++col)
+1216 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+1217 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;std::fixed&#32;&lt;&lt;&#32;std::setprecision(<link linkend="__s_d_l__opengl__glext_8h_1ae6165268264b393d031f89082216499d">precision</link>)&#32;&lt;&lt;&#32;this-&gt;GetElement(<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>,&#32;col)&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&#32;&quot;</emphasis>;
+1218 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+1219 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;std::endl;
+1220 &#32;&#32;&#32;&#32;}
+1221 }
+1222 
+1223 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+1224 <emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;::CloseEnough</link>(T&#32;f1,&#32;T&#32;f2)
+1225 {
+1226 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;fabs(f1-f2)&#32;&lt;&#32;1e-9;
+1227 }
+1228 
+1229 <emphasis role="comment">//&#32;Function&#32;to&#32;find&#32;the&#32;sub-matrix&#32;for&#32;the&#32;given&#32;element.</emphasis>
+1230 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">class</emphasis>&#32;T&gt;
+1231 <link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;<link linkend="_classqb_matrix2_1a1c913b15492558472b2e271f5a856f3b">qbMatrix2&lt;T&gt;::FindSubMatrix</link>(<emphasis role="keywordtype">int</emphasis>&#32;rowNum,&#32;<emphasis role="keywordtype">int</emphasis>&#32;colNum)
+1232 {
+1233 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Create&#32;a&#32;new&#32;matrix&#32;to&#32;store&#32;the&#32;sub-matrix.</emphasis>
+1234 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Note&#32;that&#32;this&#32;is&#32;one&#32;row&#32;and&#32;one&#32;column&#32;smaller&#32;than&#32;the&#32;original.</emphasis>
+1235 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;subMatrix(m_nRows-1,&#32;m_nCols-1);
+1236 
+1237 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Loop&#32;over&#32;the&#32;elements&#32;of&#32;the&#32;existing&#32;matrix&#32;and&#32;copy&#32;to&#32;sub-matrix&#32;as&#32;appropriate.</emphasis>
+1238 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl_8h_1a619bc20e8198de3bd3f3d7fc34de66b2">count</link>&#32;=&#32;0;
+1239 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;m_nRows;&#32;++i)
+1240 &#32;&#32;&#32;&#32;{
+1241 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j=0;&#32;j&lt;m_nCols;&#32;++j)
+1242 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+1243 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;If&#32;i&#32;or&#32;j&#32;correspond&#32;to&#32;rowNum&#32;or&#32;colNum,&#32;then&#32;ignore&#32;this&#32;element.</emphasis>
+1244 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;((i&#32;!=&#32;rowNum)&#32;&amp;&amp;&#32;(j&#32;!=&#32;colNum))
+1245 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+1246 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;subMatrix.m_matrixData[<link linkend="__s_d_l__opengl_8h_1a619bc20e8198de3bd3f3d7fc34de66b2">count</link>]&#32;=&#32;this-&gt;GetElement(i,j);
+1247 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__opengl_8h_1a619bc20e8198de3bd3f3d7fc34de66b2">count</link>++;
+1248 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+1249 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+1250 &#32;&#32;&#32;&#32;}
+1251 
+1252 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;subMatrix;
+1253 }
+1254 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

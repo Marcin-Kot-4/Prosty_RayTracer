@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="md__d___ray_tracing_docs__r_e_a_d_m_e_cmake" kind="page">
+    <compoundname>md_D__RayTracing_docs_README_cmake</compoundname>
+    <title>CMake</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>(www.cmake.org)</para>
+<para>SDL&apos;s build system was traditionally based on autotools. Over time, this approach has suffered from several issues across the different supported platforms. To solve these problems, a new build system based on CMake is under development. It works in parallel to the legacy system, so users can experiment with it without complication. While still experimental, the build system should be usable on the following platforms:</para>
+<para><itemizedlist>
+<listitem><para>FreeBSD</para>
+</listitem><listitem><para>Linux</para>
+</listitem><listitem><para>VS.NET 2010</para>
+</listitem><listitem><para>MinGW and Msys</para>
+</listitem><listitem><para>macOS, iOS, and tvOS, with support for XCode</para>
+</listitem></itemizedlist>
+</para>
+<para><hruler/>
+ </para>
+<sect1 id="md__d___ray_tracing_docs__r_e_a_d_m_e_cmake_1autotoc_md20">
+<title>Usage</title>
+<para>Assuming the source for SDL is located at ~/sdl <verbatim>cd ~
+mkdir build
+cd build
+cmake ../sdl
+</verbatim> This will build the static and dynamic versions of SDL in the ~/build directory.</para>
+<para><hruler/>
+ </para>
+</sect1>
+<sect1 id="md__d___ray_tracing_docs__r_e_a_d_m_e_cmake_1autotoc_md22">
+<title>Usage, iOS/tvOS</title>
+<para>CMake 3.14+ natively includes support for iOS and tvOS. SDL binaries may be built using Xcode or Make, possibly among other build-systems.</para>
+<para>When using a recent version of CMake (3.14+), it should be possible to:</para>
+<para><itemizedlist>
+<listitem><para>build SDL for iOS, both static and dynamic</para>
+</listitem><listitem><para>build SDL test apps (as iOS/tvOS .app bundles)</para>
+</listitem><listitem><para>generate a working SDL_config.h for iOS (using SDL_config.h.cmake as a basis)</para>
+</listitem></itemizedlist>
+</para>
+<para>To use, set the following CMake variables when running CMake&apos;s configuration stage:</para>
+<para><itemizedlist>
+<listitem><para><computeroutput>CMAKE_SYSTEM_NAME=&lt;OS&gt;</computeroutput> (either <computeroutput>iOS</computeroutput> or <computeroutput>tvOS</computeroutput>)</para>
+</listitem><listitem><para><computeroutput>CMAKE_OSX_SYSROOT=&lt;SDK&gt;</computeroutput> (examples: <computeroutput>iphoneos</computeroutput>, <computeroutput>iphonesimulator</computeroutput>, <computeroutput>iphoneos12.4</computeroutput>, <computeroutput>/full/path/to/iPhoneOS.sdk</computeroutput>, <computeroutput>appletvos</computeroutput>, <computeroutput>appletvsimulator</computeroutput>, <computeroutput>appletvos12.4</computeroutput>, <computeroutput>/full/path/to/AppleTVOS.sdk</computeroutput>, etc.)</para>
+</listitem><listitem><para><computeroutput>CMAKE_OSX_ARCHITECTURES=&lt;semicolon-separated list of CPU architectures&gt;</computeroutput> (example: &quot;arm64;armv7s;x86_64&quot;)</para>
+</listitem></itemizedlist>
+</para>
+<sect3 id="md__d___ray_tracing_docs__r_e_a_d_m_e_cmake_1autotoc_md23">
+<title>Examples (for iOS/tvOS):</title>
+<para><itemizedlist>
+<listitem><para>for iOS-Simulator, using the latest, installed SDK:</para>
+<para><computeroutput>cmake ~/sdl -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_SYSROOT=iphonesimulator -DCMAKE_OSX_ARCHITECTURES=x86_64</computeroutput></para>
+</listitem><listitem><para>for iOS-Device, using the latest, installed SDK, 64-bit only</para>
+<para><computeroutput>cmake ~/sdl -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_SYSROOT=iphoneos -DCMAKE_OSX_ARCHITECTURES=arm64</computeroutput></para>
+</listitem><listitem><para>for iOS-Device, using the latest, installed SDK, mixed 32/64 bit</para>
+<para><computeroutput>cmake ~/sdl -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_SYSROOT=iphoneos -DCMAKE_OSX_ARCHITECTURES=&quot;arm64;armv7s&quot;</computeroutput></para>
+</listitem><listitem><para>for iOS-Device, using a specific SDK revision (iOS 12.4, in this example):</para>
+<para><computeroutput>cmake ~/sdl -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_SYSROOT=iphoneos12.4 -DCMAKE_OSX_ARCHITECTURES=arm64</computeroutput></para>
+</listitem><listitem><para>for iOS-Simulator, using the latest, installed SDK, and building SDL test apps (as .app bundles):</para>
+<para><computeroutput>cmake ~/sdl -DSDL_TEST=1 -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_SYSROOT=iphonesimulator -DCMAKE_OSX_ARCHITECTURES=x86_64</computeroutput></para>
+</listitem><listitem><para>for tvOS-Simulator, using the latest, installed SDK:</para>
+<para><computeroutput>cmake ~/sdl -DCMAKE_SYSTEM_NAME=tvOS -DCMAKE_OSX_SYSROOT=appletvsimulator -DCMAKE_OSX_ARCHITECTURES=x86_64</computeroutput></para>
+</listitem><listitem><para>for tvOS-Device, using the latest, installed SDK:</para>
+<para><computeroutput>cmake ~/sdl -DCMAKE_SYSTEM_NAME=tvOS -DCMAKE_OSX_SYSROOT=appletvos -DCMAKE_OSX_ARCHITECTURES=arm64</computeroutput> </para>
+</listitem></itemizedlist>
+</para>
+</sect3>
+</sect1>
+    </detaileddescription>
+    <location file="D:/RayTracing/docs/README-cmake.md"/>
+  </compounddef>
+</doxygen>

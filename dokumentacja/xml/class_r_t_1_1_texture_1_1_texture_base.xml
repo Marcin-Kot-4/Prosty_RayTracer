@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="class_r_t_1_1_texture_1_1_texture_base" kind="class" language="C++" prot="public">
+    <compoundname>RT::Texture::TextureBase</compoundname>
+    <derivedcompoundref refid="class_r_t_1_1_texture_1_1_checker" prot="public" virt="non-virtual">RT::Texture::Checker</derivedcompoundref>
+    <derivedcompoundref refid="class_r_t_1_1_texture_1_1_flat" prot="public" virt="non-virtual">RT::Texture::Flat</derivedcompoundref>
+    <derivedcompoundref refid="class_r_t_1_1_texture_1_1_image" prot="public" virt="non-virtual">RT::Texture::Image</derivedcompoundref>
+    <includes refid="texturebase_8h" local="no">texturebase.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_r_t_1_1_texture_1_1_texture_base_1a827e5bbf802130272b880beccb7c070a" prot="private" static="no" mutable="no">
+        <type><ref refid="classqb_matrix2" kindref="compound">qbMatrix2</ref>&lt; double &gt;</type>
+        <definition>qbMatrix2&lt;double&gt; RT::Texture::TextureBase::m_transformMatrix</definition>
+        <argsstring></argsstring>
+        <name>m_transformMatrix</name>
+        <qualifiedname>RT::Texture::TextureBase::m_transformMatrix</qualifiedname>
+        <initializer>{3, 3, std::vector&lt;double&gt;{1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0}}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Textures/texturebase.h" line="39" column="23" bodyfile="D:/RayTracing/RayTrace/Textures/texturebase.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_r_t_1_1_texture_1_1_texture_base_1ae046182c6617ac3b962a1c452b398277" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RT::Texture::TextureBase::TextureBase</definition>
+        <argsstring>()</argsstring>
+        <name>TextureBase</name>
+        <qualifiedname>RT::Texture::TextureBase::TextureBase</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Textures/texturebase.h" line="18" column="13" bodyfile="D:/RayTracing/RayTrace/Textures/texturebase.cpp" bodystart="5" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_texture_1_1_texture_base_1a560385094ebf77878884bdeddf37bf81" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>RT::Texture::TextureBase::~TextureBase</definition>
+        <argsstring>()</argsstring>
+        <name>~TextureBase</name>
+        <qualifiedname>RT::Texture::TextureBase::~TextureBase</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Textures/texturebase.h" line="20" column="21" bodyfile="D:/RayTracing/RayTrace/Textures/texturebase.cpp" bodystart="10" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_texture_1_1_texture_base_1ac25b90bf7dac218a2840c998ffbd5512" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt;</type>
+        <definition>qbVector&lt; double &gt; RT::Texture::TextureBase::GetColor</definition>
+        <argsstring>(const qbVector&lt; double &gt; &amp;uvCoords)</argsstring>
+        <name>GetColor</name>
+        <qualifiedname>RT::Texture::TextureBase::GetColor</qualifiedname>
+        <reimplementedby refid="class_r_t_1_1_texture_1_1_checker_1a9faa9a7f9e46523dd2ba34d63207ee2d">GetColor</reimplementedby>
+        <reimplementedby refid="class_r_t_1_1_texture_1_1_flat_1a322a9a935bb8a5699caf544ed0fabd30">GetColor</reimplementedby>
+        <reimplementedby refid="class_r_t_1_1_texture_1_1_image_1a5a1347445b86ee91c4393488da5b50d0">GetColor</reimplementedby>
+        <param>
+          <type>const <ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>uvCoords</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Textures/texturebase.h" line="24" column="30" bodyfile="D:/RayTracing/RayTrace/Textures/texturebase.cpp" bodystart="15" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_texture_1_1_texture_base_1a55a425e9fce5762c95ecb59728b1b870" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        <definition>void RT::Texture::TextureBase::SetTransform</definition>
+        <argsstring>(const qbVector&lt; double &gt; &amp;translation, const double &amp;rotation, const qbVector&lt; double &gt; &amp;scale)</argsstring>
+        <name>SetTransform</name>
+        <qualifiedname>RT::Texture::TextureBase::SetTransform</qualifiedname>
+        <param>
+          <type>const <ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>translation</declname>
+        </param>
+        <param>
+          <type>const double &amp;</type>
+          <declname>rotation</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Textures/texturebase.h" line="27" column="18" bodyfile="D:/RayTracing/RayTrace/Textures/texturebase.cpp" bodystart="24" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_texture_1_1_texture_base_1a97805aaa693a5caf219f30b0ee53b530" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt;</type>
+        <definition>qbVector&lt; double &gt; RT::Texture::TextureBase::ApplyTransform</definition>
+        <argsstring>(const qbVector&lt; double &gt; &amp;inputVector)</argsstring>
+        <name>ApplyTransform</name>
+        <qualifiedname>RT::Texture::TextureBase::ApplyTransform</qualifiedname>
+        <param>
+          <type>const <ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>inputVector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Textures/texturebase.h" line="33" column="22" bodyfile="D:/RayTracing/RayTrace/Textures/texturebase.cpp" bodystart="56" bodyend="71"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_r_t_1_1_texture_1_1_texture_base_1a909e3180400fc19655abab504790cb06" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt;</type>
+        <definition>qbVector&lt; double &gt; RT::Texture::TextureBase::BlendColors</definition>
+        <argsstring>(const std::vector&lt; qbVector&lt; double &gt; &gt; &amp;inputColorList)</argsstring>
+        <name>BlendColors</name>
+        <qualifiedname>RT::Texture::TextureBase::BlendColors</qualifiedname>
+        <param>
+          <type>const std::vector&lt; <ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &gt; &amp;</type>
+          <declname>inputColorList</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Textures/texturebase.h" line="30" column="29" bodyfile="D:/RayTracing/RayTrace/Textures/texturebase.cpp" bodystart="47" bodyend="53"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>RT::Texture::Checker</label>
+        <link refid="class_r_t_1_1_texture_1_1_checker"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>RT::Texture::Flat</label>
+        <link refid="class_r_t_1_1_texture_1_1_flat"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>RT::Texture::Image</label>
+        <link refid="class_r_t_1_1_texture_1_1_image"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>RT::Texture::TextureBase</label>
+        <link refid="class_r_t_1_1_texture_1_1_texture_base"/>
+      </node>
+    </inheritancegraph>
+    <location file="D:/RayTracing/RayTrace/Textures/texturebase.h" line="14" column="9" bodyfile="D:/RayTracing/RayTrace/Textures/texturebase.h" bodystart="15" bodyend="41"/>
+    <listofallmembers>
+      <member refid="class_r_t_1_1_texture_1_1_texture_base_1a97805aaa693a5caf219f30b0ee53b530" prot="public" virt="non-virtual"><scope>RT::Texture::TextureBase</scope><name>ApplyTransform</name></member>
+      <member refid="class_r_t_1_1_texture_1_1_texture_base_1a909e3180400fc19655abab504790cb06" prot="public" virt="non-virtual"><scope>RT::Texture::TextureBase</scope><name>BlendColors</name></member>
+      <member refid="class_r_t_1_1_texture_1_1_texture_base_1ac25b90bf7dac218a2840c998ffbd5512" prot="public" virt="virtual"><scope>RT::Texture::TextureBase</scope><name>GetColor</name></member>
+      <member refid="class_r_t_1_1_texture_1_1_texture_base_1a827e5bbf802130272b880beccb7c070a" prot="private" virt="non-virtual"><scope>RT::Texture::TextureBase</scope><name>m_transformMatrix</name></member>
+      <member refid="class_r_t_1_1_texture_1_1_texture_base_1a55a425e9fce5762c95ecb59728b1b870" prot="public" virt="non-virtual"><scope>RT::Texture::TextureBase</scope><name>SetTransform</name></member>
+      <member refid="class_r_t_1_1_texture_1_1_texture_base_1ae046182c6617ac3b962a1c452b398277" prot="public" virt="non-virtual"><scope>RT::Texture::TextureBase</scope><name>TextureBase</name></member>
+      <member refid="class_r_t_1_1_texture_1_1_texture_base_1a560385094ebf77878884bdeddf37bf81" prot="public" virt="virtual"><scope>RT::Texture::TextureBase</scope><name>~TextureBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

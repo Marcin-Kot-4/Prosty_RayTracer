@@ -1,0 +1,86 @@
+.TH "D:/RayTracing/include/SDL_power.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_power.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SDL_stdinc\&.h'\fP
+.br
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSDL_PowerState\fP { \fBSDL_POWERSTATE_UNKNOWN\fP, \fBSDL_POWERSTATE_ON_BATTERY\fP, \fBSDL_POWERSTATE_NO_BATTERY\fP, \fBSDL_POWERSTATE_CHARGING\fP, \fBSDL_POWERSTATE_CHARGED\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_PowerState\fP \fBSDLCALL\fP \fBSDL_GetPowerInfo\fP (int *secs, int *pct)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Header for the SDL power management routines\&. 
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBSDL_PowerState\fP"
+The basic state for the system's power supply\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISDL_POWERSTATE_UNKNOWN \fP\fP
+cannot determine power status 
+.TP
+\fB\fISDL_POWERSTATE_ON_BATTERY \fP\fP
+Not plugged in, running on the battery 
+.TP
+\fB\fISDL_POWERSTATE_NO_BATTERY \fP\fP
+Plugged in, no battery available 
+.TP
+\fB\fISDL_POWERSTATE_CHARGING \fP\fP
+Plugged in, charging battery 
+.TP
+\fB\fISDL_POWERSTATE_CHARGED \fP\fP
+Plugged in, battery charged 
+.SH "Function Documentation"
+.PP 
+.SS "\fBDECLSPEC\fP \fBSDL_PowerState\fP \fBSDLCALL\fP SDL_GetPowerInfo (int * secs, int * pct)"
+Get the current power supply details\&.
+.PP
+You should never take a battery status as absolute truth\&. Batteries (especially failing batteries) are delicate hardware, and the values reported here are best estimates based on what that hardware reports\&. It's not uncommon for older batteries to lose stored power much faster than it reports, or completely drain when reporting it has 20 percent left, etc\&.
+.PP
+Battery status can change at any time; if you are concerned with power state, you should call this function frequently, and perhaps ignore changes until they seem to be stable for a few seconds\&.
+.PP
+It's possible a platform can only report battery percentage or time left but not both\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIsecs\fP seconds of battery life left, you can pass a NULL here if you don't care, will return -1 if we can't determine a value, or we're not running on a battery 
+.br
+\fIpct\fP percentage of battery life left, between 0 and 100, you can pass a NULL here if you don't care, will return -1 if we can't determine a value, or we're not running on a battery 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+an SDL_PowerState enum representing the current battery state\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

@@ -1,0 +1,49 @@
+.TH "SDL_ControllerSensorEvent" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SDL_ControllerSensorEvent \- Game controller sensor event structure (event\&.csensor\&.*)  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SDL_events\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUint32\fP \fBtype\fP"
+.br
+.ti -1c
+.RI "\fBUint32\fP \fBtimestamp\fP"
+.br
+.ti -1c
+.RI "\fBSDL_JoystickID\fP \fBwhich\fP"
+.br
+.ti -1c
+.RI "\fBSint32\fP \fBsensor\fP"
+.br
+.ti -1c
+.RI "float \fBdata\fP [3]"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Game controller sensor event structure (event\&.csensor\&.*) 
+.SH "Member Data Documentation"
+.PP 
+.SS "float SDL_ControllerSensorEvent::data[3]"
+Up to 3 values from the sensor, as defined in SDL_sensor\&.h 
+.SS "\fBSint32\fP SDL_ControllerSensorEvent::sensor"
+The type of the sensor, one of the values of \fBSDL_SensorType\fP 
+.SS "\fBUint32\fP SDL_ControllerSensorEvent::timestamp"
+In milliseconds, populated using \fBSDL_GetTicks()\fP 
+.SS "\fBUint32\fP SDL_ControllerSensorEvent::type"
+\fBSDL_CONTROLLERSENSORUPDATE\fP 
+.SS "\fBSDL_JoystickID\fP SDL_ControllerSensorEvent::which"
+The joystick instance id 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

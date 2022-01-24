@@ -1,0 +1,64 @@
+.TH "SDL_DisplayEvent" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SDL_DisplayEvent \- Display state change event data (event\&.display\&.*)  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SDL_events\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUint32\fP \fBtype\fP"
+.br
+.ti -1c
+.RI "\fBUint32\fP \fBtimestamp\fP"
+.br
+.ti -1c
+.RI "\fBUint32\fP \fBdisplay\fP"
+.br
+.ti -1c
+.RI "\fBUint8\fP \fBevent\fP"
+.br
+.ti -1c
+.RI "\fBUint8\fP \fBpadding1\fP"
+.br
+.ti -1c
+.RI "\fBUint8\fP \fBpadding2\fP"
+.br
+.ti -1c
+.RI "\fBUint8\fP \fBpadding3\fP"
+.br
+.ti -1c
+.RI "\fBSint32\fP \fBdata1\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Display state change event data (event\&.display\&.*) 
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBSint32\fP SDL_DisplayEvent::data1"
+event dependent data 
+.SS "\fBUint32\fP SDL_DisplayEvent::display"
+The associated display index 
+.SS "\fBUint8\fP SDL_DisplayEvent::event"
+\fBSDL_DisplayEventID\fP 
+.SS "\fBUint8\fP SDL_DisplayEvent::padding1"
+
+.SS "\fBUint8\fP SDL_DisplayEvent::padding2"
+
+.SS "\fBUint8\fP SDL_DisplayEvent::padding3"
+
+.SS "\fBUint32\fP SDL_DisplayEvent::timestamp"
+In milliseconds, populated using \fBSDL_GetTicks()\fP 
+.SS "\fBUint32\fP SDL_DisplayEvent::type"
+\fBSDL_DISPLAYEVENT\fP 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

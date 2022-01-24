@@ -1,0 +1,288 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e-ios_8md" kind="file" language="Markdown">
+    <compoundname>README-ios.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">iOS</highlight></codeline>
+<codeline><highlight class="normal">======</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Building<sp/>the<sp/>Simple<sp/>DirectMedia<sp/>Layer<sp/>for<sp/>iOS<sp/>5.1+</highlight></codeline>
+<codeline><highlight class="normal">==============================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Requirements:<sp/>Mac<sp/>OS<sp/>X<sp/>10.8<sp/>or<sp/>later<sp/>and<sp/>the<sp/>iOS<sp/>7+<sp/>SDK.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Instructions:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>Open<sp/>SDL.xcodeproj<sp/>(located<sp/>in<sp/>Xcode/SDL)<sp/>in<sp/>Xcode.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Select<sp/>your<sp/>desired<sp/>target,<sp/>and<sp/>hit<sp/>build.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Using<sp/>the<sp/>Simple<sp/>DirectMedia<sp/>Layer<sp/>for<sp/>iOS</highlight></codeline>
+<codeline><highlight class="normal">==============================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>Run<sp/>Xcode<sp/>and<sp/>create<sp/>a<sp/>new<sp/>project<sp/>using<sp/>the<sp/>iOS<sp/>Game<sp/>template,<sp/>selecting<sp/>the<sp/>Objective<sp/>C<sp/>language<sp/>and<sp/>Metal<sp/>game<sp/>technology.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>In<sp/>the<sp/>main<sp/>view,<sp/>delete<sp/>all<sp/>files<sp/>except<sp/>for<sp/>Assets<sp/>and<sp/>LaunchScreen</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Right<sp/>click<sp/>the<sp/>project<sp/>in<sp/>the<sp/>main<sp/>view,<sp/>select<sp/>&quot;Add<sp/>Files...&quot;,<sp/>and<sp/>add<sp/>the<sp/>SDL<sp/>project,<sp/>Xcode/SDL/SDL.xcodeproj</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>Select<sp/>the<sp/>project<sp/>in<sp/>the<sp/>main<sp/>view,<sp/>go<sp/>to<sp/>the<sp/>&quot;Info&quot;<sp/>tab<sp/>and<sp/>under<sp/>&quot;Custom<sp/>iOS<sp/>Target<sp/>Properties&quot;<sp/>remove<sp/>the<sp/>line<sp/>&quot;Main<sp/>storyboard<sp/>file<sp/>base<sp/>name&quot;</highlight></codeline>
+<codeline><highlight class="normal">5.<sp/>Select<sp/>the<sp/>project<sp/>in<sp/>the<sp/>main<sp/>view,<sp/>go<sp/>to<sp/>the<sp/>&quot;Build<sp/>Settings&quot;<sp/>tab,<sp/>select<sp/>&quot;All&quot;,<sp/>and<sp/>edit<sp/>&quot;Header<sp/>Search<sp/>Path&quot;<sp/>and<sp/>drag<sp/>over<sp/>the<sp/>SDL<sp/>&quot;Public<sp/>Headers&quot;<sp/>folder<sp/>from<sp/>the<sp/>left</highlight></codeline>
+<codeline><highlight class="normal">6.<sp/>Select<sp/>the<sp/>project<sp/>in<sp/>the<sp/>main<sp/>view,<sp/>go<sp/>to<sp/>the<sp/>&quot;Build<sp/>Phases&quot;<sp/>tab,<sp/>select<sp/>&quot;Link<sp/>Binary<sp/>With<sp/>Libraries&quot;,<sp/>and<sp/>add<sp/>SDL2.framework<sp/>from<sp/>&quot;Framework-iOS&quot;</highlight></codeline>
+<codeline><highlight class="normal">7.<sp/>Select<sp/>the<sp/>project<sp/>in<sp/>the<sp/>main<sp/>view,<sp/>go<sp/>to<sp/>the<sp/>&quot;General&quot;<sp/>tab,<sp/>scroll<sp/>down<sp/>to<sp/>&quot;Frameworks,<sp/>Libraries,<sp/>and<sp/>Embedded<sp/>Content&quot;,<sp/>and<sp/>select<sp/>&quot;Embed<sp/>&amp;<sp/>Sign&quot;<sp/>for<sp/>the<sp/>SDL<sp/>library.</highlight></codeline>
+<codeline><highlight class="normal">8.<sp/>In<sp/>the<sp/>main<sp/>view,<sp/>expand<sp/>SDL<sp/>-&gt;<sp/>Library<sp/>Source<sp/>-&gt;<sp/>main<sp/>-&gt;<sp/>uikit<sp/>and<sp/>drag<sp/>SDL_uikit_main.c<sp/>into<sp/>your<sp/>game<sp/>files</highlight></codeline>
+<codeline><highlight class="normal">9.<sp/>Add<sp/>the<sp/>source<sp/>files<sp/>that<sp/>you<sp/>would<sp/>normally<sp/>have<sp/>for<sp/>an<sp/>SDL<sp/>program,<sp/>making<sp/>sure<sp/>to<sp/>have<sp/>#include<sp/>&quot;SDL.h&quot;<sp/>at<sp/>the<sp/>top<sp/>of<sp/>the<sp/>file<sp/>containing<sp/>your<sp/>main()<sp/>function.</highlight></codeline>
+<codeline><highlight class="normal">10.<sp/>Add<sp/>any<sp/>assets<sp/>that<sp/>your<sp/>application<sp/>needs.</highlight></codeline>
+<codeline><highlight class="normal">11.<sp/>Enjoy!</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">TODO:<sp/>Add<sp/>information<sp/>regarding<sp/>App<sp/>Store<sp/>requirements<sp/>such<sp/>as<sp/>icons,<sp/>etc.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Notes<sp/>--<sp/>Retina<sp/>/<sp/>High-DPI<sp/>and<sp/>window<sp/>sizes</highlight></codeline>
+<codeline><highlight class="normal">==============================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Window<sp/>and<sp/>display<sp/>mode<sp/>sizes<sp/>in<sp/>SDL<sp/>are<sp/>in<sp/>&quot;screen<sp/>coordinates&quot;<sp/>(or<sp/>&quot;points&quot;,</highlight></codeline>
+<codeline><highlight class="normal">in<sp/>Apple&apos;s<sp/>terminology)<sp/>rather<sp/>than<sp/>in<sp/>pixels.<sp/>On<sp/>iOS<sp/>this<sp/>means<sp/>that<sp/>a<sp/>window</highlight></codeline>
+<codeline><highlight class="normal">created<sp/>on<sp/>an<sp/>iPhone<sp/>6<sp/>will<sp/>have<sp/>a<sp/>size<sp/>in<sp/>screen<sp/>coordinates<sp/>of<sp/>375<sp/>x<sp/>667,</highlight></codeline>
+<codeline><highlight class="normal">rather<sp/>than<sp/>a<sp/>size<sp/>in<sp/>pixels<sp/>of<sp/>750<sp/>x<sp/>1334.<sp/>All<sp/>iOS<sp/>apps<sp/>are<sp/>expected<sp/>to</highlight></codeline>
+<codeline><highlight class="normal">size<sp/>their<sp/>content<sp/>based<sp/>on<sp/>screen<sp/>coordinates<sp/>/<sp/>points<sp/>rather<sp/>than<sp/>pixels,</highlight></codeline>
+<codeline><highlight class="normal">as<sp/>this<sp/>allows<sp/>different<sp/>iOS<sp/>devices<sp/>to<sp/>have<sp/>different<sp/>pixel<sp/>densities</highlight></codeline>
+<codeline><highlight class="normal">(Retina<sp/>versus<sp/>non-Retina<sp/>screens,<sp/>etc.)<sp/>without<sp/>apps<sp/>caring<sp/>too<sp/>much.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">By<sp/>default<sp/>SDL<sp/>will<sp/>not<sp/>use<sp/>the<sp/>full<sp/>pixel<sp/>density<sp/>of<sp/>the<sp/>screen<sp/>on</highlight></codeline>
+<codeline><highlight class="normal">Retina/high-dpi<sp/>capable<sp/>devices.<sp/>Use<sp/>the<sp/>SDL_WINDOW_ALLOW_HIGHDPI<sp/>flag<sp/>when</highlight></codeline>
+<codeline><highlight class="normal">creating<sp/>your<sp/>window<sp/>to<sp/>enable<sp/>high-dpi<sp/>support.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">When<sp/>high-dpi<sp/>support<sp/>is<sp/>enabled,<sp/>SDL_GetWindowSize()<sp/>and<sp/>display<sp/>mode<sp/>sizes</highlight></codeline>
+<codeline><highlight class="normal">will<sp/>still<sp/>be<sp/>in<sp/>&quot;screen<sp/>coordinates&quot;<sp/>rather<sp/>than<sp/>pixels,<sp/>but<sp/>the<sp/>window<sp/>will</highlight></codeline>
+<codeline><highlight class="normal">have<sp/>a<sp/>much<sp/>greater<sp/>pixel<sp/>density<sp/>when<sp/>the<sp/>device<sp/>supports<sp/>it,<sp/>and<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">SDL_GL_GetDrawableSize()<sp/>or<sp/>SDL_GetRendererOutputSize()<sp/>functions<sp/>(depending<sp/>on</highlight></codeline>
+<codeline><highlight class="normal">whether<sp/>raw<sp/>OpenGL<sp/>or<sp/>the<sp/>SDL_Render<sp/>API<sp/>is<sp/>used)<sp/>can<sp/>be<sp/>queried<sp/>to<sp/>determine</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>size<sp/>in<sp/>pixels<sp/>of<sp/>the<sp/>drawable<sp/>screen<sp/>framebuffer.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Some<sp/>OpenGL<sp/>ES<sp/>functions<sp/>such<sp/>as<sp/>glViewport<sp/>expect<sp/>sizes<sp/>in<sp/>pixels<sp/>rather<sp/>than</highlight></codeline>
+<codeline><highlight class="normal">sizes<sp/>in<sp/>screen<sp/>coordinates.<sp/>When<sp/>doing<sp/>2D<sp/>rendering<sp/>with<sp/>OpenGL<sp/>ES,<sp/>an</highlight></codeline>
+<codeline><highlight class="normal">orthographic<sp/>projection<sp/>matrix<sp/>using<sp/>the<sp/>size<sp/>in<sp/>screen<sp/>coordinates</highlight></codeline>
+<codeline><highlight class="normal">(SDL_GetWindowSize())<sp/>can<sp/>be<sp/>used<sp/>in<sp/>order<sp/>to<sp/>display<sp/>content<sp/>at<sp/>the<sp/>same<sp/>scale</highlight></codeline>
+<codeline><highlight class="normal">no<sp/>matter<sp/>whether<sp/>a<sp/>Retina<sp/>device<sp/>is<sp/>used<sp/>or<sp/>not.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Notes<sp/>--<sp/>Application<sp/>events</highlight></codeline>
+<codeline><highlight class="normal">==============================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">On<sp/>iOS<sp/>the<sp/>application<sp/>goes<sp/>through<sp/>a<sp/>fixed<sp/>life<sp/>cycle<sp/>and<sp/>you<sp/>will<sp/>get</highlight></codeline>
+<codeline><highlight class="normal">notifications<sp/>of<sp/>state<sp/>changes<sp/>via<sp/>application<sp/>events.<sp/>When<sp/>these<sp/>events</highlight></codeline>
+<codeline><highlight class="normal">are<sp/>delivered<sp/>you<sp/>must<sp/>handle<sp/>them<sp/>in<sp/>an<sp/>event<sp/>callback<sp/>because<sp/>the<sp/>OS<sp/>may</highlight></codeline>
+<codeline><highlight class="normal">not<sp/>give<sp/>you<sp/>any<sp/>processing<sp/>time<sp/>after<sp/>the<sp/>events<sp/>are<sp/>delivered.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">e.g.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>HandleAppEvents(void<sp/>*userdata,<sp/>SDL_Event<sp/>*event)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>switch<sp/>(event-&gt;type)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>SDL_APP_TERMINATING:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*<sp/>Terminate<sp/>the<sp/>app.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Shut<sp/>everything<sp/>down<sp/>before<sp/>returning<sp/>from<sp/>this<sp/>function.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>SDL_APP_LOWMEMORY:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*<sp/>You<sp/>will<sp/>get<sp/>this<sp/>when<sp/>your<sp/>app<sp/>is<sp/>paused<sp/>and<sp/>iOS<sp/>wants<sp/>more<sp/>memory.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Release<sp/>as<sp/>much<sp/>memory<sp/>as<sp/>possible.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>SDL_APP_WILLENTERBACKGROUND:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*<sp/>Prepare<sp/>your<sp/>app<sp/>to<sp/>go<sp/>into<sp/>the<sp/>background.<sp/><sp/>Stop<sp/>loops,<sp/>etc.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>This<sp/>gets<sp/>called<sp/>when<sp/>the<sp/>user<sp/>hits<sp/>the<sp/>home<sp/>button,<sp/>or<sp/>gets<sp/>a<sp/>call.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>SDL_APP_DIDENTERBACKGROUND:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*<sp/>This<sp/>will<sp/>get<sp/>called<sp/>if<sp/>the<sp/>user<sp/>accepted<sp/>whatever<sp/>sent<sp/>your<sp/>app<sp/>to<sp/>the<sp/>background.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>If<sp/>the<sp/>user<sp/>got<sp/>a<sp/>phone<sp/>call<sp/>and<sp/>canceled<sp/>it,<sp/>you&apos;ll<sp/>instead<sp/>get<sp/>an<sp/>SDL_APP_DIDENTERFOREGROUND<sp/>event<sp/>and<sp/>restart<sp/>your<sp/>loops.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>When<sp/>you<sp/>get<sp/>this,<sp/>you<sp/>have<sp/>5<sp/>seconds<sp/>to<sp/>save<sp/>all<sp/>your<sp/>state<sp/>or<sp/>the<sp/>app<sp/>will<sp/>be<sp/>terminated.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Your<sp/>app<sp/>is<sp/>NOT<sp/>active<sp/>at<sp/>this<sp/>point.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>SDL_APP_WILLENTERFOREGROUND:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*<sp/>This<sp/>call<sp/>happens<sp/>when<sp/>your<sp/>app<sp/>is<sp/>coming<sp/>back<sp/>to<sp/>the<sp/>foreground.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Restore<sp/>all<sp/>your<sp/>state<sp/>here.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>SDL_APP_DIDENTERFOREGROUND:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*<sp/>Restart<sp/>your<sp/>loops<sp/>here.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Your<sp/>app<sp/>is<sp/>interactive<sp/>and<sp/>getting<sp/>CPU<sp/>again.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>default:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*<sp/>No<sp/>special<sp/>processing,<sp/>add<sp/>it<sp/>to<sp/>the<sp/>event<sp/>queue<sp/>*/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>1;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>main(int<sp/>argc,<sp/>char<sp/>*argv[])</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_SetEventFilter(HandleAppEvents,<sp/>NULL);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...<sp/>run<sp/>your<sp/>main<sp/>loop</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">Notes<sp/>--<sp/>Accelerometer<sp/>as<sp/>Joystick</highlight></codeline>
+<codeline><highlight class="normal">==============================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SDL<sp/>for<sp/>iPhone<sp/>supports<sp/>polling<sp/>the<sp/>built<sp/>in<sp/>accelerometer<sp/>as<sp/>a<sp/>joystick<sp/>device.<sp/><sp/>For<sp/>an<sp/>example<sp/>on<sp/>how<sp/>to<sp/>do<sp/>this,<sp/>see<sp/>the<sp/>accelerometer.c<sp/>in<sp/>the<sp/>demos<sp/>directory.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>main<sp/>thing<sp/>to<sp/>note<sp/>when<sp/>using<sp/>the<sp/>accelerometer<sp/>with<sp/>SDL<sp/>is<sp/>that<sp/>while<sp/>the<sp/>iPhone<sp/>natively<sp/>reports<sp/>accelerometer<sp/>as<sp/>floating<sp/>point<sp/>values<sp/>in<sp/>units<sp/>of<sp/>g-force,<sp/>SDL_JoystickGetAxis()<sp/>reports<sp/>joystick<sp/>values<sp/>as<sp/>signed<sp/>integers.<sp/><sp/>Hence,<sp/>in<sp/>order<sp/>to<sp/>convert<sp/>between<sp/>the<sp/>two,<sp/>some<sp/>clamping<sp/>and<sp/>scaling<sp/>is<sp/>necessary<sp/>on<sp/>the<sp/>part<sp/>of<sp/>the<sp/>iPhone<sp/>SDL<sp/>joystick<sp/>driver.<sp/><sp/>To<sp/>convert<sp/>SDL_JoystickGetAxis()<sp/>reported<sp/>values<sp/>BACK<sp/>to<sp/>units<sp/>of<sp/>g-force,<sp/>simply<sp/>multiply<sp/>the<sp/>values<sp/>by<sp/>SDL_IPHONE_MAX_GFORCE<sp/>/<sp/>0x7FFF.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Notes<sp/>--<sp/>OpenGL<sp/>ES</highlight></codeline>
+<codeline><highlight class="normal">==============================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Your<sp/>SDL<sp/>application<sp/>for<sp/>iOS<sp/>uses<sp/>OpenGL<sp/>ES<sp/>for<sp/>video<sp/>by<sp/>default.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">OpenGL<sp/>ES<sp/>for<sp/>iOS<sp/>supports<sp/>several<sp/>display<sp/>pixel<sp/>formats,<sp/>such<sp/>as<sp/>RGBA8<sp/>and<sp/>RGB565,<sp/>which<sp/>provide<sp/>a<sp/>32<sp/>bit<sp/>and<sp/>16<sp/>bit<sp/>color<sp/>buffer<sp/>respectively.<sp/>By<sp/>default,<sp/>the<sp/>implementation<sp/>uses<sp/>RGB565,<sp/>but<sp/>you<sp/>may<sp/>use<sp/>RGBA8<sp/>by<sp/>setting<sp/>each<sp/>color<sp/>component<sp/>to<sp/>8<sp/>bits<sp/>in<sp/>SDL_GL_SetAttribute().</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>your<sp/>application<sp/>doesn&apos;t<sp/>use<sp/>OpenGL&apos;s<sp/>depth<sp/>buffer,<sp/>you<sp/>may<sp/>find<sp/>significant<sp/>performance<sp/>improvement<sp/>by<sp/>setting<sp/>SDL_GL_DEPTH_SIZE<sp/>to<sp/>0.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Finally,<sp/>if<sp/>your<sp/>application<sp/>completely<sp/>redraws<sp/>the<sp/>screen<sp/>each<sp/>frame,<sp/>you<sp/>may<sp/>find<sp/>significant<sp/>performance<sp/>improvement<sp/>by<sp/>setting<sp/>the<sp/>attribute<sp/>SDL_GL_RETAINED_BACKING<sp/>to<sp/>0.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">OpenGL<sp/>ES<sp/>on<sp/>iOS<sp/>doesn&apos;t<sp/>use<sp/>the<sp/>traditional<sp/>system-framebuffer<sp/>setup<sp/>provided<sp/>in<sp/>other<sp/>operating<sp/>systems.<sp/>Special<sp/>care<sp/>must<sp/>be<sp/>taken<sp/>because<sp/>of<sp/>this:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>drawable<sp/>Renderbuffer<sp/>must<sp/>be<sp/>bound<sp/>to<sp/>the<sp/>GL_RENDERBUFFER<sp/>binding<sp/>point<sp/>when<sp/>SDL_GL_SwapWindow()<sp/>is<sp/>called.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>drawable<sp/>Framebuffer<sp/>Object<sp/>must<sp/>be<sp/>bound<sp/>while<sp/>rendering<sp/>to<sp/>the<sp/>screen<sp/>and<sp/>when<sp/>SDL_GL_SwapWindow()<sp/>is<sp/>called.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>If<sp/>multisample<sp/>antialiasing<sp/>(MSAA)<sp/>is<sp/>used<sp/>and<sp/>glReadPixels<sp/>is<sp/>used<sp/>on<sp/>the<sp/>screen,<sp/>the<sp/>drawable<sp/>framebuffer<sp/>must<sp/>be<sp/>resolved<sp/>to<sp/>the<sp/>MSAA<sp/>resolve<sp/>framebuffer<sp/>(via<sp/>glBlitFramebuffer<sp/>or<sp/>glResolveMultisampleFramebufferAPPLE),<sp/>and<sp/>the<sp/>MSAA<sp/>resolve<sp/>framebuffer<sp/>must<sp/>be<sp/>bound<sp/>to<sp/>the<sp/>GL_READ_FRAMEBUFFER<sp/>binding<sp/>point,<sp/>before<sp/>glReadPixels<sp/>is<sp/>called.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>above<sp/>objects<sp/>can<sp/>be<sp/>obtained<sp/>via<sp/>SDL_GetWindowWMInfo()<sp/>(in<sp/>SDL_syswm.h).</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Notes<sp/>--<sp/>Keyboard</highlight></codeline>
+<codeline><highlight class="normal">==============================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>SDL<sp/>keyboard<sp/>API<sp/>has<sp/>been<sp/>extended<sp/>to<sp/>support<sp/>on-screen<sp/>keyboards:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>SDL_StartTextInput()</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>--<sp/>enables<sp/>text<sp/>events<sp/>and<sp/>reveals<sp/>the<sp/>onscreen<sp/>keyboard.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>SDL_StopTextInput()</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>--<sp/>disables<sp/>text<sp/>events<sp/>and<sp/>hides<sp/>the<sp/>onscreen<sp/>keyboard.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SDL_bool<sp/>SDL_IsTextInputActive()</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>--<sp/>returns<sp/>whether<sp/>or<sp/>not<sp/>text<sp/>events<sp/>are<sp/>enabled<sp/>(and<sp/>the<sp/>onscreen<sp/>keyboard<sp/>is<sp/>visible)</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Notes<sp/>--<sp/>Mouse</highlight></codeline>
+<codeline><highlight class="normal">==============================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">iOS<sp/>now<sp/>supports<sp/>Bluetooth<sp/>mice<sp/>on<sp/>iPad,<sp/>but<sp/>by<sp/>default<sp/>will<sp/>provide<sp/>the<sp/>mouse<sp/>input<sp/>as<sp/>touch.<sp/>In<sp/>order<sp/>for<sp/>SDL<sp/>to<sp/>see<sp/>the<sp/>real<sp/>mouse<sp/>events,<sp/>you<sp/>should<sp/>set<sp/>the<sp/>key<sp/>UIApplicationSupportsIndirectInputEvents<sp/>to<sp/>true<sp/>in<sp/>your<sp/>Info.plist</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Notes<sp/>--<sp/>Reading<sp/>and<sp/>Writing<sp/>files</highlight></codeline>
+<codeline><highlight class="normal">==============================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Each<sp/>application<sp/>installed<sp/>on<sp/>iPhone<sp/>resides<sp/>in<sp/>a<sp/>sandbox<sp/>which<sp/>includes<sp/>its<sp/>own<sp/>Application<sp/>Home<sp/>directory.<sp/><sp/>Your<sp/>application<sp/>may<sp/>not<sp/>access<sp/>files<sp/>outside<sp/>this<sp/>directory.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Once<sp/>your<sp/>application<sp/>is<sp/>installed<sp/>its<sp/>directory<sp/>tree<sp/>looks<sp/>like:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>MySDLApp<sp/>Home/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MySDLApp.app</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Documents/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Library/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Preferences/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmp/</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">When<sp/>your<sp/>SDL<sp/>based<sp/>iPhone<sp/>application<sp/>starts<sp/>up,<sp/>it<sp/>sets<sp/>the<sp/>working<sp/>directory<sp/>to<sp/>the<sp/>main<sp/>bundle<sp/>(MySDLApp<sp/>Home/MySDLApp.app),<sp/>where<sp/>your<sp/>application<sp/>resources<sp/>are<sp/>stored.<sp/><sp/>You<sp/>cannot<sp/>write<sp/>to<sp/>this<sp/>directory.<sp/><sp/>Instead,<sp/>I<sp/>advise<sp/>you<sp/>to<sp/>write<sp/>document<sp/>files<sp/>to<sp/>&quot;../Documents/&quot;<sp/>and<sp/>preferences<sp/>to<sp/>&quot;../Library/Preferences&quot;.<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">More<sp/>information<sp/>on<sp/>this<sp/>subject<sp/>is<sp/>available<sp/>here:</highlight></codeline>
+<codeline><highlight class="normal">http://developer.apple.com/library/ios/#documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/Introduction/Introduction.html</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Notes<sp/>--<sp/>iPhone<sp/>SDL<sp/>limitations</highlight></codeline>
+<codeline><highlight class="normal">==============================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Windows:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Full-size,<sp/>single<sp/>window<sp/>applications<sp/>only.<sp/><sp/>You<sp/>cannot<sp/>create<sp/>multi-window<sp/>SDL<sp/>applications<sp/>for<sp/>iPhone<sp/>OS.<sp/><sp/>The<sp/>application<sp/>window<sp/>will<sp/>fill<sp/>the<sp/>display,<sp/>though<sp/>you<sp/>have<sp/>the<sp/>option<sp/>of<sp/>turning<sp/>on<sp/>or<sp/>off<sp/>the<sp/>menu-bar<sp/>(pass<sp/>SDL_CreateWindow()<sp/>the<sp/>flag<sp/>SDL_WINDOW_BORDERLESS).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Textures:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>The<sp/>optimal<sp/>texture<sp/>formats<sp/>on<sp/>iOS<sp/>are<sp/>SDL_PIXELFORMAT_ABGR8888,<sp/>SDL_PIXELFORMAT_ABGR8888,<sp/>SDL_PIXELFORMAT_BGR888,<sp/>and<sp/>SDL_PIXELFORMAT_RGB24<sp/>pixel<sp/>formats.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Loading<sp/>Shared<sp/>Objects:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>This<sp/>is<sp/>disabled<sp/>by<sp/>default<sp/>since<sp/>it<sp/>seems<sp/>to<sp/>break<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>iOS<sp/>SDK<sp/>agreement<sp/>for<sp/>iOS<sp/>versions<sp/>prior<sp/>to<sp/>iOS<sp/>8.<sp/>It<sp/>can<sp/>be<sp/>re-enabled<sp/>in<sp/>SDL_config_iphoneos.h.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Notes<sp/>--<sp/>CoreBluetooth.framework</highlight></codeline>
+<codeline><highlight class="normal">==============================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SDL_JOYSTICK_HIDAPI<sp/>is<sp/>disabled<sp/>by<sp/>default.<sp/>It<sp/>can<sp/>give<sp/>you<sp/>access<sp/>to<sp/>a<sp/>lot</highlight></codeline>
+<codeline><highlight class="normal">more<sp/>game<sp/>controller<sp/>devices,<sp/>but<sp/>it<sp/>requires<sp/>permission<sp/>from<sp/>the<sp/>user<sp/>before</highlight></codeline>
+<codeline><highlight class="normal">your<sp/>app<sp/>will<sp/>be<sp/>able<sp/>to<sp/>talk<sp/>to<sp/>the<sp/>Bluetooth<sp/>hardware.<sp/>&quot;Made<sp/>For<sp/>iOS&quot;</highlight></codeline>
+<codeline><highlight class="normal">branded<sp/>controllers<sp/>do<sp/>not<sp/>need<sp/>this<sp/>as<sp/>we<sp/>don&apos;t<sp/>have<sp/>to<sp/>speak<sp/>to<sp/>them</highlight></codeline>
+<codeline><highlight class="normal">directly<sp/>with<sp/>raw<sp/>bluetooth,<sp/>so<sp/>many<sp/>apps<sp/>can<sp/>live<sp/>without<sp/>this.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You&apos;ll<sp/>need<sp/>to<sp/>link<sp/>with<sp/>CoreBluetooth.framework<sp/>and<sp/>add<sp/>something<sp/>like<sp/>this</highlight></codeline>
+<codeline><highlight class="normal">to<sp/>your<sp/>Info.plist:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;key&gt;NSBluetoothPeripheralUsageDescription&lt;/key&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;string&gt;MyApp<sp/>would<sp/>like<sp/>to<sp/>remain<sp/>connected<sp/>to<sp/>nearby<sp/>bluetooth<sp/>Game<sp/>Controllers<sp/>and<sp/>Game<sp/>Pads<sp/>even<sp/>when<sp/>you&apos;re<sp/>not<sp/>using<sp/>the<sp/>app.&lt;/string&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Game<sp/>Center<sp/></highlight></codeline>
+<codeline><highlight class="normal">==============================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Game<sp/>Center<sp/>integration<sp/>might<sp/>require<sp/>that<sp/>you<sp/>break<sp/>up<sp/>your<sp/>main<sp/>loop<sp/>in<sp/>order<sp/>to<sp/>yield<sp/>control<sp/>back<sp/>to<sp/>the<sp/>system.<sp/>In<sp/>other<sp/>words,<sp/>instead<sp/>of<sp/>running<sp/>an<sp/>endless<sp/>main<sp/>loop,<sp/>you<sp/>run<sp/>each<sp/>frame<sp/>in<sp/>a<sp/>callback<sp/>function,<sp/>using:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>SDL_iPhoneSetAnimationCallback(SDL_Window<sp/>*<sp/>window,<sp/>int<sp/>interval,<sp/>void<sp/>(*callback)(void*),<sp/>void<sp/>*callbackParam);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>will<sp/>set<sp/>up<sp/>the<sp/>given<sp/>function<sp/>to<sp/>be<sp/>called<sp/>back<sp/>on<sp/>the<sp/>animation<sp/>callback,<sp/>and<sp/>then<sp/>you<sp/>have<sp/>to<sp/>return<sp/>from<sp/>main()<sp/>to<sp/>let<sp/>the<sp/>Cocoa<sp/>event<sp/>loop<sp/>run.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">e.g.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>extern<sp/>&quot;C&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>void<sp/>ShowFrame(void*)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...<sp/>do<sp/>event<sp/>handling,<sp/>frame<sp/>logic<sp/>and<sp/>rendering<sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>main(int<sp/>argc,<sp/>char<sp/>*argv[])</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...<sp/>initialize<sp/>game<sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#if<sp/>__IPHONEOS__</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Initialize<sp/>the<sp/>Game<sp/>Center<sp/>for<sp/>scoring<sp/>and<sp/>matchmaking</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>InitGameCenter();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Set<sp/>up<sp/>the<sp/>game<sp/>to<sp/>run<sp/>in<sp/>the<sp/>window<sp/>animation<sp/>callback<sp/>on<sp/>iOS</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>so<sp/>that<sp/>Game<sp/>Center<sp/>and<sp/>so<sp/>forth<sp/>works<sp/>correctly.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_iPhoneSetAnimationCallback(window,<sp/>1,<sp/>ShowFrame,<sp/>NULL);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#else</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>while<sp/>(<sp/>running<sp/>)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ShowFrame(0);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DelayFrame();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#endif</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Deploying<sp/>to<sp/>older<sp/>versions<sp/>of<sp/>iOS</highlight></codeline>
+<codeline><highlight class="normal">==============================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SDL<sp/>supports<sp/>deploying<sp/>to<sp/>older<sp/>versions<sp/>of<sp/>iOS<sp/>than<sp/>are<sp/>supported<sp/>by<sp/>the<sp/>latest<sp/>version<sp/>of<sp/>Xcode,<sp/>all<sp/>the<sp/>way<sp/>back<sp/>to<sp/>iOS<sp/>6.1</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>order<sp/>to<sp/>do<sp/>that<sp/>you<sp/>need<sp/>to<sp/>download<sp/>an<sp/>older<sp/>version<sp/>of<sp/>Xcode:</highlight></codeline>
+<codeline><highlight class="normal">https://developer.apple.com/download/more/?name=Xcode</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Open<sp/>the<sp/>package<sp/>contents<sp/>of<sp/>the<sp/>older<sp/>Xcode<sp/>and<sp/>your<sp/>newer<sp/>version<sp/>of<sp/>Xcode<sp/>and<sp/>copy<sp/>over<sp/>the<sp/>folders<sp/>in<sp/>Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Then<sp/>open<sp/>the<sp/>file<sp/>Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/SDKSettings.plist<sp/>and<sp/>add<sp/>the<sp/>versions<sp/>of<sp/>iOS<sp/>you<sp/>want<sp/>to<sp/>deploy<sp/>to<sp/>the<sp/>key<sp/>Root/DefaultProperties/DEPLOYMENT_TARGET_SUGGESTED_VALUES</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Open<sp/>your<sp/>project<sp/>and<sp/>set<sp/>your<sp/>deployment<sp/>target<sp/>to<sp/>the<sp/>desired<sp/>version<sp/>of<sp/>iOS</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Finally,<sp/>remove<sp/>GameController<sp/>from<sp/>the<sp/>list<sp/>of<sp/>frameworks<sp/>linked<sp/>by<sp/>your<sp/>application<sp/>and<sp/>edit<sp/>the<sp/>build<sp/>settings<sp/>for<sp/>&quot;Other<sp/>Linker<sp/>Flags&quot;<sp/>and<sp/>add<sp/>-weak_framework<sp/>GameController</highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/docs/README-ios.md"/>
+  </compounddef>
+</doxygen>

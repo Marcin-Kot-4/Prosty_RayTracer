@@ -1,0 +1,47 @@
+.TH "RT::Texture::Checker" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RT::Texture::Checker
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <checker\&.h>\fP
+.PP
+Inherits \fBRT::Texture::TextureBase\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBChecker\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~Checker\fP () override"
+.br
+.ti -1c
+.RI "virtual \fBqbVector\fP< double > \fBGetColor\fP (const \fBqbVector\fP< double > &uvCoords) override"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBSetColor\fP (const \fBqbVector\fP< double > &inputColor1, const \fBqbVector\fP< double > &inputColor2)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RT::Texture::Checker::Checker ()"
+
+.SS "RT::Texture::Checker::~Checker ()\fC [override]\fP, \fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBqbVector\fP< double > RT::Texture::Checker::GetColor (const \fBqbVector\fP< double > & uvCoords)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBRT::Texture::TextureBase\fP\&.
+.SS "\fBvoid\fP RT::Texture::Checker::SetColor (const \fBqbVector\fP< double > & inputColor1, const \fBqbVector\fP< double > & inputColor2)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

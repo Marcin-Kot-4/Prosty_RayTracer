@@ -1,0 +1,387 @@
+\hypertarget{classqb_matrix2}{}\doxysection{qb\+Matrix2\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classqb_matrix2}\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+
+
+{\ttfamily \#include $<$qb\+Matrix.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classqb_matrix2_a43751c898aa61a8544b4c65788be72b8}{qb\+Matrix2}} ()
+\item 
+\mbox{\hyperlink{classqb_matrix2_a099d5b0ce60f5ba5a1a9be44050240ba}{qb\+Matrix2}} (int n\+Rows, int n\+Cols)
+\item 
+\mbox{\hyperlink{classqb_matrix2_ab247062b9aa26dfadcb1f3af49cdc30d}{qb\+Matrix2}} (int n\+Rows, int n\+Cols, const T $\ast$input\+Data)
+\item 
+\mbox{\hyperlink{classqb_matrix2_a9c65f821ae157be87c09c9515cad1b20}{qb\+Matrix2}} (const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&input\+Matrix)
+\item 
+\mbox{\hyperlink{classqb_matrix2_a0e413d7c719f15f2575cd86f927960ed}{qb\+Matrix2}} (int n\+Rows, int n\+Cols, const std\+::vector$<$ T $>$ \&input\+Data)
+\item 
+\mbox{\hyperlink{classqb_matrix2_ab05e67188c6ae2eebdbffe8682cb0890}{$\sim$qb\+Matrix2}} ()
+\item 
+bool \mbox{\hyperlink{classqb_matrix2_aba216f400dda55542b3c06df43cd7c35}{Resize}} (int num\+Rows, int num\+Cols)
+\item 
+\mbox{\hyperlink{_s_d_l__opengles2__gl2ext_8h_ae5d8fa23ad07c48bb609509eae494c95}{void}} \mbox{\hyperlink{classqb_matrix2_af705ca91a707de5e75c6b074ad152f5e}{Set\+To\+Identity}} ()
+\item 
+T \mbox{\hyperlink{classqb_matrix2_a62ddf209105dffe6133461b273a7309f}{Get\+Element}} (int \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}}, int col) const
+\item 
+bool \mbox{\hyperlink{classqb_matrix2_a1c6693503483942d5a619a0cf470e8b5}{Set\+Element}} (int \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}}, int col, T element\+Value)
+\item 
+int \mbox{\hyperlink{classqb_matrix2_a1626b647c5268a9e64f4651bcc4b8c6e}{Get\+Num\+Rows}} () const
+\item 
+int \mbox{\hyperlink{classqb_matrix2_ab20362d8fc58a4b8da0910f94c3de2c3}{Get\+Num\+Cols}} () const
+\item 
+bool \mbox{\hyperlink{classqb_matrix2_aaf71c5642111972501f43b1e225b8a2f}{Inverse}} ()
+\item 
+\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \mbox{\hyperlink{classqb_matrix2_a803f108eff983ea5f97cc752c44c1da2}{Row\+Echelon}} ()
+\item 
+\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \mbox{\hyperlink{classqb_matrix2_a6235a35daf5fa20a9ebc7ed91d8a94a3}{Transpose}} () const
+\item 
+T \mbox{\hyperlink{classqb_matrix2_aeebab890f8c38f112972ffbcaaba422f}{Determinant}} ()
+\item 
+bool \mbox{\hyperlink{classqb_matrix2_aab23890007a5a410c57d43d69a347ea1}{operator==}} (const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&rhs)
+\item 
+bool \mbox{\hyperlink{classqb_matrix2_ae9049dba8525b2c3b4f7db1c5a29d06e}{Compare}} (const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&matrix1, double tolerance)
+\item 
+\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \mbox{\hyperlink{classqb_matrix2_ac6cc3fedd08e2a1bb2ceb097ef4c8e47}{operator=}} (const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&rhs)
+\item 
+bool \mbox{\hyperlink{classqb_matrix2_a3c37c24ae0d265ebf04a8c55a9753ac9}{Separate}} (\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&matrix1, \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&matrix2, int col\+Num)
+\item 
+bool \mbox{\hyperlink{classqb_matrix2_a9ba8140ee2c217ffce544657a1f269b8}{Join}} (const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&matrix2)
+\item 
+\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \mbox{\hyperlink{classqb_matrix2_a1c913b15492558472b2e271f5a856f3b}{Find\+Sub\+Matrix}} (int row\+Num, int col\+Num)
+\item 
+int \mbox{\hyperlink{classqb_matrix2_aa41b896d3d520de3096530845cbbc9b4}{Rank}} ()
+\item 
+bool \mbox{\hyperlink{classqb_matrix2_ae3e42b917e3127cab56b7a48faff25c3}{Is\+Square}} ()
+\item 
+bool \mbox{\hyperlink{classqb_matrix2_a44c85a2d4dcbd33b281ce417156d7431}{Is\+Row\+Echelon}} ()
+\item 
+bool \mbox{\hyperlink{classqb_matrix2_a6a9aab698ac6362495a4421f859b3658}{Is\+Non\+Zero}} ()
+\item 
+bool \mbox{\hyperlink{classqb_matrix2_a38c5e541fec532600806ac4fd8afecb2}{Is\+Symmetric}} ()
+\item 
+\mbox{\hyperlink{_s_d_l__opengles2__gl2ext_8h_ae5d8fa23ad07c48bb609509eae494c95}{void}} \mbox{\hyperlink{classqb_matrix2_a4bd6d0afe13739e2f7566cbd66b006e5}{Print\+Matrix}} ()
+\item 
+\mbox{\hyperlink{_s_d_l__opengles2__gl2ext_8h_ae5d8fa23ad07c48bb609509eae494c95}{void}} \mbox{\hyperlink{classqb_matrix2_aaefe2a08fdad8e89690dd1bddcc154d0}{Print\+Matrix}} (int \mbox{\hyperlink{_s_d_l__opengl__glext_8h_ae6165268264b393d031f89082216499d}{precision}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class U $>$ }\\\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \mbox{\hyperlink{classqb_matrix2_a1d4315f8c2f967cbf2b25a56201b3591}{operator+}} (const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \&lhs, const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \&rhs)
+\item 
+{\footnotesize template$<$class U $>$ }\\\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \mbox{\hyperlink{classqb_matrix2_ae4237cd5e71fbba4d7dfed269d1b8bcf}{operator+}} (const U \&lhs, const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \&rhs)
+\item 
+{\footnotesize template$<$class U $>$ }\\\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \mbox{\hyperlink{classqb_matrix2_a1fa6bd482a926d7cc7e176ebb9a23b90}{operator+}} (const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \&lhs, const U \&rhs)
+\item 
+{\footnotesize template$<$class U $>$ }\\\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \mbox{\hyperlink{classqb_matrix2_a0aee7d5dd114c8f8b44438668dc81f8b}{operator-\/}} (const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \&lhs, const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \&rhs)
+\item 
+{\footnotesize template$<$class U $>$ }\\\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \mbox{\hyperlink{classqb_matrix2_adad8a02fdde388de34f6f8a956f542d1}{operator-\/}} (const U \&lhs, const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \&rhs)
+\item 
+{\footnotesize template$<$class U $>$ }\\\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \mbox{\hyperlink{classqb_matrix2_a8d760cfe3cac7fbc1c21191eadd21ae0}{operator-\/}} (const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \&lhs, const U \&rhs)
+\item 
+{\footnotesize template$<$class U $>$ }\\\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \mbox{\hyperlink{classqb_matrix2_a8a110a74e2674e2b57d9f651d7a863e6}{operator$\ast$}} (const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \&lhs, const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \&rhs)
+\item 
+{\footnotesize template$<$class U $>$ }\\\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \mbox{\hyperlink{classqb_matrix2_a9481b608768e06cbe526a8c0707265be}{operator$\ast$}} (const U \&lhs, const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \&rhs)
+\item 
+{\footnotesize template$<$class U $>$ }\\\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \mbox{\hyperlink{classqb_matrix2_ace6e56a218dfa2172dc99f5e04105827}{operator$\ast$}} (const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \&lhs, const U \&rhs)
+\item 
+{\footnotesize template$<$class U $>$ }\\\mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ U $>$ \mbox{\hyperlink{classqb_matrix2_adefd905b49bf38d14fdb9cf8d940d3fc}{operator$\ast$}} (const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \&lhs, const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ U $>$ \&rhs)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classqb_matrix2_a43751c898aa61a8544b4c65788be72b8}\label{classqb_matrix2_a43751c898aa61a8544b4c65788be72b8}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!qbMatrix2@{qbMatrix2}}
+\index{qbMatrix2@{qbMatrix2}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{qbMatrix2()}{qbMatrix2()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$\mbox{\hyperlink{classqb_matrix2}{\+::qb\+Matrix2}}}
+
+\mbox{\Hypertarget{classqb_matrix2_a099d5b0ce60f5ba5a1a9be44050240ba}\label{classqb_matrix2_a099d5b0ce60f5ba5a1a9be44050240ba}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!qbMatrix2@{qbMatrix2}}
+\index{qbMatrix2@{qbMatrix2}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{qbMatrix2()}{qbMatrix2()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$\mbox{\hyperlink{classqb_matrix2}{\+::qb\+Matrix2}} (\begin{DoxyParamCaption}\item[{int}]{n\+Rows,  }\item[{int}]{n\+Cols }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classqb_matrix2_ab247062b9aa26dfadcb1f3af49cdc30d}\label{classqb_matrix2_ab247062b9aa26dfadcb1f3af49cdc30d}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!qbMatrix2@{qbMatrix2}}
+\index{qbMatrix2@{qbMatrix2}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{qbMatrix2()}{qbMatrix2()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$\mbox{\hyperlink{classqb_matrix2}{\+::qb\+Matrix2}} (\begin{DoxyParamCaption}\item[{int}]{n\+Rows,  }\item[{int}]{n\+Cols,  }\item[{const T $\ast$}]{input\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classqb_matrix2_a9c65f821ae157be87c09c9515cad1b20}\label{classqb_matrix2_a9c65f821ae157be87c09c9515cad1b20}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!qbMatrix2@{qbMatrix2}}
+\index{qbMatrix2@{qbMatrix2}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{qbMatrix2()}{qbMatrix2()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$\mbox{\hyperlink{classqb_matrix2}{\+::qb\+Matrix2}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&}]{input\+Matrix }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classqb_matrix2_a0e413d7c719f15f2575cd86f927960ed}\label{classqb_matrix2_a0e413d7c719f15f2575cd86f927960ed}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!qbMatrix2@{qbMatrix2}}
+\index{qbMatrix2@{qbMatrix2}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{qbMatrix2()}{qbMatrix2()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$\mbox{\hyperlink{classqb_matrix2}{\+::qb\+Matrix2}} (\begin{DoxyParamCaption}\item[{int}]{n\+Rows,  }\item[{int}]{n\+Cols,  }\item[{const std\+::vector$<$ T $>$ \&}]{input\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classqb_matrix2_ab05e67188c6ae2eebdbffe8682cb0890}\label{classqb_matrix2_ab05e67188c6ae2eebdbffe8682cb0890}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!````~qbMatrix2@{$\sim$qbMatrix2}}
+\index{````~qbMatrix2@{$\sim$qbMatrix2}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$qbMatrix2()}{~qbMatrix2()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classqb_matrix2_ae9049dba8525b2c3b4f7db1c5a29d06e}\label{classqb_matrix2_ae9049dba8525b2c3b4f7db1c5a29d06e}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!Compare@{Compare}}
+\index{Compare@{Compare}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Compare()}{Compare()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$\+::\+Compare (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&}]{matrix1,  }\item[{double}]{tolerance }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classqb_matrix2_aeebab890f8c38f112972ffbcaaba422f}\label{classqb_matrix2_aeebab890f8c38f112972ffbcaaba422f}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!Determinant@{Determinant}}
+\index{Determinant@{Determinant}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Determinant()}{Determinant()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$\+::\+Determinant}
+
+\mbox{\Hypertarget{classqb_matrix2_a1c913b15492558472b2e271f5a856f3b}\label{classqb_matrix2_a1c913b15492558472b2e271f5a856f3b}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!FindSubMatrix@{FindSubMatrix}}
+\index{FindSubMatrix@{FindSubMatrix}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{FindSubMatrix()}{FindSubMatrix()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$\+::\+Find\+Sub\+Matrix (\begin{DoxyParamCaption}\item[{int}]{row\+Num,  }\item[{int}]{col\+Num }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classqb_matrix2_a62ddf209105dffe6133461b273a7309f}\label{classqb_matrix2_a62ddf209105dffe6133461b273a7309f}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!GetElement@{GetElement}}
+\index{GetElement@{GetElement}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetElement()}{GetElement()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$\+::\+Get\+Element (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classqb_matrix2_ab20362d8fc58a4b8da0910f94c3de2c3}\label{classqb_matrix2_ab20362d8fc58a4b8da0910f94c3de2c3}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!GetNumCols@{GetNumCols}}
+\index{GetNumCols@{GetNumCols}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetNumCols()}{GetNumCols()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$\+::\+Get\+Num\+Cols}
+
+\mbox{\Hypertarget{classqb_matrix2_a1626b647c5268a9e64f4651bcc4b8c6e}\label{classqb_matrix2_a1626b647c5268a9e64f4651bcc4b8c6e}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!GetNumRows@{GetNumRows}}
+\index{GetNumRows@{GetNumRows}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetNumRows()}{GetNumRows()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$\+::\+Get\+Num\+Rows}
+
+\mbox{\Hypertarget{classqb_matrix2_aaf71c5642111972501f43b1e225b8a2f}\label{classqb_matrix2_aaf71c5642111972501f43b1e225b8a2f}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!Inverse@{Inverse}}
+\index{Inverse@{Inverse}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Inverse()}{Inverse()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$\+::\+Inverse}
+
+\mbox{\Hypertarget{classqb_matrix2_a6a9aab698ac6362495a4421f859b3658}\label{classqb_matrix2_a6a9aab698ac6362495a4421f859b3658}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!IsNonZero@{IsNonZero}}
+\index{IsNonZero@{IsNonZero}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{IsNonZero()}{IsNonZero()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$\+::\+Is\+Non\+Zero}
+
+\mbox{\Hypertarget{classqb_matrix2_a44c85a2d4dcbd33b281ce417156d7431}\label{classqb_matrix2_a44c85a2d4dcbd33b281ce417156d7431}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!IsRowEchelon@{IsRowEchelon}}
+\index{IsRowEchelon@{IsRowEchelon}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{IsRowEchelon()}{IsRowEchelon()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$\+::\+Is\+Row\+Echelon}
+
+\mbox{\Hypertarget{classqb_matrix2_ae3e42b917e3127cab56b7a48faff25c3}\label{classqb_matrix2_ae3e42b917e3127cab56b7a48faff25c3}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!IsSquare@{IsSquare}}
+\index{IsSquare@{IsSquare}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{IsSquare()}{IsSquare()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$\+::\+Is\+Square}
+
+\mbox{\Hypertarget{classqb_matrix2_a38c5e541fec532600806ac4fd8afecb2}\label{classqb_matrix2_a38c5e541fec532600806ac4fd8afecb2}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!IsSymmetric@{IsSymmetric}}
+\index{IsSymmetric@{IsSymmetric}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{IsSymmetric()}{IsSymmetric()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$\+::\+Is\+Symmetric}
+
+\mbox{\Hypertarget{classqb_matrix2_a9ba8140ee2c217ffce544657a1f269b8}\label{classqb_matrix2_a9ba8140ee2c217ffce544657a1f269b8}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!Join@{Join}}
+\index{Join@{Join}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Join()}{Join()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$\+::\+Join (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&}]{matrix2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classqb_matrix2_ac6cc3fedd08e2a1bb2ceb097ef4c8e47}\label{classqb_matrix2_ac6cc3fedd08e2a1bb2ceb097ef4c8e47}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classqb_matrix2_aab23890007a5a410c57d43d69a347ea1}\label{classqb_matrix2_aab23890007a5a410c57d43d69a347ea1}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classqb_matrix2_a4bd6d0afe13739e2f7566cbd66b006e5}\label{classqb_matrix2_a4bd6d0afe13739e2f7566cbd66b006e5}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!PrintMatrix@{PrintMatrix}}
+\index{PrintMatrix@{PrintMatrix}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{PrintMatrix()}{PrintMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{_s_d_l__opengles2__gl2ext_8h_ae5d8fa23ad07c48bb609509eae494c95}{void}} \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$\+::\+Print\+Matrix}
+
+\mbox{\Hypertarget{classqb_matrix2_aaefe2a08fdad8e89690dd1bddcc154d0}\label{classqb_matrix2_aaefe2a08fdad8e89690dd1bddcc154d0}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!PrintMatrix@{PrintMatrix}}
+\index{PrintMatrix@{PrintMatrix}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{PrintMatrix()}{PrintMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{_s_d_l__opengles2__gl2ext_8h_ae5d8fa23ad07c48bb609509eae494c95}{void}} \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$\+::\+Print\+Matrix (\begin{DoxyParamCaption}\item[{int}]{precision }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classqb_matrix2_aa41b896d3d520de3096530845cbbc9b4}\label{classqb_matrix2_aa41b896d3d520de3096530845cbbc9b4}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!Rank@{Rank}}
+\index{Rank@{Rank}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Rank()}{Rank()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$\+::\+Rank}
+
+\mbox{\Hypertarget{classqb_matrix2_aba216f400dda55542b3c06df43cd7c35}\label{classqb_matrix2_aba216f400dda55542b3c06df43cd7c35}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!Resize@{Resize}}
+\index{Resize@{Resize}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Resize()}{Resize()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$\+::\+Resize (\begin{DoxyParamCaption}\item[{int}]{num\+Rows,  }\item[{int}]{num\+Cols }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classqb_matrix2_a803f108eff983ea5f97cc752c44c1da2}\label{classqb_matrix2_a803f108eff983ea5f97cc752c44c1da2}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!RowEchelon@{RowEchelon}}
+\index{RowEchelon@{RowEchelon}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{RowEchelon()}{RowEchelon()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$\+::\+Row\+Echelon}
+
+\mbox{\Hypertarget{classqb_matrix2_a3c37c24ae0d265ebf04a8c55a9753ac9}\label{classqb_matrix2_a3c37c24ae0d265ebf04a8c55a9753ac9}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!Separate@{Separate}}
+\index{Separate@{Separate}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Separate()}{Separate()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$\+::\+Separate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&}]{matrix1,  }\item[{\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&}]{matrix2,  }\item[{int}]{col\+Num }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classqb_matrix2_a1c6693503483942d5a619a0cf470e8b5}\label{classqb_matrix2_a1c6693503483942d5a619a0cf470e8b5}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!SetElement@{SetElement}}
+\index{SetElement@{SetElement}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SetElement()}{SetElement()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$\+::\+Set\+Element (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col,  }\item[{T}]{element\+Value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classqb_matrix2_af705ca91a707de5e75c6b074ad152f5e}\label{classqb_matrix2_af705ca91a707de5e75c6b074ad152f5e}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!SetToIdentity@{SetToIdentity}}
+\index{SetToIdentity@{SetToIdentity}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SetToIdentity()}{SetToIdentity()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{_s_d_l__opengles2__gl2ext_8h_ae5d8fa23ad07c48bb609509eae494c95}{void}} \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$\+::\+Set\+To\+Identity}
+
+\mbox{\Hypertarget{classqb_matrix2_a6235a35daf5fa20a9ebc7ed91d8a94a3}\label{classqb_matrix2_a6235a35daf5fa20a9ebc7ed91d8a94a3}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!Transpose@{Transpose}}
+\index{Transpose@{Transpose}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Transpose()}{Transpose()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$\+::\+Transpose}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classqb_matrix2_a8a110a74e2674e2b57d9f651d7a863e6}\label{classqb_matrix2_a8a110a74e2674e2b57d9f651d7a863e6}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$}{operator*}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+template$<$class U $>$ \\
+\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \&}]{lhs,  }\item[{const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{classqb_matrix2_adefd905b49bf38d14fdb9cf8d940d3fc}\label{classqb_matrix2_adefd905b49bf38d14fdb9cf8d940d3fc}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$}{operator*}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+template$<$class U $>$ \\
+\mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ U $>$ operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \&}]{lhs,  }\item[{const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ U $>$ \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{classqb_matrix2_ace6e56a218dfa2172dc99f5e04105827}\label{classqb_matrix2_ace6e56a218dfa2172dc99f5e04105827}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$}{operator*}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+template$<$class U $>$ \\
+\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \&}]{lhs,  }\item[{const U \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{classqb_matrix2_a9481b608768e06cbe526a8c0707265be}\label{classqb_matrix2_a9481b608768e06cbe526a8c0707265be}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$}{operator*}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+template$<$class U $>$ \\
+\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ operator$\ast$ (\begin{DoxyParamCaption}\item[{const U \&}]{lhs,  }\item[{const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{classqb_matrix2_a1d4315f8c2f967cbf2b25a56201b3591}\label{classqb_matrix2_a1d4315f8c2f967cbf2b25a56201b3591}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+}{operator+}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+template$<$class U $>$ \\
+\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \&}]{lhs,  }\item[{const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{classqb_matrix2_a1fa6bd482a926d7cc7e176ebb9a23b90}\label{classqb_matrix2_a1fa6bd482a926d7cc7e176ebb9a23b90}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+}{operator+}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+template$<$class U $>$ \\
+\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \&}]{lhs,  }\item[{const U \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{classqb_matrix2_ae4237cd5e71fbba4d7dfed269d1b8bcf}\label{classqb_matrix2_ae4237cd5e71fbba4d7dfed269d1b8bcf}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+}{operator+}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+template$<$class U $>$ \\
+\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ operator+ (\begin{DoxyParamCaption}\item[{const U \&}]{lhs,  }\item[{const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{classqb_matrix2_a0aee7d5dd114c8f8b44438668dc81f8b}\label{classqb_matrix2_a0aee7d5dd114c8f8b44438668dc81f8b}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/}{operator-}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+template$<$class U $>$ \\
+\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \&}]{lhs,  }\item[{const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{classqb_matrix2_a8d760cfe3cac7fbc1c21191eadd21ae0}\label{classqb_matrix2_a8d760cfe3cac7fbc1c21191eadd21ae0}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/}{operator-}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+template$<$class U $>$ \\
+\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \&}]{lhs,  }\item[{const U \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{classqb_matrix2_adad8a02fdde388de34f6f8a956f542d1}\label{classqb_matrix2_adad8a02fdde388de34f6f8a956f542d1}} 
+\index{qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!qbMatrix2$<$ T $>$@{qbMatrix2$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/}{operator-}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+template$<$class U $>$ \\
+\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ operator-\/ (\begin{DoxyParamCaption}\item[{const U \&}]{lhs,  }\item[{const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ U $>$ \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Ray\+Tracing/\+Ray\+Trace/qb\+Lin\+Alg/\mbox{\hyperlink{qb_matrix_8h}{qb\+Matrix.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__keyboard_8h_source" xml:lang="en-US">
+<title>SDL_keyboard.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_keyboard.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+28 <emphasis role="preprocessor">#ifndef&#32;SDL_keyboard_h_</emphasis>
+29 <emphasis role="preprocessor">#define&#32;SDL_keyboard_h_</emphasis>
+30 
+31 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__stdinc_8h">SDL_stdinc.h</link>&quot;</emphasis>
+32 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__error_8h">SDL_error.h</link>&quot;</emphasis>
+33 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__keycode_8h">SDL_keycode.h</link>&quot;</emphasis>
+34 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__video_8h">SDL_video.h</link>&quot;</emphasis>
+35 
+36 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+37 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+38 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+39 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+40 <emphasis role="preprocessor">#endif</emphasis>
+41 
+47 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_s_d_l___keysym">SDL_Keysym</link>
+48 {
+49 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777b">SDL_Scancode</link>&#32;<link linkend="_struct_s_d_l___keysym_1ad47e9120a511e2efc7ec0c6d8a5ec51e">scancode</link>;&#32;&#32;&#32;&#32;&#32;&#32;
+50 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__keycode_8h_1ae9265f064f13f0f74dfca26a67875171">SDL_Keycode</link>&#32;<link linkend="_struct_s_d_l___keysym_1a082ff1fd787b79fa6c3a445deb225f08">sym</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+51 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_struct_s_d_l___keysym_1ab519d1b8a9939d3d035f7103f3208291">mod</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+52 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="_struct_s_d_l___keysym_1ab1d0a50cc619966fb06b92e15cc46dd9">unused</link>;
+53 }&#32;<link linkend="__s_d_l__keyboard_8h_1a074ae08acbe79dba712775b95267f4d2">SDL_Keysym</link>;
+54 
+55 <emphasis role="comment">/*&#32;Function&#32;prototypes&#32;*/</emphasis>
+56 
+64 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link>&#32;*&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__keyboard_8h_1a3b552fc22887b0f67b2463301698078e">SDL_GetKeyboardFocus</link>(<emphasis role="keywordtype">void</emphasis>);
+65 
+94 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__keyboard_8h_1a6df72a92c606bfcf9ef00dc1b049270f">SDL_GetKeyboardState</link>(<emphasis role="keywordtype">int</emphasis>&#32;*numkeys);
+95 
+107 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747">SDL_Keymod</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__keyboard_8h_1a7b2ee63de74c442ac456cac9db5f8ed0">SDL_GetModState</link>(<emphasis role="keywordtype">void</emphasis>);
+108 
+126 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__keyboard_8h_1a705c85881304eab01f00abeca2ef5846">SDL_SetModState</link>(<link linkend="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747">SDL_Keymod</link>&#32;modstate);
+127 
+142 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__keycode_8h_1ae9265f064f13f0f74dfca26a67875171">SDL_Keycode</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__keyboard_8h_1aa74e6944ede98feeb09408fd97aaad57">SDL_GetKeyFromScancode</link>(<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777b">SDL_Scancode</link>&#32;scancode);
+143 
+158 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777b">SDL_Scancode</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__keyboard_8h_1a36216054a385bea6898a35ded18d9c0f">SDL_GetScancodeFromKey</link>(<link linkend="__s_d_l__keycode_8h_1ae9265f064f13f0f74dfca26a67875171">SDL_Keycode</link>&#32;key);
+159 
+183 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__keyboard_8h_1a092c44261fe9c44f77a46a705f59eb57">SDL_GetScancodeName</link>(<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777b">SDL_Scancode</link>&#32;scancode);
+184 
+198 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777b">SDL_Scancode</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__keyboard_8h_1a0cb32dd58d3dc5b77c9daf0b6000f93c">SDL_GetScancodeFromName</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1aaced7cfc21e7d37775d6921bb8177239">name</link>);
+199 
+217 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__keyboard_8h_1a25e699451e621cd1ce29ae20f352f318">SDL_GetKeyName</link>(<link linkend="__s_d_l__keycode_8h_1ae9265f064f13f0f74dfca26a67875171">SDL_Keycode</link>&#32;key);
+218 
+232 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__keycode_8h_1ae9265f064f13f0f74dfca26a67875171">SDL_Keycode</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__keyboard_8h_1ad4d4e79f117a9092ec269601c5423337">SDL_GetKeyFromName</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1aaced7cfc21e7d37775d6921bb8177239">name</link>);
+233 
+249 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__keyboard_8h_1ab2c8474b9a8b6d07cae4f8eceab38870">SDL_StartTextInput</link>(<emphasis role="keywordtype">void</emphasis>);
+250 
+260 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__keyboard_8h_1a6c84ed1daac21f8224d43bcb9d5bc597">SDL_IsTextInputActive</link>(<emphasis role="keywordtype">void</emphasis>);
+261 
+269 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__keyboard_8h_1ab08b914cdfb2eaed26165cb2f6b110ec">SDL_StopTextInput</link>(<emphasis role="keywordtype">void</emphasis>);
+270 
+281 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__keyboard_8h_1a949fd9d16d5156a9d5aa0dc74580dbae">SDL_SetTextInputRect</link>(<link linkend="_struct_s_d_l___rect">SDL_Rect</link>&#32;*rect);
+282 
+294 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__keyboard_8h_1a106356274c192b53844c8f1a821b00d7">SDL_HasScreenKeyboardSupport</link>(<emphasis role="keywordtype">void</emphasis>);
+295 
+306 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__keyboard_8h_1a92f5b73c7b71efeb68f5e9616cb918b7">SDL_IsScreenKeyboardShown</link>(<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link>&#32;*window);
+307 
+308 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+309 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+310 }
+311 <emphasis role="preprocessor">#endif</emphasis>
+312 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+313 
+314 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_keyboard_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+315 
+316 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

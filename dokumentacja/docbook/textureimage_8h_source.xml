@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_textureimage_8h_source" xml:lang="en-US">
+<title>textureimage.h</title>
+<indexterm><primary>D:/RayTracing/RayTrace/Textures/textureimage.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 
+2 <emphasis role="preprocessor">#ifndef&#32;RAYTRACING_TEXTUREIMAGE_H</emphasis>
+3 <emphasis role="preprocessor">#define&#32;RAYTRACING_TEXTUREIMAGE_H</emphasis>
+4 
+5 
+6 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_texturebase_8h">texturebase.h</link>&quot;</emphasis>
+7 <emphasis role="preprocessor">#include&#32;&quot;../../include/SDL.h&quot;</emphasis>
+8 
+9 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_r_t">RT</link>
+10 {
+11 &#32;&#32;&#32;&#32;<emphasis role="keyword">namespace&#32;</emphasis>Texture
+12 &#32;&#32;&#32;&#32;{
+13 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_class_r_t_1_1_texture_1_1_image">Image</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_class_r_t_1_1_texture_1_1_texture_base">TextureBase</link>
+14 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+15 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+16 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Konstruktor</emphasis>
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_r_t_1_1_texture_1_1_image_1a58edd1c45b4faeb5f789b0d036d02313">Image</link>();
+18 
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Destruktor</emphasis>
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_class_r_t_1_1_texture_1_1_image_1a7b0235b2b5784ae92262dc7fd6c84c84">~Image</link>()&#32;<emphasis role="keyword">override</emphasis>;
+21 
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Funkcja&#32;zwracająca&#32;kolor</emphasis>
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_texture_1_1_image_1a5a1347445b86ee91c4393488da5b50d0">GetColor</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;uvCoords)&#32;<emphasis role="keyword">override</emphasis>;
+24 
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Funkcja&#32;wczytująca&#32;obraz</emphasis>
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_r_t_1_1_texture_1_1_image_1a29cf0bdcfd2c7046d0a783d38159d9d3">LoadImage</link>(<link linkend="__s_d_l__opengl__glext_8h_1ae84541b4f3d8e1ea24ec0f466a8c568b">std::string</link>&#32;fileName);
+27 
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>:
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__opengl__glext_8h_1ae84541b4f3d8e1ea24ec0f466a8c568b">std::string</link>&#32;m_fileName;
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_s_d_l___surface">SDL_Surface</link>&#32;*m_imageSurface;
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_s_d_l___pixel_format">SDL_PixelFormat</link>&#32;*m_pixelFormat;
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;m_imageLoaded&#32;=&#32;<emphasis role="keyword">false</emphasis>;
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;m_xSize,&#32;m_ySize,&#32;m_pitch;
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__config_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>&#32;m_bytesPerPixel;
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__config_8h_1a435d1572bf3f880d55459d9805097f62">uint32_t</link>&#32;m_rMask,&#32;m_gMask,&#32;m_bMask,&#32;m_aMask;
+36 
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+38 &#32;&#32;&#32;&#32;}
+39 }
+40 
+41 
+42 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//RAYTRACING_TEXTUREIMAGE_H</emphasis>
+</programlisting></section>

@@ -1,0 +1,202 @@
+.TH "D:/RayTracing/include/SDL_error.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_error.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SDL_stdinc\&.h'\fP
+.br
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_SetError\fP (\fBSDL_PRINTF_FORMAT_STRING\fP const char *fmt,\&.\&.\&.) \fBSDL_PRINTF_VARARG_FUNC\fP(1)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP const char *\fBSDLCALL\fP \fBSDL_GetError\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP char *\fBSDLCALL\fP \fBSDL_GetErrorMsg\fP (char *errstr, int maxlen)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_ClearError\fP (\fBvoid\fP)"
+.br
+.in -1c
+.SS "Internal error functions"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSDL_OutOfMemory\fP()   \fBSDL_Error\fP(\fBSDL_ENOMEM\fP)"
+.br
+.ti -1c
+.RI "#define \fBSDL_Unsupported\fP()   \fBSDL_Error\fP(\fBSDL_UNSUPPORTED\fP)"
+.br
+.ti -1c
+.RI "#define \fBSDL_InvalidParamError\fP(\fBparam\fP)   \fBSDL_SetError\fP('Parameter '%\fBs\fP' is invalid', (param))"
+.br
+.ti -1c
+.RI "enum \fBSDL_errorcode\fP { \fBSDL_ENOMEM\fP, \fBSDL_EFREAD\fP, \fBSDL_EFWRITE\fP, \fBSDL_EFSEEK\fP, \fBSDL_UNSUPPORTED\fP, \fBSDL_LASTERROR\fP }"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_Error\fP (\fBSDL_errorcode\fP code)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Simple error message routines for SDL\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define SDL_InvalidParamError(\fBparam\fP)   \fBSDL_SetError\fP('Parameter '%\fBs\fP' is invalid', (param))"
+
+.SS "#define SDL_OutOfMemory()   \fBSDL_Error\fP(\fBSDL_ENOMEM\fP)"
+
+.SS "#define SDL_Unsupported()   \fBSDL_Error\fP(\fBSDL_UNSUPPORTED\fP)"
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBSDL_errorcode\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISDL_ENOMEM \fP\fP
+.TP
+\fB\fISDL_EFREAD \fP\fP
+.TP
+\fB\fISDL_EFWRITE \fP\fP
+.TP
+\fB\fISDL_EFSEEK \fP\fP
+.TP
+\fB\fISDL_UNSUPPORTED \fP\fP
+.TP
+\fB\fISDL_LASTERROR \fP\fP
+.SH "Function Documentation"
+.PP 
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_ClearError (\fBvoid\fP)"
+Clear any previous error message for this thread\&.
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GetError\fP 
+.PP
+\fBSDL_SetError\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_Error (\fBSDL_errorcode\fP code)"
+
+.SS "\fBDECLSPEC\fP const char *\fBSDLCALL\fP SDL_GetError (\fBvoid\fP)"
+Retrieve a message about the last error that occurred on the current thread\&.
+.PP
+It is possible for multiple errors to occur before calling \fBSDL_GetError()\fP\&. Only the last error is returned\&.
+.PP
+The message is only applicable when an SDL function has signaled an error\&. You must check the return values of SDL function calls to determine when to appropriately call \fBSDL_GetError()\fP\&. You should \fInot\fP use the results of \fBSDL_GetError()\fP to decide if an error has occurred! Sometimes SDL will set an error string even when reporting success\&.
+.PP
+SDL will \fInot\fP clear the error string for successful API calls\&. You \fImust\fP check return values for failure cases before you can assume the error string applies\&.
+.PP
+Error strings are set per-thread, so an error set in a different thread will not interfere with the current thread's operation\&.
+.PP
+The returned string is internally allocated and must not be freed by the application\&.
+.PP
+\fBReturns\fP
+.RS 4
+a message with information about the specific error that occurred, or an empty string if there hasn't been an error message set since the last call to \fBSDL_ClearError()\fP\&. The message is only applicable when an SDL function has signaled an error\&. You must check the return values of SDL function calls to determine when to appropriately call \fBSDL_GetError()\fP\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_ClearError\fP 
+.PP
+\fBSDL_SetError\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP char *\fBSDLCALL\fP SDL_GetErrorMsg (char * errstr, int maxlen)"
+Get the last error message that was set for the current thread\&.
+.PP
+This allows the caller to copy the error string into a provided buffer, but otherwise operates exactly the same as \fBSDL_GetError()\fP\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIerrstr\fP A buffer to fill with the last error message that was set for the current thread 
+.br
+\fImaxlen\fP The size of the buffer pointed to by the errstr parameter 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the pointer passed in as the \fCerrstr\fP parameter\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.14\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GetError\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_SetError (\fBSDL_PRINTF_FORMAT_STRING\fP const char * fmt,  \&.\&.\&.)"
+Set the SDL error message for the current thread\&.
+.PP
+Calling this function will replace any previous error message that was set\&.
+.PP
+This function always returns -1, since SDL frequently uses -1 to signify an failing result, leading to this idiom:
+.PP
+.PP
+.nf
+if (error_code) {
+    return SDL_SetError("This operation has failed: %d", error_code);
+}
+.fi
+.PP
+.PP
+\fBParameters\fP
+.RS 4
+\fIfmt\fP a printf()-style message format string 
+.br
+\fI\&.\&.\&.\fP additional parameters matching % tokens in the \fCfmt\fP string, if any 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+always -1\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_ClearError\fP 
+.PP
+\fBSDL_GetError\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

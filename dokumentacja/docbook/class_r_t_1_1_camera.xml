@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_r_t_1_1_camera" xml:lang="en-US">
+<title>RT::Camera Class Reference</title>
+<indexterm><primary>RT::Camera</primary></indexterm>
+<para>
+<computeroutput>#include &lt;camera.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_r_t_1_1_camera_1a1513de7af55db310b04aa83f6cd747e6">Camera</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_class_r_t_1_1_camera_1a7a08c60fb7a07929897e3148e798976e">SetPosition</link> (const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp;newPosition)</para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_class_r_t_1_1_camera_1a303252f454230eb67fef370256aa806f">SetLookAt</link> (const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp;newLookAt)</para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_class_r_t_1_1_camera_1ab60600a74e7a9f82ea763321a3f7210e">SetUp</link> (const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp;upVector)</para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_class_r_t_1_1_camera_1af56677571336b038e942df0dfc4e4090">SetLength</link> (double newLength)</para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_class_r_t_1_1_camera_1aad8f50f59189b1ddf6b36e19a957c2ba">SetHorzSize</link> (double newSize)</para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_class_r_t_1_1_camera_1a2b782b4aab7480489298d78fa602d06f">SetAspect</link> (double newAspectRatio)</para>
+</listitem>
+            <listitem><para><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; <link linkend="_class_r_t_1_1_camera_1ae7c3393d671ae6fbf189102b00f14a2d">GetPosition</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; <link linkend="_class_r_t_1_1_camera_1ab2d684d8ec6c090f969770c81eaed115">GetLookAt</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; <link linkend="_class_r_t_1_1_camera_1addf57b743043ff67bf565d573a8f63f8">GetUp</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; <link linkend="_class_r_t_1_1_camera_1a844fc9bf91008fa5468b1fb37fb273f5">GetU</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; <link linkend="_class_r_t_1_1_camera_1a230e5e96be52db49974ca551aa90b24d">GetV</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; <link linkend="_class_r_t_1_1_camera_1a7f7066c62259fcea9232bac2ad943770">GetScreenCentre</link> ()</para>
+</listitem>
+            <listitem><para>double <link linkend="_class_r_t_1_1_camera_1a0799a5aa243b66a7f0172397edf76cea">GetLength</link> ()</para>
+</listitem>
+            <listitem><para>double <link linkend="_class_r_t_1_1_camera_1aceddd3f90b0a8510f5ae1639f7af0962">GetHorzSize</link> ()</para>
+</listitem>
+            <listitem><para>double <link linkend="_class_r_t_1_1_camera_1ae65dc2e37298fdf57f500aaf4e41fa88">GetAspect</link> ()</para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_r_t_1_1_camera_1ab022ad5b3b5c28e4eb016516a39367f9">GenerateRay</link> (float proScreenX, float proScreenY, <link linkend="_class_r_t_1_1_ray">RT::Ray</link> &amp;cameraRay)</para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_class_r_t_1_1_camera_1ac58d2976470b32493c5645d548e2a0c4">UpdateCameraGeometry</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_r_t_1_1_camera_1a1513de7af55db310b04aa83f6cd747e6"/><section>
+    <title>Camera()</title>
+<indexterm><primary>Camera</primary><secondary>RT::Camera</secondary></indexterm>
+<indexterm><primary>RT::Camera</primary><secondary>Camera</secondary></indexterm>
+<para><computeroutput>RT::Camera::Camera ( )</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_r_t_1_1_camera_1ab022ad5b3b5c28e4eb016516a39367f9"/><section>
+    <title>GenerateRay()</title>
+<indexterm><primary>GenerateRay</primary><secondary>RT::Camera</secondary></indexterm>
+<indexterm><primary>RT::Camera</primary><secondary>GenerateRay</secondary></indexterm>
+<para><computeroutput>bool RT::Camera::GenerateRay (float proScreenX, float proScreenY, <link linkend="_class_r_t_1_1_ray">RT::Ray</link> &amp; cameraRay)</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_camera_1ae65dc2e37298fdf57f500aaf4e41fa88"/><section>
+    <title>GetAspect()</title>
+<indexterm><primary>GetAspect</primary><secondary>RT::Camera</secondary></indexterm>
+<indexterm><primary>RT::Camera</primary><secondary>GetAspect</secondary></indexterm>
+<para><computeroutput>double RT::Camera::GetAspect ( )</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_camera_1aceddd3f90b0a8510f5ae1639f7af0962"/><section>
+    <title>GetHorzSize()</title>
+<indexterm><primary>GetHorzSize</primary><secondary>RT::Camera</secondary></indexterm>
+<indexterm><primary>RT::Camera</primary><secondary>GetHorzSize</secondary></indexterm>
+<para><computeroutput>double RT::Camera::GetHorzSize ( )</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_camera_1a0799a5aa243b66a7f0172397edf76cea"/><section>
+    <title>GetLength()</title>
+<indexterm><primary>GetLength</primary><secondary>RT::Camera</secondary></indexterm>
+<indexterm><primary>RT::Camera</primary><secondary>GetLength</secondary></indexterm>
+<para><computeroutput>double RT::Camera::GetLength ( )</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_camera_1ab2d684d8ec6c090f969770c81eaed115"/><section>
+    <title>GetLookAt()</title>
+<indexterm><primary>GetLookAt</primary><secondary>RT::Camera</secondary></indexterm>
+<indexterm><primary>RT::Camera</primary><secondary>GetLookAt</secondary></indexterm>
+<para><computeroutput><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; RT::Camera::GetLookAt ( )</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_camera_1ae7c3393d671ae6fbf189102b00f14a2d"/><section>
+    <title>GetPosition()</title>
+<indexterm><primary>GetPosition</primary><secondary>RT::Camera</secondary></indexterm>
+<indexterm><primary>RT::Camera</primary><secondary>GetPosition</secondary></indexterm>
+<para><computeroutput><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; RT::Camera::GetPosition ( )</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_camera_1a7f7066c62259fcea9232bac2ad943770"/><section>
+    <title>GetScreenCentre()</title>
+<indexterm><primary>GetScreenCentre</primary><secondary>RT::Camera</secondary></indexterm>
+<indexterm><primary>RT::Camera</primary><secondary>GetScreenCentre</secondary></indexterm>
+<para><computeroutput><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; RT::Camera::GetScreenCentre ( )</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_camera_1a844fc9bf91008fa5468b1fb37fb273f5"/><section>
+    <title>GetU()</title>
+<indexterm><primary>GetU</primary><secondary>RT::Camera</secondary></indexterm>
+<indexterm><primary>RT::Camera</primary><secondary>GetU</secondary></indexterm>
+<para><computeroutput><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; RT::Camera::GetU ( )</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_camera_1addf57b743043ff67bf565d573a8f63f8"/><section>
+    <title>GetUp()</title>
+<indexterm><primary>GetUp</primary><secondary>RT::Camera</secondary></indexterm>
+<indexterm><primary>RT::Camera</primary><secondary>GetUp</secondary></indexterm>
+<para><computeroutput><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; RT::Camera::GetUp ( )</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_camera_1a230e5e96be52db49974ca551aa90b24d"/><section>
+    <title>GetV()</title>
+<indexterm><primary>GetV</primary><secondary>RT::Camera</secondary></indexterm>
+<indexterm><primary>RT::Camera</primary><secondary>GetV</secondary></indexterm>
+<para><computeroutput><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; RT::Camera::GetV ( )</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_camera_1a2b782b4aab7480489298d78fa602d06f"/><section>
+    <title>SetAspect()</title>
+<indexterm><primary>SetAspect</primary><secondary>RT::Camera</secondary></indexterm>
+<indexterm><primary>RT::Camera</primary><secondary>SetAspect</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> RT::Camera::SetAspect (double newAspectRatio)</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_camera_1aad8f50f59189b1ddf6b36e19a957c2ba"/><section>
+    <title>SetHorzSize()</title>
+<indexterm><primary>SetHorzSize</primary><secondary>RT::Camera</secondary></indexterm>
+<indexterm><primary>RT::Camera</primary><secondary>SetHorzSize</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> RT::Camera::SetHorzSize (double newSize)</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_camera_1af56677571336b038e942df0dfc4e4090"/><section>
+    <title>SetLength()</title>
+<indexterm><primary>SetLength</primary><secondary>RT::Camera</secondary></indexterm>
+<indexterm><primary>RT::Camera</primary><secondary>SetLength</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> RT::Camera::SetLength (double newLength)</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_camera_1a303252f454230eb67fef370256aa806f"/><section>
+    <title>SetLookAt()</title>
+<indexterm><primary>SetLookAt</primary><secondary>RT::Camera</secondary></indexterm>
+<indexterm><primary>RT::Camera</primary><secondary>SetLookAt</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> RT::Camera::SetLookAt (const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp; newLookAt)</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_camera_1a7a08c60fb7a07929897e3148e798976e"/><section>
+    <title>SetPosition()</title>
+<indexterm><primary>SetPosition</primary><secondary>RT::Camera</secondary></indexterm>
+<indexterm><primary>RT::Camera</primary><secondary>SetPosition</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> RT::Camera::SetPosition (const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp; newPosition)</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_camera_1ab60600a74e7a9f82ea763321a3f7210e"/><section>
+    <title>SetUp()</title>
+<indexterm><primary>SetUp</primary><secondary>RT::Camera</secondary></indexterm>
+<indexterm><primary>RT::Camera</primary><secondary>SetUp</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> RT::Camera::SetUp (const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp; upVector)</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_camera_1ac58d2976470b32493c5645d548e2a0c4"/><section>
+    <title>UpdateCameraGeometry()</title>
+<indexterm><primary>UpdateCameraGeometry</primary><secondary>RT::Camera</secondary></indexterm>
+<indexterm><primary>RT::Camera</primary><secondary>UpdateCameraGeometry</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> RT::Camera::UpdateCameraGeometry ( )</computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following files:</para>
+D:/RayTracing/RayTrace/<link linkend="_camera_8h">camera.h</link>D:/RayTracing/RayTrace/<link linkend="_camera_8cpp">camera.cpp</link></section>
+</section>

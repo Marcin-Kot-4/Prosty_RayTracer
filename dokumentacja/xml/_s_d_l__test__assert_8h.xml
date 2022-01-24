@@ -1,0 +1,310 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_s_d_l__test__assert_8h" kind="file" language="C++">
+    <compoundname>SDL_test_assert.h</compoundname>
+    <includes refid="begin__code_8h" local="yes">begin_code.h</includes>
+    <includes refid="close__code_8h" local="yes">close_code.h</includes>
+    <includedby refid="_s_d_l__test_8h" local="yes">D:/RayTracing/include/SDL_test.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>D:/RayTracing/include/SDL_test_assert.h</label>
+        <link refid="_s_d_l__test__assert_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>begin_code.h</label>
+        <link refid="begin__code_8h"/>
+      </node>
+      <node id="3">
+        <label>close_code.h</label>
+        <link refid="close__code_8h"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>D:/RayTracing/include/SDL_test.h</label>
+        <link refid="_s_d_l__test_8h"/>
+      </node>
+      <node id="1">
+        <label>D:/RayTracing/include/SDL_test_assert.h</label>
+        <link refid="_s_d_l__test__assert_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_s_d_l__test__assert_8h_1adc9dbc949d8699a6f6515211a2efa0cf" prot="public" static="no">
+        <name>ASSERT_FAIL</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Fails the assert. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_assert.h" line="48" column="9" bodyfile="D:/RayTracing/include/SDL_test_assert.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__test__assert_8h_1ae67a2f28e6df1e351df870754835a09a" prot="public" static="no">
+        <name>ASSERT_PASS</name>
+        <initializer>1</initializer>
+        <briefdescription>
+<para>Passes the assert. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_assert.h" line="53" column="9" bodyfile="D:/RayTracing/include/SDL_test_assert.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_s_d_l__test__assert_8h_1a633252c9cb122f42c502ca43d6f842ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        <definition>void SDLTest_Assert</definition>
+        <argsstring>(int assertCondition, SDL_PRINTF_FORMAT_STRING const char *assertDescription,...) SDL_PRINTF_VARARG_FUNC(2)</argsstring>
+        <name>SDLTest_Assert</name>
+        <param>
+          <type>int</type>
+          <declname>assertCondition</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb" kindref="member">SDL_PRINTF_FORMAT_STRING</ref> const char *</type>
+          <declname>assertDescription</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+<para>Assert that logs and break execution flow on failures. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>assertCondition</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Evaluated condition or variable to assert; fail (==0) or pass (!=0). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>assertDescription</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Message to log with the assert describing it. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_assert.h" line="61" column="6" declfile="D:/RayTracing/include/SDL_test_assert.h" declline="61" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__assert_8h_1a9f6f6cecd54a5f7aeaf0c89e0f8fe0ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SDLTest_AssertCheck</definition>
+        <argsstring>(int assertCondition, SDL_PRINTF_FORMAT_STRING const char *assertDescription,...) SDL_PRINTF_VARARG_FUNC(2)</argsstring>
+        <name>SDLTest_AssertCheck</name>
+        <param>
+          <type>int</type>
+          <declname>assertCondition</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb" kindref="member">SDL_PRINTF_FORMAT_STRING</ref> const char *</type>
+          <declname>assertDescription</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+<para>Assert for test cases that logs but does not break execution flow on failures. Updates assertion counters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>assertCondition</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Evaluated condition or variable to assert; fail (==0) or pass (!=0). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>assertDescription</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Message to log with the assert describing it.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the assertCondition so it can be used to externally to break execution flow if desired. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_assert.h" line="71" column="5" declfile="D:/RayTracing/include/SDL_test_assert.h" declline="71" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__assert_8h_1a2156b479e33af1aa7e2c7d03c5cbb4c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        <definition>void SDLTest_AssertPass</definition>
+        <argsstring>(SDL_PRINTF_FORMAT_STRING const char *assertDescription,...) SDL_PRINTF_VARARG_FUNC(1)</argsstring>
+        <name>SDLTest_AssertPass</name>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb" kindref="member">SDL_PRINTF_FORMAT_STRING</ref> const char *</type>
+          <declname>assertDescription</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+<para>Explicitly pass without checking an assertion condition. Updates assertion counter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>assertDescription</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Message to log with the assert describing it. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_assert.h" line="78" column="6" declfile="D:/RayTracing/include/SDL_test_assert.h" declline="78" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__assert_8h_1a1f78edbf1f7a38ebfeb2a2c76e3a5e60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        <definition>void SDLTest_ResetAssertSummary</definition>
+        <argsstring>(void)</argsstring>
+        <name>SDLTest_ResetAssertSummary</name>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        </param>
+        <briefdescription>
+<para>Resets the assert summary counters to zero. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_assert.h" line="83" column="6" declfile="D:/RayTracing/include/SDL_test_assert.h" declline="83" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__assert_8h_1a7e34c7c9d66a164ed785de905c75ab54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        <definition>void SDLTest_LogAssertSummary</definition>
+        <argsstring>(void)</argsstring>
+        <name>SDLTest_LogAssertSummary</name>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        </param>
+        <briefdescription>
+<para>Logs summary of all assertions (total, pass, fail) since last reset as INFO or ERROR. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_assert.h" line="88" column="6" declfile="D:/RayTracing/include/SDL_test_assert.h" declline="88" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__assert_8h_1ad8cea91b1ce4db4fdea8ebab455c2190" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SDLTest_AssertSummaryToTestResult</definition>
+        <argsstring>(void)</argsstring>
+        <name>SDLTest_AssertSummaryToTestResult</name>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        </param>
+        <briefdescription>
+<para>Converts the current assert summary state to a test result. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>TEST_RESULT_PASSED, TEST_RESULT_FAILED, or TEST_RESULT_NO_ASSERT </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_assert.h" line="96" column="5" declfile="D:/RayTracing/include/SDL_test_assert.h" declline="96" declcolumn="5"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Include file for SDL test framework.</para>
+<para>This code is a part of the SDL2_test library, not the main SDL library. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/>Simple<sp/>DirectMedia<sp/>Layer</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/>Copyright<sp/>(C)<sp/>1997-2022<sp/>Sam<sp/>Lantinga<sp/>&lt;slouken@libsdl.org&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/>This<sp/>software<sp/>is<sp/>provided<sp/>&apos;as-is&apos;,<sp/>without<sp/>any<sp/>express<sp/>or<sp/>implied</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/>warranty.<sp/><sp/>In<sp/>no<sp/>event<sp/>will<sp/>the<sp/>authors<sp/>be<sp/>held<sp/>liable<sp/>for<sp/>any<sp/>damages</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/>arising<sp/>from<sp/>the<sp/>use<sp/>of<sp/>this<sp/>software.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/>Permission<sp/>is<sp/>granted<sp/>to<sp/>anyone<sp/>to<sp/>use<sp/>this<sp/>software<sp/>for<sp/>any<sp/>purpose,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/>including<sp/>commercial<sp/>applications,<sp/>and<sp/>to<sp/>alter<sp/>it<sp/>and<sp/>redistribute<sp/>it</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/>freely,<sp/>subject<sp/>to<sp/>the<sp/>following<sp/>restrictions:</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"></highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/>1.<sp/>The<sp/>origin<sp/>of<sp/>this<sp/>software<sp/>must<sp/>not<sp/>be<sp/>misrepresented;<sp/>you<sp/>must<sp/>not</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>claim<sp/>that<sp/>you<sp/>wrote<sp/>the<sp/>original<sp/>software.<sp/>If<sp/>you<sp/>use<sp/>this<sp/>software</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>in<sp/>a<sp/>product,<sp/>an<sp/>acknowledgment<sp/>in<sp/>the<sp/>product<sp/>documentation<sp/>would<sp/>be</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>appreciated<sp/>but<sp/>is<sp/>not<sp/>required.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/>2.<sp/>Altered<sp/>source<sp/>versions<sp/>must<sp/>be<sp/>plainly<sp/>marked<sp/>as<sp/>such,<sp/>and<sp/>must<sp/>not<sp/>be</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>misrepresented<sp/>as<sp/>being<sp/>the<sp/>original<sp/>software.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/>3.<sp/>This<sp/>notice<sp/>may<sp/>not<sp/>be<sp/>removed<sp/>or<sp/>altered<sp/>from<sp/>any<sp/>source<sp/>distribution.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>Assert<sp/>API<sp/>for<sp/>test<sp/>code<sp/>and<sp/>test<sp/>cases</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SDL_test_assert_h_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_test_assert_h_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="begin__code_8h" kindref="compound">begin_code.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Set<sp/>up<sp/>for<sp/>C<sp/>function<sp/>definitions,<sp/>even<sp/>when<sp/>using<sp/>C++<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="_s_d_l__test__assert_8h_1adc9dbc949d8699a6f6515211a2efa0cf" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASSERT_FAIL<sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="_s_d_l__test__assert_8h_1ae67a2f28e6df1e351df870754835a09a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ASSERT_PASS<sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="_s_d_l__test__assert_8h_1a633252c9cb122f42c502ca43d6f842ad" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__test__assert_8h_1a633252c9cb122f42c502ca43d6f842ad" kindref="member">SDLTest_Assert</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>assertCondition,<sp/><ref refid="_s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb" kindref="member">SDL_PRINTF_FORMAT_STRING</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*assertDescription,<sp/>...)<sp/><ref refid="_s_d_l__stdinc_8h_1ab974676e45d9edeef6598d601d4fdd6a" kindref="member">SDL_PRINTF_VARARG_FUNC</ref>(2);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="_s_d_l__test__assert_8h_1a9f6f6cecd54a5f7aeaf0c89e0f8fe0ab" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__test__assert_8h_1a9f6f6cecd54a5f7aeaf0c89e0f8fe0ab" kindref="member">SDLTest_AssertCheck</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>assertCondition,<sp/><ref refid="_s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb" kindref="member">SDL_PRINTF_FORMAT_STRING</ref><sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*assertDescription,<sp/>...)<sp/><ref refid="_s_d_l__stdinc_8h_1ab974676e45d9edeef6598d601d4fdd6a" kindref="member">SDL_PRINTF_VARARG_FUNC</ref>(2);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="_s_d_l__test__assert_8h_1a2156b479e33af1aa7e2c7d03c5cbb4c9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__test__assert_8h_1a2156b479e33af1aa7e2c7d03c5cbb4c9" kindref="member">SDLTest_AssertPass</ref>(<ref refid="_s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb" kindref="member">SDL_PRINTF_FORMAT_STRING</ref><sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*assertDescription,<sp/>...)<sp/><ref refid="_s_d_l__stdinc_8h_1ab974676e45d9edeef6598d601d4fdd6a" kindref="member">SDL_PRINTF_VARARG_FUNC</ref>(1);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="_s_d_l__test__assert_8h_1a1f78edbf1f7a38ebfeb2a2c76e3a5e60" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__test__assert_8h_1a1f78edbf1f7a38ebfeb2a2c76e3a5e60" kindref="member">SDLTest_ResetAssertSummary</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="_s_d_l__test__assert_8h_1a7e34c7c9d66a164ed785de905c75ab54" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__test__assert_8h_1a7e34c7c9d66a164ed785de905c75ab54" kindref="member">SDLTest_LogAssertSummary</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="_s_d_l__test__assert_8h_1ad8cea91b1ce4db4fdea8ebab455c2190" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__test__assert_8h_1ad8cea91b1ce4db4fdea8ebab455c2190" kindref="member">SDLTest_AssertSummaryToTestResult</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="close__code_8h" kindref="compound">close_code.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>SDL_test_assert_h_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>vi:<sp/>set<sp/>ts=4<sp/>sw=4<sp/>expandtab:<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/include/SDL_test_assert.h"/>
+  </compounddef>
+</doxygen>

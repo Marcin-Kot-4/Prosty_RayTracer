@@ -1,0 +1,492 @@
+.TH "D:/RayTracing/include/SDL_keyboard.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_keyboard.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SDL_stdinc\&.h'\fP
+.br
+\fC#include 'SDL_error\&.h'\fP
+.br
+\fC#include 'SDL_keycode\&.h'\fP
+.br
+\fC#include 'SDL_video\&.h'\fP
+.br
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBSDL_Keysym\fP"
+.br
+.RI "The SDL keysym structure, used in key events\&. "
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBSDL_Keysym\fP \fBSDL_Keysym\fP"
+.br
+.RI "The SDL keysym structure, used in key events\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_Window\fP *\fBSDLCALL\fP \fBSDL_GetKeyboardFocus\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP const \fBUint8\fP *\fBSDLCALL\fP \fBSDL_GetKeyboardState\fP (int *numkeys)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_Keymod\fP \fBSDLCALL\fP \fBSDL_GetModState\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_SetModState\fP (\fBSDL_Keymod\fP modstate)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_Keycode\fP \fBSDLCALL\fP \fBSDL_GetKeyFromScancode\fP (\fBSDL_Scancode\fP scancode)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_Scancode\fP \fBSDLCALL\fP \fBSDL_GetScancodeFromKey\fP (\fBSDL_Keycode\fP key)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP const char *\fBSDLCALL\fP \fBSDL_GetScancodeName\fP (\fBSDL_Scancode\fP scancode)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_Scancode\fP \fBSDLCALL\fP \fBSDL_GetScancodeFromName\fP (const char *\fBname\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP const char *\fBSDLCALL\fP \fBSDL_GetKeyName\fP (\fBSDL_Keycode\fP key)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_Keycode\fP \fBSDLCALL\fP \fBSDL_GetKeyFromName\fP (const char *\fBname\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_StartTextInput\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP \fBSDL_IsTextInputActive\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_StopTextInput\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_SetTextInputRect\fP (\fBSDL_Rect\fP *rect)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP \fBSDL_HasScreenKeyboardSupport\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP \fBSDL_IsScreenKeyboardShown\fP (\fBSDL_Window\fP *window)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include file for SDL keyboard event handling 
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBSDL_Keysym\fP \fBSDL_Keysym\fP"
+
+.PP
+The SDL keysym structure, used in key events\&. 
+.PP
+\fBNote\fP
+.RS 4
+If you are looking for translated character input, see the \fBSDL_TEXTINPUT\fP event\&. 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBDECLSPEC\fP \fBSDL_Window\fP *\fBSDLCALL\fP SDL_GetKeyboardFocus (\fBvoid\fP)"
+Query the window which currently has keyboard focus\&.
+.PP
+\fBReturns\fP
+.RS 4
+the window with keyboard focus\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP const \fBUint8\fP *\fBSDLCALL\fP SDL_GetKeyboardState (int * numkeys)"
+Get a snapshot of the current state of the keyboard\&.
+.PP
+The pointer returned is a pointer to an internal SDL array\&. It will be valid for the whole lifetime of the application and should not be freed by the caller\&.
+.PP
+A array element with a value of 1 means that the key is pressed and a value of 0 means that it is not\&. Indexes into this array are obtained by using SDL_Scancode values\&.
+.PP
+Use \fBSDL_PumpEvents()\fP to update the state array\&.
+.PP
+This function gives you the current state after all events have been processed, so if a key or button has been pressed and released before you process events, then the pressed state will never show up in the \fBSDL_GetKeyboardState()\fP calls\&.
+.PP
+Note: This function doesn't take into account whether shift has been pressed or not\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fInumkeys\fP if non-NULL, receives the length of the returned array 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a pointer to an array of key states\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_PumpEvents\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_Keycode\fP \fBSDLCALL\fP SDL_GetKeyFromName (const char * name)"
+Get a key code from a human-readable name\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP the human-readable key name 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+key code, or \fCSDLK_UNKNOWN\fP if the name wasn't recognized; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GetKeyFromScancode\fP 
+.PP
+\fBSDL_GetKeyName\fP 
+.PP
+\fBSDL_GetScancodeFromName\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_Keycode\fP \fBSDLCALL\fP SDL_GetKeyFromScancode (\fBSDL_Scancode\fP scancode)"
+Get the key code corresponding to the given scancode according to the current keyboard layout\&.
+.PP
+See SDL_Keycode for details\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIscancode\fP the desired SDL_Scancode to query 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the SDL_Keycode that corresponds to the given SDL_Scancode\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GetKeyName\fP 
+.PP
+\fBSDL_GetScancodeFromKey\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP const char *\fBSDLCALL\fP SDL_GetKeyName (\fBSDL_Keycode\fP key)"
+Get a human-readable name for a key\&.
+.PP
+See SDL_Scancode and SDL_Keycode for details\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP the desired SDL_Keycode to query 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a pointer to a UTF-8 string that stays valid at least until the next call to this function\&. If you need it around any longer, you must copy it\&. If the key doesn't have a name, this function returns an empty string ('')\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GetKeyFromName\fP 
+.PP
+\fBSDL_GetKeyFromScancode\fP 
+.PP
+\fBSDL_GetScancodeFromKey\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_Keymod\fP \fBSDLCALL\fP SDL_GetModState (\fBvoid\fP)"
+Get the current key modifier state for the keyboard\&.
+.PP
+\fBReturns\fP
+.RS 4
+an OR'd combination of the modifier keys for the keyboard\&. See SDL_Keymod for details\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GetKeyboardState\fP 
+.PP
+\fBSDL_SetModState\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_Scancode\fP \fBSDLCALL\fP SDL_GetScancodeFromKey (\fBSDL_Keycode\fP key)"
+Get the scancode corresponding to the given key code according to the current keyboard layout\&.
+.PP
+See SDL_Scancode for details\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP the desired SDL_Keycode to query 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the SDL_Scancode that corresponds to the given SDL_Keycode\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GetKeyFromScancode\fP 
+.PP
+\fBSDL_GetScancodeName\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_Scancode\fP \fBSDLCALL\fP SDL_GetScancodeFromName (const char * name)"
+Get a scancode from a human-readable name\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP the human-readable scancode name 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the SDL_Scancode, or \fCSDL_SCANCODE_UNKNOWN\fP if the name wasn't recognized; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GetKeyFromName\fP 
+.PP
+\fBSDL_GetScancodeFromKey\fP 
+.PP
+\fBSDL_GetScancodeName\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP const char *\fBSDLCALL\fP SDL_GetScancodeName (\fBSDL_Scancode\fP scancode)"
+Get a human-readable name for a scancode\&.
+.PP
+See SDL_Scancode for details\&.
+.PP
+\fBWarning\fP: The returned name is by design not stable across platforms, e\&.g\&. the name for \fCSDL_SCANCODE_LGUI\fP is 'Left GUI' under Linux but 'Left
+Windows' under Microsoft Windows, and some scancodes like \fCSDL_SCANCODE_NONUSBACKSLASH\fP don't have any name at all\&. There are even scancodes that share names, e\&.g\&. \fCSDL_SCANCODE_RETURN\fP and \fCSDL_SCANCODE_RETURN2\fP (both called 'Return')\&. This function is therefore unsuitable for creating a stable cross-platform two-way mapping between strings and scancodes\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIscancode\fP the desired SDL_Scancode to query 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a pointer to the name for the scancode\&. If the scancode doesn't have a name this function returns an empty string ('')\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GetScancodeFromKey\fP 
+.PP
+\fBSDL_GetScancodeFromName\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP SDL_HasScreenKeyboardSupport (\fBvoid\fP)"
+Check whether the platform has screen keyboard support\&.
+.PP
+\fBReturns\fP
+.RS 4
+SDL_TRUE if the platform has some screen keyboard support or SDL_FALSE if not\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_StartTextInput\fP 
+.PP
+\fBSDL_IsScreenKeyboardShown\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP SDL_IsScreenKeyboardShown (\fBSDL_Window\fP * window)"
+Check whether the screen keyboard is shown for given window\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIwindow\fP the window for which screen keyboard should be queried 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+SDL_TRUE if screen keyboard is shown or SDL_FALSE if not\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_HasScreenKeyboardSupport\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP SDL_IsTextInputActive (\fBvoid\fP)"
+Check whether or not Unicode text input events are enabled\&.
+.PP
+\fBReturns\fP
+.RS 4
+SDL_TRUE if text input events are enabled else SDL_FALSE\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_StartTextInput\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_SetModState (\fBSDL_Keymod\fP modstate)"
+Set the current key modifier state for the keyboard\&.
+.PP
+The inverse of \fBSDL_GetModState()\fP, \fBSDL_SetModState()\fP allows you to impose modifier key states on your application\&. Simply pass your desired modifier states into \fCmodstate\fP\&. This value may be a bitwise, OR'd combination of SDL_Keymod values\&.
+.PP
+This does not change the keyboard state, only the key modifier flags that SDL reports\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImodstate\fP the desired SDL_Keymod for the keyboard
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GetModState\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_SetTextInputRect (\fBSDL_Rect\fP * rect)"
+Set the rectangle used to type Unicode text inputs\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIrect\fP the \fBSDL_Rect\fP structure representing the rectangle to receive text (ignored if NULL)
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_StartTextInput\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_StartTextInput (\fBvoid\fP)"
+Start accepting Unicode text input events\&.
+.PP
+This function will start accepting Unicode text input events in the focused SDL window, and start emitting \fBSDL_TextInputEvent\fP (SDL_TEXTINPUT) and \fBSDL_TextEditingEvent\fP (SDL_TEXTEDITING) events\&. Please use this function in pair with \fBSDL_StopTextInput()\fP\&.
+.PP
+On some platforms using this function activates the screen keyboard\&.
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_SetTextInputRect\fP 
+.PP
+\fBSDL_StopTextInput\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_StopTextInput (\fBvoid\fP)"
+Stop receiving any text input events\&.
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_StartTextInput\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

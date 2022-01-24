@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e-vita_8md" kind="file" language="Markdown">
+    <compoundname>README-vita.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">PS<sp/>Vita</highlight></codeline>
+<codeline><highlight class="normal">=======</highlight></codeline>
+<codeline><highlight class="normal">SDL<sp/>port<sp/>for<sp/>the<sp/>Sony<sp/>Playstation<sp/>Vita<sp/>and<sp/>Sony<sp/>Playstation<sp/>TV</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Credit<sp/>to</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>xerpi<sp/>and<sp/>rsn8887<sp/>for<sp/>initial<sp/>(vita2d)<sp/>port</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>vitasdk/dolcesdk<sp/>devs</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>CBPS<sp/>discord<sp/>(Namely<sp/>Graphene<sp/>and<sp/>SonicMastr)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Building</highlight></codeline>
+<codeline><highlight class="normal">--------</highlight></codeline>
+<codeline><highlight class="normal">To<sp/>build<sp/>for<sp/>the<sp/>PSVita,<sp/>make<sp/>sure<sp/>you<sp/>have<sp/>vitasdk<sp/>and<sp/>cmake<sp/>installed<sp/>and<sp/>run:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>cmake<sp/>-S.<sp/>-Bbuild<sp/>-DCMAKE_TOOLCHAIN_FILE=${VITASDK}/share/vita.toolchain.cmake<sp/>-DCMAKE_BUILD_TYPE=Release</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>cmake<sp/>--build<sp/>build</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>cmake<sp/>--install<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Notes</highlight></codeline>
+<codeline><highlight class="normal">-----</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>gles1/gles2<sp/>support<sp/>and<sp/>renderers<sp/>are<sp/>disabled<sp/>by<sp/>default<sp/>and<sp/>can<sp/>be<sp/>enabled<sp/>by<sp/>configuring<sp/>with<sp/>`-DVIDEO_VITA_PVR=ON`</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>These<sp/>renderers<sp/>support<sp/>720p<sp/>and<sp/>1080i<sp/>resolutions.<sp/>These<sp/>can<sp/>be<sp/>specified<sp/>with:<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>`SDL_setenv(&quot;VITA_RESOLUTION&quot;,<sp/>&quot;720&quot;,<sp/>1);`<sp/>and<sp/>`SDL_setenv(&quot;VITA_RESOLUTION&quot;,<sp/>&quot;1080&quot;,<sp/>1);`</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>gles2<sp/>support<sp/>via<sp/>PIB<sp/>is<sp/>disabled<sp/>by<sp/>default<sp/>and<sp/>can<sp/>be<sp/>enabled<sp/>by<sp/>configuring<sp/>with<sp/>`-DVIDEO_VITA_PIB=ON`</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>By<sp/>default<sp/>SDL<sp/>emits<sp/>mouse<sp/>events<sp/>for<sp/>touch<sp/>events<sp/>on<sp/>every<sp/>touchscreen.<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Vita<sp/>has<sp/>two<sp/>touchscreens,<sp/>so<sp/>it&apos;s<sp/>recommended<sp/>to<sp/>use<sp/>`SDL_SetHint(SDL_HINT_TOUCH_MOUSE_EVENTS,<sp/>&quot;0&quot;);`<sp/>and<sp/>handle<sp/>touch<sp/>events<sp/>instead.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Individual<sp/>touchscreens<sp/>can<sp/>be<sp/>disabled<sp/>with:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>`SDL_setenv(&quot;VITA_DISABLE_TOUCH_FRONT&quot;,<sp/>&quot;1&quot;,<sp/>1);`<sp/>and<sp/>`SDL_setenv(&quot;VITA_DISABLE_TOUCH_BACK&quot;,<sp/>&quot;1&quot;,<sp/>1);`</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Support<sp/>for<sp/>L2/R2/R3/R3<sp/>buttons,<sp/>haptic<sp/>feedback<sp/>and<sp/>gamepad<sp/>led<sp/>only<sp/>available<sp/>on<sp/>PSTV,<sp/>or<sp/>when<sp/>using<sp/>external<sp/>ds4<sp/>gamepad<sp/>on<sp/>vita.</highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/docs/README-vita.md"/>
+  </compounddef>
+</doxygen>

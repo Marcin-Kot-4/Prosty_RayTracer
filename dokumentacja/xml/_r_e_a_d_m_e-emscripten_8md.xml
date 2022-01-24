@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e-emscripten_8md" kind="file" language="Markdown">
+    <compoundname>README-emscripten.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">Emscripten</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Build:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$<sp/>mkdir<sp/>build</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$<sp/>cd<sp/>build</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$<sp/>emconfigure<sp/>../configure<sp/>--host=asmjs-unknown-emscripten<sp/>--disable-assembly<sp/>--disable-threads<sp/>--disable-cpuinfo<sp/>CFLAGS=&quot;-O2&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$<sp/>emmake<sp/>make</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Or<sp/>with<sp/>cmake:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$<sp/>mkdir<sp/>build</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$<sp/>cd<sp/>build</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$<sp/>emcmake<sp/>cmake<sp/>..</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$<sp/>emmake<sp/>make</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>build<sp/>one<sp/>of<sp/>the<sp/>tests:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$<sp/>cd<sp/>test/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$<sp/>emcc<sp/>-O2<sp/>--js-opts<sp/>0<sp/>-g4<sp/>testdraw2.c<sp/>-I../include<sp/>../build/.libs/libSDL2.a<sp/>../build/libSDL2_test.a<sp/>-o<sp/>a.html</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Uses<sp/>GLES2<sp/>renderer<sp/>or<sp/>software</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Some<sp/>other<sp/>SDL2<sp/>libraries<sp/>can<sp/>be<sp/>easily<sp/>built<sp/>(assuming<sp/>SDL2<sp/>is<sp/>installed<sp/>somewhere):</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SDL_mixer<sp/>(http://www.libsdl.org/projects/SDL_mixer/):</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$<sp/>EMCONFIGURE_JS=1<sp/>emconfigure<sp/>../configure</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>build<sp/>as<sp/>usual...</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SDL_gfx<sp/>(http://cms.ferzkopp.net/index.php/software/13-sdl-gfx):</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$<sp/>EMCONFIGURE_JS=1<sp/>emconfigure<sp/>../configure<sp/>--disable-mmx</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>build<sp/>as<sp/>usual...</highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/docs/README-emscripten.md"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,407 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__rect_8h" xml:lang="en-US">
+<title>D:/RayTracing/include/SDL_rect.h File Reference</title>
+<indexterm><primary>D:/RayTracing/include/SDL_rect.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;SDL_stdinc.h&quot;
+#include &quot;SDL_error.h&quot;
+#include &quot;SDL_pixels.h&quot;
+#include &quot;SDL_rwops.h&quot;
+#include &quot;begin_code.h&quot;
+#include &quot;close_code.h&quot;
+</programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_s_d_l___point">SDL_Point</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_s_d_l___f_point">SDL_FPoint</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_s_d_l___rect">SDL_Rect</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_s_d_l___f_rect">SDL_FRect</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef struct <link linkend="_struct_s_d_l___point">SDL_Point</link> <link linkend="__s_d_l__rect_8h_1aa8e5504e162ce2079402a96ab24464b0">SDL_Point</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_s_d_l___f_point">SDL_FPoint</link> <link linkend="__s_d_l__rect_8h_1ad2d04905f83d62ade9d6e215e3ac9874">SDL_FPoint</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_s_d_l___rect">SDL_Rect</link> <link linkend="__s_d_l__rect_8h_1a9e17b356ca55e6b653f4fe33c5357ed5">SDL_Rect</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_s_d_l___f_rect">SDL_FRect</link> <link linkend="__s_d_l__rect_8h_1a9237dbcbeeba2308b0180aa51ec5ada5">SDL_FRect</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="__s_d_l__rect_8h_1a2f9708f2739ef234c34e6feda50b4d2c">SDL_PointInRect</link> (const <link linkend="_struct_s_d_l___point">SDL_Point</link> *<link linkend="__s_d_l__opengl__glext_8h_1aa5367c14d90f462230c2611b81b41d23">p</link>, const <link linkend="_struct_s_d_l___rect">SDL_Rect</link> *<link linkend="__s_d_l__opengl_8h_1a42ce7cdc612e53abee15043f80220d97">r</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="__s_d_l__rect_8h_1aac0e9b5d3f34baec6a2cde95bb01f49c">SDL_RectEmpty</link> (const <link linkend="_struct_s_d_l___rect">SDL_Rect</link> *<link linkend="__s_d_l__opengl_8h_1a42ce7cdc612e53abee15043f80220d97">r</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="__s_d_l__rect_8h_1a156979fd3561cf90b87741d11057262a">SDL_RectEquals</link> (const <link linkend="_struct_s_d_l___rect">SDL_Rect</link> *<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>, const <link linkend="_struct_s_d_l___rect">SDL_Rect</link> *<link linkend="__s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010">b</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rect_8h_1a191ec0b069421d4a36304b475697e847">SDL_HasIntersection</link> (const <link linkend="_struct_s_d_l___rect">SDL_Rect</link> *A, const <link linkend="_struct_s_d_l___rect">SDL_Rect</link> *B)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rect_8h_1aff8e3dd3b1a25443cd7c8cf02a087290">SDL_IntersectRect</link> (const <link linkend="_struct_s_d_l___rect">SDL_Rect</link> *A, const <link linkend="_struct_s_d_l___rect">SDL_Rect</link> *B, <link linkend="_struct_s_d_l___rect">SDL_Rect</link> *<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rect_8h_1a659f2c25335202888408c95195823f9c">SDL_UnionRect</link> (const <link linkend="_struct_s_d_l___rect">SDL_Rect</link> *A, const <link linkend="_struct_s_d_l___rect">SDL_Rect</link> *B, <link linkend="_struct_s_d_l___rect">SDL_Rect</link> *<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rect_8h_1afcbb58dbba760b9e6fdb4b5d1ece015c">SDL_EnclosePoints</link> (const <link linkend="_struct_s_d_l___point">SDL_Point</link> *<link linkend="__s_d_l__opengl__glext_8h_1a0c0cc65d03e264ad2c5262927b620d3f">points</link>, int <link linkend="__s_d_l__opengl_8h_1a619bc20e8198de3bd3f3d7fc34de66b2">count</link>, const <link linkend="_struct_s_d_l___rect">SDL_Rect</link> *clip, <link linkend="_struct_s_d_l___rect">SDL_Rect</link> *<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__rect_8h_1acdabdcbeb7b7083f94a092daa26ce069">SDL_IntersectRectAndLine</link> (const <link linkend="_struct_s_d_l___rect">SDL_Rect</link> *rect, int *X1, int *Y1, int *X2, int *Y2)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Header file for SDL_rect definition and management functions. </para>
+</section>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="__s_d_l__rect_8h_1ad2d04905f83d62ade9d6e215e3ac9874"/><section>
+    <title>SDL_FPoint</title>
+<indexterm><primary>SDL_FPoint</primary><secondary>SDL_rect.h</secondary></indexterm>
+<indexterm><primary>SDL_rect.h</primary><secondary>SDL_FPoint</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_s_d_l___f_point">SDL_FPoint</link> <link linkend="_struct_s_d_l___f_point">SDL_FPoint</link></computeroutput></para>
+<para>The structure that defines a point (floating point)</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__rect_8h_1afcbb58dbba760b9e6fdb4b5d1ece015c">SDL_EnclosePoints</link> </para>
+
+<para><link linkend="__s_d_l__rect_8h_1a2f9708f2739ef234c34e6feda50b4d2c">SDL_PointInRect</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rect_8h_1a9237dbcbeeba2308b0180aa51ec5ada5"/><section>
+    <title>SDL_FRect</title>
+<indexterm><primary>SDL_FRect</primary><secondary>SDL_rect.h</secondary></indexterm>
+<indexterm><primary>SDL_rect.h</primary><secondary>SDL_FRect</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_s_d_l___f_rect">SDL_FRect</link> <link linkend="_struct_s_d_l___f_rect">SDL_FRect</link></computeroutput></para>
+<para>A rectangle, with the origin at the upper left (floating point). </para>
+</section>
+<anchor xml:id="__s_d_l__rect_8h_1aa8e5504e162ce2079402a96ab24464b0"/><section>
+    <title>SDL_Point</title>
+<indexterm><primary>SDL_Point</primary><secondary>SDL_rect.h</secondary></indexterm>
+<indexterm><primary>SDL_rect.h</primary><secondary>SDL_Point</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_s_d_l___point">SDL_Point</link> <link linkend="_struct_s_d_l___point">SDL_Point</link></computeroutput></para>
+<para>The structure that defines a point (integer)</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__rect_8h_1afcbb58dbba760b9e6fdb4b5d1ece015c">SDL_EnclosePoints</link> </para>
+
+<para><link linkend="__s_d_l__rect_8h_1a2f9708f2739ef234c34e6feda50b4d2c">SDL_PointInRect</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rect_8h_1a9e17b356ca55e6b653f4fe33c5357ed5"/><section>
+    <title>SDL_Rect</title>
+<indexterm><primary>SDL_Rect</primary><secondary>SDL_rect.h</secondary></indexterm>
+<indexterm><primary>SDL_rect.h</primary><secondary>SDL_Rect</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_s_d_l___rect">SDL_Rect</link> <link linkend="_struct_s_d_l___rect">SDL_Rect</link></computeroutput></para>
+<para>A rectangle, with the origin at the upper left (integer).</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__rect_8h_1aac0e9b5d3f34baec6a2cde95bb01f49c">SDL_RectEmpty</link> </para>
+
+<para><link linkend="__s_d_l__rect_8h_1a156979fd3561cf90b87741d11057262a">SDL_RectEquals</link> </para>
+
+<para><link linkend="__s_d_l__rect_8h_1a191ec0b069421d4a36304b475697e847">SDL_HasIntersection</link> </para>
+
+<para><link linkend="__s_d_l__rect_8h_1aff8e3dd3b1a25443cd7c8cf02a087290">SDL_IntersectRect</link> </para>
+
+<para><link linkend="__s_d_l__rect_8h_1a659f2c25335202888408c95195823f9c">SDL_UnionRect</link> </para>
+
+<para><link linkend="__s_d_l__rect_8h_1afcbb58dbba760b9e6fdb4b5d1ece015c">SDL_EnclosePoints</link> </para>
+</formalpara>
+</para>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__s_d_l__rect_8h_1afcbb58dbba760b9e6fdb4b5d1ece015c"/><section>
+    <title>SDL_EnclosePoints()</title>
+<indexterm><primary>SDL_EnclosePoints</primary><secondary>SDL_rect.h</secondary></indexterm>
+<indexterm><primary>SDL_rect.h</primary><secondary>SDL_EnclosePoints</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_EnclosePoints (const <link linkend="_struct_s_d_l___point">SDL_Point</link> * points, int count, const <link linkend="_struct_s_d_l___rect">SDL_Rect</link> * clip, <link linkend="_struct_s_d_l___rect">SDL_Rect</link> * result)</computeroutput></para>
+<para>Calculate a minimal rectangle enclosing a set of points.</para>
+
+<para>If <computeroutput>clip</computeroutput> is not NULL then only points inside of the clipping rectangle are considered.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>points</entry><entry>
+<para>an array of <link linkend="_struct_s_d_l___point">SDL_Point</link> structures representing points to be enclosed </para>
+</entry>
+                            </row>
+                            <row>
+<entry>count</entry><entry>
+<para>the number of structures in the <computeroutput>points</computeroutput> array </para>
+</entry>
+                            </row>
+                            <row>
+<entry>clip</entry><entry>
+<para>an <link linkend="_struct_s_d_l___rect">SDL_Rect</link> used for clipping or NULL to enclose all points </para>
+</entry>
+                            </row>
+                            <row>
+<entry>result</entry><entry>
+<para>an <link linkend="_struct_s_d_l___rect">SDL_Rect</link> structure filled in with the minimal enclosing rectangle </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE if any points were enclosed or SDL_FALSE if all the points were outside of the clipping rectangle.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rect_8h_1a191ec0b069421d4a36304b475697e847"/><section>
+    <title>SDL_HasIntersection()</title>
+<indexterm><primary>SDL_HasIntersection</primary><secondary>SDL_rect.h</secondary></indexterm>
+<indexterm><primary>SDL_rect.h</primary><secondary>SDL_HasIntersection</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_HasIntersection (const <link linkend="_struct_s_d_l___rect">SDL_Rect</link> * A, const <link linkend="_struct_s_d_l___rect">SDL_Rect</link> * B)</computeroutput></para>
+<para>Determine whether two rectangles intersect.</para>
+
+<para>If either pointer is NULL the function will return SDL_FALSE.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>A</entry><entry>
+<para>an <link linkend="_struct_s_d_l___rect">SDL_Rect</link> structure representing the first rectangle </para>
+</entry>
+                            </row>
+                            <row>
+<entry>B</entry><entry>
+<para>an <link linkend="_struct_s_d_l___rect">SDL_Rect</link> structure representing the second rectangle </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE if there is an intersection, SDL_FALSE otherwise.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__rect_8h_1aff8e3dd3b1a25443cd7c8cf02a087290">SDL_IntersectRect</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rect_8h_1aff8e3dd3b1a25443cd7c8cf02a087290"/><section>
+    <title>SDL_IntersectRect()</title>
+<indexterm><primary>SDL_IntersectRect</primary><secondary>SDL_rect.h</secondary></indexterm>
+<indexterm><primary>SDL_rect.h</primary><secondary>SDL_IntersectRect</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_IntersectRect (const <link linkend="_struct_s_d_l___rect">SDL_Rect</link> * A, const <link linkend="_struct_s_d_l___rect">SDL_Rect</link> * B, <link linkend="_struct_s_d_l___rect">SDL_Rect</link> * result)</computeroutput></para>
+<para>Calculate the intersection of two rectangles.</para>
+
+<para>If <computeroutput>result</computeroutput> is NULL then this function will return SDL_FALSE.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>A</entry><entry>
+<para>an <link linkend="_struct_s_d_l___rect">SDL_Rect</link> structure representing the first rectangle </para>
+</entry>
+                            </row>
+                            <row>
+<entry>B</entry><entry>
+<para>an <link linkend="_struct_s_d_l___rect">SDL_Rect</link> structure representing the second rectangle </para>
+</entry>
+                            </row>
+                            <row>
+<entry>result</entry><entry>
+<para>an <link linkend="_struct_s_d_l___rect">SDL_Rect</link> structure filled in with the intersection of rectangles <computeroutput>A</computeroutput> and <computeroutput>B</computeroutput> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE if there is an intersection, SDL_FALSE otherwise.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__rect_8h_1a191ec0b069421d4a36304b475697e847">SDL_HasIntersection</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rect_8h_1acdabdcbeb7b7083f94a092daa26ce069"/><section>
+    <title>SDL_IntersectRectAndLine()</title>
+<indexterm><primary>SDL_IntersectRectAndLine</primary><secondary>SDL_rect.h</secondary></indexterm>
+<indexterm><primary>SDL_rect.h</primary><secondary>SDL_IntersectRectAndLine</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_IntersectRectAndLine (const <link linkend="_struct_s_d_l___rect">SDL_Rect</link> * rect, int * X1, int * Y1, int * X2, int * Y2)</computeroutput></para>
+<para>Calculate the intersection of a rectangle and line segment.</para>
+
+<para>This function is used to clip a line segment to a rectangle. A line segment contained entirely within the rectangle or that does not intersect will remain unchanged. A line segment that crosses the rectangle at either or both ends will be clipped to the boundary of the rectangle and the new coordinates saved in <computeroutput>X1</computeroutput>, <computeroutput>Y1</computeroutput>, <computeroutput>X2</computeroutput>, and/or <computeroutput>Y2</computeroutput> as necessary.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>rect</entry><entry>
+<para>an <link linkend="_struct_s_d_l___rect">SDL_Rect</link> structure representing the rectangle to intersect </para>
+</entry>
+                            </row>
+                            <row>
+<entry>X1</entry><entry>
+<para>a pointer to the starting X-coordinate of the line </para>
+</entry>
+                            </row>
+                            <row>
+<entry>Y1</entry><entry>
+<para>a pointer to the starting Y-coordinate of the line </para>
+</entry>
+                            </row>
+                            <row>
+<entry>X2</entry><entry>
+<para>a pointer to the ending X-coordinate of the line </para>
+</entry>
+                            </row>
+                            <row>
+<entry>Y2</entry><entry>
+<para>a pointer to the ending Y-coordinate of the line </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE if there is an intersection, SDL_FALSE otherwise.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__rect_8h_1a2f9708f2739ef234c34e6feda50b4d2c"/><section>
+    <title>SDL_PointInRect()</title>
+<indexterm><primary>SDL_PointInRect</primary><secondary>SDL_rect.h</secondary></indexterm>
+<indexterm><primary>SDL_rect.h</primary><secondary>SDL_PointInRect</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> SDL_PointInRect (const <link linkend="_struct_s_d_l___point">SDL_Point</link> * p, const <link linkend="_struct_s_d_l___rect">SDL_Rect</link> * r)</computeroutput></para>
+<para>Returns true if point resides inside a rectangle. </para>
+</section>
+<anchor xml:id="__s_d_l__rect_8h_1aac0e9b5d3f34baec6a2cde95bb01f49c"/><section>
+    <title>SDL_RectEmpty()</title>
+<indexterm><primary>SDL_RectEmpty</primary><secondary>SDL_rect.h</secondary></indexterm>
+<indexterm><primary>SDL_rect.h</primary><secondary>SDL_RectEmpty</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> SDL_RectEmpty (const <link linkend="_struct_s_d_l___rect">SDL_Rect</link> * r)</computeroutput></para>
+<para>Returns true if the rectangle has no area. </para>
+</section>
+<anchor xml:id="__s_d_l__rect_8h_1a156979fd3561cf90b87741d11057262a"/><section>
+    <title>SDL_RectEquals()</title>
+<indexterm><primary>SDL_RectEquals</primary><secondary>SDL_rect.h</secondary></indexterm>
+<indexterm><primary>SDL_rect.h</primary><secondary>SDL_RectEquals</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> SDL_RectEquals (const <link linkend="_struct_s_d_l___rect">SDL_Rect</link> * a, const <link linkend="_struct_s_d_l___rect">SDL_Rect</link> * b)</computeroutput></para>
+<para>Returns true if the two rectangles are equal. </para>
+</section>
+<anchor xml:id="__s_d_l__rect_8h_1a659f2c25335202888408c95195823f9c"/><section>
+    <title>SDL_UnionRect()</title>
+<indexterm><primary>SDL_UnionRect</primary><secondary>SDL_rect.h</secondary></indexterm>
+<indexterm><primary>SDL_rect.h</primary><secondary>SDL_UnionRect</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_UnionRect (const <link linkend="_struct_s_d_l___rect">SDL_Rect</link> * A, const <link linkend="_struct_s_d_l___rect">SDL_Rect</link> * B, <link linkend="_struct_s_d_l___rect">SDL_Rect</link> * result)</computeroutput></para>
+<para>Calculate the union of two rectangles.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>A</entry><entry>
+<para>an <link linkend="_struct_s_d_l___rect">SDL_Rect</link> structure representing the first rectangle </para>
+</entry>
+                            </row>
+                            <row>
+<entry>B</entry><entry>
+<para>an <link linkend="_struct_s_d_l___rect">SDL_Rect</link> structure representing the second rectangle </para>
+</entry>
+                            </row>
+                            <row>
+<entry>result</entry><entry>
+<para>an <link linkend="_struct_s_d_l___rect">SDL_Rect</link> structure filled in with the union of rectangles <computeroutput>A</computeroutput> and <computeroutput>B</computeroutput></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0. </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

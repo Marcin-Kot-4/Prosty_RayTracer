@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="ray_8cpp" kind="file" language="C++">
+    <compoundname>ray.cpp</compoundname>
+    <includes refid="ray_8h" local="yes">ray.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>./qbLinAlg/qbVector.h</label>
+        <link refid="qb_vector_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/RayTracing/RayTrace/ray.cpp</label>
+        <link refid="ray_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ray.h</label>
+        <link refid="ray_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>iomanip</label>
+      </node>
+      <node id="5">
+        <label>iostream</label>
+      </node>
+      <node id="7">
+        <label>math.h</label>
+      </node>
+      <node id="4">
+        <label>stdexcept</label>
+      </node>
+      <node id="8">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ray_8h" kindref="compound">ray.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Domyślny<sp/>konstruktor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><ref refid="class_r_t_1_1_ray_1a71457f5853a4b7a849b74f49c3c29f77" kindref="member">RT::Ray::Ray</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_r_t_1_1_ray_1a4421d6cade1151cda334b75ba47d7396" kindref="member">m_point1</ref><sp/>=<sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>(std::vector&lt;double&gt;{0.0,<sp/>0.0,<sp/>0,0});</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_r_t_1_1_ray_1aff734d72e41788ae3f6cbc30c63a8b2a" kindref="member">m_point2</ref><sp/>=<sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>(std::vector&lt;double&gt;{0.0,<sp/>0.0,<sp/>1,0});</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_r_t_1_1_ray_1a3d253c2a4c4dbfe94c6fdac4dee167f7" kindref="member">m_lab</ref><sp/>=<sp/><ref refid="class_r_t_1_1_ray_1aff734d72e41788ae3f6cbc30c63a8b2a" kindref="member">m_point2</ref><sp/>-<sp/><ref refid="class_r_t_1_1_ray_1a4421d6cade1151cda334b75ba47d7396" kindref="member">m_point1</ref>;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><ref refid="class_r_t_1_1_ray_1a71457f5853a4b7a849b74f49c3c29f77" kindref="member">RT::Ray::Ray</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>&amp;point1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>&amp;point2)</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>m_point1<sp/>=<sp/>point1;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>m_point2<sp/>=<sp/>point2;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Biblioteka<sp/>qbVector<sp/>przeciąża<sp/>operator<sp/>&quot;-&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>m_lab<sp/>=<sp/>m_point2<sp/>-<sp/>m_point1;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/><ref refid="class_r_t_1_1_ray_1a8e3fc973be827bd72bc89d2940019fe5" kindref="member">RT::Ray::GetPoint1</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="19"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_point1;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/><ref refid="class_r_t_1_1_ray_1af4b3be15ef1228f32ba114a475453930" kindref="member">RT::Ray::GetPoint2</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="24"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_point2;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/RayTrace/ray.cpp"/>
+  </compounddef>
+</doxygen>

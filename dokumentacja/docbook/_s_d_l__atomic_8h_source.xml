@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__atomic_8h_source" xml:lang="en-US">
+<title>SDL_atomic.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_atomic.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+59 <emphasis role="preprocessor">#ifndef&#32;SDL_atomic_h_</emphasis>
+60 <emphasis role="preprocessor">#define&#32;SDL_atomic_h_</emphasis>
+61 
+62 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__stdinc_8h">SDL_stdinc.h</link>&quot;</emphasis>
+63 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__platform_8h">SDL_platform.h</link>&quot;</emphasis>
+64 
+65 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+66 
+67 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+68 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+69 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+70 <emphasis role="preprocessor">#endif</emphasis>
+71 
+87 <emphasis role="comment">/*&#32;@{&#32;*/</emphasis>
+88 
+89 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__atomic_8h_1a59179ff8d21c65b9d9a544f3c2088e81">SDL_SpinLock</link>;
+90 
+106 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__atomic_8h_1a5410c5f832f0d862282cd65fc432fc0b">SDL_AtomicTryLock</link>(<link linkend="__s_d_l__atomic_8h_1a59179ff8d21c65b9d9a544f3c2088e81">SDL_SpinLock</link>&#32;*lock);
+107 
+121 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__atomic_8h_1a95ecd72190ba8e5ed6ed78d5d1b36509">SDL_AtomicLock</link>(<link linkend="__s_d_l__atomic_8h_1a59179ff8d21c65b9d9a544f3c2088e81">SDL_SpinLock</link>&#32;*lock);
+122 
+138 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__atomic_8h_1a3fb14c56b17347349ac2fb5300205bac">SDL_AtomicUnlock</link>(<link linkend="__s_d_l__atomic_8h_1a59179ff8d21c65b9d9a544f3c2088e81">SDL_SpinLock</link>&#32;*lock);
+139 
+140 <emphasis role="comment">/*&#32;@}&#32;*/</emphasis><emphasis role="comment">/*&#32;SDL&#32;AtomicLock&#32;*/</emphasis>
+141 
+142 
+147 <emphasis role="preprocessor">#if&#32;defined(_MSC_VER)&#32;&amp;&amp;&#32;(_MSC_VER&#32;&gt;&#32;1200)&#32;&amp;&amp;&#32;!defined(__clang__)</emphasis>
+148 <emphasis role="keywordtype">void</emphasis>&#32;_ReadWriteBarrier(<emphasis role="keywordtype">void</emphasis>);
+149 <emphasis role="preprocessor">#pragma&#32;intrinsic(_ReadWriteBarrier)</emphasis>
+150 <emphasis role="preprocessor">#define&#32;SDL_CompilerBarrier()&#32;&#32;&#32;_ReadWriteBarrier()</emphasis>
+151 <emphasis role="preprocessor">#elif&#32;(defined(__GNUC__)&#32;&amp;&amp;&#32;!defined(__EMSCRIPTEN__))&#32;||&#32;(defined(__SUNPRO_C)&#32;&amp;&amp;&#32;(__SUNPRO_C&#32;&gt;=&#32;0x5120))</emphasis>
+152 <emphasis role="comment">/*&#32;This&#32;is&#32;correct&#32;for&#32;all&#32;CPUs&#32;when&#32;using&#32;GCC&#32;or&#32;Solaris&#32;Studio&#32;12.1+.&#32;*/</emphasis>
+153 <emphasis role="preprocessor">#define&#32;SDL_CompilerBarrier()&#32;&#32;&#32;__asm__&#32;__volatile__&#32;(&quot;&quot;</emphasis>&#32;:&#32;:&#32;:&#32;&quot;memory&quot;)
+154 <emphasis role="preprocessor">#elif&#32;defined(__WATCOMC__)</emphasis>
+155 <emphasis role="keyword">extern</emphasis>&#32;__inline&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__s_d_l__atomic_8h_1a36d435d444dc115a5cc11fa7027576ec">SDL_CompilerBarrier</link>(<emphasis role="keywordtype">void</emphasis>);
+156 <emphasis role="preprocessor">#pragma&#32;aux&#32;SDL_CompilerBarrier&#32;=&#32;&quot;&quot;</emphasis>&#32;parm&#32;[]&#32;modify&#32;exact&#32;[];
+157 <emphasis role="preprocessor">#else</emphasis>
+158 <emphasis role="preprocessor">#define&#32;SDL_CompilerBarrier()&#32;&#32;&#32;\</emphasis>
+159 <emphasis role="preprocessor">{&#32;SDL_SpinLock&#32;_tmp&#32;=&#32;0;&#32;SDL_AtomicLock(&amp;_tmp);&#32;SDL_AtomicUnlock(&amp;_tmp);&#32;}</emphasis>
+160 <emphasis role="preprocessor">#endif</emphasis>
+161 
+183 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__atomic_8h_1a4bec96c1fc632536952c309513a0258e">SDL_MemoryBarrierReleaseFunction</link>(<emphasis role="keywordtype">void</emphasis>);
+184 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__atomic_8h_1ae911d7eb425a9e83fd34ab1303412cba">SDL_MemoryBarrierAcquireFunction</link>(<emphasis role="keywordtype">void</emphasis>);
+185 
+186 <emphasis role="preprocessor">#if&#32;defined(__GNUC__)&#32;&amp;&amp;&#32;(defined(__powerpc__)&#32;||&#32;defined(__ppc__))</emphasis>
+187 <emphasis role="preprocessor">#define&#32;SDL_MemoryBarrierRelease()&#32;&#32;&#32;__asm__&#32;__volatile__&#32;(&quot;lwsync&quot;</emphasis>&#32;:&#32;:&#32;:&#32;&quot;memory&quot;)
+188 <emphasis role="preprocessor">#define&#32;SDL_MemoryBarrierAcquire()&#32;&#32;&#32;__asm__&#32;__volatile__&#32;(&quot;lwsync&quot;</emphasis>&#32;:&#32;:&#32;:&#32;&quot;memory&quot;)
+189 <emphasis role="preprocessor">#elif&#32;defined(__GNUC__)&#32;&amp;&amp;&#32;defined(__aarch64__)</emphasis>
+190 <emphasis role="preprocessor">#define&#32;SDL_MemoryBarrierRelease()&#32;&#32;&#32;__asm__&#32;__volatile__&#32;(&quot;dmb&#32;ish&quot;</emphasis>&#32;:&#32;:&#32;:&#32;&quot;memory&quot;)
+191 <emphasis role="preprocessor">#define&#32;SDL_MemoryBarrierAcquire()&#32;&#32;&#32;__asm__&#32;__volatile__&#32;(&quot;dmb&#32;ish&quot;</emphasis>&#32;:&#32;:&#32;:&#32;&quot;memory&quot;)
+192 <emphasis role="preprocessor">#elif&#32;defined(__GNUC__)&#32;&amp;&amp;&#32;defined(__arm__)</emphasis>
+193 <emphasis role="preprocessor">#if&#32;0&#32;</emphasis><emphasis role="comment">/*&#32;defined(__LINUX__)&#32;||&#32;defined(__ANDROID__)&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+194 <emphasis role="comment">/*&#32;Information&#32;from:</emphasis>
+195 <emphasis role="comment">&#32;&#32;&#32;https://chromium.googlesource.com/chromium/chromium/+/trunk/base/atomicops_internals_arm_gcc.h#19</emphasis>
+196 <emphasis role="comment"></emphasis>
+197 <emphasis role="comment">&#32;&#32;&#32;The&#32;Linux&#32;kernel&#32;provides&#32;a&#32;helper&#32;function&#32;which&#32;provides&#32;the&#32;right&#32;code&#32;for&#32;a&#32;memory&#32;barrier,</emphasis>
+198 <emphasis role="comment">&#32;&#32;&#32;hard-coded&#32;at&#32;address&#32;0xffff0fa0</emphasis>
+199 <emphasis role="comment">*/</emphasis>
+200 <emphasis role="keyword">typedef</emphasis>&#32;<link linkend="__s_d_l__audio_8h_1aa5cb90967788ada2711894ca158ece01">void</link>&#32;(*SDL_KernelMemoryBarrierFunc)();
+201 <emphasis role="preprocessor">#define&#32;SDL_MemoryBarrierRelease()&#32;&#32;((SDL_KernelMemoryBarrierFunc)0xffff0fa0)()</emphasis>
+202 <emphasis role="preprocessor">#define&#32;SDL_MemoryBarrierAcquire()&#32;&#32;((SDL_KernelMemoryBarrierFunc)0xffff0fa0)()</emphasis>
+203 <emphasis role="preprocessor">#elif&#32;0&#32;</emphasis><emphasis role="comment">/*&#32;defined(__QNXNTO__)&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+204 <emphasis role="preprocessor">#include&#32;&lt;sys/cpuinline.h&gt;</emphasis>
+205 
+206 <emphasis role="preprocessor">#define&#32;SDL_MemoryBarrierRelease()&#32;&#32;&#32;__cpu_membarrier()</emphasis>
+207 <emphasis role="preprocessor">#define&#32;SDL_MemoryBarrierAcquire()&#32;&#32;&#32;__cpu_membarrier()</emphasis>
+208 <emphasis role="preprocessor">#else</emphasis>
+209 <emphasis role="preprocessor">#if&#32;defined(__ARM_ARCH_7__)&#32;||&#32;defined(__ARM_ARCH_7A__)&#32;||&#32;defined(__ARM_ARCH_7EM__)&#32;||&#32;defined(__ARM_ARCH_7R__)&#32;||&#32;defined(__ARM_ARCH_7M__)&#32;||&#32;defined(__ARM_ARCH_7S__)&#32;||&#32;defined(__ARM_ARCH_8A__)</emphasis>
+210 <emphasis role="preprocessor">#define&#32;SDL_MemoryBarrierRelease()&#32;&#32;&#32;__asm__&#32;__volatile__&#32;(&quot;dmb&#32;ish&quot;</emphasis>&#32;:&#32;:&#32;:&#32;&quot;memory&quot;)
+211 <emphasis role="preprocessor">#define&#32;SDL_MemoryBarrierAcquire()&#32;&#32;&#32;__asm__&#32;__volatile__&#32;(&quot;dmb&#32;ish&quot;</emphasis>&#32;:&#32;:&#32;:&#32;&quot;memory&quot;)
+212 <emphasis role="preprocessor">#elif&#32;defined(__ARM_ARCH_6__)&#32;||&#32;defined(__ARM_ARCH_6J__)&#32;||&#32;defined(__ARM_ARCH_6K__)&#32;||&#32;defined(__ARM_ARCH_6T2__)&#32;||&#32;defined(__ARM_ARCH_6Z__)&#32;||&#32;defined(__ARM_ARCH_6ZK__)&#32;||&#32;defined(__ARM_ARCH_5TE__)</emphasis>
+213 <emphasis role="preprocessor">#ifdef&#32;__thumb__</emphasis>
+214 <emphasis role="comment">/*&#32;The&#32;mcr&#32;instruction&#32;isn&apos;t&#32;available&#32;in&#32;thumb&#32;mode,&#32;use&#32;real&#32;functions&#32;*/</emphasis>
+215 <emphasis role="preprocessor">#define&#32;SDL_MEMORY_BARRIER_USES_FUNCTION</emphasis>
+216 <emphasis role="preprocessor">#define&#32;SDL_MemoryBarrierRelease()&#32;&#32;&#32;SDL_MemoryBarrierReleaseFunction()</emphasis>
+217 <emphasis role="preprocessor">#define&#32;SDL_MemoryBarrierAcquire()&#32;&#32;&#32;SDL_MemoryBarrierAcquireFunction()</emphasis>
+218 <emphasis role="preprocessor">#else</emphasis>
+219 <emphasis role="preprocessor">#define&#32;SDL_MemoryBarrierRelease()&#32;&#32;&#32;__asm__&#32;__volatile__&#32;(&quot;mcr&#32;p15,&#32;0,&#32;%0,&#32;c7,&#32;c10,&#32;5&quot;</emphasis>&#32;:&#32;:&#32;&quot;r&quot;(0)&#32;:&#32;&quot;memory&quot;)
+220 <emphasis role="preprocessor">#define&#32;SDL_MemoryBarrierAcquire()&#32;&#32;&#32;__asm__&#32;__volatile__&#32;(&quot;mcr&#32;p15,&#32;0,&#32;%0,&#32;c7,&#32;c10,&#32;5&quot;</emphasis>&#32;:&#32;:&#32;&quot;r&quot;(0)&#32;:&#32;&quot;memory&quot;)
+221 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;__thumb__&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+222 <emphasis role="preprocessor">#else</emphasis>
+223 <emphasis role="preprocessor">#define&#32;SDL_MemoryBarrierRelease()&#32;&#32;&#32;__asm__&#32;__volatile__&#32;(&quot;&quot;</emphasis>&#32;:&#32;:&#32;:&#32;&quot;memory&quot;)
+224 <emphasis role="preprocessor">#define&#32;SDL_MemoryBarrierAcquire()&#32;&#32;&#32;__asm__&#32;__volatile__&#32;(&quot;&quot;</emphasis>&#32;:&#32;:&#32;:&#32;&quot;memory&quot;)
+225 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;__LINUX__&#32;||&#32;__ANDROID__&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+226 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;__GNUC__&#32;&amp;&amp;&#32;__arm__&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+227 <emphasis role="preprocessor">#else</emphasis>
+228 <emphasis role="preprocessor">#if&#32;(defined(__SUNPRO_C)&#32;&amp;&amp;&#32;(__SUNPRO_C&#32;&gt;=&#32;0x5120))</emphasis>
+229 <emphasis role="comment">/*&#32;This&#32;is&#32;correct&#32;for&#32;all&#32;CPUs&#32;on&#32;Solaris&#32;when&#32;using&#32;Solaris&#32;Studio&#32;12.1+.&#32;*/</emphasis>
+230 <emphasis role="preprocessor">#include&#32;&lt;mbarrier.h&gt;</emphasis>
+231 <emphasis role="preprocessor">#define&#32;SDL_MemoryBarrierRelease()&#32;&#32;__machine_rel_barrier()</emphasis>
+232 <emphasis role="preprocessor">#define&#32;SDL_MemoryBarrierAcquire()&#32;&#32;__machine_acq_barrier()</emphasis>
+233 <emphasis role="preprocessor">#else</emphasis>
+234 <emphasis role="comment">/*&#32;This&#32;is&#32;correct&#32;for&#32;the&#32;x86&#32;and&#32;x64&#32;CPUs,&#32;and&#32;we&apos;ll&#32;expand&#32;this&#32;over&#32;time.&#32;*/</emphasis>
+235 <emphasis role="preprocessor">#define&#32;SDL_MemoryBarrierRelease()&#32;&#32;SDL_CompilerBarrier()</emphasis>
+236 <emphasis role="preprocessor">#define&#32;SDL_MemoryBarrierAcquire()&#32;&#32;SDL_CompilerBarrier()</emphasis>
+237 <emphasis role="preprocessor">#endif</emphasis>
+238 <emphasis role="preprocessor">#endif</emphasis>
+239 
+244 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis>{&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l__atomic__t_1a0d09ddf3cc5798c709edb7cea104203a">value</link>;&#32;}&#32;<link linkend="_struct_s_d_l__atomic__t">SDL_atomic_t</link>;
+245 
+263 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__atomic_8h_1ad6b90be91abb896260930d3908c0437b">SDL_AtomicCAS</link>(<link linkend="_struct_s_d_l__atomic__t">SDL_atomic_t</link>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;oldval,&#32;<emphasis role="keywordtype">int</emphasis>&#32;newval);
+264 
+281 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__atomic_8h_1a95b659308ebb16226d5c0cbf2188e51d">SDL_AtomicSet</link>(<link linkend="_struct_s_d_l__atomic__t">SDL_atomic_t</link>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90">v</link>);
+282 
+296 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__atomic_8h_1a633c2661709f59c98f128f99aea36d96">SDL_AtomicGet</link>(<link linkend="_struct_s_d_l__atomic__t">SDL_atomic_t</link>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>);
+297 
+315 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__atomic_8h_1a36cadfcf8e2bda1974fbce6afdc6d529">SDL_AtomicAdd</link>(<link linkend="_struct_s_d_l__atomic__t">SDL_atomic_t</link>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90">v</link>);
+316 
+320 <emphasis role="preprocessor">#ifndef&#32;SDL_AtomicIncRef</emphasis>
+321 <emphasis role="preprocessor">#define&#32;SDL_AtomicIncRef(a)&#32;&#32;&#32;&#32;SDL_AtomicAdd(a,&#32;1)</emphasis>
+322 <emphasis role="preprocessor">#endif</emphasis>
+323 
+330 <emphasis role="preprocessor">#ifndef&#32;SDL_AtomicDecRef</emphasis>
+331 <emphasis role="preprocessor">#define&#32;SDL_AtomicDecRef(a)&#32;&#32;&#32;&#32;(SDL_AtomicAdd(a,&#32;-1)&#32;==&#32;1)</emphasis>
+332 <emphasis role="preprocessor">#endif</emphasis>
+333 
+351 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__atomic_8h_1aa3070cf7f391b522e08595822c2f0eba">SDL_AtomicCASPtr</link>(<emphasis role="keywordtype">void</emphasis>&#32;**<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>,&#32;<emphasis role="keywordtype">void</emphasis>&#32;*oldval,&#32;<emphasis role="keywordtype">void</emphasis>&#32;*newval);
+352 
+368 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>*&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__atomic_8h_1a3207340e57c812760328fa4f15198919">SDL_AtomicSetPtr</link>(<emphasis role="keywordtype">void</emphasis>&#32;**<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>,&#32;<emphasis role="keywordtype">void</emphasis>*&#32;<link linkend="__s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90">v</link>);
+369 
+384 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>*&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__atomic_8h_1abbfdbca42b03cce91ab5a5f7f5078d4d">SDL_AtomicGetPtr</link>(<emphasis role="keywordtype">void</emphasis>&#32;**<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>);
+385 
+386 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+387 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+388 }
+389 <emphasis role="preprocessor">#endif</emphasis>
+390 
+391 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+392 
+393 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_atomic_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+394 
+395 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

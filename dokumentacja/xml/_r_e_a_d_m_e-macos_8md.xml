@@ -1,0 +1,299 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e-macos_8md" kind="file" language="Markdown">
+    <compoundname>README-macos.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Mac<sp/>OS<sp/>X<sp/>(aka<sp/>macOS).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">These<sp/>instructions<sp/>are<sp/>for<sp/>people<sp/>using<sp/>Apple&apos;s<sp/>Mac<sp/>OS<sp/>X<sp/>(pronounced</highlight></codeline>
+<codeline><highlight class="normal">&quot;ten&quot;),<sp/>which<sp/>in<sp/>newer<sp/>versions<sp/>is<sp/>just<sp/>referred<sp/>to<sp/>as<sp/>&quot;macOS&quot;.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">From<sp/>the<sp/>developer&apos;s<sp/>point<sp/>of<sp/>view,<sp/>macOS<sp/>is<sp/>a<sp/>sort<sp/>of<sp/>hybrid<sp/>Mac<sp/>and</highlight></codeline>
+<codeline><highlight class="normal">Unix<sp/>system,<sp/>and<sp/>you<sp/>have<sp/>the<sp/>option<sp/>of<sp/>using<sp/>either<sp/>traditional</highlight></codeline>
+<codeline><highlight class="normal">command<sp/>line<sp/>tools<sp/>or<sp/>Apple&apos;s<sp/>IDE<sp/>Xcode.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Command<sp/>Line<sp/>Build</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>build<sp/>SDL<sp/>using<sp/>the<sp/>command<sp/>line,<sp/>use<sp/>the<sp/>standard<sp/>configure<sp/>and<sp/>make</highlight></codeline>
+<codeline><highlight class="normal">process:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">mkdir<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">../configure</highlight></codeline>
+<codeline><highlight class="normal">make</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>make<sp/>install</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">CMake<sp/>is<sp/>also<sp/>known<sp/>to<sp/>work,<sp/>although<sp/>it<sp/>continues<sp/>to<sp/>be<sp/>a<sp/>work<sp/>in<sp/>progress:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">mkdir<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>-DCMAKE_BUILD_TYPE=Release<sp/>..</highlight></codeline>
+<codeline><highlight class="normal">make</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>make<sp/>install</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>also<sp/>build<sp/>SDL<sp/>as<sp/>a<sp/>Universal<sp/>library<sp/>(a<sp/>single<sp/>binary<sp/>for<sp/>both</highlight></codeline>
+<codeline><highlight class="normal">64-bit<sp/>Intel<sp/>and<sp/>ARM<sp/>architectures),<sp/>by<sp/>using<sp/>the<sp/>build-scripts/clang-fat.sh</highlight></codeline>
+<codeline><highlight class="normal">script.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">mkdir<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">CC=$PWD/../build-scripts/clang-fat.sh<sp/>../configure</highlight></codeline>
+<codeline><highlight class="normal">make</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>make<sp/>install</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>script<sp/>builds<sp/>SDL<sp/>with<sp/>10.6<sp/>ABI<sp/>compatibility<sp/>on<sp/>64-bit<sp/>Intel<sp/>and<sp/>11.0</highlight></codeline>
+<codeline><highlight class="normal">ABI<sp/>compatibility<sp/>on<sp/>ARM64<sp/>architectures.<sp/><sp/>For<sp/>best<sp/>compatibility<sp/>you</highlight></codeline>
+<codeline><highlight class="normal">should<sp/>compile<sp/>your<sp/>application<sp/>the<sp/>same<sp/>way.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Please<sp/>note<sp/>that<sp/>building<sp/>SDL<sp/>requires<sp/>at<sp/>least<sp/>Xcode<sp/>4.6<sp/>and<sp/>the<sp/>10.7<sp/>SDK</highlight></codeline>
+<codeline><highlight class="normal">(even<sp/>if<sp/>you<sp/>target<sp/>back<sp/>to<sp/>10.6<sp/>systems).<sp/>PowerPC<sp/>support<sp/>for<sp/>Mac<sp/>OS<sp/>X<sp/>has</highlight></codeline>
+<codeline><highlight class="normal">been<sp/>officially<sp/>dropped<sp/>as<sp/>of<sp/>SDL<sp/>2.0.2.<sp/>32-bit<sp/>Intel,<sp/>using<sp/>an<sp/>older<sp/>Xcode</highlight></codeline>
+<codeline><highlight class="normal">release,<sp/>is<sp/>still<sp/>supported<sp/>at<sp/>the<sp/>time<sp/>of<sp/>this<sp/>writing,<sp/>but<sp/>current<sp/>Xcode</highlight></codeline>
+<codeline><highlight class="normal">releases<sp/>no<sp/>longer<sp/>support<sp/>it,<sp/>and<sp/>eventually<sp/>neither<sp/>will<sp/>SDL.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>use<sp/>the<sp/>library<sp/>once<sp/>it&apos;s<sp/>built,<sp/>you<sp/>essential<sp/>have<sp/>two<sp/>possibilities:</highlight></codeline>
+<codeline><highlight class="normal">use<sp/>the<sp/>traditional<sp/>autoconf/automake/make<sp/>method,<sp/>or<sp/>use<sp/>Xcode.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Caveats<sp/>for<sp/>using<sp/>SDL<sp/>with<sp/>Mac<sp/>OS<sp/>X</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>register<sp/>your<sp/>own<sp/>NSApplicationDelegate<sp/>(using<sp/>[NSApp<sp/>setDelegate:]),</highlight></codeline>
+<codeline><highlight class="normal">SDL<sp/>will<sp/>not<sp/>register<sp/>its<sp/>own.<sp/>This<sp/>means<sp/>that<sp/>SDL<sp/>will<sp/>not<sp/>terminate<sp/>using</highlight></codeline>
+<codeline><highlight class="normal">SDL_Quit<sp/>if<sp/>it<sp/>receives<sp/>a<sp/>termination<sp/>request,<sp/>it<sp/>will<sp/>terminate<sp/>like<sp/>a</highlight></codeline>
+<codeline><highlight class="normal">normal<sp/>app,<sp/>and<sp/>it<sp/>will<sp/>not<sp/>send<sp/>a<sp/>SDL_DROPFILE<sp/>when<sp/>you<sp/>request<sp/>to<sp/>open<sp/>a</highlight></codeline>
+<codeline><highlight class="normal">file<sp/>with<sp/>the<sp/>app.<sp/>To<sp/>solve<sp/>these<sp/>issues,<sp/>put<sp/>the<sp/>following<sp/>code<sp/>in<sp/>your</highlight></codeline>
+<codeline><highlight class="normal">NSApplicationDelegate<sp/>implementation:</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```objc</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>(NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication<sp/>*)sender</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(SDL_GetEventState(SDL_QUIT)<sp/>==<sp/>SDL_ENABLE)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_Event<sp/>event;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>event.type<sp/>=<sp/>SDL_QUIT;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_PushEvent(&amp;event);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>NSTerminateCancel;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">-<sp/>(BOOL)application:(NSApplication<sp/>*)theApplication<sp/>openFile:(NSString<sp/>*)filename</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(SDL_GetEventState(SDL_DROPFILE)<sp/>==<sp/>SDL_ENABLE)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_Event<sp/>event;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>event.type<sp/>=<sp/>SDL_DROPFILE;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>event.drop.file<sp/>=<sp/>SDL_strdup([filename<sp/>UTF8String]);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>(SDL_PushEvent(&amp;event)<sp/>&gt;<sp/>0);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>NO;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Using<sp/>the<sp/>Simple<sp/>DirectMedia<sp/>Layer<sp/>with<sp/>a<sp/>traditional<sp/>Makefile</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">An<sp/>existing<sp/>autoconf/automake<sp/>build<sp/>system<sp/>for<sp/>your<sp/>SDL<sp/>app<sp/>has<sp/>good<sp/>chances</highlight></codeline>
+<codeline><highlight class="normal">to<sp/>work<sp/>almost<sp/>unchanged<sp/>on<sp/>macOS.<sp/>However,<sp/>to<sp/>produce<sp/>a<sp/>&quot;real&quot;<sp/>Mac<sp/>binary</highlight></codeline>
+<codeline><highlight class="normal">that<sp/>you<sp/>can<sp/>distribute<sp/>to<sp/>users,<sp/>you<sp/>need<sp/>to<sp/>put<sp/>the<sp/>generated<sp/>binary<sp/>into<sp/>a</highlight></codeline>
+<codeline><highlight class="normal">so<sp/>called<sp/>&quot;bundle&quot;,<sp/>which<sp/>is<sp/>basically<sp/>a<sp/>fancy<sp/>folder<sp/>with<sp/>a<sp/>name<sp/>like</highlight></codeline>
+<codeline><highlight class="normal">&quot;MyCoolGame.app&quot;.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>get<sp/>this<sp/>build<sp/>automatically,<sp/>add<sp/>something<sp/>like<sp/>the<sp/>following<sp/>rule<sp/>to</highlight></codeline>
+<codeline><highlight class="normal">your<sp/>Makefile.am:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```make</highlight></codeline>
+<codeline><highlight class="normal">bundle_contents<sp/>=<sp/>APP_NAME.app/Contents</highlight></codeline>
+<codeline><highlight class="normal">APP_NAME_bundle:<sp/>EXE_NAME</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mkdir<sp/>-p<sp/>$(bundle_contents)/MacOS</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mkdir<sp/>-p<sp/>$(bundle_contents)/Resources</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>echo<sp/>&quot;APPL????&quot;<sp/>&gt;<sp/>$(bundle_contents)/PkgInfo</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$(INSTALL_PROGRAM)<sp/>$&lt;<sp/>$(bundle_contents)/MacOS/</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>should<sp/>replace<sp/>`EXE_NAME`<sp/>with<sp/>the<sp/>name<sp/>of<sp/>the<sp/>executable.<sp/>`APP_NAME`<sp/>is</highlight></codeline>
+<codeline><highlight class="normal">what<sp/>will<sp/>be<sp/>visible<sp/>to<sp/>the<sp/>user<sp/>in<sp/>the<sp/>Finder.<sp/>Usually<sp/>it<sp/>will<sp/>be<sp/>the<sp/>same</highlight></codeline>
+<codeline><highlight class="normal">as<sp/>`EXE_NAME`<sp/>but<sp/>capitalized.<sp/>E.g.<sp/>if<sp/>`EXE_NAME`<sp/>is<sp/>&quot;testgame&quot;<sp/>then<sp/>`APP_NAME`</highlight></codeline>
+<codeline><highlight class="normal">usually<sp/>is<sp/>&quot;TestGame&quot;.<sp/>You<sp/>might<sp/>also<sp/>want<sp/>to<sp/>use<sp/>`@PACKAGE@`<sp/>to<sp/>use<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">package<sp/>name<sp/>as<sp/>specified<sp/>in<sp/>your<sp/>configure.ac<sp/>file.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>your<sp/>project<sp/>builds<sp/>more<sp/>than<sp/>one<sp/>application,<sp/>you<sp/>will<sp/>have<sp/>to<sp/>do<sp/>a<sp/>bit</highlight></codeline>
+<codeline><highlight class="normal">more.<sp/>For<sp/>each<sp/>of<sp/>your<sp/>target<sp/>applications,<sp/>you<sp/>need<sp/>a<sp/>separate<sp/>rule.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>want<sp/>the<sp/>created<sp/>bundles<sp/>to<sp/>be<sp/>installed,<sp/>you<sp/>may<sp/>want<sp/>to<sp/>add<sp/>this</highlight></codeline>
+<codeline><highlight class="normal">rule<sp/>to<sp/>your<sp/>Makefile.am:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```make</highlight></codeline>
+<codeline><highlight class="normal">install-exec-hook:<sp/>APP_NAME_bundle</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>rm<sp/>-rf<sp/>$(DESTDIR)$(prefix)/Applications/APP_NAME.app</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mkdir<sp/>-p<sp/>$(DESTDIR)$(prefix)/Applications/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cp<sp/>-r<sp/>$&lt;<sp/>/$(DESTDIR)$(prefix)Applications/</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>rule<sp/>takes<sp/>the<sp/>Bundle<sp/>created<sp/>by<sp/>the<sp/>rule<sp/>from<sp/>step<sp/>3<sp/>and<sp/>installs<sp/>them</highlight></codeline>
+<codeline><highlight class="normal">into<sp/>&quot;$(DESTDIR)$(prefix)/Applications/&quot;.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Again,<sp/>if<sp/>you<sp/>want<sp/>to<sp/>install<sp/>multiple<sp/>applications,<sp/>you<sp/>will<sp/>have<sp/>to<sp/>augment</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>make<sp/>rule<sp/>accordingly.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">But<sp/>beware!<sp/>That<sp/>is<sp/>only<sp/>part<sp/>of<sp/>the<sp/>story!<sp/>With<sp/>the<sp/>above,<sp/>you<sp/>end<sp/>up<sp/>with</highlight></codeline>
+<codeline><highlight class="normal">a<sp/>barebones<sp/>.app<sp/>bundle,<sp/>which<sp/>is<sp/>double-clickable<sp/>from<sp/>the<sp/>Finder.<sp/>But</highlight></codeline>
+<codeline><highlight class="normal">there<sp/>are<sp/>some<sp/>more<sp/>things<sp/>you<sp/>should<sp/>do<sp/>before<sp/>shipping<sp/>your<sp/>product...</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>The<sp/>bundle<sp/>right<sp/>now<sp/>probably<sp/>is<sp/>dynamically<sp/>linked<sp/>against<sp/>SDL.<sp/>That</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>means<sp/>that<sp/>when<sp/>you<sp/>copy<sp/>it<sp/>to<sp/>another<sp/>computer,<sp/>*it<sp/>will<sp/>not<sp/>run*,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>unless<sp/>you<sp/>also<sp/>install<sp/>SDL<sp/>on<sp/>that<sp/>other<sp/>computer.<sp/>A<sp/>good<sp/>solution</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>for<sp/>this<sp/>dilemma<sp/>is<sp/>to<sp/>static<sp/>link<sp/>against<sp/>SDL.<sp/>On<sp/>OS<sp/>X,<sp/>you<sp/>can</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>achieve<sp/>that<sp/>by<sp/>linking<sp/>against<sp/>the<sp/>libraries<sp/>listed<sp/>by</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```bash</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>sdl-config<sp/>--static-libs</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>instead<sp/>of<sp/>those<sp/>listed<sp/>by</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```bash</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>sdl-config<sp/>--libs</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>Depending<sp/>on<sp/>how<sp/>exactly<sp/>SDL<sp/>is<sp/>integrated<sp/>into<sp/>your<sp/>build<sp/>systems,<sp/>the</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>way<sp/>to<sp/>achieve<sp/>that<sp/>varies,<sp/>so<sp/>I<sp/>won&apos;t<sp/>describe<sp/>it<sp/>here<sp/>in<sp/>detail</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">2.<sp/>Add<sp/>an<sp/>&apos;Info.plist&apos;<sp/>to<sp/>your<sp/>application.<sp/>That<sp/>is<sp/>a<sp/>special<sp/>XML<sp/>file<sp/>which</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>contains<sp/>some<sp/>meta-information<sp/>about<sp/>your<sp/>application<sp/>(like<sp/>some<sp/>copyright</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>information,<sp/>the<sp/>version<sp/>of<sp/>your<sp/>app,<sp/>the<sp/>name<sp/>of<sp/>an<sp/>optional<sp/>icon<sp/>file,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>and<sp/>other<sp/>things).<sp/>Part<sp/>of<sp/>that<sp/>information<sp/>is<sp/>displayed<sp/>by<sp/>the<sp/>Finder</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>when<sp/>you<sp/>click<sp/>on<sp/>the<sp/>.app,<sp/>or<sp/>if<sp/>you<sp/>look<sp/>at<sp/>the<sp/>&quot;Get<sp/>Info&quot;<sp/>window.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>More<sp/>information<sp/>about<sp/>Info.plist<sp/>files<sp/>can<sp/>be<sp/>found<sp/>on<sp/>Apple&apos;s<sp/>homepage.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">As<sp/>a<sp/>final<sp/>remark,<sp/>let<sp/>me<sp/>add<sp/>that<sp/>I<sp/>use<sp/>some<sp/>of<sp/>the<sp/>techniques<sp/>(and<sp/>some</highlight></codeline>
+<codeline><highlight class="normal">variations<sp/>of<sp/>them)<sp/>in<sp/>[Exult](https://github.com/exult/exult)<sp/>and</highlight></codeline>
+<codeline><highlight class="normal">[ScummVM](https://github.com/scummvm/scummvm);<sp/>both<sp/>are<sp/>available<sp/>in<sp/>source<sp/>on</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>net,<sp/>so<sp/>feel<sp/>free<sp/>to<sp/>take<sp/>a<sp/>peek<sp/>at<sp/>them<sp/>for<sp/>inspiration!</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Using<sp/>the<sp/>Simple<sp/>DirectMedia<sp/>Layer<sp/>with<sp/>Xcode</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">These<sp/>instructions<sp/>are<sp/>for<sp/>using<sp/>Apple&apos;s<sp/>Xcode<sp/>IDE<sp/>to<sp/>build<sp/>SDL<sp/>applications.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>First<sp/>steps</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>first<sp/>thing<sp/>to<sp/>do<sp/>is<sp/>to<sp/>unpack<sp/>the<sp/>Xcode.tar.gz<sp/>archive<sp/>in<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">top<sp/>level<sp/>SDL<sp/>directory<sp/>(where<sp/>the<sp/>Xcode.tar.gz<sp/>archive<sp/>resides).</highlight></codeline>
+<codeline><highlight class="normal">Because<sp/>Stuffit<sp/>Expander<sp/>will<sp/>unpack<sp/>the<sp/>archive<sp/>into<sp/>a<sp/>subdirectory,</highlight></codeline>
+<codeline><highlight class="normal">you<sp/>should<sp/>unpack<sp/>the<sp/>archive<sp/>manually<sp/>from<sp/>the<sp/>command<sp/>line:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>[path_to_SDL_source]</highlight></codeline>
+<codeline><highlight class="normal">tar<sp/>zxf<sp/>Xcode.tar.gz</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>will<sp/>create<sp/>a<sp/>new<sp/>folder<sp/>called<sp/>Xcode,<sp/>which<sp/>you<sp/>can<sp/>browse</highlight></codeline>
+<codeline><highlight class="normal">normally<sp/>from<sp/>the<sp/>Finder.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Building<sp/>the<sp/>Framework</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>SDL<sp/>Library<sp/>is<sp/>packaged<sp/>as<sp/>a<sp/>framework<sp/>bundle,<sp/>an<sp/>organized</highlight></codeline>
+<codeline><highlight class="normal">relocatable<sp/>folder<sp/>hierarchy<sp/>of<sp/>executable<sp/>code,<sp/>interface<sp/>headers,</highlight></codeline>
+<codeline><highlight class="normal">and<sp/>additional<sp/>resources.<sp/>For<sp/>practical<sp/>purposes,<sp/>you<sp/>can<sp/>think<sp/>of<sp/>a<sp/></highlight></codeline>
+<codeline><highlight class="normal">framework<sp/>as<sp/>a<sp/>more<sp/>user<sp/>and<sp/>system-friendly<sp/>shared<sp/>library,<sp/>whose<sp/>library</highlight></codeline>
+<codeline><highlight class="normal">file<sp/>behaves<sp/>more<sp/>or<sp/>less<sp/>like<sp/>a<sp/>standard<sp/>UNIX<sp/>shared<sp/>library.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>build<sp/>the<sp/>framework,<sp/>simply<sp/>open<sp/>the<sp/>framework<sp/>project<sp/>and<sp/>build<sp/>it.<sp/></highlight></codeline>
+<codeline><highlight class="normal">By<sp/>default,<sp/>the<sp/>framework<sp/>bundle<sp/>&quot;SDL.framework&quot;<sp/>is<sp/>installed<sp/>in<sp/></highlight></codeline>
+<codeline><highlight class="normal">/Library/Frameworks.<sp/>Therefore,<sp/>the<sp/>testers<sp/>and<sp/>project<sp/>stationary<sp/>expect</highlight></codeline>
+<codeline><highlight class="normal">it<sp/>to<sp/>be<sp/>located<sp/>there.<sp/>However,<sp/>it<sp/>will<sp/>function<sp/>the<sp/>same<sp/>in<sp/>any<sp/>of<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">following<sp/>locations:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>~/Library/Frameworks</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>/Local/Library/Frameworks</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>/System/Library/Frameworks</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Build<sp/>Options</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">There<sp/>are<sp/>two<sp/>&quot;Build<sp/>Styles&quot;<sp/>(See<sp/>the<sp/>&quot;Targets&quot;<sp/>tab)<sp/>for<sp/>SDL.</highlight></codeline>
+<codeline><highlight class="normal">&quot;Deployment&quot;<sp/>should<sp/>be<sp/>used<sp/>if<sp/>you<sp/>aren&apos;t<sp/>tweaking<sp/>the<sp/>SDL<sp/>library.</highlight></codeline>
+<codeline><highlight class="normal">&quot;Development&quot;<sp/>should<sp/>be<sp/>used<sp/>to<sp/>debug<sp/>SDL<sp/>apps<sp/>or<sp/>the<sp/>library<sp/>itself.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Building<sp/>the<sp/>Testers</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Open<sp/>the<sp/>SDLTest<sp/>project<sp/>and<sp/>build<sp/>away!</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Using<sp/>the<sp/>Project<sp/>Stationary</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Copy<sp/>the<sp/>stationary<sp/>to<sp/>the<sp/>indicated<sp/>folders<sp/>to<sp/>access<sp/>it<sp/>from</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>&quot;New<sp/>Project&quot;<sp/>and<sp/>&quot;Add<sp/>target&quot;<sp/>menus.<sp/>What<sp/>could<sp/>be<sp/>easier?</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Setting<sp/>up<sp/>a<sp/>new<sp/>project<sp/>by<sp/>hand</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Some<sp/>of<sp/>you<sp/>won&apos;t<sp/>want<sp/>to<sp/>use<sp/>the<sp/>Stationary<sp/>so<sp/>I&apos;ll<sp/>give<sp/>some<sp/>tips:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">(this<sp/>is<sp/>accurate<sp/>as<sp/>of<sp/>Xcode<sp/>12.5.)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>Click<sp/>&quot;File&quot;<sp/>-&gt;<sp/>&quot;New&quot;<sp/>-&gt;<sp/>&quot;Project...</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Choose<sp/>&quot;macOS&quot;<sp/>and<sp/>then<sp/>&quot;App&quot;<sp/>from<sp/>the<sp/>&quot;Application&quot;<sp/>section.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Fill<sp/>out<sp/>the<sp/>options<sp/>in<sp/>the<sp/>next<sp/>window.<sp/>User<sp/>interface<sp/>is<sp/>&quot;XIB&quot;<sp/>and</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Language<sp/>is<sp/>&quot;Objective-C&quot;.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Remove<sp/>&quot;main.m&quot;<sp/>from<sp/>your<sp/>project</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Remove<sp/>&quot;MainMenu.xib&quot;<sp/>from<sp/>your<sp/>project</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Remove<sp/>&quot;AppDelegates.*&quot;<sp/>from<sp/>your<sp/>project</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Add<sp/>&quot;\$(HOME)/Library/Frameworks/SDL.framework/Headers&quot;<sp/>to<sp/>include<sp/>path</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Add<sp/>&quot;\$(HOME)/Library/Frameworks&quot;<sp/>to<sp/>the<sp/>frameworks<sp/>search<sp/>path</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Add<sp/>&quot;-framework<sp/>SDL<sp/>-framework<sp/>Foundation<sp/>-framework<sp/>AppKit&quot;<sp/>to<sp/>&quot;OTHER_LDFLAGS&quot;</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Add<sp/>your<sp/>files</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Clean<sp/>and<sp/>build</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Building<sp/>from<sp/>command<sp/>line</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Use<sp/>`xcode-build`<sp/>in<sp/>the<sp/>same<sp/>directory<sp/>as<sp/>your<sp/>.pbxproj<sp/>file</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Running<sp/>your<sp/>app</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>send<sp/>command<sp/>line<sp/>args<sp/>to<sp/>your<sp/>app<sp/>by<sp/>either<sp/>invoking<sp/>it<sp/>from</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>command<sp/>line<sp/>(in<sp/>*.app/Contents/MacOS)<sp/>or<sp/>by<sp/>entering<sp/>them<sp/>in<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">Executables&quot;<sp/>panel<sp/>of<sp/>the<sp/>target<sp/>settings.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Implementation<sp/>Notes</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Some<sp/>things<sp/>that<sp/>may<sp/>be<sp/>of<sp/>interest<sp/>about<sp/>how<sp/>it<sp/>all<sp/>works...</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Working<sp/>directory</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>SDL<sp/>1.2,<sp/>the<sp/>working<sp/>directory<sp/>of<sp/>your<sp/>SDL<sp/>app<sp/>is<sp/>by<sp/>default<sp/>set<sp/>to<sp/>its</highlight></codeline>
+<codeline><highlight class="normal">parent,<sp/>but<sp/>this<sp/>is<sp/>no<sp/>longer<sp/>the<sp/>case<sp/>in<sp/>SDL<sp/>2.0.<sp/>SDL2<sp/>does<sp/>change<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">working<sp/>directory,<sp/>which<sp/>means<sp/>it&apos;ll<sp/>be<sp/>whatever<sp/>the<sp/>command<sp/>line<sp/>prompt</highlight></codeline>
+<codeline><highlight class="normal">that<sp/>launched<sp/>the<sp/>program<sp/>was<sp/>using,<sp/>or<sp/>if<sp/>launched<sp/>by<sp/>double-clicking<sp/>in</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>finger,<sp/>it<sp/>will<sp/>be<sp/>&quot;/&quot;,<sp/>the<sp/>_root<sp/>of<sp/>the<sp/>filesystem_.<sp/>Plan<sp/>accordingly!</highlight></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>use<sp/>SDL_GetBasePath()<sp/>to<sp/>find<sp/>where<sp/>the<sp/>program<sp/>is<sp/>running<sp/>from<sp/>and</highlight></codeline>
+<codeline><highlight class="normal">chdir()<sp/>there<sp/>directly.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>You<sp/>have<sp/>a<sp/>Cocoa<sp/>App!</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Your<sp/>SDL<sp/>app<sp/>is<sp/>essentially<sp/>a<sp/>Cocoa<sp/>application.<sp/>When<sp/>your<sp/>app</highlight></codeline>
+<codeline><highlight class="normal">starts<sp/>up<sp/>and<sp/>the<sp/>libraries<sp/>finish<sp/>loading,<sp/>a<sp/>Cocoa<sp/>procedure<sp/>is<sp/>called,</highlight></codeline>
+<codeline><highlight class="normal">which<sp/>sets<sp/>up<sp/>the<sp/>working<sp/>directory<sp/>and<sp/>calls<sp/>your<sp/>main()<sp/>method.</highlight></codeline>
+<codeline><highlight class="normal">You<sp/>are<sp/>free<sp/>to<sp/>modify<sp/>your<sp/>Cocoa<sp/>app<sp/>with<sp/>generally<sp/>no<sp/>consequence</highlight></codeline>
+<codeline><highlight class="normal">to<sp/>SDL.<sp/>You<sp/>cannot,<sp/>however,<sp/>easily<sp/>change<sp/>the<sp/>SDL<sp/>window<sp/>itself.</highlight></codeline>
+<codeline><highlight class="normal">Functionality<sp/>may<sp/>be<sp/>added<sp/>in<sp/>the<sp/>future<sp/>to<sp/>help<sp/>this.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Bug<sp/>reports</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Bugs<sp/>are<sp/>tracked<sp/>at<sp/>[the<sp/>GitHub<sp/>issue<sp/>tracker](https://github.com/libsdl-org/SDL/issues/).</highlight></codeline>
+<codeline><highlight class="normal">Please<sp/>feel<sp/>free<sp/>to<sp/>report<sp/>bugs<sp/>there!</highlight></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/docs/README-macos.md"/>
+  </compounddef>
+</doxygen>

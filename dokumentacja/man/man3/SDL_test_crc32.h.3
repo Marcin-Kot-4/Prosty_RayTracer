@@ -1,0 +1,136 @@
+.TH "D:/RayTracing/include/SDL_test_crc32.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_test_crc32.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBSDLTest_Crc32Context\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBCrcUint32\fP   unsigned int"
+.br
+.ti -1c
+.RI "#define \fBCrcUint8\fP   unsigned char"
+.br
+.ti -1c
+.RI "#define \fBCRC32_POLY\fP   0xEDB88320   /* Perl String::CRC32 compatible */"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBSDLTest_Crc32Init\fP (\fBSDLTest_Crc32Context\fP *crcContext)"
+.br
+.RI "Initialize the CRC context\&. "
+.ti -1c
+.RI "int \fBSDLTest_Crc32Calc\fP (\fBSDLTest_Crc32Context\fP *crcContext, \fBCrcUint8\fP *inBuf, \fBCrcUint32\fP inLen, \fBCrcUint32\fP *crc32)"
+.br
+.RI "calculate a crc32 from a data block "
+.ti -1c
+.RI "int \fBSDLTest_Crc32CalcStart\fP (\fBSDLTest_Crc32Context\fP *crcContext, \fBCrcUint32\fP *crc32)"
+.br
+.ti -1c
+.RI "int \fBSDLTest_Crc32CalcEnd\fP (\fBSDLTest_Crc32Context\fP *crcContext, \fBCrcUint32\fP *crc32)"
+.br
+.ti -1c
+.RI "int \fBSDLTest_Crc32CalcBuffer\fP (\fBSDLTest_Crc32Context\fP *crcContext, \fBCrcUint8\fP *inBuf, \fBCrcUint32\fP inLen, \fBCrcUint32\fP *crc32)"
+.br
+.ti -1c
+.RI "int \fBSDLTest_Crc32Done\fP (\fBSDLTest_Crc32Context\fP *crcContext)"
+.br
+.RI "clean up CRC context "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include file for SDL test framework\&.
+.PP
+This code is a part of the SDL2_test library, not the main SDL library\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define CRC32_POLY   0xEDB88320   /* Perl String::CRC32 compatible */"
+
+.SS "#define CrcUint32   unsigned int"
+
+.SS "#define CrcUint8   unsigned char"
+
+.SH "Function Documentation"
+.PP 
+.SS "int SDLTest_Crc32Calc (\fBSDLTest_Crc32Context\fP * crcContext, \fBCrcUint8\fP * inBuf, \fBCrcUint32\fP inLen, \fBCrcUint32\fP * crc32)"
+
+.PP
+calculate a crc32 from a data block 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcrcContext\fP pointer to context variable 
+.br
+\fIinBuf\fP input buffer to checksum 
+.br
+\fIinLen\fP length of input buffer 
+.br
+\fIcrc32\fP pointer to Uint32 to store the final CRC into
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 for OK, -1 on error 
+.RE
+.PP
+
+.SS "int SDLTest_Crc32CalcBuffer (\fBSDLTest_Crc32Context\fP * crcContext, \fBCrcUint8\fP * inBuf, \fBCrcUint32\fP inLen, \fBCrcUint32\fP * crc32)"
+
+.SS "int SDLTest_Crc32CalcEnd (\fBSDLTest_Crc32Context\fP * crcContext, \fBCrcUint32\fP * crc32)"
+
+.SS "int SDLTest_Crc32CalcStart (\fBSDLTest_Crc32Context\fP * crcContext, \fBCrcUint32\fP * crc32)"
+
+.SS "int SDLTest_Crc32Done (\fBSDLTest_Crc32Context\fP * crcContext)"
+
+.PP
+clean up CRC context 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcrcContext\fP pointer to context variable
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 for OK, -1 on error 
+.RE
+.PP
+
+.SS "int SDLTest_Crc32Init (\fBSDLTest_Crc32Context\fP * crcContext)"
+
+.PP
+Initialize the CRC context\&. Note: The function initializes the crc table required for all crc calculations\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIcrcContext\fP pointer to context variable
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 for OK, -1 on error 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

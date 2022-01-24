@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_qb_e_i_g_8h" xml:lang="en-US">
+<title>D:/RayTracing/RayTrace/qbLinAlg/qbEIG.h File Reference</title>
+<indexterm><primary>D:/RayTracing/RayTrace/qbLinAlg/qbEIG.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;stdexcept&gt;
+#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+#include &lt;math.h&gt;
+#include &lt;vector&gt;
+#include &quot;qbMatrix.h&quot;
+#include &quot;qbVector.h&quot;
+#include &quot;qbQR.h&quot;
+</programlisting><simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;typename T &gt; </para><para>int <link linkend="_qb_e_i_g_8h_1a9212bbed3a221741a725494e8c7367d1">qbEigQR</link> (const <link linkend="_classqb_matrix2">qbMatrix2</link>&lt; T &gt; &amp;inputMatrix, std::vector&lt; T &gt; &amp;eigenValues)</para>
+</listitem>
+            <listitem><para>template&lt;typename T &gt; </para><para>int <link linkend="_qb_e_i_g_8h_1a947c6e89bfc37d51c19989d1d5db03b9">qbInvPIt</link> (const <link linkend="_classqb_matrix2">qbMatrix2</link>&lt; T &gt; &amp;inputMatrix, const T &amp;eigenValue, <link linkend="_classqb_vector">qbVector</link>&lt; T &gt; &amp;eigenVector)</para>
+</listitem>
+            <listitem><para>template&lt;typename T &gt; </para><para>int <link linkend="_qb_e_i_g_8h_1aecca96c88b78c9535eb65a9cebe3f5d2">qbEIG_PIt</link> (const <link linkend="_classqb_matrix2">qbMatrix2</link>&lt; T &gt; &amp;X, T &amp;eigenValue, <link linkend="_classqb_vector">qbVector</link>&lt; T &gt; &amp;eigenVector)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>constexpr int <link linkend="_qb_e_i_g_8h_1a11d1d7426a4145998cfe6b22c42fb482">QBEIG_MATRIXNOTSQUARE</link> = -1</para>
+</listitem>
+            <listitem><para>constexpr int <link linkend="_qb_e_i_g_8h_1abc41bacc5dd2ce027cd016cfab0fd284">QBEIG_MAXITERATIONSEXCEEDED</link> = -2</para>
+</listitem>
+            <listitem><para>constexpr int <link linkend="_qb_e_i_g_8h_1a4be8e1e3b0be4c2a155cf84b83b78fca">QBEIG_MATRIXNOTSYMMETRIC</link> = -3</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_qb_e_i_g_8h_1aecca96c88b78c9535eb65a9cebe3f5d2"/><section>
+    <title>qbEIG_PIt()</title>
+<indexterm><primary>qbEIG_PIt</primary><secondary>qbEIG.h</secondary></indexterm>
+<indexterm><primary>qbEIG.h</primary><secondary>qbEIG_PIt</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>int qbEIG_PIt (const <link linkend="_classqb_matrix2">qbMatrix2</link>&lt; T &gt; &amp; X, T &amp; eigenValue, <link linkend="_classqb_vector">qbVector</link>&lt; T &gt; &amp; eigenVector)</computeroutput></para></section>
+<anchor xml:id="_qb_e_i_g_8h_1a9212bbed3a221741a725494e8c7367d1"/><section>
+    <title>qbEigQR()</title>
+<indexterm><primary>qbEigQR</primary><secondary>qbEIG.h</secondary></indexterm>
+<indexterm><primary>qbEIG.h</primary><secondary>qbEigQR</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>int qbEigQR (const <link linkend="_classqb_matrix2">qbMatrix2</link>&lt; T &gt; &amp; inputMatrix, std::vector&lt; T &gt; &amp; eigenValues)</computeroutput></para></section>
+<anchor xml:id="_qb_e_i_g_8h_1a947c6e89bfc37d51c19989d1d5db03b9"/><section>
+    <title>qbInvPIt()</title>
+<indexterm><primary>qbInvPIt</primary><secondary>qbEIG.h</secondary></indexterm>
+<indexterm><primary>qbEIG.h</primary><secondary>qbInvPIt</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>int qbInvPIt (const <link linkend="_classqb_matrix2">qbMatrix2</link>&lt; T &gt; &amp; inputMatrix, const T &amp; eigenValue, <link linkend="_classqb_vector">qbVector</link>&lt; T &gt; &amp; eigenVector)</computeroutput></para></section>
+</section>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_qb_e_i_g_8h_1a11d1d7426a4145998cfe6b22c42fb482"/><section>
+    <title>QBEIG_MATRIXNOTSQUARE</title>
+<indexterm><primary>QBEIG_MATRIXNOTSQUARE</primary><secondary>qbEIG.h</secondary></indexterm>
+<indexterm><primary>qbEIG.h</primary><secondary>QBEIG_MATRIXNOTSQUARE</secondary></indexterm>
+<para><computeroutput>constexpr int QBEIG_MATRIXNOTSQUARE = -1<computeroutput>[constexpr]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_qb_e_i_g_8h_1a4be8e1e3b0be4c2a155cf84b83b78fca"/><section>
+    <title>QBEIG_MATRIXNOTSYMMETRIC</title>
+<indexterm><primary>QBEIG_MATRIXNOTSYMMETRIC</primary><secondary>qbEIG.h</secondary></indexterm>
+<indexterm><primary>qbEIG.h</primary><secondary>QBEIG_MATRIXNOTSYMMETRIC</secondary></indexterm>
+<para><computeroutput>constexpr int QBEIG_MATRIXNOTSYMMETRIC = -3<computeroutput>[constexpr]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_qb_e_i_g_8h_1abc41bacc5dd2ce027cd016cfab0fd284"/><section>
+    <title>QBEIG_MAXITERATIONSEXCEEDED</title>
+<indexterm><primary>QBEIG_MAXITERATIONSEXCEEDED</primary><secondary>qbEIG.h</secondary></indexterm>
+<indexterm><primary>qbEIG.h</primary><secondary>QBEIG_MAXITERATIONSEXCEEDED</secondary></indexterm>
+<para><computeroutput>constexpr int QBEIG_MAXITERATIONSEXCEEDED = -2<computeroutput>[constexpr]</computeroutput></computeroutput></para></section>
+</section>
+</section>

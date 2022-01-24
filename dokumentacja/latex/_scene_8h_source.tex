@@ -1,0 +1,48 @@
+\hypertarget{_scene_8h_source}{}\doxysection{Scene.\+h}
+\label{_scene_8h_source}\index{D:/RayTracing/RayTrace/Scene.h@{D:/RayTracing/RayTrace/Scene.h}}
+\mbox{\hyperlink{_scene_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef RAYTRACING\_SCENE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define RAYTRACING\_SCENE\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}../include/SDL.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_image_8h}{Image.h}}"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{camera_8h}{camera.h}}"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{objsphere_8h}{Primitives/objsphere.h}}"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{objplane_8h}{Primitives/objplane.h}}"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{cylinder_8h}{Primitives/cylinder.h}}"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{cone_8h}{Primitives/cone.h}}"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{pointlight_8h}{Lights/pointlight.h}}"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_r_t}{RT}} \{}
+\DoxyCodeLine{16     \textcolor{keyword}{class }\mbox{\hyperlink{class_r_t_1_1_scene}{Scene}} \{}
+\DoxyCodeLine{17     \textcolor{keyword}{public}:}
+\DoxyCodeLine{18         \textcolor{comment}{// Domyślny konstruktor}}
+\DoxyCodeLine{19         \mbox{\hyperlink{class_r_t_1_1_scene_a5bc05579d6758fff4f3dc15f55f998bd}{Scene}}();}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21         \textcolor{comment}{// Funkcja renderująca}}
+\DoxyCodeLine{22         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_r_t_1_1_scene_a75c7c042384cac0d24d1bb66b89da3af}{Render}}(\mbox{\hyperlink{class_image}{Image}} \&outputImage);}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24         \textcolor{comment}{// Metoda do rzucania promieni na scene}}
+\DoxyCodeLine{25         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_r_t_1_1_scene_a45a144d37be643349a7f3623038240b3}{CastRay}}(\mbox{\hyperlink{class_r_t_1_1_ray}{RT::Ray}} \&castRay, std::shared\_ptr<RT::ObjectBase> \&closestObject,}
+\DoxyCodeLine{26                      \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&closestIntPoint, \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&closestLocalNormal,}
+\DoxyCodeLine{27                      \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&closestLocalColor);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{keyword}{private}:}
+\DoxyCodeLine{30         \textcolor{comment}{// Kamera}}
+\DoxyCodeLine{31         \mbox{\hyperlink{class_r_t_1_1_camera}{RT::Camera}} m\_camera;}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33         \textcolor{comment}{// Lista obiektów na scenie}}
+\DoxyCodeLine{34         std::vector<std::shared\_ptr<RT::ObjectBase>> m\_objectList;}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36         \textcolor{comment}{// Lista źródeł światła na scenie}}
+\DoxyCodeLine{37         std::vector<std::shared\_ptr<RT::LightBase>> m\_lightList;}
+\DoxyCodeLine{38     \};}
+\DoxyCodeLine{39 \}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//RAYTRACING\_SCENE\_H}}
+
+\end{DoxyCode}

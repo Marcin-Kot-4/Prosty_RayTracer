@@ -1,0 +1,87 @@
+.TH "D:/RayTracing/include/SDL_main.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_main.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SDL_stdinc\&.h'\fP
+.br
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSDLMAIN_DECLSPEC\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef int(* \fBSDL_main_func\fP) (int argc, char *argv[])"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSDLMAIN_DECLSPEC\fP int \fBSDL_main\fP (int argc, char *argv[])"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_SetMainReady\fP (\fBvoid\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Redefine \fBmain()\fP on some platforms so that it is called by SDL\&.
+.PP
+The application's \fBmain()\fP function must be called with C linkage, and should be declared like this: 
+.PP
+.nf
+#ifdef __cplusplus
+extern "C"
+#endif
+int main(int argc, char *argv[])
+{
+}
+
+.fi
+.PP
+ 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define SDLMAIN_DECLSPEC"
+
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef int(* SDL_main_func) (int argc, char *argv[])"
+The prototype for the application's \fBmain()\fP function 
+.SH "Function Documentation"
+.PP 
+.SS "\fBSDLMAIN_DECLSPEC\fP int SDL_main (int argc, char * argv[])"
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_SetMainReady (\fBvoid\fP)"
+Circumvent failure of \fBSDL_Init()\fP when not using \fBSDL_main()\fP as an entry point\&.
+.PP
+This function is defined in SDL_main\&.h, along with the preprocessor rule to redefine \fBmain()\fP as \fBSDL_main()\fP\&. Thus to ensure that your \fBmain()\fP function will not be changed it is necessary to define SDL_MAIN_HANDLED before including SDL\&.h\&.
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_Init\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

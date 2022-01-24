@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e-raspberrypi_8md" kind="file" language="Markdown">
+    <compoundname>README-raspberrypi.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">Raspberry<sp/>Pi</highlight></codeline>
+<codeline><highlight class="normal">============</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Requirements:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Raspbian<sp/>(other<sp/>Linux<sp/>distros<sp/>may<sp/>work<sp/>as<sp/>well).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Features</highlight></codeline>
+<codeline><highlight class="normal">--------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>Works<sp/>without<sp/>X11</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Hardware<sp/>accelerated<sp/>OpenGL<sp/>ES<sp/>2.x</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Sound<sp/>via<sp/>ALSA</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Input<sp/>(mouse/keyboard/joystick)<sp/>via<sp/>EVDEV</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Hotplugging<sp/>of<sp/>input<sp/>devices<sp/>via<sp/>UDEV</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Raspbian<sp/>Build<sp/>Dependencies</highlight></codeline>
+<codeline><highlight class="normal">---------------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">sudo<sp/>apt-get<sp/>install<sp/>libudev-dev<sp/>libasound2-dev<sp/>libdbus-1-dev</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>also<sp/>need<sp/>the<sp/>VideoCore<sp/>binary<sp/>stuff<sp/>that<sp/>ships<sp/>in<sp/>/opt/vc<sp/>for<sp/>EGL<sp/>and<sp/></highlight></codeline>
+<codeline><highlight class="normal">OpenGL<sp/>ES<sp/>2.x,<sp/>it<sp/>usually<sp/>comes<sp/>pre-installed,<sp/>but<sp/>in<sp/>any<sp/>case:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>apt-get<sp/>install<sp/>libraspberrypi0<sp/>libraspberrypi-bin<sp/>libraspberrypi-dev</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">NEON</highlight></codeline>
+<codeline><highlight class="normal">----</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>your<sp/>Pi<sp/>has<sp/>NEON<sp/>support,<sp/>make<sp/>sure<sp/>you<sp/>add<sp/>-mfpu=neon<sp/>to<sp/>your<sp/>CFLAGS<sp/>so</highlight></codeline>
+<codeline><highlight class="normal">that<sp/>SDL<sp/>will<sp/>select<sp/>some<sp/>otherwise-disabled<sp/>highly-optimized<sp/>code.<sp/>The</highlight></codeline>
+<codeline><highlight class="normal">original<sp/>Pi<sp/>units<sp/>don&apos;t<sp/>have<sp/>NEON,<sp/>the<sp/>Pi2<sp/>probably<sp/>does,<sp/>and<sp/>the<sp/>Pi3</highlight></codeline>
+<codeline><highlight class="normal">definitely<sp/>does.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Cross<sp/>compiling<sp/>from<sp/>x86<sp/>Linux</highlight></codeline>
+<codeline><highlight class="normal">------------------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>cross<sp/>compile<sp/>SDL<sp/>for<sp/>Raspbian<sp/>from<sp/>your<sp/>desktop<sp/>machine,<sp/>you&apos;ll<sp/>need<sp/>a</highlight></codeline>
+<codeline><highlight class="normal">Raspbian<sp/>system<sp/>root<sp/>and<sp/>the<sp/>cross<sp/>compilation<sp/>tools.<sp/>We&apos;ll<sp/>assume<sp/>these<sp/>tools</highlight></codeline>
+<codeline><highlight class="normal">will<sp/>be<sp/>placed<sp/>in<sp/>/opt/rpi-tools</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>git<sp/>clone<sp/>--depth<sp/>1<sp/>https://github.com/raspberrypi/tools<sp/>/opt/rpi-tools</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You&apos;ll<sp/>also<sp/>need<sp/>a<sp/>Raspbian<sp/>binary<sp/>image.</highlight></codeline>
+<codeline><highlight class="normal">Get<sp/>it<sp/>from:<sp/>http://downloads.raspberrypi.org/raspbian_latest<sp/></highlight></codeline>
+<codeline><highlight class="normal">After<sp/>unzipping,<sp/>you&apos;ll<sp/>get<sp/>file<sp/>with<sp/>a<sp/>name<sp/>like:<sp/>&quot;&lt;date&gt;-wheezy-raspbian.img&quot;</highlight></codeline>
+<codeline><highlight class="normal">Let&apos;s<sp/>assume<sp/>the<sp/>sysroot<sp/>will<sp/>be<sp/>built<sp/>in<sp/>/opt/rpi-sysroot.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>export<sp/>SYSROOT=/opt/rpi-sysroot</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>kpartx<sp/>-a<sp/>-v<sp/>&lt;path_to_raspbian_image&gt;.img</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>mount<sp/>-o<sp/>loop<sp/>/dev/mapper/loop0p2<sp/>/mnt</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>cp<sp/>-r<sp/>/mnt<sp/>$SYSROOT</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>apt-get<sp/>install<sp/>qemu<sp/>binfmt-support<sp/>qemu-user-static</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>cp<sp/>/usr/bin/qemu-arm-static<sp/>$SYSROOT/usr/bin</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>mount<sp/>--bind<sp/>/dev<sp/>$SYSROOT/dev</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>mount<sp/>--bind<sp/>/proc<sp/>$SYSROOT/proc</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>mount<sp/>--bind<sp/>/sys<sp/>$SYSROOT/sys</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Now,<sp/>before<sp/>chrooting<sp/>into<sp/>the<sp/>ARM<sp/>sysroot,<sp/>you&apos;ll<sp/>need<sp/>to<sp/>apply<sp/>a<sp/>workaround,</highlight></codeline>
+<codeline><highlight class="normal">edit<sp/>$SYSROOT/etc/ld.so.preload<sp/>and<sp/>comment<sp/>out<sp/>all<sp/>lines<sp/>in<sp/>it.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>chroot<sp/>$SYSROOT</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>apt-get<sp/>install<sp/>libudev-dev<sp/>libasound2-dev<sp/>libdbus-1-dev<sp/>libraspberrypi0<sp/>libraspberrypi-bin<sp/>libraspberrypi-dev<sp/>libx11-dev<sp/>libxext-dev<sp/>libxrandr-dev<sp/>libxcursor-dev<sp/>libxi-dev<sp/>libxinerama-dev<sp/>libxxf86vm-dev<sp/>libxss-dev</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>exit</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>umount<sp/>$SYSROOT/dev</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>umount<sp/>$SYSROOT/proc</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>umount<sp/>$SYSROOT/sys</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>umount<sp/>/mnt</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">There&apos;s<sp/>one<sp/>more<sp/>fix<sp/>required,<sp/>as<sp/>the<sp/>libdl.so<sp/>symlink<sp/>uses<sp/>an<sp/>absolute<sp/>path<sp/></highlight></codeline>
+<codeline><highlight class="normal">which<sp/>doesn&apos;t<sp/>quite<sp/>work<sp/>in<sp/>our<sp/>setup.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>rm<sp/>-rf<sp/>$SYSROOT/usr/lib/arm-linux-gnueabihf/libdl.so</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>ln<sp/>-s<sp/>../../../lib/arm-linux-gnueabihf/libdl.so.2<sp/>$SYSROOT/usr/lib/arm-linux-gnueabihf/libdl.so</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>final<sp/>step<sp/>is<sp/>compiling<sp/>SDL<sp/>itself.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>export<sp/>CC=&quot;/opt/rpi-tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin/arm-linux-gnueabihf-gcc<sp/>--sysroot=$SYSROOT<sp/>-I$SYSROOT/opt/vc/include<sp/>-I$SYSROOT/usr/include<sp/>-I$SYSROOT/opt/vc/include/interface/vcos/pthreads<sp/>-I$SYSROOT/opt/vc/include/interface/vmcs_host/linux&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cd<sp/>&lt;SDL<sp/>SOURCE&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mkdir<sp/>-p<sp/>build;cd<sp/>build</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>LDFLAGS=&quot;-L$SYSROOT/opt/vc/lib&quot;<sp/>../configure<sp/>--with-sysroot=$SYSROOT<sp/>--host=arm-raspberry-linux-gnueabihf<sp/>--prefix=$PWD/rpi-sdl2-installed<sp/>--disable-pulseaudio<sp/>--disable-esd</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>make</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>make<sp/>install</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>be<sp/>able<sp/>to<sp/>deploy<sp/>this<sp/>to<sp/>/usr/local<sp/>in<sp/>the<sp/>Raspbian<sp/>system<sp/>you<sp/>need<sp/>to<sp/>fix<sp/>up<sp/>a<sp/>few<sp/>paths:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>perl<sp/>-w<sp/>-pi<sp/>-e<sp/>&quot;s#$PWD/rpi-sdl2-installed#/usr/local#g;&quot;<sp/>./rpi-sdl2-installed/lib/libSDL2.la<sp/>./rpi-sdl2-installed/lib/pkgconfig/sdl2.pc<sp/>./rpi-sdl2-installed/bin/sdl2-config</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">Apps<sp/>don&apos;t<sp/>work<sp/>or<sp/>poor<sp/>video/audio<sp/>performance</highlight></codeline>
+<codeline><highlight class="normal">-----------------------------------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>get<sp/>sound<sp/>problems,<sp/>buffer<sp/>underruns,<sp/>etc,<sp/>run<sp/>&quot;sudo<sp/>rpi-update&quot;<sp/>to<sp/></highlight></codeline>
+<codeline><highlight class="normal">update<sp/>the<sp/>RPi&apos;s<sp/>firmware.<sp/>Note<sp/>that<sp/>doing<sp/>so<sp/>will<sp/>fix<sp/>these<sp/>problems,<sp/>but<sp/>it</highlight></codeline>
+<codeline><highlight class="normal">will<sp/>also<sp/>render<sp/>the<sp/>CMA<sp/>-<sp/>Dynamic<sp/>Memory<sp/>Split<sp/>functionality<sp/>useless.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Also,<sp/>by<sp/>default<sp/>the<sp/>Raspbian<sp/>distro<sp/>configures<sp/>the<sp/>GPU<sp/>RAM<sp/>at<sp/>64MB,<sp/>this<sp/>is<sp/>too</highlight></codeline>
+<codeline><highlight class="normal">low<sp/>in<sp/>general,<sp/>specially<sp/>if<sp/>a<sp/>1080p<sp/>TV<sp/>is<sp/>hooked<sp/>up.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">See<sp/>here<sp/>how<sp/>to<sp/>configure<sp/>this<sp/>setting:<sp/>http://elinux.org/RPiconfig</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Using<sp/>a<sp/>fixed<sp/>gpu_mem=128<sp/>is<sp/>the<sp/>best<sp/>option<sp/>(specially<sp/>if<sp/>you<sp/>updated<sp/>the<sp/></highlight></codeline>
+<codeline><highlight class="normal">firmware,<sp/>using<sp/>CMA<sp/>probably<sp/>won&apos;t<sp/>work,<sp/>at<sp/>least<sp/>it&apos;s<sp/>the<sp/>current<sp/>case).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">No<sp/>input</highlight></codeline>
+<codeline><highlight class="normal">--------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Make<sp/>sure<sp/>you<sp/>belong<sp/>to<sp/>the<sp/>&quot;input&quot;<sp/>group.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>usermod<sp/>-aG<sp/>input<sp/>`whoami`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">No<sp/>HDMI<sp/>Audio</highlight></codeline>
+<codeline><highlight class="normal">-------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>notice<sp/>that<sp/>ALSA<sp/>works<sp/>but<sp/>there&apos;s<sp/>no<sp/>audio<sp/>over<sp/>HDMI,<sp/>try<sp/>adding:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>hdmi_drive=2</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">to<sp/>your<sp/>config.txt<sp/>file<sp/>and<sp/>reboot.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Reference:<sp/>http://www.raspberrypi.org/phpBB3/viewtopic.php?t=5062</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Text<sp/>Input<sp/>API<sp/>support</highlight></codeline>
+<codeline><highlight class="normal">----------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>Text<sp/>Input<sp/>API<sp/>is<sp/>supported,<sp/>with<sp/>translation<sp/>of<sp/>scan<sp/>codes<sp/>done<sp/>via<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">kernel<sp/>symbol<sp/>tables.<sp/>For<sp/>this<sp/>to<sp/>work,<sp/>SDL<sp/>needs<sp/>access<sp/>to<sp/>a<sp/>valid<sp/>console.</highlight></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>notice<sp/>there&apos;s<sp/>no<sp/>SDL_TEXTINPUT<sp/>message<sp/>being<sp/>emitted,<sp/>double<sp/>check<sp/>that</highlight></codeline>
+<codeline><highlight class="normal">your<sp/>app<sp/>has<sp/>read<sp/>access<sp/>to<sp/>one<sp/>of<sp/>the<sp/>following:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>/proc/self/fd/0</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>/dev/tty</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>/dev/tty[0...6]</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>/dev/vc/0</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>/dev/console</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>is<sp/>usually<sp/>not<sp/>a<sp/>problem<sp/>if<sp/>you<sp/>run<sp/>from<sp/>the<sp/>physical<sp/>terminal<sp/>(as<sp/>opposed</highlight></codeline>
+<codeline><highlight class="normal">to<sp/>running<sp/>from<sp/>a<sp/>pseudo<sp/>terminal,<sp/>such<sp/>as<sp/>via<sp/>SSH).<sp/>If<sp/>running<sp/>from<sp/>a<sp/>PTS,<sp/>a<sp/></highlight></codeline>
+<codeline><highlight class="normal">quick<sp/>workaround<sp/>is<sp/>to<sp/>run<sp/>your<sp/>app<sp/>as<sp/>root<sp/>or<sp/>add<sp/>yourself<sp/>to<sp/>the<sp/>tty<sp/>group,</highlight></codeline>
+<codeline><highlight class="normal">then<sp/>re-login<sp/>to<sp/>the<sp/>system.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>usermod<sp/>-aG<sp/>tty<sp/>`whoami`</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">The<sp/>keyboard<sp/>layout<sp/>used<sp/>by<sp/>SDL<sp/>is<sp/>the<sp/>same<sp/>as<sp/>the<sp/>one<sp/>the<sp/>kernel<sp/>uses.</highlight></codeline>
+<codeline><highlight class="normal">To<sp/>configure<sp/>the<sp/>layout<sp/>on<sp/>Raspbian:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>dpkg-reconfigure<sp/>keyboard-configuration</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">To<sp/>configure<sp/>the<sp/>locale,<sp/>which<sp/>controls<sp/>which<sp/>keys<sp/>are<sp/>interpreted<sp/>as<sp/>letters,</highlight></codeline>
+<codeline><highlight class="normal">this<sp/>determining<sp/>the<sp/>CAPS<sp/>LOCK<sp/>behavior:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>dpkg-reconfigure<sp/>locales</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">OpenGL<sp/>problems</highlight></codeline>
+<codeline><highlight class="normal">---------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>have<sp/>desktop<sp/>OpenGL<sp/>headers<sp/>installed<sp/>at<sp/>build<sp/>time<sp/>in<sp/>your<sp/>RPi<sp/>or<sp/>cross<sp/></highlight></codeline>
+<codeline><highlight class="normal">compilation<sp/>environment,<sp/>support<sp/>for<sp/>it<sp/>will<sp/>be<sp/>built<sp/>in.<sp/>However,<sp/>the<sp/>chipset<sp/></highlight></codeline>
+<codeline><highlight class="normal">does<sp/>not<sp/>actually<sp/>have<sp/>support<sp/>for<sp/>it,<sp/>which<sp/>causes<sp/>issues<sp/>in<sp/>certain<sp/>SDL<sp/>apps<sp/></highlight></codeline>
+<codeline><highlight class="normal">since<sp/>the<sp/>presence<sp/>of<sp/>OpenGL<sp/>support<sp/>supersedes<sp/>the<sp/>ES/ES2<sp/>variants.</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>workaround<sp/>is<sp/>to<sp/>disable<sp/>OpenGL<sp/>at<sp/>configuration<sp/>time:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>./configure<sp/>--disable-video-opengl</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Or<sp/>if<sp/>the<sp/>application<sp/>uses<sp/>the<sp/>Render<sp/>functions,<sp/>you<sp/>can<sp/>use<sp/>the<sp/>SDL_RENDER_DRIVER</highlight></codeline>
+<codeline><highlight class="normal">environment<sp/>variable:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>export<sp/>SDL_RENDER_DRIVER=opengles2</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Notes</highlight></codeline>
+<codeline><highlight class="normal">-----</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>When<sp/>launching<sp/>apps<sp/>remotely<sp/>(via<sp/>SSH),<sp/>SDL<sp/>can<sp/>prevent<sp/>local<sp/>keystrokes<sp/>from</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>leaking<sp/>into<sp/>the<sp/>console<sp/>only<sp/>if<sp/>it<sp/>has<sp/>root<sp/>privileges.<sp/>Launching<sp/>apps<sp/>locally</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>does<sp/>not<sp/>suffer<sp/>from<sp/>this<sp/>issue.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/docs/README-raspberrypi.md"/>
+  </compounddef>
+</doxygen>

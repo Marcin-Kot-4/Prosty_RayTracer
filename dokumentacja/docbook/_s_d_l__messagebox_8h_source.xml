@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__messagebox_8h_source" xml:lang="en-US">
+<title>SDL_messagebox.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_messagebox.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+22 <emphasis role="preprocessor">#ifndef&#32;SDL_messagebox_h_</emphasis>
+23 <emphasis role="preprocessor">#define&#32;SDL_messagebox_h_</emphasis>
+24 
+25 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__stdinc_8h">SDL_stdinc.h</link>&quot;</emphasis>
+26 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__video_8h">SDL_video.h</link>&quot;</emphasis>&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;For&#32;SDL_Window&#32;*/</emphasis>
+27 
+28 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+29 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+30 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+31 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+32 <emphasis role="preprocessor">#endif</emphasis>
+33 
+37 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+38 {
+39 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__messagebox_8h_1a97f06819ac610581044fdb93d81eed37a0c3a423a27f14a59ae160a8f145788d6">SDL_MESSAGEBOX_ERROR</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;0x00000010,&#32;&#32;&#32;
+40 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__messagebox_8h_1a97f06819ac610581044fdb93d81eed37a90a65bab036b0156ddec9d8c7e41a2ce">SDL_MESSAGEBOX_WARNING</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;0x00000020,&#32;&#32;&#32;
+41 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__messagebox_8h_1a97f06819ac610581044fdb93d81eed37aa5c724184320aa258788481e9ad6d814">SDL_MESSAGEBOX_INFORMATION</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;0x00000040,&#32;&#32;&#32;
+42 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__messagebox_8h_1a97f06819ac610581044fdb93d81eed37aca1b8c594588c656e940a8447a862d08">SDL_MESSAGEBOX_BUTTONS_LEFT_TO_RIGHT</link>&#32;=&#32;0x00000080,&#32;&#32;&#32;
+43 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__messagebox_8h_1a97f06819ac610581044fdb93d81eed37a9786e79c1efa0c7ea96da7a08af9a24d">SDL_MESSAGEBOX_BUTTONS_RIGHT_TO_LEFT</link>&#32;=&#32;0x00000100&#32;&#32;&#32;&#32;
+44 }&#32;<link linkend="__s_d_l__messagebox_8h_1a97f06819ac610581044fdb93d81eed37">SDL_MessageBoxFlags</link>;
+45 
+49 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+50 {
+51 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__messagebox_8h_1ad21beffe204426be6efbf4990c916ad0a67ea775510f7c29ebf0a6448ed01b842">SDL_MESSAGEBOX_BUTTON_RETURNKEY_DEFAULT</link>&#32;=&#32;0x00000001,&#32;&#32;
+52 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__messagebox_8h_1ad21beffe204426be6efbf4990c916ad0aa4afee827b33dd88c00c00eef9c9b46b">SDL_MESSAGEBOX_BUTTON_ESCAPEKEY_DEFAULT</link>&#32;=&#32;0x00000002&#32;&#32;&#32;
+53 }&#32;<link linkend="__s_d_l__messagebox_8h_1ad21beffe204426be6efbf4990c916ad0">SDL_MessageBoxButtonFlags</link>;
+54 
+58 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct</emphasis>
+59 {
+60 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="_struct_s_d_l___message_box_button_data_1a426c8b5da0e718242c7840706d95de0b">flags</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+61 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l___message_box_button_data_1a22938886a6b13792006cc5c91fa38e92">buttonid</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+62 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*&#32;<link linkend="_struct_s_d_l___message_box_button_data_1af35f3062f0577159284c8828caaf08e4">text</link>;&#32;&#32;
+63 }&#32;<link linkend="_struct_s_d_l___message_box_button_data">SDL_MessageBoxButtonData</link>;
+64 
+68 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct</emphasis>
+69 {
+70 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link>&#32;<link linkend="__s_d_l__opengl_8h_1a42ce7cdc612e53abee15043f80220d97">r</link>,&#32;<link linkend="__s_d_l__opengl__glext_8h_1acaceb3a655ff28b75259860bcb868f9f">g</link>,&#32;<link linkend="_struct_s_d_l___message_box_color_1ad1215a42167cb5b190ff8f19dbd42066">b</link>;
+71 }&#32;<link linkend="_struct_s_d_l___message_box_color">SDL_MessageBoxColor</link>;
+72 
+73 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+74 {
+75 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__messagebox_8h_1a75e562d38bc214725e01f4f829bc1567a9a2a6e8259fe737efb5c5fc71e71b67f">SDL_MESSAGEBOX_COLOR_BACKGROUND</link>,
+76 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__messagebox_8h_1a75e562d38bc214725e01f4f829bc1567aa6e69e6abffa48dba8366ca4c343bd37">SDL_MESSAGEBOX_COLOR_TEXT</link>,
+77 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__messagebox_8h_1a75e562d38bc214725e01f4f829bc1567add5517e7916c5aad3f9582d8d9e736ce">SDL_MESSAGEBOX_COLOR_BUTTON_BORDER</link>,
+78 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__messagebox_8h_1a75e562d38bc214725e01f4f829bc1567a864f22d6d76293999a83c0ae29bf04e2">SDL_MESSAGEBOX_COLOR_BUTTON_BACKGROUND</link>,
+79 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__messagebox_8h_1a75e562d38bc214725e01f4f829bc1567a8ed458545a3c4f08ff795015a197f678">SDL_MESSAGEBOX_COLOR_BUTTON_SELECTED</link>,
+80 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__messagebox_8h_1a75e562d38bc214725e01f4f829bc1567a0a575b056603e38e844b141c83a44d89">SDL_MESSAGEBOX_COLOR_MAX</link>
+81 }&#32;<link linkend="__s_d_l__messagebox_8h_1a75e562d38bc214725e01f4f829bc1567">SDL_MessageBoxColorType</link>;
+82 
+86 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct</emphasis>
+87 {
+88 &#32;&#32;&#32;&#32;<link linkend="_struct_s_d_l___message_box_color">SDL_MessageBoxColor</link>&#32;colors[<link linkend="__s_d_l__messagebox_8h_1a75e562d38bc214725e01f4f829bc1567a0a575b056603e38e844b141c83a44d89">SDL_MESSAGEBOX_COLOR_MAX</link>];
+89 }&#32;<link linkend="_struct_s_d_l___message_box_color_scheme">SDL_MessageBoxColorScheme</link>;
+90 
+94 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct</emphasis>
+95 {
+96 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="_struct_s_d_l___message_box_data_1a113d016f760bf4e4156b0f376358d6a0">flags</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+97 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link>&#32;*<link linkend="_struct_s_d_l___message_box_data_1a5c333bc93705c66068e140bc28daedcb">window</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+98 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="_struct_s_d_l___message_box_data_1a93ceeafeed20b553ad4c86c9be37f117">title</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+99 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="_struct_s_d_l___message_box_data_1ada6ae208a1f85adabbd7a7a08ca609c8">message</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+101 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l___message_box_data_1a133f4fef549cc0cb14b799af35f3dc5a">numbuttons</link>;
+102 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_s_d_l___message_box_button_data">SDL_MessageBoxButtonData</link>&#32;*<link linkend="_struct_s_d_l___message_box_data_1a265e47aab749e384661ae91d3e11e0db">buttons</link>;
+103 
+104 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_s_d_l___message_box_color_scheme">SDL_MessageBoxColorScheme</link>&#32;*<link linkend="_struct_s_d_l___message_box_data_1a18744865a3e89e260db5f01aee579e35">colorScheme</link>;&#32;&#32;&#32;
+105 }&#32;<link linkend="_struct_s_d_l___message_box_data">SDL_MessageBoxData</link>;
+106 
+140 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__messagebox_8h_1a5100de0969e90cc8f82c256287136e05">SDL_ShowMessageBox</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_s_d_l___message_box_data">SDL_MessageBoxData</link>&#32;*messageboxdata,&#32;<emphasis role="keywordtype">int</emphasis>&#32;*buttonid);
+141 
+182 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__messagebox_8h_1a34d06cce5c7b8d25812da0306696de32">SDL_ShowSimpleMessageBox</link>(<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1ac7ba7d3cce3d19ca020e056b37231289">flags</link>,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*title,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1a7b6161cffb9b8aee272b3b916183d28c">message</link>,&#32;<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link>&#32;*window);
+183 
+184 
+185 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+186 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+187 }
+188 <emphasis role="preprocessor">#endif</emphasis>
+189 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+190 
+191 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_messagebox_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+192 
+193 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

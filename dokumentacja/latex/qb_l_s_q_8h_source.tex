@@ -1,0 +1,78 @@
+\hypertarget{qb_l_s_q_8h_source}{}\doxysection{qb\+LSQ.\+h}
+\label{qb_l_s_q_8h_source}\index{D:/RayTracing/RayTrace/qbLinAlg/qbLSQ.h@{D:/RayTracing/RayTrace/qbLinAlg/qbLSQ.h}}
+\mbox{\hyperlink{qb_l_s_q_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// This file is part of the qbLinAlg linear algebra library.}}
+\DoxyCodeLine{2 \textcolor{comment}{// Copyright (c) 2021 Michael Bennett}}
+\DoxyCodeLine{3 \textcolor{comment}{// MIT license}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef QBLSQ\_H}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define QBLSQ\_H}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{comment}{/* *************************************************************************************************}}
+\DoxyCodeLine{9 \textcolor{comment}{}}
+\DoxyCodeLine{10 \textcolor{comment}{    qbLSQ}}
+\DoxyCodeLine{11 \textcolor{comment}{    }}
+\DoxyCodeLine{12 \textcolor{comment}{    Function to solve a system of linear equations using a least squares approach to handle systems}}
+\DoxyCodeLine{13 \textcolor{comment}{    where there are more equations (observations) than unknowns. Assumes that the system is in the}}
+\DoxyCodeLine{14 \textcolor{comment}{    form of y = X*beta.}}
+\DoxyCodeLine{15 \textcolor{comment}{    }}
+\DoxyCodeLine{16 \textcolor{comment}{    *** INPUTS ***}}
+\DoxyCodeLine{17 \textcolor{comment}{    }}
+\DoxyCodeLine{18 \textcolor{comment}{    Xin     qbMatrix2<T>        The matrix of independent variables (X in the above equation).}}
+\DoxyCodeLine{19 \textcolor{comment}{    yin     qbVector<T>     The vector of dependent variables (y in the above equation).}}
+\DoxyCodeLine{20 \textcolor{comment}{    result      qbVector<T>     The vector of unknown parameters (beta in the above equation).}}
+\DoxyCodeLine{21 \textcolor{comment}{                        The final solution is returned in this vector.}}
+\DoxyCodeLine{22 \textcolor{comment}{                                                            }}
+\DoxyCodeLine{23 \textcolor{comment}{    *** OUTPUTS ***}}
+\DoxyCodeLine{24 \textcolor{comment}{    }}
+\DoxyCodeLine{25 \textcolor{comment}{    INT             Flag indicating success or failure of the process.}}
+\DoxyCodeLine{26 \textcolor{comment}{                        1 Indicates success.}}
+\DoxyCodeLine{27 \textcolor{comment}{                        -\/1 indicates failure due to there being no computable inverse.}}
+\DoxyCodeLine{28 \textcolor{comment}{}}
+\DoxyCodeLine{29 \textcolor{comment}{    ************************************************************************************************* */}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{qb_vector_8h}{qbVector.h}}"{}}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{qb_matrix_8h}{qbMatrix.h}}"{}}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{comment}{// Define error codes.}}
+\DoxyCodeLine{40 \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{qb_l_s_q_8h_a0f05679b760832fce219ffeebedf5179}{QBLSQ\_NOINVERSE}} = -\/1;}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{comment}{// The qbLSQ function.}}
+\DoxyCodeLine{43 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{44 \textcolor{keywordtype}{int} \mbox{\hyperlink{qb_l_s_q_8h_ad28351819676752eba609e1e3cfda79e}{qbLSQ}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \&Xin, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \&yin, \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \&\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}})}
+\DoxyCodeLine{45 \{}
+\DoxyCodeLine{46     \textcolor{comment}{// Firstly, make a copy of X and y.}}
+\DoxyCodeLine{47     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} X = Xin;}
+\DoxyCodeLine{48     \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \mbox{\hyperlink{_s_d_l__opengl_8h_a1675d9d7bb68e1657ff028643b4037e3}{y}} = yin;}
+\DoxyCodeLine{49     }
+\DoxyCodeLine{50     \textcolor{comment}{// Compute the tranpose of X.}}
+\DoxyCodeLine{51     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} XT = X.\mbox{\hyperlink{classqb_matrix2_a6235a35daf5fa20a9ebc7ed91d8a94a3}{Transpose}}();}
+\DoxyCodeLine{52     }
+\DoxyCodeLine{53     \textcolor{comment}{// Compute XTX.}}
+\DoxyCodeLine{54     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} XTX = XT * X;}
+\DoxyCodeLine{55     }
+\DoxyCodeLine{56     \textcolor{comment}{// Compute the inverse of this.}}
+\DoxyCodeLine{57     \textcolor{keywordflow}{if} (!XTX.\mbox{\hyperlink{classqb_matrix2_aaf71c5642111972501f43b1e225b8a2f}{Inverse}}())}
+\DoxyCodeLine{58     \{}
+\DoxyCodeLine{59         \textcolor{comment}{// We were unable to compute the inverse.}}
+\DoxyCodeLine{60         \textcolor{keywordflow}{return} \mbox{\hyperlink{qb_l_s_q_8h_a0f05679b760832fce219ffeebedf5179}{QBLSQ\_NOINVERSE}};}
+\DoxyCodeLine{61     \}}
+\DoxyCodeLine{62     }
+\DoxyCodeLine{63     \textcolor{comment}{// Multiply the inverse by XT.}}
+\DoxyCodeLine{64     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} XTXXT = XTX * XT;}
+\DoxyCodeLine{65     }
+\DoxyCodeLine{66     \textcolor{comment}{// And multiply by y to get the final result.}}
+\DoxyCodeLine{67     \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}} = XTXXT * \mbox{\hyperlink{_s_d_l__opengl_8h_a1675d9d7bb68e1657ff028643b4037e3}{y}};}
+\DoxyCodeLine{68     }
+\DoxyCodeLine{69     \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{70 \}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

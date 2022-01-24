@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__cpuinfo_8h_source" xml:lang="en-US">
+<title>SDL_cpuinfo.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_cpuinfo.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+28 <emphasis role="preprocessor">#ifndef&#32;SDL_cpuinfo_h_</emphasis>
+29 <emphasis role="preprocessor">#define&#32;SDL_cpuinfo_h_</emphasis>
+30 
+31 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__stdinc_8h">SDL_stdinc.h</link>&quot;</emphasis>
+32 
+33 <emphasis role="comment">/*&#32;Need&#32;to&#32;do&#32;this&#32;here&#32;because&#32;intrin.h&#32;has&#32;C++&#32;code&#32;in&#32;it&#32;*/</emphasis>
+34 <emphasis role="comment">/*&#32;Visual&#32;Studio&#32;2005&#32;has&#32;a&#32;bug&#32;where&#32;intrin.h&#32;conflicts&#32;with&#32;winnt.h&#32;*/</emphasis>
+35 <emphasis role="preprocessor">#if&#32;defined(_MSC_VER)&#32;&amp;&amp;&#32;(_MSC_VER&#32;&gt;=&#32;1500)&#32;&amp;&amp;&#32;(defined(_M_IX86)&#32;||&#32;defined(_M_X64))</emphasis>
+36 <emphasis role="preprocessor">#ifdef&#32;__clang__</emphasis>
+37 <emphasis role="comment">/*&#32;As&#32;of&#32;Clang&#32;11,&#32;&apos;_m_prefetchw&apos;&#32;is&#32;conflicting&#32;with&#32;the&#32;winnt.h&apos;s&#32;version,</emphasis>
+38 <emphasis role="comment">&#32;&#32;&#32;so&#32;we&#32;define&#32;the&#32;needed&#32;&apos;_m_prefetch&apos;&#32;here&#32;as&#32;a&#32;pseudo-header,&#32;until&#32;the&#32;issue&#32;is&#32;fixed.&#32;*/</emphasis>
+39 
+40 <emphasis role="preprocessor">#ifndef&#32;__PRFCHWINTRIN_H</emphasis>
+41 <emphasis role="preprocessor">#define&#32;__PRFCHWINTRIN_H</emphasis>
+42 
+43 <emphasis role="keyword">static</emphasis>&#32;<link linkend="_begin__code_8h_1a9f04218fe09e6ee659e045b2f11542ed">__inline__</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;__attribute__((__always_inline__,&#32;__nodebug__))
+44 _m_prefetch(<emphasis role="keywordtype">void</emphasis>&#32;*__P)
+45 {
+46 &#32;&#32;__builtin_prefetch&#32;(__P,&#32;0,&#32;3&#32;<emphasis role="comment">/*&#32;_MM_HINT_T0&#32;*/</emphasis>);
+47 }
+48 
+49 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;__PRFCHWINTRIN_H&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+50 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;__clang__&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+51 <emphasis role="preprocessor">#include&#32;&lt;intrin.h&gt;</emphasis>
+52 <emphasis role="preprocessor">#ifndef&#32;_WIN64</emphasis>
+53 <emphasis role="preprocessor">#ifndef&#32;__MMX__</emphasis>
+54 <emphasis role="preprocessor">#define&#32;__MMX__</emphasis>
+55 <emphasis role="preprocessor">#endif</emphasis>
+56 <emphasis role="preprocessor">#ifndef&#32;__3dNOW__</emphasis>
+57 <emphasis role="preprocessor">#define&#32;__3dNOW__</emphasis>
+58 <emphasis role="preprocessor">#endif</emphasis>
+59 <emphasis role="preprocessor">#endif</emphasis>
+60 <emphasis role="preprocessor">#ifndef&#32;__SSE__</emphasis>
+61 <emphasis role="preprocessor">#define&#32;__SSE__</emphasis>
+62 <emphasis role="preprocessor">#endif</emphasis>
+63 <emphasis role="preprocessor">#ifndef&#32;__SSE2__</emphasis>
+64 <emphasis role="preprocessor">#define&#32;__SSE2__</emphasis>
+65 <emphasis role="preprocessor">#endif</emphasis>
+66 <emphasis role="preprocessor">#ifndef&#32;__SSE3__</emphasis>
+67 <emphasis role="preprocessor">#define&#32;__SSE3__</emphasis>
+68 <emphasis role="preprocessor">#endif</emphasis>
+69 <emphasis role="preprocessor">#elif&#32;defined(__MINGW64_VERSION_MAJOR)</emphasis>
+70 <emphasis role="preprocessor">#include&#32;&lt;intrin.h&gt;</emphasis>
+71 <emphasis role="preprocessor">#if&#32;!defined(SDL_DISABLE_ARM_NEON_H)&#32;&amp;&amp;&#32;defined(__ARM_NEON)</emphasis>
+72 <emphasis role="preprocessor">#&#32;&#32;include&#32;&lt;arm_neon.h&gt;</emphasis>
+73 <emphasis role="preprocessor">#endif</emphasis>
+74 <emphasis role="preprocessor">#else</emphasis>
+75 <emphasis role="comment">/*&#32;altivec.h&#32;redefining&#32;bool&#32;causes&#32;a&#32;number&#32;of&#32;problems,&#32;see&#32;bugs&#32;3993&#32;and&#32;4392,&#32;so&#32;you&#32;need&#32;to&#32;explicitly&#32;define&#32;SDL_ENABLE_ALTIVEC_H&#32;to&#32;have&#32;it&#32;included.&#32;*/</emphasis>
+76 <emphasis role="preprocessor">#if&#32;defined(HAVE_ALTIVEC_H)&#32;&amp;&amp;&#32;defined(__ALTIVEC__)&#32;&amp;&amp;&#32;!defined(__APPLE_ALTIVEC__)&#32;&amp;&amp;&#32;defined(SDL_ENABLE_ALTIVEC_H)</emphasis>
+77 <emphasis role="preprocessor">#include&#32;&lt;altivec.h&gt;</emphasis>
+78 <emphasis role="preprocessor">#endif</emphasis>
+79 <emphasis role="preprocessor">#if&#32;!defined(SDL_DISABLE_ARM_NEON_H)</emphasis>
+80 <emphasis role="preprocessor">#&#32;&#32;if&#32;defined(__ARM_NEON)</emphasis>
+81 <emphasis role="preprocessor">#&#32;&#32;&#32;&#32;include&#32;&lt;arm_neon.h&gt;</emphasis>
+82 <emphasis role="preprocessor">#&#32;&#32;elif&#32;defined(__WINDOWS__)&#32;||&#32;defined(__WINRT__)</emphasis>
+83 <emphasis role="comment">/*&#32;Visual&#32;Studio&#32;doesn&apos;t&#32;define&#32;__ARM_ARCH,&#32;but&#32;_M_ARM&#32;(if&#32;set,&#32;always&#32;7),&#32;and&#32;_M_ARM64&#32;(if&#32;set,&#32;always&#32;1).&#32;*/</emphasis>
+84 <emphasis role="preprocessor">#&#32;&#32;&#32;&#32;if&#32;defined(_M_ARM)</emphasis>
+85 <emphasis role="preprocessor">#&#32;&#32;&#32;&#32;&#32;&#32;include&#32;&lt;armintr.h&gt;</emphasis>
+86 <emphasis role="preprocessor">#&#32;&#32;&#32;&#32;&#32;&#32;include&#32;&lt;arm_neon.h&gt;</emphasis>
+87 <emphasis role="preprocessor">#&#32;&#32;&#32;&#32;&#32;&#32;define&#32;__ARM_NEON&#32;1&#32;</emphasis><emphasis role="comment">/*&#32;Set&#32;__ARM_NEON&#32;so&#32;that&#32;it&#32;can&#32;be&#32;used&#32;elsewhere,&#32;at&#32;compile&#32;time&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+88 <emphasis role="preprocessor">#&#32;&#32;&#32;&#32;endif</emphasis>
+89 <emphasis role="preprocessor">#&#32;&#32;&#32;&#32;if&#32;defined&#32;(_M_ARM64)</emphasis>
+90 <emphasis role="preprocessor">#&#32;&#32;&#32;&#32;&#32;&#32;include&#32;&lt;arm64intr.h&gt;</emphasis>
+91 <emphasis role="preprocessor">#&#32;&#32;&#32;&#32;&#32;&#32;include&#32;&lt;arm64_neon.h&gt;</emphasis>
+92 <emphasis role="preprocessor">#&#32;&#32;&#32;&#32;&#32;&#32;define&#32;__ARM_NEON&#32;1&#32;</emphasis><emphasis role="comment">/*&#32;Set&#32;__ARM_NEON&#32;so&#32;that&#32;it&#32;can&#32;be&#32;used&#32;elsewhere,&#32;at&#32;compile&#32;time&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+93 <emphasis role="preprocessor">#&#32;&#32;&#32;&#32;endif</emphasis>
+94 <emphasis role="preprocessor">#&#32;&#32;endif</emphasis>
+95 <emphasis role="preprocessor">#endif</emphasis>
+96 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;compiler&#32;version&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+97 
+98 <emphasis role="preprocessor">#if&#32;defined(__3dNOW__)&#32;&amp;&amp;&#32;!defined(SDL_DISABLE_MM3DNOW_H)</emphasis>
+99 <emphasis role="preprocessor">#include&#32;&lt;mm3dnow.h&gt;</emphasis>
+100 <emphasis role="preprocessor">#endif</emphasis>
+101 <emphasis role="preprocessor">#if&#32;defined(HAVE_IMMINTRIN_H)&#32;&amp;&amp;&#32;!defined(SDL_DISABLE_IMMINTRIN_H)</emphasis>
+102 <emphasis role="preprocessor">#include&#32;&lt;immintrin.h&gt;</emphasis>
+103 <emphasis role="preprocessor">#else</emphasis>
+104 <emphasis role="preprocessor">#if&#32;defined(__MMX__)&#32;&amp;&amp;&#32;!defined(SDL_DISABLE_MMINTRIN_H)</emphasis>
+105 <emphasis role="preprocessor">#include&#32;&lt;mmintrin.h&gt;</emphasis>
+106 <emphasis role="preprocessor">#endif</emphasis>
+107 <emphasis role="preprocessor">#if&#32;defined(__SSE__)&#32;&amp;&amp;&#32;!defined(SDL_DISABLE_XMMINTRIN_H)</emphasis>
+108 <emphasis role="preprocessor">#include&#32;&lt;xmmintrin.h&gt;</emphasis>
+109 <emphasis role="preprocessor">#endif</emphasis>
+110 <emphasis role="preprocessor">#if&#32;defined(__SSE2__)&#32;&amp;&amp;&#32;!defined(SDL_DISABLE_EMMINTRIN_H)</emphasis>
+111 <emphasis role="preprocessor">#include&#32;&lt;emmintrin.h&gt;</emphasis>
+112 <emphasis role="preprocessor">#endif</emphasis>
+113 <emphasis role="preprocessor">#if&#32;defined(__SSE3__)&#32;&amp;&amp;&#32;!defined(SDL_DISABLE_PMMINTRIN_H)</emphasis>
+114 <emphasis role="preprocessor">#include&#32;&lt;pmmintrin.h&gt;</emphasis>
+115 <emphasis role="preprocessor">#endif</emphasis>
+116 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;HAVE_IMMINTRIN_H&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+117 
+118 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+119 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+120 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+121 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+122 <emphasis role="preprocessor">#endif</emphasis>
+123 
+124 <emphasis role="comment">/*&#32;This&#32;is&#32;a&#32;guess&#32;for&#32;the&#32;cacheline&#32;size&#32;used&#32;for&#32;padding.</emphasis>
+125 <emphasis role="comment">&#32;*&#32;Most&#32;x86&#32;processors&#32;have&#32;a&#32;64&#32;byte&#32;cache&#32;line.</emphasis>
+126 <emphasis role="comment">&#32;*&#32;The&#32;64-bit&#32;PowerPC&#32;processors&#32;have&#32;a&#32;128&#32;byte&#32;cache&#32;line.</emphasis>
+127 <emphasis role="comment">&#32;*&#32;We&apos;ll&#32;use&#32;the&#32;larger&#32;value&#32;to&#32;be&#32;generally&#32;safe.</emphasis>
+128 <emphasis role="comment">&#32;*/</emphasis>
+129 <emphasis role="preprocessor">#define&#32;SDL_CACHELINE_SIZE&#32;&#32;128</emphasis>
+130 
+140 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__cpuinfo_8h_1a888cf77e53a67803402e1740a9639bd7">SDL_GetCPUCount</link>(<emphasis role="keywordtype">void</emphasis>);
+141 
+152 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__cpuinfo_8h_1aa699924d6c33d2cac8f1983c4ae4091c">SDL_GetCPUCacheLineSize</link>(<emphasis role="keywordtype">void</emphasis>);
+153 
+174 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__cpuinfo_8h_1afea666a39b6be7821303adcf16e83c47">SDL_HasRDTSC</link>(<emphasis role="keywordtype">void</emphasis>);
+175 
+197 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__cpuinfo_8h_1a9bc2024dc37b1d318eb197c161f8e50b">SDL_HasAltiVec</link>(<emphasis role="keywordtype">void</emphasis>);
+198 
+219 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__cpuinfo_8h_1aecec2f1434aa2eb5c82f974880f5181f">SDL_HasMMX</link>(<emphasis role="keywordtype">void</emphasis>);
+220 
+241 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__cpuinfo_8h_1a57efd279a93553cf43a54e3a49db6305">SDL_Has3DNow</link>(<emphasis role="keywordtype">void</emphasis>);
+242 
+263 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__cpuinfo_8h_1aed4b71a601e3a12786a5280f59c0e26d">SDL_HasSSE</link>(<emphasis role="keywordtype">void</emphasis>);
+264 
+285 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__cpuinfo_8h_1aadc66ce3d29c669f6c78ee17c592336e">SDL_HasSSE2</link>(<emphasis role="keywordtype">void</emphasis>);
+286 
+307 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__cpuinfo_8h_1ab0dfbc5d529ba0b65d1fff744da69f5e">SDL_HasSSE3</link>(<emphasis role="keywordtype">void</emphasis>);
+308 
+329 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__cpuinfo_8h_1a6719853bee3dd03b8823540705a55932">SDL_HasSSE41</link>(<emphasis role="keywordtype">void</emphasis>);
+330 
+351 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__cpuinfo_8h_1a9fea35e1593bb7981cdc1da4d0b2dccb">SDL_HasSSE42</link>(<emphasis role="keywordtype">void</emphasis>);
+352 
+373 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__cpuinfo_8h_1aec739a6c622987314d9a22899c4ba673">SDL_HasAVX</link>(<emphasis role="keywordtype">void</emphasis>);
+374 
+395 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__cpuinfo_8h_1a1fa7d982a27fb5a29fc1b291fc1054f4">SDL_HasAVX2</link>(<emphasis role="keywordtype">void</emphasis>);
+396 
+408 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__cpuinfo_8h_1a5108ee8d59a6d8a0a978f96b799bd3b1">SDL_HasAVX512F</link>(<emphasis role="keywordtype">void</emphasis>);
+409 
+423 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__cpuinfo_8h_1aa5356bc82108c60c3bee504ee63fda7e">SDL_HasARMSIMD</link>(<emphasis role="keywordtype">void</emphasis>);
+424 
+434 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__cpuinfo_8h_1ac5096ea77af07eb4a9d4c754289b2a2b">SDL_HasNEON</link>(<emphasis role="keywordtype">void</emphasis>);
+435 
+443 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__cpuinfo_8h_1af672834675f296bed0e226113695bebd">SDL_GetSystemRAM</link>(<emphasis role="keywordtype">void</emphasis>);
+444 
+462 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__cpuinfo_8h_1a99cf6527faa408c398a5a678aaf892d5">SDL_SIMDGetAlignment</link>(<emphasis role="keywordtype">void</emphasis>);
+463 
+501 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;*&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__cpuinfo_8h_1ac2e013a734c8108fa7bd80c5c80abd71">SDL_SIMDAlloc</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a652168017ea9a8bbcead03d5c16269fb">len</link>);
+502 
+525 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;*&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__cpuinfo_8h_1a674d89c2b103e08a7c94b96103cc27f8">SDL_SIMDRealloc</link>(<emphasis role="keywordtype">void</emphasis>&#32;*mem,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a652168017ea9a8bbcead03d5c16269fb">len</link>);
+526 
+549 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__cpuinfo_8h_1a5bd4b538ff298ee8f2c31ed9da3253d4">SDL_SIMDFree</link>(<emphasis role="keywordtype">void</emphasis>&#32;*ptr);
+550 
+551 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+552 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+553 }
+554 <emphasis role="preprocessor">#endif</emphasis>
+555 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+556 
+557 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_cpuinfo_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+558 
+559 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

@@ -1,0 +1,48 @@
+.TH "SDL_SysWMEvent" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SDL_SysWMEvent \- A video driver dependent system event (event\&.syswm\&.*) This event is disabled by default, you can enable it with \fBSDL_EventState()\fP  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SDL_events\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUint32\fP \fBtype\fP"
+.br
+.ti -1c
+.RI "\fBUint32\fP \fBtimestamp\fP"
+.br
+.ti -1c
+.RI "\fBSDL_SysWMmsg\fP * \fBmsg\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A video driver dependent system event (event\&.syswm\&.*) This event is disabled by default, you can enable it with \fBSDL_EventState()\fP 
+
+
+.PP
+\fBNote\fP
+.RS 4
+If you want to use this event, you should include SDL_syswm\&.h\&. 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBSDL_SysWMmsg\fP* SDL_SysWMEvent::msg"
+driver dependent data, defined in SDL_syswm\&.h 
+.SS "\fBUint32\fP SDL_SysWMEvent::timestamp"
+In milliseconds, populated using \fBSDL_GetTicks()\fP 
+.SS "\fBUint32\fP SDL_SysWMEvent::type"
+\fBSDL_SYSWMEVENT\fP 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__bits_8h" xml:lang="en-US">
+<title>D:/RayTracing/include/SDL_bits.h File Reference</title>
+<indexterm><primary>D:/RayTracing/include/SDL_bits.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;SDL_stdinc.h&quot;
+#include &quot;begin_code.h&quot;
+#include &quot;close_code.h&quot;
+</programlisting><simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link> int <link linkend="__s_d_l__bits_8h_1ada8cd16089cc635936dfe1a6884729a4">SDL_MostSignificantBitIndex32</link> (<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="__s_d_l__bits_8h_1a9ca9ab50814f9cfbce5c1cba379b001d">SDL_HasExactlyOneBitSet32</link> (<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Functions for fiddling with bits and bitmasks.</para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__s_d_l__bits_8h_1a9ca9ab50814f9cfbce5c1cba379b001d"/><section>
+    <title>SDL_HasExactlyOneBitSet32()</title>
+<indexterm><primary>SDL_HasExactlyOneBitSet32</primary><secondary>SDL_bits.h</secondary></indexterm>
+<indexterm><primary>SDL_bits.h</primary><secondary>SDL_HasExactlyOneBitSet32</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> SDL_HasExactlyOneBitSet32 (<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> x)</computeroutput></para></section>
+<anchor xml:id="__s_d_l__bits_8h_1ada8cd16089cc635936dfe1a6884729a4"/><section>
+    <title>SDL_MostSignificantBitIndex32()</title>
+<indexterm><primary>SDL_MostSignificantBitIndex32</primary><secondary>SDL_bits.h</secondary></indexterm>
+<indexterm><primary>SDL_bits.h</primary><secondary>SDL_MostSignificantBitIndex32</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link> int SDL_MostSignificantBitIndex32 (<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> x)</computeroutput></para>
+<para>Get the index of the most significant bit. Result is undefined when called with 0. This operation can also be stated as &quot;count leading zeroes&quot; and &quot;log base 2&quot;.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the index of the most significant bit, or -1 if the value is 0. </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__test__crc32_8h" xml:lang="en-US">
+<title>D:/RayTracing/include/SDL_test_crc32.h File Reference</title>
+<indexterm><primary>D:/RayTracing/include/SDL_test_crc32.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;begin_code.h&quot;
+#include &quot;close_code.h&quot;
+</programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_s_d_l_test___crc32_context">SDLTest_Crc32Context</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__s_d_l__test__crc32_8h_1ac0e8fe38fa91e9aa4b32957420795387">CrcUint32</link>   unsigned int</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__test__crc32_8h_1a8f6936196be4a985dadbb0c0549aacf2">CrcUint8</link>   unsigned char</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__test__crc32_8h_1a39e1b7cfc3c0d80ea907e6486d288796">CRC32_POLY</link>   0xEDB88320   /* Perl String::CRC32 compatible */</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="__s_d_l__test__crc32_8h_1a06655d4056d1992fa85a1849b4f3eeeb">SDLTest_Crc32Init</link> (<link linkend="_struct_s_d_l_test___crc32_context">SDLTest_Crc32Context</link> *crcContext)</para>
+
+<para>Initialize the CRC context. </para>
+</listitem>
+            <listitem><para>int <link linkend="__s_d_l__test__crc32_8h_1a0397333489338ed3fca5dc0f892070cd">SDLTest_Crc32Calc</link> (<link linkend="_struct_s_d_l_test___crc32_context">SDLTest_Crc32Context</link> *crcContext, <link linkend="__s_d_l__test__crc32_8h_1a8f6936196be4a985dadbb0c0549aacf2">CrcUint8</link> *inBuf, <link linkend="__s_d_l__test__crc32_8h_1ac0e8fe38fa91e9aa4b32957420795387">CrcUint32</link> inLen, <link linkend="__s_d_l__test__crc32_8h_1ac0e8fe38fa91e9aa4b32957420795387">CrcUint32</link> *crc32)</para>
+
+<para>calculate a crc32 from a data block </para>
+</listitem>
+            <listitem><para>int <link linkend="__s_d_l__test__crc32_8h_1a4f78079f5b6871a22dc955b3593731d0">SDLTest_Crc32CalcStart</link> (<link linkend="_struct_s_d_l_test___crc32_context">SDLTest_Crc32Context</link> *crcContext, <link linkend="__s_d_l__test__crc32_8h_1ac0e8fe38fa91e9aa4b32957420795387">CrcUint32</link> *crc32)</para>
+</listitem>
+            <listitem><para>int <link linkend="__s_d_l__test__crc32_8h_1a8e41b3f8fe2e0d8ff591f6a492c6d5b8">SDLTest_Crc32CalcEnd</link> (<link linkend="_struct_s_d_l_test___crc32_context">SDLTest_Crc32Context</link> *crcContext, <link linkend="__s_d_l__test__crc32_8h_1ac0e8fe38fa91e9aa4b32957420795387">CrcUint32</link> *crc32)</para>
+</listitem>
+            <listitem><para>int <link linkend="__s_d_l__test__crc32_8h_1a19e6816b8d3c2d11214308a301c7164f">SDLTest_Crc32CalcBuffer</link> (<link linkend="_struct_s_d_l_test___crc32_context">SDLTest_Crc32Context</link> *crcContext, <link linkend="__s_d_l__test__crc32_8h_1a8f6936196be4a985dadbb0c0549aacf2">CrcUint8</link> *inBuf, <link linkend="__s_d_l__test__crc32_8h_1ac0e8fe38fa91e9aa4b32957420795387">CrcUint32</link> inLen, <link linkend="__s_d_l__test__crc32_8h_1ac0e8fe38fa91e9aa4b32957420795387">CrcUint32</link> *crc32)</para>
+</listitem>
+            <listitem><para>int <link linkend="__s_d_l__test__crc32_8h_1a020b58aa3d188466b41b7c9e526c18ec">SDLTest_Crc32Done</link> (<link linkend="_struct_s_d_l_test___crc32_context">SDLTest_Crc32Context</link> *crcContext)</para>
+
+<para>clean up CRC context </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Include file for SDL test framework.</para>
+
+<para>This code is a part of the SDL2_test library, not the main SDL library. </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__s_d_l__test__crc32_8h_1a39e1b7cfc3c0d80ea907e6486d288796"/><section>
+    <title>CRC32_POLY</title>
+<indexterm><primary>CRC32_POLY</primary><secondary>SDL_test_crc32.h</secondary></indexterm>
+<indexterm><primary>SDL_test_crc32.h</primary><secondary>CRC32_POLY</secondary></indexterm>
+<para><computeroutput>#define CRC32_POLY   0xEDB88320   /* Perl String::CRC32 compatible */</computeroutput></para></section>
+<anchor xml:id="__s_d_l__test__crc32_8h_1ac0e8fe38fa91e9aa4b32957420795387"/><section>
+    <title>CrcUint32</title>
+<indexterm><primary>CrcUint32</primary><secondary>SDL_test_crc32.h</secondary></indexterm>
+<indexterm><primary>SDL_test_crc32.h</primary><secondary>CrcUint32</secondary></indexterm>
+<para><computeroutput>#define CrcUint32   unsigned int</computeroutput></para></section>
+<anchor xml:id="__s_d_l__test__crc32_8h_1a8f6936196be4a985dadbb0c0549aacf2"/><section>
+    <title>CrcUint8</title>
+<indexterm><primary>CrcUint8</primary><secondary>SDL_test_crc32.h</secondary></indexterm>
+<indexterm><primary>SDL_test_crc32.h</primary><secondary>CrcUint8</secondary></indexterm>
+<para><computeroutput>#define CrcUint8   unsigned char</computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__s_d_l__test__crc32_8h_1a0397333489338ed3fca5dc0f892070cd"/><section>
+    <title>SDLTest_Crc32Calc()</title>
+<indexterm><primary>SDLTest_Crc32Calc</primary><secondary>SDL_test_crc32.h</secondary></indexterm>
+<indexterm><primary>SDL_test_crc32.h</primary><secondary>SDLTest_Crc32Calc</secondary></indexterm>
+<para><computeroutput>int SDLTest_Crc32Calc (<link linkend="_struct_s_d_l_test___crc32_context">SDLTest_Crc32Context</link> * crcContext, <link linkend="__s_d_l__test__crc32_8h_1a8f6936196be4a985dadbb0c0549aacf2">CrcUint8</link> * inBuf, <link linkend="__s_d_l__test__crc32_8h_1ac0e8fe38fa91e9aa4b32957420795387">CrcUint32</link> inLen, <link linkend="__s_d_l__test__crc32_8h_1ac0e8fe38fa91e9aa4b32957420795387">CrcUint32</link> * crc32)</computeroutput></para><para>
+
+<para>calculate a crc32 from a data block </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>crcContext</entry><entry>
+<para>pointer to context variable </para>
+</entry>
+                            </row>
+                            <row>
+<entry>inBuf</entry><entry>
+<para>input buffer to checksum </para>
+</entry>
+                            </row>
+                            <row>
+<entry>inLen</entry><entry>
+<para>length of input buffer </para>
+</entry>
+                            </row>
+                            <row>
+<entry>crc32</entry><entry>
+<para>pointer to Uint32 to store the final CRC into</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 for OK, -1 on error </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__test__crc32_8h_1a19e6816b8d3c2d11214308a301c7164f"/><section>
+    <title>SDLTest_Crc32CalcBuffer()</title>
+<indexterm><primary>SDLTest_Crc32CalcBuffer</primary><secondary>SDL_test_crc32.h</secondary></indexterm>
+<indexterm><primary>SDL_test_crc32.h</primary><secondary>SDLTest_Crc32CalcBuffer</secondary></indexterm>
+<para><computeroutput>int SDLTest_Crc32CalcBuffer (<link linkend="_struct_s_d_l_test___crc32_context">SDLTest_Crc32Context</link> * crcContext, <link linkend="__s_d_l__test__crc32_8h_1a8f6936196be4a985dadbb0c0549aacf2">CrcUint8</link> * inBuf, <link linkend="__s_d_l__test__crc32_8h_1ac0e8fe38fa91e9aa4b32957420795387">CrcUint32</link> inLen, <link linkend="__s_d_l__test__crc32_8h_1ac0e8fe38fa91e9aa4b32957420795387">CrcUint32</link> * crc32)</computeroutput></para></section>
+<anchor xml:id="__s_d_l__test__crc32_8h_1a8e41b3f8fe2e0d8ff591f6a492c6d5b8"/><section>
+    <title>SDLTest_Crc32CalcEnd()</title>
+<indexterm><primary>SDLTest_Crc32CalcEnd</primary><secondary>SDL_test_crc32.h</secondary></indexterm>
+<indexterm><primary>SDL_test_crc32.h</primary><secondary>SDLTest_Crc32CalcEnd</secondary></indexterm>
+<para><computeroutput>int SDLTest_Crc32CalcEnd (<link linkend="_struct_s_d_l_test___crc32_context">SDLTest_Crc32Context</link> * crcContext, <link linkend="__s_d_l__test__crc32_8h_1ac0e8fe38fa91e9aa4b32957420795387">CrcUint32</link> * crc32)</computeroutput></para></section>
+<anchor xml:id="__s_d_l__test__crc32_8h_1a4f78079f5b6871a22dc955b3593731d0"/><section>
+    <title>SDLTest_Crc32CalcStart()</title>
+<indexterm><primary>SDLTest_Crc32CalcStart</primary><secondary>SDL_test_crc32.h</secondary></indexterm>
+<indexterm><primary>SDL_test_crc32.h</primary><secondary>SDLTest_Crc32CalcStart</secondary></indexterm>
+<para><computeroutput>int SDLTest_Crc32CalcStart (<link linkend="_struct_s_d_l_test___crc32_context">SDLTest_Crc32Context</link> * crcContext, <link linkend="__s_d_l__test__crc32_8h_1ac0e8fe38fa91e9aa4b32957420795387">CrcUint32</link> * crc32)</computeroutput></para></section>
+<anchor xml:id="__s_d_l__test__crc32_8h_1a020b58aa3d188466b41b7c9e526c18ec"/><section>
+    <title>SDLTest_Crc32Done()</title>
+<indexterm><primary>SDLTest_Crc32Done</primary><secondary>SDL_test_crc32.h</secondary></indexterm>
+<indexterm><primary>SDL_test_crc32.h</primary><secondary>SDLTest_Crc32Done</secondary></indexterm>
+<para><computeroutput>int SDLTest_Crc32Done (<link linkend="_struct_s_d_l_test___crc32_context">SDLTest_Crc32Context</link> * crcContext)</computeroutput></para><para>
+
+<para>clean up CRC context </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>crcContext</entry><entry>
+<para>pointer to context variable</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 for OK, -1 on error </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__test__crc32_8h_1a06655d4056d1992fa85a1849b4f3eeeb"/><section>
+    <title>SDLTest_Crc32Init()</title>
+<indexterm><primary>SDLTest_Crc32Init</primary><secondary>SDL_test_crc32.h</secondary></indexterm>
+<indexterm><primary>SDL_test_crc32.h</primary><secondary>SDLTest_Crc32Init</secondary></indexterm>
+<para><computeroutput>int SDLTest_Crc32Init (<link linkend="_struct_s_d_l_test___crc32_context">SDLTest_Crc32Context</link> * crcContext)</computeroutput></para><para>
+
+<para>Initialize the CRC context. </para>
+</para>
+
+<para>Note: The function initializes the crc table required for all crc calculations.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>crcContext</entry><entry>
+<para>pointer to context variable</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 for OK, -1 on error </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

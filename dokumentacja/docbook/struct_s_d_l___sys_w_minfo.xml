@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_s_d_l___sys_w_minfo" xml:lang="en-US">
+<title>SDL_SysWMinfo Struct Reference</title>
+<indexterm><primary>SDL_SysWMinfo</primary></indexterm>
+<para>
+<computeroutput>#include &lt;SDL_syswm.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_s_d_l__version">SDL_version</link> <link linkend="_struct_s_d_l___sys_w_minfo_1ac3a70af022d4849e9ff546595e94627f">version</link></para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7">SDL_SYSWM_TYPE</link> <link linkend="_struct_s_d_l___sys_w_minfo_1a438b6a06ab3ee417293c7b7fc5a23855">subsystem</link></para>
+</listitem>
+            <listitem><para>union {</para>
+        <itemizedlist>
+            <listitem><para>   struct {</para>
+        <itemizedlist>
+            <listitem><para>      HWND <link linkend="_struct_s_d_l___sys_w_minfo_1af06225591ff07e837bbd037728a525b9">window</link></para>
+</listitem>
+            <listitem><para>      HDC <link linkend="_struct_s_d_l___sys_w_minfo_1a5c9d0745b083422834681e99c38b803e">hdc</link></para>
+</listitem>
+            <listitem><para>      HINSTANCE <link linkend="_struct_s_d_l___sys_w_minfo_1ae3e93d21e2b20b2069f5f7d5308194f1">hinstance</link></para>
+</listitem>
+        </itemizedlist>
+</listitem>
+            <listitem><para>   } <link linkend="_struct_s_d_l___sys_w_minfo_1adbb01b768156be0e906c31682ba181ab">win</link></para>
+</listitem>
+            <listitem><para>   <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> <link linkend="_struct_s_d_l___sys_w_minfo_1a0e7fc58b98ae8317076e763fa94bc41f">dummy</link> [64]</para>
+</listitem>
+        </itemizedlist>
+</listitem>
+            <listitem><para>} <link linkend="_struct_s_d_l___sys_w_minfo_1afad594a80dbd84d87ef5d1500eef4c05">info</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>The custom window manager information structure.</para>
+
+<para>When this structure is returned, it holds information about which low level system it is using, and will be one of SDL_SYSWM_TYPE. </para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_s_d_l___sys_w_minfo_1a0e7fc58b98ae8317076e763fa94bc41f"/><section>
+    <title>dummy</title>
+<indexterm><primary>dummy</primary><secondary>SDL_SysWMinfo</secondary></indexterm>
+<indexterm><primary>SDL_SysWMinfo</primary><secondary>dummy</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> SDL_SysWMinfo::dummy[64]</computeroutput></para></section>
+<anchor xml:id="_struct_s_d_l___sys_w_minfo_1a5c9d0745b083422834681e99c38b803e"/><section>
+    <title>hdc</title>
+<indexterm><primary>hdc</primary><secondary>SDL_SysWMinfo</secondary></indexterm>
+<indexterm><primary>SDL_SysWMinfo</primary><secondary>hdc</secondary></indexterm>
+<para><computeroutput>HDC SDL_SysWMinfo::hdc</computeroutput></para>
+<para>The window device context </para>
+</section>
+<anchor xml:id="_struct_s_d_l___sys_w_minfo_1ae3e93d21e2b20b2069f5f7d5308194f1"/><section>
+    <title>hinstance</title>
+<indexterm><primary>hinstance</primary><secondary>SDL_SysWMinfo</secondary></indexterm>
+<indexterm><primary>SDL_SysWMinfo</primary><secondary>hinstance</secondary></indexterm>
+<para><computeroutput>HINSTANCE SDL_SysWMinfo::hinstance</computeroutput></para>
+<para>The instance handle </para>
+</section>
+<anchor xml:id="_struct_s_d_l___sys_w_minfo_1afad594a80dbd84d87ef5d1500eef4c05"/><section>
+    <title></title>
+<indexterm><primary>info</primary><secondary>SDL_SysWMinfo</secondary></indexterm>
+<indexterm><primary>SDL_SysWMinfo</primary><secondary>info</secondary></indexterm>
+<para><computeroutput>union  { ... }  SDL_SysWMinfo::info</computeroutput></para></section>
+<anchor xml:id="_struct_s_d_l___sys_w_minfo_1a438b6a06ab3ee417293c7b7fc5a23855"/><section>
+    <title>subsystem</title>
+<indexterm><primary>subsystem</primary><secondary>SDL_SysWMinfo</secondary></indexterm>
+<indexterm><primary>SDL_SysWMinfo</primary><secondary>subsystem</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7">SDL_SYSWM_TYPE</link> SDL_SysWMinfo::subsystem</computeroutput></para></section>
+<anchor xml:id="_struct_s_d_l___sys_w_minfo_1ac3a70af022d4849e9ff546595e94627f"/><section>
+    <title>version</title>
+<indexterm><primary>version</primary><secondary>SDL_SysWMinfo</secondary></indexterm>
+<indexterm><primary>SDL_SysWMinfo</primary><secondary>version</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_s_d_l__version">SDL_version</link> SDL_SysWMinfo::version</computeroutput></para></section>
+<anchor xml:id="_struct_s_d_l___sys_w_minfo_1adbb01b768156be0e906c31682ba181ab"/><section>
+    <title></title>
+<indexterm><primary>win</primary><secondary>SDL_SysWMinfo</secondary></indexterm>
+<indexterm><primary>SDL_SysWMinfo</primary><secondary>win</secondary></indexterm>
+<para><computeroutput>struct  { ... }  SDL_SysWMinfo::win</computeroutput></para></section>
+<anchor xml:id="_struct_s_d_l___sys_w_minfo_1af06225591ff07e837bbd037728a525b9"/><section>
+    <title>window</title>
+<indexterm><primary>window</primary><secondary>SDL_SysWMinfo</secondary></indexterm>
+<indexterm><primary>SDL_SysWMinfo</primary><secondary>window</secondary></indexterm>
+<para><computeroutput>HWND SDL_SysWMinfo::window</computeroutput></para>
+<para>The window handle </para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+D:/RayTracing/include/<link linkend="__s_d_l__syswm_8h">SDL_syswm.h</link></section>
+</section>

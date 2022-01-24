@@ -1,0 +1,37 @@
+\hypertarget{ray_8h_source}{}\doxysection{ray.\+h}
+\label{ray_8h_source}\index{D:/RayTracing/RayTrace/ray.h@{D:/RayTracing/RayTrace/ray.h}}
+\mbox{\hyperlink{ray_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef RAYTRACING\_RAY\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define RAYTRACING\_RAY\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{qb_vector_8h}{./qbLinAlg/qbVector.h}}"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_r_t}{RT}} \{}
+\DoxyCodeLine{7     \textcolor{keyword}{class }\mbox{\hyperlink{class_r_t_1_1_ray}{Ray}} \{}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9     \textcolor{keyword}{public}:}
+\DoxyCodeLine{10         \mbox{\hyperlink{class_r_t_1_1_ray_a71457f5853a4b7a849b74f49c3c29f77}{Ray}}();}
+\DoxyCodeLine{11         \textcolor{comment}{// Konstruktor. Tablice zawierające dwa wektory point1 i point2}}
+\DoxyCodeLine{12         \textcolor{comment}{// qbVector klasa z biblioteki liniowej algebry: qbLinAlg}}
+\DoxyCodeLine{13         \mbox{\hyperlink{class_r_t_1_1_ray_a71457f5853a4b7a849b74f49c3c29f77}{Ray}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&point1, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&point2);}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15         \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \mbox{\hyperlink{class_r_t_1_1_ray_a8e3fc973be827bd72bc89d2940019fe5}{GetPoint1}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17         \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \mbox{\hyperlink{class_r_t_1_1_ray_af4b3be15ef1228f32ba114a475453930}{GetPoint2}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{keyword}{public}:}
+\DoxyCodeLine{20         \textcolor{comment}{// Punkt początkowy}}
+\DoxyCodeLine{21         \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \mbox{\hyperlink{class_r_t_1_1_ray_a4421d6cade1151cda334b75ba47d7396}{m\_point1}}\{3\};}
+\DoxyCodeLine{22         \textcolor{comment}{// Punkt końcowy}}
+\DoxyCodeLine{23         \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \mbox{\hyperlink{class_r_t_1_1_ray_aff734d72e41788ae3f6cbc30c63a8b2a}{m\_point2}}\{3\};}
+\DoxyCodeLine{24         \textcolor{comment}{// Wektor od punktu 1 do punktu 2}}
+\DoxyCodeLine{25         \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \mbox{\hyperlink{class_r_t_1_1_ray_a3d253c2a4c4dbfe94c6fdac4dee167f7}{m\_lab}}\{3\};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \};}
+\DoxyCodeLine{28 \}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//RAYTRACING\_RAY\_H}}
+
+\end{DoxyCode}

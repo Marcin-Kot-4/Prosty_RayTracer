@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_s_d_l___sys_w_mmsg" xml:lang="en-US">
+<title>SDL_SysWMmsg Struct Reference</title>
+<indexterm><primary>SDL_SysWMmsg</primary></indexterm>
+<para>
+<computeroutput>#include &lt;SDL_syswm.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_s_d_l__version">SDL_version</link> <link linkend="_struct_s_d_l___sys_w_mmsg_1a95f9aae58d18ee8fac556416b322a5fb">version</link></para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7">SDL_SYSWM_TYPE</link> <link linkend="_struct_s_d_l___sys_w_mmsg_1a7c3900af5ea797f1318fc77ee0ecd11b">subsystem</link></para>
+</listitem>
+            <listitem><para>union {</para>
+        <itemizedlist>
+            <listitem><para>   struct {</para>
+        <itemizedlist>
+            <listitem><para>      HWND <link linkend="_struct_s_d_l___sys_w_mmsg_1a55cf9583b5eddfe60a5c9851f9cce457">hwnd</link></para>
+</listitem>
+            <listitem><para>      UINT <link linkend="_struct_s_d_l___sys_w_mmsg_1a74894ed060d5508ab06aac584154d61e">msg</link></para>
+</listitem>
+            <listitem><para>      WPARAM <link linkend="_struct_s_d_l___sys_w_mmsg_1a7463730478d90ebc031d83098f3f74fc">wParam</link></para>
+</listitem>
+            <listitem><para>      LPARAM <link linkend="_struct_s_d_l___sys_w_mmsg_1a24c1e4c3cb8d9781d34e5d99df66ac36">lParam</link></para>
+</listitem>
+        </itemizedlist>
+</listitem>
+            <listitem><para>   } <link linkend="_struct_s_d_l___sys_w_mmsg_1a0198d61e40aae8f978744853742d7c65">win</link></para>
+</listitem>
+            <listitem><para>   int <link linkend="_struct_s_d_l___sys_w_mmsg_1a8faf13f90f2477157b42b631308cd900">dummy</link></para>
+</listitem>
+        </itemizedlist>
+</listitem>
+            <listitem><para>} <link linkend="_struct_s_d_l___sys_w_mmsg_1a5e9801cfdfe884ea2f9d269ec50b092e">msg</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>The custom event structure. </para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_s_d_l___sys_w_mmsg_1a8faf13f90f2477157b42b631308cd900"/><section>
+    <title>dummy</title>
+<indexterm><primary>dummy</primary><secondary>SDL_SysWMmsg</secondary></indexterm>
+<indexterm><primary>SDL_SysWMmsg</primary><secondary>dummy</secondary></indexterm>
+<para><computeroutput>int SDL_SysWMmsg::dummy</computeroutput></para></section>
+<anchor xml:id="_struct_s_d_l___sys_w_mmsg_1a55cf9583b5eddfe60a5c9851f9cce457"/><section>
+    <title>hwnd</title>
+<indexterm><primary>hwnd</primary><secondary>SDL_SysWMmsg</secondary></indexterm>
+<indexterm><primary>SDL_SysWMmsg</primary><secondary>hwnd</secondary></indexterm>
+<para><computeroutput>HWND SDL_SysWMmsg::hwnd</computeroutput></para>
+<para>The window for the message </para>
+</section>
+<anchor xml:id="_struct_s_d_l___sys_w_mmsg_1a24c1e4c3cb8d9781d34e5d99df66ac36"/><section>
+    <title>lParam</title>
+<indexterm><primary>lParam</primary><secondary>SDL_SysWMmsg</secondary></indexterm>
+<indexterm><primary>SDL_SysWMmsg</primary><secondary>lParam</secondary></indexterm>
+<para><computeroutput>LPARAM SDL_SysWMmsg::lParam</computeroutput></para>
+<para>LONG message parameter </para>
+</section>
+<anchor xml:id="_struct_s_d_l___sys_w_mmsg_1a74894ed060d5508ab06aac584154d61e"/><section>
+    <title>msg<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>msg</primary><secondary>SDL_SysWMmsg</secondary></indexterm>
+<indexterm><primary>SDL_SysWMmsg</primary><secondary>msg</secondary></indexterm>
+<para><computeroutput>UINT SDL_SysWMmsg::msg</computeroutput></para>
+<para>The type of message </para>
+</section>
+<anchor xml:id="_struct_s_d_l___sys_w_mmsg_1a5e9801cfdfe884ea2f9d269ec50b092e"/><section>
+    <title><computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>msg</primary><secondary>SDL_SysWMmsg</secondary></indexterm>
+<indexterm><primary>SDL_SysWMmsg</primary><secondary>msg</secondary></indexterm>
+<para><computeroutput>union  { ... }  SDL_SysWMmsg::msg</computeroutput></para></section>
+<anchor xml:id="_struct_s_d_l___sys_w_mmsg_1a7c3900af5ea797f1318fc77ee0ecd11b"/><section>
+    <title>subsystem</title>
+<indexterm><primary>subsystem</primary><secondary>SDL_SysWMmsg</secondary></indexterm>
+<indexterm><primary>SDL_SysWMmsg</primary><secondary>subsystem</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7">SDL_SYSWM_TYPE</link> SDL_SysWMmsg::subsystem</computeroutput></para></section>
+<anchor xml:id="_struct_s_d_l___sys_w_mmsg_1a95f9aae58d18ee8fac556416b322a5fb"/><section>
+    <title>version</title>
+<indexterm><primary>version</primary><secondary>SDL_SysWMmsg</secondary></indexterm>
+<indexterm><primary>SDL_SysWMmsg</primary><secondary>version</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_s_d_l__version">SDL_version</link> SDL_SysWMmsg::version</computeroutput></para></section>
+<anchor xml:id="_struct_s_d_l___sys_w_mmsg_1a0198d61e40aae8f978744853742d7c65"/><section>
+    <title></title>
+<indexterm><primary>win</primary><secondary>SDL_SysWMmsg</secondary></indexterm>
+<indexterm><primary>SDL_SysWMmsg</primary><secondary>win</secondary></indexterm>
+<para><computeroutput>struct  { ... }  SDL_SysWMmsg::win</computeroutput></para></section>
+<anchor xml:id="_struct_s_d_l___sys_w_mmsg_1a7463730478d90ebc031d83098f3f74fc"/><section>
+    <title>wParam</title>
+<indexterm><primary>wParam</primary><secondary>SDL_SysWMmsg</secondary></indexterm>
+<indexterm><primary>SDL_SysWMmsg</primary><secondary>wParam</secondary></indexterm>
+<para><computeroutput>WPARAM SDL_SysWMmsg::wParam</computeroutput></para>
+<para>WORD message parameter </para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+D:/RayTracing/include/<link linkend="__s_d_l__syswm_8h">SDL_syswm.h</link></section>
+</section>

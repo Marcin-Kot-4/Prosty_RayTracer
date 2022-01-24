@@ -1,0 +1,59 @@
+.TH "SDL_AudioDeviceEvent" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SDL_AudioDeviceEvent \- Audio device event structure (event\&.adevice\&.*)  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SDL_events\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUint32\fP \fBtype\fP"
+.br
+.ti -1c
+.RI "\fBUint32\fP \fBtimestamp\fP"
+.br
+.ti -1c
+.RI "\fBUint32\fP \fBwhich\fP"
+.br
+.ti -1c
+.RI "\fBUint8\fP \fBiscapture\fP"
+.br
+.ti -1c
+.RI "\fBUint8\fP \fBpadding1\fP"
+.br
+.ti -1c
+.RI "\fBUint8\fP \fBpadding2\fP"
+.br
+.ti -1c
+.RI "\fBUint8\fP \fBpadding3\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Audio device event structure (event\&.adevice\&.*) 
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBUint8\fP SDL_AudioDeviceEvent::iscapture"
+zero if an output device, non-zero if a capture device\&. 
+.SS "\fBUint8\fP SDL_AudioDeviceEvent::padding1"
+
+.SS "\fBUint8\fP SDL_AudioDeviceEvent::padding2"
+
+.SS "\fBUint8\fP SDL_AudioDeviceEvent::padding3"
+
+.SS "\fBUint32\fP SDL_AudioDeviceEvent::timestamp"
+In milliseconds, populated using \fBSDL_GetTicks()\fP 
+.SS "\fBUint32\fP SDL_AudioDeviceEvent::type"
+\fBSDL_AUDIODEVICEADDED\fP, or \fBSDL_AUDIODEVICEREMOVED\fP 
+.SS "\fBUint32\fP SDL_AudioDeviceEvent::which"
+The audio device index for the ADDED event (valid until next \fBSDL_GetNumAudioDevices()\fP call), SDL_AudioDeviceID for the REMOVED event 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

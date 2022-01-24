@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_md__d___ray_tracing_docs__r_e_a_d_m_e_kmsbsd" xml:lang="en-US">
+
+<para>KMSDRM is supported on FreeBSD and OpenBSD. DragonFlyBSD works but requires being a root user. NetBSD isn&apos;t supported yet because the application will crash when creating the KMSDRM screen.</para>
+
+<para>WSCONS support has been brought back, but only as an input backend. It will not be brought back as a video backend to ease maintenance.</para>
+
+<para>OpenBSD note: Note that the video backend assumes that the user has read/write permissions to the /dev/drm* devices.</para>
+<section xml:id="_md__d___ray_tracing_docs__r_e_a_d_m_e_kmsbsd_1autotoc_md56">
+<title>SDL2 WSCONS input backend features</title>
+
+<para><orderedlist>
+<listitem>
+<para>It is keymap-aware; it will work properly with different keymaps.</para>
+</listitem><listitem>
+<para>It has mouse support.</para>
+</listitem><listitem>
+<para>Accent input is supported.</para>
+</listitem><listitem>
+<para>Compose keys are supported.</para>
+</listitem><listitem>
+<para>AltGr and Meta Shift keys work as intended.</para>
+</listitem></orderedlist>
+</para>
+</section>
+<section xml:id="_md__d___ray_tracing_docs__r_e_a_d_m_e_kmsbsd_1autotoc_md57">
+<title>Partially working or no input on OpenBSD/NetBSD.</title>
+
+<para>The WSCONS input backend needs read/write access to the /dev/wskbd* devices, without which it will not work properly. /dev/wsmouse must also be read/write accessible, otherwise mouse input will not work.</para>
+</section>
+<section xml:id="_md__d___ray_tracing_docs__r_e_a_d_m_e_kmsbsd_1autotoc_md58">
+<title>Partially working or no input on FreeBSD.</title>
+
+<para>The evdev devices are only accessible to the root user by default. Edit devfs rules to allow access to such devices. The /dev/kbd* devices are also only accessible to the root user by default. Edit devfs rules to allow access to such devices. </para>
+</section>
+</section>

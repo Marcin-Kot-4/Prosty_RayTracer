@@ -1,0 +1,661 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__keyboard_8h" xml:lang="en-US">
+<title>D:/RayTracing/include/SDL_keyboard.h File Reference</title>
+<indexterm><primary>D:/RayTracing/include/SDL_keyboard.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;SDL_stdinc.h&quot;
+#include &quot;SDL_error.h&quot;
+#include &quot;SDL_keycode.h&quot;
+#include &quot;SDL_video.h&quot;
+#include &quot;begin_code.h&quot;
+#include &quot;close_code.h&quot;
+</programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_s_d_l___keysym">SDL_Keysym</link></para>
+
+<para>The SDL keysym structure, used in key events. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef struct <link linkend="_struct_s_d_l___keysym">SDL_Keysym</link> <link linkend="__s_d_l__keyboard_8h_1a074ae08acbe79dba712775b95267f4d2">SDL_Keysym</link></para>
+
+<para>The SDL keysym structure, used in key events. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__keyboard_8h_1a3b552fc22887b0f67b2463301698078e">SDL_GetKeyboardFocus</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__keyboard_8h_1a6df72a92c606bfcf9ef00dc1b049270f">SDL_GetKeyboardState</link> (int *numkeys)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747">SDL_Keymod</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__keyboard_8h_1a7b2ee63de74c442ac456cac9db5f8ed0">SDL_GetModState</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__keyboard_8h_1a705c85881304eab01f00abeca2ef5846">SDL_SetModState</link> (<link linkend="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747">SDL_Keymod</link> modstate)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__keycode_8h_1ae9265f064f13f0f74dfca26a67875171">SDL_Keycode</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__keyboard_8h_1aa74e6944ede98feeb09408fd97aaad57">SDL_GetKeyFromScancode</link> (<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777b">SDL_Scancode</link> scancode)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777b">SDL_Scancode</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__keyboard_8h_1a36216054a385bea6898a35ded18d9c0f">SDL_GetScancodeFromKey</link> (<link linkend="__s_d_l__keycode_8h_1ae9265f064f13f0f74dfca26a67875171">SDL_Keycode</link> key)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__keyboard_8h_1a092c44261fe9c44f77a46a705f59eb57">SDL_GetScancodeName</link> (<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777b">SDL_Scancode</link> scancode)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777b">SDL_Scancode</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__keyboard_8h_1a0cb32dd58d3dc5b77c9daf0b6000f93c">SDL_GetScancodeFromName</link> (const char *<link linkend="__s_d_l__opengl__glext_8h_1aaced7cfc21e7d37775d6921bb8177239">name</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__keyboard_8h_1a25e699451e621cd1ce29ae20f352f318">SDL_GetKeyName</link> (<link linkend="__s_d_l__keycode_8h_1ae9265f064f13f0f74dfca26a67875171">SDL_Keycode</link> key)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__keycode_8h_1ae9265f064f13f0f74dfca26a67875171">SDL_Keycode</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__keyboard_8h_1ad4d4e79f117a9092ec269601c5423337">SDL_GetKeyFromName</link> (const char *<link linkend="__s_d_l__opengl__glext_8h_1aaced7cfc21e7d37775d6921bb8177239">name</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__keyboard_8h_1ab2c8474b9a8b6d07cae4f8eceab38870">SDL_StartTextInput</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__keyboard_8h_1a6c84ed1daac21f8224d43bcb9d5bc597">SDL_IsTextInputActive</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__keyboard_8h_1ab08b914cdfb2eaed26165cb2f6b110ec">SDL_StopTextInput</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__keyboard_8h_1a949fd9d16d5156a9d5aa0dc74580dbae">SDL_SetTextInputRect</link> (<link linkend="_struct_s_d_l___rect">SDL_Rect</link> *rect)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__keyboard_8h_1a106356274c192b53844c8f1a821b00d7">SDL_HasScreenKeyboardSupport</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__keyboard_8h_1a92f5b73c7b71efeb68f5e9616cb918b7">SDL_IsScreenKeyboardShown</link> (<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link> *window)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Include file for SDL keyboard event handling </para>
+</section>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="__s_d_l__keyboard_8h_1a074ae08acbe79dba712775b95267f4d2"/><section>
+    <title>SDL_Keysym</title>
+<indexterm><primary>SDL_Keysym</primary><secondary>SDL_keyboard.h</secondary></indexterm>
+<indexterm><primary>SDL_keyboard.h</primary><secondary>SDL_Keysym</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_s_d_l___keysym">SDL_Keysym</link> <link linkend="_struct_s_d_l___keysym">SDL_Keysym</link></computeroutput></para><para>
+
+<para>The SDL keysym structure, used in key events. </para>
+</para>
+
+<para><note><title>Note</title>
+
+<para>If you are looking for translated character input, see the <link linkend="__s_d_l__events_8h_1a3b589e89be6b35c02e0dd34a55f3fccaa4fa2570088f6b9cbd109ae91b511368f">SDL_TEXTINPUT</link> event. </para>
+</note>
+</para>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__s_d_l__keyboard_8h_1a3b552fc22887b0f67b2463301698078e"/><section>
+    <title>SDL_GetKeyboardFocus()</title>
+<indexterm><primary>SDL_GetKeyboardFocus</primary><secondary>SDL_keyboard.h</secondary></indexterm>
+<indexterm><primary>SDL_keyboard.h</primary><secondary>SDL_GetKeyboardFocus</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GetKeyboardFocus (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para>
+<para>Query the window which currently has keyboard focus.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the window with keyboard focus.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__keyboard_8h_1a6df72a92c606bfcf9ef00dc1b049270f"/><section>
+    <title>SDL_GetKeyboardState()</title>
+<indexterm><primary>SDL_GetKeyboardState</primary><secondary>SDL_keyboard.h</secondary></indexterm>
+<indexterm><primary>SDL_keyboard.h</primary><secondary>SDL_GetKeyboardState</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GetKeyboardState (int * numkeys)</computeroutput></para>
+<para>Get a snapshot of the current state of the keyboard.</para>
+
+<para>The pointer returned is a pointer to an internal SDL array. It will be valid for the whole lifetime of the application and should not be freed by the caller.</para>
+
+<para>A array element with a value of 1 means that the key is pressed and a value of 0 means that it is not. Indexes into this array are obtained by using SDL_Scancode values.</para>
+
+<para>Use <link linkend="__s_d_l__events_8h_1aa15403d1c8fc341cd9cf750e27a66d19">SDL_PumpEvents()</link> to update the state array.</para>
+
+<para>This function gives you the current state after all events have been processed, so if a key or button has been pressed and released before you process events, then the pressed state will never show up in the <link linkend="__s_d_l__keyboard_8h_1a6df72a92c606bfcf9ef00dc1b049270f">SDL_GetKeyboardState()</link> calls.</para>
+
+<para>Note: This function doesn&apos;t take into account whether shift has been pressed or not.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>numkeys</entry><entry>
+<para>if non-NULL, receives the length of the returned array </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a pointer to an array of key states.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__events_8h_1aa15403d1c8fc341cd9cf750e27a66d19">SDL_PumpEvents</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__keyboard_8h_1ad4d4e79f117a9092ec269601c5423337"/><section>
+    <title>SDL_GetKeyFromName()</title>
+<indexterm><primary>SDL_GetKeyFromName</primary><secondary>SDL_keyboard.h</secondary></indexterm>
+<indexterm><primary>SDL_keyboard.h</primary><secondary>SDL_GetKeyFromName</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__keycode_8h_1ae9265f064f13f0f74dfca26a67875171">SDL_Keycode</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GetKeyFromName (const char * name)</computeroutput></para>
+<para>Get a key code from a human-readable name.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>name</entry><entry>
+<para>the human-readable key name </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>key code, or <computeroutput>SDLK_UNKNOWN</computeroutput> if the name wasn&apos;t recognized; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__keyboard_8h_1aa74e6944ede98feeb09408fd97aaad57">SDL_GetKeyFromScancode</link> </para>
+
+<para><link linkend="__s_d_l__keyboard_8h_1a25e699451e621cd1ce29ae20f352f318">SDL_GetKeyName</link> </para>
+
+<para><link linkend="__s_d_l__keyboard_8h_1a0cb32dd58d3dc5b77c9daf0b6000f93c">SDL_GetScancodeFromName</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__keyboard_8h_1aa74e6944ede98feeb09408fd97aaad57"/><section>
+    <title>SDL_GetKeyFromScancode()</title>
+<indexterm><primary>SDL_GetKeyFromScancode</primary><secondary>SDL_keyboard.h</secondary></indexterm>
+<indexterm><primary>SDL_keyboard.h</primary><secondary>SDL_GetKeyFromScancode</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__keycode_8h_1ae9265f064f13f0f74dfca26a67875171">SDL_Keycode</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GetKeyFromScancode (<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777b">SDL_Scancode</link> scancode)</computeroutput></para>
+<para>Get the key code corresponding to the given scancode according to the current keyboard layout.</para>
+
+<para>See SDL_Keycode for details.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>scancode</entry><entry>
+<para>the desired SDL_Scancode to query </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the SDL_Keycode that corresponds to the given SDL_Scancode.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__keyboard_8h_1a25e699451e621cd1ce29ae20f352f318">SDL_GetKeyName</link> </para>
+
+<para><link linkend="__s_d_l__keyboard_8h_1a36216054a385bea6898a35ded18d9c0f">SDL_GetScancodeFromKey</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__keyboard_8h_1a25e699451e621cd1ce29ae20f352f318"/><section>
+    <title>SDL_GetKeyName()</title>
+<indexterm><primary>SDL_GetKeyName</primary><secondary>SDL_keyboard.h</secondary></indexterm>
+<indexterm><primary>SDL_keyboard.h</primary><secondary>SDL_GetKeyName</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GetKeyName (<link linkend="__s_d_l__keycode_8h_1ae9265f064f13f0f74dfca26a67875171">SDL_Keycode</link> key)</computeroutput></para>
+<para>Get a human-readable name for a key.</para>
+
+<para>See SDL_Scancode and SDL_Keycode for details.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>key</entry><entry>
+<para>the desired SDL_Keycode to query </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a pointer to a UTF-8 string that stays valid at least until the next call to this function. If you need it around any longer, you must copy it. If the key doesn&apos;t have a name, this function returns an empty string (&quot;&quot;).</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__keyboard_8h_1ad4d4e79f117a9092ec269601c5423337">SDL_GetKeyFromName</link> </para>
+
+<para><link linkend="__s_d_l__keyboard_8h_1aa74e6944ede98feeb09408fd97aaad57">SDL_GetKeyFromScancode</link> </para>
+
+<para><link linkend="__s_d_l__keyboard_8h_1a36216054a385bea6898a35ded18d9c0f">SDL_GetScancodeFromKey</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__keyboard_8h_1a7b2ee63de74c442ac456cac9db5f8ed0"/><section>
+    <title>SDL_GetModState()</title>
+<indexterm><primary>SDL_GetModState</primary><secondary>SDL_keyboard.h</secondary></indexterm>
+<indexterm><primary>SDL_keyboard.h</primary><secondary>SDL_GetModState</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747">SDL_Keymod</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GetModState (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para>
+<para>Get the current key modifier state for the keyboard.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>an OR&apos;d combination of the modifier keys for the keyboard. See SDL_Keymod for details.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__keyboard_8h_1a6df72a92c606bfcf9ef00dc1b049270f">SDL_GetKeyboardState</link> </para>
+
+<para><link linkend="__s_d_l__keyboard_8h_1a705c85881304eab01f00abeca2ef5846">SDL_SetModState</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__keyboard_8h_1a36216054a385bea6898a35ded18d9c0f"/><section>
+    <title>SDL_GetScancodeFromKey()</title>
+<indexterm><primary>SDL_GetScancodeFromKey</primary><secondary>SDL_keyboard.h</secondary></indexterm>
+<indexterm><primary>SDL_keyboard.h</primary><secondary>SDL_GetScancodeFromKey</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777b">SDL_Scancode</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GetScancodeFromKey (<link linkend="__s_d_l__keycode_8h_1ae9265f064f13f0f74dfca26a67875171">SDL_Keycode</link> key)</computeroutput></para>
+<para>Get the scancode corresponding to the given key code according to the current keyboard layout.</para>
+
+<para>See SDL_Scancode for details.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>key</entry><entry>
+<para>the desired SDL_Keycode to query </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the SDL_Scancode that corresponds to the given SDL_Keycode.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__keyboard_8h_1aa74e6944ede98feeb09408fd97aaad57">SDL_GetKeyFromScancode</link> </para>
+
+<para><link linkend="__s_d_l__keyboard_8h_1a092c44261fe9c44f77a46a705f59eb57">SDL_GetScancodeName</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__keyboard_8h_1a0cb32dd58d3dc5b77c9daf0b6000f93c"/><section>
+    <title>SDL_GetScancodeFromName()</title>
+<indexterm><primary>SDL_GetScancodeFromName</primary><secondary>SDL_keyboard.h</secondary></indexterm>
+<indexterm><primary>SDL_keyboard.h</primary><secondary>SDL_GetScancodeFromName</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777b">SDL_Scancode</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GetScancodeFromName (const char * name)</computeroutput></para>
+<para>Get a scancode from a human-readable name.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>name</entry><entry>
+<para>the human-readable scancode name </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the SDL_Scancode, or <computeroutput>SDL_SCANCODE_UNKNOWN</computeroutput> if the name wasn&apos;t recognized; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__keyboard_8h_1ad4d4e79f117a9092ec269601c5423337">SDL_GetKeyFromName</link> </para>
+
+<para><link linkend="__s_d_l__keyboard_8h_1a36216054a385bea6898a35ded18d9c0f">SDL_GetScancodeFromKey</link> </para>
+
+<para><link linkend="__s_d_l__keyboard_8h_1a092c44261fe9c44f77a46a705f59eb57">SDL_GetScancodeName</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__keyboard_8h_1a092c44261fe9c44f77a46a705f59eb57"/><section>
+    <title>SDL_GetScancodeName()</title>
+<indexterm><primary>SDL_GetScancodeName</primary><secondary>SDL_keyboard.h</secondary></indexterm>
+<indexterm><primary>SDL_keyboard.h</primary><secondary>SDL_GetScancodeName</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GetScancodeName (<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777b">SDL_Scancode</link> scancode)</computeroutput></para>
+<para>Get a human-readable name for a scancode.</para>
+
+<para>See SDL_Scancode for details.</para>
+
+<para><emphasis role="bold">Warning</emphasis>: The returned name is by design not stable across platforms, e.g. the name for <computeroutput>SDL_SCANCODE_LGUI</computeroutput> is &quot;Left GUI&quot; under Linux but &quot;Left
+Windows&quot; under Microsoft Windows, and some scancodes like <computeroutput>SDL_SCANCODE_NONUSBACKSLASH</computeroutput> don&apos;t have any name at all. There are even scancodes that share names, e.g. <computeroutput>SDL_SCANCODE_RETURN</computeroutput> and <computeroutput>SDL_SCANCODE_RETURN2</computeroutput> (both called &quot;Return&quot;). This function is therefore unsuitable for creating a stable cross-platform two-way mapping between strings and scancodes.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>scancode</entry><entry>
+<para>the desired SDL_Scancode to query </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a pointer to the name for the scancode. If the scancode doesn&apos;t have a name this function returns an empty string (&quot;&quot;).</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__keyboard_8h_1a36216054a385bea6898a35ded18d9c0f">SDL_GetScancodeFromKey</link> </para>
+
+<para><link linkend="__s_d_l__keyboard_8h_1a0cb32dd58d3dc5b77c9daf0b6000f93c">SDL_GetScancodeFromName</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__keyboard_8h_1a106356274c192b53844c8f1a821b00d7"/><section>
+    <title>SDL_HasScreenKeyboardSupport()</title>
+<indexterm><primary>SDL_HasScreenKeyboardSupport</primary><secondary>SDL_keyboard.h</secondary></indexterm>
+<indexterm><primary>SDL_keyboard.h</primary><secondary>SDL_HasScreenKeyboardSupport</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_HasScreenKeyboardSupport (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para>
+<para>Check whether the platform has screen keyboard support.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>SDL_TRUE if the platform has some screen keyboard support or SDL_FALSE if not.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__keyboard_8h_1ab2c8474b9a8b6d07cae4f8eceab38870">SDL_StartTextInput</link> </para>
+
+<para><link linkend="__s_d_l__keyboard_8h_1a92f5b73c7b71efeb68f5e9616cb918b7">SDL_IsScreenKeyboardShown</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__keyboard_8h_1a92f5b73c7b71efeb68f5e9616cb918b7"/><section>
+    <title>SDL_IsScreenKeyboardShown()</title>
+<indexterm><primary>SDL_IsScreenKeyboardShown</primary><secondary>SDL_keyboard.h</secondary></indexterm>
+<indexterm><primary>SDL_keyboard.h</primary><secondary>SDL_IsScreenKeyboardShown</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_IsScreenKeyboardShown (<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link> * window)</computeroutput></para>
+<para>Check whether the screen keyboard is shown for given window.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>window</entry><entry>
+<para>the window for which screen keyboard should be queried </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE if screen keyboard is shown or SDL_FALSE if not.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__keyboard_8h_1a106356274c192b53844c8f1a821b00d7">SDL_HasScreenKeyboardSupport</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__keyboard_8h_1a6c84ed1daac21f8224d43bcb9d5bc597"/><section>
+    <title>SDL_IsTextInputActive()</title>
+<indexterm><primary>SDL_IsTextInputActive</primary><secondary>SDL_keyboard.h</secondary></indexterm>
+<indexterm><primary>SDL_keyboard.h</primary><secondary>SDL_IsTextInputActive</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_IsTextInputActive (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para>
+<para>Check whether or not Unicode text input events are enabled.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>SDL_TRUE if text input events are enabled else SDL_FALSE.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__keyboard_8h_1ab2c8474b9a8b6d07cae4f8eceab38870">SDL_StartTextInput</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__keyboard_8h_1a705c85881304eab01f00abeca2ef5846"/><section>
+    <title>SDL_SetModState()</title>
+<indexterm><primary>SDL_SetModState</primary><secondary>SDL_keyboard.h</secondary></indexterm>
+<indexterm><primary>SDL_keyboard.h</primary><secondary>SDL_SetModState</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_SetModState (<link linkend="__s_d_l__keycode_8h_1afa050ad71f0a5b86aa05cb13f542d747">SDL_Keymod</link> modstate)</computeroutput></para>
+<para>Set the current key modifier state for the keyboard.</para>
+
+<para>The inverse of <link linkend="__s_d_l__keyboard_8h_1a7b2ee63de74c442ac456cac9db5f8ed0">SDL_GetModState()</link>, <link linkend="__s_d_l__keyboard_8h_1a705c85881304eab01f00abeca2ef5846">SDL_SetModState()</link> allows you to impose modifier key states on your application. Simply pass your desired modifier states into <computeroutput>modstate</computeroutput>. This value may be a bitwise, OR&apos;d combination of SDL_Keymod values.</para>
+
+<para>This does not change the keyboard state, only the key modifier flags that SDL reports.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>modstate</entry><entry>
+<para>the desired SDL_Keymod for the keyboard</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__keyboard_8h_1a7b2ee63de74c442ac456cac9db5f8ed0">SDL_GetModState</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__keyboard_8h_1a949fd9d16d5156a9d5aa0dc74580dbae"/><section>
+    <title>SDL_SetTextInputRect()</title>
+<indexterm><primary>SDL_SetTextInputRect</primary><secondary>SDL_keyboard.h</secondary></indexterm>
+<indexterm><primary>SDL_keyboard.h</primary><secondary>SDL_SetTextInputRect</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_SetTextInputRect (<link linkend="_struct_s_d_l___rect">SDL_Rect</link> * rect)</computeroutput></para>
+<para>Set the rectangle used to type Unicode text inputs.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>rect</entry><entry>
+<para>the <link linkend="_struct_s_d_l___rect">SDL_Rect</link> structure representing the rectangle to receive text (ignored if NULL)</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__keyboard_8h_1ab2c8474b9a8b6d07cae4f8eceab38870">SDL_StartTextInput</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__keyboard_8h_1ab2c8474b9a8b6d07cae4f8eceab38870"/><section>
+    <title>SDL_StartTextInput()</title>
+<indexterm><primary>SDL_StartTextInput</primary><secondary>SDL_keyboard.h</secondary></indexterm>
+<indexterm><primary>SDL_keyboard.h</primary><secondary>SDL_StartTextInput</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_StartTextInput (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para>
+<para>Start accepting Unicode text input events.</para>
+
+<para>This function will start accepting Unicode text input events in the focused SDL window, and start emitting <link linkend="_struct_s_d_l___text_input_event">SDL_TextInputEvent</link> (SDL_TEXTINPUT) and <link linkend="_struct_s_d_l___text_editing_event">SDL_TextEditingEvent</link> (SDL_TEXTEDITING) events. Please use this function in pair with <link linkend="__s_d_l__keyboard_8h_1ab08b914cdfb2eaed26165cb2f6b110ec">SDL_StopTextInput()</link>.</para>
+
+<para>On some platforms using this function activates the screen keyboard.</para>
+
+<para><formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__keyboard_8h_1a949fd9d16d5156a9d5aa0dc74580dbae">SDL_SetTextInputRect</link> </para>
+
+<para><link linkend="__s_d_l__keyboard_8h_1ab08b914cdfb2eaed26165cb2f6b110ec">SDL_StopTextInput</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__keyboard_8h_1ab08b914cdfb2eaed26165cb2f6b110ec"/><section>
+    <title>SDL_StopTextInput()</title>
+<indexterm><primary>SDL_StopTextInput</primary><secondary>SDL_keyboard.h</secondary></indexterm>
+<indexterm><primary>SDL_keyboard.h</primary><secondary>SDL_StopTextInput</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_StopTextInput (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para>
+<para>Stop receiving any text input events.</para>
+
+<para><formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__keyboard_8h_1ab2c8474b9a8b6d07cae4f8eceab38870">SDL_StartTextInput</link> </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__bits_8h_source" xml:lang="en-US">
+<title>SDL_bits.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_bits.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+28 <emphasis role="preprocessor">#ifndef&#32;SDL_bits_h_</emphasis>
+29 <emphasis role="preprocessor">#define&#32;SDL_bits_h_</emphasis>
+30 
+31 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__stdinc_8h">SDL_stdinc.h</link>&quot;</emphasis>
+32 
+33 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+34 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+35 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+36 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+37 <emphasis role="preprocessor">#endif</emphasis>
+38 
+50 <emphasis role="preprocessor">#if&#32;defined(__WATCOMC__)&#32;&amp;&amp;&#32;defined(__386__)</emphasis>
+51 <emphasis role="keyword">extern</emphasis>&#32;__inline&#32;<emphasis role="keywordtype">int</emphasis>&#32;_SDL_bsr_watcom(<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>);
+52 <emphasis role="preprocessor">#pragma&#32;aux&#32;_SDL_bsr_watcom&#32;=&#32;\</emphasis>
+53 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;&quot;bsr&#32;eax,&#32;eax&quot;</emphasis>&#32;\
+54 &#32;&#32;&#32;&#32;parm&#32;[eax]&#32;nomemory&#32;\
+55 &#32;&#32;&#32;&#32;value&#32;[eax]&#32;\
+56 &#32;&#32;&#32;&#32;modify&#32;exact&#32;[eax]&#32;nomemory;
+57 <emphasis role="preprocessor">#endif</emphasis>
+58 
+59 <link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link>&#32;<emphasis role="keywordtype">int</emphasis>
+60 <link linkend="__s_d_l__bits_8h_1ada8cd16089cc635936dfe1a6884729a4">SDL_MostSignificantBitIndex32</link>(<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>)
+61 {
+62 <emphasis role="preprocessor">#if&#32;defined(__GNUC__)&#32;&amp;&amp;&#32;(__GNUC__&#32;&gt;=&#32;4&#32;||&#32;(__GNUC__&#32;==&#32;3&#32;&amp;&amp;&#32;__GNUC_MINOR__&#32;&gt;=&#32;4))</emphasis>
+63 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Count&#32;Leading&#32;Zeroes&#32;builtin&#32;in&#32;GCC.</emphasis>
+64 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;*&#32;http://gcc.gnu.org/onlinedocs/gcc-4.3.4/gcc/Other-Builtins.html</emphasis>
+65 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;*/</emphasis>
+66 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>&#32;==&#32;0)&#32;{
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+68 &#32;&#32;&#32;&#32;}
+69 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;31&#32;-&#32;__builtin_clz(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>);
+70 <emphasis role="preprocessor">#elif&#32;defined(__WATCOMC__)&#32;&amp;&amp;&#32;defined(__386__)</emphasis>
+71 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>&#32;==&#32;0)&#32;{
+72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+73 &#32;&#32;&#32;&#32;}
+74 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;_SDL_bsr_watcom(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>);
+75 <emphasis role="preprocessor">#elif&#32;defined(_MSC_VER)</emphasis>
+76 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a57f14e05b1900f16a2da82ade47d0c6d">index</link>;
+77 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(_BitScanReverse(&amp;<link linkend="__s_d_l__opengl__glext_8h_1a57f14e05b1900f16a2da82ade47d0c6d">index</link>,&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>))&#32;{
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a57f14e05b1900f16a2da82ade47d0c6d">index</link>;
+79 &#32;&#32;&#32;&#32;}
+80 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+81 <emphasis role="preprocessor">#else</emphasis>
+82 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Based&#32;off&#32;of&#32;Bit&#32;Twiddling&#32;Hacks&#32;by&#32;Sean&#32;Eron&#32;Anderson</emphasis>
+83 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;*&#32;&lt;seander@cs.stanford.edu&gt;,&#32;released&#32;in&#32;the&#32;public&#32;domain.</emphasis>
+84 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;*&#32;http://graphics.stanford.edu/~seander/bithacks.html#IntegerLog</emphasis>
+85 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;*/</emphasis>
+86 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010">b</link>[]&#32;=&#32;{0x2,&#32;0xC,&#32;0xF0,&#32;0xFF00,&#32;0xFFFF0000};
+87 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;&#32;&#32;&#32;S[]&#32;=&#32;{1,&#32;2,&#32;4,&#32;8,&#32;16};
+88 
+89 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;msbIndex&#32;=&#32;0;
+90 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;i;
+91 
+92 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>&#32;==&#32;0)&#32;{
+93 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+94 &#32;&#32;&#32;&#32;}
+95 
+96 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(i&#32;=&#32;4;&#32;i&#32;&gt;=&#32;0;&#32;i--)
+97 &#32;&#32;&#32;&#32;{
+98 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>&#32;&amp;&#32;<link linkend="__s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010">b</link>[i])
+99 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>&#32;&gt;&gt;=&#32;S[i];
+101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;msbIndex&#32;|=&#32;S[i];
+102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+103 &#32;&#32;&#32;&#32;}
+104 
+105 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;msbIndex;
+106 <emphasis role="preprocessor">#endif</emphasis>
+107 }
+108 
+109 <link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>
+110 <link linkend="__s_d_l__bits_8h_1a9ca9ab50814f9cfbce5c1cba379b001d">SDL_HasExactlyOneBitSet32</link>(<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>)
+111 {
+112 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>&#32;&amp;&amp;&#32;!(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>&#32;&amp;&#32;(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>&#32;-&#32;1)))&#32;{
+113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733ba32efa84cfb0a91b0eee1edf6e941cf74">SDL_TRUE</link>;
+114 &#32;&#32;&#32;&#32;}
+115 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733ba76e680af86c5508ea4ccd9f969eb1ea2">SDL_FALSE</link>;
+116 }
+117 
+118 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+119 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+120 }
+121 <emphasis role="preprocessor">#endif</emphasis>
+122 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+123 
+124 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_bits_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+125 
+126 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

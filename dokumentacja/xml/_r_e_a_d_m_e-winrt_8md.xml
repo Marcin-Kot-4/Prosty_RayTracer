@@ -1,0 +1,563 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e-winrt_8md" kind="file" language="Markdown">
+    <compoundname>README-winrt.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">WinRT</highlight></codeline>
+<codeline><highlight class="normal">=====</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>port<sp/>allows<sp/>SDL<sp/>applications<sp/>to<sp/>run<sp/>on<sp/>Microsoft&apos;s<sp/>platforms<sp/>that<sp/>require</highlight></codeline>
+<codeline><highlight class="normal">use<sp/>of<sp/>&quot;Windows<sp/>Runtime&quot;,<sp/>aka.<sp/>&quot;WinRT&quot;,<sp/>APIs.<sp/><sp/>Microsoft<sp/>may,<sp/>in<sp/>some<sp/>cases,</highlight></codeline>
+<codeline><highlight class="normal">refer<sp/>to<sp/>them<sp/>as<sp/>either<sp/>&quot;Windows<sp/>Store&quot;,<sp/>or<sp/>for<sp/>Windows<sp/>10,<sp/>&quot;UWP&quot;<sp/>apps.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Some<sp/>of<sp/>the<sp/>operating<sp/>systems<sp/>that<sp/>include<sp/>WinRT,<sp/>are:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>Windows<sp/>10,<sp/>via<sp/>its<sp/>Universal<sp/>Windows<sp/>Platform<sp/>(UWP)<sp/>APIs</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Windows<sp/>8.x</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Windows<sp/>RT<sp/>8.x<sp/>(aka.<sp/>Windows<sp/>8.x<sp/>for<sp/>ARM<sp/>processors)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Windows<sp/>Phone<sp/>8.x</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Requirements</highlight></codeline>
+<codeline><highlight class="normal">------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>Microsoft<sp/>Visual<sp/>C++<sp/>(aka<sp/>Visual<sp/>Studio),<sp/>either<sp/>2017,<sp/>2015,<sp/>2013,<sp/>or<sp/>2012</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Free,<sp/>&quot;Community&quot;<sp/>or<sp/>&quot;Express&quot;<sp/>editions<sp/>may<sp/>be<sp/>used,<sp/>so<sp/>long<sp/>as<sp/>they</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>include<sp/><sp/>support<sp/>for<sp/>either<sp/>&quot;Windows<sp/>Store&quot;<sp/>or<sp/>&quot;Windows<sp/>Phone&quot;<sp/>apps.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;Express&quot;<sp/>versions<sp/>marked<sp/>as<sp/>supporting<sp/>&quot;Windows<sp/>Desktop&quot;<sp/>development</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>typically<sp/>do<sp/>not<sp/>include<sp/>support<sp/>for<sp/>creating<sp/>WinRT<sp/>apps,<sp/>to<sp/>note.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>(The<sp/>&quot;Community&quot;<sp/>editions<sp/>of<sp/>Visual<sp/>C++<sp/>do,<sp/>however,<sp/>support<sp/>both</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>desktop/Win32<sp/>and<sp/>WinRT<sp/>development).</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Visual<sp/>Studio<sp/>2017<sp/>can<sp/>be<sp/>used,<sp/>however<sp/>it<sp/>is<sp/>recommended<sp/>that<sp/>you<sp/>install</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>the<sp/>Visual<sp/>C++<sp/>2015<sp/>build<sp/>tools.<sp/><sp/>These<sp/>build<sp/>tools<sp/>can<sp/>be<sp/>installed</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>using<sp/>VS<sp/>2017&apos;s<sp/>installer.<sp/><sp/>Be<sp/>sure<sp/>to<sp/>also<sp/>install<sp/>the<sp/>workload<sp/>for</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;Universal<sp/>Windows<sp/>Platform<sp/>development&quot;,<sp/>its<sp/>optional<sp/>component,<sp/>the</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;C++<sp/>Universal<sp/>Windows<sp/>Platform<sp/>tools&quot;,<sp/>and<sp/>for<sp/>UWP<sp/>/<sp/>Windows<sp/>10</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>development,<sp/>the<sp/>&quot;Windows<sp/>10<sp/>SDK<sp/>(10.0.10240.0)&quot;.<sp/><sp/>Please<sp/>note<sp/>that</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>targeting<sp/>UWP<sp/>/<sp/>Windows<sp/>10<sp/>apps<sp/>from<sp/>development<sp/>machine(s)<sp/>running</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>earlier<sp/>versions<sp/>of<sp/>Windows,<sp/>such<sp/>as<sp/>Windows<sp/>7,<sp/>is<sp/>not<sp/>always<sp/>supported</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>by<sp/>Visual<sp/>Studio,<sp/>and<sp/>you<sp/>may<sp/>get<sp/>error(s)<sp/>when<sp/>attempting<sp/>to<sp/>do<sp/>so.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Visual<sp/>C++<sp/>2012<sp/>can<sp/>only<sp/>build<sp/>apps<sp/>that<sp/>target<sp/>versions<sp/>8.0<sp/>of<sp/>Windows,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>or<sp/><sp/>Windows<sp/>Phone.<sp/><sp/>8.0-targeted<sp/>apps<sp/>will<sp/>run<sp/>on<sp/>devices<sp/>running<sp/>8.1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>editions<sp/>of<sp/>Windows,<sp/>however<sp/>they<sp/>will<sp/>not<sp/>be<sp/>able<sp/>to<sp/>take<sp/>advantage<sp/>of</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>8.1-specific<sp/>features.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Visual<sp/>C++<sp/>2013<sp/>cannot<sp/>create<sp/>app<sp/>projects<sp/>that<sp/>target<sp/>Windows<sp/>8.0.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Visual<sp/>C++<sp/>2013<sp/>Update<sp/>4,<sp/>can<sp/>create<sp/>app<sp/>projects<sp/>for<sp/>Windows<sp/>Phone<sp/>8.0,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Windows<sp/>Phone<sp/>8.1,<sp/>and<sp/>Windows<sp/>8.1,<sp/>but<sp/>not<sp/>Windows<sp/>8.0.<sp/><sp/>An<sp/>optional</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Visual<sp/>Studio<sp/>add-in,<sp/>&quot;Tools<sp/>for<sp/>Maintaining<sp/>Store<sp/>apps<sp/>for<sp/>Windows<sp/>8&quot;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>allows<sp/>Visual<sp/>C++<sp/>2013<sp/>to<sp/>load<sp/>and<sp/>build<sp/>Windows<sp/>8.0<sp/>projects<sp/>that<sp/>were</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>created<sp/>with<sp/>Visual<sp/>C++<sp/>2012,<sp/>so<sp/>long<sp/>as<sp/>Visual<sp/>C++<sp/>2012<sp/>is<sp/>installed</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>on<sp/>the<sp/>same<sp/>machine.<sp/><sp/>More<sp/>details<sp/>on<sp/>targeting<sp/>different<sp/>versions<sp/>of</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Windows<sp/>can<sp/>found<sp/>at<sp/>the<sp/>following<sp/>web<sp/>pages:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[Develop<sp/>apps<sp/>by<sp/>using<sp/>Visual<sp/>Studio<sp/>2013](http://msdn.microsoft.com/en-us/library/windows/apps/br211384.aspx)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[To<sp/>add<sp/>the<sp/>Tools<sp/>for<sp/>Maintaining<sp/>Store<sp/>apps<sp/>for<sp/>Windows<sp/>8](http://msdn.microsoft.com/en-us/library/windows/apps/dn263114.aspx#AddMaintenanceTools)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>A<sp/>valid<sp/>Microsoft<sp/>account<sp/>-<sp/>This<sp/>requirement<sp/>is<sp/>not<sp/>imposed<sp/>by<sp/>SDL,<sp/>but</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>rather<sp/>by<sp/>Microsoft&apos;s<sp/>Visual<sp/>C++<sp/>toolchain.<sp/><sp/>This<sp/>is<sp/>required<sp/>to<sp/>launch<sp/>or<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>debug<sp/>apps.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Status</highlight></codeline>
+<codeline><highlight class="normal">------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Here<sp/>is<sp/>a<sp/>rough<sp/>list<sp/>of<sp/>what<sp/>works,<sp/>and<sp/>what<sp/>doesn&apos;t:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>What<sp/>works:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>compilation<sp/>via<sp/>Visual<sp/>C++<sp/>2012<sp/>through<sp/>2015</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>compile-time<sp/>platform<sp/>detection<sp/>for<sp/>SDL<sp/>programs.<sp/><sp/>The<sp/>C/C++<sp/>#define,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>`__WINRT__`,<sp/>will<sp/>be<sp/>set<sp/>to<sp/>1<sp/>(by<sp/>SDL)<sp/>when<sp/>compiling<sp/>for<sp/>WinRT.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>GPU-accelerated<sp/>2D<sp/>rendering,<sp/>via<sp/>SDL_Renderer.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>OpenGL<sp/>ES<sp/>2,<sp/>via<sp/>the<sp/>ANGLE<sp/>library<sp/>(included<sp/>separately<sp/>from<sp/>SDL)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>software<sp/>rendering,<sp/>via<sp/>either<sp/>SDL_Surface<sp/>(optionally<sp/>in<sp/>conjunction<sp/>with</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_GetWindowSurface()<sp/>and<sp/>SDL_UpdateWindowSurface())<sp/>or<sp/>via<sp/>the</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Renderer<sp/>APIs</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>threads</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>timers<sp/>(via<sp/>SDL_GetTicks(),<sp/>SDL_AddTimer(),<sp/>SDL_GetPerformanceCounter(),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_GetPerformanceFrequency(),<sp/>etc.)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>file<sp/>I/O<sp/>via<sp/>SDL_RWops</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>mouse<sp/>input<sp/><sp/>(unsupported<sp/>on<sp/>Windows<sp/>Phone)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>audio,<sp/>via<sp/>SDL&apos;s<sp/>WASAPI<sp/>backend<sp/>(if<sp/>you<sp/>want<sp/>to<sp/>record,<sp/>your<sp/>app<sp/>must<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>have<sp/>&quot;Microphone&quot;<sp/>capabilities<sp/>enabled<sp/>in<sp/>its<sp/>manifest,<sp/>and<sp/>the<sp/>user<sp/>must<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>not<sp/>have<sp/>blocked<sp/>access.<sp/>Otherwise,<sp/>capture<sp/>devices<sp/>will<sp/>fail<sp/>to<sp/>work,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>presenting<sp/>as<sp/>a<sp/>device<sp/>disconnect<sp/>shortly<sp/>after<sp/>opening<sp/>it.)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>.DLL<sp/>file<sp/>loading.<sp/><sp/>Libraries<sp/>*MUST*<sp/>be<sp/>packaged<sp/>inside<sp/>applications.<sp/><sp/>Loading</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>anything<sp/>outside<sp/>of<sp/>the<sp/>app<sp/>is<sp/>not<sp/>supported.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>system<sp/>path<sp/>retrieval<sp/>via<sp/>SDL&apos;s<sp/>filesystem<sp/>APIs</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>game<sp/>controllers.<sp/><sp/>Support<sp/>is<sp/>provided<sp/>via<sp/>the<sp/>SDL_Joystick<sp/>and</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_GameController<sp/>APIs,<sp/>and<sp/>is<sp/>backed<sp/>by<sp/>Microsoft&apos;s<sp/>XInput<sp/>API.<sp/><sp/>Please</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>note,<sp/>however,<sp/>that<sp/>Windows<sp/>limits<sp/>game-controller<sp/>support<sp/>in<sp/>UWP<sp/>apps<sp/>to,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;Xbox<sp/>compatible<sp/>controllers&quot;<sp/>(many<sp/>controllers<sp/>that<sp/>work<sp/>in<sp/>Win32<sp/>apps,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>do<sp/>not<sp/>work<sp/>in<sp/>UWP,<sp/>due<sp/>to<sp/>restrictions<sp/>in<sp/>UWP<sp/>itself.)<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>multi-touch<sp/>input</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>app<sp/>events.<sp/><sp/>SDL_APP_WILLENTER*<sp/>and<sp/>SDL_APP_DIDENTER*<sp/>events<sp/>get<sp/>sent<sp/>out<sp/>as</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>appropriate.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>window<sp/>events</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>using<sp/>Direct3D<sp/>11.x<sp/>APIs<sp/>outside<sp/>of<sp/>SDL.<sp/><sp/>Non-XAML<sp/>/<sp/>Direct3D-only<sp/>apps<sp/>can</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>choose<sp/>to<sp/>render<sp/>content<sp/>directly<sp/>via<sp/>Direct3D,<sp/>using<sp/>SDL<sp/>to<sp/>manage<sp/>the</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>internal<sp/>WinRT<sp/>window,<sp/>as<sp/>well<sp/>as<sp/>input<sp/>and<sp/>audio.<sp/><sp/>(Use</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_GetWindowWMInfo()<sp/>to<sp/>get<sp/>the<sp/>WinRT<sp/>&apos;CoreWindow&apos;,<sp/>and<sp/>pass<sp/>it<sp/>into</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>IDXGIFactory2::CreateSwapChainForCoreWindow()<sp/>as<sp/>appropriate.)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>What<sp/>partially<sp/>works:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>keyboard<sp/>input.<sp/><sp/>Most<sp/>of<sp/>WinRT&apos;s<sp/>documented<sp/>virtual<sp/>keys<sp/>are<sp/>supported,<sp/>as</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>well<sp/>as<sp/>many<sp/>keys<sp/>with<sp/>documented<sp/>hardware<sp/>scancodes.<sp/><sp/>Converting</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Scancodes<sp/>to<sp/>or<sp/>from<sp/>SDL_Keycodes<sp/>may<sp/>not<sp/>work,<sp/>due<sp/>to<sp/>missing<sp/>APIs</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>(MapVirtualKey())<sp/>in<sp/>Microsoft&apos;s<sp/>Windows<sp/>Store<sp/>/<sp/>UWP<sp/>APIs.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>SDLmain.<sp/><sp/>WinRT<sp/>uses<sp/>a<sp/>different<sp/>signature<sp/>for<sp/>each<sp/>app&apos;s<sp/>main()<sp/>function.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>SDL-based<sp/>apps<sp/>that<sp/>use<sp/>this<sp/>port<sp/>must<sp/>compile<sp/>in<sp/>SDL_winrt_main_NonXAML.cpp</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>(in<sp/>`SDL\src\main\winrt\`)<sp/>directly<sp/>in<sp/>order<sp/>for<sp/>their<sp/>C-style<sp/>main()</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>functions<sp/>to<sp/>be<sp/>called.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>What<sp/>doesn&apos;t<sp/>work:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>compilation<sp/>with<sp/>anything<sp/>other<sp/>than<sp/>Visual<sp/>C++</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>programmatically-created<sp/>custom<sp/>cursors.<sp/><sp/>These<sp/>don&apos;t<sp/>appear<sp/>to<sp/>be<sp/>supported</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>by<sp/>WinRT.<sp/><sp/>Different<sp/>OS-provided<sp/>cursors<sp/>can,<sp/>however,<sp/>be<sp/>created<sp/>via</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_CreateSystemCursor()<sp/>(unsupported<sp/>on<sp/>Windows<sp/>Phone)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>SDL_WarpMouseInWindow()<sp/>or<sp/>SDL_WarpMouseGlobal().<sp/><sp/>This<sp/>are<sp/>not<sp/>currently</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>supported<sp/>by<sp/>WinRT<sp/>itself.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>joysticks<sp/>and<sp/>game<sp/>controllers<sp/>that<sp/>either<sp/>are<sp/>not<sp/>supported<sp/>by</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Microsoft&apos;s<sp/>XInput<sp/>API,<sp/>or<sp/>are<sp/>not<sp/>supported<sp/>within<sp/>UWP<sp/>apps<sp/>(many</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>controllers<sp/>that<sp/>work<sp/>in<sp/>Win32,<sp/>do<sp/>not<sp/>work<sp/>in<sp/>UWP,<sp/>due<sp/>to<sp/>restrictions<sp/>in</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>UWP<sp/>itself).</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>turning<sp/>off<sp/>VSync<sp/>when<sp/>rendering<sp/>on<sp/>Windows<sp/>Phone.<sp/><sp/>Attempts<sp/>to<sp/>turn<sp/>VSync</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>off<sp/>on<sp/>Windows<sp/>Phone<sp/>result<sp/>either<sp/>in<sp/>Direct3D<sp/>not<sp/>drawing<sp/>anything,<sp/>or<sp/>it</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>forcing<sp/>VSync<sp/>back<sp/>on.<sp/><sp/>As<sp/>such,<sp/>SDL_RENDERER_PRESENTVSYNC<sp/>will<sp/>always<sp/>get</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>turned-on<sp/>on<sp/>Windows<sp/>Phone.<sp/><sp/>This<sp/>limitation<sp/>is<sp/>not<sp/>present<sp/>in<sp/>non-Phone</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>WinRT<sp/>(such<sp/>as<sp/>Windows<sp/>8.x),<sp/>where<sp/>turning<sp/>off<sp/>VSync<sp/>appears<sp/>to<sp/>work.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>probably<sp/>anything<sp/>else<sp/>that&apos;s<sp/>not<sp/>listed<sp/>as<sp/>supported</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Upgrade<sp/>Notes</highlight></codeline>
+<codeline><highlight class="normal">-------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>SDL_GetPrefPath()<sp/>usage<sp/>when<sp/>upgrading<sp/>WinRT<sp/>apps<sp/>from<sp/>SDL<sp/>2.0.3</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SDL<sp/>2.0.4<sp/>fixes<sp/>two<sp/>bugs<sp/>found<sp/>in<sp/>the<sp/>WinRT<sp/>version<sp/>of<sp/>SDL_GetPrefPath().</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>fixes<sp/>may<sp/>affect<sp/>older,<sp/>SDL<sp/>2.0.3-based<sp/>apps&apos;<sp/>save<sp/>data.<sp/><sp/>Please<sp/>note</highlight></codeline>
+<codeline><highlight class="normal">that<sp/>these<sp/>changes<sp/>only<sp/>apply<sp/>to<sp/>SDL-based<sp/>WinRT<sp/>apps,<sp/>and<sp/>not<sp/>to<sp/>apps<sp/>for</highlight></codeline>
+<codeline><highlight class="normal">any<sp/>other<sp/>platform.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>SDL_GetPrefPath()<sp/>would<sp/>return<sp/>an<sp/>invalid<sp/>path,<sp/>one<sp/>in<sp/>which<sp/>the<sp/>path&apos;s</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>directory<sp/>had<sp/>not<sp/>been<sp/>created.<sp/><sp/>Attempts<sp/>to<sp/>create<sp/>files<sp/>there</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>(via<sp/>fopen(),<sp/>for<sp/>example),<sp/>would<sp/>fail,<sp/>unless<sp/>that<sp/>directory<sp/>was</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>explicitly<sp/>created<sp/>beforehand.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">2.<sp/>SDL_GetPrefPath(),<sp/>for<sp/>non-WinPhone-based<sp/>apps,<sp/>would<sp/>return<sp/>a<sp/>path<sp/>inside</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>a<sp/>WinRT<sp/>&apos;Roaming&apos;<sp/>folder,<sp/>the<sp/>contents<sp/>of<sp/>which<sp/>get<sp/>automatically</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>synchronized<sp/>across<sp/>multiple<sp/>devices.<sp/><sp/>This<sp/>process<sp/>can<sp/>occur<sp/>while<sp/>an</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>application<sp/>runs,<sp/>and<sp/>can<sp/>cause<sp/>existing<sp/>save-data<sp/>to<sp/>be<sp/>overwritten</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>at<sp/>unexpected<sp/>times,<sp/>with<sp/>data<sp/>from<sp/>other<sp/>devices.<sp/><sp/>(Windows<sp/>Phone<sp/>apps</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>written<sp/>with<sp/>SDL<sp/>2.0.3<sp/>did<sp/>not<sp/>utilize<sp/>a<sp/>Roaming<sp/>folder,<sp/>due<sp/>to<sp/>API</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>restrictions<sp/>in<sp/>Windows<sp/>Phone<sp/>8.0).</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SDL_GetPrefPath(),<sp/>starting<sp/>with<sp/>SDL<sp/>2.0.4,<sp/>addresses<sp/>these<sp/>by:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>making<sp/>sure<sp/>that<sp/>SDL_GetPrefPath()<sp/>returns<sp/>a<sp/>directory<sp/>in<sp/>which<sp/>data</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>can<sp/>be<sp/>written<sp/>to<sp/>immediately,<sp/>without<sp/>first<sp/>needing<sp/>to<sp/>create<sp/>directories.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">2.<sp/>basing<sp/>SDL_GetPrefPath()<sp/>off<sp/>of<sp/>a<sp/>different,<sp/>non-Roaming<sp/>folder,<sp/>the</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>contents<sp/>of<sp/>which<sp/>do<sp/>not<sp/>automatically<sp/>get<sp/>synchronized<sp/>across<sp/>devices</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>(and<sp/>which<sp/>require<sp/>less<sp/>work<sp/>to<sp/>use<sp/>safely,<sp/>in<sp/>terms<sp/>of<sp/>data<sp/>integrity).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Apps<sp/>that<sp/>wish<sp/>to<sp/>get<sp/>their<sp/>Roaming<sp/>folder&apos;s<sp/>path<sp/>can<sp/>do<sp/>so<sp/>either<sp/>by<sp/>using</highlight></codeline>
+<codeline><highlight class="normal">SDL_WinRTGetFSPathUTF8(),<sp/>SDL_WinRTGetFSPathUNICODE()<sp/>(which<sp/>returns<sp/>a</highlight></codeline>
+<codeline><highlight class="normal">UCS-2/wide-char<sp/>string),<sp/>or<sp/>directly<sp/>through<sp/>the<sp/>WinRT<sp/>class,</highlight></codeline>
+<codeline><highlight class="normal">Windows.Storage.ApplicationData.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Setup,<sp/>High-Level<sp/>Steps</highlight></codeline>
+<codeline><highlight class="normal">-----------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>steps<sp/>for<sp/>setting<sp/>up<sp/>a<sp/>project<sp/>for<sp/>an<sp/>SDL/WinRT<sp/>app<sp/>looks<sp/>like<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">following,<sp/>at<sp/>a<sp/>high-level:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>create<sp/>a<sp/>new<sp/>Visual<sp/>C++<sp/>project<sp/>using<sp/>Microsoft&apos;s<sp/>template<sp/>for<sp/>a,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>&quot;Direct3D<sp/>App&quot;.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>remove<sp/>most<sp/>of<sp/>the<sp/>files<sp/>from<sp/>the<sp/>project.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>make<sp/>your<sp/>app&apos;s<sp/>project<sp/>directly<sp/>reference<sp/>SDL/WinRT&apos;s<sp/>own<sp/>Visual<sp/>C++</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>project<sp/>file,<sp/>via<sp/>use<sp/>of<sp/>Visual<sp/>C++&apos;s<sp/>&quot;References&quot;<sp/>dialog.<sp/><sp/>This<sp/>will<sp/>setup</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>the<sp/>linker,<sp/>and<sp/>will<sp/>copy<sp/>SDL&apos;s<sp/>.dll<sp/>files<sp/>to<sp/>your<sp/>app&apos;s<sp/>final<sp/>output.</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>adjust<sp/>your<sp/>app&apos;s<sp/>build<sp/>settings,<sp/>at<sp/>minimum,<sp/>telling<sp/>it<sp/>where<sp/>to<sp/>find<sp/>SDL&apos;s</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>header<sp/>files.</highlight></codeline>
+<codeline><highlight class="normal">5.<sp/>add<sp/>files<sp/>that<sp/>contains<sp/>a<sp/>WinRT-appropriate<sp/>main<sp/>function,<sp/>along<sp/>with<sp/>some</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>data<sp/>to<sp/>make<sp/>sure<sp/>mouse-cursor-hiding<sp/>(via<sp/>SDL_ShowCursor(SDL_DISABLE)<sp/>calls)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>work<sp/>properly.</highlight></codeline>
+<codeline><highlight class="normal">6.<sp/>add<sp/>SDL-specific<sp/>app<sp/>code.</highlight></codeline>
+<codeline><highlight class="normal">7.<sp/>build<sp/>and<sp/>run<sp/>your<sp/>app.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Setup,<sp/>Detailed<sp/>Steps</highlight></codeline>
+<codeline><highlight class="normal">---------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>1.<sp/>Create<sp/>a<sp/>new<sp/>project<sp/>###</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Create<sp/>a<sp/>new<sp/>project<sp/>using<sp/>one<sp/>of<sp/>Visual<sp/>C++&apos;s<sp/>templates<sp/>for<sp/>a<sp/>plain,<sp/>non-XAML,</highlight></codeline>
+<codeline><highlight class="normal">&quot;Direct3D<sp/>App&quot;<sp/>(XAML<sp/>support<sp/>for<sp/>SDL/WinRT<sp/>is<sp/>not<sp/>yet<sp/>ready<sp/>for<sp/>use).<sp/><sp/>If<sp/>you</highlight></codeline>
+<codeline><highlight class="normal">don&apos;t<sp/>see<sp/>one<sp/>of<sp/>these<sp/>templates,<sp/>in<sp/>Visual<sp/>C++&apos;s<sp/>&apos;New<sp/>Project&apos;<sp/>dialog,<sp/>try</highlight></codeline>
+<codeline><highlight class="normal">using<sp/>the<sp/>textbox<sp/>titled,<sp/>&apos;Search<sp/>Installed<sp/>Templates&apos;<sp/>to<sp/>look<sp/>for<sp/>one.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>2.<sp/>Remove<sp/>unneeded<sp/>files<sp/>from<sp/>the<sp/>project<sp/>###</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>the<sp/>new<sp/>project,<sp/>delete<sp/>any<sp/>file<sp/>that<sp/>has<sp/>one<sp/>of<sp/>the<sp/>following<sp/>extensions:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>.cpp</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>.h</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>.hlsl</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">When<sp/>you<sp/>are<sp/>done,<sp/>you<sp/>should<sp/>be<sp/>left<sp/>with<sp/>a<sp/>few<sp/>files,<sp/>each<sp/>of<sp/>which<sp/>will<sp/>be<sp/>a</highlight></codeline>
+<codeline><highlight class="normal">necessary<sp/>part<sp/>of<sp/>your<sp/>app&apos;s<sp/>project.<sp/><sp/>These<sp/>files<sp/>will<sp/>consist<sp/>of:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>an<sp/>.appxmanifest<sp/>file,<sp/>which<sp/>contains<sp/>metadata<sp/>on<sp/>your<sp/>WinRT<sp/>app.<sp/><sp/>This<sp/>is</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>similar<sp/>to<sp/>an<sp/>Info.plist<sp/>file<sp/>on<sp/>iOS,<sp/>or<sp/>an<sp/>AndroidManifest.xml<sp/>on<sp/>Android.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>a<sp/>few<sp/>.png<sp/>files,<sp/>one<sp/>of<sp/>which<sp/>is<sp/>a<sp/>splash<sp/>screen<sp/>(displayed<sp/>when<sp/>your<sp/>app</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>launches),<sp/>others<sp/>are<sp/>app<sp/>icons.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>a<sp/>.pfx<sp/>file,<sp/>used<sp/>for<sp/>code<sp/>signing<sp/>purposes.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>3.<sp/>Add<sp/>references<sp/>to<sp/>SDL&apos;s<sp/>project<sp/>files<sp/>###</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SDL/WinRT<sp/>can<sp/>be<sp/>built<sp/>in<sp/>multiple<sp/>variations,<sp/>spanning<sp/>across<sp/>three<sp/>different</highlight></codeline>
+<codeline><highlight class="normal">CPU<sp/>architectures<sp/>(x86,<sp/>x64,<sp/>and<sp/>ARM)<sp/>and<sp/>two<sp/>different<sp/>configurations</highlight></codeline>
+<codeline><highlight class="normal">(Debug<sp/>and<sp/>Release).<sp/><sp/>WinRT<sp/>and<sp/>Visual<sp/>C++<sp/>do<sp/>not<sp/>currently<sp/>provide<sp/>a<sp/>means</highlight></codeline>
+<codeline><highlight class="normal">for<sp/>combining<sp/>multiple<sp/>variations<sp/>of<sp/>one<sp/>library<sp/>into<sp/>a<sp/>single<sp/>file.</highlight></codeline>
+<codeline><highlight class="normal">Furthermore,<sp/>it<sp/>does<sp/>not<sp/>provide<sp/>an<sp/>easy<sp/>means<sp/>for<sp/>copying<sp/>pre-built<sp/>.dll<sp/>files</highlight></codeline>
+<codeline><highlight class="normal">into<sp/>your<sp/>app&apos;s<sp/>final<sp/>output<sp/>(via<sp/>Post-Build<sp/>steps,<sp/>for<sp/>example).<sp/><sp/>It<sp/>does,</highlight></codeline>
+<codeline><highlight class="normal">however,<sp/>provide<sp/>a<sp/>system<sp/>whereby<sp/>an<sp/>app<sp/>can<sp/>reference<sp/>the<sp/>MSVC<sp/>projects<sp/>of</highlight></codeline>
+<codeline><highlight class="normal">libraries<sp/>such<sp/>that,<sp/>when<sp/>the<sp/>app<sp/>is<sp/>built:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>each<sp/>library<sp/>gets<sp/>built<sp/>for<sp/>the<sp/>appropriate<sp/>CPU<sp/>architecture(s)<sp/>and<sp/>WinRT</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>platform(s).</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>each<sp/>library&apos;s<sp/>output,<sp/>such<sp/>as<sp/>.dll<sp/>files,<sp/>get<sp/>copied<sp/>to<sp/>the<sp/>app&apos;s<sp/>build<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>output.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>set<sp/>this<sp/>up<sp/>for<sp/>SDL/WinRT,<sp/>you&apos;ll<sp/>need<sp/>to<sp/>run<sp/>through<sp/>the<sp/>following<sp/>steps:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>open<sp/>up<sp/>the<sp/>Solution<sp/>Explorer<sp/>inside<sp/>Visual<sp/>C++<sp/>(under<sp/>the<sp/>&quot;View&quot;<sp/>menu,<sp/>then</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>&quot;Solution<sp/>Explorer&quot;)</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>right<sp/>click<sp/>on<sp/>your<sp/>app&apos;s<sp/>solution.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>navigate<sp/>to<sp/>&quot;Add&quot;,<sp/>then<sp/>to<sp/>&quot;Existing<sp/>Project...&quot;</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>find<sp/>SDL/WinRT&apos;s<sp/>Visual<sp/>C++<sp/>project<sp/>file<sp/>and<sp/>open<sp/>it.<sp/><sp/>Different<sp/>project</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>files<sp/>exist<sp/>for<sp/>different<sp/>WinRT<sp/>platforms.<sp/><sp/>All<sp/>of<sp/>them<sp/>are<sp/>in<sp/>SDL&apos;s</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>source<sp/>distribution,<sp/>in<sp/>the<sp/>following<sp/>directories:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>*<sp/>`VisualC-WinRT/UWP_VS2015/`<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>for<sp/>Windows<sp/>10<sp/>/<sp/>UWP<sp/>apps</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>*<sp/>`VisualC-WinRT/WinPhone81_VS2013/`<sp/>-<sp/>for<sp/>Windows<sp/>Phone<sp/>8.1<sp/>apps</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>*<sp/>`VisualC-WinRT/WinRT80_VS2012/`<sp/><sp/><sp/><sp/>-<sp/>for<sp/>Windows<sp/>8.0<sp/>apps</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>*<sp/>`VisualC-WinRT/WinRT81_VS2013/`<sp/><sp/><sp/><sp/>-<sp/>for<sp/>Windows<sp/>8.1<sp/>apps</highlight></codeline>
+<codeline><highlight class="normal">5.<sp/>once<sp/>the<sp/>project<sp/>has<sp/>been<sp/>added,<sp/>right-click<sp/>on<sp/>your<sp/>app&apos;s<sp/>project<sp/>and</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>select,<sp/>&quot;References...&quot;</highlight></codeline>
+<codeline><highlight class="normal">6.<sp/>click<sp/>on<sp/>the<sp/>button<sp/>titled,<sp/>&quot;Add<sp/>New<sp/>Reference...&quot;</highlight></codeline>
+<codeline><highlight class="normal">7.<sp/>check<sp/>the<sp/>box<sp/>next<sp/>to<sp/>SDL</highlight></codeline>
+<codeline><highlight class="normal">8.<sp/>click<sp/>OK<sp/>to<sp/>close<sp/>the<sp/>dialog</highlight></codeline>
+<codeline><highlight class="normal">9.<sp/>SDL<sp/>will<sp/>now<sp/>show<sp/>up<sp/>in<sp/>the<sp/>list<sp/>of<sp/>references.<sp/><sp/>Click<sp/>OK<sp/>to<sp/>close<sp/>that</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>dialog.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Your<sp/>project<sp/>is<sp/>now<sp/>linked<sp/>to<sp/>SDL&apos;s<sp/>project,<sp/>insofar<sp/>that<sp/>when<sp/>the<sp/>app<sp/>is</highlight></codeline>
+<codeline><highlight class="normal">built,<sp/>SDL<sp/>will<sp/>be<sp/>built<sp/>as<sp/>well,<sp/>with<sp/>its<sp/>build<sp/>output<sp/>getting<sp/>included<sp/>with</highlight></codeline>
+<codeline><highlight class="normal">your<sp/>app.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>4.<sp/>Adjust<sp/>Your<sp/>App&apos;s<sp/>Build<sp/>Settings<sp/>###</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Some<sp/>build<sp/>settings<sp/>need<sp/>to<sp/>be<sp/>changed<sp/>in<sp/>your<sp/>app&apos;s<sp/>project.<sp/><sp/>This<sp/>guide<sp/>will</highlight></codeline>
+<codeline><highlight class="normal">outline<sp/>the<sp/>following:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>making<sp/>sure<sp/>that<sp/>the<sp/>compiler<sp/>knows<sp/>where<sp/>to<sp/>find<sp/>SDL&apos;s<sp/>header<sp/>files</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Optional<sp/>for<sp/>C++,<sp/>but<sp/>NECESSARY<sp/>for<sp/>compiling<sp/>C<sp/>code:**<sp/>telling<sp/>the</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>compiler<sp/>not<sp/>to<sp/>use<sp/>Microsoft&apos;s<sp/>C++<sp/>extensions<sp/>for<sp/>WinRT<sp/>development.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Optional:**<sp/>telling<sp/>the<sp/>compiler<sp/>not<sp/>generate<sp/>errors<sp/>due<sp/>to<sp/>missing</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>precompiled<sp/>header<sp/>files.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>change<sp/>these<sp/>settings:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>right-click<sp/>on<sp/>the<sp/>project</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>choose<sp/>&quot;Properties&quot;</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>in<sp/>the<sp/>drop-down<sp/>box<sp/>next<sp/>to<sp/>&quot;Configuration&quot;,<sp/>choose,<sp/>&quot;All<sp/>Configurations&quot;</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>in<sp/>the<sp/>drop-down<sp/>box<sp/>next<sp/>to<sp/>&quot;Platform&quot;,<sp/>choose,<sp/>&quot;All<sp/>Platforms&quot;</highlight></codeline>
+<codeline><highlight class="normal">5.<sp/>in<sp/>the<sp/>left-hand<sp/>list,<sp/>expand<sp/>the<sp/>&quot;C/C++&quot;<sp/>section</highlight></codeline>
+<codeline><highlight class="normal">6.<sp/>select<sp/>&quot;General&quot;</highlight></codeline>
+<codeline><highlight class="normal">7.<sp/>edit<sp/>the<sp/>&quot;Additional<sp/>Include<sp/>Directories&quot;<sp/>setting,<sp/>and<sp/>add<sp/>a<sp/>path<sp/>to<sp/>SDL&apos;s</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>&quot;include&quot;<sp/>directory</highlight></codeline>
+<codeline><highlight class="normal">8.<sp/>**Optional:<sp/>to<sp/>enable<sp/>compilation<sp/>of<sp/>C<sp/>code:**<sp/>change<sp/>the<sp/>setting<sp/>for</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>&quot;Consume<sp/>Windows<sp/>Runtime<sp/>Extension&quot;<sp/>from<sp/>&quot;Yes<sp/>(/ZW)&quot;<sp/>to<sp/>&quot;No&quot;.<sp/><sp/>If<sp/>you&apos;re<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>working<sp/>with<sp/>a<sp/>completely<sp/>C++<sp/>based<sp/>project,<sp/>this<sp/>step<sp/>can<sp/>usually<sp/>be<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>omitted.</highlight></codeline>
+<codeline><highlight class="normal">9.<sp/>**Optional:<sp/>to<sp/>disable<sp/>precompiled<sp/>headers<sp/>(which<sp/>can<sp/>produce<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>&apos;stdafx.h&apos;-related<sp/>build<sp/>errors,<sp/>if<sp/>setup<sp/>incorrectly:**<sp/>in<sp/>the<sp/>left-hand<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>list,<sp/>select<sp/>&quot;Precompiled<sp/>Headers&quot;,<sp/>then<sp/>change<sp/>the<sp/>setting<sp/>for<sp/>&quot;Precompiled<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>Header&quot;<sp/>from<sp/>&quot;Use<sp/>(/Yu)&quot;<sp/>to<sp/>&quot;Not<sp/>Using<sp/>Precompiled<sp/>Headers&quot;.</highlight></codeline>
+<codeline><highlight class="normal">10.<sp/>close<sp/>the<sp/>dialog,<sp/>saving<sp/>settings,<sp/>by<sp/>clicking<sp/>the<sp/>&quot;OK&quot;<sp/>button</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>5.<sp/>Add<sp/>a<sp/>WinRT-appropriate<sp/>main<sp/>function,<sp/>and<sp/>a<sp/>blank-cursor<sp/>image,<sp/>to<sp/>the<sp/>app.<sp/>###</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A<sp/>few<sp/>files<sp/>should<sp/>be<sp/>included<sp/>directly<sp/>in<sp/>your<sp/>app&apos;s<sp/>MSVC<sp/>project,<sp/>specifically:</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>a<sp/>WinRT-appropriate<sp/>main<sp/>function<sp/>(which<sp/>is<sp/>different<sp/>than<sp/>main()<sp/>functions<sp/>on</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>other<sp/>platforms)</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>a<sp/>Win32-style<sp/>cursor<sp/>resource,<sp/>used<sp/>by<sp/>SDL_ShowCursor()<sp/>to<sp/>hide<sp/>the<sp/>mouse<sp/>cursor</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>(if<sp/>and<sp/>when<sp/>the<sp/>app<sp/>needs<sp/>to<sp/>do<sp/>so).<sp/><sp/>*If<sp/>this<sp/>cursor<sp/>resource<sp/>is<sp/>not</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>included,<sp/>mouse-position<sp/>reporting<sp/>may<sp/>fail<sp/>if<sp/>and<sp/>when<sp/>the<sp/>cursor<sp/>is</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>hidden,<sp/>due<sp/>to<sp/>possible<sp/>bugs/design-oddities<sp/>in<sp/>Windows<sp/>itself.*</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>include<sp/>these<sp/>files<sp/>for<sp/>C/C++<sp/>projects:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>right-click<sp/>on<sp/>your<sp/>project<sp/>(again,<sp/>in<sp/>Visual<sp/>C++&apos;s<sp/>Solution<sp/>Explorer),<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>navigate<sp/>to<sp/>&quot;Add&quot;,<sp/>then<sp/>choose<sp/>&quot;Existing<sp/>Item...&quot;.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>navigate<sp/>to<sp/>the<sp/>directory<sp/>containing<sp/>SDL&apos;s<sp/>source<sp/>code,<sp/>then<sp/>into<sp/>its</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>subdirectory,<sp/>&apos;src/main/winrt/&apos;.<sp/><sp/>Select,<sp/>then<sp/>add,<sp/>the<sp/>following<sp/>files:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>`SDL_winrt_main_NonXAML.cpp`</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>`SDL2-WinRTResources.rc`</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>`SDL2-WinRTResource_BlankCursor.cur`</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>right-click<sp/>on<sp/>the<sp/>file<sp/>`SDL_winrt_main_NonXAML.cpp`<sp/>(as<sp/>listed<sp/>in<sp/>your</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>project),<sp/>then<sp/>click<sp/>on<sp/>&quot;Properties...&quot;.</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>in<sp/>the<sp/>drop-down<sp/>box<sp/>next<sp/>to<sp/>&quot;Configuration&quot;,<sp/>choose,<sp/>&quot;All<sp/>Configurations&quot;</highlight></codeline>
+<codeline><highlight class="normal">5.<sp/>in<sp/>the<sp/>drop-down<sp/>box<sp/>next<sp/>to<sp/>&quot;Platform&quot;,<sp/>choose,<sp/>&quot;All<sp/>Platforms&quot;</highlight></codeline>
+<codeline><highlight class="normal">6.<sp/>in<sp/>the<sp/>left-hand<sp/>list,<sp/>click<sp/>on<sp/>&quot;C/C++&quot;</highlight></codeline>
+<codeline><highlight class="normal">7.<sp/>change<sp/>the<sp/>setting<sp/>for<sp/>&quot;Consume<sp/>Windows<sp/>Runtime<sp/>Extension&quot;<sp/>to<sp/>&quot;Yes<sp/>(/ZW)&quot;.</highlight></codeline>
+<codeline><highlight class="normal">8.<sp/>click<sp/>the<sp/>OK<sp/>button.<sp/><sp/>This<sp/>will<sp/>close<sp/>the<sp/>dialog.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**NOTE:<sp/>C++/CX<sp/>compilation<sp/>is<sp/>currently<sp/>required<sp/>in<sp/>at<sp/>least<sp/>one<sp/>file<sp/>of<sp/>your<sp/></highlight></codeline>
+<codeline><highlight class="normal">app&apos;s<sp/>project.<sp/><sp/>This<sp/>is<sp/>to<sp/>make<sp/>sure<sp/>that<sp/>Visual<sp/>C++&apos;s<sp/>linker<sp/>builds<sp/>a<sp/>&apos;Windows<sp/></highlight></codeline>
+<codeline><highlight class="normal">Metadata&apos;<sp/>file<sp/>(.winmd)<sp/>for<sp/>your<sp/>app.<sp/><sp/>Not<sp/>doing<sp/>so<sp/>can<sp/>lead<sp/>to<sp/>build<sp/>errors.**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>non-C++<sp/>projects,<sp/>you<sp/>will<sp/>need<sp/>to<sp/>call<sp/>SDL_WinRTRunApp<sp/>from<sp/>your<sp/>language&apos;s</highlight></codeline>
+<codeline><highlight class="normal">main<sp/>function,<sp/>and<sp/>generate<sp/>SDL2-WinRTResources.res<sp/>manually<sp/>by<sp/>using<sp/>`rc`<sp/>via</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>Developer<sp/>Command<sp/>Prompt<sp/>and<sp/>including<sp/>it<sp/>as<sp/>a<sp/>&lt;Win32Resource&gt;<sp/>within<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">first<sp/>&lt;PropertyGroup&gt;<sp/>block<sp/>in<sp/>your<sp/>Visual<sp/>Studio<sp/>project<sp/>file.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>6.<sp/>Add<sp/>app<sp/>code<sp/>and<sp/>assets<sp/>###</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">At<sp/>this<sp/>point,<sp/>you<sp/>can<sp/>add<sp/>in<sp/>SDL-specific<sp/>source<sp/>code.<sp/><sp/>Be<sp/>sure<sp/>to<sp/>include<sp/>a<sp/></highlight></codeline>
+<codeline><highlight class="normal">C-style<sp/>main<sp/>function<sp/>(ie:<sp/>`int<sp/>main(int<sp/>argc,<sp/>char<sp/>*argv[])`).<sp/><sp/>From<sp/>there<sp/>you<sp/></highlight></codeline>
+<codeline><highlight class="normal">should<sp/>be<sp/>able<sp/>to<sp/>create<sp/>a<sp/>single<sp/>`SDL_Window`<sp/>(WinRT<sp/>apps<sp/>can<sp/>only<sp/>have<sp/>one<sp/></highlight></codeline>
+<codeline><highlight class="normal">window,<sp/>at<sp/>present),<sp/>as<sp/>well<sp/>as<sp/>an<sp/>`SDL_Renderer`.<sp/><sp/>Direct3D<sp/>will<sp/>be<sp/>used<sp/>to<sp/></highlight></codeline>
+<codeline><highlight class="normal">draw<sp/>content.<sp/><sp/>Events<sp/>are<sp/>received<sp/>via<sp/>SDL&apos;s<sp/>usual<sp/>event<sp/>functions<sp/></highlight></codeline>
+<codeline><highlight class="normal">(`SDL_PollEvent`,<sp/>etc.)<sp/><sp/>If<sp/>you<sp/>have<sp/>a<sp/>set<sp/>of<sp/>existing<sp/>source<sp/>files<sp/>and<sp/>assets,<sp/></highlight></codeline>
+<codeline><highlight class="normal">you<sp/>can<sp/>start<sp/>adding<sp/>them<sp/>to<sp/>the<sp/>project<sp/>now.<sp/><sp/>If<sp/>not,<sp/>or<sp/>if<sp/>you<sp/>would<sp/>like<sp/>to<sp/></highlight></codeline>
+<codeline><highlight class="normal">make<sp/>sure<sp/>that<sp/>you&apos;re<sp/>setup<sp/>correctly,<sp/>some<sp/>short<sp/>and<sp/>simple<sp/>sample<sp/>code<sp/>is<sp/></highlight></codeline>
+<codeline><highlight class="normal">provided<sp/>below.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>6.A.<sp/>...<sp/>when<sp/>creating<sp/>a<sp/>new<sp/>app<sp/>####</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>are<sp/>creating<sp/>a<sp/>new<sp/>app<sp/>(rather<sp/>than<sp/>porting<sp/>an<sp/>existing<sp/>SDL-based<sp/>app),<sp/></highlight></codeline>
+<codeline><highlight class="normal">or<sp/>if<sp/>you<sp/>would<sp/>just<sp/>like<sp/>a<sp/>simple<sp/>app<sp/>to<sp/>test<sp/>SDL/WinRT<sp/>with<sp/>before<sp/>trying<sp/>to<sp/></highlight></codeline>
+<codeline><highlight class="normal">get<sp/>existing<sp/>code<sp/>working,<sp/>some<sp/>working<sp/>SDL/WinRT<sp/>code<sp/>is<sp/>provided<sp/>below.<sp/><sp/>To<sp/></highlight></codeline>
+<codeline><highlight class="normal">set<sp/>this<sp/>up:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>right<sp/>click<sp/>on<sp/>your<sp/>app&apos;s<sp/>project</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>select<sp/>Add,<sp/>then<sp/>New<sp/>Item.<sp/><sp/>An<sp/>&quot;Add<sp/>New<sp/>Item&quot;<sp/>dialog<sp/>will<sp/>show<sp/>up.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>from<sp/>the<sp/>left-hand<sp/>list,<sp/>choose<sp/>&quot;Visual<sp/>C++&quot;</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>from<sp/>the<sp/>middle/main<sp/>list,<sp/>choose<sp/>&quot;C++<sp/>File<sp/>(.cpp)&quot;</highlight></codeline>
+<codeline><highlight class="normal">5.<sp/>near<sp/>the<sp/>bottom<sp/>of<sp/>the<sp/>dialog,<sp/>next<sp/>to<sp/>&quot;Name:&quot;,<sp/>type<sp/>in<sp/>a<sp/>name<sp/>for<sp/>your<sp/></highlight></codeline>
+<codeline><highlight class="normal">source<sp/>file,<sp/>such<sp/>as,<sp/>&quot;main.cpp&quot;.</highlight></codeline>
+<codeline><highlight class="normal">6.<sp/>click<sp/>on<sp/>the<sp/>Add<sp/>button.<sp/><sp/>This<sp/>will<sp/>close<sp/>the<sp/>dialog,<sp/>add<sp/>the<sp/>new<sp/>file<sp/>to<sp/></highlight></codeline>
+<codeline><highlight class="normal">your<sp/>project,<sp/>and<sp/>open<sp/>the<sp/>file<sp/>in<sp/>Visual<sp/>C++&apos;s<sp/>text<sp/>editor.</highlight></codeline>
+<codeline><highlight class="normal">7.<sp/>Copy<sp/>and<sp/>paste<sp/>the<sp/>following<sp/>code<sp/>into<sp/>the<sp/>new<sp/>file,<sp/>then<sp/>save<sp/>it.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;SDL.h&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">int<sp/>main(int<sp/>argc,<sp/>char<sp/>**argv)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_DisplayMode<sp/>mode;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Window<sp/>*<sp/>window<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Renderer<sp/>*<sp/>renderer<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Event<sp/>evt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_bool<sp/>keep_going<sp/>=<sp/>SDL_TRUE;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(SDL_Init(SDL_INIT_VIDEO)<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>1;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>else<sp/>if<sp/>(SDL_GetCurrentDisplayMode(0,<sp/>&amp;mode)<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>1;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/>else<sp/>if<sp/>(SDL_CreateWindowAndRenderer(mode.w,<sp/>mode.h,<sp/>SDL_WINDOW_FULLSCREEN,<sp/>&amp;window,<sp/>&amp;renderer)<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>1;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while<sp/>(keep_going)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>while<sp/>(SDL_PollEvent(&amp;evt))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>((evt.type<sp/>==<sp/>SDL_KEYDOWN)<sp/>&amp;&amp;<sp/>(evt.key.keysym.sym<sp/>==<sp/>SDLK_ESCAPE))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>keep_going<sp/>=<sp/>SDL_FALSE;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_SetRenderDrawColor(renderer,<sp/>0,<sp/>255,<sp/>0,<sp/>255);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_RenderClear(renderer);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_RenderPresent(renderer);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Quit();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>6.B.<sp/>Adding<sp/>code<sp/>and<sp/>assets<sp/>####</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>have<sp/>existing<sp/>code<sp/>and<sp/>assets<sp/>that<sp/>you&apos;d<sp/>like<sp/>to<sp/>add,<sp/>you<sp/>should<sp/>be<sp/>able<sp/></highlight></codeline>
+<codeline><highlight class="normal">to<sp/>add<sp/>them<sp/>now.<sp/><sp/>The<sp/>process<sp/>for<sp/>adding<sp/>a<sp/>set<sp/>of<sp/>files<sp/>is<sp/>as<sp/>such.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>right<sp/>click<sp/>on<sp/>the<sp/>app&apos;s<sp/>project</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>select<sp/>Add,<sp/>then<sp/>click<sp/>on<sp/>&quot;New<sp/>Item...&quot;</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>open<sp/>any<sp/>source,<sp/>header,<sp/>or<sp/>asset<sp/>files<sp/>as<sp/>appropriate.<sp/><sp/>Support<sp/>for<sp/>C<sp/>and<sp/></highlight></codeline>
+<codeline><highlight class="normal">C++<sp/>is<sp/>available.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Do<sp/>note<sp/>that<sp/>WinRT<sp/>only<sp/>supports<sp/>a<sp/>subset<sp/>of<sp/>the<sp/>APIs<sp/>that<sp/>are<sp/>available<sp/>to<sp/></highlight></codeline>
+<codeline><highlight class="normal">Win32-based<sp/>apps.<sp/><sp/>Many<sp/>portions<sp/>of<sp/>the<sp/>Win32<sp/>API<sp/>and<sp/>the<sp/>C<sp/>runtime<sp/>are<sp/>not<sp/></highlight></codeline>
+<codeline><highlight class="normal">available.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A<sp/>list<sp/>of<sp/>unsupported<sp/>C<sp/>APIs<sp/>can<sp/>be<sp/>found<sp/>at<sp/></highlight></codeline>
+<codeline><highlight class="normal">&lt;http://msdn.microsoft.com/en-us/library/windows/apps/jj606124.aspx&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">General<sp/>information<sp/>on<sp/>using<sp/>the<sp/>C<sp/>runtime<sp/>in<sp/>WinRT<sp/>can<sp/>be<sp/>found<sp/>at<sp/></highlight></codeline>
+<codeline><highlight class="normal">&lt;https://msdn.microsoft.com/en-us/library/hh972425.aspx&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A<sp/>list<sp/>of<sp/>supported<sp/>Win32<sp/>APIs<sp/>for<sp/>WinRT<sp/>apps<sp/>can<sp/>be<sp/>found<sp/>at<sp/></highlight></codeline>
+<codeline><highlight class="normal">&lt;http://msdn.microsoft.com/en-us/library/windows/apps/br205757.aspx&gt;.<sp/><sp/>To<sp/>note,<sp/></highlight></codeline>
+<codeline><highlight class="normal">the<sp/>list<sp/>of<sp/>supported<sp/>Win32<sp/>APIs<sp/>for<sp/>Windows<sp/>Phone<sp/>8.0<sp/>is<sp/>different.<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">That<sp/>list<sp/>can<sp/>be<sp/>found<sp/>at<sp/></highlight></codeline>
+<codeline><highlight class="normal">&lt;http://msdn.microsoft.com/en-us/library/windowsphone/develop/jj662956(v=vs.105).aspx&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>7.<sp/>Build<sp/>and<sp/>run<sp/>your<sp/>app<sp/>###</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Your<sp/>app<sp/>project<sp/>should<sp/>now<sp/>be<sp/>setup,<sp/>and<sp/>you<sp/>should<sp/>be<sp/>ready<sp/>to<sp/>build<sp/>your<sp/>app.<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">To<sp/>run<sp/>it<sp/>on<sp/>the<sp/>local<sp/>machine,<sp/>open<sp/>the<sp/>Debug<sp/>menu<sp/>and<sp/>choose<sp/>&quot;Start<sp/></highlight></codeline>
+<codeline><highlight class="normal">Debugging&quot;.<sp/><sp/>This<sp/>will<sp/>build<sp/>your<sp/>app,<sp/>then<sp/>run<sp/>your<sp/>app<sp/>full-screen.<sp/><sp/>To<sp/>switch<sp/></highlight></codeline>
+<codeline><highlight class="normal">out<sp/>of<sp/>your<sp/>app,<sp/>press<sp/>the<sp/>Windows<sp/>key.<sp/><sp/>Alternatively,<sp/>you<sp/>can<sp/>choose<sp/>to<sp/>run<sp/></highlight></codeline>
+<codeline><highlight class="normal">your<sp/>app<sp/>in<sp/>a<sp/>window.<sp/><sp/>To<sp/>do<sp/>this,<sp/>before<sp/>building<sp/>and<sp/>running<sp/>your<sp/>app,<sp/>find<sp/></highlight></codeline>
+<codeline><highlight class="normal">the<sp/>drop-down<sp/>menu<sp/>in<sp/>Visual<sp/>C++&apos;s<sp/>toolbar<sp/>that<sp/>says,<sp/>&quot;Local<sp/>Machine&quot;.<sp/><sp/>Expand<sp/></highlight></codeline>
+<codeline><highlight class="normal">this<sp/>by<sp/>clicking<sp/>on<sp/>the<sp/>arrow<sp/>on<sp/>the<sp/>right<sp/>side<sp/>of<sp/>the<sp/>list,<sp/>then<sp/>click<sp/>on<sp/></highlight></codeline>
+<codeline><highlight class="normal">Simulator.<sp/><sp/>Once<sp/>you<sp/>do<sp/>that,<sp/>any<sp/>time<sp/>you<sp/>build<sp/>and<sp/>run<sp/>the<sp/>app,<sp/>the<sp/>app<sp/>will<sp/></highlight></codeline>
+<codeline><highlight class="normal">launch<sp/>in<sp/>window,<sp/>rather<sp/>than<sp/>full-screen.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>7.A.<sp/>Running<sp/>apps<sp/>on<sp/>older,<sp/>ARM-based,<sp/>&quot;Windows<sp/>RT&quot;<sp/>devices<sp/>####</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**These<sp/>instructions<sp/>do<sp/>not<sp/>include<sp/>Windows<sp/>Phone,<sp/>despite<sp/>Windows<sp/>Phone</highlight></codeline>
+<codeline><highlight class="normal">typically<sp/>running<sp/>on<sp/>ARM<sp/>processors.**<sp/><sp/>They<sp/>are<sp/>specifically<sp/>for<sp/>devices</highlight></codeline>
+<codeline><highlight class="normal">that<sp/>use<sp/>the<sp/>&quot;Windows<sp/>RT&quot;<sp/>operating<sp/>system,<sp/>which<sp/>was<sp/>a<sp/>modified<sp/>version<sp/>of</highlight></codeline>
+<codeline><highlight class="normal">Windows<sp/>8.x<sp/>that<sp/>ran<sp/>primarily<sp/>on<sp/>ARM-based<sp/>tablet<sp/>computers.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>build<sp/>and<sp/>run<sp/>the<sp/>app<sp/>on<sp/>ARM-based,<sp/>&quot;Windows<sp/>RT&quot;<sp/>devices,<sp/>you&apos;ll<sp/>need<sp/>to:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>install<sp/>Microsoft&apos;s<sp/>&quot;Remote<sp/>Debugger&quot;<sp/>on<sp/>the<sp/>device.<sp/><sp/>Visual<sp/>C++<sp/>installs<sp/>and<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>debugs<sp/>ARM-based<sp/>apps<sp/>via<sp/>IP<sp/>networks.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>change<sp/>a<sp/>few<sp/>options<sp/>on<sp/>the<sp/>development<sp/>machine,<sp/>both<sp/>to<sp/>make<sp/>sure<sp/>it<sp/>builds<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>for<sp/>ARM<sp/>(rather<sp/>than<sp/>x86<sp/>or<sp/>x64),<sp/>and<sp/>to<sp/>make<sp/>sure<sp/>it<sp/>knows<sp/>how<sp/>to<sp/>find<sp/>the<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Windows<sp/>RT<sp/>device<sp/>(on<sp/>the<sp/>network).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Microsoft&apos;s<sp/>Remote<sp/>Debugger<sp/>can<sp/>be<sp/>found<sp/>at<sp/></highlight></codeline>
+<codeline><highlight class="normal">&lt;https://msdn.microsoft.com/en-us/library/hh441469.aspx&gt;.<sp/><sp/>Please<sp/>note<sp/></highlight></codeline>
+<codeline><highlight class="normal">that<sp/>separate<sp/>versions<sp/>of<sp/>this<sp/>debugger<sp/>exist<sp/>for<sp/>different<sp/>versions<sp/>of<sp/>Visual<sp/></highlight></codeline>
+<codeline><highlight class="normal">C++,<sp/>one<sp/>each<sp/>for<sp/>MSVC<sp/>2015,<sp/>2013,<sp/>and<sp/>2012.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>setup<sp/>Visual<sp/>C++<sp/>to<sp/>launch<sp/>your<sp/>app<sp/>on<sp/>an<sp/>ARM<sp/>device:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>make<sp/>sure<sp/>the<sp/>Remote<sp/>Debugger<sp/>is<sp/>running<sp/>on<sp/>your<sp/>ARM<sp/>device,<sp/>and<sp/>that<sp/>it&apos;s<sp/>on<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>the<sp/>same<sp/>IP<sp/>network<sp/>as<sp/>your<sp/>development<sp/>machine.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>from<sp/>Visual<sp/>C++&apos;s<sp/>toolbar,<sp/>find<sp/>a<sp/>drop-down<sp/>menu<sp/>that<sp/>says,<sp/>&quot;Win32&quot;.<sp/><sp/>Click<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>it,<sp/>then<sp/>change<sp/>the<sp/>value<sp/>to<sp/>&quot;ARM&quot;.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>make<sp/>sure<sp/>Visual<sp/>C++<sp/>knows<sp/>the<sp/>hostname<sp/>or<sp/>IP<sp/>address<sp/>of<sp/>the<sp/>ARM<sp/>device.<sp/><sp/>To<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>do<sp/>this:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>1.<sp/>open<sp/>the<sp/>app<sp/>project&apos;s<sp/>properties</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>2.<sp/>select<sp/>&quot;Debugging&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>3.<sp/>next<sp/>to<sp/>&quot;Machine<sp/>Name&quot;,<sp/>enter<sp/>the<sp/>hostname<sp/>or<sp/>IP<sp/>address<sp/>of<sp/>the<sp/>ARM<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>device</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>4.<sp/>if,<sp/>and<sp/>only<sp/>if,<sp/>you&apos;ve<sp/>turned<sp/>off<sp/>authentication<sp/>in<sp/>the<sp/>Remote<sp/>Debugger,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>then<sp/>change<sp/>the<sp/>setting<sp/>for<sp/>&quot;Require<sp/>Authentication&quot;<sp/>to<sp/>No</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>5.<sp/>click<sp/>&quot;OK&quot;</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>build<sp/>and<sp/>run<sp/>the<sp/>app<sp/>(from<sp/>Visual<sp/>C++).<sp/><sp/>The<sp/>first<sp/>time<sp/>you<sp/>do<sp/>this,<sp/>a<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>prompt<sp/>will<sp/>show<sp/>up<sp/>on<sp/>the<sp/>ARM<sp/>device,<sp/>asking<sp/>for<sp/>a<sp/>Microsoft<sp/>Account.<sp/><sp/>You<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>do,<sp/>unfortunately,<sp/>need<sp/>to<sp/>log<sp/>in<sp/>here,<sp/>and<sp/>will<sp/>need<sp/>to<sp/>follow<sp/>the<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>subsequent<sp/>registration<sp/>steps<sp/>in<sp/>order<sp/>to<sp/>launch<sp/>the<sp/>app.<sp/><sp/>After<sp/>you<sp/>do<sp/>so,<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>if<sp/>the<sp/>app<sp/>didn&apos;t<sp/>already<sp/>launch,<sp/>try<sp/>relaunching<sp/>it<sp/>again<sp/>from<sp/>within<sp/>Visual<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>C++.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Troubleshooting</highlight></codeline>
+<codeline><highlight class="normal">---------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Build<sp/>fails<sp/>with<sp/>message,<sp/>&quot;error<sp/>LNK2038:<sp/>mismatch<sp/>detected<sp/>for<sp/>&apos;vccorlib_lib_should_be_specified_before_msvcrt_lib_to_linker&apos;&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Try<sp/>adding<sp/>the<sp/>following<sp/>to<sp/>your<sp/>linker<sp/>flags.<sp/><sp/>In<sp/>MSVC,<sp/>this<sp/>can<sp/>be<sp/>done<sp/>by</highlight></codeline>
+<codeline><highlight class="normal">right-clicking<sp/>on<sp/>the<sp/>app<sp/>project,<sp/>navigating<sp/>to<sp/>Configuration<sp/>Properties<sp/>-&gt;</highlight></codeline>
+<codeline><highlight class="normal">Linker<sp/>-&gt;<sp/>Command<sp/>Line,<sp/>then<sp/>adding<sp/>them<sp/>to<sp/>the<sp/>Additional<sp/>Options</highlight></codeline>
+<codeline><highlight class="normal">section.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>For<sp/>Release<sp/>builds<sp/>/<sp/>MSVC-Configurations,<sp/>add:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/nodefaultlib:vccorlib<sp/>/nodefaultlib:msvcrt<sp/>vccorlib.lib<sp/>msvcrt.lib</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>For<sp/>Debug<sp/>builds<sp/>/<sp/>MSVC-Configurations,<sp/>add:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/nodefaultlib:vccorlibd<sp/>/nodefaultlib:msvcrtd<sp/>vccorlibd.lib<sp/>msvcrtd.lib</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Mouse-motion<sp/>events<sp/>fail<sp/>to<sp/>get<sp/>sent,<sp/>or<sp/>SDL_GetMouseState()<sp/>fails<sp/>to<sp/>return<sp/>updated<sp/>values</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>may<sp/>be<sp/>caused<sp/>by<sp/>a<sp/>bug<sp/>in<sp/>Windows<sp/>itself,<sp/>whereby<sp/>hiding<sp/>the<sp/>mouse</highlight></codeline>
+<codeline><highlight class="normal">cursor<sp/>can<sp/>cause<sp/>mouse-position<sp/>reporting<sp/>to<sp/>fail.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SDL<sp/>provides<sp/>a<sp/>workaround<sp/>for<sp/>this,<sp/>but<sp/>it<sp/>requires<sp/>that<sp/>an<sp/>app<sp/>links<sp/>to<sp/>a</highlight></codeline>
+<codeline><highlight class="normal">set<sp/>of<sp/>Win32-style<sp/>cursor<sp/>image-resource<sp/>files.<sp/><sp/>A<sp/>copy<sp/>of<sp/>suitable<sp/>resource</highlight></codeline>
+<codeline><highlight class="normal">files<sp/>can<sp/>be<sp/>found<sp/>in<sp/>`src/main/winrt/`.<sp/><sp/>Adding<sp/>them<sp/>to<sp/>an<sp/>app&apos;s<sp/>Visual<sp/>C++</highlight></codeline>
+<codeline><highlight class="normal">project<sp/>file<sp/>should<sp/>be<sp/>sufficient<sp/>to<sp/>get<sp/>the<sp/>app<sp/>to<sp/>use<sp/>them.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>SDL&apos;s<sp/>Visual<sp/>Studio<sp/>project<sp/>file<sp/>fails<sp/>to<sp/>open,<sp/>with<sp/>message,<sp/>&quot;The<sp/>system<sp/>can&apos;t<sp/>find<sp/>the<sp/>file<sp/>specified.&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>can<sp/>be<sp/>caused<sp/>for<sp/>any<sp/>one<sp/>of<sp/>a<sp/>few<sp/>reasons,<sp/>which<sp/>Visual<sp/>Studio<sp/>can</highlight></codeline>
+<codeline><highlight class="normal">report,<sp/>but<sp/>won&apos;t<sp/>always<sp/>do<sp/>so<sp/>in<sp/>an<sp/>up-front<sp/>manner.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>help<sp/>determine<sp/>why<sp/>this<sp/>error<sp/>comes<sp/>up:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>open<sp/>a<sp/>copy<sp/>of<sp/>Visual<sp/>Studio<sp/>without<sp/>opening<sp/>a<sp/>project<sp/>file.<sp/><sp/>This<sp/>can<sp/>be</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>accomplished<sp/>via<sp/>Windows&apos;<sp/>Start<sp/>Menu,<sp/>among<sp/>other<sp/>means.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>show<sp/>Visual<sp/>Studio&apos;s<sp/>Output<sp/>window.<sp/><sp/>This<sp/>can<sp/>be<sp/>done<sp/>by<sp/>going<sp/>to<sp/>VS&apos;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>menu<sp/>bar,<sp/>then<sp/>to<sp/>View,<sp/>and<sp/>then<sp/>to<sp/>Output.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>try<sp/>opening<sp/>the<sp/>SDL<sp/>project<sp/>file<sp/>directly<sp/>by<sp/>going<sp/>to<sp/>VS&apos;<sp/>menu<sp/>bar,<sp/>then</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>to<sp/>File,<sp/>then<sp/>to<sp/>Open,<sp/>then<sp/>to<sp/>Project/Solution.<sp/><sp/>When<sp/>a<sp/>File-Open<sp/>dialog</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>appears,<sp/>open<sp/>the<sp/>SDL<sp/>project<sp/>(such<sp/>as<sp/>the<sp/>one<sp/>in<sp/>SDL&apos;s<sp/>source<sp/>code,<sp/>in<sp/>its</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>directory,<sp/>VisualC-WinRT/UWP_VS2015/).</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>after<sp/>attempting<sp/>to<sp/>open<sp/>SDL&apos;s<sp/>Visual<sp/>Studio<sp/>project<sp/>file,<sp/>additional<sp/>error</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>information<sp/>will<sp/>be<sp/>output<sp/>to<sp/>the<sp/>Output<sp/>window.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>Visual<sp/>Studio<sp/>reports<sp/>(via<sp/>its<sp/>Output<sp/>window)<sp/>that<sp/>the<sp/>project:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&quot;could<sp/>not<sp/>be<sp/>loaded<sp/>because<sp/>it&apos;s<sp/>missing<sp/>install<sp/>components.<sp/>To<sp/>fix<sp/>this<sp/>launch<sp/>Visual<sp/>Studio<sp/>setup<sp/>with<sp/>the<sp/>following<sp/>selections:</highlight></codeline>
+<codeline><highlight class="normal">Microsoft.VisualStudio.ComponentGroup.UWP.VC&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">...<sp/>then<sp/>you<sp/>will<sp/>need<sp/>to<sp/>re-launch<sp/>Visual<sp/>Studio&apos;s<sp/>installer,<sp/>and<sp/>make<sp/>sure<sp/>that</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>workflow<sp/>for<sp/>&quot;Universal<sp/>Windows<sp/>Platform<sp/>development&quot;<sp/>is<sp/>checked,<sp/>and<sp/>that<sp/>its</highlight></codeline>
+<codeline><highlight class="normal">optional<sp/>component,<sp/>&quot;C++<sp/>Universal<sp/>Windows<sp/>Platform<sp/>tools&quot;<sp/>is<sp/>also<sp/>checked.<sp/><sp/>While</highlight></codeline>
+<codeline><highlight class="normal">you<sp/>are<sp/>there,<sp/>if<sp/>you<sp/>are<sp/>planning<sp/>on<sp/>targeting<sp/>UWP<sp/>/<sp/>Windows<sp/>10,<sp/>also<sp/>make<sp/>sure</highlight></codeline>
+<codeline><highlight class="normal">that<sp/>you<sp/>check<sp/>the<sp/>optional<sp/>component,<sp/>&quot;Windows<sp/>10<sp/>SDK<sp/>(10.0.10240.0)&quot;.<sp/><sp/>After</highlight></codeline>
+<codeline><highlight class="normal">making<sp/>sure<sp/>these<sp/>items<sp/>are<sp/>checked<sp/>as-appropriate,<sp/>install<sp/>them.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Once<sp/>you<sp/>install<sp/>these<sp/>components,<sp/>try<sp/>re-launching<sp/>Visual<sp/>Studio,<sp/>and<sp/>re-opening</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>SDL<sp/>project<sp/>file.<sp/><sp/>If<sp/>you<sp/>still<sp/>get<sp/>the<sp/>error<sp/>dialog,<sp/>try<sp/>using<sp/>the<sp/>Output</highlight></codeline>
+<codeline><highlight class="normal">window,<sp/>again,<sp/>seeing<sp/>what<sp/>Visual<sp/>Studio<sp/>says<sp/>about<sp/>it.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Game<sp/>controllers<sp/>/<sp/>joysticks<sp/>aren&apos;t<sp/>working!</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Windows<sp/>only<sp/>permits<sp/>certain<sp/>game<sp/>controllers<sp/>and<sp/>joysticks<sp/>to<sp/>work<sp/>within</highlight></codeline>
+<codeline><highlight class="normal">WinRT<sp/>/<sp/>UWP<sp/>apps.<sp/><sp/>Even<sp/>if<sp/>a<sp/>game<sp/>controller<sp/>or<sp/>joystick<sp/>works<sp/>in<sp/>a<sp/>Win32</highlight></codeline>
+<codeline><highlight class="normal">app,<sp/>that<sp/>device<sp/>is<sp/>not<sp/>guaranteed<sp/>to<sp/>work<sp/>inside<sp/>a<sp/>WinRT<sp/>/<sp/>UWP<sp/>app.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">According<sp/>to<sp/>Microsoft,<sp/>&quot;Xbox<sp/>compatible<sp/>controllers&quot;<sp/>should<sp/>work<sp/>inside</highlight></codeline>
+<codeline><highlight class="normal">UWP<sp/>apps,<sp/>potentially<sp/>with<sp/>more<sp/>working<sp/>in<sp/>the<sp/>future.<sp/><sp/>This<sp/>includes,<sp/>but</highlight></codeline>
+<codeline><highlight class="normal">may<sp/>not<sp/>be<sp/>limited<sp/>to,<sp/>Microsoft-made<sp/>Xbox<sp/>controllers<sp/>and<sp/>USB<sp/>adapters.</highlight></codeline>
+<codeline><highlight class="normal">(Source:<sp/>https://social.msdn.microsoft.com/Forums/en-US/9064838b-e8c3-4c18-8a83-19bf0dfe150d/xinput-fails-to-detect-game-controllers?forum=wpdevelop)</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/docs/README-winrt.md"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,47 @@
+.TH "RT::Texture::Flat" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RT::Texture::Flat
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <flat\&.h>\fP
+.PP
+Inherits \fBRT::Texture::TextureBase\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFlat\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~Flat\fP () override"
+.br
+.ti -1c
+.RI "virtual \fBqbVector\fP< double > \fBGetColor\fP (const \fBqbVector\fP< double > &uvCoords) override"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBSetColor\fP (const \fBqbVector\fP< double > &inputColor)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RT::Texture::Flat::Flat ()"
+
+.SS "RT::Texture::Flat::~Flat ()\fC [override]\fP, \fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBqbVector\fP< double > RT::Texture::Flat::GetColor (const \fBqbVector\fP< double > & uvCoords)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBRT::Texture::TextureBase\fP\&.
+.SS "\fBvoid\fP RT::Texture::Flat::SetColor (const \fBqbVector\fP< double > & inputColor)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

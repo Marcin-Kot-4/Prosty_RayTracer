@@ -1,0 +1,485 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e-android_8md" kind="file" language="Markdown">
+    <compoundname>README-android.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">Android</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Matt<sp/>Styles<sp/>wrote<sp/>a<sp/>tutorial<sp/>on<sp/>building<sp/>SDL<sp/>for<sp/>Android<sp/>with<sp/>Visual<sp/>Studio:</highlight></codeline>
+<codeline><highlight class="normal">http://trederia.blogspot.de/2017/03/building-sdl2-for-android-with-visual.html</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>rest<sp/>of<sp/>this<sp/>README<sp/>covers<sp/>the<sp/>Android<sp/>gradle<sp/>style<sp/>build<sp/>process.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>are<sp/>using<sp/>the<sp/>older<sp/>ant<sp/>build<sp/>process,<sp/>it<sp/>is<sp/>no<sp/>longer<sp/>officially</highlight></codeline>
+<codeline><highlight class="normal">supported,<sp/>but<sp/>you<sp/>can<sp/>use<sp/>the<sp/>&quot;android-project-ant&quot;<sp/>directory<sp/>as<sp/>a<sp/>template.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Requirements</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Android<sp/>SDK<sp/>(version<sp/>26<sp/>or<sp/>later)</highlight></codeline>
+<codeline><highlight class="normal">https://developer.android.com/sdk/index.html</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Android<sp/>NDK<sp/>r15c<sp/>or<sp/>later</highlight></codeline>
+<codeline><highlight class="normal">https://developer.android.com/tools/sdk/ndk/index.html</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Minimum<sp/>API<sp/>level<sp/>supported<sp/>by<sp/>SDL:<sp/>16<sp/>(Android<sp/>4.1)</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">How<sp/>the<sp/>port<sp/>works</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Android<sp/>applications<sp/>are<sp/>Java-based,<sp/>optionally<sp/>with<sp/>parts<sp/>written<sp/>in<sp/>C</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>As<sp/>SDL<sp/>apps<sp/>are<sp/>C-based,<sp/>we<sp/>use<sp/>a<sp/>small<sp/>Java<sp/>shim<sp/>that<sp/>uses<sp/>JNI<sp/>to<sp/>talk<sp/>to<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>the<sp/>SDL<sp/>library</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>This<sp/>means<sp/>that<sp/>your<sp/>application<sp/>C<sp/>code<sp/>must<sp/>be<sp/>placed<sp/>inside<sp/>an<sp/>Android<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Java<sp/>project,<sp/>along<sp/>with<sp/>some<sp/>C<sp/>support<sp/>code<sp/>that<sp/>communicates<sp/>with<sp/>Java</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>This<sp/>eventually<sp/>produces<sp/>a<sp/>standard<sp/>Android<sp/>.apk<sp/>package</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>Android<sp/>Java<sp/>code<sp/>implements<sp/>an<sp/>&quot;Activity&quot;<sp/>and<sp/>can<sp/>be<sp/>found<sp/>in:</highlight></codeline>
+<codeline><highlight class="normal">android-project/app/src/main/java/org/libsdl/app/SDLActivity.java</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>Java<sp/>code<sp/>loads<sp/>your<sp/>game<sp/>code,<sp/>the<sp/>SDL<sp/>shared<sp/>library,<sp/>and</highlight></codeline>
+<codeline><highlight class="normal">dispatches<sp/>to<sp/>native<sp/>functions<sp/>implemented<sp/>in<sp/>the<sp/>SDL<sp/>library:</highlight></codeline>
+<codeline><highlight class="normal">src/core/android/SDL_android.c</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Building<sp/>an<sp/>app</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>simple<sp/>projects<sp/>you<sp/>can<sp/>use<sp/>the<sp/>script<sp/>located<sp/>at<sp/>build-scripts/androidbuild.sh</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">There&apos;s<sp/>two<sp/>ways<sp/>of<sp/>using<sp/>it:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>androidbuild.sh<sp/>com.yourcompany.yourapp<sp/>&lt;<sp/>sources.list</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>androidbuild.sh<sp/>com.yourcompany.yourapp<sp/>source1.c<sp/>source2.c<sp/>...sourceN.c</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">sources.list<sp/>should<sp/>be<sp/>a<sp/>text<sp/>file<sp/>with<sp/>a<sp/>source<sp/>file<sp/>name<sp/>in<sp/>each<sp/>line</highlight></codeline>
+<codeline><highlight class="normal">Filenames<sp/>should<sp/>be<sp/>specified<sp/>relative<sp/>to<sp/>the<sp/>current<sp/>directory,<sp/>for<sp/>example<sp/>if</highlight></codeline>
+<codeline><highlight class="normal">you<sp/>are<sp/>in<sp/>the<sp/>build-scripts<sp/>directory<sp/>and<sp/>want<sp/>to<sp/>create<sp/>the<sp/>testgles.c<sp/>test,<sp/>you&apos;ll</highlight></codeline>
+<codeline><highlight class="normal">run:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>./androidbuild.sh<sp/>org.libsdl.testgles<sp/>../test/testgles.c</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">One<sp/>limitation<sp/>of<sp/>this<sp/>script<sp/>is<sp/>that<sp/>all<sp/>sources<sp/>provided<sp/>will<sp/>be<sp/>aggregated<sp/>into</highlight></codeline>
+<codeline><highlight class="normal">a<sp/>single<sp/>directory,<sp/>thus<sp/>all<sp/>your<sp/>source<sp/>files<sp/>should<sp/>have<sp/>a<sp/>unique<sp/>name.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Once<sp/>the<sp/>project<sp/>is<sp/>complete<sp/>the<sp/>script<sp/>will<sp/>tell<sp/>you<sp/>where<sp/>the<sp/>debug<sp/>APK<sp/>is<sp/>located.</highlight></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>want<sp/>to<sp/>create<sp/>a<sp/>signed<sp/>release<sp/>APK,<sp/>you<sp/>can<sp/>use<sp/>the<sp/>project<sp/>created<sp/>by<sp/>this</highlight></codeline>
+<codeline><highlight class="normal">utility<sp/>to<sp/>generate<sp/>it.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Finally,<sp/>a<sp/>word<sp/>of<sp/>caution:<sp/>re<sp/>running<sp/>androidbuild.sh<sp/>wipes<sp/>any<sp/>changes<sp/>you<sp/>may<sp/>have</highlight></codeline>
+<codeline><highlight class="normal">done<sp/>in<sp/>the<sp/>build<sp/>directory<sp/>for<sp/>the<sp/>app!</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>more<sp/>complex<sp/>projects,<sp/>follow<sp/>these<sp/>instructions:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Copy<sp/>the<sp/>android-project<sp/>directory<sp/>wherever<sp/>you<sp/>want<sp/>to<sp/>keep<sp/>your<sp/>projects</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>and<sp/>rename<sp/>it<sp/>to<sp/>the<sp/>name<sp/>of<sp/>your<sp/>project.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Move<sp/>or<sp/>symlink<sp/>this<sp/>SDL<sp/>directory<sp/>into<sp/>the<sp/>&quot;&lt;project&gt;/app/jni&quot;<sp/>directory</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Edit<sp/>&quot;&lt;project&gt;/app/jni/src/Android.mk&quot;<sp/>to<sp/>include<sp/>your<sp/>source<sp/>files</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">4a.<sp/>If<sp/>you<sp/>want<sp/>to<sp/>use<sp/>Android<sp/>Studio,<sp/>simply<sp/>open<sp/>your<sp/>&lt;project&gt;<sp/>directory<sp/>and<sp/>start<sp/>building.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">4b.<sp/>If<sp/>you<sp/>want<sp/>to<sp/>build<sp/>manually,<sp/>run<sp/>&apos;./gradlew<sp/>installDebug&apos;<sp/>in<sp/>the<sp/>project<sp/>directory.<sp/>This<sp/>compiles<sp/>the<sp/>.java,<sp/>creates<sp/>an<sp/>.apk<sp/>with<sp/>the<sp/>native<sp/>code<sp/>embedded,<sp/>and<sp/>installs<sp/>it<sp/>on<sp/>any<sp/>connected<sp/>Android<sp/>device</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>already<sp/>have<sp/>a<sp/>project<sp/>that<sp/>uses<sp/>CMake,<sp/>the<sp/>instructions<sp/>change<sp/>somewhat:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>Do<sp/>points<sp/>1<sp/>and<sp/>2<sp/>from<sp/>the<sp/>instruction<sp/>above.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Edit<sp/>&quot;&lt;project&gt;/app/build.gradle&quot;<sp/>to<sp/>comment<sp/>out<sp/>or<sp/>remove<sp/>sections<sp/>containing<sp/>ndk-build</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>and<sp/>uncomment<sp/>the<sp/>cmake<sp/>sections.<sp/>Add<sp/>arguments<sp/>to<sp/>the<sp/>CMake<sp/>invocation<sp/>as<sp/>needed.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Edit<sp/>&quot;&lt;project&gt;/app/jni/CMakeLists.txt&quot;<sp/>to<sp/>include<sp/>your<sp/>project<sp/>(it<sp/>defaults<sp/>to</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>adding<sp/>the<sp/>&quot;src&quot;<sp/>subdirectory).<sp/>Note<sp/>that<sp/>you&apos;ll<sp/>have<sp/>SDL2,<sp/>SDL2main<sp/>and<sp/>SDL2-static</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>as<sp/>targets<sp/>in<sp/>your<sp/>project,<sp/>so<sp/>you<sp/>should<sp/>have<sp/>&quot;target_link_libraries(yourgame<sp/>SDL2<sp/>SDL2main)&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>in<sp/>your<sp/>CMakeLists.txt<sp/>file.<sp/>Also<sp/>be<sp/>aware<sp/>that<sp/>you<sp/>should<sp/>use<sp/>add_library()<sp/>instead<sp/>of</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>add_executable()<sp/>for<sp/>the<sp/>target<sp/>containing<sp/>your<sp/>&quot;main&quot;<sp/>function.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>wish<sp/>to<sp/>use<sp/>Android<sp/>Studio,<sp/>you<sp/>can<sp/>skip<sp/>the<sp/>last<sp/>step.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">4.<sp/>Run<sp/>&apos;./gradlew<sp/>installDebug&apos;<sp/>or<sp/>&apos;./gradlew<sp/>installRelease&apos;<sp/>in<sp/>the<sp/>project<sp/>directory.<sp/>It<sp/>will<sp/>build<sp/>and<sp/>install<sp/>your<sp/>.apk<sp/>on<sp/>any</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>connected<sp/>Android<sp/>device</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Here&apos;s<sp/>an<sp/>explanation<sp/>of<sp/>the<sp/>files<sp/>in<sp/>the<sp/>Android<sp/>project,<sp/>so<sp/>you<sp/>can<sp/>customize<sp/>them:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>android-project/app</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>build.gradle<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>build<sp/>info<sp/>including<sp/>the<sp/>application<sp/>version<sp/>and<sp/>SDK</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>src/main/AndroidManifest.xml<sp/><sp/><sp/><sp/>-<sp/>package<sp/>manifest.<sp/>Among<sp/>others,<sp/>it<sp/>contains<sp/>the<sp/>class<sp/>name<sp/>of<sp/>the<sp/>main<sp/>Activity<sp/>and<sp/>the<sp/>package<sp/>name<sp/>of<sp/>the<sp/>application.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jni/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>directory<sp/>holding<sp/>native<sp/>code</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jni/Application.mk<sp/><sp/>-<sp/>Application<sp/>JNI<sp/>settings,<sp/>including<sp/>target<sp/>platform<sp/>and<sp/>STL<sp/>library</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jni/Android.mk<sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>Android<sp/>makefile<sp/>that<sp/>can<sp/>call<sp/>recursively<sp/>the<sp/>Android.mk<sp/>files<sp/>in<sp/>all<sp/>subdirectories</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jni/CMakeLists.txt<sp/><sp/>-<sp/>Top-level<sp/>CMake<sp/>project<sp/>that<sp/>adds<sp/>SDL<sp/>as<sp/>a<sp/>subproject</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jni/SDL/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>(symlink<sp/>to)<sp/>directory<sp/>holding<sp/>the<sp/>SDL<sp/>library<sp/>files</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jni/SDL/Android.mk<sp/><sp/>-<sp/>Android<sp/>makefile<sp/>for<sp/>creating<sp/>the<sp/>SDL<sp/>shared<sp/>library</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jni/src/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>directory<sp/>holding<sp/>your<sp/>C/C++<sp/>source</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jni/src/Android.mk<sp/><sp/>-<sp/>Android<sp/>makefile<sp/>that<sp/>you<sp/>should<sp/>customize<sp/>to<sp/>include<sp/>your<sp/>source<sp/>code<sp/>and<sp/>any<sp/>library<sp/>references</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jni/src/CMakeLists.txt<sp/><sp/>-<sp/>CMake<sp/>file<sp/>that<sp/>you<sp/>may<sp/>customize<sp/>to<sp/>include<sp/>your<sp/>source<sp/>code<sp/>and<sp/>any<sp/>library<sp/>references</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>src/main/assets/<sp/><sp/><sp/><sp/>-<sp/>directory<sp/>holding<sp/>asset<sp/>files<sp/>for<sp/>your<sp/>application</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>src/main/res/<sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>directory<sp/>holding<sp/>resources<sp/>for<sp/>your<sp/>application</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>src/main/res/mipmap-*<sp/><sp/><sp/>-<sp/>directories<sp/>holding<sp/>icons<sp/>for<sp/>different<sp/>phone<sp/>hardware</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>src/main/res/values/strings.xml<sp/>-<sp/>strings<sp/>used<sp/>in<sp/>your<sp/>application,<sp/>including<sp/>the<sp/>application<sp/>name</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>src/main/java/org/libsdl/app/SDLActivity.java<sp/>-<sp/>the<sp/>Java<sp/>class<sp/>handling<sp/>the<sp/>initialization<sp/>and<sp/>binding<sp/>to<sp/>SDL.<sp/>Be<sp/>very<sp/>careful<sp/>changing<sp/>this,<sp/>as<sp/>the<sp/>SDL<sp/>library<sp/>relies<sp/>on<sp/>this<sp/>implementation.<sp/>You<sp/>should<sp/>instead<sp/>subclass<sp/>this<sp/>for<sp/>your<sp/>application.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Customizing<sp/>your<sp/>application<sp/>name</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>customize<sp/>your<sp/>application<sp/>name,<sp/>edit<sp/>AndroidManifest.xml<sp/>and<sp/>replace</highlight></codeline>
+<codeline><highlight class="normal">&quot;org.libsdl.app&quot;<sp/>with<sp/>an<sp/>identifier<sp/>for<sp/>your<sp/>product<sp/>package.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Then<sp/>create<sp/>a<sp/>Java<sp/>class<sp/>extending<sp/>SDLActivity<sp/>and<sp/>place<sp/>it<sp/>in<sp/>a<sp/>directory</highlight></codeline>
+<codeline><highlight class="normal">under<sp/>src<sp/>matching<sp/>your<sp/>package,<sp/>e.g.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>src/com/gamemaker/game/MyGame.java</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Here&apos;s<sp/>an<sp/>example<sp/>of<sp/>a<sp/>minimal<sp/>class<sp/>file:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>---<sp/>MyGame.java<sp/>--------------------------</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>package<sp/>com.gamemaker.game;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>import<sp/>org.libsdl.app.SDLActivity;<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*<sp/>A<sp/>sample<sp/>wrapper<sp/>class<sp/>that<sp/>just<sp/>calls<sp/>SDLActivity<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*/<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>public<sp/>class<sp/>MyGame<sp/>extends<sp/>SDLActivity<sp/>{<sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>------------------------------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Then<sp/>replace<sp/>&quot;SDLActivity&quot;<sp/>in<sp/>AndroidManifest.xml<sp/>with<sp/>the<sp/>name<sp/>of<sp/>your</highlight></codeline>
+<codeline><highlight class="normal">class,<sp/>.e.g.<sp/>&quot;MyGame&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Customizing<sp/>your<sp/>application<sp/>icon</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Conceptually<sp/>changing<sp/>your<sp/>icon<sp/>is<sp/>just<sp/>replacing<sp/>the<sp/>&quot;ic_launcher.png&quot;<sp/>files<sp/>in</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>drawable<sp/>directories<sp/>under<sp/>the<sp/>res<sp/>directory.<sp/>There<sp/>are<sp/>several<sp/>directories</highlight></codeline>
+<codeline><highlight class="normal">for<sp/>different<sp/>screen<sp/>sizes.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Loading<sp/>assets</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Any<sp/>files<sp/>you<sp/>put<sp/>in<sp/>the<sp/>&quot;app/src/main/assets&quot;<sp/>directory<sp/>of<sp/>your<sp/>project</highlight></codeline>
+<codeline><highlight class="normal">directory<sp/>will<sp/>get<sp/>bundled<sp/>into<sp/>the<sp/>application<sp/>package<sp/>and<sp/>you<sp/>can<sp/>load</highlight></codeline>
+<codeline><highlight class="normal">them<sp/>using<sp/>the<sp/>standard<sp/>functions<sp/>in<sp/>SDL_rwops.h.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">There<sp/>are<sp/>also<sp/>a<sp/>few<sp/>Android<sp/>specific<sp/>functions<sp/>that<sp/>allow<sp/>you<sp/>to<sp/>get<sp/>other</highlight></codeline>
+<codeline><highlight class="normal">useful<sp/>paths<sp/>for<sp/>saving<sp/>and<sp/>loading<sp/>data:</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>SDL_AndroidGetInternalStoragePath()</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>SDL_AndroidGetExternalStorageState()</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>SDL_AndroidGetExternalStoragePath()</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">See<sp/>SDL_system.h<sp/>for<sp/>more<sp/>details<sp/>on<sp/>these<sp/>functions.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>asset<sp/>packaging<sp/>system<sp/>will,<sp/>by<sp/>default,<sp/>compress<sp/>certain<sp/>file<sp/>extensions.</highlight></codeline>
+<codeline><highlight class="normal">SDL<sp/>includes<sp/>two<sp/>asset<sp/>file<sp/>access<sp/>mechanisms,<sp/>the<sp/>preferred<sp/>one<sp/>is<sp/>the<sp/>so</highlight></codeline>
+<codeline><highlight class="normal">called<sp/>&quot;File<sp/>Descriptor&quot;<sp/>method,<sp/>which<sp/>is<sp/>faster<sp/>and<sp/>doesn&apos;t<sp/>involve<sp/>the<sp/>Dalvik</highlight></codeline>
+<codeline><highlight class="normal">GC,<sp/>but<sp/>given<sp/>this<sp/>method<sp/>does<sp/>not<sp/>work<sp/>on<sp/>compressed<sp/>assets,<sp/>there<sp/>is<sp/>also<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">&quot;Input<sp/>Stream&quot;<sp/>method,<sp/>which<sp/>is<sp/>automatically<sp/>used<sp/>as<sp/>a<sp/>fall<sp/>back<sp/>by<sp/>SDL.<sp/>You</highlight></codeline>
+<codeline><highlight class="normal">may<sp/>want<sp/>to<sp/>keep<sp/>this<sp/>fact<sp/>in<sp/>mind<sp/>when<sp/>building<sp/>your<sp/>APK,<sp/>specially<sp/>when<sp/>large</highlight></codeline>
+<codeline><highlight class="normal">files<sp/>are<sp/>involved.</highlight></codeline>
+<codeline><highlight class="normal">For<sp/>more<sp/>information<sp/>on<sp/>which<sp/>extensions<sp/>get<sp/>compressed<sp/>by<sp/>default<sp/>and<sp/>how<sp/>to</highlight></codeline>
+<codeline><highlight class="normal">disable<sp/>this<sp/>behaviour,<sp/>see<sp/>for<sp/>example:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">http://ponystyle.com/blog/2010/03/26/dealing-with-asset-compression-in-android-apps/</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Pause<sp/>/<sp/>Resume<sp/>behaviour</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>SDL_HINT_ANDROID_BLOCK_ON_PAUSE<sp/>hint<sp/>is<sp/>set<sp/>(the<sp/>default),</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>event<sp/>loop<sp/>will<sp/>block<sp/>itself<sp/>when<sp/>the<sp/>app<sp/>is<sp/>paused<sp/>(ie,<sp/>when<sp/>the<sp/>user</highlight></codeline>
+<codeline><highlight class="normal">returns<sp/>to<sp/>the<sp/>main<sp/>Android<sp/>dashboard).<sp/>Blocking<sp/>is<sp/>better<sp/>in<sp/>terms<sp/>of<sp/>battery</highlight></codeline>
+<codeline><highlight class="normal">use,<sp/>and<sp/>it<sp/>allows<sp/>your<sp/>app<sp/>to<sp/>spring<sp/>back<sp/>to<sp/>life<sp/>instantaneously<sp/>after<sp/>resume</highlight></codeline>
+<codeline><highlight class="normal">(versus<sp/>polling<sp/>for<sp/>a<sp/>resume<sp/>message).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Upon<sp/>resume,<sp/>SDL<sp/>will<sp/>attempt<sp/>to<sp/>restore<sp/>the<sp/>GL<sp/>context<sp/>automatically.</highlight></codeline>
+<codeline><highlight class="normal">In<sp/>modern<sp/>devices<sp/>(Android<sp/>3.0<sp/>and<sp/>up)<sp/>this<sp/>will<sp/>most<sp/>likely<sp/>succeed<sp/>and<sp/>your</highlight></codeline>
+<codeline><highlight class="normal">app<sp/>can<sp/>continue<sp/>to<sp/>operate<sp/>as<sp/>it<sp/>was.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">However,<sp/>there&apos;s<sp/>a<sp/>chance<sp/>(on<sp/>older<sp/>hardware,<sp/>or<sp/>on<sp/>systems<sp/>under<sp/>heavy<sp/>load),</highlight></codeline>
+<codeline><highlight class="normal">where<sp/>the<sp/>GL<sp/>context<sp/>can<sp/>not<sp/>be<sp/>restored.<sp/>In<sp/>that<sp/>case<sp/>you<sp/>have<sp/>to<sp/>listen<sp/>for</highlight></codeline>
+<codeline><highlight class="normal">a<sp/>specific<sp/>message<sp/>(SDL_RENDER_DEVICE_RESET)<sp/>and<sp/>restore<sp/>your<sp/>textures</highlight></codeline>
+<codeline><highlight class="normal">manually<sp/>or<sp/>quit<sp/>the<sp/>app.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>should<sp/>not<sp/>use<sp/>the<sp/>SDL<sp/>renderer<sp/>API<sp/>while<sp/>the<sp/>app<sp/>going<sp/>in<sp/>background:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>SDL_APP_WILLENTERBACKGROUND:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>after<sp/>you<sp/>read<sp/>this<sp/>message,<sp/>GL<sp/>context<sp/>gets<sp/>backed-up<sp/>and<sp/>you<sp/>should<sp/>not</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>use<sp/>the<sp/>SDL<sp/>renderer<sp/>API.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>SDL_APP_DIDENTERFOREGROUND:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>GL<sp/>context<sp/>is<sp/>restored,<sp/>and<sp/>the<sp/>SDL<sp/>renderer<sp/>API<sp/>is<sp/>available<sp/>(unless<sp/>you</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>receive<sp/>SDL_RENDER_DEVICE_RESET).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Mouse<sp/>/<sp/>Touch<sp/>events</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>some<sp/>case,<sp/>SDL<sp/>generates<sp/>synthetic<sp/>mouse<sp/>(resp.<sp/>touch)<sp/>events<sp/>for<sp/>touch</highlight></codeline>
+<codeline><highlight class="normal">(resp.<sp/>mouse)<sp/>devices.</highlight></codeline>
+<codeline><highlight class="normal">To<sp/>enable/disable<sp/>this<sp/>behavior,<sp/>see<sp/>SDL_hints.h:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>SDL_HINT_TOUCH_MOUSE_EVENTS</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>SDL_HINT_MOUSE_TOUCH_EVENTS</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Misc</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>some<sp/>device,<sp/>it<sp/>appears<sp/>to<sp/>works<sp/>better<sp/>setting<sp/>explicitly<sp/>GL<sp/>attributes</highlight></codeline>
+<codeline><highlight class="normal">before<sp/>creating<sp/>a<sp/>window:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>SDL_GL_SetAttribute(SDL_GL_RED_SIZE,<sp/>5);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE,<sp/>6);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE,<sp/>5);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Threads<sp/>and<sp/>the<sp/>Java<sp/>VM</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>a<sp/>quick<sp/>tour<sp/>on<sp/>how<sp/>Linux<sp/>native<sp/>threads<sp/>interoperate<sp/>with<sp/>the<sp/>Java<sp/>VM,<sp/>take</highlight></codeline>
+<codeline><highlight class="normal">a<sp/>look<sp/>here:<sp/>https://developer.android.com/guide/practices/jni.html</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>want<sp/>to<sp/>use<sp/>threads<sp/>in<sp/>your<sp/>SDL<sp/>app,<sp/>it&apos;s<sp/>strongly<sp/>recommended<sp/>that<sp/>you</highlight></codeline>
+<codeline><highlight class="normal">do<sp/>so<sp/>by<sp/>creating<sp/>them<sp/>using<sp/>SDL<sp/>functions.<sp/>This<sp/>way,<sp/>the<sp/>required<sp/>attach/detach</highlight></codeline>
+<codeline><highlight class="normal">handling<sp/>is<sp/>managed<sp/>by<sp/>SDL<sp/>automagically.<sp/>If<sp/>you<sp/>have<sp/>threads<sp/>created<sp/>by<sp/>other</highlight></codeline>
+<codeline><highlight class="normal">means<sp/>and<sp/>they<sp/>make<sp/>calls<sp/>to<sp/>SDL<sp/>functions,<sp/>make<sp/>sure<sp/>that<sp/>you<sp/>call</highlight></codeline>
+<codeline><highlight class="normal">Android_JNI_SetupThread()<sp/>before<sp/>doing<sp/>anything<sp/>else<sp/>otherwise<sp/>SDL<sp/>will<sp/>attach</highlight></codeline>
+<codeline><highlight class="normal">your<sp/>thread<sp/>automatically<sp/>anyway<sp/>(when<sp/>you<sp/>make<sp/>an<sp/>SDL<sp/>call),<sp/>but<sp/>it&apos;ll<sp/>never</highlight></codeline>
+<codeline><highlight class="normal">detach<sp/>it.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>ever<sp/>want<sp/>to<sp/>use<sp/>JNI<sp/>in<sp/>a<sp/>native<sp/>thread<sp/>(created<sp/>by<sp/>&quot;SDL_CreateThread()&quot;),</highlight></codeline>
+<codeline><highlight class="normal">it<sp/>won&apos;t<sp/>be<sp/>able<sp/>to<sp/>find<sp/>your<sp/>java<sp/>class<sp/>and<sp/>method<sp/>because<sp/>of<sp/>the<sp/>java<sp/>class<sp/>loader</highlight></codeline>
+<codeline><highlight class="normal">which<sp/>is<sp/>different<sp/>for<sp/>native<sp/>threads,<sp/>than<sp/>for<sp/>java<sp/>threads<sp/>(eg<sp/>your<sp/>&quot;main()&quot;).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">the<sp/>work-around<sp/>is<sp/>to<sp/>find<sp/>class/method,<sp/>in<sp/>you<sp/>&quot;main()&quot;<sp/>thread,<sp/>and<sp/>to<sp/>use<sp/>them</highlight></codeline>
+<codeline><highlight class="normal">in<sp/>your<sp/>native<sp/>thread.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">see:</highlight></codeline>
+<codeline><highlight class="normal">https://developer.android.com/training/articles/perf-jni#faq:-why-didnt-findclass-find-my-class</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Using<sp/>STL</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>use<sp/>STL<sp/>in<sp/>your<sp/>project<sp/>by<sp/>creating<sp/>an<sp/>Application.mk<sp/>file<sp/>in<sp/>the<sp/>jni</highlight></codeline>
+<codeline><highlight class="normal">folder<sp/>and<sp/>adding<sp/>the<sp/>following<sp/>line:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>APP_STL<sp/>:=<sp/>c++_shared</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>more<sp/>information<sp/>go<sp/>here:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>https://developer.android.com/ndk/guides/cpp-support</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Using<sp/>the<sp/>emulator</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">There<sp/>are<sp/>some<sp/>good<sp/>tips<sp/>and<sp/>tricks<sp/>for<sp/>getting<sp/>the<sp/>most<sp/>out<sp/>of<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">emulator<sp/>here:<sp/>https://developer.android.com/tools/devices/emulator.html</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Especially<sp/>useful<sp/>is<sp/>the<sp/>info<sp/>on<sp/>setting<sp/>up<sp/>OpenGL<sp/>ES<sp/>2.0<sp/>emulation.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Notice<sp/>that<sp/>this<sp/>software<sp/>emulator<sp/>is<sp/>incredibly<sp/>slow<sp/>and<sp/>needs<sp/>a<sp/>lot<sp/>of<sp/>disk<sp/>space.</highlight></codeline>
+<codeline><highlight class="normal">Using<sp/>a<sp/>real<sp/>device<sp/>works<sp/>better.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Troubleshooting</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>see<sp/>if<sp/>adb<sp/>can<sp/>see<sp/>any<sp/>devices<sp/>with<sp/>the<sp/>following<sp/>command:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adb<sp/>devices</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>see<sp/>the<sp/>output<sp/>of<sp/>log<sp/>messages<sp/>on<sp/>the<sp/>default<sp/>device<sp/>with:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adb<sp/>logcat</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>push<sp/>files<sp/>to<sp/>the<sp/>device<sp/>with:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adb<sp/>push<sp/>local_file<sp/>remote_path_and_file</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>push<sp/>files<sp/>to<sp/>the<sp/>SD<sp/>Card<sp/>at<sp/>/sdcard,<sp/>for<sp/>example:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adb<sp/>push<sp/>moose.dat<sp/>/sdcard/moose.dat</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>see<sp/>the<sp/>files<sp/>on<sp/>the<sp/>SD<sp/>card<sp/>with<sp/>a<sp/>shell<sp/>command:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adb<sp/>shell<sp/>ls<sp/>/sdcard/</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>start<sp/>a<sp/>command<sp/>shell<sp/>on<sp/>the<sp/>default<sp/>device<sp/>with:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adb<sp/>shell</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>remove<sp/>the<sp/>library<sp/>files<sp/>of<sp/>your<sp/>project<sp/>(and<sp/>not<sp/>the<sp/>SDL<sp/>lib<sp/>files)<sp/>with:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ndk-build<sp/>clean</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>do<sp/>a<sp/>build<sp/>with<sp/>the<sp/>following<sp/>command:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ndk-build</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>see<sp/>the<sp/>complete<sp/>command<sp/>line<sp/>that<sp/>ndk-build<sp/>is<sp/>using<sp/>by<sp/>passing<sp/>V=1<sp/>on<sp/>the<sp/>command<sp/>line:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ndk-build<sp/>V=1</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>your<sp/>application<sp/>crashes<sp/>in<sp/>native<sp/>code,<sp/>you<sp/>can<sp/>use<sp/>ndk-stack<sp/>to<sp/>get<sp/>a<sp/>symbolic<sp/>stack<sp/>trace:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>https://developer.android.com/ndk/guides/ndk-stack</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>want<sp/>to<sp/>go<sp/>through<sp/>the<sp/>process<sp/>manually,<sp/>you<sp/>can<sp/>use<sp/>addr2line<sp/>to<sp/>convert<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">addresses<sp/>in<sp/>the<sp/>stack<sp/>trace<sp/>to<sp/>lines<sp/>in<sp/>your<sp/>code.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>example,<sp/>if<sp/>your<sp/>crash<sp/>looks<sp/>like<sp/>this:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>I/DEBUG<sp/><sp/><sp/>(<sp/><sp/><sp/>31):<sp/>signal<sp/>11<sp/>(SIGSEGV),<sp/>code<sp/>2<sp/>(SEGV_ACCERR),<sp/>fault<sp/>addr<sp/>400085d0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>I/DEBUG<sp/><sp/><sp/>(<sp/><sp/><sp/>31):<sp/><sp/>r0<sp/>00000000<sp/><sp/>r1<sp/>00001000<sp/><sp/>r2<sp/>00000003<sp/><sp/>r3<sp/>400085d4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>I/DEBUG<sp/><sp/><sp/>(<sp/><sp/><sp/>31):<sp/><sp/>r4<sp/>400085d0<sp/><sp/>r5<sp/>40008000<sp/><sp/>r6<sp/>afd41504<sp/><sp/>r7<sp/>436c6a7c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>I/DEBUG<sp/><sp/><sp/>(<sp/><sp/><sp/>31):<sp/><sp/>r8<sp/>436c6b30<sp/><sp/>r9<sp/>435c6fb0<sp/><sp/>10<sp/>435c6f9c<sp/><sp/>fp<sp/>4168d82c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>I/DEBUG<sp/><sp/><sp/>(<sp/><sp/><sp/>31):<sp/><sp/>ip<sp/>8346aff0<sp/><sp/>sp<sp/>436c6a60<sp/><sp/>lr<sp/>afd1c8ff<sp/><sp/>pc<sp/>afd1c902<sp/><sp/>cpsr<sp/>60000030</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>I/DEBUG<sp/><sp/><sp/>(<sp/><sp/><sp/>31):<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#00<sp/><sp/>pc<sp/>0001c902<sp/><sp/>/system/lib/libc.so</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>I/DEBUG<sp/><sp/><sp/>(<sp/><sp/><sp/>31):<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#01<sp/><sp/>pc<sp/>0001ccf6<sp/><sp/>/system/lib/libc.so</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>I/DEBUG<sp/><sp/><sp/>(<sp/><sp/><sp/>31):<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#02<sp/><sp/>pc<sp/>000014bc<sp/><sp/>/data/data/org.libsdl.app/lib/libmain.so</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>I/DEBUG<sp/><sp/><sp/>(<sp/><sp/><sp/>31):<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#03<sp/><sp/>pc<sp/>00001506<sp/><sp/>/data/data/org.libsdl.app/lib/libmain.so</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>see<sp/>that<sp/>there&apos;s<sp/>a<sp/>crash<sp/>in<sp/>the<sp/>C<sp/>library<sp/>being<sp/>called<sp/>from<sp/>the<sp/>main<sp/>code.</highlight></codeline>
+<codeline><highlight class="normal">I<sp/>run<sp/>addr2line<sp/>with<sp/>the<sp/>debug<sp/>version<sp/>of<sp/>my<sp/>code:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>arm-eabi-addr2line<sp/>-C<sp/>-f<sp/>-e<sp/>obj/local/armeabi/libmain.so</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">and<sp/>then<sp/>paste<sp/>in<sp/>the<sp/>number<sp/>after<sp/>&quot;pc&quot;<sp/>in<sp/>the<sp/>call<sp/>stack,<sp/>from<sp/>the<sp/>line<sp/>that<sp/>I<sp/>care<sp/>about:</highlight></codeline>
+<codeline><highlight class="normal">000014bc</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">I<sp/>get<sp/>output<sp/>from<sp/>addr2line<sp/>showing<sp/>that<sp/>it&apos;s<sp/>in<sp/>the<sp/>quit<sp/>function,<sp/>in<sp/>testspriteminimal.c,<sp/>on<sp/>line<sp/>23.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>add<sp/>logging<sp/>to<sp/>your<sp/>code<sp/>to<sp/>help<sp/>show<sp/>what&apos;s<sp/>happening:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#include<sp/>&lt;android/log.h&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>__android_log_print(ANDROID_LOG_INFO,<sp/>&quot;foo&quot;,<sp/>&quot;Something<sp/>happened!<sp/>x<sp/>=<sp/>%d&quot;,<sp/>x);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>need<sp/>to<sp/>build<sp/>without<sp/>optimization<sp/>turned<sp/>on,<sp/>you<sp/>can<sp/>create<sp/>a<sp/>file<sp/>called</highlight></codeline>
+<codeline><highlight class="normal">&quot;Application.mk&quot;<sp/>in<sp/>the<sp/>jni<sp/>directory,<sp/>with<sp/>the<sp/>following<sp/>line<sp/>in<sp/>it:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>APP_OPTIM<sp/>:=<sp/>debug</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Memory<sp/>debugging</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>best<sp/>(and<sp/>slowest)<sp/>way<sp/>to<sp/>debug<sp/>memory<sp/>issues<sp/>on<sp/>Android<sp/>is<sp/>valgrind.</highlight></codeline>
+<codeline><highlight class="normal">Valgrind<sp/>has<sp/>support<sp/>for<sp/>Android<sp/>out<sp/>of<sp/>the<sp/>box,<sp/>just<sp/>grab<sp/>code<sp/>using:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>svn<sp/>co<sp/>svn://svn.valgrind.org/valgrind/trunk<sp/>valgrind</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">...<sp/>and<sp/>follow<sp/>the<sp/>instructions<sp/>in<sp/>the<sp/>file<sp/>README.android<sp/>to<sp/>build<sp/>it.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">One<sp/>thing<sp/>I<sp/>needed<sp/>to<sp/>do<sp/>on<sp/>Mac<sp/>OS<sp/>X<sp/>was<sp/>change<sp/>the<sp/>path<sp/>to<sp/>the<sp/>toolchain,</highlight></codeline>
+<codeline><highlight class="normal">and<sp/>add<sp/>ranlib<sp/>to<sp/>the<sp/>environment<sp/>variables:</highlight></codeline>
+<codeline><highlight class="normal">export<sp/>RANLIB=$NDKROOT/toolchains/arm-linux-androideabi-4.4.3/prebuilt/darwin-x86/bin/arm-linux-androideabi-ranlib</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Once<sp/>valgrind<sp/>is<sp/>built,<sp/>you<sp/>can<sp/>create<sp/>a<sp/>wrapper<sp/>script<sp/>to<sp/>launch<sp/>your</highlight></codeline>
+<codeline><highlight class="normal">application<sp/>with<sp/>it,<sp/>changing<sp/>org.libsdl.app<sp/>to<sp/>your<sp/>package<sp/>identifier:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>---<sp/>start_valgrind_app<sp/>-------------------</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#!/system/bin/sh</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>export<sp/>TMPDIR=/data/data/org.libsdl.app</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>exec<sp/>/data/local/Inst/bin/valgrind<sp/>--log-file=/sdcard/valgrind.log<sp/>--error-limit=no<sp/>$*</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>------------------------------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Then<sp/>push<sp/>it<sp/>to<sp/>the<sp/>device:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adb<sp/>push<sp/>start_valgrind_app<sp/>/data/local</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">and<sp/>make<sp/>it<sp/>executable:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adb<sp/>shell<sp/>chmod<sp/>755<sp/>/data/local/start_valgrind_app</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">and<sp/>tell<sp/>Android<sp/>to<sp/>use<sp/>the<sp/>script<sp/>to<sp/>launch<sp/>your<sp/>application:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adb<sp/>shell<sp/>setprop<sp/>wrap.org.libsdl.app<sp/>&quot;logwrapper<sp/>/data/local/start_valgrind_app&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>the<sp/>setprop<sp/>command<sp/>says<sp/>&quot;could<sp/>not<sp/>set<sp/>property&quot;,<sp/>it&apos;s<sp/>likely<sp/>that</highlight></codeline>
+<codeline><highlight class="normal">your<sp/>package<sp/>name<sp/>is<sp/>too<sp/>long<sp/>and<sp/>you<sp/>should<sp/>make<sp/>it<sp/>shorter<sp/>by<sp/>changing</highlight></codeline>
+<codeline><highlight class="normal">AndroidManifest.xml<sp/>and<sp/>the<sp/>path<sp/>to<sp/>your<sp/>class<sp/>file<sp/>in<sp/>android-project/src</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>then<sp/>launch<sp/>your<sp/>application<sp/>normally<sp/>and<sp/>waaaaaaaiiittt<sp/>for<sp/>it.</highlight></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>monitor<sp/>the<sp/>startup<sp/>process<sp/>with<sp/>the<sp/>logcat<sp/>command<sp/>above,<sp/>and</highlight></codeline>
+<codeline><highlight class="normal">when<sp/>it&apos;s<sp/>done<sp/>(or<sp/>even<sp/>while<sp/>it&apos;s<sp/>running)<sp/>you<sp/>can<sp/>grab<sp/>the<sp/>valgrind</highlight></codeline>
+<codeline><highlight class="normal">output<sp/>file:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adb<sp/>pull<sp/>/sdcard/valgrind.log</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">When<sp/>you&apos;re<sp/>done<sp/>instrumenting<sp/>with<sp/>valgrind,<sp/>you<sp/>can<sp/>disable<sp/>the<sp/>wrapper:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>adb<sp/>shell<sp/>setprop<sp/>wrap.org.libsdl.app<sp/>&quot;&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Graphics<sp/>debugging</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>are<sp/>developing<sp/>on<sp/>a<sp/>compatible<sp/>Tegra-based<sp/>tablet,<sp/>NVidia<sp/>provides</highlight></codeline>
+<codeline><highlight class="normal">Tegra<sp/>Graphics<sp/>Debugger<sp/>at<sp/>their<sp/>website.<sp/>Because<sp/>SDL2<sp/>dynamically<sp/>loads<sp/>EGL</highlight></codeline>
+<codeline><highlight class="normal">and<sp/>GLES<sp/>libraries,<sp/>you<sp/>must<sp/>follow<sp/>their<sp/>instructions<sp/>for<sp/>installing<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">interposer<sp/>library<sp/>on<sp/>a<sp/>rooted<sp/>device.<sp/>The<sp/>non-rooted<sp/>instructions<sp/>are<sp/>not</highlight></codeline>
+<codeline><highlight class="normal">compatible<sp/>with<sp/>applications<sp/>that<sp/>use<sp/>SDL2<sp/>for<sp/>video.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>Tegra<sp/>Graphics<sp/>Debugger<sp/>is<sp/>available<sp/>from<sp/>NVidia<sp/>here:</highlight></codeline>
+<codeline><highlight class="normal">https://developer.nvidia.com/tegra-graphics-debugger</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Why<sp/>is<sp/>API<sp/>level<sp/>16<sp/>the<sp/>minimum<sp/>required?</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>latest<sp/>NDK<sp/>toolchain<sp/>doesn&apos;t<sp/>support<sp/>targeting<sp/>earlier<sp/>than<sp/>API<sp/>level<sp/>16.</highlight></codeline>
+<codeline><highlight class="normal">As<sp/>of<sp/>this<sp/>writing,<sp/>according<sp/>to<sp/>https://developer.android.com/about/dashboards/index.html</highlight></codeline>
+<codeline><highlight class="normal">about<sp/>99%<sp/>of<sp/>the<sp/>Android<sp/>devices<sp/>accessing<sp/>Google<sp/>Play<sp/>support<sp/>API<sp/>level<sp/>16<sp/>or</highlight></codeline>
+<codeline><highlight class="normal">higher<sp/>(January<sp/>2018).</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A<sp/>note<sp/>regarding<sp/>the<sp/>use<sp/>of<sp/>the<sp/>&quot;dirty<sp/>rectangles&quot;<sp/>rendering<sp/>technique</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>your<sp/>app<sp/>uses<sp/>a<sp/>variation<sp/>of<sp/>the<sp/>&quot;dirty<sp/>rectangles&quot;<sp/>rendering<sp/>technique,</highlight></codeline>
+<codeline><highlight class="normal">where<sp/>you<sp/>only<sp/>update<sp/>a<sp/>portion<sp/>of<sp/>the<sp/>screen<sp/>on<sp/>each<sp/>frame,<sp/>you<sp/>may<sp/>notice<sp/>a</highlight></codeline>
+<codeline><highlight class="normal">variety<sp/>of<sp/>visual<sp/>glitches<sp/>on<sp/>Android,<sp/>that<sp/>are<sp/>not<sp/>present<sp/>on<sp/>other<sp/>platforms.</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>is<sp/>caused<sp/>by<sp/>SDL&apos;s<sp/>use<sp/>of<sp/>EGL<sp/>as<sp/>the<sp/>support<sp/>system<sp/>to<sp/>handle<sp/>OpenGL<sp/>ES/ES2</highlight></codeline>
+<codeline><highlight class="normal">contexts,<sp/>in<sp/>particular<sp/>the<sp/>use<sp/>of<sp/>the<sp/>eglSwapBuffers<sp/>function.<sp/>As<sp/>stated<sp/>in<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">documentation<sp/>for<sp/>the<sp/>function<sp/>&quot;The<sp/>contents<sp/>of<sp/>ancillary<sp/>buffers<sp/>are<sp/>always<sp/></highlight></codeline>
+<codeline><highlight class="normal">undefined<sp/>after<sp/>calling<sp/>eglSwapBuffers&quot;.</highlight></codeline>
+<codeline><highlight class="normal">Setting<sp/>the<sp/>EGL_SWAP_BEHAVIOR<sp/>attribute<sp/>of<sp/>the<sp/>surface<sp/>to<sp/>EGL_BUFFER_PRESERVED</highlight></codeline>
+<codeline><highlight class="normal">is<sp/>not<sp/>possible<sp/>for<sp/>SDL<sp/>as<sp/>it<sp/>requires<sp/>EGL<sp/>1.4,<sp/>available<sp/>only<sp/>on<sp/>the<sp/>API<sp/>level</highlight></codeline>
+<codeline><highlight class="normal">17+,<sp/>so<sp/>the<sp/>only<sp/>workaround<sp/>available<sp/>on<sp/>this<sp/>platform<sp/>is<sp/>to<sp/>redraw<sp/>the<sp/>entire</highlight></codeline>
+<codeline><highlight class="normal">screen<sp/>each<sp/>frame.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Reference:<sp/>http://www.khronos.org/registry/egl/specs/EGLTechNote0001.html</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Ending<sp/>your<sp/>application</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Two<sp/>legitimate<sp/>ways:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>return<sp/>from<sp/>your<sp/>main()<sp/>function.<sp/>Java<sp/>side<sp/>will<sp/>automatically<sp/>terminate<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">Activity<sp/>by<sp/>calling<sp/>Activity.finish().</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Android<sp/>OS<sp/>can<sp/>decide<sp/>to<sp/>terminate<sp/>your<sp/>application<sp/>by<sp/>calling<sp/>onDestroy()</highlight></codeline>
+<codeline><highlight class="normal">(see<sp/>Activity<sp/>life<sp/>cycle).<sp/>Your<sp/>application<sp/>will<sp/>receive<sp/>a<sp/>SDL_QUIT<sp/>event<sp/>you<sp/></highlight></codeline>
+<codeline><highlight class="normal">can<sp/>handle<sp/>to<sp/>save<sp/>things<sp/>and<sp/>quit.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Don&apos;t<sp/>call<sp/>exit()<sp/>as<sp/>it<sp/>stops<sp/>the<sp/>activity<sp/>badly.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">NB:<sp/>&quot;Back<sp/>button&quot;<sp/>can<sp/>be<sp/>handled<sp/>as<sp/>a<sp/>SDL_KEYDOWN/UP<sp/>events,<sp/>with<sp/>Keycode</highlight></codeline>
+<codeline><highlight class="normal">SDLK_AC_BACK,<sp/>for<sp/>any<sp/>purpose.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Known<sp/>issues</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>number<sp/>of<sp/>buttons<sp/>reported<sp/>for<sp/>each<sp/>joystick<sp/>is<sp/>hardcoded<sp/>to<sp/>be<sp/>36,<sp/>which</highlight></codeline>
+<codeline><highlight class="normal">is<sp/>the<sp/>current<sp/>maximum<sp/>number<sp/>of<sp/>buttons<sp/>Android<sp/>can<sp/>report.</highlight></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/docs/README-android.md"/>
+  </compounddef>
+</doxygen>

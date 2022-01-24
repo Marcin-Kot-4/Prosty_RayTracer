@@ -1,0 +1,94 @@
+\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_visualc_autotoc_md112}{}\doxysubsection{by $<$a href=\char`\"{}mailto\+:snowlion@sprynet.\+com\char`\"{} $>$\+Lion Kimbro$<$/a$>$ with additions by $<$a href=\char`\"{}mailto\+:james@conceptofzero.\+net\char`\"{} $>$\+James Turk$<$/a$>$}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_visualc_autotoc_md112}
+You can either use the precompiled libraries from the \href{https://www.libsdl.org/download.php}{\texttt{ SDL}} web site, or you can build SDL yourself.\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_visualc_autotoc_md113}{}\doxysubsection{Building SDL}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_visualc_autotoc_md113}
+0. To build SDL, your machine must, at a minimum, have the Direct\+X9.\+0c SDK installed. It may or may not be retrievable from the \href{https://www.microsoft.com}{\texttt{ Microsoft}} website, so you might need to locate it \href{https://duckduckgo.com/?q=directx9.0c+sdk+download&t=h_&ia=web}{\texttt{ online}}. {\itshape Editor\textquotesingle{}s note\+: I\textquotesingle{}ve been able to successfully build SDL using Visual Studio 2019 {\bfseries{without}} the DX9.\+0c SDK}
+
+
+\begin{DoxyEnumerate}
+\item Open the Visual Studio solution file at {\ttfamily ./\+Visual\+C/\+SDL.sln}.
+\item Your IDE will likely prompt you to upgrade this solution file to whatever later version of the IDE you\textquotesingle{}re using. In the {\ttfamily Retarget Projects} dialog, all of the affected project files should be checked allowing you to use the latest {\ttfamily Windows SDK Version} you have installed, along with the {\ttfamily Platform Toolset}.
+\end{DoxyEnumerate}
+
+If you choose {\itshape NOT} to upgrade to use the latest {\ttfamily Windows SDK Version} or {\ttfamily Platform Toolset}, then you\textquotesingle{}ll need the {\ttfamily Visual Studio 2010 Platform Toolset}.
+
+
+\begin{DoxyEnumerate}
+\item Build the {\ttfamily .dll} and {\ttfamily .lib} files by right clicking on each project in turn (Projects are listed in the {\itshape Workspace} panel in the {\itshape File\+View} tab), and selecting {\ttfamily Build}.
+\end{DoxyEnumerate}
+
+You may get a few warnings, but you should not get any errors.
+
+Later, we will refer to the following {\ttfamily .lib} and {\ttfamily .dll} files that have just been generated\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily ./\+Visual\+C/\+Win32/\+Debug/\+SDL2.dll} or {\ttfamily ./\+Visual\+C/\+Win32/\+Release/\+SDL2.dll}
+\item {\ttfamily ./\+Visual\+C/\+Win32/\+Debug/\+SDL2.lib} or {\ttfamily ./\+Visual\+C/\+Win32/\+Release/\+SDL2.lib}
+\item {\ttfamily ./\+Visual\+C/\+Win32/\+Debug/\+SDL2main.lib} or {\ttfamily ./\+Visual\+C/\+Win32/\+Release/\+SDL2main.lib}
+\end{DoxyItemize}
+
+{\itshape Note for the {\ttfamily x64} versions, just replace {\ttfamily Win32} in the path with {\ttfamily x64}}\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_visualc_autotoc_md114}{}\doxysubsection{Creating a Project with SDL}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_visualc_autotoc_md114}
+
+\begin{DoxyItemize}
+\item Create a project as a {\ttfamily Win32 Application}.
+\item Create a C++ file for your project.
+\item Set the C runtime to {\ttfamily Multi-\/threaded DLL} in the menu\+: {\ttfamily Project$\vert$\+Settings$\vert$\+C/\+C++ tab$\vert$\+Code Generation$\vert$\+Runtime Library}.
+\item Add the SDL {\ttfamily include} directory to your list of includes in the menu\+: {\ttfamily Project$\vert$\+Settings$\vert$\+C/\+C++ tab$\vert$\+Preprocessor$\vert$\+Additional include directories}
+\end{DoxyItemize}
+
+{\itshape VC7 Specific\+: Instead of doing this, I find it easier to add the include and library directories to the list that VC7 keeps. Do this by selecting Tools$\vert$\+Options$\vert$\+Projects$\vert$\+VC++ Directories and under the \char`\"{}\+Show \+Directories For\+:\char`\"{} dropbox select \char`\"{}\+Include Files\char`\"{}, and click the \char`\"{}\+New \+Directory Icon\char`\"{} and add the \mbox{[}SDLROOT\mbox{]}\textbackslash{}include directory (e.\+g. If you installed to c\+:\textbackslash{}SDL\textbackslash{} add c\+:\textbackslash{}SDL\textbackslash{}include). Proceed to change the dropbox selection to \char`\"{}\+Library Files\char`\"{} and add \mbox{[}SDLROOT\mbox{]}\textbackslash{}lib.}
+
+The \char`\"{}include directory\char`\"{} I am referring to is the {\ttfamily ./include} folder.
+
+Now we\textquotesingle{}re going to use the files that we had created earlier in the {\itshape Build SDL} step.
+
+Copy the following file into your Project directory\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily SDL2.\+dll}
+\end{DoxyItemize}
+
+Add the following files to your project (It is not necessary to copy them to your project directory)\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily SDL2.\+lib}
+\item {\ttfamily SDL2main.\+lib}
+\end{DoxyItemize}
+
+To add them to your project, right click on your project, and select {\ttfamily Add files to project}.
+
+{\bfseries{Instead of adding the files to your project, it is more desirable to add them to the linker options\+: Project$\vert$\+Properties$\vert$\+Linker$\vert$\+Command Line and type the names of the libraries to link with in the \char`\"{}\+Additional Options\+:\char`\"{} box. Note\+: This must be done for each build configuration (e.\+g. Release,Debug).}}\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_visualc_autotoc_md115}{}\doxysubsection{Hello SDL2}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_visualc_autotoc_md115}
+Here\textquotesingle{}s a sample SDL snippet to verify everything is setup in your IDE\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#include "{}SDL.h"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{int main( int argc, char* argv[] )}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    const int WIDTH = 640;}
+\DoxyCodeLine{    const int HEIGHT = 480;}
+\DoxyCodeLine{    SDL\_Window* window = NULL;}
+\DoxyCodeLine{    SDL\_Renderer* renderer = NULL;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    SDL\_Init(SDL\_INIT\_VIDEO);}
+\DoxyCodeLine{    window = SDL\_CreateWindow("{}SDL2 Test"{}, SDL\_WINDOWPOS\_UNDEFINED, SDL\_WINDOWPOS\_UNDEFINED, WIDTH, HEIGHT, SDL\_WINDOW\_SHOWN);}
+\DoxyCodeLine{    renderer = SDL\_CreateRenderer(window, -\/1, SDL\_RENDERER\_ACCELERATED | SDL\_RENDERER\_PRESENTVSYNC);}
+\DoxyCodeLine{}
+\DoxyCodeLine{    SDL\_DestroyRenderer(renderer);}
+\DoxyCodeLine{    SDL\_DestroyWindow(window);}
+\DoxyCodeLine{    SDL\_Quit();}
+\DoxyCodeLine{    return 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_visualc_autotoc_md116}{}\doxysubsection{That\textquotesingle{}s it!}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_visualc_autotoc_md116}
+I hope that this document has helped you get through the most difficult part of using the SDL\+: installing it. Suggestions for improvements should be posted to the \href{https://github.com/libsdl-org/SDL/issues}{\texttt{ Github Issues}}.\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_visualc_autotoc_md117}{}\doxysubsection{Credits}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_visualc_autotoc_md117}
+Thanks to \href{mailto:pesterhazy@gmx.net}{\texttt{ Paulus Esterhazy}}, for the work on VC++ port.
+
+This document was originally called \char`\"{}\+Visual\+C.\+txt\char`\"{}, and was written by \href{mailto:slouken@libsdl.org}{\texttt{ Sam Lantinga}}.
+
+Later, it was converted to HTML and expanded into the document that you see today by \href{mailto:snowlion@sprynet.com}{\texttt{ Lion Kimbro}}.
+
+Minor Fixes and Visual C++ 7 Information (In Green) was added by \href{mailto:james@conceptofzero.net}{\texttt{ James Turk}} 

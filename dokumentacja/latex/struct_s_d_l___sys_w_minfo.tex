@@ -1,0 +1,86 @@
+\hypertarget{struct_s_d_l___sys_w_minfo}{}\doxysection{SDL\+\_\+\+Sys\+WMinfo Struct Reference}
+\label{struct_s_d_l___sys_w_minfo}\index{SDL\_SysWMinfo@{SDL\_SysWMinfo}}
+
+
+{\ttfamily \#include $<$SDL\+\_\+syswm.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_s_d_l__version}{SDL\+\_\+version}} \mbox{\hyperlink{struct_s_d_l___sys_w_minfo_ac3a70af022d4849e9ff546595e94627f}{version}}
+\item 
+\mbox{\hyperlink{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7}{SDL\+\_\+\+SYSWM\+\_\+\+TYPE}} \mbox{\hyperlink{struct_s_d_l___sys_w_minfo_a438b6a06ab3ee417293c7b7fc5a23855}{subsystem}}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>struct \{\\
+\>\>HWND \mbox{\hyperlink{struct_s_d_l___sys_w_minfo_af06225591ff07e837bbd037728a525b9}{window}}\\
+\>\>HDC \mbox{\hyperlink{struct_s_d_l___sys_w_minfo_a5c9d0745b083422834681e99c38b803e}{hdc}}\\
+\>\>HINSTANCE \mbox{\hyperlink{struct_s_d_l___sys_w_minfo_ae3e93d21e2b20b2069f5f7d5308194f1}{hinstance}}\\
+\>\} \mbox{\hyperlink{struct_s_d_l___sys_w_minfo_adbb01b768156be0e906c31682ba181ab}{win}}\\
+\>\mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} \mbox{\hyperlink{struct_s_d_l___sys_w_minfo_a0e7fc58b98ae8317076e763fa94bc41f}{dummy}} \mbox{[}64\mbox{]}\\
+\} \mbox{\hyperlink{struct_s_d_l___sys_w_minfo_afad594a80dbd84d87ef5d1500eef4c05}{info}}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The custom window manager information structure.
+
+When this structure is returned, it holds information about which low level system it is using, and will be one of SDL\+\_\+\+SYSWM\+\_\+\+TYPE. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_s_d_l___sys_w_minfo_a0e7fc58b98ae8317076e763fa94bc41f}\label{struct_s_d_l___sys_w_minfo_a0e7fc58b98ae8317076e763fa94bc41f}} 
+\index{SDL\_SysWMinfo@{SDL\_SysWMinfo}!dummy@{dummy}}
+\index{dummy@{dummy}!SDL\_SysWMinfo@{SDL\_SysWMinfo}}
+\doxysubsubsection{\texorpdfstring{dummy}{dummy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__stdinc_8h_a2944638813a090aa23e62f4da842c3e2}{Uint8}} SDL\+\_\+\+Sys\+WMinfo\+::dummy\mbox{[}64\mbox{]}}
+
+\mbox{\Hypertarget{struct_s_d_l___sys_w_minfo_a5c9d0745b083422834681e99c38b803e}\label{struct_s_d_l___sys_w_minfo_a5c9d0745b083422834681e99c38b803e}} 
+\index{SDL\_SysWMinfo@{SDL\_SysWMinfo}!hdc@{hdc}}
+\index{hdc@{hdc}!SDL\_SysWMinfo@{SDL\_SysWMinfo}}
+\doxysubsubsection{\texorpdfstring{hdc}{hdc}}
+{\footnotesize\ttfamily HDC SDL\+\_\+\+Sys\+WMinfo\+::hdc}
+
+The window device context \mbox{\Hypertarget{struct_s_d_l___sys_w_minfo_ae3e93d21e2b20b2069f5f7d5308194f1}\label{struct_s_d_l___sys_w_minfo_ae3e93d21e2b20b2069f5f7d5308194f1}} 
+\index{SDL\_SysWMinfo@{SDL\_SysWMinfo}!hinstance@{hinstance}}
+\index{hinstance@{hinstance}!SDL\_SysWMinfo@{SDL\_SysWMinfo}}
+\doxysubsubsection{\texorpdfstring{hinstance}{hinstance}}
+{\footnotesize\ttfamily HINSTANCE SDL\+\_\+\+Sys\+WMinfo\+::hinstance}
+
+The instance handle \mbox{\Hypertarget{struct_s_d_l___sys_w_minfo_afad594a80dbd84d87ef5d1500eef4c05}\label{struct_s_d_l___sys_w_minfo_afad594a80dbd84d87ef5d1500eef4c05}} 
+\index{SDL\_SysWMinfo@{SDL\_SysWMinfo}!info@{info}}
+\index{info@{info}!SDL\_SysWMinfo@{SDL\_SysWMinfo}}
+\doxysubsubsection{\texorpdfstring{}{}}
+{\footnotesize\ttfamily union  \{ ... \}  SDL\+\_\+\+Sys\+WMinfo\+::info}
+
+\mbox{\Hypertarget{struct_s_d_l___sys_w_minfo_a438b6a06ab3ee417293c7b7fc5a23855}\label{struct_s_d_l___sys_w_minfo_a438b6a06ab3ee417293c7b7fc5a23855}} 
+\index{SDL\_SysWMinfo@{SDL\_SysWMinfo}!subsystem@{subsystem}}
+\index{subsystem@{subsystem}!SDL\_SysWMinfo@{SDL\_SysWMinfo}}
+\doxysubsubsection{\texorpdfstring{subsystem}{subsystem}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__syswm_8h_a064c26598287280fff2a00d6758ac4f7}{SDL\+\_\+\+SYSWM\+\_\+\+TYPE}} SDL\+\_\+\+Sys\+WMinfo\+::subsystem}
+
+\mbox{\Hypertarget{struct_s_d_l___sys_w_minfo_ac3a70af022d4849e9ff546595e94627f}\label{struct_s_d_l___sys_w_minfo_ac3a70af022d4849e9ff546595e94627f}} 
+\index{SDL\_SysWMinfo@{SDL\_SysWMinfo}!version@{version}}
+\index{version@{version}!SDL\_SysWMinfo@{SDL\_SysWMinfo}}
+\doxysubsubsection{\texorpdfstring{version}{version}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_s_d_l__version}{SDL\+\_\+version}} SDL\+\_\+\+Sys\+WMinfo\+::version}
+
+\mbox{\Hypertarget{struct_s_d_l___sys_w_minfo_adbb01b768156be0e906c31682ba181ab}\label{struct_s_d_l___sys_w_minfo_adbb01b768156be0e906c31682ba181ab}} 
+\index{SDL\_SysWMinfo@{SDL\_SysWMinfo}!win@{win}}
+\index{win@{win}!SDL\_SysWMinfo@{SDL\_SysWMinfo}}
+\doxysubsubsection{\texorpdfstring{}{}}
+{\footnotesize\ttfamily struct  \{ ... \}  SDL\+\_\+\+Sys\+WMinfo\+::win}
+
+\mbox{\Hypertarget{struct_s_d_l___sys_w_minfo_af06225591ff07e837bbd037728a525b9}\label{struct_s_d_l___sys_w_minfo_af06225591ff07e837bbd037728a525b9}} 
+\index{SDL\_SysWMinfo@{SDL\_SysWMinfo}!window@{window}}
+\index{window@{window}!SDL\_SysWMinfo@{SDL\_SysWMinfo}}
+\doxysubsubsection{\texorpdfstring{window}{window}}
+{\footnotesize\ttfamily HWND SDL\+\_\+\+Sys\+WMinfo\+::window}
+
+The window handle 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Ray\+Tracing/include/\mbox{\hyperlink{_s_d_l__syswm_8h}{SDL\+\_\+syswm.\+h}}\end{DoxyCompactItemize}

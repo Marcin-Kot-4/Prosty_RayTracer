@@ -1,0 +1,64 @@
+.TH "SDL_GameControllerButtonBind" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SDL_GameControllerButtonBind
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SDL_gamecontroller\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSDL_GameControllerBindType\fP \fBbindType\fP"
+.br
+.ti -1c
+.RI "union {"
+.br
+.ti -1c
+.RI "   int \fBbutton\fP"
+.br
+.ti -1c
+.RI "   int \fBaxis\fP"
+.br
+.ti -1c
+.RI "   struct {"
+.br
+.ti -1c
+.RI "      int \fBhat\fP"
+.br
+.ti -1c
+.RI "      int \fBhat_mask\fP"
+.br
+.ti -1c
+.RI "   } \fBhat\fP"
+.br
+.ti -1c
+.RI "} \fBvalue\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Get the SDL joystick layer binding for this controller button/axis mapping 
+.SH "Member Data Documentation"
+.PP 
+.SS "int SDL_GameControllerButtonBind::axis"
+
+.SS "\fBSDL_GameControllerBindType\fP SDL_GameControllerButtonBind::bindType"
+
+.SS "int SDL_GameControllerButtonBind::button"
+
+.SS "int SDL_GameControllerButtonBind::hat"
+
+.SS "struct  { \&.\&.\&. }  SDL_GameControllerButtonBind::hat"
+
+.SS "int SDL_GameControllerButtonBind::hat_mask"
+
+.SS "union  { \&.\&.\&. }  SDL_GameControllerButtonBind::value"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

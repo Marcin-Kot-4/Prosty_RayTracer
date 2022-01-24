@@ -1,0 +1,118 @@
+\hypertarget{class_r_t_1_1_simple_refractive}{}\doxysection{RT\+::Simple\+Refractive Class Reference}
+\label{class_r_t_1_1_simple_refractive}\index{RT::SimpleRefractive@{RT::SimpleRefractive}}
+
+
+{\ttfamily \#include $<$simplerefractive.\+h$>$}
+
+Inheritance diagram for RT\+::Simple\+Refractive\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_r_t_1_1_simple_refractive}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_r_t_1_1_simple_refractive_aac5b29fd159aa8a7dc0ccef01509f5c5}{Simple\+Refractive}} ()
+\item 
+virtual \mbox{\hyperlink{class_r_t_1_1_simple_refractive_a8d59f1bd70c33c5144ae5f90d839a40c}{$\sim$\+Simple\+Refractive}} () override
+\item 
+virtual \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \mbox{\hyperlink{class_r_t_1_1_simple_refractive_a988530ca94a0cf72b9035f74c4527f96}{Compute\+Color}} (const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ $>$ \&object\+List, const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_light_base}{RT\+::\+Light\+Base}} $>$ $>$ \&light\+List, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ \&current\+Object, const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&int\+Point, const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&local\+Normal, const \mbox{\hyperlink{class_r_t_1_1_ray}{RT\+::\+Ray}} \&camera\+Ray) override
+\item 
+\mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \mbox{\hyperlink{class_r_t_1_1_simple_refractive_a9f62cb48d9ca6bba4425ad0b9a6a570d}{Compute\+Specular}} (const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ $>$ \&object\+List, const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_light_base}{RT\+::\+Light\+Base}} $>$ $>$ \&light\+List, const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&int\+Point, const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&local\+Normal, const \mbox{\hyperlink{class_r_t_1_1_ray}{RT\+::\+Ray}} \&camera\+Ray)
+\item 
+\mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \mbox{\hyperlink{class_r_t_1_1_simple_refractive_a37c12415266512f2872cda06d371a5ef}{Compute\+Translucency}} (const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ $>$ \&object\+List, const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_light_base}{RT\+::\+Light\+Base}} $>$ $>$ \&light\+List, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ \&current\+Object, const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&int\+Point, const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&local\+Normal, const \mbox{\hyperlink{class_r_t_1_1_ray}{RT\+::\+Ray}} \&incident\+Ray)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \mbox{\hyperlink{class_r_t_1_1_simple_refractive_a6f9238bb78392356c462686dd7abe34d}{m\+\_\+base\+Color}} \{std\+::vector $<$ double $>$ \{1.\+0, 0.\+0, 1.\+0\}\}
+\item 
+double \mbox{\hyperlink{class_r_t_1_1_simple_refractive_ac34ea618840abeaeebc8db3c7026893a}{m\+\_\+reflectivity}} = 0.\+0
+\item 
+double \mbox{\hyperlink{class_r_t_1_1_simple_refractive_adc4c409f615d47f4685da63ff81be3e7}{m\+\_\+shininess}} = 0.\+0
+\item 
+double \mbox{\hyperlink{class_r_t_1_1_simple_refractive_a89bcff2b1ad242c6c38e97c702ad6500}{m\+\_\+translucency}} = 0.\+0
+\item 
+double \mbox{\hyperlink{class_r_t_1_1_simple_refractive_a64d4ca05e7d5f500baebef4f094d580a}{m\+\_\+ior}} = 1.\+0
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_r_t_1_1_simple_refractive_aac5b29fd159aa8a7dc0ccef01509f5c5}\label{class_r_t_1_1_simple_refractive_aac5b29fd159aa8a7dc0ccef01509f5c5}} 
+\index{RT::SimpleRefractive@{RT::SimpleRefractive}!SimpleRefractive@{SimpleRefractive}}
+\index{SimpleRefractive@{SimpleRefractive}!RT::SimpleRefractive@{RT::SimpleRefractive}}
+\doxysubsubsection{\texorpdfstring{SimpleRefractive()}{SimpleRefractive()}}
+{\footnotesize\ttfamily RT\+::\+Simple\+Refractive\+::\+Simple\+Refractive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_r_t_1_1_simple_refractive_a8d59f1bd70c33c5144ae5f90d839a40c}\label{class_r_t_1_1_simple_refractive_a8d59f1bd70c33c5144ae5f90d839a40c}} 
+\index{RT::SimpleRefractive@{RT::SimpleRefractive}!````~SimpleRefractive@{$\sim$SimpleRefractive}}
+\index{````~SimpleRefractive@{$\sim$SimpleRefractive}!RT::SimpleRefractive@{RT::SimpleRefractive}}
+\doxysubsubsection{\texorpdfstring{$\sim$SimpleRefractive()}{~SimpleRefractive()}}
+{\footnotesize\ttfamily RT\+::\+Simple\+Refractive\+::$\sim$\+Simple\+Refractive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_r_t_1_1_simple_refractive_a988530ca94a0cf72b9035f74c4527f96}\label{class_r_t_1_1_simple_refractive_a988530ca94a0cf72b9035f74c4527f96}} 
+\index{RT::SimpleRefractive@{RT::SimpleRefractive}!ComputeColor@{ComputeColor}}
+\index{ComputeColor@{ComputeColor}!RT::SimpleRefractive@{RT::SimpleRefractive}}
+\doxysubsubsection{\texorpdfstring{ComputeColor()}{ComputeColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ RT\+::\+Simple\+Refractive\+::\+Compute\+Color (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ $>$ \&}]{object\+List,  }\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_light_base}{RT\+::\+Light\+Base}} $>$ $>$ \&}]{light\+List,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ \&}]{current\+Object,  }\item[{const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&}]{int\+Point,  }\item[{const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&}]{local\+Normal,  }\item[{const \mbox{\hyperlink{class_r_t_1_1_ray}{RT\+::\+Ray}} \&}]{camera\+Ray }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_r_t_1_1_material_base_aa8b05496fa1fed6988efd524eb5dbe48}{RT\+::\+Material\+Base}}.
+
+\mbox{\Hypertarget{class_r_t_1_1_simple_refractive_a9f62cb48d9ca6bba4425ad0b9a6a570d}\label{class_r_t_1_1_simple_refractive_a9f62cb48d9ca6bba4425ad0b9a6a570d}} 
+\index{RT::SimpleRefractive@{RT::SimpleRefractive}!ComputeSpecular@{ComputeSpecular}}
+\index{ComputeSpecular@{ComputeSpecular}!RT::SimpleRefractive@{RT::SimpleRefractive}}
+\doxysubsubsection{\texorpdfstring{ComputeSpecular()}{ComputeSpecular()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ RT\+::\+Simple\+Refractive\+::\+Compute\+Specular (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ $>$ \&}]{object\+List,  }\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_light_base}{RT\+::\+Light\+Base}} $>$ $>$ \&}]{light\+List,  }\item[{const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&}]{int\+Point,  }\item[{const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&}]{local\+Normal,  }\item[{const \mbox{\hyperlink{class_r_t_1_1_ray}{RT\+::\+Ray}} \&}]{camera\+Ray }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_r_t_1_1_simple_refractive_a37c12415266512f2872cda06d371a5ef}\label{class_r_t_1_1_simple_refractive_a37c12415266512f2872cda06d371a5ef}} 
+\index{RT::SimpleRefractive@{RT::SimpleRefractive}!ComputeTranslucency@{ComputeTranslucency}}
+\index{ComputeTranslucency@{ComputeTranslucency}!RT::SimpleRefractive@{RT::SimpleRefractive}}
+\doxysubsubsection{\texorpdfstring{ComputeTranslucency()}{ComputeTranslucency()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ RT\+::\+Simple\+Refractive\+::\+Compute\+Translucency (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ $>$ \&}]{object\+List,  }\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_light_base}{RT\+::\+Light\+Base}} $>$ $>$ \&}]{light\+List,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ \&}]{current\+Object,  }\item[{const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&}]{int\+Point,  }\item[{const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&}]{local\+Normal,  }\item[{const \mbox{\hyperlink{class_r_t_1_1_ray}{RT\+::\+Ray}} \&}]{incident\+Ray }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_r_t_1_1_simple_refractive_a6f9238bb78392356c462686dd7abe34d}\label{class_r_t_1_1_simple_refractive_a6f9238bb78392356c462686dd7abe34d}} 
+\index{RT::SimpleRefractive@{RT::SimpleRefractive}!m\_baseColor@{m\_baseColor}}
+\index{m\_baseColor@{m\_baseColor}!RT::SimpleRefractive@{RT::SimpleRefractive}}
+\doxysubsubsection{\texorpdfstring{m\_baseColor}{m\_baseColor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$double$>$ RT\+::\+Simple\+Refractive\+::m\+\_\+base\+Color \{std\+::vector $<$ double $>$ \{1.\+0, 0.\+0, 1.\+0\}\}}
+
+\mbox{\Hypertarget{class_r_t_1_1_simple_refractive_a64d4ca05e7d5f500baebef4f094d580a}\label{class_r_t_1_1_simple_refractive_a64d4ca05e7d5f500baebef4f094d580a}} 
+\index{RT::SimpleRefractive@{RT::SimpleRefractive}!m\_ior@{m\_ior}}
+\index{m\_ior@{m\_ior}!RT::SimpleRefractive@{RT::SimpleRefractive}}
+\doxysubsubsection{\texorpdfstring{m\_ior}{m\_ior}}
+{\footnotesize\ttfamily double RT\+::\+Simple\+Refractive\+::m\+\_\+ior = 1.\+0}
+
+\mbox{\Hypertarget{class_r_t_1_1_simple_refractive_ac34ea618840abeaeebc8db3c7026893a}\label{class_r_t_1_1_simple_refractive_ac34ea618840abeaeebc8db3c7026893a}} 
+\index{RT::SimpleRefractive@{RT::SimpleRefractive}!m\_reflectivity@{m\_reflectivity}}
+\index{m\_reflectivity@{m\_reflectivity}!RT::SimpleRefractive@{RT::SimpleRefractive}}
+\doxysubsubsection{\texorpdfstring{m\_reflectivity}{m\_reflectivity}}
+{\footnotesize\ttfamily double RT\+::\+Simple\+Refractive\+::m\+\_\+reflectivity = 0.\+0}
+
+\mbox{\Hypertarget{class_r_t_1_1_simple_refractive_adc4c409f615d47f4685da63ff81be3e7}\label{class_r_t_1_1_simple_refractive_adc4c409f615d47f4685da63ff81be3e7}} 
+\index{RT::SimpleRefractive@{RT::SimpleRefractive}!m\_shininess@{m\_shininess}}
+\index{m\_shininess@{m\_shininess}!RT::SimpleRefractive@{RT::SimpleRefractive}}
+\doxysubsubsection{\texorpdfstring{m\_shininess}{m\_shininess}}
+{\footnotesize\ttfamily double RT\+::\+Simple\+Refractive\+::m\+\_\+shininess = 0.\+0}
+
+\mbox{\Hypertarget{class_r_t_1_1_simple_refractive_a89bcff2b1ad242c6c38e97c702ad6500}\label{class_r_t_1_1_simple_refractive_a89bcff2b1ad242c6c38e97c702ad6500}} 
+\index{RT::SimpleRefractive@{RT::SimpleRefractive}!m\_translucency@{m\_translucency}}
+\index{m\_translucency@{m\_translucency}!RT::SimpleRefractive@{RT::SimpleRefractive}}
+\doxysubsubsection{\texorpdfstring{m\_translucency}{m\_translucency}}
+{\footnotesize\ttfamily double RT\+::\+Simple\+Refractive\+::m\+\_\+translucency = 0.\+0}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Ray\+Tracing/\+Ray\+Trace/\+Materials/\mbox{\hyperlink{simplerefractive_8h}{simplerefractive.\+h}}\item 
+D\+:/\+Ray\+Tracing/\+Ray\+Trace/\+Materials/\mbox{\hyperlink{simplerefractive_8cpp}{simplerefractive.\+cpp}}\end{DoxyCompactItemize}

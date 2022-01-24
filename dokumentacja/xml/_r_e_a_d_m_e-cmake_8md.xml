@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e-cmake_8md" kind="file" language="Markdown">
+    <compoundname>README-cmake.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">CMake</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline><highlight class="normal">(www.cmake.org)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SDL&apos;s<sp/>build<sp/>system<sp/>was<sp/>traditionally<sp/>based<sp/>on<sp/>autotools.<sp/>Over<sp/>time,<sp/>this</highlight></codeline>
+<codeline><highlight class="normal">approach<sp/>has<sp/>suffered<sp/>from<sp/>several<sp/>issues<sp/>across<sp/>the<sp/>different<sp/>supported<sp/></highlight></codeline>
+<codeline><highlight class="normal">platforms.</highlight></codeline>
+<codeline><highlight class="normal">To<sp/>solve<sp/>these<sp/>problems,<sp/>a<sp/>new<sp/>build<sp/>system<sp/>based<sp/>on<sp/>CMake<sp/>is<sp/>under<sp/>development.</highlight></codeline>
+<codeline><highlight class="normal">It<sp/>works<sp/>in<sp/>parallel<sp/>to<sp/>the<sp/>legacy<sp/>system,<sp/>so<sp/>users<sp/>can<sp/>experiment<sp/>with<sp/>it</highlight></codeline>
+<codeline><highlight class="normal">without<sp/>complication.</highlight></codeline>
+<codeline><highlight class="normal">While<sp/>still<sp/>experimental,<sp/>the<sp/>build<sp/>system<sp/>should<sp/>be<sp/>usable<sp/>on<sp/>the<sp/>following</highlight></codeline>
+<codeline><highlight class="normal">platforms:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>FreeBSD</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Linux</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>VS.NET<sp/>2010</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>MinGW<sp/>and<sp/>Msys</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>macOS,<sp/>iOS,<sp/>and<sp/>tvOS,<sp/>with<sp/>support<sp/>for<sp/>XCode</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline><highlight class="normal">Usage</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Assuming<sp/>the<sp/>source<sp/>for<sp/>SDL<sp/>is<sp/>located<sp/>at<sp/>~/sdl</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cd<sp/>~</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mkdir<sp/>build</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cd<sp/>build</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cmake<sp/>../sdl</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>will<sp/>build<sp/>the<sp/>static<sp/>and<sp/>dynamic<sp/>versions<sp/>of<sp/>SDL<sp/>in<sp/>the<sp/>~/build<sp/>directory.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline><highlight class="normal">Usage,<sp/>iOS/tvOS</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">CMake<sp/>3.14+<sp/>natively<sp/>includes<sp/>support<sp/>for<sp/>iOS<sp/>and<sp/>tvOS.<sp/><sp/>SDL<sp/>binaries<sp/>may<sp/>be<sp/>built</highlight></codeline>
+<codeline><highlight class="normal">using<sp/>Xcode<sp/>or<sp/>Make,<sp/>possibly<sp/>among<sp/>other<sp/>build-systems.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">When<sp/>using<sp/>a<sp/>recent<sp/>version<sp/>of<sp/>CMake<sp/>(3.14+),<sp/>it<sp/>should<sp/>be<sp/>possible<sp/>to:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>build<sp/>SDL<sp/>for<sp/>iOS,<sp/>both<sp/>static<sp/>and<sp/>dynamic</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>build<sp/>SDL<sp/>test<sp/>apps<sp/>(as<sp/>iOS/tvOS<sp/>.app<sp/>bundles)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>generate<sp/>a<sp/>working<sp/>SDL_config.h<sp/>for<sp/>iOS<sp/>(using<sp/>SDL_config.h.cmake<sp/>as<sp/>a<sp/>basis)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>use,<sp/>set<sp/>the<sp/>following<sp/>CMake<sp/>variables<sp/>when<sp/>running<sp/>CMake&apos;s<sp/>configuration<sp/>stage:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>`CMAKE_SYSTEM_NAME=&lt;OS&gt;`<sp/><sp/><sp/>(either<sp/>`iOS`<sp/>or<sp/>`tvOS`)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`CMAKE_OSX_SYSROOT=&lt;SDK&gt;`<sp/><sp/>(examples:<sp/>`iphoneos`,<sp/>`iphonesimulator`,<sp/>`iphoneos12.4`,<sp/>`/full/path/to/iPhoneOS.sdk`,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>`appletvos`,<sp/>`appletvsimulator`,<sp/>`appletvos12.4`,<sp/>`/full/path/to/AppleTVOS.sdk`,<sp/>etc.)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`CMAKE_OSX_ARCHITECTURES=&lt;semicolon-separated<sp/>list<sp/>of<sp/>CPU<sp/>architectures&gt;`<sp/>(example:<sp/>&quot;arm64;armv7s;x86_64&quot;)</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Examples<sp/>(for<sp/>iOS/tvOS):</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>for<sp/>iOS-Simulator,<sp/>using<sp/>the<sp/>latest,<sp/>installed<sp/>SDK:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>`cmake<sp/>~/sdl<sp/>-DCMAKE_SYSTEM_NAME=iOS<sp/>-DCMAKE_OSX_SYSROOT=iphonesimulator<sp/>-DCMAKE_OSX_ARCHITECTURES=x86_64`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>for<sp/>iOS-Device,<sp/>using<sp/>the<sp/>latest,<sp/>installed<sp/>SDK,<sp/>64-bit<sp/>only</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>`cmake<sp/>~/sdl<sp/>-DCMAKE_SYSTEM_NAME=iOS<sp/>-DCMAKE_OSX_SYSROOT=iphoneos<sp/>-DCMAKE_OSX_ARCHITECTURES=arm64`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>for<sp/>iOS-Device,<sp/>using<sp/>the<sp/>latest,<sp/>installed<sp/>SDK,<sp/>mixed<sp/>32/64<sp/>bit</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>`cmake<sp/>~/sdl<sp/>-DCMAKE_SYSTEM_NAME=iOS<sp/>-DCMAKE_OSX_SYSROOT=iphoneos<sp/>-DCMAKE_OSX_ARCHITECTURES=&quot;arm64;armv7s&quot;`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>for<sp/>iOS-Device,<sp/>using<sp/>a<sp/>specific<sp/>SDK<sp/>revision<sp/>(iOS<sp/>12.4,<sp/>in<sp/>this<sp/>example):</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>`cmake<sp/>~/sdl<sp/>-DCMAKE_SYSTEM_NAME=iOS<sp/>-DCMAKE_OSX_SYSROOT=iphoneos12.4<sp/>-DCMAKE_OSX_ARCHITECTURES=arm64`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>for<sp/>iOS-Simulator,<sp/>using<sp/>the<sp/>latest,<sp/>installed<sp/>SDK,<sp/>and<sp/>building<sp/>SDL<sp/>test<sp/>apps<sp/>(as<sp/>.app<sp/>bundles):</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>`cmake<sp/>~/sdl<sp/>-DSDL_TEST=1<sp/>-DCMAKE_SYSTEM_NAME=iOS<sp/>-DCMAKE_OSX_SYSROOT=iphonesimulator<sp/>-DCMAKE_OSX_ARCHITECTURES=x86_64`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>for<sp/>tvOS-Simulator,<sp/>using<sp/>the<sp/>latest,<sp/>installed<sp/>SDK:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>`cmake<sp/>~/sdl<sp/>-DCMAKE_SYSTEM_NAME=tvOS<sp/>-DCMAKE_OSX_SYSROOT=appletvsimulator<sp/>-DCMAKE_OSX_ARCHITECTURES=x86_64`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>for<sp/>tvOS-Device,<sp/>using<sp/>the<sp/>latest,<sp/>installed<sp/>SDK:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>`cmake<sp/>~/sdl<sp/>-DCMAKE_SYSTEM_NAME=tvOS<sp/>-DCMAKE_OSX_SYSROOT=appletvos<sp/>-DCMAKE_OSX_ARCHITECTURES=arm64`</highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/docs/README-cmake.md"/>
+  </compounddef>
+</doxygen>

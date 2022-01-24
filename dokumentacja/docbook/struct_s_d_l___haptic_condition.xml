@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_s_d_l___haptic_condition" xml:lang="en-US">
+<title>SDL_HapticCondition Struct Reference</title>
+<indexterm><primary>SDL_HapticCondition</primary></indexterm>
+<para>
+
+<para>A structure containing a template for a Condition effect. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;SDL_haptic.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_struct_s_d_l___haptic_condition_1a7be55a9a86c05dd1a54a3006781cfa6f">type</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_s_d_l___haptic_direction">SDL_HapticDirection</link> <link linkend="_struct_s_d_l___haptic_condition_1a728507d30d18998949313de3a25e5581">direction</link></para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="_struct_s_d_l___haptic_condition_1ad0efb0a6ddc20f058e87199eaaa95978">length</link></para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_struct_s_d_l___haptic_condition_1aad40417980530ca8d80c62ba864a090b">delay</link></para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_struct_s_d_l___haptic_condition_1acd35a9d432ad122bf7824b16974eac7a">button</link></para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_struct_s_d_l___haptic_condition_1aafc182abea1078bed7e9cf5d0e713ea2">interval</link></para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_struct_s_d_l___haptic_condition_1a90427a1e0d464b4b53abc1d419c97b2e">right_sat</link> [3]</para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_struct_s_d_l___haptic_condition_1a953448774c40818a4f47c6efea21124d">left_sat</link> [3]</para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5">Sint16</link> <link linkend="_struct_s_d_l___haptic_condition_1a3de7f164ef88841255535387d0f100b6">right_coeff</link> [3]</para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5">Sint16</link> <link linkend="_struct_s_d_l___haptic_condition_1a2adf52c32f60f0b6826b1e3add2eae7a">left_coeff</link> [3]</para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_struct_s_d_l___haptic_condition_1af684c8eeeb719739a32723c00c5a2bbd">deadband</link> [3]</para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5">Sint16</link> <link linkend="_struct_s_d_l___haptic_condition_1a8a71ec28ff5ab85246cbc59736aa2c53">center</link> [3]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>A structure containing a template for a Condition effect. </para>
+
+
+
+<para>The struct handles the following effects:<itemizedlist>
+<listitem>
+<para><link linkend="__s_d_l__haptic_8h_1a3b52d4700380085e2b5d87bb20320fb1">SDL_HAPTIC_SPRING</link>: Effect based on axes position.</para>
+</listitem><listitem>
+<para><link linkend="__s_d_l__haptic_8h_1a69522f261973e3ea4273486141320a87">SDL_HAPTIC_DAMPER</link>: Effect based on axes velocity.</para>
+</listitem><listitem>
+<para><link linkend="__s_d_l__haptic_8h_1a14b807471589120395aec28293cf6642">SDL_HAPTIC_INERTIA</link>: Effect based on axes acceleration.</para>
+</listitem><listitem>
+<para><link linkend="__s_d_l__haptic_8h_1a98a5011311168d63921aaac21403a4d8">SDL_HAPTIC_FRICTION</link>: Effect based on axes movement.</para>
+</listitem></itemizedlist>
+</para>
+
+<para>Direction is handled by condition internals instead of a direction member. The condition effect specific members have three parameters. The first refers to the X axis, the second refers to the Y axis and the third refers to the Z axis. The right terms refer to the positive side of the axis and the left terms refer to the negative side of the axis. Please refer to the <link linkend="_struct_s_d_l___haptic_direction">SDL_HapticDirection</link> diagram for which side is positive and which is negative.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_struct_s_d_l___haptic_direction">SDL_HapticDirection</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a3b52d4700380085e2b5d87bb20320fb1">SDL_HAPTIC_SPRING</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a69522f261973e3ea4273486141320a87">SDL_HAPTIC_DAMPER</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a14b807471589120395aec28293cf6642">SDL_HAPTIC_INERTIA</link> </para>
+
+<para><link linkend="__s_d_l__haptic_8h_1a98a5011311168d63921aaac21403a4d8">SDL_HAPTIC_FRICTION</link> </para>
+
+<para><link linkend="_union_s_d_l___haptic_effect">SDL_HapticEffect</link> </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_s_d_l___haptic_condition_1acd35a9d432ad122bf7824b16974eac7a"/><section>
+    <title>button</title>
+<indexterm><primary>button</primary><secondary>SDL_HapticCondition</secondary></indexterm>
+<indexterm><primary>SDL_HapticCondition</primary><secondary>button</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> SDL_HapticCondition::button</computeroutput></para>
+<para>Button that triggers the effect. </para>
+</section>
+<anchor xml:id="_struct_s_d_l___haptic_condition_1a8a71ec28ff5ab85246cbc59736aa2c53"/><section>
+    <title>center</title>
+<indexterm><primary>center</primary><secondary>SDL_HapticCondition</secondary></indexterm>
+<indexterm><primary>SDL_HapticCondition</primary><secondary>center</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5">Sint16</link> SDL_HapticCondition::center[3]</computeroutput></para>
+<para>Position of the dead zone. </para>
+</section>
+<anchor xml:id="_struct_s_d_l___haptic_condition_1af684c8eeeb719739a32723c00c5a2bbd"/><section>
+    <title>deadband</title>
+<indexterm><primary>deadband</primary><secondary>SDL_HapticCondition</secondary></indexterm>
+<indexterm><primary>SDL_HapticCondition</primary><secondary>deadband</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> SDL_HapticCondition::deadband[3]</computeroutput></para>
+<para>Size of the dead zone; max 0xFFFF: whole axis-range when 0-centered. </para>
+</section>
+<anchor xml:id="_struct_s_d_l___haptic_condition_1aad40417980530ca8d80c62ba864a090b"/><section>
+    <title>delay</title>
+<indexterm><primary>delay</primary><secondary>SDL_HapticCondition</secondary></indexterm>
+<indexterm><primary>SDL_HapticCondition</primary><secondary>delay</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> SDL_HapticCondition::delay</computeroutput></para>
+<para>Delay before starting the effect. </para>
+</section>
+<anchor xml:id="_struct_s_d_l___haptic_condition_1a728507d30d18998949313de3a25e5581"/><section>
+    <title>direction</title>
+<indexterm><primary>direction</primary><secondary>SDL_HapticCondition</secondary></indexterm>
+<indexterm><primary>SDL_HapticCondition</primary><secondary>direction</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_s_d_l___haptic_direction">SDL_HapticDirection</link> SDL_HapticCondition::direction</computeroutput></para>
+<para>Direction of the effect - Not used ATM. </para>
+</section>
+<anchor xml:id="_struct_s_d_l___haptic_condition_1aafc182abea1078bed7e9cf5d0e713ea2"/><section>
+    <title>interval</title>
+<indexterm><primary>interval</primary><secondary>SDL_HapticCondition</secondary></indexterm>
+<indexterm><primary>SDL_HapticCondition</primary><secondary>interval</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> SDL_HapticCondition::interval</computeroutput></para>
+<para>How soon it can be triggered again after button. </para>
+</section>
+<anchor xml:id="_struct_s_d_l___haptic_condition_1a2adf52c32f60f0b6826b1e3add2eae7a"/><section>
+    <title>left_coeff</title>
+<indexterm><primary>left_coeff</primary><secondary>SDL_HapticCondition</secondary></indexterm>
+<indexterm><primary>SDL_HapticCondition</primary><secondary>left_coeff</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5">Sint16</link> SDL_HapticCondition::left_coeff[3]</computeroutput></para>
+<para>How fast to increase the force towards the negative side. </para>
+</section>
+<anchor xml:id="_struct_s_d_l___haptic_condition_1a953448774c40818a4f47c6efea21124d"/><section>
+    <title>left_sat</title>
+<indexterm><primary>left_sat</primary><secondary>SDL_HapticCondition</secondary></indexterm>
+<indexterm><primary>SDL_HapticCondition</primary><secondary>left_sat</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> SDL_HapticCondition::left_sat[3]</computeroutput></para>
+<para>Level when joystick is to the negative side; max 0xFFFF. </para>
+</section>
+<anchor xml:id="_struct_s_d_l___haptic_condition_1ad0efb0a6ddc20f058e87199eaaa95978"/><section>
+    <title>length</title>
+<indexterm><primary>length</primary><secondary>SDL_HapticCondition</secondary></indexterm>
+<indexterm><primary>SDL_HapticCondition</primary><secondary>length</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> SDL_HapticCondition::length</computeroutput></para>
+<para>Duration of the effect. </para>
+</section>
+<anchor xml:id="_struct_s_d_l___haptic_condition_1a3de7f164ef88841255535387d0f100b6"/><section>
+    <title>right_coeff</title>
+<indexterm><primary>right_coeff</primary><secondary>SDL_HapticCondition</secondary></indexterm>
+<indexterm><primary>SDL_HapticCondition</primary><secondary>right_coeff</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5">Sint16</link> SDL_HapticCondition::right_coeff[3]</computeroutput></para>
+<para>How fast to increase the force towards the positive side. </para>
+</section>
+<anchor xml:id="_struct_s_d_l___haptic_condition_1a90427a1e0d464b4b53abc1d419c97b2e"/><section>
+    <title>right_sat</title>
+<indexterm><primary>right_sat</primary><secondary>SDL_HapticCondition</secondary></indexterm>
+<indexterm><primary>SDL_HapticCondition</primary><secondary>right_sat</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> SDL_HapticCondition::right_sat[3]</computeroutput></para>
+<para>Level when joystick is to the positive side; max 0xFFFF. </para>
+</section>
+<anchor xml:id="_struct_s_d_l___haptic_condition_1a7be55a9a86c05dd1a54a3006781cfa6f"/><section>
+    <title>type</title>
+<indexterm><primary>type</primary><secondary>SDL_HapticCondition</secondary></indexterm>
+<indexterm><primary>SDL_HapticCondition</primary><secondary>type</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> SDL_HapticCondition::type</computeroutput></para>
+<para><link linkend="__s_d_l__haptic_8h_1a3b52d4700380085e2b5d87bb20320fb1">SDL_HAPTIC_SPRING</link>, <link linkend="__s_d_l__haptic_8h_1a69522f261973e3ea4273486141320a87">SDL_HAPTIC_DAMPER</link>, <link linkend="__s_d_l__haptic_8h_1a14b807471589120395aec28293cf6642">SDL_HAPTIC_INERTIA</link> or <link linkend="__s_d_l__haptic_8h_1a98a5011311168d63921aaac21403a4d8">SDL_HAPTIC_FRICTION</link> </para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+D:/RayTracing/include/<link linkend="__s_d_l__haptic_8h">SDL_haptic.h</link></section>
+</section>

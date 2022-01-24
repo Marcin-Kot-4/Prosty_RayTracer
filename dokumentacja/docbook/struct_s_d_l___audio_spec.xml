@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_s_d_l___audio_spec" xml:lang="en-US">
+<title>SDL_AudioSpec Struct Reference</title>
+<indexterm><primary>SDL_AudioSpec</primary></indexterm>
+<para>
+<computeroutput>#include &lt;SDL_audio.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_struct_s_d_l___audio_spec_1a8b823ce46fc2e448cf7e6fc141aff6b2">freq</link></para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__audio_8h_1a491ed103fd25d920c4e6b7495217ce66">SDL_AudioFormat</link> <link linkend="_struct_s_d_l___audio_spec_1ae37c634cac5807762f184c8d5d49fc2d">format</link></para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> <link linkend="_struct_s_d_l___audio_spec_1a31fe8b3710cf23bbef24be8a1749fe46">channels</link></para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> <link linkend="_struct_s_d_l___audio_spec_1addc462c8a806e6c122eccf63482048f6">silence</link></para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_struct_s_d_l___audio_spec_1a2cdf5e885808c10bfa2810b706e69f95">samples</link></para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_struct_s_d_l___audio_spec_1a738371fc13b54cefef4db16994abeeb6">padding</link></para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="_struct_s_d_l___audio_spec_1a154cf44743ecec78c36dc6c827dd2fdb">size</link></para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__audio_8h_1a379fcc25845e46bfa80cb3619fc2821c">SDL_AudioCallback</link> <link linkend="_struct_s_d_l___audio_spec_1a1f8d05139f1679dcf359f49251233eac">callback</link></para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> * <link linkend="_struct_s_d_l___audio_spec_1aeec9481666f5f0982c98d3878f175d9b">userdata</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>The calculated values in this structure are calculated by <link linkend="__s_d_l__audio_8h_1a2edf30e7747584e28041b4986f89f440">SDL_OpenAudio()</link>.</para>
+
+<para>For multi-channel audio, the default SDL channel mapping is: 2: FL FR (stereo) 3: FL FR LFE (2.1 surround) 4: FL FR BL BR (quad) 5: FL FR FC BL BR (quad + center) 6: FL FR FC LFE SL SR (5.1 surround - last two can also be BL BR) 7: FL FR FC LFE BC SL SR (6.1 surround) 8: FL FR FC LFE BL BR SL SR (7.1 surround) </para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_s_d_l___audio_spec_1a1f8d05139f1679dcf359f49251233eac"/><section>
+    <title>callback</title>
+<indexterm><primary>callback</primary><secondary>SDL_AudioSpec</secondary></indexterm>
+<indexterm><primary>SDL_AudioSpec</primary><secondary>callback</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__audio_8h_1a379fcc25845e46bfa80cb3619fc2821c">SDL_AudioCallback</link> SDL_AudioSpec::callback</computeroutput></para>
+<para>Callback that feeds the audio device (NULL to use <link linkend="__s_d_l__audio_8h_1a19ef6fa2396f581aaf4d9a9512972268">SDL_QueueAudio()</link>). </para>
+</section>
+<anchor xml:id="_struct_s_d_l___audio_spec_1a31fe8b3710cf23bbef24be8a1749fe46"/><section>
+    <title>channels</title>
+<indexterm><primary>channels</primary><secondary>SDL_AudioSpec</secondary></indexterm>
+<indexterm><primary>SDL_AudioSpec</primary><secondary>channels</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> SDL_AudioSpec::channels</computeroutput></para>
+<para>Number of channels: 1 mono, 2 stereo </para>
+</section>
+<anchor xml:id="_struct_s_d_l___audio_spec_1ae37c634cac5807762f184c8d5d49fc2d"/><section>
+    <title>format</title>
+<indexterm><primary>format</primary><secondary>SDL_AudioSpec</secondary></indexterm>
+<indexterm><primary>SDL_AudioSpec</primary><secondary>format</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__audio_8h_1a491ed103fd25d920c4e6b7495217ce66">SDL_AudioFormat</link> SDL_AudioSpec::format</computeroutput></para>
+<para>Audio data format </para>
+</section>
+<anchor xml:id="_struct_s_d_l___audio_spec_1a8b823ce46fc2e448cf7e6fc141aff6b2"/><section>
+    <title>freq</title>
+<indexterm><primary>freq</primary><secondary>SDL_AudioSpec</secondary></indexterm>
+<indexterm><primary>SDL_AudioSpec</primary><secondary>freq</secondary></indexterm>
+<para><computeroutput>int SDL_AudioSpec::freq</computeroutput></para>
+<para>DSP frequency &#8211; samples per second </para>
+</section>
+<anchor xml:id="_struct_s_d_l___audio_spec_1a738371fc13b54cefef4db16994abeeb6"/><section>
+    <title>padding</title>
+<indexterm><primary>padding</primary><secondary>SDL_AudioSpec</secondary></indexterm>
+<indexterm><primary>SDL_AudioSpec</primary><secondary>padding</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> SDL_AudioSpec::padding</computeroutput></para>
+<para>Necessary for some compile environments </para>
+</section>
+<anchor xml:id="_struct_s_d_l___audio_spec_1a2cdf5e885808c10bfa2810b706e69f95"/><section>
+    <title>samples</title>
+<indexterm><primary>samples</primary><secondary>SDL_AudioSpec</secondary></indexterm>
+<indexterm><primary>SDL_AudioSpec</primary><secondary>samples</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> SDL_AudioSpec::samples</computeroutput></para>
+<para>Audio buffer size in sample FRAMES (total samples divided by channel count) </para>
+</section>
+<anchor xml:id="_struct_s_d_l___audio_spec_1addc462c8a806e6c122eccf63482048f6"/><section>
+    <title>silence</title>
+<indexterm><primary>silence</primary><secondary>SDL_AudioSpec</secondary></indexterm>
+<indexterm><primary>SDL_AudioSpec</primary><secondary>silence</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> SDL_AudioSpec::silence</computeroutput></para>
+<para>Audio buffer silence value (calculated) </para>
+</section>
+<anchor xml:id="_struct_s_d_l___audio_spec_1a154cf44743ecec78c36dc6c827dd2fdb"/><section>
+    <title>size</title>
+<indexterm><primary>size</primary><secondary>SDL_AudioSpec</secondary></indexterm>
+<indexterm><primary>SDL_AudioSpec</primary><secondary>size</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> SDL_AudioSpec::size</computeroutput></para>
+<para>Audio buffer size in bytes (calculated) </para>
+</section>
+<anchor xml:id="_struct_s_d_l___audio_spec_1aeec9481666f5f0982c98d3878f175d9b"/><section>
+    <title>userdata</title>
+<indexterm><primary>userdata</primary><secondary>SDL_AudioSpec</secondary></indexterm>
+<indexterm><primary>SDL_AudioSpec</primary><secondary>userdata</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>* SDL_AudioSpec::userdata</computeroutput></para>
+<para>Userdata passed to callback (ignored for NULL callbacks). </para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+D:/RayTracing/include/<link linkend="__s_d_l__audio_8h">SDL_audio.h</link></section>
+</section>

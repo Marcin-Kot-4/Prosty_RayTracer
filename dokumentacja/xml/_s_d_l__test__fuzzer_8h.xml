@@ -1,0 +1,1013 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_s_d_l__test__fuzzer_8h" kind="file" language="C++">
+    <compoundname>SDL_test_fuzzer.h</compoundname>
+    <includes refid="begin__code_8h" local="yes">begin_code.h</includes>
+    <includes refid="close__code_8h" local="yes">close_code.h</includes>
+    <includedby refid="_s_d_l__test_8h" local="yes">D:/RayTracing/include/SDL_test.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>D:/RayTracing/include/SDL_test_fuzzer.h</label>
+        <link refid="_s_d_l__test__fuzzer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>begin_code.h</label>
+        <link refid="begin__code_8h"/>
+      </node>
+      <node id="3">
+        <label>close_code.h</label>
+        <link refid="close__code_8h"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>D:/RayTracing/include/SDL_test.h</label>
+        <link refid="_s_d_l__test_8h"/>
+      </node>
+      <node id="1">
+        <label>D:/RayTracing/include/SDL_test_fuzzer.h</label>
+        <link refid="_s_d_l__test__fuzzer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_s_d_l__test__fuzzer_8h_1a623db129ea615326bed457ebb9703c1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        <definition>void SDLTest_FuzzerInit</definition>
+        <argsstring>(Uint64 execKey)</argsstring>
+        <name>SDLTest_FuzzerInit</name>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13" kindref="member">Uint64</ref></type>
+          <declname>execKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes the fuzzer for a test</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>execKey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Execution &quot;Key&quot; that initializes the random number generator uniquely for the test. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_fuzzer.h" line="63" column="6" declfile="D:/RayTracing/include/SDL_test_fuzzer.h" declline="63" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__fuzzer_8h_1ac8dedcebddb993c4a5c86fb914133289" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2" kindref="member">Uint8</ref></type>
+        <definition>Uint8 SDLTest_RandomUint8</definition>
+        <argsstring>(void)</argsstring>
+        <name>SDLTest_RandomUint8</name>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a random Uint8</para>
+<para><simplesect kind="return"><para>a generated integer </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_fuzzer.h" line="71" column="7" declfile="D:/RayTracing/include/SDL_test_fuzzer.h" declline="71" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__fuzzer_8h_1ac4988f65c0b1e921ac6a498ba9b9150a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__stdinc_8h_1a5fc98623306a32e69eaab63e89e1d138" kindref="member">Sint8</ref></type>
+        <definition>Sint8 SDLTest_RandomSint8</definition>
+        <argsstring>(void)</argsstring>
+        <name>SDLTest_RandomSint8</name>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a random Sint8</para>
+<para><simplesect kind="return"><para>a generated signed integer </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_fuzzer.h" line="78" column="7" declfile="D:/RayTracing/include/SDL_test_fuzzer.h" declline="78" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__fuzzer_8h_1a3eceb16e97b4c4c5143904c36ba3a3d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b" kindref="member">Uint16</ref></type>
+        <definition>Uint16 SDLTest_RandomUint16</definition>
+        <argsstring>(void)</argsstring>
+        <name>SDLTest_RandomUint16</name>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a random Uint16</para>
+<para><simplesect kind="return"><para>a generated integer </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_fuzzer.h" line="86" column="8" declfile="D:/RayTracing/include/SDL_test_fuzzer.h" declline="86" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__fuzzer_8h_1aaf6c560d87e5c01b638b9072a85369aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5" kindref="member">Sint16</ref></type>
+        <definition>Sint16 SDLTest_RandomSint16</definition>
+        <argsstring>(void)</argsstring>
+        <name>SDLTest_RandomSint16</name>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a random Sint16</para>
+<para><simplesect kind="return"><para>a generated signed integer </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_fuzzer.h" line="93" column="8" declfile="D:/RayTracing/include/SDL_test_fuzzer.h" declline="93" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__fuzzer_8h_1a26976cb8f4e44aec5e83c90b900e7ae0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__stdinc_8h_1a7a90b941db9d4582e9ad7abb9940ff7e" kindref="member">Sint32</ref></type>
+        <definition>Sint32 SDLTest_RandomSint32</definition>
+        <argsstring>(void)</argsstring>
+        <name>SDLTest_RandomSint32</name>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a random integer</para>
+<para><simplesect kind="return"><para>a generated integer </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_fuzzer.h" line="101" column="8" declfile="D:/RayTracing/include/SDL_test_fuzzer.h" declline="101" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__fuzzer_8h_1a853884a6887973eb5072f7a6be20f51e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d" kindref="member">Uint32</ref></type>
+        <definition>Uint32 SDLTest_RandomUint32</definition>
+        <argsstring>(void)</argsstring>
+        <name>SDLTest_RandomUint32</name>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a random positive integer</para>
+<para><simplesect kind="return"><para>a generated integer </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_fuzzer.h" line="109" column="8" declfile="D:/RayTracing/include/SDL_test_fuzzer.h" declline="109" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__fuzzer_8h_1a3c9b42462ea1d24552306004338f7d32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13" kindref="member">Uint64</ref></type>
+        <definition>Uint64 SDLTest_RandomUint64</definition>
+        <argsstring>(void)</argsstring>
+        <name>SDLTest_RandomUint64</name>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns random Uint64.</para>
+<para><simplesect kind="return"><para>a generated integer </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_fuzzer.h" line="116" column="8" declfile="D:/RayTracing/include/SDL_test_fuzzer.h" declline="116" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__fuzzer_8h_1ab503ec55dfd34e9c491f83bfff374bdb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d" kindref="member">Sint64</ref></type>
+        <definition>Sint64 SDLTest_RandomSint64</definition>
+        <argsstring>(void)</argsstring>
+        <name>SDLTest_RandomSint64</name>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns random Sint64.</para>
+<para><simplesect kind="return"><para>a generated signed integer </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_fuzzer.h" line="124" column="8" declfile="D:/RayTracing/include/SDL_test_fuzzer.h" declline="124" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__fuzzer_8h_1a2f9e47894c17386a36793504fc11de85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float SDLTest_RandomUnitFloat</definition>
+        <argsstring>(void)</argsstring>
+        <name>SDLTest_RandomUnitFloat</name>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a random float in range [0.0 - 1.0] </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_fuzzer.h" line="129" column="7" declfile="D:/RayTracing/include/SDL_test_fuzzer.h" declline="129" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__fuzzer_8h_1a9f3159422e964a51f17243ce86b6eef6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double SDLTest_RandomUnitDouble</definition>
+        <argsstring>(void)</argsstring>
+        <name>SDLTest_RandomUnitDouble</name>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a random double in range [0.0 - 1.0] </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_fuzzer.h" line="134" column="8" declfile="D:/RayTracing/include/SDL_test_fuzzer.h" declline="134" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__fuzzer_8h_1a65a242a0a22e7cbea6e9081567fdd056" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float SDLTest_RandomFloat</definition>
+        <argsstring>(void)</argsstring>
+        <name>SDLTest_RandomFloat</name>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a random float. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_fuzzer.h" line="140" column="7" declfile="D:/RayTracing/include/SDL_test_fuzzer.h" declline="140" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__fuzzer_8h_1a31167fd1a3b922f62896210dbe30c32c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double SDLTest_RandomDouble</definition>
+        <argsstring>(void)</argsstring>
+        <name>SDLTest_RandomDouble</name>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>a random double. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_fuzzer.h" line="146" column="8" declfile="D:/RayTracing/include/SDL_test_fuzzer.h" declline="146" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__fuzzer_8h_1a129a58a37dc23847b8257569bf56d16f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2" kindref="member">Uint8</ref></type>
+        <definition>Uint8 SDLTest_RandomUint8BoundaryValue</definition>
+        <argsstring>(Uint8 boundary1, Uint8 boundary2, SDL_bool validDomain)</argsstring>
+        <name>SDLTest_RandomUint8BoundaryValue</name>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2" kindref="member">Uint8</ref></type>
+          <declname>boundary1</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2" kindref="member">Uint8</ref></type>
+          <declname>boundary2</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b" kindref="member">SDL_bool</ref></type>
+          <declname>validDomain</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a random boundary value for Uint8 within the given boundaries. Boundaries are inclusive, see the usage examples below. If validDomain is true, the function will only return valid boundaries, otherwise non-valid boundaries are also possible. If boundary1 &gt; boundary2, the values are swapped</para>
+<para>Usage examples: RandomUint8BoundaryValue(10, 20, SDL_TRUE) returns 10, 11, 19 or 20 RandomUint8BoundaryValue(1, 20, SDL_FALSE) returns 0 or 21 RandomUint8BoundaryValue(0, 99, SDL_FALSE) returns 100 RandomUint8BoundaryValue(0, 255, SDL_FALSE) returns 0 (error set)</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boundary1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower boundary limit </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>boundary2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper boundary limit </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>validDomain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Should the generated boundary be valid (=within the bounds) or not?</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a random boundary value for the given range and domain or 0 with error set </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_fuzzer.h" line="167" column="7" declfile="D:/RayTracing/include/SDL_test_fuzzer.h" declline="167" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__fuzzer_8h_1a3710dba14db764872949252f558429ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b" kindref="member">Uint16</ref></type>
+        <definition>Uint16 SDLTest_RandomUint16BoundaryValue</definition>
+        <argsstring>(Uint16 boundary1, Uint16 boundary2, SDL_bool validDomain)</argsstring>
+        <name>SDLTest_RandomUint16BoundaryValue</name>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b" kindref="member">Uint16</ref></type>
+          <declname>boundary1</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b" kindref="member">Uint16</ref></type>
+          <declname>boundary2</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b" kindref="member">SDL_bool</ref></type>
+          <declname>validDomain</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a random boundary value for Uint16 within the given boundaries. Boundaries are inclusive, see the usage examples below. If validDomain is true, the function will only return valid boundaries, otherwise non-valid boundaries are also possible. If boundary1 &gt; boundary2, the values are swapped</para>
+<para>Usage examples: RandomUint16BoundaryValue(10, 20, SDL_TRUE) returns 10, 11, 19 or 20 RandomUint16BoundaryValue(1, 20, SDL_FALSE) returns 0 or 21 RandomUint16BoundaryValue(0, 99, SDL_FALSE) returns 100 RandomUint16BoundaryValue(0, 0xFFFF, SDL_FALSE) returns 0 (error set)</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boundary1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower boundary limit </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>boundary2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper boundary limit </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>validDomain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Should the generated boundary be valid (=within the bounds) or not?</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a random boundary value for the given range and domain or 0 with error set </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_fuzzer.h" line="188" column="8" declfile="D:/RayTracing/include/SDL_test_fuzzer.h" declline="188" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__fuzzer_8h_1a9e718145eaf96f611cd67fc530473e3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d" kindref="member">Uint32</ref></type>
+        <definition>Uint32 SDLTest_RandomUint32BoundaryValue</definition>
+        <argsstring>(Uint32 boundary1, Uint32 boundary2, SDL_bool validDomain)</argsstring>
+        <name>SDLTest_RandomUint32BoundaryValue</name>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d" kindref="member">Uint32</ref></type>
+          <declname>boundary1</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d" kindref="member">Uint32</ref></type>
+          <declname>boundary2</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b" kindref="member">SDL_bool</ref></type>
+          <declname>validDomain</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a random boundary value for Uint32 within the given boundaries. Boundaries are inclusive, see the usage examples below. If validDomain is true, the function will only return valid boundaries, otherwise non-valid boundaries are also possible. If boundary1 &gt; boundary2, the values are swapped</para>
+<para>Usage examples: RandomUint32BoundaryValue(10, 20, SDL_TRUE) returns 10, 11, 19 or 20 RandomUint32BoundaryValue(1, 20, SDL_FALSE) returns 0 or 21 RandomUint32BoundaryValue(0, 99, SDL_FALSE) returns 100 RandomUint32BoundaryValue(0, 0xFFFFFFFF, SDL_FALSE) returns 0 (with error set)</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boundary1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower boundary limit </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>boundary2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper boundary limit </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>validDomain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Should the generated boundary be valid (=within the bounds) or not?</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a random boundary value for the given range and domain or 0 with error set </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_fuzzer.h" line="209" column="8" declfile="D:/RayTracing/include/SDL_test_fuzzer.h" declline="209" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__fuzzer_8h_1abc660d9b04554c8c2717325224b88b6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13" kindref="member">Uint64</ref></type>
+        <definition>Uint64 SDLTest_RandomUint64BoundaryValue</definition>
+        <argsstring>(Uint64 boundary1, Uint64 boundary2, SDL_bool validDomain)</argsstring>
+        <name>SDLTest_RandomUint64BoundaryValue</name>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13" kindref="member">Uint64</ref></type>
+          <declname>boundary1</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13" kindref="member">Uint64</ref></type>
+          <declname>boundary2</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b" kindref="member">SDL_bool</ref></type>
+          <declname>validDomain</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a random boundary value for Uint64 within the given boundaries. Boundaries are inclusive, see the usage examples below. If validDomain is true, the function will only return valid boundaries, otherwise non-valid boundaries are also possible. If boundary1 &gt; boundary2, the values are swapped</para>
+<para>Usage examples: RandomUint64BoundaryValue(10, 20, SDL_TRUE) returns 10, 11, 19 or 20 RandomUint64BoundaryValue(1, 20, SDL_FALSE) returns 0 or 21 RandomUint64BoundaryValue(0, 99, SDL_FALSE) returns 100 RandomUint64BoundaryValue(0, 0xFFFFFFFFFFFFFFFF, SDL_FALSE) returns 0 (with error set)</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boundary1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower boundary limit </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>boundary2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper boundary limit </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>validDomain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Should the generated boundary be valid (=within the bounds) or not?</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a random boundary value for the given range and domain or 0 with error set </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_fuzzer.h" line="230" column="8" declfile="D:/RayTracing/include/SDL_test_fuzzer.h" declline="230" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__fuzzer_8h_1a09ec06adf1ca58afa5283be6b4f5fdfc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__stdinc_8h_1a5fc98623306a32e69eaab63e89e1d138" kindref="member">Sint8</ref></type>
+        <definition>Sint8 SDLTest_RandomSint8BoundaryValue</definition>
+        <argsstring>(Sint8 boundary1, Sint8 boundary2, SDL_bool validDomain)</argsstring>
+        <name>SDLTest_RandomSint8BoundaryValue</name>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1a5fc98623306a32e69eaab63e89e1d138" kindref="member">Sint8</ref></type>
+          <declname>boundary1</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1a5fc98623306a32e69eaab63e89e1d138" kindref="member">Sint8</ref></type>
+          <declname>boundary2</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b" kindref="member">SDL_bool</ref></type>
+          <declname>validDomain</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a random boundary value for Sint8 within the given boundaries. Boundaries are inclusive, see the usage examples below. If validDomain is true, the function will only return valid boundaries, otherwise non-valid boundaries are also possible. If boundary1 &gt; boundary2, the values are swapped</para>
+<para>Usage examples: RandomSint8BoundaryValue(-10, 20, SDL_TRUE) returns -11, -10, 19 or 20 RandomSint8BoundaryValue(-100, -10, SDL_FALSE) returns -101 or -9 RandomSint8BoundaryValue(SINT8_MIN, 99, SDL_FALSE) returns 100 RandomSint8BoundaryValue(SINT8_MIN, SINT8_MAX, SDL_FALSE) returns SINT8_MIN (== error value) with error set</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boundary1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower boundary limit </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>boundary2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper boundary limit </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>validDomain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Should the generated boundary be valid (=within the bounds) or not?</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a random boundary value for the given range and domain or SINT8_MIN with error set </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_fuzzer.h" line="251" column="7" declfile="D:/RayTracing/include/SDL_test_fuzzer.h" declline="251" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__fuzzer_8h_1ae11fb12560b1a9180b1645d6ca1c6af6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5" kindref="member">Sint16</ref></type>
+        <definition>Sint16 SDLTest_RandomSint16BoundaryValue</definition>
+        <argsstring>(Sint16 boundary1, Sint16 boundary2, SDL_bool validDomain)</argsstring>
+        <name>SDLTest_RandomSint16BoundaryValue</name>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5" kindref="member">Sint16</ref></type>
+          <declname>boundary1</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5" kindref="member">Sint16</ref></type>
+          <declname>boundary2</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b" kindref="member">SDL_bool</ref></type>
+          <declname>validDomain</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a random boundary value for Sint16 within the given boundaries. Boundaries are inclusive, see the usage examples below. If validDomain is true, the function will only return valid boundaries, otherwise non-valid boundaries are also possible. If boundary1 &gt; boundary2, the values are swapped</para>
+<para>Usage examples: RandomSint16BoundaryValue(-10, 20, SDL_TRUE) returns -11, -10, 19 or 20 RandomSint16BoundaryValue(-100, -10, SDL_FALSE) returns -101 or -9 RandomSint16BoundaryValue(SINT16_MIN, 99, SDL_FALSE) returns 100 RandomSint16BoundaryValue(SINT16_MIN, SINT16_MAX, SDL_FALSE) returns SINT16_MIN (== error value) with error set</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boundary1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower boundary limit </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>boundary2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper boundary limit </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>validDomain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Should the generated boundary be valid (=within the bounds) or not?</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a random boundary value for the given range and domain or SINT16_MIN with error set </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_fuzzer.h" line="273" column="8" declfile="D:/RayTracing/include/SDL_test_fuzzer.h" declline="273" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__fuzzer_8h_1ab17fbfddfa253bb3d64412000488fc07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__stdinc_8h_1a7a90b941db9d4582e9ad7abb9940ff7e" kindref="member">Sint32</ref></type>
+        <definition>Sint32 SDLTest_RandomSint32BoundaryValue</definition>
+        <argsstring>(Sint32 boundary1, Sint32 boundary2, SDL_bool validDomain)</argsstring>
+        <name>SDLTest_RandomSint32BoundaryValue</name>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1a7a90b941db9d4582e9ad7abb9940ff7e" kindref="member">Sint32</ref></type>
+          <declname>boundary1</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1a7a90b941db9d4582e9ad7abb9940ff7e" kindref="member">Sint32</ref></type>
+          <declname>boundary2</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b" kindref="member">SDL_bool</ref></type>
+          <declname>validDomain</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a random boundary value for Sint32 within the given boundaries. Boundaries are inclusive, see the usage examples below. If validDomain is true, the function will only return valid boundaries, otherwise non-valid boundaries are also possible. If boundary1 &gt; boundary2, the values are swapped</para>
+<para>Usage examples: RandomSint32BoundaryValue(-10, 20, SDL_TRUE) returns -11, -10, 19 or 20 RandomSint32BoundaryValue(-100, -10, SDL_FALSE) returns -101 or -9 RandomSint32BoundaryValue(SINT32_MIN, 99, SDL_FALSE) returns 100 RandomSint32BoundaryValue(SINT32_MIN, SINT32_MAX, SDL_FALSE) returns SINT32_MIN (== error value)</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boundary1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower boundary limit </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>boundary2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper boundary limit </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>validDomain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Should the generated boundary be valid (=within the bounds) or not?</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a random boundary value for the given range and domain or SINT32_MIN with error set </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_fuzzer.h" line="294" column="8" declfile="D:/RayTracing/include/SDL_test_fuzzer.h" declline="294" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__fuzzer_8h_1a0b6a8004aba7d72595f80540fa0b6727" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d" kindref="member">Sint64</ref></type>
+        <definition>Sint64 SDLTest_RandomSint64BoundaryValue</definition>
+        <argsstring>(Sint64 boundary1, Sint64 boundary2, SDL_bool validDomain)</argsstring>
+        <name>SDLTest_RandomSint64BoundaryValue</name>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d" kindref="member">Sint64</ref></type>
+          <declname>boundary1</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d" kindref="member">Sint64</ref></type>
+          <declname>boundary2</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b" kindref="member">SDL_bool</ref></type>
+          <declname>validDomain</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a random boundary value for Sint64 within the given boundaries. Boundaries are inclusive, see the usage examples below. If validDomain is true, the function will only return valid boundaries, otherwise non-valid boundaries are also possible. If boundary1 &gt; boundary2, the values are swapped</para>
+<para>Usage examples: RandomSint64BoundaryValue(-10, 20, SDL_TRUE) returns -11, -10, 19 or 20 RandomSint64BoundaryValue(-100, -10, SDL_FALSE) returns -101 or -9 RandomSint64BoundaryValue(SINT64_MIN, 99, SDL_FALSE) returns 100 RandomSint64BoundaryValue(SINT64_MIN, SINT64_MAX, SDL_FALSE) returns SINT64_MIN (== error value) and error set</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>boundary1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lower boundary limit </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>boundary2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper boundary limit </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>validDomain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Should the generated boundary be valid (=within the bounds) or not?</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a random boundary value for the given range and domain or SINT64_MIN with error set </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_fuzzer.h" line="315" column="8" declfile="D:/RayTracing/include/SDL_test_fuzzer.h" declline="315" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__fuzzer_8h_1a5c81f42e213ad1608cf5f29669eb8521" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__stdinc_8h_1a7a90b941db9d4582e9ad7abb9940ff7e" kindref="member">Sint32</ref></type>
+        <definition>Sint32 SDLTest_RandomIntegerInRange</definition>
+        <argsstring>(Sint32 min, Sint32 max)</argsstring>
+        <name>SDLTest_RandomIntegerInRange</name>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1a7a90b941db9d4582e9ad7abb9940ff7e" kindref="member">Sint32</ref></type>
+          <declname>min</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1a7a90b941db9d4582e9ad7abb9940ff7e" kindref="member">Sint32</ref></type>
+          <declname>max</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns integer in range [min, max] (inclusive). Min and max values can be negative values. If Max in smaller than min, then the values are swapped. Min and max are the same value, that value will be returned.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>min</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minimum inclusive value of returned random number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum inclusive value of returned random number</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a generated random integer in range </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_fuzzer.h" line="329" column="8" declfile="D:/RayTracing/include/SDL_test_fuzzer.h" declline="329" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__fuzzer_8h_1af897306a58db0f68e053fc28cc28e078" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * SDLTest_RandomAsciiString</definition>
+        <argsstring>(void)</argsstring>
+        <name>SDLTest_RandomAsciiString</name>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Generates random null-terminated string. The minimum length for the string is 1 character, maximum length for the string is 255 characters and it can contain ASCII characters from 32 to 126.</para>
+<para>Note: Returned string needs to be deallocated.</para>
+<para><simplesect kind="return"><para>a newly allocated random string; or NULL if length was invalid or string could not be allocated. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_fuzzer.h" line="341" column="7" declfile="D:/RayTracing/include/SDL_test_fuzzer.h" declline="341" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__fuzzer_8h_1ab945d938652f887b7389afabc5442588" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * SDLTest_RandomAsciiStringWithMaximumLength</definition>
+        <argsstring>(int maxLength)</argsstring>
+        <name>SDLTest_RandomAsciiStringWithMaximumLength</name>
+        <param>
+          <type>int</type>
+          <declname>maxLength</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Generates random null-terminated string. The maximum length for the string is defined by the maxLength parameter. String can contain ASCII characters from 32 to 126.</para>
+<para>Note: Returned string needs to be deallocated.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>maxLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum length of the generated string.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a newly allocated random string; or NULL if maxLength was invalid or string could not be allocated. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_fuzzer.h" line="355" column="7" declfile="D:/RayTracing/include/SDL_test_fuzzer.h" declline="355" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__fuzzer_8h_1aa0c9c462a0cb9bbfe49e38b53821e341" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * SDLTest_RandomAsciiStringOfSize</definition>
+        <argsstring>(int size)</argsstring>
+        <name>SDLTest_RandomAsciiStringOfSize</name>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Generates random null-terminated string. The length for the string is defined by the size parameter. String can contain ASCII characters from 32 to 126.</para>
+<para>Note: Returned string needs to be deallocated.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of the generated string</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a newly allocated random string; or NULL if size was invalid or string could not be allocated. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_fuzzer.h" line="369" column="7" declfile="D:/RayTracing/include/SDL_test_fuzzer.h" declline="369" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__fuzzer_8h_1a2a0e63a6e02a55141edbdfa53b201c9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SDLTest_GetFuzzerInvocationCount</definition>
+        <argsstring>(void)</argsstring>
+        <name>SDLTest_GetFuzzerInvocationCount</name>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the invocation count for the fuzzer since last ...FuzzerInit.</para>
+<para><simplesect kind="return"><para>the invocation count. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_fuzzer.h" line="376" column="5" declfile="D:/RayTracing/include/SDL_test_fuzzer.h" declline="376" declcolumn="5"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Include file for SDL test framework.</para>
+<para>This code is a part of the SDL2_test library, not the main SDL library.</para>
+<para>Note: The fuzzer implementation uses a static instance of random context internally which makes it thread-UNsafe. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/>Simple<sp/>DirectMedia<sp/>Layer</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/>Copyright<sp/>(C)<sp/>1997-2022<sp/>Sam<sp/>Lantinga<sp/>&lt;slouken@libsdl.org&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/>This<sp/>software<sp/>is<sp/>provided<sp/>&apos;as-is&apos;,<sp/>without<sp/>any<sp/>express<sp/>or<sp/>implied</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/>warranty.<sp/><sp/>In<sp/>no<sp/>event<sp/>will<sp/>the<sp/>authors<sp/>be<sp/>held<sp/>liable<sp/>for<sp/>any<sp/>damages</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/>arising<sp/>from<sp/>the<sp/>use<sp/>of<sp/>this<sp/>software.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/>Permission<sp/>is<sp/>granted<sp/>to<sp/>anyone<sp/>to<sp/>use<sp/>this<sp/>software<sp/>for<sp/>any<sp/>purpose,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/>including<sp/>commercial<sp/>applications,<sp/>and<sp/>to<sp/>alter<sp/>it<sp/>and<sp/>redistribute<sp/>it</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/>freely,<sp/>subject<sp/>to<sp/>the<sp/>following<sp/>restrictions:</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"></highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/>1.<sp/>The<sp/>origin<sp/>of<sp/>this<sp/>software<sp/>must<sp/>not<sp/>be<sp/>misrepresented;<sp/>you<sp/>must<sp/>not</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>claim<sp/>that<sp/>you<sp/>wrote<sp/>the<sp/>original<sp/>software.<sp/>If<sp/>you<sp/>use<sp/>this<sp/>software</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>in<sp/>a<sp/>product,<sp/>an<sp/>acknowledgment<sp/>in<sp/>the<sp/>product<sp/>documentation<sp/>would<sp/>be</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>appreciated<sp/>but<sp/>is<sp/>not<sp/>required.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/>2.<sp/>Altered<sp/>source<sp/>versions<sp/>must<sp/>be<sp/>plainly<sp/>marked<sp/>as<sp/>such,<sp/>and<sp/>must<sp/>not<sp/>be</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>misrepresented<sp/>as<sp/>being<sp/>the<sp/>original<sp/>software.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/>3.<sp/>This<sp/>notice<sp/>may<sp/>not<sp/>be<sp/>removed<sp/>or<sp/>altered<sp/>from<sp/>any<sp/>source<sp/>distribution.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"></highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/><sp/>Data<sp/>generators<sp/>for<sp/>fuzzing<sp/>test<sp/>data<sp/>in<sp/>a<sp/>reproducible<sp/>way.</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"></highlight></codeline>
+<codeline lineno="34"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SDL_test_fuzzer_h_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_test_fuzzer_h_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="begin__code_8h" kindref="compound">begin_code.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Set<sp/>up<sp/>for<sp/>C<sp/>function<sp/>definitions,<sp/>even<sp/>when<sp/>using<sp/>C++<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/><sp/>Based<sp/>on<sp/>GSOC<sp/>code<sp/>by<sp/>Markus<sp/>Kauppila<sp/>&lt;markus.kauppila@gmail.com&gt;</highlight></codeline>
+<codeline lineno="48"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="_s_d_l__test__fuzzer_8h_1a623db129ea615326bed457ebb9703c1e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__test__fuzzer_8h_1a623db129ea615326bed457ebb9703c1e" kindref="member">SDLTest_FuzzerInit</ref>(<ref refid="_s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13" kindref="member">Uint64</ref><sp/>execKey);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="_s_d_l__test__fuzzer_8h_1ac8dedcebddb993c4a5c86fb914133289" refkind="member"><highlight class="normal"><ref refid="_s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2" kindref="member">Uint8</ref><sp/><ref refid="_s_d_l__test__fuzzer_8h_1ac8dedcebddb993c4a5c86fb914133289" kindref="member">SDLTest_RandomUint8</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="_s_d_l__test__fuzzer_8h_1ac4988f65c0b1e921ac6a498ba9b9150a" refkind="member"><highlight class="normal"><ref refid="_s_d_l__stdinc_8h_1a5fc98623306a32e69eaab63e89e1d138" kindref="member">Sint8</ref><sp/><ref refid="_s_d_l__test__fuzzer_8h_1ac4988f65c0b1e921ac6a498ba9b9150a" kindref="member">SDLTest_RandomSint8</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="_s_d_l__test__fuzzer_8h_1a3eceb16e97b4c4c5143904c36ba3a3d5" refkind="member"><highlight class="normal"><ref refid="_s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b" kindref="member">Uint16</ref><sp/><ref refid="_s_d_l__test__fuzzer_8h_1a3eceb16e97b4c4c5143904c36ba3a3d5" kindref="member">SDLTest_RandomUint16</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="_s_d_l__test__fuzzer_8h_1aaf6c560d87e5c01b638b9072a85369aa" refkind="member"><highlight class="normal"><ref refid="_s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5" kindref="member">Sint16</ref><sp/><ref refid="_s_d_l__test__fuzzer_8h_1aaf6c560d87e5c01b638b9072a85369aa" kindref="member">SDLTest_RandomSint16</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="_s_d_l__test__fuzzer_8h_1a26976cb8f4e44aec5e83c90b900e7ae0" refkind="member"><highlight class="normal"><ref refid="_s_d_l__stdinc_8h_1a7a90b941db9d4582e9ad7abb9940ff7e" kindref="member">Sint32</ref><sp/><ref refid="_s_d_l__test__fuzzer_8h_1a26976cb8f4e44aec5e83c90b900e7ae0" kindref="member">SDLTest_RandomSint32</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="_s_d_l__test__fuzzer_8h_1a853884a6887973eb5072f7a6be20f51e" refkind="member"><highlight class="normal"><ref refid="_s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d" kindref="member">Uint32</ref><sp/><ref refid="_s_d_l__test__fuzzer_8h_1a853884a6887973eb5072f7a6be20f51e" kindref="member">SDLTest_RandomUint32</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="_s_d_l__test__fuzzer_8h_1a3c9b42462ea1d24552306004338f7d32" refkind="member"><highlight class="normal"><ref refid="_s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13" kindref="member">Uint64</ref><sp/><ref refid="_s_d_l__test__fuzzer_8h_1a3c9b42462ea1d24552306004338f7d32" kindref="member">SDLTest_RandomUint64</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="_s_d_l__test__fuzzer_8h_1ab503ec55dfd34e9c491f83bfff374bdb" refkind="member"><highlight class="normal"><ref refid="_s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d" kindref="member">Sint64</ref><sp/><ref refid="_s_d_l__test__fuzzer_8h_1ab503ec55dfd34e9c491f83bfff374bdb" kindref="member">SDLTest_RandomSint64</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129" refid="_s_d_l__test__fuzzer_8h_1a2f9e47894c17386a36793504fc11de85" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__test__fuzzer_8h_1a2f9e47894c17386a36793504fc11de85" kindref="member">SDLTest_RandomUnitFloat</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="_s_d_l__test__fuzzer_8h_1a9f3159422e964a51f17243ce86b6eef6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__test__fuzzer_8h_1a9f3159422e964a51f17243ce86b6eef6" kindref="member">SDLTest_RandomUnitDouble</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140" refid="_s_d_l__test__fuzzer_8h_1a65a242a0a22e7cbea6e9081567fdd056" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__test__fuzzer_8h_1a65a242a0a22e7cbea6e9081567fdd056" kindref="member">SDLTest_RandomFloat</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146" refid="_s_d_l__test__fuzzer_8h_1a31167fd1a3b922f62896210dbe30c32c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__test__fuzzer_8h_1a31167fd1a3b922f62896210dbe30c32c" kindref="member">SDLTest_RandomDouble</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167" refid="_s_d_l__test__fuzzer_8h_1a129a58a37dc23847b8257569bf56d16f" refkind="member"><highlight class="normal"><ref refid="_s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2" kindref="member">Uint8</ref><sp/><ref refid="_s_d_l__test__fuzzer_8h_1a129a58a37dc23847b8257569bf56d16f" kindref="member">SDLTest_RandomUint8BoundaryValue</ref>(<ref refid="_s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2" kindref="member">Uint8</ref><sp/>boundary1,<sp/><ref refid="_s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2" kindref="member">Uint8</ref><sp/>boundary2,<sp/><ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b" kindref="member">SDL_bool</ref><sp/>validDomain);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188" refid="_s_d_l__test__fuzzer_8h_1a3710dba14db764872949252f558429ba" refkind="member"><highlight class="normal"><ref refid="_s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b" kindref="member">Uint16</ref><sp/><ref refid="_s_d_l__test__fuzzer_8h_1a3710dba14db764872949252f558429ba" kindref="member">SDLTest_RandomUint16BoundaryValue</ref>(<ref refid="_s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b" kindref="member">Uint16</ref><sp/>boundary1,<sp/><ref refid="_s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b" kindref="member">Uint16</ref><sp/>boundary2,<sp/><ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b" kindref="member">SDL_bool</ref><sp/>validDomain);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209" refid="_s_d_l__test__fuzzer_8h_1a9e718145eaf96f611cd67fc530473e3a" refkind="member"><highlight class="normal"><ref refid="_s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d" kindref="member">Uint32</ref><sp/><ref refid="_s_d_l__test__fuzzer_8h_1a9e718145eaf96f611cd67fc530473e3a" kindref="member">SDLTest_RandomUint32BoundaryValue</ref>(<ref refid="_s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d" kindref="member">Uint32</ref><sp/>boundary1,<sp/><ref refid="_s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d" kindref="member">Uint32</ref><sp/>boundary2,<sp/><ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b" kindref="member">SDL_bool</ref><sp/>validDomain);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230" refid="_s_d_l__test__fuzzer_8h_1abc660d9b04554c8c2717325224b88b6a" refkind="member"><highlight class="normal"><ref refid="_s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13" kindref="member">Uint64</ref><sp/><ref refid="_s_d_l__test__fuzzer_8h_1abc660d9b04554c8c2717325224b88b6a" kindref="member">SDLTest_RandomUint64BoundaryValue</ref>(<ref refid="_s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13" kindref="member">Uint64</ref><sp/>boundary1,<sp/><ref refid="_s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13" kindref="member">Uint64</ref><sp/>boundary2,<sp/><ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b" kindref="member">SDL_bool</ref><sp/>validDomain);</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="251" refid="_s_d_l__test__fuzzer_8h_1a09ec06adf1ca58afa5283be6b4f5fdfc" refkind="member"><highlight class="normal"><ref refid="_s_d_l__stdinc_8h_1a5fc98623306a32e69eaab63e89e1d138" kindref="member">Sint8</ref><sp/><ref refid="_s_d_l__test__fuzzer_8h_1a09ec06adf1ca58afa5283be6b4f5fdfc" kindref="member">SDLTest_RandomSint8BoundaryValue</ref>(<ref refid="_s_d_l__stdinc_8h_1a5fc98623306a32e69eaab63e89e1d138" kindref="member">Sint8</ref><sp/>boundary1,<sp/><ref refid="_s_d_l__stdinc_8h_1a5fc98623306a32e69eaab63e89e1d138" kindref="member">Sint8</ref><sp/>boundary2,<sp/><ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b" kindref="member">SDL_bool</ref><sp/>validDomain);</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273" refid="_s_d_l__test__fuzzer_8h_1ae11fb12560b1a9180b1645d6ca1c6af6" refkind="member"><highlight class="normal"><ref refid="_s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5" kindref="member">Sint16</ref><sp/><ref refid="_s_d_l__test__fuzzer_8h_1ae11fb12560b1a9180b1645d6ca1c6af6" kindref="member">SDLTest_RandomSint16BoundaryValue</ref>(<ref refid="_s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5" kindref="member">Sint16</ref><sp/>boundary1,<sp/><ref refid="_s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5" kindref="member">Sint16</ref><sp/>boundary2,<sp/><ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b" kindref="member">SDL_bool</ref><sp/>validDomain);</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="294" refid="_s_d_l__test__fuzzer_8h_1ab17fbfddfa253bb3d64412000488fc07" refkind="member"><highlight class="normal"><ref refid="_s_d_l__stdinc_8h_1a7a90b941db9d4582e9ad7abb9940ff7e" kindref="member">Sint32</ref><sp/><ref refid="_s_d_l__test__fuzzer_8h_1ab17fbfddfa253bb3d64412000488fc07" kindref="member">SDLTest_RandomSint32BoundaryValue</ref>(<ref refid="_s_d_l__stdinc_8h_1a7a90b941db9d4582e9ad7abb9940ff7e" kindref="member">Sint32</ref><sp/>boundary1,<sp/><ref refid="_s_d_l__stdinc_8h_1a7a90b941db9d4582e9ad7abb9940ff7e" kindref="member">Sint32</ref><sp/>boundary2,<sp/><ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b" kindref="member">SDL_bool</ref><sp/>validDomain);</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
+<codeline lineno="315" refid="_s_d_l__test__fuzzer_8h_1a0b6a8004aba7d72595f80540fa0b6727" refkind="member"><highlight class="normal"><ref refid="_s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d" kindref="member">Sint64</ref><sp/><ref refid="_s_d_l__test__fuzzer_8h_1a0b6a8004aba7d72595f80540fa0b6727" kindref="member">SDLTest_RandomSint64BoundaryValue</ref>(<ref refid="_s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d" kindref="member">Sint64</ref><sp/>boundary1,<sp/><ref refid="_s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d" kindref="member">Sint64</ref><sp/>boundary2,<sp/><ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b" kindref="member">SDL_bool</ref><sp/>validDomain);</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight></codeline>
+<codeline lineno="329" refid="_s_d_l__test__fuzzer_8h_1a5c81f42e213ad1608cf5f29669eb8521" refkind="member"><highlight class="normal"><ref refid="_s_d_l__stdinc_8h_1a7a90b941db9d4582e9ad7abb9940ff7e" kindref="member">Sint32</ref><sp/><ref refid="_s_d_l__test__fuzzer_8h_1a5c81f42e213ad1608cf5f29669eb8521" kindref="member">SDLTest_RandomIntegerInRange</ref>(<ref refid="_s_d_l__stdinc_8h_1a7a90b941db9d4582e9ad7abb9940ff7e" kindref="member">Sint32</ref><sp/>min,<sp/><ref refid="_s_d_l__stdinc_8h_1a7a90b941db9d4582e9ad7abb9940ff7e" kindref="member">Sint32</ref><sp/>max);</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight></codeline>
+<codeline lineno="341" refid="_s_d_l__test__fuzzer_8h_1af897306a58db0f68e053fc28cc28e078" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="_s_d_l__test__fuzzer_8h_1af897306a58db0f68e053fc28cc28e078" kindref="member">SDLTest_RandomAsciiString</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"></highlight></codeline>
+<codeline lineno="355" refid="_s_d_l__test__fuzzer_8h_1ab945d938652f887b7389afabc5442588" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="_s_d_l__test__fuzzer_8h_1ab945d938652f887b7389afabc5442588" kindref="member">SDLTest_RandomAsciiStringWithMaximumLength</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__opengl__glext_8h_1a5c0738fe9fcce8c6b2d54e2a3b951a97" kindref="member">maxLength</ref>);</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"></highlight></codeline>
+<codeline lineno="357"><highlight class="normal"></highlight></codeline>
+<codeline lineno="369" refid="_s_d_l__test__fuzzer_8h_1aa0c9c462a0cb9bbfe49e38b53821e341" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="_s_d_l__test__fuzzer_8h_1aa0c9c462a0cb9bbfe49e38b53821e341" kindref="member">SDLTest_RandomAsciiStringOfSize</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__opengl__glext_8h_1a3d1e3edfcf61ca2d831883e1afbad89e" kindref="member">size</ref>);</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"></highlight></codeline>
+<codeline lineno="376" refid="_s_d_l__test__fuzzer_8h_1a2a0e63a6e02a55141edbdfa53b201c9b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__test__fuzzer_8h_1a2a0e63a6e02a55141edbdfa53b201c9b" kindref="member">SDLTest_GetFuzzerInvocationCount</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"></highlight></codeline>
+<codeline lineno="378"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Ends<sp/>C<sp/>function<sp/>definitions<sp/>when<sp/>using<sp/>C++<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="379"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="380"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="382"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="close__code_8h" kindref="compound">close_code.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"></highlight></codeline>
+<codeline lineno="384"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>SDL_test_fuzzer_h_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="385"><highlight class="normal"></highlight></codeline>
+<codeline lineno="386"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>vi:<sp/>set<sp/>ts=4<sp/>sw=4<sp/>expandtab:<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/include/SDL_test_fuzzer.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,46 @@
+\hypertarget{_c_app_8h_source}{}\doxysection{CApp.\+h}
+\label{_c_app_8h_source}\index{D:/RayTracing/CApp.h@{D:/RayTracing/CApp.h}}
+\mbox{\hyperlink{_c_app_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef RAYTRACING\_CAPP\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define RAYTRACING\_CAPP\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l_8h}{include/SDL.h}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_image_8h}{./RayTrace/Image.h}}"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_scene_8h}{./RayTrace/Scene.h}}"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{camera_8h}{./RayTrace/camera.h}}"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{flat_8h}{./RayTrace/Textures/flat.h}}"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{checker_8h}{./RayTrace/Textures/checker.h}}"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_app}{CApp}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13 \textcolor{keyword}{public}:}
+\DoxyCodeLine{14     \mbox{\hyperlink{class_c_app_af14ddd76e4c5d54998308e299f2c0af5}{CApp}}();}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_c_app_a134439f7f299b9d323d976c787d378ec}{OnExecute}}();}
+\DoxyCodeLine{17     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_c_app_ac48eeaa86e8be5bbe7d931cb6b5c953b}{OnInit}}();}
+\DoxyCodeLine{18     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_app_a9bdf280ee565d99694a6e28757e08d60}{OnEvent}}(\mbox{\hyperlink{union_s_d_l___event}{SDL\_Event}} *\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a03b04a5a978bad576866339075de01f6}{event}});}
+\DoxyCodeLine{19     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_app_a239d21c890a96a07625c96675c8455ac}{OnLoop}}();}
+\DoxyCodeLine{20     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_app_aa36e15c53011907de9f177a2394c100e}{OnRender}}();}
+\DoxyCodeLine{21     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_app_ab0da2578a987ddb2633420272a5a7284}{OnExit}}();}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{private}:}
+\DoxyCodeLine{24     \textcolor{comment}{// Wydrukuj wektor do terminala}}
+\DoxyCodeLine{25     \textcolor{keywordtype}{void} PrintVector(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&inputVector);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{private}:}
+\DoxyCodeLine{28     \textcolor{comment}{// Instancja klasy Image do przechowywania obrazu}}
+\DoxyCodeLine{29     \mbox{\hyperlink{class_image}{Image}} m\_image;}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \textcolor{comment}{// Instancja klasy Scene}}
+\DoxyCodeLine{32     \mbox{\hyperlink{class_r_t_1_1_scene}{RT::Scene}} m\_scene;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{comment}{// SDL2}}
+\DoxyCodeLine{35     \textcolor{keywordtype}{bool} isRunning;}
+\DoxyCodeLine{36     \mbox{\hyperlink{_s_d_l__video_8h_a55a196c7d3b8497538632c79ae1e6392}{SDL\_Window}} *pWindow;}
+\DoxyCodeLine{37     \mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\_Renderer}} *pRenderer;}
+\DoxyCodeLine{38 \};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//RAYTRACING\_CAPP\_H}}
+
+\end{DoxyCode}

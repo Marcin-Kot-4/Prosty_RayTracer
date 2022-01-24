@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__test__harness_8h_source" xml:lang="en-US">
+<title>SDL_test_harness.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_test_harness.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+30 <emphasis role="comment">/*</emphasis>
+31 <emphasis role="comment">&#32;&#32;Defines&#32;types&#32;for&#32;test&#32;case&#32;definitions&#32;and&#32;the&#32;test&#32;execution&#32;harness&#32;API.</emphasis>
+32 <emphasis role="comment"></emphasis>
+33 <emphasis role="comment">&#32;&#32;Based&#32;on&#32;original&#32;GSOC&#32;code&#32;by&#32;Markus&#32;Kauppila&#32;&lt;markus.kauppila@gmail.com&gt;</emphasis>
+34 <emphasis role="comment">*/</emphasis>
+35 
+36 <emphasis role="preprocessor">#ifndef&#32;SDL_test_h_arness_h</emphasis>
+37 <emphasis role="preprocessor">#define&#32;SDL_test_h_arness_h</emphasis>
+38 
+39 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+40 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+41 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+42 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+43 <emphasis role="preprocessor">#endif</emphasis>
+44 
+45 
+46 <emphasis role="comment">/*&#32;!&#32;Definitions&#32;for&#32;test&#32;case&#32;structures&#32;*/</emphasis>
+47 <emphasis role="preprocessor">#define&#32;TEST_ENABLED&#32;&#32;1</emphasis>
+48 <emphasis role="preprocessor">#define&#32;TEST_DISABLED&#32;0</emphasis>
+49 
+50 <emphasis role="comment">/*&#32;!&#32;Definition&#32;of&#32;all&#32;the&#32;possible&#32;test&#32;return&#32;values&#32;of&#32;the&#32;test&#32;case&#32;method&#32;*/</emphasis>
+51 <emphasis role="preprocessor">#define&#32;TEST_ABORTED&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-1</emphasis>
+52 <emphasis role="preprocessor">#define&#32;TEST_STARTED&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0</emphasis>
+53 <emphasis role="preprocessor">#define&#32;TEST_COMPLETED&#32;&#32;&#32;&#32;&#32;&#32;&#32;1</emphasis>
+54 <emphasis role="preprocessor">#define&#32;TEST_SKIPPED&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;2</emphasis>
+55 
+56 <emphasis role="comment">/*&#32;!&#32;Definition&#32;of&#32;all&#32;the&#32;possible&#32;test&#32;results&#32;for&#32;the&#32;harness&#32;*/</emphasis>
+57 <emphasis role="preprocessor">#define&#32;TEST_RESULT_PASSED&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0</emphasis>
+58 <emphasis role="preprocessor">#define&#32;TEST_RESULT_FAILED&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;1</emphasis>
+59 <emphasis role="preprocessor">#define&#32;TEST_RESULT_NO_ASSERT&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;2</emphasis>
+60 <emphasis role="preprocessor">#define&#32;TEST_RESULT_SKIPPED&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;3</emphasis>
+61 <emphasis role="preprocessor">#define&#32;TEST_RESULT_SETUP_FAILURE&#32;&#32;&#32;&#32;&#32;&#32;&#32;4</emphasis>
+62 
+63 <emphasis role="comment">/*&#32;!&lt;&#32;Function&#32;pointer&#32;to&#32;a&#32;test&#32;case&#32;setup&#32;function&#32;(run&#32;before&#32;every&#32;test)&#32;*/</emphasis>
+64 <emphasis role="keyword">typedef</emphasis>&#32;<link linkend="__s_d_l__audio_8h_1aa5cb90967788ada2711894ca158ece01">void</link>&#32;(*<link linkend="__s_d_l__test__harness_8h_1acf5b8d5c6dcbf946fdf7bdb1ceb03e45">SDLTest_TestCaseSetUpFp</link>)(<emphasis role="keywordtype">void</emphasis>&#32;*arg);
+65 
+66 <emphasis role="comment">/*&#32;!&lt;&#32;Function&#32;pointer&#32;to&#32;a&#32;test&#32;case&#32;function&#32;*/</emphasis>
+67 <emphasis role="keyword">typedef</emphasis>&#32;int&#32;(*<link linkend="__s_d_l__test__harness_8h_1ae1a62d8f725d57dc95faddcc5409afbb">SDLTest_TestCaseFp</link>)(<emphasis role="keywordtype">void</emphasis>&#32;*arg);
+68 
+69 <emphasis role="comment">/*&#32;!&lt;&#32;Function&#32;pointer&#32;to&#32;a&#32;test&#32;case&#32;teardown&#32;function&#32;(run&#32;after&#32;every&#32;test)&#32;*/</emphasis>
+70 <emphasis role="keyword">typedef</emphasis>&#32;<link linkend="__s_d_l__audio_8h_1aa5cb90967788ada2711894ca158ece01">void</link>&#32;&#32;(*<link linkend="__s_d_l__test__harness_8h_1a146292b699bf0c95e1c4bcfaced3b1dc">SDLTest_TestCaseTearDownFp</link>)(<emphasis role="keywordtype">void</emphasis>&#32;*arg);
+71 
+75 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_s_d_l_test___test_case_reference">SDLTest_TestCaseReference</link>&#32;{
+76 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;!&lt;&#32;Func2Stress&#32;*/</emphasis>
+77 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__test__harness_8h_1ae1a62d8f725d57dc95faddcc5409afbb">SDLTest_TestCaseFp</link>&#32;<link linkend="_struct_s_d_l_test___test_case_reference_1af9472f0c421a2845b540fc28fb30a3ef">testCase</link>;
+78 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;!&lt;&#32;Short&#32;name&#32;(or&#32;function&#32;name)&#32;&quot;Func2Stress&quot;&#32;*/</emphasis>
+79 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="_struct_s_d_l_test___test_case_reference_1a02bcd31636644ce291dae6520304a112">name</link>;
+80 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;!&lt;&#32;Long&#32;name&#32;or&#32;full&#32;description&#32;&quot;This&#32;test&#32;pushes&#32;func2()&#32;to&#32;the&#32;limit.&quot;&#32;*/</emphasis>
+81 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="_struct_s_d_l_test___test_case_reference_1a5bfe4df076e488b8773beab882f42614">description</link>;
+82 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;!&lt;&#32;Set&#32;to&#32;TEST_ENABLED&#32;or&#32;TEST_DISABLED&#32;(test&#32;won&apos;t&#32;be&#32;run)&#32;*/</emphasis>
+83 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___test_case_reference_1a15168c85e38cae7557b4beb477ef6f9a">enabled</link>;
+84 }&#32;<link linkend="__s_d_l__test__harness_8h_1ae02b9535633a86200d7bce94686d1545">SDLTest_TestCaseReference</link>;
+85 
+89 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_s_d_l_test___test_suite_reference">SDLTest_TestSuiteReference</link>&#32;{
+90 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;!&lt;&#32;&quot;PlatformSuite&quot;&#32;*/</emphasis>
+91 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="_struct_s_d_l_test___test_suite_reference_1a01b702b83dad3dc15cfe535554527418">name</link>;
+92 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;!&lt;&#32;The&#32;function&#32;that&#32;is&#32;run&#32;before&#32;each&#32;test.&#32;NULL&#32;skips.&#32;*/</emphasis>
+93 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__test__harness_8h_1acf5b8d5c6dcbf946fdf7bdb1ceb03e45">SDLTest_TestCaseSetUpFp</link>&#32;<link linkend="_struct_s_d_l_test___test_suite_reference_1a8aa788b982efb93c93c2ab01202e0007">testSetUp</link>;
+94 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;!&lt;&#32;The&#32;test&#32;cases&#32;that&#32;are&#32;run&#32;as&#32;part&#32;of&#32;the&#32;suite.&#32;Last&#32;item&#32;should&#32;be&#32;NULL.&#32;*/</emphasis>
+95 &#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_s_d_l_test___test_case_reference">SDLTest_TestCaseReference</link>&#32;**<link linkend="_struct_s_d_l_test___test_suite_reference_1a06d97ce5bcf9ceb1300cc4aa39c028d3">testCases</link>;
+96 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;!&lt;&#32;The&#32;function&#32;that&#32;is&#32;run&#32;after&#32;each&#32;test.&#32;NULL&#32;skips.&#32;*/</emphasis>
+97 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__test__harness_8h_1a146292b699bf0c95e1c4bcfaced3b1dc">SDLTest_TestCaseTearDownFp</link>&#32;<link linkend="_struct_s_d_l_test___test_suite_reference_1ad66abaf20653fd7361d28c69f88ac702">testTearDown</link>;
+98 }&#32;<link linkend="__s_d_l__test__harness_8h_1ae52f136004f974251df5cde2152fc5ad">SDLTest_TestSuiteReference</link>;
+99 
+100 
+110 <emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="__s_d_l__test__harness_8h_1a44e422204aa15c9a33e17ea74b2442ab">SDLTest_GenerateRunSeed</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1ab9c919755bde3b34349e23a32b4e0fa7">length</link>);
+111 
+123 <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__test__harness_8h_1a4999be460499b1cb45e2b2b3bbb582b2">SDLTest_RunSuites</link>(<link linkend="_struct_s_d_l_test___test_suite_reference">SDLTest_TestSuiteReference</link>&#32;*testSuites[],&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*userRunSeed,&#32;<link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link>&#32;userExecKey,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1a8bed50656d87c3eeed9d8f5e539c6b3e">filter</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;testIterations);
+124 
+125 
+126 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+127 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+128 }
+129 <emphasis role="preprocessor">#endif</emphasis>
+130 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+131 
+132 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_test_h_arness_h&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+133 
+134 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

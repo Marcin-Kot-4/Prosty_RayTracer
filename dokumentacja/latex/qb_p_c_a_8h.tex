@@ -1,0 +1,51 @@
+\hypertarget{qb_p_c_a_8h}{}\doxysection{D\+:/\+Ray\+Tracing/\+Ray\+Trace/qb\+Lin\+Alg/qb\+PCA.h File Reference}
+\label{qb_p_c_a_8h}\index{D:/RayTracing/RayTrace/qbLinAlg/qbPCA.h@{D:/RayTracing/RayTrace/qbLinAlg/qbPCA.h}}
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include \char`\"{}qb\+Matrix.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}qb\+Vector.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}qb\+EIG.\+h\char`\"{}}\newline
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceqb_p_c_a}{qb\+PCA}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::vector$<$ T $>$ \mbox{\hyperlink{namespaceqb_p_c_a_ade6a2d48ed6e5d5bbd7db9dc515fbfa2}{qb\+PCA\+::\+Compute\+Column\+Means}} (const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&input\+Data)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{_s_d_l__opengles2__gl2ext_8h_ae5d8fa23ad07c48bb609509eae494c95}{void}} \mbox{\hyperlink{namespaceqb_p_c_a_a5a22357f0fe78194175135e2adc1045e}{qb\+PCA\+::\+Subtract\+Column\+Means}} (\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&input\+Data, std\+::vector$<$ T $>$ \&column\+Means)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \mbox{\hyperlink{namespaceqb_p_c_a_a393fa03dff91c84ac6c53aa8bd4141b7}{qb\+PCA\+::\+Compute\+Covariance}} (const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&X)
+\item 
+{\footnotesize template$<$typename T $>$ }\\int \mbox{\hyperlink{namespaceqb_p_c_a_aa00b5e4dee58ccfa5ce763a873b96c2f}{qb\+PCA\+::\+Compute\+Eigenvectors}} (const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&covariance\+Matrix, \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&eigenvectors)
+\item 
+{\footnotesize template$<$typename T $>$ }\\int \mbox{\hyperlink{namespaceqb_p_c_a_aa99d4f272173791d49b268a9dd151fc6}{qb\+PCA\+::qb\+PCA}} (const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&input\+Data, \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&output\+Components)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr int \mbox{\hyperlink{qb_p_c_a_8h_a89d6ef3ada78889d41961ce39a19b714}{QBPCA\+\_\+\+MATRIXNOTSQUARE}} = -\/1
+\item 
+constexpr int \mbox{\hyperlink{qb_p_c_a_8h_a02940f783282efeef7d7b823be4ebb61}{QBPCA\+\_\+\+MATRIXNOTSYMMETRIC}} = -\/2
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{qb_p_c_a_8h_a89d6ef3ada78889d41961ce39a19b714}\label{qb_p_c_a_8h_a89d6ef3ada78889d41961ce39a19b714}} 
+\index{qbPCA.h@{qbPCA.h}!QBPCA\_MATRIXNOTSQUARE@{QBPCA\_MATRIXNOTSQUARE}}
+\index{QBPCA\_MATRIXNOTSQUARE@{QBPCA\_MATRIXNOTSQUARE}!qbPCA.h@{qbPCA.h}}
+\doxysubsubsection{\texorpdfstring{QBPCA\_MATRIXNOTSQUARE}{QBPCA\_MATRIXNOTSQUARE}}
+{\footnotesize\ttfamily constexpr int QBPCA\+\_\+\+MATRIXNOTSQUARE = -\/1\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{qb_p_c_a_8h_a02940f783282efeef7d7b823be4ebb61}\label{qb_p_c_a_8h_a02940f783282efeef7d7b823be4ebb61}} 
+\index{qbPCA.h@{qbPCA.h}!QBPCA\_MATRIXNOTSYMMETRIC@{QBPCA\_MATRIXNOTSYMMETRIC}}
+\index{QBPCA\_MATRIXNOTSYMMETRIC@{QBPCA\_MATRIXNOTSYMMETRIC}!qbPCA.h@{qbPCA.h}}
+\doxysubsubsection{\texorpdfstring{QBPCA\_MATRIXNOTSYMMETRIC}{QBPCA\_MATRIXNOTSYMMETRIC}}
+{\footnotesize\ttfamily constexpr int QBPCA\+\_\+\+MATRIXNOTSYMMETRIC = -\/2\hspace{0.3cm}{\ttfamily [constexpr]}}
+

@@ -1,0 +1,56 @@
+.TH "D:/RayTracing/include/SDL_platform.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_platform.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDECLSPEC\fP const char *\fBSDLCALL\fP \fBSDL_GetPlatform\fP (\fBvoid\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Try to get a standard set of platform defines\&. 
+.SH "Function Documentation"
+.PP 
+.SS "\fBDECLSPEC\fP const char *\fBSDLCALL\fP SDL_GetPlatform (\fBvoid\fP)"
+Get the name of the platform\&.
+.PP
+Here are the names returned for some (but not all) supported platforms:
+.PP
+.IP "\(bu" 2
+'Windows'
+.IP "\(bu" 2
+'Mac OS X'
+.IP "\(bu" 2
+'Linux'
+.IP "\(bu" 2
+'iOS'
+.IP "\(bu" 2
+'Android'
+.PP
+.PP
+\fBReturns\fP
+.RS 4
+the name of the platform\&. If the correct platform name is not available, returns a string beginning with the text 'Unknown'\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

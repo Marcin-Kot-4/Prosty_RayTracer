@@ -1,0 +1,2082 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_s_d_l__rwops_8h" kind="file" language="C++">
+    <compoundname>SDL_rwops.h</compoundname>
+    <includes refid="_s_d_l__stdinc_8h" local="yes">SDL_stdinc.h</includes>
+    <includes refid="_s_d_l__error_8h" local="yes">SDL_error.h</includes>
+    <includes refid="begin__code_8h" local="yes">begin_code.h</includes>
+    <includes refid="close__code_8h" local="yes">close_code.h</includes>
+    <includedby refid="_s_d_l_8h" local="yes">D:/RayTracing/include/SDL.h</includedby>
+    <includedby refid="_s_d_l__audio_8h" local="yes">D:/RayTracing/include/SDL_audio.h</includedby>
+    <includedby refid="_s_d_l__gamecontroller_8h" local="yes">D:/RayTracing/include/SDL_gamecontroller.h</includedby>
+    <includedby refid="_s_d_l__rect_8h" local="yes">D:/RayTracing/include/SDL_rect.h</includedby>
+    <includedby refid="_s_d_l__surface_8h" local="yes">D:/RayTracing/include/SDL_surface.h</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>SDL_config.h</label>
+        <link refid="_s_d_l__config_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>SDL_error.h</label>
+        <link refid="_s_d_l__error_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>SDL_platform.h</label>
+        <link refid="_s_d_l__platform_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/RayTracing/include/SDL_rwops.h</label>
+        <link refid="_s_d_l__rwops_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SDL_stdinc.h</label>
+        <link refid="_s_d_l__stdinc_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>begin_code.h</label>
+        <link refid="begin__code_8h"/>
+      </node>
+      <node id="6">
+        <label>close_code.h</label>
+        <link refid="close__code_8h"/>
+      </node>
+      <node id="8">
+        <label>stdarg.h</label>
+      </node>
+      <node id="7">
+        <label>stddef.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>D:/RayTracing/CApp.cpp</label>
+        <link refid="_c_app_8cpp"/>
+      </node>
+      <node id="3">
+        <label>D:/RayTracing/CApp.h</label>
+        <link refid="_c_app_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>D:/RayTracing/RayTrace/Image.cpp</label>
+        <link refid="_image_8cpp"/>
+      </node>
+      <node id="6">
+        <label>D:/RayTracing/RayTrace/Image.h</label>
+        <link refid="_image_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>D:/RayTracing/RayTrace/Scene.cpp</label>
+        <link refid="_scene_8cpp"/>
+      </node>
+      <node id="8">
+        <label>D:/RayTracing/RayTrace/Scene.h</label>
+        <link refid="_scene_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>D:/RayTracing/RayTrace/Textures/textureimage.cpp</label>
+        <link refid="textureimage_8cpp"/>
+      </node>
+      <node id="10">
+        <label>D:/RayTracing/RayTrace/Textures/textureimage.h</label>
+        <link refid="textureimage_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>D:/RayTracing/include/SDL.h</label>
+        <link refid="_s_d_l_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>D:/RayTracing/include/SDL_audio.h</label>
+        <link refid="_s_d_l__audio_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>D:/RayTracing/include/SDL_events.h</label>
+        <link refid="_s_d_l__events_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>D:/RayTracing/include/SDL_gamecontroller.h</label>
+        <link refid="_s_d_l__gamecontroller_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>D:/RayTracing/include/SDL_gesture.h</label>
+        <link refid="_s_d_l__gesture_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>D:/RayTracing/include/SDL_keyboard.h</label>
+        <link refid="_s_d_l__keyboard_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>D:/RayTracing/include/SDL_messagebox.h</label>
+        <link refid="_s_d_l__messagebox_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>D:/RayTracing/include/SDL_metal.h</label>
+        <link refid="_s_d_l__metal_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>D:/RayTracing/include/SDL_mouse.h</label>
+        <link refid="_s_d_l__mouse_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>D:/RayTracing/include/SDL_rect.h</label>
+        <link refid="_s_d_l__rect_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>D:/RayTracing/include/SDL_render.h</label>
+        <link refid="_s_d_l__render_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/RayTracing/include/SDL_rwops.h</label>
+        <link refid="_s_d_l__rwops_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>D:/RayTracing/include/SDL_shape.h</label>
+        <link refid="_s_d_l__shape_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>D:/RayTracing/include/SDL_surface.h</label>
+        <link refid="_s_d_l__surface_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>D:/RayTracing/include/SDL_system.h</label>
+        <link refid="_s_d_l__system_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>D:/RayTracing/include/SDL_syswm.h</label>
+        <link refid="_s_d_l__syswm_8h"/>
+      </node>
+      <node id="12">
+        <label>D:/RayTracing/include/SDL_test.h</label>
+        <link refid="_s_d_l__test_8h"/>
+      </node>
+      <node id="13">
+        <label>D:/RayTracing/include/SDL_test_common.h</label>
+        <link refid="_s_d_l__test__common_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>D:/RayTracing/include/SDL_test_compare.h</label>
+        <link refid="_s_d_l__test__compare_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>D:/RayTracing/include/SDL_test_images.h</label>
+        <link refid="_s_d_l__test__images_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>D:/RayTracing/include/SDL_touch.h</label>
+        <link refid="_s_d_l__touch_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>D:/RayTracing/include/SDL_video.h</label>
+        <link refid="_s_d_l__video_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>D:/RayTracing/include/SDL_vulkan.h</label>
+        <link refid="_s_d_l__vulkan_8h"/>
+      </node>
+      <node id="5">
+        <label>D:/RayTracing/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_s_d_l___r_wops" prot="public">SDL_RWops</innerclass>
+      <sectiondef kind="user-defined">
+      <header>RWFrom functions</header>
+      <description><para>Functions to create <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> structures from various data streams. </para>
+</description>
+      <memberdef kind="define" id="_s_d_l__rwops_8h_1ac028b032bb8230df64bc6284e04789f5" prot="public" static="no">
+        <name>RW_SEEK_SET</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Seek from the beginning of data </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="383" column="9" bodyfile="D:/RayTracing/include/SDL_rwops.h" bodystart="383" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__rwops_8h_1aba5f3b60c197def370ffa2ca1ab1348d" prot="public" static="no">
+        <name>RW_SEEK_CUR</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Seek relative to current read point </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="384" column="9" bodyfile="D:/RayTracing/include/SDL_rwops.h" bodystart="384" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__rwops_8h_1a6cf141faabd1b8f2ec3c03cf76eaf553" prot="public" static="no">
+        <name>RW_SEEK_END</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Seek relative to the end of data </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="385" column="9" bodyfile="D:/RayTracing/include/SDL_rwops.h" bodystart="385" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__rwops_8h_1a898d9ad749f054f6b6780bff411fd33a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> *<ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC SDL_RWops *SDLCALL SDL_RWFromFile</definition>
+        <argsstring>(const char *file, const char *mode)</argsstring>
+        <name>SDL_RWFromFile</name>
+        <param>
+          <type>const char *</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Use this function to create a new <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> structure for reading from and/or writing to a named file.</para>
+<para>The <computeroutput>mode</computeroutput> string is treated roughly the same as in a call to the C library&apos;s fopen(), even if SDL doesn&apos;t happen to use fopen() behind the scenes.</para>
+<para>Available <computeroutput>mode</computeroutput> strings:</para>
+<para><itemizedlist>
+<listitem><para>&quot;r&quot;: Open a file for reading. The file must exist.</para>
+</listitem><listitem><para>&quot;w&quot;: Create an empty file for writing. If a file with the same name already exists its content is erased and the file is treated as a new empty file.</para>
+</listitem><listitem><para>&quot;a&quot;: Append to a file. Writing operations append data at the end of the file. The file is created if it does not exist.</para>
+</listitem><listitem><para>&quot;r+&quot;: Open a file for update both reading and writing. The file must exist.</para>
+</listitem><listitem><para>&quot;w+&quot;: Create an empty file for both reading and writing. If a file with the same name already exists its content is erased and the file is treated as a new empty file.</para>
+</listitem><listitem><para>&quot;a+&quot;: Open a file for reading and appending. All writing operations are performed at the end of the file, protecting the previous content to be overwritten. You can reposition (fseek, rewind) the internal pointer to anywhere in the file for reading, but writing operations will move it back to the end of file. The file is created if it does not exist.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>NOTE</bold>: In order to open a file as a binary file, a &quot;b&quot; character has to be included in the <computeroutput>mode</computeroutput> string. This additional &quot;b&quot; character can either be appended at the end of the string (thus making the following compound modes: &quot;rb&quot;, &quot;wb&quot;, &quot;ab&quot;, &quot;r+b&quot;, &quot;w+b&quot;, &quot;a+b&quot;) or be inserted between the letter and the &quot;+&quot; sign for the mixed modes (&quot;rb+&quot;, &quot;wb+&quot;, &quot;ab+&quot;). Additional characters may follow the sequence, although they should have no effect. For example, &quot;t&quot; is sometimes appended to make explicit the file is a text file.</para>
+<para>This function supports Unicode filenames, but they must be encoded in UTF-8 format, regardless of the underlying operating system.</para>
+<para>As a fallback, <ref refid="_s_d_l__rwops_8h_1a898d9ad749f054f6b6780bff411fd33a" kindref="member">SDL_RWFromFile()</ref> will transparently open a matching filename in an Android app&apos;s <computeroutput>assets</computeroutput>.</para>
+<para>Closing the <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> will close the file handle SDL is holding internally.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a UTF-8 string representing the filename to open </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an ASCII string representing the mode to be used for opening the file. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a pointer to the <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> structure that is created, or NULL on failure; call <ref refid="_s_d_l__error_8h_1adaef317de186f072f8328798de29d51a" kindref="member">SDL_GetError()</ref> for more information.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a4e432d6d008ad176b7653b4797de12e9" kindref="member">SDL_RWclose</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1aafa955069a970575dfa1cab7db167c54" kindref="member">SDL_RWFromConstMem</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1ac97cd440488d5985ee24b981169b94c6" kindref="member">SDL_RWFromFP</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a71dcee62581049097e1a6e2966849b85" kindref="member">SDL_RWFromMem</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a7496ce8759fe964ee40cd6fbfa4b82f9" kindref="member">SDL_RWread</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a2bd3bfec48d375b5e761a5f7f3138766" kindref="member">SDL_RWseek</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1aade1cc6bf5cd0972c64f1bc032bdece6" kindref="member">SDL_RWtell</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1ada3c6d29d2fc5f0367abdcbfc2f2896a" kindref="member">SDL_RWwrite</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="220" column="35" declfile="D:/RayTracing/include/SDL_rwops.h" declline="220" declcolumn="35"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__rwops_8h_1ac97cd440488d5985ee24b981169b94c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> *<ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC SDL_RWops *SDLCALL SDL_RWFromFP</definition>
+        <argsstring>(void *fp, SDL_bool autoclose)</argsstring>
+        <name>SDL_RWFromFP</name>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> *</type>
+          <declname>fp</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b" kindref="member">SDL_bool</ref></type>
+          <declname>autoclose</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Use this function to create an <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> structure from a standard I/O file pointer (stdio.h&apos;s <computeroutput>FILE*</computeroutput>).</para>
+<para>This function is not available on Windows, since files opened in an application on that platform cannot be used by a dynamically linked library.</para>
+<para>On some platforms, the first parameter is a <computeroutput>void*</computeroutput>, on others, it&apos;s a <computeroutput>FILE*</computeroutput>, depending on what system headers are available to SDL. It is always intended to be the <computeroutput>FILE*</computeroutput> type from the C runtime&apos;s stdio.h.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <computeroutput>FILE*</computeroutput> that feeds the <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> stream </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>autoclose</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>SDL_TRUE to close the <computeroutput>FILE*</computeroutput> when closing the <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref>, SDL_FALSE to leave the <computeroutput>FILE*</computeroutput> open when the RWops is closed </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a pointer to the <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> structure that is created, or NULL on failure; call <ref refid="_s_d_l__error_8h_1adaef317de186f072f8328798de29d51a" kindref="member">SDL_GetError()</ref> for more information.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a4e432d6d008ad176b7653b4797de12e9" kindref="member">SDL_RWclose</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1aafa955069a970575dfa1cab7db167c54" kindref="member">SDL_RWFromConstMem</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a898d9ad749f054f6b6780bff411fd33a" kindref="member">SDL_RWFromFile</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a71dcee62581049097e1a6e2966849b85" kindref="member">SDL_RWFromMem</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a7496ce8759fe964ee40cd6fbfa4b82f9" kindref="member">SDL_RWread</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a2bd3bfec48d375b5e761a5f7f3138766" kindref="member">SDL_RWseek</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1aade1cc6bf5cd0972c64f1bc032bdece6" kindref="member">SDL_RWtell</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1ada3c6d29d2fc5f0367abdcbfc2f2896a" kindref="member">SDL_RWwrite</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="259" column="35" declfile="D:/RayTracing/include/SDL_rwops.h" declline="259" declcolumn="35"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__rwops_8h_1a71dcee62581049097e1a6e2966849b85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> *<ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC SDL_RWops *SDLCALL SDL_RWFromMem</definition>
+        <argsstring>(void *mem, int size)</argsstring>
+        <name>SDL_RWFromMem</name>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> *</type>
+          <declname>mem</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Use this function to prepare a read-write memory buffer for use with <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref>.</para>
+<para>This function sets up an <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> struct based on a memory area of a certain size, for both read and write access.</para>
+<para>This memory buffer is not copied by the RWops; the pointer you provide must remain valid until you close the stream. Closing the stream will not free the original buffer.</para>
+<para>If you need to make sure the RWops never writes to the memory buffer, you should use <ref refid="_s_d_l__rwops_8h_1aafa955069a970575dfa1cab7db167c54" kindref="member">SDL_RWFromConstMem()</ref> with a read-only buffer of memory instead.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mem</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to a buffer to feed an <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> stream </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the buffer size, in bytes </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a pointer to a new <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> structure, or NULL if it fails; call <ref refid="_s_d_l__error_8h_1adaef317de186f072f8328798de29d51a" kindref="member">SDL_GetError()</ref> for more information.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a4e432d6d008ad176b7653b4797de12e9" kindref="member">SDL_RWclose</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1aafa955069a970575dfa1cab7db167c54" kindref="member">SDL_RWFromConstMem</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a898d9ad749f054f6b6780bff411fd33a" kindref="member">SDL_RWFromFile</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1ac97cd440488d5985ee24b981169b94c6" kindref="member">SDL_RWFromFP</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a71dcee62581049097e1a6e2966849b85" kindref="member">SDL_RWFromMem</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a7496ce8759fe964ee40cd6fbfa4b82f9" kindref="member">SDL_RWread</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a2bd3bfec48d375b5e761a5f7f3138766" kindref="member">SDL_RWseek</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1aade1cc6bf5cd0972c64f1bc032bdece6" kindref="member">SDL_RWtell</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1ada3c6d29d2fc5f0367abdcbfc2f2896a" kindref="member">SDL_RWwrite</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="294" column="35" declfile="D:/RayTracing/include/SDL_rwops.h" declline="294" declcolumn="35"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__rwops_8h_1aafa955069a970575dfa1cab7db167c54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> *<ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC SDL_RWops *SDLCALL SDL_RWFromConstMem</definition>
+        <argsstring>(const void *mem, int size)</argsstring>
+        <name>SDL_RWFromConstMem</name>
+        <param>
+          <type>const <ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> *</type>
+          <declname>mem</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Use this function to prepare a read-only memory buffer for use with RWops.</para>
+<para>This function sets up an <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> struct based on a memory area of a certain size. It assumes the memory area is not writable.</para>
+<para>Attempting to write to this RWops stream will report an error without writing to the memory buffer.</para>
+<para>This memory buffer is not copied by the RWops; the pointer you provide must remain valid until you close the stream. Closing the stream will not free the original buffer.</para>
+<para>If you need to write to a memory buffer, you should use <ref refid="_s_d_l__rwops_8h_1a71dcee62581049097e1a6e2966849b85" kindref="member">SDL_RWFromMem()</ref> with a writable buffer of memory instead.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mem</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to a read-only buffer to feed an <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> stream </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the buffer size, in bytes </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a pointer to a new <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> structure, or NULL if it fails; call <ref refid="_s_d_l__error_8h_1adaef317de186f072f8328798de29d51a" kindref="member">SDL_GetError()</ref> for more information.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a4e432d6d008ad176b7653b4797de12e9" kindref="member">SDL_RWclose</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1aafa955069a970575dfa1cab7db167c54" kindref="member">SDL_RWFromConstMem</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a898d9ad749f054f6b6780bff411fd33a" kindref="member">SDL_RWFromFile</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1ac97cd440488d5985ee24b981169b94c6" kindref="member">SDL_RWFromFP</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a71dcee62581049097e1a6e2966849b85" kindref="member">SDL_RWFromMem</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a7496ce8759fe964ee40cd6fbfa4b82f9" kindref="member">SDL_RWread</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a2bd3bfec48d375b5e761a5f7f3138766" kindref="member">SDL_RWseek</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1aade1cc6bf5cd0972c64f1bc032bdece6" kindref="member">SDL_RWtell</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="328" column="35" declfile="D:/RayTracing/include/SDL_rwops.h" declline="328" declcolumn="35"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__rwops_8h_1a2fa1222f94ca8a89b0719be6ef391856" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> *<ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC SDL_RWops *SDLCALL SDL_AllocRW</definition>
+        <argsstring>(void)</argsstring>
+        <name>SDL_AllocRW</name>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Use this function to allocate an empty, unpopulated <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> structure.</para>
+<para>Applications do not need to use this function unless they are providing their own <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> implementation. If you just need a <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> to read/write a common data source, you should use the built-in implementations in SDL, like <ref refid="_s_d_l__rwops_8h_1a898d9ad749f054f6b6780bff411fd33a" kindref="member">SDL_RWFromFile()</ref> or <ref refid="_s_d_l__rwops_8h_1a71dcee62581049097e1a6e2966849b85" kindref="member">SDL_RWFromMem()</ref>, etc.</para>
+<para>You must free the returned pointer with <ref refid="_s_d_l__rwops_8h_1ac4c87c7bed186ea1a98531164ff1acfa" kindref="member">SDL_FreeRW()</ref>. Depending on your operating system and compiler, there may be a difference between the malloc() and free() your program uses and the versions SDL calls internally. Trying to mix the two can cause crashing such as segmentation faults. Since all <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> must free themselves when their <bold>close</bold> method is called, all <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> must be allocated through this function, so they can all be freed correctly with <ref refid="_s_d_l__rwops_8h_1ac4c87c7bed186ea1a98531164ff1acfa" kindref="member">SDL_FreeRW()</ref>.</para>
+<para><simplesect kind="return"><para>a pointer to the allocated memory on success, or NULL on failure; call <ref refid="_s_d_l__error_8h_1adaef317de186f072f8328798de29d51a" kindref="member">SDL_GetError()</ref> for more information.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1ac4c87c7bed186ea1a98531164ff1acfa" kindref="member">SDL_FreeRW</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="357" column="35" declfile="D:/RayTracing/include/SDL_rwops.h" declline="357" declcolumn="35"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__rwops_8h_1ac4c87c7bed186ea1a98531164ff1acfa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC void SDLCALL SDL_FreeRW</definition>
+        <argsstring>(SDL_RWops *area)</argsstring>
+        <name>SDL_FreeRW</name>
+        <param>
+          <type><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> *</type>
+          <declname>area</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Use this function to free an <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> structure allocated by <ref refid="_s_d_l__rwops_8h_1a2fa1222f94ca8a89b0719be6ef391856" kindref="member">SDL_AllocRW()</ref>.</para>
+<para>Applications do not need to use this function unless they are providing their own <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> implementation. If you just need a <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> to read/write a common data source, you should use the built-in implementations in SDL, like <ref refid="_s_d_l__rwops_8h_1a898d9ad749f054f6b6780bff411fd33a" kindref="member">SDL_RWFromFile()</ref> or <ref refid="_s_d_l__rwops_8h_1a71dcee62581049097e1a6e2966849b85" kindref="member">SDL_RWFromMem()</ref>, etc, and call the <bold>close</bold> method on those <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> pointers when you are done with them.</para>
+<para>Only use <ref refid="_s_d_l__rwops_8h_1ac4c87c7bed186ea1a98531164ff1acfa" kindref="member">SDL_FreeRW()</ref> on pointers returned by <ref refid="_s_d_l__rwops_8h_1a2fa1222f94ca8a89b0719be6ef391856" kindref="member">SDL_AllocRW()</ref>. The pointer is invalid as soon as this function returns. Any extra memory allocated during creation of the <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> is not freed by <ref refid="_s_d_l__rwops_8h_1ac4c87c7bed186ea1a98531164ff1acfa" kindref="member">SDL_FreeRW()</ref>; the programmer must be responsible for managing that memory in their <bold>close</bold> method.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>area</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> structure to be freed</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a2fa1222f94ca8a89b0719be6ef391856" kindref="member">SDL_AllocRW</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="381" column="30" declfile="D:/RayTracing/include/SDL_rwops.h" declline="381" declcolumn="30"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__rwops_8h_1ab311e9e01e66dde338349b5988008f79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d" kindref="member">Sint64</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC Sint64 SDLCALL SDL_RWsize</definition>
+        <argsstring>(SDL_RWops *context)</argsstring>
+        <name>SDL_RWsize</name>
+        <param>
+          <type><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Use this function to get the size of the data stream in an <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref>.</para>
+<para>Prior to SDL 2.0.10, this function was a macro.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> to get the size of the data stream from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the size of the data stream in the <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> on success, -1 if unknown or a negative error code on failure; call <ref refid="_s_d_l__error_8h_1adaef317de186f072f8328798de29d51a" kindref="member">SDL_GetError()</ref> for more information.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.10. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="399" column="32" declfile="D:/RayTracing/include/SDL_rwops.h" declline="399" declcolumn="32"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__rwops_8h_1a2bd3bfec48d375b5e761a5f7f3138766" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d" kindref="member">Sint64</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC Sint64 SDLCALL SDL_RWseek</definition>
+        <argsstring>(SDL_RWops *context, Sint64 offset, int whence)</argsstring>
+        <name>SDL_RWseek</name>
+        <param>
+          <type><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d" kindref="member">Sint64</ref></type>
+          <declname>offset</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>whence</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Seek within an <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> data stream.</para>
+<para>This function seeks to byte <computeroutput>offset</computeroutput>, relative to <computeroutput>whence</computeroutput>.</para>
+<para><computeroutput>whence</computeroutput> may be any of the following values:</para>
+<para><itemizedlist>
+<listitem><para><computeroutput>RW_SEEK_SET</computeroutput>: seek from the beginning of data</para>
+</listitem><listitem><para><computeroutput>RW_SEEK_CUR</computeroutput>: seek relative to current read point</para>
+</listitem><listitem><para><computeroutput>RW_SEEK_END</computeroutput>: seek relative to the end of data</para>
+</listitem></itemizedlist>
+</para>
+<para>If this stream can not seek, it will return -1.</para>
+<para><ref refid="_s_d_l__rwops_8h_1a2bd3bfec48d375b5e761a5f7f3138766" kindref="member">SDL_RWseek()</ref> is actually a wrapper function that calls the <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref>&apos;s <computeroutput>seek</computeroutput> method appropriately, to simplify application development.</para>
+<para>Prior to SDL 2.0.10, this function was a macro.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to an <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> structure </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>offset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an offset in bytes, relative to <bold>whence</bold> location; can be negative </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>whence</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>any of <computeroutput>RW_SEEK_SET</computeroutput>, <computeroutput>RW_SEEK_CUR</computeroutput>, <computeroutput>RW_SEEK_END</computeroutput> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the final offset in the data stream after the seek or -1 on error.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.10.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a4e432d6d008ad176b7653b4797de12e9" kindref="member">SDL_RWclose</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1aafa955069a970575dfa1cab7db167c54" kindref="member">SDL_RWFromConstMem</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a898d9ad749f054f6b6780bff411fd33a" kindref="member">SDL_RWFromFile</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1ac97cd440488d5985ee24b981169b94c6" kindref="member">SDL_RWFromFP</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a71dcee62581049097e1a6e2966849b85" kindref="member">SDL_RWFromMem</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a7496ce8759fe964ee40cd6fbfa4b82f9" kindref="member">SDL_RWread</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1aade1cc6bf5cd0972c64f1bc032bdece6" kindref="member">SDL_RWtell</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1ada3c6d29d2fc5f0367abdcbfc2f2896a" kindref="member">SDL_RWwrite</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="436" column="32" declfile="D:/RayTracing/include/SDL_rwops.h" declline="436" declcolumn="32"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__rwops_8h_1aade1cc6bf5cd0972c64f1bc032bdece6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d" kindref="member">Sint64</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC Sint64 SDLCALL SDL_RWtell</definition>
+        <argsstring>(SDL_RWops *context)</argsstring>
+        <name>SDL_RWtell</name>
+        <param>
+          <type><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Determine the current read/write offset in an <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> data stream.</para>
+<para>SDL_RWtell is actually a wrapper function that calls the <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref>&apos;s <computeroutput>seek</computeroutput> method, with an offset of 0 bytes from <computeroutput>RW_SEEK_CUR</computeroutput>, to simplify application development.</para>
+<para>Prior to SDL 2.0.10, this function was a macro.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> data stream object from which to get the current offset </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the current offset in the stream, or -1 if the information can not be determined.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.10.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a4e432d6d008ad176b7653b4797de12e9" kindref="member">SDL_RWclose</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1aafa955069a970575dfa1cab7db167c54" kindref="member">SDL_RWFromConstMem</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a898d9ad749f054f6b6780bff411fd33a" kindref="member">SDL_RWFromFile</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1ac97cd440488d5985ee24b981169b94c6" kindref="member">SDL_RWFromFP</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a71dcee62581049097e1a6e2966849b85" kindref="member">SDL_RWFromMem</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a7496ce8759fe964ee40cd6fbfa4b82f9" kindref="member">SDL_RWread</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a2bd3bfec48d375b5e761a5f7f3138766" kindref="member">SDL_RWseek</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1ada3c6d29d2fc5f0367abdcbfc2f2896a" kindref="member">SDL_RWwrite</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="464" column="32" declfile="D:/RayTracing/include/SDL_rwops.h" declline="464" declcolumn="32"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__rwops_8h_1a7496ce8759fe964ee40cd6fbfa4b82f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf" kindref="member">size_t</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC size_t SDLCALL SDL_RWread</definition>
+        <argsstring>(SDL_RWops *context, void *ptr, size_t size, size_t maxnum)</argsstring>
+        <name>SDL_RWread</name>
+        <param>
+          <type><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> *</type>
+          <declname>ptr</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf" kindref="member">size_t</ref></type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf" kindref="member">size_t</ref></type>
+          <declname>maxnum</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Read from a data source.</para>
+<para>This function reads up to <computeroutput>maxnum</computeroutput> objects each of size <computeroutput>size</computeroutput> from the data source to the area pointed at by <computeroutput>ptr</computeroutput>. This function may read less objects than requested. It will return zero when there has been an error or the data stream is completely read.</para>
+<para><ref refid="_s_d_l__rwops_8h_1a7496ce8759fe964ee40cd6fbfa4b82f9" kindref="member">SDL_RWread()</ref> is actually a function wrapper that calls the <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref>&apos;s <computeroutput>read</computeroutput> method appropriately, to simplify application development.</para>
+<para>Prior to SDL 2.0.10, this function was a macro.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to an <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> structure </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to a buffer to read data into </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the size of each object to read, in bytes </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maxnum</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the maximum number of objects to be read </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the number of objects read, or 0 at error or end of file; call <ref refid="_s_d_l__error_8h_1adaef317de186f072f8328798de29d51a" kindref="member">SDL_GetError()</ref> for more information.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.10.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a4e432d6d008ad176b7653b4797de12e9" kindref="member">SDL_RWclose</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1aafa955069a970575dfa1cab7db167c54" kindref="member">SDL_RWFromConstMem</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a898d9ad749f054f6b6780bff411fd33a" kindref="member">SDL_RWFromFile</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1ac97cd440488d5985ee24b981169b94c6" kindref="member">SDL_RWFromFP</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a71dcee62581049097e1a6e2966849b85" kindref="member">SDL_RWFromMem</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a2bd3bfec48d375b5e761a5f7f3138766" kindref="member">SDL_RWseek</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1ada3c6d29d2fc5f0367abdcbfc2f2896a" kindref="member">SDL_RWwrite</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="496" column="32" declfile="D:/RayTracing/include/SDL_rwops.h" declline="496" declcolumn="32"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__rwops_8h_1ada3c6d29d2fc5f0367abdcbfc2f2896a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf" kindref="member">size_t</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC size_t SDLCALL SDL_RWwrite</definition>
+        <argsstring>(SDL_RWops *context, const void *ptr, size_t size, size_t num)</argsstring>
+        <name>SDL_RWwrite</name>
+        <param>
+          <type><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> *</type>
+          <declname>ptr</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf" kindref="member">size_t</ref></type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf" kindref="member">size_t</ref></type>
+          <declname>num</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Write to an <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> data stream.</para>
+<para>This function writes exactly <computeroutput>num</computeroutput> objects each of size <computeroutput>size</computeroutput> from the area pointed at by <computeroutput>ptr</computeroutput> to the stream. If this fails for any reason, it&apos;ll return less than <computeroutput>num</computeroutput> to demonstrate how far the write progressed. On success, it returns <computeroutput>num</computeroutput>.</para>
+<para>SDL_RWwrite is actually a function wrapper that calls the <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref>&apos;s <computeroutput>write</computeroutput> method appropriately, to simplify application development.</para>
+<para>Prior to SDL 2.0.10, this function was a macro.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to an <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> structure </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to a buffer containing data to write </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the size of an object to write, in bytes </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the number of objects to write </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the number of objects written, which will be less than <bold>num</bold> on error; call <ref refid="_s_d_l__error_8h_1adaef317de186f072f8328798de29d51a" kindref="member">SDL_GetError()</ref> for more information.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.10.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a4e432d6d008ad176b7653b4797de12e9" kindref="member">SDL_RWclose</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1aafa955069a970575dfa1cab7db167c54" kindref="member">SDL_RWFromConstMem</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a898d9ad749f054f6b6780bff411fd33a" kindref="member">SDL_RWFromFile</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1ac97cd440488d5985ee24b981169b94c6" kindref="member">SDL_RWFromFP</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a71dcee62581049097e1a6e2966849b85" kindref="member">SDL_RWFromMem</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a7496ce8759fe964ee40cd6fbfa4b82f9" kindref="member">SDL_RWread</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a2bd3bfec48d375b5e761a5f7f3138766" kindref="member">SDL_RWseek</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="530" column="32" declfile="D:/RayTracing/include/SDL_rwops.h" declline="530" declcolumn="32"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__rwops_8h_1a4e432d6d008ad176b7653b4797de12e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> int <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC int SDLCALL SDL_RWclose</definition>
+        <argsstring>(SDL_RWops *context)</argsstring>
+        <name>SDL_RWclose</name>
+        <param>
+          <type><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> *</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Close and free an allocated <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> structure.</para>
+<para><ref refid="_s_d_l__rwops_8h_1a4e432d6d008ad176b7653b4797de12e9" kindref="member">SDL_RWclose()</ref> closes and cleans up the <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> stream. It releases any resources used by the stream and frees the <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> itself with <ref refid="_s_d_l__rwops_8h_1ac4c87c7bed186ea1a98531164ff1acfa" kindref="member">SDL_FreeRW()</ref>. This returns 0 on success, or -1 if the stream failed to flush to its output (e.g. to disk).</para>
+<para>Note that if this fails to flush the stream to disk, this function reports an error, but the <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> is still invalid once this function returns.</para>
+<para>Prior to SDL 2.0.10, this function was a macro.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> structure to close </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on success or a negative error code on failure; call <ref refid="_s_d_l__error_8h_1adaef317de186f072f8328798de29d51a" kindref="member">SDL_GetError()</ref> for more information.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.10.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1aafa955069a970575dfa1cab7db167c54" kindref="member">SDL_RWFromConstMem</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a898d9ad749f054f6b6780bff411fd33a" kindref="member">SDL_RWFromFile</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1ac97cd440488d5985ee24b981169b94c6" kindref="member">SDL_RWFromFP</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a71dcee62581049097e1a6e2966849b85" kindref="member">SDL_RWFromMem</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a7496ce8759fe964ee40cd6fbfa4b82f9" kindref="member">SDL_RWread</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a2bd3bfec48d375b5e761a5f7f3138766" kindref="member">SDL_RWseek</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1ada3c6d29d2fc5f0367abdcbfc2f2896a" kindref="member">SDL_RWwrite</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="561" column="29" declfile="D:/RayTracing/include/SDL_rwops.h" declline="561" declcolumn="29"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__rwops_8h_1ade6af59bde1d4dd05ee5cff900bd3429" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> *<ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC void *SDLCALL SDL_LoadFile_RW</definition>
+        <argsstring>(SDL_RWops *src, size_t *datasize, int freesrc)</argsstring>
+        <name>SDL_LoadFile_RW</name>
+        <param>
+          <type><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> *</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf" kindref="member">size_t</ref> *</type>
+          <declname>datasize</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>freesrc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Load all the data from an SDL data stream.</para>
+<para>The data is allocated with a zero byte at the end (null terminated) for convenience. This extra byte is not included in the value reported via <computeroutput>datasize</computeroutput>.</para>
+<para>The data should be freed with <ref refid="_s_d_l__stdinc_8h_1a0e4ade894d550ada1fa19dc2d46e88b8" kindref="member">SDL_free()</ref>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> to read all available data from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>datasize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if not NULL, will store the number of bytes read </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>freesrc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if non-zero, calls <ref refid="_s_d_l__rwops_8h_1a4e432d6d008ad176b7653b4797de12e9" kindref="member">SDL_RWclose()</ref> on <computeroutput>src</computeroutput> before returning </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the data, or NULL if there was an error.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.6. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="579" column="30" declfile="D:/RayTracing/include/SDL_rwops.h" declline="579" declcolumn="30"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__rwops_8h_1a2ba73f182958405663c8511885c0740c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> *<ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC void *SDLCALL SDL_LoadFile</definition>
+        <argsstring>(const char *file, size_t *datasize)</argsstring>
+        <name>SDL_LoadFile</name>
+        <param>
+          <type>const char *</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf" kindref="member">size_t</ref> *</type>
+          <declname>datasize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Load all the data from a file path.</para>
+<para>The data is allocated with a zero byte at the end (null terminated) for convenience. This extra byte is not included in the value reported via <computeroutput>datasize</computeroutput>.</para>
+<para>The data should be freed with <ref refid="_s_d_l__stdinc_8h_1a0e4ade894d550ada1fa19dc2d46e88b8" kindref="member">SDL_free()</ref>.</para>
+<para>Prior to SDL 2.0.10, this function was a macro wrapping around SDL_LoadFile_RW.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the path to read all available data from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>datasize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if not NULL, will store the number of bytes read </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the data, or NULL if there was an error.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.10. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="601" column="30" declfile="D:/RayTracing/include/SDL_rwops.h" declline="601" declcolumn="30"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Read endian functions</header>
+      <description><para>Read an item of the specified endianness and return in native format. </para>
+</description>
+      <memberdef kind="function" id="_s_d_l__rwops_8h_1ab864094eb6b80fbf0c77d34ecdde7907" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2" kindref="member">Uint8</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC Uint8 SDLCALL SDL_ReadU8</definition>
+        <argsstring>(SDL_RWops *src)</argsstring>
+        <name>SDL_ReadU8</name>
+        <param>
+          <type><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> *</type>
+          <declname>src</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Use this function to read a byte from an <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> to read from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the read byte on success or 0 on failure; call <ref refid="_s_d_l__error_8h_1adaef317de186f072f8328798de29d51a" kindref="member">SDL_GetError()</ref> for more information.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a07c817f8360ddc8c8983d12373306555" kindref="member">SDL_WriteU8</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="621" column="31" declfile="D:/RayTracing/include/SDL_rwops.h" declline="621" declcolumn="31"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__rwops_8h_1a7274f5c4b6f22a6b742ec6ef4f9d390b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b" kindref="member">Uint16</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC Uint16 SDLCALL SDL_ReadLE16</definition>
+        <argsstring>(SDL_RWops *src)</argsstring>
+        <name>SDL_ReadLE16</name>
+        <param>
+          <type><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> *</type>
+          <declname>src</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Use this function to read 16 bits of little-endian data from an <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> and return in native format.</para>
+<para>SDL byteswaps the data only if necessary, so the data returned will be in the native byte order.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the stream from which to read data </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>16 bits of data in the native byte order of the platform.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a3cdf85a50e40dc58536930429b7b4d09" kindref="member">SDL_ReadBE16</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="637" column="32" declfile="D:/RayTracing/include/SDL_rwops.h" declline="637" declcolumn="32"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__rwops_8h_1a3cdf85a50e40dc58536930429b7b4d09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b" kindref="member">Uint16</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC Uint16 SDLCALL SDL_ReadBE16</definition>
+        <argsstring>(SDL_RWops *src)</argsstring>
+        <name>SDL_ReadBE16</name>
+        <param>
+          <type><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> *</type>
+          <declname>src</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Use this function to read 16 bits of big-endian data from an <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> and return in native format.</para>
+<para>SDL byteswaps the data only if necessary, so the data returned will be in the native byte order.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the stream from which to read data </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>16 bits of data in the native byte order of the platform.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a7274f5c4b6f22a6b742ec6ef4f9d390b" kindref="member">SDL_ReadLE16</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="653" column="32" declfile="D:/RayTracing/include/SDL_rwops.h" declline="653" declcolumn="32"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__rwops_8h_1a8320334c299a3631fd6beb9937c30f04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d" kindref="member">Uint32</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC Uint32 SDLCALL SDL_ReadLE32</definition>
+        <argsstring>(SDL_RWops *src)</argsstring>
+        <name>SDL_ReadLE32</name>
+        <param>
+          <type><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> *</type>
+          <declname>src</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Use this function to read 32 bits of little-endian data from an <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> and return in native format.</para>
+<para>SDL byteswaps the data only if necessary, so the data returned will be in the native byte order.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the stream from which to read data </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>32 bits of data in the native byte order of the platform.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1af023e134e3ae87b1595306e5faeaab76" kindref="member">SDL_ReadBE32</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="669" column="32" declfile="D:/RayTracing/include/SDL_rwops.h" declline="669" declcolumn="32"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__rwops_8h_1af023e134e3ae87b1595306e5faeaab76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d" kindref="member">Uint32</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC Uint32 SDLCALL SDL_ReadBE32</definition>
+        <argsstring>(SDL_RWops *src)</argsstring>
+        <name>SDL_ReadBE32</name>
+        <param>
+          <type><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> *</type>
+          <declname>src</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Use this function to read 32 bits of big-endian data from an <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> and return in native format.</para>
+<para>SDL byteswaps the data only if necessary, so the data returned will be in the native byte order.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the stream from which to read data </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>32 bits of data in the native byte order of the platform.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a8320334c299a3631fd6beb9937c30f04" kindref="member">SDL_ReadLE32</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="685" column="32" declfile="D:/RayTracing/include/SDL_rwops.h" declline="685" declcolumn="32"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__rwops_8h_1af7e5d9b56874b8bd3a8a6a0c5393c33d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13" kindref="member">Uint64</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC Uint64 SDLCALL SDL_ReadLE64</definition>
+        <argsstring>(SDL_RWops *src)</argsstring>
+        <name>SDL_ReadLE64</name>
+        <param>
+          <type><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> *</type>
+          <declname>src</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Use this function to read 64 bits of little-endian data from an <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> and return in native format.</para>
+<para>SDL byteswaps the data only if necessary, so the data returned will be in the native byte order.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the stream from which to read data </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>64 bits of data in the native byte order of the platform.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a4917dc584d162bc5f28b63843557214e" kindref="member">SDL_ReadBE64</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="701" column="32" declfile="D:/RayTracing/include/SDL_rwops.h" declline="701" declcolumn="32"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__rwops_8h_1a4917dc584d162bc5f28b63843557214e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13" kindref="member">Uint64</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC Uint64 SDLCALL SDL_ReadBE64</definition>
+        <argsstring>(SDL_RWops *src)</argsstring>
+        <name>SDL_ReadBE64</name>
+        <param>
+          <type><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> *</type>
+          <declname>src</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Use this function to read 64 bits of big-endian data from an <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> and return in native format.</para>
+<para>SDL byteswaps the data only if necessary, so the data returned will be in the native byte order.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the stream from which to read data </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>64 bits of data in the native byte order of the platform.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1af7e5d9b56874b8bd3a8a6a0c5393c33d" kindref="member">SDL_ReadLE64</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="717" column="32" declfile="D:/RayTracing/include/SDL_rwops.h" declline="717" declcolumn="32"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Write endian functions</header>
+      <description><para>Write an item of native format to the specified endianness. </para>
+</description>
+      <memberdef kind="function" id="_s_d_l__rwops_8h_1a07c817f8360ddc8c8983d12373306555" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf" kindref="member">size_t</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC size_t SDLCALL SDL_WriteU8</definition>
+        <argsstring>(SDL_RWops *dst, Uint8 value)</argsstring>
+        <name>SDL_WriteU8</name>
+        <param>
+          <type><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> *</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2" kindref="member">Uint8</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Use this function to write a byte to an <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> to write to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the byte value to write </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 on success or 0 on failure; call <ref refid="_s_d_l__error_8h_1adaef317de186f072f8328798de29d51a" kindref="member">SDL_GetError()</ref> for more information.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1ab864094eb6b80fbf0c77d34ecdde7907" kindref="member">SDL_ReadU8</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="739" column="32" declfile="D:/RayTracing/include/SDL_rwops.h" declline="739" declcolumn="32"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__rwops_8h_1aa4a7df8d967c5751e3f0974743b9c2d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf" kindref="member">size_t</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC size_t SDLCALL SDL_WriteLE16</definition>
+        <argsstring>(SDL_RWops *dst, Uint16 value)</argsstring>
+        <name>SDL_WriteLE16</name>
+        <param>
+          <type><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> *</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b" kindref="member">Uint16</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Use this function to write 16 bits in native format to a <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> as little-endian data.</para>
+<para>SDL byteswaps the data only if necessary, so the application always specifies native format, and the data written will be in little-endian format.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the stream to which data will be written </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the data to be written, in native format </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 on successful write, 0 on error.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1ab84ea778a5f8f76cd73a52216c2c08f5" kindref="member">SDL_WriteBE16</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="757" column="32" declfile="D:/RayTracing/include/SDL_rwops.h" declline="757" declcolumn="32"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__rwops_8h_1ab84ea778a5f8f76cd73a52216c2c08f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf" kindref="member">size_t</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC size_t SDLCALL SDL_WriteBE16</definition>
+        <argsstring>(SDL_RWops *dst, Uint16 value)</argsstring>
+        <name>SDL_WriteBE16</name>
+        <param>
+          <type><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> *</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b" kindref="member">Uint16</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Use this function to write 16 bits in native format to a <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> as big-endian data.</para>
+<para>SDL byteswaps the data only if necessary, so the application always specifies native format, and the data written will be in big-endian format.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the stream to which data will be written </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the data to be written, in native format </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 on successful write, 0 on error.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1aa4a7df8d967c5751e3f0974743b9c2d4" kindref="member">SDL_WriteLE16</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="774" column="32" declfile="D:/RayTracing/include/SDL_rwops.h" declline="774" declcolumn="32"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__rwops_8h_1a84f37961925773fe8b06ea09ed144568" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf" kindref="member">size_t</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC size_t SDLCALL SDL_WriteLE32</definition>
+        <argsstring>(SDL_RWops *dst, Uint32 value)</argsstring>
+        <name>SDL_WriteLE32</name>
+        <param>
+          <type><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> *</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d" kindref="member">Uint32</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Use this function to write 32 bits in native format to a <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> as little-endian data.</para>
+<para>SDL byteswaps the data only if necessary, so the application always specifies native format, and the data written will be in little-endian format.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the stream to which data will be written </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the data to be written, in native format </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 on successful write, 0 on error.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a5debf04eeed819018ddd9a2f70d32c89" kindref="member">SDL_WriteBE32</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="792" column="32" declfile="D:/RayTracing/include/SDL_rwops.h" declline="792" declcolumn="32"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__rwops_8h_1a5debf04eeed819018ddd9a2f70d32c89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf" kindref="member">size_t</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC size_t SDLCALL SDL_WriteBE32</definition>
+        <argsstring>(SDL_RWops *dst, Uint32 value)</argsstring>
+        <name>SDL_WriteBE32</name>
+        <param>
+          <type><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> *</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d" kindref="member">Uint32</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Use this function to write 32 bits in native format to a <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> as big-endian data.</para>
+<para>SDL byteswaps the data only if necessary, so the application always specifies native format, and the data written will be in big-endian format.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the stream to which data will be written </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the data to be written, in native format </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 on successful write, 0 on error.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a84f37961925773fe8b06ea09ed144568" kindref="member">SDL_WriteLE32</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="809" column="32" declfile="D:/RayTracing/include/SDL_rwops.h" declline="809" declcolumn="32"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__rwops_8h_1ae4f9b45fbb3bf4a40f3f308419307e6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf" kindref="member">size_t</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC size_t SDLCALL SDL_WriteLE64</definition>
+        <argsstring>(SDL_RWops *dst, Uint64 value)</argsstring>
+        <name>SDL_WriteLE64</name>
+        <param>
+          <type><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> *</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13" kindref="member">Uint64</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Use this function to write 64 bits in native format to a <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> as little-endian data.</para>
+<para>SDL byteswaps the data only if necessary, so the application always specifies native format, and the data written will be in little-endian format.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the stream to which data will be written </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the data to be written, in native format </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 on successful write, 0 on error.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1a0422f79e1889750cf99310e968cb76fc" kindref="member">SDL_WriteBE64</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="827" column="32" declfile="D:/RayTracing/include/SDL_rwops.h" declline="827" declcolumn="32"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__rwops_8h_1a0422f79e1889750cf99310e968cb76fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf" kindref="member">size_t</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC size_t SDLCALL SDL_WriteBE64</definition>
+        <argsstring>(SDL_RWops *dst, Uint64 value)</argsstring>
+        <name>SDL_WriteBE64</name>
+        <param>
+          <type><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> *</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13" kindref="member">Uint64</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Use this function to write 64 bits in native format to a <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> as big-endian data.</para>
+<para>SDL byteswaps the data only if necessary, so the application always specifies native format, and the data written will be in big-endian format.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the stream to which data will be written </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the data to be written, in native format </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 on successful write, 0 on error.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__rwops_8h_1ae4f9b45fbb3bf4a40f3f308419307e6b" kindref="member">SDL_WriteLE64</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="844" column="32" declfile="D:/RayTracing/include/SDL_rwops.h" declline="844" declcolumn="32"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_s_d_l__rwops_8h_1abefd1a35086e97620beffc2c069bd97d" prot="public" static="no">
+        <name>SDL_RWOPS_UNKNOWN</name>
+        <initializer>0U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unknown stream type </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="42" column="9" bodyfile="D:/RayTracing/include/SDL_rwops.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__rwops_8h_1ad979b58d7905cfd8af0bab9ed97c1685" prot="public" static="no">
+        <name>SDL_RWOPS_WINFILE</name>
+        <initializer>1U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Win32 file </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="43" column="9" bodyfile="D:/RayTracing/include/SDL_rwops.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__rwops_8h_1a054a717fd0b1a2f175e2e822e1ecc67d" prot="public" static="no">
+        <name>SDL_RWOPS_STDFILE</name>
+        <initializer>2U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stdio file </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="44" column="9" bodyfile="D:/RayTracing/include/SDL_rwops.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__rwops_8h_1ad1e973a8b9f9c6cae33f2870c9f76b7d" prot="public" static="no">
+        <name>SDL_RWOPS_JNIFILE</name>
+        <initializer>3U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Android asset </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="45" column="9" bodyfile="D:/RayTracing/include/SDL_rwops.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__rwops_8h_1a1120765c20af356803b2beb6709e6749" prot="public" static="no">
+        <name>SDL_RWOPS_MEMORY</name>
+        <initializer>4U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Memory stream </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="46" column="9" bodyfile="D:/RayTracing/include/SDL_rwops.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__rwops_8h_1a145dd63b72548f37e2fdd9de8bf15bbc" prot="public" static="no">
+        <name>SDL_RWOPS_MEMORY_RO</name>
+        <initializer>5U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Read-Only memory stream </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="47" column="9" bodyfile="D:/RayTracing/include/SDL_rwops.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_s_d_l__rwops_8h_1a74ae02b3c98390e2792749c53329cc23" prot="public" static="no">
+        <type>struct <ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref></type>
+        <definition>typedef struct SDL_RWops SDL_RWops</definition>
+        <argsstring></argsstring>
+        <name>SDL_RWops</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is the read/write operation structure <ndash/> very basic. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_rwops.h" line="149" column="11"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>This file provides a general interface for SDL to read and write data streams. It can easily be extended to files, memory, etc. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/>Simple<sp/>DirectMedia<sp/>Layer</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/>Copyright<sp/>(C)<sp/>1997-2022<sp/>Sam<sp/>Lantinga<sp/>&lt;slouken@libsdl.org&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/>This<sp/>software<sp/>is<sp/>provided<sp/>&apos;as-is&apos;,<sp/>without<sp/>any<sp/>express<sp/>or<sp/>implied</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/>warranty.<sp/><sp/>In<sp/>no<sp/>event<sp/>will<sp/>the<sp/>authors<sp/>be<sp/>held<sp/>liable<sp/>for<sp/>any<sp/>damages</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/>arising<sp/>from<sp/>the<sp/>use<sp/>of<sp/>this<sp/>software.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/>Permission<sp/>is<sp/>granted<sp/>to<sp/>anyone<sp/>to<sp/>use<sp/>this<sp/>software<sp/>for<sp/>any<sp/>purpose,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/>including<sp/>commercial<sp/>applications,<sp/>and<sp/>to<sp/>alter<sp/>it<sp/>and<sp/>redistribute<sp/>it</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/>freely,<sp/>subject<sp/>to<sp/>the<sp/>following<sp/>restrictions:</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"></highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/>1.<sp/>The<sp/>origin<sp/>of<sp/>this<sp/>software<sp/>must<sp/>not<sp/>be<sp/>misrepresented;<sp/>you<sp/>must<sp/>not</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>claim<sp/>that<sp/>you<sp/>wrote<sp/>the<sp/>original<sp/>software.<sp/>If<sp/>you<sp/>use<sp/>this<sp/>software</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>in<sp/>a<sp/>product,<sp/>an<sp/>acknowledgment<sp/>in<sp/>the<sp/>product<sp/>documentation<sp/>would<sp/>be</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>appreciated<sp/>but<sp/>is<sp/>not<sp/>required.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/>2.<sp/>Altered<sp/>source<sp/>versions<sp/>must<sp/>be<sp/>plainly<sp/>marked<sp/>as<sp/>such,<sp/>and<sp/>must<sp/>not<sp/>be</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>misrepresented<sp/>as<sp/>being<sp/>the<sp/>original<sp/>software.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/>3.<sp/>This<sp/>notice<sp/>may<sp/>not<sp/>be<sp/>removed<sp/>or<sp/>altered<sp/>from<sp/>any<sp/>source<sp/>distribution.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SDL_rwops_h_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_rwops_h_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_s_d_l__stdinc_8h" kindref="compound">SDL_stdinc.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_s_d_l__error_8h" kindref="compound">SDL_error.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="begin__code_8h" kindref="compound">begin_code.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Set<sp/>up<sp/>for<sp/>C<sp/>function<sp/>definitions,<sp/>even<sp/>when<sp/>using<sp/>C++<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>RWops<sp/>Types<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="_s_d_l__rwops_8h_1abefd1a35086e97620beffc2c069bd97d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_RWOPS_UNKNOWN<sp/><sp/><sp/>0U<sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="_s_d_l__rwops_8h_1ad979b58d7905cfd8af0bab9ed97c1685" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_RWOPS_WINFILE<sp/><sp/><sp/>1U<sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="_s_d_l__rwops_8h_1a054a717fd0b1a2f175e2e822e1ecc67d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_RWOPS_STDFILE<sp/><sp/><sp/>2U<sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="_s_d_l__rwops_8h_1ad1e973a8b9f9c6cae33f2870c9f76b7d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_RWOPS_JNIFILE<sp/><sp/><sp/>3U<sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="_s_d_l__rwops_8h_1a1120765c20af356803b2beb6709e6749" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_RWOPS_MEMORY<sp/><sp/><sp/><sp/>4U<sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="_s_d_l__rwops_8h_1a145dd63b72548f37e2fdd9de8bf15bbc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_RWOPS_MEMORY_RO<sp/>5U<sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__VITA__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_RWOPS_VITAFILE<sp/><sp/>6U<sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="struct_s_d_l___r_wops" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="60" refid="struct_s_d_l___r_wops_1a45f66dbb683a88281d96f83ca18c525f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_s_d_l___r_wops_1a45f66dbb683a88281d96f83ca18c525f" kindref="member">Sint64</ref><sp/>(<ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/>*<sp/><ref refid="_s_d_l__opengl__glext_8h_1a3d1e3edfcf61ca2d831883e1afbad89e" kindref="member">size</ref>)<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*<sp/>context);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="struct_s_d_l___r_wops_1ab1ee9d9e4f61b3b30f26160c282ae416" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_s_d_l___r_wops_1a45f66dbb683a88281d96f83ca18c525f" kindref="member">Sint64</ref><sp/>(<ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/>*<sp/>seek)<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*<sp/>context,<sp/><ref refid="_s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d" kindref="member">Sint64</ref><sp/><ref refid="struct_s_d_l___r_wops_1ab1ee9d9e4f61b3b30f26160c282ae416" kindref="member">offset</ref>,</highlight></codeline>
+<codeline lineno="69" refid="struct_s_d_l___r_wops_1a95b96dcc6690897bfaf2d059f4378ed2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_l___r_wops_1a95b96dcc6690897bfaf2d059f4378ed2" kindref="member">whence</ref>);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="struct_s_d_l___r_wops_1a3f68b93789331775de802d51a2934f0a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_s_d_l___r_wops_1acd9a3c6e840d285c1e30cadaf99097b2" kindref="member">size_t</ref><sp/>(<ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/>*<sp/>read)<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*<sp/>context,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="struct_s_d_l___r_wops_1a3f68b93789331775de802d51a2934f0a" kindref="member">ptr</ref>,</highlight></codeline>
+<codeline lineno="78" refid="struct_s_d_l___r_wops_1a7786282ec28451085908f70048ee32c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_l___r_wops_1ab078bcf43a916d469ff550c60ab4b3f2" kindref="member">size</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_l___r_wops_1a7786282ec28451085908f70048ee32c8" kindref="member">maxnum</ref>);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="struct_s_d_l___r_wops_1a51baff579726790887a4ca41ce14873c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_s_d_l___r_wops_1acd9a3c6e840d285c1e30cadaf99097b2" kindref="member">size_t</ref><sp/>(<ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/>*<sp/>write)<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*<sp/>context,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="struct_s_d_l___r_wops_1a51baff579726790887a4ca41ce14873c" kindref="member">ptr</ref>,</highlight></codeline>
+<codeline lineno="87" refid="struct_s_d_l___r_wops_1a630921d5c84cf48a4a10f9a75e1caa10" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_l___r_wops_1ab078bcf43a916d469ff550c60ab4b3f2" kindref="member">size</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_l___r_wops_1a630921d5c84cf48a4a10f9a75e1caa10" kindref="member">num</ref>);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="struct_s_d_l___r_wops_1ab303bcbb0f6742a141ba8b2998923f47" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_s_d_l___r_wops_1ab303bcbb0f6742a141ba8b2998923f47" kindref="member">int</ref><sp/>(<ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/>*<sp/>close)<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*<sp/>context);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="struct_s_d_l___r_wops_1a099017bfceaac24ced0e4d08a4e0a023" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d" kindref="member">Uint32</ref><sp/><ref refid="struct_s_d_l___r_wops_1a099017bfceaac24ced0e4d08a4e0a023" kindref="member">type</ref>;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__ANDROID__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*asset;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>androidio;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__WIN32__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b" kindref="member">SDL_bool</ref><sp/>append;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="_s_d_l__opengl__glext_8h_1afa0fb1b5e976920c0abeff2dca3ed774" kindref="member">h</ref>;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="_s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a" kindref="member">data</ref>;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_l___r_wops_1ab078bcf43a916d469ff550c60ab4b3f2" kindref="member">size</ref>;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__opengl__glext_8h_1a85b8f6c07fbc1fb5d77c2ae090f21995" kindref="member">left</ref>;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/><ref refid="_s_d_l__opengl__glext_8h_1a76461e97a098d2c9ae20ac193d3825ae" kindref="member">buffer</ref>;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>windowsio;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__VITA__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__opengl__glext_8h_1afa0fb1b5e976920c0abeff2dca3ed774" kindref="member">h</ref>;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="_s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a" kindref="member">data</ref>;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_l___r_wops_1ab078bcf43a916d469ff550c60ab4b3f2" kindref="member">size</ref>;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__opengl__glext_8h_1a85b8f6c07fbc1fb5d77c2ae090f21995" kindref="member">left</ref>;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/><ref refid="_s_d_l__opengl__glext_8h_1a76461e97a098d2c9ae20ac193d3825ae" kindref="member">buffer</ref>;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>vitaio;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>HAVE_STDIO_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b" kindref="member">SDL_bool</ref><sp/>autoclose;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FILE<sp/>*fp;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>stdio;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="138" refid="struct_s_d_l___r_wops_1af9b489d7342296ce197b911cfa93b2ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2" kindref="member">Uint8</ref><sp/>*<ref refid="struct_s_d_l___r_wops_1af9b489d7342296ce197b911cfa93b2ab" kindref="member">base</ref>;</highlight></codeline>
+<codeline lineno="139" refid="struct_s_d_l___r_wops_1a6fc84601c17e347c6ef24c63a79deb57" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2" kindref="member">Uint8</ref><sp/>*<ref refid="struct_s_d_l___r_wops_1a6fc84601c17e347c6ef24c63a79deb57" kindref="member">here</ref>;</highlight></codeline>
+<codeline lineno="140" refid="struct_s_d_l___r_wops_1a4108a41afa8b62e75b0f160de4b56103" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2" kindref="member">Uint8</ref><sp/>*<ref refid="struct_s_d_l___r_wops_1a4108a41afa8b62e75b0f160de4b56103" kindref="member">stop</ref>;</highlight></codeline>
+<codeline lineno="141" refid="struct_s_d_l___r_wops_1a0243203420e29fab68b949cec27425f8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/><ref refid="struct_s_d_l___r_wops_1a0243203420e29fab68b949cec27425f8" kindref="member">mem</ref>;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="144" refid="struct_s_d_l___r_wops_1ab89d27b4312c0b9d664c81bc92917fc8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="struct_s_d_l___r_wops_1ab89d27b4312c0b9d664c81bc92917fc8" kindref="member">data1</ref>;</highlight></codeline>
+<codeline lineno="145" refid="struct_s_d_l___r_wops_1aca073130e2e262eb11e86e1be993e215" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="struct_s_d_l___r_wops_1aca073130e2e262eb11e86e1be993e215" kindref="member">data2</ref>;</highlight></codeline>
+<codeline lineno="146" refid="struct_s_d_l___r_wops_1ad225b02055230209c0f25d24cb8a8588" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/><ref refid="struct_s_d_l___r_wops_1ad225b02055230209c0f25d24cb8a8588" kindref="member">unknown</ref>;</highlight></codeline>
+<codeline lineno="147" refid="struct_s_d_l___r_wops_1ac39b920843b21701aa755f10cc1faad2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><ref refid="struct_s_d_l___r_wops_1ac39b920843b21701aa755f10cc1faad2" kindref="member">hidden</ref>;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="_s_d_l__rwops_8h_1a74ae02b3c98390e2792749c53329cc23" refkind="member"><highlight class="normal">}<sp/><ref refid="_s_d_l__rwops_8h_1a74ae02b3c98390e2792749c53329cc23" kindref="member">SDL_RWops</ref>;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>@{<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220" refid="_s_d_l__rwops_8h_1a898d9ad749f054f6b6780bff411fd33a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*<ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__rwops_8h_1a898d9ad749f054f6b6780bff411fd33a" kindref="member">SDL_RWFromFile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*file,</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="_s_d_l__opengl__glext_8h_1a1e71d9c196e4683cc06c4b54d53f7ef5" kindref="member">mode</ref>);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>HAVE_STDIO_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*<ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__rwops_8h_1ac97cd440488d5985ee24b981169b94c6" kindref="member">SDL_RWFromFP</ref>(FILE<sp/>*<sp/>fp,<sp/><ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b" kindref="member">SDL_bool</ref><sp/>autoclose);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259" refid="_s_d_l__rwops_8h_1ac97cd440488d5985ee24b981169b94c6" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*<ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__rwops_8h_1ac97cd440488d5985ee24b981169b94c6" kindref="member">SDL_RWFromFP</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>fp,</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b" kindref="member">SDL_bool</ref><sp/>autoclose);</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="294" refid="_s_d_l__rwops_8h_1a71dcee62581049097e1a6e2966849b85" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*<ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__rwops_8h_1a71dcee62581049097e1a6e2966849b85" kindref="member">SDL_RWFromMem</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="struct_s_d_l___r_wops_1a0243203420e29fab68b949cec27425f8" kindref="member">mem</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__opengl__glext_8h_1a3d1e3edfcf61ca2d831883e1afbad89e" kindref="member">size</ref>);</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
+<codeline lineno="328" refid="_s_d_l__rwops_8h_1aafa955069a970575dfa1cab7db167c54" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*<ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__rwops_8h_1aafa955069a970575dfa1cab7db167c54" kindref="member">SDL_RWFromConstMem</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="struct_s_d_l___r_wops_1a0243203420e29fab68b949cec27425f8" kindref="member">mem</ref>,</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__opengl__glext_8h_1a3d1e3edfcf61ca2d831883e1afbad89e" kindref="member">size</ref>);</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>@}<sp/>*/</highlight><highlight class="comment">/*<sp/>RWFrom<sp/>functions<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight></codeline>
+<codeline lineno="357" refid="_s_d_l__rwops_8h_1a2fa1222f94ca8a89b0719be6ef391856" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*<ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__rwops_8h_1a2fa1222f94ca8a89b0719be6ef391856" kindref="member">SDL_AllocRW</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"></highlight></codeline>
+<codeline lineno="381" refid="_s_d_l__rwops_8h_1ac4c87c7bed186ea1a98531164ff1acfa" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__rwops_8h_1ac4c87c7bed186ea1a98531164ff1acfa" kindref="member">SDL_FreeRW</ref>(<ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*<sp/>area);</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"></highlight></codeline>
+<codeline lineno="383" refid="_s_d_l__rwops_8h_1ac028b032bb8230df64bc6284e04789f5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RW_SEEK_SET<sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="384" refid="_s_d_l__rwops_8h_1aba5f3b60c197def370ffa2ca1ab1348d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RW_SEEK_CUR<sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="385" refid="_s_d_l__rwops_8h_1a6cf141faabd1b8f2ec3c03cf76eaf553" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RW_SEEK_END<sp/>2<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="399" refid="_s_d_l__rwops_8h_1ab311e9e01e66dde338349b5988008f79" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/><ref refid="_s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d" kindref="member">Sint64</ref><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__rwops_8h_1ab311e9e01e66dde338349b5988008f79" kindref="member">SDL_RWsize</ref>(<ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*context);</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"></highlight></codeline>
+<codeline lineno="436" refid="_s_d_l__rwops_8h_1a2bd3bfec48d375b5e761a5f7f3138766" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/><ref refid="_s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d" kindref="member">Sint64</ref><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__rwops_8h_1a2bd3bfec48d375b5e761a5f7f3138766" kindref="member">SDL_RWseek</ref>(<ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*context,</highlight></codeline>
+<codeline lineno="437"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d" kindref="member">Sint64</ref><sp/><ref refid="_s_d_l__opengl__glext_8h_1ac915cd848f42b26af51745f204a3b9af" kindref="member">offset</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_l___r_wops_1a95b96dcc6690897bfaf2d059f4378ed2" kindref="member">whence</ref>);</highlight></codeline>
+<codeline lineno="438"><highlight class="normal"></highlight></codeline>
+<codeline lineno="464" refid="_s_d_l__rwops_8h_1aade1cc6bf5cd0972c64f1bc032bdece6" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/><ref refid="_s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d" kindref="member">Sint64</ref><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__rwops_8h_1aade1cc6bf5cd0972c64f1bc032bdece6" kindref="member">SDL_RWtell</ref>(<ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*context);</highlight></codeline>
+<codeline lineno="465"><highlight class="normal"></highlight></codeline>
+<codeline lineno="496" refid="_s_d_l__rwops_8h_1a7496ce8759fe964ee40cd6fbfa4b82f9" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__rwops_8h_1a7496ce8759fe964ee40cd6fbfa4b82f9" kindref="member">SDL_RWread</ref>(<ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*context,</highlight></codeline>
+<codeline lineno="497"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="struct_s_d_l___r_wops_1a3f68b93789331775de802d51a2934f0a" kindref="member">ptr</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__opengl__glext_8h_1a3d1e3edfcf61ca2d831883e1afbad89e" kindref="member">size</ref>,</highlight></codeline>
+<codeline lineno="498"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_l___r_wops_1a7786282ec28451085908f70048ee32c8" kindref="member">maxnum</ref>);</highlight></codeline>
+<codeline lineno="499"><highlight class="normal"></highlight></codeline>
+<codeline lineno="530" refid="_s_d_l__rwops_8h_1ada3c6d29d2fc5f0367abdcbfc2f2896a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__rwops_8h_1ada3c6d29d2fc5f0367abdcbfc2f2896a" kindref="member">SDL_RWwrite</ref>(<ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*context,</highlight></codeline>
+<codeline lineno="531"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="struct_s_d_l___r_wops_1a3f68b93789331775de802d51a2934f0a" kindref="member">ptr</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__opengl__glext_8h_1a3d1e3edfcf61ca2d831883e1afbad89e" kindref="member">size</ref>,</highlight></codeline>
+<codeline lineno="532"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__opengl__glext_8h_1abb50fc1ead3a02a46fb52daa2045f95c" kindref="member">num</ref>);</highlight></codeline>
+<codeline lineno="533"><highlight class="normal"></highlight></codeline>
+<codeline lineno="561" refid="_s_d_l__rwops_8h_1a4e432d6d008ad176b7653b4797de12e9" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__rwops_8h_1a4e432d6d008ad176b7653b4797de12e9" kindref="member">SDL_RWclose</ref>(<ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*context);</highlight></codeline>
+<codeline lineno="562"><highlight class="normal"></highlight></codeline>
+<codeline lineno="579" refid="_s_d_l__rwops_8h_1ade6af59bde1d4dd05ee5cff900bd3429" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__rwops_8h_1ade6af59bde1d4dd05ee5cff900bd3429" kindref="member">SDL_LoadFile_RW</ref>(<ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*<ref refid="_s_d_l__opengl__glext_8h_1a72e0fdf0f845ded60b1fada9e9195cd7" kindref="member">src</ref>,</highlight></codeline>
+<codeline lineno="580"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*datasize,</highlight></codeline>
+<codeline lineno="581"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>freesrc);</highlight></codeline>
+<codeline lineno="582"><highlight class="normal"></highlight></codeline>
+<codeline lineno="601" refid="_s_d_l__rwops_8h_1a2ba73f182958405663c8511885c0740c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__rwops_8h_1a2ba73f182958405663c8511885c0740c" kindref="member">SDL_LoadFile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*file,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*datasize);</highlight></codeline>
+<codeline lineno="602"><highlight class="normal"></highlight></codeline>
+<codeline lineno="608"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>@{<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="609"><highlight class="normal"></highlight></codeline>
+<codeline lineno="621" refid="_s_d_l__rwops_8h_1ab864094eb6b80fbf0c77d34ecdde7907" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/><ref refid="_s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2" kindref="member">Uint8</ref><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__rwops_8h_1ab864094eb6b80fbf0c77d34ecdde7907" kindref="member">SDL_ReadU8</ref>(<ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*<sp/><ref refid="_s_d_l__opengl__glext_8h_1a72e0fdf0f845ded60b1fada9e9195cd7" kindref="member">src</ref>);</highlight></codeline>
+<codeline lineno="622"><highlight class="normal"></highlight></codeline>
+<codeline lineno="637" refid="_s_d_l__rwops_8h_1a7274f5c4b6f22a6b742ec6ef4f9d390b" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/><ref refid="_s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b" kindref="member">Uint16</ref><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__rwops_8h_1a7274f5c4b6f22a6b742ec6ef4f9d390b" kindref="member">SDL_ReadLE16</ref>(<ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*<sp/><ref refid="_s_d_l__opengl__glext_8h_1a72e0fdf0f845ded60b1fada9e9195cd7" kindref="member">src</ref>);</highlight></codeline>
+<codeline lineno="638"><highlight class="normal"></highlight></codeline>
+<codeline lineno="653" refid="_s_d_l__rwops_8h_1a3cdf85a50e40dc58536930429b7b4d09" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/><ref refid="_s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b" kindref="member">Uint16</ref><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__rwops_8h_1a3cdf85a50e40dc58536930429b7b4d09" kindref="member">SDL_ReadBE16</ref>(<ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*<sp/><ref refid="_s_d_l__opengl__glext_8h_1a72e0fdf0f845ded60b1fada9e9195cd7" kindref="member">src</ref>);</highlight></codeline>
+<codeline lineno="654"><highlight class="normal"></highlight></codeline>
+<codeline lineno="669" refid="_s_d_l__rwops_8h_1a8320334c299a3631fd6beb9937c30f04" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/><ref refid="_s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d" kindref="member">Uint32</ref><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__rwops_8h_1a8320334c299a3631fd6beb9937c30f04" kindref="member">SDL_ReadLE32</ref>(<ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*<sp/><ref refid="_s_d_l__opengl__glext_8h_1a72e0fdf0f845ded60b1fada9e9195cd7" kindref="member">src</ref>);</highlight></codeline>
+<codeline lineno="670"><highlight class="normal"></highlight></codeline>
+<codeline lineno="685" refid="_s_d_l__rwops_8h_1af023e134e3ae87b1595306e5faeaab76" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/><ref refid="_s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d" kindref="member">Uint32</ref><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__rwops_8h_1af023e134e3ae87b1595306e5faeaab76" kindref="member">SDL_ReadBE32</ref>(<ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*<sp/><ref refid="_s_d_l__opengl__glext_8h_1a72e0fdf0f845ded60b1fada9e9195cd7" kindref="member">src</ref>);</highlight></codeline>
+<codeline lineno="686"><highlight class="normal"></highlight></codeline>
+<codeline lineno="701" refid="_s_d_l__rwops_8h_1af7e5d9b56874b8bd3a8a6a0c5393c33d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/><ref refid="_s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13" kindref="member">Uint64</ref><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__rwops_8h_1af7e5d9b56874b8bd3a8a6a0c5393c33d" kindref="member">SDL_ReadLE64</ref>(<ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*<sp/><ref refid="_s_d_l__opengl__glext_8h_1a72e0fdf0f845ded60b1fada9e9195cd7" kindref="member">src</ref>);</highlight></codeline>
+<codeline lineno="702"><highlight class="normal"></highlight></codeline>
+<codeline lineno="717" refid="_s_d_l__rwops_8h_1a4917dc584d162bc5f28b63843557214e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/><ref refid="_s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13" kindref="member">Uint64</ref><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__rwops_8h_1a4917dc584d162bc5f28b63843557214e" kindref="member">SDL_ReadBE64</ref>(<ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*<sp/><ref refid="_s_d_l__opengl__glext_8h_1a72e0fdf0f845ded60b1fada9e9195cd7" kindref="member">src</ref>);</highlight></codeline>
+<codeline lineno="718"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>@}<sp/>*/</highlight><highlight class="comment">/*<sp/>Read<sp/>endian<sp/>functions<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="719"><highlight class="normal"></highlight></codeline>
+<codeline lineno="725"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>@{<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="726"><highlight class="normal"></highlight></codeline>
+<codeline lineno="739" refid="_s_d_l__rwops_8h_1a07c817f8360ddc8c8983d12373306555" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__rwops_8h_1a07c817f8360ddc8c8983d12373306555" kindref="member">SDL_WriteU8</ref>(<ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*<sp/><ref refid="_s_d_l__opengl__glext_8h_1a92034251bfd455d524a9b5610cddba00" kindref="member">dst</ref>,<sp/><ref refid="_s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2" kindref="member">Uint8</ref><sp/><ref refid="_s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="740"><highlight class="normal"></highlight></codeline>
+<codeline lineno="757" refid="_s_d_l__rwops_8h_1aa4a7df8d967c5751e3f0974743b9c2d4" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__rwops_8h_1aa4a7df8d967c5751e3f0974743b9c2d4" kindref="member">SDL_WriteLE16</ref>(<ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*<sp/><ref refid="_s_d_l__opengl__glext_8h_1a92034251bfd455d524a9b5610cddba00" kindref="member">dst</ref>,<sp/><ref refid="_s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b" kindref="member">Uint16</ref><sp/><ref refid="_s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="758"><highlight class="normal"></highlight></codeline>
+<codeline lineno="774" refid="_s_d_l__rwops_8h_1ab84ea778a5f8f76cd73a52216c2c08f5" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__rwops_8h_1ab84ea778a5f8f76cd73a52216c2c08f5" kindref="member">SDL_WriteBE16</ref>(<ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*<sp/><ref refid="_s_d_l__opengl__glext_8h_1a92034251bfd455d524a9b5610cddba00" kindref="member">dst</ref>,<sp/><ref refid="_s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b" kindref="member">Uint16</ref><sp/><ref refid="_s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="775"><highlight class="normal"></highlight></codeline>
+<codeline lineno="792" refid="_s_d_l__rwops_8h_1a84f37961925773fe8b06ea09ed144568" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__rwops_8h_1a84f37961925773fe8b06ea09ed144568" kindref="member">SDL_WriteLE32</ref>(<ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*<sp/><ref refid="_s_d_l__opengl__glext_8h_1a92034251bfd455d524a9b5610cddba00" kindref="member">dst</ref>,<sp/><ref refid="_s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d" kindref="member">Uint32</ref><sp/><ref refid="_s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="793"><highlight class="normal"></highlight></codeline>
+<codeline lineno="809" refid="_s_d_l__rwops_8h_1a5debf04eeed819018ddd9a2f70d32c89" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__rwops_8h_1a5debf04eeed819018ddd9a2f70d32c89" kindref="member">SDL_WriteBE32</ref>(<ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*<sp/><ref refid="_s_d_l__opengl__glext_8h_1a92034251bfd455d524a9b5610cddba00" kindref="member">dst</ref>,<sp/><ref refid="_s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d" kindref="member">Uint32</ref><sp/><ref refid="_s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="810"><highlight class="normal"></highlight></codeline>
+<codeline lineno="827" refid="_s_d_l__rwops_8h_1ae4f9b45fbb3bf4a40f3f308419307e6b" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__rwops_8h_1ae4f9b45fbb3bf4a40f3f308419307e6b" kindref="member">SDL_WriteLE64</ref>(<ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*<sp/><ref refid="_s_d_l__opengl__glext_8h_1a92034251bfd455d524a9b5610cddba00" kindref="member">dst</ref>,<sp/><ref refid="_s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13" kindref="member">Uint64</ref><sp/><ref refid="_s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="828"><highlight class="normal"></highlight></codeline>
+<codeline lineno="844" refid="_s_d_l__rwops_8h_1a0422f79e1889750cf99310e968cb76fc" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__rwops_8h_1a0422f79e1889750cf99310e968cb76fc" kindref="member">SDL_WriteBE64</ref>(<ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref><sp/>*<sp/><ref refid="_s_d_l__opengl__glext_8h_1a92034251bfd455d524a9b5610cddba00" kindref="member">dst</ref>,<sp/><ref refid="_s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13" kindref="member">Uint64</ref><sp/><ref refid="_s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f" kindref="member">value</ref>);</highlight></codeline>
+<codeline lineno="845"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>@}<sp/>*/</highlight><highlight class="comment">/*<sp/>Write<sp/>endian<sp/>functions<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="846"><highlight class="normal"></highlight></codeline>
+<codeline lineno="847"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Ends<sp/>C<sp/>function<sp/>definitions<sp/>when<sp/>using<sp/>C++<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="848"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="849"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="850"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="851"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="close__code_8h" kindref="compound">close_code.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="852"><highlight class="normal"></highlight></codeline>
+<codeline lineno="853"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>SDL_rwops_h_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="854"><highlight class="normal"></highlight></codeline>
+<codeline lineno="855"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>vi:<sp/>set<sp/>ts=4<sp/>sw=4<sp/>expandtab:<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/include/SDL_rwops.h"/>
+  </compounddef>
+</doxygen>

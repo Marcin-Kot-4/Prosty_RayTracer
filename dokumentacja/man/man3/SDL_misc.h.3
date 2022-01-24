@@ -1,0 +1,60 @@
+.TH "D:/RayTracing/include/SDL_misc.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_misc.h \- Include file for SDL API functions that don't fit elsewhere\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SDL_stdinc\&.h'\fP
+.br
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_OpenURL\fP (const char *url)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include file for SDL API functions that don't fit elsewhere\&. 
+
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_OpenURL (const char * url)"
+Open a URL/URI in the browser or other appropriate external application\&.
+.PP
+Open a URL in a separate, system-provided application\&. How this works will vary wildly depending on the platform\&. This will likely launch what makes sense to handle a specific URL's protocol (a web browser for \fChttp://\fP, etc), but it might also be able to launch file managers for directories and other things\&.
+.PP
+What happens when you open a URL varies wildly as well: your game window may lose focus (and may or may not lose focus if your game was fullscreen or grabbing input at the time)\&. On mobile devices, your app will likely move to the background or your process might be paused\&. Any given platform may or may not handle a given URL\&.
+.PP
+If this is unimplemented (or simply unavailable) for a platform, this will fail with an error\&. A successful result does not mean the URL loaded, just that we launched \fIsomething\fP to handle it (or at least believe we did)\&.
+.PP
+All this to say: this function can be useful, but you should definitely test it on every platform you target\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIurl\fP A valid URL/URI to open\&. Use \fCfile:///full/path/to/file\fP for local files, if supported\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 on success, or -1 on error; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.14\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

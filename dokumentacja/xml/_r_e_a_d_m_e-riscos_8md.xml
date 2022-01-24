@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e-riscos_8md" kind="file" language="Markdown">
+    <compoundname>README-riscos.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">RISC<sp/>OS</highlight></codeline>
+<codeline><highlight class="normal">=======</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Requirements:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>RISC<sp/>OS<sp/>3.5<sp/>or<sp/>later.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>[SharedUnixLibrary](http://www.riscos.info/packages/LibraryDetails.html#SharedUnixLibraryarm).</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>[DigitalRenderer](http://www.riscos.info/packages/LibraryDetails.html#DRendererarm),<sp/>for<sp/>audio<sp/>support.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>[Iconv](http://www.netsurf-browser.org/projects/iconv/),<sp/>for<sp/>`SDL_iconv`<sp/>and<sp/>related<sp/>functions.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Compiling:</highlight></codeline>
+<codeline><highlight class="normal">----------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Currently,<sp/>SDL2<sp/>for<sp/>RISC<sp/>OS<sp/>only<sp/>supports<sp/>compiling<sp/>with<sp/>GCCSDK<sp/>under<sp/>Linux.<sp/>Both<sp/>the<sp/>autoconf<sp/>and<sp/>CMake<sp/>build<sp/>systems<sp/>are<sp/>supported.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>following<sp/>commands<sp/>can<sp/>be<sp/>used<sp/>to<sp/>build<sp/>SDL2<sp/>for<sp/>RISC<sp/>OS<sp/>using<sp/>autoconf:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>./configure<sp/>--host=arm-unknown-riscos<sp/>--prefix=$GCCSDK_INSTALL_ENV<sp/>--disable-gcc-atomics</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>make</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>make<sp/>install</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>following<sp/>commands<sp/>can<sp/>be<sp/>used<sp/>to<sp/>build<sp/>SDL2<sp/>for<sp/>RISC<sp/>OS<sp/>using<sp/>CMake:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cmake<sp/>-Bbuild-riscos<sp/>-DCMAKE_TOOLCHAIN_FILE=$GCCSDK_INSTALL_ENV/toolchain-riscos.cmake<sp/>-DRISCOS=ON<sp/>-DCMAKE_INSTALL_PREFIX=$GCCSDK_INSTALL_ENV<sp/>-DCMAKE_BUILD_TYPE=Release<sp/>-DSDL_GCC_ATOMICS=OFF</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cmake<sp/>--build<sp/>build-riscos</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cmake<sp/>--build<sp/>build-riscos<sp/>--target<sp/>install</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Current<sp/>level<sp/>of<sp/>implementation</highlight></codeline>
+<codeline><highlight class="normal">-------------------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>video<sp/>driver<sp/>currently<sp/>provides<sp/>full<sp/>screen<sp/>video<sp/>support<sp/>with<sp/>keyboard<sp/>and<sp/>mouse<sp/>input.<sp/>Windowed<sp/>mode<sp/>is<sp/>not<sp/>yet<sp/>supported,<sp/>but<sp/>is<sp/>planned<sp/>in<sp/>the<sp/>future.<sp/>Only<sp/>software<sp/>rendering<sp/>is<sp/>supported.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>filesystem<sp/>APIs<sp/>return<sp/>either<sp/>Unix-style<sp/>paths<sp/>or<sp/>RISC<sp/>OS-style<sp/>paths<sp/>based<sp/>on<sp/>the<sp/>value<sp/>of<sp/>the<sp/>`__riscosify_control`<sp/>symbol,<sp/>as<sp/>is<sp/>standard<sp/>for<sp/>UnixLib<sp/>functions.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>audio,<sp/>loadso,<sp/>thread<sp/>and<sp/>timer<sp/>APIs<sp/>are<sp/>currently<sp/>provided<sp/>by<sp/>UnixLib.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">GCC<sp/>atomics<sp/>are<sp/>currently<sp/>broken<sp/>on<sp/>some<sp/>platforms,<sp/>meaning<sp/>it&apos;s<sp/>currently<sp/>necessary<sp/>to<sp/>compile<sp/>with<sp/>`--disable-gcc-atomics`<sp/>using<sp/>autotools<sp/>or<sp/>`-DSDL_GCC_ATOMICS=OFF`<sp/>using<sp/>CMake.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>joystick,<sp/>locale<sp/>and<sp/>power<sp/>APIs<sp/>are<sp/>not<sp/>yet<sp/>implemented.</highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/docs/README-riscos.md"/>
+  </compounddef>
+</doxygen>

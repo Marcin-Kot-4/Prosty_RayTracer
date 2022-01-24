@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__test__assert_8h_source" xml:lang="en-US">
+<title>SDL_test_assert.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_test_assert.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+30 <emphasis role="comment">/*</emphasis>
+31 <emphasis role="comment">&#32;*</emphasis>
+32 <emphasis role="comment">&#32;*&#32;Assert&#32;API&#32;for&#32;test&#32;code&#32;and&#32;test&#32;cases</emphasis>
+33 <emphasis role="comment">&#32;*</emphasis>
+34 <emphasis role="comment">&#32;*/</emphasis>
+35 
+36 <emphasis role="preprocessor">#ifndef&#32;SDL_test_assert_h_</emphasis>
+37 <emphasis role="preprocessor">#define&#32;SDL_test_assert_h_</emphasis>
+38 
+39 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+40 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+41 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+42 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+43 <emphasis role="preprocessor">#endif</emphasis>
+44 
+48 <emphasis role="preprocessor">#define&#32;ASSERT_FAIL&#32;&#32;&#32;&#32;&#32;0</emphasis>
+49 
+53 <emphasis role="preprocessor">#define&#32;ASSERT_PASS&#32;&#32;&#32;&#32;&#32;1</emphasis>
+54 
+61 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__s_d_l__test__assert_8h_1a633252c9cb122f42c502ca43d6f842ad">SDLTest_Assert</link>(<emphasis role="keywordtype">int</emphasis>&#32;assertCondition,&#32;<link linkend="__s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</link>&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*assertDescription,&#32;...)&#32;<link linkend="__s_d_l__stdinc_8h_1ab974676e45d9edeef6598d601d4fdd6a">SDL_PRINTF_VARARG_FUNC</link>(2);
+62 
+71 <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__test__assert_8h_1a9f6f6cecd54a5f7aeaf0c89e0f8fe0ab">SDLTest_AssertCheck</link>(<emphasis role="keywordtype">int</emphasis>&#32;assertCondition,&#32;<link linkend="__s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</link>&#32;const&#32;<emphasis role="keywordtype">char</emphasis>&#32;*assertDescription,&#32;...)&#32;<link linkend="__s_d_l__stdinc_8h_1ab974676e45d9edeef6598d601d4fdd6a">SDL_PRINTF_VARARG_FUNC</link>(2);
+72 
+78 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__s_d_l__test__assert_8h_1a2156b479e33af1aa7e2c7d03c5cbb4c9">SDLTest_AssertPass</link>(<link linkend="__s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb">SDL_PRINTF_FORMAT_STRING</link>&#32;const&#32;<emphasis role="keywordtype">char</emphasis>&#32;*assertDescription,&#32;...)&#32;<link linkend="__s_d_l__stdinc_8h_1ab974676e45d9edeef6598d601d4fdd6a">SDL_PRINTF_VARARG_FUNC</link>(1);
+79 
+83 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__s_d_l__test__assert_8h_1a1f78edbf1f7a38ebfeb2a2c76e3a5e60">SDLTest_ResetAssertSummary</link>(<emphasis role="keywordtype">void</emphasis>);
+84 
+88 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__s_d_l__test__assert_8h_1a7e34c7c9d66a164ed785de905c75ab54">SDLTest_LogAssertSummary</link>(<emphasis role="keywordtype">void</emphasis>);
+89 
+90 
+96 <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__test__assert_8h_1ad8cea91b1ce4db4fdea8ebab455c2190">SDLTest_AssertSummaryToTestResult</link>(<emphasis role="keywordtype">void</emphasis>);
+97 
+98 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+99 }
+100 <emphasis role="preprocessor">#endif</emphasis>
+101 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+102 
+103 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_test_assert_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+104 
+105 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

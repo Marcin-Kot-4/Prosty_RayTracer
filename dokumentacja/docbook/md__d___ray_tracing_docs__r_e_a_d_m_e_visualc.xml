@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_md__d___ray_tracing_docs__r_e_a_d_m_e_visualc" xml:lang="en-US">
+<section xml:id="_md__d___ray_tracing_docs__r_e_a_d_m_e_visualc_1autotoc_md112">
+<title>by &lt;a href=&quot;mailto:snowlion@sprynet.com&quot; &gt;Lion Kimbro&lt;/a&gt; with additions by &lt;a href=&quot;mailto:james@conceptofzero.net&quot; &gt;James Turk&lt;/a&gt;</title>
+
+<para>You can either use the precompiled libraries from the <link xlink:href="https://www.libsdl.org/download.php">SDL</link> web site, or you can build SDL yourself.</para>
+</section>
+<section xml:id="_md__d___ray_tracing_docs__r_e_a_d_m_e_visualc_1autotoc_md113">
+<title>Building SDL</title>
+
+<para>0. To build SDL, your machine must, at a minimum, have the DirectX9.0c SDK installed. It may or may not be retrievable from the <link xlink:href="https://www.microsoft.com">Microsoft</link> website, so you might need to locate it <link xlink:href="https://duckduckgo.com/?q=directx9.0c+sdk+download&amp;t=h_&amp;ia=web">online</link>. <emphasis>Editor&apos;s note: I&apos;ve been able to successfully build SDL using Visual Studio 2019 <emphasis role="bold">without</emphasis> the DX9.0c SDK</emphasis></para>
+
+<para><orderedlist>
+<listitem>
+<para>Open the Visual Studio solution file at <computeroutput>./VisualC/SDL.sln</computeroutput>.</para>
+</listitem><listitem>
+<para>Your IDE will likely prompt you to upgrade this solution file to whatever later version of the IDE you&apos;re using. In the <computeroutput>Retarget Projects</computeroutput> dialog, all of the affected project files should be checked allowing you to use the latest <computeroutput>Windows SDK Version</computeroutput> you have installed, along with the <computeroutput>Platform Toolset</computeroutput>.</para>
+</listitem></orderedlist>
+</para>
+
+<para>If you choose <emphasis>NOT</emphasis> to upgrade to use the latest <computeroutput>Windows SDK Version</computeroutput> or <computeroutput>Platform Toolset</computeroutput>, then you&apos;ll need the <computeroutput>Visual Studio 2010 Platform Toolset</computeroutput>.</para>
+
+<para><orderedlist>
+<listitem>
+<para>Build the <computeroutput>.dll</computeroutput> and <computeroutput>.lib</computeroutput> files by right clicking on each project in turn (Projects are listed in the <emphasis>Workspace</emphasis> panel in the <emphasis>FileView</emphasis> tab), and selecting <computeroutput>Build</computeroutput>.</para>
+</listitem></orderedlist>
+</para>
+
+<para>You may get a few warnings, but you should not get any errors.</para>
+
+<para>Later, we will refer to the following <computeroutput>.lib</computeroutput> and <computeroutput>.dll</computeroutput> files that have just been generated:</para>
+
+<para><itemizedlist>
+<listitem>
+<para><computeroutput>./VisualC/Win32/Debug/SDL2.dll</computeroutput> or <computeroutput>./VisualC/Win32/Release/SDL2.dll</computeroutput></para>
+</listitem><listitem>
+<para><computeroutput>./VisualC/Win32/Debug/SDL2.lib</computeroutput> or <computeroutput>./VisualC/Win32/Release/SDL2.lib</computeroutput></para>
+</listitem><listitem>
+<para><computeroutput>./VisualC/Win32/Debug/SDL2main.lib</computeroutput> or <computeroutput>./VisualC/Win32/Release/SDL2main.lib</computeroutput></para>
+</listitem></itemizedlist>
+</para>
+
+<para><emphasis>Note for the <computeroutput>x64</computeroutput> versions, just replace <computeroutput>Win32</computeroutput> in the path with <computeroutput>x64</computeroutput></emphasis></para>
+</section>
+<section xml:id="_md__d___ray_tracing_docs__r_e_a_d_m_e_visualc_1autotoc_md114">
+<title>Creating a Project with SDL</title>
+
+<para><itemizedlist>
+<listitem>
+<para>Create a project as a <computeroutput>Win32 Application</computeroutput>.</para>
+</listitem><listitem>
+<para>Create a C++ file for your project.</para>
+</listitem><listitem>
+<para>Set the C runtime to <computeroutput>Multi-threaded DLL</computeroutput> in the menu: <computeroutput>Project|Settings|C/C++ tab|Code Generation|Runtime Library</computeroutput>.</para>
+</listitem><listitem>
+<para>Add the SDL <computeroutput>include</computeroutput> directory to your list of includes in the menu: <computeroutput>Project|Settings|C/C++ tab|Preprocessor|Additional include directories</computeroutput></para>
+</listitem></itemizedlist>
+</para>
+
+<para><emphasis>VC7 Specific: Instead of doing this, I find it easier to add the include and library directories to the list that VC7 keeps. Do this by selecting Tools|Options|Projects|VC++ Directories and under the &quot;Show
+Directories For:&quot; dropbox select &quot;Include Files&quot;, and click the &quot;New
+Directory Icon&quot; and add the [SDLROOT]\include directory (e.g. If you installed to c:\SDL\ add c:\SDL\include). Proceed to change the dropbox selection to &quot;Library Files&quot; and add [SDLROOT]\lib.</emphasis></para>
+
+<para>The &quot;include directory&quot; I am referring to is the <computeroutput>./include</computeroutput> folder.</para>
+
+<para>Now we&apos;re going to use the files that we had created earlier in the <emphasis>Build SDL</emphasis> step.</para>
+
+<para>Copy the following file into your Project directory:</para>
+
+<para><itemizedlist>
+<listitem>
+<para><computeroutput>SDL2.dll</computeroutput></para>
+</listitem></itemizedlist>
+</para>
+
+<para>Add the following files to your project (It is not necessary to copy them to your project directory):</para>
+
+<para><itemizedlist>
+<listitem>
+<para><computeroutput>SDL2.lib</computeroutput></para>
+</listitem><listitem>
+<para><computeroutput>SDL2main.lib</computeroutput></para>
+</listitem></itemizedlist>
+</para>
+
+<para>To add them to your project, right click on your project, and select <computeroutput>Add files to project</computeroutput>.</para>
+
+<para><emphasis role="bold">Instead of adding the files to your project, it is more desirable to add them to the linker options: Project|Properties|Linker|Command Line and type the names of the libraries to link with in the &quot;Additional Options:&quot; box. Note: This must be done for each build configuration (e.g. Release,Debug).</emphasis></para>
+</section>
+<section xml:id="_md__d___ray_tracing_docs__r_e_a_d_m_e_visualc_1autotoc_md115">
+<title>Hello SDL2</title>
+
+<para>Here&apos;s a sample SDL snippet to verify everything is setup in your IDE:</para>
+
+<para><literallayout><computeroutput>#include&#32;&quot;SDL.h&quot;
+
+int&#32;main(&#32;int&#32;argc,&#32;char*&#32;argv[]&#32;)
+{
+&#32;&#32;&#32;&#32;const&#32;int&#32;WIDTH&#32;=&#32;640;
+&#32;&#32;&#32;&#32;const&#32;int&#32;HEIGHT&#32;=&#32;480;
+&#32;&#32;&#32;&#32;SDL_Window*&#32;window&#32;=&#32;NULL;
+&#32;&#32;&#32;&#32;SDL_Renderer*&#32;renderer&#32;=&#32;NULL;
+
+&#32;&#32;&#32;&#32;SDL_Init(SDL_INIT_VIDEO);
+&#32;&#32;&#32;&#32;window&#32;=&#32;SDL_CreateWindow(&quot;SDL2&#32;Test&quot;,&#32;SDL_WINDOWPOS_UNDEFINED,&#32;SDL_WINDOWPOS_UNDEFINED,&#32;WIDTH,&#32;HEIGHT,&#32;SDL_WINDOW_SHOWN);
+&#32;&#32;&#32;&#32;renderer&#32;=&#32;SDL_CreateRenderer(window,&#32;-1,&#32;SDL_RENDERER_ACCELERATED&#32;|&#32;SDL_RENDERER_PRESENTVSYNC);
+
+&#32;&#32;&#32;&#32;SDL_DestroyRenderer(renderer);
+&#32;&#32;&#32;&#32;SDL_DestroyWindow(window);
+&#32;&#32;&#32;&#32;SDL_Quit();
+&#32;&#32;&#32;&#32;return&#32;0;
+}
+</computeroutput></literallayout></para>
+</section>
+<section xml:id="_md__d___ray_tracing_docs__r_e_a_d_m_e_visualc_1autotoc_md116">
+<title>That&apos;s it!</title>
+
+<para>I hope that this document has helped you get through the most difficult part of using the SDL: installing it. Suggestions for improvements should be posted to the <link xlink:href="https://github.com/libsdl-org/SDL/issues">Github Issues</link>.</para>
+</section>
+<section xml:id="_md__d___ray_tracing_docs__r_e_a_d_m_e_visualc_1autotoc_md117">
+<title>Credits</title>
+
+<para>Thanks to <link xlink:href="mailto:pesterhazy@gmx.net">Paulus Esterhazy</link>, for the work on VC++ port.</para>
+
+<para>This document was originally called &quot;VisualC.txt&quot;, and was written by <link xlink:href="mailto:slouken@libsdl.org">Sam Lantinga</link>.</para>
+
+<para>Later, it was converted to HTML and expanded into the document that you see today by <link xlink:href="mailto:snowlion@sprynet.com">Lion Kimbro</link>.</para>
+
+<para>Minor Fixes and Visual C++ 7 Information (In Green) was added by <link xlink:href="mailto:james@conceptofzero.net">James Turk</link> </para>
+</section>
+</section>

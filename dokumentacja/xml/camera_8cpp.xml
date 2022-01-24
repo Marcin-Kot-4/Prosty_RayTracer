@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="camera_8cpp" kind="file" language="C++">
+    <compoundname>camera.cpp</compoundname>
+    <includes refid="camera_8h" local="yes">camera.h</includes>
+    <includes refid="ray_8h" local="yes">ray.h</includes>
+    <includes local="yes">math.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>D:/RayTracing/RayTrace/camera.cpp</label>
+        <link refid="camera_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>camera.h</label>
+        <link refid="camera_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>./qbLinAlg/qbVector.h</label>
+        <link refid="qb_vector_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>ray.h</label>
+        <link refid="ray_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>iomanip</label>
+      </node>
+      <node id="5">
+        <label>iostream</label>
+      </node>
+      <node id="7">
+        <label>math.h</label>
+      </node>
+      <node id="4">
+        <label>stdexcept</label>
+      </node>
+      <node id="8">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="camera_8h" kindref="compound">camera.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ray_8h" kindref="compound">ray.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;math.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Konstruktor<sp/>domyślny</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><ref refid="class_r_t_1_1_camera_1a1513de7af55db310b04aa83f6cd747e6" kindref="member">RT::Camera::Camera</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>m_cameraPosition<sp/>=<sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.0,<sp/>-10.0,<sp/>0.0}};</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>m_cameraLookAt<sp/>=<sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.0,<sp/>0.0,<sp/>0.0}};</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>m_cameraUp<sp/>=<sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.0,<sp/>0.0,<sp/>1.0}};</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>m_cameraLength<sp/>=<sp/>1.0;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>m_cameraHorzSize<sp/>=<sp/>1.0;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>m_cameraAspectRatio<sp/>=<sp/>1.0;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_camera_1a7a08c60fb7a07929897e3148e798976e" kindref="member">RT::Camera::SetPosition</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>&amp;newPosition)<sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>m_cameraPosition<sp/>=<sp/>newPosition;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_camera_1a303252f454230eb67fef370256aa806f" kindref="member">RT::Camera::SetLookAt</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>&amp;newLookAt)<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>m_cameraLookAt<sp/>=<sp/>newLookAt;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_camera_1ab60600a74e7a9f82ea763321a3f7210e" kindref="member">RT::Camera::SetUp</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>&amp;upVector)<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>m_cameraUp<sp/>=<sp/>upVector;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_camera_1af56677571336b038e942df0dfc4e4090" kindref="member">RT::Camera::SetLength</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>newLength)<sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>m_cameraLength<sp/>=<sp/>newLength;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_camera_1aad8f50f59189b1ddf6b36e19a957c2ba" kindref="member">RT::Camera::SetHorzSize</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>newHorzSize)<sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>m_cameraHorzSize<sp/>=<sp/>newHorzSize;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_camera_1a2b782b4aab7480489298d78fa602d06f" kindref="member">RT::Camera::SetAspect</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>newAspect)<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>m_cameraAspectRatio<sp/>=<sp/>newAspect;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/><ref refid="class_r_t_1_1_camera_1ae7c3393d671ae6fbf189102b00f14a2d" kindref="member">RT::Camera::GetPosition</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_cameraPosition;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/><ref refid="class_r_t_1_1_camera_1ab2d684d8ec6c090f969770c81eaed115" kindref="member">RT::Camera::GetLookAt</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_cameraLookAt;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Zwraca<sp/>wektor<sp/>wychodzący<sp/>pionowo<sp/>z<sp/>punktu,<sp/>w<sp/>którym<sp/>znajduje<sp/>się<sp/>kamera</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/><ref refid="class_r_t_1_1_camera_1addf57b743043ff67bf565d573a8f63f8" kindref="member">RT::Camera::GetUp</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_cameraUp;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Zwraca<sp/>odległość<sp/>od<sp/>kamery<sp/>do<sp/>punktu,<sp/>na<sp/>który<sp/>patrzymy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_camera_1a0799a5aa243b66a7f0172397edf76cea" kindref="member">RT::Camera::GetLength</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_cameraLength;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Zwraca<sp/>horyzontalny/poziomy<sp/>rozmiar<sp/>kamery</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_camera_1aceddd3f90b0a8510f5ae1639f7af0962" kindref="member">RT::Camera::GetHorzSize</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_cameraHorzSize;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Zwraca<sp/>proporcje<sp/>kamery.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_camera_1ae65dc2e37298fdf57f500aaf4e41fa88" kindref="member">RT::Camera::GetAspect</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_cameraAspectRatio;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Zwraca<sp/>wektor<sp/>U</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/><ref refid="class_r_t_1_1_camera_1a844fc9bf91008fa5468b1fb37fb273f5" kindref="member">RT::Camera::GetU</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_projectionScreenU;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Zwraca<sp/>wektor<sp/>V</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/><ref refid="class_r_t_1_1_camera_1a230e5e96be52db49974ca551aa90b24d" kindref="member">RT::Camera::GetV</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_projectionScreenV;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Wektor<sp/>środka<sp/>ekranu</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/><ref refid="class_r_t_1_1_camera_1a7f7066c62259fcea9232bac2ad943770" kindref="member">RT::Camera::GetScreenCentre</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_projectionScreenCentre;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Funkcja<sp/>aktualizująca<sp/>geometrię<sp/>kamery<sp/>(w<sp/>przypadku<sp/>zmiany<sp/>jej<sp/>położenia<sp/>lub<sp/>punktu,<sp/>na<sp/>który<sp/>patrzy)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_camera_1ac58d2976470b32493c5645d548e2a0c4" kindref="member">RT::Camera::UpdateCameraGeometry</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Oblicz<sp/>wektor<sp/>z<sp/>pozycji,<sp/>w<sp/>której<sp/>znajduje<sp/>się<sp/>kamera<sp/>do<sp/>pozycji,<sp/>na<sp/>którą<sp/>patrzy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>m_alignmentVector<sp/>=<sp/>m_cameraLookAt<sp/>-<sp/>m_cameraPosition;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Normalizacja<sp/>w<sp/>celu<sp/>uzyskania<sp/>jedynie<sp/>kierunku<sp/>(bez<sp/>odległości)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>m_alignmentVector.Normalize();</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Oblicz<sp/>wektory<sp/>U<sp/>i<sp/>V.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Produkt<sp/>krzyżowy<sp/>wektorów<sp/>m_alignmentVector<sp/>i<sp/>m_camerUp.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>m_projectionScreenU<sp/>=<sp/><ref refid="classqb_vector_1af77140337a3e04ff051d346599fe4283" kindref="member">qbVector&lt;double&gt;::cross</ref>(m_alignmentVector,<sp/>m_cameraUp);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>m_projectionScreenU.Normalize();</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Produkt<sp/>krzyżowy<sp/>wektorów<sp/>m_projectionScreenU<sp/>i<sp/>m_alignmentVector.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>m_projectionScreenV<sp/>=<sp/><ref refid="classqb_vector_1af77140337a3e04ff051d346599fe4283" kindref="member">qbVector&lt;double&gt;::cross</ref>(m_projectionScreenU,<sp/>m_alignmentVector);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>m_projectionScreenV.Normalize();</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Oblicz<sp/>pozycję<sp/>środka<sp/>ekranu</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Zaczynając<sp/>od<sp/>położenia,<sp/>w<sp/>którym<sp/>znajduje<sp/>się<sp/>kamera,<sp/>przesuwamy<sp/>się<sp/>po<sp/>głównej<sp/>osi<sp/>o<sp/>odległość<sp/>od<sp/>kamery</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>do<sp/>ekranu</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>m_projectionScreenCentre<sp/>=<sp/>m_cameraPosition<sp/>+<sp/>(m_cameraLength<sp/>*<sp/>m_alignmentVector);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Zmodyfikuj<sp/>wektory<sp/>U<sp/>i<sp/>V<sp/>tak,<sp/>aby<sp/>pasowały<sp/>do<sp/>rozmiaru<sp/>i<sp/>proporcji<sp/>ekranu</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>m_projectionScreenU<sp/>=<sp/>m_projectionScreenU<sp/>*<sp/>m_cameraHorzSize;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>szerokość<sp/>ekranu</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>m_projectionScreenV<sp/>=<sp/>m_projectionScreenV<sp/>*<sp/>(m_cameraHorzSize<sp/>/<sp/>m_cameraAspectRatio);<sp/></highlight><highlight class="comment">//<sp/>wysokość<sp/>ekranu</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Zwraca<sp/>promień<sp/>wychodzący<sp/>ze<sp/>środka<sp/>kamery<sp/>i<sp/>przechodzący<sp/>przez<sp/>ekran<sp/>w<sp/>konkretnym<sp/>punkcie<sp/>(przekazanym<sp/>przez<sp/>parametry)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_camera_1ab022ad5b3b5c28e4eb016516a39367f9" kindref="member">RT::Camera::GenerateRay</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>proScreenX,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>proScreenY,<sp/><ref refid="class_r_t_1_1_ray" kindref="compound">RT::Ray</ref><sp/>&amp;cameraRay)<sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Przekształć<sp/>położenie<sp/>punktu<sp/>na<sp/>ekranie<sp/>na<sp/>położenie<sp/>punktu<sp/>w<sp/>globalnych<sp/>współrzędnych</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Wektor<sp/>U<sp/>pomnożony<sp/>przez<sp/>zmienną<sp/>zmiennoprzecinkową<sp/>z<sp/>przedziału<sp/>&lt;-1;<sp/>1&gt;<sp/>daje<sp/>pozycję<sp/>od<sp/>środka<sp/>ekranu<sp/>na<sp/>osi<sp/>poziomej</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Wektor<sp/>V<sp/>pomnożony<sp/>przez<sp/>zmienną<sp/>zmiennoprzecinkową<sp/>z<sp/>przedziału<sp/>&lt;-1;<sp/>1&gt;<sp/>daje<sp/>pozycję<sp/>od<sp/>środka<sp/>ekranu<sp/>na<sp/>osi<sp/>pionowej</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Dodanie<sp/>nowo<sp/>powstałych<sp/>wektorów<sp/>daje<sp/>konkretne<sp/>położenie<sp/>punktu<sp/>w<sp/>globalnych<sp/>współrzędnych</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>screenWorldPart1<sp/>=<sp/>m_projectionScreenCentre<sp/>+<sp/>(m_projectionScreenU<sp/>*<sp/>proScreenX);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>screenWorldCoordinate<sp/>=<sp/>screenWorldPart1<sp/>+<sp/>(m_projectionScreenV<sp/>*<sp/>proScreenY);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Wykorzystaj<sp/>wektor<sp/>kamery<sp/>i<sp/>punktu<sp/>na<sp/>ekranie,<sp/>przez<sp/>który<sp/>ma<sp/>przechodzić<sp/>promień<sp/>do<sp/>zmodyfikowania<sp/>parametrów</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>instancji<sp/>promienia</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>cameraRay.<ref refid="class_r_t_1_1_ray_1a4421d6cade1151cda334b75ba47d7396" kindref="member">m_point1</ref><sp/>=<sp/>m_cameraPosition;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>cameraRay.<ref refid="class_r_t_1_1_ray_1aff734d72e41788ae3f6cbc30c63a8b2a" kindref="member">m_point2</ref><sp/>=<sp/>screenWorldCoordinate;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>cameraRay.<ref refid="class_r_t_1_1_ray_1a3d253c2a4c4dbfe94c6fdac4dee167f7" kindref="member">m_lab</ref><sp/>=<sp/>screenWorldCoordinate<sp/>-<sp/>m_cameraPosition;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/RayTrace/camera.cpp"/>
+  </compounddef>
+</doxygen>

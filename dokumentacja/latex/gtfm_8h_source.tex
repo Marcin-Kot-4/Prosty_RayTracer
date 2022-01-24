@@ -1,0 +1,64 @@
+\hypertarget{gtfm_8h_source}{}\doxysection{gtfm.\+h}
+\label{gtfm_8h_source}\index{D:/RayTracing/RayTrace/gtfm.h@{D:/RayTracing/RayTrace/gtfm.h}}
+\mbox{\hyperlink{gtfm_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef RAYTRACING\_GTFM\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define RAYTRACING\_GTFM\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{qb_vector_8h}{./qbLinAlg/qbVector.h}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{qb_matrix_8h}{./qbLinAlg/qbMatrix.h}}"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{ray_8h}{ray.h}}"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_r_t}{RT}} \{}
+\DoxyCodeLine{9     \textcolor{comment}{// Definicja flag kierunków transformacji}}
+\DoxyCodeLine{10     \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespace_r_t_aaac17f4135aafa89d5b75f9b48ba61eb}{FWDTFORM}} = \textcolor{keyword}{true}; \textcolor{comment}{// forward transform}}
+\DoxyCodeLine{11     \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespace_r_t_a6d7c00f7bd41a6734521d58797804e84}{BCKTFORM}} = \textcolor{keyword}{false}; \textcolor{comment}{// backward transform}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13     \textcolor{keyword}{class }\mbox{\hyperlink{class_r_t_1_1_g_tform}{GTform}} \{}
+\DoxyCodeLine{14     \textcolor{keyword}{public}:}
+\DoxyCodeLine{15         \textcolor{comment}{// Konstruktor}}
+\DoxyCodeLine{16         \mbox{\hyperlink{class_r_t_1_1_g_tform_af4a85301e8377010585ab3b9be09b73e}{GTform}}();}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18         \textcolor{comment}{// Destruktor}}
+\DoxyCodeLine{19         \mbox{\hyperlink{class_r_t_1_1_g_tform_ac52387dbc170335f4648b5ba6994834d}{\string~GTform}}();}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21         \textcolor{comment}{// Konstruktor wykorzystujący dwie macierze}}
+\DoxyCodeLine{22         \mbox{\hyperlink{class_r_t_1_1_g_tform_af4a85301e8377010585ab3b9be09b73e}{GTform}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<double>}} \&fwd, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<double>}} \&bck);}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24         \textcolor{comment}{// Metoda do ustawiania komponentów translacji, rotacji i skalowania}}
+\DoxyCodeLine{25         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_r_t_1_1_g_tform_a54c87058d14d7cf321230ea13523f622}{SetTransform}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&translation,}
+\DoxyCodeLine{26                           \textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&rotation,}
+\DoxyCodeLine{27                           \textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a281421b881aa7a1266842b73a3bc7655}{scale}});}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29         \textcolor{comment}{// Metody zwracające matryce transformacji}}
+\DoxyCodeLine{30         \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<double>}} \mbox{\hyperlink{class_r_t_1_1_g_tform_a115fa0452dcb2c3fd97577f044986d80}{GetForward}}();}
+\DoxyCodeLine{31         \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<double>}} \mbox{\hyperlink{class_r_t_1_1_g_tform_adcf5e1799ce160c0793f6ac243cd4cde}{GetBackward}}();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33         \textcolor{comment}{// Metody do transformacji}}
+\DoxyCodeLine{34         \mbox{\hyperlink{class_r_t_1_1_ray}{RT::Ray}} \mbox{\hyperlink{class_r_t_1_1_g_tform_a77ea09e51153e6eca97750c38e520eef}{Apply}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_r_t_1_1_ray}{RT::Ray}} \&inputRay, \textcolor{keywordtype}{bool} dirFlag);}
+\DoxyCodeLine{35         \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \mbox{\hyperlink{class_r_t_1_1_g_tform_a77ea09e51153e6eca97750c38e520eef}{Apply}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&inputVector, \textcolor{keywordtype}{bool} dirFlag);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37         \textcolor{comment}{// Przeciążenie operatorów}}
+\DoxyCodeLine{38         \textcolor{keyword}{friend} \mbox{\hyperlink{class_r_t_1_1_g_tform}{GTform}} \mbox{\hyperlink{class_r_t_1_1_g_tform_a8b8700192cec8d25c73f40b6e787c77c}{operator*}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_r_t_1_1_g_tform}{RT::GTform}} \&lhs, \textcolor{keyword}{const} \mbox{\hyperlink{class_r_t_1_1_g_tform}{RT::GTform}} \&rhs); \textcolor{comment}{// left hand side, right hand side}}
+\DoxyCodeLine{39         \mbox{\hyperlink{class_r_t_1_1_g_tform}{GTform}} \mbox{\hyperlink{class_r_t_1_1_g_tform_a809b7029a456b68e49a109c97a07afa2}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_r_t_1_1_g_tform}{GTform}} \&rhs);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41         \textcolor{comment}{// Metoda wypisująca macierze}}
+\DoxyCodeLine{42         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_r_t_1_1_g_tform_a2169f46803d51938b059da7eb9fa08fb}{PrintMatrix}}(\textcolor{keywordtype}{bool} dirFlag);}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44         \textcolor{comment}{// Metoda umożliwiająca wypisywanie wektorów}}
+\DoxyCodeLine{45         \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_r_t_1_1_g_tform_a7ed83f7c30e352f5639dd7af0afbfe37}{PrintVector}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&vector);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     \textcolor{keyword}{private}:}
+\DoxyCodeLine{48         \textcolor{keywordtype}{void} Print(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<double>}} \&\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a7b24a3f2f56eb1244ae69dacb4fecb6f}{matrix}});}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     \textcolor{keyword}{private}:}
+\DoxyCodeLine{51         \textcolor{comment}{// macierze jednorodne 4 x 4 pozwalają na przeprowadzenie operacji translacji, rotacji i skalowania za jednym zamachem}}
+\DoxyCodeLine{52         \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<double>}} m\_fwdtfm\{4, 4\};}
+\DoxyCodeLine{53         \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<double>}} m\_bcktfm\{4, 4\};}
+\DoxyCodeLine{54     \};}
+\DoxyCodeLine{55 \}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//RAYTRACING\_GTFM\_H}}
+
+\end{DoxyCode}

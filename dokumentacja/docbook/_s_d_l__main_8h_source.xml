@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__main_8h_source" xml:lang="en-US">
+<title>SDL_main.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_main.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+22 <emphasis role="preprocessor">#ifndef&#32;SDL_main_h_</emphasis>
+23 <emphasis role="preprocessor">#define&#32;SDL_main_h_</emphasis>
+24 
+25 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__stdinc_8h">SDL_stdinc.h</link>&quot;</emphasis>
+26 
+33 <emphasis role="preprocessor">#ifndef&#32;SDL_MAIN_HANDLED</emphasis>
+34 <emphasis role="preprocessor">#if&#32;defined(__WIN32__)</emphasis>
+35 <emphasis role="comment">/*&#32;On&#32;Windows&#32;SDL&#32;provides&#32;WinMain(),&#32;which&#32;parses&#32;the&#32;command&#32;line&#32;and&#32;passes</emphasis>
+36 <emphasis role="comment">&#32;&#32;&#32;the&#32;arguments&#32;to&#32;your&#32;main&#32;function.</emphasis>
+37 <emphasis role="comment"></emphasis>
+38 <emphasis role="comment">&#32;&#32;&#32;If&#32;you&#32;provide&#32;your&#32;own&#32;WinMain(),&#32;you&#32;may&#32;define&#32;SDL_MAIN_HANDLED</emphasis>
+39 <emphasis role="comment">&#32;*/</emphasis>
+40 <emphasis role="preprocessor">#define&#32;SDL_MAIN_AVAILABLE</emphasis>
+41 
+42 <emphasis role="preprocessor">#elif&#32;defined(__WINRT__)</emphasis>
+43 <emphasis role="comment">/*&#32;On&#32;WinRT,&#32;SDL&#32;provides&#32;a&#32;main&#32;function&#32;that&#32;initializes&#32;CoreApplication,</emphasis>
+44 <emphasis role="comment">&#32;&#32;&#32;creating&#32;an&#32;instance&#32;of&#32;IFrameworkView&#32;in&#32;the&#32;process.</emphasis>
+45 <emphasis role="comment"></emphasis>
+46 <emphasis role="comment">&#32;&#32;&#32;Please&#32;note&#32;that&#32;#include&apos;ing&#32;SDL_main.h&#32;is&#32;not&#32;enough&#32;to&#32;get&#32;a&#32;main()</emphasis>
+47 <emphasis role="comment">&#32;&#32;&#32;function&#32;working.&#32;&#32;In&#32;non-XAML&#32;apps,&#32;the&#32;file,</emphasis>
+48 <emphasis role="comment">&#32;&#32;&#32;src/main/winrt/SDL_WinRT_main_NonXAML.cpp,&#32;or&#32;a&#32;copy&#32;of&#32;it,&#32;must&#32;be&#32;compiled</emphasis>
+49 <emphasis role="comment">&#32;&#32;&#32;into&#32;the&#32;app&#32;itself.&#32;&#32;In&#32;XAML&#32;apps,&#32;the&#32;function,&#32;SDL_WinRTRunApp&#32;must&#32;be</emphasis>
+50 <emphasis role="comment">&#32;&#32;&#32;called,&#32;with&#32;a&#32;pointer&#32;to&#32;the&#32;Direct3D-hosted&#32;XAML&#32;control&#32;passed&#32;in.</emphasis>
+51 <emphasis role="comment">*/</emphasis>
+52 <emphasis role="preprocessor">#define&#32;SDL_MAIN_NEEDED</emphasis>
+53 
+54 <emphasis role="preprocessor">#elif&#32;defined(__IPHONEOS__)</emphasis>
+55 <emphasis role="comment">/*&#32;On&#32;iOS&#32;SDL&#32;provides&#32;a&#32;main&#32;function&#32;that&#32;creates&#32;an&#32;application&#32;delegate</emphasis>
+56 <emphasis role="comment">&#32;&#32;&#32;and&#32;starts&#32;the&#32;iOS&#32;application&#32;run&#32;loop.</emphasis>
+57 <emphasis role="comment"></emphasis>
+58 <emphasis role="comment">&#32;&#32;&#32;If&#32;you&#32;link&#32;with&#32;SDL&#32;dynamically&#32;on&#32;iOS,&#32;the&#32;main&#32;function&#32;can&apos;t&#32;be&#32;in&#32;a</emphasis>
+59 <emphasis role="comment">&#32;&#32;&#32;shared&#32;library,&#32;so&#32;you&#32;need&#32;to&#32;link&#32;with&#32;libSDLmain.a,&#32;which&#32;includes&#32;a</emphasis>
+60 <emphasis role="comment">&#32;&#32;&#32;stub&#32;main&#32;function&#32;that&#32;calls&#32;into&#32;the&#32;shared&#32;library&#32;to&#32;start&#32;execution.</emphasis>
+61 <emphasis role="comment"></emphasis>
+62 <emphasis role="comment">&#32;&#32;&#32;See&#32;src/video/uikit/SDL_uikitappdelegate.m&#32;for&#32;more&#32;details.</emphasis>
+63 <emphasis role="comment">&#32;*/</emphasis>
+64 <emphasis role="preprocessor">#define&#32;SDL_MAIN_NEEDED</emphasis>
+65 
+66 <emphasis role="preprocessor">#elif&#32;defined(__ANDROID__)</emphasis>
+67 <emphasis role="comment">/*&#32;On&#32;Android&#32;SDL&#32;provides&#32;a&#32;Java&#32;class&#32;in&#32;SDLActivity.java&#32;that&#32;is&#32;the</emphasis>
+68 <emphasis role="comment">&#32;&#32;&#32;main&#32;activity&#32;entry&#32;point.</emphasis>
+69 <emphasis role="comment"></emphasis>
+70 <emphasis role="comment">&#32;&#32;&#32;See&#32;docs/README-android.md&#32;for&#32;more&#32;details&#32;on&#32;extending&#32;that&#32;class.</emphasis>
+71 <emphasis role="comment">&#32;*/</emphasis>
+72 <emphasis role="preprocessor">#define&#32;SDL_MAIN_NEEDED</emphasis>
+73 
+74 <emphasis role="comment">/*&#32;We&#32;need&#32;to&#32;export&#32;SDL_main&#32;so&#32;it&#32;can&#32;be&#32;launched&#32;from&#32;Java&#32;*/</emphasis>
+75 <emphasis role="preprocessor">#define&#32;SDLMAIN_DECLSPEC&#32;&#32;&#32;&#32;DECLSPEC</emphasis>
+76 
+77 <emphasis role="preprocessor">#elif&#32;defined(__NACL__)</emphasis>
+78 <emphasis role="comment">/*&#32;On&#32;NACL&#32;we&#32;use&#32;ppapi_simple&#32;to&#32;set&#32;up&#32;the&#32;application&#32;helper&#32;code,</emphasis>
+79 <emphasis role="comment">&#32;&#32;&#32;then&#32;wait&#32;for&#32;the&#32;first&#32;PSE_INSTANCE_DIDCHANGEVIEW&#32;event&#32;before&#32;</emphasis>
+80 <emphasis role="comment">&#32;&#32;&#32;starting&#32;the&#32;user&#32;main&#32;function.</emphasis>
+81 <emphasis role="comment">&#32;&#32;&#32;All&#32;user&#32;code&#32;is&#32;run&#32;in&#32;a&#32;separate&#32;thread&#32;by&#32;ppapi_simple,&#32;thus&#32;</emphasis>
+82 <emphasis role="comment">&#32;&#32;&#32;allowing&#32;for&#32;blocking&#32;io&#32;to&#32;take&#32;place&#32;via&#32;nacl_io</emphasis>
+83 <emphasis role="comment">*/</emphasis>
+84 <emphasis role="preprocessor">#define&#32;SDL_MAIN_NEEDED</emphasis>
+85 
+86 <emphasis role="preprocessor">#elif&#32;defined(__PSP__)</emphasis>
+87 <emphasis role="comment">/*&#32;On&#32;PSP&#32;SDL&#32;provides&#32;a&#32;main&#32;function&#32;that&#32;sets&#32;the&#32;module&#32;info,</emphasis>
+88 <emphasis role="comment">&#32;&#32;&#32;activates&#32;the&#32;GPU&#32;and&#32;starts&#32;the&#32;thread&#32;required&#32;to&#32;be&#32;able&#32;to&#32;exit</emphasis>
+89 <emphasis role="comment">&#32;&#32;&#32;the&#32;software.</emphasis>
+90 <emphasis role="comment"></emphasis>
+91 <emphasis role="comment">&#32;&#32;&#32;If&#32;you&#32;provide&#32;this&#32;yourself,&#32;you&#32;may&#32;define&#32;SDL_MAIN_HANDLED</emphasis>
+92 <emphasis role="comment">&#32;*/</emphasis>
+93 <emphasis role="preprocessor">#define&#32;SDL_MAIN_AVAILABLE</emphasis>
+94 
+95 <emphasis role="preprocessor">#endif</emphasis>
+96 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_MAIN_HANDLED&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+97 
+98 <emphasis role="preprocessor">#ifndef&#32;SDLMAIN_DECLSPEC</emphasis>
+99 <emphasis role="preprocessor">#define&#32;SDLMAIN_DECLSPEC</emphasis>
+100 <emphasis role="preprocessor">#endif</emphasis>
+101 
+117 <emphasis role="preprocessor">#if&#32;defined(SDL_MAIN_NEEDED)&#32;||&#32;defined(SDL_MAIN_AVAILABLE)</emphasis>
+118 <emphasis role="preprocessor">#define&#32;main&#32;&#32;&#32;&#32;SDL_main</emphasis>
+119 <emphasis role="preprocessor">#endif</emphasis>
+120 
+121 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+122 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+123 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+124 <emphasis role="preprocessor">#endif</emphasis>
+125 
+129 <emphasis role="keyword">typedef</emphasis>&#32;int&#32;(*<link linkend="__s_d_l__main_8h_1a824db1a8625cd44144b424017466c4f9">SDL_main_func</link>)(<emphasis role="keywordtype">int</emphasis>&#32;argc,&#32;<emphasis role="keywordtype">char</emphasis>&#32;*argv[]);
+130 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="__s_d_l__main_8h_1a3934e9a3a2bfa70c194144202edf41bb">SDLMAIN_DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__main_8h_1a35282508ae396e1fd5711ff3d85e08a7">SDL_main</link>(<emphasis role="keywordtype">int</emphasis>&#32;argc,&#32;<emphasis role="keywordtype">char</emphasis>&#32;*argv[]);
+131 
+132 
+146 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__main_8h_1a6a4bb5ffb489bf0956bc1b813397306d">SDL_SetMainReady</link>(<emphasis role="keywordtype">void</emphasis>);
+147 
+148 <emphasis role="preprocessor">#ifdef&#32;__WIN32__</emphasis>
+149 
+173 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;SDL_RegisterApp(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1aaced7cfc21e7d37775d6921bb8177239">name</link>,&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;style,&#32;<emphasis role="keywordtype">void</emphasis>&#32;*hInst);
+174 
+190 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;SDL_UnregisterApp(<emphasis role="keywordtype">void</emphasis>);
+191 
+192 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;__WIN32__&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+193 
+194 
+195 <emphasis role="preprocessor">#ifdef&#32;__WINRT__</emphasis>
+196 
+207 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;SDL_WinRTRunApp(<link linkend="__s_d_l__main_8h_1a824db1a8625cd44144b424017466c4f9">SDL_main_func</link>&#32;mainFunction,&#32;<emphasis role="keywordtype">void</emphasis>&#32;*&#32;reserved);
+208 
+209 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;__WINRT__&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+210 
+211 <emphasis role="preprocessor">#if&#32;defined(__IPHONEOS__)</emphasis>
+212 
+223 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;SDL_UIKitRunApp(<emphasis role="keywordtype">int</emphasis>&#32;argc,&#32;<emphasis role="keywordtype">char</emphasis>&#32;*argv[],&#32;<link linkend="__s_d_l__main_8h_1a824db1a8625cd44144b424017466c4f9">SDL_main_func</link>&#32;mainFunction);
+224 
+225 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;__IPHONEOS__&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+226 
+227 
+228 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+229 }
+230 <emphasis role="preprocessor">#endif</emphasis>
+231 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+232 
+233 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_main_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+234 
+235 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_ray_8h_source" xml:lang="en-US">
+<title>ray.h</title>
+<indexterm><primary>D:/RayTracing/RayTrace/ray.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;RAYTRACING_RAY_H</emphasis>
+2 <emphasis role="preprocessor">#define&#32;RAYTRACING_RAY_H</emphasis>
+3 
+4 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_qb_vector_8h">./qbLinAlg/qbVector.h</link>&quot;</emphasis>
+5 
+6 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_r_t">RT</link>&#32;{
+7 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_class_r_t_1_1_ray">Ray</link>&#32;{
+8 
+9 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+10 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_r_t_1_1_ray_1a71457f5853a4b7a849b74f49c3c29f77">Ray</link>();
+11 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Konstruktor.&#32;Tablice&#32;zawierające&#32;dwa&#32;wektory&#32;point1&#32;i&#32;point2</emphasis>
+12 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;qbVector&#32;klasa&#32;z&#32;biblioteki&#32;liniowej&#32;algebry:&#32;qbLinAlg</emphasis>
+13 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_r_t_1_1_ray_1a71457f5853a4b7a849b74f49c3c29f77">Ray</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;point1,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;point2);
+14 
+15 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_ray_1a8e3fc973be827bd72bc89d2940019fe5">GetPoint1</link>()&#32;<emphasis role="keyword">const</emphasis>;
+16 
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_ray_1af4b3be15ef1228f32ba114a475453930">GetPoint2</link>()&#32;<emphasis role="keyword">const</emphasis>;
+18 
+19 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Punkt&#32;początkowy</emphasis>
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_ray_1a4421d6cade1151cda334b75ba47d7396">m_point1</link>{3};
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Punkt&#32;końcowy</emphasis>
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_ray_1aff734d72e41788ae3f6cbc30c63a8b2a">m_point2</link>{3};
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Wektor&#32;od&#32;punktu&#32;1&#32;do&#32;punktu&#32;2</emphasis>
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_ray_1a3d253c2a4c4dbfe94c6fdac4dee167f7">m_lab</link>{3};
+26 
+27 &#32;&#32;&#32;&#32;};
+28 }
+29 
+30 
+31 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//RAYTRACING_RAY_H</emphasis>
+</programlisting></section>

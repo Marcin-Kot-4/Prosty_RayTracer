@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__endian_8h" xml:lang="en-US">
+<title>D:/RayTracing/include/SDL_endian.h File Reference</title>
+<indexterm><primary>D:/RayTracing/include/SDL_endian.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;SDL_stdinc.h&quot;
+#include &quot;begin_code.h&quot;
+#include &quot;close_code.h&quot;
+</programlisting><simplesect>
+    <title>Macros    </title>
+<simplesect><title>Swap to native</title>
+
+<para>Byteswap item from the specified endianness to the native endianness. </para>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__s_d_l__endian_8h_1ae650119b14f608de5d79e0d73a444c35">SDL_SwapLE16</link>(X)   (X)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__endian_8h_1a14265c62e134bff318afba31ec1b0911">SDL_SwapLE32</link>(X)   (X)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__endian_8h_1ae1c6fb787318750e4e974345bd46ca4b">SDL_SwapLE64</link>(X)   (X)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__endian_8h_1a2b64599423c3c710550238f2ee6fe3a8">SDL_SwapFloatLE</link>(X)   (X)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__endian_8h_1aba916646d6a5abd082d5a21b406d3823">SDL_SwapBE16</link>(X)   <link linkend="__s_d_l__endian_8h_1a157cb22d3cc4b3f623822b15c3921e54">SDL_Swap16</link>(X)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__endian_8h_1a2a2c8f38728448268d6d881f4a699d54">SDL_SwapBE32</link>(X)   <link linkend="__s_d_l__endian_8h_1a0f516a794e03b48778c9fcf41ddfe026">SDL_Swap32</link>(X)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__endian_8h_1acc75cbc3e0bbf00dfd438e2186b91b03">SDL_SwapBE64</link>(X)   <link linkend="__s_d_l__endian_8h_1a5ffaae586753b46ec5df4e601702324a">SDL_Swap64</link>(X)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__endian_8h_1a12efebb66799de3703518e127361cfb7">SDL_SwapFloatBE</link>(X)   <link linkend="__s_d_l__endian_8h_1a5f0f2d51e5ca5b27627ffc46ec892ce2">SDL_SwapFloat</link>(X)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</simplesect>
+<simplesect>
+    <title>The two types of endianness    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__s_d_l__endian_8h_1ad2b20e63545e73207b007b03bf08c2df">SDL_LIL_ENDIAN</link>   1234</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__endian_8h_1af22db189169b9aa7e356bf26b2a553f6">SDL_BIG_ENDIAN</link>   4321</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__endian_8h_1a0582882a281bd6c7580e454be3595703">SDL_BYTEORDER</link>   <link linkend="__s_d_l__endian_8h_1ad2b20e63545e73207b007b03bf08c2df">SDL_LIL_ENDIAN</link></para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__endian_8h_1a7092866f7153eb705ca7a407955e3a01">HAS_BUILTIN_BSWAP16</link>   0</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__endian_8h_1a36c0d118c6346d33e90fea757d6dfec1">HAS_BUILTIN_BSWAP32</link>   0</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__endian_8h_1a665dc1a01711462ec0ba7a9fd04a57cf">HAS_BUILTIN_BSWAP64</link>   0</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__endian_8h_1a6f4674b3fe2d67cc426e40f681a64b0e">HAS_BROKEN_BSWAP</link>   0</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link> <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="__s_d_l__endian_8h_1a157cb22d3cc4b3f623822b15c3921e54">SDL_Swap16</link> (<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link> <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="__s_d_l__endian_8h_1a0f516a794e03b48778c9fcf41ddfe026">SDL_Swap32</link> (<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link> <link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link> <link linkend="__s_d_l__endian_8h_1a5ffaae586753b46ec5df4e601702324a">SDL_Swap64</link> (<link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link> <link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link> float <link linkend="__s_d_l__endian_8h_1a5f0f2d51e5ca5b27627ffc46ec892ce2">SDL_SwapFloat</link> (float <link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Functions for reading and writing endian-specific values</para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__s_d_l__endian_8h_1a6f4674b3fe2d67cc426e40f681a64b0e"/><section>
+    <title>HAS_BROKEN_BSWAP</title>
+<indexterm><primary>HAS_BROKEN_BSWAP</primary><secondary>SDL_endian.h</secondary></indexterm>
+<indexterm><primary>SDL_endian.h</primary><secondary>HAS_BROKEN_BSWAP</secondary></indexterm>
+<para><computeroutput>#define HAS_BROKEN_BSWAP   0</computeroutput></para></section>
+<anchor xml:id="__s_d_l__endian_8h_1a7092866f7153eb705ca7a407955e3a01"/><section>
+    <title>HAS_BUILTIN_BSWAP16</title>
+<indexterm><primary>HAS_BUILTIN_BSWAP16</primary><secondary>SDL_endian.h</secondary></indexterm>
+<indexterm><primary>SDL_endian.h</primary><secondary>HAS_BUILTIN_BSWAP16</secondary></indexterm>
+<para><computeroutput>#define HAS_BUILTIN_BSWAP16   0</computeroutput></para></section>
+<anchor xml:id="__s_d_l__endian_8h_1a36c0d118c6346d33e90fea757d6dfec1"/><section>
+    <title>HAS_BUILTIN_BSWAP32</title>
+<indexterm><primary>HAS_BUILTIN_BSWAP32</primary><secondary>SDL_endian.h</secondary></indexterm>
+<indexterm><primary>SDL_endian.h</primary><secondary>HAS_BUILTIN_BSWAP32</secondary></indexterm>
+<para><computeroutput>#define HAS_BUILTIN_BSWAP32   0</computeroutput></para></section>
+<anchor xml:id="__s_d_l__endian_8h_1a665dc1a01711462ec0ba7a9fd04a57cf"/><section>
+    <title>HAS_BUILTIN_BSWAP64</title>
+<indexterm><primary>HAS_BUILTIN_BSWAP64</primary><secondary>SDL_endian.h</secondary></indexterm>
+<indexterm><primary>SDL_endian.h</primary><secondary>HAS_BUILTIN_BSWAP64</secondary></indexterm>
+<para><computeroutput>#define HAS_BUILTIN_BSWAP64   0</computeroutput></para></section>
+<anchor xml:id="__s_d_l__endian_8h_1af22db189169b9aa7e356bf26b2a553f6"/><section>
+    <title>SDL_BIG_ENDIAN</title>
+<indexterm><primary>SDL_BIG_ENDIAN</primary><secondary>SDL_endian.h</secondary></indexterm>
+<indexterm><primary>SDL_endian.h</primary><secondary>SDL_BIG_ENDIAN</secondary></indexterm>
+<para><computeroutput>#define SDL_BIG_ENDIAN   4321</computeroutput></para></section>
+<anchor xml:id="__s_d_l__endian_8h_1a0582882a281bd6c7580e454be3595703"/><section>
+    <title>SDL_BYTEORDER</title>
+<indexterm><primary>SDL_BYTEORDER</primary><secondary>SDL_endian.h</secondary></indexterm>
+<indexterm><primary>SDL_endian.h</primary><secondary>SDL_BYTEORDER</secondary></indexterm>
+<para><computeroutput>#define SDL_BYTEORDER   <link linkend="__s_d_l__endian_8h_1ad2b20e63545e73207b007b03bf08c2df">SDL_LIL_ENDIAN</link></computeroutput></para></section>
+<anchor xml:id="__s_d_l__endian_8h_1ad2b20e63545e73207b007b03bf08c2df"/><section>
+    <title>SDL_LIL_ENDIAN</title>
+<indexterm><primary>SDL_LIL_ENDIAN</primary><secondary>SDL_endian.h</secondary></indexterm>
+<indexterm><primary>SDL_endian.h</primary><secondary>SDL_LIL_ENDIAN</secondary></indexterm>
+<para><computeroutput>#define SDL_LIL_ENDIAN   1234</computeroutput></para></section>
+<anchor xml:id="__s_d_l__endian_8h_1aba916646d6a5abd082d5a21b406d3823"/><section>
+    <title>SDL_SwapBE16</title>
+<indexterm><primary>SDL_SwapBE16</primary><secondary>SDL_endian.h</secondary></indexterm>
+<indexterm><primary>SDL_endian.h</primary><secondary>SDL_SwapBE16</secondary></indexterm>
+<para><computeroutput>#define SDL_SwapBE16( X)   <link linkend="__s_d_l__endian_8h_1a157cb22d3cc4b3f623822b15c3921e54">SDL_Swap16</link>(X)</computeroutput></para></section>
+<anchor xml:id="__s_d_l__endian_8h_1a2a2c8f38728448268d6d881f4a699d54"/><section>
+    <title>SDL_SwapBE32</title>
+<indexterm><primary>SDL_SwapBE32</primary><secondary>SDL_endian.h</secondary></indexterm>
+<indexterm><primary>SDL_endian.h</primary><secondary>SDL_SwapBE32</secondary></indexterm>
+<para><computeroutput>#define SDL_SwapBE32( X)   <link linkend="__s_d_l__endian_8h_1a0f516a794e03b48778c9fcf41ddfe026">SDL_Swap32</link>(X)</computeroutput></para></section>
+<anchor xml:id="__s_d_l__endian_8h_1acc75cbc3e0bbf00dfd438e2186b91b03"/><section>
+    <title>SDL_SwapBE64</title>
+<indexterm><primary>SDL_SwapBE64</primary><secondary>SDL_endian.h</secondary></indexterm>
+<indexterm><primary>SDL_endian.h</primary><secondary>SDL_SwapBE64</secondary></indexterm>
+<para><computeroutput>#define SDL_SwapBE64( X)   <link linkend="__s_d_l__endian_8h_1a5ffaae586753b46ec5df4e601702324a">SDL_Swap64</link>(X)</computeroutput></para></section>
+<anchor xml:id="__s_d_l__endian_8h_1a12efebb66799de3703518e127361cfb7"/><section>
+    <title>SDL_SwapFloatBE</title>
+<indexterm><primary>SDL_SwapFloatBE</primary><secondary>SDL_endian.h</secondary></indexterm>
+<indexterm><primary>SDL_endian.h</primary><secondary>SDL_SwapFloatBE</secondary></indexterm>
+<para><computeroutput>#define SDL_SwapFloatBE( X)   <link linkend="__s_d_l__endian_8h_1a5f0f2d51e5ca5b27627ffc46ec892ce2">SDL_SwapFloat</link>(X)</computeroutput></para></section>
+<anchor xml:id="__s_d_l__endian_8h_1a2b64599423c3c710550238f2ee6fe3a8"/><section>
+    <title>SDL_SwapFloatLE</title>
+<indexterm><primary>SDL_SwapFloatLE</primary><secondary>SDL_endian.h</secondary></indexterm>
+<indexterm><primary>SDL_endian.h</primary><secondary>SDL_SwapFloatLE</secondary></indexterm>
+<para><computeroutput>#define SDL_SwapFloatLE( X)   (X)</computeroutput></para></section>
+<anchor xml:id="__s_d_l__endian_8h_1ae650119b14f608de5d79e0d73a444c35"/><section>
+    <title>SDL_SwapLE16</title>
+<indexterm><primary>SDL_SwapLE16</primary><secondary>SDL_endian.h</secondary></indexterm>
+<indexterm><primary>SDL_endian.h</primary><secondary>SDL_SwapLE16</secondary></indexterm>
+<para><computeroutput>#define SDL_SwapLE16( X)   (X)</computeroutput></para></section>
+<anchor xml:id="__s_d_l__endian_8h_1a14265c62e134bff318afba31ec1b0911"/><section>
+    <title>SDL_SwapLE32</title>
+<indexterm><primary>SDL_SwapLE32</primary><secondary>SDL_endian.h</secondary></indexterm>
+<indexterm><primary>SDL_endian.h</primary><secondary>SDL_SwapLE32</secondary></indexterm>
+<para><computeroutput>#define SDL_SwapLE32( X)   (X)</computeroutput></para></section>
+<anchor xml:id="__s_d_l__endian_8h_1ae1c6fb787318750e4e974345bd46ca4b"/><section>
+    <title>SDL_SwapLE64</title>
+<indexterm><primary>SDL_SwapLE64</primary><secondary>SDL_endian.h</secondary></indexterm>
+<indexterm><primary>SDL_endian.h</primary><secondary>SDL_SwapLE64</secondary></indexterm>
+<para><computeroutput>#define SDL_SwapLE64( X)   (X)</computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__s_d_l__endian_8h_1a157cb22d3cc4b3f623822b15c3921e54"/><section>
+    <title>SDL_Swap16()</title>
+<indexterm><primary>SDL_Swap16</primary><secondary>SDL_endian.h</secondary></indexterm>
+<indexterm><primary>SDL_endian.h</primary><secondary>SDL_Swap16</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link> <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> SDL_Swap16 (<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> x)</computeroutput></para></section>
+<anchor xml:id="__s_d_l__endian_8h_1a0f516a794e03b48778c9fcf41ddfe026"/><section>
+    <title>SDL_Swap32()</title>
+<indexterm><primary>SDL_Swap32</primary><secondary>SDL_endian.h</secondary></indexterm>
+<indexterm><primary>SDL_endian.h</primary><secondary>SDL_Swap32</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link> <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> SDL_Swap32 (<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> x)</computeroutput></para></section>
+<anchor xml:id="__s_d_l__endian_8h_1a5ffaae586753b46ec5df4e601702324a"/><section>
+    <title>SDL_Swap64()</title>
+<indexterm><primary>SDL_Swap64</primary><secondary>SDL_endian.h</secondary></indexterm>
+<indexterm><primary>SDL_endian.h</primary><secondary>SDL_Swap64</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link> <link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link> SDL_Swap64 (<link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link> x)</computeroutput></para></section>
+<anchor xml:id="__s_d_l__endian_8h_1a5f0f2d51e5ca5b27627ffc46ec892ce2"/><section>
+    <title>SDL_SwapFloat()</title>
+<indexterm><primary>SDL_SwapFloat</primary><secondary>SDL_endian.h</secondary></indexterm>
+<indexterm><primary>SDL_endian.h</primary><secondary>SDL_SwapFloat</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link> float SDL_SwapFloat (float x)</computeroutput></para></section>
+</section>
+</section>

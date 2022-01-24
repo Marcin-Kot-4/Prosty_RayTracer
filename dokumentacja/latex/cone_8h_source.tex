@@ -1,0 +1,32 @@
+\hypertarget{cone_8h_source}{}\doxysection{cone.\+h}
+\label{cone_8h_source}\index{D:/RayTracing/RayTrace/Primitives/cone.h@{D:/RayTracing/RayTrace/Primitives/cone.h}}
+\mbox{\hyperlink{cone_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef RAYTRACING\_CONE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define RAYTRACING\_CONE\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{objectbase_8h}{objectbase.h}}"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}../gtfm.h"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_r_t}{RT}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10     \textcolor{keyword}{class }\mbox{\hyperlink{class_r_t_1_1_cone}{Cone}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_r_t_1_1_object_base}{ObjectBase}}}
+\DoxyCodeLine{11     \{}
+\DoxyCodeLine{12     \textcolor{keyword}{public}:}
+\DoxyCodeLine{13         \textcolor{comment}{// Konstruktor domyślny}}
+\DoxyCodeLine{14         \mbox{\hyperlink{class_r_t_1_1_cone_a72241657528b125089d9efe01e4ef07f}{Cone}}();}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16         \textcolor{comment}{// Nadpisany destruktor}}
+\DoxyCodeLine{17         \textcolor{keyword}{virtual} \mbox{\hyperlink{class_r_t_1_1_cone_acb0b9da6ecea09458201e048c7dfbd47}{\string~Cone}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19         \textcolor{comment}{// Nadpisz metodę sprawdzającą przecięcia promieni ze stożkiem}}
+\DoxyCodeLine{20         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_r_t_1_1_cone_a6df1cffc250d1c629250abf6e6dfb925}{TestIntersection}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_r_t_1_1_ray}{RT::Ray}} \&castRay, \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&intPoint,}
+\DoxyCodeLine{21                                       \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&localNormal, \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&localColor) \textcolor{keyword}{override};}
+\DoxyCodeLine{22     \};}
+\DoxyCodeLine{23 \}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//RAYTRACING\_CONE\_H}}
+
+\end{DoxyCode}

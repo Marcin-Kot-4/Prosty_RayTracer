@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="objsphere_8cpp" kind="file" language="C++">
+    <compoundname>objsphere.cpp</compoundname>
+    <includes refid="objsphere_8h" local="yes">objsphere.h</includes>
+    <includes local="no">cmath</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>objectbase.h</label>
+        <link refid="objectbase_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/RayTracing/RayTrace/Primitives/objsphere.cpp</label>
+        <link refid="objsphere_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>objsphere.h</label>
+        <link refid="objsphere_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>../gtfm.h</label>
+        <link refid="gtfm_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>./qbLinAlg/qbMatrix.h</label>
+        <link refid="qb_matrix_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>../qbLinAlg/qbVector.h</label>
+        <link refid="qb_vector_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>../ray.h</label>
+        <link refid="ray_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>cmath</label>
+      </node>
+      <node id="14">
+        <label>exception</label>
+      </node>
+      <node id="8">
+        <label>iomanip</label>
+      </node>
+      <node id="7">
+        <label>iostream</label>
+      </node>
+      <node id="9">
+        <label>math.h</label>
+      </node>
+      <node id="4">
+        <label>memory</label>
+      </node>
+      <node id="6">
+        <label>stdexcept</label>
+      </node>
+      <node id="10">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="objsphere_8h" kindref="compound">objsphere.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Domyślny<sp/>konstruktor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><ref refid="class_r_t_1_1_obj_sphere_1acebbd30c9598b1e97f3372d7f0d87e74" kindref="member">RT::ObjSphere::ObjSphere</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Destruktor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><ref refid="class_r_t_1_1_obj_sphere_1a91db8fe9bbd7ad278d7899221204f300" kindref="member">RT::ObjSphere::~ObjSphere</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Metoda<sp/>odpowiedzialna<sp/>za<sp/>sprawdzanie<sp/>przecięcia<sp/>się<sp/>promienia<sp/>z<sp/>powierzchnią<sp/>obiektu</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_obj_sphere_1ac61205d4e6dc56ad927e84ada7f3a77b" kindref="member">RT::ObjSphere::TestIntersection</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_ray" kindref="compound">RT::Ray</ref><sp/>&amp;castRay,<sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>&amp;intPoint,</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>&amp;localNormal,<sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>&amp;localColor)<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Przekształcenie<sp/>współrzędnych<sp/>globalnych<sp/>castRay<sp/>na<sp/>współrzędne<sp/>lokalne<sp/>obiektu</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Kopiowanie<sp/>promienia<sp/>i<sp/>zastosowanie<sp/>wstecznej<sp/>transformacji</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Wsteczna<sp/>transformacja<sp/>zwraca<sp/>nam<sp/>lokalne<sp/>współrzędne,<sp/>ponieważ<sp/>po<sp/>transformacji<sp/>obiekt<sp/>jest<sp/>opisany<sp/>przez</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>globalne<sp/>współrzędne</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_r_t_1_1_ray" kindref="compound">RT::Ray</ref><sp/>bckRay<sp/>=<sp/>m_transformMatrix.Apply(castRay,<sp/><ref refid="namespace_r_t_1a6d7c00f7bd41a6734521d58797804e84" kindref="member">RT::BCKTFORM</ref>);<sp/></highlight><highlight class="comment">//<sp/>z<sp/>globalnych<sp/>na<sp/>lokalne</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Oblicz<sp/>wartości<sp/>a,<sp/>b<sp/>i<sp/>c</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>vhat<sp/>=<sp/>bckRay.<ref refid="class_r_t_1_1_ray_1a3d253c2a4c4dbfe94c6fdac4dee167f7" kindref="member">m_lab</ref>;<sp/></highlight><highlight class="comment">//<sp/>m_lab<sp/>-<sp/>kierunek<sp/>promienia</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>vhat.<ref refid="classqb_vector_1a06cc00476d406a772461fc4acd7e9ea8" kindref="member">Normalize</ref>();<sp/></highlight><highlight class="comment">//<sp/>Normalizacja<sp/>wektora,<sp/>czyli<sp/>przeskalowanie<sp/>go<sp/>tak,<sp/>aby<sp/>jego<sp/>długość<sp/>była<sp/>równa<sp/>1.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Czyli<sp/>podzielenie<sp/>go<sp/>przez<sp/>jego<sp/>długość.<sp/>Dzięki<sp/>temu<sp/>powstaje<sp/>wektor<sp/>jednostkowy.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>A<sp/>jest<sp/>równe<sp/>kwadratowi<sp/>wielkości<sp/>kierunku<sp/>promienia.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Jako<sp/>że<sp/>będzie<sp/>to<sp/>wektor<sp/>jednostkowy<sp/>wartość<sp/>&quot;a&quot;<sp/>zawsze<sp/>będzie<sp/>równa<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>a<sp/>=<sp/>1.0;<sp/>nie<sp/>musimy<sp/>obliczać<sp/>a</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Oblicz<sp/>b<sp/>(m_point1<sp/>punkt<sp/>startowy<sp/>promienia)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010" kindref="member">b</ref><sp/>=<sp/>2.0<sp/>*<sp/><ref refid="classqb_vector_1a8a3c9123ca342c3499c99112a577db8b" kindref="member">qbVector&lt;double&gt;::dot</ref>(bckRay.<ref refid="class_r_t_1_1_ray_1a4421d6cade1151cda334b75ba47d7396" kindref="member">m_point1</ref>,<sp/>vhat);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Oblicz<sp/>c</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__opengl__glext_8h_1a1f2d7f8147412c43ba2303a56f97ee73" kindref="member">c</ref><sp/>=<sp/><ref refid="classqb_vector_1a8a3c9123ca342c3499c99112a577db8b" kindref="member">qbVector&lt;double&gt;::dot</ref>(bckRay.<ref refid="class_r_t_1_1_ray_1a4421d6cade1151cda334b75ba47d7396" kindref="member">m_point1</ref>,<sp/>bckRay.<ref refid="class_r_t_1_1_ray_1a4421d6cade1151cda334b75ba47d7396" kindref="member">m_point1</ref>)<sp/>-<sp/>1.0;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Sprawdzanie<sp/>przecięcia</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>intTest<sp/>=<sp/>(<ref refid="_s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010" kindref="member">b</ref><sp/>*<sp/><ref refid="_s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010" kindref="member">b</ref>)<sp/>-<sp/>4.0<sp/>*<sp/><ref refid="_s_d_l__opengl__glext_8h_1a1f2d7f8147412c43ba2303a56f97ee73" kindref="member">c</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>poi;<sp/></highlight><highlight class="comment">//<sp/>point<sp/>of<sp/>intersection</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(intTest<sp/>&gt;<sp/>0.0)<sp/>{<sp/></highlight><highlight class="comment">//<sp/>Jeśli<sp/>występuje<sp/>przecięcie<sp/>promienia<sp/>ze<sp/>sferą</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>numSQRT<sp/>=<sp/>sqrtf(intTest);<sp/></highlight><highlight class="comment">//<sp/>pierwiastek<sp/>z<sp/>delty</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__opengl__glext_8h_1af48031a37b713afa3b0d0d7d29653d7c" kindref="member">t1</ref><sp/>=<sp/>(-<ref refid="_s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010" kindref="member">b</ref><sp/>+<sp/>numSQRT)<sp/>/<sp/>2.0;<sp/></highlight><highlight class="comment">//<sp/>x1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>t2<sp/>=<sp/>(-<ref refid="_s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010" kindref="member">b</ref><sp/>-<sp/>numSQRT)<sp/>/<sp/>2.0;<sp/></highlight><highlight class="comment">//<sp/>x2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Jeśli<sp/>t1<sp/>lub<sp/>t2<sp/>to<sp/>wartości<sp/>ujemne,<sp/>wówczas<sp/>przynajmniej<sp/>część<sp/>obiektu<sp/>jest<sp/>za<sp/>kamerą<sp/>i<sp/>możemy<sp/>to<sp/>zignorować</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((<ref refid="_s_d_l__opengl__glext_8h_1af48031a37b713afa3b0d0d7d29653d7c" kindref="member">t1</ref><sp/>&lt;<sp/>0.0)<sp/>&amp;&amp;<sp/>(t2<sp/>&lt;<sp/>0.0))<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Określ,<sp/>który<sp/>punkt<sp/>jest<sp/>bliżej<sp/>kamery<sp/>(przednia<sp/>część<sp/>sfery<sp/>czy<sp/>tylna)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[w<sp/>przypadku<sp/>gdy<sp/>promień<sp/>przecina<sp/>się<sp/>ze<sp/>sferą<sp/>w<sp/>dwóch<sp/>punktach]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="_s_d_l__opengl__glext_8h_1af48031a37b713afa3b0d0d7d29653d7c" kindref="member">t1</ref><sp/>&lt;<sp/>t2)<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="_s_d_l__opengl__glext_8h_1af48031a37b713afa3b0d0d7d29653d7c" kindref="member">t1</ref><sp/>&gt;<sp/>0.0)<sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>poi<sp/>=<sp/>bckRay.<ref refid="class_r_t_1_1_ray_1a4421d6cade1151cda334b75ba47d7396" kindref="member">m_point1</ref><sp/>+<sp/>(vhat<sp/>*<sp/><ref refid="_s_d_l__opengl__glext_8h_1af48031a37b713afa3b0d0d7d29653d7c" kindref="member">t1</ref>);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(t2<sp/>&gt;<sp/>0.0)<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>poi<sp/>=<sp/>bckRay.<ref refid="class_r_t_1_1_ray_1a4421d6cade1151cda334b75ba47d7396" kindref="member">m_point1</ref><sp/>+<sp/>(vhat<sp/>*<sp/>t2);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(t2<sp/>&gt;<sp/>0.0)<sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>poi<sp/>=<sp/>bckRay.<ref refid="class_r_t_1_1_ray_1a4421d6cade1151cda334b75ba47d7396" kindref="member">m_point1</ref><sp/>+<sp/>(vhat<sp/>*<sp/>t2);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="_s_d_l__opengl__glext_8h_1af48031a37b713afa3b0d0d7d29653d7c" kindref="member">t1</ref><sp/>&gt;<sp/>0.0)<sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>poi<sp/>=<sp/>bckRay.<ref refid="class_r_t_1_1_ray_1a4421d6cade1151cda334b75ba47d7396" kindref="member">m_point1</ref><sp/>+<sp/>(vhat<sp/>*<sp/><ref refid="_s_d_l__opengl__glext_8h_1af48031a37b713afa3b0d0d7d29653d7c" kindref="member">t1</ref>);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>teraz<sp/>poi<sp/>zawiera<sp/>punkt<sp/>przecięcia<sp/>opisany<sp/>przez<sp/>lokalne<sp/>współrzędne<sp/>obiektu</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Przekształcenie<sp/>punktu<sp/>przecięcia<sp/>na<sp/>współrzędne<sp/>globalne</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>intPoint<sp/>=<sp/>m_transformMatrix.Apply(poi,<sp/><ref refid="namespace_r_t_1aaac17f4135aafa89d5b75f9b48ba61eb" kindref="member">RT::FWDTFORM</ref>);<sp/></highlight><highlight class="comment">//<sp/>z<sp/>lokalnych<sp/>na<sp/>globalne</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Oblicz<sp/>wektor<sp/>normalny</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Środek<sp/>obiektu</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>objOrigin<sp/>=<sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.0,<sp/>0.0,<sp/>0.0}};</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Zastosuj<sp/>transformacje<sp/>dla<sp/>środka<sp/>obiektu</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>newObjOrigin<sp/>=<sp/>m_transformMatrix.Apply(objOrigin,<sp/><ref refid="namespace_r_t_1aaac17f4135aafa89d5b75f9b48ba61eb" kindref="member">RT::FWDTFORM</ref>);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Teraz<sp/>normalna<sp/>lokalna<sp/>to<sp/>punkt<sp/>przecięcia<sp/>minus<sp/>nowy<sp/>środek<sp/>obiektu</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>localNormal<sp/>=<sp/>intPoint<sp/>-<sp/>newObjOrigin;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>localNormal.<ref refid="classqb_vector_1a06cc00476d406a772461fc4acd7e9ea8" kindref="member">Normalize</ref>();</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Ustaw<sp/>kolor<sp/>bazowy<sp/>jako<sp/>lokalny<sp/>kolor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>localColor<sp/>=<sp/>m_baseColor;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Oblicz<sp/>i<sp/>zapisz<sp/>współrzędne<sp/>przecięcia<sp/>(u,v)<sp/>do<sp/>późniejszego<sp/>użycia</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47" kindref="member">x</ref><sp/>=<sp/>poi.<ref refid="classqb_vector_1adadd6ca87273a15f57a5e1d6ae15583b" kindref="member">GetElement</ref>(0);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__opengl_8h_1a1675d9d7bb68e1657ff028643b4037e3" kindref="member">y</ref><sp/>=<sp/>poi.<ref refid="classqb_vector_1adadd6ca87273a15f57a5e1d6ae15583b" kindref="member">GetElement</ref>(1);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__opengl__glext_8h_1a5e74030ebb3297ce1b37ff716fedd68f" kindref="member">z</ref><sp/>=<sp/>poi.<ref refid="classqb_vector_1adadd6ca87273a15f57a5e1d6ae15583b" kindref="member">GetElement</ref>(2);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>u<sp/>=<sp/>atan2(sqrtf(pow(<ref refid="_s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47" kindref="member">x</ref>,<sp/>2.0)<sp/>+<sp/>pow(<ref refid="_s_d_l__opengl_8h_1a1675d9d7bb68e1657ff028643b4037e3" kindref="member">y</ref>,<sp/>2.0)),<sp/><ref refid="_s_d_l__opengl__glext_8h_1a5e74030ebb3297ce1b37ff716fedd68f" kindref="member">z</ref>);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90" kindref="member">v</ref><sp/>=<sp/>atan2(<ref refid="_s_d_l__opengl_8h_1a1675d9d7bb68e1657ff028643b4037e3" kindref="member">y</ref>,<sp/><ref refid="_s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47" kindref="member">x</ref>);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u<sp/>/=<sp/><ref refid="_s_d_l__stdinc_8h_1ae71449b1cc6e6250b91f539153a7a0d3" kindref="member">M_PI</ref>;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90" kindref="member">v</ref><sp/>/=<sp/><ref refid="_s_d_l__stdinc_8h_1ae71449b1cc6e6250b91f539153a7a0d3" kindref="member">M_PI</ref>;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_uvCoords.SetElement(0,<sp/>u);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_uvCoords.SetElement(1,<sp/><ref refid="_s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90" kindref="member">v</ref>);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="comment">//<sp/>Jeśli<sp/>nie<sp/>występuje<sp/>przecięcie<sp/>promienia<sp/>ze<sp/>sferą</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/RayTrace/Primitives/objsphere.cpp"/>
+  </compounddef>
+</doxygen>

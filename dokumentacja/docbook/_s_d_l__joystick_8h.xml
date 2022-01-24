@@ -1,0 +1,2553 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__joystick_8h" xml:lang="en-US">
+<title>D:/RayTracing/include/SDL_joystick.h File Reference</title>
+<indexterm><primary>D:/RayTracing/include/SDL_joystick.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;SDL_stdinc.h&quot;
+#include &quot;SDL_error.h&quot;
+#include &quot;begin_code.h&quot;
+#include &quot;close_code.h&quot;
+</programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_s_d_l___joystick_g_u_i_d">SDL_JoystickGUID</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__s_d_l__joystick_8h_1a174438b13726ecccde135dded4119722">SDL_IPHONE_MAX_GFORCE</link>   5.0</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__joystick_8h_1af443c2c3d8cc4dd4f5b2923bc053ee4b">SDL_JOYSTICK_AXIS_MAX</link>   32767</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__joystick_8h_1a591b0765b63a2cab64d8f268be8a22ec">SDL_JOYSTICK_AXIS_MIN</link>   -32768</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef struct _SDL_Joystick <link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link></para>
+</listitem>
+            <listitem><para>typedef <link linkend="__s_d_l__stdinc_8h_1a7a90b941db9d4582e9ad7abb9940ff7e">Sint32</link> <link linkend="__s_d_l__joystick_8h_1a3c3d32500cb08f76ee8077983912c0bd">SDL_JoystickID</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2ea">SDL_JoystickType</link> { 
+<link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2eaa75dd0ff09f40f46f2558852840c4c5f5">SDL_JOYSTICK_TYPE_UNKNOWN</link>
+, <link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2eaac9fd28d66ae0b3e31faca357823955cd">SDL_JOYSTICK_TYPE_GAMECONTROLLER</link>
+, <link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2eaa8805ad382637dbffd54e2aed0b9bf4eb">SDL_JOYSTICK_TYPE_WHEEL</link>
+, <link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2eaa767f0e4bec3e03a50cd61952f3627b7f">SDL_JOYSTICK_TYPE_ARCADE_STICK</link>
+, 
+<link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2eaac858031ce3be0248e46b538f536548d4">SDL_JOYSTICK_TYPE_FLIGHT_STICK</link>
+, <link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2eaa00190ed35e476fe91ff5ca23c82116fc">SDL_JOYSTICK_TYPE_DANCE_PAD</link>
+, <link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2eaa9b2061e66c2dbd6683bbea3d1bc7f73d">SDL_JOYSTICK_TYPE_GUITAR</link>
+, <link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2eaaedd82419201a9f73081398709ed4d5ea">SDL_JOYSTICK_TYPE_DRUM_KIT</link>
+, 
+<link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2eaa3d7a52c076bb13f177da3ac9051ffca9">SDL_JOYSTICK_TYPE_ARCADE_PAD</link>
+, <link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2eaa89b1053067e73f56c2354bf5a24ce038">SDL_JOYSTICK_TYPE_THROTTLE</link>
+ }</para>
+</listitem>
+            <listitem><para>enum <link linkend="__s_d_l__joystick_8h_1a293471a907265fb92ea12caf5bcc8065">SDL_JoystickPowerLevel</link> { 
+<link linkend="__s_d_l__joystick_8h_1a293471a907265fb92ea12caf5bcc8065abdec428b76e198adbaf36d0f2d6a3807">SDL_JOYSTICK_POWER_UNKNOWN</link> = -1
+, <link linkend="__s_d_l__joystick_8h_1a293471a907265fb92ea12caf5bcc8065abbb610fd44dc06d7452b6c479eb58cb8">SDL_JOYSTICK_POWER_EMPTY</link>
+, <link linkend="__s_d_l__joystick_8h_1a293471a907265fb92ea12caf5bcc8065ae9c916910a524e577d1e4df6197773f7">SDL_JOYSTICK_POWER_LOW</link>
+, <link linkend="__s_d_l__joystick_8h_1a293471a907265fb92ea12caf5bcc8065a7405e87795b790ef10faf47e40f8b908">SDL_JOYSTICK_POWER_MEDIUM</link>
+, 
+<link linkend="__s_d_l__joystick_8h_1a293471a907265fb92ea12caf5bcc8065a225ba474db36e95f79000543df2f3634">SDL_JOYSTICK_POWER_FULL</link>
+, <link linkend="__s_d_l__joystick_8h_1a293471a907265fb92ea12caf5bcc8065abe065a7a24f1fb49826cdaeea765f2d9">SDL_JOYSTICK_POWER_WIRED</link>
+, <link linkend="__s_d_l__joystick_8h_1a293471a907265fb92ea12caf5bcc8065a0f6495dc8ac09096b13d9c546a88bfa4">SDL_JOYSTICK_POWER_MAX</link>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a4a2e0bedda1b7d0ac957607e944bfba0">SDL_LockJoysticks</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1add3a6baa4646469b34c42df028c59be0">SDL_UnlockJoysticks</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a2ab130eaa28f8e3bd544a5432041a311">SDL_NumJoysticks</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a7b146627cc69693b6ab6acd9b39a94c9">SDL_JoystickNameForIndex</link> (int device_index)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1ad882a8dd3fe4278725a7fc212b755db7">SDL_JoystickGetDevicePlayerIndex</link> (int device_index)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="_struct_s_d_l___joystick_g_u_i_d">SDL_JoystickGUID</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1afdbf5289ff5452afb1bd869ffcf250b5">SDL_JoystickGetDeviceGUID</link> (int device_index)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1afb8ba88559debca4ab2c702b8500d5fe">SDL_JoystickGetDeviceVendor</link> (int device_index)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a6330470720659333e6ef60994942a855">SDL_JoystickGetDeviceProduct</link> (int device_index)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a10972ad002df75e76ed68c18e1188e5e">SDL_JoystickGetDeviceProductVersion</link> (int device_index)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2ea">SDL_JoystickType</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a368a06b0fd51d453bb4692dcc2c42b69">SDL_JoystickGetDeviceType</link> (int device_index)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__joystick_8h_1a3c3d32500cb08f76ee8077983912c0bd">SDL_JoystickID</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a6c46ea976c7a65d49b38d31b42d11652">SDL_JoystickGetDeviceInstanceID</link> (int device_index)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a69452f7f7e11db54292f64db9a629029">SDL_JoystickOpen</link> (int device_index)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a16e92e23a46579db3a3419f784f2a026">SDL_JoystickFromInstanceID</link> (<link linkend="__s_d_l__joystick_8h_1a3c3d32500cb08f76ee8077983912c0bd">SDL_JoystickID</link> instance_id)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1ab872247fcafb96d4e3f71ac8ab98cc45">SDL_JoystickFromPlayerIndex</link> (int player_index)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1ac72e7fbcf14ab9d1d061b48b60ee63f1">SDL_JoystickAttachVirtual</link> (<link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2ea">SDL_JoystickType</link> <link linkend="__s_d_l__opengl_8h_1ad5ddf6fca7b585646515660e810e0188">type</link>, int naxes, int nbuttons, int nhats)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1ae1cff0f737264b2d885bff05a9c5b33f">SDL_JoystickDetachVirtual</link> (int device_index)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a718be0fe686e838f1d0db00d523ff47a">SDL_JoystickIsVirtual</link> (int device_index)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a68d808bc0054c5cd068b0d0ff7c5ef7d">SDL_JoystickSetVirtualAxis</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick, int axis, <link linkend="__s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5">Sint16</link> <link linkend="__s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f">value</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1aa895270395be528f6658006a5c02a799">SDL_JoystickSetVirtualButton</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick, int button, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> <link linkend="__s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f">value</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a3f1bcde55e0486bee726f7748c1ca971">SDL_JoystickSetVirtualHat</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick, int hat, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> <link linkend="__s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f">value</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a6f3a290c0367a7607d6ebbaa50721eec">SDL_JoystickName</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a1b3543511c1839f9c06aeea65b574e77">SDL_JoystickGetPlayerIndex</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a552d1be1bccb9cd81191ddf5f576fa31">SDL_JoystickSetPlayerIndex</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick, int player_index)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="_struct_s_d_l___joystick_g_u_i_d">SDL_JoystickGUID</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1acc85c770af41eae76948e11c678f92ca">SDL_JoystickGetGUID</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a13d9a1e3c5cbe2591cd5214aad48fed8">SDL_JoystickGetVendor</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a0f4732dffd2a769a2346f4091b2f3199">SDL_JoystickGetProduct</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1afe6bbdbc0c81170d237fae42bec05665">SDL_JoystickGetProductVersion</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1afd37d9ca54a83fec1ba34b103047ad61">SDL_JoystickGetSerial</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2ea">SDL_JoystickType</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1ad21afdbdd915c013cacefb7e79bfe3bf">SDL_JoystickGetType</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a7f615ef8040e7e9de3af6482d8d9908c">SDL_JoystickGetGUIDString</link> (<link linkend="_struct_s_d_l___joystick_g_u_i_d">SDL_JoystickGUID</link> guid, char *pszGUID, int cbGUID)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="_struct_s_d_l___joystick_g_u_i_d">SDL_JoystickGUID</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1aef9d131a6a6838847731cf8094944b46">SDL_JoystickGetGUIDFromString</link> (const char *pchGUID)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a222cd2d664acbea2dad78b891df4b89a">SDL_JoystickGetAttached</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__joystick_8h_1a3c3d32500cb08f76ee8077983912c0bd">SDL_JoystickID</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1ab38dfc6428e15c2476478418075d4c83">SDL_JoystickInstanceID</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a865c2e087fe69a3a30c87243729ecdea">SDL_JoystickNumAxes</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a755d087bb16270087bfced7501656a6d">SDL_JoystickNumBalls</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1aa62ea91c7c4ca2d12804a9fb3760e448">SDL_JoystickNumHats</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1adfc662e571011ae7ec303101ab34e53a">SDL_JoystickNumButtons</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a3ea23a9504ea56f2778147dbf39a029f">SDL_JoystickUpdate</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a51ba353843fd4477f6a485ac4ef35d00">SDL_JoystickEventState</link> (int state)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5">Sint16</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1ac6fbda13b93679bedfc34733d4b2e748">SDL_JoystickGetAxis</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick, int axis)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a3b87809500c342149471e1abf0ace40c">SDL_JoystickGetAxisInitialState</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick, int axis, <link linkend="__s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5">Sint16</link> *state)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Hat positions    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__s_d_l__joystick_8h_1adbfd6f0bad25cd1bb79f8c0a065f3833">SDL_HAT_CENTERED</link>   0x00</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__joystick_8h_1ac916fe96c0740790e5496e12c67d8889">SDL_HAT_UP</link>   0x01</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__joystick_8h_1a5d1844afaf2ceaf58c689a8bd480a543">SDL_HAT_RIGHT</link>   0x02</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__joystick_8h_1aa87f7a91d6bae8b420b133559d983338">SDL_HAT_DOWN</link>   0x04</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__joystick_8h_1a4666c12cae25d8bab053d8569396cd77">SDL_HAT_LEFT</link>   0x08</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__joystick_8h_1a65fde978b4ab9c269c215d1922ae7755">SDL_HAT_RIGHTUP</link>   (<link linkend="__s_d_l__joystick_8h_1a5d1844afaf2ceaf58c689a8bd480a543">SDL_HAT_RIGHT</link>|<link linkend="__s_d_l__joystick_8h_1ac916fe96c0740790e5496e12c67d8889">SDL_HAT_UP</link>)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__joystick_8h_1abf50339da11ca12699ee2199607d275f">SDL_HAT_RIGHTDOWN</link>   (<link linkend="__s_d_l__joystick_8h_1a5d1844afaf2ceaf58c689a8bd480a543">SDL_HAT_RIGHT</link>|<link linkend="__s_d_l__joystick_8h_1aa87f7a91d6bae8b420b133559d983338">SDL_HAT_DOWN</link>)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__joystick_8h_1a6d7988b43c09ced08ec318a2556f1858">SDL_HAT_LEFTUP</link>   (<link linkend="__s_d_l__joystick_8h_1a4666c12cae25d8bab053d8569396cd77">SDL_HAT_LEFT</link>|<link linkend="__s_d_l__joystick_8h_1ac916fe96c0740790e5496e12c67d8889">SDL_HAT_UP</link>)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__joystick_8h_1a3fa8609d382a0f74507890491033c784">SDL_HAT_LEFTDOWN</link>   (<link linkend="__s_d_l__joystick_8h_1a4666c12cae25d8bab053d8569396cd77">SDL_HAT_LEFT</link>|<link linkend="__s_d_l__joystick_8h_1aa87f7a91d6bae8b420b133559d983338">SDL_HAT_DOWN</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a2215030cf283295569fee41fd0251e01">SDL_JoystickGetHat</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick, int hat)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1ac7a5a4c17f6a5a4ef9f5bc78e50913df">SDL_JoystickGetBall</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick, int ball, int *dx, int *dy)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1aaf7789eb03bc42525691e075e2a36131">SDL_JoystickGetButton</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick, int button)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a307c87a4de5aec2d1ca22856d94930fa">SDL_JoystickRumble</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick, <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> low_frequency_rumble, <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> high_frequency_rumble, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> duration_ms)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a0d248aa2e25ac62d30444583180ff539">SDL_JoystickRumbleTriggers</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick, <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> left_rumble, <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> right_rumble, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> duration_ms)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a7a5a92f4eb93dde4e58d5155ce22b7a7">SDL_JoystickHasLED</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1afa0e29b3b5738184da3cc281de3e4896">SDL_JoystickHasRumble</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a815f02f2cbced249cb4b0018dfd3a777">SDL_JoystickHasRumbleTriggers</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a4e3e052e175f47fe02c63e92a59f4b04">SDL_JoystickSetLED</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> red, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> <link linkend="__s_d_l__opengl__glext_8h_1ac14cda87cf6c751d53b65a3cd41c35a1">green</link>, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> <link linkend="__s_d_l__opengl__glext_8h_1a1853b32584a90fa75432925f3e26d0e8">blue</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a16c10474f6a3d861babfe1ae424cb1a5">SDL_JoystickSendEffect</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick, const <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *<link linkend="__s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a">data</link>, int <link linkend="__s_d_l__opengl__glext_8h_1a3d1e3edfcf61ca2d831883e1afbad89e">size</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1aafa0951b40ec2e200c098495c3dd4943">SDL_JoystickClose</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__joystick_8h_1a293471a907265fb92ea12caf5bcc8065">SDL_JoystickPowerLevel</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__joystick_8h_1a192bbea3553394a6e9c80f77e431fd76">SDL_JoystickCurrentPowerLevel</link> (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *joystick)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Include file for SDL joystick event handling</para>
+
+<para>The term &quot;device_index&quot; identifies currently plugged in joystick devices between 0 and <link linkend="__s_d_l__joystick_8h_1a2ab130eaa28f8e3bd544a5432041a311">SDL_NumJoysticks()</link>, with the exact joystick behind a device_index changing as joysticks are plugged and unplugged.</para>
+
+<para>The term &quot;instance_id&quot; is the current instantiation of a joystick device in the system, if the joystick is removed and then re-inserted then it will get a new instance_id, instance_id&apos;s are monotonically increasing identifiers of a joystick plugged in.</para>
+
+<para>The term &quot;player_index&quot; is the number assigned to a player on a specific controller. For XInput controllers this returns the XInput user index. Many joysticks will not be able to supply this information.</para>
+
+<para>The term JoystickGUID is a stable 128-bit identifier for a joystick device that does not change over time, it identifies class of the device (a X360 wired controller for example). This identifier is platform dependent.</para>
+
+<para>In order to use these functions, <link linkend="__s_d_l_8h_1a8fc8d35348d7c74bad8392d776c937b8">SDL_Init()</link> must have been called with the <link linkend="__s_d_l_8h_1ad6b47d785eaa00d9c48e6c1cff4aef4b">SDL_INIT_JOYSTICK</link> flag. This causes SDL to scan the system for joysticks, and load appropriate drivers.</para>
+
+<para>If you would like to receive joystick updates while the application is in the background, you should set the following hint before calling <link linkend="__s_d_l_8h_1a8fc8d35348d7c74bad8392d776c937b8">SDL_Init()</link>: SDL_HINT_JOYSTICK_ALLOW_BACKGROUND_EVENTS </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__s_d_l__joystick_8h_1adbfd6f0bad25cd1bb79f8c0a065f3833"/><section>
+    <title>SDL_HAT_CENTERED</title>
+<indexterm><primary>SDL_HAT_CENTERED</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_HAT_CENTERED</secondary></indexterm>
+<para><computeroutput>#define SDL_HAT_CENTERED   0x00</computeroutput></para></section>
+<anchor xml:id="__s_d_l__joystick_8h_1aa87f7a91d6bae8b420b133559d983338"/><section>
+    <title>SDL_HAT_DOWN</title>
+<indexterm><primary>SDL_HAT_DOWN</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_HAT_DOWN</secondary></indexterm>
+<para><computeroutput>#define SDL_HAT_DOWN   0x04</computeroutput></para></section>
+<anchor xml:id="__s_d_l__joystick_8h_1a4666c12cae25d8bab053d8569396cd77"/><section>
+    <title>SDL_HAT_LEFT</title>
+<indexterm><primary>SDL_HAT_LEFT</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_HAT_LEFT</secondary></indexterm>
+<para><computeroutput>#define SDL_HAT_LEFT   0x08</computeroutput></para></section>
+<anchor xml:id="__s_d_l__joystick_8h_1a3fa8609d382a0f74507890491033c784"/><section>
+    <title>SDL_HAT_LEFTDOWN</title>
+<indexterm><primary>SDL_HAT_LEFTDOWN</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_HAT_LEFTDOWN</secondary></indexterm>
+<para><computeroutput>#define SDL_HAT_LEFTDOWN   (<link linkend="__s_d_l__joystick_8h_1a4666c12cae25d8bab053d8569396cd77">SDL_HAT_LEFT</link>|<link linkend="__s_d_l__joystick_8h_1aa87f7a91d6bae8b420b133559d983338">SDL_HAT_DOWN</link>)</computeroutput></para></section>
+<anchor xml:id="__s_d_l__joystick_8h_1a6d7988b43c09ced08ec318a2556f1858"/><section>
+    <title>SDL_HAT_LEFTUP</title>
+<indexterm><primary>SDL_HAT_LEFTUP</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_HAT_LEFTUP</secondary></indexterm>
+<para><computeroutput>#define SDL_HAT_LEFTUP   (<link linkend="__s_d_l__joystick_8h_1a4666c12cae25d8bab053d8569396cd77">SDL_HAT_LEFT</link>|<link linkend="__s_d_l__joystick_8h_1ac916fe96c0740790e5496e12c67d8889">SDL_HAT_UP</link>)</computeroutput></para></section>
+<anchor xml:id="__s_d_l__joystick_8h_1a5d1844afaf2ceaf58c689a8bd480a543"/><section>
+    <title>SDL_HAT_RIGHT</title>
+<indexterm><primary>SDL_HAT_RIGHT</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_HAT_RIGHT</secondary></indexterm>
+<para><computeroutput>#define SDL_HAT_RIGHT   0x02</computeroutput></para></section>
+<anchor xml:id="__s_d_l__joystick_8h_1abf50339da11ca12699ee2199607d275f"/><section>
+    <title>SDL_HAT_RIGHTDOWN</title>
+<indexterm><primary>SDL_HAT_RIGHTDOWN</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_HAT_RIGHTDOWN</secondary></indexterm>
+<para><computeroutput>#define SDL_HAT_RIGHTDOWN   (<link linkend="__s_d_l__joystick_8h_1a5d1844afaf2ceaf58c689a8bd480a543">SDL_HAT_RIGHT</link>|<link linkend="__s_d_l__joystick_8h_1aa87f7a91d6bae8b420b133559d983338">SDL_HAT_DOWN</link>)</computeroutput></para></section>
+<anchor xml:id="__s_d_l__joystick_8h_1a65fde978b4ab9c269c215d1922ae7755"/><section>
+    <title>SDL_HAT_RIGHTUP</title>
+<indexterm><primary>SDL_HAT_RIGHTUP</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_HAT_RIGHTUP</secondary></indexterm>
+<para><computeroutput>#define SDL_HAT_RIGHTUP   (<link linkend="__s_d_l__joystick_8h_1a5d1844afaf2ceaf58c689a8bd480a543">SDL_HAT_RIGHT</link>|<link linkend="__s_d_l__joystick_8h_1ac916fe96c0740790e5496e12c67d8889">SDL_HAT_UP</link>)</computeroutput></para></section>
+<anchor xml:id="__s_d_l__joystick_8h_1ac916fe96c0740790e5496e12c67d8889"/><section>
+    <title>SDL_HAT_UP</title>
+<indexterm><primary>SDL_HAT_UP</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_HAT_UP</secondary></indexterm>
+<para><computeroutput>#define SDL_HAT_UP   0x01</computeroutput></para></section>
+<anchor xml:id="__s_d_l__joystick_8h_1a174438b13726ecccde135dded4119722"/><section>
+    <title>SDL_IPHONE_MAX_GFORCE</title>
+<indexterm><primary>SDL_IPHONE_MAX_GFORCE</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_IPHONE_MAX_GFORCE</secondary></indexterm>
+<para><computeroutput>#define SDL_IPHONE_MAX_GFORCE   5.0</computeroutput></para></section>
+<anchor xml:id="__s_d_l__joystick_8h_1af443c2c3d8cc4dd4f5b2923bc053ee4b"/><section>
+    <title>SDL_JOYSTICK_AXIS_MAX</title>
+<indexterm><primary>SDL_JOYSTICK_AXIS_MAX</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JOYSTICK_AXIS_MAX</secondary></indexterm>
+<para><computeroutput>#define SDL_JOYSTICK_AXIS_MAX   32767</computeroutput></para></section>
+<anchor xml:id="__s_d_l__joystick_8h_1a591b0765b63a2cab64d8f268be8a22ec"/><section>
+    <title>SDL_JOYSTICK_AXIS_MIN</title>
+<indexterm><primary>SDL_JOYSTICK_AXIS_MIN</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JOYSTICK_AXIS_MIN</secondary></indexterm>
+<para><computeroutput>#define SDL_JOYSTICK_AXIS_MIN   -32768</computeroutput></para></section>
+</section>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987"/><section>
+    <title>SDL_Joystick</title>
+<indexterm><primary>SDL_Joystick</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_Joystick</secondary></indexterm>
+<para><computeroutput>typedef struct _SDL_Joystick <link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link></computeroutput></para></section>
+<anchor xml:id="__s_d_l__joystick_8h_1a3c3d32500cb08f76ee8077983912c0bd"/><section>
+    <title>SDL_JoystickID</title>
+<indexterm><primary>SDL_JoystickID</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickID</secondary></indexterm>
+<para><computeroutput>typedef <link linkend="__s_d_l__stdinc_8h_1a7a90b941db9d4582e9ad7abb9940ff7e">Sint32</link> <link linkend="__s_d_l__joystick_8h_1a3c3d32500cb08f76ee8077983912c0bd">SDL_JoystickID</link></computeroutput></para>
+<para>This is a unique ID for a joystick for the time it is connected to the system, and is never reused for the lifetime of the application. If the joystick is disconnected and reconnected, it will get a new ID.</para>
+
+<para>The ID value starts at 0 and increments from there. The value -1 is an invalid ID. </para>
+</section>
+</section>
+<section>
+<title>Enumeration Type Documentation</title>
+<anchor xml:id="__s_d_l__joystick_8h_1a293471a907265fb92ea12caf5bcc8065"/><section>
+    <title>SDL_JoystickPowerLevel</title>
+<indexterm><primary>SDL_JoystickPowerLevel</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickPowerLevel</secondary></indexterm>
+<para><computeroutput>enum <link linkend="__s_d_l__joystick_8h_1a293471a907265fb92ea12caf5bcc8065">SDL_JoystickPowerLevel</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SDL_JOYSTICK_POWER_UNKNOWN</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JOYSTICK_POWER_UNKNOWN</secondary></indexterm>
+<anchor xml:id="__s_d_l__joystick_8h_1a293471a907265fb92ea12caf5bcc8065abdec428b76e198adbaf36d0f2d6a3807"/>SDL_JOYSTICK_POWER_UNKNOWN</entry><entry></entry></row><row><entry><indexterm><primary>SDL_JOYSTICK_POWER_EMPTY</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JOYSTICK_POWER_EMPTY</secondary></indexterm>
+<anchor xml:id="__s_d_l__joystick_8h_1a293471a907265fb92ea12caf5bcc8065abbb610fd44dc06d7452b6c479eb58cb8"/>SDL_JOYSTICK_POWER_EMPTY</entry><entry></entry></row><row><entry><indexterm><primary>SDL_JOYSTICK_POWER_LOW</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JOYSTICK_POWER_LOW</secondary></indexterm>
+<anchor xml:id="__s_d_l__joystick_8h_1a293471a907265fb92ea12caf5bcc8065ae9c916910a524e577d1e4df6197773f7"/>SDL_JOYSTICK_POWER_LOW</entry><entry></entry></row><row><entry><indexterm><primary>SDL_JOYSTICK_POWER_MEDIUM</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JOYSTICK_POWER_MEDIUM</secondary></indexterm>
+<anchor xml:id="__s_d_l__joystick_8h_1a293471a907265fb92ea12caf5bcc8065a7405e87795b790ef10faf47e40f8b908"/>SDL_JOYSTICK_POWER_MEDIUM</entry><entry></entry></row><row><entry><indexterm><primary>SDL_JOYSTICK_POWER_FULL</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JOYSTICK_POWER_FULL</secondary></indexterm>
+<anchor xml:id="__s_d_l__joystick_8h_1a293471a907265fb92ea12caf5bcc8065a225ba474db36e95f79000543df2f3634"/>SDL_JOYSTICK_POWER_FULL</entry><entry></entry></row><row><entry><indexterm><primary>SDL_JOYSTICK_POWER_WIRED</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JOYSTICK_POWER_WIRED</secondary></indexterm>
+<anchor xml:id="__s_d_l__joystick_8h_1a293471a907265fb92ea12caf5bcc8065abe065a7a24f1fb49826cdaeea765f2d9"/>SDL_JOYSTICK_POWER_WIRED</entry><entry></entry></row><row><entry><indexterm><primary>SDL_JOYSTICK_POWER_MAX</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JOYSTICK_POWER_MAX</secondary></indexterm>
+<anchor xml:id="__s_d_l__joystick_8h_1a293471a907265fb92ea12caf5bcc8065a0f6495dc8ac09096b13d9c546a88bfa4"/>SDL_JOYSTICK_POWER_MAX</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2ea"/><section>
+    <title>SDL_JoystickType</title>
+<indexterm><primary>SDL_JoystickType</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickType</secondary></indexterm>
+<para><computeroutput>enum <link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2ea">SDL_JoystickType</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SDL_JOYSTICK_TYPE_UNKNOWN</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JOYSTICK_TYPE_UNKNOWN</secondary></indexterm>
+<anchor xml:id="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2eaa75dd0ff09f40f46f2558852840c4c5f5"/>SDL_JOYSTICK_TYPE_UNKNOWN</entry><entry></entry></row><row><entry><indexterm><primary>SDL_JOYSTICK_TYPE_GAMECONTROLLER</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JOYSTICK_TYPE_GAMECONTROLLER</secondary></indexterm>
+<anchor xml:id="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2eaac9fd28d66ae0b3e31faca357823955cd"/>SDL_JOYSTICK_TYPE_GAMECONTROLLER</entry><entry></entry></row><row><entry><indexterm><primary>SDL_JOYSTICK_TYPE_WHEEL</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JOYSTICK_TYPE_WHEEL</secondary></indexterm>
+<anchor xml:id="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2eaa8805ad382637dbffd54e2aed0b9bf4eb"/>SDL_JOYSTICK_TYPE_WHEEL</entry><entry></entry></row><row><entry><indexterm><primary>SDL_JOYSTICK_TYPE_ARCADE_STICK</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JOYSTICK_TYPE_ARCADE_STICK</secondary></indexterm>
+<anchor xml:id="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2eaa767f0e4bec3e03a50cd61952f3627b7f"/>SDL_JOYSTICK_TYPE_ARCADE_STICK</entry><entry></entry></row><row><entry><indexterm><primary>SDL_JOYSTICK_TYPE_FLIGHT_STICK</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JOYSTICK_TYPE_FLIGHT_STICK</secondary></indexterm>
+<anchor xml:id="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2eaac858031ce3be0248e46b538f536548d4"/>SDL_JOYSTICK_TYPE_FLIGHT_STICK</entry><entry></entry></row><row><entry><indexterm><primary>SDL_JOYSTICK_TYPE_DANCE_PAD</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JOYSTICK_TYPE_DANCE_PAD</secondary></indexterm>
+<anchor xml:id="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2eaa00190ed35e476fe91ff5ca23c82116fc"/>SDL_JOYSTICK_TYPE_DANCE_PAD</entry><entry></entry></row><row><entry><indexterm><primary>SDL_JOYSTICK_TYPE_GUITAR</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JOYSTICK_TYPE_GUITAR</secondary></indexterm>
+<anchor xml:id="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2eaa9b2061e66c2dbd6683bbea3d1bc7f73d"/>SDL_JOYSTICK_TYPE_GUITAR</entry><entry></entry></row><row><entry><indexterm><primary>SDL_JOYSTICK_TYPE_DRUM_KIT</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JOYSTICK_TYPE_DRUM_KIT</secondary></indexterm>
+<anchor xml:id="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2eaaedd82419201a9f73081398709ed4d5ea"/>SDL_JOYSTICK_TYPE_DRUM_KIT</entry><entry></entry></row><row><entry><indexterm><primary>SDL_JOYSTICK_TYPE_ARCADE_PAD</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JOYSTICK_TYPE_ARCADE_PAD</secondary></indexterm>
+<anchor xml:id="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2eaa3d7a52c076bb13f177da3ac9051ffca9"/>SDL_JOYSTICK_TYPE_ARCADE_PAD</entry><entry></entry></row><row><entry><indexterm><primary>SDL_JOYSTICK_TYPE_THROTTLE</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JOYSTICK_TYPE_THROTTLE</secondary></indexterm>
+<anchor xml:id="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2eaa89b1053067e73f56c2354bf5a24ce038"/>SDL_JOYSTICK_TYPE_THROTTLE</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__s_d_l__joystick_8h_1ac72e7fbcf14ab9d1d061b48b60ee63f1"/><section>
+    <title>SDL_JoystickAttachVirtual()</title>
+<indexterm><primary>SDL_JoystickAttachVirtual</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickAttachVirtual</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickAttachVirtual (<link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2ea">SDL_JoystickType</link> type, int naxes, int nbuttons, int nhats)</computeroutput></para>
+<para>Attach a new virtual joystick.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the joystick&apos;s device index, or -1 if an error occurred.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.14. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1aafa0951b40ec2e200c098495c3dd4943"/><section>
+    <title>SDL_JoystickClose()</title>
+<indexterm><primary>SDL_JoystickClose</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickClose</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickClose (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick)</computeroutput></para>
+<para>Close a joystick previously opened with <link linkend="__s_d_l__joystick_8h_1a69452f7f7e11db54292f64db9a629029">SDL_JoystickOpen()</link>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>The joystick device to close</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__joystick_8h_1a69452f7f7e11db54292f64db9a629029">SDL_JoystickOpen</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a192bbea3553394a6e9c80f77e431fd76"/><section>
+    <title>SDL_JoystickCurrentPowerLevel()</title>
+<indexterm><primary>SDL_JoystickCurrentPowerLevel</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickCurrentPowerLevel</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__joystick_8h_1a293471a907265fb92ea12caf5bcc8065">SDL_JoystickPowerLevel</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickCurrentPowerLevel (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick)</computeroutput></para>
+<para>Get the battery level of a joystick as SDL_JoystickPowerLevel.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>the SDL_Joystick to query </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the current battery level as SDL_JoystickPowerLevel on success or <computeroutput>SDL_JOYSTICK_POWER_UNKNOWN</computeroutput> if it is unknown</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.4. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1ae1cff0f737264b2d885bff05a9c5b33f"/><section>
+    <title>SDL_JoystickDetachVirtual()</title>
+<indexterm><primary>SDL_JoystickDetachVirtual</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickDetachVirtual</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickDetachVirtual (int device_index)</computeroutput></para>
+<para>Detach a virtual joystick.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>device_index</entry><entry>
+<para>a value previously returned from <link linkend="__s_d_l__joystick_8h_1ac72e7fbcf14ab9d1d061b48b60ee63f1">SDL_JoystickAttachVirtual()</link> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 on success, or -1 if an error occurred.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.14. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a51ba353843fd4477f6a485ac4ef35d00"/><section>
+    <title>SDL_JoystickEventState()</title>
+<indexterm><primary>SDL_JoystickEventState</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickEventState</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickEventState (int state)</computeroutput></para>
+<para>Enable/disable joystick event polling.</para>
+
+<para>If joystick events are disabled, you must call <link linkend="__s_d_l__joystick_8h_1a3ea23a9504ea56f2778147dbf39a029f">SDL_JoystickUpdate()</link> yourself and manually check the state of the joystick when you want joystick information.</para>
+
+<para>It is recommended that you leave joystick event handling enabled.</para>
+
+<para><emphasis role="bold">WARNING</emphasis>: Calling this function may delete all events currently in SDL&apos;s event queue.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>state</entry><entry>
+<para>can be one of <computeroutput>SDL_QUERY</computeroutput>, <computeroutput>SDL_IGNORE</computeroutput>, or <computeroutput>SDL_ENABLE</computeroutput> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>1 if enabled, 0 if disabled, or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+If <computeroutput>state</computeroutput> is <computeroutput>SDL_QUERY</computeroutput> then the current state is returned, otherwise the new processing state is returned.</para>
+
+<para><formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1a457fd59b3dec7d1b6ed384973b584bc6">SDL_GameControllerEventState</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a16e92e23a46579db3a3419f784f2a026"/><section>
+    <title>SDL_JoystickFromInstanceID()</title>
+<indexterm><primary>SDL_JoystickFromInstanceID</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickFromInstanceID</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickFromInstanceID (<link linkend="__s_d_l__joystick_8h_1a3c3d32500cb08f76ee8077983912c0bd">SDL_JoystickID</link> instance_id)</computeroutput></para>
+<para>Get the SDL_Joystick associated with an instance id.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>instance_id</entry><entry>
+<para>the instance id to get the SDL_Joystick for </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>an SDL_Joystick on success or NULL on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.4. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1ab872247fcafb96d4e3f71ac8ab98cc45"/><section>
+    <title>SDL_JoystickFromPlayerIndex()</title>
+<indexterm><primary>SDL_JoystickFromPlayerIndex</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickFromPlayerIndex</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickFromPlayerIndex (int player_index)</computeroutput></para>
+<para>Get the SDL_Joystick associated with a player index.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>player_index</entry><entry>
+<para>the player index to get the SDL_Joystick for </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>an SDL_Joystick on success or NULL on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.12. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a222cd2d664acbea2dad78b891df4b89a"/><section>
+    <title>SDL_JoystickGetAttached()</title>
+<indexterm><primary>SDL_JoystickGetAttached</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickGetAttached</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickGetAttached (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick)</computeroutput></para>
+<para>Get the status of a specified joystick.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>the joystick to query </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE if the joystick has been opened, SDL_FALSE if it has not; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__joystick_8h_1aafa0951b40ec2e200c098495c3dd4943">SDL_JoystickClose</link> </para>
+
+<para><link linkend="__s_d_l__joystick_8h_1a69452f7f7e11db54292f64db9a629029">SDL_JoystickOpen</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1ac6fbda13b93679bedfc34733d4b2e748"/><section>
+    <title>SDL_JoystickGetAxis()</title>
+<indexterm><primary>SDL_JoystickGetAxis</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickGetAxis</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5">Sint16</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickGetAxis (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick, int axis)</computeroutput></para>
+<para>Get the current state of an axis control on a joystick.</para>
+
+<para>SDL makes no promises about what part of the joystick any given axis refers to. Your game should have some sort of configuration UI to let users specify what each axis should be bound to. Alternately, SDL&apos;s higher-level Game Controller API makes a great effort to apply order to this lower-level interface, so you know that a specific axis is the &quot;left thumb stick,&quot; etc.</para>
+
+<para>The value returned by <link linkend="__s_d_l__joystick_8h_1ac6fbda13b93679bedfc34733d4b2e748">SDL_JoystickGetAxis()</link> is a signed integer (-32768 to 32767) representing the current position of the axis. It may be necessary to impose certain tolerances on these values to account for jitter.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>an SDL_Joystick structure containing joystick information </para>
+</entry>
+                            </row>
+                            <row>
+<entry>axis</entry><entry>
+<para>the axis to query; the axis indices start at index 0 </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a 16-bit signed integer representing the current position of the axis or 0 on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__joystick_8h_1a865c2e087fe69a3a30c87243729ecdea">SDL_JoystickNumAxes</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a3b87809500c342149471e1abf0ace40c"/><section>
+    <title>SDL_JoystickGetAxisInitialState()</title>
+<indexterm><primary>SDL_JoystickGetAxisInitialState</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickGetAxisInitialState</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickGetAxisInitialState (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick, int axis, <link linkend="__s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5">Sint16</link> * state)</computeroutput></para>
+<para>Get the initial state of an axis control on a joystick.</para>
+
+<para>The state is a value ranging from -32768 to 32767.</para>
+
+<para>The axis indices start at index 0.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>an SDL_Joystick structure containing joystick information </para>
+</entry>
+                            </row>
+                            <row>
+<entry>axis</entry><entry>
+<para>the axis to query; the axis indices start at index 0 </para>
+</entry>
+                            </row>
+                            <row>
+<entry>state</entry><entry>
+<para>Upon return, the initial value is supplied here. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE if this axis has any initial value, or SDL_FALSE if not.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.6. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1ac7a5a4c17f6a5a4ef9f5bc78e50913df"/><section>
+    <title>SDL_JoystickGetBall()</title>
+<indexterm><primary>SDL_JoystickGetBall</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickGetBall</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickGetBall (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick, int ball, int * dx, int * dy)</computeroutput></para>
+<para>Get the ball axis change since the last poll.</para>
+
+<para>Trackballs can only return relative motion since the last call to <link linkend="__s_d_l__joystick_8h_1ac7a5a4c17f6a5a4ef9f5bc78e50913df">SDL_JoystickGetBall()</link>, these motion deltas are placed into <computeroutput>dx</computeroutput> and <computeroutput>dy</computeroutput>.</para>
+
+<para>Most joysticks do not have trackballs.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>the SDL_Joystick to query </para>
+</entry>
+                            </row>
+                            <row>
+<entry>ball</entry><entry>
+<para>the ball index to query; ball indices start at index 0 </para>
+</entry>
+                            </row>
+                            <row>
+<entry>dx</entry><entry>
+<para>stores the difference in the x axis position since the last poll </para>
+</entry>
+                            </row>
+                            <row>
+<entry>dy</entry><entry>
+<para>stores the difference in the y axis position since the last poll </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 on success or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__joystick_8h_1a755d087bb16270087bfced7501656a6d">SDL_JoystickNumBalls</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1aaf7789eb03bc42525691e075e2a36131"/><section>
+    <title>SDL_JoystickGetButton()</title>
+<indexterm><primary>SDL_JoystickGetButton</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickGetButton</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickGetButton (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick, int button)</computeroutput></para>
+<para>Get the current state of a button on a joystick.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>an SDL_Joystick structure containing joystick information </para>
+</entry>
+                            </row>
+                            <row>
+<entry>button</entry><entry>
+<para>the button index to get the state from; indices start at index 0 </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>1 if the specified button is pressed, 0 otherwise.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__joystick_8h_1adfc662e571011ae7ec303101ab34e53a">SDL_JoystickNumButtons</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1afdbf5289ff5452afb1bd869ffcf250b5"/><section>
+    <title>SDL_JoystickGetDeviceGUID()</title>
+<indexterm><primary>SDL_JoystickGetDeviceGUID</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickGetDeviceGUID</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="_struct_s_d_l___joystick_g_u_i_d">SDL_JoystickGUID</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickGetDeviceGUID (int device_index)</computeroutput></para>
+<para>Get the implementation-dependent GUID for the joystick at a given device index.</para>
+
+<para>This function can be called before any joysticks are opened.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>device_index</entry><entry>
+<para>the index of the joystick to query (the N&apos;th joystick on the system </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the GUID of the selected joystick. If called on an invalid index, this function returns a zero GUID</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__joystick_8h_1acc85c770af41eae76948e11c678f92ca">SDL_JoystickGetGUID</link> </para>
+
+<para><link linkend="__s_d_l__joystick_8h_1a7f615ef8040e7e9de3af6482d8d9908c">SDL_JoystickGetGUIDString</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a6c46ea976c7a65d49b38d31b42d11652"/><section>
+    <title>SDL_JoystickGetDeviceInstanceID()</title>
+<indexterm><primary>SDL_JoystickGetDeviceInstanceID</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickGetDeviceInstanceID</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__joystick_8h_1a3c3d32500cb08f76ee8077983912c0bd">SDL_JoystickID</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickGetDeviceInstanceID (int device_index)</computeroutput></para>
+<para>Get the instance ID of a joystick.</para>
+
+<para>This can be called before any joysticks are opened. If the index is out of range, this function will return -1.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>device_index</entry><entry>
+<para>the index of the joystick to query (the N&apos;th joystick on the system </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the instance id of the selected joystick. If called on an invalid index, this function returns zero</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.6. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1ad882a8dd3fe4278725a7fc212b755db7"/><section>
+    <title>SDL_JoystickGetDevicePlayerIndex()</title>
+<indexterm><primary>SDL_JoystickGetDevicePlayerIndex</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickGetDevicePlayerIndex</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickGetDevicePlayerIndex (int device_index)</computeroutput></para>
+<para>Get the player index of a joystick, or -1 if it&apos;s not available This can be called before any joysticks are opened.</para>
+
+<para><formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.9. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a6330470720659333e6ef60994942a855"/><section>
+    <title>SDL_JoystickGetDeviceProduct()</title>
+<indexterm><primary>SDL_JoystickGetDeviceProduct</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickGetDeviceProduct</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickGetDeviceProduct (int device_index)</computeroutput></para>
+<para>Get the USB product ID of a joystick, if available.</para>
+
+<para>This can be called before any joysticks are opened. If the product ID isn&apos;t available this function returns 0.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>device_index</entry><entry>
+<para>the index of the joystick to query (the N&apos;th joystick on the system </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the USB product ID of the selected joystick. If called on an invalid index, this function returns zero</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.6. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a10972ad002df75e76ed68c18e1188e5e"/><section>
+    <title>SDL_JoystickGetDeviceProductVersion()</title>
+<indexterm><primary>SDL_JoystickGetDeviceProductVersion</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickGetDeviceProductVersion</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickGetDeviceProductVersion (int device_index)</computeroutput></para>
+<para>Get the product version of a joystick, if available.</para>
+
+<para>This can be called before any joysticks are opened. If the product version isn&apos;t available this function returns 0.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>device_index</entry><entry>
+<para>the index of the joystick to query (the N&apos;th joystick on the system </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the product version of the selected joystick. If called on an invalid index, this function returns zero</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.6. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a368a06b0fd51d453bb4692dcc2c42b69"/><section>
+    <title>SDL_JoystickGetDeviceType()</title>
+<indexterm><primary>SDL_JoystickGetDeviceType</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickGetDeviceType</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2ea">SDL_JoystickType</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickGetDeviceType (int device_index)</computeroutput></para>
+<para>Get the type of a joystick, if available.</para>
+
+<para>This can be called before any joysticks are opened.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>device_index</entry><entry>
+<para>the index of the joystick to query (the N&apos;th joystick on the system </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the SDL_JoystickType of the selected joystick. If called on an invalid index, this function returns <computeroutput>SDL_JOYSTICK_TYPE_UNKNOWN</computeroutput></para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.6. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1afb8ba88559debca4ab2c702b8500d5fe"/><section>
+    <title>SDL_JoystickGetDeviceVendor()</title>
+<indexterm><primary>SDL_JoystickGetDeviceVendor</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickGetDeviceVendor</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickGetDeviceVendor (int device_index)</computeroutput></para>
+<para>Get the USB vendor ID of a joystick, if available.</para>
+
+<para>This can be called before any joysticks are opened. If the vendor ID isn&apos;t available this function returns 0.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>device_index</entry><entry>
+<para>the index of the joystick to query (the N&apos;th joystick on the system </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the USB vendor ID of the selected joystick. If called on an invalid index, this function returns zero</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.6. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1acc85c770af41eae76948e11c678f92ca"/><section>
+    <title>SDL_JoystickGetGUID()</title>
+<indexterm><primary>SDL_JoystickGetGUID</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickGetGUID</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="_struct_s_d_l___joystick_g_u_i_d">SDL_JoystickGUID</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickGetGUID (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick)</computeroutput></para>
+<para>Get the implementation-dependent GUID for the joystick.</para>
+
+<para>This function requires an open joystick.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>the SDL_Joystick obtained from <link linkend="__s_d_l__joystick_8h_1a69452f7f7e11db54292f64db9a629029">SDL_JoystickOpen()</link> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the GUID of the given joystick. If called on an invalid index, this function returns a zero GUID; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__joystick_8h_1afdbf5289ff5452afb1bd869ffcf250b5">SDL_JoystickGetDeviceGUID</link> </para>
+
+<para><link linkend="__s_d_l__joystick_8h_1a7f615ef8040e7e9de3af6482d8d9908c">SDL_JoystickGetGUIDString</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1aef9d131a6a6838847731cf8094944b46"/><section>
+    <title>SDL_JoystickGetGUIDFromString()</title>
+<indexterm><primary>SDL_JoystickGetGUIDFromString</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickGetGUIDFromString</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="_struct_s_d_l___joystick_g_u_i_d">SDL_JoystickGUID</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickGetGUIDFromString (const char * pchGUID)</computeroutput></para>
+<para>Convert a GUID string into a <link linkend="_struct_s_d_l___joystick_g_u_i_d">SDL_JoystickGUID</link> structure.</para>
+
+<para>Performs no error checking. If this function is given a string containing an invalid GUID, the function will silently succeed, but the GUID generated will not be useful.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pchGUID</entry><entry>
+<para>string containing an ASCII representation of a GUID </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a <link linkend="_struct_s_d_l___joystick_g_u_i_d">SDL_JoystickGUID</link> structure.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__joystick_8h_1a7f615ef8040e7e9de3af6482d8d9908c">SDL_JoystickGetGUIDString</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a7f615ef8040e7e9de3af6482d8d9908c"/><section>
+    <title>SDL_JoystickGetGUIDString()</title>
+<indexterm><primary>SDL_JoystickGetGUIDString</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickGetGUIDString</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickGetGUIDString (<link linkend="_struct_s_d_l___joystick_g_u_i_d">SDL_JoystickGUID</link> guid, char * pszGUID, int cbGUID)</computeroutput></para>
+<para>Get an ASCII string representation for a given <link linkend="_struct_s_d_l___joystick_g_u_i_d">SDL_JoystickGUID</link>.</para>
+
+<para>You should supply at least 33 bytes for pszGUID.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>guid</entry><entry>
+<para>the <link linkend="_struct_s_d_l___joystick_g_u_i_d">SDL_JoystickGUID</link> you wish to convert to string </para>
+</entry>
+                            </row>
+                            <row>
+<entry>pszGUID</entry><entry>
+<para>buffer in which to write the ASCII string </para>
+</entry>
+                            </row>
+                            <row>
+<entry>cbGUID</entry><entry>
+<para>the size of pszGUID</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__joystick_8h_1afdbf5289ff5452afb1bd869ffcf250b5">SDL_JoystickGetDeviceGUID</link> </para>
+
+<para><link linkend="__s_d_l__joystick_8h_1acc85c770af41eae76948e11c678f92ca">SDL_JoystickGetGUID</link> </para>
+
+<para><link linkend="__s_d_l__joystick_8h_1aef9d131a6a6838847731cf8094944b46">SDL_JoystickGetGUIDFromString</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a2215030cf283295569fee41fd0251e01"/><section>
+    <title>SDL_JoystickGetHat()</title>
+<indexterm><primary>SDL_JoystickGetHat</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickGetHat</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickGetHat (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick, int hat)</computeroutput></para>
+<para>Get the current state of a POV hat on a joystick.</para>
+
+<para>The returned value will be one of the following positions:</para>
+
+<para><itemizedlist>
+<listitem>
+<para><computeroutput>SDL_HAT_CENTERED</computeroutput></para>
+</listitem><listitem>
+<para><computeroutput>SDL_HAT_UP</computeroutput></para>
+</listitem><listitem>
+<para><computeroutput>SDL_HAT_RIGHT</computeroutput></para>
+</listitem><listitem>
+<para><computeroutput>SDL_HAT_DOWN</computeroutput></para>
+</listitem><listitem>
+<para><computeroutput>SDL_HAT_LEFT</computeroutput></para>
+</listitem><listitem>
+<para><computeroutput>SDL_HAT_RIGHTUP</computeroutput></para>
+</listitem><listitem>
+<para><computeroutput>SDL_HAT_RIGHTDOWN</computeroutput></para>
+</listitem><listitem>
+<para><computeroutput>SDL_HAT_LEFTUP</computeroutput></para>
+</listitem><listitem>
+<para><computeroutput>SDL_HAT_LEFTDOWN</computeroutput></para>
+</listitem></itemizedlist>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>an SDL_Joystick structure containing joystick information </para>
+</entry>
+                            </row>
+                            <row>
+<entry>hat</entry><entry>
+<para>the hat index to get the state from; indices start at index 0 </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the current hat position.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__joystick_8h_1aa62ea91c7c4ca2d12804a9fb3760e448">SDL_JoystickNumHats</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a1b3543511c1839f9c06aeea65b574e77"/><section>
+    <title>SDL_JoystickGetPlayerIndex()</title>
+<indexterm><primary>SDL_JoystickGetPlayerIndex</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickGetPlayerIndex</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickGetPlayerIndex (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick)</computeroutput></para>
+<para>Get the player index of an opened joystick.</para>
+
+<para>For XInput controllers this returns the XInput user index. Many joysticks will not be able to supply this information.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>the SDL_Joystick obtained from <link linkend="__s_d_l__joystick_8h_1a69452f7f7e11db54292f64db9a629029">SDL_JoystickOpen()</link> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the player index, or -1 if it&apos;s not available.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.9. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a0f4732dffd2a769a2346f4091b2f3199"/><section>
+    <title>SDL_JoystickGetProduct()</title>
+<indexterm><primary>SDL_JoystickGetProduct</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickGetProduct</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickGetProduct (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick)</computeroutput></para>
+<para>Get the USB product ID of an opened joystick, if available.</para>
+
+<para>If the product ID isn&apos;t available this function returns 0.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>the SDL_Joystick obtained from <link linkend="__s_d_l__joystick_8h_1a69452f7f7e11db54292f64db9a629029">SDL_JoystickOpen()</link> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the USB product ID of the selected joystick, or 0 if unavailable.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.6. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1afe6bbdbc0c81170d237fae42bec05665"/><section>
+    <title>SDL_JoystickGetProductVersion()</title>
+<indexterm><primary>SDL_JoystickGetProductVersion</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickGetProductVersion</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickGetProductVersion (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick)</computeroutput></para>
+<para>Get the product version of an opened joystick, if available.</para>
+
+<para>If the product version isn&apos;t available this function returns 0.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>the SDL_Joystick obtained from <link linkend="__s_d_l__joystick_8h_1a69452f7f7e11db54292f64db9a629029">SDL_JoystickOpen()</link> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the product version of the selected joystick, or 0 if unavailable.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.6. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1afd37d9ca54a83fec1ba34b103047ad61"/><section>
+    <title>SDL_JoystickGetSerial()</title>
+<indexterm><primary>SDL_JoystickGetSerial</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickGetSerial</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickGetSerial (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick)</computeroutput></para>
+<para>Get the serial number of an opened joystick, if available.</para>
+
+<para>Returns the serial number of the joystick, or NULL if it is not available.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>the SDL_Joystick obtained from <link linkend="__s_d_l__joystick_8h_1a69452f7f7e11db54292f64db9a629029">SDL_JoystickOpen()</link> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the serial number of the selected joystick, or NULL if unavailable.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.14. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1ad21afdbdd915c013cacefb7e79bfe3bf"/><section>
+    <title>SDL_JoystickGetType()</title>
+<indexterm><primary>SDL_JoystickGetType</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickGetType</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2ea">SDL_JoystickType</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickGetType (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick)</computeroutput></para>
+<para>Get the type of an opened joystick.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>the SDL_Joystick obtained from <link linkend="__s_d_l__joystick_8h_1a69452f7f7e11db54292f64db9a629029">SDL_JoystickOpen()</link> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the SDL_JoystickType of the selected joystick.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.6. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a13d9a1e3c5cbe2591cd5214aad48fed8"/><section>
+    <title>SDL_JoystickGetVendor()</title>
+<indexterm><primary>SDL_JoystickGetVendor</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickGetVendor</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickGetVendor (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick)</computeroutput></para>
+<para>Get the USB vendor ID of an opened joystick, if available.</para>
+
+<para>If the vendor ID isn&apos;t available this function returns 0.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>the SDL_Joystick obtained from <link linkend="__s_d_l__joystick_8h_1a69452f7f7e11db54292f64db9a629029">SDL_JoystickOpen()</link> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the USB vendor ID of the selected joystick, or 0 if unavailable.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.6. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a7a5a92f4eb93dde4e58d5155ce22b7a7"/><section>
+    <title>SDL_JoystickHasLED()</title>
+<indexterm><primary>SDL_JoystickHasLED</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickHasLED</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickHasLED (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick)</computeroutput></para>
+<para>Query whether a joystick has an LED.</para>
+
+<para>An example of a joystick LED is the light on the back of a PlayStation 4&apos;s DualShock 4 controller.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>The joystick to query </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE if the joystick has a modifiable LED, SDL_FALSE otherwise.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.14. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1afa0e29b3b5738184da3cc281de3e4896"/><section>
+    <title>SDL_JoystickHasRumble()</title>
+<indexterm><primary>SDL_JoystickHasRumble</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickHasRumble</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickHasRumble (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick)</computeroutput></para>
+<para>Query whether a joystick has rumble support.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>The joystick to query </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE if the joystick has rumble, SDL_FALSE otherwise.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.18.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__joystick_8h_1a307c87a4de5aec2d1ca22856d94930fa">SDL_JoystickRumble</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a815f02f2cbced249cb4b0018dfd3a777"/><section>
+    <title>SDL_JoystickHasRumbleTriggers()</title>
+<indexterm><primary>SDL_JoystickHasRumbleTriggers</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickHasRumbleTriggers</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickHasRumbleTriggers (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick)</computeroutput></para>
+<para>Query whether a joystick has rumble support on triggers.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>The joystick to query </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE if the joystick has trigger rumble, SDL_FALSE otherwise.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.18.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__joystick_8h_1a0d248aa2e25ac62d30444583180ff539">SDL_JoystickRumbleTriggers</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1ab38dfc6428e15c2476478418075d4c83"/><section>
+    <title>SDL_JoystickInstanceID()</title>
+<indexterm><primary>SDL_JoystickInstanceID</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickInstanceID</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__joystick_8h_1a3c3d32500cb08f76ee8077983912c0bd">SDL_JoystickID</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickInstanceID (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick)</computeroutput></para>
+<para>Get the instance ID of an opened joystick.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>an SDL_Joystick structure containing joystick information </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the instance ID of the specified joystick on success or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__joystick_8h_1a69452f7f7e11db54292f64db9a629029">SDL_JoystickOpen</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a718be0fe686e838f1d0db00d523ff47a"/><section>
+    <title>SDL_JoystickIsVirtual()</title>
+<indexterm><primary>SDL_JoystickIsVirtual</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickIsVirtual</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickIsVirtual (int device_index)</computeroutput></para>
+<para>Query whether or not the joystick at a given device index is virtual.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>device_index</entry><entry>
+<para>a joystick device index. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE if the joystick is virtual, SDL_FALSE otherwise.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.14. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a6f3a290c0367a7607d6ebbaa50721eec"/><section>
+    <title>SDL_JoystickName()</title>
+<indexterm><primary>SDL_JoystickName</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickName</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickName (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick)</computeroutput></para>
+<para>Get the implementation dependent name of a joystick.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>the SDL_Joystick obtained from <link linkend="__s_d_l__joystick_8h_1a69452f7f7e11db54292f64db9a629029">SDL_JoystickOpen()</link> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the name of the selected joystick. If no name can be found, this function returns NULL; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__joystick_8h_1a7b146627cc69693b6ab6acd9b39a94c9">SDL_JoystickNameForIndex</link> </para>
+
+<para><link linkend="__s_d_l__joystick_8h_1a69452f7f7e11db54292f64db9a629029">SDL_JoystickOpen</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a7b146627cc69693b6ab6acd9b39a94c9"/><section>
+    <title>SDL_JoystickNameForIndex()</title>
+<indexterm><primary>SDL_JoystickNameForIndex</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickNameForIndex</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickNameForIndex (int device_index)</computeroutput></para>
+<para>Get the implementation dependent name of a joystick.</para>
+
+<para>This can be called before any joysticks are opened.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>device_index</entry><entry>
+<para>the index of the joystick to query (the N&apos;th joystick on the system) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the name of the selected joystick. If no name can be found, this function returns NULL; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__joystick_8h_1a6f3a290c0367a7607d6ebbaa50721eec">SDL_JoystickName</link> </para>
+
+<para><link linkend="__s_d_l__joystick_8h_1a69452f7f7e11db54292f64db9a629029">SDL_JoystickOpen</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a865c2e087fe69a3a30c87243729ecdea"/><section>
+    <title>SDL_JoystickNumAxes()</title>
+<indexterm><primary>SDL_JoystickNumAxes</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickNumAxes</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickNumAxes (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick)</computeroutput></para>
+<para>Get the number of general axis controls on a joystick.</para>
+
+<para>Often, the directional pad on a game controller will either look like 4 separate buttons or a POV hat, and not axes, but all of this is up to the device and platform.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>an SDL_Joystick structure containing joystick information </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the number of axis controls/number of axes on success or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__joystick_8h_1ac6fbda13b93679bedfc34733d4b2e748">SDL_JoystickGetAxis</link> </para>
+
+<para><link linkend="__s_d_l__joystick_8h_1a69452f7f7e11db54292f64db9a629029">SDL_JoystickOpen</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a755d087bb16270087bfced7501656a6d"/><section>
+    <title>SDL_JoystickNumBalls()</title>
+<indexterm><primary>SDL_JoystickNumBalls</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickNumBalls</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickNumBalls (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick)</computeroutput></para>
+<para>Get the number of trackballs on a joystick.</para>
+
+<para>Joystick trackballs have only relative motion events associated with them and their state cannot be polled.</para>
+
+<para>Most joysticks do not have trackballs.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>an SDL_Joystick structure containing joystick information </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the number of trackballs on success or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__joystick_8h_1ac7a5a4c17f6a5a4ef9f5bc78e50913df">SDL_JoystickGetBall</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1adfc662e571011ae7ec303101ab34e53a"/><section>
+    <title>SDL_JoystickNumButtons()</title>
+<indexterm><primary>SDL_JoystickNumButtons</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickNumButtons</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickNumButtons (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick)</computeroutput></para>
+<para>Get the number of buttons on a joystick.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>an SDL_Joystick structure containing joystick information </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the number of buttons on success or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__joystick_8h_1aaf7789eb03bc42525691e075e2a36131">SDL_JoystickGetButton</link> </para>
+
+<para><link linkend="__s_d_l__joystick_8h_1a69452f7f7e11db54292f64db9a629029">SDL_JoystickOpen</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1aa62ea91c7c4ca2d12804a9fb3760e448"/><section>
+    <title>SDL_JoystickNumHats()</title>
+<indexterm><primary>SDL_JoystickNumHats</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickNumHats</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickNumHats (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick)</computeroutput></para>
+<para>Get the number of POV hats on a joystick.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>an SDL_Joystick structure containing joystick information </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the number of POV hats on success or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__joystick_8h_1a2215030cf283295569fee41fd0251e01">SDL_JoystickGetHat</link> </para>
+
+<para><link linkend="__s_d_l__joystick_8h_1a69452f7f7e11db54292f64db9a629029">SDL_JoystickOpen</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a69452f7f7e11db54292f64db9a629029"/><section>
+    <title>SDL_JoystickOpen()</title>
+<indexterm><primary>SDL_JoystickOpen</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickOpen</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickOpen (int device_index)</computeroutput></para>
+<para>Open a joystick for use.</para>
+
+<para>The <computeroutput>device_index</computeroutput> argument refers to the N&apos;th joystick presently recognized by SDL on the system. It is <emphasis role="bold">NOT</emphasis> the same as the instance ID used to identify the joystick in future events. See <link linkend="__s_d_l__joystick_8h_1ab38dfc6428e15c2476478418075d4c83">SDL_JoystickInstanceID()</link> for more details about instance IDs.</para>
+
+<para>The joystick subsystem must be initialized before a joystick can be opened for use.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>device_index</entry><entry>
+<para>the index of the joystick to query </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a joystick identifier or NULL if an error occurred; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__joystick_8h_1aafa0951b40ec2e200c098495c3dd4943">SDL_JoystickClose</link> </para>
+
+<para><link linkend="__s_d_l__joystick_8h_1ab38dfc6428e15c2476478418075d4c83">SDL_JoystickInstanceID</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a307c87a4de5aec2d1ca22856d94930fa"/><section>
+    <title>SDL_JoystickRumble()</title>
+<indexterm><primary>SDL_JoystickRumble</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickRumble</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickRumble (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick, <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> low_frequency_rumble, <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> high_frequency_rumble, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> duration_ms)</computeroutput></para>
+<para>Start a rumble effect.</para>
+
+<para>Each call to this function cancels any previous rumble effect, and calling it with 0 intensity stops any rumbling.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>The joystick to vibrate </para>
+</entry>
+                            </row>
+                            <row>
+<entry>low_frequency_rumble</entry><entry>
+<para>The intensity of the low frequency (left) rumble motor, from 0 to 0xFFFF </para>
+</entry>
+                            </row>
+                            <row>
+<entry>high_frequency_rumble</entry><entry>
+<para>The intensity of the high frequency (right) rumble motor, from 0 to 0xFFFF </para>
+</entry>
+                            </row>
+                            <row>
+<entry>duration_ms</entry><entry>
+<para>The duration of the rumble effect, in milliseconds </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0, or -1 if rumble isn&apos;t supported on this joystick</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.9.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__joystick_8h_1afa0e29b3b5738184da3cc281de3e4896">SDL_JoystickHasRumble</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a0d248aa2e25ac62d30444583180ff539"/><section>
+    <title>SDL_JoystickRumbleTriggers()</title>
+<indexterm><primary>SDL_JoystickRumbleTriggers</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickRumbleTriggers</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickRumbleTriggers (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick, <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> left_rumble, <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> right_rumble, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> duration_ms)</computeroutput></para>
+<para>Start a rumble effect in the joystick&apos;s triggers</para>
+
+<para>Each call to this function cancels any previous trigger rumble effect, and calling it with 0 intensity stops any rumbling.</para>
+
+<para>Note that this function is for <emphasis>trigger</emphasis> rumble; the first joystick to support this was the PlayStation 5&apos;s DualShock 5 controller. If you want the (more common) whole-controller rumble, use <link linkend="__s_d_l__joystick_8h_1a307c87a4de5aec2d1ca22856d94930fa">SDL_JoystickRumble()</link> instead.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>The joystick to vibrate </para>
+</entry>
+                            </row>
+                            <row>
+<entry>left_rumble</entry><entry>
+<para>The intensity of the left trigger rumble motor, from 0 to 0xFFFF </para>
+</entry>
+                            </row>
+                            <row>
+<entry>right_rumble</entry><entry>
+<para>The intensity of the right trigger rumble motor, from 0 to 0xFFFF </para>
+</entry>
+                            </row>
+                            <row>
+<entry>duration_ms</entry><entry>
+<para>The duration of the rumble effect, in milliseconds </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0, or -1 if trigger rumble isn&apos;t supported on this joystick</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.14.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__joystick_8h_1a815f02f2cbced249cb4b0018dfd3a777">SDL_JoystickHasRumbleTriggers</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a16c10474f6a3d861babfe1ae424cb1a5"/><section>
+    <title>SDL_JoystickSendEffect()</title>
+<indexterm><primary>SDL_JoystickSendEffect</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickSendEffect</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickSendEffect (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick, const <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> * data, int size)</computeroutput></para>
+<para>Send a joystick specific effect packet</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>The joystick to affect </para>
+</entry>
+                            </row>
+                            <row>
+<entry>data</entry><entry>
+<para>The data to send to the joystick </para>
+</entry>
+                            </row>
+                            <row>
+<entry>size</entry><entry>
+<para>The size of the data to send to the joystick </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0, or -1 if this joystick or driver doesn&apos;t support effect packets</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.16. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a4e3e052e175f47fe02c63e92a59f4b04"/><section>
+    <title>SDL_JoystickSetLED()</title>
+<indexterm><primary>SDL_JoystickSetLED</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickSetLED</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickSetLED (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> red, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> green, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> blue)</computeroutput></para>
+<para>Update a joystick&apos;s LED color.</para>
+
+<para>An example of a joystick LED is the light on the back of a PlayStation 4&apos;s DualShock 4 controller.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>The joystick to update </para>
+</entry>
+                            </row>
+                            <row>
+<entry>red</entry><entry>
+<para>The intensity of the red LED </para>
+</entry>
+                            </row>
+                            <row>
+<entry>green</entry><entry>
+<para>The intensity of the green LED </para>
+</entry>
+                            </row>
+                            <row>
+<entry>blue</entry><entry>
+<para>The intensity of the blue LED </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 on success, -1 if this joystick does not have a modifiable LED</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.14. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a552d1be1bccb9cd81191ddf5f576fa31"/><section>
+    <title>SDL_JoystickSetPlayerIndex()</title>
+<indexterm><primary>SDL_JoystickSetPlayerIndex</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickSetPlayerIndex</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickSetPlayerIndex (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick, int player_index)</computeroutput></para>
+<para>Set the player index of an opened joystick.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>the SDL_Joystick obtained from <link linkend="__s_d_l__joystick_8h_1a69452f7f7e11db54292f64db9a629029">SDL_JoystickOpen()</link> </para>
+</entry>
+                            </row>
+                            <row>
+<entry>player_index</entry><entry>
+<para>the player index to set.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.12. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a68d808bc0054c5cd068b0d0ff7c5ef7d"/><section>
+    <title>SDL_JoystickSetVirtualAxis()</title>
+<indexterm><primary>SDL_JoystickSetVirtualAxis</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickSetVirtualAxis</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickSetVirtualAxis (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick, int axis, <link linkend="__s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5">Sint16</link> value)</computeroutput></para>
+<para>Set values on an opened, virtual-joystick&apos;s axis.</para>
+
+<para>Please note that values set here will not be applied until the next call to SDL_JoystickUpdate, which can either be called directly, or can be called indirectly through various other SDL APIs, including, but not limited to the following: SDL_PollEvent, SDL_PumpEvents, SDL_WaitEventTimeout, SDL_WaitEvent.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>the virtual joystick on which to set state. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>axis</entry><entry>
+<para>the specific axis on the virtual joystick to set. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>value</entry><entry>
+<para>the new value for the specified axis. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 on success, -1 on error.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.14. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1aa895270395be528f6658006a5c02a799"/><section>
+    <title>SDL_JoystickSetVirtualButton()</title>
+<indexterm><primary>SDL_JoystickSetVirtualButton</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickSetVirtualButton</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickSetVirtualButton (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick, int button, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> value)</computeroutput></para>
+<para>Set values on an opened, virtual-joystick&apos;s button.</para>
+
+<para>Please note that values set here will not be applied until the next call to SDL_JoystickUpdate, which can either be called directly, or can be called indirectly through various other SDL APIs, including, but not limited to the following: SDL_PollEvent, SDL_PumpEvents, SDL_WaitEventTimeout, SDL_WaitEvent.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>the virtual joystick on which to set state. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>button</entry><entry>
+<para>the specific button on the virtual joystick to set. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>value</entry><entry>
+<para>the new value for the specified button. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 on success, -1 on error.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.14. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a3f1bcde55e0486bee726f7748c1ca971"/><section>
+    <title>SDL_JoystickSetVirtualHat()</title>
+<indexterm><primary>SDL_JoystickSetVirtualHat</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickSetVirtualHat</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickSetVirtualHat (<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> * joystick, int hat, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> value)</computeroutput></para>
+<para>Set values on an opened, virtual-joystick&apos;s hat.</para>
+
+<para>Please note that values set here will not be applied until the next call to SDL_JoystickUpdate, which can either be called directly, or can be called indirectly through various other SDL APIs, including, but not limited to the following: SDL_PollEvent, SDL_PumpEvents, SDL_WaitEventTimeout, SDL_WaitEvent.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick</entry><entry>
+<para>the virtual joystick on which to set state. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>hat</entry><entry>
+<para>the specific hat on the virtual joystick to set. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>value</entry><entry>
+<para>the new value for the specified hat. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 on success, -1 on error.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.14. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a3ea23a9504ea56f2778147dbf39a029f"/><section>
+    <title>SDL_JoystickUpdate()</title>
+<indexterm><primary>SDL_JoystickUpdate</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_JoystickUpdate</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_JoystickUpdate (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para>
+<para>Update the current state of the open joysticks.</para>
+
+<para>This is called automatically by the event loop if any joystick events are enabled.</para>
+
+<para><formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__joystick_8h_1a51ba353843fd4477f6a485ac4ef35d00">SDL_JoystickEventState</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a4a2e0bedda1b7d0ac957607e944bfba0"/><section>
+    <title>SDL_LockJoysticks()</title>
+<indexterm><primary>SDL_LockJoysticks</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_LockJoysticks</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_LockJoysticks (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para>
+<para>Locking for multi-threaded access to the joystick API</para>
+
+<para>If you are using the joystick API or handling events from multiple threads you should use these locking functions to protect access to the joysticks.</para>
+
+<para>In particular, you are guaranteed that the joystick list won&apos;t change, so the API functions that take a joystick index will be valid, and joystick and game controller events will not be delivered.</para>
+
+<para><formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.7. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1a2ab130eaa28f8e3bd544a5432041a311"/><section>
+    <title>SDL_NumJoysticks()</title>
+<indexterm><primary>SDL_NumJoysticks</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_NumJoysticks</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_NumJoysticks (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para>
+<para>Count the number of joysticks attached to the system.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the number of attached joysticks on success or a negative error code on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__joystick_8h_1a6f3a290c0367a7607d6ebbaa50721eec">SDL_JoystickName</link> </para>
+
+<para><link linkend="__s_d_l__joystick_8h_1a69452f7f7e11db54292f64db9a629029">SDL_JoystickOpen</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__joystick_8h_1add3a6baa4646469b34c42df028c59be0"/><section>
+    <title>SDL_UnlockJoysticks()</title>
+<indexterm><primary>SDL_UnlockJoysticks</primary><secondary>SDL_joystick.h</secondary></indexterm>
+<indexterm><primary>SDL_joystick.h</primary><secondary>SDL_UnlockJoysticks</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_UnlockJoysticks (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para>
+<para>Unlocking for multi-threaded access to the joystick API</para>
+
+<para>If you are using the joystick API or handling events from multiple threads you should use these locking functions to protect access to the joysticks.</para>
+
+<para>In particular, you are guaranteed that the joystick list won&apos;t change, so the API functions that take a joystick index will be valid, and joystick and game controller events will not be delivered.</para>
+
+<para><formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.7. </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

@@ -1,0 +1,218 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_qb_e_i_g_8h_source" xml:lang="en-US">
+<title>qbEIG.h</title>
+<indexterm><primary>D:/RayTracing/RayTrace/qbLinAlg/qbEIG.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">//&#32;This&#32;file&#32;is&#32;part&#32;of&#32;the&#32;qbLinAlg&#32;linear&#32;algebra&#32;library.</emphasis>
+2 <emphasis role="comment">//&#32;Copyright&#32;(c)&#32;2021&#32;Michael&#32;Bennett</emphasis>
+3 <emphasis role="comment">//&#32;MIT&#32;license</emphasis>
+4 
+5 <emphasis role="preprocessor">#ifndef&#32;QBEIG_H</emphasis>
+6 <emphasis role="preprocessor">#define&#32;QBEIG_H</emphasis>
+7 
+8 <emphasis role="preprocessor">#include&#32;&lt;stdexcept&gt;</emphasis>
+9 <emphasis role="preprocessor">#include&#32;&lt;iostream&gt;</emphasis>
+10 <emphasis role="preprocessor">#include&#32;&lt;iomanip&gt;</emphasis>
+11 <emphasis role="preprocessor">#include&#32;&lt;math.h&gt;</emphasis>
+12 <emphasis role="preprocessor">#include&#32;&lt;vector&gt;</emphasis>
+13 
+14 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_qb_matrix_8h">qbMatrix.h</link>&quot;</emphasis>
+15 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_qb_vector_8h">qbVector.h</link>&quot;</emphasis>
+16 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_qb_q_r_8h">qbQR.h</link>&quot;</emphasis>
+17 
+18 <emphasis role="comment">//&#32;Define&#32;error&#32;codes.</emphasis>
+19 <emphasis role="keyword">constexpr</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_qb_e_i_g_8h_1a11d1d7426a4145998cfe6b22c42fb482">QBEIG_MATRIXNOTSQUARE</link>&#32;=&#32;-1;
+20 <emphasis role="keyword">constexpr</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_qb_e_i_g_8h_1abc41bacc5dd2ce027cd016cfab0fd284">QBEIG_MAXITERATIONSEXCEEDED</link>&#32;=&#32;-2;
+21 <emphasis role="keyword">constexpr</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_qb_e_i_g_8h_1a4be8e1e3b0be4c2a155cf84b83b78fca">QBEIG_MATRIXNOTSYMMETRIC</link>&#32;=&#32;-3;
+22 
+23 <emphasis role="comment">//&#32;Function&#32;to&#32;estimate&#32;(real)&#32;eigenvalues&#32;using&#32;QR&#32;decomposition.</emphasis>
+24 <emphasis role="comment">/*&#32;Note&#32;that&#32;this&#32;is&#32;only&#32;valid&#32;for&#32;matrices&#32;that&#32;have&#32;ALL&#32;real</emphasis>
+25 <emphasis role="comment">&#32;&#32;&#32;&#32;eigenvalues.&#32;The&#32;only&#32;matrices&#32;that&#32;are&#32;guaranteed&#32;to&#32;have&#32;only</emphasis>
+26 <emphasis role="comment">&#32;&#32;&#32;&#32;real&#32;eigenvalues&#32;are&#32;symmetric&#32;matrices.&#32;Therefore,&#32;this&#32;function</emphasis>
+27 <emphasis role="comment">&#32;&#32;&#32;&#32;is&#32;only&#32;guaranteed&#32;to&#32;work&#32;with&#32;symmetric&#32;matrices.&#32;*/</emphasis>
+28 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+29 <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_qb_e_i_g_8h_1a9212bbed3a221741a725494e8c7367d1">qbEigQR</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;&amp;inputMatrix,&#32;std::vector&lt;T&gt;&#32;&amp;eigenValues)
+30 {
+31 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Make&#32;a&#32;copy&#32;of&#32;the&#32;input&#32;matrix.</emphasis>
+32 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;A&#32;=&#32;inputMatrix;
+33 
+34 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Verify&#32;that&#32;the&#32;input&#32;matrix&#32;is&#32;square.</emphasis>
+35 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!A.<link linkend="_classqb_matrix2_1ae3e42b917e3127cab56b7a48faff25c3">IsSquare</link>())
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_qb_e_i_g_8h_1a11d1d7426a4145998cfe6b22c42fb482">QBEIG_MATRIXNOTSQUARE</link>;
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+38 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Verify&#32;that&#32;the&#32;matrix&#32;is&#32;symmetric.</emphasis>
+39 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!A.<link linkend="_classqb_matrix2_1a38c5e541fec532600806ac4fd8afecb2">IsSymmetric</link>())
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_qb_e_i_g_8h_1a4be8e1e3b0be4c2a155cf84b83b78fca">QBEIG_MATRIXNOTSYMMETRIC</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+42 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;The&#32;number&#32;of&#32;eigenvalues&#32;is&#32;equal&#32;to&#32;the&#32;number&#32;of&#32;rows.</emphasis>
+43 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numRows&#32;=&#32;A.<link linkend="_classqb_matrix2_1a1626b647c5268a9e64f4651bcc4b8c6e">GetNumRows</link>();
+44 &#32;&#32;&#32;&#32;
+45 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Create&#32;an&#32;identity&#32;matrix&#32;of&#32;the&#32;same&#32;dimensions.</emphasis>
+46 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;identityMatrix(numRows,&#32;numRows);
+47 &#32;&#32;&#32;&#32;identityMatrix.<link linkend="_classqb_matrix2_1af705ca91a707de5e75c6b074ad152f5e">SetToIdentity</link>();
+48 &#32;&#32;&#32;&#32;
+49 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Create&#32;matrices&#32;to&#32;store&#32;Q&#32;and&#32;R.</emphasis>
+50 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;Q&#32;(numRows,&#32;numRows);
+51 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;R&#32;(numRows,&#32;numRows);
+52 &#32;&#32;&#32;&#32;
+53 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Loop&#32;through&#32;each&#32;iteration.</emphasis>
+54 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;maxIterations&#32;=&#32;10e3;
+55 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;iterationCount&#32;=&#32;0;
+56 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;continueFlag&#32;=&#32;<emphasis role="keyword">true</emphasis>;
+57 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;((iterationCount&#32;&lt;&#32;maxIterations)&#32;&amp;&amp;&#32;continueFlag)
+58 &#32;&#32;&#32;&#32;{
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;the&#32;QR&#32;decomposition&#32;of&#32;A.</emphasis>
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;returnValue&#32;=&#32;qbQR&lt;T&gt;(A,&#32;Q,&#32;R);
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;the&#32;next&#32;value&#32;of&#32;A&#32;as&#32;the&#32;product&#32;of&#32;R&#32;and&#32;Q.</emphasis>
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;A&#32;=&#32;R&#32;*&#32;Q;
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Check&#32;if&#32;A&#32;is&#32;now&#32;close&#32;enough&#32;to&#32;being&#32;upper-triangular.</emphasis>
+66 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;We&#32;can&#32;do&#32;this&#32;using&#32;the&#32;IsRowEchelon()&#32;function&#32;from&#32;the&#32;</emphasis>
+67 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;qbMatrix2&#32;class.&#32;*/</emphasis>
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(A.<link linkend="_classqb_matrix2_1a44c85a2d4dcbd33b281ce417156d7431">IsRowEchelon</link>())
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;continueFlag&#32;=&#32;<emphasis role="keyword">false</emphasis>;
+70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Increment&#32;iterationCount.</emphasis>
+72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;iterationCount++;
+73 &#32;&#32;&#32;&#32;}
+74 &#32;&#32;&#32;&#32;
+75 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;At&#32;this&#32;point,&#32;the&#32;eigenvalues&#32;should&#32;be&#32;the&#32;diagonal&#32;elements&#32;of&#32;A.</emphasis>
+76 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;numRows;&#32;++i)
+77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;eigenValues.push_back(A.<link linkend="_classqb_matrix2_1a62ddf209105dffe6133461b273a7309f">GetElement</link>(i,i));
+78 &#32;&#32;&#32;&#32;
+79 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Set&#32;the&#32;return&#32;status&#32;accordingly.</emphasis>
+80 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(iterationCount&#32;==&#32;maxIterations)
+81 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_qb_e_i_g_8h_1abc41bacc5dd2ce027cd016cfab0fd284">QBEIG_MAXITERATIONSEXCEEDED</link>;
+82 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+83 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;&#32;&#32;&#32;
+84 &#32;&#32;&#32;&#32;
+85 }
+86 
+87 <emphasis role="comment">//&#32;Function&#32;to&#32;perform&#32;inverse&#32;power&#32;iteration&#32;method.</emphasis>
+88 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+89 <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_qb_e_i_g_8h_1a947c6e89bfc37d51c19989d1d5db03b9">qbInvPIt</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;&amp;inputMatrix,&#32;<emphasis role="keyword">const</emphasis>&#32;T&#32;&amp;eigenValue,&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;&amp;eigenVector)
+90 {
+91 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Make&#32;a&#32;copy&#32;of&#32;the&#32;input&#32;matrix.</emphasis>
+92 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;A&#32;=&#32;inputMatrix;
+93 
+94 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Verify&#32;that&#32;the&#32;input&#32;matrix&#32;is&#32;square.</emphasis>
+95 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!A.<link linkend="_classqb_matrix2_1ae3e42b917e3127cab56b7a48faff25c3">IsSquare</link>())
+96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_qb_e_i_g_8h_1a11d1d7426a4145998cfe6b22c42fb482">QBEIG_MATRIXNOTSQUARE</link>;
+97 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+98 &#32;&#32;<emphasis role="comment">//&#32;Setup&#32;a&#32;random&#32;number&#32;generator.</emphasis>
+99 &#32;&#32;&#32;&#32;std::random_device&#32;myRandomDevice;
+100 &#32;&#32;std::mt19937&#32;myRandomGenerator(myRandomDevice());
+101 &#32;&#32;&#32;&#32;std::uniform_int_distribution&lt;int&gt;&#32;myDistribution(1.0,&#32;10.0);
+102 &#32;&#32;&#32;&#32;
+103 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;The&#32;number&#32;of&#32;eigenvectors&#32;and&#32;eigenvalues&#32;that&#32;we&#32;will&#32;compute&#32;will&#32;be</emphasis>
+104 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;equal&#32;to&#32;the&#32;number&#32;of&#32;rows&#32;in&#32;the&#32;input&#32;matrix.&#32;*/</emphasis>
+105 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numRows&#32;=&#32;A.<link linkend="_classqb_matrix2_1a1626b647c5268a9e64f4651bcc4b8c6e">GetNumRows</link>();
+106 &#32;&#32;&#32;&#32;
+107 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Create&#32;an&#32;identity&#32;matrix&#32;of&#32;the&#32;same&#32;dimensions.</emphasis>
+108 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;identityMatrix(numRows,&#32;numRows);
+109 &#32;&#32;&#32;&#32;identityMatrix.<link linkend="_classqb_matrix2_1af705ca91a707de5e75c6b074ad152f5e">SetToIdentity</link>();
+110 &#32;&#32;&#32;&#32;
+111 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Create&#32;an&#32;initial&#32;vector,&#32;v.</emphasis>
+112 &#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;<link linkend="__s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90">v</link>(numRows);
+113 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;numRows;&#32;++i)
+114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90">v</link>.SetElement(i,&#32;<emphasis role="keyword">static_cast&lt;</emphasis>T<emphasis role="keyword">&gt;</emphasis>(myDistribution(myRandomGenerator)));
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+116 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Iterate.</emphasis>
+117 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;maxIterations&#32;=&#32;100;
+118 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;iterationCount&#32;=&#32;0;
+119 &#32;&#32;&#32;&#32;T&#32;deltaThreshold&#32;=&#32;<emphasis role="keyword">static_cast&lt;</emphasis>T<emphasis role="keyword">&gt;</emphasis>(1e-9);
+120 &#32;&#32;&#32;&#32;T&#32;delta&#32;=&#32;<emphasis role="keyword">static_cast&lt;</emphasis>T<emphasis role="keyword">&gt;</emphasis>(1e6);
+121 &#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;prevVector(numRows);
+122 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;tempMatrix(numRows,&#32;numRows);
+123 &#32;&#32;&#32;&#32;
+124 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;((iterationCount&#32;&lt;&#32;maxIterations)&#32;&amp;&amp;&#32;(delta&#32;&gt;&#32;deltaThreshold))
+125 &#32;&#32;&#32;&#32;{
+126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Store&#32;a&#32;copy&#32;of&#32;the&#32;current&#32;working&#32;vector&#32;to&#32;use&#32;for&#32;computing&#32;delta.</emphasis>
+127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;prevVector&#32;=&#32;<link linkend="__s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90">v</link>;
+128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;the&#32;next&#32;value&#32;of&#32;v.</emphasis>
+130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tempMatrix&#32;=&#32;A&#32;-&#32;(eigenValue&#32;*&#32;identityMatrix);
+131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;tempMatrix.<link linkend="_classqb_matrix2_1aaf71c5642111972501f43b1e225b8a2f">Inverse</link>();
+132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90">v</link>&#32;=&#32;tempMatrix&#32;*&#32;<link linkend="__s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90">v</link>;
+133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90">v</link>.Normalize();
+134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;delta.</emphasis>
+136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;delta&#32;=&#32;(<link linkend="__s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90">v</link>&#32;-&#32;prevVector).norm();
+137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Increment&#32;iteration&#32;count.</emphasis>
+139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;iterationCount++;
+140 &#32;&#32;&#32;&#32;}
+141 &#32;&#32;&#32;&#32;
+142 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Return&#32;the&#32;estimated&#32;eigenvector.</emphasis>
+143 &#32;&#32;&#32;&#32;eigenVector&#32;=&#32;<link linkend="__s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90">v</link>;
+144 &#32;&#32;&#32;&#32;
+145 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Set&#32;the&#32;return&#32;status&#32;accordingly.</emphasis>
+146 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(iterationCount&#32;==&#32;maxIterations)
+147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_qb_e_i_g_8h_1abc41bacc5dd2ce027cd016cfab0fd284">QBEIG_MAXITERATIONSEXCEEDED</link>;
+148 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+151 }
+152 
+153 <emphasis role="comment">//&#32;The&#32;qbEIG&#32;function&#32;(power&#32;iteration&#32;method).</emphasis>
+154 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+155 <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_qb_e_i_g_8h_1aecca96c88b78c9535eb65a9cebe3f5d2">qbEIG_PIt</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;&amp;X,&#32;T&#32;&amp;eigenValue,&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;&amp;eigenVector)
+156 {
+157 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Make&#32;a&#32;copy&#32;of&#32;the&#32;input&#32;matrix.</emphasis>
+158 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;inputMatrix&#32;=&#32;X;
+159 
+160 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Verify&#32;that&#32;the&#32;input&#32;matrix&#32;is&#32;square.</emphasis>
+161 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!inputMatrix.<link linkend="_classqb_matrix2_1ae3e42b917e3127cab56b7a48faff25c3">IsSquare</link>())
+162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_qb_e_i_g_8h_1a11d1d7426a4145998cfe6b22c42fb482">QBEIG_MATRIXNOTSQUARE</link>;
+163 &#32;&#32;&#32;&#32;
+164 &#32;&#32;<emphasis role="comment">//&#32;Setup&#32;a&#32;random&#32;number&#32;generator.</emphasis>
+165 &#32;&#32;&#32;&#32;std::random_device&#32;myRandomDevice;
+166 &#32;&#32;std::mt19937&#32;myRandomGenerator(myRandomDevice());
+167 &#32;&#32;&#32;&#32;std::uniform_int_distribution&lt;int&gt;&#32;myDistribution(1.0,&#32;10.0);
+168 &#32;&#32;&#32;&#32;
+169 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;The&#32;number&#32;of&#32;eigenvectors&#32;and&#32;eigenvalues&#32;that&#32;we&#32;will&#32;compute&#32;will&#32;be</emphasis>
+170 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;equal&#32;to&#32;the&#32;number&#32;of&#32;rows&#32;in&#32;the&#32;input&#32;matrix.&#32;*/</emphasis>
+171 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numRows&#32;=&#32;inputMatrix.<link linkend="_classqb_matrix2_1a1626b647c5268a9e64f4651bcc4b8c6e">GetNumRows</link>();
+172 &#32;&#32;&#32;&#32;
+173 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Create&#32;an&#32;identity&#32;matrix&#32;of&#32;the&#32;same&#32;dimensions.</emphasis>
+174 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;identityMatrix(numRows,&#32;numRows);
+175 &#32;&#32;&#32;&#32;identityMatrix.<link linkend="_classqb_matrix2_1af705ca91a707de5e75c6b074ad152f5e">SetToIdentity</link>();
+176 
+177 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;**************************************************************</emphasis>
+178 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Compute&#32;the&#32;eigenvector.</emphasis>
+179 <emphasis role="comment">&#32;&#32;&#32;&#32;**************************************************************&#32;*/</emphasis>
+180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+181 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Create&#32;an&#32;initial&#32;vector,&#32;v.</emphasis>
+182 &#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;<link linkend="__s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90">v</link>(numRows);
+183 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;numRows;&#32;++i)
+184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90">v</link>.SetElement(i,&#32;<emphasis role="keyword">static_cast&lt;</emphasis>T<emphasis role="keyword">&gt;</emphasis>(myDistribution(myRandomGenerator)));
+185 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+186 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Loop&#32;over&#32;the&#32;required&#32;number&#32;of&#32;iterations.</emphasis>
+187 &#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a435c176a02c061b43e19bdf7c86cceae">v1</link>(numRows);
+188 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numIterations&#32;=&#32;1000;
+189 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;numIterations;&#32;++i)
+190 &#32;&#32;&#32;&#32;{
+191 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__opengl__glext_8h_1a435c176a02c061b43e19bdf7c86cceae">v1</link>&#32;=&#32;inputMatrix&#32;*&#32;<link linkend="__s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90">v</link>;
+192 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__opengl__glext_8h_1a435c176a02c061b43e19bdf7c86cceae">v1</link>.Normalize();
+193 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90">v</link>&#32;=&#32;<link linkend="__s_d_l__opengl__glext_8h_1a435c176a02c061b43e19bdf7c86cceae">v1</link>;
+194 &#32;&#32;&#32;&#32;}
+195 
+196 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Store&#32;this&#32;eigenvector.</emphasis>
+197 &#32;&#32;&#32;&#32;eigenVector&#32;=&#32;<link linkend="__s_d_l__opengl__glext_8h_1a435c176a02c061b43e19bdf7c86cceae">v1</link>;
+198 &#32;&#32;&#32;&#32;
+199 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;**************************************************************</emphasis>
+200 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Compute&#32;the&#32;eigenvalue&#32;corresponding&#32;to&#32;this&#32;eigenvector.</emphasis>
+201 <emphasis role="comment">&#32;&#32;&#32;&#32;**************************************************************&#32;*/</emphasis>&#32;&#32;&#32;
+202 &#32;&#32;&#32;&#32;
+203 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;the&#32;cumulative&#32;sum.</emphasis>
+204 &#32;&#32;&#32;&#32;T&#32;cumulativeSum&#32;=&#32;<emphasis role="keyword">static_cast&lt;</emphasis>T<emphasis role="keyword">&gt;</emphasis>(0.0);
+205 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=1;&#32;i&lt;numRows;&#32;++i)
+206 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cumulativeSum&#32;+=&#32;inputMatrix.<link linkend="_classqb_matrix2_1a62ddf209105dffe6133461b273a7309f">GetElement</link>(0,i)&#32;*&#32;<link linkend="__s_d_l__opengl__glext_8h_1a435c176a02c061b43e19bdf7c86cceae">v1</link>.GetElement(i);
+207 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+208 &#32;&#32;&#32;&#32;eigenValue&#32;=&#32;(cumulativeSum&#32;/&#32;<link linkend="__s_d_l__opengl__glext_8h_1a435c176a02c061b43e19bdf7c86cceae">v1</link>.GetElement(0))&#32;+&#32;inputMatrix.<link linkend="_classqb_matrix2_1a62ddf209105dffe6133461b273a7309f">GetElement</link>(0,0);
+209 
+210 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+211 }
+212 
+213 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

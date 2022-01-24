@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__test__fuzzer_8h_source" xml:lang="en-US">
+<title>SDL_test_fuzzer.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_test_fuzzer.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+30 <emphasis role="comment">/*</emphasis>
+31 <emphasis role="comment"></emphasis>
+32 <emphasis role="comment">&#32;&#32;Data&#32;generators&#32;for&#32;fuzzing&#32;test&#32;data&#32;in&#32;a&#32;reproducible&#32;way.</emphasis>
+33 <emphasis role="comment"></emphasis>
+34 <emphasis role="comment">*/</emphasis>
+35 
+36 <emphasis role="preprocessor">#ifndef&#32;SDL_test_fuzzer_h_</emphasis>
+37 <emphasis role="preprocessor">#define&#32;SDL_test_fuzzer_h_</emphasis>
+38 
+39 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+40 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+41 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+42 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+43 <emphasis role="preprocessor">#endif</emphasis>
+44 
+45 
+46 <emphasis role="comment">/*</emphasis>
+47 <emphasis role="comment">&#32;&#32;Based&#32;on&#32;GSOC&#32;code&#32;by&#32;Markus&#32;Kauppila&#32;&lt;markus.kauppila@gmail.com&gt;</emphasis>
+48 <emphasis role="comment">*/</emphasis>
+49 
+50 
+63 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__s_d_l__test__fuzzer_8h_1a623db129ea615326bed457ebb9703c1e">SDLTest_FuzzerInit</link>(<link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link>&#32;execKey);
+64 
+65 
+71 <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link>&#32;<link linkend="__s_d_l__test__fuzzer_8h_1ac8dedcebddb993c4a5c86fb914133289">SDLTest_RandomUint8</link>(<emphasis role="keywordtype">void</emphasis>);
+72 
+78 <link linkend="__s_d_l__stdinc_8h_1a5fc98623306a32e69eaab63e89e1d138">Sint8</link>&#32;<link linkend="__s_d_l__test__fuzzer_8h_1ac4988f65c0b1e921ac6a498ba9b9150a">SDLTest_RandomSint8</link>(<emphasis role="keywordtype">void</emphasis>);
+79 
+80 
+86 <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="__s_d_l__test__fuzzer_8h_1a3eceb16e97b4c4c5143904c36ba3a3d5">SDLTest_RandomUint16</link>(<emphasis role="keywordtype">void</emphasis>);
+87 
+93 <link linkend="__s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5">Sint16</link>&#32;<link linkend="__s_d_l__test__fuzzer_8h_1aaf6c560d87e5c01b638b9072a85369aa">SDLTest_RandomSint16</link>(<emphasis role="keywordtype">void</emphasis>);
+94 
+95 
+101 <link linkend="__s_d_l__stdinc_8h_1a7a90b941db9d4582e9ad7abb9940ff7e">Sint32</link>&#32;<link linkend="__s_d_l__test__fuzzer_8h_1a26976cb8f4e44aec5e83c90b900e7ae0">SDLTest_RandomSint32</link>(<emphasis role="keywordtype">void</emphasis>);
+102 
+103 
+109 <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="__s_d_l__test__fuzzer_8h_1a853884a6887973eb5072f7a6be20f51e">SDLTest_RandomUint32</link>(<emphasis role="keywordtype">void</emphasis>);
+110 
+116 <link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link>&#32;<link linkend="__s_d_l__test__fuzzer_8h_1a3c9b42462ea1d24552306004338f7d32">SDLTest_RandomUint64</link>(<emphasis role="keywordtype">void</emphasis>);
+117 
+118 
+124 <link linkend="__s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</link>&#32;<link linkend="__s_d_l__test__fuzzer_8h_1ab503ec55dfd34e9c491f83bfff374bdb">SDLTest_RandomSint64</link>(<emphasis role="keywordtype">void</emphasis>);
+125 
+129 <emphasis role="keywordtype">float</emphasis>&#32;<link linkend="__s_d_l__test__fuzzer_8h_1a2f9e47894c17386a36793504fc11de85">SDLTest_RandomUnitFloat</link>(<emphasis role="keywordtype">void</emphasis>);
+130 
+134 <emphasis role="keywordtype">double</emphasis>&#32;<link linkend="__s_d_l__test__fuzzer_8h_1a9f3159422e964a51f17243ce86b6eef6">SDLTest_RandomUnitDouble</link>(<emphasis role="keywordtype">void</emphasis>);
+135 
+140 <emphasis role="keywordtype">float</emphasis>&#32;<link linkend="__s_d_l__test__fuzzer_8h_1a65a242a0a22e7cbea6e9081567fdd056">SDLTest_RandomFloat</link>(<emphasis role="keywordtype">void</emphasis>);
+141 
+146 <emphasis role="keywordtype">double</emphasis>&#32;<link linkend="__s_d_l__test__fuzzer_8h_1a31167fd1a3b922f62896210dbe30c32c">SDLTest_RandomDouble</link>(<emphasis role="keywordtype">void</emphasis>);
+147 
+167 <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link>&#32;<link linkend="__s_d_l__test__fuzzer_8h_1a129a58a37dc23847b8257569bf56d16f">SDLTest_RandomUint8BoundaryValue</link>(<link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link>&#32;boundary1,&#32;<link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link>&#32;boundary2,&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;validDomain);
+168 
+188 <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="__s_d_l__test__fuzzer_8h_1a3710dba14db764872949252f558429ba">SDLTest_RandomUint16BoundaryValue</link>(<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;boundary1,&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;boundary2,&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;validDomain);
+189 
+209 <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="__s_d_l__test__fuzzer_8h_1a9e718145eaf96f611cd67fc530473e3a">SDLTest_RandomUint32BoundaryValue</link>(<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;boundary1,&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;boundary2,&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;validDomain);
+210 
+230 <link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link>&#32;<link linkend="__s_d_l__test__fuzzer_8h_1abc660d9b04554c8c2717325224b88b6a">SDLTest_RandomUint64BoundaryValue</link>(<link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link>&#32;boundary1,&#32;<link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link>&#32;boundary2,&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;validDomain);
+231 
+251 <link linkend="__s_d_l__stdinc_8h_1a5fc98623306a32e69eaab63e89e1d138">Sint8</link>&#32;<link linkend="__s_d_l__test__fuzzer_8h_1a09ec06adf1ca58afa5283be6b4f5fdfc">SDLTest_RandomSint8BoundaryValue</link>(<link linkend="__s_d_l__stdinc_8h_1a5fc98623306a32e69eaab63e89e1d138">Sint8</link>&#32;boundary1,&#32;<link linkend="__s_d_l__stdinc_8h_1a5fc98623306a32e69eaab63e89e1d138">Sint8</link>&#32;boundary2,&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;validDomain);
+252 
+253 
+273 <link linkend="__s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5">Sint16</link>&#32;<link linkend="__s_d_l__test__fuzzer_8h_1ae11fb12560b1a9180b1645d6ca1c6af6">SDLTest_RandomSint16BoundaryValue</link>(<link linkend="__s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5">Sint16</link>&#32;boundary1,&#32;<link linkend="__s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5">Sint16</link>&#32;boundary2,&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;validDomain);
+274 
+294 <link linkend="__s_d_l__stdinc_8h_1a7a90b941db9d4582e9ad7abb9940ff7e">Sint32</link>&#32;<link linkend="__s_d_l__test__fuzzer_8h_1ab17fbfddfa253bb3d64412000488fc07">SDLTest_RandomSint32BoundaryValue</link>(<link linkend="__s_d_l__stdinc_8h_1a7a90b941db9d4582e9ad7abb9940ff7e">Sint32</link>&#32;boundary1,&#32;<link linkend="__s_d_l__stdinc_8h_1a7a90b941db9d4582e9ad7abb9940ff7e">Sint32</link>&#32;boundary2,&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;validDomain);
+295 
+315 <link linkend="__s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</link>&#32;<link linkend="__s_d_l__test__fuzzer_8h_1a0b6a8004aba7d72595f80540fa0b6727">SDLTest_RandomSint64BoundaryValue</link>(<link linkend="__s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</link>&#32;boundary1,&#32;<link linkend="__s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</link>&#32;boundary2,&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;validDomain);
+316 
+317 
+329 <link linkend="__s_d_l__stdinc_8h_1a7a90b941db9d4582e9ad7abb9940ff7e">Sint32</link>&#32;<link linkend="__s_d_l__test__fuzzer_8h_1a5c81f42e213ad1608cf5f29669eb8521">SDLTest_RandomIntegerInRange</link>(<link linkend="__s_d_l__stdinc_8h_1a7a90b941db9d4582e9ad7abb9940ff7e">Sint32</link>&#32;min,&#32;<link linkend="__s_d_l__stdinc_8h_1a7a90b941db9d4582e9ad7abb9940ff7e">Sint32</link>&#32;max);
+330 
+331 
+341 <emphasis role="keywordtype">char</emphasis>&#32;*&#32;<link linkend="__s_d_l__test__fuzzer_8h_1af897306a58db0f68e053fc28cc28e078">SDLTest_RandomAsciiString</link>(<emphasis role="keywordtype">void</emphasis>);
+342 
+343 
+355 <emphasis role="keywordtype">char</emphasis>&#32;*&#32;<link linkend="__s_d_l__test__fuzzer_8h_1ab945d938652f887b7389afabc5442588">SDLTest_RandomAsciiStringWithMaximumLength</link>(<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a5c0738fe9fcce8c6b2d54e2a3b951a97">maxLength</link>);
+356 
+357 
+369 <emphasis role="keywordtype">char</emphasis>&#32;*&#32;<link linkend="__s_d_l__test__fuzzer_8h_1aa0c9c462a0cb9bbfe49e38b53821e341">SDLTest_RandomAsciiStringOfSize</link>(<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a3d1e3edfcf61ca2d831883e1afbad89e">size</link>);
+370 
+376 <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__test__fuzzer_8h_1a2a0e63a6e02a55141edbdfa53b201c9b">SDLTest_GetFuzzerInvocationCount</link>(<emphasis role="keywordtype">void</emphasis>);
+377 
+378 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+379 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+380 }
+381 <emphasis role="preprocessor">#endif</emphasis>
+382 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+383 
+384 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_test_fuzzer_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+385 
+386 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

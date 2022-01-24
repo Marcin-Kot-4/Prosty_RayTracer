@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__test__md5_8h" xml:lang="en-US">
+<title>D:/RayTracing/include/SDL_test_md5.h File Reference</title>
+<indexterm><primary>D:/RayTracing/include/SDL_test_md5.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;begin_code.h&quot;
+#include &quot;close_code.h&quot;
+</programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_s_d_l_test___md5_context">SDLTest_Md5Context</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef unsigned long int <link linkend="__s_d_l__test__md5_8h_1a2bdcfd1b3373be8191c70eb4a7cb84c6">MD5UINT4</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="__s_d_l__test__md5_8h_1add801a5f4162ed3bb0211d0e7b5829ec">SDLTest_Md5Init</link> (<link linkend="_struct_s_d_l_test___md5_context">SDLTest_Md5Context</link> *mdContext)</para>
+
+<para>initialize the context </para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="__s_d_l__test__md5_8h_1a435607e2ee1bf1ce09686ef97c21a7d5">SDLTest_Md5Update</link> (<link linkend="_struct_s_d_l_test___md5_context">SDLTest_Md5Context</link> *mdContext, unsigned char *inBuf, unsigned int inLen)</para>
+
+<para>update digest from variable length data </para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="__s_d_l__test__md5_8h_1a3f0bd1fb177aea21d09b3ff7b3323e77">SDLTest_Md5Final</link> (<link linkend="_struct_s_d_l_test___md5_context">SDLTest_Md5Context</link> *mdContext)</para>
+
+<para>complete digest computation </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Include file for SDL test framework.</para>
+
+<para>This code is a part of the SDL2_test library, not the main SDL library. </para>
+</section>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="__s_d_l__test__md5_8h_1a2bdcfd1b3373be8191c70eb4a7cb84c6"/><section>
+    <title>MD5UINT4</title>
+<indexterm><primary>MD5UINT4</primary><secondary>SDL_test_md5.h</secondary></indexterm>
+<indexterm><primary>SDL_test_md5.h</primary><secondary>MD5UINT4</secondary></indexterm>
+<para><computeroutput>typedef unsigned long int <link linkend="__s_d_l__test__md5_8h_1a2bdcfd1b3373be8191c70eb4a7cb84c6">MD5UINT4</link></computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__s_d_l__test__md5_8h_1a3f0bd1fb177aea21d09b3ff7b3323e77"/><section>
+    <title>SDLTest_Md5Final()</title>
+<indexterm><primary>SDLTest_Md5Final</primary><secondary>SDL_test_md5.h</secondary></indexterm>
+<indexterm><primary>SDL_test_md5.h</primary><secondary>SDLTest_Md5Final</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> SDLTest_Md5Final (<link linkend="_struct_s_d_l_test___md5_context">SDLTest_Md5Context</link> * mdContext)</computeroutput></para><para>
+
+<para>complete digest computation </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>mdContext</entry><entry>
+<para>pointer to context variable</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                Note: The function terminates the message-digest computation and ends with the desired message digest in mdContext.digest[0..15]. Always call before using the digest[] variable. </para>
+</section>
+<anchor xml:id="__s_d_l__test__md5_8h_1add801a5f4162ed3bb0211d0e7b5829ec"/><section>
+    <title>SDLTest_Md5Init()</title>
+<indexterm><primary>SDLTest_Md5Init</primary><secondary>SDL_test_md5.h</secondary></indexterm>
+<indexterm><primary>SDL_test_md5.h</primary><secondary>SDLTest_Md5Init</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> SDLTest_Md5Init (<link linkend="_struct_s_d_l_test___md5_context">SDLTest_Md5Context</link> * mdContext)</computeroutput></para><para>
+
+<para>initialize the context </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>mdContext</entry><entry>
+<para>pointer to context variable</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                Note: The function initializes the message-digest context mdContext. Call before each new use of the context - all fields are set to zero. </para>
+</section>
+<anchor xml:id="__s_d_l__test__md5_8h_1a435607e2ee1bf1ce09686ef97c21a7d5"/><section>
+    <title>SDLTest_Md5Update()</title>
+<indexterm><primary>SDLTest_Md5Update</primary><secondary>SDL_test_md5.h</secondary></indexterm>
+<indexterm><primary>SDL_test_md5.h</primary><secondary>SDLTest_Md5Update</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> SDLTest_Md5Update (<link linkend="_struct_s_d_l_test___md5_context">SDLTest_Md5Context</link> * mdContext, unsigned char * inBuf, unsigned int inLen)</computeroutput></para><para>
+
+<para>update digest from variable length data </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>mdContext</entry><entry>
+<para>pointer to context variable </para>
+</entry>
+                            </row>
+                            <row>
+<entry>inBuf</entry><entry>
+<para>pointer to data array/string </para>
+</entry>
+                            </row>
+                            <row>
+<entry>inLen</entry><entry>
+<para>length of data array/string</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                Note: The function updates the message-digest context to account for the presence of each of the characters inBuf[0..inLen-1] in the message whose digest is being computed. </para>
+</section>
+</section>
+</section>

@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e-visualc_8md" kind="file" language="Markdown">
+    <compoundname>README-visualc.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">Using<sp/>SDL<sp/>with<sp/>Microsoft<sp/>Visual<sp/>C++</highlight></codeline>
+<codeline><highlight class="normal">===================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>by<sp/>[Lion<sp/>Kimbro](mailto:snowlion@sprynet.com)<sp/>with<sp/>additions<sp/>by<sp/>[James<sp/>Turk](mailto:james@conceptofzero.net)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>either<sp/>use<sp/>the<sp/>precompiled<sp/>libraries<sp/>from<sp/>the<sp/>[SDL](https://www.libsdl.org/download.php)<sp/>web<sp/>site,<sp/>or<sp/>you<sp/>can<sp/>build<sp/>SDL</highlight></codeline>
+<codeline><highlight class="normal">yourself.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Building<sp/>SDL</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">0.<sp/>To<sp/>build<sp/>SDL,<sp/>your<sp/>machine<sp/>must,<sp/>at<sp/>a<sp/>minimum,<sp/>have<sp/>the<sp/>DirectX9.0c<sp/>SDK<sp/>installed.<sp/>It<sp/>may<sp/>or<sp/>may<sp/>not<sp/>be<sp/>retrievable<sp/>from</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>[Microsoft](https://www.microsoft.com)<sp/>website,<sp/>so<sp/>you<sp/>might<sp/>need<sp/>to<sp/>locate<sp/>it<sp/>[online](https://duckduckgo.com/?q=directx9.0c+sdk+download&amp;t=h_&amp;ia=web).</highlight></codeline>
+<codeline><highlight class="normal">_Editor&apos;s<sp/>note:<sp/>I&apos;ve<sp/>been<sp/>able<sp/>to<sp/>successfully<sp/>build<sp/>SDL<sp/>using<sp/>Visual<sp/>Studio<sp/>2019<sp/>**without**<sp/>the<sp/>DX9.0c<sp/>SDK_</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>Open<sp/>the<sp/>Visual<sp/>Studio<sp/>solution<sp/>file<sp/>at<sp/>`./VisualC/SDL.sln`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">2.<sp/>Your<sp/>IDE<sp/>will<sp/>likely<sp/>prompt<sp/>you<sp/>to<sp/>upgrade<sp/>this<sp/>solution<sp/>file<sp/>to<sp/>whatever<sp/>later<sp/>version<sp/>of<sp/>the<sp/>IDE<sp/>you&apos;re<sp/>using.<sp/>In<sp/>the<sp/>`Retarget<sp/>Projects`<sp/>dialog,</highlight></codeline>
+<codeline><highlight class="normal">all<sp/>of<sp/>the<sp/>affected<sp/>project<sp/>files<sp/>should<sp/>be<sp/>checked<sp/>allowing<sp/>you<sp/>to<sp/>use<sp/>the<sp/>latest<sp/>`Windows<sp/>SDK<sp/>Version`<sp/>you<sp/>have<sp/>installed,<sp/>along<sp/>with</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>`Platform<sp/>Toolset`.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>choose<sp/>*NOT*<sp/>to<sp/>upgrade<sp/>to<sp/>use<sp/>the<sp/>latest<sp/>`Windows<sp/>SDK<sp/>Version`<sp/>or<sp/>`Platform<sp/>Toolset`,<sp/>then<sp/>you&apos;ll<sp/>need<sp/>the<sp/>`Visual<sp/>Studio<sp/>2010<sp/>Platform<sp/>Toolset`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">3.<sp/>Build<sp/>the<sp/>`.dll`<sp/>and<sp/>`.lib`<sp/>files<sp/>by<sp/>right<sp/>clicking<sp/>on<sp/>each<sp/>project<sp/>in<sp/>turn<sp/>(Projects<sp/>are<sp/>listed<sp/>in<sp/>the<sp/>_Workspace_<sp/></highlight></codeline>
+<codeline><highlight class="normal">panel<sp/>in<sp/>the<sp/>_FileView_<sp/>tab),<sp/>and<sp/>selecting<sp/>`Build`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>may<sp/>get<sp/>a<sp/>few<sp/>warnings,<sp/>but<sp/>you<sp/>should<sp/>not<sp/>get<sp/>any<sp/>errors.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Later,<sp/>we<sp/>will<sp/>refer<sp/>to<sp/>the<sp/>following<sp/>`.lib`<sp/>and<sp/>`.dll`<sp/>files<sp/>that<sp/>have<sp/>just<sp/>been<sp/>generated:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/><sp/>`./VisualC/Win32/Debug/SDL2.dll`<sp/>or<sp/>`./VisualC/Win32/Release/SDL2.dll`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/><sp/><sp/>`./VisualC/Win32/Debug/SDL2.lib`<sp/>or<sp/>`./VisualC/Win32/Release/SDL2.lib`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/><sp/><sp/>`./VisualC/Win32/Debug/SDL2main.lib`<sp/>or<sp/>`./VisualC/Win32/Release/SDL2main.lib`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_Note<sp/>for<sp/>the<sp/>`x64`<sp/>versions,<sp/>just<sp/>replace<sp/>`Win32`<sp/>in<sp/>the<sp/>path<sp/>with<sp/>`x64`_</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Creating<sp/>a<sp/>Project<sp/>with<sp/>SDL</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Create<sp/>a<sp/>project<sp/>as<sp/>a<sp/>`Win32<sp/>Application`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Create<sp/>a<sp/>C++<sp/>file<sp/>for<sp/>your<sp/>project.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Set<sp/>the<sp/>C<sp/>runtime<sp/>to<sp/>`Multi-threaded<sp/>DLL`<sp/>in<sp/>the<sp/>menu:</highlight></codeline>
+<codeline><highlight class="normal">`Project|Settings|C/C++<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tab|Code<sp/>Generation|Runtime<sp/>Library<sp/>`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Add<sp/>the<sp/>SDL<sp/>`include`<sp/>directory<sp/>to<sp/>your<sp/>list<sp/>of<sp/>includes<sp/>in<sp/>the<sp/>menu:</highlight></codeline>
+<codeline><highlight class="normal">`Project|Settings|C/C++<sp/>tab|Preprocessor|Additional<sp/>include<sp/>directories<sp/>`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*VC7<sp/>Specific:<sp/>Instead<sp/>of<sp/>doing<sp/>this,<sp/>I<sp/>find<sp/>it<sp/>easier<sp/>to<sp/>add<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">include<sp/>and<sp/>library<sp/>directories<sp/>to<sp/>the<sp/>list<sp/>that<sp/>VC7<sp/>keeps.<sp/>Do<sp/>this<sp/>by</highlight></codeline>
+<codeline><highlight class="normal">selecting<sp/>Tools|Options|Projects|VC++<sp/>Directories<sp/>and<sp/>under<sp/>the<sp/>&quot;Show</highlight></codeline>
+<codeline><highlight class="normal">Directories<sp/>For:&quot;<sp/>dropbox<sp/>select<sp/>&quot;Include<sp/>Files&quot;,<sp/>and<sp/>click<sp/>the<sp/>&quot;New</highlight></codeline>
+<codeline><highlight class="normal">Directory<sp/>Icon&quot;<sp/>and<sp/>add<sp/>the<sp/>[SDLROOT]\\include<sp/>directory<sp/>(e.g.<sp/>If<sp/>you</highlight></codeline>
+<codeline><highlight class="normal">installed<sp/>to<sp/>c:\\SDL\\<sp/>add<sp/>c:\\SDL\\include).<sp/>Proceed<sp/>to<sp/>change<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">dropbox<sp/>selection<sp/>to<sp/>&quot;Library<sp/>Files&quot;<sp/>and<sp/>add<sp/>[SDLROOT]\\lib.*</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>&quot;include<sp/>directory&quot;<sp/>I<sp/>am<sp/>referring<sp/>to<sp/>is<sp/>the<sp/>`./include`<sp/>folder.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Now<sp/>we&apos;re<sp/>going<sp/>to<sp/>use<sp/>the<sp/>files<sp/>that<sp/>we<sp/>had<sp/>created<sp/>earlier<sp/>in<sp/>the<sp/>*Build<sp/>SDL*<sp/>step.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Copy<sp/>the<sp/>following<sp/>file<sp/>into<sp/>your<sp/>Project<sp/>directory:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/><sp/>`SDL2.dll`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Add<sp/>the<sp/>following<sp/>files<sp/>to<sp/>your<sp/>project<sp/>(It<sp/>is<sp/>not<sp/>necessary<sp/>to<sp/>copy<sp/>them<sp/>to<sp/>your<sp/>project<sp/>directory):</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/><sp/><sp/>`SDL2.lib`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/><sp/><sp/>`SDL2main.lib`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>add<sp/>them<sp/>to<sp/>your<sp/>project,<sp/>right<sp/>click<sp/>on<sp/>your<sp/>project,<sp/>and<sp/>select</highlight></codeline>
+<codeline><highlight class="normal">`Add<sp/>files<sp/>to<sp/>project`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Instead<sp/>of<sp/>adding<sp/>the<sp/>files<sp/>to<sp/>your<sp/>project,<sp/>it<sp/>is<sp/>more<sp/>desirable<sp/>to<sp/>add<sp/>them<sp/>to<sp/>the<sp/>linker<sp/>options:<sp/>Project|Properties|Linker|Command<sp/>Line</highlight></codeline>
+<codeline><highlight class="normal">and<sp/>type<sp/>the<sp/>names<sp/>of<sp/>the<sp/>libraries<sp/>to<sp/>link<sp/>with<sp/>in<sp/>the<sp/>&quot;Additional<sp/>Options:&quot;<sp/>box.<sp/>Note:<sp/>This<sp/>must<sp/>be<sp/>done<sp/>for<sp/>each<sp/>build<sp/>configuration</highlight></codeline>
+<codeline><highlight class="normal">(e.g.<sp/>Release,Debug).**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Hello<sp/>SDL2</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Here&apos;s<sp/>a<sp/>sample<sp/>SDL<sp/>snippet<sp/>to<sp/>verify<sp/>everything<sp/>is<sp/>setup<sp/>in<sp/>your<sp/>IDE:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>#include<sp/>&quot;SDL.h&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>main(<sp/>int<sp/>argc,<sp/>char*<sp/>argv[]<sp/>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>int<sp/>WIDTH<sp/>=<sp/>640;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>int<sp/>HEIGHT<sp/>=<sp/>480;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_Window*<sp/>window<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_Renderer*<sp/>renderer<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_Init(SDL_INIT_VIDEO);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>window<sp/>=<sp/>SDL_CreateWindow(&quot;SDL2<sp/>Test&quot;,<sp/>SDL_WINDOWPOS_UNDEFINED,<sp/>SDL_WINDOWPOS_UNDEFINED,<sp/>WIDTH,<sp/>HEIGHT,<sp/>SDL_WINDOW_SHOWN);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>renderer<sp/>=<sp/>SDL_CreateRenderer(window,<sp/>-1,<sp/>SDL_RENDERER_ACCELERATED<sp/>|<sp/>SDL_RENDERER_PRESENTVSYNC);</highlight></codeline>
+<codeline><highlight class="normal"><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_DestroyRenderer(renderer);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_DestroyWindow(window);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_Quit();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/>```<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>That&apos;s<sp/>it!</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">I<sp/>hope<sp/>that<sp/>this<sp/>document<sp/>has<sp/>helped<sp/>you<sp/>get<sp/>through<sp/>the<sp/>most<sp/>difficult<sp/>part<sp/>of<sp/>using<sp/>the<sp/>SDL:<sp/>installing<sp/>it.<sp/></highlight></codeline>
+<codeline><highlight class="normal">Suggestions<sp/>for<sp/>improvements<sp/>should<sp/>be<sp/>posted<sp/>to<sp/>the<sp/>[Github<sp/>Issues](https://github.com/libsdl-org/SDL/issues).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Credits</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Thanks<sp/>to<sp/>[Paulus<sp/>Esterhazy](mailto:pesterhazy@gmx.net),<sp/>for<sp/>the<sp/>work<sp/>on<sp/>VC++<sp/>port.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>document<sp/>was<sp/>originally<sp/>called<sp/>&quot;VisualC.txt&quot;,<sp/>and<sp/>was<sp/>written<sp/>by<sp/>[Sam<sp/>Lantinga](mailto:slouken@libsdl.org).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Later,<sp/>it<sp/>was<sp/>converted<sp/>to<sp/>HTML<sp/>and<sp/>expanded<sp/>into<sp/>the<sp/>document<sp/>that<sp/>you<sp/>see<sp/>today<sp/>by<sp/>[Lion<sp/>Kimbro](mailto:snowlion@sprynet.com).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Minor<sp/>Fixes<sp/>and<sp/>Visual<sp/>C++<sp/>7<sp/>Information<sp/>(In<sp/>Green)<sp/>was<sp/>added<sp/>by<sp/>[James<sp/>Turk](mailto:james@conceptofzero.net)</highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/docs/README-visualc.md"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,481 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="class_r_t_1_1_camera" kind="class" language="C++" prot="public">
+    <compoundname>RT::Camera</compoundname>
+    <includes refid="camera_8h" local="no">camera.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_r_t_1_1_camera_1aea1097508eca6f226209cc0225e71ed3" prot="private" static="no" mutable="no">
+        <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt;</type>
+        <definition>qbVector&lt;double&gt; RT::Camera::m_cameraPosition</definition>
+        <argsstring></argsstring>
+        <name>m_cameraPosition</name>
+        <qualifiedname>RT::Camera::m_cameraPosition</qualifiedname>
+        <initializer>{3}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/camera.h" line="57" column="18" bodyfile="D:/RayTracing/RayTrace/camera.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_r_t_1_1_camera_1af2769327e3bb6f8abdd25a543137550d" prot="private" static="no" mutable="no">
+        <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt;</type>
+        <definition>qbVector&lt;double&gt; RT::Camera::m_cameraLookAt</definition>
+        <argsstring></argsstring>
+        <name>m_cameraLookAt</name>
+        <qualifiedname>RT::Camera::m_cameraLookAt</qualifiedname>
+        <initializer>{3}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/camera.h" line="58" column="18" bodyfile="D:/RayTracing/RayTrace/camera.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_r_t_1_1_camera_1afc95ebefa340375dd0250cb715a5ab9d" prot="private" static="no" mutable="no">
+        <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt;</type>
+        <definition>qbVector&lt;double&gt; RT::Camera::m_cameraUp</definition>
+        <argsstring></argsstring>
+        <name>m_cameraUp</name>
+        <qualifiedname>RT::Camera::m_cameraUp</qualifiedname>
+        <initializer>{3}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/camera.h" line="59" column="18" bodyfile="D:/RayTracing/RayTrace/camera.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_r_t_1_1_camera_1a93dc0440489310d7db34e8b8298e46ee" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double RT::Camera::m_cameraLength</definition>
+        <argsstring></argsstring>
+        <name>m_cameraLength</name>
+        <qualifiedname>RT::Camera::m_cameraLength</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/camera.h" line="60" column="16" bodyfile="D:/RayTracing/RayTrace/camera.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_r_t_1_1_camera_1a89ecd3e73f461279f48cf952ddf8751d" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double RT::Camera::m_cameraHorzSize</definition>
+        <argsstring></argsstring>
+        <name>m_cameraHorzSize</name>
+        <qualifiedname>RT::Camera::m_cameraHorzSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/camera.h" line="61" column="16" bodyfile="D:/RayTracing/RayTrace/camera.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_r_t_1_1_camera_1af6765503e150e947d7bf6b5dac67420e" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double RT::Camera::m_cameraAspectRatio</definition>
+        <argsstring></argsstring>
+        <name>m_cameraAspectRatio</name>
+        <qualifiedname>RT::Camera::m_cameraAspectRatio</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/camera.h" line="62" column="16" bodyfile="D:/RayTracing/RayTrace/camera.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_r_t_1_1_camera_1a78d267ef7bd540ba9b5590d06f6efae6" prot="private" static="no" mutable="no">
+        <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt;</type>
+        <definition>qbVector&lt;double&gt; RT::Camera::m_alignmentVector</definition>
+        <argsstring></argsstring>
+        <name>m_alignmentVector</name>
+        <qualifiedname>RT::Camera::m_alignmentVector</qualifiedname>
+        <initializer>{3}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/camera.h" line="65" column="18" bodyfile="D:/RayTracing/RayTrace/camera.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_r_t_1_1_camera_1a38a1ef184e9f03dd9a87a08c19fbe948" prot="private" static="no" mutable="no">
+        <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt;</type>
+        <definition>qbVector&lt;double&gt; RT::Camera::m_projectionScreenU</definition>
+        <argsstring></argsstring>
+        <name>m_projectionScreenU</name>
+        <qualifiedname>RT::Camera::m_projectionScreenU</qualifiedname>
+        <initializer>{3}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/camera.h" line="66" column="18" bodyfile="D:/RayTracing/RayTrace/camera.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_r_t_1_1_camera_1a6cd657c20c2809820156dc4e0bf674bd" prot="private" static="no" mutable="no">
+        <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt;</type>
+        <definition>qbVector&lt;double&gt; RT::Camera::m_projectionScreenV</definition>
+        <argsstring></argsstring>
+        <name>m_projectionScreenV</name>
+        <qualifiedname>RT::Camera::m_projectionScreenV</qualifiedname>
+        <initializer>{3}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/camera.h" line="67" column="18" bodyfile="D:/RayTracing/RayTrace/camera.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_r_t_1_1_camera_1a6131909772f8ca7d80ab2de106c31430" prot="private" static="no" mutable="no">
+        <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt;</type>
+        <definition>qbVector&lt;double&gt; RT::Camera::m_projectionScreenCentre</definition>
+        <argsstring></argsstring>
+        <name>m_projectionScreenCentre</name>
+        <qualifiedname>RT::Camera::m_projectionScreenCentre</qualifiedname>
+        <initializer>{3}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/camera.h" line="68" column="18" bodyfile="D:/RayTracing/RayTrace/camera.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_r_t_1_1_camera_1a1513de7af55db310b04aa83f6cd747e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RT::Camera::Camera</definition>
+        <argsstring>()</argsstring>
+        <name>Camera</name>
+        <qualifiedname>RT::Camera::Camera</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/camera.h" line="13" column="9" bodyfile="D:/RayTracing/RayTrace/camera.cpp" bodystart="6" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_camera_1a7a08c60fb7a07929897e3148e798976e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        <definition>void RT::Camera::SetPosition</definition>
+        <argsstring>(const qbVector&lt; double &gt; &amp;newPosition)</argsstring>
+        <name>SetPosition</name>
+        <qualifiedname>RT::Camera::SetPosition</qualifiedname>
+        <param>
+          <type>const <ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>newPosition</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/camera.h" line="16" column="14" bodyfile="D:/RayTracing/RayTrace/camera.cpp" bodystart="15" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_camera_1a303252f454230eb67fef370256aa806f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        <definition>void RT::Camera::SetLookAt</definition>
+        <argsstring>(const qbVector&lt; double &gt; &amp;newLookAt)</argsstring>
+        <name>SetLookAt</name>
+        <qualifiedname>RT::Camera::SetLookAt</qualifiedname>
+        <param>
+          <type>const <ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>newLookAt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/camera.h" line="17" column="14" bodyfile="D:/RayTracing/RayTrace/camera.cpp" bodystart="19" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_camera_1ab60600a74e7a9f82ea763321a3f7210e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        <definition>void RT::Camera::SetUp</definition>
+        <argsstring>(const qbVector&lt; double &gt; &amp;upVector)</argsstring>
+        <name>SetUp</name>
+        <qualifiedname>RT::Camera::SetUp</qualifiedname>
+        <param>
+          <type>const <ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>upVector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/camera.h" line="18" column="14" bodyfile="D:/RayTracing/RayTrace/camera.cpp" bodystart="23" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_camera_1af56677571336b038e942df0dfc4e4090" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        <definition>void RT::Camera::SetLength</definition>
+        <argsstring>(double newLength)</argsstring>
+        <name>SetLength</name>
+        <qualifiedname>RT::Camera::SetLength</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>newLength</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/camera.h" line="21" column="14" bodyfile="D:/RayTracing/RayTrace/camera.cpp" bodystart="27" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_camera_1aad8f50f59189b1ddf6b36e19a957c2ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        <definition>void RT::Camera::SetHorzSize</definition>
+        <argsstring>(double newSize)</argsstring>
+        <name>SetHorzSize</name>
+        <qualifiedname>RT::Camera::SetHorzSize</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>newSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/camera.h" line="24" column="14" bodyfile="D:/RayTracing/RayTrace/camera.cpp" bodystart="31" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_camera_1a2b782b4aab7480489298d78fa602d06f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        <definition>void RT::Camera::SetAspect</definition>
+        <argsstring>(double newAspectRatio)</argsstring>
+        <name>SetAspect</name>
+        <qualifiedname>RT::Camera::SetAspect</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>newAspectRatio</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/camera.h" line="27" column="14" bodyfile="D:/RayTracing/RayTrace/camera.cpp" bodystart="35" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_camera_1ae7c3393d671ae6fbf189102b00f14a2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt;</type>
+        <definition>qbVector&lt; double &gt; RT::Camera::GetPosition</definition>
+        <argsstring>()</argsstring>
+        <name>GetPosition</name>
+        <qualifiedname>RT::Camera::GetPosition</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/camera.h" line="30" column="18" bodyfile="D:/RayTracing/RayTrace/camera.cpp" bodystart="39" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_camera_1ab2d684d8ec6c090f969770c81eaed115" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt;</type>
+        <definition>qbVector&lt; double &gt; RT::Camera::GetLookAt</definition>
+        <argsstring>()</argsstring>
+        <name>GetLookAt</name>
+        <qualifiedname>RT::Camera::GetLookAt</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/camera.h" line="31" column="18" bodyfile="D:/RayTracing/RayTrace/camera.cpp" bodystart="43" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_camera_1addf57b743043ff67bf565d573a8f63f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt;</type>
+        <definition>qbVector&lt; double &gt; RT::Camera::GetUp</definition>
+        <argsstring>()</argsstring>
+        <name>GetUp</name>
+        <qualifiedname>RT::Camera::GetUp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/camera.h" line="32" column="18" bodyfile="D:/RayTracing/RayTrace/camera.cpp" bodystart="48" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_camera_1a844fc9bf91008fa5468b1fb37fb273f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt;</type>
+        <definition>qbVector&lt; double &gt; RT::Camera::GetU</definition>
+        <argsstring>()</argsstring>
+        <name>GetU</name>
+        <qualifiedname>RT::Camera::GetU</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/camera.h" line="35" column="18" bodyfile="D:/RayTracing/RayTrace/camera.cpp" bodystart="68" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_camera_1a230e5e96be52db49974ca551aa90b24d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt;</type>
+        <definition>qbVector&lt; double &gt; RT::Camera::GetV</definition>
+        <argsstring>()</argsstring>
+        <name>GetV</name>
+        <qualifiedname>RT::Camera::GetV</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/camera.h" line="36" column="18" bodyfile="D:/RayTracing/RayTrace/camera.cpp" bodystart="73" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_camera_1a7f7066c62259fcea9232bac2ad943770" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt;</type>
+        <definition>qbVector&lt; double &gt; RT::Camera::GetScreenCentre</definition>
+        <argsstring>()</argsstring>
+        <name>GetScreenCentre</name>
+        <qualifiedname>RT::Camera::GetScreenCentre</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/camera.h" line="39" column="18" bodyfile="D:/RayTracing/RayTrace/camera.cpp" bodystart="78" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_camera_1a0799a5aa243b66a7f0172397edf76cea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double RT::Camera::GetLength</definition>
+        <argsstring>()</argsstring>
+        <name>GetLength</name>
+        <qualifiedname>RT::Camera::GetLength</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/camera.h" line="41" column="16" bodyfile="D:/RayTracing/RayTrace/camera.cpp" bodystart="53" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_camera_1aceddd3f90b0a8510f5ae1639f7af0962" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double RT::Camera::GetHorzSize</definition>
+        <argsstring>()</argsstring>
+        <name>GetHorzSize</name>
+        <qualifiedname>RT::Camera::GetHorzSize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/camera.h" line="42" column="16" bodyfile="D:/RayTracing/RayTrace/camera.cpp" bodystart="58" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_camera_1ae65dc2e37298fdf57f500aaf4e41fa88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double RT::Camera::GetAspect</definition>
+        <argsstring>()</argsstring>
+        <name>GetAspect</name>
+        <qualifiedname>RT::Camera::GetAspect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/camera.h" line="43" column="16" bodyfile="D:/RayTracing/RayTrace/camera.cpp" bodystart="63" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_camera_1ab022ad5b3b5c28e4eb016516a39367f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool RT::Camera::GenerateRay</definition>
+        <argsstring>(float proScreenX, float proScreenY, RT::Ray &amp;cameraRay)</argsstring>
+        <name>GenerateRay</name>
+        <qualifiedname>RT::Camera::GenerateRay</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>proScreenX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>proScreenY</declname>
+        </param>
+        <param>
+          <type><ref refid="class_r_t_1_1_ray" kindref="compound">RT::Ray</ref> &amp;</type>
+          <declname>cameraRay</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/camera.h" line="51" column="14" bodyfile="D:/RayTracing/RayTrace/camera.cpp" bodystart="108" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_camera_1ac58d2976470b32493c5645d548e2a0c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        <definition>void RT::Camera::UpdateCameraGeometry</definition>
+        <argsstring>()</argsstring>
+        <name>UpdateCameraGeometry</name>
+        <qualifiedname>RT::Camera::UpdateCameraGeometry</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/camera.h" line="54" column="14" bodyfile="D:/RayTracing/RayTrace/camera.cpp" bodystart="83" bodyend="105"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/RayTracing/RayTrace/camera.h" line="9" column="5" bodyfile="D:/RayTracing/RayTrace/camera.h" bodystart="9" bodyend="69"/>
+    <listofallmembers>
+      <member refid="class_r_t_1_1_camera_1a1513de7af55db310b04aa83f6cd747e6" prot="public" virt="non-virtual"><scope>RT::Camera</scope><name>Camera</name></member>
+      <member refid="class_r_t_1_1_camera_1ab022ad5b3b5c28e4eb016516a39367f9" prot="public" virt="non-virtual"><scope>RT::Camera</scope><name>GenerateRay</name></member>
+      <member refid="class_r_t_1_1_camera_1ae65dc2e37298fdf57f500aaf4e41fa88" prot="public" virt="non-virtual"><scope>RT::Camera</scope><name>GetAspect</name></member>
+      <member refid="class_r_t_1_1_camera_1aceddd3f90b0a8510f5ae1639f7af0962" prot="public" virt="non-virtual"><scope>RT::Camera</scope><name>GetHorzSize</name></member>
+      <member refid="class_r_t_1_1_camera_1a0799a5aa243b66a7f0172397edf76cea" prot="public" virt="non-virtual"><scope>RT::Camera</scope><name>GetLength</name></member>
+      <member refid="class_r_t_1_1_camera_1ab2d684d8ec6c090f969770c81eaed115" prot="public" virt="non-virtual"><scope>RT::Camera</scope><name>GetLookAt</name></member>
+      <member refid="class_r_t_1_1_camera_1ae7c3393d671ae6fbf189102b00f14a2d" prot="public" virt="non-virtual"><scope>RT::Camera</scope><name>GetPosition</name></member>
+      <member refid="class_r_t_1_1_camera_1a7f7066c62259fcea9232bac2ad943770" prot="public" virt="non-virtual"><scope>RT::Camera</scope><name>GetScreenCentre</name></member>
+      <member refid="class_r_t_1_1_camera_1a844fc9bf91008fa5468b1fb37fb273f5" prot="public" virt="non-virtual"><scope>RT::Camera</scope><name>GetU</name></member>
+      <member refid="class_r_t_1_1_camera_1addf57b743043ff67bf565d573a8f63f8" prot="public" virt="non-virtual"><scope>RT::Camera</scope><name>GetUp</name></member>
+      <member refid="class_r_t_1_1_camera_1a230e5e96be52db49974ca551aa90b24d" prot="public" virt="non-virtual"><scope>RT::Camera</scope><name>GetV</name></member>
+      <member refid="class_r_t_1_1_camera_1a78d267ef7bd540ba9b5590d06f6efae6" prot="private" virt="non-virtual"><scope>RT::Camera</scope><name>m_alignmentVector</name></member>
+      <member refid="class_r_t_1_1_camera_1af6765503e150e947d7bf6b5dac67420e" prot="private" virt="non-virtual"><scope>RT::Camera</scope><name>m_cameraAspectRatio</name></member>
+      <member refid="class_r_t_1_1_camera_1a89ecd3e73f461279f48cf952ddf8751d" prot="private" virt="non-virtual"><scope>RT::Camera</scope><name>m_cameraHorzSize</name></member>
+      <member refid="class_r_t_1_1_camera_1a93dc0440489310d7db34e8b8298e46ee" prot="private" virt="non-virtual"><scope>RT::Camera</scope><name>m_cameraLength</name></member>
+      <member refid="class_r_t_1_1_camera_1af2769327e3bb6f8abdd25a543137550d" prot="private" virt="non-virtual"><scope>RT::Camera</scope><name>m_cameraLookAt</name></member>
+      <member refid="class_r_t_1_1_camera_1aea1097508eca6f226209cc0225e71ed3" prot="private" virt="non-virtual"><scope>RT::Camera</scope><name>m_cameraPosition</name></member>
+      <member refid="class_r_t_1_1_camera_1afc95ebefa340375dd0250cb715a5ab9d" prot="private" virt="non-virtual"><scope>RT::Camera</scope><name>m_cameraUp</name></member>
+      <member refid="class_r_t_1_1_camera_1a6131909772f8ca7d80ab2de106c31430" prot="private" virt="non-virtual"><scope>RT::Camera</scope><name>m_projectionScreenCentre</name></member>
+      <member refid="class_r_t_1_1_camera_1a38a1ef184e9f03dd9a87a08c19fbe948" prot="private" virt="non-virtual"><scope>RT::Camera</scope><name>m_projectionScreenU</name></member>
+      <member refid="class_r_t_1_1_camera_1a6cd657c20c2809820156dc4e0bf674bd" prot="private" virt="non-virtual"><scope>RT::Camera</scope><name>m_projectionScreenV</name></member>
+      <member refid="class_r_t_1_1_camera_1a2b782b4aab7480489298d78fa602d06f" prot="public" virt="non-virtual"><scope>RT::Camera</scope><name>SetAspect</name></member>
+      <member refid="class_r_t_1_1_camera_1aad8f50f59189b1ddf6b36e19a957c2ba" prot="public" virt="non-virtual"><scope>RT::Camera</scope><name>SetHorzSize</name></member>
+      <member refid="class_r_t_1_1_camera_1af56677571336b038e942df0dfc4e4090" prot="public" virt="non-virtual"><scope>RT::Camera</scope><name>SetLength</name></member>
+      <member refid="class_r_t_1_1_camera_1a303252f454230eb67fef370256aa806f" prot="public" virt="non-virtual"><scope>RT::Camera</scope><name>SetLookAt</name></member>
+      <member refid="class_r_t_1_1_camera_1a7a08c60fb7a07929897e3148e798976e" prot="public" virt="non-virtual"><scope>RT::Camera</scope><name>SetPosition</name></member>
+      <member refid="class_r_t_1_1_camera_1ab60600a74e7a9f82ea763321a3f7210e" prot="public" virt="non-virtual"><scope>RT::Camera</scope><name>SetUp</name></member>
+      <member refid="class_r_t_1_1_camera_1ac58d2976470b32493c5645d548e2a0c4" prot="public" virt="non-virtual"><scope>RT::Camera</scope><name>UpdateCameraGeometry</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,34 @@
+\hypertarget{objplane_8h_source}{}\doxysection{objplane.\+h}
+\label{objplane_8h_source}\index{D:/RayTracing/RayTrace/Primitives/objplane.h@{D:/RayTracing/RayTrace/Primitives/objplane.h}}
+\mbox{\hyperlink{objplane_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef RAYTRACING\_OBJPLANE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define RAYTRACING\_OBJPLANE\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{objectbase_8h}{objectbase.h}}"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}../gtfm.h"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_r_t}{RT}} \{}
+\DoxyCodeLine{9     \textcolor{keyword}{class }\mbox{\hyperlink{class_r_t_1_1_obj_plane}{ObjPlane}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_r_t_1_1_object_base}{ObjectBase}} \{}
+\DoxyCodeLine{10     \textcolor{keyword}{public}:}
+\DoxyCodeLine{11         \textcolor{comment}{// Domyślny konstruktor}}
+\DoxyCodeLine{12         \mbox{\hyperlink{class_r_t_1_1_obj_plane_ae9544dd9451f2bf53fc9dc1c2361e50c}{ObjPlane}}();}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14         \textcolor{comment}{// Destruktor}}
+\DoxyCodeLine{15         \textcolor{keyword}{virtual} \mbox{\hyperlink{class_r_t_1_1_obj_plane_a4fa7bd4a0a03c70c2ab79d8118af21e9}{\string~ObjPlane}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17         \textcolor{comment}{// Nadpisana metoda do sprawdzania przecięć}}
+\DoxyCodeLine{18         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_r_t_1_1_obj_plane_a7bf64e3ec94953a0a6c8c1da14c4e79d}{TestIntersection}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_r_t_1_1_ray}{RT::Ray}} \&castRay, \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&intPoint,}
+\DoxyCodeLine{19                                       \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&localNormal, \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&localColor) \textcolor{keyword}{override};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \textcolor{keyword}{private}:}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24     \};}
+\DoxyCodeLine{25 \}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//RAYTRACING\_OBJPLANE\_H}}
+
+\end{DoxyCode}

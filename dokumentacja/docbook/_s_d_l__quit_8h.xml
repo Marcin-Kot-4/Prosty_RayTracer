@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__quit_8h" xml:lang="en-US">
+<title>D:/RayTracing/include/SDL_quit.h File Reference</title>
+<indexterm><primary>D:/RayTracing/include/SDL_quit.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;SDL_stdinc.h&quot;
+#include &quot;SDL_error.h&quot;
+</programlisting><simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__s_d_l__quit_8h_1a28f0e45d1be91312001526ec45d9dc83">SDL_QuitRequested</link>()           (<link linkend="__s_d_l__events_8h_1aa15403d1c8fc341cd9cf750e27a66d19">SDL_PumpEvents</link>(), (<link linkend="__s_d_l__events_8h_1a83618a672f963892ddd0eef74a402e75">SDL_PeepEvents</link>(<link linkend="_begin__code_8h_1a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</link>,0,<link linkend="__s_d_l__events_8h_1a8fdf1485b0419bb77b89e745267dc179a75469beff07bfd6aa7fa4f54674ce34d">SDL_PEEKEVENT</link>,<link linkend="__s_d_l__events_8h_1a3b589e89be6b35c02e0dd34a55f3fccaa31acc5fdafc86ebe2c1f5c3cae48d603">SDL_QUIT</link>,<link linkend="__s_d_l__events_8h_1a3b589e89be6b35c02e0dd34a55f3fccaa31acc5fdafc86ebe2c1f5c3cae48d603">SDL_QUIT</link>) &gt; 0))</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Include file for SDL quit event handling.</para>
+
+<para>An <link linkend="__s_d_l__events_8h_1a3b589e89be6b35c02e0dd34a55f3fccaa31acc5fdafc86ebe2c1f5c3cae48d603">SDL_QUIT</link> event is generated when the user tries to close the application window. If it is ignored or filtered out, the window will remain open. If it is not ignored or filtered, it is queued normally and the window is allowed to close. When the window is closed, screen updates will complete, but have no effect.</para>
+
+<para><link linkend="__s_d_l_8h_1a8fc8d35348d7c74bad8392d776c937b8">SDL_Init()</link> installs signal handlers for SIGINT (keyboard interrupt) and SIGTERM (system termination request), if handlers do not already exist, that generate <link linkend="__s_d_l__events_8h_1a3b589e89be6b35c02e0dd34a55f3fccaa31acc5fdafc86ebe2c1f5c3cae48d603">SDL_QUIT</link> events as well. There is no way to determine the cause of an <link linkend="__s_d_l__events_8h_1a3b589e89be6b35c02e0dd34a55f3fccaa31acc5fdafc86ebe2c1f5c3cae48d603">SDL_QUIT</link> event, but setting a signal handler in your application will override the default generation of quit events for that signal.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l_8h_1afdabaf714781099083592051f2d9ac11">SDL_Quit()</link> </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__s_d_l__quit_8h_1a28f0e45d1be91312001526ec45d9dc83"/><section>
+    <title>SDL_QuitRequested</title>
+<indexterm><primary>SDL_QuitRequested</primary><secondary>SDL_quit.h</secondary></indexterm>
+<indexterm><primary>SDL_quit.h</primary><secondary>SDL_QuitRequested</secondary></indexterm>
+<para><computeroutput>#define SDL_QuitRequested( )           (<link linkend="__s_d_l__events_8h_1aa15403d1c8fc341cd9cf750e27a66d19">SDL_PumpEvents</link>(), (<link linkend="__s_d_l__events_8h_1a83618a672f963892ddd0eef74a402e75">SDL_PeepEvents</link>(<link linkend="_begin__code_8h_1a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</link>,0,<link linkend="__s_d_l__events_8h_1a8fdf1485b0419bb77b89e745267dc179a75469beff07bfd6aa7fa4f54674ce34d">SDL_PEEKEVENT</link>,<link linkend="__s_d_l__events_8h_1a3b589e89be6b35c02e0dd34a55f3fccaa31acc5fdafc86ebe2c1f5c3cae48d603">SDL_QUIT</link>,<link linkend="__s_d_l__events_8h_1a3b589e89be6b35c02e0dd34a55f3fccaa31acc5fdafc86ebe2c1f5c3cae48d603">SDL_QUIT</link>) &gt; 0))</computeroutput></para></section>
+</section>
+</section>

@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e-nacl_8md" kind="file" language="Markdown">
+    <compoundname>README-nacl.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">Native<sp/>Client</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Requirements:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>Native<sp/>Client<sp/>SDK<sp/>(https://developer.chrome.com/native-client),<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>(tested<sp/>with<sp/>Pepper<sp/>version<sp/>33<sp/>or<sp/>higher).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>SDL<sp/>backend<sp/>for<sp/>Chrome&apos;s<sp/>Native<sp/>Client<sp/>has<sp/>been<sp/>tested<sp/>only<sp/>with<sp/>the<sp/>PNaCl</highlight></codeline>
+<codeline><highlight class="normal">toolchain,<sp/>which<sp/>generates<sp/>binaries<sp/>designed<sp/>to<sp/>run<sp/>on<sp/>ARM<sp/>and<sp/>x86_32/64<sp/></highlight></codeline>
+<codeline><highlight class="normal">platforms.<sp/>This<sp/>does<sp/>not<sp/>mean<sp/>it<sp/>won&apos;t<sp/>work<sp/>with<sp/>the<sp/>other<sp/>toolchains!</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline><highlight class="normal">Building<sp/>SDL<sp/>for<sp/>NaCl</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Set<sp/>up<sp/>the<sp/>right<sp/>environment<sp/>variables<sp/>(see<sp/>naclbuild.sh),<sp/>then<sp/>configure<sp/>SDL<sp/>with:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>configure<sp/>--host=pnacl<sp/>--prefix<sp/>some/install/destination</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">Then<sp/>&quot;make&quot;.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">As<sp/>an<sp/>example<sp/>of<sp/>how<sp/>to<sp/>create<sp/>a<sp/>deployable<sp/>app<sp/>a<sp/>Makefile<sp/>project<sp/>is<sp/>provided<sp/></highlight></codeline>
+<codeline><highlight class="normal">in<sp/>test/nacl/Makefile,<sp/>which<sp/>includes<sp/>some<sp/>monkey<sp/>patching<sp/>of<sp/>the<sp/>common.mk<sp/>file<sp/></highlight></codeline>
+<codeline><highlight class="normal">provided<sp/>by<sp/>NaCl,<sp/>without<sp/>which<sp/>linking<sp/>properly<sp/>to<sp/>SDL<sp/>won&apos;t<sp/>work<sp/>(the<sp/>search<sp/></highlight></codeline>
+<codeline><highlight class="normal">path<sp/>can&apos;t<sp/>be<sp/>modified<sp/>externally,<sp/>so<sp/>the<sp/>linker<sp/>won&apos;t<sp/>find<sp/>SDL&apos;s<sp/>binaries<sp/>unless<sp/></highlight></codeline>
+<codeline><highlight class="normal">you<sp/>dump<sp/>them<sp/>into<sp/>the<sp/>SDK<sp/>path,<sp/>which<sp/>is<sp/>inconvenient).</highlight></codeline>
+<codeline><highlight class="normal">Also<sp/>provided<sp/>in<sp/>test/nacl<sp/>is<sp/>the<sp/>required<sp/>support<sp/>file,<sp/>such<sp/>as<sp/>index.html,<sp/></highlight></codeline>
+<codeline><highlight class="normal">manifest.json,<sp/>etc.</highlight></codeline>
+<codeline><highlight class="normal">SDL<sp/>apps<sp/>for<sp/>NaCl<sp/>run<sp/>on<sp/>a<sp/>worker<sp/>thread<sp/>using<sp/>the<sp/>ppapi_simple<sp/>infrastructure.</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>allows<sp/>for<sp/>blocking<sp/>calls<sp/>on<sp/>all<sp/>the<sp/>relevant<sp/>systems<sp/>(OpenGL<sp/>ES,<sp/>filesystem),</highlight></codeline>
+<codeline><highlight class="normal">hiding<sp/>the<sp/>asynchronous<sp/>nature<sp/>of<sp/>the<sp/>browser<sp/>behind<sp/>the<sp/>scenes...which<sp/>is<sp/>not<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">same<sp/>as<sp/>making<sp/>it<sp/>disappear!</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline><highlight class="normal">Running<sp/>tests</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Due<sp/>to<sp/>the<sp/>nature<sp/>of<sp/>NaCl<sp/>programs,<sp/>building<sp/>and<sp/>running<sp/>SDL<sp/>tests<sp/>is<sp/>not<sp/>as</highlight></codeline>
+<codeline><highlight class="normal">straightforward<sp/>as<sp/>one<sp/>would<sp/>hope.<sp/>The<sp/>script<sp/>naclbuild.sh<sp/>in<sp/>build-scripts<sp/></highlight></codeline>
+<codeline><highlight class="normal">automates<sp/>the<sp/>process<sp/>and<sp/>should<sp/>serve<sp/>as<sp/>a<sp/>guide<sp/>for<sp/>users<sp/>of<sp/>SDL<sp/>trying<sp/>to<sp/>build<sp/></highlight></codeline>
+<codeline><highlight class="normal">their<sp/>own<sp/>applications.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Basic<sp/>usage:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>./naclbuild.sh<sp/>path/to/pepper/toolchain<sp/>(i.e.<sp/>~/naclsdk/pepper_35)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">This<sp/>will<sp/>build<sp/>testgles2.c<sp/>by<sp/>default.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>want<sp/>to<sp/>build<sp/>a<sp/>different<sp/>test,<sp/>for<sp/>example<sp/>testrendercopyex.c:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>SOURCES=~/sdl/SDL/test/testrendercopyex.c<sp/>./naclbuild.sh<sp/>~/naclsdk/pepper_35</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">Once<sp/>the<sp/>build<sp/>finishes,<sp/>you<sp/>have<sp/>to<sp/>serve<sp/>the<sp/>contents<sp/>with<sp/>a<sp/>web<sp/>server<sp/>(the</highlight></codeline>
+<codeline><highlight class="normal">script<sp/>will<sp/>give<sp/>you<sp/>instructions<sp/>on<sp/>how<sp/>to<sp/>do<sp/>that<sp/>with<sp/>Python).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline><highlight class="normal">RWops<sp/>and<sp/>nacl_io</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SDL_RWops<sp/>work<sp/>transparently<sp/>with<sp/>nacl_io.<sp/>Two<sp/>functions<sp/>control<sp/>the<sp/>mount<sp/>points:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>mount(const<sp/>char*<sp/>source,<sp/>const<sp/>char*<sp/>target,<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>char*<sp/>filesystemtype,<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>unsigned<sp/>long<sp/>mountflags,<sp/>const<sp/>void<sp/>*data);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>umount(const<sp/>char<sp/>*target);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>For<sp/>convenience,<sp/>SDL<sp/>will<sp/>by<sp/>default<sp/>mount<sp/>an<sp/>httpfs<sp/>tree<sp/>at<sp/>/<sp/>before<sp/>calling<sp/></highlight></codeline>
+<codeline><highlight class="normal">the<sp/>app&apos;s<sp/>main<sp/>function.<sp/>Such<sp/>setting<sp/>can<sp/>be<sp/>overridden<sp/>by<sp/>calling:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>umount(&quot;/&quot;);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">And<sp/>then<sp/>mounting<sp/>a<sp/>different<sp/>filesystem<sp/>at<sp/>/</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">It&apos;s<sp/>important<sp/>to<sp/>consider<sp/>that<sp/>the<sp/>asynchronous<sp/>nature<sp/>of<sp/>file<sp/>operations<sp/>on<sp/>a</highlight></codeline>
+<codeline><highlight class="normal">browser<sp/>is<sp/>hidden<sp/>from<sp/>the<sp/>application,<sp/>effectively<sp/>providing<sp/>the<sp/>developer<sp/>with</highlight></codeline>
+<codeline><highlight class="normal">a<sp/>set<sp/>of<sp/>blocking<sp/>file<sp/>operations<sp/>just<sp/>like<sp/>you<sp/>get<sp/>in<sp/>a<sp/>regular<sp/>desktop<sp/></highlight></codeline>
+<codeline><highlight class="normal">environment,<sp/>which<sp/>eases<sp/>the<sp/>job<sp/>of<sp/>porting<sp/>to<sp/>Native<sp/>Client,<sp/>but<sp/>also<sp/>introduces<sp/></highlight></codeline>
+<codeline><highlight class="normal">a<sp/>set<sp/>of<sp/>challenges<sp/>of<sp/>its<sp/>own,<sp/>in<sp/>particular<sp/>when<sp/>big<sp/>file<sp/>sizes<sp/>and<sp/>slow<sp/></highlight></codeline>
+<codeline><highlight class="normal">connections<sp/>are<sp/>involved.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>more<sp/>information<sp/>on<sp/>how<sp/>nacl_io<sp/>and<sp/>mount<sp/>points<sp/>work,<sp/>see:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>https://developer.chrome.com/native-client/devguide/coding/nacl_io</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>https://src.chromium.org/chrome/trunk/src/native_client_sdk/src/libraries/nacl_io/nacl_io.h</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>be<sp/>able<sp/>to<sp/>save<sp/>into<sp/>the<sp/>directory<sp/>&quot;/save/&quot;<sp/>(like<sp/>backup<sp/>of<sp/>game)<sp/>:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mount(&quot;&quot;,<sp/>&quot;/save&quot;,<sp/>&quot;html5fs&quot;,<sp/>0,<sp/>&quot;type=PERSISTENT&quot;);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">And<sp/>add<sp/>to<sp/>manifest.json<sp/>:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&quot;permissions&quot;:<sp/>[</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;unlimitedStorage&quot;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>]</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline><highlight class="normal">TODO<sp/>-<sp/>Known<sp/>Issues</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Testing<sp/>of<sp/>all<sp/>systems<sp/>with<sp/>a<sp/>real<sp/>application<sp/>(something<sp/>other<sp/>than<sp/>SDL&apos;s<sp/>tests)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Key<sp/>events<sp/>don&apos;t<sp/>seem<sp/>to<sp/>work<sp/>properly</highlight></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/docs/README-nacl.md"/>
+  </compounddef>
+</doxygen>

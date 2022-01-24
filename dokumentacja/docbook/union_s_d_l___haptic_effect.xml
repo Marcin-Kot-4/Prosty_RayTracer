@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_union_s_d_l___haptic_effect" xml:lang="en-US">
+<title>SDL_HapticEffect Union Reference</title>
+<indexterm><primary>SDL_HapticEffect</primary></indexterm>
+<para>
+
+<para>The generic template for any haptic effect. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;SDL_haptic.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_union_s_d_l___haptic_effect_1a5ff6cfd8da91537091e9a6c2108cb179">type</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_s_d_l___haptic_constant">SDL_HapticConstant</link> <link linkend="_union_s_d_l___haptic_effect_1ac435275e9683d6cc5d65b9c7cc2ec659">constant</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_s_d_l___haptic_periodic">SDL_HapticPeriodic</link> <link linkend="_union_s_d_l___haptic_effect_1a8320ec4db6ec1dc1d30feb62ee2a2f04">periodic</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_s_d_l___haptic_condition">SDL_HapticCondition</link> <link linkend="_union_s_d_l___haptic_effect_1aa8fdd1ba202ccd7e61f48ef9977080d2">condition</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_s_d_l___haptic_ramp">SDL_HapticRamp</link> <link linkend="_union_s_d_l___haptic_effect_1a1d32ef4c2d1cc89dc938b392f6ad81bd">ramp</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_s_d_l___haptic_left_right">SDL_HapticLeftRight</link> <link linkend="_union_s_d_l___haptic_effect_1a3c254b81c1ff41c7888eee0cd0076a12">leftright</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_s_d_l___haptic_custom">SDL_HapticCustom</link> <link linkend="_union_s_d_l___haptic_effect_1a0b2d2af28c515cc39896b2b7c23019d2">custom</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>The generic template for any haptic effect. </para>
+
+
+
+<para>All values max at 32767 (0x7FFF). Signed values also can be negative. Time values unless specified otherwise are in milliseconds.</para>
+
+<para>You can also pass <link linkend="__s_d_l__haptic_8h_1a648896e9e14cb27fa8a4b6632d3f3882">SDL_HAPTIC_INFINITY</link> to length instead of a 0-32767 value. Neither delay, interval, attack_length nor fade_length support <link linkend="__s_d_l__haptic_8h_1a648896e9e14cb27fa8a4b6632d3f3882">SDL_HAPTIC_INFINITY</link>. Fade will also not be used since effect never ends.</para>
+
+<para>Additionally, the <link linkend="__s_d_l__haptic_8h_1af10eb937a64a8f602e9c46682ac0d868">SDL_HAPTIC_RAMP</link> effect does not support a duration of <link linkend="__s_d_l__haptic_8h_1a648896e9e14cb27fa8a4b6632d3f3882">SDL_HAPTIC_INFINITY</link>.</para>
+
+<para>Button triggers may not be supported on all devices, it is advised to not use them if possible. Buttons start at index 1 instead of index 0 like the joystick.</para>
+
+<para>If both attack_length and fade_level are 0, the envelope is not used, otherwise both values are used.</para>
+
+<para>Common parts: <literallayout><computeroutput><emphasis role="comment">//&#32;Replay&#32;-&#32;All&#32;effects&#32;have&#32;this</emphasis>
+<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1ab9c919755bde3b34349e23a32b4e0fa7">length</link>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Duration&#32;of&#32;effect&#32;(ms).</emphasis>
+<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;delay;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Delay&#32;before&#32;starting&#32;effect.</emphasis>
+
+<emphasis role="comment">//&#32;Trigger&#32;-&#32;All&#32;effects&#32;have&#32;this</emphasis>
+<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;button;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Button&#32;that&#32;triggers&#32;effect.</emphasis>
+<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;interval;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;How&#32;soon&#32;before&#32;effect&#32;can&#32;be&#32;triggered&#32;again.</emphasis>
+
+<emphasis role="comment">//&#32;Envelope&#32;-&#32;All&#32;effects&#32;except&#32;condition&#32;effects&#32;have&#32;this</emphasis>
+<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;attack_length;&#32;<emphasis role="comment">//&#32;Duration&#32;of&#32;the&#32;attack&#32;(ms).</emphasis>
+<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;attack_level;&#32;&#32;<emphasis role="comment">//&#32;Level&#32;at&#32;the&#32;start&#32;of&#32;the&#32;attack.</emphasis>
+<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;fade_length;&#32;&#32;&#32;<emphasis role="comment">//&#32;Duration&#32;of&#32;the&#32;fade&#32;out&#32;(ms).</emphasis>
+<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;fade_level;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Level&#32;at&#32;the&#32;end&#32;of&#32;the&#32;fade.</emphasis>
+</computeroutput></literallayout></para>
+
+<para>Here we have an example of a constant effect evolution in time: <literallayout><computeroutput>Strength
+^
+|
+|    effect level --&gt;  _________________
+|                     /                 \
+|                    /                   \
+|                   /                     \
+|                  /                       \
+| attack_level --&gt; |                        \
+|                  |                        |  &lt;---  fade_level
+|
++--------------------------------------------------&gt; Time
+                   [--]                 [---]
+                   attack_length        fade_length
+
+[------------------][-----------------------]
+delay               length
+</computeroutput></literallayout></para>
+
+<para>Note either the attack_level or the fade_level may be above the actual effect level.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_struct_s_d_l___haptic_constant">SDL_HapticConstant</link> </para>
+
+<para><link linkend="_struct_s_d_l___haptic_periodic">SDL_HapticPeriodic</link> </para>
+
+<para><link linkend="_struct_s_d_l___haptic_condition">SDL_HapticCondition</link> </para>
+
+<para><link linkend="_struct_s_d_l___haptic_ramp">SDL_HapticRamp</link> </para>
+
+<para><link linkend="_struct_s_d_l___haptic_left_right">SDL_HapticLeftRight</link> </para>
+
+<para><link linkend="_struct_s_d_l___haptic_custom">SDL_HapticCustom</link> </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_union_s_d_l___haptic_effect_1aa8fdd1ba202ccd7e61f48ef9977080d2"/><section>
+    <title>condition</title>
+<indexterm><primary>condition</primary><secondary>SDL_HapticEffect</secondary></indexterm>
+<indexterm><primary>SDL_HapticEffect</primary><secondary>condition</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_s_d_l___haptic_condition">SDL_HapticCondition</link> SDL_HapticEffect::condition</computeroutput></para>
+<para>Condition effect. </para>
+</section>
+<anchor xml:id="_union_s_d_l___haptic_effect_1ac435275e9683d6cc5d65b9c7cc2ec659"/><section>
+    <title>constant</title>
+<indexterm><primary>constant</primary><secondary>SDL_HapticEffect</secondary></indexterm>
+<indexterm><primary>SDL_HapticEffect</primary><secondary>constant</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_s_d_l___haptic_constant">SDL_HapticConstant</link> SDL_HapticEffect::constant</computeroutput></para>
+<para>Constant effect. </para>
+</section>
+<anchor xml:id="_union_s_d_l___haptic_effect_1a0b2d2af28c515cc39896b2b7c23019d2"/><section>
+    <title>custom</title>
+<indexterm><primary>custom</primary><secondary>SDL_HapticEffect</secondary></indexterm>
+<indexterm><primary>SDL_HapticEffect</primary><secondary>custom</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_s_d_l___haptic_custom">SDL_HapticCustom</link> SDL_HapticEffect::custom</computeroutput></para>
+<para>Custom effect. </para>
+</section>
+<anchor xml:id="_union_s_d_l___haptic_effect_1a3c254b81c1ff41c7888eee0cd0076a12"/><section>
+    <title>leftright</title>
+<indexterm><primary>leftright</primary><secondary>SDL_HapticEffect</secondary></indexterm>
+<indexterm><primary>SDL_HapticEffect</primary><secondary>leftright</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_s_d_l___haptic_left_right">SDL_HapticLeftRight</link> SDL_HapticEffect::leftright</computeroutput></para>
+<para>Left/Right effect. </para>
+</section>
+<anchor xml:id="_union_s_d_l___haptic_effect_1a8320ec4db6ec1dc1d30feb62ee2a2f04"/><section>
+    <title>periodic</title>
+<indexterm><primary>periodic</primary><secondary>SDL_HapticEffect</secondary></indexterm>
+<indexterm><primary>SDL_HapticEffect</primary><secondary>periodic</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_s_d_l___haptic_periodic">SDL_HapticPeriodic</link> SDL_HapticEffect::periodic</computeroutput></para>
+<para>Periodic effect. </para>
+</section>
+<anchor xml:id="_union_s_d_l___haptic_effect_1a1d32ef4c2d1cc89dc938b392f6ad81bd"/><section>
+    <title>ramp</title>
+<indexterm><primary>ramp</primary><secondary>SDL_HapticEffect</secondary></indexterm>
+<indexterm><primary>SDL_HapticEffect</primary><secondary>ramp</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_s_d_l___haptic_ramp">SDL_HapticRamp</link> SDL_HapticEffect::ramp</computeroutput></para>
+<para>Ramp effect. </para>
+</section>
+<anchor xml:id="_union_s_d_l___haptic_effect_1a5ff6cfd8da91537091e9a6c2108cb179"/><section>
+    <title>type</title>
+<indexterm><primary>type</primary><secondary>SDL_HapticEffect</secondary></indexterm>
+<indexterm><primary>SDL_HapticEffect</primary><secondary>type</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> SDL_HapticEffect::type</computeroutput></para>
+<para>Effect type. </para>
+</section>
+<para>
+The documentation for this union was generated from the following file:</para>
+D:/RayTracing/include/<link linkend="__s_d_l__haptic_8h">SDL_haptic.h</link></section>
+</section>

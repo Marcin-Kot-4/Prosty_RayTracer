@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__misc_8h" xml:lang="en-US">
+<title>D:/RayTracing/include/SDL_misc.h File Reference</title>
+<indexterm><primary>D:/RayTracing/include/SDL_misc.h</primary></indexterm>
+<para>
+
+<para>Include file for SDL API functions that don&apos;t fit elsewhere. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;SDL_stdinc.h&quot;
+#include &quot;begin_code.h&quot;
+#include &quot;close_code.h&quot;
+</programlisting><simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__misc_8h_1a5c3b7c94c97e141f250d59fc1c416caa">SDL_OpenURL</link> (const char *url)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Include file for SDL API functions that don&apos;t fit elsewhere. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__s_d_l__misc_8h_1a5c3b7c94c97e141f250d59fc1c416caa"/><section>
+    <title>SDL_OpenURL()</title>
+<indexterm><primary>SDL_OpenURL</primary><secondary>SDL_misc.h</secondary></indexterm>
+<indexterm><primary>SDL_misc.h</primary><secondary>SDL_OpenURL</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_OpenURL (const char * url)</computeroutput></para>
+<para>Open a URL/URI in the browser or other appropriate external application.</para>
+
+<para>Open a URL in a separate, system-provided application. How this works will vary wildly depending on the platform. This will likely launch what makes sense to handle a specific URL&apos;s protocol (a web browser for <computeroutput><link xlink:href="http://">http://</link></computeroutput>, etc), but it might also be able to launch file managers for directories and other things.</para>
+
+<para>What happens when you open a URL varies wildly as well: your game window may lose focus (and may or may not lose focus if your game was fullscreen or grabbing input at the time). On mobile devices, your app will likely move to the background or your process might be paused. Any given platform may or may not handle a given URL.</para>
+
+<para>If this is unimplemented (or simply unavailable) for a platform, this will fail with an error. A successful result does not mean the URL loaded, just that we launched <emphasis>something</emphasis> to handle it (or at least believe we did).</para>
+
+<para>All this to say: this function can be useful, but you should definitely test it on every platform you target.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>url</entry><entry>
+<para>A valid URL/URI to open. Use <computeroutput><link xlink:href="file:///full/path/to/file">file:///full/path/to/file</link></computeroutput> for local files, if supported. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 on success, or -1 on error; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.14. </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

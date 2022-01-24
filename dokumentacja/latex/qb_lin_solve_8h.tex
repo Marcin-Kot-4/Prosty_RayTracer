@@ -1,0 +1,60 @@
+\hypertarget{qb_lin_solve_8h}{}\doxysection{D\+:/\+Ray\+Tracing/\+Ray\+Trace/qb\+Lin\+Alg/qb\+Lin\+Solve.h File Reference}
+\label{qb_lin_solve_8h}\index{D:/RayTracing/RayTrace/qbLinAlg/qbLinSolve.h@{D:/RayTracing/RayTrace/qbLinAlg/qbLinSolve.h}}
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}qb\+Matrix.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}qb\+Vector.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{qb_lin_solve_8h_a1ba1aafd04920743fda65443be0ce049}{QBLINESOLVE\+\_\+H}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\int \mbox{\hyperlink{qb_lin_solve_8h_a8969ab7f6729c05ec6adaca60180e4f5}{qb\+Lin\+Solve}} (const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&a\+Matrix, const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ T $>$ \&b\+Vector, \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ T $>$ \&result\+Vec)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr int \mbox{\hyperlink{qb_lin_solve_8h_a3728df71a7cb43303b5566037629653f}{QBLINSOLVE\+\_\+\+NOUNIQUESOLUTION}} = -\/1
+\item 
+constexpr int \mbox{\hyperlink{qb_lin_solve_8h_a9f228e33ff5dd53dfda25e579e85610d}{QBLINSOLVE\+\_\+\+NOSOLUTIONS}} = -\/2
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{qb_lin_solve_8h_a1ba1aafd04920743fda65443be0ce049}\label{qb_lin_solve_8h_a1ba1aafd04920743fda65443be0ce049}} 
+\index{qbLinSolve.h@{qbLinSolve.h}!QBLINESOLVE\_H@{QBLINESOLVE\_H}}
+\index{QBLINESOLVE\_H@{QBLINESOLVE\_H}!qbLinSolve.h@{qbLinSolve.h}}
+\doxysubsubsection{\texorpdfstring{QBLINESOLVE\_H}{QBLINESOLVE\_H}}
+{\footnotesize\ttfamily \#define QBLINESOLVE\+\_\+H}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{qb_lin_solve_8h_a8969ab7f6729c05ec6adaca60180e4f5}\label{qb_lin_solve_8h_a8969ab7f6729c05ec6adaca60180e4f5}} 
+\index{qbLinSolve.h@{qbLinSolve.h}!qbLinSolve@{qbLinSolve}}
+\index{qbLinSolve@{qbLinSolve}!qbLinSolve.h@{qbLinSolve.h}}
+\doxysubsubsection{\texorpdfstring{qbLinSolve()}{qbLinSolve()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int qb\+Lin\+Solve (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ T $>$ \&}]{a\+Matrix,  }\item[{const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ T $>$ \&}]{b\+Vector,  }\item[{\mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ T $>$ \&}]{result\+Vec }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{qb_lin_solve_8h_a9f228e33ff5dd53dfda25e579e85610d}\label{qb_lin_solve_8h_a9f228e33ff5dd53dfda25e579e85610d}} 
+\index{qbLinSolve.h@{qbLinSolve.h}!QBLINSOLVE\_NOSOLUTIONS@{QBLINSOLVE\_NOSOLUTIONS}}
+\index{QBLINSOLVE\_NOSOLUTIONS@{QBLINSOLVE\_NOSOLUTIONS}!qbLinSolve.h@{qbLinSolve.h}}
+\doxysubsubsection{\texorpdfstring{QBLINSOLVE\_NOSOLUTIONS}{QBLINSOLVE\_NOSOLUTIONS}}
+{\footnotesize\ttfamily constexpr int QBLINSOLVE\+\_\+\+NOSOLUTIONS = -\/2\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{qb_lin_solve_8h_a3728df71a7cb43303b5566037629653f}\label{qb_lin_solve_8h_a3728df71a7cb43303b5566037629653f}} 
+\index{qbLinSolve.h@{qbLinSolve.h}!QBLINSOLVE\_NOUNIQUESOLUTION@{QBLINSOLVE\_NOUNIQUESOLUTION}}
+\index{QBLINSOLVE\_NOUNIQUESOLUTION@{QBLINSOLVE\_NOUNIQUESOLUTION}!qbLinSolve.h@{qbLinSolve.h}}
+\doxysubsubsection{\texorpdfstring{QBLINSOLVE\_NOUNIQUESOLUTION}{QBLINSOLVE\_NOUNIQUESOLUTION}}
+{\footnotesize\ttfamily constexpr int QBLINSOLVE\+\_\+\+NOUNIQUESOLUTION = -\/1\hspace{0.3cm}{\ttfamily [constexpr]}}
+

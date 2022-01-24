@@ -1,0 +1,2334 @@
+.TH "D:/RayTracing/include/SDL_opengles2_gl2.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_opengles2_gl2.h
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBGL_ES_VERSION_2_0\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_DEPTH_BUFFER_BIT\fP   0x00000100"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_BUFFER_BIT\fP   0x00000400"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_BUFFER_BIT\fP   0x00004000"
+.br
+.ti -1c
+.RI "#define \fBGL_FALSE\fP   0"
+.br
+.ti -1c
+.RI "#define \fBGL_TRUE\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_POINTS\fP   0x0000"
+.br
+.ti -1c
+.RI "#define \fBGL_LINES\fP   0x0001"
+.br
+.ti -1c
+.RI "#define \fBGL_LINE_LOOP\fP   0x0002"
+.br
+.ti -1c
+.RI "#define \fBGL_LINE_STRIP\fP   0x0003"
+.br
+.ti -1c
+.RI "#define \fBGL_TRIANGLES\fP   0x0004"
+.br
+.ti -1c
+.RI "#define \fBGL_TRIANGLE_STRIP\fP   0x0005"
+.br
+.ti -1c
+.RI "#define \fBGL_TRIANGLE_FAN\fP   0x0006"
+.br
+.ti -1c
+.RI "#define \fBGL_ZERO\fP   0"
+.br
+.ti -1c
+.RI "#define \fBGL_ONE\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_SRC_COLOR\fP   0x0300"
+.br
+.ti -1c
+.RI "#define \fBGL_ONE_MINUS_SRC_COLOR\fP   0x0301"
+.br
+.ti -1c
+.RI "#define \fBGL_SRC_ALPHA\fP   0x0302"
+.br
+.ti -1c
+.RI "#define \fBGL_ONE_MINUS_SRC_ALPHA\fP   0x0303"
+.br
+.ti -1c
+.RI "#define \fBGL_DST_ALPHA\fP   0x0304"
+.br
+.ti -1c
+.RI "#define \fBGL_ONE_MINUS_DST_ALPHA\fP   0x0305"
+.br
+.ti -1c
+.RI "#define \fBGL_DST_COLOR\fP   0x0306"
+.br
+.ti -1c
+.RI "#define \fBGL_ONE_MINUS_DST_COLOR\fP   0x0307"
+.br
+.ti -1c
+.RI "#define \fBGL_SRC_ALPHA_SATURATE\fP   0x0308"
+.br
+.ti -1c
+.RI "#define \fBGL_FUNC_ADD\fP   0x8006"
+.br
+.ti -1c
+.RI "#define \fBGL_BLEND_EQUATION\fP   0x8009"
+.br
+.ti -1c
+.RI "#define \fBGL_BLEND_EQUATION_RGB\fP   0x8009    /* same as BLEND_EQUATION */"
+.br
+.ti -1c
+.RI "#define \fBGL_BLEND_EQUATION_ALPHA\fP   0x883D"
+.br
+.ti -1c
+.RI "#define \fBGL_FUNC_SUBTRACT\fP   0x800A"
+.br
+.ti -1c
+.RI "#define \fBGL_FUNC_REVERSE_SUBTRACT\fP   0x800B"
+.br
+.ti -1c
+.RI "#define \fBGL_BLEND_DST_RGB\fP   0x80C8"
+.br
+.ti -1c
+.RI "#define \fBGL_BLEND_SRC_RGB\fP   0x80C9"
+.br
+.ti -1c
+.RI "#define \fBGL_BLEND_DST_ALPHA\fP   0x80CA"
+.br
+.ti -1c
+.RI "#define \fBGL_BLEND_SRC_ALPHA\fP   0x80CB"
+.br
+.ti -1c
+.RI "#define \fBGL_CONSTANT_COLOR\fP   0x8001"
+.br
+.ti -1c
+.RI "#define \fBGL_ONE_MINUS_CONSTANT_COLOR\fP   0x8002"
+.br
+.ti -1c
+.RI "#define \fBGL_CONSTANT_ALPHA\fP   0x8003"
+.br
+.ti -1c
+.RI "#define \fBGL_ONE_MINUS_CONSTANT_ALPHA\fP   0x8004"
+.br
+.ti -1c
+.RI "#define \fBGL_BLEND_COLOR\fP   0x8005"
+.br
+.ti -1c
+.RI "#define \fBGL_ARRAY_BUFFER\fP   0x8892"
+.br
+.ti -1c
+.RI "#define \fBGL_ELEMENT_ARRAY_BUFFER\fP   0x8893"
+.br
+.ti -1c
+.RI "#define \fBGL_ARRAY_BUFFER_BINDING\fP   0x8894"
+.br
+.ti -1c
+.RI "#define \fBGL_ELEMENT_ARRAY_BUFFER_BINDING\fP   0x8895"
+.br
+.ti -1c
+.RI "#define \fBGL_STREAM_DRAW\fP   0x88E0"
+.br
+.ti -1c
+.RI "#define \fBGL_STATIC_DRAW\fP   0x88E4"
+.br
+.ti -1c
+.RI "#define \fBGL_DYNAMIC_DRAW\fP   0x88E8"
+.br
+.ti -1c
+.RI "#define \fBGL_BUFFER_SIZE\fP   0x8764"
+.br
+.ti -1c
+.RI "#define \fBGL_BUFFER_USAGE\fP   0x8765"
+.br
+.ti -1c
+.RI "#define \fBGL_CURRENT_VERTEX_ATTRIB\fP   0x8626"
+.br
+.ti -1c
+.RI "#define \fBGL_FRONT\fP   0x0404"
+.br
+.ti -1c
+.RI "#define \fBGL_BACK\fP   0x0405"
+.br
+.ti -1c
+.RI "#define \fBGL_FRONT_AND_BACK\fP   0x0408"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_2D\fP   0x0DE1"
+.br
+.ti -1c
+.RI "#define \fBGL_CULL_FACE\fP   0x0B44"
+.br
+.ti -1c
+.RI "#define \fBGL_BLEND\fP   0x0BE2"
+.br
+.ti -1c
+.RI "#define \fBGL_DITHER\fP   0x0BD0"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_TEST\fP   0x0B90"
+.br
+.ti -1c
+.RI "#define \fBGL_DEPTH_TEST\fP   0x0B71"
+.br
+.ti -1c
+.RI "#define \fBGL_SCISSOR_TEST\fP   0x0C11"
+.br
+.ti -1c
+.RI "#define \fBGL_POLYGON_OFFSET_FILL\fP   0x8037"
+.br
+.ti -1c
+.RI "#define \fBGL_SAMPLE_ALPHA_TO_COVERAGE\fP   0x809E"
+.br
+.ti -1c
+.RI "#define \fBGL_SAMPLE_COVERAGE\fP   0x80A0"
+.br
+.ti -1c
+.RI "#define \fBGL_NO_ERROR\fP   0"
+.br
+.ti -1c
+.RI "#define \fBGL_INVALID_ENUM\fP   0x0500"
+.br
+.ti -1c
+.RI "#define \fBGL_INVALID_VALUE\fP   0x0501"
+.br
+.ti -1c
+.RI "#define \fBGL_INVALID_OPERATION\fP   0x0502"
+.br
+.ti -1c
+.RI "#define \fBGL_OUT_OF_MEMORY\fP   0x0505"
+.br
+.ti -1c
+.RI "#define \fBGL_CW\fP   0x0900"
+.br
+.ti -1c
+.RI "#define \fBGL_CCW\fP   0x0901"
+.br
+.ti -1c
+.RI "#define \fBGL_LINE_WIDTH\fP   0x0B21"
+.br
+.ti -1c
+.RI "#define \fBGL_ALIASED_POINT_SIZE_RANGE\fP   0x846D"
+.br
+.ti -1c
+.RI "#define \fBGL_ALIASED_LINE_WIDTH_RANGE\fP   0x846E"
+.br
+.ti -1c
+.RI "#define \fBGL_CULL_FACE_MODE\fP   0x0B45"
+.br
+.ti -1c
+.RI "#define \fBGL_FRONT_FACE\fP   0x0B46"
+.br
+.ti -1c
+.RI "#define \fBGL_DEPTH_RANGE\fP   0x0B70"
+.br
+.ti -1c
+.RI "#define \fBGL_DEPTH_WRITEMASK\fP   0x0B72"
+.br
+.ti -1c
+.RI "#define \fBGL_DEPTH_CLEAR_VALUE\fP   0x0B73"
+.br
+.ti -1c
+.RI "#define \fBGL_DEPTH_FUNC\fP   0x0B74"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_CLEAR_VALUE\fP   0x0B91"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_FUNC\fP   0x0B92"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_FAIL\fP   0x0B94"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_PASS_DEPTH_FAIL\fP   0x0B95"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_PASS_DEPTH_PASS\fP   0x0B96"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_REF\fP   0x0B97"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_VALUE_MASK\fP   0x0B93"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_WRITEMASK\fP   0x0B98"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_BACK_FUNC\fP   0x8800"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_BACK_FAIL\fP   0x8801"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_BACK_PASS_DEPTH_FAIL\fP   0x8802"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_BACK_PASS_DEPTH_PASS\fP   0x8803"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_BACK_REF\fP   0x8CA3"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_BACK_VALUE_MASK\fP   0x8CA4"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_BACK_WRITEMASK\fP   0x8CA5"
+.br
+.ti -1c
+.RI "#define \fBGL_VIEWPORT\fP   0x0BA2"
+.br
+.ti -1c
+.RI "#define \fBGL_SCISSOR_BOX\fP   0x0C10"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_CLEAR_VALUE\fP   0x0C22"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_WRITEMASK\fP   0x0C23"
+.br
+.ti -1c
+.RI "#define \fBGL_UNPACK_ALIGNMENT\fP   0x0CF5"
+.br
+.ti -1c
+.RI "#define \fBGL_PACK_ALIGNMENT\fP   0x0D05"
+.br
+.ti -1c
+.RI "#define \fBGL_MAX_TEXTURE_SIZE\fP   0x0D33"
+.br
+.ti -1c
+.RI "#define \fBGL_MAX_VIEWPORT_DIMS\fP   0x0D3A"
+.br
+.ti -1c
+.RI "#define \fBGL_SUBPIXEL_BITS\fP   0x0D50"
+.br
+.ti -1c
+.RI "#define \fBGL_RED_BITS\fP   0x0D52"
+.br
+.ti -1c
+.RI "#define \fBGL_GREEN_BITS\fP   0x0D53"
+.br
+.ti -1c
+.RI "#define \fBGL_BLUE_BITS\fP   0x0D54"
+.br
+.ti -1c
+.RI "#define \fBGL_ALPHA_BITS\fP   0x0D55"
+.br
+.ti -1c
+.RI "#define \fBGL_DEPTH_BITS\fP   0x0D56"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_BITS\fP   0x0D57"
+.br
+.ti -1c
+.RI "#define \fBGL_POLYGON_OFFSET_UNITS\fP   0x2A00"
+.br
+.ti -1c
+.RI "#define \fBGL_POLYGON_OFFSET_FACTOR\fP   0x8038"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_BINDING_2D\fP   0x8069"
+.br
+.ti -1c
+.RI "#define \fBGL_SAMPLE_BUFFERS\fP   0x80A8"
+.br
+.ti -1c
+.RI "#define \fBGL_SAMPLES\fP   0x80A9"
+.br
+.ti -1c
+.RI "#define \fBGL_SAMPLE_COVERAGE_VALUE\fP   0x80AA"
+.br
+.ti -1c
+.RI "#define \fBGL_SAMPLE_COVERAGE_INVERT\fP   0x80AB"
+.br
+.ti -1c
+.RI "#define \fBGL_NUM_COMPRESSED_TEXTURE_FORMATS\fP   0x86A2"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_TEXTURE_FORMATS\fP   0x86A3"
+.br
+.ti -1c
+.RI "#define \fBGL_DONT_CARE\fP   0x1100"
+.br
+.ti -1c
+.RI "#define \fBGL_FASTEST\fP   0x1101"
+.br
+.ti -1c
+.RI "#define \fBGL_NICEST\fP   0x1102"
+.br
+.ti -1c
+.RI "#define \fBGL_GENERATE_MIPMAP_HINT\fP   0x8192"
+.br
+.ti -1c
+.RI "#define \fBGL_BYTE\fP   0x1400"
+.br
+.ti -1c
+.RI "#define \fBGL_UNSIGNED_BYTE\fP   0x1401"
+.br
+.ti -1c
+.RI "#define \fBGL_SHORT\fP   0x1402"
+.br
+.ti -1c
+.RI "#define \fBGL_UNSIGNED_SHORT\fP   0x1403"
+.br
+.ti -1c
+.RI "#define \fBGL_INT\fP   0x1404"
+.br
+.ti -1c
+.RI "#define \fBGL_UNSIGNED_INT\fP   0x1405"
+.br
+.ti -1c
+.RI "#define \fBGL_FLOAT\fP   0x1406"
+.br
+.ti -1c
+.RI "#define \fBGL_FIXED\fP   0x140C"
+.br
+.ti -1c
+.RI "#define \fBGL_DEPTH_COMPONENT\fP   0x1902"
+.br
+.ti -1c
+.RI "#define \fBGL_ALPHA\fP   0x1906"
+.br
+.ti -1c
+.RI "#define \fBGL_RGB\fP   0x1907"
+.br
+.ti -1c
+.RI "#define \fBGL_RGBA\fP   0x1908"
+.br
+.ti -1c
+.RI "#define \fBGL_LUMINANCE\fP   0x1909"
+.br
+.ti -1c
+.RI "#define \fBGL_LUMINANCE_ALPHA\fP   0x190A"
+.br
+.ti -1c
+.RI "#define \fBGL_UNSIGNED_SHORT_4_4_4_4\fP   0x8033"
+.br
+.ti -1c
+.RI "#define \fBGL_UNSIGNED_SHORT_5_5_5_1\fP   0x8034"
+.br
+.ti -1c
+.RI "#define \fBGL_UNSIGNED_SHORT_5_6_5\fP   0x8363"
+.br
+.ti -1c
+.RI "#define \fBGL_FRAGMENT_SHADER\fP   0x8B30"
+.br
+.ti -1c
+.RI "#define \fBGL_VERTEX_SHADER\fP   0x8B31"
+.br
+.ti -1c
+.RI "#define \fBGL_MAX_VERTEX_ATTRIBS\fP   0x8869"
+.br
+.ti -1c
+.RI "#define \fBGL_MAX_VERTEX_UNIFORM_VECTORS\fP   0x8DFB"
+.br
+.ti -1c
+.RI "#define \fBGL_MAX_VARYING_VECTORS\fP   0x8DFC"
+.br
+.ti -1c
+.RI "#define \fBGL_MAX_COMBINED_TEXTURE_IMAGE_UNITS\fP   0x8B4D"
+.br
+.ti -1c
+.RI "#define \fBGL_MAX_VERTEX_TEXTURE_IMAGE_UNITS\fP   0x8B4C"
+.br
+.ti -1c
+.RI "#define \fBGL_MAX_TEXTURE_IMAGE_UNITS\fP   0x8872"
+.br
+.ti -1c
+.RI "#define \fBGL_MAX_FRAGMENT_UNIFORM_VECTORS\fP   0x8DFD"
+.br
+.ti -1c
+.RI "#define \fBGL_SHADER_TYPE\fP   0x8B4F"
+.br
+.ti -1c
+.RI "#define \fBGL_DELETE_STATUS\fP   0x8B80"
+.br
+.ti -1c
+.RI "#define \fBGL_LINK_STATUS\fP   0x8B82"
+.br
+.ti -1c
+.RI "#define \fBGL_VALIDATE_STATUS\fP   0x8B83"
+.br
+.ti -1c
+.RI "#define \fBGL_ATTACHED_SHADERS\fP   0x8B85"
+.br
+.ti -1c
+.RI "#define \fBGL_ACTIVE_UNIFORMS\fP   0x8B86"
+.br
+.ti -1c
+.RI "#define \fBGL_ACTIVE_UNIFORM_MAX_LENGTH\fP   0x8B87"
+.br
+.ti -1c
+.RI "#define \fBGL_ACTIVE_ATTRIBUTES\fP   0x8B89"
+.br
+.ti -1c
+.RI "#define \fBGL_ACTIVE_ATTRIBUTE_MAX_LENGTH\fP   0x8B8A"
+.br
+.ti -1c
+.RI "#define \fBGL_SHADING_LANGUAGE_VERSION\fP   0x8B8C"
+.br
+.ti -1c
+.RI "#define \fBGL_CURRENT_PROGRAM\fP   0x8B8D"
+.br
+.ti -1c
+.RI "#define \fBGL_NEVER\fP   0x0200"
+.br
+.ti -1c
+.RI "#define \fBGL_LESS\fP   0x0201"
+.br
+.ti -1c
+.RI "#define \fBGL_EQUAL\fP   0x0202"
+.br
+.ti -1c
+.RI "#define \fBGL_LEQUAL\fP   0x0203"
+.br
+.ti -1c
+.RI "#define \fBGL_GREATER\fP   0x0204"
+.br
+.ti -1c
+.RI "#define \fBGL_NOTEQUAL\fP   0x0205"
+.br
+.ti -1c
+.RI "#define \fBGL_GEQUAL\fP   0x0206"
+.br
+.ti -1c
+.RI "#define \fBGL_ALWAYS\fP   0x0207"
+.br
+.ti -1c
+.RI "#define \fBGL_KEEP\fP   0x1E00"
+.br
+.ti -1c
+.RI "#define \fBGL_REPLACE\fP   0x1E01"
+.br
+.ti -1c
+.RI "#define \fBGL_INCR\fP   0x1E02"
+.br
+.ti -1c
+.RI "#define \fBGL_DECR\fP   0x1E03"
+.br
+.ti -1c
+.RI "#define \fBGL_INVERT\fP   0x150A"
+.br
+.ti -1c
+.RI "#define \fBGL_INCR_WRAP\fP   0x8507"
+.br
+.ti -1c
+.RI "#define \fBGL_DECR_WRAP\fP   0x8508"
+.br
+.ti -1c
+.RI "#define \fBGL_VENDOR\fP   0x1F00"
+.br
+.ti -1c
+.RI "#define \fBGL_RENDERER\fP   0x1F01"
+.br
+.ti -1c
+.RI "#define \fBGL_VERSION\fP   0x1F02"
+.br
+.ti -1c
+.RI "#define \fBGL_EXTENSIONS\fP   0x1F03"
+.br
+.ti -1c
+.RI "#define \fBGL_NEAREST\fP   0x2600"
+.br
+.ti -1c
+.RI "#define \fBGL_LINEAR\fP   0x2601"
+.br
+.ti -1c
+.RI "#define \fBGL_NEAREST_MIPMAP_NEAREST\fP   0x2700"
+.br
+.ti -1c
+.RI "#define \fBGL_LINEAR_MIPMAP_NEAREST\fP   0x2701"
+.br
+.ti -1c
+.RI "#define \fBGL_NEAREST_MIPMAP_LINEAR\fP   0x2702"
+.br
+.ti -1c
+.RI "#define \fBGL_LINEAR_MIPMAP_LINEAR\fP   0x2703"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_MAG_FILTER\fP   0x2800"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_MIN_FILTER\fP   0x2801"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_WRAP_S\fP   0x2802"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_WRAP_T\fP   0x2803"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE\fP   0x1702"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_CUBE_MAP\fP   0x8513"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_BINDING_CUBE_MAP\fP   0x8514"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_CUBE_MAP_POSITIVE_X\fP   0x8515"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_CUBE_MAP_NEGATIVE_X\fP   0x8516"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_CUBE_MAP_POSITIVE_Y\fP   0x8517"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_CUBE_MAP_NEGATIVE_Y\fP   0x8518"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_CUBE_MAP_POSITIVE_Z\fP   0x8519"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_CUBE_MAP_NEGATIVE_Z\fP   0x851A"
+.br
+.ti -1c
+.RI "#define \fBGL_MAX_CUBE_MAP_TEXTURE_SIZE\fP   0x851C"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE0\fP   0x84C0"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE1\fP   0x84C1"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE2\fP   0x84C2"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE3\fP   0x84C3"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE4\fP   0x84C4"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE5\fP   0x84C5"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE6\fP   0x84C6"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE7\fP   0x84C7"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE8\fP   0x84C8"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE9\fP   0x84C9"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE10\fP   0x84CA"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE11\fP   0x84CB"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE12\fP   0x84CC"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE13\fP   0x84CD"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE14\fP   0x84CE"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE15\fP   0x84CF"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE16\fP   0x84D0"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE17\fP   0x84D1"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE18\fP   0x84D2"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE19\fP   0x84D3"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE20\fP   0x84D4"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE21\fP   0x84D5"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE22\fP   0x84D6"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE23\fP   0x84D7"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE24\fP   0x84D8"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE25\fP   0x84D9"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE26\fP   0x84DA"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE27\fP   0x84DB"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE28\fP   0x84DC"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE29\fP   0x84DD"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE30\fP   0x84DE"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE31\fP   0x84DF"
+.br
+.ti -1c
+.RI "#define \fBGL_ACTIVE_TEXTURE\fP   0x84E0"
+.br
+.ti -1c
+.RI "#define \fBGL_REPEAT\fP   0x2901"
+.br
+.ti -1c
+.RI "#define \fBGL_CLAMP_TO_EDGE\fP   0x812F"
+.br
+.ti -1c
+.RI "#define \fBGL_MIRRORED_REPEAT\fP   0x8370"
+.br
+.ti -1c
+.RI "#define \fBGL_FLOAT_VEC2\fP   0x8B50"
+.br
+.ti -1c
+.RI "#define \fBGL_FLOAT_VEC3\fP   0x8B51"
+.br
+.ti -1c
+.RI "#define \fBGL_FLOAT_VEC4\fP   0x8B52"
+.br
+.ti -1c
+.RI "#define \fBGL_INT_VEC2\fP   0x8B53"
+.br
+.ti -1c
+.RI "#define \fBGL_INT_VEC3\fP   0x8B54"
+.br
+.ti -1c
+.RI "#define \fBGL_INT_VEC4\fP   0x8B55"
+.br
+.ti -1c
+.RI "#define \fBGL_BOOL\fP   0x8B56"
+.br
+.ti -1c
+.RI "#define \fBGL_BOOL_VEC2\fP   0x8B57"
+.br
+.ti -1c
+.RI "#define \fBGL_BOOL_VEC3\fP   0x8B58"
+.br
+.ti -1c
+.RI "#define \fBGL_BOOL_VEC4\fP   0x8B59"
+.br
+.ti -1c
+.RI "#define \fBGL_FLOAT_MAT2\fP   0x8B5A"
+.br
+.ti -1c
+.RI "#define \fBGL_FLOAT_MAT3\fP   0x8B5B"
+.br
+.ti -1c
+.RI "#define \fBGL_FLOAT_MAT4\fP   0x8B5C"
+.br
+.ti -1c
+.RI "#define \fBGL_SAMPLER_2D\fP   0x8B5E"
+.br
+.ti -1c
+.RI "#define \fBGL_SAMPLER_CUBE\fP   0x8B60"
+.br
+.ti -1c
+.RI "#define \fBGL_VERTEX_ATTRIB_ARRAY_ENABLED\fP   0x8622"
+.br
+.ti -1c
+.RI "#define \fBGL_VERTEX_ATTRIB_ARRAY_SIZE\fP   0x8623"
+.br
+.ti -1c
+.RI "#define \fBGL_VERTEX_ATTRIB_ARRAY_STRIDE\fP   0x8624"
+.br
+.ti -1c
+.RI "#define \fBGL_VERTEX_ATTRIB_ARRAY_TYPE\fP   0x8625"
+.br
+.ti -1c
+.RI "#define \fBGL_VERTEX_ATTRIB_ARRAY_NORMALIZED\fP   0x886A"
+.br
+.ti -1c
+.RI "#define \fBGL_VERTEX_ATTRIB_ARRAY_POINTER\fP   0x8645"
+.br
+.ti -1c
+.RI "#define \fBGL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING\fP   0x889F"
+.br
+.ti -1c
+.RI "#define \fBGL_IMPLEMENTATION_COLOR_READ_TYPE\fP   0x8B9A"
+.br
+.ti -1c
+.RI "#define \fBGL_IMPLEMENTATION_COLOR_READ_FORMAT\fP   0x8B9B"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPILE_STATUS\fP   0x8B81"
+.br
+.ti -1c
+.RI "#define \fBGL_INFO_LOG_LENGTH\fP   0x8B84"
+.br
+.ti -1c
+.RI "#define \fBGL_SHADER_SOURCE_LENGTH\fP   0x8B88"
+.br
+.ti -1c
+.RI "#define \fBGL_SHADER_COMPILER\fP   0x8DFA"
+.br
+.ti -1c
+.RI "#define \fBGL_SHADER_BINARY_FORMATS\fP   0x8DF8"
+.br
+.ti -1c
+.RI "#define \fBGL_NUM_SHADER_BINARY_FORMATS\fP   0x8DF9"
+.br
+.ti -1c
+.RI "#define \fBGL_LOW_FLOAT\fP   0x8DF0"
+.br
+.ti -1c
+.RI "#define \fBGL_MEDIUM_FLOAT\fP   0x8DF1"
+.br
+.ti -1c
+.RI "#define \fBGL_HIGH_FLOAT\fP   0x8DF2"
+.br
+.ti -1c
+.RI "#define \fBGL_LOW_INT\fP   0x8DF3"
+.br
+.ti -1c
+.RI "#define \fBGL_MEDIUM_INT\fP   0x8DF4"
+.br
+.ti -1c
+.RI "#define \fBGL_HIGH_INT\fP   0x8DF5"
+.br
+.ti -1c
+.RI "#define \fBGL_FRAMEBUFFER\fP   0x8D40"
+.br
+.ti -1c
+.RI "#define \fBGL_RENDERBUFFER\fP   0x8D41"
+.br
+.ti -1c
+.RI "#define \fBGL_RGBA4\fP   0x8056"
+.br
+.ti -1c
+.RI "#define \fBGL_RGB5_A1\fP   0x8057"
+.br
+.ti -1c
+.RI "#define \fBGL_RGB565\fP   0x8D62"
+.br
+.ti -1c
+.RI "#define \fBGL_DEPTH_COMPONENT16\fP   0x81A5"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_INDEX8\fP   0x8D48"
+.br
+.ti -1c
+.RI "#define \fBGL_RENDERBUFFER_WIDTH\fP   0x8D42"
+.br
+.ti -1c
+.RI "#define \fBGL_RENDERBUFFER_HEIGHT\fP   0x8D43"
+.br
+.ti -1c
+.RI "#define \fBGL_RENDERBUFFER_INTERNAL_FORMAT\fP   0x8D44"
+.br
+.ti -1c
+.RI "#define \fBGL_RENDERBUFFER_RED_SIZE\fP   0x8D50"
+.br
+.ti -1c
+.RI "#define \fBGL_RENDERBUFFER_GREEN_SIZE\fP   0x8D51"
+.br
+.ti -1c
+.RI "#define \fBGL_RENDERBUFFER_BLUE_SIZE\fP   0x8D52"
+.br
+.ti -1c
+.RI "#define \fBGL_RENDERBUFFER_ALPHA_SIZE\fP   0x8D53"
+.br
+.ti -1c
+.RI "#define \fBGL_RENDERBUFFER_DEPTH_SIZE\fP   0x8D54"
+.br
+.ti -1c
+.RI "#define \fBGL_RENDERBUFFER_STENCIL_SIZE\fP   0x8D55"
+.br
+.ti -1c
+.RI "#define \fBGL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE\fP   0x8CD0"
+.br
+.ti -1c
+.RI "#define \fBGL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME\fP   0x8CD1"
+.br
+.ti -1c
+.RI "#define \fBGL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL\fP   0x8CD2"
+.br
+.ti -1c
+.RI "#define \fBGL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE\fP   0x8CD3"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT0\fP   0x8CE0"
+.br
+.ti -1c
+.RI "#define \fBGL_DEPTH_ATTACHMENT\fP   0x8D00"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_ATTACHMENT\fP   0x8D20"
+.br
+.ti -1c
+.RI "#define \fBGL_NONE\fP   0"
+.br
+.ti -1c
+.RI "#define \fBGL_FRAMEBUFFER_COMPLETE\fP   0x8CD5"
+.br
+.ti -1c
+.RI "#define \fBGL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT\fP   0x8CD6"
+.br
+.ti -1c
+.RI "#define \fBGL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT\fP   0x8CD7"
+.br
+.ti -1c
+.RI "#define \fBGL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS\fP   0x8CD9"
+.br
+.ti -1c
+.RI "#define \fBGL_FRAMEBUFFER_UNSUPPORTED\fP   0x8CDD"
+.br
+.ti -1c
+.RI "#define \fBGL_FRAMEBUFFER_BINDING\fP   0x8CA6"
+.br
+.ti -1c
+.RI "#define \fBGL_RENDERBUFFER_BINDING\fP   0x8CA7"
+.br
+.ti -1c
+.RI "#define \fBGL_MAX_RENDERBUFFER_SIZE\fP   0x84E8"
+.br
+.ti -1c
+.RI "#define \fBGL_INVALID_FRAMEBUFFER_OPERATION\fP   0x0506"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBvoid\fP \fBGLvoid\fP"
+.br
+.ti -1c
+.RI "typedef char \fBGLchar\fP"
+.br
+.ti -1c
+.RI "typedef unsigned int \fBGLenum\fP"
+.br
+.ti -1c
+.RI "typedef unsigned char \fBGLboolean\fP"
+.br
+.ti -1c
+.RI "typedef unsigned int \fBGLbitfield\fP"
+.br
+.ti -1c
+.RI "typedef \fBkhronos_int8_t\fP \fBGLbyte\fP"
+.br
+.ti -1c
+.RI "typedef short \fBGLshort\fP"
+.br
+.ti -1c
+.RI "typedef int \fBGLint\fP"
+.br
+.ti -1c
+.RI "typedef int \fBGLsizei\fP"
+.br
+.ti -1c
+.RI "typedef \fBkhronos_uint8_t\fP \fBGLubyte\fP"
+.br
+.ti -1c
+.RI "typedef unsigned short \fBGLushort\fP"
+.br
+.ti -1c
+.RI "typedef unsigned int \fBGLuint\fP"
+.br
+.ti -1c
+.RI "typedef \fBkhronos_float_t\fP \fBGLfloat\fP"
+.br
+.ti -1c
+.RI "typedef \fBkhronos_float_t\fP \fBGLclampf\fP"
+.br
+.ti -1c
+.RI "typedef \fBkhronos_int32_t\fP \fBGLfixed\fP"
+.br
+.ti -1c
+.RI "typedef \fBkhronos_intptr_t\fP \fBGLintptr\fP"
+.br
+.ti -1c
+.RI "typedef \fBkhronos_ssize_t\fP \fBGLsizeiptr\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglActiveTexture\fP (\fBGLenum\fP \fBtexture\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglAttachShader\fP (\fBGLuint\fP \fBprogram\fP, \fBGLuint\fP \fBshader\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglBindAttribLocation\fP (\fBGLuint\fP \fBprogram\fP, \fBGLuint\fP \fBindex\fP, const \fBGLchar\fP *\fBname\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglBindBuffer\fP (\fBGLenum\fP \fBtarget\fP, \fBGLuint\fP \fBbuffer\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglBindFramebuffer\fP (\fBGLenum\fP \fBtarget\fP, \fBGLuint\fP \fBframebuffer\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglBindRenderbuffer\fP (\fBGLenum\fP \fBtarget\fP, \fBGLuint\fP \fBrenderbuffer\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglBindTexture\fP (\fBGLenum\fP \fBtarget\fP, \fBGLuint\fP \fBtexture\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglBlendColor\fP (\fBGLclampf\fP red, \fBGLclampf\fP \fBgreen\fP, \fBGLclampf\fP \fBblue\fP, \fBGLclampf\fP \fBalpha\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglBlendEquation\fP (\fBGLenum\fP \fBmode\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglBlendEquationSeparate\fP (\fBGLenum\fP \fBmodeRGB\fP, \fBGLenum\fP \fBmodeAlpha\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglBlendFunc\fP (\fBGLenum\fP sfactor, \fBGLenum\fP dfactor)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglBlendFuncSeparate\fP (\fBGLenum\fP \fBsrcRGB\fP, \fBGLenum\fP \fBdstRGB\fP, \fBGLenum\fP \fBsrcAlpha\fP, \fBGLenum\fP \fBdstAlpha\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglBufferData\fP (\fBGLenum\fP \fBtarget\fP, \fBGLsizeiptr\fP \fBsize\fP, const \fBGLvoid\fP *\fBdata\fP, \fBGLenum\fP \fBusage\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglBufferSubData\fP (\fBGLenum\fP \fBtarget\fP, \fBGLintptr\fP \fBoffset\fP, \fBGLsizeiptr\fP \fBsize\fP, const \fBGLvoid\fP *\fBdata\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBGLenum\fP \fBGL_APIENTRY\fP \fBglCheckFramebufferStatus\fP (\fBGLenum\fP \fBtarget\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglClear\fP (\fBGLbitfield\fP \fBmask\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglClearColor\fP (\fBGLclampf\fP red, \fBGLclampf\fP \fBgreen\fP, \fBGLclampf\fP \fBblue\fP, \fBGLclampf\fP \fBalpha\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglClearDepthf\fP (\fBGLclampf\fP \fBdepth\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglClearStencil\fP (\fBGLint\fP \fBs\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglColorMask\fP (\fBGLboolean\fP red, \fBGLboolean\fP \fBgreen\fP, \fBGLboolean\fP \fBblue\fP, \fBGLboolean\fP \fBalpha\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglCompileShader\fP (\fBGLuint\fP \fBshader\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglCompressedTexImage2D\fP (\fBGLenum\fP \fBtarget\fP, \fBGLint\fP \fBlevel\fP, \fBGLenum\fP \fBinternalformat\fP, \fBGLsizei\fP \fBwidth\fP, \fBGLsizei\fP \fBheight\fP, \fBGLint\fP \fBborder\fP, \fBGLsizei\fP \fBimageSize\fP, const \fBGLvoid\fP *\fBdata\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglCompressedTexSubImage2D\fP (\fBGLenum\fP \fBtarget\fP, \fBGLint\fP \fBlevel\fP, \fBGLint\fP \fBxoffset\fP, \fBGLint\fP \fByoffset\fP, \fBGLsizei\fP \fBwidth\fP, \fBGLsizei\fP \fBheight\fP, \fBGLenum\fP \fBformat\fP, \fBGLsizei\fP \fBimageSize\fP, const \fBGLvoid\fP *\fBdata\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglCopyTexImage2D\fP (\fBGLenum\fP \fBtarget\fP, \fBGLint\fP \fBlevel\fP, \fBGLenum\fP \fBinternalformat\fP, \fBGLint\fP \fBx\fP, \fBGLint\fP \fBy\fP, \fBGLsizei\fP \fBwidth\fP, \fBGLsizei\fP \fBheight\fP, \fBGLint\fP \fBborder\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglCopyTexSubImage2D\fP (\fBGLenum\fP \fBtarget\fP, \fBGLint\fP \fBlevel\fP, \fBGLint\fP \fBxoffset\fP, \fBGLint\fP \fByoffset\fP, \fBGLint\fP \fBx\fP, \fBGLint\fP \fBy\fP, \fBGLsizei\fP \fBwidth\fP, \fBGLsizei\fP \fBheight\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBGLuint\fP \fBGL_APIENTRY\fP \fBglCreateProgram\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBGLuint\fP \fBGL_APIENTRY\fP \fBglCreateShader\fP (\fBGLenum\fP \fBtype\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglCullFace\fP (\fBGLenum\fP \fBmode\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglDeleteBuffers\fP (\fBGLsizei\fP \fBn\fP, const \fBGLuint\fP *\fBbuffers\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglDeleteFramebuffers\fP (\fBGLsizei\fP \fBn\fP, const \fBGLuint\fP *\fBframebuffers\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglDeleteProgram\fP (\fBGLuint\fP \fBprogram\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglDeleteRenderbuffers\fP (\fBGLsizei\fP \fBn\fP, const \fBGLuint\fP *\fBrenderbuffers\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglDeleteShader\fP (\fBGLuint\fP \fBshader\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglDeleteTextures\fP (\fBGLsizei\fP \fBn\fP, const \fBGLuint\fP *\fBtextures\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglDepthFunc\fP (\fBGLenum\fP \fBfunc\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglDepthMask\fP (\fBGLboolean\fP flag)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglDepthRangef\fP (\fBGLclampf\fP \fBzNear\fP, \fBGLclampf\fP \fBzFar\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglDetachShader\fP (\fBGLuint\fP \fBprogram\fP, \fBGLuint\fP \fBshader\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglDisable\fP (\fBGLenum\fP \fBcap\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglDisableVertexAttribArray\fP (\fBGLuint\fP \fBindex\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglDrawArrays\fP (\fBGLenum\fP \fBmode\fP, \fBGLint\fP \fBfirst\fP, \fBGLsizei\fP \fBcount\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglDrawElements\fP (\fBGLenum\fP \fBmode\fP, \fBGLsizei\fP \fBcount\fP, \fBGLenum\fP \fBtype\fP, const \fBGLvoid\fP *\fBindices\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglEnable\fP (\fBGLenum\fP \fBcap\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglEnableVertexAttribArray\fP (\fBGLuint\fP \fBindex\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglFinish\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglFlush\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglFramebufferRenderbuffer\fP (\fBGLenum\fP \fBtarget\fP, \fBGLenum\fP \fBattachment\fP, \fBGLenum\fP \fBrenderbuffertarget\fP, \fBGLuint\fP \fBrenderbuffer\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglFramebufferTexture2D\fP (\fBGLenum\fP \fBtarget\fP, \fBGLenum\fP \fBattachment\fP, \fBGLenum\fP \fBtextarget\fP, \fBGLuint\fP \fBtexture\fP, \fBGLint\fP \fBlevel\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglFrontFace\fP (\fBGLenum\fP \fBmode\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglGenBuffers\fP (\fBGLsizei\fP \fBn\fP, \fBGLuint\fP *\fBbuffers\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglGenerateMipmap\fP (\fBGLenum\fP \fBtarget\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglGenFramebuffers\fP (\fBGLsizei\fP \fBn\fP, \fBGLuint\fP *\fBframebuffers\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglGenRenderbuffers\fP (\fBGLsizei\fP \fBn\fP, \fBGLuint\fP *\fBrenderbuffers\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglGenTextures\fP (\fBGLsizei\fP \fBn\fP, \fBGLuint\fP *\fBtextures\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglGetActiveAttrib\fP (\fBGLuint\fP \fBprogram\fP, \fBGLuint\fP \fBindex\fP, \fBGLsizei\fP \fBbufsize\fP, \fBGLsizei\fP *\fBlength\fP, \fBGLint\fP *\fBsize\fP, \fBGLenum\fP *\fBtype\fP, \fBGLchar\fP *\fBname\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglGetActiveUniform\fP (\fBGLuint\fP \fBprogram\fP, \fBGLuint\fP \fBindex\fP, \fBGLsizei\fP \fBbufsize\fP, \fBGLsizei\fP *\fBlength\fP, \fBGLint\fP *\fBsize\fP, \fBGLenum\fP *\fBtype\fP, \fBGLchar\fP *\fBname\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglGetAttachedShaders\fP (\fBGLuint\fP \fBprogram\fP, \fBGLsizei\fP maxcount, \fBGLsizei\fP *\fBcount\fP, \fBGLuint\fP *\fBshaders\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBGLint\fP \fBGL_APIENTRY\fP \fBglGetAttribLocation\fP (\fBGLuint\fP \fBprogram\fP, const \fBGLchar\fP *\fBname\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglGetBooleanv\fP (\fBGLenum\fP \fBpname\fP, \fBGLboolean\fP *\fBparams\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglGetBufferParameteriv\fP (\fBGLenum\fP \fBtarget\fP, \fBGLenum\fP \fBpname\fP, \fBGLint\fP *\fBparams\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBGLenum\fP \fBGL_APIENTRY\fP \fBglGetError\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglGetFloatv\fP (\fBGLenum\fP \fBpname\fP, \fBGLfloat\fP *\fBparams\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglGetFramebufferAttachmentParameteriv\fP (\fBGLenum\fP \fBtarget\fP, \fBGLenum\fP \fBattachment\fP, \fBGLenum\fP \fBpname\fP, \fBGLint\fP *\fBparams\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglGetIntegerv\fP (\fBGLenum\fP \fBpname\fP, \fBGLint\fP *\fBparams\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglGetProgramiv\fP (\fBGLuint\fP \fBprogram\fP, \fBGLenum\fP \fBpname\fP, \fBGLint\fP *\fBparams\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglGetProgramInfoLog\fP (\fBGLuint\fP \fBprogram\fP, \fBGLsizei\fP \fBbufsize\fP, \fBGLsizei\fP *\fBlength\fP, \fBGLchar\fP *infolog)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglGetRenderbufferParameteriv\fP (\fBGLenum\fP \fBtarget\fP, \fBGLenum\fP \fBpname\fP, \fBGLint\fP *\fBparams\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglGetShaderiv\fP (\fBGLuint\fP \fBshader\fP, \fBGLenum\fP \fBpname\fP, \fBGLint\fP *\fBparams\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglGetShaderInfoLog\fP (\fBGLuint\fP \fBshader\fP, \fBGLsizei\fP \fBbufsize\fP, \fBGLsizei\fP *\fBlength\fP, \fBGLchar\fP *infolog)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglGetShaderPrecisionFormat\fP (\fBGLenum\fP \fBshadertype\fP, \fBGLenum\fP \fBprecisiontype\fP, \fBGLint\fP *\fBrange\fP, \fBGLint\fP *\fBprecision\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglGetShaderSource\fP (\fBGLuint\fP \fBshader\fP, \fBGLsizei\fP \fBbufsize\fP, \fBGLsizei\fP *\fBlength\fP, \fBGLchar\fP *\fBsource\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP const \fBGLubyte\fP *\fBGL_APIENTRY\fP \fBglGetString\fP (\fBGLenum\fP \fBname\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglGetTexParameterfv\fP (\fBGLenum\fP \fBtarget\fP, \fBGLenum\fP \fBpname\fP, \fBGLfloat\fP *\fBparams\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglGetTexParameteriv\fP (\fBGLenum\fP \fBtarget\fP, \fBGLenum\fP \fBpname\fP, \fBGLint\fP *\fBparams\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglGetUniformfv\fP (\fBGLuint\fP \fBprogram\fP, \fBGLint\fP \fBlocation\fP, \fBGLfloat\fP *\fBparams\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglGetUniformiv\fP (\fBGLuint\fP \fBprogram\fP, \fBGLint\fP \fBlocation\fP, \fBGLint\fP *\fBparams\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBGLint\fP \fBGL_APIENTRY\fP \fBglGetUniformLocation\fP (\fBGLuint\fP \fBprogram\fP, const \fBGLchar\fP *\fBname\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglGetVertexAttribfv\fP (\fBGLuint\fP \fBindex\fP, \fBGLenum\fP \fBpname\fP, \fBGLfloat\fP *\fBparams\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglGetVertexAttribiv\fP (\fBGLuint\fP \fBindex\fP, \fBGLenum\fP \fBpname\fP, \fBGLint\fP *\fBparams\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglGetVertexAttribPointerv\fP (\fBGLuint\fP \fBindex\fP, \fBGLenum\fP \fBpname\fP, \fBGLvoid\fP **\fBpointer\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglHint\fP (\fBGLenum\fP \fBtarget\fP, \fBGLenum\fP \fBmode\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBGLboolean\fP \fBGL_APIENTRY\fP \fBglIsBuffer\fP (\fBGLuint\fP \fBbuffer\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBGLboolean\fP \fBGL_APIENTRY\fP \fBglIsEnabled\fP (\fBGLenum\fP \fBcap\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBGLboolean\fP \fBGL_APIENTRY\fP \fBglIsFramebuffer\fP (\fBGLuint\fP \fBframebuffer\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBGLboolean\fP \fBGL_APIENTRY\fP \fBglIsProgram\fP (\fBGLuint\fP \fBprogram\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBGLboolean\fP \fBGL_APIENTRY\fP \fBglIsRenderbuffer\fP (\fBGLuint\fP \fBrenderbuffer\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBGLboolean\fP \fBGL_APIENTRY\fP \fBglIsShader\fP (\fBGLuint\fP \fBshader\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBGLboolean\fP \fBGL_APIENTRY\fP \fBglIsTexture\fP (\fBGLuint\fP \fBtexture\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglLineWidth\fP (\fBGLfloat\fP \fBwidth\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglLinkProgram\fP (\fBGLuint\fP \fBprogram\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglPixelStorei\fP (\fBGLenum\fP \fBpname\fP, \fBGLint\fP \fBparam\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglPolygonOffset\fP (\fBGLfloat\fP factor, \fBGLfloat\fP \fBunits\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglReadPixels\fP (\fBGLint\fP \fBx\fP, \fBGLint\fP \fBy\fP, \fBGLsizei\fP \fBwidth\fP, \fBGLsizei\fP \fBheight\fP, \fBGLenum\fP \fBformat\fP, \fBGLenum\fP \fBtype\fP, \fBGLvoid\fP *\fBpixels\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglReleaseShaderCompiler\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglRenderbufferStorage\fP (\fBGLenum\fP \fBtarget\fP, \fBGLenum\fP \fBinternalformat\fP, \fBGLsizei\fP \fBwidth\fP, \fBGLsizei\fP \fBheight\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglSampleCoverage\fP (\fBGLclampf\fP \fBvalue\fP, \fBGLboolean\fP \fBinvert\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglScissor\fP (\fBGLint\fP \fBx\fP, \fBGLint\fP \fBy\fP, \fBGLsizei\fP \fBwidth\fP, \fBGLsizei\fP \fBheight\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglShaderBinary\fP (\fBGLsizei\fP \fBn\fP, const \fBGLuint\fP *\fBshaders\fP, \fBGLenum\fP \fBbinaryformat\fP, const \fBGLvoid\fP *\fBbinary\fP, \fBGLsizei\fP \fBlength\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglShaderSource\fP (\fBGLuint\fP \fBshader\fP, \fBGLsizei\fP \fBcount\fP, const \fBGLchar\fP *const *\fBstring\fP, const \fBGLint\fP *\fBlength\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglStencilFunc\fP (\fBGLenum\fP \fBfunc\fP, \fBGLint\fP \fBref\fP, \fBGLuint\fP \fBmask\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglStencilFuncSeparate\fP (\fBGLenum\fP \fBface\fP, \fBGLenum\fP \fBfunc\fP, \fBGLint\fP \fBref\fP, \fBGLuint\fP \fBmask\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglStencilMask\fP (\fBGLuint\fP \fBmask\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglStencilMaskSeparate\fP (\fBGLenum\fP \fBface\fP, \fBGLuint\fP \fBmask\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglStencilOp\fP (\fBGLenum\fP fail, \fBGLenum\fP zfail, \fBGLenum\fP zpass)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglStencilOpSeparate\fP (\fBGLenum\fP \fBface\fP, \fBGLenum\fP fail, \fBGLenum\fP zfail, \fBGLenum\fP zpass)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglTexImage2D\fP (\fBGLenum\fP \fBtarget\fP, \fBGLint\fP \fBlevel\fP, \fBGLint\fP \fBinternalformat\fP, \fBGLsizei\fP \fBwidth\fP, \fBGLsizei\fP \fBheight\fP, \fBGLint\fP \fBborder\fP, \fBGLenum\fP \fBformat\fP, \fBGLenum\fP \fBtype\fP, const \fBGLvoid\fP *\fBpixels\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglTexParameterf\fP (\fBGLenum\fP \fBtarget\fP, \fBGLenum\fP \fBpname\fP, \fBGLfloat\fP \fBparam\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglTexParameterfv\fP (\fBGLenum\fP \fBtarget\fP, \fBGLenum\fP \fBpname\fP, const \fBGLfloat\fP *\fBparams\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglTexParameteri\fP (\fBGLenum\fP \fBtarget\fP, \fBGLenum\fP \fBpname\fP, \fBGLint\fP \fBparam\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglTexParameteriv\fP (\fBGLenum\fP \fBtarget\fP, \fBGLenum\fP \fBpname\fP, const \fBGLint\fP *\fBparams\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglTexSubImage2D\fP (\fBGLenum\fP \fBtarget\fP, \fBGLint\fP \fBlevel\fP, \fBGLint\fP \fBxoffset\fP, \fBGLint\fP \fByoffset\fP, \fBGLsizei\fP \fBwidth\fP, \fBGLsizei\fP \fBheight\fP, \fBGLenum\fP \fBformat\fP, \fBGLenum\fP \fBtype\fP, const \fBGLvoid\fP *\fBpixels\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglUniform1f\fP (\fBGLint\fP \fBlocation\fP, \fBGLfloat\fP \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglUniform1fv\fP (\fBGLint\fP \fBlocation\fP, \fBGLsizei\fP \fBcount\fP, const \fBGLfloat\fP *\fBv\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglUniform1i\fP (\fBGLint\fP \fBlocation\fP, \fBGLint\fP \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglUniform1iv\fP (\fBGLint\fP \fBlocation\fP, \fBGLsizei\fP \fBcount\fP, const \fBGLint\fP *\fBv\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglUniform2f\fP (\fBGLint\fP \fBlocation\fP, \fBGLfloat\fP \fBx\fP, \fBGLfloat\fP \fBy\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglUniform2fv\fP (\fBGLint\fP \fBlocation\fP, \fBGLsizei\fP \fBcount\fP, const \fBGLfloat\fP *\fBv\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglUniform2i\fP (\fBGLint\fP \fBlocation\fP, \fBGLint\fP \fBx\fP, \fBGLint\fP \fBy\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglUniform2iv\fP (\fBGLint\fP \fBlocation\fP, \fBGLsizei\fP \fBcount\fP, const \fBGLint\fP *\fBv\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglUniform3f\fP (\fBGLint\fP \fBlocation\fP, \fBGLfloat\fP \fBx\fP, \fBGLfloat\fP \fBy\fP, \fBGLfloat\fP \fBz\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglUniform3fv\fP (\fBGLint\fP \fBlocation\fP, \fBGLsizei\fP \fBcount\fP, const \fBGLfloat\fP *\fBv\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglUniform3i\fP (\fBGLint\fP \fBlocation\fP, \fBGLint\fP \fBx\fP, \fBGLint\fP \fBy\fP, \fBGLint\fP \fBz\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglUniform3iv\fP (\fBGLint\fP \fBlocation\fP, \fBGLsizei\fP \fBcount\fP, const \fBGLint\fP *\fBv\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglUniform4f\fP (\fBGLint\fP \fBlocation\fP, \fBGLfloat\fP \fBx\fP, \fBGLfloat\fP \fBy\fP, \fBGLfloat\fP \fBz\fP, \fBGLfloat\fP \fBw\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglUniform4fv\fP (\fBGLint\fP \fBlocation\fP, \fBGLsizei\fP \fBcount\fP, const \fBGLfloat\fP *\fBv\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglUniform4i\fP (\fBGLint\fP \fBlocation\fP, \fBGLint\fP \fBx\fP, \fBGLint\fP \fBy\fP, \fBGLint\fP \fBz\fP, \fBGLint\fP \fBw\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglUniform4iv\fP (\fBGLint\fP \fBlocation\fP, \fBGLsizei\fP \fBcount\fP, const \fBGLint\fP *\fBv\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglUniformMatrix2fv\fP (\fBGLint\fP \fBlocation\fP, \fBGLsizei\fP \fBcount\fP, \fBGLboolean\fP \fBtranspose\fP, const \fBGLfloat\fP *\fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglUniformMatrix3fv\fP (\fBGLint\fP \fBlocation\fP, \fBGLsizei\fP \fBcount\fP, \fBGLboolean\fP \fBtranspose\fP, const \fBGLfloat\fP *\fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglUniformMatrix4fv\fP (\fBGLint\fP \fBlocation\fP, \fBGLsizei\fP \fBcount\fP, \fBGLboolean\fP \fBtranspose\fP, const \fBGLfloat\fP *\fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglUseProgram\fP (\fBGLuint\fP \fBprogram\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglValidateProgram\fP (\fBGLuint\fP \fBprogram\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglVertexAttrib1f\fP (\fBGLuint\fP indx, \fBGLfloat\fP \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglVertexAttrib1fv\fP (\fBGLuint\fP indx, const \fBGLfloat\fP *\fBvalues\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglVertexAttrib2f\fP (\fBGLuint\fP indx, \fBGLfloat\fP \fBx\fP, \fBGLfloat\fP \fBy\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglVertexAttrib2fv\fP (\fBGLuint\fP indx, const \fBGLfloat\fP *\fBvalues\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglVertexAttrib3f\fP (\fBGLuint\fP indx, \fBGLfloat\fP \fBx\fP, \fBGLfloat\fP \fBy\fP, \fBGLfloat\fP \fBz\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglVertexAttrib3fv\fP (\fBGLuint\fP indx, const \fBGLfloat\fP *\fBvalues\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglVertexAttrib4f\fP (\fBGLuint\fP indx, \fBGLfloat\fP \fBx\fP, \fBGLfloat\fP \fBy\fP, \fBGLfloat\fP \fBz\fP, \fBGLfloat\fP \fBw\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglVertexAttrib4fv\fP (\fBGLuint\fP indx, const \fBGLfloat\fP *\fBvalues\fP)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglVertexAttribPointer\fP (\fBGLuint\fP indx, \fBGLint\fP \fBsize\fP, \fBGLenum\fP \fBtype\fP, \fBGLboolean\fP \fBnormalized\fP, \fBGLsizei\fP \fBstride\fP, const \fBGLvoid\fP *ptr)"
+.br
+.ti -1c
+.RI "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP \fBglViewport\fP (\fBGLint\fP \fBx\fP, \fBGLint\fP \fBy\fP, \fBGLsizei\fP \fBwidth\fP, \fBGLsizei\fP \fBheight\fP)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define GL_ACTIVE_ATTRIBUTE_MAX_LENGTH   0x8B8A"
+
+.SS "#define GL_ACTIVE_ATTRIBUTES   0x8B89"
+
+.SS "#define GL_ACTIVE_TEXTURE   0x84E0"
+
+.SS "#define GL_ACTIVE_UNIFORM_MAX_LENGTH   0x8B87"
+
+.SS "#define GL_ACTIVE_UNIFORMS   0x8B86"
+
+.SS "#define GL_ALIASED_LINE_WIDTH_RANGE   0x846E"
+
+.SS "#define GL_ALIASED_POINT_SIZE_RANGE   0x846D"
+
+.SS "#define GL_ALPHA   0x1906"
+
+.SS "#define GL_ALPHA_BITS   0x0D55"
+
+.SS "#define GL_ALWAYS   0x0207"
+
+.SS "#define GL_ARRAY_BUFFER   0x8892"
+
+.SS "#define GL_ARRAY_BUFFER_BINDING   0x8894"
+
+.SS "#define GL_ATTACHED_SHADERS   0x8B85"
+
+.SS "#define GL_BACK   0x0405"
+
+.SS "#define GL_BLEND   0x0BE2"
+
+.SS "#define GL_BLEND_COLOR   0x8005"
+
+.SS "#define GL_BLEND_DST_ALPHA   0x80CA"
+
+.SS "#define GL_BLEND_DST_RGB   0x80C8"
+
+.SS "#define GL_BLEND_EQUATION   0x8009"
+
+.SS "#define GL_BLEND_EQUATION_ALPHA   0x883D"
+
+.SS "#define GL_BLEND_EQUATION_RGB   0x8009    /* same as BLEND_EQUATION */"
+
+.SS "#define GL_BLEND_SRC_ALPHA   0x80CB"
+
+.SS "#define GL_BLEND_SRC_RGB   0x80C9"
+
+.SS "#define GL_BLUE_BITS   0x0D54"
+
+.SS "#define GL_BOOL   0x8B56"
+
+.SS "#define GL_BOOL_VEC2   0x8B57"
+
+.SS "#define GL_BOOL_VEC3   0x8B58"
+
+.SS "#define GL_BOOL_VEC4   0x8B59"
+
+.SS "#define GL_BUFFER_SIZE   0x8764"
+
+.SS "#define GL_BUFFER_USAGE   0x8765"
+
+.SS "#define GL_BYTE   0x1400"
+
+.SS "#define GL_CCW   0x0901"
+
+.SS "#define GL_CLAMP_TO_EDGE   0x812F"
+
+.SS "#define GL_COLOR_ATTACHMENT0   0x8CE0"
+
+.SS "#define GL_COLOR_BUFFER_BIT   0x00004000"
+
+.SS "#define GL_COLOR_CLEAR_VALUE   0x0C22"
+
+.SS "#define GL_COLOR_WRITEMASK   0x0C23"
+
+.SS "#define GL_COMPILE_STATUS   0x8B81"
+
+.SS "#define GL_COMPRESSED_TEXTURE_FORMATS   0x86A3"
+
+.SS "#define GL_CONSTANT_ALPHA   0x8003"
+
+.SS "#define GL_CONSTANT_COLOR   0x8001"
+
+.SS "#define GL_CULL_FACE   0x0B44"
+
+.SS "#define GL_CULL_FACE_MODE   0x0B45"
+
+.SS "#define GL_CURRENT_PROGRAM   0x8B8D"
+
+.SS "#define GL_CURRENT_VERTEX_ATTRIB   0x8626"
+
+.SS "#define GL_CW   0x0900"
+
+.SS "#define GL_DECR   0x1E03"
+
+.SS "#define GL_DECR_WRAP   0x8508"
+
+.SS "#define GL_DELETE_STATUS   0x8B80"
+
+.SS "#define GL_DEPTH_ATTACHMENT   0x8D00"
+
+.SS "#define GL_DEPTH_BITS   0x0D56"
+
+.SS "#define GL_DEPTH_BUFFER_BIT   0x00000100"
+
+.SS "#define GL_DEPTH_CLEAR_VALUE   0x0B73"
+
+.SS "#define GL_DEPTH_COMPONENT   0x1902"
+
+.SS "#define GL_DEPTH_COMPONENT16   0x81A5"
+
+.SS "#define GL_DEPTH_FUNC   0x0B74"
+
+.SS "#define GL_DEPTH_RANGE   0x0B70"
+
+.SS "#define GL_DEPTH_TEST   0x0B71"
+
+.SS "#define GL_DEPTH_WRITEMASK   0x0B72"
+
+.SS "#define GL_DITHER   0x0BD0"
+
+.SS "#define GL_DONT_CARE   0x1100"
+
+.SS "#define GL_DST_ALPHA   0x0304"
+
+.SS "#define GL_DST_COLOR   0x0306"
+
+.SS "#define GL_DYNAMIC_DRAW   0x88E8"
+
+.SS "#define GL_ELEMENT_ARRAY_BUFFER   0x8893"
+
+.SS "#define GL_ELEMENT_ARRAY_BUFFER_BINDING   0x8895"
+
+.SS "#define GL_EQUAL   0x0202"
+
+.SS "#define GL_ES_VERSION_2_0   1"
+
+.SS "#define GL_EXTENSIONS   0x1F03"
+
+.SS "#define GL_FALSE   0"
+
+.SS "#define GL_FASTEST   0x1101"
+
+.SS "#define GL_FIXED   0x140C"
+
+.SS "#define GL_FLOAT   0x1406"
+
+.SS "#define GL_FLOAT_MAT2   0x8B5A"
+
+.SS "#define GL_FLOAT_MAT3   0x8B5B"
+
+.SS "#define GL_FLOAT_MAT4   0x8B5C"
+
+.SS "#define GL_FLOAT_VEC2   0x8B50"
+
+.SS "#define GL_FLOAT_VEC3   0x8B51"
+
+.SS "#define GL_FLOAT_VEC4   0x8B52"
+
+.SS "#define GL_FRAGMENT_SHADER   0x8B30"
+
+.SS "#define GL_FRAMEBUFFER   0x8D40"
+
+.SS "#define GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME   0x8CD1"
+
+.SS "#define GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE   0x8CD0"
+
+.SS "#define GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE   0x8CD3"
+
+.SS "#define GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL   0x8CD2"
+
+.SS "#define GL_FRAMEBUFFER_BINDING   0x8CA6"
+
+.SS "#define GL_FRAMEBUFFER_COMPLETE   0x8CD5"
+
+.SS "#define GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT   0x8CD6"
+
+.SS "#define GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS   0x8CD9"
+
+.SS "#define GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT   0x8CD7"
+
+.SS "#define GL_FRAMEBUFFER_UNSUPPORTED   0x8CDD"
+
+.SS "#define GL_FRONT   0x0404"
+
+.SS "#define GL_FRONT_AND_BACK   0x0408"
+
+.SS "#define GL_FRONT_FACE   0x0B46"
+
+.SS "#define GL_FUNC_ADD   0x8006"
+
+.SS "#define GL_FUNC_REVERSE_SUBTRACT   0x800B"
+
+.SS "#define GL_FUNC_SUBTRACT   0x800A"
+
+.SS "#define GL_GENERATE_MIPMAP_HINT   0x8192"
+
+.SS "#define GL_GEQUAL   0x0206"
+
+.SS "#define GL_GREATER   0x0204"
+
+.SS "#define GL_GREEN_BITS   0x0D53"
+
+.SS "#define GL_HIGH_FLOAT   0x8DF2"
+
+.SS "#define GL_HIGH_INT   0x8DF5"
+
+.SS "#define GL_IMPLEMENTATION_COLOR_READ_FORMAT   0x8B9B"
+
+.SS "#define GL_IMPLEMENTATION_COLOR_READ_TYPE   0x8B9A"
+
+.SS "#define GL_INCR   0x1E02"
+
+.SS "#define GL_INCR_WRAP   0x8507"
+
+.SS "#define GL_INFO_LOG_LENGTH   0x8B84"
+
+.SS "#define GL_INT   0x1404"
+
+.SS "#define GL_INT_VEC2   0x8B53"
+
+.SS "#define GL_INT_VEC3   0x8B54"
+
+.SS "#define GL_INT_VEC4   0x8B55"
+
+.SS "#define GL_INVALID_ENUM   0x0500"
+
+.SS "#define GL_INVALID_FRAMEBUFFER_OPERATION   0x0506"
+
+.SS "#define GL_INVALID_OPERATION   0x0502"
+
+.SS "#define GL_INVALID_VALUE   0x0501"
+
+.SS "#define GL_INVERT   0x150A"
+
+.SS "#define GL_KEEP   0x1E00"
+
+.SS "#define GL_LEQUAL   0x0203"
+
+.SS "#define GL_LESS   0x0201"
+
+.SS "#define GL_LINE_LOOP   0x0002"
+
+.SS "#define GL_LINE_STRIP   0x0003"
+
+.SS "#define GL_LINE_WIDTH   0x0B21"
+
+.SS "#define GL_LINEAR   0x2601"
+
+.SS "#define GL_LINEAR_MIPMAP_LINEAR   0x2703"
+
+.SS "#define GL_LINEAR_MIPMAP_NEAREST   0x2701"
+
+.SS "#define GL_LINES   0x0001"
+
+.SS "#define GL_LINK_STATUS   0x8B82"
+
+.SS "#define GL_LOW_FLOAT   0x8DF0"
+
+.SS "#define GL_LOW_INT   0x8DF3"
+
+.SS "#define GL_LUMINANCE   0x1909"
+
+.SS "#define GL_LUMINANCE_ALPHA   0x190A"
+
+.SS "#define GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS   0x8B4D"
+
+.SS "#define GL_MAX_CUBE_MAP_TEXTURE_SIZE   0x851C"
+
+.SS "#define GL_MAX_FRAGMENT_UNIFORM_VECTORS   0x8DFD"
+
+.SS "#define GL_MAX_RENDERBUFFER_SIZE   0x84E8"
+
+.SS "#define GL_MAX_TEXTURE_IMAGE_UNITS   0x8872"
+
+.SS "#define GL_MAX_TEXTURE_SIZE   0x0D33"
+
+.SS "#define GL_MAX_VARYING_VECTORS   0x8DFC"
+
+.SS "#define GL_MAX_VERTEX_ATTRIBS   0x8869"
+
+.SS "#define GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS   0x8B4C"
+
+.SS "#define GL_MAX_VERTEX_UNIFORM_VECTORS   0x8DFB"
+
+.SS "#define GL_MAX_VIEWPORT_DIMS   0x0D3A"
+
+.SS "#define GL_MEDIUM_FLOAT   0x8DF1"
+
+.SS "#define GL_MEDIUM_INT   0x8DF4"
+
+.SS "#define GL_MIRRORED_REPEAT   0x8370"
+
+.SS "#define GL_NEAREST   0x2600"
+
+.SS "#define GL_NEAREST_MIPMAP_LINEAR   0x2702"
+
+.SS "#define GL_NEAREST_MIPMAP_NEAREST   0x2700"
+
+.SS "#define GL_NEVER   0x0200"
+
+.SS "#define GL_NICEST   0x1102"
+
+.SS "#define GL_NO_ERROR   0"
+
+.SS "#define GL_NONE   0"
+
+.SS "#define GL_NOTEQUAL   0x0205"
+
+.SS "#define GL_NUM_COMPRESSED_TEXTURE_FORMATS   0x86A2"
+
+.SS "#define GL_NUM_SHADER_BINARY_FORMATS   0x8DF9"
+
+.SS "#define GL_ONE   1"
+
+.SS "#define GL_ONE_MINUS_CONSTANT_ALPHA   0x8004"
+
+.SS "#define GL_ONE_MINUS_CONSTANT_COLOR   0x8002"
+
+.SS "#define GL_ONE_MINUS_DST_ALPHA   0x0305"
+
+.SS "#define GL_ONE_MINUS_DST_COLOR   0x0307"
+
+.SS "#define GL_ONE_MINUS_SRC_ALPHA   0x0303"
+
+.SS "#define GL_ONE_MINUS_SRC_COLOR   0x0301"
+
+.SS "#define GL_OUT_OF_MEMORY   0x0505"
+
+.SS "#define GL_PACK_ALIGNMENT   0x0D05"
+
+.SS "#define GL_POINTS   0x0000"
+
+.SS "#define GL_POLYGON_OFFSET_FACTOR   0x8038"
+
+.SS "#define GL_POLYGON_OFFSET_FILL   0x8037"
+
+.SS "#define GL_POLYGON_OFFSET_UNITS   0x2A00"
+
+.SS "#define GL_RED_BITS   0x0D52"
+
+.SS "#define GL_RENDERBUFFER   0x8D41"
+
+.SS "#define GL_RENDERBUFFER_ALPHA_SIZE   0x8D53"
+
+.SS "#define GL_RENDERBUFFER_BINDING   0x8CA7"
+
+.SS "#define GL_RENDERBUFFER_BLUE_SIZE   0x8D52"
+
+.SS "#define GL_RENDERBUFFER_DEPTH_SIZE   0x8D54"
+
+.SS "#define GL_RENDERBUFFER_GREEN_SIZE   0x8D51"
+
+.SS "#define GL_RENDERBUFFER_HEIGHT   0x8D43"
+
+.SS "#define GL_RENDERBUFFER_INTERNAL_FORMAT   0x8D44"
+
+.SS "#define GL_RENDERBUFFER_RED_SIZE   0x8D50"
+
+.SS "#define GL_RENDERBUFFER_STENCIL_SIZE   0x8D55"
+
+.SS "#define GL_RENDERBUFFER_WIDTH   0x8D42"
+
+.SS "#define GL_RENDERER   0x1F01"
+
+.SS "#define GL_REPEAT   0x2901"
+
+.SS "#define GL_REPLACE   0x1E01"
+
+.SS "#define GL_RGB   0x1907"
+
+.SS "#define GL_RGB565   0x8D62"
+
+.SS "#define GL_RGB5_A1   0x8057"
+
+.SS "#define GL_RGBA   0x1908"
+
+.SS "#define GL_RGBA4   0x8056"
+
+.SS "#define GL_SAMPLE_ALPHA_TO_COVERAGE   0x809E"
+
+.SS "#define GL_SAMPLE_BUFFERS   0x80A8"
+
+.SS "#define GL_SAMPLE_COVERAGE   0x80A0"
+
+.SS "#define GL_SAMPLE_COVERAGE_INVERT   0x80AB"
+
+.SS "#define GL_SAMPLE_COVERAGE_VALUE   0x80AA"
+
+.SS "#define GL_SAMPLER_2D   0x8B5E"
+
+.SS "#define GL_SAMPLER_CUBE   0x8B60"
+
+.SS "#define GL_SAMPLES   0x80A9"
+
+.SS "#define GL_SCISSOR_BOX   0x0C10"
+
+.SS "#define GL_SCISSOR_TEST   0x0C11"
+
+.SS "#define GL_SHADER_BINARY_FORMATS   0x8DF8"
+
+.SS "#define GL_SHADER_COMPILER   0x8DFA"
+
+.SS "#define GL_SHADER_SOURCE_LENGTH   0x8B88"
+
+.SS "#define GL_SHADER_TYPE   0x8B4F"
+
+.SS "#define GL_SHADING_LANGUAGE_VERSION   0x8B8C"
+
+.SS "#define GL_SHORT   0x1402"
+
+.SS "#define GL_SRC_ALPHA   0x0302"
+
+.SS "#define GL_SRC_ALPHA_SATURATE   0x0308"
+
+.SS "#define GL_SRC_COLOR   0x0300"
+
+.SS "#define GL_STATIC_DRAW   0x88E4"
+
+.SS "#define GL_STENCIL_ATTACHMENT   0x8D20"
+
+.SS "#define GL_STENCIL_BACK_FAIL   0x8801"
+
+.SS "#define GL_STENCIL_BACK_FUNC   0x8800"
+
+.SS "#define GL_STENCIL_BACK_PASS_DEPTH_FAIL   0x8802"
+
+.SS "#define GL_STENCIL_BACK_PASS_DEPTH_PASS   0x8803"
+
+.SS "#define GL_STENCIL_BACK_REF   0x8CA3"
+
+.SS "#define GL_STENCIL_BACK_VALUE_MASK   0x8CA4"
+
+.SS "#define GL_STENCIL_BACK_WRITEMASK   0x8CA5"
+
+.SS "#define GL_STENCIL_BITS   0x0D57"
+
+.SS "#define GL_STENCIL_BUFFER_BIT   0x00000400"
+
+.SS "#define GL_STENCIL_CLEAR_VALUE   0x0B91"
+
+.SS "#define GL_STENCIL_FAIL   0x0B94"
+
+.SS "#define GL_STENCIL_FUNC   0x0B92"
+
+.SS "#define GL_STENCIL_INDEX8   0x8D48"
+
+.SS "#define GL_STENCIL_PASS_DEPTH_FAIL   0x0B95"
+
+.SS "#define GL_STENCIL_PASS_DEPTH_PASS   0x0B96"
+
+.SS "#define GL_STENCIL_REF   0x0B97"
+
+.SS "#define GL_STENCIL_TEST   0x0B90"
+
+.SS "#define GL_STENCIL_VALUE_MASK   0x0B93"
+
+.SS "#define GL_STENCIL_WRITEMASK   0x0B98"
+
+.SS "#define GL_STREAM_DRAW   0x88E0"
+
+.SS "#define GL_SUBPIXEL_BITS   0x0D50"
+
+.SS "#define GL_TEXTURE   0x1702"
+
+.SS "#define GL_TEXTURE0   0x84C0"
+
+.SS "#define GL_TEXTURE1   0x84C1"
+
+.SS "#define GL_TEXTURE10   0x84CA"
+
+.SS "#define GL_TEXTURE11   0x84CB"
+
+.SS "#define GL_TEXTURE12   0x84CC"
+
+.SS "#define GL_TEXTURE13   0x84CD"
+
+.SS "#define GL_TEXTURE14   0x84CE"
+
+.SS "#define GL_TEXTURE15   0x84CF"
+
+.SS "#define GL_TEXTURE16   0x84D0"
+
+.SS "#define GL_TEXTURE17   0x84D1"
+
+.SS "#define GL_TEXTURE18   0x84D2"
+
+.SS "#define GL_TEXTURE19   0x84D3"
+
+.SS "#define GL_TEXTURE2   0x84C2"
+
+.SS "#define GL_TEXTURE20   0x84D4"
+
+.SS "#define GL_TEXTURE21   0x84D5"
+
+.SS "#define GL_TEXTURE22   0x84D6"
+
+.SS "#define GL_TEXTURE23   0x84D7"
+
+.SS "#define GL_TEXTURE24   0x84D8"
+
+.SS "#define GL_TEXTURE25   0x84D9"
+
+.SS "#define GL_TEXTURE26   0x84DA"
+
+.SS "#define GL_TEXTURE27   0x84DB"
+
+.SS "#define GL_TEXTURE28   0x84DC"
+
+.SS "#define GL_TEXTURE29   0x84DD"
+
+.SS "#define GL_TEXTURE3   0x84C3"
+
+.SS "#define GL_TEXTURE30   0x84DE"
+
+.SS "#define GL_TEXTURE31   0x84DF"
+
+.SS "#define GL_TEXTURE4   0x84C4"
+
+.SS "#define GL_TEXTURE5   0x84C5"
+
+.SS "#define GL_TEXTURE6   0x84C6"
+
+.SS "#define GL_TEXTURE7   0x84C7"
+
+.SS "#define GL_TEXTURE8   0x84C8"
+
+.SS "#define GL_TEXTURE9   0x84C9"
+
+.SS "#define GL_TEXTURE_2D   0x0DE1"
+
+.SS "#define GL_TEXTURE_BINDING_2D   0x8069"
+
+.SS "#define GL_TEXTURE_BINDING_CUBE_MAP   0x8514"
+
+.SS "#define GL_TEXTURE_CUBE_MAP   0x8513"
+
+.SS "#define GL_TEXTURE_CUBE_MAP_NEGATIVE_X   0x8516"
+
+.SS "#define GL_TEXTURE_CUBE_MAP_NEGATIVE_Y   0x8518"
+
+.SS "#define GL_TEXTURE_CUBE_MAP_NEGATIVE_Z   0x851A"
+
+.SS "#define GL_TEXTURE_CUBE_MAP_POSITIVE_X   0x8515"
+
+.SS "#define GL_TEXTURE_CUBE_MAP_POSITIVE_Y   0x8517"
+
+.SS "#define GL_TEXTURE_CUBE_MAP_POSITIVE_Z   0x8519"
+
+.SS "#define GL_TEXTURE_MAG_FILTER   0x2800"
+
+.SS "#define GL_TEXTURE_MIN_FILTER   0x2801"
+
+.SS "#define GL_TEXTURE_WRAP_S   0x2802"
+
+.SS "#define GL_TEXTURE_WRAP_T   0x2803"
+
+.SS "#define GL_TRIANGLE_FAN   0x0006"
+
+.SS "#define GL_TRIANGLE_STRIP   0x0005"
+
+.SS "#define GL_TRIANGLES   0x0004"
+
+.SS "#define GL_TRUE   1"
+
+.SS "#define GL_UNPACK_ALIGNMENT   0x0CF5"
+
+.SS "#define GL_UNSIGNED_BYTE   0x1401"
+
+.SS "#define GL_UNSIGNED_INT   0x1405"
+
+.SS "#define GL_UNSIGNED_SHORT   0x1403"
+
+.SS "#define GL_UNSIGNED_SHORT_4_4_4_4   0x8033"
+
+.SS "#define GL_UNSIGNED_SHORT_5_5_5_1   0x8034"
+
+.SS "#define GL_UNSIGNED_SHORT_5_6_5   0x8363"
+
+.SS "#define GL_VALIDATE_STATUS   0x8B83"
+
+.SS "#define GL_VENDOR   0x1F00"
+
+.SS "#define GL_VERSION   0x1F02"
+
+.SS "#define GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING   0x889F"
+
+.SS "#define GL_VERTEX_ATTRIB_ARRAY_ENABLED   0x8622"
+
+.SS "#define GL_VERTEX_ATTRIB_ARRAY_NORMALIZED   0x886A"
+
+.SS "#define GL_VERTEX_ATTRIB_ARRAY_POINTER   0x8645"
+
+.SS "#define GL_VERTEX_ATTRIB_ARRAY_SIZE   0x8623"
+
+.SS "#define GL_VERTEX_ATTRIB_ARRAY_STRIDE   0x8624"
+
+.SS "#define GL_VERTEX_ATTRIB_ARRAY_TYPE   0x8625"
+
+.SS "#define GL_VERTEX_SHADER   0x8B31"
+
+.SS "#define GL_VIEWPORT   0x0BA2"
+
+.SS "#define GL_ZERO   0"
+
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef unsigned int \fBGLbitfield\fP"
+
+.SS "typedef unsigned char \fBGLboolean\fP"
+
+.SS "typedef \fBkhronos_int8_t\fP \fBGLbyte\fP"
+
+.SS "typedef char \fBGLchar\fP"
+
+.SS "typedef \fBkhronos_float_t\fP \fBGLclampf\fP"
+
+.SS "typedef unsigned int \fBGLenum\fP"
+
+.SS "typedef \fBkhronos_int32_t\fP \fBGLfixed\fP"
+
+.SS "typedef \fBkhronos_float_t\fP \fBGLfloat\fP"
+
+.SS "typedef int \fBGLint\fP"
+
+.SS "typedef \fBkhronos_intptr_t\fP \fBGLintptr\fP"
+
+.SS "typedef short \fBGLshort\fP"
+
+.SS "typedef int \fBGLsizei\fP"
+
+.SS "typedef \fBkhronos_ssize_t\fP \fBGLsizeiptr\fP"
+
+.SS "typedef \fBkhronos_uint8_t\fP \fBGLubyte\fP"
+
+.SS "typedef unsigned int \fBGLuint\fP"
+
+.SS "typedef unsigned short \fBGLushort\fP"
+
+.SS "typedef \fBvoid\fP \fBGLvoid\fP"
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glActiveTexture (\fBGLenum\fP texture)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glAttachShader (\fBGLuint\fP program, \fBGLuint\fP shader)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glBindAttribLocation (\fBGLuint\fP program, \fBGLuint\fP index, const \fBGLchar\fP * name)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glBindBuffer (\fBGLenum\fP target, \fBGLuint\fP buffer)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glBindFramebuffer (\fBGLenum\fP target, \fBGLuint\fP framebuffer)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glBindRenderbuffer (\fBGLenum\fP target, \fBGLuint\fP renderbuffer)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glBindTexture (\fBGLenum\fP target, \fBGLuint\fP texture)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glBlendColor (\fBGLclampf\fP red, \fBGLclampf\fP green, \fBGLclampf\fP blue, \fBGLclampf\fP alpha)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glBlendEquation (\fBGLenum\fP mode)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glBlendEquationSeparate (\fBGLenum\fP modeRGB, \fBGLenum\fP modeAlpha)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glBlendFunc (\fBGLenum\fP sfactor, \fBGLenum\fP dfactor)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glBlendFuncSeparate (\fBGLenum\fP srcRGB, \fBGLenum\fP dstRGB, \fBGLenum\fP srcAlpha, \fBGLenum\fP dstAlpha)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glBufferData (\fBGLenum\fP target, \fBGLsizeiptr\fP size, const \fBGLvoid\fP * data, \fBGLenum\fP usage)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glBufferSubData (\fBGLenum\fP target, \fBGLintptr\fP offset, \fBGLsizeiptr\fP size, const \fBGLvoid\fP * data)"
+
+.SS "\fBGL_APICALL\fP \fBGLenum\fP \fBGL_APIENTRY\fP glCheckFramebufferStatus (\fBGLenum\fP target)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glClear (\fBGLbitfield\fP mask)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glClearColor (\fBGLclampf\fP red, \fBGLclampf\fP green, \fBGLclampf\fP blue, \fBGLclampf\fP alpha)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glClearDepthf (\fBGLclampf\fP depth)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glClearStencil (\fBGLint\fP s)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glColorMask (\fBGLboolean\fP red, \fBGLboolean\fP green, \fBGLboolean\fP blue, \fBGLboolean\fP alpha)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glCompileShader (\fBGLuint\fP shader)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glCompressedTexImage2D (\fBGLenum\fP target, \fBGLint\fP level, \fBGLenum\fP internalformat, \fBGLsizei\fP width, \fBGLsizei\fP height, \fBGLint\fP border, \fBGLsizei\fP imageSize, const \fBGLvoid\fP * data)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glCompressedTexSubImage2D (\fBGLenum\fP target, \fBGLint\fP level, \fBGLint\fP xoffset, \fBGLint\fP yoffset, \fBGLsizei\fP width, \fBGLsizei\fP height, \fBGLenum\fP format, \fBGLsizei\fP imageSize, const \fBGLvoid\fP * data)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glCopyTexImage2D (\fBGLenum\fP target, \fBGLint\fP level, \fBGLenum\fP internalformat, \fBGLint\fP x, \fBGLint\fP y, \fBGLsizei\fP width, \fBGLsizei\fP height, \fBGLint\fP border)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glCopyTexSubImage2D (\fBGLenum\fP target, \fBGLint\fP level, \fBGLint\fP xoffset, \fBGLint\fP yoffset, \fBGLint\fP x, \fBGLint\fP y, \fBGLsizei\fP width, \fBGLsizei\fP height)"
+
+.SS "\fBGL_APICALL\fP \fBGLuint\fP \fBGL_APIENTRY\fP glCreateProgram (\fBvoid\fP)"
+
+.SS "\fBGL_APICALL\fP \fBGLuint\fP \fBGL_APIENTRY\fP glCreateShader (\fBGLenum\fP type)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glCullFace (\fBGLenum\fP mode)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glDeleteBuffers (\fBGLsizei\fP n, const \fBGLuint\fP * buffers)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glDeleteFramebuffers (\fBGLsizei\fP n, const \fBGLuint\fP * framebuffers)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glDeleteProgram (\fBGLuint\fP program)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glDeleteRenderbuffers (\fBGLsizei\fP n, const \fBGLuint\fP * renderbuffers)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glDeleteShader (\fBGLuint\fP shader)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glDeleteTextures (\fBGLsizei\fP n, const \fBGLuint\fP * textures)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glDepthFunc (\fBGLenum\fP func)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glDepthMask (\fBGLboolean\fP flag)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glDepthRangef (\fBGLclampf\fP zNear, \fBGLclampf\fP zFar)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glDetachShader (\fBGLuint\fP program, \fBGLuint\fP shader)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glDisable (\fBGLenum\fP cap)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glDisableVertexAttribArray (\fBGLuint\fP index)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glDrawArrays (\fBGLenum\fP mode, \fBGLint\fP first, \fBGLsizei\fP count)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glDrawElements (\fBGLenum\fP mode, \fBGLsizei\fP count, \fBGLenum\fP type, const \fBGLvoid\fP * indices)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glEnable (\fBGLenum\fP cap)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glEnableVertexAttribArray (\fBGLuint\fP index)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glFinish (\fBvoid\fP)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glFlush (\fBvoid\fP)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glFramebufferRenderbuffer (\fBGLenum\fP target, \fBGLenum\fP attachment, \fBGLenum\fP renderbuffertarget, \fBGLuint\fP renderbuffer)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glFramebufferTexture2D (\fBGLenum\fP target, \fBGLenum\fP attachment, \fBGLenum\fP textarget, \fBGLuint\fP texture, \fBGLint\fP level)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glFrontFace (\fBGLenum\fP mode)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glGenBuffers (\fBGLsizei\fP n, \fBGLuint\fP * buffers)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glGenerateMipmap (\fBGLenum\fP target)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glGenFramebuffers (\fBGLsizei\fP n, \fBGLuint\fP * framebuffers)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glGenRenderbuffers (\fBGLsizei\fP n, \fBGLuint\fP * renderbuffers)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glGenTextures (\fBGLsizei\fP n, \fBGLuint\fP * textures)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glGetActiveAttrib (\fBGLuint\fP program, \fBGLuint\fP index, \fBGLsizei\fP bufsize, \fBGLsizei\fP * length, \fBGLint\fP * size, \fBGLenum\fP * type, \fBGLchar\fP * name)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glGetActiveUniform (\fBGLuint\fP program, \fBGLuint\fP index, \fBGLsizei\fP bufsize, \fBGLsizei\fP * length, \fBGLint\fP * size, \fBGLenum\fP * type, \fBGLchar\fP * name)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glGetAttachedShaders (\fBGLuint\fP program, \fBGLsizei\fP maxcount, \fBGLsizei\fP * count, \fBGLuint\fP * shaders)"
+
+.SS "\fBGL_APICALL\fP \fBGLint\fP \fBGL_APIENTRY\fP glGetAttribLocation (\fBGLuint\fP program, const \fBGLchar\fP * name)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glGetBooleanv (\fBGLenum\fP pname, \fBGLboolean\fP * params)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glGetBufferParameteriv (\fBGLenum\fP target, \fBGLenum\fP pname, \fBGLint\fP * params)"
+
+.SS "\fBGL_APICALL\fP \fBGLenum\fP \fBGL_APIENTRY\fP glGetError (\fBvoid\fP)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glGetFloatv (\fBGLenum\fP pname, \fBGLfloat\fP * params)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glGetFramebufferAttachmentParameteriv (\fBGLenum\fP target, \fBGLenum\fP attachment, \fBGLenum\fP pname, \fBGLint\fP * params)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glGetIntegerv (\fBGLenum\fP pname, \fBGLint\fP * params)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glGetProgramInfoLog (\fBGLuint\fP program, \fBGLsizei\fP bufsize, \fBGLsizei\fP * length, \fBGLchar\fP * infolog)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glGetProgramiv (\fBGLuint\fP program, \fBGLenum\fP pname, \fBGLint\fP * params)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glGetRenderbufferParameteriv (\fBGLenum\fP target, \fBGLenum\fP pname, \fBGLint\fP * params)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glGetShaderInfoLog (\fBGLuint\fP shader, \fBGLsizei\fP bufsize, \fBGLsizei\fP * length, \fBGLchar\fP * infolog)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glGetShaderiv (\fBGLuint\fP shader, \fBGLenum\fP pname, \fBGLint\fP * params)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glGetShaderPrecisionFormat (\fBGLenum\fP shadertype, \fBGLenum\fP precisiontype, \fBGLint\fP * range, \fBGLint\fP * precision)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glGetShaderSource (\fBGLuint\fP shader, \fBGLsizei\fP bufsize, \fBGLsizei\fP * length, \fBGLchar\fP * source)"
+
+.SS "\fBGL_APICALL\fP const \fBGLubyte\fP *\fBGL_APIENTRY\fP glGetString (\fBGLenum\fP name)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glGetTexParameterfv (\fBGLenum\fP target, \fBGLenum\fP pname, \fBGLfloat\fP * params)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glGetTexParameteriv (\fBGLenum\fP target, \fBGLenum\fP pname, \fBGLint\fP * params)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glGetUniformfv (\fBGLuint\fP program, \fBGLint\fP location, \fBGLfloat\fP * params)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glGetUniformiv (\fBGLuint\fP program, \fBGLint\fP location, \fBGLint\fP * params)"
+
+.SS "\fBGL_APICALL\fP \fBGLint\fP \fBGL_APIENTRY\fP glGetUniformLocation (\fBGLuint\fP program, const \fBGLchar\fP * name)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glGetVertexAttribfv (\fBGLuint\fP index, \fBGLenum\fP pname, \fBGLfloat\fP * params)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glGetVertexAttribiv (\fBGLuint\fP index, \fBGLenum\fP pname, \fBGLint\fP * params)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glGetVertexAttribPointerv (\fBGLuint\fP index, \fBGLenum\fP pname, \fBGLvoid\fP ** pointer)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glHint (\fBGLenum\fP target, \fBGLenum\fP mode)"
+
+.SS "\fBGL_APICALL\fP \fBGLboolean\fP \fBGL_APIENTRY\fP glIsBuffer (\fBGLuint\fP buffer)"
+
+.SS "\fBGL_APICALL\fP \fBGLboolean\fP \fBGL_APIENTRY\fP glIsEnabled (\fBGLenum\fP cap)"
+
+.SS "\fBGL_APICALL\fP \fBGLboolean\fP \fBGL_APIENTRY\fP glIsFramebuffer (\fBGLuint\fP framebuffer)"
+
+.SS "\fBGL_APICALL\fP \fBGLboolean\fP \fBGL_APIENTRY\fP glIsProgram (\fBGLuint\fP program)"
+
+.SS "\fBGL_APICALL\fP \fBGLboolean\fP \fBGL_APIENTRY\fP glIsRenderbuffer (\fBGLuint\fP renderbuffer)"
+
+.SS "\fBGL_APICALL\fP \fBGLboolean\fP \fBGL_APIENTRY\fP glIsShader (\fBGLuint\fP shader)"
+
+.SS "\fBGL_APICALL\fP \fBGLboolean\fP \fBGL_APIENTRY\fP glIsTexture (\fBGLuint\fP texture)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glLineWidth (\fBGLfloat\fP width)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glLinkProgram (\fBGLuint\fP program)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glPixelStorei (\fBGLenum\fP pname, \fBGLint\fP param)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glPolygonOffset (\fBGLfloat\fP factor, \fBGLfloat\fP units)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glReadPixels (\fBGLint\fP x, \fBGLint\fP y, \fBGLsizei\fP width, \fBGLsizei\fP height, \fBGLenum\fP format, \fBGLenum\fP type, \fBGLvoid\fP * pixels)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glReleaseShaderCompiler (\fBvoid\fP)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glRenderbufferStorage (\fBGLenum\fP target, \fBGLenum\fP internalformat, \fBGLsizei\fP width, \fBGLsizei\fP height)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glSampleCoverage (\fBGLclampf\fP value, \fBGLboolean\fP invert)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glScissor (\fBGLint\fP x, \fBGLint\fP y, \fBGLsizei\fP width, \fBGLsizei\fP height)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glShaderBinary (\fBGLsizei\fP n, const \fBGLuint\fP * shaders, \fBGLenum\fP binaryformat, const \fBGLvoid\fP * binary, \fBGLsizei\fP length)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glShaderSource (\fBGLuint\fP shader, \fBGLsizei\fP count, const \fBGLchar\fP *const * string, const \fBGLint\fP * length)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glStencilFunc (\fBGLenum\fP func, \fBGLint\fP ref, \fBGLuint\fP mask)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glStencilFuncSeparate (\fBGLenum\fP face, \fBGLenum\fP func, \fBGLint\fP ref, \fBGLuint\fP mask)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glStencilMask (\fBGLuint\fP mask)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glStencilMaskSeparate (\fBGLenum\fP face, \fBGLuint\fP mask)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glStencilOp (\fBGLenum\fP fail, \fBGLenum\fP zfail, \fBGLenum\fP zpass)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glStencilOpSeparate (\fBGLenum\fP face, \fBGLenum\fP fail, \fBGLenum\fP zfail, \fBGLenum\fP zpass)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glTexImage2D (\fBGLenum\fP target, \fBGLint\fP level, \fBGLint\fP internalformat, \fBGLsizei\fP width, \fBGLsizei\fP height, \fBGLint\fP border, \fBGLenum\fP format, \fBGLenum\fP type, const \fBGLvoid\fP * pixels)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glTexParameterf (\fBGLenum\fP target, \fBGLenum\fP pname, \fBGLfloat\fP param)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glTexParameterfv (\fBGLenum\fP target, \fBGLenum\fP pname, const \fBGLfloat\fP * params)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glTexParameteri (\fBGLenum\fP target, \fBGLenum\fP pname, \fBGLint\fP param)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glTexParameteriv (\fBGLenum\fP target, \fBGLenum\fP pname, const \fBGLint\fP * params)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glTexSubImage2D (\fBGLenum\fP target, \fBGLint\fP level, \fBGLint\fP xoffset, \fBGLint\fP yoffset, \fBGLsizei\fP width, \fBGLsizei\fP height, \fBGLenum\fP format, \fBGLenum\fP type, const \fBGLvoid\fP * pixels)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glUniform1f (\fBGLint\fP location, \fBGLfloat\fP x)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glUniform1fv (\fBGLint\fP location, \fBGLsizei\fP count, const \fBGLfloat\fP * v)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glUniform1i (\fBGLint\fP location, \fBGLint\fP x)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glUniform1iv (\fBGLint\fP location, \fBGLsizei\fP count, const \fBGLint\fP * v)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glUniform2f (\fBGLint\fP location, \fBGLfloat\fP x, \fBGLfloat\fP y)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glUniform2fv (\fBGLint\fP location, \fBGLsizei\fP count, const \fBGLfloat\fP * v)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glUniform2i (\fBGLint\fP location, \fBGLint\fP x, \fBGLint\fP y)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glUniform2iv (\fBGLint\fP location, \fBGLsizei\fP count, const \fBGLint\fP * v)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glUniform3f (\fBGLint\fP location, \fBGLfloat\fP x, \fBGLfloat\fP y, \fBGLfloat\fP z)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glUniform3fv (\fBGLint\fP location, \fBGLsizei\fP count, const \fBGLfloat\fP * v)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glUniform3i (\fBGLint\fP location, \fBGLint\fP x, \fBGLint\fP y, \fBGLint\fP z)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glUniform3iv (\fBGLint\fP location, \fBGLsizei\fP count, const \fBGLint\fP * v)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glUniform4f (\fBGLint\fP location, \fBGLfloat\fP x, \fBGLfloat\fP y, \fBGLfloat\fP z, \fBGLfloat\fP w)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glUniform4fv (\fBGLint\fP location, \fBGLsizei\fP count, const \fBGLfloat\fP * v)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glUniform4i (\fBGLint\fP location, \fBGLint\fP x, \fBGLint\fP y, \fBGLint\fP z, \fBGLint\fP w)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glUniform4iv (\fBGLint\fP location, \fBGLsizei\fP count, const \fBGLint\fP * v)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glUniformMatrix2fv (\fBGLint\fP location, \fBGLsizei\fP count, \fBGLboolean\fP transpose, const \fBGLfloat\fP * value)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glUniformMatrix3fv (\fBGLint\fP location, \fBGLsizei\fP count, \fBGLboolean\fP transpose, const \fBGLfloat\fP * value)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glUniformMatrix4fv (\fBGLint\fP location, \fBGLsizei\fP count, \fBGLboolean\fP transpose, const \fBGLfloat\fP * value)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glUseProgram (\fBGLuint\fP program)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glValidateProgram (\fBGLuint\fP program)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glVertexAttrib1f (\fBGLuint\fP indx, \fBGLfloat\fP x)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glVertexAttrib1fv (\fBGLuint\fP indx, const \fBGLfloat\fP * values)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glVertexAttrib2f (\fBGLuint\fP indx, \fBGLfloat\fP x, \fBGLfloat\fP y)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glVertexAttrib2fv (\fBGLuint\fP indx, const \fBGLfloat\fP * values)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glVertexAttrib3f (\fBGLuint\fP indx, \fBGLfloat\fP x, \fBGLfloat\fP y, \fBGLfloat\fP z)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glVertexAttrib3fv (\fBGLuint\fP indx, const \fBGLfloat\fP * values)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glVertexAttrib4f (\fBGLuint\fP indx, \fBGLfloat\fP x, \fBGLfloat\fP y, \fBGLfloat\fP z, \fBGLfloat\fP w)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glVertexAttrib4fv (\fBGLuint\fP indx, const \fBGLfloat\fP * values)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glVertexAttribPointer (\fBGLuint\fP indx, \fBGLint\fP size, \fBGLenum\fP type, \fBGLboolean\fP normalized, \fBGLsizei\fP stride, const \fBGLvoid\fP * ptr)"
+
+.SS "\fBGL_APICALL\fP \fBvoid\fP \fBGL_APIENTRY\fP glViewport (\fBGLint\fP x, \fBGLint\fP y, \fBGLsizei\fP width, \fBGLsizei\fP height)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

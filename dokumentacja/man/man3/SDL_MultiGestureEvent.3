@@ -1,0 +1,69 @@
+.TH "SDL_MultiGestureEvent" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SDL_MultiGestureEvent \- Multiple Finger Gesture Event (event\&.mgesture\&.*)  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SDL_events\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUint32\fP \fBtype\fP"
+.br
+.ti -1c
+.RI "\fBUint32\fP \fBtimestamp\fP"
+.br
+.ti -1c
+.RI "\fBSDL_TouchID\fP \fBtouchId\fP"
+.br
+.ti -1c
+.RI "float \fBdTheta\fP"
+.br
+.ti -1c
+.RI "float \fBdDist\fP"
+.br
+.ti -1c
+.RI "float \fBx\fP"
+.br
+.ti -1c
+.RI "float \fBy\fP"
+.br
+.ti -1c
+.RI "\fBUint16\fP \fBnumFingers\fP"
+.br
+.ti -1c
+.RI "\fBUint16\fP \fBpadding\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Multiple Finger Gesture Event (event\&.mgesture\&.*) 
+.SH "Member Data Documentation"
+.PP 
+.SS "float SDL_MultiGestureEvent::dDist"
+
+.SS "float SDL_MultiGestureEvent::dTheta"
+
+.SS "\fBUint16\fP SDL_MultiGestureEvent::numFingers"
+
+.SS "\fBUint16\fP SDL_MultiGestureEvent::padding"
+
+.SS "\fBUint32\fP SDL_MultiGestureEvent::timestamp"
+In milliseconds, populated using \fBSDL_GetTicks()\fP 
+.SS "\fBSDL_TouchID\fP SDL_MultiGestureEvent::touchId"
+The touch device id 
+.SS "\fBUint32\fP SDL_MultiGestureEvent::type"
+\fBSDL_MULTIGESTURE\fP 
+.SS "float SDL_MultiGestureEvent::x"
+
+.SS "float SDL_MultiGestureEvent::y"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

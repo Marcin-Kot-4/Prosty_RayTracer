@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__metal_8h" xml:lang="en-US">
+<title>D:/RayTracing/include/SDL_metal.h File Reference</title>
+<indexterm><primary>D:/RayTracing/include/SDL_metal.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;SDL_video.h&quot;
+#include &quot;begin_code.h&quot;
+#include &quot;close_code.h&quot;
+</programlisting><simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> * <link linkend="__s_d_l__metal_8h_1a0d6413e2d369fbf22f0a2e4ec15bf412">SDL_MetalView</link></para>
+
+<para>A handle to a CAMetalLayer-backed NSView (macOS) or UIView (iOS/tvOS). </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+<simplesect><title>Metal support functions</title>
+        <itemizedlist>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__metal_8h_1a0d6413e2d369fbf22f0a2e4ec15bf412">SDL_MetalView</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__metal_8h_1a3dad1f90d67b2e72ec2f5bfc9e20f54c">SDL_Metal_CreateView</link> (<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link> *window)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__metal_8h_1a262167b535f38dd12f022df81fddb8f5">SDL_Metal_DestroyView</link> (<link linkend="__s_d_l__metal_8h_1a0d6413e2d369fbf22f0a2e4ec15bf412">SDL_MetalView</link> view)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__metal_8h_1acb0b7609463a8ad97a694213eec68bdc">SDL_Metal_GetLayer</link> (<link linkend="__s_d_l__metal_8h_1a0d6413e2d369fbf22f0a2e4ec15bf412">SDL_MetalView</link> view)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__metal_8h_1a57af6bc34b5686963397add6e383eb17">SDL_Metal_GetDrawableSize</link> (<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link> *window, int *<link linkend="__s_d_l__opengl__glext_8h_1a6ee8f168a7ab6785a9bb57c6715dad99">w</link>, int *<link linkend="__s_d_l__opengl__glext_8h_1afa0fb1b5e976920c0abeff2dca3ed774">h</link>)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Header file for functions to creating Metal layers and views on SDL windows. </para>
+</section>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="__s_d_l__metal_8h_1a0d6413e2d369fbf22f0a2e4ec15bf412"/><section>
+    <title>SDL_MetalView</title>
+<indexterm><primary>SDL_MetalView</primary><secondary>SDL_metal.h</secondary></indexterm>
+<indexterm><primary>SDL_metal.h</primary><secondary>SDL_MetalView</secondary></indexterm>
+<para><computeroutput>typedef <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>* <link linkend="__s_d_l__metal_8h_1a0d6413e2d369fbf22f0a2e4ec15bf412">SDL_MetalView</link></computeroutput></para><para>
+
+<para>A handle to a CAMetalLayer-backed NSView (macOS) or UIView (iOS/tvOS). </para>
+</para>
+
+<para><note><title>Note</title>
+
+<para>This can be cast directly to an NSView or UIView. </para>
+</note>
+</para>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__s_d_l__metal_8h_1a3dad1f90d67b2e72ec2f5bfc9e20f54c"/><section>
+    <title>SDL_Metal_CreateView()</title>
+<indexterm><primary>SDL_Metal_CreateView</primary><secondary>SDL_metal.h</secondary></indexterm>
+<indexterm><primary>SDL_metal.h</primary><secondary>SDL_Metal_CreateView</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__metal_8h_1a0d6413e2d369fbf22f0a2e4ec15bf412">SDL_MetalView</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_Metal_CreateView (<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link> * window)</computeroutput></para>
+<para>Create a CAMetalLayer-backed NSView/UIView and attach it to the specified window.</para>
+
+<para>On macOS, this does <emphasis>not</emphasis> associate a MTLDevice with the CAMetalLayer on its own. It is up to user code to do that.</para>
+
+<para>The returned handle can be casted directly to a NSView or UIView. To access the backing CAMetalLayer, call <link linkend="__s_d_l__metal_8h_1acb0b7609463a8ad97a694213eec68bdc">SDL_Metal_GetLayer()</link>.</para>
+
+<para><formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.12.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__metal_8h_1a262167b535f38dd12f022df81fddb8f5">SDL_Metal_DestroyView</link> </para>
+
+<para><link linkend="__s_d_l__metal_8h_1acb0b7609463a8ad97a694213eec68bdc">SDL_Metal_GetLayer</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__metal_8h_1a262167b535f38dd12f022df81fddb8f5"/><section>
+    <title>SDL_Metal_DestroyView()</title>
+<indexterm><primary>SDL_Metal_DestroyView</primary><secondary>SDL_metal.h</secondary></indexterm>
+<indexterm><primary>SDL_metal.h</primary><secondary>SDL_Metal_DestroyView</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_Metal_DestroyView (<link linkend="__s_d_l__metal_8h_1a0d6413e2d369fbf22f0a2e4ec15bf412">SDL_MetalView</link> view)</computeroutput></para>
+<para>Destroy an existing SDL_MetalView object.</para>
+
+<para>This should be called before SDL_DestroyWindow, if SDL_Metal_CreateView was called after SDL_CreateWindow.</para>
+
+<para><formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.12.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__metal_8h_1a3dad1f90d67b2e72ec2f5bfc9e20f54c">SDL_Metal_CreateView</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__metal_8h_1a57af6bc34b5686963397add6e383eb17"/><section>
+    <title>SDL_Metal_GetDrawableSize()</title>
+<indexterm><primary>SDL_Metal_GetDrawableSize</primary><secondary>SDL_metal.h</secondary></indexterm>
+<indexterm><primary>SDL_metal.h</primary><secondary>SDL_Metal_GetDrawableSize</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_Metal_GetDrawableSize (<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link> * window, int * w, int * h)</computeroutput></para>
+<para>Get the size of a window&apos;s underlying drawable in pixels (for use with setting viewport, scissor &amp; etc).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>window</entry><entry>
+<para>SDL_Window from which the drawable size should be queried </para>
+</entry>
+                            </row>
+                            <row>
+<entry>w</entry><entry>
+<para>Pointer to variable for storing the width in pixels, may be NULL</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.14.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__video_8h_1a5cbfffcfec91c22a7ca95fd1d5163db5">SDL_GetWindowSize</link> </para>
+
+<para><link linkend="__s_d_l__video_8h_1a841edb930dc7cb2c1ec64f831d3abba6">SDL_CreateWindow</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__metal_8h_1acb0b7609463a8ad97a694213eec68bdc"/><section>
+    <title>SDL_Metal_GetLayer()</title>
+<indexterm><primary>SDL_Metal_GetLayer</primary><secondary>SDL_metal.h</secondary></indexterm>
+<indexterm><primary>SDL_metal.h</primary><secondary>SDL_Metal_GetLayer</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_Metal_GetLayer (<link linkend="__s_d_l__metal_8h_1a0d6413e2d369fbf22f0a2e4ec15bf412">SDL_MetalView</link> view)</computeroutput></para>
+<para>Get a pointer to the backing CAMetalLayer for the given view.</para>
+
+<para><formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.14.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para>SDL_MetalCreateView </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

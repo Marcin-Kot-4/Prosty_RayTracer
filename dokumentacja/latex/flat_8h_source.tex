@@ -1,0 +1,37 @@
+\hypertarget{flat_8h_source}{}\doxysection{flat.\+h}
+\label{flat_8h_source}\index{D:/RayTracing/RayTrace/Textures/flat.h@{D:/RayTracing/RayTrace/Textures/flat.h}}
+\mbox{\hyperlink{flat_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef RAYTRACING\_FLAT\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define RAYTRACING\_FLAT\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{texturebase_8h}{texturebase.h}}"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_r_t}{RT}} \{}
+\DoxyCodeLine{8     \textcolor{keyword}{namespace }Texture \{}
+\DoxyCodeLine{9         \textcolor{keyword}{class }\mbox{\hyperlink{class_r_t_1_1_texture_1_1_flat}{Flat}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_r_t_1_1_texture_1_1_texture_base}{TextureBase}} \{}
+\DoxyCodeLine{10         \textcolor{keyword}{public}:}
+\DoxyCodeLine{11             \textcolor{comment}{// Konstruktor}}
+\DoxyCodeLine{12             \mbox{\hyperlink{class_r_t_1_1_texture_1_1_flat_a54fe014741b2720a2e779de9f38ae1b7}{Flat}}();}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14             \textcolor{comment}{// Destruktor}}
+\DoxyCodeLine{15             \textcolor{keyword}{virtual} \mbox{\hyperlink{class_r_t_1_1_texture_1_1_flat_a4aa04ade3b3c8890c4d24a9dce58f135}{\string~Flat}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17             \textcolor{comment}{// Metoda zwracająca kolor}}
+\DoxyCodeLine{18             \textcolor{keyword}{virtual} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \mbox{\hyperlink{class_r_t_1_1_texture_1_1_flat_a322a9a935bb8a5699caf544ed0fabd30}{GetColor}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&uvCoords) \textcolor{keyword}{override};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20             \textcolor{comment}{// Metoda ustawiająca kolor}}
+\DoxyCodeLine{21             \textcolor{keywordtype}{void} \mbox{\hyperlink{class_r_t_1_1_texture_1_1_flat_a88213c83b897ca888cabe71157282753}{SetColor}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&inputColor);}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23         \textcolor{keyword}{private}:}
+\DoxyCodeLine{24             \mbox{\hyperlink{classqb_vector}{qbVector<double>}} m\_color\{4\};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26         \};}
+\DoxyCodeLine{27     \}}
+\DoxyCodeLine{28 \}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//RAYTRACING\_FLAT\_H}}
+
+\end{DoxyCode}

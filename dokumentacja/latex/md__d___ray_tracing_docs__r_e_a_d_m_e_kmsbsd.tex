@@ -1,0 +1,15 @@
+KMSDRM is supported on Free\+BSD and Open\+BSD. Dragon\+Fly\+BSD works but requires being a root user. Net\+BSD isn\textquotesingle{}t supported yet because the application will crash when creating the KMSDRM screen.
+
+WSCONS support has been brought back, but only as an input backend. It will not be brought back as a video backend to ease maintenance.
+
+Open\+BSD note\+: Note that the video backend assumes that the user has read/write permissions to the /dev/drm$\ast$ devices.\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_kmsbsd_autotoc_md56}{}\doxysection{SDL2 WSCONS input backend features}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_kmsbsd_autotoc_md56}
+
+\begin{DoxyEnumerate}
+\item It is keymap-\/aware; it will work properly with different keymaps.
+\item It has mouse support.
+\item Accent input is supported.
+\item Compose keys are supported.
+\item Alt\+Gr and Meta Shift keys work as intended.
+\end{DoxyEnumerate}\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_kmsbsd_autotoc_md57}{}\doxysection{Partially working or no input on Open\+BSD/\+Net\+BSD.}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_kmsbsd_autotoc_md57}
+The WSCONS input backend needs read/write access to the /dev/wskbd$\ast$ devices, without which it will not work properly. /dev/wsmouse must also be read/write accessible, otherwise mouse input will not work.\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_kmsbsd_autotoc_md58}{}\doxysection{Partially working or no input on Free\+BSD.}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_kmsbsd_autotoc_md58}
+The evdev devices are only accessible to the root user by default. Edit devfs rules to allow access to such devices. The /dev/kbd$\ast$ devices are also only accessible to the root user by default. Edit devfs rules to allow access to such devices. 

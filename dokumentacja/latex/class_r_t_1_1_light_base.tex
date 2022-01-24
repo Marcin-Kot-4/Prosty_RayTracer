@@ -1,0 +1,85 @@
+\hypertarget{class_r_t_1_1_light_base}{}\doxysection{RT\+::Light\+Base Class Reference}
+\label{class_r_t_1_1_light_base}\index{RT::LightBase@{RT::LightBase}}
+
+
+{\ttfamily \#include $<$lightbase.\+h$>$}
+
+Inheritance diagram for RT\+::Light\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_r_t_1_1_light_base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_r_t_1_1_light_base_a4c1a6d7c5758f9331b42248dd1435cf1}{Light\+Base}} ()
+\item 
+virtual \mbox{\hyperlink{class_r_t_1_1_light_base_a53e052503c906f9eaf9ee32b11ba53d4}{$\sim$\+Light\+Base}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_r_t_1_1_light_base_ae497648bbf44225db5a545e7c152d07a}{Compute\+Illumination}} (const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&int\+Point, const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&local\+Normal, const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ $>$ \&object\+List, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ \&current\+Object, \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3ea846f998d64f079b86052b6c4193a8}{color}}, double \&intensity)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \mbox{\hyperlink{class_r_t_1_1_light_base_afed58cde187e60119a96761008944268}{m\+\_\+color}} \{3\}
+\item 
+\mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \mbox{\hyperlink{class_r_t_1_1_light_base_a52255d6980ce013a614bb50d51d6a399}{m\+\_\+location}} \{3\}
+\item 
+double \mbox{\hyperlink{class_r_t_1_1_light_base_a322ee3ce9c2e01a1b36d6f8cf280a0f3}{m\+\_\+intensity}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_r_t_1_1_light_base_a4c1a6d7c5758f9331b42248dd1435cf1}\label{class_r_t_1_1_light_base_a4c1a6d7c5758f9331b42248dd1435cf1}} 
+\index{RT::LightBase@{RT::LightBase}!LightBase@{LightBase}}
+\index{LightBase@{LightBase}!RT::LightBase@{RT::LightBase}}
+\doxysubsubsection{\texorpdfstring{LightBase()}{LightBase()}}
+{\footnotesize\ttfamily RT\+::\+Light\+Base\+::\+Light\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_r_t_1_1_light_base_a53e052503c906f9eaf9ee32b11ba53d4}\label{class_r_t_1_1_light_base_a53e052503c906f9eaf9ee32b11ba53d4}} 
+\index{RT::LightBase@{RT::LightBase}!````~LightBase@{$\sim$LightBase}}
+\index{````~LightBase@{$\sim$LightBase}!RT::LightBase@{RT::LightBase}}
+\doxysubsubsection{\texorpdfstring{$\sim$LightBase()}{~LightBase()}}
+{\footnotesize\ttfamily RT\+::\+Light\+Base\+::$\sim$\+Light\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_r_t_1_1_light_base_ae497648bbf44225db5a545e7c152d07a}\label{class_r_t_1_1_light_base_ae497648bbf44225db5a545e7c152d07a}} 
+\index{RT::LightBase@{RT::LightBase}!ComputeIllumination@{ComputeIllumination}}
+\index{ComputeIllumination@{ComputeIllumination}!RT::LightBase@{RT::LightBase}}
+\doxysubsubsection{\texorpdfstring{ComputeIllumination()}{ComputeIllumination()}}
+{\footnotesize\ttfamily bool RT\+::\+Light\+Base\+::\+Compute\+Illumination (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&}]{int\+Point,  }\item[{const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&}]{local\+Normal,  }\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ $>$ \&}]{object\+List,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ \&}]{current\+Object,  }\item[{\mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&}]{color,  }\item[{double \&}]{intensity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_r_t_1_1_point_light_a589d51d6e3aecfcaf2a6690ed97e888e}{RT\+::\+Point\+Light}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_r_t_1_1_light_base_afed58cde187e60119a96761008944268}\label{class_r_t_1_1_light_base_afed58cde187e60119a96761008944268}} 
+\index{RT::LightBase@{RT::LightBase}!m\_color@{m\_color}}
+\index{m\_color@{m\_color}!RT::LightBase@{RT::LightBase}}
+\doxysubsubsection{\texorpdfstring{m\_color}{m\_color}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$double$>$ RT\+::\+Light\+Base\+::m\+\_\+color \{3\}}
+
+\mbox{\Hypertarget{class_r_t_1_1_light_base_a322ee3ce9c2e01a1b36d6f8cf280a0f3}\label{class_r_t_1_1_light_base_a322ee3ce9c2e01a1b36d6f8cf280a0f3}} 
+\index{RT::LightBase@{RT::LightBase}!m\_intensity@{m\_intensity}}
+\index{m\_intensity@{m\_intensity}!RT::LightBase@{RT::LightBase}}
+\doxysubsubsection{\texorpdfstring{m\_intensity}{m\_intensity}}
+{\footnotesize\ttfamily double RT\+::\+Light\+Base\+::m\+\_\+intensity}
+
+\mbox{\Hypertarget{class_r_t_1_1_light_base_a52255d6980ce013a614bb50d51d6a399}\label{class_r_t_1_1_light_base_a52255d6980ce013a614bb50d51d6a399}} 
+\index{RT::LightBase@{RT::LightBase}!m\_location@{m\_location}}
+\index{m\_location@{m\_location}!RT::LightBase@{RT::LightBase}}
+\doxysubsubsection{\texorpdfstring{m\_location}{m\_location}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$double$>$ RT\+::\+Light\+Base\+::m\+\_\+location \{3\}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Ray\+Tracing/\+Ray\+Trace/\+Lights/\mbox{\hyperlink{lightbase_8h}{lightbase.\+h}}\item 
+D\+:/\+Ray\+Tracing/\+Ray\+Trace/\+Lights/\mbox{\hyperlink{lightbase_8cpp}{lightbase.\+cpp}}\end{DoxyCompactItemize}

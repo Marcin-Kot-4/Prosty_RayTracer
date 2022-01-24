@@ -1,0 +1,3609 @@
+.TH "D:/RayTracing/include/SDL_opengles2_gl2ext.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_opengles2_gl2ext.h
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBGL_APIENTRYP\fP   \fBGL_APIENTRY\fP*"
+.br
+.ti -1c
+.RI "#define \fBGL_ETC1_RGB8_OES\fP   0x8D64"
+.br
+.ti -1c
+.RI "#define \fBGL_PALETTE4_RGB8_OES\fP   0x8B90"
+.br
+.ti -1c
+.RI "#define \fBGL_PALETTE4_RGBA8_OES\fP   0x8B91"
+.br
+.ti -1c
+.RI "#define \fBGL_PALETTE4_R5_G6_B5_OES\fP   0x8B92"
+.br
+.ti -1c
+.RI "#define \fBGL_PALETTE4_RGBA4_OES\fP   0x8B93"
+.br
+.ti -1c
+.RI "#define \fBGL_PALETTE4_RGB5_A1_OES\fP   0x8B94"
+.br
+.ti -1c
+.RI "#define \fBGL_PALETTE8_RGB8_OES\fP   0x8B95"
+.br
+.ti -1c
+.RI "#define \fBGL_PALETTE8_RGBA8_OES\fP   0x8B96"
+.br
+.ti -1c
+.RI "#define \fBGL_PALETTE8_R5_G6_B5_OES\fP   0x8B97"
+.br
+.ti -1c
+.RI "#define \fBGL_PALETTE8_RGBA4_OES\fP   0x8B98"
+.br
+.ti -1c
+.RI "#define \fBGL_PALETTE8_RGB5_A1_OES\fP   0x8B99"
+.br
+.ti -1c
+.RI "#define \fBGL_DEPTH_COMPONENT24_OES\fP   0x81A6"
+.br
+.ti -1c
+.RI "#define \fBGL_DEPTH_COMPONENT32_OES\fP   0x81A7"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_EXTERNAL_OES\fP   0x8D65"
+.br
+.ti -1c
+.RI "#define \fBGL_SAMPLER_EXTERNAL_OES\fP   0x8D66"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_BINDING_EXTERNAL_OES\fP   0x8D67"
+.br
+.ti -1c
+.RI "#define \fBGL_REQUIRED_TEXTURE_IMAGE_UNITS_OES\fP   0x8D68"
+.br
+.ti -1c
+.RI "#define \fBGL_UNSIGNED_INT\fP   0x1405"
+.br
+.ti -1c
+.RI "#define \fBGL_PROGRAM_BINARY_LENGTH_OES\fP   0x8741"
+.br
+.ti -1c
+.RI "#define \fBGL_NUM_PROGRAM_BINARY_FORMATS_OES\fP   0x87FE"
+.br
+.ti -1c
+.RI "#define \fBGL_PROGRAM_BINARY_FORMATS_OES\fP   0x87FF"
+.br
+.ti -1c
+.RI "#define \fBGL_WRITE_ONLY_OES\fP   0x88B9"
+.br
+.ti -1c
+.RI "#define \fBGL_BUFFER_ACCESS_OES\fP   0x88BB"
+.br
+.ti -1c
+.RI "#define \fBGL_BUFFER_MAPPED_OES\fP   0x88BC"
+.br
+.ti -1c
+.RI "#define \fBGL_BUFFER_MAP_POINTER_OES\fP   0x88BD"
+.br
+.ti -1c
+.RI "#define \fBGL_DEPTH_STENCIL_OES\fP   0x84F9"
+.br
+.ti -1c
+.RI "#define \fBGL_UNSIGNED_INT_24_8_OES\fP   0x84FA"
+.br
+.ti -1c
+.RI "#define \fBGL_DEPTH24_STENCIL8_OES\fP   0x88F0"
+.br
+.ti -1c
+.RI "#define \fBGL_ALPHA8_OES\fP   0x803C"
+.br
+.ti -1c
+.RI "#define \fBGL_DEPTH_COMPONENT16_OES\fP   0x81A5"
+.br
+.ti -1c
+.RI "#define \fBGL_LUMINANCE4_ALPHA4_OES\fP   0x8043"
+.br
+.ti -1c
+.RI "#define \fBGL_LUMINANCE8_ALPHA8_OES\fP   0x8045"
+.br
+.ti -1c
+.RI "#define \fBGL_LUMINANCE8_OES\fP   0x8040"
+.br
+.ti -1c
+.RI "#define \fBGL_RGBA4_OES\fP   0x8056"
+.br
+.ti -1c
+.RI "#define \fBGL_RGB5_A1_OES\fP   0x8057"
+.br
+.ti -1c
+.RI "#define \fBGL_RGB565_OES\fP   0x8D62"
+.br
+.ti -1c
+.RI "#define \fBGL_RGB8_OES\fP   0x8051"
+.br
+.ti -1c
+.RI "#define \fBGL_RGBA8_OES\fP   0x8058"
+.br
+.ti -1c
+.RI "#define \fBGL_FRAGMENT_SHADER_DERIVATIVE_HINT_OES\fP   0x8B8B"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_INDEX1_OES\fP   0x8D46"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_INDEX4_OES\fP   0x8D47"
+.br
+.ti -1c
+.RI "#define \fBGL_FRAMEBUFFER_UNDEFINED_OES\fP   0x8219"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_WRAP_R_OES\fP   0x8072"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_3D_OES\fP   0x806F"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_BINDING_3D_OES\fP   0x806A"
+.br
+.ti -1c
+.RI "#define \fBGL_MAX_3D_TEXTURE_SIZE_OES\fP   0x8073"
+.br
+.ti -1c
+.RI "#define \fBGL_SAMPLER_3D_OES\fP   0x8B5F"
+.br
+.ti -1c
+.RI "#define \fBGL_FRAMEBUFFER_ATTACHMENT_TEXTURE_3D_ZOFFSET_OES\fP   0x8CD4"
+.br
+.ti -1c
+.RI "#define \fBGL_HALF_FLOAT_OES\fP   0x8D61"
+.br
+.ti -1c
+.RI "#define \fBGL_VERTEX_ARRAY_BINDING_OES\fP   0x85B5"
+.br
+.ti -1c
+.RI "#define \fBGL_UNSIGNED_INT_10_10_10_2_OES\fP   0x8DF6"
+.br
+.ti -1c
+.RI "#define \fBGL_INT_10_10_10_2_OES\fP   0x8DF7"
+.br
+.ti -1c
+.RI "#define \fBGL_DEBUG_OUTPUT_SYNCHRONOUS_KHR\fP   0x8242"
+.br
+.ti -1c
+.RI "#define \fBGL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH_KHR\fP   0x8243"
+.br
+.ti -1c
+.RI "#define \fBGL_DEBUG_CALLBACK_FUNCTION_KHR\fP   0x8244"
+.br
+.ti -1c
+.RI "#define \fBGL_DEBUG_CALLBACK_USER_PARAM_KHR\fP   0x8245"
+.br
+.ti -1c
+.RI "#define \fBGL_DEBUG_SOURCE_API_KHR\fP   0x8246"
+.br
+.ti -1c
+.RI "#define \fBGL_DEBUG_SOURCE_WINDOW_SYSTEM_KHR\fP   0x8247"
+.br
+.ti -1c
+.RI "#define \fBGL_DEBUG_SOURCE_SHADER_COMPILER_KHR\fP   0x8248"
+.br
+.ti -1c
+.RI "#define \fBGL_DEBUG_SOURCE_THIRD_PARTY_KHR\fP   0x8249"
+.br
+.ti -1c
+.RI "#define \fBGL_DEBUG_SOURCE_APPLICATION_KHR\fP   0x824A"
+.br
+.ti -1c
+.RI "#define \fBGL_DEBUG_SOURCE_OTHER_KHR\fP   0x824B"
+.br
+.ti -1c
+.RI "#define \fBGL_DEBUG_TYPE_ERROR_KHR\fP   0x824C"
+.br
+.ti -1c
+.RI "#define \fBGL_DEBUG_TYPE_DEPRECATED_BEHAVIOR_KHR\fP   0x824D"
+.br
+.ti -1c
+.RI "#define \fBGL_DEBUG_TYPE_UNDEFINED_BEHAVIOR_KHR\fP   0x824E"
+.br
+.ti -1c
+.RI "#define \fBGL_DEBUG_TYPE_PORTABILITY_KHR\fP   0x824F"
+.br
+.ti -1c
+.RI "#define \fBGL_DEBUG_TYPE_PERFORMANCE_KHR\fP   0x8250"
+.br
+.ti -1c
+.RI "#define \fBGL_DEBUG_TYPE_OTHER_KHR\fP   0x8251"
+.br
+.ti -1c
+.RI "#define \fBGL_DEBUG_TYPE_MARKER_KHR\fP   0x8268"
+.br
+.ti -1c
+.RI "#define \fBGL_DEBUG_TYPE_PUSH_GROUP_KHR\fP   0x8269"
+.br
+.ti -1c
+.RI "#define \fBGL_DEBUG_TYPE_POP_GROUP_KHR\fP   0x826A"
+.br
+.ti -1c
+.RI "#define \fBGL_DEBUG_SEVERITY_NOTIFICATION_KHR\fP   0x826B"
+.br
+.ti -1c
+.RI "#define \fBGL_MAX_DEBUG_GROUP_STACK_DEPTH_KHR\fP   0x826C"
+.br
+.ti -1c
+.RI "#define \fBGL_DEBUG_GROUP_STACK_DEPTH_KHR\fP   0x826D"
+.br
+.ti -1c
+.RI "#define \fBGL_BUFFER_KHR\fP   0x82E0"
+.br
+.ti -1c
+.RI "#define \fBGL_SHADER_KHR\fP   0x82E1"
+.br
+.ti -1c
+.RI "#define \fBGL_PROGRAM_KHR\fP   0x82E2"
+.br
+.ti -1c
+.RI "#define \fBGL_QUERY_KHR\fP   0x82E3"
+.br
+.ti -1c
+.RI "#define \fBGL_SAMPLER_KHR\fP   0x82E6"
+.br
+.ti -1c
+.RI "#define \fBGL_MAX_LABEL_LENGTH_KHR\fP   0x82E8"
+.br
+.ti -1c
+.RI "#define \fBGL_MAX_DEBUG_MESSAGE_LENGTH_KHR\fP   0x9143"
+.br
+.ti -1c
+.RI "#define \fBGL_MAX_DEBUG_LOGGED_MESSAGES_KHR\fP   0x9144"
+.br
+.ti -1c
+.RI "#define \fBGL_DEBUG_LOGGED_MESSAGES_KHR\fP   0x9145"
+.br
+.ti -1c
+.RI "#define \fBGL_DEBUG_SEVERITY_HIGH_KHR\fP   0x9146"
+.br
+.ti -1c
+.RI "#define \fBGL_DEBUG_SEVERITY_MEDIUM_KHR\fP   0x9147"
+.br
+.ti -1c
+.RI "#define \fBGL_DEBUG_SEVERITY_LOW_KHR\fP   0x9148"
+.br
+.ti -1c
+.RI "#define \fBGL_DEBUG_OUTPUT_KHR\fP   0x92E0"
+.br
+.ti -1c
+.RI "#define \fBGL_CONTEXT_FLAG_DEBUG_BIT_KHR\fP   0x00000002"
+.br
+.ti -1c
+.RI "#define \fBGL_STACK_OVERFLOW_KHR\fP   0x0503"
+.br
+.ti -1c
+.RI "#define \fBGL_STACK_UNDERFLOW_KHR\fP   0x0504"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_RGBA_ASTC_4x4_KHR\fP   0x93B0"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_RGBA_ASTC_5x4_KHR\fP   0x93B1"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_RGBA_ASTC_5x5_KHR\fP   0x93B2"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_RGBA_ASTC_6x5_KHR\fP   0x93B3"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_RGBA_ASTC_6x6_KHR\fP   0x93B4"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_RGBA_ASTC_8x5_KHR\fP   0x93B5"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_RGBA_ASTC_8x6_KHR\fP   0x93B6"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_RGBA_ASTC_8x8_KHR\fP   0x93B7"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_RGBA_ASTC_10x5_KHR\fP   0x93B8"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_RGBA_ASTC_10x6_KHR\fP   0x93B9"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_RGBA_ASTC_10x8_KHR\fP   0x93BA"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_RGBA_ASTC_10x10_KHR\fP   0x93BB"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_RGBA_ASTC_12x10_KHR\fP   0x93BC"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_RGBA_ASTC_12x12_KHR\fP   0x93BD"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR\fP   0x93D0"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR\fP   0x93D1"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR\fP   0x93D2"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR\fP   0x93D3"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR\fP   0x93D4"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR\fP   0x93D5"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR\fP   0x93D6"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR\fP   0x93D7"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR\fP   0x93D8"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR\fP   0x93D9"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x8_KHR\fP   0x93DA"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR\fP   0x93DB"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR\fP   0x93DC"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR\fP   0x93DD"
+.br
+.ti -1c
+.RI "#define \fBGL_3DC_X_AMD\fP   0x87F9"
+.br
+.ti -1c
+.RI "#define \fBGL_3DC_XY_AMD\fP   0x87FA"
+.br
+.ti -1c
+.RI "#define \fBGL_ATC_RGB_AMD\fP   0x8C92"
+.br
+.ti -1c
+.RI "#define \fBGL_ATC_RGBA_EXPLICIT_ALPHA_AMD\fP   0x8C93"
+.br
+.ti -1c
+.RI "#define \fBGL_ATC_RGBA_INTERPOLATED_ALPHA_AMD\fP   0x87EE"
+.br
+.ti -1c
+.RI "#define \fBGL_COUNTER_TYPE_AMD\fP   0x8BC0"
+.br
+.ti -1c
+.RI "#define \fBGL_COUNTER_RANGE_AMD\fP   0x8BC1"
+.br
+.ti -1c
+.RI "#define \fBGL_UNSIGNED_INT64_AMD\fP   0x8BC2"
+.br
+.ti -1c
+.RI "#define \fBGL_PERCENTAGE_AMD\fP   0x8BC3"
+.br
+.ti -1c
+.RI "#define \fBGL_PERFMON_RESULT_AVAILABLE_AMD\fP   0x8BC4"
+.br
+.ti -1c
+.RI "#define \fBGL_PERFMON_RESULT_SIZE_AMD\fP   0x8BC5"
+.br
+.ti -1c
+.RI "#define \fBGL_PERFMON_RESULT_AMD\fP   0x8BC6"
+.br
+.ti -1c
+.RI "#define \fBGL_Z400_BINARY_AMD\fP   0x8740"
+.br
+.ti -1c
+.RI "#define \fBGL_DEPTH_COMPONENT\fP   0x1902"
+.br
+.ti -1c
+.RI "#define \fBGL_DEPTH_STENCIL_OES\fP   0x84F9"
+.br
+.ti -1c
+.RI "#define \fBGL_UNSIGNED_SHORT\fP   0x1403"
+.br
+.ti -1c
+.RI "#define \fBGL_UNSIGNED_INT\fP   0x1405"
+.br
+.ti -1c
+.RI "#define \fBGL_UNSIGNED_INT_24_8_OES\fP   0x84FA"
+.br
+.ti -1c
+.RI "#define \fBGL_DEPTH_COMPONENT16\fP   0x81A5"
+.br
+.ti -1c
+.RI "#define \fBGL_DEPTH_COMPONENT32_OES\fP   0x81A7"
+.br
+.ti -1c
+.RI "#define \fBGL_DEPTH24_STENCIL8_OES\fP   0x88F0"
+.br
+.ti -1c
+.RI "#define \fBGL_READ_FRAMEBUFFER_ANGLE\fP   0x8CA8"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_FRAMEBUFFER_ANGLE\fP   0x8CA9"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_FRAMEBUFFER_BINDING_ANGLE\fP   0x8CA6"
+.br
+.ti -1c
+.RI "#define \fBGL_READ_FRAMEBUFFER_BINDING_ANGLE\fP   0x8CAA"
+.br
+.ti -1c
+.RI "#define \fBGL_RENDERBUFFER_SAMPLES_ANGLE\fP   0x8CAB"
+.br
+.ti -1c
+.RI "#define \fBGL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_ANGLE\fP   0x8D56"
+.br
+.ti -1c
+.RI "#define \fBGL_MAX_SAMPLES_ANGLE\fP   0x8D57"
+.br
+.ti -1c
+.RI "#define \fBGL_VERTEX_ATTRIB_ARRAY_DIVISOR_ANGLE\fP   0x88FE"
+.br
+.ti -1c
+.RI "#define \fBGL_PACK_REVERSE_ROW_ORDER_ANGLE\fP   0x93A4"
+.br
+.ti -1c
+.RI "#define \fBGL_PROGRAM_BINARY_ANGLE\fP   0x93A6"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_RGBA_S3TC_DXT3_ANGLE\fP   0x83F2"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_RGBA_S3TC_DXT5_ANGLE\fP   0x83F3"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_USAGE_ANGLE\fP   0x93A2"
+.br
+.ti -1c
+.RI "#define \fBGL_FRAMEBUFFER_ATTACHMENT_ANGLE\fP   0x93A3"
+.br
+.ti -1c
+.RI "#define \fBGL_TRANSLATED_SHADER_SOURCE_LENGTH_ANGLE\fP   0x93A0"
+.br
+.ti -1c
+.RI "#define \fBGL_RENDERBUFFER_SAMPLES_APPLE\fP   0x8CAB"
+.br
+.ti -1c
+.RI "#define \fBGL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_APPLE\fP   0x8D56"
+.br
+.ti -1c
+.RI "#define \fBGL_MAX_SAMPLES_APPLE\fP   0x8D57"
+.br
+.ti -1c
+.RI "#define \fBGL_READ_FRAMEBUFFER_APPLE\fP   0x8CA8"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_FRAMEBUFFER_APPLE\fP   0x8CA9"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_FRAMEBUFFER_BINDING_APPLE\fP   0x8CA6"
+.br
+.ti -1c
+.RI "#define \fBGL_READ_FRAMEBUFFER_BINDING_APPLE\fP   0x8CAA"
+.br
+.ti -1c
+.RI "#define \fBGL_RGB_422_APPLE\fP   0x8A1F"
+.br
+.ti -1c
+.RI "#define \fBGL_UNSIGNED_SHORT_8_8_APPLE\fP   0x85BA"
+.br
+.ti -1c
+.RI "#define \fBGL_UNSIGNED_SHORT_8_8_REV_APPLE\fP   0x85BB"
+.br
+.ti -1c
+.RI "#define \fBGL_SYNC_OBJECT_APPLE\fP   0x8A53"
+.br
+.ti -1c
+.RI "#define \fBGL_MAX_SERVER_WAIT_TIMEOUT_APPLE\fP   0x9111"
+.br
+.ti -1c
+.RI "#define \fBGL_OBJECT_TYPE_APPLE\fP   0x9112"
+.br
+.ti -1c
+.RI "#define \fBGL_SYNC_CONDITION_APPLE\fP   0x9113"
+.br
+.ti -1c
+.RI "#define \fBGL_SYNC_STATUS_APPLE\fP   0x9114"
+.br
+.ti -1c
+.RI "#define \fBGL_SYNC_FLAGS_APPLE\fP   0x9115"
+.br
+.ti -1c
+.RI "#define \fBGL_SYNC_FENCE_APPLE\fP   0x9116"
+.br
+.ti -1c
+.RI "#define \fBGL_SYNC_GPU_COMMANDS_COMPLETE_APPLE\fP   0x9117"
+.br
+.ti -1c
+.RI "#define \fBGL_UNSIGNALED_APPLE\fP   0x9118"
+.br
+.ti -1c
+.RI "#define \fBGL_SIGNALED_APPLE\fP   0x9119"
+.br
+.ti -1c
+.RI "#define \fBGL_ALREADY_SIGNALED_APPLE\fP   0x911A"
+.br
+.ti -1c
+.RI "#define \fBGL_TIMEOUT_EXPIRED_APPLE\fP   0x911B"
+.br
+.ti -1c
+.RI "#define \fBGL_CONDITION_SATISFIED_APPLE\fP   0x911C"
+.br
+.ti -1c
+.RI "#define \fBGL_WAIT_FAILED_APPLE\fP   0x911D"
+.br
+.ti -1c
+.RI "#define \fBGL_SYNC_FLUSH_COMMANDS_BIT_APPLE\fP   0x00000001"
+.br
+.ti -1c
+.RI "#define \fBGL_TIMEOUT_IGNORED_APPLE\fP   0xFFFFFFFFFFFFFFFFull"
+.br
+.ti -1c
+.RI "#define \fBGL_BGRA_EXT\fP   0x80E1"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_MAX_LEVEL_APPLE\fP   0x813D"
+.br
+.ti -1c
+.RI "#define \fBGL_MALI_PROGRAM_BINARY_ARM\fP   0x8F61"
+.br
+.ti -1c
+.RI "#define \fBGL_MALI_SHADER_BINARY_ARM\fP   0x8F60"
+.br
+.ti -1c
+.RI "#define \fBGL_MIN_EXT\fP   0x8007"
+.br
+.ti -1c
+.RI "#define \fBGL_MAX_EXT\fP   0x8008"
+.br
+.ti -1c
+.RI "#define \fBGL_RGBA16F_EXT\fP   0x881A"
+.br
+.ti -1c
+.RI "#define \fBGL_RGB16F_EXT\fP   0x881B"
+.br
+.ti -1c
+.RI "#define \fBGL_RG16F_EXT\fP   0x822F"
+.br
+.ti -1c
+.RI "#define \fBGL_R16F_EXT\fP   0x822D"
+.br
+.ti -1c
+.RI "#define \fBGL_FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE_EXT\fP   0x8211"
+.br
+.ti -1c
+.RI "#define \fBGL_UNSIGNED_NORMALIZED_EXT\fP   0x8C17"
+.br
+.ti -1c
+.RI "#define \fBGL_PROGRAM_PIPELINE_OBJECT_EXT\fP   0x8A4F"
+.br
+.ti -1c
+.RI "#define \fBGL_PROGRAM_OBJECT_EXT\fP   0x8B40"
+.br
+.ti -1c
+.RI "#define \fBGL_SHADER_OBJECT_EXT\fP   0x8B48"
+.br
+.ti -1c
+.RI "#define \fBGL_BUFFER_OBJECT_EXT\fP   0x9151"
+.br
+.ti -1c
+.RI "#define \fBGL_QUERY_OBJECT_EXT\fP   0x9153"
+.br
+.ti -1c
+.RI "#define \fBGL_VERTEX_ARRAY_OBJECT_EXT\fP   0x9154"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_EXT\fP   0x1800"
+.br
+.ti -1c
+.RI "#define \fBGL_DEPTH_EXT\fP   0x1801"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_EXT\fP   0x1802"
+.br
+.ti -1c
+.RI "#define \fBGL_QUERY_COUNTER_BITS_EXT\fP   0x8864"
+.br
+.ti -1c
+.RI "#define \fBGL_CURRENT_QUERY_EXT\fP   0x8865"
+.br
+.ti -1c
+.RI "#define \fBGL_QUERY_RESULT_EXT\fP   0x8866"
+.br
+.ti -1c
+.RI "#define \fBGL_QUERY_RESULT_AVAILABLE_EXT\fP   0x8867"
+.br
+.ti -1c
+.RI "#define \fBGL_TIME_ELAPSED_EXT\fP   0x88BF"
+.br
+.ti -1c
+.RI "#define \fBGL_TIMESTAMP_EXT\fP   0x8E28"
+.br
+.ti -1c
+.RI "#define \fBGL_GPU_DISJOINT_EXT\fP   0x8FBB"
+.br
+.ti -1c
+.RI "#define \fBGL_EXT_draw_buffers\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_MAX_COLOR_ATTACHMENTS_EXT\fP   0x8CDF"
+.br
+.ti -1c
+.RI "#define \fBGL_MAX_DRAW_BUFFERS_EXT\fP   0x8824"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER0_EXT\fP   0x8825"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER1_EXT\fP   0x8826"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER2_EXT\fP   0x8827"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER3_EXT\fP   0x8828"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER4_EXT\fP   0x8829"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER5_EXT\fP   0x882A"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER6_EXT\fP   0x882B"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER7_EXT\fP   0x882C"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER8_EXT\fP   0x882D"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER9_EXT\fP   0x882E"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER10_EXT\fP   0x882F"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER11_EXT\fP   0x8830"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER12_EXT\fP   0x8831"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER13_EXT\fP   0x8832"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER14_EXT\fP   0x8833"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER15_EXT\fP   0x8834"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT0_EXT\fP   0x8CE0"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT1_EXT\fP   0x8CE1"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT2_EXT\fP   0x8CE2"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT3_EXT\fP   0x8CE3"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT4_EXT\fP   0x8CE4"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT5_EXT\fP   0x8CE5"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT6_EXT\fP   0x8CE6"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT7_EXT\fP   0x8CE7"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT8_EXT\fP   0x8CE8"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT9_EXT\fP   0x8CE9"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT10_EXT\fP   0x8CEA"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT11_EXT\fP   0x8CEB"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT12_EXT\fP   0x8CEC"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT13_EXT\fP   0x8CED"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT14_EXT\fP   0x8CEE"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT15_EXT\fP   0x8CEF"
+.br
+.ti -1c
+.RI "#define \fBGL_MAP_READ_BIT_EXT\fP   0x0001"
+.br
+.ti -1c
+.RI "#define \fBGL_MAP_WRITE_BIT_EXT\fP   0x0002"
+.br
+.ti -1c
+.RI "#define \fBGL_MAP_INVALIDATE_RANGE_BIT_EXT\fP   0x0004"
+.br
+.ti -1c
+.RI "#define \fBGL_MAP_INVALIDATE_BUFFER_BIT_EXT\fP   0x0008"
+.br
+.ti -1c
+.RI "#define \fBGL_MAP_FLUSH_EXPLICIT_BIT_EXT\fP   0x0010"
+.br
+.ti -1c
+.RI "#define \fBGL_MAP_UNSYNCHRONIZED_BIT_EXT\fP   0x0020"
+.br
+.ti -1c
+.RI "#define \fBGL_FRAMEBUFFER_ATTACHMENT_TEXTURE_SAMPLES_EXT\fP   0x8D6C"
+.br
+.ti -1c
+.RI "#define \fBGL_RENDERBUFFER_SAMPLES_EXT\fP   0x8CAB"
+.br
+.ti -1c
+.RI "#define \fBGL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_EXT\fP   0x8D56"
+.br
+.ti -1c
+.RI "#define \fBGL_MAX_SAMPLES_EXT\fP   0x8D57"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT_EXT\fP   0x90F0"
+.br
+.ti -1c
+.RI "#define \fBGL_MULTIVIEW_EXT\fP   0x90F1"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER_EXT\fP   0x0C01"
+.br
+.ti -1c
+.RI "#define \fBGL_READ_BUFFER_EXT\fP   0x0C02"
+.br
+.ti -1c
+.RI "#define \fBGL_MAX_MULTIVIEW_BUFFERS_EXT\fP   0x90F2"
+.br
+.ti -1c
+.RI "#define \fBGL_ANY_SAMPLES_PASSED_EXT\fP   0x8C2F"
+.br
+.ti -1c
+.RI "#define \fBGL_ANY_SAMPLES_PASSED_CONSERVATIVE_EXT\fP   0x8D6A"
+.br
+.ti -1c
+.RI "#define \fBGL_CURRENT_QUERY_EXT\fP   0x8865"
+.br
+.ti -1c
+.RI "#define \fBGL_QUERY_RESULT_EXT\fP   0x8866"
+.br
+.ti -1c
+.RI "#define \fBGL_QUERY_RESULT_AVAILABLE_EXT\fP   0x8867"
+.br
+.ti -1c
+.RI "#define \fBGL_BGRA_EXT\fP   0x80E1"
+.br
+.ti -1c
+.RI "#define \fBGL_UNSIGNED_SHORT_4_4_4_4_REV_EXT\fP   0x8365"
+.br
+.ti -1c
+.RI "#define \fBGL_UNSIGNED_SHORT_1_5_5_5_REV_EXT\fP   0x8366"
+.br
+.ti -1c
+.RI "#define \fBGL_GUILTY_CONTEXT_RESET_EXT\fP   0x8253"
+.br
+.ti -1c
+.RI "#define \fBGL_INNOCENT_CONTEXT_RESET_EXT\fP   0x8254"
+.br
+.ti -1c
+.RI "#define \fBGL_UNKNOWN_CONTEXT_RESET_EXT\fP   0x8255"
+.br
+.ti -1c
+.RI "#define \fBGL_CONTEXT_ROBUST_ACCESS_EXT\fP   0x90F3"
+.br
+.ti -1c
+.RI "#define \fBGL_RESET_NOTIFICATION_STRATEGY_EXT\fP   0x8256"
+.br
+.ti -1c
+.RI "#define \fBGL_LOSE_CONTEXT_ON_RESET_EXT\fP   0x8252"
+.br
+.ti -1c
+.RI "#define \fBGL_NO_RESET_NOTIFICATION_EXT\fP   0x8261"
+.br
+.ti -1c
+.RI "#define \fBGL_VERTEX_SHADER_BIT_EXT\fP   0x00000001"
+.br
+.ti -1c
+.RI "#define \fBGL_FRAGMENT_SHADER_BIT_EXT\fP   0x00000002"
+.br
+.ti -1c
+.RI "#define \fBGL_ALL_SHADER_BITS_EXT\fP   0xFFFFFFFF"
+.br
+.ti -1c
+.RI "#define \fBGL_PROGRAM_SEPARABLE_EXT\fP   0x8258"
+.br
+.ti -1c
+.RI "#define \fBGL_ACTIVE_PROGRAM_EXT\fP   0x8259"
+.br
+.ti -1c
+.RI "#define \fBGL_PROGRAM_PIPELINE_BINDING_EXT\fP   0x825A"
+.br
+.ti -1c
+.RI "#define \fBGL_FRAGMENT_SHADER_DISCARDS_SAMPLES_EXT\fP   0x8A52"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_COMPARE_MODE_EXT\fP   0x884C"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_COMPARE_FUNC_EXT\fP   0x884D"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPARE_REF_TO_TEXTURE_EXT\fP   0x884E"
+.br
+.ti -1c
+.RI "#define \fBGL_SAMPLER_2D_SHADOW_EXT\fP   0x8B62"
+.br
+.ti -1c
+.RI "#define \fBGL_SRGB_EXT\fP   0x8C40"
+.br
+.ti -1c
+.RI "#define \fBGL_SRGB_ALPHA_EXT\fP   0x8C42"
+.br
+.ti -1c
+.RI "#define \fBGL_SRGB8_ALPHA8_EXT\fP   0x8C43"
+.br
+.ti -1c
+.RI "#define \fBGL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING_EXT\fP   0x8210"
+.br
+.ti -1c
+.RI "#define \fBGL_EXT_sRGB_write_control\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_FRAMEBUFFER_SRGB_EXT\fP   0x8DB9"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_RGB_S3TC_DXT1_EXT\fP   0x83F0"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_RGBA_S3TC_DXT1_EXT\fP   0x83F1"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_MAX_ANISOTROPY_EXT\fP   0x84FE"
+.br
+.ti -1c
+.RI "#define \fBGL_MAX_TEXTURE_MAX_ANISOTROPY_EXT\fP   0x84FF"
+.br
+.ti -1c
+.RI "#define \fBGL_BGRA_EXT\fP   0x80E1"
+.br
+.ti -1c
+.RI "#define \fBGL_RED_EXT\fP   0x1903"
+.br
+.ti -1c
+.RI "#define \fBGL_RG_EXT\fP   0x8227"
+.br
+.ti -1c
+.RI "#define \fBGL_R8_EXT\fP   0x8229"
+.br
+.ti -1c
+.RI "#define \fBGL_RG8_EXT\fP   0x822B"
+.br
+.ti -1c
+.RI "#define \fBGL_EXT_texture_sRGB_decode\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_SRGB_DECODE_EXT\fP   0x8A48"
+.br
+.ti -1c
+.RI "#define \fBGL_DECODE_EXT\fP   0x8A49"
+.br
+.ti -1c
+.RI "#define \fBGL_SKIP_DECODE_EXT\fP   0x8A4A"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_IMMUTABLE_FORMAT_EXT\fP   0x912F"
+.br
+.ti -1c
+.RI "#define \fBGL_ALPHA8_EXT\fP   0x803C"
+.br
+.ti -1c
+.RI "#define \fBGL_LUMINANCE8_EXT\fP   0x8040"
+.br
+.ti -1c
+.RI "#define \fBGL_LUMINANCE8_ALPHA8_EXT\fP   0x8045"
+.br
+.ti -1c
+.RI "#define \fBGL_RGBA32F_EXT\fP   0x8814"
+.br
+.ti -1c
+.RI "#define \fBGL_RGB32F_EXT\fP   0x8815"
+.br
+.ti -1c
+.RI "#define \fBGL_ALPHA32F_EXT\fP   0x8816"
+.br
+.ti -1c
+.RI "#define \fBGL_LUMINANCE32F_EXT\fP   0x8818"
+.br
+.ti -1c
+.RI "#define \fBGL_LUMINANCE_ALPHA32F_EXT\fP   0x8819"
+.br
+.ti -1c
+.RI "#define \fBGL_ALPHA16F_EXT\fP   0x881C"
+.br
+.ti -1c
+.RI "#define \fBGL_LUMINANCE16F_EXT\fP   0x881E"
+.br
+.ti -1c
+.RI "#define \fBGL_LUMINANCE_ALPHA16F_EXT\fP   0x881F"
+.br
+.ti -1c
+.RI "#define \fBGL_RGB10_A2_EXT\fP   0x8059"
+.br
+.ti -1c
+.RI "#define \fBGL_RGB10_EXT\fP   0x8052"
+.br
+.ti -1c
+.RI "#define \fBGL_BGRA8_EXT\fP   0x93A1"
+.br
+.ti -1c
+.RI "#define \fBGL_R8_EXT\fP   0x8229"
+.br
+.ti -1c
+.RI "#define \fBGL_RG8_EXT\fP   0x822B"
+.br
+.ti -1c
+.RI "#define \fBGL_R32F_EXT\fP   0x822E"
+.br
+.ti -1c
+.RI "#define \fBGL_RG32F_EXT\fP   0x8230"
+.br
+.ti -1c
+.RI "#define \fBGL_R16F_EXT\fP   0x822D"
+.br
+.ti -1c
+.RI "#define \fBGL_RG16F_EXT\fP   0x822F"
+.br
+.ti -1c
+.RI "#define \fBGL_UNSIGNED_INT_2_10_10_10_REV_EXT\fP   0x8368"
+.br
+.ti -1c
+.RI "#define \fBGL_UNPACK_ROW_LENGTH_EXT\fP   0x0CF2"
+.br
+.ti -1c
+.RI "#define \fBGL_UNPACK_SKIP_ROWS_EXT\fP   0x0CF3"
+.br
+.ti -1c
+.RI "#define \fBGL_UNPACK_SKIP_PIXELS_EXT\fP   0x0CF4"
+.br
+.ti -1c
+.RI "#define \fBGL_SHADER_BINARY_DMP\fP   0x9250"
+.br
+.ti -1c
+.RI "#define \fBGL_GCCSO_SHADER_BINARY_FJ\fP   0x9260"
+.br
+.ti -1c
+.RI "#define \fBGL_SGX_PROGRAM_BINARY_IMG\fP   0x9130"
+.br
+.ti -1c
+.RI "#define \fBGL_BGRA_IMG\fP   0x80E1"
+.br
+.ti -1c
+.RI "#define \fBGL_UNSIGNED_SHORT_4_4_4_4_REV_IMG\fP   0x8365"
+.br
+.ti -1c
+.RI "#define \fBGL_SGX_BINARY_IMG\fP   0x8C0A"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_RGB_PVRTC_4BPPV1_IMG\fP   0x8C00"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_RGB_PVRTC_2BPPV1_IMG\fP   0x8C01"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_RGBA_PVRTC_4BPPV1_IMG\fP   0x8C02"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_RGBA_PVRTC_2BPPV1_IMG\fP   0x8C03"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_RGBA_PVRTC_2BPPV2_IMG\fP   0x9137"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_RGBA_PVRTC_4BPPV2_IMG\fP   0x9138"
+.br
+.ti -1c
+.RI "#define \fBGL_RENDERBUFFER_SAMPLES_IMG\fP   0x9133"
+.br
+.ti -1c
+.RI "#define \fBGL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_IMG\fP   0x9134"
+.br
+.ti -1c
+.RI "#define \fBGL_MAX_SAMPLES_IMG\fP   0x9135"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_SAMPLES_IMG\fP   0x9136"
+.br
+.ti -1c
+.RI "#define \fBGL_COVERAGE_COMPONENT_NV\fP   0x8ED0"
+.br
+.ti -1c
+.RI "#define \fBGL_COVERAGE_COMPONENT4_NV\fP   0x8ED1"
+.br
+.ti -1c
+.RI "#define \fBGL_COVERAGE_ATTACHMENT_NV\fP   0x8ED2"
+.br
+.ti -1c
+.RI "#define \fBGL_COVERAGE_BUFFERS_NV\fP   0x8ED3"
+.br
+.ti -1c
+.RI "#define \fBGL_COVERAGE_SAMPLES_NV\fP   0x8ED4"
+.br
+.ti -1c
+.RI "#define \fBGL_COVERAGE_ALL_FRAGMENTS_NV\fP   0x8ED5"
+.br
+.ti -1c
+.RI "#define \fBGL_COVERAGE_EDGE_FRAGMENTS_NV\fP   0x8ED6"
+.br
+.ti -1c
+.RI "#define \fBGL_COVERAGE_AUTOMATIC_NV\fP   0x8ED7"
+.br
+.ti -1c
+.RI "#define \fBGL_COVERAGE_BUFFER_BIT_NV\fP   0x00008000"
+.br
+.ti -1c
+.RI "#define \fBGL_DEPTH_COMPONENT16_NONLINEAR_NV\fP   0x8E2C"
+.br
+.ti -1c
+.RI "#define \fBGL_MAX_DRAW_BUFFERS_NV\fP   0x8824"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER0_NV\fP   0x8825"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER1_NV\fP   0x8826"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER2_NV\fP   0x8827"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER3_NV\fP   0x8828"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER4_NV\fP   0x8829"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER5_NV\fP   0x882A"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER6_NV\fP   0x882B"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER7_NV\fP   0x882C"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER8_NV\fP   0x882D"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER9_NV\fP   0x882E"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER10_NV\fP   0x882F"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER11_NV\fP   0x8830"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER12_NV\fP   0x8831"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER13_NV\fP   0x8832"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER14_NV\fP   0x8833"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_BUFFER15_NV\fP   0x8834"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT0_NV\fP   0x8CE0"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT1_NV\fP   0x8CE1"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT2_NV\fP   0x8CE2"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT3_NV\fP   0x8CE3"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT4_NV\fP   0x8CE4"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT5_NV\fP   0x8CE5"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT6_NV\fP   0x8CE6"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT7_NV\fP   0x8CE7"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT8_NV\fP   0x8CE8"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT9_NV\fP   0x8CE9"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT10_NV\fP   0x8CEA"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT11_NV\fP   0x8CEB"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT12_NV\fP   0x8CEC"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT13_NV\fP   0x8CED"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT14_NV\fP   0x8CEE"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_ATTACHMENT15_NV\fP   0x8CEF"
+.br
+.ti -1c
+.RI "#define \fBGL_MAX_COLOR_ATTACHMENTS_NV\fP   0x8CDF"
+.br
+.ti -1c
+.RI "#define \fBGL_ALL_COMPLETED_NV\fP   0x84F2"
+.br
+.ti -1c
+.RI "#define \fBGL_FENCE_STATUS_NV\fP   0x84F3"
+.br
+.ti -1c
+.RI "#define \fBGL_FENCE_CONDITION_NV\fP   0x84F4"
+.br
+.ti -1c
+.RI "#define \fBGL_READ_FRAMEBUFFER_NV\fP   0x8CA8"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_FRAMEBUFFER_NV\fP   0x8CA9"
+.br
+.ti -1c
+.RI "#define \fBGL_DRAW_FRAMEBUFFER_BINDING_NV\fP   0x8CA6"
+.br
+.ti -1c
+.RI "#define \fBGL_READ_FRAMEBUFFER_BINDING_NV\fP   0x8CAA"
+.br
+.ti -1c
+.RI "#define \fBGL_RENDERBUFFER_SAMPLES_NV\fP   0x8CAB"
+.br
+.ti -1c
+.RI "#define \fBGL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_NV\fP   0x8D56"
+.br
+.ti -1c
+.RI "#define \fBGL_MAX_SAMPLES_NV\fP   0x8D57"
+.br
+.ti -1c
+.RI "#define \fBGL_VERTEX_ATTRIB_ARRAY_DIVISOR_NV\fP   0x88FE"
+.br
+.ti -1c
+.RI "#define \fBGL_READ_BUFFER_NV\fP   0x0C02"
+.br
+.ti -1c
+.RI "#define \fBGL_SAMPLER_2D_ARRAY_SHADOW_NV\fP   0x8DC4"
+.br
+.ti -1c
+.RI "#define \fBGL_SAMPLER_CUBE_SHADOW_NV\fP   0x8DC5"
+.br
+.ti -1c
+.RI "#define \fBGL_SLUMINANCE_NV\fP   0x8C46"
+.br
+.ti -1c
+.RI "#define \fBGL_SLUMINANCE_ALPHA_NV\fP   0x8C44"
+.br
+.ti -1c
+.RI "#define \fBGL_SRGB8_NV\fP   0x8C41"
+.br
+.ti -1c
+.RI "#define \fBGL_SLUMINANCE8_NV\fP   0x8C47"
+.br
+.ti -1c
+.RI "#define \fBGL_SLUMINANCE8_ALPHA8_NV\fP   0x8C45"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_SRGB_S3TC_DXT1_NV\fP   0x8C4C"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_SRGB_ALPHA_S3TC_DXT1_NV\fP   0x8C4D"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_SRGB_ALPHA_S3TC_DXT3_NV\fP   0x8C4E"
+.br
+.ti -1c
+.RI "#define \fBGL_COMPRESSED_SRGB_ALPHA_S3TC_DXT5_NV\fP   0x8C4F"
+.br
+.ti -1c
+.RI "#define \fBGL_ETC1_SRGB8_NV\fP   0x88EE"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_BORDER_COLOR_NV\fP   0x1004"
+.br
+.ti -1c
+.RI "#define \fBGL_CLAMP_TO_BORDER_NV\fP   0x812D"
+.br
+.ti -1c
+.RI "#define \fBGL_ALPHA_TEST_QCOM\fP   0x0BC0"
+.br
+.ti -1c
+.RI "#define \fBGL_ALPHA_TEST_FUNC_QCOM\fP   0x0BC1"
+.br
+.ti -1c
+.RI "#define \fBGL_ALPHA_TEST_REF_QCOM\fP   0x0BC2"
+.br
+.ti -1c
+.RI "#define \fBGL_BINNING_CONTROL_HINT_QCOM\fP   0x8FB0"
+.br
+.ti -1c
+.RI "#define \fBGL_CPU_OPTIMIZED_QCOM\fP   0x8FB1"
+.br
+.ti -1c
+.RI "#define \fBGL_GPU_OPTIMIZED_QCOM\fP   0x8FB2"
+.br
+.ti -1c
+.RI "#define \fBGL_RENDER_DIRECT_TO_FRAMEBUFFER_QCOM\fP   0x8FB3"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_WIDTH_QCOM\fP   0x8BD2"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_HEIGHT_QCOM\fP   0x8BD3"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_DEPTH_QCOM\fP   0x8BD4"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_INTERNAL_FORMAT_QCOM\fP   0x8BD5"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_FORMAT_QCOM\fP   0x8BD6"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_TYPE_QCOM\fP   0x8BD7"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_IMAGE_VALID_QCOM\fP   0x8BD8"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_NUM_LEVELS_QCOM\fP   0x8BD9"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_TARGET_QCOM\fP   0x8BDA"
+.br
+.ti -1c
+.RI "#define \fBGL_TEXTURE_OBJECT_VALID_QCOM\fP   0x8BDB"
+.br
+.ti -1c
+.RI "#define \fBGL_STATE_RESTORE\fP   0x8BDC"
+.br
+.ti -1c
+.RI "#define \fBGL_PERFMON_GLOBAL_MODE_QCOM\fP   0x8FA0"
+.br
+.ti -1c
+.RI "#define \fBGL_WRITEONLY_RENDERING_QCOM\fP   0x8823"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_BUFFER_BIT0_QCOM\fP   0x00000001"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_BUFFER_BIT1_QCOM\fP   0x00000002"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_BUFFER_BIT2_QCOM\fP   0x00000004"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_BUFFER_BIT3_QCOM\fP   0x00000008"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_BUFFER_BIT4_QCOM\fP   0x00000010"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_BUFFER_BIT5_QCOM\fP   0x00000020"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_BUFFER_BIT6_QCOM\fP   0x00000040"
+.br
+.ti -1c
+.RI "#define \fBGL_COLOR_BUFFER_BIT7_QCOM\fP   0x00000080"
+.br
+.ti -1c
+.RI "#define \fBGL_DEPTH_BUFFER_BIT0_QCOM\fP   0x00000100"
+.br
+.ti -1c
+.RI "#define \fBGL_DEPTH_BUFFER_BIT1_QCOM\fP   0x00000200"
+.br
+.ti -1c
+.RI "#define \fBGL_DEPTH_BUFFER_BIT2_QCOM\fP   0x00000400"
+.br
+.ti -1c
+.RI "#define \fBGL_DEPTH_BUFFER_BIT3_QCOM\fP   0x00000800"
+.br
+.ti -1c
+.RI "#define \fBGL_DEPTH_BUFFER_BIT4_QCOM\fP   0x00001000"
+.br
+.ti -1c
+.RI "#define \fBGL_DEPTH_BUFFER_BIT5_QCOM\fP   0x00002000"
+.br
+.ti -1c
+.RI "#define \fBGL_DEPTH_BUFFER_BIT6_QCOM\fP   0x00004000"
+.br
+.ti -1c
+.RI "#define \fBGL_DEPTH_BUFFER_BIT7_QCOM\fP   0x00008000"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_BUFFER_BIT0_QCOM\fP   0x00010000"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_BUFFER_BIT1_QCOM\fP   0x00020000"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_BUFFER_BIT2_QCOM\fP   0x00040000"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_BUFFER_BIT3_QCOM\fP   0x00080000"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_BUFFER_BIT4_QCOM\fP   0x00100000"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_BUFFER_BIT5_QCOM\fP   0x00200000"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_BUFFER_BIT6_QCOM\fP   0x00400000"
+.br
+.ti -1c
+.RI "#define \fBGL_STENCIL_BUFFER_BIT7_QCOM\fP   0x00800000"
+.br
+.ti -1c
+.RI "#define \fBGL_MULTISAMPLE_BUFFER_BIT0_QCOM\fP   0x01000000"
+.br
+.ti -1c
+.RI "#define \fBGL_MULTISAMPLE_BUFFER_BIT1_QCOM\fP   0x02000000"
+.br
+.ti -1c
+.RI "#define \fBGL_MULTISAMPLE_BUFFER_BIT2_QCOM\fP   0x04000000"
+.br
+.ti -1c
+.RI "#define \fBGL_MULTISAMPLE_BUFFER_BIT3_QCOM\fP   0x08000000"
+.br
+.ti -1c
+.RI "#define \fBGL_MULTISAMPLE_BUFFER_BIT4_QCOM\fP   0x10000000"
+.br
+.ti -1c
+.RI "#define \fBGL_MULTISAMPLE_BUFFER_BIT5_QCOM\fP   0x20000000"
+.br
+.ti -1c
+.RI "#define \fBGL_MULTISAMPLE_BUFFER_BIT6_QCOM\fP   0x40000000"
+.br
+.ti -1c
+.RI "#define \fBGL_MULTISAMPLE_BUFFER_BIT7_QCOM\fP   0x80000000"
+.br
+.ti -1c
+.RI "#define \fBGL_SHADER_BINARY_VIV\fP   0x8FC4"
+.br
+.ti -1c
+.RI "#define \fBGL_OES_compressed_ETC1_RGB8_texture\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_OES_compressed_paletted_texture\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_OES_depth24\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_OES_depth32\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_OES_depth_texture\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_OES_EGL_image\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_OES_EGL_image_external\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_OES_element_index_uint\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_OES_fbo_render_mipmap\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_OES_fragment_precision_high\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_OES_get_program_binary\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_OES_mapbuffer\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_OES_packed_depth_stencil\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_OES_required_internalformat\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_OES_rgb8_rgba8\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_OES_standard_derivatives\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_OES_stencil1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_OES_stencil4\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_OES_surfaceless_context\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_OES_texture_3D\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_OES_texture_float\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_OES_texture_float_linear\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_OES_texture_half_float\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_OES_texture_half_float_linear\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_OES_texture_npot\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_OES_vertex_array_object\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_OES_vertex_half_float\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_OES_vertex_type_10_10_10_2\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_KHR_debug\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_KHR_texture_compression_astc_ldr\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_AMD_compressed_3DC_texture\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_AMD_compressed_ATC_texture\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_AMD_performance_monitor\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_AMD_program_binary_Z400\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_ANGLE_depth_texture\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_ANGLE_framebuffer_blit\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_ANGLE_framebuffer_multisample\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_ANGLE_instanced_arrays\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_ANGLE_pack_reverse_row_order\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_ANGLE_program_binary\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_ANGLE_texture_compression_dxt3\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_ANGLE_texture_compression_dxt5\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_ANGLE_texture_usage\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_ANGLE_translated_shader_source\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_APPLE_copy_texture_levels\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_APPLE_framebuffer_multisample\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_APPLE_rgb_422\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_APPLE_sync\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_APPLE_texture_format_BGRA8888\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_APPLE_texture_max_level\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_ARM_mali_program_binary\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_ARM_mali_shader_binary\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_ARM_rgba8\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_EXT_blend_minmax\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_EXT_color_buffer_half_float\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_EXT_debug_label\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_EXT_debug_marker\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_EXT_discard_framebuffer\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_EXT_disjoint_timer_query\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_EXT_map_buffer_range\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_EXT_multisampled_render_to_texture\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_EXT_multiview_draw_buffers\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_EXT_multi_draw_arrays\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_EXT_occlusion_query_boolean\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_EXT_read_format_bgra\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_EXT_robustness\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_EXT_separate_shader_objects\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_EXT_shader_framebuffer_fetch\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_EXT_shader_texture_lod\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_EXT_shadow_samplers\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_EXT_sRGB\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_EXT_texture_compression_dxt1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_EXT_texture_filter_anisotropic\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_EXT_texture_format_BGRA8888\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_EXT_texture_rg\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_EXT_texture_storage\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_EXT_texture_type_2_10_10_10_REV\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_EXT_unpack_subimage\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_DMP_shader_binary\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_FJ_shader_binary_GCCSO\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_IMG_program_binary\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_IMG_read_format\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_IMG_shader_binary\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_IMG_texture_compression_pvrtc\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_IMG_texture_compression_pvrtc2\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_IMG_multisampled_render_to_texture\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_NV_coverage_sample\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_NV_depth_nonlinear\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_NV_draw_buffers\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_NV_draw_instanced\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_NV_fbo_color_attachments\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_NV_fence\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_NV_framebuffer_blit\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_NV_framebuffer_multisample\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_NV_generate_mipmap_sRGB\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_NV_instanced_arrays\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_NV_read_buffer\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_NV_read_buffer_front\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_NV_read_depth\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_NV_read_depth_stencil\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_NV_read_stencil\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_NV_shadow_samplers_array\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_NV_shadow_samplers_cube\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_NV_sRGB_formats\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_NV_texture_border_clamp\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_NV_texture_compression_s3tc_update\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_NV_texture_npot_2D_mipmap\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_QCOM_alpha_test\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_QCOM_binning_control\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_QCOM_driver_control\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_QCOM_extended_get\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_QCOM_extended_get2\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_QCOM_perfmon_global_mode\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_QCOM_writeonly_rendering\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_QCOM_tiled_rendering\fP   1"
+.br
+.ti -1c
+.RI "#define \fBGL_VIV_shader_binary\fP   1"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBkhronos_int64_t\fP \fBGLint64\fP"
+.br
+.ti -1c
+.RI "typedef \fBkhronos_uint64_t\fP \fBGLuint64\fP"
+.br
+.ti -1c
+.RI "typedef struct __GLsync * \fBGLsync\fP"
+.br
+.ti -1c
+.RI "typedef \fBvoid\fP * \fBGLeglImageOES\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLenum\fP \fBtype\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLenum\fP \fBGLuint\fP \fBid\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLenum\fP \fBGLuint\fP \fBGLenum\fP \fBseverity\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLenum\fP \fBGLuint\fP \fBGLenum\fP \fBGLsizei\fP \fBlength\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLenum\fP \fBGLuint\fP \fBGLenum\fP \fBGLsizei\fP const \fBGLchar\fP * \fBmessage\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLenum\fP \fBGLuint\fP \fBGLenum\fP \fBGLsizei\fP const \fBGLchar\fP const \fBvoid\fP * \fBuserParam\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLeglImageOES\fP \fBimage\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLsizei\fP \fBbufSize\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLsizei\fP \fBGLsizei\fP \fBGLenum\fP * \fBbinaryFormat\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLsizei\fP \fBGLsizei\fP \fBGLenum\fP \fBGLvoid\fP * \fBbinary\fP"
+.br
+.ti -1c
+.RI "typedef \fBvoid\fP *\fBGL_APIENTRYP\fP \fBPFNGLMAPBUFFEROESPROC\fP(\fBGLenum\fP \fBtarget\fP, \fBGLenum\fP \fBaccess\fP)"
+.br
+.ti -1c
+.RI "typedef \fBGLenum\fP \fBpname\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLenum\fP \fBGLvoid\fP ** \fBparams\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBlevel\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLenum\fP \fBinternalformat\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLenum\fP \fBGLsizei\fP \fBwidth\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLenum\fP \fBGLsizei\fP \fBGLsizei\fP \fBheight\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLenum\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLsizei\fP \fBdepth\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLenum\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLint\fP \fBborder\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLenum\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLint\fP \fBGLenum\fP \fBformat\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLenum\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLint\fP \fBGLenum\fP \fBGLenum\fP const \fBGLvoid\fP * \fBpixels\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLint\fP \fBxoffset\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLint\fP \fBGLint\fP \fByoffset\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBzoffset\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBx\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBy\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLenum\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLint\fP \fBGLsizei\fP \fBimageSize\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLenum\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLint\fP \fBGLsizei\fP const \fBGLvoid\fP * \fBdata\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLenum\fP \fBattachment\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLenum\fP \fBGLenum\fP \fBtextarget\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLenum\fP \fBGLenum\fP \fBGLuint\fP \fBtexture\fP"
+.br
+.ti -1c
+.RI "typedef const \fBGLuint\fP * \fBarrays\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLenum\fP \fBGLenum\fP \fBGLsizei\fP \fBcount\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLenum\fP \fBGLenum\fP \fBGLsizei\fP const \fBGLuint\fP * \fBids\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLenum\fP \fBGLenum\fP \fBGLsizei\fP const \fBGLuint\fP \fBGLboolean\fP \fBenabled\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLenum\fP \fBGLuint\fP \fBGLenum\fP \fBGLsizei\fP const \fBGLchar\fP * \fBbuf\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLsizei\fP \fBbufsize\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLsizei\fP \fBGLenum\fP * \fBsources\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLsizei\fP \fBGLenum\fP \fBGLenum\fP * \fBtypes\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLsizei\fP \fBGLenum\fP \fBGLenum\fP \fBGLuint\fP \fBGLenum\fP * \fBseverities\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLsizei\fP \fBGLenum\fP \fBGLenum\fP \fBGLuint\fP \fBGLenum\fP \fBGLsizei\fP * \fBlengths\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLsizei\fP \fBGLenum\fP \fBGLenum\fP \fBGLuint\fP \fBGLenum\fP \fBGLsizei\fP \fBGLchar\fP * \fBmessageLog\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLuint\fP \fBname\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLuint\fP \fBGLsizei\fP const \fBGLchar\fP * \fBlabel\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLsizei\fP \fBgroupsSize\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLsizei\fP \fBGLuint\fP * \fBgroups\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP * \fBnumCounters\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLint\fP * \fBmaxActiveCounters\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLint\fP \fBGLsizei\fP \fBcounterSize\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLint\fP \fBGLsizei\fP \fBGLuint\fP * \fBcounters\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLsizei\fP \fBGLsizei\fP \fBGLchar\fP * \fBgroupString\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLuint\fP \fBcounter\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLuint\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLchar\fP * \fBcounterString\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLuint\fP * \fBmonitors\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLboolean\fP \fBenable\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLboolean\fP \fBGLuint\fP \fBgroup\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLboolean\fP \fBGLuint\fP \fBGLint\fP \fBGLuint\fP * \fBcountersList\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLenum\fP \fBGLsizei\fP \fBdataSize\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLenum\fP \fBGLsizei\fP \fBGLuint\fP \fBGLint\fP * \fBbytesWritten\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBsrcY0\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLint\fP \fBsrcX1\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBsrcY1\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBdstX0\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBdstY0\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBdstX1\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBdstY1\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLbitfield\fP \fBmask\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLbitfield\fP \fBGLenum\fP \fBfilter\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLsizei\fP \fBsamples\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBfirst\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLsizei\fP \fBGLsizei\fP \fBprimcount\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLsizei\fP \fBGLenum\fP const \fBvoid\fP * \fBindices\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLuint\fP \fBdivisor\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLsizei\fP \fBGLsizei\fP \fBGLchar\fP * \fBsource\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLuint\fP \fBsourceTexture\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLuint\fP \fBGLint\fP \fBsourceBaseLevel\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLuint\fP \fBGLint\fP \fBGLsizei\fP \fBsourceLevelCount\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLbitfield\fP \fBflags\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLbitfield\fP \fBGLuint64\fP \fBtimeout\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLenum\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLint\fP * \fBvalues\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLuint\fP \fBobject\fP"
+.br
+.ti -1c
+.RI "typedef const \fBGLchar\fP * \fBmarker\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLsizei\fP \fBnumAttachments\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLsizei\fP const \fBGLenum\fP * \fBattachments\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLenum\fP \fBtarget\fP"
+.br
+.ti -1c
+.RI "typedef \fBvoid\fP *\fBGL_APIENTRYP\fP \fBPFNGLMAPBUFFERRANGEEXTPROC\fP(\fBGLenum\fP \fBtarget\fP, \fBGLintptr\fP \fBoffset\fP, \fBGLsizeiptr\fP \fBlength\fP, \fBGLbitfield\fP \fBaccess\fP)"
+.br
+.ti -1c
+.RI "typedef \fBGLintptr\fP \fBoffset\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBindex\fP"
+.br
+.ti -1c
+.RI "typedef const \fBGLenum\fP * \fBlocation\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLbitfield\fP \fBstages\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLbitfield\fP \fBGLuint\fP \fBprogram\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLsizei\fP const \fBGLchar\fP ** \fBstrings\fP"
+.br
+.ti -1c
+.RI "typedef const \fBGLuint\fP * \fBpipelines\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLenum\fP \fBGLint\fP \fBvalue\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBz\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBw\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLsizei\fP \fBGLboolean\fP \fBtranspose\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLsizei\fP \fBGLsizei\fP \fBGLchar\fP * \fBinfoLog\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLsizei\fP \fBlevels\fP"
+.br
+.ti -1c
+.RI "typedef const \fBGLenum\fP * \fBbufs\fP"
+.br
+.ti -1c
+.RI "typedef const \fBGLuint\fP * \fBfences\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLenum\fP \fBcondition\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLclampf\fP \fBref\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLsizei\fP \fBsize\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLsizei\fP \fBGLuint\fP * \fBdriverControls\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLsizei\fP \fBGLsizei\fP \fBGLchar\fP * \fBdriverControlString\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBmaxTextures\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLint\fP * \fBnumTextures\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBmaxBuffers\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLint\fP * \fBnumBuffers\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBmaxRenderbuffers\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLint\fP * \fBnumRenderbuffers\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBmaxFramebuffers\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLint\fP * \fBnumFramebuffers\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLenum\fP \fBface\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLenum\fP \fBGLint\fP \fBparam\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLenum\fP \fBGLenum\fP \fBGLvoid\fP * \fBtexels\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBmaxShaders\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLint\fP * \fBnumShaders\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBmaxPrograms\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLint\fP \fBGLint\fP * \fBnumPrograms\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLenum\fP \fBshadertype\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLuint\fP \fBGLuint\fP \fBGLuint\fP \fBGLbitfield\fP \fBpreserveMask\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBvoid\fP (\fBGL_APIENTRYP\fP GLDEBUGPROCKHR)(\fBGLenum\fP \fBsource\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLboolean\fP (\fBGL_APIENTRYP\fP PFNGLUNMAPBUFFEROESPROC)(\fBGLenum\fP \fBtarget\fP)"
+.br
+.ti -1c
+.RI "typedef \fBGLuint\fP (\fBGL_APIENTRYP\fP PFNGLGETDEBUGMESSAGELOGKHRPROC)(\fBGLuint\fP \fBcount\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLsync\fP (\fBGL_APIENTRYP\fP PFNGLFENCESYNCAPPLEPROC)(\fBGLenum\fP \fBcondition\fP"
+.br
+.ti -1c
+.RI "typedef \fBGLenum\fP (\fBGL_APIENTRYP\fP PFNGLCLIENTWAITSYNCAPPLEPROC)(\fBGLsync\fP sync"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define GL_3DC_X_AMD   0x87F9"
+
+.SS "#define GL_3DC_XY_AMD   0x87FA"
+
+.SS "#define GL_ACTIVE_PROGRAM_EXT   0x8259"
+
+.SS "#define GL_ALL_COMPLETED_NV   0x84F2"
+
+.SS "#define GL_ALL_SHADER_BITS_EXT   0xFFFFFFFF"
+
+.SS "#define GL_ALPHA16F_EXT   0x881C"
+
+.SS "#define GL_ALPHA32F_EXT   0x8816"
+
+.SS "#define GL_ALPHA8_EXT   0x803C"
+
+.SS "#define GL_ALPHA8_OES   0x803C"
+
+.SS "#define GL_ALPHA_TEST_FUNC_QCOM   0x0BC1"
+
+.SS "#define GL_ALPHA_TEST_QCOM   0x0BC0"
+
+.SS "#define GL_ALPHA_TEST_REF_QCOM   0x0BC2"
+
+.SS "#define GL_ALREADY_SIGNALED_APPLE   0x911A"
+
+.SS "#define GL_AMD_compressed_3DC_texture   1"
+
+.SS "#define GL_AMD_compressed_ATC_texture   1"
+
+.SS "#define GL_AMD_performance_monitor   1"
+
+.SS "#define GL_AMD_program_binary_Z400   1"
+
+.SS "#define GL_ANGLE_depth_texture   1"
+
+.SS "#define GL_ANGLE_framebuffer_blit   1"
+
+.SS "#define GL_ANGLE_framebuffer_multisample   1"
+
+.SS "#define GL_ANGLE_instanced_arrays   1"
+
+.SS "#define GL_ANGLE_pack_reverse_row_order   1"
+
+.SS "#define GL_ANGLE_program_binary   1"
+
+.SS "#define GL_ANGLE_texture_compression_dxt3   1"
+
+.SS "#define GL_ANGLE_texture_compression_dxt5   1"
+
+.SS "#define GL_ANGLE_texture_usage   1"
+
+.SS "#define GL_ANGLE_translated_shader_source   1"
+
+.SS "#define GL_ANY_SAMPLES_PASSED_CONSERVATIVE_EXT   0x8D6A"
+
+.SS "#define GL_ANY_SAMPLES_PASSED_EXT   0x8C2F"
+
+.SS "#define GL_APIENTRYP   \fBGL_APIENTRY\fP*"
+
+.SS "#define GL_APPLE_copy_texture_levels   1"
+
+.SS "#define GL_APPLE_framebuffer_multisample   1"
+
+.SS "#define GL_APPLE_rgb_422   1"
+
+.SS "#define GL_APPLE_sync   1"
+
+.SS "#define GL_APPLE_texture_format_BGRA8888   1"
+
+.SS "#define GL_APPLE_texture_max_level   1"
+
+.SS "#define GL_ARM_mali_program_binary   1"
+
+.SS "#define GL_ARM_mali_shader_binary   1"
+
+.SS "#define GL_ARM_rgba8   1"
+
+.SS "#define GL_ATC_RGB_AMD   0x8C92"
+
+.SS "#define GL_ATC_RGBA_EXPLICIT_ALPHA_AMD   0x8C93"
+
+.SS "#define GL_ATC_RGBA_INTERPOLATED_ALPHA_AMD   0x87EE"
+
+.SS "#define GL_BGRA8_EXT   0x93A1"
+
+.SS "#define GL_BGRA_EXT   0x80E1"
+
+.SS "#define GL_BGRA_EXT   0x80E1"
+
+.SS "#define GL_BGRA_EXT   0x80E1"
+
+.SS "#define GL_BGRA_IMG   0x80E1"
+
+.SS "#define GL_BINNING_CONTROL_HINT_QCOM   0x8FB0"
+
+.SS "#define GL_BUFFER_ACCESS_OES   0x88BB"
+
+.SS "#define GL_BUFFER_KHR   0x82E0"
+
+.SS "#define GL_BUFFER_MAP_POINTER_OES   0x88BD"
+
+.SS "#define GL_BUFFER_MAPPED_OES   0x88BC"
+
+.SS "#define GL_BUFFER_OBJECT_EXT   0x9151"
+
+.SS "#define GL_CLAMP_TO_BORDER_NV   0x812D"
+
+.SS "#define GL_COLOR_ATTACHMENT0_EXT   0x8CE0"
+
+.SS "#define GL_COLOR_ATTACHMENT0_NV   0x8CE0"
+
+.SS "#define GL_COLOR_ATTACHMENT10_EXT   0x8CEA"
+
+.SS "#define GL_COLOR_ATTACHMENT10_NV   0x8CEA"
+
+.SS "#define GL_COLOR_ATTACHMENT11_EXT   0x8CEB"
+
+.SS "#define GL_COLOR_ATTACHMENT11_NV   0x8CEB"
+
+.SS "#define GL_COLOR_ATTACHMENT12_EXT   0x8CEC"
+
+.SS "#define GL_COLOR_ATTACHMENT12_NV   0x8CEC"
+
+.SS "#define GL_COLOR_ATTACHMENT13_EXT   0x8CED"
+
+.SS "#define GL_COLOR_ATTACHMENT13_NV   0x8CED"
+
+.SS "#define GL_COLOR_ATTACHMENT14_EXT   0x8CEE"
+
+.SS "#define GL_COLOR_ATTACHMENT14_NV   0x8CEE"
+
+.SS "#define GL_COLOR_ATTACHMENT15_EXT   0x8CEF"
+
+.SS "#define GL_COLOR_ATTACHMENT15_NV   0x8CEF"
+
+.SS "#define GL_COLOR_ATTACHMENT1_EXT   0x8CE1"
+
+.SS "#define GL_COLOR_ATTACHMENT1_NV   0x8CE1"
+
+.SS "#define GL_COLOR_ATTACHMENT2_EXT   0x8CE2"
+
+.SS "#define GL_COLOR_ATTACHMENT2_NV   0x8CE2"
+
+.SS "#define GL_COLOR_ATTACHMENT3_EXT   0x8CE3"
+
+.SS "#define GL_COLOR_ATTACHMENT3_NV   0x8CE3"
+
+.SS "#define GL_COLOR_ATTACHMENT4_EXT   0x8CE4"
+
+.SS "#define GL_COLOR_ATTACHMENT4_NV   0x8CE4"
+
+.SS "#define GL_COLOR_ATTACHMENT5_EXT   0x8CE5"
+
+.SS "#define GL_COLOR_ATTACHMENT5_NV   0x8CE5"
+
+.SS "#define GL_COLOR_ATTACHMENT6_EXT   0x8CE6"
+
+.SS "#define GL_COLOR_ATTACHMENT6_NV   0x8CE6"
+
+.SS "#define GL_COLOR_ATTACHMENT7_EXT   0x8CE7"
+
+.SS "#define GL_COLOR_ATTACHMENT7_NV   0x8CE7"
+
+.SS "#define GL_COLOR_ATTACHMENT8_EXT   0x8CE8"
+
+.SS "#define GL_COLOR_ATTACHMENT8_NV   0x8CE8"
+
+.SS "#define GL_COLOR_ATTACHMENT9_EXT   0x8CE9"
+
+.SS "#define GL_COLOR_ATTACHMENT9_NV   0x8CE9"
+
+.SS "#define GL_COLOR_ATTACHMENT_EXT   0x90F0"
+
+.SS "#define GL_COLOR_BUFFER_BIT0_QCOM   0x00000001"
+
+.SS "#define GL_COLOR_BUFFER_BIT1_QCOM   0x00000002"
+
+.SS "#define GL_COLOR_BUFFER_BIT2_QCOM   0x00000004"
+
+.SS "#define GL_COLOR_BUFFER_BIT3_QCOM   0x00000008"
+
+.SS "#define GL_COLOR_BUFFER_BIT4_QCOM   0x00000010"
+
+.SS "#define GL_COLOR_BUFFER_BIT5_QCOM   0x00000020"
+
+.SS "#define GL_COLOR_BUFFER_BIT6_QCOM   0x00000040"
+
+.SS "#define GL_COLOR_BUFFER_BIT7_QCOM   0x00000080"
+
+.SS "#define GL_COLOR_EXT   0x1800"
+
+.SS "#define GL_COMPARE_REF_TO_TEXTURE_EXT   0x884E"
+
+.SS "#define GL_COMPRESSED_RGB_PVRTC_2BPPV1_IMG   0x8C01"
+
+.SS "#define GL_COMPRESSED_RGB_PVRTC_4BPPV1_IMG   0x8C00"
+
+.SS "#define GL_COMPRESSED_RGB_S3TC_DXT1_EXT   0x83F0"
+
+.SS "#define GL_COMPRESSED_RGBA_ASTC_10x10_KHR   0x93BB"
+
+.SS "#define GL_COMPRESSED_RGBA_ASTC_10x5_KHR   0x93B8"
+
+.SS "#define GL_COMPRESSED_RGBA_ASTC_10x6_KHR   0x93B9"
+
+.SS "#define GL_COMPRESSED_RGBA_ASTC_10x8_KHR   0x93BA"
+
+.SS "#define GL_COMPRESSED_RGBA_ASTC_12x10_KHR   0x93BC"
+
+.SS "#define GL_COMPRESSED_RGBA_ASTC_12x12_KHR   0x93BD"
+
+.SS "#define GL_COMPRESSED_RGBA_ASTC_4x4_KHR   0x93B0"
+
+.SS "#define GL_COMPRESSED_RGBA_ASTC_5x4_KHR   0x93B1"
+
+.SS "#define GL_COMPRESSED_RGBA_ASTC_5x5_KHR   0x93B2"
+
+.SS "#define GL_COMPRESSED_RGBA_ASTC_6x5_KHR   0x93B3"
+
+.SS "#define GL_COMPRESSED_RGBA_ASTC_6x6_KHR   0x93B4"
+
+.SS "#define GL_COMPRESSED_RGBA_ASTC_8x5_KHR   0x93B5"
+
+.SS "#define GL_COMPRESSED_RGBA_ASTC_8x6_KHR   0x93B6"
+
+.SS "#define GL_COMPRESSED_RGBA_ASTC_8x8_KHR   0x93B7"
+
+.SS "#define GL_COMPRESSED_RGBA_PVRTC_2BPPV1_IMG   0x8C03"
+
+.SS "#define GL_COMPRESSED_RGBA_PVRTC_2BPPV2_IMG   0x9137"
+
+.SS "#define GL_COMPRESSED_RGBA_PVRTC_4BPPV1_IMG   0x8C02"
+
+.SS "#define GL_COMPRESSED_RGBA_PVRTC_4BPPV2_IMG   0x9138"
+
+.SS "#define GL_COMPRESSED_RGBA_S3TC_DXT1_EXT   0x83F1"
+
+.SS "#define GL_COMPRESSED_RGBA_S3TC_DXT3_ANGLE   0x83F2"
+
+.SS "#define GL_COMPRESSED_RGBA_S3TC_DXT5_ANGLE   0x83F3"
+
+.SS "#define GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR   0x93DB"
+
+.SS "#define GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR   0x93D8"
+
+.SS "#define GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR   0x93D9"
+
+.SS "#define GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x8_KHR   0x93DA"
+
+.SS "#define GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR   0x93DC"
+
+.SS "#define GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR   0x93DD"
+
+.SS "#define GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR   0x93D0"
+
+.SS "#define GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR   0x93D1"
+
+.SS "#define GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR   0x93D2"
+
+.SS "#define GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR   0x93D3"
+
+.SS "#define GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR   0x93D4"
+
+.SS "#define GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR   0x93D5"
+
+.SS "#define GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR   0x93D6"
+
+.SS "#define GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR   0x93D7"
+
+.SS "#define GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT1_NV   0x8C4D"
+
+.SS "#define GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT3_NV   0x8C4E"
+
+.SS "#define GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT5_NV   0x8C4F"
+
+.SS "#define GL_COMPRESSED_SRGB_S3TC_DXT1_NV   0x8C4C"
+
+.SS "#define GL_CONDITION_SATISFIED_APPLE   0x911C"
+
+.SS "#define GL_CONTEXT_FLAG_DEBUG_BIT_KHR   0x00000002"
+
+.SS "#define GL_CONTEXT_ROBUST_ACCESS_EXT   0x90F3"
+
+.SS "#define GL_COUNTER_RANGE_AMD   0x8BC1"
+
+.SS "#define GL_COUNTER_TYPE_AMD   0x8BC0"
+
+.SS "#define GL_COVERAGE_ALL_FRAGMENTS_NV   0x8ED5"
+
+.SS "#define GL_COVERAGE_ATTACHMENT_NV   0x8ED2"
+
+.SS "#define GL_COVERAGE_AUTOMATIC_NV   0x8ED7"
+
+.SS "#define GL_COVERAGE_BUFFER_BIT_NV   0x00008000"
+
+.SS "#define GL_COVERAGE_BUFFERS_NV   0x8ED3"
+
+.SS "#define GL_COVERAGE_COMPONENT4_NV   0x8ED1"
+
+.SS "#define GL_COVERAGE_COMPONENT_NV   0x8ED0"
+
+.SS "#define GL_COVERAGE_EDGE_FRAGMENTS_NV   0x8ED6"
+
+.SS "#define GL_COVERAGE_SAMPLES_NV   0x8ED4"
+
+.SS "#define GL_CPU_OPTIMIZED_QCOM   0x8FB1"
+
+.SS "#define GL_CURRENT_QUERY_EXT   0x8865"
+
+.SS "#define GL_CURRENT_QUERY_EXT   0x8865"
+
+.SS "#define GL_DEBUG_CALLBACK_FUNCTION_KHR   0x8244"
+
+.SS "#define GL_DEBUG_CALLBACK_USER_PARAM_KHR   0x8245"
+
+.SS "#define GL_DEBUG_GROUP_STACK_DEPTH_KHR   0x826D"
+
+.SS "#define GL_DEBUG_LOGGED_MESSAGES_KHR   0x9145"
+
+.SS "#define GL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH_KHR   0x8243"
+
+.SS "#define GL_DEBUG_OUTPUT_KHR   0x92E0"
+
+.SS "#define GL_DEBUG_OUTPUT_SYNCHRONOUS_KHR   0x8242"
+
+.SS "#define GL_DEBUG_SEVERITY_HIGH_KHR   0x9146"
+
+.SS "#define GL_DEBUG_SEVERITY_LOW_KHR   0x9148"
+
+.SS "#define GL_DEBUG_SEVERITY_MEDIUM_KHR   0x9147"
+
+.SS "#define GL_DEBUG_SEVERITY_NOTIFICATION_KHR   0x826B"
+
+.SS "#define GL_DEBUG_SOURCE_API_KHR   0x8246"
+
+.SS "#define GL_DEBUG_SOURCE_APPLICATION_KHR   0x824A"
+
+.SS "#define GL_DEBUG_SOURCE_OTHER_KHR   0x824B"
+
+.SS "#define GL_DEBUG_SOURCE_SHADER_COMPILER_KHR   0x8248"
+
+.SS "#define GL_DEBUG_SOURCE_THIRD_PARTY_KHR   0x8249"
+
+.SS "#define GL_DEBUG_SOURCE_WINDOW_SYSTEM_KHR   0x8247"
+
+.SS "#define GL_DEBUG_TYPE_DEPRECATED_BEHAVIOR_KHR   0x824D"
+
+.SS "#define GL_DEBUG_TYPE_ERROR_KHR   0x824C"
+
+.SS "#define GL_DEBUG_TYPE_MARKER_KHR   0x8268"
+
+.SS "#define GL_DEBUG_TYPE_OTHER_KHR   0x8251"
+
+.SS "#define GL_DEBUG_TYPE_PERFORMANCE_KHR   0x8250"
+
+.SS "#define GL_DEBUG_TYPE_POP_GROUP_KHR   0x826A"
+
+.SS "#define GL_DEBUG_TYPE_PORTABILITY_KHR   0x824F"
+
+.SS "#define GL_DEBUG_TYPE_PUSH_GROUP_KHR   0x8269"
+
+.SS "#define GL_DEBUG_TYPE_UNDEFINED_BEHAVIOR_KHR   0x824E"
+
+.SS "#define GL_DECODE_EXT   0x8A49"
+
+.SS "#define GL_DEPTH24_STENCIL8_OES   0x88F0"
+
+.SS "#define GL_DEPTH24_STENCIL8_OES   0x88F0"
+
+.SS "#define GL_DEPTH_BUFFER_BIT0_QCOM   0x00000100"
+
+.SS "#define GL_DEPTH_BUFFER_BIT1_QCOM   0x00000200"
+
+.SS "#define GL_DEPTH_BUFFER_BIT2_QCOM   0x00000400"
+
+.SS "#define GL_DEPTH_BUFFER_BIT3_QCOM   0x00000800"
+
+.SS "#define GL_DEPTH_BUFFER_BIT4_QCOM   0x00001000"
+
+.SS "#define GL_DEPTH_BUFFER_BIT5_QCOM   0x00002000"
+
+.SS "#define GL_DEPTH_BUFFER_BIT6_QCOM   0x00004000"
+
+.SS "#define GL_DEPTH_BUFFER_BIT7_QCOM   0x00008000"
+
+.SS "#define GL_DEPTH_COMPONENT   0x1902"
+
+.SS "#define GL_DEPTH_COMPONENT16   0x81A5"
+
+.SS "#define GL_DEPTH_COMPONENT16_NONLINEAR_NV   0x8E2C"
+
+.SS "#define GL_DEPTH_COMPONENT16_OES   0x81A5"
+
+.SS "#define GL_DEPTH_COMPONENT24_OES   0x81A6"
+
+.SS "#define GL_DEPTH_COMPONENT32_OES   0x81A7"
+
+.SS "#define GL_DEPTH_COMPONENT32_OES   0x81A7"
+
+.SS "#define GL_DEPTH_EXT   0x1801"
+
+.SS "#define GL_DEPTH_STENCIL_OES   0x84F9"
+
+.SS "#define GL_DEPTH_STENCIL_OES   0x84F9"
+
+.SS "#define GL_DMP_shader_binary   1"
+
+.SS "#define GL_DRAW_BUFFER0_EXT   0x8825"
+
+.SS "#define GL_DRAW_BUFFER0_NV   0x8825"
+
+.SS "#define GL_DRAW_BUFFER10_EXT   0x882F"
+
+.SS "#define GL_DRAW_BUFFER10_NV   0x882F"
+
+.SS "#define GL_DRAW_BUFFER11_EXT   0x8830"
+
+.SS "#define GL_DRAW_BUFFER11_NV   0x8830"
+
+.SS "#define GL_DRAW_BUFFER12_EXT   0x8831"
+
+.SS "#define GL_DRAW_BUFFER12_NV   0x8831"
+
+.SS "#define GL_DRAW_BUFFER13_EXT   0x8832"
+
+.SS "#define GL_DRAW_BUFFER13_NV   0x8832"
+
+.SS "#define GL_DRAW_BUFFER14_EXT   0x8833"
+
+.SS "#define GL_DRAW_BUFFER14_NV   0x8833"
+
+.SS "#define GL_DRAW_BUFFER15_EXT   0x8834"
+
+.SS "#define GL_DRAW_BUFFER15_NV   0x8834"
+
+.SS "#define GL_DRAW_BUFFER1_EXT   0x8826"
+
+.SS "#define GL_DRAW_BUFFER1_NV   0x8826"
+
+.SS "#define GL_DRAW_BUFFER2_EXT   0x8827"
+
+.SS "#define GL_DRAW_BUFFER2_NV   0x8827"
+
+.SS "#define GL_DRAW_BUFFER3_EXT   0x8828"
+
+.SS "#define GL_DRAW_BUFFER3_NV   0x8828"
+
+.SS "#define GL_DRAW_BUFFER4_EXT   0x8829"
+
+.SS "#define GL_DRAW_BUFFER4_NV   0x8829"
+
+.SS "#define GL_DRAW_BUFFER5_EXT   0x882A"
+
+.SS "#define GL_DRAW_BUFFER5_NV   0x882A"
+
+.SS "#define GL_DRAW_BUFFER6_EXT   0x882B"
+
+.SS "#define GL_DRAW_BUFFER6_NV   0x882B"
+
+.SS "#define GL_DRAW_BUFFER7_EXT   0x882C"
+
+.SS "#define GL_DRAW_BUFFER7_NV   0x882C"
+
+.SS "#define GL_DRAW_BUFFER8_EXT   0x882D"
+
+.SS "#define GL_DRAW_BUFFER8_NV   0x882D"
+
+.SS "#define GL_DRAW_BUFFER9_EXT   0x882E"
+
+.SS "#define GL_DRAW_BUFFER9_NV   0x882E"
+
+.SS "#define GL_DRAW_BUFFER_EXT   0x0C01"
+
+.SS "#define GL_DRAW_FRAMEBUFFER_ANGLE   0x8CA9"
+
+.SS "#define GL_DRAW_FRAMEBUFFER_APPLE   0x8CA9"
+
+.SS "#define GL_DRAW_FRAMEBUFFER_BINDING_ANGLE   0x8CA6"
+
+.SS "#define GL_DRAW_FRAMEBUFFER_BINDING_APPLE   0x8CA6"
+
+.SS "#define GL_DRAW_FRAMEBUFFER_BINDING_NV   0x8CA6"
+
+.SS "#define GL_DRAW_FRAMEBUFFER_NV   0x8CA9"
+
+.SS "#define GL_ETC1_RGB8_OES   0x8D64"
+
+.SS "#define GL_ETC1_SRGB8_NV   0x88EE"
+
+.SS "#define GL_EXT_blend_minmax   1"
+
+.SS "#define GL_EXT_color_buffer_half_float   1"
+
+.SS "#define GL_EXT_debug_label   1"
+
+.SS "#define GL_EXT_debug_marker   1"
+
+.SS "#define GL_EXT_discard_framebuffer   1"
+
+.SS "#define GL_EXT_disjoint_timer_query   1"
+
+.SS "#define GL_EXT_draw_buffers   1"
+
+.SS "#define GL_EXT_map_buffer_range   1"
+
+.SS "#define GL_EXT_multi_draw_arrays   1"
+
+.SS "#define GL_EXT_multisampled_render_to_texture   1"
+
+.SS "#define GL_EXT_multiview_draw_buffers   1"
+
+.SS "#define GL_EXT_occlusion_query_boolean   1"
+
+.SS "#define GL_EXT_read_format_bgra   1"
+
+.SS "#define GL_EXT_robustness   1"
+
+.SS "#define GL_EXT_separate_shader_objects   1"
+
+.SS "#define GL_EXT_shader_framebuffer_fetch   1"
+
+.SS "#define GL_EXT_shader_texture_lod   1"
+
+.SS "#define GL_EXT_shadow_samplers   1"
+
+.SS "#define GL_EXT_sRGB   1"
+
+.SS "#define GL_EXT_sRGB_write_control   1"
+
+.SS "#define GL_EXT_texture_compression_dxt1   1"
+
+.SS "#define GL_EXT_texture_filter_anisotropic   1"
+
+.SS "#define GL_EXT_texture_format_BGRA8888   1"
+
+.SS "#define GL_EXT_texture_rg   1"
+
+.SS "#define GL_EXT_texture_sRGB_decode   1"
+
+.SS "#define GL_EXT_texture_storage   1"
+
+.SS "#define GL_EXT_texture_type_2_10_10_10_REV   1"
+
+.SS "#define GL_EXT_unpack_subimage   1"
+
+.SS "#define GL_FENCE_CONDITION_NV   0x84F4"
+
+.SS "#define GL_FENCE_STATUS_NV   0x84F3"
+
+.SS "#define GL_FJ_shader_binary_GCCSO   1"
+
+.SS "#define GL_FRAGMENT_SHADER_BIT_EXT   0x00000002"
+
+.SS "#define GL_FRAGMENT_SHADER_DERIVATIVE_HINT_OES   0x8B8B"
+
+.SS "#define GL_FRAGMENT_SHADER_DISCARDS_SAMPLES_EXT   0x8A52"
+
+.SS "#define GL_FRAMEBUFFER_ATTACHMENT_ANGLE   0x93A3"
+
+.SS "#define GL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING_EXT   0x8210"
+
+.SS "#define GL_FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE_EXT   0x8211"
+
+.SS "#define GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_3D_ZOFFSET_OES   0x8CD4"
+
+.SS "#define GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_SAMPLES_EXT   0x8D6C"
+
+.SS "#define GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_ANGLE   0x8D56"
+
+.SS "#define GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_APPLE   0x8D56"
+
+.SS "#define GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_EXT   0x8D56"
+
+.SS "#define GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_IMG   0x9134"
+
+.SS "#define GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_NV   0x8D56"
+
+.SS "#define GL_FRAMEBUFFER_SRGB_EXT   0x8DB9"
+
+.SS "#define GL_FRAMEBUFFER_UNDEFINED_OES   0x8219"
+
+.SS "#define GL_GCCSO_SHADER_BINARY_FJ   0x9260"
+
+.SS "#define GL_GPU_DISJOINT_EXT   0x8FBB"
+
+.SS "#define GL_GPU_OPTIMIZED_QCOM   0x8FB2"
+
+.SS "#define GL_GUILTY_CONTEXT_RESET_EXT   0x8253"
+
+.SS "#define GL_HALF_FLOAT_OES   0x8D61"
+
+.SS "#define GL_IMG_multisampled_render_to_texture   1"
+
+.SS "#define GL_IMG_program_binary   1"
+
+.SS "#define GL_IMG_read_format   1"
+
+.SS "#define GL_IMG_shader_binary   1"
+
+.SS "#define GL_IMG_texture_compression_pvrtc   1"
+
+.SS "#define GL_IMG_texture_compression_pvrtc2   1"
+
+.SS "#define GL_INNOCENT_CONTEXT_RESET_EXT   0x8254"
+
+.SS "#define GL_INT_10_10_10_2_OES   0x8DF7"
+
+.SS "#define GL_KHR_debug   1"
+
+.SS "#define GL_KHR_texture_compression_astc_ldr   1"
+
+.SS "#define GL_LOSE_CONTEXT_ON_RESET_EXT   0x8252"
+
+.SS "#define GL_LUMINANCE16F_EXT   0x881E"
+
+.SS "#define GL_LUMINANCE32F_EXT   0x8818"
+
+.SS "#define GL_LUMINANCE4_ALPHA4_OES   0x8043"
+
+.SS "#define GL_LUMINANCE8_ALPHA8_EXT   0x8045"
+
+.SS "#define GL_LUMINANCE8_ALPHA8_OES   0x8045"
+
+.SS "#define GL_LUMINANCE8_EXT   0x8040"
+
+.SS "#define GL_LUMINANCE8_OES   0x8040"
+
+.SS "#define GL_LUMINANCE_ALPHA16F_EXT   0x881F"
+
+.SS "#define GL_LUMINANCE_ALPHA32F_EXT   0x8819"
+
+.SS "#define GL_MALI_PROGRAM_BINARY_ARM   0x8F61"
+
+.SS "#define GL_MALI_SHADER_BINARY_ARM   0x8F60"
+
+.SS "#define GL_MAP_FLUSH_EXPLICIT_BIT_EXT   0x0010"
+
+.SS "#define GL_MAP_INVALIDATE_BUFFER_BIT_EXT   0x0008"
+
+.SS "#define GL_MAP_INVALIDATE_RANGE_BIT_EXT   0x0004"
+
+.SS "#define GL_MAP_READ_BIT_EXT   0x0001"
+
+.SS "#define GL_MAP_UNSYNCHRONIZED_BIT_EXT   0x0020"
+
+.SS "#define GL_MAP_WRITE_BIT_EXT   0x0002"
+
+.SS "#define GL_MAX_3D_TEXTURE_SIZE_OES   0x8073"
+
+.SS "#define GL_MAX_COLOR_ATTACHMENTS_EXT   0x8CDF"
+
+.SS "#define GL_MAX_COLOR_ATTACHMENTS_NV   0x8CDF"
+
+.SS "#define GL_MAX_DEBUG_GROUP_STACK_DEPTH_KHR   0x826C"
+
+.SS "#define GL_MAX_DEBUG_LOGGED_MESSAGES_KHR   0x9144"
+
+.SS "#define GL_MAX_DEBUG_MESSAGE_LENGTH_KHR   0x9143"
+
+.SS "#define GL_MAX_DRAW_BUFFERS_EXT   0x8824"
+
+.SS "#define GL_MAX_DRAW_BUFFERS_NV   0x8824"
+
+.SS "#define GL_MAX_EXT   0x8008"
+
+.SS "#define GL_MAX_LABEL_LENGTH_KHR   0x82E8"
+
+.SS "#define GL_MAX_MULTIVIEW_BUFFERS_EXT   0x90F2"
+
+.SS "#define GL_MAX_SAMPLES_ANGLE   0x8D57"
+
+.SS "#define GL_MAX_SAMPLES_APPLE   0x8D57"
+
+.SS "#define GL_MAX_SAMPLES_EXT   0x8D57"
+
+.SS "#define GL_MAX_SAMPLES_IMG   0x9135"
+
+.SS "#define GL_MAX_SAMPLES_NV   0x8D57"
+
+.SS "#define GL_MAX_SERVER_WAIT_TIMEOUT_APPLE   0x9111"
+
+.SS "#define GL_MAX_TEXTURE_MAX_ANISOTROPY_EXT   0x84FF"
+
+.SS "#define GL_MIN_EXT   0x8007"
+
+.SS "#define GL_MULTISAMPLE_BUFFER_BIT0_QCOM   0x01000000"
+
+.SS "#define GL_MULTISAMPLE_BUFFER_BIT1_QCOM   0x02000000"
+
+.SS "#define GL_MULTISAMPLE_BUFFER_BIT2_QCOM   0x04000000"
+
+.SS "#define GL_MULTISAMPLE_BUFFER_BIT3_QCOM   0x08000000"
+
+.SS "#define GL_MULTISAMPLE_BUFFER_BIT4_QCOM   0x10000000"
+
+.SS "#define GL_MULTISAMPLE_BUFFER_BIT5_QCOM   0x20000000"
+
+.SS "#define GL_MULTISAMPLE_BUFFER_BIT6_QCOM   0x40000000"
+
+.SS "#define GL_MULTISAMPLE_BUFFER_BIT7_QCOM   0x80000000"
+
+.SS "#define GL_MULTIVIEW_EXT   0x90F1"
+
+.SS "#define GL_NO_RESET_NOTIFICATION_EXT   0x8261"
+
+.SS "#define GL_NUM_PROGRAM_BINARY_FORMATS_OES   0x87FE"
+
+.SS "#define GL_NV_coverage_sample   1"
+
+.SS "#define GL_NV_depth_nonlinear   1"
+
+.SS "#define GL_NV_draw_buffers   1"
+
+.SS "#define GL_NV_draw_instanced   1"
+
+.SS "#define GL_NV_fbo_color_attachments   1"
+
+.SS "#define GL_NV_fence   1"
+
+.SS "#define GL_NV_framebuffer_blit   1"
+
+.SS "#define GL_NV_framebuffer_multisample   1"
+
+.SS "#define GL_NV_generate_mipmap_sRGB   1"
+
+.SS "#define GL_NV_instanced_arrays   1"
+
+.SS "#define GL_NV_read_buffer   1"
+
+.SS "#define GL_NV_read_buffer_front   1"
+
+.SS "#define GL_NV_read_depth   1"
+
+.SS "#define GL_NV_read_depth_stencil   1"
+
+.SS "#define GL_NV_read_stencil   1"
+
+.SS "#define GL_NV_shadow_samplers_array   1"
+
+.SS "#define GL_NV_shadow_samplers_cube   1"
+
+.SS "#define GL_NV_sRGB_formats   1"
+
+.SS "#define GL_NV_texture_border_clamp   1"
+
+.SS "#define GL_NV_texture_compression_s3tc_update   1"
+
+.SS "#define GL_NV_texture_npot_2D_mipmap   1"
+
+.SS "#define GL_OBJECT_TYPE_APPLE   0x9112"
+
+.SS "#define GL_OES_compressed_ETC1_RGB8_texture   1"
+
+.SS "#define GL_OES_compressed_paletted_texture   1"
+
+.SS "#define GL_OES_depth24   1"
+
+.SS "#define GL_OES_depth32   1"
+
+.SS "#define GL_OES_depth_texture   1"
+
+.SS "#define GL_OES_EGL_image   1"
+
+.SS "#define GL_OES_EGL_image_external   1"
+
+.SS "#define GL_OES_element_index_uint   1"
+
+.SS "#define GL_OES_fbo_render_mipmap   1"
+
+.SS "#define GL_OES_fragment_precision_high   1"
+
+.SS "#define GL_OES_get_program_binary   1"
+
+.SS "#define GL_OES_mapbuffer   1"
+
+.SS "#define GL_OES_packed_depth_stencil   1"
+
+.SS "#define GL_OES_required_internalformat   1"
+
+.SS "#define GL_OES_rgb8_rgba8   1"
+
+.SS "#define GL_OES_standard_derivatives   1"
+
+.SS "#define GL_OES_stencil1   1"
+
+.SS "#define GL_OES_stencil4   1"
+
+.SS "#define GL_OES_surfaceless_context   1"
+
+.SS "#define GL_OES_texture_3D   1"
+
+.SS "#define GL_OES_texture_float   1"
+
+.SS "#define GL_OES_texture_float_linear   1"
+
+.SS "#define GL_OES_texture_half_float   1"
+
+.SS "#define GL_OES_texture_half_float_linear   1"
+
+.SS "#define GL_OES_texture_npot   1"
+
+.SS "#define GL_OES_vertex_array_object   1"
+
+.SS "#define GL_OES_vertex_half_float   1"
+
+.SS "#define GL_OES_vertex_type_10_10_10_2   1"
+
+.SS "#define GL_PACK_REVERSE_ROW_ORDER_ANGLE   0x93A4"
+
+.SS "#define GL_PALETTE4_R5_G6_B5_OES   0x8B92"
+
+.SS "#define GL_PALETTE4_RGB5_A1_OES   0x8B94"
+
+.SS "#define GL_PALETTE4_RGB8_OES   0x8B90"
+
+.SS "#define GL_PALETTE4_RGBA4_OES   0x8B93"
+
+.SS "#define GL_PALETTE4_RGBA8_OES   0x8B91"
+
+.SS "#define GL_PALETTE8_R5_G6_B5_OES   0x8B97"
+
+.SS "#define GL_PALETTE8_RGB5_A1_OES   0x8B99"
+
+.SS "#define GL_PALETTE8_RGB8_OES   0x8B95"
+
+.SS "#define GL_PALETTE8_RGBA4_OES   0x8B98"
+
+.SS "#define GL_PALETTE8_RGBA8_OES   0x8B96"
+
+.SS "#define GL_PERCENTAGE_AMD   0x8BC3"
+
+.SS "#define GL_PERFMON_GLOBAL_MODE_QCOM   0x8FA0"
+
+.SS "#define GL_PERFMON_RESULT_AMD   0x8BC6"
+
+.SS "#define GL_PERFMON_RESULT_AVAILABLE_AMD   0x8BC4"
+
+.SS "#define GL_PERFMON_RESULT_SIZE_AMD   0x8BC5"
+
+.SS "#define GL_PROGRAM_BINARY_ANGLE   0x93A6"
+
+.SS "#define GL_PROGRAM_BINARY_FORMATS_OES   0x87FF"
+
+.SS "#define GL_PROGRAM_BINARY_LENGTH_OES   0x8741"
+
+.SS "#define GL_PROGRAM_KHR   0x82E2"
+
+.SS "#define GL_PROGRAM_OBJECT_EXT   0x8B40"
+
+.SS "#define GL_PROGRAM_PIPELINE_BINDING_EXT   0x825A"
+
+.SS "#define GL_PROGRAM_PIPELINE_OBJECT_EXT   0x8A4F"
+
+.SS "#define GL_PROGRAM_SEPARABLE_EXT   0x8258"
+
+.SS "#define GL_QCOM_alpha_test   1"
+
+.SS "#define GL_QCOM_binning_control   1"
+
+.SS "#define GL_QCOM_driver_control   1"
+
+.SS "#define GL_QCOM_extended_get   1"
+
+.SS "#define GL_QCOM_extended_get2   1"
+
+.SS "#define GL_QCOM_perfmon_global_mode   1"
+
+.SS "#define GL_QCOM_tiled_rendering   1"
+
+.SS "#define GL_QCOM_writeonly_rendering   1"
+
+.SS "#define GL_QUERY_COUNTER_BITS_EXT   0x8864"
+
+.SS "#define GL_QUERY_KHR   0x82E3"
+
+.SS "#define GL_QUERY_OBJECT_EXT   0x9153"
+
+.SS "#define GL_QUERY_RESULT_AVAILABLE_EXT   0x8867"
+
+.SS "#define GL_QUERY_RESULT_AVAILABLE_EXT   0x8867"
+
+.SS "#define GL_QUERY_RESULT_EXT   0x8866"
+
+.SS "#define GL_QUERY_RESULT_EXT   0x8866"
+
+.SS "#define GL_R16F_EXT   0x822D"
+
+.SS "#define GL_R16F_EXT   0x822D"
+
+.SS "#define GL_R32F_EXT   0x822E"
+
+.SS "#define GL_R8_EXT   0x8229"
+
+.SS "#define GL_R8_EXT   0x8229"
+
+.SS "#define GL_READ_BUFFER_EXT   0x0C02"
+
+.SS "#define GL_READ_BUFFER_NV   0x0C02"
+
+.SS "#define GL_READ_FRAMEBUFFER_ANGLE   0x8CA8"
+
+.SS "#define GL_READ_FRAMEBUFFER_APPLE   0x8CA8"
+
+.SS "#define GL_READ_FRAMEBUFFER_BINDING_ANGLE   0x8CAA"
+
+.SS "#define GL_READ_FRAMEBUFFER_BINDING_APPLE   0x8CAA"
+
+.SS "#define GL_READ_FRAMEBUFFER_BINDING_NV   0x8CAA"
+
+.SS "#define GL_READ_FRAMEBUFFER_NV   0x8CA8"
+
+.SS "#define GL_RED_EXT   0x1903"
+
+.SS "#define GL_RENDER_DIRECT_TO_FRAMEBUFFER_QCOM   0x8FB3"
+
+.SS "#define GL_RENDERBUFFER_SAMPLES_ANGLE   0x8CAB"
+
+.SS "#define GL_RENDERBUFFER_SAMPLES_APPLE   0x8CAB"
+
+.SS "#define GL_RENDERBUFFER_SAMPLES_EXT   0x8CAB"
+
+.SS "#define GL_RENDERBUFFER_SAMPLES_IMG   0x9133"
+
+.SS "#define GL_RENDERBUFFER_SAMPLES_NV   0x8CAB"
+
+.SS "#define GL_REQUIRED_TEXTURE_IMAGE_UNITS_OES   0x8D68"
+
+.SS "#define GL_RESET_NOTIFICATION_STRATEGY_EXT   0x8256"
+
+.SS "#define GL_RG16F_EXT   0x822F"
+
+.SS "#define GL_RG16F_EXT   0x822F"
+
+.SS "#define GL_RG32F_EXT   0x8230"
+
+.SS "#define GL_RG8_EXT   0x822B"
+
+.SS "#define GL_RG8_EXT   0x822B"
+
+.SS "#define GL_RG_EXT   0x8227"
+
+.SS "#define GL_RGB10_A2_EXT   0x8059"
+
+.SS "#define GL_RGB10_EXT   0x8052"
+
+.SS "#define GL_RGB16F_EXT   0x881B"
+
+.SS "#define GL_RGB32F_EXT   0x8815"
+
+.SS "#define GL_RGB565_OES   0x8D62"
+
+.SS "#define GL_RGB5_A1_OES   0x8057"
+
+.SS "#define GL_RGB8_OES   0x8051"
+
+.SS "#define GL_RGB_422_APPLE   0x8A1F"
+
+.SS "#define GL_RGBA16F_EXT   0x881A"
+
+.SS "#define GL_RGBA32F_EXT   0x8814"
+
+.SS "#define GL_RGBA4_OES   0x8056"
+
+.SS "#define GL_RGBA8_OES   0x8058"
+
+.SS "#define GL_SAMPLER_2D_ARRAY_SHADOW_NV   0x8DC4"
+
+.SS "#define GL_SAMPLER_2D_SHADOW_EXT   0x8B62"
+
+.SS "#define GL_SAMPLER_3D_OES   0x8B5F"
+
+.SS "#define GL_SAMPLER_CUBE_SHADOW_NV   0x8DC5"
+
+.SS "#define GL_SAMPLER_EXTERNAL_OES   0x8D66"
+
+.SS "#define GL_SAMPLER_KHR   0x82E6"
+
+.SS "#define GL_SGX_BINARY_IMG   0x8C0A"
+
+.SS "#define GL_SGX_PROGRAM_BINARY_IMG   0x9130"
+
+.SS "#define GL_SHADER_BINARY_DMP   0x9250"
+
+.SS "#define GL_SHADER_BINARY_VIV   0x8FC4"
+
+.SS "#define GL_SHADER_KHR   0x82E1"
+
+.SS "#define GL_SHADER_OBJECT_EXT   0x8B48"
+
+.SS "#define GL_SIGNALED_APPLE   0x9119"
+
+.SS "#define GL_SKIP_DECODE_EXT   0x8A4A"
+
+.SS "#define GL_SLUMINANCE8_ALPHA8_NV   0x8C45"
+
+.SS "#define GL_SLUMINANCE8_NV   0x8C47"
+
+.SS "#define GL_SLUMINANCE_ALPHA_NV   0x8C44"
+
+.SS "#define GL_SLUMINANCE_NV   0x8C46"
+
+.SS "#define GL_SRGB8_ALPHA8_EXT   0x8C43"
+
+.SS "#define GL_SRGB8_NV   0x8C41"
+
+.SS "#define GL_SRGB_ALPHA_EXT   0x8C42"
+
+.SS "#define GL_SRGB_EXT   0x8C40"
+
+.SS "#define GL_STACK_OVERFLOW_KHR   0x0503"
+
+.SS "#define GL_STACK_UNDERFLOW_KHR   0x0504"
+
+.SS "#define GL_STATE_RESTORE   0x8BDC"
+
+.SS "#define GL_STENCIL_BUFFER_BIT0_QCOM   0x00010000"
+
+.SS "#define GL_STENCIL_BUFFER_BIT1_QCOM   0x00020000"
+
+.SS "#define GL_STENCIL_BUFFER_BIT2_QCOM   0x00040000"
+
+.SS "#define GL_STENCIL_BUFFER_BIT3_QCOM   0x00080000"
+
+.SS "#define GL_STENCIL_BUFFER_BIT4_QCOM   0x00100000"
+
+.SS "#define GL_STENCIL_BUFFER_BIT5_QCOM   0x00200000"
+
+.SS "#define GL_STENCIL_BUFFER_BIT6_QCOM   0x00400000"
+
+.SS "#define GL_STENCIL_BUFFER_BIT7_QCOM   0x00800000"
+
+.SS "#define GL_STENCIL_EXT   0x1802"
+
+.SS "#define GL_STENCIL_INDEX1_OES   0x8D46"
+
+.SS "#define GL_STENCIL_INDEX4_OES   0x8D47"
+
+.SS "#define GL_SYNC_CONDITION_APPLE   0x9113"
+
+.SS "#define GL_SYNC_FENCE_APPLE   0x9116"
+
+.SS "#define GL_SYNC_FLAGS_APPLE   0x9115"
+
+.SS "#define GL_SYNC_FLUSH_COMMANDS_BIT_APPLE   0x00000001"
+
+.SS "#define GL_SYNC_GPU_COMMANDS_COMPLETE_APPLE   0x9117"
+
+.SS "#define GL_SYNC_OBJECT_APPLE   0x8A53"
+
+.SS "#define GL_SYNC_STATUS_APPLE   0x9114"
+
+.SS "#define GL_TEXTURE_3D_OES   0x806F"
+
+.SS "#define GL_TEXTURE_BINDING_3D_OES   0x806A"
+
+.SS "#define GL_TEXTURE_BINDING_EXTERNAL_OES   0x8D67"
+
+.SS "#define GL_TEXTURE_BORDER_COLOR_NV   0x1004"
+
+.SS "#define GL_TEXTURE_COMPARE_FUNC_EXT   0x884D"
+
+.SS "#define GL_TEXTURE_COMPARE_MODE_EXT   0x884C"
+
+.SS "#define GL_TEXTURE_DEPTH_QCOM   0x8BD4"
+
+.SS "#define GL_TEXTURE_EXTERNAL_OES   0x8D65"
+
+.SS "#define GL_TEXTURE_FORMAT_QCOM   0x8BD6"
+
+.SS "#define GL_TEXTURE_HEIGHT_QCOM   0x8BD3"
+
+.SS "#define GL_TEXTURE_IMAGE_VALID_QCOM   0x8BD8"
+
+.SS "#define GL_TEXTURE_IMMUTABLE_FORMAT_EXT   0x912F"
+
+.SS "#define GL_TEXTURE_INTERNAL_FORMAT_QCOM   0x8BD5"
+
+.SS "#define GL_TEXTURE_MAX_ANISOTROPY_EXT   0x84FE"
+
+.SS "#define GL_TEXTURE_MAX_LEVEL_APPLE   0x813D"
+
+.SS "#define GL_TEXTURE_NUM_LEVELS_QCOM   0x8BD9"
+
+.SS "#define GL_TEXTURE_OBJECT_VALID_QCOM   0x8BDB"
+
+.SS "#define GL_TEXTURE_SAMPLES_IMG   0x9136"
+
+.SS "#define GL_TEXTURE_SRGB_DECODE_EXT   0x8A48"
+
+.SS "#define GL_TEXTURE_TARGET_QCOM   0x8BDA"
+
+.SS "#define GL_TEXTURE_TYPE_QCOM   0x8BD7"
+
+.SS "#define GL_TEXTURE_USAGE_ANGLE   0x93A2"
+
+.SS "#define GL_TEXTURE_WIDTH_QCOM   0x8BD2"
+
+.SS "#define GL_TEXTURE_WRAP_R_OES   0x8072"
+
+.SS "#define GL_TIME_ELAPSED_EXT   0x88BF"
+
+.SS "#define GL_TIMEOUT_EXPIRED_APPLE   0x911B"
+
+.SS "#define GL_TIMEOUT_IGNORED_APPLE   0xFFFFFFFFFFFFFFFFull"
+
+.SS "#define GL_TIMESTAMP_EXT   0x8E28"
+
+.SS "#define GL_TRANSLATED_SHADER_SOURCE_LENGTH_ANGLE   0x93A0"
+
+.SS "#define GL_UNKNOWN_CONTEXT_RESET_EXT   0x8255"
+
+.SS "#define GL_UNPACK_ROW_LENGTH_EXT   0x0CF2"
+
+.SS "#define GL_UNPACK_SKIP_PIXELS_EXT   0x0CF4"
+
+.SS "#define GL_UNPACK_SKIP_ROWS_EXT   0x0CF3"
+
+.SS "#define GL_UNSIGNALED_APPLE   0x9118"
+
+.SS "#define GL_UNSIGNED_INT   0x1405"
+
+.SS "#define GL_UNSIGNED_INT   0x1405"
+
+.SS "#define GL_UNSIGNED_INT64_AMD   0x8BC2"
+
+.SS "#define GL_UNSIGNED_INT_10_10_10_2_OES   0x8DF6"
+
+.SS "#define GL_UNSIGNED_INT_24_8_OES   0x84FA"
+
+.SS "#define GL_UNSIGNED_INT_24_8_OES   0x84FA"
+
+.SS "#define GL_UNSIGNED_INT_2_10_10_10_REV_EXT   0x8368"
+
+.SS "#define GL_UNSIGNED_NORMALIZED_EXT   0x8C17"
+
+.SS "#define GL_UNSIGNED_SHORT   0x1403"
+
+.SS "#define GL_UNSIGNED_SHORT_1_5_5_5_REV_EXT   0x8366"
+
+.SS "#define GL_UNSIGNED_SHORT_4_4_4_4_REV_EXT   0x8365"
+
+.SS "#define GL_UNSIGNED_SHORT_4_4_4_4_REV_IMG   0x8365"
+
+.SS "#define GL_UNSIGNED_SHORT_8_8_APPLE   0x85BA"
+
+.SS "#define GL_UNSIGNED_SHORT_8_8_REV_APPLE   0x85BB"
+
+.SS "#define GL_VERTEX_ARRAY_BINDING_OES   0x85B5"
+
+.SS "#define GL_VERTEX_ARRAY_OBJECT_EXT   0x9154"
+
+.SS "#define GL_VERTEX_ATTRIB_ARRAY_DIVISOR_ANGLE   0x88FE"
+
+.SS "#define GL_VERTEX_ATTRIB_ARRAY_DIVISOR_NV   0x88FE"
+
+.SS "#define GL_VERTEX_SHADER_BIT_EXT   0x00000001"
+
+.SS "#define GL_VIV_shader_binary   1"
+
+.SS "#define GL_WAIT_FAILED_APPLE   0x911D"
+
+.SS "#define GL_WRITE_ONLY_OES   0x88B9"
+
+.SS "#define GL_WRITEONLY_RENDERING_QCOM   0x8823"
+
+.SS "#define GL_Z400_BINARY_AMD   0x8740"
+
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBGLuint\fP* \fBarrays\fP"
+
+.SS "typedef \fBGLenum\fP \fBattachment\fP"
+
+.SS "typedef \fBGLsizei\fP const \fBGLenum\fP* \fBattachments\fP"
+
+.SS "typedef \fBGLenum\fP const \fBGLvoid\fP* \fBbinary\fP"
+
+.SS "typedef \fBGLenum\fP \fBbinaryFormat\fP"
+
+.SS "typedef \fBGLint\fP \fBGLenum\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLint\fP \fBborder\fP"
+
+.SS "typedef \fBGLenum\fP \fBGLuint\fP \fBGLenum\fP \fBGLsizei\fP const \fBGLchar\fP* \fBbuf\fP"
+
+.SS "typedef const \fBGLenum\fP* \fBbufs\fP"
+
+.SS "typedef \fBGLsizei\fP \fBbufSize\fP"
+
+.SS "typedef \fBGLsizei\fP \fBbufsize\fP"
+
+.SS "typedef \fBGLenum\fP \fBGLsizei\fP \fBGLuint\fP \fBGLint\fP* \fBbytesWritten\fP"
+
+.SS "typedef \fBGLenum\fP \fBcondition\fP"
+
+.SS "typedef \fBGLsizei\fP \fBcount\fP"
+
+.SS "typedef \fBGLuint\fP \fBcounter\fP"
+
+.SS "typedef \fBGLint\fP \fBGLint\fP \fBGLsizei\fP \fBGLuint\fP* \fBcounters\fP"
+
+.SS "typedef \fBGLint\fP \fBGLint\fP \fBGLsizei\fP \fBcounterSize\fP"
+
+.SS "typedef \fBGLboolean\fP \fBGLuint\fP \fBGLint\fP \fBGLuint\fP* \fBcountersList\fP"
+
+.SS "typedef \fBGLuint\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLchar\fP* \fBcounterString\fP"
+
+.SS "typedef \fBGLint\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLenum\fP \fBGLenum\fP \fBGLsizei\fP \fBGLvoid\fP* \fBdata\fP"
+
+.SS "typedef \fBGLenum\fP \fBGLsizei\fP \fBdataSize\fP"
+
+.SS "typedef \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLsizei\fP \fBdepth\fP"
+
+.SS "typedef \fBGLuint\fP \fBdivisor\fP"
+
+.SS "typedef \fBGLsizei\fP \fBGLuint\fP* \fBdriverControls\fP"
+
+.SS "typedef \fBGLsizei\fP \fBGLsizei\fP \fBGLchar\fP* \fBdriverControlString\fP"
+
+.SS "typedef \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBdstX0\fP"
+
+.SS "typedef \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBdstX1\fP"
+
+.SS "typedef \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBdstY0\fP"
+
+.SS "typedef \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBdstY1\fP"
+
+.SS "typedef \fBGLboolean\fP \fBenable\fP"
+
+.SS "typedef \fBGLenum\fP \fBGLenum\fP \fBGLsizei\fP const \fBGLuint\fP \fBGLboolean\fP \fBenabled\fP"
+
+.SS "typedef \fBGLenum\fP \fBface\fP"
+
+.SS "typedef \fBGLuint\fP* \fBfences\fP"
+
+.SS "typedef \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLbitfield\fP \fBGLenum\fP \fBfilter\fP"
+
+.SS "typedef \fBGLint\fP \fBfirst\fP"
+
+.SS "typedef \fBGLbitfield\fP \fBflags\fP"
+
+.SS "typedef \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLenum\fP \fBformat\fP"
+
+.SS "typedef \fBvoid\fP* \fBGLeglImageOES\fP"
+
+.SS "typedef \fBkhronos_int64_t\fP \fBGLint64\fP"
+
+.SS "typedef struct __GLsync* \fBGLsync\fP"
+
+.SS "typedef \fBkhronos_uint64_t\fP \fBGLuint64\fP"
+
+.SS "typedef \fBGLboolean\fP \fBGLuint\fP \fBgroup\fP"
+
+.SS "typedef \fBGLsizei\fP \fBGLuint\fP* \fBgroups\fP"
+
+.SS "typedef \fBGLsizei\fP \fBgroupsSize\fP"
+
+.SS "typedef \fBGLsizei\fP \fBGLsizei\fP \fBGLchar\fP* \fBgroupString\fP"
+
+.SS "typedef \fBGLuint\fP \fBGLuint\fP \fBGLuint\fP \fBheight\fP"
+
+.SS "typedef \fBGLuint\fP \fBid\fP"
+
+.SS "typedef const \fBGLuint\fP* \fBids\fP"
+
+.SS "typedef \fBGLeglImageOES\fP \fBimage\fP"
+
+.SS "typedef \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLenum\fP \fBGLsizei\fP \fBimageSize\fP"
+
+.SS "typedef \fBGLuint\fP \fBindex\fP"
+
+.SS "typedef \fBGLsizei\fP \fBGLenum\fP const \fBGLvoid\fP* \fBindices\fP"
+
+.SS "typedef \fBGLsizei\fP \fBGLsizei\fP \fBGLchar\fP* \fBinfoLog\fP"
+
+.SS "typedef \fBGLsizei\fP \fBGLenum\fP \fBinternalformat\fP"
+
+.SS "typedef \fBGLuint\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLchar\fP* \fBlabel\fP"
+
+.SS "typedef \fBGLenum\fP \fBGLchar\fP \fBGLint\fP* \fBlength\fP"
+
+.SS "typedef \fBGLsizei\fP \fBGLenum\fP \fBGLenum\fP \fBGLuint\fP \fBGLenum\fP \fBGLsizei\fP* \fBlengths\fP"
+
+.SS "typedef \fBGLint\fP \fBlevel\fP"
+
+.SS "typedef \fBGLenum\fP \fBGLsizei\fP \fBlevels\fP"
+
+.SS "typedef \fBGLint\fP \fBlocation\fP"
+
+.SS "typedef const \fBGLchar\fP* \fBmarker\fP"
+
+.SS "typedef \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLbitfield\fP \fBmask\fP"
+
+.SS "typedef \fBGLint\fP \fBGLint\fP* \fBmaxActiveCounters\fP"
+
+.SS "typedef \fBGLint\fP \fBmaxBuffers\fP"
+
+.SS "typedef \fBGLint\fP \fBmaxFramebuffers\fP"
+
+.SS "typedef \fBGLint\fP \fBmaxPrograms\fP"
+
+.SS "typedef \fBGLint\fP \fBmaxRenderbuffers\fP"
+
+.SS "typedef \fBGLint\fP \fBmaxShaders\fP"
+
+.SS "typedef \fBGLint\fP \fBmaxTextures\fP"
+
+.SS "typedef \fBGLuint\fP \fBGLsizei\fP const \fBGLchar\fP* \fBmessage\fP"
+
+.SS "typedef \fBGLsizei\fP \fBGLenum\fP \fBGLenum\fP \fBGLuint\fP \fBGLenum\fP \fBGLsizei\fP \fBGLchar\fP* \fBmessageLog\fP"
+
+.SS "typedef \fBGLuint\fP* \fBmonitors\fP"
+
+.SS "typedef \fBGLuint\fP \fBname\fP"
+
+.SS "typedef \fBGLsizei\fP \fBnumAttachments\fP"
+
+.SS "typedef \fBGLint\fP \fBGLint\fP* \fBnumBuffers\fP"
+
+.SS "typedef \fBGLboolean\fP \fBGLuint\fP \fBGLint\fP \fBnumCounters\fP"
+
+.SS "typedef \fBGLint\fP \fBGLint\fP* \fBnumFramebuffers\fP"
+
+.SS "typedef \fBGLint\fP \fBGLint\fP* \fBnumPrograms\fP"
+
+.SS "typedef \fBGLint\fP \fBGLint\fP* \fBnumRenderbuffers\fP"
+
+.SS "typedef \fBGLint\fP \fBGLint\fP* \fBnumShaders\fP"
+
+.SS "typedef \fBGLint\fP \fBGLint\fP* \fBnumTextures\fP"
+
+.SS "typedef \fBGLuint\fP \fBobject\fP"
+
+.SS "typedef \fBGLintptr\fP \fBoffset\fP"
+
+.SS "typedef \fBGLenum\fP \fBGLint\fP \fBparam\fP"
+
+.SS "typedef \fBGLvoid\fP** \fBparams\fP"
+
+.SS "typedef \fBvoid\fP *\fBGL_APIENTRYP\fP PFNGLMAPBUFFEROESPROC(\fBGLenum\fP \fBtarget\fP, \fBGLenum\fP \fBaccess\fP)"
+
+.SS "typedef \fBvoid\fP *\fBGL_APIENTRYP\fP PFNGLMAPBUFFERRANGEEXTPROC(\fBGLenum\fP \fBtarget\fP, \fBGLintptr\fP \fBoffset\fP, \fBGLsizeiptr\fP \fBlength\fP, \fBGLbitfield\fP \fBaccess\fP)"
+
+.SS "typedef \fBGLuint\fP* \fBpipelines\fP"
+
+.SS "typedef \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLenum\fP \fBGLenum\fP const \fBGLvoid\fP* \fBpixels\fP"
+
+.SS "typedef \fBGLenum\fP \fBpname\fP"
+
+.SS "typedef \fBGLuint\fP \fBGLuint\fP \fBGLuint\fP \fBGLbitfield\fP \fBpreserveMask\fP"
+
+.SS "typedef \fBGLsizei\fP \fBGLenum\fP const \fBGLvoid\fP \fBGLsizei\fP \fBprimcount\fP"
+
+.SS "typedef \fBGLuint\fP \fBprogram\fP"
+
+.SS "typedef \fBGLclampf\fP \fBref\fP"
+
+.SS "typedef \fBGLsizei\fP \fBsamples\fP"
+
+.SS "typedef \fBGLsizei\fP \fBGLenum\fP \fBGLenum\fP \fBGLuint\fP \fBGLenum\fP* \fBseverities\fP"
+
+.SS "typedef \fBGLenum\fP \fBGLuint\fP \fBGLenum\fP \fBseverity\fP"
+
+.SS "typedef \fBGLenum\fP \fBshadertype\fP"
+
+.SS "typedef \fBGLsizei\fP \fBsize\fP"
+
+.SS "typedef \fBGLenum\fP \fBGLchar\fP* \fBsource\fP"
+
+.SS "typedef \fBGLuint\fP \fBGLint\fP \fBsourceBaseLevel\fP"
+
+.SS "typedef \fBGLuint\fP \fBGLint\fP \fBGLsizei\fP \fBsourceLevelCount\fP"
+
+.SS "typedef \fBGLsizei\fP \fBGLenum\fP* \fBsources\fP"
+
+.SS "typedef \fBGLuint\fP \fBsourceTexture\fP"
+
+.SS "typedef \fBGLint\fP \fBGLint\fP \fBsrcX1\fP"
+
+.SS "typedef \fBGLint\fP \fBsrcY0\fP"
+
+.SS "typedef \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBsrcY1\fP"
+
+.SS "typedef \fBGLbitfield\fP \fBstages\fP"
+
+.SS "typedef \fBGLsizei\fP const \fBGLchar\fP** \fBstrings\fP"
+
+.SS "typedef \fBGLenum\fP \fBtarget\fP"
+
+.SS "typedef \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLenum\fP \fBGLenum\fP \fBGLvoid\fP* \fBtexels\fP"
+
+.SS "typedef \fBGLenum\fP \fBGLenum\fP \fBtextarget\fP"
+
+.SS "typedef \fBGLenum\fP \fBGLenum\fP \fBGLuint\fP \fBtexture\fP"
+
+.SS "typedef \fBGLbitfield\fP \fBGLuint64\fP \fBtimeout\fP"
+
+.SS "typedef \fBGLint\fP \fBGLsizei\fP \fBGLboolean\fP \fBtranspose\fP"
+
+.SS "typedef \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLenum\fP \fBGLenum\fP \fBtype\fP"
+
+.SS "typedef \fBGLsizei\fP \fBGLenum\fP \fBGLenum\fP* \fBtypes\fP"
+
+.SS "typedef const \fBvoid\fP* \fBuserParam\fP"
+
+.SS "typedef \fBGLint\fP \fBGLsizei\fP \fBGLboolean\fP const \fBGLfloat\fP* \fBvalue\fP"
+
+.SS "typedef \fBGLenum\fP \fBGLsizei\fP \fBGLsizei\fP \fBGLint\fP* \fBvalues\fP"
+
+.SS "typedef \fBGLint\fP \fBGLfloat\fP \fBGLfloat\fP \fBGLfloat\fP \fBGLfloat\fP \fBw\fP"
+
+.SS "typedef \fBGLuint\fP \fBGLuint\fP \fBwidth\fP"
+
+.SS "typedef \fBGLint\fP \fBGLfloat\fP \fBx\fP"
+
+.SS "typedef \fBGLint\fP \fBGLint\fP \fBxoffset\fP"
+
+.SS "typedef \fBGLuint\fP \fBy\fP"
+
+.SS "typedef \fBGLint\fP \fBGLint\fP \fBGLint\fP \fByoffset\fP"
+
+.SS "typedef \fBGLint\fP \fBGLfloat\fP \fBGLfloat\fP \fBGLfloat\fP \fBz\fP"
+
+.SS "typedef \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBGLint\fP \fBzoffset\fP"
+
+.SH "Function Documentation"
+.PP 
+.SS "typedef \fBGLboolean\fP (\fBGL_APIENTRYP\fP PFNGLUNMAPBUFFEROESPROC)"
+
+.SS "typedef \fBGLenum\fP (\fBGL_APIENTRYP\fP PFNGLCLIENTWAITSYNCAPPLEPROC)"
+
+.SS "typedef \fBGLsync\fP (\fBGL_APIENTRYP\fP PFNGLFENCESYNCAPPLEPROC)"
+
+.SS "typedef \fBGLuint\fP (\fBGL_APIENTRYP\fP PFNGLGETDEBUGMESSAGELOGKHRPROC)"
+
+.SS "typedef void (\fBGL_APIENTRYP\fP GLDEBUGPROCKHR)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

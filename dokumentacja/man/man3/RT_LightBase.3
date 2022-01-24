@@ -1,0 +1,62 @@
+.TH "RT::LightBase" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RT::LightBase
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <lightbase\&.h>\fP
+.PP
+Inherited by \fBRT::PointLight\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLightBase\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~LightBase\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBComputeIllumination\fP (const \fBqbVector\fP< double > &intPoint, const \fBqbVector\fP< double > &localNormal, const std::vector< std::shared_ptr< \fBRT::ObjectBase\fP > > &objectList, const std::shared_ptr< \fBRT::ObjectBase\fP > &currentObject, \fBqbVector\fP< double > &\fBcolor\fP, double &intensity)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBqbVector\fP< double > \fBm_color\fP {3}"
+.br
+.ti -1c
+.RI "\fBqbVector\fP< double > \fBm_location\fP {3}"
+.br
+.ti -1c
+.RI "double \fBm_intensity\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RT::LightBase::LightBase ()"
+
+.SS "RT::LightBase::~LightBase ()\fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool RT::LightBase::ComputeIllumination (const \fBqbVector\fP< double > & intPoint, const \fBqbVector\fP< double > & localNormal, const std::vector< std::shared_ptr< \fBRT::ObjectBase\fP > > & objectList, const std::shared_ptr< \fBRT::ObjectBase\fP > & currentObject, \fBqbVector\fP< double > & color, double & intensity)\fC [virtual]\fP"
+
+.PP
+Reimplemented in \fBRT::PointLight\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBqbVector\fP<double> RT::LightBase::m_color {3}"
+
+.SS "double RT::LightBase::m_intensity"
+
+.SS "\fBqbVector\fP<double> RT::LightBase::m_location {3}"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

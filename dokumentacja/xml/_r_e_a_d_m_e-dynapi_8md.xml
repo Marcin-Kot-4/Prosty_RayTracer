@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e-dynapi_8md" kind="file" language="Markdown">
+    <compoundname>README-dynapi.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Dynamic<sp/>API</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Originally<sp/>posted<sp/>on<sp/>Ryan&apos;s<sp/>Google+<sp/>account.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Background:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>Steam<sp/>Runtime<sp/>has<sp/>(at<sp/>least<sp/>in<sp/>theory)<sp/>a<sp/>really<sp/>kick-ass<sp/>build<sp/>of<sp/>SDL2,<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>but<sp/>developers<sp/>are<sp/>shipping<sp/>their<sp/>own<sp/>SDL2<sp/>with<sp/>individual<sp/>Steam<sp/>games.<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>These<sp/>games<sp/>might<sp/>stop<sp/>getting<sp/>updates,<sp/>but<sp/>a<sp/>newer<sp/>SDL2<sp/>might<sp/>be<sp/>needed<sp/>later.<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Certainly<sp/>we&apos;ll<sp/>always<sp/>be<sp/>fixing<sp/>bugs<sp/>in<sp/>SDL,<sp/>even<sp/>if<sp/>a<sp/>new<sp/>video<sp/>target<sp/>isn&apos;t<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>ever<sp/>needed,<sp/>and<sp/>these<sp/>fixes<sp/>won&apos;t<sp/>make<sp/>it<sp/>to<sp/>a<sp/>game<sp/>shipping<sp/>its<sp/>own<sp/>SDL.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Even<sp/>if<sp/>we<sp/>replace<sp/>the<sp/>SDL2<sp/>in<sp/>those<sp/>games<sp/>with<sp/>a<sp/>compatible<sp/>one,<sp/>that<sp/>is<sp/>to<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>say,<sp/>edit<sp/>a<sp/>developer&apos;s<sp/>Steam<sp/>depot<sp/>(yuck!),<sp/>there<sp/>are<sp/>developers<sp/>that<sp/>are<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>statically<sp/>linking<sp/>SDL2<sp/>that<sp/>we<sp/>can&apos;t<sp/>do<sp/>this<sp/>for.<sp/>We<sp/>can&apos;t<sp/>even<sp/>force<sp/>the<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>dynamic<sp/>loader<sp/>to<sp/>ignore<sp/>their<sp/>SDL2<sp/>in<sp/>this<sp/>case,<sp/>of<sp/>course.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>If<sp/>you<sp/>don&apos;t<sp/>ship<sp/>an<sp/>SDL2<sp/>with<sp/>the<sp/>game<sp/>in<sp/>some<sp/>form,<sp/>people<sp/>that<sp/>disabled<sp/>the</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Steam<sp/>Runtime,<sp/>or<sp/>just<sp/>tried<sp/>to<sp/>run<sp/>the<sp/>game<sp/>from<sp/>the<sp/>command<sp/>line<sp/>instead<sp/>of<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Steam<sp/>might<sp/>find<sp/>themselves<sp/>unable<sp/>to<sp/>run<sp/>the<sp/>game,<sp/>due<sp/>to<sp/>a<sp/>missing<sp/>dependency.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>If<sp/>you<sp/>want<sp/>to<sp/>ship<sp/>on<sp/>non-Steam<sp/>platforms<sp/>like<sp/>GOG<sp/>or<sp/>Humble<sp/>Bundle,<sp/>or<sp/>target</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>generic<sp/>Linux<sp/>boxes<sp/>that<sp/>may<sp/>or<sp/>may<sp/>not<sp/>have<sp/>SDL2<sp/>installed,<sp/>you<sp/>have<sp/>to<sp/>ship<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>the<sp/>library<sp/>or<sp/>risk<sp/>a<sp/>total<sp/>failure<sp/>to<sp/>launch.<sp/>So<sp/>now,<sp/>you<sp/>might<sp/>have<sp/>to<sp/>have<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>a<sp/>non-Steam<sp/>build<sp/>plus<sp/>a<sp/>Steam<sp/>build<sp/>(that<sp/>is,<sp/>one<sp/>with<sp/>and<sp/>one<sp/>without<sp/>SDL2<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>included),<sp/>which<sp/>is<sp/>inconvenient<sp/>if<sp/>you<sp/>could<sp/>have<sp/>had<sp/>one<sp/>universal<sp/>build<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>that<sp/>works<sp/>everywhere.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>We<sp/>like<sp/>the<sp/>zlib<sp/>license,<sp/>but<sp/>the<sp/>biggest<sp/>complaint<sp/>from<sp/>the<sp/>open<sp/>source<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>community<sp/>about<sp/>the<sp/>license<sp/>change<sp/>is<sp/>the<sp/>static<sp/>linking.<sp/>The<sp/>LGPL<sp/>forced<sp/>this<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>as<sp/>a<sp/>legal,<sp/>not<sp/>technical<sp/>issue,<sp/>but<sp/>zlib<sp/>doesn&apos;t<sp/>care.<sp/>Even<sp/>those<sp/>that<sp/>aren&apos;t</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>concerned<sp/>about<sp/>the<sp/>GNU<sp/>freedoms<sp/>found<sp/>themselves<sp/>solving<sp/>the<sp/>same<sp/>problems:<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>swapping<sp/>in<sp/>a<sp/>newer<sp/>SDL<sp/>to<sp/>an<sp/>older<sp/>game<sp/>often<sp/>times<sp/>can<sp/>save<sp/>the<sp/>day.<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Static<sp/>linking<sp/>stops<sp/>this<sp/>dead.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">So<sp/>here&apos;s<sp/>what<sp/>we<sp/>did:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SDL<sp/>now<sp/>has,<sp/>internally,<sp/>a<sp/>table<sp/>of<sp/>function<sp/>pointers.<sp/>So,<sp/>this<sp/>is<sp/>what<sp/>SDL_Init</highlight></codeline>
+<codeline><highlight class="normal">now<sp/>looks<sp/>like:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">UInt32<sp/>SDL_Init(Uint32<sp/>flags)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>jump_table.SDL_Init(flags);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Except<sp/>that<sp/>is<sp/>all<sp/>done<sp/>with<sp/>a<sp/>bunch<sp/>of<sp/>macro<sp/>magic<sp/>so<sp/>we<sp/>don&apos;t<sp/>have<sp/>to<sp/>maintain</highlight></codeline>
+<codeline><highlight class="normal">every<sp/>one<sp/>of<sp/>these.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">What<sp/>is<sp/>jump_table.SDL_init()?<sp/>Eventually,<sp/>that&apos;s<sp/>a<sp/>function<sp/>pointer<sp/>of<sp/>the<sp/>real</highlight></codeline>
+<codeline><highlight class="normal">SDL_Init()<sp/>that<sp/>you&apos;ve<sp/>been<sp/>calling<sp/>all<sp/>this<sp/>time.<sp/>But<sp/>at<sp/>startup,<sp/>it<sp/>looks<sp/>more<sp/></highlight></codeline>
+<codeline><highlight class="normal">like<sp/>this:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">Uint32<sp/>SDL_Init_DEFAULT(Uint32<sp/>flags)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_InitDynamicAPI();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>jump_table.SDL_Init(flags);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SDL_InitDynamicAPI()<sp/>fills<sp/>in<sp/>jump_table<sp/>with<sp/>all<sp/>the<sp/>actual<sp/>SDL<sp/>function<sp/></highlight></codeline>
+<codeline><highlight class="normal">pointers,<sp/>which<sp/>means<sp/>that<sp/>this<sp/>`_DEFAULT`<sp/>function<sp/>never<sp/>gets<sp/>called<sp/>again.<sp/></highlight></codeline>
+<codeline><highlight class="normal">First<sp/>call<sp/>to<sp/>any<sp/>SDL<sp/>function<sp/>sets<sp/>the<sp/>whole<sp/>thing<sp/>up.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">So<sp/>you<sp/>might<sp/>be<sp/>asking,<sp/>what<sp/>was<sp/>the<sp/>value<sp/>in<sp/>that?<sp/>Isn&apos;t<sp/>this<sp/>what<sp/>the<sp/>operating</highlight></codeline>
+<codeline><highlight class="normal">system&apos;s<sp/>dynamic<sp/>loader<sp/>was<sp/>supposed<sp/>to<sp/>do<sp/>for<sp/>us?<sp/>Yes,<sp/>but<sp/>now<sp/>we&apos;ve<sp/>got<sp/>this<sp/></highlight></codeline>
+<codeline><highlight class="normal">level<sp/>of<sp/>indirection,<sp/>we<sp/>can<sp/>do<sp/>things<sp/>like<sp/>this:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">export<sp/>SDL_DYNAMIC_API=/my/actual/libSDL-2.0.so.0</highlight></codeline>
+<codeline><highlight class="normal">./MyGameThatIsStaticallyLinkedToSDL2</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">And<sp/>now,<sp/>this<sp/>game<sp/>that<sp/>is<sp/>statically<sp/>linked<sp/>to<sp/>SDL,<sp/>can<sp/>still<sp/>be<sp/>overridden<sp/></highlight></codeline>
+<codeline><highlight class="normal">with<sp/>a<sp/>newer,<sp/>or<sp/>better,<sp/>SDL.<sp/>The<sp/>statically<sp/>linked<sp/>one<sp/>will<sp/>only<sp/>be<sp/>used<sp/>as<sp/></highlight></codeline>
+<codeline><highlight class="normal">far<sp/>as<sp/>calling<sp/>into<sp/>the<sp/>jump<sp/>table<sp/>in<sp/>this<sp/>case.<sp/>But<sp/>in<sp/>cases<sp/>where<sp/>no<sp/>override</highlight></codeline>
+<codeline><highlight class="normal">is<sp/>desired,<sp/>the<sp/>statically<sp/>linked<sp/>version<sp/>will<sp/>provide<sp/>its<sp/>own<sp/>jump<sp/>table,<sp/></highlight></codeline>
+<codeline><highlight class="normal">and<sp/>everyone<sp/>is<sp/>happy.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">So<sp/>now:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Developers<sp/>can<sp/>statically<sp/>link<sp/>SDL,<sp/>and<sp/>users<sp/>can<sp/>still<sp/>replace<sp/>it.<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>(We&apos;d<sp/>still<sp/>rather<sp/>you<sp/>ship<sp/>a<sp/>shared<sp/>library,<sp/>though!)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Developers<sp/>can<sp/>ship<sp/>an<sp/>SDL<sp/>with<sp/>their<sp/>game,<sp/>Valve<sp/>can<sp/>override<sp/>it<sp/>for,<sp/>say,<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>new<sp/>features<sp/>on<sp/>SteamOS,<sp/>or<sp/>distros<sp/>can<sp/>override<sp/>it<sp/>for<sp/>their<sp/>own<sp/>needs,<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>but<sp/>it&apos;ll<sp/>also<sp/>just<sp/>work<sp/>in<sp/>the<sp/>default<sp/>case.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Developers<sp/>can<sp/>ship<sp/>the<sp/>same<sp/>package<sp/>to<sp/>everyone<sp/>(Humble<sp/>Bundle,<sp/>GOG,<sp/>etc),<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>and<sp/>it&apos;ll<sp/>do<sp/>the<sp/>right<sp/>thing.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>End<sp/>users<sp/>(and<sp/>Valve)<sp/>can<sp/>update<sp/>a<sp/>game&apos;s<sp/>SDL<sp/>in<sp/>almost<sp/>any<sp/>case,<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>to<sp/>keep<sp/>abandoned<sp/>games<sp/>running<sp/>on<sp/>newer<sp/>platforms.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Everyone<sp/>develops<sp/>with<sp/>SDL<sp/>exactly<sp/>as<sp/>they<sp/>have<sp/>been<sp/>doing<sp/>all<sp/>along.<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Same<sp/>headers,<sp/>same<sp/>ABI.<sp/>Just<sp/>get<sp/>the<sp/>latest<sp/>version<sp/>to<sp/>enable<sp/>this<sp/>magic.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A<sp/>little<sp/>more<sp/>about<sp/>SDL_InitDynamicAPI():</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Internally,<sp/>InitAPI<sp/>does<sp/>some<sp/>locking<sp/>to<sp/>make<sp/>sure<sp/>everything<sp/>waits<sp/>until<sp/>a<sp/></highlight></codeline>
+<codeline><highlight class="normal">single<sp/>thread<sp/>initializes<sp/>everything<sp/>(although<sp/>even<sp/>SDL_CreateThread()<sp/>goes<sp/></highlight></codeline>
+<codeline><highlight class="normal">through<sp/>here<sp/>before<sp/>spinning<sp/>a<sp/>thread,<sp/>too),<sp/>and<sp/>then<sp/>decides<sp/>if<sp/>it<sp/>should<sp/>use</highlight></codeline>
+<codeline><highlight class="normal">an<sp/>external<sp/>SDL<sp/>library.<sp/>If<sp/>not,<sp/>it<sp/>sets<sp/>up<sp/>the<sp/>jump<sp/>table<sp/>using<sp/>the<sp/>current<sp/></highlight></codeline>
+<codeline><highlight class="normal">SDL&apos;s<sp/>function<sp/>pointers<sp/>(which<sp/>might<sp/>be<sp/>statically<sp/>linked<sp/>into<sp/>a<sp/>program,<sp/>or<sp/>in</highlight></codeline>
+<codeline><highlight class="normal">a<sp/>shared<sp/>library<sp/>of<sp/>its<sp/>own).<sp/>If<sp/>so,<sp/>it<sp/>loads<sp/>that<sp/>library<sp/>and<sp/>looks<sp/>for<sp/>and<sp/></highlight></codeline>
+<codeline><highlight class="normal">calls<sp/>a<sp/>single<sp/>function:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">SInt32<sp/>SDL_DYNAPI_entry(Uint32<sp/>version,<sp/>void<sp/>*table,<sp/>Uint32<sp/>tablesize);</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">That<sp/>function<sp/>takes<sp/>a<sp/>version<sp/>number<sp/>(more<sp/>on<sp/>that<sp/>in<sp/>a<sp/>moment),<sp/>the<sp/>address<sp/>of</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>jump<sp/>table,<sp/>and<sp/>the<sp/>size,<sp/>in<sp/>bytes,<sp/>of<sp/>the<sp/>table.<sp/></highlight></codeline>
+<codeline><highlight class="normal">Now,<sp/>we&apos;ve<sp/>got<sp/>policy<sp/>here:<sp/>this<sp/>table&apos;s<sp/>layout<sp/>never<sp/>changes;<sp/>new<sp/>stuff<sp/>gets<sp/></highlight></codeline>
+<codeline><highlight class="normal">added<sp/>to<sp/>the<sp/>end.<sp/>Therefore<sp/>SDL_DYNAPI_entry()<sp/>knows<sp/>that<sp/>it<sp/>can<sp/>provide<sp/>all<sp/></highlight></codeline>
+<codeline><highlight class="normal">the<sp/>needed<sp/>functions<sp/>if<sp/>tablesize<sp/>&lt;=<sp/>sizeof<sp/>its<sp/>own<sp/>jump<sp/>table.<sp/>If<sp/>tablesize<sp/>is</highlight></codeline>
+<codeline><highlight class="normal">bigger<sp/>(say,<sp/>SDL<sp/>2.0.4<sp/>is<sp/>trying<sp/>to<sp/>load<sp/>SDL<sp/>2.0.3),<sp/>then<sp/>we<sp/>know<sp/>to<sp/>abort,<sp/>but</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>it&apos;s<sp/>smaller,<sp/>we<sp/>know<sp/>we<sp/>can<sp/>provide<sp/>the<sp/>entire<sp/>API<sp/>that<sp/>the<sp/>caller<sp/>needs.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>version<sp/>variable<sp/>is<sp/>a<sp/>failsafe<sp/>switch.<sp/></highlight></codeline>
+<codeline><highlight class="normal">Right<sp/>now<sp/>it&apos;s<sp/>always<sp/>1.<sp/>This<sp/>number<sp/>changes<sp/>when<sp/>there<sp/>are<sp/>major<sp/>API<sp/>changes<sp/></highlight></codeline>
+<codeline><highlight class="normal">(so<sp/>we<sp/>know<sp/>if<sp/>the<sp/>tablesize<sp/>might<sp/>be<sp/>smaller,<sp/>or<sp/>entries<sp/>in<sp/>it<sp/>have<sp/>changed).<sp/></highlight></codeline>
+<codeline><highlight class="normal">Right<sp/>now<sp/>SDL_DYNAPI_entry<sp/>gives<sp/>up<sp/>if<sp/>the<sp/>version<sp/>doesn&apos;t<sp/>match,<sp/>but<sp/>it&apos;s<sp/>not<sp/></highlight></codeline>
+<codeline><highlight class="normal">inconceivable<sp/>to<sp/>have<sp/>a<sp/>small<sp/>dispatch<sp/>library<sp/>that<sp/>only<sp/>supplies<sp/>this<sp/>one<sp/></highlight></codeline>
+<codeline><highlight class="normal">function<sp/>and<sp/>loads<sp/>different,<sp/>otherwise-incompatible<sp/>SDL<sp/>libraries<sp/>and<sp/>has<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">right<sp/>one<sp/>initialize<sp/>the<sp/>jump<sp/>table<sp/>based<sp/>on<sp/>the<sp/>version.<sp/>For<sp/>something<sp/>that<sp/></highlight></codeline>
+<codeline><highlight class="normal">must<sp/>generically<sp/>catch<sp/>lots<sp/>of<sp/>different<sp/>versions<sp/>of<sp/>SDL<sp/>over<sp/>time,<sp/>like<sp/>the<sp/></highlight></codeline>
+<codeline><highlight class="normal">Steam<sp/>Client,<sp/>this<sp/>isn&apos;t<sp/>a<sp/>bad<sp/>option.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Finally,<sp/>I&apos;m<sp/>sure<sp/>some<sp/>people<sp/>are<sp/>reading<sp/>this<sp/>and<sp/>thinking,</highlight></codeline>
+<codeline><highlight class="normal">&quot;I<sp/>don&apos;t<sp/>want<sp/>that<sp/>overhead<sp/>in<sp/>my<sp/>project!&quot;<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>which<sp/>I<sp/>would<sp/>point<sp/>out<sp/>that<sp/>the<sp/>extra<sp/>function<sp/>call<sp/>through<sp/>the<sp/>jump<sp/>table<sp/></highlight></codeline>
+<codeline><highlight class="normal">probably<sp/>wouldn&apos;t<sp/>even<sp/>show<sp/>up<sp/>in<sp/>a<sp/>profile,<sp/>but<sp/>lucky<sp/>you:<sp/>this<sp/>can<sp/>all<sp/>be<sp/></highlight></codeline>
+<codeline><highlight class="normal">disabled.<sp/>You<sp/>can<sp/>build<sp/>SDL<sp/>without<sp/>this<sp/>if<sp/>you<sp/>absolutely<sp/>must,<sp/>but<sp/>we<sp/>would<sp/></highlight></codeline>
+<codeline><highlight class="normal">encourage<sp/>you<sp/>not<sp/>to<sp/>do<sp/>that.<sp/>However,<sp/>on<sp/>heavily<sp/>locked<sp/>down<sp/>platforms<sp/>like<sp/></highlight></codeline>
+<codeline><highlight class="normal">iOS,<sp/>or<sp/>maybe<sp/>when<sp/>debugging,<sp/>it<sp/>makes<sp/>sense<sp/>to<sp/>disable<sp/>it.<sp/>The<sp/>way<sp/>this<sp/>is</highlight></codeline>
+<codeline><highlight class="normal">designed<sp/>in<sp/>SDL,<sp/>you<sp/>just<sp/>have<sp/>to<sp/>change<sp/>one<sp/>#define,<sp/>and<sp/>the<sp/>entire<sp/>system<sp/></highlight></codeline>
+<codeline><highlight class="normal">vaporizes<sp/>out,<sp/>and<sp/>SDL<sp/>functions<sp/>exactly<sp/>like<sp/>it<sp/>always<sp/>did.<sp/>Most<sp/>of<sp/>it<sp/>is<sp/></highlight></codeline>
+<codeline><highlight class="normal">macro<sp/>magic,<sp/>so<sp/>the<sp/>system<sp/>is<sp/>contained<sp/>to<sp/>one<sp/>C<sp/>file<sp/>and<sp/>a<sp/>few<sp/>headers.<sp/></highlight></codeline>
+<codeline><highlight class="normal">However,<sp/>this<sp/>is<sp/>on<sp/>by<sp/>default<sp/>and<sp/>you<sp/>have<sp/>to<sp/>edit<sp/>a<sp/>header<sp/>file<sp/>to<sp/>turn<sp/>it<sp/></highlight></codeline>
+<codeline><highlight class="normal">off.<sp/>Our<sp/>hopes<sp/>is<sp/>that<sp/>if<sp/>we<sp/>make<sp/>it<sp/>easy<sp/>to<sp/>disable,<sp/>but<sp/>not<sp/>too<sp/>easy,<sp/></highlight></codeline>
+<codeline><highlight class="normal">everyone<sp/>will<sp/>ultimately<sp/>be<sp/>able<sp/>to<sp/>get<sp/>what<sp/>they<sp/>want,<sp/>but<sp/>we&apos;ve<sp/>gently<sp/></highlight></codeline>
+<codeline><highlight class="normal">nudged<sp/>everyone<sp/>towards<sp/>what<sp/>we<sp/>think<sp/>is<sp/>the<sp/>best<sp/>solution.</highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/docs/README-dynapi.md"/>
+  </compounddef>
+</doxygen>

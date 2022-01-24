@@ -1,0 +1,157 @@
+\hypertarget{qb_p_c_a_8h_source}{}\doxysection{qb\+PCA.\+h}
+\label{qb_p_c_a_8h_source}\index{D:/RayTracing/RayTrace/qbLinAlg/qbPCA.h@{D:/RayTracing/RayTrace/qbLinAlg/qbPCA.h}}
+\mbox{\hyperlink{qb_p_c_a_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// This file is part of the qbLinAlg linear algebra library.}}
+\DoxyCodeLine{2 \textcolor{comment}{// Copyright (c) 2021 Michael Bennett}}
+\DoxyCodeLine{3 \textcolor{comment}{// MIT license}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef QBPCA\_H}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define QBPCA\_H}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{qb_matrix_8h}{qbMatrix.h}}"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{qb_vector_8h}{qbVector.h}}"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{qb_e_i_g_8h}{qbEIG.h}}"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{// Define error codes.}}
+\DoxyCodeLine{20 \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{qb_p_c_a_8h_a89d6ef3ada78889d41961ce39a19b714}{QBPCA\_MATRIXNOTSQUARE}} = -\/1;}
+\DoxyCodeLine{21 \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{qb_p_c_a_8h_a02940f783282efeef7d7b823be4ebb61}{QBPCA\_MATRIXNOTSYMMETRIC}} = -\/2;}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceqb_p_c_a}{qbPCA}}}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{comment}{// Function to compute the column means.}}
+\DoxyCodeLine{27 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{28 std::vector<T> \mbox{\hyperlink{namespaceqb_p_c_a_ade6a2d48ed6e5d5bbd7db9dc515fbfa2}{ComputeColumnMeans}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \&inputData)}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30     \textcolor{comment}{// Determine the size of the input data.}}
+\DoxyCodeLine{31     \textcolor{keywordtype}{int} numRows = inputData.\mbox{\hyperlink{classqb_matrix2_a1626b647c5268a9e64f4651bcc4b8c6e}{GetNumRows}}();}
+\DoxyCodeLine{32     \textcolor{keywordtype}{int} numCols = inputData.\mbox{\hyperlink{classqb_matrix2_ab20362d8fc58a4b8da0910f94c3de2c3}{GetNumCols}}();}
+\DoxyCodeLine{33     }
+\DoxyCodeLine{34     \textcolor{comment}{// Create a vector for output.}}
+\DoxyCodeLine{35     std::vector<T> output;  }
+\DoxyCodeLine{36     }
+\DoxyCodeLine{37     \textcolor{comment}{// Loop through and compute means.}}
+\DoxyCodeLine{38     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j<numCols; ++j)}
+\DoxyCodeLine{39     \{}
+\DoxyCodeLine{40         T cumulativeSum = \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.0);}
+\DoxyCodeLine{41         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<numRows; ++i)}
+\DoxyCodeLine{42             cumulativeSum += inputData.\mbox{\hyperlink{classqb_matrix2_a62ddf209105dffe6133461b273a7309f}{GetElement}}(i,j);}
+\DoxyCodeLine{43             }
+\DoxyCodeLine{44         output.push\_back(cumulativeSum / \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(numRows));}
+\DoxyCodeLine{45     \}}
+\DoxyCodeLine{46     }
+\DoxyCodeLine{47     \textcolor{keywordflow}{return} output;}
+\DoxyCodeLine{48 \}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{comment}{// Function to subtract the column means.}}
+\DoxyCodeLine{51 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{52 \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceqb_p_c_a_a5a22357f0fe78194175135e2adc1045e}{SubtractColumnMeans}}(\mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \&inputData, std::vector<T> \&columnMeans)}
+\DoxyCodeLine{53 \{}
+\DoxyCodeLine{54     \textcolor{comment}{// Determine the size of the input data.}}
+\DoxyCodeLine{55     \textcolor{keywordtype}{int} numRows = inputData.\mbox{\hyperlink{classqb_matrix2_a1626b647c5268a9e64f4651bcc4b8c6e}{GetNumRows}}();}
+\DoxyCodeLine{56     \textcolor{keywordtype}{int} numCols = inputData.\mbox{\hyperlink{classqb_matrix2_ab20362d8fc58a4b8da0910f94c3de2c3}{GetNumCols}}();}
+\DoxyCodeLine{57     }
+\DoxyCodeLine{58     \textcolor{comment}{// Loop through and subtract the means.}}
+\DoxyCodeLine{59     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j<numCols; ++j)}
+\DoxyCodeLine{60     \{}
+\DoxyCodeLine{61         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<numRows; ++i)}
+\DoxyCodeLine{62             inputData.\mbox{\hyperlink{classqb_matrix2_a1c6693503483942d5a619a0cf470e8b5}{SetElement}}(i,j, inputData.\mbox{\hyperlink{classqb_matrix2_a62ddf209105dffe6133461b273a7309f}{GetElement}}(i,j) -\/ columnMeans.at(j));}
+\DoxyCodeLine{63     \}   }
+\DoxyCodeLine{64 \}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{comment}{// Function to compute the covaraince matrix.}}
+\DoxyCodeLine{67 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{68 \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \mbox{\hyperlink{namespaceqb_p_c_a_a393fa03dff91c84ac6c53aa8bd4141b7}{ComputeCovariance}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \&X)}
+\DoxyCodeLine{69 \{}
+\DoxyCodeLine{70     \textcolor{comment}{/* Compute the covariance matrix.}}
+\DoxyCodeLine{71 \textcolor{comment}{        Note that here we use X'X, rather than XX' as is the usual case.}}
+\DoxyCodeLine{72 \textcolor{comment}{        This is because we are requiring our data to be arranged with one }}
+\DoxyCodeLine{73 \textcolor{comment}{        column (p) for each variable, with one row (k) for each observation. If}}
+\DoxyCodeLine{74 \textcolor{comment}{        we computed XX', the result would be a [k x k] matrix. The covariance}}
+\DoxyCodeLine{75 \textcolor{comment}{        matrix should be [p x p], so we need to transpose, hence the use of}}
+\DoxyCodeLine{76 \textcolor{comment}{        X'X. */}}
+\DoxyCodeLine{77     \textcolor{keywordtype}{int} numRows = X.\mbox{\hyperlink{classqb_matrix2_a1626b647c5268a9e64f4651bcc4b8c6e}{GetNumRows}}();}
+\DoxyCodeLine{78     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} covX = (\textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1.0) / \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(numRows -\/ 1)) * (X.\mbox{\hyperlink{classqb_matrix2_a6235a35daf5fa20a9ebc7ed91d8a94a3}{Transpose}}() * X);}
+\DoxyCodeLine{79     \textcolor{keywordflow}{return} covX;}
+\DoxyCodeLine{80 \}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{comment}{// Function to compute the eigenvectors of the covariance matrix.}}
+\DoxyCodeLine{83 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{84 \textcolor{keywordtype}{int} \mbox{\hyperlink{namespaceqb_p_c_a_aa00b5e4dee58ccfa5ce763a873b96c2f}{ComputeEigenvectors}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \&covarianceMatrix, \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \&eigenvectors)}
+\DoxyCodeLine{85 \{}
+\DoxyCodeLine{86     \textcolor{comment}{// Copy the input matrix.}}
+\DoxyCodeLine{87     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} X = covarianceMatrix;}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \textcolor{comment}{// The covariance matrix must be square and symmetric.}}
+\DoxyCodeLine{90     \textcolor{keywordflow}{if} (!X.\mbox{\hyperlink{classqb_matrix2_ae3e42b917e3127cab56b7a48faff25c3}{IsSquare}}())}
+\DoxyCodeLine{91         \textcolor{keywordflow}{return} \mbox{\hyperlink{qb_p_c_a_8h_a89d6ef3ada78889d41961ce39a19b714}{QBPCA\_MATRIXNOTSQUARE}};}
+\DoxyCodeLine{92         }
+\DoxyCodeLine{93     \textcolor{comment}{// Verify that the matrix is symmetric.}}
+\DoxyCodeLine{94     \textcolor{keywordflow}{if} (!X.\mbox{\hyperlink{classqb_matrix2_a38c5e541fec532600806ac4fd8afecb2}{IsSymmetric}}())}
+\DoxyCodeLine{95         \textcolor{keywordflow}{return} \mbox{\hyperlink{qb_p_c_a_8h_a02940f783282efeef7d7b823be4ebb61}{QBPCA\_MATRIXNOTSYMMETRIC}};}
+\DoxyCodeLine{96         }
+\DoxyCodeLine{97     \textcolor{comment}{// Compute the eignvalues.}}
+\DoxyCodeLine{98     std::vector<T> eigenValues;}
+\DoxyCodeLine{99     \textcolor{keywordtype}{int} returnStatus = \mbox{\hyperlink{qb_e_i_g_8h_a9212bbed3a221741a725494e8c7367d1}{qbEigQR}}(X, eigenValues);}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101     \textcolor{comment}{// Sort the eigenvalues.}}
+\DoxyCodeLine{102     std::sort(eigenValues.begin(), eigenValues.end());}
+\DoxyCodeLine{103     std::reverse(eigenValues.begin(), eigenValues.end());}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105     \textcolor{comment}{// Compute the eigenvector for each eigenvalue.}}
+\DoxyCodeLine{106     \mbox{\hyperlink{classqb_vector}{qbVector<T>}} eV(X.\mbox{\hyperlink{classqb_matrix2_ab20362d8fc58a4b8da0910f94c3de2c3}{GetNumCols}}());}
+\DoxyCodeLine{107     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} eVM(X.\mbox{\hyperlink{classqb_matrix2_a1626b647c5268a9e64f4651bcc4b8c6e}{GetNumRows}}(), X.\mbox{\hyperlink{classqb_matrix2_ab20362d8fc58a4b8da0910f94c3de2c3}{GetNumCols}}());}
+\DoxyCodeLine{108     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j<eigenValues.size(); ++j)}
+\DoxyCodeLine{109     \{}
+\DoxyCodeLine{110         T eig = eigenValues.at(j);}
+\DoxyCodeLine{111         \textcolor{keywordtype}{int} returnStatus2 = qbInvPIt<T>(X, eig, eV);}
+\DoxyCodeLine{112         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<eV.\mbox{\hyperlink{classqb_vector_a4b1f24a8ae47ef9019109c23c56fc9c4}{GetNumDims}}(); ++i)}
+\DoxyCodeLine{113             eVM.\mbox{\hyperlink{classqb_matrix2_a1c6693503483942d5a619a0cf470e8b5}{SetElement}}(i, j, eV.\mbox{\hyperlink{classqb_vector_adadd6ca87273a15f57a5e1d6ae15583b}{GetElement}}(i));}
+\DoxyCodeLine{114     \}}
+\DoxyCodeLine{115     }
+\DoxyCodeLine{116     \textcolor{comment}{// Return the eigenvectors.}}
+\DoxyCodeLine{117     eigenvectors = eVM;}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119     \textcolor{comment}{// Return the final return status.  }}
+\DoxyCodeLine{120     \textcolor{keywordflow}{return} returnStatus;}
+\DoxyCodeLine{121 \}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 \textcolor{comment}{/* Function to compute the principal components of the supplied data. */}}
+\DoxyCodeLine{124 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{125 \textcolor{keywordtype}{int} \mbox{\hyperlink{namespaceqb_p_c_a_aa99d4f272173791d49b268a9dd151fc6}{qbPCA}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \&inputData, \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \&outputComponents)}
+\DoxyCodeLine{126 \{}
+\DoxyCodeLine{127     \textcolor{comment}{// Make a copy of the input matrix.}}
+\DoxyCodeLine{128     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} X = inputData;}
+\DoxyCodeLine{129     }
+\DoxyCodeLine{130     \textcolor{comment}{// Compute the mean of each column of X.}}
+\DoxyCodeLine{131     std::vector<T> columnMeans = \mbox{\hyperlink{namespaceqb_p_c_a_ade6a2d48ed6e5d5bbd7db9dc515fbfa2}{ComputeColumnMeans}}(X);}
+\DoxyCodeLine{132     }
+\DoxyCodeLine{133     \textcolor{comment}{// Subtract the column means from the data.}}
+\DoxyCodeLine{134     SubtractColumnMeans<T>(X, columnMeans);}
+\DoxyCodeLine{135     }
+\DoxyCodeLine{136     \textcolor{comment}{// Compute the covariance matrix.}}
+\DoxyCodeLine{137     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} covX = \mbox{\hyperlink{namespaceqb_p_c_a_a393fa03dff91c84ac6c53aa8bd4141b7}{ComputeCovariance}}(X);}
+\DoxyCodeLine{138     }
+\DoxyCodeLine{139     \textcolor{comment}{// Compute the eigenvectors.}}
+\DoxyCodeLine{140     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} eigenvectors;}
+\DoxyCodeLine{141     \textcolor{keywordtype}{int} returnStatus = \mbox{\hyperlink{namespaceqb_p_c_a_aa00b5e4dee58ccfa5ce763a873b96c2f}{ComputeEigenvectors}}(covX, eigenvectors);}
+\DoxyCodeLine{142     }
+\DoxyCodeLine{143     \textcolor{comment}{// Return the output.}}
+\DoxyCodeLine{144     outputComponents = eigenvectors;}
+\DoxyCodeLine{145     }
+\DoxyCodeLine{146     \textcolor{keywordflow}{return} returnStatus;}
+\DoxyCodeLine{147 \}}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149 \}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

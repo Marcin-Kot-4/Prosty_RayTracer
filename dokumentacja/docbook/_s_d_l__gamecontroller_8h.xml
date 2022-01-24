@@ -1,0 +1,2604 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__gamecontroller_8h" xml:lang="en-US">
+<title>D:/RayTracing/include/SDL_gamecontroller.h File Reference</title>
+<indexterm><primary>D:/RayTracing/include/SDL_gamecontroller.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;SDL_stdinc.h&quot;
+#include &quot;SDL_error.h&quot;
+#include &quot;SDL_rwops.h&quot;
+#include &quot;SDL_sensor.h&quot;
+#include &quot;SDL_joystick.h&quot;
+#include &quot;begin_code.h&quot;
+#include &quot;close_code.h&quot;
+</programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_s_d_l___game_controller_button_bind">SDL_GameControllerButtonBind</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__s_d_l__gamecontroller_8h_1a86b050862858714f651a4cf08fea2d3a">SDL_GameControllerAddMappingsFromFile</link>(file)   <link linkend="__s_d_l__gamecontroller_8h_1a01da8611222d5648872fbb4440c886af">SDL_GameControllerAddMappingsFromRW</link>(<link linkend="__s_d_l__rwops_8h_1a898d9ad749f054f6b6780bff411fd33a">SDL_RWFromFile</link>(file, &quot;rb&quot;), 1)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef struct _SDL_GameController <link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_s_d_l___game_controller_button_bind">SDL_GameControllerButtonBind</link> <link linkend="__s_d_l__gamecontroller_8h_1ac05d685077e640c887c2f83de995767e">SDL_GameControllerButtonBind</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="__s_d_l__gamecontroller_8h_1afe5f759b2d709059e4b429cfc08b399c">SDL_GameControllerType</link> { 
+<link linkend="__s_d_l__gamecontroller_8h_1afe5f759b2d709059e4b429cfc08b399cac164fe46d1fbf300e7b2dcbb959fa1f2">SDL_CONTROLLER_TYPE_UNKNOWN</link> = 0
+, <link linkend="__s_d_l__gamecontroller_8h_1afe5f759b2d709059e4b429cfc08b399ca421aa592d50d45cc107ebb0a20ef5243">SDL_CONTROLLER_TYPE_XBOX360</link>
+, <link linkend="__s_d_l__gamecontroller_8h_1afe5f759b2d709059e4b429cfc08b399ca992f3efd9dc991ca99c340ca45a745ad">SDL_CONTROLLER_TYPE_XBOXONE</link>
+, <link linkend="__s_d_l__gamecontroller_8h_1afe5f759b2d709059e4b429cfc08b399ca836c931c04f81bd4dbcc797f0b775ca3">SDL_CONTROLLER_TYPE_PS3</link>
+, 
+<link linkend="__s_d_l__gamecontroller_8h_1afe5f759b2d709059e4b429cfc08b399ca427cb6b5ae3bcf6f05a012846ad65708">SDL_CONTROLLER_TYPE_PS4</link>
+, <link linkend="__s_d_l__gamecontroller_8h_1afe5f759b2d709059e4b429cfc08b399ca59edb1c7103fa9354d321c5bdf9a4757">SDL_CONTROLLER_TYPE_NINTENDO_SWITCH_PRO</link>
+, <link linkend="__s_d_l__gamecontroller_8h_1afe5f759b2d709059e4b429cfc08b399ca2a95097c9563d8d056b13e2ff74c0f72">SDL_CONTROLLER_TYPE_VIRTUAL</link>
+, <link linkend="__s_d_l__gamecontroller_8h_1afe5f759b2d709059e4b429cfc08b399ca8ec244b067f496500d61776a0ffddde0">SDL_CONTROLLER_TYPE_PS5</link>
+, 
+<link linkend="__s_d_l__gamecontroller_8h_1afe5f759b2d709059e4b429cfc08b399ca82817f78d9d531efafa3e83f0315251d">SDL_CONTROLLER_TYPE_AMAZON_LUNA</link>
+, <link linkend="__s_d_l__gamecontroller_8h_1afe5f759b2d709059e4b429cfc08b399ca813c9e0665c6bda4d727394e253cf8e1">SDL_CONTROLLER_TYPE_GOOGLE_STADIA</link>
+ }</para>
+</listitem>
+            <listitem><para>enum <link linkend="__s_d_l__gamecontroller_8h_1aff63e7281b46e5275134938c52f5d6fa">SDL_GameControllerBindType</link> { <link linkend="__s_d_l__gamecontroller_8h_1aff63e7281b46e5275134938c52f5d6faa924aaca26baf8152bb7762076f60bf96">SDL_CONTROLLER_BINDTYPE_NONE</link> = 0
+, <link linkend="__s_d_l__gamecontroller_8h_1aff63e7281b46e5275134938c52f5d6faac9fbdda70bc3b9777ae1b469e625059b">SDL_CONTROLLER_BINDTYPE_BUTTON</link>
+, <link linkend="__s_d_l__gamecontroller_8h_1aff63e7281b46e5275134938c52f5d6faa2b8d3e7e77373e167b9c5222ba415b84">SDL_CONTROLLER_BINDTYPE_AXIS</link>
+, <link linkend="__s_d_l__gamecontroller_8h_1aff63e7281b46e5275134938c52f5d6faa5a1573b45526156d1f9dac3a9ae5e39f">SDL_CONTROLLER_BINDTYPE_HAT</link>
+ }</para>
+</listitem>
+            <listitem><para>enum <link linkend="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1c">SDL_GameControllerAxis</link> { 
+<link linkend="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1ca5de779d8bd6705e149a7716938343eff">SDL_CONTROLLER_AXIS_INVALID</link> = -1
+, <link linkend="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1ca1bfd993bdf7fba84fbff1136bf0544e8">SDL_CONTROLLER_AXIS_LEFTX</link>
+, <link linkend="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1cafc13ab2522c6ebc3341a79b49c7c7676">SDL_CONTROLLER_AXIS_LEFTY</link>
+, <link linkend="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1cae585879e750723896120b1cab1339bd5">SDL_CONTROLLER_AXIS_RIGHTX</link>
+, 
+<link linkend="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1caadb3ea3a60521d9f7302aac903344ce6">SDL_CONTROLLER_AXIS_RIGHTY</link>
+, <link linkend="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1cafaa85151001c0a30a15cdfaf5ae8f339">SDL_CONTROLLER_AXIS_TRIGGERLEFT</link>
+, <link linkend="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1ca592ce519a63cd82125ca0560a204eb2f">SDL_CONTROLLER_AXIS_TRIGGERRIGHT</link>
+, <link linkend="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1cae5c03400ecb6557710d76c9f08bf7440">SDL_CONTROLLER_AXIS_MAX</link>
+ }</para>
+</listitem>
+            <listitem><para>enum <link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98">SDL_GameControllerButton</link> { 
+<link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98a766cfa477e7e2f3b9f43b06c17867e4e">SDL_CONTROLLER_BUTTON_INVALID</link> = -1
+, <link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98aeb919ef0e2e348a4376301a5ecbbfe7b">SDL_CONTROLLER_BUTTON_A</link>
+, <link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98a070a080f115d0feea90bd1c422ef6fc1">SDL_CONTROLLER_BUTTON_B</link>
+, <link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98ac3631495ee81400f9593e9371c419c76">SDL_CONTROLLER_BUTTON_X</link>
+, 
+<link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98ae73050ab476745463294d68fc8b7511b">SDL_CONTROLLER_BUTTON_Y</link>
+, <link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98a180b1a4d5433cee7a806cab698da8477">SDL_CONTROLLER_BUTTON_BACK</link>
+, <link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98ab5408020b11da1ed3a8208ca8089bc59">SDL_CONTROLLER_BUTTON_GUIDE</link>
+, <link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98a294c504c7fcb6632f69976c57886e9be">SDL_CONTROLLER_BUTTON_START</link>
+, 
+<link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98a1c9e6552dd22452a5f7ad952bdd986d4">SDL_CONTROLLER_BUTTON_LEFTSTICK</link>
+, <link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98adb5779ee1b56e30e407e424c9d544b98">SDL_CONTROLLER_BUTTON_RIGHTSTICK</link>
+, <link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98aaf052d8d37a07c9544ab0bf4529ed804">SDL_CONTROLLER_BUTTON_LEFTSHOULDER</link>
+, <link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98a6a898ff460e56c9dc4976d79b9082037">SDL_CONTROLLER_BUTTON_RIGHTSHOULDER</link>
+, 
+<link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98aa0f0fd22b168ec69174d19c48d689842">SDL_CONTROLLER_BUTTON_DPAD_UP</link>
+, <link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98a779a4c74ab01a93c3168b8942c22dd27">SDL_CONTROLLER_BUTTON_DPAD_DOWN</link>
+, <link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98a65fdf618f56696b2065edf885b9f3987">SDL_CONTROLLER_BUTTON_DPAD_LEFT</link>
+, <link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98aba83de7c7c7988fd100baa570eb47be6">SDL_CONTROLLER_BUTTON_DPAD_RIGHT</link>
+, 
+<link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98abe0b9c5a5e4eddf07c1cdbbecb42d9d9">SDL_CONTROLLER_BUTTON_MISC1</link>
+, <link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98a4fc8aee99f12ab3c57d2f820eb2c6635">SDL_CONTROLLER_BUTTON_PADDLE1</link>
+, <link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98a2999601c50861a576034679f019c032a">SDL_CONTROLLER_BUTTON_PADDLE2</link>
+, <link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98ae7050393a9592fb29e426cad2b727697">SDL_CONTROLLER_BUTTON_PADDLE3</link>
+, 
+<link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98aec63a9872450ba0d7cd11086f947b4c7">SDL_CONTROLLER_BUTTON_PADDLE4</link>
+, <link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98a84b1ad3d30a45b34c44056d13090a6cf">SDL_CONTROLLER_BUTTON_TOUCHPAD</link>
+, <link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98aa61e388a5ffcb7d516bc461c6129b2be">SDL_CONTROLLER_BUTTON_MAX</link>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a01da8611222d5648872fbb4440c886af">SDL_GameControllerAddMappingsFromRW</link> (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> *rw, int freerw)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a62cb682b1c589135cd32cce381d403f8">SDL_GameControllerAddMapping</link> (const char *mappingString)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1ac14eb47ec6097d89c7bec14f6b27ebfe">SDL_GameControllerNumMappings</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1aea128c564d021dec7c6670c600599840">SDL_GameControllerMappingForIndex</link> (int mapping_index)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a0369b513d6c6e005fb47d1ff0374d446">SDL_GameControllerMappingForGUID</link> (<link linkend="_struct_s_d_l___joystick_g_u_i_d">SDL_JoystickGUID</link> guid)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1aafacb372b1557c3f58fa70e8a977f850">SDL_GameControllerMapping</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a3307c27938a336b83c317b6054d91bd4">SDL_IsGameController</link> (int joystick_index)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a11fb78d9621b8d746510f08d00208349">SDL_GameControllerNameForIndex</link> (int joystick_index)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__gamecontroller_8h_1afe5f759b2d709059e4b429cfc08b399c">SDL_GameControllerType</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a8cab24dcd19022722c306f04fdfc6b6a">SDL_GameControllerTypeForIndex</link> (int joystick_index)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a485646c923953d2df3d3bf3b95a8e6b1">SDL_GameControllerMappingForDeviceIndex</link> (int joystick_index)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1ae9ebcb51205ee1663284b22f42f2e805">SDL_GameControllerOpen</link> (int joystick_index)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a9519468dd6fc6fef421a50437403f21f">SDL_GameControllerFromInstanceID</link> (<link linkend="__s_d_l__joystick_8h_1a3c3d32500cb08f76ee8077983912c0bd">SDL_JoystickID</link> joyid)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1af3c46a502e81ce42fdd4531e5f408e9d">SDL_GameControllerFromPlayerIndex</link> (int player_index)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a0bdcaf9e186ed7d66d41aae9978f08ef">SDL_GameControllerName</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__gamecontroller_8h_1afe5f759b2d709059e4b429cfc08b399c">SDL_GameControllerType</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1aab21a8d107d382ce7ff32afbe82b8776">SDL_GameControllerGetType</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a99740db152ae93bcdc59a8b540c3178d">SDL_GameControllerGetPlayerIndex</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a85be71ba10423ad4da459131a13a0f5f">SDL_GameControllerSetPlayerIndex</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller, int player_index)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1ab0032725dcea365502694731c37605f7">SDL_GameControllerGetVendor</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a8ea81761681d1666a3b447eb9ef2dee8">SDL_GameControllerGetProduct</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a2e3eda7c9faf9bf0f4e06d89f3859c72">SDL_GameControllerGetProductVersion</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a6aac054155c553beeed92bb0da1a6f09">SDL_GameControllerGetSerial</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1adeeeba5a268842412f6578f38e75d231">SDL_GameControllerGetAttached</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1ad8b23ae8fa4a1ef11a1401d249bf0fc2">SDL_GameControllerGetJoystick</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a457fd59b3dec7d1b6ed384973b584bc6">SDL_GameControllerEventState</link> (int state)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a92fe68241a17b60b2240c04d01b73e6b">SDL_GameControllerUpdate</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1c">SDL_GameControllerAxis</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a623237e182b87c6def6d7be80a7d71d3">SDL_GameControllerGetAxisFromString</link> (const char *str)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1ad2c3e85478023f3756ff2637ec570dea">SDL_GameControllerGetStringForAxis</link> (<link linkend="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1c">SDL_GameControllerAxis</link> axis)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="_struct_s_d_l___game_controller_button_bind">SDL_GameControllerButtonBind</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1acdb9303cc6b67f1a0ec3ee55ad8e29d5">SDL_GameControllerGetBindForAxis</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller, <link linkend="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1c">SDL_GameControllerAxis</link> axis)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a8448d364a118ef54ba1d240f318d7a03">SDL_GameControllerHasAxis</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller, <link linkend="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1c">SDL_GameControllerAxis</link> axis)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5">Sint16</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a067291389e9a8a1fbc8cb2b0dabb8dd2">SDL_GameControllerGetAxis</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller, <link linkend="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1c">SDL_GameControllerAxis</link> axis)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98">SDL_GameControllerButton</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a8e072a1f116583ca136be6b609e41d13">SDL_GameControllerGetButtonFromString</link> (const char *str)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a0bc4c7655fc3a13fe2a9a3b05149033f">SDL_GameControllerGetStringForButton</link> (<link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98">SDL_GameControllerButton</link> button)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="_struct_s_d_l___game_controller_button_bind">SDL_GameControllerButtonBind</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a4ee15324cc28aa53bab9f28e71c96840">SDL_GameControllerGetBindForButton</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller, <link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98">SDL_GameControllerButton</link> button)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a761d5b2da1c9aef500cebe401c6ed30f">SDL_GameControllerHasButton</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller, <link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98">SDL_GameControllerButton</link> button)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1afa9f025f4262bdfba38c364ec9cc31bf">SDL_GameControllerGetButton</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller, <link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98">SDL_GameControllerButton</link> button)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a5a22ed44ff4c46e2ec8edeea48b8b1ae">SDL_GameControllerGetNumTouchpads</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a80657ada0dcc10e971df3cf07b5c7106">SDL_GameControllerGetNumTouchpadFingers</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller, int touchpad)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a4a13f3fc8b896356f0bd57edebb4a72c">SDL_GameControllerGetTouchpadFinger</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller, int touchpad, int finger, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> *state, float *<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>, float *<link linkend="__s_d_l__opengl_8h_1a1675d9d7bb68e1657ff028643b4037e3">y</link>, float *pressure)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1af84b3cbfe9f9acd9563c0d63cc57247a">SDL_GameControllerHasSensor</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller, <link linkend="__s_d_l__sensor_8h_1a94a441696f7d053dd541ec0b7e00e33a">SDL_SensorType</link> <link linkend="__s_d_l__opengl_8h_1ad5ddf6fca7b585646515660e810e0188">type</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1acee01b6bdc79b5dda14b77538b1d34ba">SDL_GameControllerSetSensorEnabled</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller, <link linkend="__s_d_l__sensor_8h_1a94a441696f7d053dd541ec0b7e00e33a">SDL_SensorType</link> <link linkend="__s_d_l__opengl_8h_1ad5ddf6fca7b585646515660e810e0188">type</link>, <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="__s_d_l__opengl__glext_8h_1a0455a397ab5468d21c3021f2efa6dd3c">enabled</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a289122b9f72b3e89671fcbfaa6d61699">SDL_GameControllerIsSensorEnabled</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller, <link linkend="__s_d_l__sensor_8h_1a94a441696f7d053dd541ec0b7e00e33a">SDL_SensorType</link> <link linkend="__s_d_l__opengl_8h_1ad5ddf6fca7b585646515660e810e0188">type</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> float <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a8bc636752e61693a6d38bb4b9c999ea2">SDL_GameControllerGetSensorDataRate</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller, <link linkend="__s_d_l__sensor_8h_1a94a441696f7d053dd541ec0b7e00e33a">SDL_SensorType</link> <link linkend="__s_d_l__opengl_8h_1ad5ddf6fca7b585646515660e810e0188">type</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1ac258208c13968bac123c18751dc3f198">SDL_GameControllerGetSensorData</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller, <link linkend="__s_d_l__sensor_8h_1a94a441696f7d053dd541ec0b7e00e33a">SDL_SensorType</link> <link linkend="__s_d_l__opengl_8h_1ad5ddf6fca7b585646515660e810e0188">type</link>, float *<link linkend="__s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a">data</link>, int num_values)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1af656d1c71fe07da1146c376439d9b403">SDL_GameControllerRumble</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller, <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> low_frequency_rumble, <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> high_frequency_rumble, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> duration_ms)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a2879f90f77b4de4f73892aef4cf73d26">SDL_GameControllerRumbleTriggers</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller, <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> left_rumble, <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> right_rumble, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> duration_ms)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1aea8e212c4b72bb4e72c4e5f1a25457c6">SDL_GameControllerHasLED</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1aa3fb8be22a6781c2b46b79309747978c">SDL_GameControllerHasRumble</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1aedb548895f677b818901440b759b3a94">SDL_GameControllerHasRumbleTriggers</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a5c5e9971086494aeef01c3ee0325a132">SDL_GameControllerSetLED</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> red, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> <link linkend="__s_d_l__opengl__glext_8h_1ac14cda87cf6c751d53b65a3cd41c35a1">green</link>, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> <link linkend="__s_d_l__opengl__glext_8h_1a1853b32584a90fa75432925f3e26d0e8">blue</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a2eaa3571798dff5d990be3514c744a99">SDL_GameControllerSendEffect</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller, const <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *<link linkend="__s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a">data</link>, int <link linkend="__s_d_l__opengl__glext_8h_1a3d1e3edfcf61ca2d831883e1afbad89e">size</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a97fcf011947b35403c7d5319673a35e9">SDL_GameControllerClose</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a30190c8134817d2a1865a5084e1743ca">SDL_GameControllerGetAppleSFSymbolsNameForButton</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller, <link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98">SDL_GameControllerButton</link> button)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__gamecontroller_8h_1a80fb1f81a242209c93808cbfc42d8fb0">SDL_GameControllerGetAppleSFSymbolsNameForAxis</link> (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *gamecontroller, <link linkend="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1c">SDL_GameControllerAxis</link> axis)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Include file for SDL game controller event handling</para>
+
+<para>In order to use these functions, <link linkend="__s_d_l_8h_1a8fc8d35348d7c74bad8392d776c937b8">SDL_Init()</link> must have been called with the <link linkend="__s_d_l_8h_1ac224a9aa4208de0e9b03948ff9b5fe0a">SDL_INIT_GAMECONTROLLER</link> flag. This causes SDL to scan the system for game controllers, and load appropriate drivers.</para>
+
+<para>If you would like to receive controller updates while the application is in the background, you should set the following hint before calling <link linkend="__s_d_l_8h_1a8fc8d35348d7c74bad8392d776c937b8">SDL_Init()</link>: SDL_HINT_JOYSTICK_ALLOW_BACKGROUND_EVENTS </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a86b050862858714f651a4cf08fea2d3a"/><section>
+    <title>SDL_GameControllerAddMappingsFromFile</title>
+<indexterm><primary>SDL_GameControllerAddMappingsFromFile</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerAddMappingsFromFile</secondary></indexterm>
+<para><computeroutput>#define SDL_GameControllerAddMappingsFromFile( file)   <link linkend="__s_d_l__gamecontroller_8h_1a01da8611222d5648872fbb4440c886af">SDL_GameControllerAddMappingsFromRW</link>(<link linkend="__s_d_l__rwops_8h_1a898d9ad749f054f6b6780bff411fd33a">SDL_RWFromFile</link>(file, &quot;rb&quot;), 1)</computeroutput></para>
+<para>Load a set of mappings from a file, filtered by the current <link linkend="__s_d_l__platform_8h_1a2fde3bb5b1578f29e786289a8d689255">SDL_GetPlatform()</link></para>
+
+<para>Convenience macro. </para>
+</section>
+</section>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873"/><section>
+    <title>SDL_GameController</title>
+<indexterm><primary>SDL_GameController</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameController</secondary></indexterm>
+<para><computeroutput>typedef struct _SDL_GameController <link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link></computeroutput></para></section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1ac05d685077e640c887c2f83de995767e"/><section>
+    <title>SDL_GameControllerButtonBind</title>
+<indexterm><primary>SDL_GameControllerButtonBind</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerButtonBind</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_s_d_l___game_controller_button_bind">SDL_GameControllerButtonBind</link> <link linkend="_struct_s_d_l___game_controller_button_bind">SDL_GameControllerButtonBind</link></computeroutput></para>
+<para>Get the SDL joystick layer binding for this controller button/axis mapping </para>
+</section>
+</section>
+<section>
+<title>Enumeration Type Documentation</title>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1c"/><section>
+    <title>SDL_GameControllerAxis</title>
+<indexterm><primary>SDL_GameControllerAxis</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerAxis</secondary></indexterm>
+<para><computeroutput>enum <link linkend="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1c">SDL_GameControllerAxis</link></computeroutput></para>
+<para>The list of axes available from a controller</para>
+
+<para>Thumbstick axis values range from SDL_JOYSTICK_AXIS_MIN to SDL_JOYSTICK_AXIS_MAX, and are centered within ~8000 of zero, though advanced UI will allow users to set or autodetect the dead zone, which varies between controllers.</para>
+
+<para>Trigger axis values range from 0 to SDL_JOYSTICK_AXIS_MAX. </para>
+<informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SDL_CONTROLLER_AXIS_INVALID</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_AXIS_INVALID</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1ca5de779d8bd6705e149a7716938343eff"/>SDL_CONTROLLER_AXIS_INVALID</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_AXIS_LEFTX</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_AXIS_LEFTX</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1ca1bfd993bdf7fba84fbff1136bf0544e8"/>SDL_CONTROLLER_AXIS_LEFTX</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_AXIS_LEFTY</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_AXIS_LEFTY</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1cafc13ab2522c6ebc3341a79b49c7c7676"/>SDL_CONTROLLER_AXIS_LEFTY</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_AXIS_RIGHTX</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_AXIS_RIGHTX</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1cae585879e750723896120b1cab1339bd5"/>SDL_CONTROLLER_AXIS_RIGHTX</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_AXIS_RIGHTY</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_AXIS_RIGHTY</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1caadb3ea3a60521d9f7302aac903344ce6"/>SDL_CONTROLLER_AXIS_RIGHTY</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_AXIS_TRIGGERLEFT</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_AXIS_TRIGGERLEFT</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1cafaa85151001c0a30a15cdfaf5ae8f339"/>SDL_CONTROLLER_AXIS_TRIGGERLEFT</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_AXIS_TRIGGERRIGHT</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_AXIS_TRIGGERRIGHT</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1ca592ce519a63cd82125ca0560a204eb2f"/>SDL_CONTROLLER_AXIS_TRIGGERRIGHT</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_AXIS_MAX</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_AXIS_MAX</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1cae5c03400ecb6557710d76c9f08bf7440"/>SDL_CONTROLLER_AXIS_MAX</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1aff63e7281b46e5275134938c52f5d6fa"/><section>
+    <title>SDL_GameControllerBindType</title>
+<indexterm><primary>SDL_GameControllerBindType</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerBindType</secondary></indexterm>
+<para><computeroutput>enum <link linkend="__s_d_l__gamecontroller_8h_1aff63e7281b46e5275134938c52f5d6fa">SDL_GameControllerBindType</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SDL_CONTROLLER_BINDTYPE_NONE</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_BINDTYPE_NONE</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1aff63e7281b46e5275134938c52f5d6faa924aaca26baf8152bb7762076f60bf96"/>SDL_CONTROLLER_BINDTYPE_NONE</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_BINDTYPE_BUTTON</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_BINDTYPE_BUTTON</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1aff63e7281b46e5275134938c52f5d6faac9fbdda70bc3b9777ae1b469e625059b"/>SDL_CONTROLLER_BINDTYPE_BUTTON</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_BINDTYPE_AXIS</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_BINDTYPE_AXIS</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1aff63e7281b46e5275134938c52f5d6faa2b8d3e7e77373e167b9c5222ba415b84"/>SDL_CONTROLLER_BINDTYPE_AXIS</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_BINDTYPE_HAT</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_BINDTYPE_HAT</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1aff63e7281b46e5275134938c52f5d6faa5a1573b45526156d1f9dac3a9ae5e39f"/>SDL_CONTROLLER_BINDTYPE_HAT</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98"/><section>
+    <title>SDL_GameControllerButton</title>
+<indexterm><primary>SDL_GameControllerButton</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerButton</secondary></indexterm>
+<para><computeroutput>enum <link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98">SDL_GameControllerButton</link></computeroutput></para>
+<para>The list of buttons available from a controller </para>
+<informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SDL_CONTROLLER_BUTTON_INVALID</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_BUTTON_INVALID</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98a766cfa477e7e2f3b9f43b06c17867e4e"/>SDL_CONTROLLER_BUTTON_INVALID</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_BUTTON_A</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_BUTTON_A</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98aeb919ef0e2e348a4376301a5ecbbfe7b"/>SDL_CONTROLLER_BUTTON_A</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_BUTTON_B</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_BUTTON_B</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98a070a080f115d0feea90bd1c422ef6fc1"/>SDL_CONTROLLER_BUTTON_B</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_BUTTON_X</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_BUTTON_X</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98ac3631495ee81400f9593e9371c419c76"/>SDL_CONTROLLER_BUTTON_X</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_BUTTON_Y</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_BUTTON_Y</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98ae73050ab476745463294d68fc8b7511b"/>SDL_CONTROLLER_BUTTON_Y</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_BUTTON_BACK</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_BUTTON_BACK</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98a180b1a4d5433cee7a806cab698da8477"/>SDL_CONTROLLER_BUTTON_BACK</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_BUTTON_GUIDE</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_BUTTON_GUIDE</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98ab5408020b11da1ed3a8208ca8089bc59"/>SDL_CONTROLLER_BUTTON_GUIDE</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_BUTTON_START</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_BUTTON_START</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98a294c504c7fcb6632f69976c57886e9be"/>SDL_CONTROLLER_BUTTON_START</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_BUTTON_LEFTSTICK</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_BUTTON_LEFTSTICK</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98a1c9e6552dd22452a5f7ad952bdd986d4"/>SDL_CONTROLLER_BUTTON_LEFTSTICK</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_BUTTON_RIGHTSTICK</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_BUTTON_RIGHTSTICK</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98adb5779ee1b56e30e407e424c9d544b98"/>SDL_CONTROLLER_BUTTON_RIGHTSTICK</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_BUTTON_LEFTSHOULDER</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_BUTTON_LEFTSHOULDER</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98aaf052d8d37a07c9544ab0bf4529ed804"/>SDL_CONTROLLER_BUTTON_LEFTSHOULDER</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_BUTTON_RIGHTSHOULDER</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_BUTTON_RIGHTSHOULDER</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98a6a898ff460e56c9dc4976d79b9082037"/>SDL_CONTROLLER_BUTTON_RIGHTSHOULDER</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_BUTTON_DPAD_UP</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_BUTTON_DPAD_UP</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98aa0f0fd22b168ec69174d19c48d689842"/>SDL_CONTROLLER_BUTTON_DPAD_UP</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_BUTTON_DPAD_DOWN</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_BUTTON_DPAD_DOWN</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98a779a4c74ab01a93c3168b8942c22dd27"/>SDL_CONTROLLER_BUTTON_DPAD_DOWN</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_BUTTON_DPAD_LEFT</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_BUTTON_DPAD_LEFT</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98a65fdf618f56696b2065edf885b9f3987"/>SDL_CONTROLLER_BUTTON_DPAD_LEFT</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_BUTTON_DPAD_RIGHT</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_BUTTON_DPAD_RIGHT</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98aba83de7c7c7988fd100baa570eb47be6"/>SDL_CONTROLLER_BUTTON_DPAD_RIGHT</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_BUTTON_MISC1</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_BUTTON_MISC1</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98abe0b9c5a5e4eddf07c1cdbbecb42d9d9"/>SDL_CONTROLLER_BUTTON_MISC1</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_BUTTON_PADDLE1</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_BUTTON_PADDLE1</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98a4fc8aee99f12ab3c57d2f820eb2c6635"/>SDL_CONTROLLER_BUTTON_PADDLE1</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_BUTTON_PADDLE2</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_BUTTON_PADDLE2</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98a2999601c50861a576034679f019c032a"/>SDL_CONTROLLER_BUTTON_PADDLE2</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_BUTTON_PADDLE3</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_BUTTON_PADDLE3</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98ae7050393a9592fb29e426cad2b727697"/>SDL_CONTROLLER_BUTTON_PADDLE3</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_BUTTON_PADDLE4</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_BUTTON_PADDLE4</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98aec63a9872450ba0d7cd11086f947b4c7"/>SDL_CONTROLLER_BUTTON_PADDLE4</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_BUTTON_TOUCHPAD</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_BUTTON_TOUCHPAD</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98a84b1ad3d30a45b34c44056d13090a6cf"/>SDL_CONTROLLER_BUTTON_TOUCHPAD</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_BUTTON_MAX</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_BUTTON_MAX</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98aa61e388a5ffcb7d516bc461c6129b2be"/>SDL_CONTROLLER_BUTTON_MAX</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1afe5f759b2d709059e4b429cfc08b399c"/><section>
+    <title>SDL_GameControllerType</title>
+<indexterm><primary>SDL_GameControllerType</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerType</secondary></indexterm>
+<para><computeroutput>enum <link linkend="__s_d_l__gamecontroller_8h_1afe5f759b2d709059e4b429cfc08b399c">SDL_GameControllerType</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SDL_CONTROLLER_TYPE_UNKNOWN</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_TYPE_UNKNOWN</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1afe5f759b2d709059e4b429cfc08b399cac164fe46d1fbf300e7b2dcbb959fa1f2"/>SDL_CONTROLLER_TYPE_UNKNOWN</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_TYPE_XBOX360</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_TYPE_XBOX360</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1afe5f759b2d709059e4b429cfc08b399ca421aa592d50d45cc107ebb0a20ef5243"/>SDL_CONTROLLER_TYPE_XBOX360</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_TYPE_XBOXONE</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_TYPE_XBOXONE</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1afe5f759b2d709059e4b429cfc08b399ca992f3efd9dc991ca99c340ca45a745ad"/>SDL_CONTROLLER_TYPE_XBOXONE</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_TYPE_PS3</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_TYPE_PS3</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1afe5f759b2d709059e4b429cfc08b399ca836c931c04f81bd4dbcc797f0b775ca3"/>SDL_CONTROLLER_TYPE_PS3</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_TYPE_PS4</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_TYPE_PS4</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1afe5f759b2d709059e4b429cfc08b399ca427cb6b5ae3bcf6f05a012846ad65708"/>SDL_CONTROLLER_TYPE_PS4</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_TYPE_NINTENDO_SWITCH_PRO</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_TYPE_NINTENDO_SWITCH_PRO</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1afe5f759b2d709059e4b429cfc08b399ca59edb1c7103fa9354d321c5bdf9a4757"/>SDL_CONTROLLER_TYPE_NINTENDO_SWITCH_PRO</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_TYPE_VIRTUAL</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_TYPE_VIRTUAL</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1afe5f759b2d709059e4b429cfc08b399ca2a95097c9563d8d056b13e2ff74c0f72"/>SDL_CONTROLLER_TYPE_VIRTUAL</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_TYPE_PS5</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_TYPE_PS5</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1afe5f759b2d709059e4b429cfc08b399ca8ec244b067f496500d61776a0ffddde0"/>SDL_CONTROLLER_TYPE_PS5</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_TYPE_AMAZON_LUNA</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_TYPE_AMAZON_LUNA</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1afe5f759b2d709059e4b429cfc08b399ca82817f78d9d531efafa3e83f0315251d"/>SDL_CONTROLLER_TYPE_AMAZON_LUNA</entry><entry></entry></row><row><entry><indexterm><primary>SDL_CONTROLLER_TYPE_GOOGLE_STADIA</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_CONTROLLER_TYPE_GOOGLE_STADIA</secondary></indexterm>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1afe5f759b2d709059e4b429cfc08b399ca813c9e0665c6bda4d727394e253cf8e1"/>SDL_CONTROLLER_TYPE_GOOGLE_STADIA</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a62cb682b1c589135cd32cce381d403f8"/><section>
+    <title>SDL_GameControllerAddMapping()</title>
+<indexterm><primary>SDL_GameControllerAddMapping</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerAddMapping</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerAddMapping (const char * mappingString)</computeroutput></para>
+<para>Add support for controllers that SDL is unaware of or to cause an existing controller to have a different binding.</para>
+
+<para>The mapping string has the format &quot;GUID,name,mapping&quot;, where GUID is the string value from <link linkend="__s_d_l__joystick_8h_1a7f615ef8040e7e9de3af6482d8d9908c">SDL_JoystickGetGUIDString()</link>, name is the human readable string for the device and mappings are controller mappings to joystick ones. Under Windows there is a reserved GUID of &quot;xinput&quot; that covers all XInput devices. The mapping format for joystick is: {| |bX |a joystick button, index X |- |hX.Y |hat X with value Y |- |aX |axis X of the joystick |} Buttons can be used as a controller axes and vice versa.</para>
+
+<para>This string shows an example of a valid mapping for a controller:</para>
+
+<para><literallayout><computeroutput><emphasis role="stringliteral">&quot;341a3608000000000000504944564944,Afterglow&#32;PS3&#32;Controller,a:b1,b:b2,y:b3,x:b0,start:b9,guide:b12,back:b8,dpup:h0.1,dpleft:h0.8,dpdown:h0.4,dpright:h0.2,leftshoulder:b4,rightshoulder:b5,leftstick:b10,rightstick:b11,leftx:a0,lefty:a1,rightx:a2,righty:a3,lefttrigger:b6,righttrigger:b7&quot;</emphasis>
+</computeroutput></literallayout></para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>mappingString</entry><entry>
+<para>the mapping string </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>1 if a new mapping is added, 0 if an existing mapping is updated, -1 on error; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1aafacb372b1557c3f58fa70e8a977f850">SDL_GameControllerMapping</link> </para>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1a0369b513d6c6e005fb47d1ff0374d446">SDL_GameControllerMappingForGUID</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a01da8611222d5648872fbb4440c886af"/><section>
+    <title>SDL_GameControllerAddMappingsFromRW()</title>
+<indexterm><primary>SDL_GameControllerAddMappingsFromRW</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerAddMappingsFromRW</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerAddMappingsFromRW (<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link> * rw, int freerw)</computeroutput></para>
+<para>To count the number of game controllers in the system for the following:</para>
+
+<para><literallayout><computeroutput><emphasis role="keywordtype">int</emphasis>&#32;nJoysticks&#32;=&#32;<link linkend="__s_d_l__joystick_8h_1a2ab130eaa28f8e3bd544a5432041a311">SDL_NumJoysticks</link>();
+<emphasis role="keywordtype">int</emphasis>&#32;nGameControllers&#32;=&#32;0;
+<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;0;&#32;i&#32;&lt;&#32;nJoysticks;&#32;i++)&#32;{
+&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="__s_d_l__gamecontroller_8h_1a3307c27938a336b83c317b6054d91bd4">SDL_IsGameController</link>(i))&#32;{
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;nGameControllers++;
+&#32;&#32;&#32;&#32;}
+}
+</computeroutput></literallayout></para>
+
+<para>Using the SDL_HINT_GAMECONTROLLERCONFIG hint or the <link linkend="__s_d_l__gamecontroller_8h_1a62cb682b1c589135cd32cce381d403f8">SDL_GameControllerAddMapping()</link> you can add support for controllers SDL is unaware of or cause an existing controller to have a different binding. The format is: guid,name,mappings</para>
+
+<para>Where GUID is the string value from <link linkend="__s_d_l__joystick_8h_1a7f615ef8040e7e9de3af6482d8d9908c">SDL_JoystickGetGUIDString()</link>, name is the human readable string for the device and mappings are controller mappings to joystick ones. Under Windows there is a reserved GUID of &quot;xinput&quot; that covers any XInput devices. The mapping format for joystick is: bX - a joystick button, index X hX.Y - hat X with value Y aX - axis X of the joystick Buttons can be used as a controller axis and vice versa.</para>
+
+<para>This string shows an example of a valid mapping for a controller</para>
+
+<para><literallayout><computeroutput><emphasis role="stringliteral">&quot;03000000341a00003608000000000000,PS3&#32;Controller,a:b1,b:b2,y:b3,x:b0,start:b9,guide:b12,back:b8,dpup:h0.1,dpleft:h0.8,dpdown:h0.4,dpright:h0.2,leftshoulder:b4,rightshoulder:b5,leftstick:b10,rightstick:b11,leftx:a0,lefty:a1,rightx:a2,righty:a3,lefttrigger:b6,righttrigger:b7&quot;</emphasis>,
+</computeroutput></literallayout> Load a set of Game Controller mappings from a seekable SDL data stream.</para>
+
+<para>You can call this function several times, if needed, to load different database files.</para>
+
+<para>If a new mapping is loaded for an already known controller GUID, the later version will overwrite the one currently loaded.</para>
+
+<para>Mappings not belonging to the current platform or with no platform field specified will be ignored (i.e. mappings for Linux will be ignored in Windows, etc).</para>
+
+<para>This function will load the text database entirely in memory before processing it, so take this into consideration if you are in a memory constrained environment.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>rw</entry><entry>
+<para>the data stream for the mappings to be added </para>
+</entry>
+                            </row>
+                            <row>
+<entry>freerw</entry><entry>
+<para>non-zero to close the stream after being read </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the number of mappings added or -1 on error; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.2.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1a62cb682b1c589135cd32cce381d403f8">SDL_GameControllerAddMapping</link> </para>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1a86b050862858714f651a4cf08fea2d3a">SDL_GameControllerAddMappingsFromFile</link> </para>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1a0369b513d6c6e005fb47d1ff0374d446">SDL_GameControllerMappingForGUID</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a97fcf011947b35403c7d5319673a35e9"/><section>
+    <title>SDL_GameControllerClose()</title>
+<indexterm><primary>SDL_GameControllerClose</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerClose</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerClose (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller)</computeroutput></para>
+<para>Close a game controller previously opened with <link linkend="__s_d_l__gamecontroller_8h_1ae9ebcb51205ee1663284b22f42f2e805">SDL_GameControllerOpen()</link>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>a game controller identifier previously returned by <link linkend="__s_d_l__gamecontroller_8h_1ae9ebcb51205ee1663284b22f42f2e805">SDL_GameControllerOpen()</link></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1ae9ebcb51205ee1663284b22f42f2e805">SDL_GameControllerOpen</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a457fd59b3dec7d1b6ed384973b584bc6"/><section>
+    <title>SDL_GameControllerEventState()</title>
+<indexterm><primary>SDL_GameControllerEventState</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerEventState</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerEventState (int state)</computeroutput></para>
+<para>Query or change current state of Game Controller events.</para>
+
+<para>If controller events are disabled, you must call <link linkend="__s_d_l__gamecontroller_8h_1a92fe68241a17b60b2240c04d01b73e6b">SDL_GameControllerUpdate()</link> yourself and check the state of the controller when you want controller information.</para>
+
+<para>Any number can be passed to <link linkend="__s_d_l__gamecontroller_8h_1a457fd59b3dec7d1b6ed384973b584bc6">SDL_GameControllerEventState()</link>, but only -1, 0, and 1 will have any effect. Other numbers will just be returned.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>state</entry><entry>
+<para>can be one of <computeroutput>SDL_QUERY</computeroutput>, <computeroutput>SDL_IGNORE</computeroutput>, or <computeroutput>SDL_ENABLE</computeroutput> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the same value passed to the function, with exception to -1 (SDL_QUERY), which will return the current state.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__joystick_8h_1a51ba353843fd4477f6a485ac4ef35d00">SDL_JoystickEventState</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a9519468dd6fc6fef421a50437403f21f"/><section>
+    <title>SDL_GameControllerFromInstanceID()</title>
+<indexterm><primary>SDL_GameControllerFromInstanceID</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerFromInstanceID</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerFromInstanceID (<link linkend="__s_d_l__joystick_8h_1a3c3d32500cb08f76ee8077983912c0bd">SDL_JoystickID</link> joyid)</computeroutput></para>
+<para>Get the SDL_GameController associated with an instance id.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joyid</entry><entry>
+<para>the instance id to get the SDL_GameController for </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>an SDL_GameController on success or NULL on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.4. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1af3c46a502e81ce42fdd4531e5f408e9d"/><section>
+    <title>SDL_GameControllerFromPlayerIndex()</title>
+<indexterm><primary>SDL_GameControllerFromPlayerIndex</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerFromPlayerIndex</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerFromPlayerIndex (int player_index)</computeroutput></para>
+<para>Get the SDL_GameController associated with a player index.</para>
+
+<para>Please note that the player index is <emphasis>not</emphasis> the device index, nor is it the instance id!</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>player_index</entry><entry>
+<para>the player index, which is not the device index or the instance id! </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the SDL_GameController associated with a player index.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.12.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1a99740db152ae93bcdc59a8b540c3178d">SDL_GameControllerGetPlayerIndex</link> </para>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1a85be71ba10423ad4da459131a13a0f5f">SDL_GameControllerSetPlayerIndex</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a80fb1f81a242209c93808cbfc42d8fb0"/><section>
+    <title>SDL_GameControllerGetAppleSFSymbolsNameForAxis()</title>
+<indexterm><primary>SDL_GameControllerGetAppleSFSymbolsNameForAxis</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerGetAppleSFSymbolsNameForAxis</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerGetAppleSFSymbolsNameForAxis (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller, <link linkend="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1c">SDL_GameControllerAxis</link> axis)</computeroutput></para>
+<para>Return the sfSymbolsName for a given axis on a game controller on Apple platforms.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>the controller to query </para>
+</entry>
+                            </row>
+                            <row>
+<entry>axis</entry><entry>
+<para>an axis on the game controller </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the sfSymbolsName or NULL if the name can&apos;t be found</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.18.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1a30190c8134817d2a1865a5084e1743ca">SDL_GameControllerGetAppleSFSymbolsNameForButton</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a30190c8134817d2a1865a5084e1743ca"/><section>
+    <title>SDL_GameControllerGetAppleSFSymbolsNameForButton()</title>
+<indexterm><primary>SDL_GameControllerGetAppleSFSymbolsNameForButton</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerGetAppleSFSymbolsNameForButton</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerGetAppleSFSymbolsNameForButton (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller, <link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98">SDL_GameControllerButton</link> button)</computeroutput></para>
+<para>Return the sfSymbolsName for a given button on a game controller on Apple platforms.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>the controller to query </para>
+</entry>
+                            </row>
+                            <row>
+<entry>button</entry><entry>
+<para>a button on the game controller </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the sfSymbolsName or NULL if the name can&apos;t be found</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.18.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1a80fb1f81a242209c93808cbfc42d8fb0">SDL_GameControllerGetAppleSFSymbolsNameForAxis</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1adeeeba5a268842412f6578f38e75d231"/><section>
+    <title>SDL_GameControllerGetAttached()</title>
+<indexterm><primary>SDL_GameControllerGetAttached</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerGetAttached</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerGetAttached (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller)</computeroutput></para>
+<para>Check if a controller has been opened and is currently connected.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>a game controller identifier previously returned by <link linkend="__s_d_l__gamecontroller_8h_1ae9ebcb51205ee1663284b22f42f2e805">SDL_GameControllerOpen()</link> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE if the controller has been opened and is currently connected, or SDL_FALSE if not.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1a97fcf011947b35403c7d5319673a35e9">SDL_GameControllerClose</link> </para>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1ae9ebcb51205ee1663284b22f42f2e805">SDL_GameControllerOpen</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a067291389e9a8a1fbc8cb2b0dabb8dd2"/><section>
+    <title>SDL_GameControllerGetAxis()</title>
+<indexterm><primary>SDL_GameControllerGetAxis</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerGetAxis</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5">Sint16</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerGetAxis (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller, <link linkend="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1c">SDL_GameControllerAxis</link> axis)</computeroutput></para>
+<para>Get the current state of an axis control on a game controller.</para>
+
+<para>The axis indices start at index 0.</para>
+
+<para>The state is a value ranging from -32768 to 32767. Triggers, however, range from 0 to 32767 (they never return a negative value).</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>a game controller </para>
+</entry>
+                            </row>
+                            <row>
+<entry>axis</entry><entry>
+<para>an axis index (one of the SDL_GameControllerAxis values) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>axis state (including 0) on success or 0 (also) on failure; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1afa9f025f4262bdfba38c364ec9cc31bf">SDL_GameControllerGetButton</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a623237e182b87c6def6d7be80a7d71d3"/><section>
+    <title>SDL_GameControllerGetAxisFromString()</title>
+<indexterm><primary>SDL_GameControllerGetAxisFromString</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerGetAxisFromString</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1c">SDL_GameControllerAxis</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerGetAxisFromString (const char * str)</computeroutput></para>
+<para>Convert a string into SDL_GameControllerAxis enum.</para>
+
+<para>This function is called internally to translate SDL_GameController mapping strings for the underlying joystick device into the consistent SDL_GameController mapping. You do not normally need to call this function unless you are parsing SDL_GameController mappings in your own code.</para>
+
+<para>Note specially that &quot;righttrigger&quot; and &quot;lefttrigger&quot; map to <computeroutput>SDL_CONTROLLER_AXIS_TRIGGERRIGHT</computeroutput> and <computeroutput>SDL_CONTROLLER_AXIS_TRIGGERLEFT</computeroutput>, respectively.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>str</entry><entry>
+<para>string representing a SDL_GameController axis </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the SDL_GameControllerAxis enum corresponding to the input string, or <computeroutput>SDL_CONTROLLER_AXIS_INVALID</computeroutput> if no match was found.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1ad2c3e85478023f3756ff2637ec570dea">SDL_GameControllerGetStringForAxis</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1acdb9303cc6b67f1a0ec3ee55ad8e29d5"/><section>
+    <title>SDL_GameControllerGetBindForAxis()</title>
+<indexterm><primary>SDL_GameControllerGetBindForAxis</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerGetBindForAxis</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="_struct_s_d_l___game_controller_button_bind">SDL_GameControllerButtonBind</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerGetBindForAxis (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller, <link linkend="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1c">SDL_GameControllerAxis</link> axis)</computeroutput></para>
+<para>Get the SDL joystick layer binding for a controller axis mapping.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>a game controller </para>
+</entry>
+                            </row>
+                            <row>
+<entry>axis</entry><entry>
+<para>an axis enum value (one of the SDL_GameControllerAxis values) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a <link linkend="_struct_s_d_l___game_controller_button_bind">SDL_GameControllerButtonBind</link> describing the bind. On failure (like the given Controller axis doesn&apos;t exist on the device), its <computeroutput>.bindType</computeroutput> will be <computeroutput>SDL_CONTROLLER_BINDTYPE_NONE</computeroutput>.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1a4ee15324cc28aa53bab9f28e71c96840">SDL_GameControllerGetBindForButton</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a4ee15324cc28aa53bab9f28e71c96840"/><section>
+    <title>SDL_GameControllerGetBindForButton()</title>
+<indexterm><primary>SDL_GameControllerGetBindForButton</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerGetBindForButton</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="_struct_s_d_l___game_controller_button_bind">SDL_GameControllerButtonBind</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerGetBindForButton (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller, <link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98">SDL_GameControllerButton</link> button)</computeroutput></para>
+<para>Get the SDL joystick layer binding for a controller button mapping.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>a game controller </para>
+</entry>
+                            </row>
+                            <row>
+<entry>button</entry><entry>
+<para>an button enum value (an SDL_GameControllerButton value) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a <link linkend="_struct_s_d_l___game_controller_button_bind">SDL_GameControllerButtonBind</link> describing the bind. On failure (like the given Controller button doesn&apos;t exist on the device), its <computeroutput>.bindType</computeroutput> will be <computeroutput>SDL_CONTROLLER_BINDTYPE_NONE</computeroutput>.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1acdb9303cc6b67f1a0ec3ee55ad8e29d5">SDL_GameControllerGetBindForAxis</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1afa9f025f4262bdfba38c364ec9cc31bf"/><section>
+    <title>SDL_GameControllerGetButton()</title>
+<indexterm><primary>SDL_GameControllerGetButton</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerGetButton</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerGetButton (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller, <link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98">SDL_GameControllerButton</link> button)</computeroutput></para>
+<para>Get the current state of a button on a game controller.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>a game controller </para>
+</entry>
+                            </row>
+                            <row>
+<entry>button</entry><entry>
+<para>a button index (one of the SDL_GameControllerButton values) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>1 for pressed state or 0 for not pressed state or error; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1a067291389e9a8a1fbc8cb2b0dabb8dd2">SDL_GameControllerGetAxis</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a8e072a1f116583ca136be6b609e41d13"/><section>
+    <title>SDL_GameControllerGetButtonFromString()</title>
+<indexterm><primary>SDL_GameControllerGetButtonFromString</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerGetButtonFromString</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98">SDL_GameControllerButton</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerGetButtonFromString (const char * str)</computeroutput></para>
+<para>Convert a string into an SDL_GameControllerButton enum.</para>
+
+<para>This function is called internally to translate SDL_GameController mapping strings for the underlying joystick device into the consistent SDL_GameController mapping. You do not normally need to call this function unless you are parsing SDL_GameController mappings in your own code.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>str</entry><entry>
+<para>string representing a SDL_GameController axis </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the SDL_GameControllerButton enum corresponding to the input string, or <computeroutput>SDL_CONTROLLER_AXIS_INVALID</computeroutput> if no match was found.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1ad8b23ae8fa4a1ef11a1401d249bf0fc2"/><section>
+    <title>SDL_GameControllerGetJoystick()</title>
+<indexterm><primary>SDL_GameControllerGetJoystick</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerGetJoystick</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerGetJoystick (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller)</computeroutput></para>
+<para>Get the Joystick ID from a Game Controller.</para>
+
+<para>This function will give you a SDL_Joystick object, which allows you to use the SDL_Joystick functions with a SDL_GameController object. This would be useful for getting a joystick&apos;s position at any given time, even if it hasn&apos;t moved (moving it would produce an event, which would have the axis&apos; value).</para>
+
+<para>The pointer returned is owned by the SDL_GameController. You should not call <link linkend="__s_d_l__joystick_8h_1aafa0951b40ec2e200c098495c3dd4943">SDL_JoystickClose()</link> on it, for example, since doing so will likely cause SDL to crash.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>the game controller object that you want to get a joystick from </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a SDL_Joystick object; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a80657ada0dcc10e971df3cf07b5c7106"/><section>
+    <title>SDL_GameControllerGetNumTouchpadFingers()</title>
+<indexterm><primary>SDL_GameControllerGetNumTouchpadFingers</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerGetNumTouchpadFingers</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerGetNumTouchpadFingers (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller, int touchpad)</computeroutput></para>
+<para>Get the number of supported simultaneous fingers on a touchpad on a game controller.</para>
+
+<para><formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.14. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a5a22ed44ff4c46e2ec8edeea48b8b1ae"/><section>
+    <title>SDL_GameControllerGetNumTouchpads()</title>
+<indexterm><primary>SDL_GameControllerGetNumTouchpads</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerGetNumTouchpads</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerGetNumTouchpads (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller)</computeroutput></para>
+<para>Get the number of touchpads on a game controller.</para>
+
+<para><formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.14. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a99740db152ae93bcdc59a8b540c3178d"/><section>
+    <title>SDL_GameControllerGetPlayerIndex()</title>
+<indexterm><primary>SDL_GameControllerGetPlayerIndex</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerGetPlayerIndex</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerGetPlayerIndex (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller)</computeroutput></para>
+<para>Get the player index of an opened game controller.</para>
+
+<para>For XInput controllers this returns the XInput user index.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>the game controller object to query. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the player index for controller, or -1 if it&apos;s not available.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.9. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a8ea81761681d1666a3b447eb9ef2dee8"/><section>
+    <title>SDL_GameControllerGetProduct()</title>
+<indexterm><primary>SDL_GameControllerGetProduct</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerGetProduct</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerGetProduct (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller)</computeroutput></para>
+<para>Get the USB product ID of an opened controller, if available.</para>
+
+<para>If the product ID isn&apos;t available this function returns 0.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>the game controller object to query. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the USB product ID, or zero if unavailable.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.6. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a2e3eda7c9faf9bf0f4e06d89f3859c72"/><section>
+    <title>SDL_GameControllerGetProductVersion()</title>
+<indexterm><primary>SDL_GameControllerGetProductVersion</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerGetProductVersion</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerGetProductVersion (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller)</computeroutput></para>
+<para>Get the product version of an opened controller, if available.</para>
+
+<para>If the product version isn&apos;t available this function returns 0.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>the game controller object to query. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the USB product version, or zero if unavailable.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.6. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1ac258208c13968bac123c18751dc3f198"/><section>
+    <title>SDL_GameControllerGetSensorData()</title>
+<indexterm><primary>SDL_GameControllerGetSensorData</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerGetSensorData</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerGetSensorData (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller, <link linkend="__s_d_l__sensor_8h_1a94a441696f7d053dd541ec0b7e00e33a">SDL_SensorType</link> type, float * data, int num_values)</computeroutput></para>
+<para>Get the current state of a game controller sensor.</para>
+
+<para>The number of values and interpretation of the data is sensor dependent. See SDL_sensor.h for the details for each type of sensor.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>The controller to query </para>
+</entry>
+                            </row>
+                            <row>
+<entry>type</entry><entry>
+<para>The type of sensor to query </para>
+</entry>
+                            </row>
+                            <row>
+<entry>data</entry><entry>
+<para>A pointer filled with the current sensor state </para>
+</entry>
+                            </row>
+                            <row>
+<entry>num_values</entry><entry>
+<para>The number of values to write to data </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 or -1 if an error occurred.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.14. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a8bc636752e61693a6d38bb4b9c999ea2"/><section>
+    <title>SDL_GameControllerGetSensorDataRate()</title>
+<indexterm><primary>SDL_GameControllerGetSensorDataRate</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerGetSensorDataRate</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> float <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerGetSensorDataRate (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller, <link linkend="__s_d_l__sensor_8h_1a94a441696f7d053dd541ec0b7e00e33a">SDL_SensorType</link> type)</computeroutput></para>
+<para>Get the data rate (number of events per second) of a game controller sensor.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>The controller to query </para>
+</entry>
+                            </row>
+                            <row>
+<entry>type</entry><entry>
+<para>The type of sensor to query </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the data rate, or 0.0f if the data rate is not available.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.16. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a6aac054155c553beeed92bb0da1a6f09"/><section>
+    <title>SDL_GameControllerGetSerial()</title>
+<indexterm><primary>SDL_GameControllerGetSerial</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerGetSerial</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerGetSerial (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller)</computeroutput></para>
+<para>Get the serial number of an opened controller, if available.</para>
+
+<para>Returns the serial number of the controller, or NULL if it is not available.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>the game controller object to query. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the serial number, or NULL if unavailable.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.14. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1ad2c3e85478023f3756ff2637ec570dea"/><section>
+    <title>SDL_GameControllerGetStringForAxis()</title>
+<indexterm><primary>SDL_GameControllerGetStringForAxis</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerGetStringForAxis</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerGetStringForAxis (<link linkend="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1c">SDL_GameControllerAxis</link> axis)</computeroutput></para>
+<para>Convert from an SDL_GameControllerAxis enum to a string.</para>
+
+<para>The caller should not <link linkend="__s_d_l__stdinc_8h_1a0e4ade894d550ada1fa19dc2d46e88b8">SDL_free()</link> the returned string.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>axis</entry><entry>
+<para>an enum value for a given SDL_GameControllerAxis </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a string for the given axis, or NULL if an invalid axis is specified. The string returned is of the format used by SDL_GameController mapping strings.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1a623237e182b87c6def6d7be80a7d71d3">SDL_GameControllerGetAxisFromString</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a0bc4c7655fc3a13fe2a9a3b05149033f"/><section>
+    <title>SDL_GameControllerGetStringForButton()</title>
+<indexterm><primary>SDL_GameControllerGetStringForButton</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerGetStringForButton</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerGetStringForButton (<link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98">SDL_GameControllerButton</link> button)</computeroutput></para>
+<para>Convert from an SDL_GameControllerButton enum to a string.</para>
+
+<para>The caller should not <link linkend="__s_d_l__stdinc_8h_1a0e4ade894d550ada1fa19dc2d46e88b8">SDL_free()</link> the returned string.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>button</entry><entry>
+<para>an enum value for a given SDL_GameControllerButton </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a string for the given button, or NULL if an invalid axis is specified. The string returned is of the format used by SDL_GameController mapping strings.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1a8e072a1f116583ca136be6b609e41d13">SDL_GameControllerGetButtonFromString</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a4a13f3fc8b896356f0bd57edebb4a72c"/><section>
+    <title>SDL_GameControllerGetTouchpadFinger()</title>
+<indexterm><primary>SDL_GameControllerGetTouchpadFinger</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerGetTouchpadFinger</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerGetTouchpadFinger (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller, int touchpad, int finger, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> * state, float * x, float * y, float * pressure)</computeroutput></para>
+<para>Get the current state of a finger on a touchpad on a game controller.</para>
+
+<para><formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.14. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1aab21a8d107d382ce7ff32afbe82b8776"/><section>
+    <title>SDL_GameControllerGetType()</title>
+<indexterm><primary>SDL_GameControllerGetType</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerGetType</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__gamecontroller_8h_1afe5f759b2d709059e4b429cfc08b399c">SDL_GameControllerType</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerGetType (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller)</computeroutput></para>
+<para>Get the type of this currently opened controller</para>
+
+<para>This is the same name as returned by <link linkend="__s_d_l__gamecontroller_8h_1a8cab24dcd19022722c306f04fdfc6b6a">SDL_GameControllerTypeForIndex()</link>, but it takes a controller identifier instead of the (unstable) device index.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>the game controller object to query. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the controller type.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.12. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1ab0032725dcea365502694731c37605f7"/><section>
+    <title>SDL_GameControllerGetVendor()</title>
+<indexterm><primary>SDL_GameControllerGetVendor</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerGetVendor</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerGetVendor (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller)</computeroutput></para>
+<para>Get the USB vendor ID of an opened controller, if available.</para>
+
+<para>If the vendor ID isn&apos;t available this function returns 0.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>the game controller object to query. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the USB vendor ID, or zero if unavailable.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.6. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a8448d364a118ef54ba1d240f318d7a03"/><section>
+    <title>SDL_GameControllerHasAxis()</title>
+<indexterm><primary>SDL_GameControllerHasAxis</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerHasAxis</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerHasAxis (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller, <link linkend="__s_d_l__gamecontroller_8h_1a96d0bda99d806397e4c697241ccffa1c">SDL_GameControllerAxis</link> axis)</computeroutput></para>
+<para>Query whether a game controller has a given axis.</para>
+
+<para>This merely reports whether the controller&apos;s mapping defined this axis, as that is all the information SDL has about the physical device.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>a game controller </para>
+</entry>
+                            </row>
+                            <row>
+<entry>axis</entry><entry>
+<para>an axis enum value (an SDL_GameControllerAxis value) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE if the controller has this axis, SDL_FALSE otherwise.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.14. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a761d5b2da1c9aef500cebe401c6ed30f"/><section>
+    <title>SDL_GameControllerHasButton()</title>
+<indexterm><primary>SDL_GameControllerHasButton</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerHasButton</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerHasButton (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller, <link linkend="__s_d_l__gamecontroller_8h_1a9e4d3f8c9c9860064a68a700e0486f98">SDL_GameControllerButton</link> button)</computeroutput></para>
+<para>Query whether a game controller has a given button.</para>
+
+<para>This merely reports whether the controller&apos;s mapping defined this button, as that is all the information SDL has about the physical device.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>a game controller </para>
+</entry>
+                            </row>
+                            <row>
+<entry>button</entry><entry>
+<para>a button enum value (an SDL_GameControllerButton value) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE if the controller has this button, SDL_FALSE otherwise.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.14. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1aea8e212c4b72bb4e72c4e5f1a25457c6"/><section>
+    <title>SDL_GameControllerHasLED()</title>
+<indexterm><primary>SDL_GameControllerHasLED</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerHasLED</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerHasLED (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller)</computeroutput></para>
+<para>Query whether a game controller has an LED.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>The controller to query </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE, or SDL_FALSE if this controller does not have a modifiable LED</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.14. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1aa3fb8be22a6781c2b46b79309747978c"/><section>
+    <title>SDL_GameControllerHasRumble()</title>
+<indexterm><primary>SDL_GameControllerHasRumble</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerHasRumble</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerHasRumble (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller)</computeroutput></para>
+<para>Query whether a game controller has rumble support.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>The controller to query </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE, or SDL_FALSE if this controller does not have rumble support</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.18.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1af656d1c71fe07da1146c376439d9b403">SDL_GameControllerRumble</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1aedb548895f677b818901440b759b3a94"/><section>
+    <title>SDL_GameControllerHasRumbleTriggers()</title>
+<indexterm><primary>SDL_GameControllerHasRumbleTriggers</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerHasRumbleTriggers</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerHasRumbleTriggers (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller)</computeroutput></para>
+<para>Query whether a game controller has rumble support on triggers.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>The controller to query </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE, or SDL_FALSE if this controller does not have trigger rumble support</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.18.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1a2879f90f77b4de4f73892aef4cf73d26">SDL_GameControllerRumbleTriggers</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1af84b3cbfe9f9acd9563c0d63cc57247a"/><section>
+    <title>SDL_GameControllerHasSensor()</title>
+<indexterm><primary>SDL_GameControllerHasSensor</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerHasSensor</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerHasSensor (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller, <link linkend="__s_d_l__sensor_8h_1a94a441696f7d053dd541ec0b7e00e33a">SDL_SensorType</link> type)</computeroutput></para>
+<para>Return whether a game controller has a particular sensor.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>The controller to query </para>
+</entry>
+                            </row>
+                            <row>
+<entry>type</entry><entry>
+<para>The type of sensor to query </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE if the sensor exists, SDL_FALSE otherwise.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.14. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a289122b9f72b3e89671fcbfaa6d61699"/><section>
+    <title>SDL_GameControllerIsSensorEnabled()</title>
+<indexterm><primary>SDL_GameControllerIsSensorEnabled</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerIsSensorEnabled</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerIsSensorEnabled (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller, <link linkend="__s_d_l__sensor_8h_1a94a441696f7d053dd541ec0b7e00e33a">SDL_SensorType</link> type)</computeroutput></para>
+<para>Query whether sensor data reporting is enabled for a game controller.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>The controller to query </para>
+</entry>
+                            </row>
+                            <row>
+<entry>type</entry><entry>
+<para>The type of sensor to query </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE if the sensor is enabled, SDL_FALSE otherwise.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.14. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1aafacb372b1557c3f58fa70e8a977f850"/><section>
+    <title>SDL_GameControllerMapping()</title>
+<indexterm><primary>SDL_GameControllerMapping</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerMapping</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerMapping (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller)</computeroutput></para>
+<para>Get the current mapping of a Game Controller.</para>
+
+<para>The returned string must be freed with <link linkend="__s_d_l__stdinc_8h_1a0e4ade894d550ada1fa19dc2d46e88b8">SDL_free()</link>.</para>
+
+<para>Details about mappings are discussed with <link linkend="__s_d_l__gamecontroller_8h_1a62cb682b1c589135cd32cce381d403f8">SDL_GameControllerAddMapping()</link>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>the game controller you want to get the current mapping for </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a string that has the controller&apos;s mapping or NULL if no mapping is available; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1a62cb682b1c589135cd32cce381d403f8">SDL_GameControllerAddMapping</link> </para>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1a0369b513d6c6e005fb47d1ff0374d446">SDL_GameControllerMappingForGUID</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a485646c923953d2df3d3bf3b95a8e6b1"/><section>
+    <title>SDL_GameControllerMappingForDeviceIndex()</title>
+<indexterm><primary>SDL_GameControllerMappingForDeviceIndex</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerMappingForDeviceIndex</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerMappingForDeviceIndex (int joystick_index)</computeroutput></para>
+<para>Get the mapping of a game controller.</para>
+
+<para>This can be called before any controllers are opened.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick_index</entry><entry>
+<para>the device_index of a device, from zero to <link linkend="__s_d_l__joystick_8h_1a2ab130eaa28f8e3bd544a5432041a311">SDL_NumJoysticks()</link>-1 </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the mapping string. Must be freed with <link linkend="__s_d_l__stdinc_8h_1a0e4ade894d550ada1fa19dc2d46e88b8">SDL_free()</link>. Returns NULL if no mapping is available.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.9. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a0369b513d6c6e005fb47d1ff0374d446"/><section>
+    <title>SDL_GameControllerMappingForGUID()</title>
+<indexterm><primary>SDL_GameControllerMappingForGUID</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerMappingForGUID</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerMappingForGUID (<link linkend="_struct_s_d_l___joystick_g_u_i_d">SDL_JoystickGUID</link> guid)</computeroutput></para>
+<para>Get the game controller mapping string for a given GUID.</para>
+
+<para>The returned string must be freed with <link linkend="__s_d_l__stdinc_8h_1a0e4ade894d550ada1fa19dc2d46e88b8">SDL_free()</link>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>guid</entry><entry>
+<para>a structure containing the GUID for which a mapping is desired </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a mapping string or NULL on error; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__joystick_8h_1afdbf5289ff5452afb1bd869ffcf250b5">SDL_JoystickGetDeviceGUID</link> </para>
+
+<para><link linkend="__s_d_l__joystick_8h_1acc85c770af41eae76948e11c678f92ca">SDL_JoystickGetGUID</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1aea128c564d021dec7c6670c600599840"/><section>
+    <title>SDL_GameControllerMappingForIndex()</title>
+<indexterm><primary>SDL_GameControllerMappingForIndex</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerMappingForIndex</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerMappingForIndex (int mapping_index)</computeroutput></para>
+<para>Get the mapping at a particular index.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the mapping string. Must be freed with <link linkend="__s_d_l__stdinc_8h_1a0e4ade894d550ada1fa19dc2d46e88b8">SDL_free()</link>. Returns NULL if the index is out of range.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.6. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a0bdcaf9e186ed7d66d41aae9978f08ef"/><section>
+    <title>SDL_GameControllerName()</title>
+<indexterm><primary>SDL_GameControllerName</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerName</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerName (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller)</computeroutput></para>
+<para>Get the implementation-dependent name for an opened game controller.</para>
+
+<para>This is the same name as returned by <link linkend="__s_d_l__gamecontroller_8h_1a11fb78d9621b8d746510f08d00208349">SDL_GameControllerNameForIndex()</link>, but it takes a controller identifier instead of the (unstable) device index.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>a game controller identifier previously returned by <link linkend="__s_d_l__gamecontroller_8h_1ae9ebcb51205ee1663284b22f42f2e805">SDL_GameControllerOpen()</link> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the implementation dependent name for the game controller, or NULL if there is no name or the identifier passed is invalid.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1a11fb78d9621b8d746510f08d00208349">SDL_GameControllerNameForIndex</link> </para>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1ae9ebcb51205ee1663284b22f42f2e805">SDL_GameControllerOpen</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a11fb78d9621b8d746510f08d00208349"/><section>
+    <title>SDL_GameControllerNameForIndex()</title>
+<indexterm><primary>SDL_GameControllerNameForIndex</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerNameForIndex</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerNameForIndex (int joystick_index)</computeroutput></para>
+<para>Get the implementation dependent name for the game controller.</para>
+
+<para>This function can be called before any controllers are opened.</para>
+
+<para><computeroutput>joystick_index</computeroutput> is the same as the <computeroutput>device_index</computeroutput> passed to <link linkend="__s_d_l__joystick_8h_1a69452f7f7e11db54292f64db9a629029">SDL_JoystickOpen()</link>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick_index</entry><entry>
+<para>the device_index of a device, from zero to <link linkend="__s_d_l__joystick_8h_1a2ab130eaa28f8e3bd544a5432041a311">SDL_NumJoysticks()</link>-1 </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the implementation-dependent name for the game controller, or NULL if there is no name or the index is invalid.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1a0bdcaf9e186ed7d66d41aae9978f08ef">SDL_GameControllerName</link> </para>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1ae9ebcb51205ee1663284b22f42f2e805">SDL_GameControllerOpen</link> </para>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1a3307c27938a336b83c317b6054d91bd4">SDL_IsGameController</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1ac14eb47ec6097d89c7bec14f6b27ebfe"/><section>
+    <title>SDL_GameControllerNumMappings()</title>
+<indexterm><primary>SDL_GameControllerNumMappings</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerNumMappings</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerNumMappings (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para>
+<para>Get the number of mappings installed.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the number of mappings.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.6. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1ae9ebcb51205ee1663284b22f42f2e805"/><section>
+    <title>SDL_GameControllerOpen()</title>
+<indexterm><primary>SDL_GameControllerOpen</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerOpen</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerOpen (int joystick_index)</computeroutput></para>
+<para>Open a game controller for use.</para>
+
+<para><computeroutput>joystick_index</computeroutput> is the same as the <computeroutput>device_index</computeroutput> passed to <link linkend="__s_d_l__joystick_8h_1a69452f7f7e11db54292f64db9a629029">SDL_JoystickOpen()</link>.</para>
+
+<para>The index passed as an argument refers to the N&apos;th game controller on the system. This index is not the value which will identify this controller in future controller events. The joystick&apos;s instance id (SDL_JoystickID) will be used there instead.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick_index</entry><entry>
+<para>the device_index of a device, up to <link linkend="__s_d_l__joystick_8h_1a2ab130eaa28f8e3bd544a5432041a311">SDL_NumJoysticks()</link> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>a gamecontroller identifier or NULL if an error occurred; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1a97fcf011947b35403c7d5319673a35e9">SDL_GameControllerClose</link> </para>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1a11fb78d9621b8d746510f08d00208349">SDL_GameControllerNameForIndex</link> </para>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1a3307c27938a336b83c317b6054d91bd4">SDL_IsGameController</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1af656d1c71fe07da1146c376439d9b403"/><section>
+    <title>SDL_GameControllerRumble()</title>
+<indexterm><primary>SDL_GameControllerRumble</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerRumble</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerRumble (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller, <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> low_frequency_rumble, <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> high_frequency_rumble, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> duration_ms)</computeroutput></para>
+<para>Start a rumble effect on a game controller.</para>
+
+<para>Each call to this function cancels any previous rumble effect, and calling it with 0 intensity stops any rumbling.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>The controller to vibrate </para>
+</entry>
+                            </row>
+                            <row>
+<entry>low_frequency_rumble</entry><entry>
+<para>The intensity of the low frequency (left) rumble motor, from 0 to 0xFFFF </para>
+</entry>
+                            </row>
+                            <row>
+<entry>high_frequency_rumble</entry><entry>
+<para>The intensity of the high frequency (right) rumble motor, from 0 to 0xFFFF </para>
+</entry>
+                            </row>
+                            <row>
+<entry>duration_ms</entry><entry>
+<para>The duration of the rumble effect, in milliseconds </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0, or -1 if rumble isn&apos;t supported on this controller</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.9.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1aa3fb8be22a6781c2b46b79309747978c">SDL_GameControllerHasRumble</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a2879f90f77b4de4f73892aef4cf73d26"/><section>
+    <title>SDL_GameControllerRumbleTriggers()</title>
+<indexterm><primary>SDL_GameControllerRumbleTriggers</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerRumbleTriggers</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerRumbleTriggers (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller, <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> left_rumble, <link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link> right_rumble, <link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> duration_ms)</computeroutput></para>
+<para>Start a rumble effect in the game controller&apos;s triggers.</para>
+
+<para>Each call to this function cancels any previous trigger rumble effect, and calling it with 0 intensity stops any rumbling.</para>
+
+<para>Note that this is rumbling of the <emphasis>triggers</emphasis> and not the game controller as a whole. The first controller to offer this feature was the PlayStation 5&apos;s DualShock 5.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>The controller to vibrate </para>
+</entry>
+                            </row>
+                            <row>
+<entry>left_rumble</entry><entry>
+<para>The intensity of the left trigger rumble motor, from 0 to 0xFFFF </para>
+</entry>
+                            </row>
+                            <row>
+<entry>right_rumble</entry><entry>
+<para>The intensity of the right trigger rumble motor, from 0 to 0xFFFF </para>
+</entry>
+                            </row>
+                            <row>
+<entry>duration_ms</entry><entry>
+<para>The duration of the rumble effect, in milliseconds </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0, or -1 if trigger rumble isn&apos;t supported on this controller</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.14.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1aedb548895f677b818901440b759b3a94">SDL_GameControllerHasRumbleTriggers</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a2eaa3571798dff5d990be3514c744a99"/><section>
+    <title>SDL_GameControllerSendEffect()</title>
+<indexterm><primary>SDL_GameControllerSendEffect</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerSendEffect</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerSendEffect (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller, const <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> * data, int size)</computeroutput></para>
+<para>Send a controller specific effect packet</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>The controller to affect </para>
+</entry>
+                            </row>
+                            <row>
+<entry>data</entry><entry>
+<para>The data to send to the controller </para>
+</entry>
+                            </row>
+                            <row>
+<entry>size</entry><entry>
+<para>The size of the data to send to the controller </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0, or -1 if this controller or driver doesn&apos;t support effect packets</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.16. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a5c5e9971086494aeef01c3ee0325a132"/><section>
+    <title>SDL_GameControllerSetLED()</title>
+<indexterm><primary>SDL_GameControllerSetLED</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerSetLED</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerSetLED (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> red, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> green, <link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> blue)</computeroutput></para>
+<para>Update a game controller&apos;s LED color.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>The controller to update </para>
+</entry>
+                            </row>
+                            <row>
+<entry>red</entry><entry>
+<para>The intensity of the red LED </para>
+</entry>
+                            </row>
+                            <row>
+<entry>green</entry><entry>
+<para>The intensity of the green LED </para>
+</entry>
+                            </row>
+                            <row>
+<entry>blue</entry><entry>
+<para>The intensity of the blue LED </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0, or -1 if this controller does not have a modifiable LED</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.14. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a85be71ba10423ad4da459131a13a0f5f"/><section>
+    <title>SDL_GameControllerSetPlayerIndex()</title>
+<indexterm><primary>SDL_GameControllerSetPlayerIndex</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerSetPlayerIndex</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerSetPlayerIndex (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller, int player_index)</computeroutput></para>
+<para>Set the player index of an opened game controller.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>the game controller object to adjust. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>player_index</entry><entry>
+<para>Player index to assign to this controller.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.12. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1acee01b6bdc79b5dda14b77538b1d34ba"/><section>
+    <title>SDL_GameControllerSetSensorEnabled()</title>
+<indexterm><primary>SDL_GameControllerSetSensorEnabled</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerSetSensorEnabled</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerSetSensorEnabled (<link linkend="__s_d_l__gamecontroller_8h_1aa434ddee85ce43a59567b39c20acf873">SDL_GameController</link> * gamecontroller, <link linkend="__s_d_l__sensor_8h_1a94a441696f7d053dd541ec0b7e00e33a">SDL_SensorType</link> type, <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> enabled)</computeroutput></para>
+<para>Set whether data reporting for a game controller sensor is enabled.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>gamecontroller</entry><entry>
+<para>The controller to update </para>
+</entry>
+                            </row>
+                            <row>
+<entry>type</entry><entry>
+<para>The type of sensor to enable/disable </para>
+</entry>
+                            </row>
+                            <row>
+<entry>enabled</entry><entry>
+<para>Whether data reporting should be enabled </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 or -1 if an error occurred.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.14. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a8cab24dcd19022722c306f04fdfc6b6a"/><section>
+    <title>SDL_GameControllerTypeForIndex()</title>
+<indexterm><primary>SDL_GameControllerTypeForIndex</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerTypeForIndex</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__gamecontroller_8h_1afe5f759b2d709059e4b429cfc08b399c">SDL_GameControllerType</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerTypeForIndex (int joystick_index)</computeroutput></para>
+<para>Get the type of a game controller.</para>
+
+<para>This can be called before any controllers are opened.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick_index</entry><entry>
+<para>the device_index of a device, from zero to <link linkend="__s_d_l__joystick_8h_1a2ab130eaa28f8e3bd544a5432041a311">SDL_NumJoysticks()</link>-1 </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the controller type.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.12. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a92fe68241a17b60b2240c04d01b73e6b"/><section>
+    <title>SDL_GameControllerUpdate()</title>
+<indexterm><primary>SDL_GameControllerUpdate</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_GameControllerUpdate</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GameControllerUpdate (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para>
+<para>Manually pump game controller updates if not using the loop.</para>
+
+<para>This function is called automatically by the event loop if events are enabled. Under such circumstances, it will not be necessary to call this function.</para>
+
+<para><formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__gamecontroller_8h_1a3307c27938a336b83c317b6054d91bd4"/><section>
+    <title>SDL_IsGameController()</title>
+<indexterm><primary>SDL_IsGameController</primary><secondary>SDL_gamecontroller.h</secondary></indexterm>
+<indexterm><primary>SDL_gamecontroller.h</primary><secondary>SDL_IsGameController</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_IsGameController (int joystick_index)</computeroutput></para>
+<para>Check if the given joystick is supported by the game controller interface.</para>
+
+<para><computeroutput>joystick_index</computeroutput> is the same as the <computeroutput>device_index</computeroutput> passed to <link linkend="__s_d_l__joystick_8h_1a69452f7f7e11db54292f64db9a629029">SDL_JoystickOpen()</link>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>joystick_index</entry><entry>
+<para>the device_index of a device, up to <link linkend="__s_d_l__joystick_8h_1a2ab130eaa28f8e3bd544a5432041a311">SDL_NumJoysticks()</link> </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE if the given joystick is supported by the game controller interface, SDL_FALSE if it isn&apos;t or it&apos;s an invalid index.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1a11fb78d9621b8d746510f08d00208349">SDL_GameControllerNameForIndex</link> </para>
+
+<para><link linkend="__s_d_l__gamecontroller_8h_1ae9ebcb51205ee1663284b22f42f2e805">SDL_GameControllerOpen</link> </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

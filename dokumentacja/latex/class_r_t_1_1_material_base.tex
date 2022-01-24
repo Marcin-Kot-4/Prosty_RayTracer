@@ -1,0 +1,147 @@
+\hypertarget{class_r_t_1_1_material_base}{}\doxysection{RT\+::Material\+Base Class Reference}
+\label{class_r_t_1_1_material_base}\index{RT::MaterialBase@{RT::MaterialBase}}
+
+
+{\ttfamily \#include $<$materialbase.\+h$>$}
+
+Inheritance diagram for RT\+::Material\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_r_t_1_1_material_base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_r_t_1_1_material_base_afc66df6eff4e978f498e541b1750221c}{Material\+Base}} ()
+\item 
+virtual \mbox{\hyperlink{class_r_t_1_1_material_base_a68eb6a4d3a0c5fd01f858c4a217e6187}{$\sim$\+Material\+Base}} ()
+\item 
+virtual \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \mbox{\hyperlink{class_r_t_1_1_material_base_aa8b05496fa1fed6988efd524eb5dbe48}{Compute\+Color}} (const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ $>$ \&object\+List, const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_light_base}{RT\+::\+Light\+Base}} $>$ $>$ \&light\+List, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ \&current\+Object, const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&int\+Point, const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&local\+Normal, const \mbox{\hyperlink{class_r_t_1_1_ray}{RT\+::\+Ray}} \&camera\+Ray)
+\item 
+\mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \mbox{\hyperlink{class_r_t_1_1_material_base_a5981b94c2858393d5d3308e4fe047768}{Compute\+Reflection\+Color}} (const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ $>$ \&object\+List, const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_light_base}{RT\+::\+Light\+Base}} $>$ $>$ \&light\+List, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ \&current\+Object, const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&int\+Point, const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&local\+Normal, const \mbox{\hyperlink{class_r_t_1_1_ray}{RT\+::\+Ray}} \&incident\+Ray)
+\item 
+bool \mbox{\hyperlink{class_r_t_1_1_material_base_ac7549ffbbac551a9e343a3d1a29c30b4}{Cast\+Ray}} (const \mbox{\hyperlink{class_r_t_1_1_ray}{RT\+::\+Ray}} \&cast\+Ray, const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ $>$ \&object\+List, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ \&this\+Object, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ \&closest\+Object, \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&closest\+Int\+Point, \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&closest\+Local\+Normal, \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&closest\+Local\+Color)
+\item 
+\mbox{\hyperlink{_s_d_l__opengles2__gl2ext_8h_ae5d8fa23ad07c48bb609509eae494c95}{void}} \mbox{\hyperlink{class_r_t_1_1_material_base_a6a1070eefc722456176a821f447e6ef2}{Assign\+Texture}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_texture_1_1_texture_base}{RT\+::\+Texture\+::\+Texture\+Base}} $>$ \&input\+Texture)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \mbox{\hyperlink{class_r_t_1_1_material_base_a2a8f6d812302097b550388ed3deed6b7}{Compute\+Diffuse\+Color}} (const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ $>$ \&object\+List, const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_light_base}{RT\+::\+Light\+Base}} $>$ $>$ \&light\+List, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ \&current\+Object, const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&int\+Point, const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&local\+Normal, const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&base\+Color)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_texture_1_1_texture_base}{RT\+::\+Texture\+::\+Texture\+Base}} $>$ $>$ \mbox{\hyperlink{class_r_t_1_1_material_base_a22c94fe436f4b7944381238983ec0472}{m\+\_\+texture\+List}}
+\item 
+bool \mbox{\hyperlink{class_r_t_1_1_material_base_acbde6abdad78b526022475a8e2b39d2a}{m\+\_\+has\+Texture}} = false
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_r_t_1_1_material_base_a2e2661a371b1689d72d929ca21f8e8eb}{m\+\_\+max\+Reflection\+Rays}}
+\item 
+static int \mbox{\hyperlink{class_r_t_1_1_material_base_acb27faf3834b1db091139c8a970ea4bc}{m\+\_\+reflection\+Ray\+Count}}
+\item 
+static \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \mbox{\hyperlink{class_r_t_1_1_material_base_a97579f592fb17d8077e16e2b48d6e826}{m\+\_\+ambient\+Color}} \{std\+::vector$<$double$>$ \{1.\+0, 1.\+0, 1.\+0\}\}
+\item 
+static double \mbox{\hyperlink{class_r_t_1_1_material_base_a6297b836279524bc2772b3a066f1a5d8}{m\+\_\+ambient\+Intensity}} = 0.\+2
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_r_t_1_1_material_base_afc66df6eff4e978f498e541b1750221c}\label{class_r_t_1_1_material_base_afc66df6eff4e978f498e541b1750221c}} 
+\index{RT::MaterialBase@{RT::MaterialBase}!MaterialBase@{MaterialBase}}
+\index{MaterialBase@{MaterialBase}!RT::MaterialBase@{RT::MaterialBase}}
+\doxysubsubsection{\texorpdfstring{MaterialBase()}{MaterialBase()}}
+{\footnotesize\ttfamily RT\+::\+Material\+Base\+::\+Material\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_r_t_1_1_material_base_a68eb6a4d3a0c5fd01f858c4a217e6187}\label{class_r_t_1_1_material_base_a68eb6a4d3a0c5fd01f858c4a217e6187}} 
+\index{RT::MaterialBase@{RT::MaterialBase}!````~MaterialBase@{$\sim$MaterialBase}}
+\index{````~MaterialBase@{$\sim$MaterialBase}!RT::MaterialBase@{RT::MaterialBase}}
+\doxysubsubsection{\texorpdfstring{$\sim$MaterialBase()}{~MaterialBase()}}
+{\footnotesize\ttfamily RT\+::\+Material\+Base\+::$\sim$\+Material\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_r_t_1_1_material_base_a6a1070eefc722456176a821f447e6ef2}\label{class_r_t_1_1_material_base_a6a1070eefc722456176a821f447e6ef2}} 
+\index{RT::MaterialBase@{RT::MaterialBase}!AssignTexture@{AssignTexture}}
+\index{AssignTexture@{AssignTexture}!RT::MaterialBase@{RT::MaterialBase}}
+\doxysubsubsection{\texorpdfstring{AssignTexture()}{AssignTexture()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__opengles2__gl2ext_8h_ae5d8fa23ad07c48bb609509eae494c95}{void}} RT\+::\+Material\+Base\+::\+Assign\+Texture (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_texture_1_1_texture_base}{RT\+::\+Texture\+::\+Texture\+Base}} $>$ \&}]{input\+Texture }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_r_t_1_1_material_base_ac7549ffbbac551a9e343a3d1a29c30b4}\label{class_r_t_1_1_material_base_ac7549ffbbac551a9e343a3d1a29c30b4}} 
+\index{RT::MaterialBase@{RT::MaterialBase}!CastRay@{CastRay}}
+\index{CastRay@{CastRay}!RT::MaterialBase@{RT::MaterialBase}}
+\doxysubsubsection{\texorpdfstring{CastRay()}{CastRay()}}
+{\footnotesize\ttfamily bool RT\+::\+Material\+Base\+::\+Cast\+Ray (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_r_t_1_1_ray}{RT\+::\+Ray}} \&}]{cast\+Ray,  }\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ $>$ \&}]{object\+List,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ \&}]{this\+Object,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ \&}]{closest\+Object,  }\item[{\mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&}]{closest\+Int\+Point,  }\item[{\mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&}]{closest\+Local\+Normal,  }\item[{\mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&}]{closest\+Local\+Color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_r_t_1_1_material_base_aa8b05496fa1fed6988efd524eb5dbe48}\label{class_r_t_1_1_material_base_aa8b05496fa1fed6988efd524eb5dbe48}} 
+\index{RT::MaterialBase@{RT::MaterialBase}!ComputeColor@{ComputeColor}}
+\index{ComputeColor@{ComputeColor}!RT::MaterialBase@{RT::MaterialBase}}
+\doxysubsubsection{\texorpdfstring{ComputeColor()}{ComputeColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ RT\+::\+Material\+Base\+::\+Compute\+Color (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ $>$ \&}]{object\+List,  }\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_light_base}{RT\+::\+Light\+Base}} $>$ $>$ \&}]{light\+List,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ \&}]{current\+Object,  }\item[{const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&}]{int\+Point,  }\item[{const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&}]{local\+Normal,  }\item[{const \mbox{\hyperlink{class_r_t_1_1_ray}{RT\+::\+Ray}} \&}]{camera\+Ray }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_r_t_1_1_simple_material_a27119202e1ef25225faa2b425bd681e4}{RT\+::\+Simple\+Material}}, and \mbox{\hyperlink{class_r_t_1_1_simple_refractive_a988530ca94a0cf72b9035f74c4527f96}{RT\+::\+Simple\+Refractive}}.
+
+\mbox{\Hypertarget{class_r_t_1_1_material_base_a2a8f6d812302097b550388ed3deed6b7}\label{class_r_t_1_1_material_base_a2a8f6d812302097b550388ed3deed6b7}} 
+\index{RT::MaterialBase@{RT::MaterialBase}!ComputeDiffuseColor@{ComputeDiffuseColor}}
+\index{ComputeDiffuseColor@{ComputeDiffuseColor}!RT::MaterialBase@{RT::MaterialBase}}
+\doxysubsubsection{\texorpdfstring{ComputeDiffuseColor()}{ComputeDiffuseColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ RT\+::\+Material\+Base\+::\+Compute\+Diffuse\+Color (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ $>$ \&}]{object\+List,  }\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_light_base}{RT\+::\+Light\+Base}} $>$ $>$ \&}]{light\+List,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ \&}]{current\+Object,  }\item[{const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&}]{int\+Point,  }\item[{const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&}]{local\+Normal,  }\item[{const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&}]{base\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_r_t_1_1_material_base_a5981b94c2858393d5d3308e4fe047768}\label{class_r_t_1_1_material_base_a5981b94c2858393d5d3308e4fe047768}} 
+\index{RT::MaterialBase@{RT::MaterialBase}!ComputeReflectionColor@{ComputeReflectionColor}}
+\index{ComputeReflectionColor@{ComputeReflectionColor}!RT::MaterialBase@{RT::MaterialBase}}
+\doxysubsubsection{\texorpdfstring{ComputeReflectionColor()}{ComputeReflectionColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ RT\+::\+Material\+Base\+::\+Compute\+Reflection\+Color (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ $>$ \&}]{object\+List,  }\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_light_base}{RT\+::\+Light\+Base}} $>$ $>$ \&}]{light\+List,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_r_t_1_1_object_base}{RT\+::\+Object\+Base}} $>$ \&}]{current\+Object,  }\item[{const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&}]{int\+Point,  }\item[{const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&}]{local\+Normal,  }\item[{const \mbox{\hyperlink{class_r_t_1_1_ray}{RT\+::\+Ray}} \&}]{incident\+Ray }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_r_t_1_1_material_base_a97579f592fb17d8077e16e2b48d6e826}\label{class_r_t_1_1_material_base_a97579f592fb17d8077e16e2b48d6e826}} 
+\index{RT::MaterialBase@{RT::MaterialBase}!m\_ambientColor@{m\_ambientColor}}
+\index{m\_ambientColor@{m\_ambientColor}!RT::MaterialBase@{RT::MaterialBase}}
+\doxysubsubsection{\texorpdfstring{m\_ambientColor}{m\_ambientColor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$double$>$ RT\+::\+Material\+Base\+::m\+\_\+ambient\+Color \{std\+::vector$<$double$>$ \{1.\+0, 1.\+0, 1.\+0\}\}\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_r_t_1_1_material_base_a6297b836279524bc2772b3a066f1a5d8}\label{class_r_t_1_1_material_base_a6297b836279524bc2772b3a066f1a5d8}} 
+\index{RT::MaterialBase@{RT::MaterialBase}!m\_ambientIntensity@{m\_ambientIntensity}}
+\index{m\_ambientIntensity@{m\_ambientIntensity}!RT::MaterialBase@{RT::MaterialBase}}
+\doxysubsubsection{\texorpdfstring{m\_ambientIntensity}{m\_ambientIntensity}}
+{\footnotesize\ttfamily double RT\+::\+Material\+Base\+::m\+\_\+ambient\+Intensity = 0.\+2\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_r_t_1_1_material_base_acbde6abdad78b526022475a8e2b39d2a}\label{class_r_t_1_1_material_base_acbde6abdad78b526022475a8e2b39d2a}} 
+\index{RT::MaterialBase@{RT::MaterialBase}!m\_hasTexture@{m\_hasTexture}}
+\index{m\_hasTexture@{m\_hasTexture}!RT::MaterialBase@{RT::MaterialBase}}
+\doxysubsubsection{\texorpdfstring{m\_hasTexture}{m\_hasTexture}}
+{\footnotesize\ttfamily bool RT\+::\+Material\+Base\+::m\+\_\+has\+Texture = false}
+
+\mbox{\Hypertarget{class_r_t_1_1_material_base_a2e2661a371b1689d72d929ca21f8e8eb}\label{class_r_t_1_1_material_base_a2e2661a371b1689d72d929ca21f8e8eb}} 
+\index{RT::MaterialBase@{RT::MaterialBase}!m\_maxReflectionRays@{m\_maxReflectionRays}}
+\index{m\_maxReflectionRays@{m\_maxReflectionRays}!RT::MaterialBase@{RT::MaterialBase}}
+\doxysubsubsection{\texorpdfstring{m\_maxReflectionRays}{m\_maxReflectionRays}}
+{\footnotesize\ttfamily int RT\+::\+Material\+Base\+::m\+\_\+max\+Reflection\+Rays\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_r_t_1_1_material_base_acb27faf3834b1db091139c8a970ea4bc}\label{class_r_t_1_1_material_base_acb27faf3834b1db091139c8a970ea4bc}} 
+\index{RT::MaterialBase@{RT::MaterialBase}!m\_reflectionRayCount@{m\_reflectionRayCount}}
+\index{m\_reflectionRayCount@{m\_reflectionRayCount}!RT::MaterialBase@{RT::MaterialBase}}
+\doxysubsubsection{\texorpdfstring{m\_reflectionRayCount}{m\_reflectionRayCount}}
+{\footnotesize\ttfamily int RT\+::\+Material\+Base\+::m\+\_\+reflection\+Ray\+Count\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_r_t_1_1_material_base_a22c94fe436f4b7944381238983ec0472}\label{class_r_t_1_1_material_base_a22c94fe436f4b7944381238983ec0472}} 
+\index{RT::MaterialBase@{RT::MaterialBase}!m\_textureList@{m\_textureList}}
+\index{m\_textureList@{m\_textureList}!RT::MaterialBase@{RT::MaterialBase}}
+\doxysubsubsection{\texorpdfstring{m\_textureList}{m\_textureList}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_r_t_1_1_texture_1_1_texture_base}{RT\+::\+Texture\+::\+Texture\+Base}}$>$ $>$ RT\+::\+Material\+Base\+::m\+\_\+texture\+List}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Ray\+Tracing/\+Ray\+Trace/\+Materials/\mbox{\hyperlink{materialbase_8h}{materialbase.\+h}}\item 
+D\+:/\+Ray\+Tracing/\+Ray\+Trace/\+Materials/\mbox{\hyperlink{materialbase_8cpp}{materialbase.\+cpp}}\end{DoxyCompactItemize}

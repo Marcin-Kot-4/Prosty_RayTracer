@@ -1,0 +1,112 @@
+.TH "RT::Camera" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RT::Camera
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <camera\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCamera\fP ()"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBSetPosition\fP (const \fBqbVector\fP< double > &newPosition)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBSetLookAt\fP (const \fBqbVector\fP< double > &newLookAt)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBSetUp\fP (const \fBqbVector\fP< double > &upVector)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBSetLength\fP (double newLength)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBSetHorzSize\fP (double newSize)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBSetAspect\fP (double newAspectRatio)"
+.br
+.ti -1c
+.RI "\fBqbVector\fP< double > \fBGetPosition\fP ()"
+.br
+.ti -1c
+.RI "\fBqbVector\fP< double > \fBGetLookAt\fP ()"
+.br
+.ti -1c
+.RI "\fBqbVector\fP< double > \fBGetUp\fP ()"
+.br
+.ti -1c
+.RI "\fBqbVector\fP< double > \fBGetU\fP ()"
+.br
+.ti -1c
+.RI "\fBqbVector\fP< double > \fBGetV\fP ()"
+.br
+.ti -1c
+.RI "\fBqbVector\fP< double > \fBGetScreenCentre\fP ()"
+.br
+.ti -1c
+.RI "double \fBGetLength\fP ()"
+.br
+.ti -1c
+.RI "double \fBGetHorzSize\fP ()"
+.br
+.ti -1c
+.RI "double \fBGetAspect\fP ()"
+.br
+.ti -1c
+.RI "bool \fBGenerateRay\fP (float proScreenX, float proScreenY, \fBRT::Ray\fP &cameraRay)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBUpdateCameraGeometry\fP ()"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RT::Camera::Camera ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool RT::Camera::GenerateRay (float proScreenX, float proScreenY, \fBRT::Ray\fP & cameraRay)"
+
+.SS "double RT::Camera::GetAspect ()"
+
+.SS "double RT::Camera::GetHorzSize ()"
+
+.SS "double RT::Camera::GetLength ()"
+
+.SS "\fBqbVector\fP< double > RT::Camera::GetLookAt ()"
+
+.SS "\fBqbVector\fP< double > RT::Camera::GetPosition ()"
+
+.SS "\fBqbVector\fP< double > RT::Camera::GetScreenCentre ()"
+
+.SS "\fBqbVector\fP< double > RT::Camera::GetU ()"
+
+.SS "\fBqbVector\fP< double > RT::Camera::GetUp ()"
+
+.SS "\fBqbVector\fP< double > RT::Camera::GetV ()"
+
+.SS "\fBvoid\fP RT::Camera::SetAspect (double newAspectRatio)"
+
+.SS "\fBvoid\fP RT::Camera::SetHorzSize (double newSize)"
+
+.SS "\fBvoid\fP RT::Camera::SetLength (double newLength)"
+
+.SS "\fBvoid\fP RT::Camera::SetLookAt (const \fBqbVector\fP< double > & newLookAt)"
+
+.SS "\fBvoid\fP RT::Camera::SetPosition (const \fBqbVector\fP< double > & newPosition)"
+
+.SS "\fBvoid\fP RT::Camera::SetUp (const \fBqbVector\fP< double > & upVector)"
+
+.SS "\fBvoid\fP RT::Camera::UpdateCameraGeometry ()"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

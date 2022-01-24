@@ -1,0 +1,59 @@
+Requirements\+:
+
+
+\begin{DoxyItemize}
+\item Native Client SDK (\href{https://developer.chrome.com/native-client}{\texttt{ https\+://developer.\+chrome.\+com/native-\/client}}), (tested with Pepper version 33 or higher).
+\end{DoxyItemize}
+
+The SDL backend for Chrome\textquotesingle{}s Native Client has been tested only with the PNa\+Cl toolchain, which generates binaries designed to run on ARM and x86\+\_\+32/64 platforms. This does not mean it won\textquotesingle{}t work with the other toolchains!
+
+\DoxyHorRuler{0}
+ \hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_nacl_autotoc_md79}{}\doxysection{Building SDL for Na\+Cl}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_nacl_autotoc_md79}
+Set up the right environment variables (see naclbuild.\+sh), then configure SDL with\+: \begin{DoxyVerb}configure --host=pnacl --prefix some/install/destination
+\end{DoxyVerb}
+ Then \char`\"{}make\char`\"{}.
+
+As an example of how to create a deployable app a Makefile project is provided in test/nacl/\+Makefile, which includes some monkey patching of the common.\+mk file provided by Na\+Cl, without which linking properly to SDL won\textquotesingle{}t work (the search path can\textquotesingle{}t be modified externally, so the linker won\textquotesingle{}t find SDL\textquotesingle{}s binaries unless you dump them into the SDK path, which is inconvenient). Also provided in test/nacl is the required support file, such as index.\+html, manifest.\+json, etc. SDL apps for Na\+Cl run on a worker thread using the ppapi\+\_\+simple infrastructure. This allows for blocking calls on all the relevant systems (Open\+GL ES, filesystem), hiding the asynchronous nature of the browser behind the scenes...which is not the same as making it disappear!
+
+\DoxyHorRuler{0}
+ \hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_nacl_autotoc_md81}{}\doxysection{Running tests}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_nacl_autotoc_md81}
+Due to the nature of Na\+Cl programs, building and running SDL tests is not as straightforward as one would hope. The script naclbuild.\+sh in build-\/scripts automates the process and should serve as a guide for users of SDL trying to build their own applications.
+
+Basic usage\+: \begin{DoxyVerb}./naclbuild.sh path/to/pepper/toolchain (i.e. ~/naclsdk/pepper_35)
+\end{DoxyVerb}
+ This will build testgles2.\+c by default.
+
+If you want to build a different test, for example testrendercopyex.\+c\+: \begin{DoxyVerb}SOURCES=~/sdl/SDL/test/testrendercopyex.c ./naclbuild.sh ~/naclsdk/pepper_35
+\end{DoxyVerb}
+ Once the build finishes, you have to serve the contents with a web server (the script will give you instructions on how to do that with Python).
+
+\DoxyHorRuler{0}
+ \hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_nacl_autotoc_md83}{}\doxysection{RWops and nacl\+\_\+io}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_nacl_autotoc_md83}
+\mbox{\hyperlink{struct_s_d_l___r_wops}{SDL\+\_\+\+RWops}} work transparently with nacl\+\_\+io. Two functions control the mount points\+: \begin{DoxyVerb}int mount(const char* source, const char* target, 
+                  const char* filesystemtype, 
+                  unsigned long mountflags, const void *data);
+int umount(const char *target);
+
+For convenience, SDL will by default mount an httpfs tree at / before calling 
+\end{DoxyVerb}
+ the app\textquotesingle{}s main function. Such setting can be overridden by calling\+: \begin{DoxyVerb}umount("/");
+\end{DoxyVerb}
+ And then mounting a different filesystem at /
+
+It\textquotesingle{}s important to consider that the asynchronous nature of file operations on a browser is hidden from the application, effectively providing the developer with a set of blocking file operations just like you get in a regular desktop environment, which eases the job of porting to Native Client, but also introduces a set of challenges of its own, in particular when big file sizes and slow connections are involved.
+
+For more information on how nacl\+\_\+io and mount points work, see\+: \begin{DoxyVerb}https://developer.chrome.com/native-client/devguide/coding/nacl_io
+https://src.chromium.org/chrome/trunk/src/native_client_sdk/src/libraries/nacl_io/nacl_io.h
+\end{DoxyVerb}
+ To be able to save into the directory \char`\"{}/save/\char`\"{} (like backup of game) \+: \begin{DoxyVerb}mount("", "/save", "html5fs", 0, "type=PERSISTENT");
+\end{DoxyVerb}
+ And add to manifest.\+json \+: \begin{DoxyVerb}"permissions": [
+    "unlimitedStorage"
+]
+\end{DoxyVerb}
+ ================================================================================ \hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_nacl_autotoc_md84}{}\doxysection{TODO -\/ Known Issues}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_nacl_autotoc_md84}
+
+\begin{DoxyItemize}
+\item Testing of all systems with a real application (something other than SDL\textquotesingle{}s tests)
+\item Key events don\textquotesingle{}t seem to work properly 
+\end{DoxyItemize}

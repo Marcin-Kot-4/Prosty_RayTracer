@@ -1,0 +1,203 @@
+\hypertarget{_s_d_l__config__macosx_8h_source}{}\doxysection{SDL\+\_\+config\+\_\+macosx.\+h}
+\label{_s_d_l__config__macosx_8h_source}\index{D:/RayTracing/include/SDL\_config\_macosx.h@{D:/RayTracing/include/SDL\_config\_macosx.h}}
+\mbox{\hyperlink{_s_d_l__config__macosx_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{  Simple DirectMedia Layer}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright (C) 1997-\/2017 Sam Lantinga <slouken@libsdl.org>}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{6 \textcolor{comment}{  warranty.  In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{7 \textcolor{comment}{  arising from the use of this software.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{  Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{10 \textcolor{comment}{  including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{11 \textcolor{comment}{  freely, subject to the following restrictions:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{  1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{14 \textcolor{comment}{     claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{15 \textcolor{comment}{     in a product, an acknowledgment in the product documentation would be}}
+\DoxyCodeLine{16 \textcolor{comment}{     appreciated but is not required.}}
+\DoxyCodeLine{17 \textcolor{comment}{  2. Altered source versions must be plainly marked as such, and must not be}}
+\DoxyCodeLine{18 \textcolor{comment}{     misrepresented as being the original software.}}
+\DoxyCodeLine{19 \textcolor{comment}{  3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{20 \textcolor{comment}{*/}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#ifndef SDL\_config\_macosx\_h\_}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define SDL\_config\_macosx\_h\_}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define SDL\_config\_h\_}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__platform_8h}{SDL\_platform.h}}"{}}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{comment}{/* This gets us MAC\_OS\_X\_VERSION\_MIN\_REQUIRED... */}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <AvailabilityMacros.h>}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{comment}{/* This is a set of defines to configure the SDL features */}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#ifdef \_\_LP64\_\_}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{    \#define SIZEOF\_VOIDP 8}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{    \#define SIZEOF\_VOIDP 4}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{comment}{/* Useful headers */}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define HAVE\_ALLOCA\_H       1}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define HAVE\_SYS\_TYPES\_H    1}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define HAVE\_STDIO\_H    1}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define STDC\_HEADERS    1}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define HAVE\_STRING\_H   1}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define HAVE\_INTTYPES\_H 1}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define HAVE\_STDINT\_H   1}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define HAVE\_CTYPE\_H    1}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define HAVE\_MATH\_H 1}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define HAVE\_SIGNAL\_H   1}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{comment}{/* C library functions */}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define HAVE\_MALLOC 1}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define HAVE\_CALLOC 1}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define HAVE\_REALLOC    1}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define HAVE\_FREE   1}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define HAVE\_ALLOCA 1}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define HAVE\_GETENV 1}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define HAVE\_SETENV 1}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define HAVE\_PUTENV 1}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define HAVE\_UNSETENV   1}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define HAVE\_QSORT  1}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define HAVE\_ABS    1}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define HAVE\_BCOPY  1}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define HAVE\_MEMSET 1}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define HAVE\_MEMCPY 1}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define HAVE\_MEMMOVE    1}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define HAVE\_MEMCMP 1}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define HAVE\_STRLEN 1}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define HAVE\_STRLCPY    1}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define HAVE\_STRLCAT    1}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define HAVE\_STRDUP 1}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define HAVE\_STRCHR 1}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define HAVE\_STRRCHR    1}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define HAVE\_STRSTR 1}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define HAVE\_STRTOL 1}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define HAVE\_STRTOUL    1}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define HAVE\_STRTOLL    1}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define HAVE\_STRTOULL   1}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define HAVE\_STRTOD 1}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define HAVE\_ATOI   1}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define HAVE\_ATOF   1}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define HAVE\_STRCMP 1}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define HAVE\_STRNCMP    1}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define HAVE\_STRCASECMP 1}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define HAVE\_STRNCASECMP 1}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define HAVE\_VSSCANF 1}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define HAVE\_VSNPRINTF  1}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define HAVE\_CEIL   1}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define HAVE\_COPYSIGN   1}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define HAVE\_COS    1}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define HAVE\_COSF   1}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define HAVE\_FABS   1}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define HAVE\_FLOOR  1}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define HAVE\_LOG    1}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define HAVE\_POW    1}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define HAVE\_SCALBN 1}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define HAVE\_SIN    1}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define HAVE\_SINF   1}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define HAVE\_SQRT   1}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define HAVE\_SQRTF  1}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define HAVE\_TAN    1}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define HAVE\_TANF   1}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define HAVE\_SIGACTION  1}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define HAVE\_SETJMP 1}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define HAVE\_NANOSLEEP  1}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define HAVE\_SYSCONF    1}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define HAVE\_SYSCTLBYNAME 1}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#define HAVE\_ATAN 1}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define HAVE\_ATAN2 1}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#define HAVE\_ACOS 1}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#define HAVE\_ASIN 1}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \textcolor{comment}{/* Enable various audio drivers */}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#define SDL\_AUDIO\_DRIVER\_COREAUDIO  1}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#define SDL\_AUDIO\_DRIVER\_DISK   1}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#define SDL\_AUDIO\_DRIVER\_DUMMY  1}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{comment}{/* Enable various input drivers */}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#define SDL\_JOYSTICK\_IOKIT  1}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#define SDL\_HAPTIC\_IOKIT    1}}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 \textcolor{comment}{/* Enable various shared object loading systems */}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#define SDL\_LOADSO\_DLOPEN   1}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 \textcolor{comment}{/* Enable various threading systems */}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#define SDL\_THREAD\_PTHREAD  1}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#define SDL\_THREAD\_PTHREAD\_RECURSIVE\_MUTEX  1}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129 \textcolor{comment}{/* Enable various timer systems */}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#define SDL\_TIMER\_UNIX  1}}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 \textcolor{comment}{/* Enable various video drivers */}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#define SDL\_VIDEO\_DRIVER\_COCOA  1}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#define SDL\_VIDEO\_DRIVER\_DUMMY  1}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#undef SDL\_VIDEO\_DRIVER\_X11}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define SDL\_VIDEO\_DRIVER\_X11\_DYNAMIC "{}/usr/X11R6/lib/libX11.6.dylib"{}}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#define SDL\_VIDEO\_DRIVER\_X11\_DYNAMIC\_XEXT "{}/usr/X11R6/lib/libXext.6.dylib"{}}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define SDL\_VIDEO\_DRIVER\_X11\_DYNAMIC\_XINERAMA "{}/usr/X11R6/lib/libXinerama.1.dylib"{}}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define SDL\_VIDEO\_DRIVER\_X11\_DYNAMIC\_XINPUT2 "{}/usr/X11R6/lib/libXi.6.dylib"{}}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#define SDL\_VIDEO\_DRIVER\_X11\_DYNAMIC\_XRANDR "{}/usr/X11R6/lib/libXrandr.2.dylib"{}}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#define SDL\_VIDEO\_DRIVER\_X11\_DYNAMIC\_XSS "{}/usr/X11R6/lib/libXss.1.dylib"{}}}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#define SDL\_VIDEO\_DRIVER\_X11\_DYNAMIC\_XVIDMODE "{}/usr/X11R6/lib/libXxf86vm.1.dylib"{}}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#define SDL\_VIDEO\_DRIVER\_X11\_XDBE 1}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#define SDL\_VIDEO\_DRIVER\_X11\_XINERAMA 1}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#define SDL\_VIDEO\_DRIVER\_X11\_XRANDR 1}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define SDL\_VIDEO\_DRIVER\_X11\_XSCRNSAVER 1}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#define SDL\_VIDEO\_DRIVER\_X11\_XSHAPE 1}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#define SDL\_VIDEO\_DRIVER\_X11\_XVIDMODE 1}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#define SDL\_VIDEO\_DRIVER\_X11\_HAS\_XKBKEYCODETOKEYSYM 1}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#ifdef MAC\_OS\_X\_VERSION\_10\_8}}
+\DoxyCodeLine{152 \textcolor{comment}{/*}}
+\DoxyCodeLine{153 \textcolor{comment}{ * No matter the versions targeted, this is the 10.8 or later SDK, so you have}}
+\DoxyCodeLine{154 \textcolor{comment}{ *  to use the external Xquartz, which is a more modern Xlib. Previous SDKs}}
+\DoxyCodeLine{155 \textcolor{comment}{ *  used an older Xlib.}}
+\DoxyCodeLine{156 \textcolor{comment}{ */}}
+\DoxyCodeLine{157 \textcolor{preprocessor}{\#define SDL\_VIDEO\_DRIVER\_X11\_XINPUT2 1}}
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#define SDL\_VIDEO\_DRIVER\_X11\_SUPPORTS\_GENERIC\_EVENTS 1}}
+\DoxyCodeLine{159 \textcolor{preprocessor}{\#define SDL\_VIDEO\_DRIVER\_X11\_CONST\_PARAM\_XEXTADDDISPLAY 1}}
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#ifndef SDL\_VIDEO\_RENDER\_OGL}}
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#define SDL\_VIDEO\_RENDER\_OGL    1}}
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166 \textcolor{comment}{/* Enable OpenGL support */}}
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#ifndef SDL\_VIDEO\_OPENGL}}
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#define SDL\_VIDEO\_OPENGL    1}}
+\DoxyCodeLine{169 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#ifndef SDL\_VIDEO\_OPENGL\_CGL}}
+\DoxyCodeLine{171 \textcolor{preprocessor}{\#define SDL\_VIDEO\_OPENGL\_CGL    1}}
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{173 \textcolor{preprocessor}{\#ifndef SDL\_VIDEO\_OPENGL\_GLX}}
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#define SDL\_VIDEO\_OPENGL\_GLX    1}}
+\DoxyCodeLine{175 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177 \textcolor{comment}{/* Enable Vulkan support */}}
+\DoxyCodeLine{178 \textcolor{comment}{/* Metal/MoltenVK/Vulkan only supported on 64-\/bit architectures with 10.11+ */}}
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#if TARGET\_CPU\_X86\_64 \&\& (MAC\_OS\_X\_VERSION\_MAX\_ALLOWED >= 101100)}}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#define SDL\_VIDEO\_VULKAN 1}}
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{182 \textcolor{preprocessor}{\#define  SDL\_VIDEO\_VULKAN 0}}
+\DoxyCodeLine{183 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185 \textcolor{comment}{/* Enable system power support */}}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#define SDL\_POWER\_MACOSX 1}}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188 \textcolor{comment}{/* enable filesystem support */}}
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#define SDL\_FILESYSTEM\_COCOA   1}}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191 \textcolor{comment}{/* Enable assembly routines */}}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#define SDL\_ASSEMBLY\_ROUTINES   1}}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#ifdef \_\_ppc\_\_}}
+\DoxyCodeLine{194 \textcolor{preprocessor}{\#define SDL\_ALTIVEC\_BLITTERS    1}}
+\DoxyCodeLine{195 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_config\_macosx\_h\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

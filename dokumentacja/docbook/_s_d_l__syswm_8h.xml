@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__syswm_8h" xml:lang="en-US">
+<title>D:/RayTracing/include/SDL_syswm.h File Reference</title>
+<indexterm><primary>D:/RayTracing/include/SDL_syswm.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;SDL_stdinc.h&quot;
+#include &quot;SDL_error.h&quot;
+#include &quot;SDL_video.h&quot;
+#include &quot;SDL_version.h&quot;
+#include &lt;windows.h&gt;
+#include &quot;begin_code.h&quot;
+#include &quot;close_code.h&quot;
+</programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_s_d_l___sys_w_mmsg">SDL_SysWMmsg</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_s_d_l___sys_w_minfo">SDL_SysWMinfo</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__s_d_l__syswm_8h_1ac7bef5d85e3dcd73eef56ad39ffc84a9">WIN32_LEAN_AND_MEAN</link></para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__syswm_8h_1a9f918755b601cf4bffca775992e6fb90">NOMINMAX</link></para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__syswm_8h_1a86f85c397b71a424eb062f295b995115">SDL_METALVIEW_TAG</link>   255</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef struct <link linkend="_struct_s_d_l___sys_w_minfo">SDL_SysWMinfo</link> <link linkend="__s_d_l__syswm_8h_1a25c885f5150c5d1202a70a6a4a135a4a">SDL_SysWMinfo</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7">SDL_SYSWM_TYPE</link> { 
+<link linkend="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7a2092ff1b6f64c9425c2671fc8d2a41a3">SDL_SYSWM_UNKNOWN</link>
+, <link linkend="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7a742b98a86d65f462c8e71761f0d94cc8">SDL_SYSWM_WINDOWS</link>
+, <link linkend="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7a058ec6dbf52ef47653898a98fad28f98">SDL_SYSWM_X11</link>
+, <link linkend="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7a0a1dd75758eee6a20c1563eb353fc60b">SDL_SYSWM_DIRECTFB</link>
+, 
+<link linkend="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7aaa5db40b547b1f26ad9929aeea898951">SDL_SYSWM_COCOA</link>
+, <link linkend="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7a9a3ed7d8a77990281a88e87c69ad7bf8">SDL_SYSWM_UIKIT</link>
+, <link linkend="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7aadd4f69005f2b67dec9d59c93b967d99">SDL_SYSWM_WAYLAND</link>
+, <link linkend="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7ad247a114ba9ad8c6d7e9cead6d151ef7">SDL_SYSWM_MIR</link>
+, 
+<link linkend="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7adbfa1e5eb411358b409099b87c8ada40">SDL_SYSWM_WINRT</link>
+, <link linkend="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7ad171b4f9e1c8819a5c08f8290d3533b2">SDL_SYSWM_ANDROID</link>
+, <link linkend="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7ab66656fc6b88f7ae88397b10f9dff28f">SDL_SYSWM_VIVANTE</link>
+, <link linkend="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7a2191fbd3981b985a2a34a2566f9c9624">SDL_SYSWM_OS2</link>
+, 
+<link linkend="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7a318014a08c7b8b2a7eae808e6da8fe39">SDL_SYSWM_HAIKU</link>
+, <link linkend="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7a506c6fa3c1763310f051362b3d7e60e8">SDL_SYSWM_KMSDRM</link>
+, <link linkend="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7a0baf5f6eb1ce77e5fc1b32d502a05206">SDL_SYSWM_RISCOS</link>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__syswm_8h_1ad6e40121a96c88af20d9469a04706fef">SDL_GetWindowWMInfo</link> (<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link> *window, <link linkend="_struct_s_d_l___sys_w_minfo">SDL_SysWMinfo</link> *info)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Include file for SDL custom system window manager hooks. </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__s_d_l__syswm_8h_1a9f918755b601cf4bffca775992e6fb90"/><section>
+    <title>NOMINMAX</title>
+<indexterm><primary>NOMINMAX</primary><secondary>SDL_syswm.h</secondary></indexterm>
+<indexterm><primary>SDL_syswm.h</primary><secondary>NOMINMAX</secondary></indexterm>
+<para><computeroutput>#define NOMINMAX</computeroutput></para></section>
+<anchor xml:id="__s_d_l__syswm_8h_1a86f85c397b71a424eb062f295b995115"/><section>
+    <title>SDL_METALVIEW_TAG</title>
+<indexterm><primary>SDL_METALVIEW_TAG</primary><secondary>SDL_syswm.h</secondary></indexterm>
+<indexterm><primary>SDL_syswm.h</primary><secondary>SDL_METALVIEW_TAG</secondary></indexterm>
+<para><computeroutput>#define SDL_METALVIEW_TAG   255</computeroutput></para></section>
+<anchor xml:id="__s_d_l__syswm_8h_1ac7bef5d85e3dcd73eef56ad39ffc84a9"/><section>
+    <title>WIN32_LEAN_AND_MEAN</title>
+<indexterm><primary>WIN32_LEAN_AND_MEAN</primary><secondary>SDL_syswm.h</secondary></indexterm>
+<indexterm><primary>SDL_syswm.h</primary><secondary>WIN32_LEAN_AND_MEAN</secondary></indexterm>
+<para><computeroutput>#define WIN32_LEAN_AND_MEAN</computeroutput></para></section>
+</section>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="__s_d_l__syswm_8h_1a25c885f5150c5d1202a70a6a4a135a4a"/><section>
+    <title>SDL_SysWMinfo</title>
+<indexterm><primary>SDL_SysWMinfo</primary><secondary>SDL_syswm.h</secondary></indexterm>
+<indexterm><primary>SDL_syswm.h</primary><secondary>SDL_SysWMinfo</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_s_d_l___sys_w_minfo">SDL_SysWMinfo</link> <link linkend="_struct_s_d_l___sys_w_minfo">SDL_SysWMinfo</link></computeroutput></para></section>
+</section>
+<section>
+<title>Enumeration Type Documentation</title>
+<anchor xml:id="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7"/><section>
+    <title>SDL_SYSWM_TYPE</title>
+<indexterm><primary>SDL_SYSWM_TYPE</primary><secondary>SDL_syswm.h</secondary></indexterm>
+<indexterm><primary>SDL_syswm.h</primary><secondary>SDL_SYSWM_TYPE</secondary></indexterm>
+<para><computeroutput>enum <link linkend="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7">SDL_SYSWM_TYPE</link></computeroutput></para>
+<para>These are the various supported windowing subsystems </para>
+<informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SDL_SYSWM_UNKNOWN</primary><secondary>SDL_syswm.h</secondary></indexterm>
+<indexterm><primary>SDL_syswm.h</primary><secondary>SDL_SYSWM_UNKNOWN</secondary></indexterm>
+<anchor xml:id="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7a2092ff1b6f64c9425c2671fc8d2a41a3"/>SDL_SYSWM_UNKNOWN</entry><entry></entry></row><row><entry><indexterm><primary>SDL_SYSWM_WINDOWS</primary><secondary>SDL_syswm.h</secondary></indexterm>
+<indexterm><primary>SDL_syswm.h</primary><secondary>SDL_SYSWM_WINDOWS</secondary></indexterm>
+<anchor xml:id="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7a742b98a86d65f462c8e71761f0d94cc8"/>SDL_SYSWM_WINDOWS</entry><entry></entry></row><row><entry><indexterm><primary>SDL_SYSWM_X11</primary><secondary>SDL_syswm.h</secondary></indexterm>
+<indexterm><primary>SDL_syswm.h</primary><secondary>SDL_SYSWM_X11</secondary></indexterm>
+<anchor xml:id="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7a058ec6dbf52ef47653898a98fad28f98"/>SDL_SYSWM_X11</entry><entry></entry></row><row><entry><indexterm><primary>SDL_SYSWM_DIRECTFB</primary><secondary>SDL_syswm.h</secondary></indexterm>
+<indexterm><primary>SDL_syswm.h</primary><secondary>SDL_SYSWM_DIRECTFB</secondary></indexterm>
+<anchor xml:id="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7a0a1dd75758eee6a20c1563eb353fc60b"/>SDL_SYSWM_DIRECTFB</entry><entry></entry></row><row><entry><indexterm><primary>SDL_SYSWM_COCOA</primary><secondary>SDL_syswm.h</secondary></indexterm>
+<indexterm><primary>SDL_syswm.h</primary><secondary>SDL_SYSWM_COCOA</secondary></indexterm>
+<anchor xml:id="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7aaa5db40b547b1f26ad9929aeea898951"/>SDL_SYSWM_COCOA</entry><entry></entry></row><row><entry><indexterm><primary>SDL_SYSWM_UIKIT</primary><secondary>SDL_syswm.h</secondary></indexterm>
+<indexterm><primary>SDL_syswm.h</primary><secondary>SDL_SYSWM_UIKIT</secondary></indexterm>
+<anchor xml:id="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7a9a3ed7d8a77990281a88e87c69ad7bf8"/>SDL_SYSWM_UIKIT</entry><entry></entry></row><row><entry><indexterm><primary>SDL_SYSWM_WAYLAND</primary><secondary>SDL_syswm.h</secondary></indexterm>
+<indexterm><primary>SDL_syswm.h</primary><secondary>SDL_SYSWM_WAYLAND</secondary></indexterm>
+<anchor xml:id="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7aadd4f69005f2b67dec9d59c93b967d99"/>SDL_SYSWM_WAYLAND</entry><entry></entry></row><row><entry><indexterm><primary>SDL_SYSWM_MIR</primary><secondary>SDL_syswm.h</secondary></indexterm>
+<indexterm><primary>SDL_syswm.h</primary><secondary>SDL_SYSWM_MIR</secondary></indexterm>
+<anchor xml:id="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7ad247a114ba9ad8c6d7e9cead6d151ef7"/>SDL_SYSWM_MIR</entry><entry></entry></row><row><entry><indexterm><primary>SDL_SYSWM_WINRT</primary><secondary>SDL_syswm.h</secondary></indexterm>
+<indexterm><primary>SDL_syswm.h</primary><secondary>SDL_SYSWM_WINRT</secondary></indexterm>
+<anchor xml:id="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7adbfa1e5eb411358b409099b87c8ada40"/>SDL_SYSWM_WINRT</entry><entry></entry></row><row><entry><indexterm><primary>SDL_SYSWM_ANDROID</primary><secondary>SDL_syswm.h</secondary></indexterm>
+<indexterm><primary>SDL_syswm.h</primary><secondary>SDL_SYSWM_ANDROID</secondary></indexterm>
+<anchor xml:id="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7ad171b4f9e1c8819a5c08f8290d3533b2"/>SDL_SYSWM_ANDROID</entry><entry></entry></row><row><entry><indexterm><primary>SDL_SYSWM_VIVANTE</primary><secondary>SDL_syswm.h</secondary></indexterm>
+<indexterm><primary>SDL_syswm.h</primary><secondary>SDL_SYSWM_VIVANTE</secondary></indexterm>
+<anchor xml:id="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7ab66656fc6b88f7ae88397b10f9dff28f"/>SDL_SYSWM_VIVANTE</entry><entry></entry></row><row><entry><indexterm><primary>SDL_SYSWM_OS2</primary><secondary>SDL_syswm.h</secondary></indexterm>
+<indexterm><primary>SDL_syswm.h</primary><secondary>SDL_SYSWM_OS2</secondary></indexterm>
+<anchor xml:id="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7a2191fbd3981b985a2a34a2566f9c9624"/>SDL_SYSWM_OS2</entry><entry></entry></row><row><entry><indexterm><primary>SDL_SYSWM_HAIKU</primary><secondary>SDL_syswm.h</secondary></indexterm>
+<indexterm><primary>SDL_syswm.h</primary><secondary>SDL_SYSWM_HAIKU</secondary></indexterm>
+<anchor xml:id="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7a318014a08c7b8b2a7eae808e6da8fe39"/>SDL_SYSWM_HAIKU</entry><entry></entry></row><row><entry><indexterm><primary>SDL_SYSWM_KMSDRM</primary><secondary>SDL_syswm.h</secondary></indexterm>
+<indexterm><primary>SDL_syswm.h</primary><secondary>SDL_SYSWM_KMSDRM</secondary></indexterm>
+<anchor xml:id="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7a506c6fa3c1763310f051362b3d7e60e8"/>SDL_SYSWM_KMSDRM</entry><entry></entry></row><row><entry><indexterm><primary>SDL_SYSWM_RISCOS</primary><secondary>SDL_syswm.h</secondary></indexterm>
+<indexterm><primary>SDL_syswm.h</primary><secondary>SDL_SYSWM_RISCOS</secondary></indexterm>
+<anchor xml:id="__s_d_l__syswm_8h_1a064c26598287280fff2a00d6758ac4f7a0baf5f6eb1ce77e5fc1b32d502a05206"/>SDL_SYSWM_RISCOS</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__s_d_l__syswm_8h_1ad6e40121a96c88af20d9469a04706fef"/><section>
+    <title>SDL_GetWindowWMInfo()</title>
+<indexterm><primary>SDL_GetWindowWMInfo</primary><secondary>SDL_syswm.h</secondary></indexterm>
+<indexterm><primary>SDL_syswm.h</primary><secondary>SDL_GetWindowWMInfo</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_GetWindowWMInfo (<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link> * window, <link linkend="_struct_s_d_l___sys_w_minfo">SDL_SysWMinfo</link> * info)</computeroutput></para>
+<para>Get driver-specific information about a window.</para>
+
+<para>You must include SDL_syswm.h for the declaration of <link linkend="_struct_s_d_l___sys_w_minfo">SDL_SysWMinfo</link>.</para>
+
+<para>The caller must initialize the <computeroutput>info</computeroutput> structure&apos;s version by using <computeroutput>SDL_VERSION(&amp;info.version)</computeroutput>, and then this function will fill in the rest of the structure with information about the given window.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>window</entry><entry>
+<para>the window about which information is being requested </para>
+</entry>
+                            </row>
+                            <row>
+<entry>info</entry><entry>
+<para>an <link linkend="_struct_s_d_l___sys_w_minfo">SDL_SysWMinfo</link> structure filled in with window information </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE if the function is implemented and the <computeroutput>version</computeroutput> member of the <computeroutput>info</computeroutput> struct is valid, or SDL_FALSE if the information could not be retrieved; call <link linkend="__s_d_l__error_8h_1adaef317de186f072f8328798de29d51a">SDL_GetError()</link> for more information.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0. </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="struct_s_d_l___vertex" kind="struct" language="C++" prot="public">
+    <compoundname>SDL_Vertex</compoundname>
+    <includes refid="_s_d_l__render_8h" local="no">SDL_render.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_s_d_l___vertex_1ace816a77e2a2abe41a8c712686250577" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_s_d_l___f_point" kindref="compound">SDL_FPoint</ref></type>
+        <definition>SDL_FPoint SDL_Vertex::position</definition>
+        <argsstring></argsstring>
+        <name>position</name>
+        <qualifiedname>SDL_Vertex::position</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vertex position, in SDL_Renderer coordinates <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_render.h" line="93" column="16" bodyfile="D:/RayTracing/include/SDL_render.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_l___vertex_1ace543def50f0b3f3f87a86c47caab53f" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_s_d_l___color" kindref="compound">SDL_Color</ref></type>
+        <definition>SDL_Color SDL_Vertex::color</definition>
+        <argsstring></argsstring>
+        <name>color</name>
+        <qualifiedname>SDL_Vertex::color</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vertex color </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_render.h" line="94" column="16" bodyfile="D:/RayTracing/include/SDL_render.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_s_d_l___vertex_1a613ca86679cbd0f84041298ffcde5bc4" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_s_d_l___f_point" kindref="compound">SDL_FPoint</ref></type>
+        <definition>SDL_FPoint SDL_Vertex::tex_coord</definition>
+        <argsstring></argsstring>
+        <name>tex_coord</name>
+        <qualifiedname>SDL_Vertex::tex_coord</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Normalized texture coordinates, if needed </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_render.h" line="95" column="16" bodyfile="D:/RayTracing/include/SDL_render.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Vertex structure </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>SDL_Color</label>
+        <link refid="struct_s_d_l___color"/>
+      </node>
+      <node id="2">
+        <label>SDL_FPoint</label>
+        <link refid="struct_s_d_l___f_point"/>
+      </node>
+      <node id="1">
+        <label>SDL_Vertex</label>
+        <link refid="struct_s_d_l___vertex"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>position</edgelabel>
+          <edgelabel>tex_coord</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>color</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/RayTracing/include/SDL_render.h" line="91" column="1" bodyfile="D:/RayTracing/include/SDL_render.h" bodystart="92" bodyend="96"/>
+    <listofallmembers>
+      <member refid="struct_s_d_l___vertex_1ace543def50f0b3f3f87a86c47caab53f" prot="public" virt="non-virtual"><scope>SDL_Vertex</scope><name>color</name></member>
+      <member refid="struct_s_d_l___vertex_1ace816a77e2a2abe41a8c712686250577" prot="public" virt="non-virtual"><scope>SDL_Vertex</scope><name>position</name></member>
+      <member refid="struct_s_d_l___vertex_1a613ca86679cbd0f84041298ffcde5bc4" prot="public" virt="non-virtual"><scope>SDL_Vertex</scope><name>tex_coord</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

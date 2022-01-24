@@ -1,0 +1,250 @@
+.TH "D:/RayTracing/include/SDL_vulkan.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_vulkan.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SDL_video\&.h'\fP
+.br
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBVK_DEFINE_HANDLE\fP(\fBobject\fP)   typedef struct \fBobject\fP##_T* \fBobject\fP;"
+.br
+.ti -1c
+.RI "#define \fBVK_DEFINE_NON_DISPATCHABLE_HANDLE\fP(\fBobject\fP)   typedef \fBuint64_t\fP \fBobject\fP;"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef VkInstance \fBSDL_vulkanInstance\fP"
+.br
+.ti -1c
+.RI "typedef VkSurfaceKHR \fBSDL_vulkanSurface\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.PP
+.RI "\fBVulkan support functions\fP"
+.br
+
+.PP
+\fBNote\fP
+.RS 4
+SDL_Vulkan_GetInstanceExtensions & SDL_Vulkan_CreateSurface API is compatable with Tizen's implementation of Vulkan in SDL\&. 
+.RE
+.PP
+
+.PP
+.in +1c
+.in +1c
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_Vulkan_LoadLibrary\fP (const char *\fBpath\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP *\fBSDLCALL\fP \fBSDL_Vulkan_GetVkGetInstanceProcAddr\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_Vulkan_UnloadLibrary\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP \fBSDL_Vulkan_GetInstanceExtensions\fP (\fBSDL_Window\fP *window, unsigned int *pCount, const char **pNames)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP \fBSDL_Vulkan_CreateSurface\fP (\fBSDL_Window\fP *window, VkInstance instance, VkSurfaceKHR *surface)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_Vulkan_GetDrawableSize\fP (\fBSDL_Window\fP *window, int *\fBw\fP, int *\fBh\fP)"
+.br
+.in -1c
+.in -1c
+.SH "Detailed Description"
+.PP 
+Header file for functions to creating Vulkan surfaces on SDL windows\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define VK_DEFINE_HANDLE(\fBobject\fP)   typedef struct \fBobject\fP##_T* \fBobject\fP;"
+
+.SS "#define VK_DEFINE_NON_DISPATCHABLE_HANDLE(\fBobject\fP)   typedef \fBuint64_t\fP \fBobject\fP;"
+
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef VkInstance \fBSDL_vulkanInstance\fP"
+
+.SS "typedef VkSurfaceKHR \fBSDL_vulkanSurface\fP"
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP SDL_Vulkan_CreateSurface (\fBSDL_Window\fP * window, VkInstance instance, VkSurfaceKHR * surface)"
+Create a Vulkan rendering surface for a window\&.
+.PP
+The \fCwindow\fP must have been created with the \fCSDL_WINDOW_VULKAN\fP flag and \fCinstance\fP must have been created with extensions returned by \fBSDL_Vulkan_GetInstanceExtensions()\fP enabled\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIwindow\fP The window to which to attach the Vulkan surface 
+.br
+\fIinstance\fP The Vulkan instance handle 
+.br
+\fIsurface\fP A pointer to a VkSurfaceKHR handle to output the newly created surface 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+SDL_TRUE on success, SDL_FALSE on error\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.6\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_Vulkan_GetInstanceExtensions\fP 
+.PP
+\fBSDL_Vulkan_GetDrawableSize\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_Vulkan_GetDrawableSize (\fBSDL_Window\fP * window, int * w, int * h)"
+Get the size of the window's underlying drawable dimensions in pixels\&.
+.PP
+This may differ from \fBSDL_GetWindowSize()\fP if we're rendering to a high-DPI drawable, i\&.e\&. the window was created with \fCSDL_WINDOW_ALLOW_HIGHDPI\fP on a platform with high-DPI support (Apple calls this 'Retina'), and not disabled by the \fCSDL_HINT_VIDEO_HIGHDPI_DISABLED\fP hint\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIwindow\fP an SDL_Window for which the size is to be queried 
+.br
+\fIw\fP Pointer to the variable to write the width to or NULL 
+.br
+\fIh\fP Pointer to the variable to write the height to or NULL
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.6\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GetWindowSize\fP 
+.PP
+\fBSDL_CreateWindow\fP 
+.PP
+\fBSDL_Vulkan_CreateSurface\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP SDL_Vulkan_GetInstanceExtensions (\fBSDL_Window\fP * window, unsigned int * pCount, const char ** pNames)"
+Get the names of the Vulkan instance extensions needed to create a surface with SDL_Vulkan_CreateSurface\&.
+.PP
+If \fCpNames\fP is NULL, then the number of required Vulkan instance extensions is returned in \fCpCount\fP\&. Otherwise, \fCpCount\fP must point to a variable set to the number of elements in the \fCpNames\fP array, and on return the variable is overwritten with the number of names actually written to \fCpNames\fP\&. If \fCpCount\fP is less than the number of required extensions, at most \fCpCount\fP structures will be written\&. If \fCpCount\fP is smaller than the number of required extensions, SDL_FALSE will be returned instead of SDL_TRUE, to indicate that not all the required extensions were returned\&.
+.PP
+The \fCwindow\fP parameter is currently needed to be valid as of SDL 2\&.0\&.8, however, this parameter will likely be removed in future releases
+.PP
+\fBParameters\fP
+.RS 4
+\fIwindow\fP A window for which the required Vulkan instance extensions should be retrieved (will be deprecated in a future release) 
+.br
+\fIpCount\fP A pointer to an unsigned int corresponding to the number of extensions to be returned 
+.br
+\fIpNames\fP NULL or a pointer to an array to be filled with required Vulkan instance extensions 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+SDL_TRUE on success, SDL_FALSE on error\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.6\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_Vulkan_CreateSurface\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP *\fBSDLCALL\fP SDL_Vulkan_GetVkGetInstanceProcAddr (\fBvoid\fP)"
+Get the address of the \fCvkGetInstanceProcAddr\fP function\&.
+.PP
+This should be called after either calling \fBSDL_Vulkan_LoadLibrary()\fP or creating an SDL_Window with the \fCSDL_WINDOW_VULKAN\fP flag\&.
+.PP
+\fBReturns\fP
+.RS 4
+the function pointer for \fCvkGetInstanceProcAddr\fP or NULL on error\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.6\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_Vulkan_LoadLibrary (const char * path)"
+Dynamically load the Vulkan loader library\&.
+.PP
+This should be called after initializing the video driver, but before creating any Vulkan windows\&. If no Vulkan loader library is loaded, the default library will be loaded upon creation of the first Vulkan window\&.
+.PP
+It is fairly common for Vulkan applications to link with libvulkan instead of explicitly loading it at run time\&. This will work with SDL provided the application links to a dynamic library and both it and SDL use the same search path\&.
+.PP
+If you specify a non-NULL \fCpath\fP, an application should retrieve all of the Vulkan functions it uses from the dynamic library using SDL_Vulkan_GetVkGetInstanceProcAddr unless you can guarantee \fCpath\fP points to the same vulkan loader library the application linked to\&.
+.PP
+On Apple devices, if \fCpath\fP is NULL, SDL will attempt to find the \fCvkGetInstanceProcAddr\fP address within all the Mach-O images of the current process\&. This is because it is fairly common for Vulkan applications to link with libvulkan (and historically MoltenVK was provided as a static library)\&. If it is not found, on macOS, SDL will attempt to load \fCvulkan\&.framework/vulkan\fP, \fClibvulkan\&.1\&.dylib\fP, \fCMoltenVK\&.framework/MoltenVK\fP, and \fClibMoltenVK\&.dylib\fP, in that order\&. On iOS, SDL will attempt to load \fClibMoltenVK\&.dylib\fP\&. Applications using a dynamic framework or \&.dylib must ensure it is included in its application bundle\&.
+.PP
+On non-Apple devices, application linking with a static libvulkan is not supported\&. Either do not link to the Vulkan loader or link to a dynamic library version\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIpath\fP The platform dependent Vulkan loader library name or NULL 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 on success or -1 if the library couldn't be loaded; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.6\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+SDL_Vulkan_GetVkInstanceProcAddr 
+.PP
+\fBSDL_Vulkan_UnloadLibrary\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_Vulkan_UnloadLibrary (\fBvoid\fP)"
+Unload the Vulkan library previously loaded by \fBSDL_Vulkan_LoadLibrary()\fP
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.6\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_Vulkan_LoadLibrary\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

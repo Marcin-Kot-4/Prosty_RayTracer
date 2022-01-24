@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__shape_8h_source" xml:lang="en-US">
+<title>SDL_shape.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_shape.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+22 <emphasis role="preprocessor">#ifndef&#32;SDL_shape_h_</emphasis>
+23 <emphasis role="preprocessor">#define&#32;SDL_shape_h_</emphasis>
+24 
+25 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__stdinc_8h">SDL_stdinc.h</link>&quot;</emphasis>
+26 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__pixels_8h">SDL_pixels.h</link>&quot;</emphasis>
+27 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__rect_8h">SDL_rect.h</link>&quot;</emphasis>
+28 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__surface_8h">SDL_surface.h</link>&quot;</emphasis>
+29 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__video_8h">SDL_video.h</link>&quot;</emphasis>
+30 
+31 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+32 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+33 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+34 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+35 <emphasis role="preprocessor">#endif</emphasis>
+36 
+42 <emphasis role="preprocessor">#define&#32;SDL_NONSHAPEABLE_WINDOW&#32;-1</emphasis>
+43 <emphasis role="preprocessor">#define&#32;SDL_INVALID_SHAPE_ARGUMENT&#32;-2</emphasis>
+44 <emphasis role="preprocessor">#define&#32;SDL_WINDOW_LACKS_SHAPE&#32;-3</emphasis>
+45 
+69 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link>&#32;*&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__shape_8h_1aa3fd07ce85c885b4124e855875c1f52a">SDL_CreateShapedWindow</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*title,<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>,<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl_8h_1a1675d9d7bb68e1657ff028643b4037e3">y</link>,<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a6ee8f168a7ab6785a9bb57c6715dad99">w</link>,<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1afa0fb1b5e976920c0abeff2dca3ed774">h</link>,<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1ac7ba7d3cce3d19ca020e056b37231289">flags</link>);
+70 
+82 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__shape_8h_1a28630f0f6b298bac4d0efe850d7d327e">SDL_IsShapedWindow</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link>&#32;*window);
+83 
+85 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>&#32;{
+87 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__shape_8h_1aa30948f2699e316a43b740eccebe5c20aca1bc38c9b5179cbed0e9e176cd84d9e">ShapeModeDefault</link>,
+89 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__shape_8h_1aa30948f2699e316a43b740eccebe5c20a0ba1cff6129858a1136728ffdc787926">ShapeModeBinarizeAlpha</link>,
+91 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__shape_8h_1aa30948f2699e316a43b740eccebe5c20ae478c81ede522586674806541e145993">ShapeModeReverseBinarizeAlpha</link>,
+93 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__shape_8h_1aa30948f2699e316a43b740eccebe5c20a1d3ca52e90d5b3086e22120c2899f214">ShapeModeColorKey</link>
+94 }&#32;<link linkend="__s_d_l__shape_8h_1aa30948f2699e316a43b740eccebe5c20">WindowShapeMode</link>;
+95 
+96 <emphasis role="preprocessor">#define&#32;SDL_SHAPEMODEALPHA(mode)&#32;(mode&#32;==&#32;ShapeModeDefault&#32;||&#32;mode&#32;==&#32;ShapeModeBinarizeAlpha&#32;||&#32;mode&#32;==&#32;ShapeModeReverseBinarizeAlpha)</emphasis>
+97 
+99 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">union&#32;</emphasis>{
+101 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link>&#32;<link linkend="_union_s_d_l___window_shape_params_1a534c40b09588a8075c0a70227753dc56">binarizationCutoff</link>;
+102 &#32;&#32;&#32;&#32;<link linkend="_struct_s_d_l___color">SDL_Color</link>&#32;<link linkend="_union_s_d_l___window_shape_params_1a8bf3e442a51a1bbf452cfec7c1ed5318">colorKey</link>;
+103 }&#32;<link linkend="_union_s_d_l___window_shape_params">SDL_WindowShapeParams</link>;
+104 
+106 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_s_d_l___window_shape_mode">SDL_WindowShapeMode</link>&#32;{
+108 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__shape_8h_1aa30948f2699e316a43b740eccebe5c20">WindowShapeMode</link>&#32;<link linkend="_struct_s_d_l___window_shape_mode_1a40ebd8b9a76d982cbd87563386cc05de">mode</link>;
+110 &#32;&#32;&#32;&#32;<link linkend="_union_s_d_l___window_shape_params">SDL_WindowShapeParams</link>&#32;<link linkend="_struct_s_d_l___window_shape_mode_1a2f79bb294034156207fa6d88d3a8c819">parameters</link>;
+111 }&#32;<link linkend="__s_d_l__shape_8h_1a7c3c38083471976868424ca18e89295d">SDL_WindowShapeMode</link>;
+112 
+128 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__shape_8h_1a90d52818802235df9689922be5a4cf5a">SDL_SetWindowShape</link>(<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link>&#32;*window,<link linkend="_struct_s_d_l___surface">SDL_Surface</link>&#32;*shape,<link linkend="_struct_s_d_l___window_shape_mode">SDL_WindowShapeMode</link>&#32;*shape_mode);
+129 
+147 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__shape_8h_1a64dba6f6440cf6984d8da868fd758711">SDL_GetShapedWindowMode</link>(<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link>&#32;*window,<link linkend="_struct_s_d_l___window_shape_mode">SDL_WindowShapeMode</link>&#32;*shape_mode);
+148 
+149 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+150 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+151 }
+152 <emphasis role="preprocessor">#endif</emphasis>
+153 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+154 
+155 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_shape_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+</programlisting></section>

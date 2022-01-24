@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_cylinder_8h_source" xml:lang="en-US">
+<title>cylinder.h</title>
+<indexterm><primary>D:/RayTracing/RayTrace/Primitives/cylinder.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;RAYTRACING_CYLINDER_H</emphasis>
+2 <emphasis role="preprocessor">#define&#32;RAYTRACING_CYLINDER_H</emphasis>
+3 
+4 
+5 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_objectbase_8h">objectbase.h</link>&quot;</emphasis>
+6 <emphasis role="preprocessor">#include&#32;&quot;../gtfm.h&quot;</emphasis>
+7 
+8 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_r_t">RT</link>
+9 {
+10 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_class_r_t_1_1_cylinder">Cylinder</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_class_r_t_1_1_object_base">ObjectBase</link>
+11 &#32;&#32;&#32;&#32;{
+12 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+13 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Domyślny&#32;konstruktor</emphasis>
+14 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_r_t_1_1_cylinder_1a33570b4dfcc1f25ee45ad0bc02d74258">Cylinder</link>();
+15 
+16 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Nadpisany&#32;destruktor</emphasis>
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_class_r_t_1_1_cylinder_1ac4c3c2f77f3f74f97519d7e8d360e36f">~Cylinder</link>()&#32;<emphasis role="keyword">override</emphasis>;
+18 
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Nadpisana&#32;metoda&#32;do&#32;sprawdzania&#32;przecięcia&#32;promienia&#32;z&#32;obiektem</emphasis>
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_r_t_1_1_cylinder_1af651d28a24101803fc4fe1a12f9d0730">TestIntersection</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_r_t_1_1_ray">RT::Ray</link>&#32;&amp;castRay,&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;intPoint,
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;localNormal,&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;localColor)&#32;<emphasis role="keyword">override</emphasis>;
+22 &#32;&#32;&#32;&#32;};
+23 }
+24 
+25 
+26 
+27 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//RAYTRACING_CYLINDER_H</emphasis>
+</programlisting></section>

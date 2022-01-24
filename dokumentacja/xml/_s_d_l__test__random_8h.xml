@@ -1,0 +1,256 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_s_d_l__test__random_8h" kind="file" language="C++">
+    <compoundname>SDL_test_random.h</compoundname>
+    <includes refid="begin__code_8h" local="yes">begin_code.h</includes>
+    <includes refid="close__code_8h" local="yes">close_code.h</includes>
+    <includedby refid="_s_d_l__test_8h" local="yes">D:/RayTracing/include/SDL_test.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>D:/RayTracing/include/SDL_test_random.h</label>
+        <link refid="_s_d_l__test__random_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>begin_code.h</label>
+        <link refid="begin__code_8h"/>
+      </node>
+      <node id="3">
+        <label>close_code.h</label>
+        <link refid="close__code_8h"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>D:/RayTracing/include/SDL_test.h</label>
+        <link refid="_s_d_l__test_8h"/>
+      </node>
+      <node id="1">
+        <label>D:/RayTracing/include/SDL_test_random.h</label>
+        <link refid="_s_d_l__test__random_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_s_d_l_test___random_context" prot="public">SDLTest_RandomContext</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_s_d_l__test__random_8h_1a10ad442c3a8b85d202b6ac306bfe04cc" prot="public" static="no">
+        <name>SDLTest_RandomInt</name>
+        <param><defname>c</defname></param>
+        <initializer>((int)<ref refid="_s_d_l__test__random_8h_1a7a64ae98b2b7034bf7c38ef5cbc39ead" kindref="member">SDLTest_Random</ref>(<ref refid="_s_d_l__opengl__glext_8h_1a1f2d7f8147412c43ba2303a56f97ee73" kindref="member">c</ref>))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_random.h" line="54" column="9" bodyfile="D:/RayTracing/include/SDL_test_random.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_s_d_l__test__random_8h_1ac02d87003e18791250a4f762f8779c4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        <definition>void SDLTest_RandomInit</definition>
+        <argsstring>(SDLTest_RandomContext *rndContext, unsigned int xi, unsigned int ci)</argsstring>
+        <name>SDLTest_RandomInit</name>
+        <param>
+          <type><ref refid="struct_s_d_l_test___random_context" kindref="compound">SDLTest_RandomContext</ref> *</type>
+          <declname>rndContext</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>xi</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>ci</declname>
+        </param>
+        <briefdescription>
+<para>Initialize random number generator with two integers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Note: The random sequence of numbers returned by ...Random() is the same for the same two integers and has a period of 2^31.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rndContext</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to context structure </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>xi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>integer that defines the random sequence </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ci</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>integer that defines the random sequence </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_random.h" line="81" column="7" declfile="D:/RayTracing/include/SDL_test_random.h" declline="81" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__random_8h_1a1d1378845f65b7e471f13cb4f3b1a54e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        <definition>void SDLTest_RandomInitTime</definition>
+        <argsstring>(SDLTest_RandomContext *rndContext)</argsstring>
+        <name>SDLTest_RandomInitTime</name>
+        <param>
+          <type><ref refid="struct_s_d_l_test___random_context" kindref="compound">SDLTest_RandomContext</ref> *</type>
+          <declname>rndContext</declname>
+        </param>
+        <briefdescription>
+<para>Initialize random number generator based on current system time. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rndContext</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to context structure </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_random.h" line="90" column="7" declfile="D:/RayTracing/include/SDL_test_random.h" declline="90" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__random_8h_1a7a64ae98b2b7034bf7c38ef5cbc39ead" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int SDLTest_Random</definition>
+        <argsstring>(SDLTest_RandomContext *rndContext)</argsstring>
+        <name>SDLTest_Random</name>
+        <param>
+          <type><ref refid="struct_s_d_l_test___random_context" kindref="compound">SDLTest_RandomContext</ref> *</type>
+          <declname>rndContext</declname>
+        </param>
+        <briefdescription>
+<para>Initialize random number generator based on current system time. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Note: ...RandomInit() or ...RandomInitTime() must have been called before using this function.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rndContext</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to context structure</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a random number (32bit unsigned integer) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_random.h" line="104" column="15" declfile="D:/RayTracing/include/SDL_test_random.h" declline="104" declcolumn="15"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Include file for SDL test framework.</para>
+<para>This code is a part of the SDL2_test library, not the main SDL library. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/>Simple<sp/>DirectMedia<sp/>Layer</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/>Copyright<sp/>(C)<sp/>1997-2022<sp/>Sam<sp/>Lantinga<sp/>&lt;slouken@libsdl.org&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/>This<sp/>software<sp/>is<sp/>provided<sp/>&apos;as-is&apos;,<sp/>without<sp/>any<sp/>express<sp/>or<sp/>implied</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/>warranty.<sp/><sp/>In<sp/>no<sp/>event<sp/>will<sp/>the<sp/>authors<sp/>be<sp/>held<sp/>liable<sp/>for<sp/>any<sp/>damages</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/>arising<sp/>from<sp/>the<sp/>use<sp/>of<sp/>this<sp/>software.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/>Permission<sp/>is<sp/>granted<sp/>to<sp/>anyone<sp/>to<sp/>use<sp/>this<sp/>software<sp/>for<sp/>any<sp/>purpose,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/>including<sp/>commercial<sp/>applications,<sp/>and<sp/>to<sp/>alter<sp/>it<sp/>and<sp/>redistribute<sp/>it</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/>freely,<sp/>subject<sp/>to<sp/>the<sp/>following<sp/>restrictions:</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"></highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/>1.<sp/>The<sp/>origin<sp/>of<sp/>this<sp/>software<sp/>must<sp/>not<sp/>be<sp/>misrepresented;<sp/>you<sp/>must<sp/>not</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>claim<sp/>that<sp/>you<sp/>wrote<sp/>the<sp/>original<sp/>software.<sp/>If<sp/>you<sp/>use<sp/>this<sp/>software</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>in<sp/>a<sp/>product,<sp/>an<sp/>acknowledgment<sp/>in<sp/>the<sp/>product<sp/>documentation<sp/>would<sp/>be</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>appreciated<sp/>but<sp/>is<sp/>not<sp/>required.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/>2.<sp/>Altered<sp/>source<sp/>versions<sp/>must<sp/>be<sp/>plainly<sp/>marked<sp/>as<sp/>such,<sp/>and<sp/>must<sp/>not<sp/>be</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>misrepresented<sp/>as<sp/>being<sp/>the<sp/>original<sp/>software.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/>3.<sp/>This<sp/>notice<sp/>may<sp/>not<sp/>be<sp/>removed<sp/>or<sp/>altered<sp/>from<sp/>any<sp/>source<sp/>distribution.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"></highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>A<sp/>&quot;32-bit<sp/>Multiply<sp/>with<sp/>carry<sp/>random<sp/>number<sp/>generator.<sp/>Very<sp/>fast.</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>Includes<sp/>a<sp/>list<sp/>of<sp/>recommended<sp/>multipliers.</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"></highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>multiply-with-carry<sp/>generator:<sp/>x(n)<sp/>=<sp/>a*x(n-1)<sp/>+<sp/>carry<sp/>mod<sp/>2^32.</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>period:<sp/>(a*2^31)-1</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"></highlight></codeline>
+<codeline lineno="38"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SDL_test_random_h_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_test_random_h_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="begin__code_8h" kindref="compound">begin_code.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Set<sp/>up<sp/>for<sp/>C<sp/>function<sp/>definitions,<sp/>even<sp/>when<sp/>using<sp/>C++<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---<sp/>Definitions<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/>Macros<sp/>that<sp/>return<sp/>a<sp/>random<sp/>number<sp/>in<sp/>a<sp/>specific<sp/>format.</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="_s_d_l__test__random_8h_1a10ad442c3a8b85d202b6ac306bfe04cc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDLTest_RandomInt(c)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((int)SDLTest_Random(c))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*<sp/>Context<sp/>structure<sp/>for<sp/>the<sp/>random<sp/>number<sp/>generator<sp/>state.</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="struct_s_d_l_test___random_context" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="60" refid="struct_s_d_l_test___random_context_1a24f830d6cb476c96fbe325c99331e45f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_l_test___random_context_1a24f830d6cb476c96fbe325c99331e45f" kindref="member">a</ref>;</highlight></codeline>
+<codeline lineno="61" refid="struct_s_d_l_test___random_context_1a8bd6d1b4e1677ed1c06f5cc09f1af5b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_l_test___random_context_1a8bd6d1b4e1677ed1c06f5cc09f1af5b6" kindref="member">x</ref>;</highlight></codeline>
+<codeline lineno="62" refid="struct_s_d_l_test___random_context_1a17a6a7e7b68a33c67d9b74c8c7c33198" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_l_test___random_context_1a17a6a7e7b68a33c67d9b74c8c7c33198" kindref="member">c</ref>;</highlight></codeline>
+<codeline lineno="63" refid="struct_s_d_l_test___random_context_1a2c8d2f1ee16cdfd38361b8f03b3fdb85" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_l_test___random_context_1a2c8d2f1ee16cdfd38361b8f03b3fdb85" kindref="member">ah</ref>;</highlight></codeline>
+<codeline lineno="64" refid="struct_s_d_l_test___random_context_1a0e2bccd3611d383d6510c6c828aa54c4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_l_test___random_context_1a0e2bccd3611d383d6510c6c828aa54c4" kindref="member">al</ref>;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>}<sp/><ref refid="struct_s_d_l_test___random_context" kindref="compound">SDLTest_RandomContext</ref>;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---<sp/>Function<sp/>prototypes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="_s_d_l__test__random_8h_1ac02d87003e18791250a4f762f8779c4f" refkind="member"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__test__random_8h_1ac02d87003e18791250a4f762f8779c4f" kindref="member">SDLTest_RandomInit</ref>(<ref refid="struct_s_d_l_test___random_context" kindref="compound">SDLTest_RandomContext</ref><sp/>*<sp/>rndContext,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>xi,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ci);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="_s_d_l__test__random_8h_1a1d1378845f65b7e471f13cb4f3b1a54e" refkind="member"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__test__random_8h_1a1d1378845f65b7e471f13cb4f3b1a54e" kindref="member">SDLTest_RandomInitTime</ref>(<ref refid="struct_s_d_l_test___random_context" kindref="compound">SDLTest_RandomContext</ref><sp/>*rndContext);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="_s_d_l__test__random_8h_1a7a64ae98b2b7034bf7c38ef5cbc39ead" refkind="member"><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__test__random_8h_1a7a64ae98b2b7034bf7c38ef5cbc39ead" kindref="member">SDLTest_Random</ref>(<ref refid="struct_s_d_l_test___random_context" kindref="compound">SDLTest_RandomContext</ref><sp/>*rndContext);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Ends<sp/>C<sp/>function<sp/>definitions<sp/>when<sp/>using<sp/>C++<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="close__code_8h" kindref="compound">close_code.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>SDL_test_random_h_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>vi:<sp/>set<sp/>ts=4<sp/>sw=4<sp/>expandtab:<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/include/SDL_test_random.h"/>
+  </compounddef>
+</doxygen>

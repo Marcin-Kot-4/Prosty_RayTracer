@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__rect_8h_source" xml:lang="en-US">
+<title>SDL_rect.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_rect.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+28 <emphasis role="preprocessor">#ifndef&#32;SDL_rect_h_</emphasis>
+29 <emphasis role="preprocessor">#define&#32;SDL_rect_h_</emphasis>
+30 
+31 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__stdinc_8h">SDL_stdinc.h</link>&quot;</emphasis>
+32 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__error_8h">SDL_error.h</link>&quot;</emphasis>
+33 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__pixels_8h">SDL_pixels.h</link>&quot;</emphasis>
+34 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__rwops_8h">SDL_rwops.h</link>&quot;</emphasis>
+35 
+36 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+37 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+38 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+39 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+40 <emphasis role="preprocessor">#endif</emphasis>
+41 
+48 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_s_d_l___point">SDL_Point</link>
+49 {
+50 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l___point_1a2ee987d59888024771c8d83aec43056c">x</link>;
+51 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l___point_1aaa68aefa869f6bdf46367a70bd9414b0">y</link>;
+52 }&#32;<link linkend="__s_d_l__rect_8h_1aa8e5504e162ce2079402a96ab24464b0">SDL_Point</link>;
+53 
+60 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_s_d_l___f_point">SDL_FPoint</link>
+61 {
+62 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_struct_s_d_l___f_point_1a5211b32bdc9f5ac3b9972ab48418d6f3">x</link>;
+63 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_struct_s_d_l___f_point_1ac03695801666f08ee04b9d2e83f079ee">y</link>;
+64 }&#32;<link linkend="__s_d_l__rect_8h_1ad2d04905f83d62ade9d6e215e3ac9874">SDL_FPoint</link>;
+65 
+66 
+77 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_s_d_l___rect">SDL_Rect</link>
+78 {
+79 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l___rect_1a85418d94621dd6855805c4b5c7bf6482">x</link>,&#32;<link linkend="_struct_s_d_l___rect_1a822694af8ddca5fd0d5d94e47106ab85">y</link>;
+80 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l___rect_1a56b7be5738fb6fab86881534a814c45e">w</link>,&#32;<link linkend="_struct_s_d_l___rect_1a0a17d46b320af8063b746153348edd72">h</link>;
+81 }&#32;<link linkend="__s_d_l__rect_8h_1a9e17b356ca55e6b653f4fe33c5357ed5">SDL_Rect</link>;
+82 
+83 
+87 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_s_d_l___f_rect">SDL_FRect</link>
+88 {
+89 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_struct_s_d_l___f_rect_1a7dff6b929b472aa0c3989bec52bd01e0">x</link>;
+90 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_struct_s_d_l___f_rect_1a9c7105750c0b4b1d27ee86ecd29835b3">y</link>;
+91 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_struct_s_d_l___f_rect_1a8be19bcef20d0dc94302bfc092583bd7">w</link>;
+92 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="_struct_s_d_l___f_rect_1a23dacbd4579fa5a425435124b197a183">h</link>;
+93 }&#32;<link linkend="__s_d_l__rect_8h_1a9237dbcbeeba2308b0180aa51ec5ada5">SDL_FRect</link>;
+94 
+95 
+99 <link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="__s_d_l__rect_8h_1a2f9708f2739ef234c34e6feda50b4d2c">SDL_PointInRect</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_s_d_l___point">SDL_Point</link>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1aa5367c14d90f462230c2611b81b41d23">p</link>,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_s_d_l___rect">SDL_Rect</link>&#32;*<link linkend="__s_d_l__opengl_8h_1a42ce7cdc612e53abee15043f80220d97">r</link>)
+100 {
+101 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(&#32;(<link linkend="__s_d_l__opengl__glext_8h_1aa5367c14d90f462230c2611b81b41d23">p</link>-&gt;x&#32;&gt;=&#32;<link linkend="__s_d_l__opengl_8h_1a42ce7cdc612e53abee15043f80220d97">r</link>-&gt;x)&#32;&amp;&amp;&#32;(<link linkend="__s_d_l__opengl__glext_8h_1aa5367c14d90f462230c2611b81b41d23">p</link>-&gt;x&#32;&lt;&#32;(<link linkend="__s_d_l__opengl_8h_1a42ce7cdc612e53abee15043f80220d97">r</link>-&gt;x&#32;+&#32;<link linkend="__s_d_l__opengl_8h_1a42ce7cdc612e53abee15043f80220d97">r</link>-&gt;w))&#32;&amp;&amp;
+102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(<link linkend="__s_d_l__opengl__glext_8h_1aa5367c14d90f462230c2611b81b41d23">p</link>-&gt;y&#32;&gt;=&#32;<link linkend="__s_d_l__opengl_8h_1a42ce7cdc612e53abee15043f80220d97">r</link>-&gt;y)&#32;&amp;&amp;&#32;(<link linkend="__s_d_l__opengl__glext_8h_1aa5367c14d90f462230c2611b81b41d23">p</link>-&gt;y&#32;&lt;&#32;(<link linkend="__s_d_l__opengl_8h_1a42ce7cdc612e53abee15043f80220d97">r</link>-&gt;y&#32;+&#32;<link linkend="__s_d_l__opengl_8h_1a42ce7cdc612e53abee15043f80220d97">r</link>-&gt;h))&#32;)&#32;?&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733ba32efa84cfb0a91b0eee1edf6e941cf74">SDL_TRUE</link>&#32;:&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733ba76e680af86c5508ea4ccd9f969eb1ea2">SDL_FALSE</link>;
+103 }
+104 
+108 <link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="__s_d_l__rect_8h_1aac0e9b5d3f34baec6a2cde95bb01f49c">SDL_RectEmpty</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_s_d_l___rect">SDL_Rect</link>&#32;*<link linkend="__s_d_l__opengl_8h_1a42ce7cdc612e53abee15043f80220d97">r</link>)
+109 {
+110 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;((!<link linkend="__s_d_l__opengl_8h_1a42ce7cdc612e53abee15043f80220d97">r</link>)&#32;||&#32;(<link linkend="__s_d_l__opengl_8h_1a42ce7cdc612e53abee15043f80220d97">r</link>-&gt;w&#32;&lt;=&#32;0)&#32;||&#32;(<link linkend="__s_d_l__opengl_8h_1a42ce7cdc612e53abee15043f80220d97">r</link>-&gt;h&#32;&lt;=&#32;0))&#32;?&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733ba32efa84cfb0a91b0eee1edf6e941cf74">SDL_TRUE</link>&#32;:&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733ba76e680af86c5508ea4ccd9f969eb1ea2">SDL_FALSE</link>;
+111 }
+112 
+116 <link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="__s_d_l__rect_8h_1a156979fd3561cf90b87741d11057262a">SDL_RectEquals</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_s_d_l___rect">SDL_Rect</link>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_s_d_l___rect">SDL_Rect</link>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010">b</link>)
+117 {
+118 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>&#32;&amp;&amp;&#32;<link linkend="__s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010">b</link>&#32;&amp;&amp;&#32;(<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>-&gt;x&#32;==&#32;<link linkend="__s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010">b</link>-&gt;x)&#32;&amp;&amp;&#32;(<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>-&gt;y&#32;==&#32;<link linkend="__s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010">b</link>-&gt;y)&#32;&amp;&amp;
+119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>-&gt;w&#32;==&#32;<link linkend="__s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010">b</link>-&gt;w)&#32;&amp;&amp;&#32;(<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>-&gt;h&#32;==&#32;<link linkend="__s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010">b</link>-&gt;h))&#32;?&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733ba32efa84cfb0a91b0eee1edf6e941cf74">SDL_TRUE</link>&#32;:&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733ba76e680af86c5508ea4ccd9f969eb1ea2">SDL_FALSE</link>;
+120 }
+121 
+135 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rect_8h_1a191ec0b069421d4a36304b475697e847">SDL_HasIntersection</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_s_d_l___rect">SDL_Rect</link>&#32;*&#32;A,
+136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_s_d_l___rect">SDL_Rect</link>&#32;*&#32;B);
+137 
+153 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rect_8h_1aff8e3dd3b1a25443cd7c8cf02a087290">SDL_IntersectRect</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_s_d_l___rect">SDL_Rect</link>&#32;*&#32;A,
+154 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_s_d_l___rect">SDL_Rect</link>&#32;*&#32;B,
+155 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_s_d_l___rect">SDL_Rect</link>&#32;*&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>);
+156 
+167 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rect_8h_1a659f2c25335202888408c95195823f9c">SDL_UnionRect</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_s_d_l___rect">SDL_Rect</link>&#32;*&#32;A,
+168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_s_d_l___rect">SDL_Rect</link>&#32;*&#32;B,
+169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_s_d_l___rect">SDL_Rect</link>&#32;*&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>);
+170 
+188 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rect_8h_1afcbb58dbba760b9e6fdb4b5d1ece015c">SDL_EnclosePoints</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_s_d_l___point">SDL_Point</link>&#32;*&#32;<link linkend="__s_d_l__opengl__glext_8h_1a0c0cc65d03e264ad2c5262927b620d3f">points</link>,
+189 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl_8h_1a619bc20e8198de3bd3f3d7fc34de66b2">count</link>,
+190 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_s_d_l___rect">SDL_Rect</link>&#32;*&#32;clip,
+191 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_s_d_l___rect">SDL_Rect</link>&#32;*&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>);
+192 
+211 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rect_8h_1acdabdcbeb7b7083f94a092daa26ce069">SDL_IntersectRectAndLine</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_s_d_l___rect">SDL_Rect</link>&#32;*
+212 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rect,&#32;<emphasis role="keywordtype">int</emphasis>&#32;*X1,
+213 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;*Y1,&#32;<emphasis role="keywordtype">int</emphasis>&#32;*X2,
+214 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;*Y2);
+215 
+216 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+217 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+218 }
+219 <emphasis role="preprocessor">#endif</emphasis>
+220 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+221 
+222 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_rect_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+223 
+224 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

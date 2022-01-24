@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="md__d___ray_tracing_docs__r_e_a_d_m_e_kmsbsd" kind="page">
+    <compoundname>md_D__RayTracing_docs_README_kmsbsd</compoundname>
+    <title>KMSDRM on *BSD</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>KMSDRM is supported on FreeBSD and OpenBSD. DragonFlyBSD works but requires being a root user. NetBSD isn&apos;t supported yet because the application will crash when creating the KMSDRM screen.</para>
+<para>WSCONS support has been brought back, but only as an input backend. It will not be brought back as a video backend to ease maintenance.</para>
+<para>OpenBSD note: Note that the video backend assumes that the user has read/write permissions to the /dev/drm* devices.</para>
+<sect1 id="md__d___ray_tracing_docs__r_e_a_d_m_e_kmsbsd_1autotoc_md56">
+<title>SDL2 WSCONS input backend features</title>
+<para><orderedlist>
+<listitem><para>It is keymap-aware; it will work properly with different keymaps.</para>
+</listitem><listitem><para>It has mouse support.</para>
+</listitem><listitem><para>Accent input is supported.</para>
+</listitem><listitem><para>Compose keys are supported.</para>
+</listitem><listitem><para>AltGr and Meta Shift keys work as intended.</para>
+</listitem></orderedlist>
+</para>
+</sect1>
+<sect1 id="md__d___ray_tracing_docs__r_e_a_d_m_e_kmsbsd_1autotoc_md57">
+<title>Partially working or no input on OpenBSD/NetBSD.</title>
+<para>The WSCONS input backend needs read/write access to the /dev/wskbd* devices, without which it will not work properly. /dev/wsmouse must also be read/write accessible, otherwise mouse input will not work.</para>
+</sect1>
+<sect1 id="md__d___ray_tracing_docs__r_e_a_d_m_e_kmsbsd_1autotoc_md58">
+<title>Partially working or no input on FreeBSD.</title>
+<para>The evdev devices are only accessible to the root user by default. Edit devfs rules to allow access to such devices. The /dev/kbd* devices are also only accessible to the root user by default. Edit devfs rules to allow access to such devices. </para>
+</sect1>
+    </detaileddescription>
+    <location file="D:/RayTracing/docs/README-kmsbsd.md"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_s_d_l___keyboard_event" xml:lang="en-US">
+<title>SDL_KeyboardEvent Struct Reference</title>
+<indexterm><primary>SDL_KeyboardEvent</primary></indexterm>
+<para>
+
+<para>Keyboard button event structure (event.key.*) </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;SDL_events.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="_struct_s_d_l___keyboard_event_1ae0b2f2aace6f80c1f47e5a14350d409a">type</link></para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="_struct_s_d_l___keyboard_event_1a3da1d8f6892e7f6ee28d9eafdb5e7d02">timestamp</link></para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> <link linkend="_struct_s_d_l___keyboard_event_1a56efb6780b96acd5b50d8f797efb3546">windowID</link></para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> <link linkend="_struct_s_d_l___keyboard_event_1a110558eb96c113c86cfa31a7018c2346">state</link></para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> <link linkend="_struct_s_d_l___keyboard_event_1a3edac3b36304812d533795c9df4ed4c1">repeat</link></para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> <link linkend="_struct_s_d_l___keyboard_event_1ae270122f757f76171318294afd2c95e6">padding2</link></para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> <link linkend="_struct_s_d_l___keyboard_event_1ae1831035ef556a7b09efcd2469f26f7a">padding3</link></para>
+</listitem>
+            <listitem><para><link linkend="_struct_s_d_l___keysym">SDL_Keysym</link> <link linkend="_struct_s_d_l___keyboard_event_1a2a57ba820a298f2c02ad5d41fd2b1aa8">keysym</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Keyboard button event structure (event.key.*) </para>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_s_d_l___keyboard_event_1a2a57ba820a298f2c02ad5d41fd2b1aa8"/><section>
+    <title>keysym</title>
+<indexterm><primary>keysym</primary><secondary>SDL_KeyboardEvent</secondary></indexterm>
+<indexterm><primary>SDL_KeyboardEvent</primary><secondary>keysym</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_s_d_l___keysym">SDL_Keysym</link> SDL_KeyboardEvent::keysym</computeroutput></para>
+<para>The key that was pressed or released </para>
+</section>
+<anchor xml:id="_struct_s_d_l___keyboard_event_1ae270122f757f76171318294afd2c95e6"/><section>
+    <title>padding2</title>
+<indexterm><primary>padding2</primary><secondary>SDL_KeyboardEvent</secondary></indexterm>
+<indexterm><primary>SDL_KeyboardEvent</primary><secondary>padding2</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> SDL_KeyboardEvent::padding2</computeroutput></para></section>
+<anchor xml:id="_struct_s_d_l___keyboard_event_1ae1831035ef556a7b09efcd2469f26f7a"/><section>
+    <title>padding3</title>
+<indexterm><primary>padding3</primary><secondary>SDL_KeyboardEvent</secondary></indexterm>
+<indexterm><primary>SDL_KeyboardEvent</primary><secondary>padding3</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> SDL_KeyboardEvent::padding3</computeroutput></para></section>
+<anchor xml:id="_struct_s_d_l___keyboard_event_1a3edac3b36304812d533795c9df4ed4c1"/><section>
+    <title>repeat</title>
+<indexterm><primary>repeat</primary><secondary>SDL_KeyboardEvent</secondary></indexterm>
+<indexterm><primary>SDL_KeyboardEvent</primary><secondary>repeat</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> SDL_KeyboardEvent::repeat</computeroutput></para>
+<para>Non-zero if this is a key repeat </para>
+</section>
+<anchor xml:id="_struct_s_d_l___keyboard_event_1a110558eb96c113c86cfa31a7018c2346"/><section>
+    <title>state</title>
+<indexterm><primary>state</primary><secondary>SDL_KeyboardEvent</secondary></indexterm>
+<indexterm><primary>SDL_KeyboardEvent</primary><secondary>state</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link> SDL_KeyboardEvent::state</computeroutput></para>
+<para><link linkend="__s_d_l__events_8h_1aee81bbffbc8489bdea8fecd1232c4bd1">SDL_PRESSED</link> or <link linkend="__s_d_l__events_8h_1ad680a069f9fcab80de91b3eefdf29c3c">SDL_RELEASED</link> </para>
+</section>
+<anchor xml:id="_struct_s_d_l___keyboard_event_1a3da1d8f6892e7f6ee28d9eafdb5e7d02"/><section>
+    <title>timestamp</title>
+<indexterm><primary>timestamp</primary><secondary>SDL_KeyboardEvent</secondary></indexterm>
+<indexterm><primary>SDL_KeyboardEvent</primary><secondary>timestamp</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> SDL_KeyboardEvent::timestamp</computeroutput></para>
+<para>In milliseconds, populated using <link linkend="__s_d_l__timer_8h_1a0b9bc71d6287e0ffafdc3419760fe2b3">SDL_GetTicks()</link> </para>
+</section>
+<anchor xml:id="_struct_s_d_l___keyboard_event_1ae0b2f2aace6f80c1f47e5a14350d409a"/><section>
+    <title>type</title>
+<indexterm><primary>type</primary><secondary>SDL_KeyboardEvent</secondary></indexterm>
+<indexterm><primary>SDL_KeyboardEvent</primary><secondary>type</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> SDL_KeyboardEvent::type</computeroutput></para>
+<para><link linkend="__s_d_l__events_8h_1a3b589e89be6b35c02e0dd34a55f3fccaacaf8cfd53c985cdbf6a90c811d51a1fc">SDL_KEYDOWN</link> or <link linkend="__s_d_l__events_8h_1a3b589e89be6b35c02e0dd34a55f3fccaadefb8866b9d28be21c2c33c35cc66c4b">SDL_KEYUP</link> </para>
+</section>
+<anchor xml:id="_struct_s_d_l___keyboard_event_1a56efb6780b96acd5b50d8f797efb3546"/><section>
+    <title>windowID</title>
+<indexterm><primary>windowID</primary><secondary>SDL_KeyboardEvent</secondary></indexterm>
+<indexterm><primary>SDL_KeyboardEvent</primary><secondary>windowID</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link> SDL_KeyboardEvent::windowID</computeroutput></para>
+<para>The window with keyboard focus, if any </para>
+</section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+D:/RayTracing/include/<link linkend="__s_d_l__events_8h">SDL_events.h</link></section>
+</section>

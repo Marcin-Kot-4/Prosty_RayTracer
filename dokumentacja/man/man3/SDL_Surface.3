@@ -1,0 +1,93 @@
+.TH "SDL_Surface" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SDL_Surface \- A collection of pixels used in software blitting\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SDL_surface\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUint32\fP \fBflags\fP"
+.br
+.ti -1c
+.RI "\fBSDL_PixelFormat\fP * \fBformat\fP"
+.br
+.ti -1c
+.RI "int \fBw\fP"
+.br
+.ti -1c
+.RI "int \fBh\fP"
+.br
+.ti -1c
+.RI "int \fBpitch\fP"
+.br
+.ti -1c
+.RI "\fBvoid\fP * \fBpixels\fP"
+.br
+.ti -1c
+.RI "\fBvoid\fP * \fBuserdata\fP"
+.br
+.ti -1c
+.RI "int \fBlocked\fP"
+.br
+.ti -1c
+.RI "\fBvoid\fP * \fBlist_blitmap\fP"
+.br
+.ti -1c
+.RI "\fBSDL_Rect\fP \fBclip_rect\fP"
+.br
+.ti -1c
+.RI "struct SDL_BlitMap * \fBmap\fP"
+.br
+.ti -1c
+.RI "int \fBrefcount\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A collection of pixels used in software blitting\&. 
+
+
+.PP
+\fBNote\fP
+.RS 4
+This structure should be treated as read-only, except for \fCpixels\fP, which, if not NULL, contains the raw pixel data for the surface\&. 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBSDL_Rect\fP SDL_Surface::clip_rect"
+clipping information Read-only 
+.SS "\fBUint32\fP SDL_Surface::flags"
+Read-only 
+.SS "\fBSDL_PixelFormat\fP* SDL_Surface::format"
+Read-only 
+.SS "int SDL_Surface::h"
+Read-only 
+.SS "\fBvoid\fP* SDL_Surface::list_blitmap"
+list of BlitMap that hold a reference to this surface Private 
+.SS "int SDL_Surface::locked"
+information needed for surfaces requiring locks Read-only 
+.SS "struct SDL_BlitMap* SDL_Surface::map"
+info for fast blit mapping to other surfaces Private 
+.SS "int SDL_Surface::pitch"
+Read-only 
+.SS "\fBvoid\fP* SDL_Surface::pixels"
+Read-write 
+.SS "int SDL_Surface::refcount"
+Reference count -- used when freeing surface Read-mostly 
+.SS "\fBvoid\fP* SDL_Surface::userdata"
+Application data associated with the surface Read-write 
+.SS "int SDL_Surface::w"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

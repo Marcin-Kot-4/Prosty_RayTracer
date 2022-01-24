@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__blendmode_8h_source" xml:lang="en-US">
+<title>SDL_blendmode.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_blendmode.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+28 <emphasis role="preprocessor">#ifndef&#32;SDL_blendmode_h_</emphasis>
+29 <emphasis role="preprocessor">#define&#32;SDL_blendmode_h_</emphasis>
+30 
+31 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+32 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+33 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+34 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+35 <emphasis role="preprocessor">#endif</emphasis>
+36 
+40 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+41 {
+42 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__blendmode_8h_1a850d3c67a878fd6698a1c8dbb1eabf1ea417f2736f69e38ae734e75afa04c57ac">SDL_BLENDMODE_NONE</link>&#32;=&#32;0x00000000,&#32;&#32;&#32;&#32;&#32;
+44 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__blendmode_8h_1a850d3c67a878fd6698a1c8dbb1eabf1eae421984ebfeedd59dfea21e1bdda1883">SDL_BLENDMODE_BLEND</link>&#32;=&#32;0x00000001,&#32;&#32;&#32;&#32;
+47 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__blendmode_8h_1a850d3c67a878fd6698a1c8dbb1eabf1ea4af39da8d41a1765fb26425a3ca4391e">SDL_BLENDMODE_ADD</link>&#32;=&#32;0x00000002,&#32;&#32;&#32;&#32;&#32;&#32;
+50 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__blendmode_8h_1a850d3c67a878fd6698a1c8dbb1eabf1eaf7714323757a614d3e506be37cd28c43">SDL_BLENDMODE_MOD</link>&#32;=&#32;0x00000004,&#32;&#32;&#32;&#32;&#32;&#32;
+53 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__blendmode_8h_1a850d3c67a878fd6698a1c8dbb1eabf1eae52e77421c29b374f9442f162e357d50">SDL_BLENDMODE_MUL</link>&#32;=&#32;0x00000008,&#32;&#32;&#32;&#32;&#32;&#32;
+56 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__blendmode_8h_1a850d3c67a878fd6698a1c8dbb1eabf1eae478ff9a0e5e1a5d1418c69d28061e82">SDL_BLENDMODE_INVALID</link>&#32;=&#32;0x7FFFFFFF
+57 
+58 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Additional&#32;custom&#32;blend&#32;modes&#32;can&#32;be&#32;returned&#32;by&#32;SDL_ComposeCustomBlendMode()&#32;*/</emphasis>
+59 
+60 }&#32;<link linkend="__s_d_l__blendmode_8h_1a850d3c67a878fd6698a1c8dbb1eabf1e">SDL_BlendMode</link>;
+61 
+65 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+66 {
+67 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__blendmode_8h_1a54ae8d3f832db7354f4fda522835f502a79c1a3992734df94dc21b0dd2eaf9cc3">SDL_BLENDOPERATION_ADD</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;0x1,&#32;&#32;
+68 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__blendmode_8h_1a54ae8d3f832db7354f4fda522835f502acd41cbbe8ee275638a8c9ef97de2eae5">SDL_BLENDOPERATION_SUBTRACT</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;0x2,&#32;&#32;
+69 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__blendmode_8h_1a54ae8d3f832db7354f4fda522835f502a6f55ae40255c3d8c9927a85ea836d518">SDL_BLENDOPERATION_REV_SUBTRACT</link>&#32;&#32;&#32;&#32;&#32;=&#32;0x3,&#32;&#32;
+70 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__blendmode_8h_1a54ae8d3f832db7354f4fda522835f502a49762d60e4bf6edcf42c7f7aa3c51fbd">SDL_BLENDOPERATION_MINIMUM</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;0x4,&#32;&#32;
+71 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__blendmode_8h_1a54ae8d3f832db7354f4fda522835f502a236541634d3e80b4932b6c8a6b278f2a">SDL_BLENDOPERATION_MAXIMUM</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;0x5&#32;&#32;&#32;
+73 }&#32;<link linkend="__s_d_l__blendmode_8h_1a54ae8d3f832db7354f4fda522835f502">SDL_BlendOperation</link>;
+74 
+78 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+79 {
+80 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605ca1729e63b0e2643241b7fb83b5e00a618">SDL_BLENDFACTOR_ZERO</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;0x1,&#32;&#32;
+81 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605caf2f9f66f01b413de3802f6764125a273">SDL_BLENDFACTOR_ONE</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;0x2,&#32;&#32;
+82 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605ca2ae2717da790b7616c9512cd5a031b06">SDL_BLENDFACTOR_SRC_COLOR</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;0x3,&#32;&#32;
+83 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605ca0ef57a3ec7cfbe5a4b6d7e6aab3d7612">SDL_BLENDFACTOR_ONE_MINUS_SRC_COLOR</link>&#32;=&#32;0x4,&#32;&#32;
+84 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605ca6709090055ddc6033c4ce7a63ac26fe5">SDL_BLENDFACTOR_SRC_ALPHA</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;0x5,&#32;&#32;
+85 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605ca99342bc66f17946d8b6ef26452a8b010">SDL_BLENDFACTOR_ONE_MINUS_SRC_ALPHA</link>&#32;=&#32;0x6,&#32;&#32;
+86 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605cadcd2cc1da2d79b0f696a2f79350c96fc">SDL_BLENDFACTOR_DST_COLOR</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;0x7,&#32;&#32;
+87 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605ca7238a9b5d18911b67ca3e6975bc66f73">SDL_BLENDFACTOR_ONE_MINUS_DST_COLOR</link>&#32;=&#32;0x8,&#32;&#32;
+88 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605cabb3330092906beea2a5d1e275f338e42">SDL_BLENDFACTOR_DST_ALPHA</link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;=&#32;0x9,&#32;&#32;
+89 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605ca7419eb5c0c94094f26f1f5183438c9e2">SDL_BLENDFACTOR_ONE_MINUS_DST_ALPHA</link>&#32;=&#32;0xA&#32;&#32;&#32;
+91 }&#32;<link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605c">SDL_BlendFactor</link>;
+92 
+185 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__blendmode_8h_1a850d3c67a878fd6698a1c8dbb1eabf1e">SDL_BlendMode</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__blendmode_8h_1a68566100acaa096e94f213a9768c6b6d">SDL_ComposeCustomBlendMode</link>(<link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605c">SDL_BlendFactor</link>&#32;srcColorFactor,
+186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605c">SDL_BlendFactor</link>&#32;dstColorFactor,
+187 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__blendmode_8h_1a54ae8d3f832db7354f4fda522835f502">SDL_BlendOperation</link>&#32;colorOperation,
+188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605c">SDL_BlendFactor</link>&#32;srcAlphaFactor,
+189 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605c">SDL_BlendFactor</link>&#32;dstAlphaFactor,
+190 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__blendmode_8h_1a54ae8d3f832db7354f4fda522835f502">SDL_BlendOperation</link>&#32;alphaOperation);
+191 
+192 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+193 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+194 }
+195 <emphasis role="preprocessor">#endif</emphasis>
+196 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+197 
+198 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_blendmode_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+199 
+200 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

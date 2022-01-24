@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_camera_8h_source" xml:lang="en-US">
+<title>camera.h</title>
+<indexterm><primary>D:/RayTracing/RayTrace/camera.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;RAYTRACING_CAMERA_H</emphasis>
+2 <emphasis role="preprocessor">#define&#32;RAYTRACING_CAMERA_H</emphasis>
+3 
+4 
+5 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_qb_vector_8h">./qbLinAlg/qbVector.h</link>&quot;</emphasis>
+6 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_ray_8h">ray.h</link>&quot;</emphasis>
+7 
+8 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_r_t">RT</link>&#32;{
+9 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_class_r_t_1_1_camera">Camera</link>&#32;{
+10 
+11 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+12 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Konstruktor&#32;domyślny</emphasis>
+13 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_r_t_1_1_camera_1a1513de7af55db310b04aa83f6cd747e6">Camera</link>();
+14 
+15 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Funkcje&#32;do&#32;ustawiania&#32;parametrów&#32;kamery</emphasis>
+16 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_r_t_1_1_camera_1a7a08c60fb7a07929897e3148e798976e">SetPosition</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;newPosition);
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_r_t_1_1_camera_1a303252f454230eb67fef370256aa806f">SetLookAt</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;newLookAt);
+18 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_r_t_1_1_camera_1ab60600a74e7a9f82ea763321a3f7210e">SetUp</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;upVector);
+19 
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Funkcja&#32;ustawiająca&#32;odległość&#32;od&#32;kamery&#32;do&#32;punktu,&#32;na&#32;który&#32;patrzymy</emphasis>
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_r_t_1_1_camera_1af56677571336b038e942df0dfc4e4090">SetLength</link>(<emphasis role="keywordtype">double</emphasis>&#32;newLength);
+22 
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Horyzontalny/poziomy&#32;rozmiar&#32;kamery</emphasis>
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_r_t_1_1_camera_1aad8f50f59189b1ddf6b36e19a957c2ba">SetHorzSize</link>(<emphasis role="keywordtype">double</emphasis>&#32;newSize);
+25 
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Funkcja&#32;ustawiająca&#32;proporcje&#32;kamery.&#32;Proporcje&#32;16:9&#32;=&#32;1.78</emphasis>
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_r_t_1_1_camera_1a2b782b4aab7480489298d78fa602d06f">SetAspect</link>(<emphasis role="keywordtype">double</emphasis>&#32;newAspectRatio);
+28 
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Gettery</emphasis>
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_camera_1ae7c3393d671ae6fbf189102b00f14a2d">GetPosition</link>();
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_camera_1ab2d684d8ec6c090f969770c81eaed115">GetLookAt</link>();
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_camera_1addf57b743043ff67bf565d573a8f63f8">GetUp</link>();
+33 
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Wektory&#32;U&#32;oraz&#32;V&#32;to&#32;wektory&#32;ekranu</emphasis>
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_camera_1a844fc9bf91008fa5468b1fb37fb273f5">GetU</link>();
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_camera_1a230e5e96be52db49974ca551aa90b24d">GetV</link>();
+37 
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Wektor&#32;środka&#32;ekranu</emphasis>
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_camera_1a7f7066c62259fcea9232bac2ad943770">GetScreenCentre</link>();
+40 
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_class_r_t_1_1_camera_1a0799a5aa243b66a7f0172397edf76cea">GetLength</link>();
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_class_r_t_1_1_camera_1aceddd3f90b0a8510f5ae1639f7af0962">GetHorzSize</link>();
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_class_r_t_1_1_camera_1ae65dc2e37298fdf57f500aaf4e41fa88">GetAspect</link>();
+44 
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Funkcja&#32;inicjująca&#32;instancję&#32;klasy&#32;Ray.&#32;Reprezentuje&#32;promień&#32;wychodzący&#32;z&#32;kamery&#32;i&#32;przechodzący&#32;przez</emphasis>
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;pozycję&#32;na&#32;ekranie&#32;określoną&#32;przez&#32;parametry&#32;proScreenX&#32;i&#32;proScreenY</emphasis>
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;0&#32;to&#32;środek&#32;ekranu,&#32;-1&#32;i&#32;1&#32;do&#32;lewa&#32;lub&#32;prawa,&#32;lub&#32;góra,&#32;lub&#32;dół&#32;ekranu.</emphasis>
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;X&#32;reprezentuje&#32;część&#32;wektora&#32;U.</emphasis>
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Y&#32;reprezentuje&#32;część&#32;wektora&#32;V.</emphasis>
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Są&#32;one&#32;translacją&#32;pozycji&#32;w&#32;przestrzeni&#32;trójwymiarowej,&#32;kiedy&#32;pomnożymy&#32;je&#32;przez&#32;te&#32;wektory.</emphasis>
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_r_t_1_1_camera_1ab022ad5b3b5c28e4eb016516a39367f9">GenerateRay</link>(<emphasis role="keywordtype">float</emphasis>&#32;proScreenX,&#32;<emphasis role="keywordtype">float</emphasis>&#32;proScreenY,&#32;<link linkend="_class_r_t_1_1_ray">RT::Ray</link>&#32;&amp;cameraRay);
+52 
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Funkcja&#32;aktualizująca&#32;geometrię&#32;kamery&#32;(w&#32;przypadku&#32;zmiany&#32;jej&#32;położenia&#32;lub&#32;punktu,&#32;na&#32;który&#32;patrzy)</emphasis>
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_r_t_1_1_camera_1ac58d2976470b32493c5645d548e2a0c4">UpdateCameraGeometry</link>();
+55 
+56 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>:
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;m_cameraPosition{3};
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;m_cameraLookAt{3};
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;m_cameraUp{3};
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;m_cameraLength;
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;m_cameraHorzSize;
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;m_cameraAspectRatio;
+63 
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Główna&#32;oś&#32;kamery</emphasis>
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;m_alignmentVector{3};
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;m_projectionScreenU{3};
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;m_projectionScreenV{3};
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;m_projectionScreenCentre{3};
+69 &#32;&#32;&#32;&#32;};
+70 }
+71 
+72 
+73 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//RAYTRACING_CAMERA_H</emphasis>
+</programlisting></section>

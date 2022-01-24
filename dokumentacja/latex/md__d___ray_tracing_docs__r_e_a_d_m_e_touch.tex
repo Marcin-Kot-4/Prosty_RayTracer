@@ -1,0 +1,60 @@
+\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_touch_autotoc_md105}{}\doxysection{System Specific Notes}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_touch_autotoc_md105}
+Linux\+: The linux touch system is currently based off event streams, and proc/bus/devices. The active user must be given permissions to read /dev/input/\+TOUCHDEVICE, where TOUCHDEVICE is the event stream for your device. Currently only Wacom tablets are supported. If you have an unsupported tablet contact me at \href{mailto:jim.tla+sdl_touch@gmail.com}{\texttt{ jim.\+tla+sdl\+\_\+touch@gmail.\+com}} and I will help you get support for it.
+
+Mac\+: The Mac and i\+Phone APIs are pretty. If your touch device supports them then you\textquotesingle{}ll be fine. If it doesn\textquotesingle{}t, then there isn\textquotesingle{}t much we can do.
+
+i\+Phone\+: Works out of box.
+
+Windows\+: Unfortunately there is no windows support as of yet. Support for Windows 7 is planned, but we currently have no way to test. If you have a Windows 7 WM\+\_\+\+TOUCH supported device, and are willing to help test please contact me at \href{mailto:jim.tla+sdl_touch@gmail.com}{\texttt{ jim.\+tla+sdl\+\_\+touch@gmail.\+com}}
+
+\DoxyHorRuler{0}
+ \hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_touch_autotoc_md107}{}\doxysection{Events}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_touch_autotoc_md107}
+SDL\+\_\+\+FINGERDOWN\+: Sent when a finger (or stylus) is placed on a touch device. Fields\+:
+\begin{DoxyItemize}
+\item event.\+tfinger.\+touch\+Id -\/ the Id of the touch device.
+\item event.\+tfinger.\+finger\+Id -\/ the Id of the finger which just went down.
+\item event.\+tfinger.\+x -\/ the x coordinate of the touch (0..1)
+\item event.\+tfinger.\+y -\/ the y coordinate of the touch (0..1)
+\item event.\+tfinger.\+pressure -\/ the pressure of the touch (0..1)
+\end{DoxyItemize}
+
+SDL\+\_\+\+FINGERMOTION\+: Sent when a finger (or stylus) is moved on the touch device. Fields\+: Same as SDL\+\_\+\+FINGERDOWN but with additional\+:
+\begin{DoxyItemize}
+\item event.\+tfinger.\+dx -\/ change in x coordinate during this motion event.
+\item event.\+tfinger.\+dy -\/ change in y coordinate during this motion event.
+\end{DoxyItemize}
+
+SDL\+\_\+\+FINGERUP\+: Sent when a finger (or stylus) is lifted from the touch device. Fields\+: Same as SDL\+\_\+\+FINGERDOWN.
+
+\DoxyHorRuler{0}
+ \hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_touch_autotoc_md109}{}\doxysection{Functions}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_touch_autotoc_md109}
+SDL provides the ability to access the underlying \mbox{\hyperlink{struct_s_d_l___finger}{SDL\+\_\+\+Finger}} structures. These structures should {\itshape never} be modified.
+
+The following functions are included from SDL\+\_\+touch.\+h
+
+To get a SDL\+\_\+\+Touch\+ID call \mbox{\hyperlink{_s_d_l__touch_8h_af23f09dc79eace93cdc8dd770eed0d0a}{SDL\+\_\+\+Get\+Touch\+Device(int index)}}. This returns a SDL\+\_\+\+Touch\+ID. IMPORTANT\+: If the touch has been removed, or there is no touch with the given index, \mbox{\hyperlink{_s_d_l__touch_8h_af23f09dc79eace93cdc8dd770eed0d0a}{SDL\+\_\+\+Get\+Touch\+Device()}} will return 0. Be sure to check for this!
+
+The number of touch devices can be queried with \mbox{\hyperlink{_s_d_l__touch_8h_a14a41a2964ddf868a180e42ccfd441d1}{SDL\+\_\+\+Get\+Num\+Touch\+Devices()}}.
+
+A SDL\+\_\+\+Touch\+ID may be used to get pointers to \mbox{\hyperlink{struct_s_d_l___finger}{SDL\+\_\+\+Finger}}.
+
+SDL\+\_\+\+Get\+Num\+Touch\+Fingers(touch\+ID) may be used to get the number of fingers currently down on the device.
+
+The most common reason to access \mbox{\hyperlink{struct_s_d_l___finger}{SDL\+\_\+\+Finger}} is to query the fingers outside the event. In most cases accessing the fingers is using the event. This would be accomplished by code like the following\+: \begin{DoxyVerb}  float x = event.tfinger.x;
+  float y = event.tfinger.y;
+\end{DoxyVerb}
+
+
+To get a \mbox{\hyperlink{struct_s_d_l___finger}{SDL\+\_\+\+Finger}}, call \mbox{\hyperlink{_s_d_l__touch_8h_a51f8b790d3c82f53215796d9a043ef90}{SDL\+\_\+\+Get\+Touch\+Finger(\+SDL\+\_\+\+Touch\+ID touch\+ID, int index)}}, where touch\+ID is a SDL\+\_\+\+Touch\+ID, and index is the requested finger. This returns a \mbox{\hyperlink{struct_s_d_l___finger}{SDL\+\_\+\+Finger}} $\ast$, or NULL if the finger does not exist, or has been removed. A \mbox{\hyperlink{struct_s_d_l___finger}{SDL\+\_\+\+Finger}} is guaranteed to be persistent for the duration of a touch, but it will be de-\/allocated as soon as the finger is removed. This occurs when the SDL\+\_\+\+FINGERUP event is {\itshape added} to the event queue, and thus {\itshape before} the SDL\+\_\+\+FINGERUP event is polled. As a result, be very careful to check for NULL return values.
+
+A \mbox{\hyperlink{struct_s_d_l___finger}{SDL\+\_\+\+Finger}} has the following fields\+:
+\begin{DoxyItemize}
+\item x, y\+: The current coordinates of the touch.
+\item pressure\+: The pressure of the touch.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+ \hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_touch_autotoc_md111}{}\doxysection{Notes}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_touch_autotoc_md111}
+For a complete example see test/testgesture.\+c
+
+Please direct questions/comments to\+: \href{mailto:jim.tla+sdl_touch@gmail.com}{\texttt{ jim.\+tla+sdl\+\_\+touch@gmail.\+com}} (original author, API was changed since) 

@@ -1,0 +1,79 @@
+\hypertarget{camera_8h_source}{}\doxysection{camera.\+h}
+\label{camera_8h_source}\index{D:/RayTracing/RayTrace/camera.h@{D:/RayTracing/RayTrace/camera.h}}
+\mbox{\hyperlink{camera_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef RAYTRACING\_CAMERA\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define RAYTRACING\_CAMERA\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{qb_vector_8h}{./qbLinAlg/qbVector.h}}"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{ray_8h}{ray.h}}"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_r_t}{RT}} \{}
+\DoxyCodeLine{9     \textcolor{keyword}{class }\mbox{\hyperlink{class_r_t_1_1_camera}{Camera}} \{}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11     \textcolor{keyword}{public}:}
+\DoxyCodeLine{12         \textcolor{comment}{// Konstruktor domyślny}}
+\DoxyCodeLine{13         \mbox{\hyperlink{class_r_t_1_1_camera_a1513de7af55db310b04aa83f6cd747e6}{Camera}}();}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15         \textcolor{comment}{// Funkcje do ustawiania parametrów kamery}}
+\DoxyCodeLine{16         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_r_t_1_1_camera_a7a08c60fb7a07929897e3148e798976e}{SetPosition}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&newPosition);}
+\DoxyCodeLine{17         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_r_t_1_1_camera_a303252f454230eb67fef370256aa806f}{SetLookAt}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&newLookAt);}
+\DoxyCodeLine{18         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_r_t_1_1_camera_ab60600a74e7a9f82ea763321a3f7210e}{SetUp}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&upVector);}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20         \textcolor{comment}{// Funkcja ustawiająca odległość od kamery do punktu, na który patrzymy}}
+\DoxyCodeLine{21         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_r_t_1_1_camera_af56677571336b038e942df0dfc4e4090}{SetLength}}(\textcolor{keywordtype}{double} newLength);}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23         \textcolor{comment}{// Horyzontalny/poziomy rozmiar kamery}}
+\DoxyCodeLine{24         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_r_t_1_1_camera_aad8f50f59189b1ddf6b36e19a957c2ba}{SetHorzSize}}(\textcolor{keywordtype}{double} newSize);}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26         \textcolor{comment}{// Funkcja ustawiająca proporcje kamery. Proporcje 16:9 = 1.78}}
+\DoxyCodeLine{27         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_r_t_1_1_camera_a2b782b4aab7480489298d78fa602d06f}{SetAspect}}(\textcolor{keywordtype}{double} newAspectRatio);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29         \textcolor{comment}{// Gettery}}
+\DoxyCodeLine{30         \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \mbox{\hyperlink{class_r_t_1_1_camera_ae7c3393d671ae6fbf189102b00f14a2d}{GetPosition}}();}
+\DoxyCodeLine{31         \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \mbox{\hyperlink{class_r_t_1_1_camera_ab2d684d8ec6c090f969770c81eaed115}{GetLookAt}}();}
+\DoxyCodeLine{32         \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \mbox{\hyperlink{class_r_t_1_1_camera_addf57b743043ff67bf565d573a8f63f8}{GetUp}}();}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34         \textcolor{comment}{// Wektory U oraz V to wektory ekranu}}
+\DoxyCodeLine{35         \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \mbox{\hyperlink{class_r_t_1_1_camera_a844fc9bf91008fa5468b1fb37fb273f5}{GetU}}();}
+\DoxyCodeLine{36         \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \mbox{\hyperlink{class_r_t_1_1_camera_a230e5e96be52db49974ca551aa90b24d}{GetV}}();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38         \textcolor{comment}{// Wektor środka ekranu}}
+\DoxyCodeLine{39         \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \mbox{\hyperlink{class_r_t_1_1_camera_a7f7066c62259fcea9232bac2ad943770}{GetScreenCentre}}();}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41         \textcolor{keywordtype}{double} \mbox{\hyperlink{class_r_t_1_1_camera_a0799a5aa243b66a7f0172397edf76cea}{GetLength}}();}
+\DoxyCodeLine{42         \textcolor{keywordtype}{double} \mbox{\hyperlink{class_r_t_1_1_camera_aceddd3f90b0a8510f5ae1639f7af0962}{GetHorzSize}}();}
+\DoxyCodeLine{43         \textcolor{keywordtype}{double} \mbox{\hyperlink{class_r_t_1_1_camera_ae65dc2e37298fdf57f500aaf4e41fa88}{GetAspect}}();}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45         \textcolor{comment}{// Funkcja inicjująca instancję klasy Ray. Reprezentuje promień wychodzący z kamery i przechodzący przez}}
+\DoxyCodeLine{46         \textcolor{comment}{// pozycję na ekranie określoną przez parametry proScreenX i proScreenY}}
+\DoxyCodeLine{47         \textcolor{comment}{// 0 to środek ekranu, -\/1 i 1 do lewa lub prawa, lub góra, lub dół ekranu.}}
+\DoxyCodeLine{48         \textcolor{comment}{// X reprezentuje część wektora U.}}
+\DoxyCodeLine{49         \textcolor{comment}{// Y reprezentuje część wektora V.}}
+\DoxyCodeLine{50         \textcolor{comment}{// Są one translacją pozycji w przestrzeni trójwymiarowej, kiedy pomnożymy je przez te wektory.}}
+\DoxyCodeLine{51         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_r_t_1_1_camera_ab022ad5b3b5c28e4eb016516a39367f9}{GenerateRay}}(\textcolor{keywordtype}{float} proScreenX, \textcolor{keywordtype}{float} proScreenY, \mbox{\hyperlink{class_r_t_1_1_ray}{RT::Ray}} \&cameraRay);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53         \textcolor{comment}{// Funkcja aktualizująca geometrię kamery (w przypadku zmiany jej położenia lub punktu, na który patrzy)}}
+\DoxyCodeLine{54         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_r_t_1_1_camera_ac58d2976470b32493c5645d548e2a0c4}{UpdateCameraGeometry}}();}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \textcolor{keyword}{private}:}
+\DoxyCodeLine{57         \mbox{\hyperlink{classqb_vector}{qbVector<double>}} m\_cameraPosition\{3\};}
+\DoxyCodeLine{58         \mbox{\hyperlink{classqb_vector}{qbVector<double>}} m\_cameraLookAt\{3\};}
+\DoxyCodeLine{59         \mbox{\hyperlink{classqb_vector}{qbVector<double>}} m\_cameraUp\{3\};}
+\DoxyCodeLine{60         \textcolor{keywordtype}{double} m\_cameraLength;}
+\DoxyCodeLine{61         \textcolor{keywordtype}{double} m\_cameraHorzSize;}
+\DoxyCodeLine{62         \textcolor{keywordtype}{double} m\_cameraAspectRatio;}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64         \textcolor{comment}{// Główna oś kamery}}
+\DoxyCodeLine{65         \mbox{\hyperlink{classqb_vector}{qbVector<double>}} m\_alignmentVector\{3\};}
+\DoxyCodeLine{66         \mbox{\hyperlink{classqb_vector}{qbVector<double>}} m\_projectionScreenU\{3\};}
+\DoxyCodeLine{67         \mbox{\hyperlink{classqb_vector}{qbVector<double>}} m\_projectionScreenV\{3\};}
+\DoxyCodeLine{68         \mbox{\hyperlink{classqb_vector}{qbVector<double>}} m\_projectionScreenCentre\{3\};}
+\DoxyCodeLine{69     \};}
+\DoxyCodeLine{70 \}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//RAYTRACING\_CAMERA\_H}}
+
+\end{DoxyCode}

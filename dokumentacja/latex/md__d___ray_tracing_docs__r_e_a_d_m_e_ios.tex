@@ -1,0 +1,181 @@
+\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_ios_autotoc_md43}{}\doxysection{Building the Simple Direct\+Media Layer for i\+OS 5.\+1+}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_ios_autotoc_md43}
+Requirements\+: Mac OS X 10.\+8 or later and the i\+OS 7+ SDK.
+
+Instructions\+:
+
+
+\begin{DoxyEnumerate}
+\item Open SDL.\+xcodeproj (located in Xcode/\+SDL) in Xcode.
+\item Select your desired target, and hit build.
+\end{DoxyEnumerate}\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_ios_autotoc_md44}{}\doxysection{Using the Simple Direct\+Media Layer for i\+OS}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_ios_autotoc_md44}
+
+\begin{DoxyEnumerate}
+\item Run Xcode and create a new project using the i\+OS Game template, selecting the Objective C language and Metal game technology.
+\item In the main view, delete all files except for Assets and Launch\+Screen
+\item Right click the project in the main view, select \char`\"{}\+Add Files...\char`\"{}, and add the SDL project, Xcode/\+SDL/\+SDL.\+xcodeproj
+\item Select the project in the main view, go to the \char`\"{}\+Info\char`\"{} tab and under \char`\"{}\+Custom i\+OS Target Properties\char`\"{} remove the line \char`\"{}\+Main storyboard file base name\char`\"{}
+\item Select the project in the main view, go to the \char`\"{}\+Build Settings\char`\"{} tab, select \char`\"{}\+All\char`\"{}, and edit \char`\"{}\+Header Search Path\char`\"{} and drag over the SDL \char`\"{}\+Public Headers\char`\"{} folder from the left
+\item Select the project in the main view, go to the \char`\"{}\+Build Phases\char`\"{} tab, select \char`\"{}\+Link Binary With Libraries\char`\"{}, and add SDL2.\+framework from \char`\"{}\+Framework-\/i\+OS\char`\"{}
+\item Select the project in the main view, go to the \char`\"{}\+General\char`\"{} tab, scroll down to \char`\"{}\+Frameworks, Libraries, and Embedded Content\char`\"{}, and select \char`\"{}\+Embed \& Sign\char`\"{} for the SDL library.
+\item In the main view, expand SDL -\/\texorpdfstring{$>$}{>} Library Source -\/\texorpdfstring{$>$}{>} main -\/\texorpdfstring{$>$}{>} uikit and drag SDL\+\_\+uikit\+\_\+main.\+c into your game files
+\item Add the source files that you would normally have for an SDL program, making sure to have \#include \char`\"{}\+SDL.\+h\char`\"{} at the top of the file containing your \mbox{\hyperlink{_c_make_c_compiler_id_8c_a0ddf1224851353fc92bfbff6f499fa97}{main()}} function.
+\item Add any assets that your application needs.
+\item Enjoy!
+\end{DoxyEnumerate}
+
+TODO\+: Add information regarding App Store requirements such as icons, etc.\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_ios_autotoc_md45}{}\doxysection{Notes – Retina / High-\/\+DPI and window sizes}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_ios_autotoc_md45}
+Window and display mode sizes in SDL are in \char`\"{}screen coordinates\char`\"{} (or \char`\"{}points\char`\"{}, in Apple\textquotesingle{}s terminology) rather than in pixels. On i\+OS this means that a window created on an i\+Phone 6 will have a size in screen coordinates of 375 x 667, rather than a size in pixels of 750 x 1334. All i\+OS apps are expected to size their content based on screen coordinates / points rather than pixels, as this allows different i\+OS devices to have different pixel densities (Retina versus non-\/\+Retina screens, etc.) without apps caring too much.
+
+By default SDL will not use the full pixel density of the screen on Retina/high-\/dpi capable devices. Use the SDL\+\_\+\+WINDOW\+\_\+\+ALLOW\+\_\+\+HIGHDPI flag when creating your window to enable high-\/dpi support.
+
+When high-\/dpi support is enabled, \mbox{\hyperlink{_s_d_l__video_8h_a5cbfffcfec91c22a7ca95fd1d5163db5}{SDL\+\_\+\+Get\+Window\+Size()}} and display mode sizes will still be in \char`\"{}screen coordinates\char`\"{} rather than pixels, but the window will have a much greater pixel density when the device supports it, and the \mbox{\hyperlink{_s_d_l__video_8h_ac21851bbd91760c5bab92594a58edba3}{SDL\+\_\+\+GL\+\_\+\+Get\+Drawable\+Size()}} or \mbox{\hyperlink{_s_d_l__render_8h_abfc0c9a50d9d1870ab7d271b7a73d8ab}{SDL\+\_\+\+Get\+Renderer\+Output\+Size()}} functions (depending on whether raw Open\+GL or the SDL\+\_\+\+Render API is used) can be queried to determine the size in pixels of the drawable screen framebuffer.
+
+Some Open\+GL ES functions such as gl\+Viewport expect sizes in pixels rather than sizes in screen coordinates. When doing 2D rendering with Open\+GL ES, an orthographic projection matrix using the size in screen coordinates (\mbox{\hyperlink{_s_d_l__video_8h_a5cbfffcfec91c22a7ca95fd1d5163db5}{SDL\+\_\+\+Get\+Window\+Size()}}) can be used in order to display content at the same scale no matter whether a Retina device is used or not.\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_ios_autotoc_md46}{}\doxysection{Notes – Application events}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_ios_autotoc_md46}
+On i\+OS the application goes through a fixed life cycle and you will get notifications of state changes via application events. When these events are delivered you must handle them in an event callback because the OS may not give you any processing time after the events are delivered.
+
+e.\+g. \begin{DoxyVerb}int HandleAppEvents(void *userdata, SDL_Event *event)
+{
+    switch (event->type)
+    {
+    case SDL_APP_TERMINATING:
+        /* Terminate the app.
+           Shut everything down before returning from this function.
+        */
+        return 0;
+    case SDL_APP_LOWMEMORY:
+        /* You will get this when your app is paused and iOS wants more memory.
+           Release as much memory as possible.
+        */
+        return 0;
+    case SDL_APP_WILLENTERBACKGROUND:
+        /* Prepare your app to go into the background.  Stop loops, etc.
+           This gets called when the user hits the home button, or gets a call.
+        */
+        return 0;
+    case SDL_APP_DIDENTERBACKGROUND:
+        /* This will get called if the user accepted whatever sent your app to the background.
+           If the user got a phone call and canceled it, you'll instead get an SDL_APP_DIDENTERFOREGROUND event and restart your loops.
+           When you get this, you have 5 seconds to save all your state or the app will be terminated.
+           Your app is NOT active at this point.
+        */
+        return 0;
+    case SDL_APP_WILLENTERFOREGROUND:
+        /* This call happens when your app is coming back to the foreground.
+           Restore all your state here.
+        */
+        return 0;
+    case SDL_APP_DIDENTERFOREGROUND:
+        /* Restart your loops here.
+           Your app is interactive and getting CPU again.
+        */
+        return 0;
+    default:
+        /* No special processing, add it to the event queue */
+        return 1;
+    }
+}
+
+int main(int argc, char *argv[])
+{
+    SDL_SetEventFilter(HandleAppEvents, NULL);
+
+    ... run your main loop
+
+    return 0;
+}
+\end{DoxyVerb}
+\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_ios_autotoc_md47}{}\doxysection{Notes – Accelerometer as Joystick}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_ios_autotoc_md47}
+SDL for i\+Phone supports polling the built in accelerometer as a joystick device. For an example on how to do this, see the accelerometer.\+c in the demos directory.
+
+The main thing to note when using the accelerometer with SDL is that while the i\+Phone natively reports accelerometer as floating point values in units of g-\/force, \mbox{\hyperlink{_s_d_l__joystick_8h_ac6fbda13b93679bedfc34733d4b2e748}{SDL\+\_\+\+Joystick\+Get\+Axis()}} reports joystick values as signed integers. Hence, in order to convert between the two, some clamping and scaling is necessary on the part of the i\+Phone SDL joystick driver. To convert \mbox{\hyperlink{_s_d_l__joystick_8h_ac6fbda13b93679bedfc34733d4b2e748}{SDL\+\_\+\+Joystick\+Get\+Axis()}} reported values BACK to units of g-\/force, simply multiply the values by SDL\+\_\+\+IPHONE\+\_\+\+MAX\+\_\+\+GFORCE / 0x7\+FFF.\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_ios_autotoc_md48}{}\doxysection{Notes – Open\+GL ES}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_ios_autotoc_md48}
+Your SDL application for i\+OS uses Open\+GL ES for video by default.
+
+Open\+GL ES for i\+OS supports several display pixel formats, such as RGBA8 and RGB565, which provide a 32 bit and 16 bit color buffer respectively. By default, the implementation uses RGB565, but you may use RGBA8 by setting each color component to 8 bits in \mbox{\hyperlink{_s_d_l__video_8h_aed4d4347f2d5def1532bc22893e0e0d9}{SDL\+\_\+\+GL\+\_\+\+Set\+Attribute()}}.
+
+If your application doesn\textquotesingle{}t use Open\+GL\textquotesingle{}s depth buffer, you may find significant performance improvement by setting SDL\+\_\+\+GL\+\_\+\+DEPTH\+\_\+\+SIZE to 0.
+
+Finally, if your application completely redraws the screen each frame, you may find significant performance improvement by setting the attribute SDL\+\_\+\+GL\+\_\+\+RETAINED\+\_\+\+BACKING to 0.
+
+Open\+GL ES on i\+OS doesn\textquotesingle{}t use the traditional system-\/framebuffer setup provided in other operating systems. Special care must be taken because of this\+:
+
+
+\begin{DoxyItemize}
+\item The drawable Renderbuffer must be bound to the GL\+\_\+\+RENDERBUFFER binding point when \mbox{\hyperlink{_s_d_l__video_8h_a11d1245662f49f6af257627119f22835}{SDL\+\_\+\+GL\+\_\+\+Swap\+Window()}} is called.
+\item The drawable Framebuffer Object must be bound while rendering to the screen and when \mbox{\hyperlink{_s_d_l__video_8h_a11d1245662f49f6af257627119f22835}{SDL\+\_\+\+GL\+\_\+\+Swap\+Window()}} is called.
+\item If multisample antialiasing (MSAA) is used and gl\+Read\+Pixels is used on the screen, the drawable framebuffer must be resolved to the MSAA resolve framebuffer (via gl\+Blit\+Framebuffer or gl\+Resolve\+Multisample\+Framebuffer\+APPLE), and the MSAA resolve framebuffer must be bound to the GL\+\_\+\+READ\+\_\+\+FRAMEBUFFER binding point, before gl\+Read\+Pixels is called.
+\end{DoxyItemize}
+
+The above objects can be obtained via \mbox{\hyperlink{_s_d_l__syswm_8h_ad6e40121a96c88af20d9469a04706fef}{SDL\+\_\+\+Get\+Window\+WMInfo()}} (in SDL\+\_\+syswm.\+h).\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_ios_autotoc_md49}{}\doxysection{Notes – Keyboard}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_ios_autotoc_md49}
+The SDL keyboard API has been extended to support on-\/screen keyboards\+:
+
+void \mbox{\hyperlink{_s_d_l__keyboard_8h_ab2c8474b9a8b6d07cae4f8eceab38870}{SDL\+\_\+\+Start\+Text\+Input()}} -- enables text events and reveals the onscreen keyboard.
+
+void \mbox{\hyperlink{_s_d_l__keyboard_8h_ab08b914cdfb2eaed26165cb2f6b110ec}{SDL\+\_\+\+Stop\+Text\+Input()}} -- disables text events and hides the onscreen keyboard.
+
+SDL\+\_\+bool \mbox{\hyperlink{_s_d_l__keyboard_8h_a6c84ed1daac21f8224d43bcb9d5bc597}{SDL\+\_\+\+Is\+Text\+Input\+Active()}} -- returns whether or not text events are enabled (and the onscreen keyboard is visible)\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_ios_autotoc_md50}{}\doxysection{Notes – Mouse}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_ios_autotoc_md50}
+i\+OS now supports Bluetooth mice on i\+Pad, but by default will provide the mouse input as touch. In order for SDL to see the real mouse events, you should set the key UIApplication\+Supports\+Indirect\+Input\+Events to true in your Info.\+plist\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_ios_autotoc_md51}{}\doxysection{Notes – Reading and Writing files}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_ios_autotoc_md51}
+Each application installed on i\+Phone resides in a sandbox which includes its own Application Home directory. Your application may not access files outside this directory.
+
+Once your application is installed its directory tree looks like\+: \begin{DoxyVerb}MySDLApp Home/
+    MySDLApp.app
+    Documents/
+    Library/
+        Preferences/
+    tmp/
+\end{DoxyVerb}
+ When your SDL based i\+Phone application starts up, it sets the working directory to the main bundle (My\+SDLApp Home/\+My\+SDLApp.\+app), where your application resources are stored. You cannot write to this directory. Instead, I advise you to write document files to \char`\"{}../\+Documents/\char`\"{} and preferences to \char`\"{}../\+Library/\+Preferences\char`\"{}. ~\newline
+
+
+More information on this subject is available here\+: \href{http://developer.apple.com/library/ios/\#documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/Introduction/Introduction.html}{\texttt{ http\+://developer.\+apple.\+com/library/ios/\#documentation/i\+Phone/\+Conceptual/i\+Phone\+OSProgramming\+Guide/\+Introduction/\+Introduction.\+html}}\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_ios_autotoc_md52}{}\doxysection{Notes – i\+Phone SDL limitations}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_ios_autotoc_md52}
+Windows\+: Full-\/size, single window applications only. You cannot create multi-\/window SDL applications for i\+Phone OS. The application window will fill the display, though you have the option of turning on or off the menu-\/bar (pass \mbox{\hyperlink{_s_d_l__video_8h_a841edb930dc7cb2c1ec64f831d3abba6}{SDL\+\_\+\+Create\+Window()}} the flag SDL\+\_\+\+WINDOW\+\_\+\+BORDERLESS).
+
+Textures\+: The optimal texture formats on i\+OS are SDL\+\_\+\+PIXELFORMAT\+\_\+\+ABGR8888, SDL\+\_\+\+PIXELFORMAT\+\_\+\+ABGR8888, SDL\+\_\+\+PIXELFORMAT\+\_\+\+BGR888, and SDL\+\_\+\+PIXELFORMAT\+\_\+\+RGB24 pixel formats.
+
+Loading Shared Objects\+: This is disabled by default since it seems to break the terms of the i\+OS SDK agreement for i\+OS versions prior to i\+OS 8. It can be re-\/enabled in SDL\+\_\+config\+\_\+iphoneos.\+h.\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_ios_autotoc_md53}{}\doxysection{Notes – Core\+Bluetooth.\+framework}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_ios_autotoc_md53}
+SDL\+\_\+\+JOYSTICK\+\_\+\+HIDAPI is disabled by default. It can give you access to a lot more game controller devices, but it requires permission from the user before your app will be able to talk to the Bluetooth hardware. \char`\"{}\+Made For i\+OS\char`\"{} branded controllers do not need this as we don\textquotesingle{}t have to speak to them directly with raw bluetooth, so many apps can live without this.
+
+You\textquotesingle{}ll need to link with Core\+Bluetooth.\+framework and add something like this to your Info.\+plist\+:
+
+$<$key$>$NSBluetooth\+Peripheral\+Usage\+Description$<$/key$>$ $<$string$>$My\+App would like to remain connected to nearby bluetooth Game Controllers and Game Pads even when you\textquotesingle{}re not using the app.$<$/string$>$\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_ios_autotoc_md54}{}\doxysection{Game Center}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_ios_autotoc_md54}
+Game Center integration might require that you break up your main loop in order to yield control back to the system. In other words, instead of running an endless main loop, you run each frame in a callback function, using\+: \begin{DoxyVerb}int SDL_iPhoneSetAnimationCallback(SDL_Window * window, int interval, void (*callback)(void*), void *callbackParam);
+\end{DoxyVerb}
+ This will set up the given function to be called back on the animation callback, and then you have to return from \mbox{\hyperlink{_c_make_c_compiler_id_8c_a0ddf1224851353fc92bfbff6f499fa97}{main()}} to let the Cocoa event loop run.
+
+e.\+g. \begin{DoxyVerb}extern "C"
+void ShowFrame(void*)
+{
+    ... do event handling, frame logic and rendering ...
+}
+
+int main(int argc, char *argv[])
+{
+    ... initialize game ...
+
+#if __IPHONEOS__
+    // Initialize the Game Center for scoring and matchmaking
+    InitGameCenter();
+
+    // Set up the game to run in the window animation callback on iOS
+    // so that Game Center and so forth works correctly.
+    SDL_iPhoneSetAnimationCallback(window, 1, ShowFrame, NULL);
+#else
+    while ( running ) {
+        ShowFrame(0);
+        DelayFrame();
+    }
+#endif
+    return 0;
+}
+\end{DoxyVerb}
+\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_ios_autotoc_md55}{}\doxysection{Deploying to older versions of i\+OS}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_ios_autotoc_md55}
+SDL supports deploying to older versions of i\+OS than are supported by the latest version of Xcode, all the way back to i\+OS 6.\+1
+
+In order to do that you need to download an older version of Xcode\+: \href{https://developer.apple.com/download/more/?name=Xcode}{\texttt{ https\+://developer.\+apple.\+com/download/more/?name=\+Xcode}}
+
+Open the package contents of the older Xcode and your newer version of Xcode and copy over the folders in Xcode.\+app/\+Contents/\+Developer/\+Platforms/i\+Phone\+OS.platform/\+Device\+Support
+
+Then open the file Xcode.\+app/\+Contents/\+Developer/\+Platforms/i\+Phone\+OS.platform/\+Developer/\+SDKs/i\+Phone\+OS.\+sdk/\+SDKSettings.plist and add the versions of i\+OS you want to deploy to the key Root/\+Default\+Properties/\+DEPLOYMENT\+\_\+\+TARGET\+\_\+\+SUGGESTED\+\_\+\+VALUES
+
+Open your project and set your deployment target to the desired version of i\+OS
+
+Finally, remove Game\+Controller from the list of frameworks linked by your application and edit the build settings for \char`\"{}\+Other Linker Flags\char`\"{} and add -\/weak\+\_\+framework Game\+Controller 

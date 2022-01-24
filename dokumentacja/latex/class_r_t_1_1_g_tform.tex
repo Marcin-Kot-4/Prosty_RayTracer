@@ -1,0 +1,126 @@
+\hypertarget{class_r_t_1_1_g_tform}{}\doxysection{RT\+::GTform Class Reference}
+\label{class_r_t_1_1_g_tform}\index{RT::GTform@{RT::GTform}}
+
+
+{\ttfamily \#include $<$gtfm.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_r_t_1_1_g_tform_af4a85301e8377010585ab3b9be09b73e}{GTform}} ()
+\item 
+\mbox{\hyperlink{class_r_t_1_1_g_tform_ac52387dbc170335f4648b5ba6994834d}{$\sim$\+GTform}} ()
+\item 
+\mbox{\hyperlink{class_r_t_1_1_g_tform_a7e4e554e38330d47571b60b408525536}{GTform}} (const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ double $>$ \&fwd, const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ double $>$ \&bck)
+\item 
+\mbox{\hyperlink{_s_d_l__opengles2__gl2ext_8h_ae5d8fa23ad07c48bb609509eae494c95}{void}} \mbox{\hyperlink{class_r_t_1_1_g_tform_a54c87058d14d7cf321230ea13523f622}{Set\+Transform}} (const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&translation, const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&rotation, const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a281421b881aa7a1266842b73a3bc7655}{scale}})
+\item 
+\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ double $>$ \mbox{\hyperlink{class_r_t_1_1_g_tform_a115fa0452dcb2c3fd97577f044986d80}{Get\+Forward}} ()
+\item 
+\mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ double $>$ \mbox{\hyperlink{class_r_t_1_1_g_tform_adcf5e1799ce160c0793f6ac243cd4cde}{Get\+Backward}} ()
+\item 
+\mbox{\hyperlink{class_r_t_1_1_ray}{RT\+::\+Ray}} \mbox{\hyperlink{class_r_t_1_1_g_tform_a77ea09e51153e6eca97750c38e520eef}{Apply}} (const \mbox{\hyperlink{class_r_t_1_1_ray}{RT\+::\+Ray}} \&input\+Ray, bool dir\+Flag)
+\item 
+\mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \mbox{\hyperlink{class_r_t_1_1_g_tform_aefa4034fcc6e1ff530708f1a810940cd}{Apply}} (const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&input\+Vector, bool dir\+Flag)
+\item 
+\mbox{\hyperlink{class_r_t_1_1_g_tform}{GTform}} \mbox{\hyperlink{class_r_t_1_1_g_tform_a809b7029a456b68e49a109c97a07afa2}{operator=}} (const \mbox{\hyperlink{class_r_t_1_1_g_tform}{GTform}} \&rhs)
+\item 
+\mbox{\hyperlink{_s_d_l__opengles2__gl2ext_8h_ae5d8fa23ad07c48bb609509eae494c95}{void}} \mbox{\hyperlink{class_r_t_1_1_g_tform_a2169f46803d51938b059da7eb9fa08fb}{Print\+Matrix}} (bool dir\+Flag)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{_s_d_l__opengles2__gl2ext_8h_ae5d8fa23ad07c48bb609509eae494c95}{void}} \mbox{\hyperlink{class_r_t_1_1_g_tform_a7ed83f7c30e352f5639dd7af0afbfe37}{Print\+Vector}} (const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&vector)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_r_t_1_1_g_tform}{GTform}} \mbox{\hyperlink{class_r_t_1_1_g_tform_a8b8700192cec8d25c73f40b6e787c77c}{operator$\ast$}} (const \mbox{\hyperlink{class_r_t_1_1_g_tform}{RT\+::\+GTform}} \&lhs, const \mbox{\hyperlink{class_r_t_1_1_g_tform}{RT\+::\+GTform}} \&rhs)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_r_t_1_1_g_tform_af4a85301e8377010585ab3b9be09b73e}\label{class_r_t_1_1_g_tform_af4a85301e8377010585ab3b9be09b73e}} 
+\index{RT::GTform@{RT::GTform}!GTform@{GTform}}
+\index{GTform@{GTform}!RT::GTform@{RT::GTform}}
+\doxysubsubsection{\texorpdfstring{GTform()}{GTform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily RT\+::\+GTform\+::\+GTform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_r_t_1_1_g_tform_ac52387dbc170335f4648b5ba6994834d}\label{class_r_t_1_1_g_tform_ac52387dbc170335f4648b5ba6994834d}} 
+\index{RT::GTform@{RT::GTform}!````~GTform@{$\sim$GTform}}
+\index{````~GTform@{$\sim$GTform}!RT::GTform@{RT::GTform}}
+\doxysubsubsection{\texorpdfstring{$\sim$GTform()}{~GTform()}}
+{\footnotesize\ttfamily RT\+::\+GTform\+::$\sim$\+GTform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_r_t_1_1_g_tform_a7e4e554e38330d47571b60b408525536}\label{class_r_t_1_1_g_tform_a7e4e554e38330d47571b60b408525536}} 
+\index{RT::GTform@{RT::GTform}!GTform@{GTform}}
+\index{GTform@{GTform}!RT::GTform@{RT::GTform}}
+\doxysubsubsection{\texorpdfstring{GTform()}{GTform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily RT\+::\+GTform\+::\+GTform (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ double $>$ \&}]{fwd,  }\item[{const \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ double $>$ \&}]{bck }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_r_t_1_1_g_tform_aefa4034fcc6e1ff530708f1a810940cd}\label{class_r_t_1_1_g_tform_aefa4034fcc6e1ff530708f1a810940cd}} 
+\index{RT::GTform@{RT::GTform}!Apply@{Apply}}
+\index{Apply@{Apply}!RT::GTform@{RT::GTform}}
+\doxysubsubsection{\texorpdfstring{Apply()}{Apply()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ RT\+::\+GTform\+::\+Apply (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&}]{input\+Vector,  }\item[{bool}]{dir\+Flag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_r_t_1_1_g_tform_a77ea09e51153e6eca97750c38e520eef}\label{class_r_t_1_1_g_tform_a77ea09e51153e6eca97750c38e520eef}} 
+\index{RT::GTform@{RT::GTform}!Apply@{Apply}}
+\index{Apply@{Apply}!RT::GTform@{RT::GTform}}
+\doxysubsubsection{\texorpdfstring{Apply()}{Apply()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_r_t_1_1_ray}{RT\+::\+Ray}} RT\+::\+GTform\+::\+Apply (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_r_t_1_1_ray}{RT\+::\+Ray}} \&}]{input\+Ray,  }\item[{bool}]{dir\+Flag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_r_t_1_1_g_tform_adcf5e1799ce160c0793f6ac243cd4cde}\label{class_r_t_1_1_g_tform_adcf5e1799ce160c0793f6ac243cd4cde}} 
+\index{RT::GTform@{RT::GTform}!GetBackward@{GetBackward}}
+\index{GetBackward@{GetBackward}!RT::GTform@{RT::GTform}}
+\doxysubsubsection{\texorpdfstring{GetBackward()}{GetBackward()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ double $>$ RT\+::\+GTform\+::\+Get\+Backward (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_r_t_1_1_g_tform_a115fa0452dcb2c3fd97577f044986d80}\label{class_r_t_1_1_g_tform_a115fa0452dcb2c3fd97577f044986d80}} 
+\index{RT::GTform@{RT::GTform}!GetForward@{GetForward}}
+\index{GetForward@{GetForward}!RT::GTform@{RT::GTform}}
+\doxysubsubsection{\texorpdfstring{GetForward()}{GetForward()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classqb_matrix2}{qb\+Matrix2}}$<$ double $>$ RT\+::\+GTform\+::\+Get\+Forward (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_r_t_1_1_g_tform_a809b7029a456b68e49a109c97a07afa2}\label{class_r_t_1_1_g_tform_a809b7029a456b68e49a109c97a07afa2}} 
+\index{RT::GTform@{RT::GTform}!operator=@{operator=}}
+\index{operator=@{operator=}!RT::GTform@{RT::GTform}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_r_t_1_1_g_tform}{RT\+::\+GTform}} RT\+::\+GTform\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_r_t_1_1_g_tform}{GTform}} \&}]{rhs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_r_t_1_1_g_tform_a2169f46803d51938b059da7eb9fa08fb}\label{class_r_t_1_1_g_tform_a2169f46803d51938b059da7eb9fa08fb}} 
+\index{RT::GTform@{RT::GTform}!PrintMatrix@{PrintMatrix}}
+\index{PrintMatrix@{PrintMatrix}!RT::GTform@{RT::GTform}}
+\doxysubsubsection{\texorpdfstring{PrintMatrix()}{PrintMatrix()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__opengles2__gl2ext_8h_ae5d8fa23ad07c48bb609509eae494c95}{void}} RT\+::\+GTform\+::\+Print\+Matrix (\begin{DoxyParamCaption}\item[{bool}]{dir\+Flag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_r_t_1_1_g_tform_a7ed83f7c30e352f5639dd7af0afbfe37}\label{class_r_t_1_1_g_tform_a7ed83f7c30e352f5639dd7af0afbfe37}} 
+\index{RT::GTform@{RT::GTform}!PrintVector@{PrintVector}}
+\index{PrintVector@{PrintVector}!RT::GTform@{RT::GTform}}
+\doxysubsubsection{\texorpdfstring{PrintVector()}{PrintVector()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__opengles2__gl2ext_8h_ae5d8fa23ad07c48bb609509eae494c95}{void}} RT\+::\+GTform\+::\+Print\+Vector (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&}]{vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_r_t_1_1_g_tform_a54c87058d14d7cf321230ea13523f622}\label{class_r_t_1_1_g_tform_a54c87058d14d7cf321230ea13523f622}} 
+\index{RT::GTform@{RT::GTform}!SetTransform@{SetTransform}}
+\index{SetTransform@{SetTransform}!RT::GTform@{RT::GTform}}
+\doxysubsubsection{\texorpdfstring{SetTransform()}{SetTransform()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__opengles2__gl2ext_8h_ae5d8fa23ad07c48bb609509eae494c95}{void}} RT\+::\+GTform\+::\+Set\+Transform (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&}]{translation,  }\item[{const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&}]{rotation,  }\item[{const \mbox{\hyperlink{classqb_vector}{qb\+Vector}}$<$ double $>$ \&}]{scale }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_r_t_1_1_g_tform_a8b8700192cec8d25c73f40b6e787c77c}\label{class_r_t_1_1_g_tform_a8b8700192cec8d25c73f40b6e787c77c}} 
+\index{RT::GTform@{RT::GTform}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!RT::GTform@{RT::GTform}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$}{operator*}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_r_t_1_1_g_tform}{GTform}} operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_r_t_1_1_g_tform}{RT\+::\+GTform}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{class_r_t_1_1_g_tform}{RT\+::\+GTform}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Ray\+Tracing/\+Ray\+Trace/\mbox{\hyperlink{gtfm_8h}{gtfm.\+h}}\item 
+D\+:/\+Ray\+Tracing/\+Ray\+Trace/\mbox{\hyperlink{gtfm_8cpp}{gtfm.\+cpp}}\end{DoxyCompactItemize}

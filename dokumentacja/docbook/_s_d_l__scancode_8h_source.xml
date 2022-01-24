@@ -1,0 +1,320 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__scancode_8h_source" xml:lang="en-US">
+<title>SDL_scancode.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_scancode.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+28 <emphasis role="preprocessor">#ifndef&#32;SDL_scancode_h_</emphasis>
+29 <emphasis role="preprocessor">#define&#32;SDL_scancode_h_</emphasis>
+30 
+31 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__stdinc_8h">SDL_stdinc.h</link>&quot;</emphasis>
+32 
+43 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+44 {
+45 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba87fcff2a4b4ea2b71e20c602f960b479">SDL_SCANCODE_UNKNOWN</link>&#32;=&#32;0,
+46 
+52 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;@{&#32;*/</emphasis>
+53 
+54 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bac3149d38992b048463fe2aee8c3524ec">SDL_SCANCODE_A</link>&#32;=&#32;4,
+55 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba2a909118ebf82b013b1a474c2d8cd297">SDL_SCANCODE_B</link>&#32;=&#32;5,
+56 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bade01dec031d4f7bdf44e06d41859275a">SDL_SCANCODE_C</link>&#32;=&#32;6,
+57 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bab0e874d9b332a806ad4b6ec7ddbef2cc">SDL_SCANCODE_D</link>&#32;=&#32;7,
+58 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba01b3ed143013e63128b7d75217e022e5">SDL_SCANCODE_E</link>&#32;=&#32;8,
+59 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba4949da84308954f52594906e751084c4">SDL_SCANCODE_F</link>&#32;=&#32;9,
+60 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bac63f311655f246c71ad4dcacb4795702">SDL_SCANCODE_G</link>&#32;=&#32;10,
+61 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba52ac58180c02af96291300cd904a3935">SDL_SCANCODE_H</link>&#32;=&#32;11,
+62 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba9fd7d35e38ff07254f62016314fbfdfc">SDL_SCANCODE_I</link>&#32;=&#32;12,
+63 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baff0b1e2c459f0ed1001c1a07fa416da3">SDL_SCANCODE_J</link>&#32;=&#32;13,
+64 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba46d079fb6c9c2718e00745cfb19e793b">SDL_SCANCODE_K</link>&#32;=&#32;14,
+65 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bae9e141e187d7ffa34a77674dd138e220">SDL_SCANCODE_L</link>&#32;=&#32;15,
+66 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba14d9dc55e896e1fa48e1be90cb461b19">SDL_SCANCODE_M</link>&#32;=&#32;16,
+67 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baf423bd8746a963fd0fc56172f99138d5">SDL_SCANCODE_N</link>&#32;=&#32;17,
+68 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba46373f68c8f65a72a6129ea5c4b1b5d9">SDL_SCANCODE_O</link>&#32;=&#32;18,
+69 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bab0b59feb089e3f2372c2330793061007">SDL_SCANCODE_P</link>&#32;=&#32;19,
+70 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baffa7aa4157a97c907c1bf49f76482910">SDL_SCANCODE_Q</link>&#32;=&#32;20,
+71 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bab55f16eb9eaeb462bef9f8d5df75797a">SDL_SCANCODE_R</link>&#32;=&#32;21,
+72 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baaac7cb56d42605def48a88bee0a4d14f">SDL_SCANCODE_S</link>&#32;=&#32;22,
+73 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bae2c0b9f4c617aba2dbfe8408522f9d4a">SDL_SCANCODE_T</link>&#32;=&#32;23,
+74 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bac911ca972693c95171607aa2cbb15683">SDL_SCANCODE_U</link>&#32;=&#32;24,
+75 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba9435f27f303f82d9f7da50ec183d5689">SDL_SCANCODE_V</link>&#32;=&#32;25,
+76 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba180806321fa10f45e07d2ad05615f53f">SDL_SCANCODE_W</link>&#32;=&#32;26,
+77 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba173f6d7a2f039b14a358c5c25617ce37">SDL_SCANCODE_X</link>&#32;=&#32;27,
+78 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba3a581c450d751c66c6e6a04123cca988">SDL_SCANCODE_Y</link>&#32;=&#32;28,
+79 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baadf71e762d53f934a34926d436a552be">SDL_SCANCODE_Z</link>&#32;=&#32;29,
+80 
+81 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baff74b80a712cfb73e8df04f92253ae4f">SDL_SCANCODE_1</link>&#32;=&#32;30,
+82 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba3ebed61e20d686723587c9d89bce1383">SDL_SCANCODE_2</link>&#32;=&#32;31,
+83 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba81df8628016cec298744a7d99f702ab1">SDL_SCANCODE_3</link>&#32;=&#32;32,
+84 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bacffde94a59446968c03361fdc74a53fa">SDL_SCANCODE_4</link>&#32;=&#32;33,
+85 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba5196f385ac9b54aa291339e3f13d27f3">SDL_SCANCODE_5</link>&#32;=&#32;34,
+86 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baa8460627fa69b7b6f599374b113c82b2">SDL_SCANCODE_6</link>&#32;=&#32;35,
+87 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba60c4f83c4b6847fa4db3c76ee6db3028">SDL_SCANCODE_7</link>&#32;=&#32;36,
+88 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba9f283c84e1fd3b2f18c0c51aa2448e3e">SDL_SCANCODE_8</link>&#32;=&#32;37,
+89 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba62186f3e482710a089fa741cdced64c9">SDL_SCANCODE_9</link>&#32;=&#32;38,
+90 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba8b4bd18e2d0bed5c7ba50a90a3a4dca6">SDL_SCANCODE_0</link>&#32;=&#32;39,
+91 
+92 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba76a75d2436c9061b989672ffa54b796d">SDL_SCANCODE_RETURN</link>&#32;=&#32;40,
+93 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba0ccb17b6d9ec1195a659ca31500b67d2">SDL_SCANCODE_ESCAPE</link>&#32;=&#32;41,
+94 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baf56f70d78d75d8252be3cee40096496e">SDL_SCANCODE_BACKSPACE</link>&#32;=&#32;42,
+95 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba7ed6cb89c0e5dd0974cbb0a11c8caa4a">SDL_SCANCODE_TAB</link>&#32;=&#32;43,
+96 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baf7db31fda547e25f962b7ecf4a3d6a7c">SDL_SCANCODE_SPACE</link>&#32;=&#32;44,
+97 
+98 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bac174bfdfddbb3e83e67e70f4534a3261">SDL_SCANCODE_MINUS</link>&#32;=&#32;45,
+99 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baf674a54891844d7994a324d27a7b02bd">SDL_SCANCODE_EQUALS</link>&#32;=&#32;46,
+100 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba8d574f0c0dd026ea071faff592987399">SDL_SCANCODE_LEFTBRACKET</link>&#32;=&#32;47,
+101 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba25f7475bec9d651de48dfad4f74c667a">SDL_SCANCODE_RIGHTBRACKET</link>&#32;=&#32;48,
+102 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba0ada7413e8a549d8a91d095789a3c138">SDL_SCANCODE_BACKSLASH</link>&#32;=&#32;49,&#32;
+116 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bac3a553bf8b10cc5fb62734c866e799e5">SDL_SCANCODE_NONUSHASH</link>&#32;=&#32;50,&#32;
+128 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba8784cfcaf0597143c194575787042952">SDL_SCANCODE_SEMICOLON</link>&#32;=&#32;51,
+129 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba3aeee9fe769cce606a77b30e6db468aa">SDL_SCANCODE_APOSTROPHE</link>&#32;=&#32;52,
+130 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba98a95c705af01d280d8ce14146bdddae">SDL_SCANCODE_GRAVE</link>&#32;=&#32;53,&#32;
+147 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba3204f738ff4ab5d9863708ab0f47826a">SDL_SCANCODE_COMMA</link>&#32;=&#32;54,
+148 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bab23ca9d4f507cbecfbd929787d59000c">SDL_SCANCODE_PERIOD</link>&#32;=&#32;55,
+149 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba565a31d5ffe7a26ac57924bb94414a01">SDL_SCANCODE_SLASH</link>&#32;=&#32;56,
+150 
+151 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba28a4f82bac1a41eb8cc8fc16642c9577">SDL_SCANCODE_CAPSLOCK</link>&#32;=&#32;57,
+152 
+153 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba566d88add7495cc66d8eb38417d5cfda">SDL_SCANCODE_F1</link>&#32;=&#32;58,
+154 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba2b3101068fc09aa464fee5b8aa6b6d70">SDL_SCANCODE_F2</link>&#32;=&#32;59,
+155 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba4e61a04b37db9ee7fb5e2d7c26881dea">SDL_SCANCODE_F3</link>&#32;=&#32;60,
+156 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba1f619f756d28fd94545368c62fb054a7">SDL_SCANCODE_F4</link>&#32;=&#32;61,
+157 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bad1fa9469e679c3c381946e0459b3c410">SDL_SCANCODE_F5</link>&#32;=&#32;62,
+158 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba2d64ad39b80d42b8f7edc98dd42347b6">SDL_SCANCODE_F6</link>&#32;=&#32;63,
+159 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777babd231b2e5b57f28e35afddeb5461f999">SDL_SCANCODE_F7</link>&#32;=&#32;64,
+160 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bae5c7867ffa377b2ce2287a836b4fbd5d">SDL_SCANCODE_F8</link>&#32;=&#32;65,
+161 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bad1080eb409e48828a945f4c08f9770f7">SDL_SCANCODE_F9</link>&#32;=&#32;66,
+162 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba4decaf0d9f1e09290da0187817bceb04">SDL_SCANCODE_F10</link>&#32;=&#32;67,
+163 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba2fb5793a64aa81f09b19938cfd60ba1b">SDL_SCANCODE_F11</link>&#32;=&#32;68,
+164 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba1515b23b35f10df6656c38bda0d7e50a">SDL_SCANCODE_F12</link>&#32;=&#32;69,
+165 
+166 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba713c5ddb0670d47574052104071e15b7">SDL_SCANCODE_PRINTSCREEN</link>&#32;=&#32;70,
+167 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba74ddbc6c30fb4cc87980e8a397546fbc">SDL_SCANCODE_SCROLLLOCK</link>&#32;=&#32;71,
+168 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba76576234aad6b878d32f5ed5f0c73f87">SDL_SCANCODE_PAUSE</link>&#32;=&#32;72,
+169 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bafadcacdcd29fa5cf74598a6c61796287">SDL_SCANCODE_INSERT</link>&#32;=&#32;73,&#32;
+171 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777badeeda08268fb05fd3d0bf5a114c41c18">SDL_SCANCODE_HOME</link>&#32;=&#32;74,
+172 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baade4e769c2f49b7fe3c429cf4eca4d79">SDL_SCANCODE_PAGEUP</link>&#32;=&#32;75,
+173 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba495fa6f00d47cb80cbddfafa70c6ca3c">SDL_SCANCODE_DELETE</link>&#32;=&#32;76,
+174 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba04101b2072a4133c309e9acbb0a2f1a5">SDL_SCANCODE_END</link>&#32;=&#32;77,
+175 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba7b22fa9c6bd5060d5175a5a322593a1f">SDL_SCANCODE_PAGEDOWN</link>&#32;=&#32;78,
+176 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777babd10fb56325bf76b89597135f6574b0b">SDL_SCANCODE_RIGHT</link>&#32;=&#32;79,
+177 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bad6d4c964522975ede0f3dfe28f5092d1">SDL_SCANCODE_LEFT</link>&#32;=&#32;80,
+178 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777babb372eb6f2e96fcfb271210326f1fbc0">SDL_SCANCODE_DOWN</link>&#32;=&#32;81,
+179 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bad6990477d3b31f28937fb7f041fdf216">SDL_SCANCODE_UP</link>&#32;=&#32;82,
+180 
+181 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba6fe49f0c14d072eaa8fcd80862a73b32">SDL_SCANCODE_NUMLOCKCLEAR</link>&#32;=&#32;83,&#32;
+183 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baef641863f3326b3c67190f88d8e776fa">SDL_SCANCODE_KP_DIVIDE</link>&#32;=&#32;84,
+184 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bacbed39f41f6f96d7c3b551b4e8a7933a">SDL_SCANCODE_KP_MULTIPLY</link>&#32;=&#32;85,
+185 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba2bb7c4f77e45924684b0aab8c3ae42e4">SDL_SCANCODE_KP_MINUS</link>&#32;=&#32;86,
+186 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba1d8d826cabd5ccdc93171ee531fc8009">SDL_SCANCODE_KP_PLUS</link>&#32;=&#32;87,
+187 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baab5f4d3e694d7ed8d51cb18a3c107d11">SDL_SCANCODE_KP_ENTER</link>&#32;=&#32;88,
+188 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bab5ce6521604c853ee7addbe796dcd1e9">SDL_SCANCODE_KP_1</link>&#32;=&#32;89,
+189 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bac655fcbe9b3f70d207cb542286b90cd9">SDL_SCANCODE_KP_2</link>&#32;=&#32;90,
+190 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba746ea2081a9318d3722cb09d835d3a14">SDL_SCANCODE_KP_3</link>&#32;=&#32;91,
+191 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baddec465900094b7363f5a97244659af7">SDL_SCANCODE_KP_4</link>&#32;=&#32;92,
+192 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bae99e2b4f9c106132aab3dc992e12c1b4">SDL_SCANCODE_KP_5</link>&#32;=&#32;93,
+193 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba5b7111b84f684fcb2d35efc25044fdeb">SDL_SCANCODE_KP_6</link>&#32;=&#32;94,
+194 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba641957314423092c4abb6d2e289a55ef">SDL_SCANCODE_KP_7</link>&#32;=&#32;95,
+195 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bae710ada31bd35749e9d237fd43949b51">SDL_SCANCODE_KP_8</link>&#32;=&#32;96,
+196 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba66b3994ad26a8a75aa95772c7f20ba1f">SDL_SCANCODE_KP_9</link>&#32;=&#32;97,
+197 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba2f174964eeb7658764821366b508db66">SDL_SCANCODE_KP_0</link>&#32;=&#32;98,
+198 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba34ea6e3ff60b23951a4d5b360aee301a">SDL_SCANCODE_KP_PERIOD</link>&#32;=&#32;99,
+199 
+200 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba2ede89520423e3fe6357257283872d25">SDL_SCANCODE_NONUSBACKSLASH</link>&#32;=&#32;100,&#32;
+210 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777badb4e1b4439049803dd22679a7abbf466">SDL_SCANCODE_APPLICATION</link>&#32;=&#32;101,&#32;
+211 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba736f5c8b3d2c2c899e5dac90fce3a691">SDL_SCANCODE_POWER</link>&#32;=&#32;102,&#32;
+214 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba5aec81ba78165300a3b02c8b0b0baca7">SDL_SCANCODE_KP_EQUALS</link>&#32;=&#32;103,
+215 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baf0df550fde1dbc03b119283c25ca8e3c">SDL_SCANCODE_F13</link>&#32;=&#32;104,
+216 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bae1e5d331e9797af1fb1abd705fcb652b">SDL_SCANCODE_F14</link>&#32;=&#32;105,
+217 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba11e70ffe227a735ca6aa2e7b2909e390">SDL_SCANCODE_F15</link>&#32;=&#32;106,
+218 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba87d122e3f09f418a1f1c19badc148e91">SDL_SCANCODE_F16</link>&#32;=&#32;107,
+219 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baa0f837ce49a9d8c0a5b5005da23e7d86">SDL_SCANCODE_F17</link>&#32;=&#32;108,
+220 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baf09be27a57d24bffaef184227dc9b14c">SDL_SCANCODE_F18</link>&#32;=&#32;109,
+221 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba940e6352ddd2a3d3160560ea5cca743b">SDL_SCANCODE_F19</link>&#32;=&#32;110,
+222 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bae8476956a41e49f859175d64d722adf3">SDL_SCANCODE_F20</link>&#32;=&#32;111,
+223 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba5b7079766878d94e842b4a0a47cf047e">SDL_SCANCODE_F21</link>&#32;=&#32;112,
+224 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba87d775bdc05b4dcd76a821fcf8e5f4dc">SDL_SCANCODE_F22</link>&#32;=&#32;113,
+225 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bab22712a86ef1e40d9a0329e1c29b32ad">SDL_SCANCODE_F23</link>&#32;=&#32;114,
+226 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba35c5ea29ffba456da0535dbeb84ae8b5">SDL_SCANCODE_F24</link>&#32;=&#32;115,
+227 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba96ebf860d10f9e6acd07770d7a7384ea">SDL_SCANCODE_EXECUTE</link>&#32;=&#32;116,
+228 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba79f611667b0d8252881ca6616e5f97f5">SDL_SCANCODE_HELP</link>&#32;=&#32;117,
+229 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba9ae330a572ae20141c8f27b13990a7c9">SDL_SCANCODE_MENU</link>&#32;=&#32;118,
+230 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bada5860866f0a98510a59d612416e3f16">SDL_SCANCODE_SELECT</link>&#32;=&#32;119,
+231 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba7f4a0071619fb99161a32480de93076a">SDL_SCANCODE_STOP</link>&#32;=&#32;120,
+232 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bac9197a2eef1a3f3b9359feffdb0a126e">SDL_SCANCODE_AGAIN</link>&#32;=&#32;121,&#32;&#32;&#32;
+233 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bae9e335ddb5ac643710d1650f140830ad">SDL_SCANCODE_UNDO</link>&#32;=&#32;122,
+234 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba39a732616eafbce44dcdda4549cd52bd">SDL_SCANCODE_CUT</link>&#32;=&#32;123,
+235 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777babbae2e94d83cb072ea8f4d303745126d">SDL_SCANCODE_COPY</link>&#32;=&#32;124,
+236 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bae770b6a9f63f534273798509be583d23">SDL_SCANCODE_PASTE</link>&#32;=&#32;125,
+237 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baac61a2afd37141b0953559f20969a321">SDL_SCANCODE_FIND</link>&#32;=&#32;126,
+238 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba9ec2984faac05cf9a993e5a80e60b985">SDL_SCANCODE_MUTE</link>&#32;=&#32;127,
+239 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba6b5f6b795b8dc7387510b2df256c075a">SDL_SCANCODE_VOLUMEUP</link>&#32;=&#32;128,
+240 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baecc7c9ff2f22bd88cc5bea5260b403a7">SDL_SCANCODE_VOLUMEDOWN</link>&#32;=&#32;129,
+241 <emphasis role="comment">/*&#32;not&#32;sure&#32;whether&#32;there&apos;s&#32;a&#32;reason&#32;to&#32;enable&#32;these&#32;*/</emphasis>
+242 <emphasis role="comment">/*&#32;&#32;&#32;&#32;&#32;SDL_SCANCODE_LOCKINGCAPSLOCK&#32;=&#32;130,&#32;&#32;*/</emphasis>
+243 <emphasis role="comment">/*&#32;&#32;&#32;&#32;&#32;SDL_SCANCODE_LOCKINGNUMLOCK&#32;=&#32;131,&#32;*/</emphasis>
+244 <emphasis role="comment">/*&#32;&#32;&#32;&#32;&#32;SDL_SCANCODE_LOCKINGSCROLLLOCK&#32;=&#32;132,&#32;*/</emphasis>
+245 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba3d5f3b643283be49778096dc2ff9d7c2">SDL_SCANCODE_KP_COMMA</link>&#32;=&#32;133,
+246 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bacb18adc967988979fe56115d201482a2">SDL_SCANCODE_KP_EQUALSAS400</link>&#32;=&#32;134,
+247 
+248 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba271484c36406e14309d6456a7b105d11">SDL_SCANCODE_INTERNATIONAL1</link>&#32;=&#32;135,&#32;
+250 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba90216097eaa6d829173a45a6741857b9">SDL_SCANCODE_INTERNATIONAL2</link>&#32;=&#32;136,
+251 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba7b8e9da1c746c94bf93727d81ec13e3d">SDL_SCANCODE_INTERNATIONAL3</link>&#32;=&#32;137,&#32;
+252 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba1d3bad83d9e6f78c3157298a69863d98">SDL_SCANCODE_INTERNATIONAL4</link>&#32;=&#32;138,
+253 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baa6a176fda8d9b58365b76c888a382f54">SDL_SCANCODE_INTERNATIONAL5</link>&#32;=&#32;139,
+254 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bac142178be558fc9a3374a35f1c2535e7">SDL_SCANCODE_INTERNATIONAL6</link>&#32;=&#32;140,
+255 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba27d29450b927eacc40f99a5fe5fdab88">SDL_SCANCODE_INTERNATIONAL7</link>&#32;=&#32;141,
+256 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba6d9eb5a49ea5ff1e9f389b0d7610ae13">SDL_SCANCODE_INTERNATIONAL8</link>&#32;=&#32;142,
+257 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba65deee23f9b592aeeafec70fbf2bc880">SDL_SCANCODE_INTERNATIONAL9</link>&#32;=&#32;143,
+258 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba7f7be1cf065a535aa5b55f8d00dcea53">SDL_SCANCODE_LANG1</link>&#32;=&#32;144,&#32;
+259 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba286b0b85880f3227d34fb24e57b5c07f">SDL_SCANCODE_LANG2</link>&#32;=&#32;145,&#32;
+260 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baa339dcd13c578be8f95aa6d013432f7e">SDL_SCANCODE_LANG3</link>&#32;=&#32;146,&#32;
+261 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baa012fb1c4b68db61f6ef3a9e8f5ea419">SDL_SCANCODE_LANG4</link>&#32;=&#32;147,&#32;
+262 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777badcaf2dafa4e6e579c971b3f52d33d8ad">SDL_SCANCODE_LANG5</link>&#32;=&#32;148,&#32;
+263 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baebbf5f90a525a274be9f1ff8145f3601">SDL_SCANCODE_LANG6</link>&#32;=&#32;149,&#32;
+264 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bac544904fb1498903e44a3435261de5c7">SDL_SCANCODE_LANG7</link>&#32;=&#32;150,&#32;
+265 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba21ac9ec9b92b6b88c5341046e2a17d6f">SDL_SCANCODE_LANG8</link>&#32;=&#32;151,&#32;
+266 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baf585d6475dabc61549da2160335c1f3e">SDL_SCANCODE_LANG9</link>&#32;=&#32;152,&#32;
+268 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bac5a757253971a21c0b68bc413da5d261">SDL_SCANCODE_ALTERASE</link>&#32;=&#32;153,&#32;
+269 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba9f08ad16cb4729e9ed82960cc9be6d94">SDL_SCANCODE_SYSREQ</link>&#32;=&#32;154,
+270 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba3198e7213223453e1d49702bf7b6945e">SDL_SCANCODE_CANCEL</link>&#32;=&#32;155,
+271 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baeb135091fb46c89eec963aa892b46c7c">SDL_SCANCODE_CLEAR</link>&#32;=&#32;156,
+272 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baf0468103fd3a41ba7dc41b9b35f95ce5">SDL_SCANCODE_PRIOR</link>&#32;=&#32;157,
+273 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baa27f0eb552b2fb8d87d9cb5e4c2bd483">SDL_SCANCODE_RETURN2</link>&#32;=&#32;158,
+274 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bafa080000bf56069850abfec6a0b81f0f">SDL_SCANCODE_SEPARATOR</link>&#32;=&#32;159,
+275 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba062eb5a37fb5038b634e8bfbeb94f40a">SDL_SCANCODE_OUT</link>&#32;=&#32;160,
+276 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba8be476e6c46701dc84db07dc412d22f2">SDL_SCANCODE_OPER</link>&#32;=&#32;161,
+277 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba463df21758370da0d161f26739ac7394">SDL_SCANCODE_CLEARAGAIN</link>&#32;=&#32;162,
+278 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba6dd1a577f94f474da2bd5ce17a6ce21f">SDL_SCANCODE_CRSEL</link>&#32;=&#32;163,
+279 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba68218b33a039d2f8ba3cd38c5cd2a3fc">SDL_SCANCODE_EXSEL</link>&#32;=&#32;164,
+280 
+281 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba2ce0d4f508093f1a5d4f7ebda08db3c8">SDL_SCANCODE_KP_00</link>&#32;=&#32;176,
+282 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba78082a186452b939a779a63cc8207abd">SDL_SCANCODE_KP_000</link>&#32;=&#32;177,
+283 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baa7d4a456411ad010c8c330e49f3fa4e4">SDL_SCANCODE_THOUSANDSSEPARATOR</link>&#32;=&#32;178,
+284 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba905565f277ff196ed6d1efc0049f4e1e">SDL_SCANCODE_DECIMALSEPARATOR</link>&#32;=&#32;179,
+285 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baf2899a8c952245e7393967abdab86569">SDL_SCANCODE_CURRENCYUNIT</link>&#32;=&#32;180,
+286 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba7f67ed99b884ae87f391e5e0f170c6ec">SDL_SCANCODE_CURRENCYSUBUNIT</link>&#32;=&#32;181,
+287 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba353c29f024111208f73a6ec02561d842">SDL_SCANCODE_KP_LEFTPAREN</link>&#32;=&#32;182,
+288 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba51f0147f620ecb85d67a044de5af26a8">SDL_SCANCODE_KP_RIGHTPAREN</link>&#32;=&#32;183,
+289 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba9a4cef6740240e82a5ca96e484a2ea4d">SDL_SCANCODE_KP_LEFTBRACE</link>&#32;=&#32;184,
+290 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bac89e8138428383f271278d5926b381b5">SDL_SCANCODE_KP_RIGHTBRACE</link>&#32;=&#32;185,
+291 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba627cc5b019b31d507133c66f74b69481">SDL_SCANCODE_KP_TAB</link>&#32;=&#32;186,
+292 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba4076d94bbc8d7ed65c4437d1778e0912">SDL_SCANCODE_KP_BACKSPACE</link>&#32;=&#32;187,
+293 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba8dbc6a809907698c2cb40001b55ec573">SDL_SCANCODE_KP_A</link>&#32;=&#32;188,
+294 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba2f7692ac95c21eaa1cafc11afff74290">SDL_SCANCODE_KP_B</link>&#32;=&#32;189,
+295 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bacd14098382f58f39b2168fd733542035">SDL_SCANCODE_KP_C</link>&#32;=&#32;190,
+296 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba547c65a58145fa71996138809e9de906">SDL_SCANCODE_KP_D</link>&#32;=&#32;191,
+297 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba1c8f021b8ccb97985ac18c688695f7ce">SDL_SCANCODE_KP_E</link>&#32;=&#32;192,
+298 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba34f33836b2035b00542dda102034da48">SDL_SCANCODE_KP_F</link>&#32;=&#32;193,
+299 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba71ebce6fabf6e34fa441745f22b306c6">SDL_SCANCODE_KP_XOR</link>&#32;=&#32;194,
+300 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bacda369fc95d6be0016e3159718ab6a8f">SDL_SCANCODE_KP_POWER</link>&#32;=&#32;195,
+301 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baa0f07c9d265d1e32277144287c8f0a09">SDL_SCANCODE_KP_PERCENT</link>&#32;=&#32;196,
+302 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba8b6d4c68a85584d4cb430f9718cfa1c6">SDL_SCANCODE_KP_LESS</link>&#32;=&#32;197,
+303 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba2863bd6a478a3a6bf170e607de3185c5">SDL_SCANCODE_KP_GREATER</link>&#32;=&#32;198,
+304 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba4ef7836ad1e5886828d58bf32aa1b0fe">SDL_SCANCODE_KP_AMPERSAND</link>&#32;=&#32;199,
+305 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baea00878e33e83597ba78a435c0b8d915">SDL_SCANCODE_KP_DBLAMPERSAND</link>&#32;=&#32;200,
+306 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba3a58276e1a575a9b090affec8302bd4b">SDL_SCANCODE_KP_VERTICALBAR</link>&#32;=&#32;201,
+307 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bad06e18466f9415c3f7daad112bfcf9da">SDL_SCANCODE_KP_DBLVERTICALBAR</link>&#32;=&#32;202,
+308 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba513a19c9a8f8ac3cee597e89d44eabcc">SDL_SCANCODE_KP_COLON</link>&#32;=&#32;203,
+309 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba5e1733f2623a0d4ba678787b4553cf60">SDL_SCANCODE_KP_HASH</link>&#32;=&#32;204,
+310 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba3e18f73935b41120c2a35cd7d8ce5cdd">SDL_SCANCODE_KP_SPACE</link>&#32;=&#32;205,
+311 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bab5badcea9cd8dc872a64361ec9d95775">SDL_SCANCODE_KP_AT</link>&#32;=&#32;206,
+312 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba113577fb4ec881c819658eef90719e23">SDL_SCANCODE_KP_EXCLAM</link>&#32;=&#32;207,
+313 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baac8705f3b686df1af5ede3b1861c28ed">SDL_SCANCODE_KP_MEMSTORE</link>&#32;=&#32;208,
+314 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bab497312f27548de3bc66f786b99f022e">SDL_SCANCODE_KP_MEMRECALL</link>&#32;=&#32;209,
+315 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba8b27df895b52876a689b729d2842c0f3">SDL_SCANCODE_KP_MEMCLEAR</link>&#32;=&#32;210,
+316 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baa3a92d1a21f1a402b157d14b26e11e79">SDL_SCANCODE_KP_MEMADD</link>&#32;=&#32;211,
+317 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba8d9b77b9b94e6820bba9cb2d9293633f">SDL_SCANCODE_KP_MEMSUBTRACT</link>&#32;=&#32;212,
+318 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777babb2f962659818f8925e05047dfd8d407">SDL_SCANCODE_KP_MEMMULTIPLY</link>&#32;=&#32;213,
+319 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bafca27f123e21c17efb28402a7225f05d">SDL_SCANCODE_KP_MEMDIVIDE</link>&#32;=&#32;214,
+320 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baa5e0039a78d8b66cc2fb525c9039936a">SDL_SCANCODE_KP_PLUSMINUS</link>&#32;=&#32;215,
+321 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bae3c1b9349ef5eceb7f96d0b999cab590">SDL_SCANCODE_KP_CLEAR</link>&#32;=&#32;216,
+322 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba104c147bc2cab3fa88c59ac8cfa2b5ba">SDL_SCANCODE_KP_CLEARENTRY</link>&#32;=&#32;217,
+323 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bada1414bf13e700e8088a51fc414e7c84">SDL_SCANCODE_KP_BINARY</link>&#32;=&#32;218,
+324 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba0ddfa9e2870eeb0807e87038aaf7ca45">SDL_SCANCODE_KP_OCTAL</link>&#32;=&#32;219,
+325 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba11da9ccf87d3c2d3f580634b995d4850">SDL_SCANCODE_KP_DECIMAL</link>&#32;=&#32;220,
+326 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba3bd59ac02356269a73b92317b3cc9ae2">SDL_SCANCODE_KP_HEXADECIMAL</link>&#32;=&#32;221,
+327 
+328 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba8467d5f993ef86523d0cdfceeffafbcf">SDL_SCANCODE_LCTRL</link>&#32;=&#32;224,
+329 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba7c4526c2839f514b4e1b83c095a35a03">SDL_SCANCODE_LSHIFT</link>&#32;=&#32;225,
+330 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bae6a58c2b28e6aa3d473d1a76c75088bc">SDL_SCANCODE_LALT</link>&#32;=&#32;226,&#32;
+331 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba8b3916409c841cdb3ef4b0d4cc9d9155">SDL_SCANCODE_LGUI</link>&#32;=&#32;227,&#32;
+332 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bae800a6269a766611a3200ae9d6d6af8b">SDL_SCANCODE_RCTRL</link>&#32;=&#32;228,
+333 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bafadbef6246926be3d764e3bab489fecc">SDL_SCANCODE_RSHIFT</link>&#32;=&#32;229,
+334 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba9af4ffee688b9914dfb696b43b4e9889">SDL_SCANCODE_RALT</link>&#32;=&#32;230,&#32;
+335 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba46902ad8e7146f0f255400aff8ab489d">SDL_SCANCODE_RGUI</link>&#32;=&#32;231,&#32;
+337 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bac35fd3f41be03648c6c478d6e88bbe91">SDL_SCANCODE_MODE</link>&#32;=&#32;257,&#32;&#32;&#32;&#32;
+342 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;@}&#32;*/</emphasis><emphasis role="comment">/*&#32;Usage&#32;page&#32;0x07&#32;*/</emphasis>
+343 
+349 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;@{&#32;*/</emphasis>
+350 
+351 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bad8391a7c37304ddc426b1499f0029435">SDL_SCANCODE_AUDIONEXT</link>&#32;=&#32;258,
+352 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba75bc2aed20b57d1c56acd6ee868d0819">SDL_SCANCODE_AUDIOPREV</link>&#32;=&#32;259,
+353 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba7c96d0d316afb4d73110558334612a92">SDL_SCANCODE_AUDIOSTOP</link>&#32;=&#32;260,
+354 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bab0502e2d98b7da2501aee829d5f83d6c">SDL_SCANCODE_AUDIOPLAY</link>&#32;=&#32;261,
+355 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba36eb458e006fd947a03807542a198bf1">SDL_SCANCODE_AUDIOMUTE</link>&#32;=&#32;262,
+356 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baf450d0734e5f00813c93142f53dde76d">SDL_SCANCODE_MEDIASELECT</link>&#32;=&#32;263,
+357 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bac1281d31ef54c88224ed000d330d8abe">SDL_SCANCODE_WWW</link>&#32;=&#32;264,
+358 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba742e6d554965341b431428ec84298f0b">SDL_SCANCODE_MAIL</link>&#32;=&#32;265,
+359 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba37abd3fb9a5d345468d8047be9272461">SDL_SCANCODE_CALCULATOR</link>&#32;=&#32;266,
+360 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baaec2345893f4741cfd922f818a77b8c1">SDL_SCANCODE_COMPUTER</link>&#32;=&#32;267,
+361 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba8ed7d25d7dc29e72156c7f8f1e311570">SDL_SCANCODE_AC_SEARCH</link>&#32;=&#32;268,
+362 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baec191eeab1802feac5f86ed0a716c481">SDL_SCANCODE_AC_HOME</link>&#32;=&#32;269,
+363 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baac3fac97583e4e9fc5c5cfd46355706b">SDL_SCANCODE_AC_BACK</link>&#32;=&#32;270,
+364 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bafb0259f7247ca11dd9e1ba5c6111f4ee">SDL_SCANCODE_AC_FORWARD</link>&#32;=&#32;271,
+365 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba8bae7b26ad9bb7295eb3c086fd30907d">SDL_SCANCODE_AC_STOP</link>&#32;=&#32;272,
+366 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba64fbcce8ee4c5857041d2a824b515950">SDL_SCANCODE_AC_REFRESH</link>&#32;=&#32;273,
+367 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bab90516ce9261e0e0d88d476b3d9671b8">SDL_SCANCODE_AC_BOOKMARKS</link>&#32;=&#32;274,
+368 
+369 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;@}&#32;*/</emphasis><emphasis role="comment">/*&#32;Usage&#32;page&#32;0x0C&#32;*/</emphasis>
+370 
+376 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;@{&#32;*/</emphasis>
+377 
+378 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bad2a67c2b232d3ac1273b30d02edcf0b9">SDL_SCANCODE_BRIGHTNESSDOWN</link>&#32;=&#32;275,
+379 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba10ce8d4d0bf54911d71661a14218acc4">SDL_SCANCODE_BRIGHTNESSUP</link>&#32;=&#32;276,
+380 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba893aa25f300cba8af0cf6263a4cd7ade">SDL_SCANCODE_DISPLAYSWITCH</link>&#32;=&#32;277,&#32;
+382 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba76dfc9426f4d4004e5ece1acfea5a87c">SDL_SCANCODE_KBDILLUMTOGGLE</link>&#32;=&#32;278,
+383 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bad95b566f8a9ed11f5db0268650dea852">SDL_SCANCODE_KBDILLUMDOWN</link>&#32;=&#32;279,
+384 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bae4b4703c5ed2dc42683d76295bd08634">SDL_SCANCODE_KBDILLUMUP</link>&#32;=&#32;280,
+385 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba757c942a9baad80918a3aa391257a2aa">SDL_SCANCODE_EJECT</link>&#32;=&#32;281,
+386 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777baeee203f10f74f6045c4e0820f1461066">SDL_SCANCODE_SLEEP</link>&#32;=&#32;282,
+387 
+388 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bad0fb3e504f6357f0b99c077280693ae4">SDL_SCANCODE_APP1</link>&#32;=&#32;283,
+389 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777ba6b941a29374f3fbbcb8fcb4164b5b3ca">SDL_SCANCODE_APP2</link>&#32;=&#32;284,
+390 
+391 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;@}&#32;*/</emphasis><emphasis role="comment">/*&#32;Walther&#32;keys&#32;*/</emphasis>
+392 
+398 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;@{&#32;*/</emphasis>
+399 
+400 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bacdeb5cbc3381249864fd0b30f1191bb6">SDL_SCANCODE_AUDIOREWIND</link>&#32;=&#32;285,
+401 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bae40142e725def936c02cae679f3cd638">SDL_SCANCODE_AUDIOFASTFORWARD</link>&#32;=&#32;286,
+402 
+403 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;@}&#32;*/</emphasis><emphasis role="comment">/*&#32;Usage&#32;page&#32;0x0C&#32;(additional&#32;media&#32;keys)&#32;*/</emphasis>
+404 
+405 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Add&#32;any&#32;other&#32;keys&#32;here.&#32;*/</emphasis>
+406 
+407 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777bad2f6ac1f569510266d9dcd92f86d8b33">SDL_NUM_SCANCODES</link>&#32;=&#32;512&#32;
+409 }&#32;<link linkend="__s_d_l__scancode_8h_1a82ab7cff701034fb40a47b5b3a02777b">SDL_Scancode</link>;
+410 
+411 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_scancode_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+412 
+413 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

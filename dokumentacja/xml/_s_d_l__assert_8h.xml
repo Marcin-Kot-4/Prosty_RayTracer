@@ -1,0 +1,849 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_s_d_l__assert_8h" kind="file" language="C++">
+    <compoundname>SDL_assert.h</compoundname>
+    <includes refid="_s_d_l__config_8h" local="yes">SDL_config.h</includes>
+    <includes refid="begin__code_8h" local="yes">begin_code.h</includes>
+    <includes refid="close__code_8h" local="yes">close_code.h</includes>
+    <includedby refid="_s_d_l_8h" local="yes">D:/RayTracing/include/SDL.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>D:/RayTracing/include/SDL_assert.h</label>
+        <link refid="_s_d_l__assert_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SDL_config.h</label>
+        <link refid="_s_d_l__config_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>SDL_platform.h</label>
+        <link refid="_s_d_l__platform_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>begin_code.h</label>
+        <link refid="begin__code_8h"/>
+      </node>
+      <node id="5">
+        <label>close_code.h</label>
+        <link refid="close__code_8h"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>D:/RayTracing/CApp.cpp</label>
+        <link refid="_c_app_8cpp"/>
+      </node>
+      <node id="3">
+        <label>D:/RayTracing/CApp.h</label>
+        <link refid="_c_app_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>D:/RayTracing/RayTrace/Image.cpp</label>
+        <link refid="_image_8cpp"/>
+      </node>
+      <node id="6">
+        <label>D:/RayTracing/RayTrace/Image.h</label>
+        <link refid="_image_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>D:/RayTracing/RayTrace/Scene.cpp</label>
+        <link refid="_scene_8cpp"/>
+      </node>
+      <node id="8">
+        <label>D:/RayTracing/RayTrace/Scene.h</label>
+        <link refid="_scene_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>D:/RayTracing/RayTrace/Textures/textureimage.cpp</label>
+        <link refid="textureimage_8cpp"/>
+      </node>
+      <node id="10">
+        <label>D:/RayTracing/RayTrace/Textures/textureimage.h</label>
+        <link refid="textureimage_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>D:/RayTracing/include/SDL.h</label>
+        <link refid="_s_d_l_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/RayTracing/include/SDL_assert.h</label>
+        <link refid="_s_d_l__assert_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>D:/RayTracing/include/SDL_test.h</label>
+        <link refid="_s_d_l__test_8h"/>
+      </node>
+      <node id="13">
+        <label>D:/RayTracing/include/SDL_test_common.h</label>
+        <link refid="_s_d_l__test__common_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>D:/RayTracing/include/SDL_test_compare.h</label>
+        <link refid="_s_d_l__test__compare_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>D:/RayTracing/include/SDL_test_images.h</label>
+        <link refid="_s_d_l__test__images_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>D:/RayTracing/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_s_d_l___assert_data" prot="public">SDL_AssertData</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_s_d_l__assert_8h_1afbd8fdb86f3bba968efccbd932877731" prot="public" static="no">
+        <name>SDL_ASSERT_LEVEL</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_assert.h" line="40" column="10" bodyfile="D:/RayTracing/include/SDL_assert.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__assert_8h_1a42e8a6e0677acca7c1a927238b8dfe32" prot="public" static="no">
+        <name>SDL_TriggerBreakpoint</name>
+        <param></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_assert.h" line="67" column="13" bodyfile="D:/RayTracing/include/SDL_assert.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__assert_8h_1a30da3daba50f032ecda2c701e97da79d" prot="public" static="no">
+        <name>SDL_FUNCTION</name>
+        <initializer>&quot;???&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_assert.h" line="75" column="13" bodyfile="D:/RayTracing/include/SDL_assert.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__assert_8h_1a195c2795832718d008000d969eed96c3" prot="public" static="no">
+        <name>SDL_FILE</name>
+        <initializer>__FILE__</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_assert.h" line="77" column="10" bodyfile="D:/RayTracing/include/SDL_assert.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__assert_8h_1a421a39f96c53fe309aa6d66b5c5bec22" prot="public" static="no">
+        <name>SDL_LINE</name>
+        <initializer>__LINE__</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_assert.h" line="78" column="9" bodyfile="D:/RayTracing/include/SDL_assert.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__assert_8h_1a2ffca06819acf027ec29d6fd14c94cbe" prot="public" static="no">
+        <name>SDL_NULL_WHILE_LOOP_CONDITION</name>
+        <initializer>(0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_assert.h" line="100" column="10" bodyfile="D:/RayTracing/include/SDL_assert.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__assert_8h_1aeee78c1e2347a3cfe4ee3c215d497acd" prot="public" static="no">
+        <name>SDL_disabled_assert</name>
+        <param><defname>condition</defname></param>
+        <initializer>    do { (<ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref>) sizeof ((<ref refid="_s_d_l__opengl__glext_8h_1a3fd7759b3d6e5284475eee14a613b9f9" kindref="member">condition</ref>)); } while (<ref refid="_s_d_l__assert_8h_1a2ffca06819acf027ec29d6fd14c94cbe" kindref="member">SDL_NULL_WHILE_LOOP_CONDITION</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_assert.h" line="103" column="9" bodyfile="D:/RayTracing/include/SDL_assert.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__assert_8h_1a560c9df30e5f2db3d81daef3bbe81992" prot="public" static="no">
+        <name>SDL_enabled_assert</name>
+        <param><defname>condition</defname></param>
+        <initializer>    do { \
+        while ( !(<ref refid="_s_d_l__opengl__glext_8h_1a3fd7759b3d6e5284475eee14a613b9f9" kindref="member">condition</ref>) ) { \
+            static struct <ref refid="struct_s_d_l___assert_data" kindref="compound">SDL_AssertData</ref> sdl_assert_data = { \
+                0, 0, #<ref refid="_s_d_l__opengl__glext_8h_1a3fd7759b3d6e5284475eee14a613b9f9" kindref="member">condition</ref>, 0, 0, 0, 0 \
+            }; \
+            const <ref refid="_s_d_l__assert_8h_1a06d6a46a43cc7b34764c37398573ef1a" kindref="member">SDL_AssertState</ref> sdl_assert_state = <ref refid="_s_d_l__assert_8h_1a01ef51d076f7e9c3839fff4161a16550" kindref="member">SDL_ReportAssertion</ref>(&amp;sdl_assert_data, <ref refid="_s_d_l__assert_8h_1a30da3daba50f032ecda2c701e97da79d" kindref="member">SDL_FUNCTION</ref>, <ref refid="_s_d_l__assert_8h_1a195c2795832718d008000d969eed96c3" kindref="member">SDL_FILE</ref>, <ref refid="_s_d_l__assert_8h_1a421a39f96c53fe309aa6d66b5c5bec22" kindref="member">SDL_LINE</ref>); \
+            if (sdl_assert_state == <ref refid="_s_d_l__assert_8h_1a06d6a46a43cc7b34764c37398573ef1aa0ccce3254f1d981283e0792cd70437df" kindref="member">SDL_ASSERTION_RETRY</ref>) { \
+                continue; /* go again. */ \
+            } else if (sdl_assert_state == <ref refid="_s_d_l__assert_8h_1a06d6a46a43cc7b34764c37398573ef1aace6f6a41a6b303e220828fbe25b5d2a6" kindref="member">SDL_ASSERTION_BREAK</ref>) { \
+                <ref refid="_s_d_l__assert_8h_1a42e8a6e0677acca7c1a927238b8dfe32" kindref="member">SDL_TriggerBreakpoint</ref>(); \
+            } \
+            break; /* not retrying. */ \
+        } \
+    } while (<ref refid="_s_d_l__assert_8h_1a2ffca06819acf027ec29d6fd14c94cbe" kindref="member">SDL_NULL_WHILE_LOOP_CONDITION</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_assert.h" line="149" column="9" bodyfile="D:/RayTracing/include/SDL_assert.h" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__assert_8h_1af03d71e27f06835f6a09358943c33b1d" prot="public" static="no">
+        <name>SDL_assert</name>
+        <param><defname>condition</defname></param>
+        <initializer><ref refid="_s_d_l__assert_8h_1aeee78c1e2347a3cfe4ee3c215d497acd" kindref="member">SDL_disabled_assert</ref>(<ref refid="_s_d_l__opengl__glext_8h_1a3fd7759b3d6e5284475eee14a613b9f9" kindref="member">condition</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_assert.h" line="173" column="12" bodyfile="D:/RayTracing/include/SDL_assert.h" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__assert_8h_1a3af3f7dba7e28942c17e16745028a7da" prot="public" static="no">
+        <name>SDL_assert_release</name>
+        <param><defname>condition</defname></param>
+        <initializer><ref refid="_s_d_l__assert_8h_1a560c9df30e5f2db3d81daef3bbe81992" kindref="member">SDL_enabled_assert</ref>(<ref refid="_s_d_l__opengl__glext_8h_1a3fd7759b3d6e5284475eee14a613b9f9" kindref="member">condition</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_assert.h" line="174" column="12" bodyfile="D:/RayTracing/include/SDL_assert.h" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__assert_8h_1a4cc20db7eed29c5cd0e83f4f3d10860a" prot="public" static="no">
+        <name>SDL_assert_paranoid</name>
+        <param><defname>condition</defname></param>
+        <initializer><ref refid="_s_d_l__assert_8h_1aeee78c1e2347a3cfe4ee3c215d497acd" kindref="member">SDL_disabled_assert</ref>(<ref refid="_s_d_l__opengl__glext_8h_1a3fd7759b3d6e5284475eee14a613b9f9" kindref="member">condition</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_assert.h" line="175" column="12" bodyfile="D:/RayTracing/include/SDL_assert.h" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__assert_8h_1a22dedc823eb26ea054cbc584b614718e" prot="public" static="no">
+        <name>SDL_assert_always</name>
+        <param><defname>condition</defname></param>
+        <initializer><ref refid="_s_d_l__assert_8h_1a560c9df30e5f2db3d81daef3bbe81992" kindref="member">SDL_enabled_assert</ref>(<ref refid="_s_d_l__opengl__glext_8h_1a3fd7759b3d6e5284475eee14a613b9f9" kindref="member">condition</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_assert.h" line="189" column="9" bodyfile="D:/RayTracing/include/SDL_assert.h" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__assert_8h_1a15ee0b48c2893f92f851d251424837b6" prot="public" static="no">
+        <name>SDL_assert_state</name>
+        <initializer><ref refid="_s_d_l__assert_8h_1a06d6a46a43cc7b34764c37398573ef1a" kindref="member">SDL_AssertState</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_assert.h" line="312" column="9" bodyfile="D:/RayTracing/include/SDL_assert.h" bodystart="312" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__assert_8h_1a74c575b310128e12358caf79aec09da7" prot="public" static="no">
+        <name>SDL_assert_data</name>
+        <initializer><ref refid="struct_s_d_l___assert_data" kindref="compound">SDL_AssertData</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_assert.h" line="313" column="9" bodyfile="D:/RayTracing/include/SDL_assert.h" bodystart="313" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_s_d_l__assert_8h_1a06d6a46a43cc7b34764c37398573ef1a" prot="public" static="no" strong="no">
+        <type></type>
+        <name>SDL_AssertState</name>
+        <enumvalue id="_s_d_l__assert_8h_1a06d6a46a43cc7b34764c37398573ef1aa0ccce3254f1d981283e0792cd70437df" prot="public">
+          <name>SDL_ASSERTION_RETRY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Retry the assert immediately. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_l__assert_8h_1a06d6a46a43cc7b34764c37398573ef1aace6f6a41a6b303e220828fbe25b5d2a6" prot="public">
+          <name>SDL_ASSERTION_BREAK</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Make the debugger trigger a breakpoint. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_l__assert_8h_1a06d6a46a43cc7b34764c37398573ef1aa4cf9444bddf799c7638bbcc9c542799c" prot="public">
+          <name>SDL_ASSERTION_ABORT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Terminate the program. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_l__assert_8h_1a06d6a46a43cc7b34764c37398573ef1aa76eace7638278c093e24d78a91d6d772" prot="public">
+          <name>SDL_ASSERTION_IGNORE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Ignore the assert. </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_l__assert_8h_1a06d6a46a43cc7b34764c37398573ef1aaf8d1af4dc16f160217acadf2b8585fea" prot="public">
+          <name>SDL_ASSERTION_ALWAYS_IGNORE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Ignore the assert from now on. </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_assert.h" line="106" column="1" bodyfile="D:/RayTracing/include/SDL_assert.h" bodystart="107" bodyend="113"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_s_d_l__assert_8h_1afc62064b31b91c078b2960270e29801e" prot="public" static="no">
+        <type>struct <ref refid="struct_s_d_l___assert_data" kindref="compound">SDL_AssertData</ref></type>
+        <definition>typedef struct SDL_AssertData SDL_AssertData</definition>
+        <argsstring></argsstring>
+        <name>SDL_AssertData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_assert.h" line="124" column="16"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_s_d_l__assert_8h_1aa63dc5ca0d954add6893512583b08071" prot="public" static="no">
+        <type><ref refid="_s_d_l__assert_8h_1a06d6a46a43cc7b34764c37398573ef1a" kindref="member">SDL_AssertState</ref>(<ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref> *</type>
+        <definition>typedef SDL_AssertState(SDLCALL * SDL_AssertionHandler) (const SDL_AssertData *data, void *userdata)</definition>
+        <argsstring>)(const SDL_AssertData *data, void *userdata)</argsstring>
+        <name>SDL_AssertionHandler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A callback that fires when an SDL assertion fails.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to the <ref refid="struct_s_d_l___assert_data" kindref="compound">SDL_AssertData</ref> structure corresponding to the current assertion </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>userdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>what was passed as <computeroutput>userdata</computeroutput> to <ref refid="_s_d_l__assert_8h_1a12dc8edd25f52f3add69369b2978e689" kindref="member">SDL_SetAssertionHandler()</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>an SDL_AssertState value indicating how to handle the failure. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_assert.h" line="200" column="9" bodyfile="D:/RayTracing/include/SDL_assert.h" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_s_d_l__assert_8h_1a01ef51d076f7e9c3839fff4161a16550" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__assert_8h_1a06d6a46a43cc7b34764c37398573ef1a" kindref="member">SDL_AssertState</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC SDL_AssertState SDLCALL SDL_ReportAssertion</definition>
+        <argsstring>(SDL_AssertData *, const char *, const char *, int)</argsstring>
+        <name>SDL_ReportAssertion</name>
+        <param>
+          <type><ref refid="struct_s_d_l___assert_data" kindref="compound">SDL_AssertData</ref> *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_assert.h" line="129" column="41" declfile="D:/RayTracing/include/SDL_assert.h" declline="129" declcolumn="41"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__assert_8h_1a12dc8edd25f52f3add69369b2978e689" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC void SDLCALL SDL_SetAssertionHandler</definition>
+        <argsstring>(SDL_AssertionHandler handler, void *userdata)</argsstring>
+        <name>SDL_SetAssertionHandler</name>
+        <param>
+          <type><ref refid="_s_d_l__assert_8h_1aa63dc5ca0d954add6893512583b08071" kindref="member">SDL_AssertionHandler</ref></type>
+          <declname>handler</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> *</type>
+          <declname>userdata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set an application-defined assertion handler.</para>
+<para>This function allows an application to show its own assertion UI and/or force the response to an assertion failure. If the application doesn&apos;t provide this, SDL will try to do the right thing, popping up a system-specific GUI dialog, and probably minimizing any fullscreen windows.</para>
+<para>This callback may fire from any thread, but it runs wrapped in a mutex, so it will only fire from one thread at a time.</para>
+<para>This callback is NOT reset to SDL&apos;s internal handler upon <ref refid="_s_d_l_8h_1afdabaf714781099083592051f2d9ac11" kindref="member">SDL_Quit()</ref>!</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handler</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the SDL_AssertionHandler function to call when an assertion fails or NULL for the default handler </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>userdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer that is passed to <computeroutput>handler</computeroutput></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__assert_8h_1a61c95d5aa8a1bd701e829b0842e04f07" kindref="member">SDL_GetAssertionHandler</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_assert.h" line="224" column="30" declfile="D:/RayTracing/include/SDL_assert.h" declline="224" declcolumn="30"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__assert_8h_1a34dc4d9332bcdc32b3a0baa3fc2966bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__assert_8h_1aa63dc5ca0d954add6893512583b08071" kindref="member">SDL_AssertionHandler</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC SDL_AssertionHandler SDLCALL SDL_GetDefaultAssertionHandler</definition>
+        <argsstring>(void)</argsstring>
+        <name>SDL_GetDefaultAssertionHandler</name>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the default assertion handler.</para>
+<para>This returns the function pointer that is called by default when an assertion is triggered. This is an internal function provided by SDL, that is used for assertions when <ref refid="_s_d_l__assert_8h_1a12dc8edd25f52f3add69369b2978e689" kindref="member">SDL_SetAssertionHandler()</ref> hasn&apos;t been used to provide a different function.</para>
+<para><simplesect kind="return"><para>the default SDL_AssertionHandler that is called when an assert triggers.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.2.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__assert_8h_1a61c95d5aa8a1bd701e829b0842e04f07" kindref="member">SDL_GetAssertionHandler</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_assert.h" line="243" column="46" declfile="D:/RayTracing/include/SDL_assert.h" declline="243" declcolumn="46"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__assert_8h_1a61c95d5aa8a1bd701e829b0842e04f07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__assert_8h_1aa63dc5ca0d954add6893512583b08071" kindref="member">SDL_AssertionHandler</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC SDL_AssertionHandler SDLCALL SDL_GetAssertionHandler</definition>
+        <argsstring>(void **puserdata)</argsstring>
+        <name>SDL_GetAssertionHandler</name>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> **</type>
+          <declname>puserdata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the current assertion handler.</para>
+<para>This returns the function pointer that is called when an assertion is triggered. This is either the value last passed to <ref refid="_s_d_l__assert_8h_1a12dc8edd25f52f3add69369b2978e689" kindref="member">SDL_SetAssertionHandler()</ref>, or if no application-specified function is set, is equivalent to calling <ref refid="_s_d_l__assert_8h_1a34dc4d9332bcdc32b3a0baa3fc2966bc" kindref="member">SDL_GetDefaultAssertionHandler()</ref>.</para>
+<para>The parameter <computeroutput>puserdata</computeroutput> is a pointer to a void*, which will store the &quot;userdata&quot; pointer that was passed to <ref refid="_s_d_l__assert_8h_1a12dc8edd25f52f3add69369b2978e689" kindref="member">SDL_SetAssertionHandler()</ref>. This value will always be NULL for the default handler. If you don&apos;t care about this data, it is safe to pass a NULL pointer to this function to ignore it.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>puserdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer which is filled with the &quot;userdata&quot; pointer that was passed to <ref refid="_s_d_l__assert_8h_1a12dc8edd25f52f3add69369b2978e689" kindref="member">SDL_SetAssertionHandler()</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the SDL_AssertionHandler that is called when an assert triggers.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.2.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__assert_8h_1a12dc8edd25f52f3add69369b2978e689" kindref="member">SDL_SetAssertionHandler</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_assert.h" line="266" column="46" declfile="D:/RayTracing/include/SDL_assert.h" declline="266" declcolumn="46"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__assert_8h_1a59366c845267d9d6c8f214e096f7b45c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> const <ref refid="struct_s_d_l___assert_data" kindref="compound">SDL_AssertData</ref> *<ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC const SDL_AssertData *SDLCALL SDL_GetAssertionReport</definition>
+        <argsstring>(void)</argsstring>
+        <name>SDL_GetAssertionReport</name>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get a list of all assertion failures.</para>
+<para>This function gets all assertions triggered since the last call to <ref refid="_s_d_l__assert_8h_1abdbad45c4ede1953c784a7b312349a32" kindref="member">SDL_ResetAssertionReport()</ref>, or the start of the program.</para>
+<para>The proper way to examine this data looks something like this:</para>
+<para><programlisting filename=".c"><codeline><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_l___assert_data" kindref="compound">SDL_AssertData</ref><sp/>*item<sp/>=<sp/><ref refid="_s_d_l__assert_8h_1a59366c845267d9d6c8f214e096f7b45c" kindref="member">SDL_GetAssertionReport</ref>();</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(item)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;&apos;%s&apos;,<sp/>%s<sp/>(%s:%d),<sp/>triggered<sp/>%u<sp/>times,<sp/>always<sp/>ignore:<sp/>%s.\\n&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_s_d_l___assert_data_1aec6d372462fa8c94a9d04c1168cd38c9" kindref="member">condition</ref>,<sp/>item-&gt;<ref refid="struct_s_d_l___assert_data_1a4913c57d4affb813feea82fc5f48a25c" kindref="member">function</ref>,<sp/>item-&gt;<ref refid="struct_s_d_l___assert_data_1acf27f593e6a436386d2cbcf826cf1ef7" kindref="member">filename</ref>,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_s_d_l___assert_data_1ad026d8573970d2402230d5fa3c550b0f" kindref="member">linenum</ref>,<sp/>item-&gt;<ref refid="struct_s_d_l___assert_data_1a230bbcc2d115aab04cf817773e08eb5b" kindref="member">trigger_count</ref>,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>item-&gt;<ref refid="struct_s_d_l___assert_data_1a825e1c7772fe24afad33d0afc42cf04c" kindref="member">always_ignore</ref><sp/>?<sp/></highlight><highlight class="stringliteral">&quot;yes&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;no&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>item<sp/>=<sp/>item-&gt;<ref refid="struct_s_d_l___assert_data_1a2081dcf06dce4df497e423bccddfc099" kindref="member">next</ref>;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>a list of all failed assertions or NULL if the list is empty. This memory should not be modified or freed by the application.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__assert_8h_1abdbad45c4ede1953c784a7b312349a32" kindref="member">SDL_ResetAssertionReport</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_assert.h" line="294" column="47" declfile="D:/RayTracing/include/SDL_assert.h" declline="294" declcolumn="47"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__assert_8h_1abdbad45c4ede1953c784a7b312349a32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC void SDLCALL SDL_ResetAssertionReport</definition>
+        <argsstring>(void)</argsstring>
+        <name>SDL_ResetAssertionReport</name>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Clear the list of all assertion failures.</para>
+<para>This function will clear the list of all assertions triggered up to that point. Immediately following this call, SDL_GetAssertionReport will return no items. In addition, any previously-triggered assertions will be reset to a trigger_count of zero, and their always_ignore state will be false.</para>
+<para><simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__assert_8h_1a59366c845267d9d6c8f214e096f7b45c" kindref="member">SDL_GetAssertionReport</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_assert.h" line="308" column="30" declfile="D:/RayTracing/include/SDL_assert.h" declline="308" declcolumn="30"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/>Simple<sp/>DirectMedia<sp/>Layer</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/>Copyright<sp/>(C)<sp/>1997-2022<sp/>Sam<sp/>Lantinga<sp/>&lt;slouken@libsdl.org&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/>This<sp/>software<sp/>is<sp/>provided<sp/>&apos;as-is&apos;,<sp/>without<sp/>any<sp/>express<sp/>or<sp/>implied</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/>warranty.<sp/><sp/>In<sp/>no<sp/>event<sp/>will<sp/>the<sp/>authors<sp/>be<sp/>held<sp/>liable<sp/>for<sp/>any<sp/>damages</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/>arising<sp/>from<sp/>the<sp/>use<sp/>of<sp/>this<sp/>software.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/>Permission<sp/>is<sp/>granted<sp/>to<sp/>anyone<sp/>to<sp/>use<sp/>this<sp/>software<sp/>for<sp/>any<sp/>purpose,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/>including<sp/>commercial<sp/>applications,<sp/>and<sp/>to<sp/>alter<sp/>it<sp/>and<sp/>redistribute<sp/>it</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/>freely,<sp/>subject<sp/>to<sp/>the<sp/>following<sp/>restrictions:</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"></highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/>1.<sp/>The<sp/>origin<sp/>of<sp/>this<sp/>software<sp/>must<sp/>not<sp/>be<sp/>misrepresented;<sp/>you<sp/>must<sp/>not</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>claim<sp/>that<sp/>you<sp/>wrote<sp/>the<sp/>original<sp/>software.<sp/>If<sp/>you<sp/>use<sp/>this<sp/>software</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>in<sp/>a<sp/>product,<sp/>an<sp/>acknowledgment<sp/>in<sp/>the<sp/>product<sp/>documentation<sp/>would<sp/>be</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>appreciated<sp/>but<sp/>is<sp/>not<sp/>required.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/>2.<sp/>Altered<sp/>source<sp/>versions<sp/>must<sp/>be<sp/>plainly<sp/>marked<sp/>as<sp/>such,<sp/>and<sp/>must<sp/>not<sp/>be</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>misrepresented<sp/>as<sp/>being<sp/>the<sp/>original<sp/>software.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/>3.<sp/>This<sp/>notice<sp/>may<sp/>not<sp/>be<sp/>removed<sp/>or<sp/>altered<sp/>from<sp/>any<sp/>source<sp/>distribution.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SDL_assert_h_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_assert_h_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_s_d_l__config_8h" kindref="compound">SDL_config.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="begin__code_8h" kindref="compound">begin_code.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Set<sp/>up<sp/>for<sp/>C<sp/>function<sp/>definitions,<sp/>even<sp/>when<sp/>using<sp/>C++<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SDL_ASSERT_LEVEL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>SDL_DEFAULT_ASSERT_LEVEL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_ASSERT_LEVEL<sp/>SDL_DEFAULT_ASSERT_LEVEL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(_DEBUG)<sp/>||<sp/>defined(DEBUG)<sp/>||<sp/>\</highlight></codeline>
+<codeline lineno="37"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>(defined(__GNUC__)<sp/>&amp;&amp;<sp/>!defined(__OPTIMIZE__))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_ASSERT_LEVEL<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="_s_d_l__assert_8h_1afbd8fdb86f3bba968efccbd932877731" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_ASSERT_LEVEL<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>SDL_ASSERT_LEVEL<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="45"><highlight class="comment">These<sp/>are<sp/>macros<sp/>and<sp/>not<sp/>first<sp/>class<sp/>functions<sp/>so<sp/>that<sp/>the<sp/>debugger<sp/>breaks</highlight></codeline>
+<codeline lineno="46"><highlight class="comment">on<sp/>the<sp/>assertion<sp/>line<sp/>and<sp/>not<sp/>in<sp/>some<sp/>random<sp/>guts<sp/>of<sp/>SDL,<sp/>and<sp/>so<sp/>each</highlight></codeline>
+<codeline lineno="47"><highlight class="comment">assert<sp/>can<sp/>have<sp/>unique<sp/>static<sp/>variables<sp/>associated<sp/>with<sp/>it.</highlight></codeline>
+<codeline lineno="48"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_MSC_VER)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Don&apos;t<sp/>include<sp/>intrin.h<sp/>here<sp/>because<sp/>it<sp/>contains<sp/>C++<sp/>code<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>__cdecl<sp/>__debugbreak(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>SDL_TriggerBreakpoint()<sp/>__debugbreak()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>(<sp/>(!defined(__NACL__))<sp/>&amp;&amp;<sp/>((defined(__GNUC__)<sp/>||<sp/>defined(__clang__))<sp/>&amp;&amp;<sp/>(defined(__i386__)<sp/>||<sp/>defined(__x86_64__)))<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>SDL_TriggerBreakpoint()<sp/>__asm__<sp/>__volatile__<sp/>(<sp/>&quot;int<sp/>$3\n\t&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>(<sp/>defined(__APPLE__)<sp/>&amp;&amp;<sp/>(defined(__arm64__)<sp/>||<sp/>defined(__aarch64__))<sp/>)<sp/><sp/></highlight><highlight class="comment">/*<sp/>this<sp/>might<sp/>work<sp/>on<sp/>other<sp/>ARM<sp/>targets,<sp/>but<sp/>this<sp/>is<sp/>a<sp/>known<sp/>quantity...<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>SDL_TriggerBreakpoint()<sp/>__asm__<sp/>__volatile__<sp/>(<sp/>&quot;brk<sp/>#22\n\t&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__APPLE__)<sp/>&amp;&amp;<sp/>defined(__arm__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>SDL_TriggerBreakpoint()<sp/>__asm__<sp/>__volatile__<sp/>(<sp/>&quot;bkpt<sp/>#22\n\t&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__386__)<sp/>&amp;&amp;<sp/>defined(__WATCOMC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>SDL_TriggerBreakpoint()<sp/>{<sp/>_asm<sp/>{<sp/>int<sp/>0x03<sp/>}<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(HAVE_SIGNAL_H)<sp/>&amp;&amp;<sp/>!defined(__WATCOMC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#include<sp/>&lt;signal.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>SDL_TriggerBreakpoint()<sp/>raise(SIGTRAP)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>How<sp/>do<sp/>we<sp/>trigger<sp/>breakpoints<sp/>on<sp/>this<sp/>platform?<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="_s_d_l__assert_8h_1a42e8a6e0677acca7c1a927238b8dfe32" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>SDL_TriggerBreakpoint()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__STDC_VERSION__)<sp/>&amp;&amp;<sp/>(__STDC_VERSION__<sp/>&gt;=<sp/>199901L)<sp/></highlight><highlight class="comment">/*<sp/>C99<sp/>supports<sp/>__func__<sp/>as<sp/>a<sp/>standard.<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>SDL_FUNCTION<sp/>__func__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>((__GNUC__<sp/>&gt;=<sp/>2)<sp/>||<sp/>defined(_MSC_VER)<sp/>||<sp/>defined<sp/>(__WATCOMC__))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>SDL_FUNCTION<sp/>__FUNCTION__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="_s_d_l__assert_8h_1a30da3daba50f032ecda2c701e97da79d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>SDL_FUNCTION<sp/>&quot;???&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="_s_d_l__assert_8h_1a195c2795832718d008000d969eed96c3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_FILE<sp/><sp/><sp/><sp/>__FILE__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="_s_d_l__assert_8h_1a421a39f96c53fe309aa6d66b5c5bec22" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_LINE<sp/><sp/><sp/><sp/>__LINE__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="81"><highlight class="comment">sizeof<sp/>(x)<sp/>makes<sp/>the<sp/>compiler<sp/>still<sp/>parse<sp/>the<sp/>expression<sp/>even<sp/>without</highlight></codeline>
+<codeline lineno="82"><highlight class="comment">assertions<sp/>enabled,<sp/>so<sp/>the<sp/>code<sp/>is<sp/>always<sp/>checked<sp/>at<sp/>compile<sp/>time,<sp/>but</highlight></codeline>
+<codeline lineno="83"><highlight class="comment">doesn&apos;t<sp/>actually<sp/>generate<sp/>code<sp/>for<sp/>it,<sp/>so<sp/>there<sp/>are<sp/>no<sp/>side<sp/>effects<sp/>or</highlight></codeline>
+<codeline lineno="84"><highlight class="comment">expensive<sp/>checks<sp/>at<sp/>run<sp/>time,<sp/>just<sp/>the<sp/>constant<sp/>size<sp/>of<sp/>what<sp/>x<sp/>WOULD<sp/>be,</highlight></codeline>
+<codeline lineno="85"><highlight class="comment">which<sp/>presumably<sp/>gets<sp/>optimized<sp/>out<sp/>as<sp/>unused.</highlight></codeline>
+<codeline lineno="86"><highlight class="comment">This<sp/>also<sp/>solves<sp/>the<sp/>problem<sp/>of...</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"></highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/><sp/><sp/><sp/>int<sp/>somevalue<sp/>=<sp/>blah();</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/><sp/><sp/><sp/>SDL_assert(somevalue<sp/>==<sp/>1);</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"></highlight></codeline>
+<codeline lineno="91"><highlight class="comment">...which<sp/>would<sp/>cause<sp/>compiles<sp/>to<sp/>complain<sp/>that<sp/>somevalue<sp/>is<sp/>unused<sp/>if<sp/>we</highlight></codeline>
+<codeline lineno="92"><highlight class="comment">disable<sp/>assertions.</highlight></codeline>
+<codeline lineno="93"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>&quot;while<sp/>(0,0)&quot;<sp/>fools<sp/>Microsoft&apos;s<sp/>compiler&apos;s<sp/>/W4<sp/>warning<sp/>level<sp/>into<sp/>thinking</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/><sp/><sp/><sp/>this<sp/>condition<sp/>isn&apos;t<sp/>constant.<sp/>And<sp/>looks<sp/>like<sp/>an<sp/>owl&apos;s<sp/>face!<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_MSC_VER<sp/><sp/></highlight><highlight class="comment">/*<sp/>stupid<sp/>/W4<sp/>warnings.<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_NULL_WHILE_LOOP_CONDITION<sp/>(0,0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="_s_d_l__assert_8h_1a2ffca06819acf027ec29d6fd14c94cbe" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_NULL_WHILE_LOOP_CONDITION<sp/>(0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="_s_d_l__assert_8h_1aeee78c1e2347a3cfe4ee3c215d497acd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_disabled_assert(condition)<sp/>\</highlight></codeline>
+<codeline lineno="104"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>do<sp/>{<sp/>(void)<sp/>sizeof<sp/>((condition));<sp/>}<sp/>while<sp/>(SDL_NULL_WHILE_LOOP_CONDITION)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="_s_d_l__assert_8h_1a06d6a46a43cc7b34764c37398573ef1a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="108" refid="_s_d_l__assert_8h_1a06d6a46a43cc7b34764c37398573ef1aa0ccce3254f1d981283e0792cd70437df" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__assert_8h_1a06d6a46a43cc7b34764c37398573ef1aa0ccce3254f1d981283e0792cd70437df" kindref="member">SDL_ASSERTION_RETRY</ref>,<sp/><sp/></highlight></codeline>
+<codeline lineno="109" refid="_s_d_l__assert_8h_1a06d6a46a43cc7b34764c37398573ef1aace6f6a41a6b303e220828fbe25b5d2a6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__assert_8h_1a06d6a46a43cc7b34764c37398573ef1aace6f6a41a6b303e220828fbe25b5d2a6" kindref="member">SDL_ASSERTION_BREAK</ref>,<sp/><sp/></highlight></codeline>
+<codeline lineno="110" refid="_s_d_l__assert_8h_1a06d6a46a43cc7b34764c37398573ef1aa4cf9444bddf799c7638bbcc9c542799c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__assert_8h_1a06d6a46a43cc7b34764c37398573ef1aa4cf9444bddf799c7638bbcc9c542799c" kindref="member">SDL_ASSERTION_ABORT</ref>,<sp/><sp/></highlight></codeline>
+<codeline lineno="111" refid="_s_d_l__assert_8h_1a06d6a46a43cc7b34764c37398573ef1aa76eace7638278c093e24d78a91d6d772" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__assert_8h_1a06d6a46a43cc7b34764c37398573ef1aa76eace7638278c093e24d78a91d6d772" kindref="member">SDL_ASSERTION_IGNORE</ref>,<sp/><sp/></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__assert_8h_1a06d6a46a43cc7b34764c37398573ef1aaf8d1af4dc16f160217acadf2b8585fea" kindref="member">SDL_ASSERTION_ALWAYS_IGNORE</ref><sp/><sp/></highlight></codeline>
+<codeline lineno="113" refid="_s_d_l__assert_8h_1a06d6a46a43cc7b34764c37398573ef1aaf8d1af4dc16f160217acadf2b8585fea" refkind="member"><highlight class="normal">}<sp/><ref refid="_s_d_l__assert_8h_1a06d6a46a43cc7b34764c37398573ef1a" kindref="member">SDL_AssertState</ref>;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="struct_s_d_l___assert_data" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_s_d_l___assert_data" kindref="compound">SDL_AssertData</ref></highlight></codeline>
+<codeline lineno="116"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="117" refid="struct_s_d_l___assert_data_1a825e1c7772fe24afad33d0afc42cf04c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_l___assert_data_1a825e1c7772fe24afad33d0afc42cf04c" kindref="member">always_ignore</ref>;</highlight></codeline>
+<codeline lineno="118" refid="struct_s_d_l___assert_data_1a230bbcc2d115aab04cf817773e08eb5b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_l___assert_data_1a230bbcc2d115aab04cf817773e08eb5b" kindref="member">trigger_count</ref>;</highlight></codeline>
+<codeline lineno="119" refid="struct_s_d_l___assert_data_1aec6d372462fa8c94a9d04c1168cd38c9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="struct_s_d_l___assert_data_1aec6d372462fa8c94a9d04c1168cd38c9" kindref="member">condition</ref>;</highlight></codeline>
+<codeline lineno="120" refid="struct_s_d_l___assert_data_1acf27f593e6a436386d2cbcf826cf1ef7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="struct_s_d_l___assert_data_1acf27f593e6a436386d2cbcf826cf1ef7" kindref="member">filename</ref>;</highlight></codeline>
+<codeline lineno="121" refid="struct_s_d_l___assert_data_1ad026d8573970d2402230d5fa3c550b0f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_l___assert_data_1ad026d8573970d2402230d5fa3c550b0f" kindref="member">linenum</ref>;</highlight></codeline>
+<codeline lineno="122" refid="struct_s_d_l___assert_data_1a4913c57d4affb813feea82fc5f48a25c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="struct_s_d_l___assert_data_1a4913c57d4affb813feea82fc5f48a25c" kindref="member">function</ref>;</highlight></codeline>
+<codeline lineno="123" refid="struct_s_d_l___assert_data_1a2081dcf06dce4df497e423bccddfc099" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_s_d_l___assert_data" kindref="compound">SDL_AssertData</ref><sp/>*<ref refid="struct_s_d_l___assert_data_1a2081dcf06dce4df497e423bccddfc099" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="124" refid="_s_d_l__assert_8h_1afc62064b31b91c078b2960270e29801e" refkind="member"><highlight class="normal">}<sp/><ref refid="_s_d_l__assert_8h_1afc62064b31b91c078b2960270e29801e" kindref="member">SDL_AssertData</ref>;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(SDL_ASSERT_LEVEL<sp/>&gt;<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Never<sp/>call<sp/>this<sp/>directly.<sp/>Use<sp/>the<sp/>SDL_assert*<sp/>macros.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129" refid="_s_d_l__assert_8h_1a01ef51d076f7e9c3839fff4161a16550" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/><ref refid="_s_d_l__assert_8h_1a06d6a46a43cc7b34764c37398573ef1a" kindref="member">SDL_AssertState</ref><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__assert_8h_1a01ef51d076f7e9c3839fff4161a16550" kindref="member">SDL_ReportAssertion</ref>(<ref refid="struct_s_d_l___assert_data" kindref="compound">SDL_AssertData</ref><sp/>*,</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__clang__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>__has_feature(attribute_analyzer_noreturn)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>this<sp/>tells<sp/>Clang&apos;s<sp/>static<sp/>analysis<sp/>that<sp/>we&apos;re<sp/>a<sp/>custom<sp/>assert<sp/>function,</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/><sp/><sp/>and<sp/>that<sp/>the<sp/>analyzer<sp/>should<sp/>assume<sp/>the<sp/>condition<sp/>was<sp/>always<sp/>true<sp/>past<sp/>this</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/><sp/><sp/>SDL_assert<sp/>test.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/>__attribute__((analyzer_noreturn))</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal">;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>the<sp/>do<sp/>{}<sp/>while(0)<sp/>avoids<sp/>dangling<sp/>else<sp/>problems:</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/><sp/><sp/><sp/>if<sp/>(x)<sp/>SDL_assert(y);<sp/>else<sp/>blah();</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...<sp/>without<sp/>the<sp/>do/while,<sp/>the<sp/>&quot;else&quot;<sp/>could<sp/>attach<sp/>to<sp/>this<sp/>macro&apos;s<sp/>&quot;if&quot;.</highlight></codeline>
+<codeline lineno="145"><highlight class="comment"><sp/><sp/><sp/>We<sp/>try<sp/>to<sp/>handle<sp/>just<sp/>the<sp/>minimum<sp/>we<sp/>need<sp/>here<sp/>in<sp/>a<sp/>macro...the<sp/>loop,</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/><sp/><sp/>the<sp/>static<sp/>vars,<sp/>and<sp/>break<sp/>points.<sp/>The<sp/>heavy<sp/>lifting<sp/>is<sp/>handled<sp/>in</highlight></codeline>
+<codeline lineno="147"><highlight class="comment"><sp/><sp/><sp/>SDL_ReportAssertion(),<sp/>in<sp/>SDL_assert.c.</highlight></codeline>
+<codeline lineno="148"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="_s_d_l__assert_8h_1a560c9df30e5f2db3d81daef3bbe81992" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_enabled_assert(condition)<sp/>\</highlight></codeline>
+<codeline lineno="150"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>do<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="151"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>while<sp/>(<sp/>!(condition)<sp/>)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="152"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>static<sp/>struct<sp/>SDL_AssertData<sp/>sdl_assert_data<sp/>=<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="153"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>0,<sp/>#condition,<sp/>0,<sp/>0,<sp/>0,<sp/>0<sp/>\</highlight></codeline>
+<codeline lineno="154"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};<sp/>\</highlight></codeline>
+<codeline lineno="155"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>SDL_AssertState<sp/>sdl_assert_state<sp/>=<sp/>SDL_ReportAssertion(&amp;sdl_assert_data,<sp/>SDL_FUNCTION,<sp/>SDL_FILE,<sp/>SDL_LINE);<sp/>\</highlight></codeline>
+<codeline lineno="156"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(sdl_assert_state<sp/>==<sp/>SDL_ASSERTION_RETRY)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="157"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>continue;<sp/></highlight><highlight class="comment">/*<sp/>go<sp/>again.<sp/>*/</highlight><highlight class="preprocessor"><sp/>\</highlight></codeline>
+<codeline lineno="158"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>else<sp/>if<sp/>(sdl_assert_state<sp/>==<sp/>SDL_ASSERTION_BREAK)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="159"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_TriggerBreakpoint();<sp/>\</highlight></codeline>
+<codeline lineno="160"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="161"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;<sp/></highlight><highlight class="comment">/*<sp/>not<sp/>retrying.<sp/>*/</highlight><highlight class="preprocessor"><sp/>\</highlight></codeline>
+<codeline lineno="162"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="163"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/>while<sp/>(SDL_NULL_WHILE_LOOP_CONDITION)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/></highlight><highlight class="comment">/*<sp/>enabled<sp/>assertions<sp/>support<sp/>code<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Enable<sp/>various<sp/>levels<sp/>of<sp/>assertions.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>SDL_ASSERT_LEVEL<sp/>==<sp/>0<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>assertions<sp/>disabled<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>SDL_assert(condition)<sp/>SDL_disabled_assert(condition)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>SDL_assert_release(condition)<sp/>SDL_disabled_assert(condition)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>SDL_assert_paranoid(condition)<sp/>SDL_disabled_assert(condition)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>SDL_ASSERT_LEVEL<sp/>==<sp/>1<sp/><sp/></highlight><highlight class="comment">/*<sp/>release<sp/>settings.<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173" refid="_s_d_l__assert_8h_1af03d71e27f06835f6a09358943c33b1d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>SDL_assert(condition)<sp/>SDL_disabled_assert(condition)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174" refid="_s_d_l__assert_8h_1a3af3f7dba7e28942c17e16745028a7da" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>SDL_assert_release(condition)<sp/>SDL_enabled_assert(condition)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175" refid="_s_d_l__assert_8h_1a4cc20db7eed29c5cd0e83f4f3d10860a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>SDL_assert_paranoid(condition)<sp/>SDL_disabled_assert(condition)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>SDL_ASSERT_LEVEL<sp/>==<sp/>2<sp/><sp/></highlight><highlight class="comment">/*<sp/>normal<sp/>settings.<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>SDL_assert(condition)<sp/>SDL_enabled_assert(condition)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>SDL_assert_release(condition)<sp/>SDL_enabled_assert(condition)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>SDL_assert_paranoid(condition)<sp/>SDL_disabled_assert(condition)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>SDL_ASSERT_LEVEL<sp/>==<sp/>3<sp/><sp/></highlight><highlight class="comment">/*<sp/>paranoid<sp/>settings.<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>SDL_assert(condition)<sp/>SDL_enabled_assert(condition)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>SDL_assert_release(condition)<sp/>SDL_enabled_assert(condition)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>SDL_assert_paranoid(condition)<sp/>SDL_enabled_assert(condition)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>error<sp/>Unknown<sp/>assertion<sp/>level.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>this<sp/>assertion<sp/>is<sp/>never<sp/>disabled<sp/>at<sp/>any<sp/>level.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189" refid="_s_d_l__assert_8h_1a22dedc823eb26ea054cbc584b614718e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_assert_always(condition)<sp/>SDL_enabled_assert(condition)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200" refid="_s_d_l__assert_8h_1aa63dc5ca0d954add6893512583b08071" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__assert_8h_1a06d6a46a43cc7b34764c37398573ef1a" kindref="member">SDL_AssertState</ref><sp/>(<ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/>*<ref refid="_s_d_l__assert_8h_1aa63dc5ca0d954add6893512583b08071" kindref="member">SDL_AssertionHandler</ref>)(</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_l___assert_data" kindref="compound">SDL_AssertData</ref>*<sp/><ref refid="_s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a" kindref="member">data</ref>,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>userdata);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224" refid="_s_d_l__assert_8h_1a12dc8edd25f52f3add69369b2978e689" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__assert_8h_1a12dc8edd25f52f3add69369b2978e689" kindref="member">SDL_SetAssertionHandler</ref>(</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_s_d_l__assert_8h_1aa63dc5ca0d954add6893512583b08071" kindref="member">SDL_AssertionHandler</ref><sp/>handler,</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*userdata);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243" refid="_s_d_l__assert_8h_1a34dc4d9332bcdc32b3a0baa3fc2966bc" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/><ref refid="_s_d_l__assert_8h_1aa63dc5ca0d954add6893512583b08071" kindref="member">SDL_AssertionHandler</ref><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__assert_8h_1a34dc4d9332bcdc32b3a0baa3fc2966bc" kindref="member">SDL_GetDefaultAssertionHandler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266" refid="_s_d_l__assert_8h_1a61c95d5aa8a1bd701e829b0842e04f07" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/><ref refid="_s_d_l__assert_8h_1aa63dc5ca0d954add6893512583b08071" kindref="member">SDL_AssertionHandler</ref><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__assert_8h_1a61c95d5aa8a1bd701e829b0842e04f07" kindref="member">SDL_GetAssertionHandler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**puserdata);</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="294" refid="_s_d_l__assert_8h_1a59366c845267d9d6c8f214e096f7b45c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_l___assert_data" kindref="compound">SDL_AssertData</ref><sp/>*<sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__assert_8h_1a59366c845267d9d6c8f214e096f7b45c" kindref="member">SDL_GetAssertionReport</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
+<codeline lineno="308" refid="_s_d_l__assert_8h_1abdbad45c4ede1953c784a7b312349a32" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__assert_8h_1abdbad45c4ede1953c784a7b312349a32" kindref="member">SDL_ResetAssertionReport</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>these<sp/>had<sp/>wrong<sp/>naming<sp/>conventions<sp/>until<sp/>2.0.4.<sp/>Please<sp/>update<sp/>your<sp/>app!<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="312" refid="_s_d_l__assert_8h_1a15ee0b48c2893f92f851d251424837b6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_assert_state<sp/>SDL_AssertState</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="313" refid="_s_d_l__assert_8h_1a74c575b310128e12358caf79aec09da7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_assert_data<sp/>SDL_AssertData</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Ends<sp/>C<sp/>function<sp/>definitions<sp/>when<sp/>using<sp/>C++<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="close__code_8h" kindref="compound">close_code.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>SDL_assert_h_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>vi:<sp/>set<sp/>ts=4<sp/>sw=4<sp/>expandtab:<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/include/SDL_assert.h"/>
+  </compounddef>
+</doxygen>

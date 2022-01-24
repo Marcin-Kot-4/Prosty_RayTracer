@@ -1,0 +1,177 @@
+.TH "D:/RayTracing/include/SDL_test_harness.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_test_harness.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBSDLTest_TestCaseReference\fP"
+.br
+.ti -1c
+.RI "struct \fBSDLTest_TestSuiteReference\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBTEST_ENABLED\fP   1"
+.br
+.ti -1c
+.RI "#define \fBTEST_DISABLED\fP   0"
+.br
+.ti -1c
+.RI "#define \fBTEST_ABORTED\fP   \-1"
+.br
+.ti -1c
+.RI "#define \fBTEST_STARTED\fP   0"
+.br
+.ti -1c
+.RI "#define \fBTEST_COMPLETED\fP   1"
+.br
+.ti -1c
+.RI "#define \fBTEST_SKIPPED\fP   2"
+.br
+.ti -1c
+.RI "#define \fBTEST_RESULT_PASSED\fP   0"
+.br
+.ti -1c
+.RI "#define \fBTEST_RESULT_FAILED\fP   1"
+.br
+.ti -1c
+.RI "#define \fBTEST_RESULT_NO_ASSERT\fP   2"
+.br
+.ti -1c
+.RI "#define \fBTEST_RESULT_SKIPPED\fP   3"
+.br
+.ti -1c
+.RI "#define \fBTEST_RESULT_SETUP_FAILURE\fP   4"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBvoid\fP(* \fBSDLTest_TestCaseSetUpFp\fP) (\fBvoid\fP *arg)"
+.br
+.ti -1c
+.RI "typedef int(* \fBSDLTest_TestCaseFp\fP) (\fBvoid\fP *arg)"
+.br
+.ti -1c
+.RI "typedef \fBvoid\fP(* \fBSDLTest_TestCaseTearDownFp\fP) (\fBvoid\fP *arg)"
+.br
+.ti -1c
+.RI "typedef struct \fBSDLTest_TestCaseReference\fP \fBSDLTest_TestCaseReference\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBSDLTest_TestSuiteReference\fP \fBSDLTest_TestSuiteReference\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBSDLTest_GenerateRunSeed\fP (const int \fBlength\fP)"
+.br
+.RI "Generates a random run seed string for the harness\&. The generated seed will contain alphanumeric characters (0-9A-Z)\&. "
+.ti -1c
+.RI "int \fBSDLTest_RunSuites\fP (\fBSDLTest_TestSuiteReference\fP *testSuites[], const char *userRunSeed, \fBUint64\fP userExecKey, const char *\fBfilter\fP, int testIterations)"
+.br
+.RI "Execute a test suite using the given run seed and execution key\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include file for SDL test framework\&.
+.PP
+This code is a part of the SDL2_test library, not the main SDL library\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define TEST_ABORTED   \-1"
+
+.SS "#define TEST_COMPLETED   1"
+
+.SS "#define TEST_DISABLED   0"
+
+.SS "#define TEST_ENABLED   1"
+
+.SS "#define TEST_RESULT_FAILED   1"
+
+.SS "#define TEST_RESULT_NO_ASSERT   2"
+
+.SS "#define TEST_RESULT_PASSED   0"
+
+.SS "#define TEST_RESULT_SETUP_FAILURE   4"
+
+.SS "#define TEST_RESULT_SKIPPED   3"
+
+.SS "#define TEST_SKIPPED   2"
+
+.SS "#define TEST_STARTED   0"
+
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef int(* SDLTest_TestCaseFp) (\fBvoid\fP *arg)"
+
+.SS "typedef struct \fBSDLTest_TestCaseReference\fP \fBSDLTest_TestCaseReference\fP"
+Holds information about a single test case\&. 
+.SS "typedef \fBvoid\fP(* SDLTest_TestCaseSetUpFp) (\fBvoid\fP *arg)"
+
+.SS "typedef \fBvoid\fP(* SDLTest_TestCaseTearDownFp) (\fBvoid\fP *arg)"
+
+.SS "typedef struct \fBSDLTest_TestSuiteReference\fP \fBSDLTest_TestSuiteReference\fP"
+Holds information about a test suite (multiple test cases)\&. 
+.SH "Function Documentation"
+.PP 
+.SS "char * SDLTest_GenerateRunSeed (const int length)"
+
+.PP
+Generates a random run seed string for the harness\&. The generated seed will contain alphanumeric characters (0-9A-Z)\&. Note: The returned string needs to be deallocated by the caller\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIlength\fP The length of the seed string to generate
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the generated seed string 
+.RE
+.PP
+
+.SS "int SDLTest_RunSuites (\fBSDLTest_TestSuiteReference\fP * testSuites[], const char * userRunSeed, \fBUint64\fP userExecKey, const char * filter, int testIterations)"
+
+.PP
+Execute a test suite using the given run seed and execution key\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItestSuites\fP Suites containing the test case\&. 
+.br
+\fIuserRunSeed\fP Custom run seed provided by user, or NULL to autogenerate one\&. 
+.br
+\fIuserExecKey\fP Custom execution key provided by user, or 0 to autogenerate one\&. 
+.br
+\fIfilter\fP Filter specification\&. NULL disables\&. Case sensitive\&. 
+.br
+\fItestIterations\fP Number of iterations to run each test case\&.
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the test run result: 0 when all tests passed, 1 if any tests failed\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

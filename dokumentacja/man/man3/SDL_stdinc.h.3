@@ -1,0 +1,1126 @@
+.TH "D:/RayTracing/include/SDL_stdinc.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_stdinc.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SDL_config\&.h'\fP
+.br
+\fC#include <stddef\&.h>\fP
+.br
+\fC#include <stdarg\&.h>\fP
+.br
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fB_SDL_HAS_BUILTIN\fP(\fBx\fP)   0"
+.br
+.ti -1c
+.RI "#define \fBSDL_arraysize\fP(\fBarray\fP)   (sizeof(\fBarray\fP)/sizeof(\fBarray\fP[0]))"
+.br
+.ti -1c
+.RI "#define \fBSDL_TABLESIZE\fP(\fBtable\fP)   \fBSDL_arraysize\fP(\fBtable\fP)"
+.br
+.ti -1c
+.RI "#define \fBSDL_STRINGIFY_ARG\fP(arg)   #arg"
+.br
+.in -1c
+.PP
+.RI "\fBCast operators\fP"
+.br
+Use proper C++ casts when compiled as C++ to be compatible with the option -Wold-style-cast of GCC (and -Werror=old-style-cast in GCC 4\&.2 and above)\&. 
+.PP
+.in +1c
+.in +1c
+.ti -1c
+.RI "#define \fBSDL_reinterpret_cast\fP(\fBtype\fP,  expression)   ((\fBtype\fP)(expression))"
+.br
+.ti -1c
+.RI "#define \fBSDL_static_cast\fP(\fBtype\fP,  expression)   ((\fBtype\fP)(expression))"
+.br
+.ti -1c
+.RI "#define \fBSDL_const_cast\fP(\fBtype\fP,  expression)   ((\fBtype\fP)(expression))"
+.br
+.ti -1c
+.RI "#define \fBSDL_FOURCC\fP(A,  B,  C,  D)"
+.br
+.in -1c
+.in -1c
+.SS "Basic data types"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSDL_MAX_SINT8\fP   ((\fBSint8\fP)0x7F)           /* 127 */"
+.br
+.RI "A signed 8-bit integer type\&. "
+.ti -1c
+.RI "#define \fBSDL_MIN_SINT8\fP   ((\fBSint8\fP)(~0x7F))        /* \-128 */"
+.br
+.ti -1c
+.RI "#define \fBSDL_MAX_UINT8\fP   ((\fBUint8\fP)0xFF)           /* 255 */"
+.br
+.RI "An unsigned 8-bit integer type\&. "
+.ti -1c
+.RI "#define \fBSDL_MIN_UINT8\fP   ((\fBUint8\fP)0x00)           /* 0 */"
+.br
+.ti -1c
+.RI "#define \fBSDL_MAX_SINT16\fP   ((\fBSint16\fP)0x7FFF)        /* 32767 */"
+.br
+.RI "A signed 16-bit integer type\&. "
+.ti -1c
+.RI "#define \fBSDL_MIN_SINT16\fP   ((\fBSint16\fP)(~0x7FFF))     /* \-32768 */"
+.br
+.ti -1c
+.RI "#define \fBSDL_MAX_UINT16\fP   ((\fBUint16\fP)0xFFFF)        /* 65535 */"
+.br
+.RI "An unsigned 16-bit integer type\&. "
+.ti -1c
+.RI "#define \fBSDL_MIN_UINT16\fP   ((\fBUint16\fP)0x0000)        /* 0 */"
+.br
+.ti -1c
+.RI "#define \fBSDL_MAX_SINT32\fP   ((\fBSint32\fP)0x7FFFFFFF)    /* 2147483647 */"
+.br
+.RI "A signed 32-bit integer type\&. "
+.ti -1c
+.RI "#define \fBSDL_MIN_SINT32\fP   ((\fBSint32\fP)(~0x7FFFFFFF)) /* \-2147483648 */"
+.br
+.ti -1c
+.RI "#define \fBSDL_MAX_UINT32\fP   ((\fBUint32\fP)0xFFFFFFFFu)   /* 4294967295 */"
+.br
+.RI "An unsigned 32-bit integer type\&. "
+.ti -1c
+.RI "#define \fBSDL_MIN_UINT32\fP   ((\fBUint32\fP)0x00000000)    /* 0 */"
+.br
+.ti -1c
+.RI "#define \fBSDL_MAX_SINT64\fP   ((\fBSint64\fP)0x7FFFFFFFFFFFFFFFll)      /* 9223372036854775807 */"
+.br
+.RI "A signed 64-bit integer type\&. "
+.ti -1c
+.RI "#define \fBSDL_MIN_SINT64\fP   ((\fBSint64\fP)(~0x7FFFFFFFFFFFFFFFll))   /* \-9223372036854775808 */"
+.br
+.ti -1c
+.RI "#define \fBSDL_MAX_UINT64\fP   ((\fBUint64\fP)0xFFFFFFFFFFFFFFFFull)     /* 18446744073709551615 */"
+.br
+.RI "An unsigned 64-bit integer type\&. "
+.ti -1c
+.RI "#define \fBSDL_MIN_UINT64\fP   ((\fBUint64\fP)(0x0000000000000000ull))   /* 0 */"
+.br
+.ti -1c
+.RI "#define \fBSDL_PRIs64\fP   'lld'"
+.br
+.ti -1c
+.RI "#define \fBSDL_PRIu64\fP   'llu'"
+.br
+.ti -1c
+.RI "#define \fBSDL_PRIx64\fP   'llx'"
+.br
+.ti -1c
+.RI "#define \fBSDL_PRIX64\fP   'llX'"
+.br
+.ti -1c
+.RI "#define \fBSDL_PRIs32\fP   'd'"
+.br
+.ti -1c
+.RI "#define \fBSDL_PRIu32\fP   'u'"
+.br
+.ti -1c
+.RI "#define \fBSDL_PRIx32\fP   'x'"
+.br
+.ti -1c
+.RI "#define \fBSDL_PRIX32\fP   'X'"
+.br
+.ti -1c
+.RI "#define \fBSDL_IN_BYTECAP\fP(\fBx\fP)"
+.br
+.ti -1c
+.RI "#define \fBSDL_INOUT_Z_CAP\fP(\fBx\fP)"
+.br
+.ti -1c
+.RI "#define \fBSDL_OUT_Z_CAP\fP(\fBx\fP)"
+.br
+.ti -1c
+.RI "#define \fBSDL_OUT_CAP\fP(\fBx\fP)"
+.br
+.ti -1c
+.RI "#define \fBSDL_OUT_BYTECAP\fP(\fBx\fP)"
+.br
+.ti -1c
+.RI "#define \fBSDL_OUT_Z_BYTECAP\fP(\fBx\fP)"
+.br
+.ti -1c
+.RI "#define \fBSDL_PRINTF_FORMAT_STRING\fP"
+.br
+.ti -1c
+.RI "#define \fBSDL_SCANF_FORMAT_STRING\fP"
+.br
+.ti -1c
+.RI "#define \fBSDL_PRINTF_VARARG_FUNC\fP(fmtargnumber)"
+.br
+.ti -1c
+.RI "#define \fBSDL_SCANF_VARARG_FUNC\fP(fmtargnumber)"
+.br
+.ti -1c
+.RI "#define \fBSDL_COMPILE_TIME_ASSERT\fP(\fBname\fP,  \fBx\fP)          typedef int SDL_compile_time_assert_ ## \fBname\fP[(\fBx\fP) * 2 \- 1]"
+.br
+.ti -1c
+.RI "#define \fBSDL_stack_alloc\fP(\fBtype\fP,  \fBcount\fP)   (\fBtype\fP*)\fBSDL_malloc\fP(sizeof(\fBtype\fP)*(\fBcount\fP))"
+.br
+.ti -1c
+.RI "#define \fBSDL_stack_free\fP(\fBdata\fP)   \fBSDL_free\fP(\fBdata\fP)"
+.br
+.ti -1c
+.RI "#define \fBSDL_min\fP(\fBx\fP,  \fBy\fP)   (((\fBx\fP) < (\fBy\fP)) ? (\fBx\fP) : (\fBy\fP))"
+.br
+.ti -1c
+.RI "#define \fBSDL_max\fP(\fBx\fP,  \fBy\fP)   (((\fBx\fP) > (\fBy\fP)) ? (\fBx\fP) : (\fBy\fP))"
+.br
+.ti -1c
+.RI "#define \fBSDL_clamp\fP(\fBx\fP,  \fBa\fP,  \fBb\fP)   (((\fBx\fP) < (\fBa\fP)) ? (\fBa\fP) : (((\fBx\fP) > (\fBb\fP)) ? (\fBb\fP) : (\fBx\fP)))"
+.br
+.ti -1c
+.RI "#define \fBSDL_zero\fP(\fBx\fP)   \fBSDL_memset\fP(&(\fBx\fP), 0, sizeof((\fBx\fP)))"
+.br
+.ti -1c
+.RI "#define \fBSDL_zerop\fP(\fBx\fP)   \fBSDL_memset\fP((\fBx\fP), 0, sizeof(*(\fBx\fP)))"
+.br
+.ti -1c
+.RI "#define \fBSDL_zeroa\fP(\fBx\fP)   \fBSDL_memset\fP((\fBx\fP), 0, sizeof((\fBx\fP)))"
+.br
+.ti -1c
+.RI "#define \fBM_PI\fP   3\&.14159265358979323846264338327950288"
+.br
+.ti -1c
+.RI "#define \fBSDL_ICONV_ERROR\fP   (\fBsize_t\fP)\-1"
+.br
+.ti -1c
+.RI "#define \fBSDL_ICONV_E2BIG\fP   (\fBsize_t\fP)\-2"
+.br
+.ti -1c
+.RI "#define \fBSDL_ICONV_EILSEQ\fP   (\fBsize_t\fP)\-3"
+.br
+.ti -1c
+.RI "#define \fBSDL_ICONV_EINVAL\fP   (\fBsize_t\fP)\-4"
+.br
+.ti -1c
+.RI "#define \fBSDL_iconv_utf8_locale\fP(S)   \fBSDL_iconv_string\fP('', 'UTF\-8', S, \fBSDL_strlen\fP(S)+1)"
+.br
+.ti -1c
+.RI "#define \fBSDL_iconv_utf8_ucs2\fP(S)   (\fBUint16\fP *)\fBSDL_iconv_string\fP('UCS\-2\-INTERNAL', 'UTF\-8', S, \fBSDL_strlen\fP(S)+1)"
+.br
+.ti -1c
+.RI "#define \fBSDL_iconv_utf8_ucs4\fP(S)   (\fBUint32\fP *)\fBSDL_iconv_string\fP('UCS\-4\-INTERNAL', 'UTF\-8', S, \fBSDL_strlen\fP(S)+1)"
+.br
+.ti -1c
+.RI "#define \fBSDL_iconv_wchar_utf8\fP(S)   \fBSDL_iconv_string\fP('UTF\-8', 'WCHAR_T', (char *)S, (\fBSDL_wcslen\fP(S)+1)*sizeof(wchar_t))"
+.br
+.ti -1c
+.RI "enum \fBSDL_bool\fP { \fBSDL_FALSE\fP = 0, \fBSDL_TRUE\fP = 1 }"
+.br
+.ti -1c
+.RI "typedef \fBint8_t\fP \fBSint8\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint8_t\fP \fBUint8\fP"
+.br
+.ti -1c
+.RI "typedef \fBint16_t\fP \fBSint16\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint16_t\fP \fBUint16\fP"
+.br
+.ti -1c
+.RI "typedef \fBint32_t\fP \fBSint32\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint32_t\fP \fBUint32\fP"
+.br
+.ti -1c
+.RI "typedef \fBint64_t\fP \fBSint64\fP"
+.br
+.ti -1c
+.RI "typedef \fBuint64_t\fP \fBUint64\fP"
+.br
+.ti -1c
+.RI "typedef \fBvoid\fP *(\fBSDLCALL\fP * \fBSDL_malloc_func\fP) (\fBsize_t\fP \fBsize\fP)"
+.br
+.ti -1c
+.RI "typedef \fBvoid\fP *(\fBSDLCALL\fP * \fBSDL_calloc_func\fP) (\fBsize_t\fP nmemb, \fBsize_t\fP \fBsize\fP)"
+.br
+.ti -1c
+.RI "typedef \fBvoid\fP *(\fBSDLCALL\fP * \fBSDL_realloc_func\fP) (\fBvoid\fP *mem, \fBsize_t\fP \fBsize\fP)"
+.br
+.ti -1c
+.RI "typedef \fBvoid\fP(\fBSDLCALL\fP * \fBSDL_free_func\fP) (\fBvoid\fP *mem)"
+.br
+.ti -1c
+.RI "typedef struct _SDL_iconv_t * \fBSDL_iconv_t\fP"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP *\fBSDLCALL\fP \fBSDL_malloc\fP (\fBsize_t\fP \fBsize\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP *\fBSDLCALL\fP \fBSDL_calloc\fP (\fBsize_t\fP nmemb, \fBsize_t\fP \fBsize\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP *\fBSDLCALL\fP \fBSDL_realloc\fP (\fBvoid\fP *mem, \fBsize_t\fP \fBsize\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_free\fP (\fBvoid\fP *mem)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_GetMemoryFunctions\fP (\fBSDL_malloc_func\fP *malloc_func, \fBSDL_calloc_func\fP *calloc_func, \fBSDL_realloc_func\fP *realloc_func, \fBSDL_free_func\fP *free_func)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_SetMemoryFunctions\fP (\fBSDL_malloc_func\fP malloc_func, \fBSDL_calloc_func\fP calloc_func, \fBSDL_realloc_func\fP realloc_func, \fBSDL_free_func\fP free_func)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_GetNumAllocations\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP char *\fBSDLCALL\fP \fBSDL_getenv\fP (const char *\fBname\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_setenv\fP (const char *\fBname\fP, const char *\fBvalue\fP, int overwrite)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_qsort\fP (\fBvoid\fP *base, \fBsize_t\fP nmemb, \fBsize_t\fP \fBsize\fP, int(*compare)(const \fBvoid\fP *, const \fBvoid\fP *))"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_abs\fP (int \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_isalpha\fP (int \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_isalnum\fP (int \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_isblank\fP (int \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_iscntrl\fP (int \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_isdigit\fP (int \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_isxdigit\fP (int \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_ispunct\fP (int \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_isspace\fP (int \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_isupper\fP (int \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_islower\fP (int \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_isprint\fP (int \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_isgraph\fP (int \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_toupper\fP (int \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_tolower\fP (int \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBUint32\fP \fBSDLCALL\fP \fBSDL_crc32\fP (\fBUint32\fP crc, const \fBvoid\fP *\fBdata\fP, \fBsize_t\fP \fBlen\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP *\fBSDLCALL\fP \fBSDL_memset\fP (\fBSDL_OUT_BYTECAP\fP(\fBlen\fP) \fBvoid\fP *\fBdst\fP, int \fBc\fP, \fBsize_t\fP \fBlen\fP)"
+.br
+.ti -1c
+.RI "\fBSDL_FORCE_INLINE\fP \fBvoid\fP \fBSDL_memset4\fP (\fBvoid\fP *\fBdst\fP, \fBUint32\fP \fBval\fP, \fBsize_t\fP dwords)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP *\fBSDLCALL\fP \fBSDL_memcpy\fP (\fBSDL_OUT_BYTECAP\fP(\fBlen\fP) \fBvoid\fP *\fBdst\fP, \fBSDL_IN_BYTECAP\fP(\fBlen\fP) const \fBvoid\fP *\fBsrc\fP, \fBsize_t\fP \fBlen\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP *\fBSDLCALL\fP \fBSDL_memmove\fP (\fBSDL_OUT_BYTECAP\fP(\fBlen\fP) \fBvoid\fP *\fBdst\fP, \fBSDL_IN_BYTECAP\fP(\fBlen\fP) const \fBvoid\fP *\fBsrc\fP, \fBsize_t\fP \fBlen\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_memcmp\fP (const \fBvoid\fP *\fBs1\fP, const \fBvoid\fP *s2, \fBsize_t\fP \fBlen\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP \fBSDL_wcslen\fP (const wchar_t *wstr)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP \fBSDL_wcslcpy\fP (\fBSDL_OUT_Z_CAP\fP(maxlen) wchar_t *\fBdst\fP, const wchar_t *\fBsrc\fP, \fBsize_t\fP maxlen)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP \fBSDL_wcslcat\fP (\fBSDL_INOUT_Z_CAP\fP(maxlen) wchar_t *\fBdst\fP, const wchar_t *\fBsrc\fP, \fBsize_t\fP maxlen)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP wchar_t *\fBSDLCALL\fP \fBSDL_wcsdup\fP (const wchar_t *wstr)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP wchar_t *\fBSDLCALL\fP \fBSDL_wcsstr\fP (const wchar_t *haystack, const wchar_t *needle)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_wcscmp\fP (const wchar_t *str1, const wchar_t *str2)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_wcsncmp\fP (const wchar_t *str1, const wchar_t *str2, \fBsize_t\fP maxlen)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_wcscasecmp\fP (const wchar_t *str1, const wchar_t *str2)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_wcsncasecmp\fP (const wchar_t *str1, const wchar_t *str2, \fBsize_t\fP \fBlen\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP \fBSDL_strlen\fP (const char *str)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP \fBSDL_strlcpy\fP (\fBSDL_OUT_Z_CAP\fP(maxlen) char *\fBdst\fP, const char *\fBsrc\fP, \fBsize_t\fP maxlen)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP \fBSDL_utf8strlcpy\fP (\fBSDL_OUT_Z_CAP\fP(dst_bytes) char *\fBdst\fP, const char *\fBsrc\fP, \fBsize_t\fP dst_bytes)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP \fBSDL_strlcat\fP (\fBSDL_INOUT_Z_CAP\fP(maxlen) char *\fBdst\fP, const char *\fBsrc\fP, \fBsize_t\fP maxlen)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP char *\fBSDLCALL\fP \fBSDL_strdup\fP (const char *str)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP char *\fBSDLCALL\fP \fBSDL_strrev\fP (char *str)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP char *\fBSDLCALL\fP \fBSDL_strupr\fP (char *str)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP char *\fBSDLCALL\fP \fBSDL_strlwr\fP (char *str)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP char *\fBSDLCALL\fP \fBSDL_strchr\fP (const char *str, int \fBc\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP char *\fBSDLCALL\fP \fBSDL_strrchr\fP (const char *str, int \fBc\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP char *\fBSDLCALL\fP \fBSDL_strstr\fP (const char *haystack, const char *needle)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP char *\fBSDLCALL\fP \fBSDL_strtokr\fP (char *\fBs1\fP, const char *s2, char **saveptr)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP \fBSDL_utf8strlen\fP (const char *str)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP char *\fBSDLCALL\fP \fBSDL_itoa\fP (int \fBvalue\fP, char *str, int radix)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP char *\fBSDLCALL\fP \fBSDL_uitoa\fP (unsigned int \fBvalue\fP, char *str, int radix)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP char *\fBSDLCALL\fP \fBSDL_ltoa\fP (long \fBvalue\fP, char *str, int radix)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP char *\fBSDLCALL\fP \fBSDL_ultoa\fP (unsigned long \fBvalue\fP, char *str, int radix)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP char *\fBSDLCALL\fP \fBSDL_lltoa\fP (\fBSint64\fP \fBvalue\fP, char *str, int radix)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP char *\fBSDLCALL\fP \fBSDL_ulltoa\fP (\fBUint64\fP \fBvalue\fP, char *str, int radix)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_atoi\fP (const char *str)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP double \fBSDLCALL\fP \fBSDL_atof\fP (const char *str)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP long \fBSDLCALL\fP \fBSDL_strtol\fP (const char *str, char **endp, int base)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP unsigned long \fBSDLCALL\fP \fBSDL_strtoul\fP (const char *str, char **endp, int base)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSint64\fP \fBSDLCALL\fP \fBSDL_strtoll\fP (const char *str, char **endp, int base)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBUint64\fP \fBSDLCALL\fP \fBSDL_strtoull\fP (const char *str, char **endp, int base)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP double \fBSDLCALL\fP \fBSDL_strtod\fP (const char *str, char **endp)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_strcmp\fP (const char *str1, const char *str2)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_strncmp\fP (const char *str1, const char *str2, \fBsize_t\fP maxlen)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_strcasecmp\fP (const char *str1, const char *str2)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_strncasecmp\fP (const char *str1, const char *str2, \fBsize_t\fP \fBlen\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_sscanf\fP (const char *text, \fBSDL_SCANF_FORMAT_STRING\fP const char *fmt,\&.\&.\&.) \fBSDL_SCANF_VARARG_FUNC\fP(2)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_vsscanf\fP (const char *text, const char *fmt, va_list ap)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_snprintf\fP (\fBSDL_OUT_Z_CAP\fP(maxlen) char *text, \fBsize_t\fP maxlen, \fBSDL_PRINTF_FORMAT_STRING\fP const char *fmt,\&.\&.\&.) \fBSDL_PRINTF_VARARG_FUNC\fP(3)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_vsnprintf\fP (\fBSDL_OUT_Z_CAP\fP(maxlen) char *text, \fBsize_t\fP maxlen, const char *fmt, va_list ap)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_asprintf\fP (char **strp, \fBSDL_PRINTF_FORMAT_STRING\fP const char *fmt,\&.\&.\&.) \fBSDL_PRINTF_VARARG_FUNC\fP(2)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_vasprintf\fP (char **strp, const char *fmt, va_list ap)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP double \fBSDLCALL\fP \fBSDL_acos\fP (double \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP float \fBSDLCALL\fP \fBSDL_acosf\fP (float \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP double \fBSDLCALL\fP \fBSDL_asin\fP (double \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP float \fBSDLCALL\fP \fBSDL_asinf\fP (float \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP double \fBSDLCALL\fP \fBSDL_atan\fP (double \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP float \fBSDLCALL\fP \fBSDL_atanf\fP (float \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP double \fBSDLCALL\fP \fBSDL_atan2\fP (double \fBy\fP, double \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP float \fBSDLCALL\fP \fBSDL_atan2f\fP (float \fBy\fP, float \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP double \fBSDLCALL\fP \fBSDL_ceil\fP (double \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP float \fBSDLCALL\fP \fBSDL_ceilf\fP (float \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP double \fBSDLCALL\fP \fBSDL_copysign\fP (double \fBx\fP, double \fBy\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP float \fBSDLCALL\fP \fBSDL_copysignf\fP (float \fBx\fP, float \fBy\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP double \fBSDLCALL\fP \fBSDL_cos\fP (double \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP float \fBSDLCALL\fP \fBSDL_cosf\fP (float \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP double \fBSDLCALL\fP \fBSDL_exp\fP (double \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP float \fBSDLCALL\fP \fBSDL_expf\fP (float \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP double \fBSDLCALL\fP \fBSDL_fabs\fP (double \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP float \fBSDLCALL\fP \fBSDL_fabsf\fP (float \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP double \fBSDLCALL\fP \fBSDL_floor\fP (double \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP float \fBSDLCALL\fP \fBSDL_floorf\fP (float \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP double \fBSDLCALL\fP \fBSDL_trunc\fP (double \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP float \fBSDLCALL\fP \fBSDL_truncf\fP (float \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP double \fBSDLCALL\fP \fBSDL_fmod\fP (double \fBx\fP, double \fBy\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP float \fBSDLCALL\fP \fBSDL_fmodf\fP (float \fBx\fP, float \fBy\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP double \fBSDLCALL\fP \fBSDL_log\fP (double \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP float \fBSDLCALL\fP \fBSDL_logf\fP (float \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP double \fBSDLCALL\fP \fBSDL_log10\fP (double \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP float \fBSDLCALL\fP \fBSDL_log10f\fP (float \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP double \fBSDLCALL\fP \fBSDL_pow\fP (double \fBx\fP, double \fBy\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP float \fBSDLCALL\fP \fBSDL_powf\fP (float \fBx\fP, float \fBy\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP double \fBSDLCALL\fP \fBSDL_round\fP (double \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP float \fBSDLCALL\fP \fBSDL_roundf\fP (float \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP long \fBSDLCALL\fP \fBSDL_lround\fP (double \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP long \fBSDLCALL\fP \fBSDL_lroundf\fP (float \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP double \fBSDLCALL\fP \fBSDL_scalbn\fP (double \fBx\fP, int \fBn\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP float \fBSDLCALL\fP \fBSDL_scalbnf\fP (float \fBx\fP, int \fBn\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP double \fBSDLCALL\fP \fBSDL_sin\fP (double \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP float \fBSDLCALL\fP \fBSDL_sinf\fP (float \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP double \fBSDLCALL\fP \fBSDL_sqrt\fP (double \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP float \fBSDLCALL\fP \fBSDL_sqrtf\fP (float \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP double \fBSDLCALL\fP \fBSDL_tan\fP (double \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP float \fBSDLCALL\fP \fBSDL_tanf\fP (float \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_iconv_t\fP \fBSDLCALL\fP \fBSDL_iconv_open\fP (const char *tocode, const char *fromcode)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_iconv_close\fP (\fBSDL_iconv_t\fP cd)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP \fBSDL_iconv\fP (\fBSDL_iconv_t\fP cd, const char **inbuf, \fBsize_t\fP *inbytesleft, char **outbuf, \fBsize_t\fP *outbytesleft)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP char *\fBSDLCALL\fP \fBSDL_iconv_string\fP (const char *tocode, const char *fromcode, const char *inbuf, \fBsize_t\fP inbytesleft)"
+.br
+.ti -1c
+.RI "\fBSDL_FORCE_INLINE\fP \fBvoid\fP * \fBSDL_memcpy4\fP (\fBSDL_OUT_BYTECAP\fP(dwords *4) \fBvoid\fP *\fBdst\fP, \fBSDL_IN_BYTECAP\fP(dwords *4) const \fBvoid\fP *\fBsrc\fP, \fBsize_t\fP dwords)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This is a general header that includes C language support\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define _SDL_HAS_BUILTIN(\fBx\fP)   0"
+Check if the compiler supports a given builtin\&. Supported by virtually all clang versions and recent gcc\&. Use this instead of checking the clang version if possible\&. 
+.SS "#define M_PI   3\&.14159265358979323846264338327950288"
+pi 
+.SS "#define SDL_arraysize(\fBarray\fP)   (sizeof(\fBarray\fP)/sizeof(\fBarray\fP[0]))"
+The number of elements in an array\&. 
+.SS "#define SDL_clamp(\fBx\fP, \fBa\fP, \fBb\fP)   (((\fBx\fP) < (\fBa\fP)) ? (\fBa\fP) : (((\fBx\fP) > (\fBb\fP)) ? (\fBb\fP) : (\fBx\fP)))"
+
+.SS "#define SDL_COMPILE_TIME_ASSERT(\fBname\fP, \fBx\fP)          typedef int SDL_compile_time_assert_ ## \fBname\fP[(\fBx\fP) * 2 \- 1]"
+
+.SS "#define SDL_const_cast(\fBtype\fP, expression)   ((\fBtype\fP)(expression))"
+
+.SS "#define SDL_FOURCC(A, B, C, D)"
+\fBValue:\fP
+.PP
+.nf
+    ((SDL_static_cast(Uint32, SDL_static_cast(Uint8, (A))) << 0) | \
+     (SDL_static_cast(Uint32, SDL_static_cast(Uint8, (B))) << 8) | \
+     (SDL_static_cast(Uint32, SDL_static_cast(Uint8, (C))) << 16) | \
+     (SDL_static_cast(Uint32, SDL_static_cast(Uint8, (D))) << 24))
+.fi
+.SS "#define SDL_ICONV_E2BIG   (\fBsize_t\fP)\-2"
+
+.SS "#define SDL_ICONV_EILSEQ   (\fBsize_t\fP)\-3"
+
+.SS "#define SDL_ICONV_EINVAL   (\fBsize_t\fP)\-4"
+
+.SS "#define SDL_ICONV_ERROR   (\fBsize_t\fP)\-1"
+
+.SS "#define SDL_iconv_utf8_locale(S)   \fBSDL_iconv_string\fP('', 'UTF\-8', S, \fBSDL_strlen\fP(S)+1)"
+
+.SS "#define SDL_iconv_utf8_ucs2(S)   (\fBUint16\fP *)\fBSDL_iconv_string\fP('UCS\-2\-INTERNAL', 'UTF\-8', S, \fBSDL_strlen\fP(S)+1)"
+
+.SS "#define SDL_iconv_utf8_ucs4(S)   (\fBUint32\fP *)\fBSDL_iconv_string\fP('UCS\-4\-INTERNAL', 'UTF\-8', S, \fBSDL_strlen\fP(S)+1)"
+
+.SS "#define SDL_iconv_wchar_utf8(S)   \fBSDL_iconv_string\fP('UTF\-8', 'WCHAR_T', (char *)S, (\fBSDL_wcslen\fP(S)+1)*sizeof(wchar_t))"
+
+.SS "#define SDL_IN_BYTECAP(\fBx\fP)"
+
+.SS "#define SDL_INOUT_Z_CAP(\fBx\fP)"
+
+.SS "#define SDL_max(\fBx\fP, \fBy\fP)   (((\fBx\fP) > (\fBy\fP)) ? (\fBx\fP) : (\fBy\fP))"
+
+.SS "#define SDL_MAX_SINT16   ((\fBSint16\fP)0x7FFF)        /* 32767 */"
+
+.PP
+A signed 16-bit integer type\&. 
+.SS "#define SDL_MAX_SINT32   ((\fBSint32\fP)0x7FFFFFFF)    /* 2147483647 */"
+
+.PP
+A signed 32-bit integer type\&. 
+.SS "#define SDL_MAX_SINT64   ((\fBSint64\fP)0x7FFFFFFFFFFFFFFFll)      /* 9223372036854775807 */"
+
+.PP
+A signed 64-bit integer type\&. 
+.SS "#define SDL_MAX_SINT8   ((\fBSint8\fP)0x7F)           /* 127 */"
+
+.PP
+A signed 8-bit integer type\&. 
+.SS "#define SDL_MAX_UINT16   ((\fBUint16\fP)0xFFFF)        /* 65535 */"
+
+.PP
+An unsigned 16-bit integer type\&. 
+.SS "#define SDL_MAX_UINT32   ((\fBUint32\fP)0xFFFFFFFFu)   /* 4294967295 */"
+
+.PP
+An unsigned 32-bit integer type\&. 
+.SS "#define SDL_MAX_UINT64   ((\fBUint64\fP)0xFFFFFFFFFFFFFFFFull)     /* 18446744073709551615 */"
+
+.PP
+An unsigned 64-bit integer type\&. 
+.SS "#define SDL_MAX_UINT8   ((\fBUint8\fP)0xFF)           /* 255 */"
+
+.PP
+An unsigned 8-bit integer type\&. 
+.SS "#define SDL_min(\fBx\fP, \fBy\fP)   (((\fBx\fP) < (\fBy\fP)) ? (\fBx\fP) : (\fBy\fP))"
+
+.SS "#define SDL_MIN_SINT16   ((\fBSint16\fP)(~0x7FFF))     /* \-32768 */"
+
+.SS "#define SDL_MIN_SINT32   ((\fBSint32\fP)(~0x7FFFFFFF)) /* \-2147483648 */"
+
+.SS "#define SDL_MIN_SINT64   ((\fBSint64\fP)(~0x7FFFFFFFFFFFFFFFll))   /* \-9223372036854775808 */"
+
+.SS "#define SDL_MIN_SINT8   ((\fBSint8\fP)(~0x7F))        /* \-128 */"
+
+.SS "#define SDL_MIN_UINT16   ((\fBUint16\fP)0x0000)        /* 0 */"
+
+.SS "#define SDL_MIN_UINT32   ((\fBUint32\fP)0x00000000)    /* 0 */"
+
+.SS "#define SDL_MIN_UINT64   ((\fBUint64\fP)(0x0000000000000000ull))   /* 0 */"
+
+.SS "#define SDL_MIN_UINT8   ((\fBUint8\fP)0x00)           /* 0 */"
+
+.SS "#define SDL_OUT_BYTECAP(\fBx\fP)"
+
+.SS "#define SDL_OUT_CAP(\fBx\fP)"
+
+.SS "#define SDL_OUT_Z_BYTECAP(\fBx\fP)"
+
+.SS "#define SDL_OUT_Z_CAP(\fBx\fP)"
+
+.SS "#define SDL_PRINTF_FORMAT_STRING"
+
+.SS "#define SDL_PRINTF_VARARG_FUNC(fmtargnumber)"
+
+.SS "#define SDL_PRIs32   'd'"
+
+.SS "#define SDL_PRIs64   'lld'"
+
+.SS "#define SDL_PRIu32   'u'"
+
+.SS "#define SDL_PRIu64   'llu'"
+
+.SS "#define SDL_PRIx32   'x'"
+
+.SS "#define SDL_PRIX32   'X'"
+
+.SS "#define SDL_PRIx64   'llx'"
+
+.SS "#define SDL_PRIX64   'llX'"
+
+.SS "#define SDL_reinterpret_cast(\fBtype\fP, expression)   ((\fBtype\fP)(expression))"
+
+.SS "#define SDL_SCANF_FORMAT_STRING"
+
+.SS "#define SDL_SCANF_VARARG_FUNC(fmtargnumber)"
+
+.SS "#define SDL_stack_alloc(\fBtype\fP, \fBcount\fP)   (\fBtype\fP*)\fBSDL_malloc\fP(sizeof(\fBtype\fP)*(\fBcount\fP))"
+
+.SS "#define SDL_stack_free(\fBdata\fP)   \fBSDL_free\fP(\fBdata\fP)"
+
+.SS "#define SDL_static_cast(\fBtype\fP, expression)   ((\fBtype\fP)(expression))"
+
+.SS "#define SDL_STRINGIFY_ARG(arg)   #arg"
+Macro useful for building other macros with strings in them
+.PP
+e\&.g\&. #define LOG_ERROR(X) OutputDebugString(SDL_STRINGIFY_ARG(\fBFUNCTION\fP) ': ' X '\\n') 
+.SS "#define SDL_TABLESIZE(\fBtable\fP)   \fBSDL_arraysize\fP(\fBtable\fP)"
+
+.SS "#define SDL_zero(\fBx\fP)   \fBSDL_memset\fP(&(\fBx\fP), 0, sizeof((\fBx\fP)))"
+
+.SS "#define SDL_zeroa(\fBx\fP)   \fBSDL_memset\fP((\fBx\fP), 0, sizeof((\fBx\fP)))"
+
+.SS "#define SDL_zerop(\fBx\fP)   \fBSDL_memset\fP((\fBx\fP), 0, sizeof(*(\fBx\fP)))"
+
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBvoid\fP *(\fBSDLCALL\fP * SDL_calloc_func) (\fBsize_t\fP nmemb, \fBsize_t\fP \fBsize\fP)"
+
+.SS "typedef \fBvoid\fP(\fBSDLCALL\fP * SDL_free_func) (\fBvoid\fP *mem)"
+
+.SS "typedef struct _SDL_iconv_t* \fBSDL_iconv_t\fP"
+
+.SS "typedef \fBvoid\fP *(\fBSDLCALL\fP * SDL_malloc_func) (\fBsize_t\fP \fBsize\fP)"
+
+.SS "typedef \fBvoid\fP *(\fBSDLCALL\fP * SDL_realloc_func) (\fBvoid\fP *mem, \fBsize_t\fP \fBsize\fP)"
+
+.SS "typedef \fBint16_t\fP \fBSint16\fP"
+
+.SS "typedef \fBint32_t\fP \fBSint32\fP"
+
+.SS "typedef \fBint64_t\fP \fBSint64\fP"
+
+.SS "typedef \fBint8_t\fP \fBSint8\fP"
+
+.SS "typedef \fBuint16_t\fP \fBUint16\fP"
+
+.SS "typedef \fBuint32_t\fP \fBUint32\fP"
+
+.SS "typedef \fBuint64_t\fP \fBUint64\fP"
+
+.SS "typedef \fBuint8_t\fP \fBUint8\fP"
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBSDL_bool\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISDL_FALSE \fP\fP
+.TP
+\fB\fISDL_TRUE \fP\fP
+.SH "Function Documentation"
+.PP 
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_abs (int x)"
+
+.SS "\fBDECLSPEC\fP double \fBSDLCALL\fP SDL_acos (double x)"
+Use this function to compute arc cosine of \fCx\fP\&.
+.PP
+The definition of \fCy = acos(x)\fP is \fCx = cos(y)\fP\&.
+.PP
+Domain: \fC-1 <= x <= 1\fP
+.PP
+Range: \fC0 <= y <= Pi\fP
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP floating point value, in radians\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+arc cosine of \fCx\fP\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.2\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP float \fBSDLCALL\fP SDL_acosf (float x)"
+
+.SS "\fBDECLSPEC\fP double \fBSDLCALL\fP SDL_asin (double x)"
+
+.SS "\fBDECLSPEC\fP float \fBSDLCALL\fP SDL_asinf (float x)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_asprintf (char ** strp, \fBSDL_PRINTF_FORMAT_STRING\fP const char * fmt,  \&.\&.\&.)"
+
+.SS "\fBDECLSPEC\fP double \fBSDLCALL\fP SDL_atan (double x)"
+
+.SS "\fBDECLSPEC\fP double \fBSDLCALL\fP SDL_atan2 (double y, double x)"
+
+.SS "\fBDECLSPEC\fP float \fBSDLCALL\fP SDL_atan2f (float y, float x)"
+
+.SS "\fBDECLSPEC\fP float \fBSDLCALL\fP SDL_atanf (float x)"
+
+.SS "\fBDECLSPEC\fP double \fBSDLCALL\fP SDL_atof (const char * str)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_atoi (const char * str)"
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP *\fBSDLCALL\fP SDL_calloc (\fBsize_t\fP nmemb, \fBsize_t\fP size)"
+
+.SS "\fBDECLSPEC\fP double \fBSDLCALL\fP SDL_ceil (double x)"
+
+.SS "\fBDECLSPEC\fP float \fBSDLCALL\fP SDL_ceilf (float x)"
+
+.SS "\fBDECLSPEC\fP double \fBSDLCALL\fP SDL_copysign (double x, double y)"
+
+.SS "\fBDECLSPEC\fP float \fBSDLCALL\fP SDL_copysignf (float x, float y)"
+
+.SS "\fBDECLSPEC\fP double \fBSDLCALL\fP SDL_cos (double x)"
+
+.SS "\fBDECLSPEC\fP float \fBSDLCALL\fP SDL_cosf (float x)"
+
+.SS "\fBDECLSPEC\fP \fBUint32\fP \fBSDLCALL\fP SDL_crc32 (\fBUint32\fP crc, const \fBvoid\fP * data, \fBsize_t\fP len)"
+
+.SS "\fBDECLSPEC\fP double \fBSDLCALL\fP SDL_exp (double x)"
+
+.SS "\fBDECLSPEC\fP float \fBSDLCALL\fP SDL_expf (float x)"
+
+.SS "\fBDECLSPEC\fP double \fBSDLCALL\fP SDL_fabs (double x)"
+
+.SS "\fBDECLSPEC\fP float \fBSDLCALL\fP SDL_fabsf (float x)"
+
+.SS "\fBDECLSPEC\fP double \fBSDLCALL\fP SDL_floor (double x)"
+
+.SS "\fBDECLSPEC\fP float \fBSDLCALL\fP SDL_floorf (float x)"
+
+.SS "\fBDECLSPEC\fP double \fBSDLCALL\fP SDL_fmod (double x, double y)"
+
+.SS "\fBDECLSPEC\fP float \fBSDLCALL\fP SDL_fmodf (float x, float y)"
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_free (\fBvoid\fP * mem)"
+
+.SS "\fBDECLSPEC\fP char *\fBSDLCALL\fP SDL_getenv (const char * name)"
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_GetMemoryFunctions (\fBSDL_malloc_func\fP * malloc_func, \fBSDL_calloc_func\fP * calloc_func, \fBSDL_realloc_func\fP * realloc_func, \fBSDL_free_func\fP * free_func)"
+Get the current set of SDL memory functions
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.7\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_GetNumAllocations (\fBvoid\fP)"
+Get the number of outstanding (unfreed) allocations
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.7\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP SDL_iconv (\fBSDL_iconv_t\fP cd, const char ** inbuf, \fBsize_t\fP * inbytesleft, char ** outbuf, \fBsize_t\fP * outbytesleft)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_iconv_close (\fBSDL_iconv_t\fP cd)"
+
+.SS "\fBDECLSPEC\fP \fBSDL_iconv_t\fP \fBSDLCALL\fP SDL_iconv_open (const char * tocode, const char * fromcode)"
+
+.SS "\fBDECLSPEC\fP char *\fBSDLCALL\fP SDL_iconv_string (const char * tocode, const char * fromcode, const char * inbuf, \fBsize_t\fP inbytesleft)"
+This function converts a string between encodings in one pass, returning a string that must be freed with \fBSDL_free()\fP or NULL on error\&.
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_isalnum (int x)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_isalpha (int x)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_isblank (int x)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_iscntrl (int x)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_isdigit (int x)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_isgraph (int x)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_islower (int x)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_isprint (int x)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_ispunct (int x)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_isspace (int x)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_isupper (int x)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_isxdigit (int x)"
+
+.SS "\fBDECLSPEC\fP char *\fBSDLCALL\fP SDL_itoa (int value, char * str, int radix)"
+
+.SS "\fBDECLSPEC\fP char *\fBSDLCALL\fP SDL_lltoa (\fBSint64\fP value, char * str, int radix)"
+
+.SS "\fBDECLSPEC\fP double \fBSDLCALL\fP SDL_log (double x)"
+
+.SS "\fBDECLSPEC\fP double \fBSDLCALL\fP SDL_log10 (double x)"
+
+.SS "\fBDECLSPEC\fP float \fBSDLCALL\fP SDL_log10f (float x)"
+
+.SS "\fBDECLSPEC\fP float \fBSDLCALL\fP SDL_logf (float x)"
+
+.SS "\fBDECLSPEC\fP long \fBSDLCALL\fP SDL_lround (double x)"
+
+.SS "\fBDECLSPEC\fP long \fBSDLCALL\fP SDL_lroundf (float x)"
+
+.SS "\fBDECLSPEC\fP char *\fBSDLCALL\fP SDL_ltoa (long value, char * str, int radix)"
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP *\fBSDLCALL\fP SDL_malloc (\fBsize_t\fP size)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_memcmp (const \fBvoid\fP * s1, const \fBvoid\fP * s2, \fBsize_t\fP len)"
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP *\fBSDLCALL\fP SDL_memcpy (\fBSDL_OUT_BYTECAP\fP(\fBlen\fP) \fBvoid\fP * dst, \fBSDL_IN_BYTECAP\fP(\fBlen\fP) const \fBvoid\fP * src, \fBsize_t\fP len)"
+
+.SS "\fBSDL_FORCE_INLINE\fP \fBvoid\fP * SDL_memcpy4 (\fBSDL_OUT_BYTECAP\fP(dwords *4) \fBvoid\fP * dst, \fBSDL_IN_BYTECAP\fP(dwords *4) const \fBvoid\fP * src, \fBsize_t\fP dwords)"
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP *\fBSDLCALL\fP SDL_memmove (\fBSDL_OUT_BYTECAP\fP(\fBlen\fP) \fBvoid\fP * dst, \fBSDL_IN_BYTECAP\fP(\fBlen\fP) const \fBvoid\fP * src, \fBsize_t\fP len)"
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP *\fBSDLCALL\fP SDL_memset (\fBSDL_OUT_BYTECAP\fP(\fBlen\fP) \fBvoid\fP * dst, int c, \fBsize_t\fP len)"
+
+.SS "\fBSDL_FORCE_INLINE\fP \fBvoid\fP SDL_memset4 (\fBvoid\fP * dst, \fBUint32\fP val, \fBsize_t\fP dwords)"
+
+.SS "\fBDECLSPEC\fP double \fBSDLCALL\fP SDL_pow (double x, double y)"
+
+.SS "\fBDECLSPEC\fP float \fBSDLCALL\fP SDL_powf (float x, float y)"
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_qsort (\fBvoid\fP * base, \fBsize_t\fP nmemb, \fBsize_t\fP size, int(*)(const \fBvoid\fP *, const \fBvoid\fP *) compare)"
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP *\fBSDLCALL\fP SDL_realloc (\fBvoid\fP * mem, \fBsize_t\fP size)"
+
+.SS "\fBDECLSPEC\fP double \fBSDLCALL\fP SDL_round (double x)"
+
+.SS "\fBDECLSPEC\fP float \fBSDLCALL\fP SDL_roundf (float x)"
+
+.SS "\fBDECLSPEC\fP double \fBSDLCALL\fP SDL_scalbn (double x, int n)"
+
+.SS "\fBDECLSPEC\fP float \fBSDLCALL\fP SDL_scalbnf (float x, int n)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_setenv (const char * name, const char * value, int overwrite)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_SetMemoryFunctions (\fBSDL_malloc_func\fP malloc_func, \fBSDL_calloc_func\fP calloc_func, \fBSDL_realloc_func\fP realloc_func, \fBSDL_free_func\fP free_func)"
+Replace SDL's memory allocation functions with a custom set
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.7\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP double \fBSDLCALL\fP SDL_sin (double x)"
+
+.SS "\fBDECLSPEC\fP float \fBSDLCALL\fP SDL_sinf (float x)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_snprintf (\fBSDL_OUT_Z_CAP\fP(maxlen) char * text, \fBsize_t\fP maxlen, \fBSDL_PRINTF_FORMAT_STRING\fP const char * fmt,  \&.\&.\&.)"
+
+.SS "\fBDECLSPEC\fP double \fBSDLCALL\fP SDL_sqrt (double x)"
+
+.SS "\fBDECLSPEC\fP float \fBSDLCALL\fP SDL_sqrtf (float x)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_sscanf (const char * text, \fBSDL_SCANF_FORMAT_STRING\fP const char * fmt,  \&.\&.\&.)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_strcasecmp (const char * str1, const char * str2)"
+
+.SS "\fBDECLSPEC\fP char *\fBSDLCALL\fP SDL_strchr (const char * str, int c)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_strcmp (const char * str1, const char * str2)"
+
+.SS "\fBDECLSPEC\fP char *\fBSDLCALL\fP SDL_strdup (const char * str)"
+
+.SS "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP SDL_strlcat (\fBSDL_INOUT_Z_CAP\fP(maxlen) char * dst, const char * src, \fBsize_t\fP maxlen)"
+
+.SS "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP SDL_strlcpy (\fBSDL_OUT_Z_CAP\fP(maxlen) char * dst, const char * src, \fBsize_t\fP maxlen)"
+
+.SS "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP SDL_strlen (const char * str)"
+
+.SS "\fBDECLSPEC\fP char *\fBSDLCALL\fP SDL_strlwr (char * str)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_strncasecmp (const char * str1, const char * str2, \fBsize_t\fP len)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_strncmp (const char * str1, const char * str2, \fBsize_t\fP maxlen)"
+
+.SS "\fBDECLSPEC\fP char *\fBSDLCALL\fP SDL_strrchr (const char * str, int c)"
+
+.SS "\fBDECLSPEC\fP char *\fBSDLCALL\fP SDL_strrev (char * str)"
+
+.SS "\fBDECLSPEC\fP char *\fBSDLCALL\fP SDL_strstr (const char * haystack, const char * needle)"
+
+.SS "\fBDECLSPEC\fP double \fBSDLCALL\fP SDL_strtod (const char * str, char ** endp)"
+
+.SS "\fBDECLSPEC\fP char *\fBSDLCALL\fP SDL_strtokr (char * s1, const char * s2, char ** saveptr)"
+
+.SS "\fBDECLSPEC\fP long \fBSDLCALL\fP SDL_strtol (const char * str, char ** endp, int base)"
+
+.SS "\fBDECLSPEC\fP \fBSint64\fP \fBSDLCALL\fP SDL_strtoll (const char * str, char ** endp, int base)"
+
+.SS "\fBDECLSPEC\fP unsigned long \fBSDLCALL\fP SDL_strtoul (const char * str, char ** endp, int base)"
+
+.SS "\fBDECLSPEC\fP \fBUint64\fP \fBSDLCALL\fP SDL_strtoull (const char * str, char ** endp, int base)"
+
+.SS "\fBDECLSPEC\fP char *\fBSDLCALL\fP SDL_strupr (char * str)"
+
+.SS "\fBDECLSPEC\fP double \fBSDLCALL\fP SDL_tan (double x)"
+
+.SS "\fBDECLSPEC\fP float \fBSDLCALL\fP SDL_tanf (float x)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_tolower (int x)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_toupper (int x)"
+
+.SS "\fBDECLSPEC\fP double \fBSDLCALL\fP SDL_trunc (double x)"
+
+.SS "\fBDECLSPEC\fP float \fBSDLCALL\fP SDL_truncf (float x)"
+
+.SS "\fBDECLSPEC\fP char *\fBSDLCALL\fP SDL_uitoa (unsigned int value, char * str, int radix)"
+
+.SS "\fBDECLSPEC\fP char *\fBSDLCALL\fP SDL_ulltoa (\fBUint64\fP value, char * str, int radix)"
+
+.SS "\fBDECLSPEC\fP char *\fBSDLCALL\fP SDL_ultoa (unsigned long value, char * str, int radix)"
+
+.SS "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP SDL_utf8strlcpy (\fBSDL_OUT_Z_CAP\fP(dst_bytes) char * dst, const char * src, \fBsize_t\fP dst_bytes)"
+
+.SS "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP SDL_utf8strlen (const char * str)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_vasprintf (char ** strp, const char * fmt, va_list ap)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_vsnprintf (\fBSDL_OUT_Z_CAP\fP(maxlen) char * text, \fBsize_t\fP maxlen, const char * fmt, va_list ap)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_vsscanf (const char * text, const char * fmt, va_list ap)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_wcscasecmp (const wchar_t * str1, const wchar_t * str2)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_wcscmp (const wchar_t * str1, const wchar_t * str2)"
+
+.SS "\fBDECLSPEC\fP wchar_t *\fBSDLCALL\fP SDL_wcsdup (const wchar_t * wstr)"
+
+.SS "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP SDL_wcslcat (\fBSDL_INOUT_Z_CAP\fP(maxlen) wchar_t * dst, const wchar_t * src, \fBsize_t\fP maxlen)"
+
+.SS "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP SDL_wcslcpy (\fBSDL_OUT_Z_CAP\fP(maxlen) wchar_t * dst, const wchar_t * src, \fBsize_t\fP maxlen)"
+
+.SS "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP SDL_wcslen (const wchar_t * wstr)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_wcsncasecmp (const wchar_t * str1, const wchar_t * str2, \fBsize_t\fP len)"
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_wcsncmp (const wchar_t * str1, const wchar_t * str2, \fBsize_t\fP maxlen)"
+
+.SS "\fBDECLSPEC\fP wchar_t *\fBSDLCALL\fP SDL_wcsstr (const wchar_t * haystack, const wchar_t * needle)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e-touch_8md" kind="file" language="Markdown">
+    <compoundname>README-touch.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">Touch</highlight></codeline>
+<codeline><highlight class="normal">===========================================================================</highlight></codeline>
+<codeline><highlight class="normal">System<sp/>Specific<sp/>Notes</highlight></codeline>
+<codeline><highlight class="normal">===========================================================================</highlight></codeline>
+<codeline><highlight class="normal">Linux:</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>linux<sp/>touch<sp/>system<sp/>is<sp/>currently<sp/>based<sp/>off<sp/>event<sp/>streams,<sp/>and<sp/>proc/bus/devices.<sp/>The<sp/>active<sp/>user<sp/>must<sp/>be<sp/>given<sp/>permissions<sp/>to<sp/>read<sp/>/dev/input/TOUCHDEVICE,<sp/>where<sp/>TOUCHDEVICE<sp/>is<sp/>the<sp/>event<sp/>stream<sp/>for<sp/>your<sp/>device.<sp/>Currently<sp/>only<sp/>Wacom<sp/>tablets<sp/>are<sp/>supported.<sp/>If<sp/>you<sp/>have<sp/>an<sp/>unsupported<sp/>tablet<sp/>contact<sp/>me<sp/>at<sp/>jim.tla+sdl_touch@gmail.com<sp/>and<sp/>I<sp/>will<sp/>help<sp/>you<sp/>get<sp/>support<sp/>for<sp/>it.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Mac:</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>Mac<sp/>and<sp/>iPhone<sp/>APIs<sp/>are<sp/>pretty.<sp/>If<sp/>your<sp/>touch<sp/>device<sp/>supports<sp/>them<sp/>then<sp/>you&apos;ll<sp/>be<sp/>fine.<sp/>If<sp/>it<sp/>doesn&apos;t,<sp/>then<sp/>there<sp/>isn&apos;t<sp/>much<sp/>we<sp/>can<sp/>do.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">iPhone:<sp/></highlight></codeline>
+<codeline><highlight class="normal">Works<sp/>out<sp/>of<sp/>box.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Windows:</highlight></codeline>
+<codeline><highlight class="normal">Unfortunately<sp/>there<sp/>is<sp/>no<sp/>windows<sp/>support<sp/>as<sp/>of<sp/>yet.<sp/>Support<sp/>for<sp/>Windows<sp/>7<sp/>is<sp/>planned,<sp/>but<sp/>we<sp/>currently<sp/>have<sp/>no<sp/>way<sp/>to<sp/>test.<sp/>If<sp/>you<sp/>have<sp/>a<sp/>Windows<sp/>7<sp/>WM_TOUCH<sp/>supported<sp/>device,<sp/>and<sp/>are<sp/>willing<sp/>to<sp/>help<sp/>test<sp/>please<sp/>contact<sp/>me<sp/>at<sp/>jim.tla+sdl_touch@gmail.com</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">===========================================================================</highlight></codeline>
+<codeline><highlight class="normal">Events</highlight></codeline>
+<codeline><highlight class="normal">===========================================================================</highlight></codeline>
+<codeline><highlight class="normal">SDL_FINGERDOWN:</highlight></codeline>
+<codeline><highlight class="normal">Sent<sp/>when<sp/>a<sp/>finger<sp/>(or<sp/>stylus)<sp/>is<sp/>placed<sp/>on<sp/>a<sp/>touch<sp/>device.</highlight></codeline>
+<codeline><highlight class="normal">Fields:</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>event.tfinger.touchId<sp/><sp/>-<sp/>the<sp/>Id<sp/>of<sp/>the<sp/>touch<sp/>device.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>event.tfinger.fingerId<sp/>-<sp/>the<sp/>Id<sp/>of<sp/>the<sp/>finger<sp/>which<sp/>just<sp/>went<sp/>down.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>event.tfinger.x<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>the<sp/>x<sp/>coordinate<sp/>of<sp/>the<sp/>touch<sp/>(0..1)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>event.tfinger.y<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>the<sp/>y<sp/>coordinate<sp/>of<sp/>the<sp/>touch<sp/>(0..1)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>event.tfinger.pressure<sp/>-<sp/>the<sp/>pressure<sp/>of<sp/>the<sp/>touch<sp/>(0..1)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SDL_FINGERMOTION:</highlight></codeline>
+<codeline><highlight class="normal">Sent<sp/>when<sp/>a<sp/>finger<sp/>(or<sp/>stylus)<sp/>is<sp/>moved<sp/>on<sp/>the<sp/>touch<sp/>device.</highlight></codeline>
+<codeline><highlight class="normal">Fields:</highlight></codeline>
+<codeline><highlight class="normal">Same<sp/>as<sp/>SDL_FINGERDOWN<sp/>but<sp/>with<sp/>additional:</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>event.tfinger.dx<sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>change<sp/>in<sp/>x<sp/>coordinate<sp/>during<sp/>this<sp/>motion<sp/>event.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>event.tfinger.dy<sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>change<sp/>in<sp/>y<sp/>coordinate<sp/>during<sp/>this<sp/>motion<sp/>event.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SDL_FINGERUP:</highlight></codeline>
+<codeline><highlight class="normal">Sent<sp/>when<sp/>a<sp/>finger<sp/>(or<sp/>stylus)<sp/>is<sp/>lifted<sp/>from<sp/>the<sp/>touch<sp/>device.</highlight></codeline>
+<codeline><highlight class="normal">Fields:</highlight></codeline>
+<codeline><highlight class="normal">Same<sp/>as<sp/>SDL_FINGERDOWN.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">===========================================================================</highlight></codeline>
+<codeline><highlight class="normal">Functions</highlight></codeline>
+<codeline><highlight class="normal">===========================================================================</highlight></codeline>
+<codeline><highlight class="normal">SDL<sp/>provides<sp/>the<sp/>ability<sp/>to<sp/>access<sp/>the<sp/>underlying<sp/>SDL_Finger<sp/>structures.</highlight></codeline>
+<codeline><highlight class="normal">These<sp/>structures<sp/>should<sp/>_never_<sp/>be<sp/>modified.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>following<sp/>functions<sp/>are<sp/>included<sp/>from<sp/>SDL_touch.h</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>get<sp/>a<sp/>SDL_TouchID<sp/>call<sp/>SDL_GetTouchDevice(int<sp/>index).</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>returns<sp/>a<sp/>SDL_TouchID.</highlight></codeline>
+<codeline><highlight class="normal">IMPORTANT:<sp/>If<sp/>the<sp/>touch<sp/>has<sp/>been<sp/>removed,<sp/>or<sp/>there<sp/>is<sp/>no<sp/>touch<sp/>with<sp/>the<sp/>given<sp/>index,<sp/>SDL_GetTouchDevice()<sp/>will<sp/>return<sp/>0.<sp/>Be<sp/>sure<sp/>to<sp/>check<sp/>for<sp/>this!</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>number<sp/>of<sp/>touch<sp/>devices<sp/>can<sp/>be<sp/>queried<sp/>with<sp/>SDL_GetNumTouchDevices().</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A<sp/>SDL_TouchID<sp/>may<sp/>be<sp/>used<sp/>to<sp/>get<sp/>pointers<sp/>to<sp/>SDL_Finger.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SDL_GetNumTouchFingers(touchID)<sp/>may<sp/>be<sp/>used<sp/>to<sp/>get<sp/>the<sp/>number<sp/>of<sp/>fingers<sp/>currently<sp/>down<sp/>on<sp/>the<sp/>device.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>most<sp/>common<sp/>reason<sp/>to<sp/>access<sp/>SDL_Finger<sp/>is<sp/>to<sp/>query<sp/>the<sp/>fingers<sp/>outside<sp/>the<sp/>event.<sp/>In<sp/>most<sp/>cases<sp/>accessing<sp/>the<sp/>fingers<sp/>is<sp/>using<sp/>the<sp/>event.<sp/>This<sp/>would<sp/>be<sp/>accomplished<sp/>by<sp/>code<sp/>like<sp/>the<sp/>following:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>float<sp/>x<sp/>=<sp/>event.tfinger.x;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>float<sp/>y<sp/>=<sp/>event.tfinger.y;</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>get<sp/>a<sp/>SDL_Finger,<sp/>call<sp/>SDL_GetTouchFinger(SDL_TouchID<sp/>touchID,<sp/>int<sp/>index),<sp/>where<sp/>touchID<sp/>is<sp/>a<sp/>SDL_TouchID,<sp/>and<sp/>index<sp/>is<sp/>the<sp/>requested<sp/>finger.</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>returns<sp/>a<sp/>SDL_Finger<sp/>*,<sp/>or<sp/>NULL<sp/>if<sp/>the<sp/>finger<sp/>does<sp/>not<sp/>exist,<sp/>or<sp/>has<sp/>been<sp/>removed.</highlight></codeline>
+<codeline><highlight class="normal">A<sp/>SDL_Finger<sp/>is<sp/>guaranteed<sp/>to<sp/>be<sp/>persistent<sp/>for<sp/>the<sp/>duration<sp/>of<sp/>a<sp/>touch,<sp/>but<sp/>it<sp/>will<sp/>be<sp/>de-allocated<sp/>as<sp/>soon<sp/>as<sp/>the<sp/>finger<sp/>is<sp/>removed.<sp/>This<sp/>occurs<sp/>when<sp/>the<sp/>SDL_FINGERUP<sp/>event<sp/>is<sp/>_added_<sp/>to<sp/>the<sp/>event<sp/>queue,<sp/>and<sp/>thus<sp/>_before_<sp/>the<sp/>SDL_FINGERUP<sp/>event<sp/>is<sp/>polled.</highlight></codeline>
+<codeline><highlight class="normal">As<sp/>a<sp/>result,<sp/>be<sp/>very<sp/>careful<sp/>to<sp/>check<sp/>for<sp/>NULL<sp/>return<sp/>values.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A<sp/>SDL_Finger<sp/>has<sp/>the<sp/>following<sp/>fields:</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>x,<sp/>y:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>The<sp/>current<sp/>coordinates<sp/>of<sp/>the<sp/>touch.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>pressure:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>The<sp/>pressure<sp/>of<sp/>the<sp/>touch.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">===========================================================================</highlight></codeline>
+<codeline><highlight class="normal">Notes</highlight></codeline>
+<codeline><highlight class="normal">===========================================================================</highlight></codeline>
+<codeline><highlight class="normal">For<sp/>a<sp/>complete<sp/>example<sp/>see<sp/>test/testgesture.c</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Please<sp/>direct<sp/>questions/comments<sp/>to:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>jim.tla+sdl_touch@gmail.com</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>(original<sp/>author,<sp/>API<sp/>was<sp/>changed<sp/>since)</highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/docs/README-touch.md"/>
+  </compounddef>
+</doxygen>

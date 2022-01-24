@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="md__d___ray_tracing_docs__r_e_a_d_m_e_nacl" kind="page">
+    <compoundname>md_D__RayTracing_docs_README_nacl</compoundname>
+    <title>Native Client</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Requirements:</para>
+<para><itemizedlist>
+<listitem><para>Native Client SDK (<ulink url="https://developer.chrome.com/native-client">https://developer.chrome.com/native-client</ulink>), (tested with Pepper version 33 or higher).</para>
+</listitem></itemizedlist>
+</para>
+<para>The SDL backend for Chrome&apos;s Native Client has been tested only with the PNaCl toolchain, which generates binaries designed to run on ARM and x86_32/64 platforms. This does not mean it won&apos;t work with the other toolchains!</para>
+<para><hruler/>
+ </para>
+<sect1 id="md__d___ray_tracing_docs__r_e_a_d_m_e_nacl_1autotoc_md79">
+<title>Building SDL for NaCl</title>
+<para>Set up the right environment variables (see naclbuild.sh), then configure SDL with: <verbatim>configure --host=pnacl --prefix some/install/destination
+</verbatim> Then &quot;make&quot;.</para>
+<para>As an example of how to create a deployable app a Makefile project is provided in test/nacl/Makefile, which includes some monkey patching of the common.mk file provided by NaCl, without which linking properly to SDL won&apos;t work (the search path can&apos;t be modified externally, so the linker won&apos;t find SDL&apos;s binaries unless you dump them into the SDK path, which is inconvenient). Also provided in test/nacl is the required support file, such as index.html, manifest.json, etc. SDL apps for NaCl run on a worker thread using the ppapi_simple infrastructure. This allows for blocking calls on all the relevant systems (OpenGL ES, filesystem), hiding the asynchronous nature of the browser behind the scenes...which is not the same as making it disappear!</para>
+<para><hruler/>
+ </para>
+</sect1>
+<sect1 id="md__d___ray_tracing_docs__r_e_a_d_m_e_nacl_1autotoc_md81">
+<title>Running tests</title>
+<para>Due to the nature of NaCl programs, building and running SDL tests is not as straightforward as one would hope. The script naclbuild.sh in build-scripts automates the process and should serve as a guide for users of SDL trying to build their own applications.</para>
+<para>Basic usage: <verbatim>./naclbuild.sh path/to/pepper/toolchain (i.e. ~/naclsdk/pepper_35)
+</verbatim> This will build testgles2.c by default.</para>
+<para>If you want to build a different test, for example testrendercopyex.c: <verbatim>SOURCES=~/sdl/SDL/test/testrendercopyex.c ./naclbuild.sh ~/naclsdk/pepper_35
+</verbatim> Once the build finishes, you have to serve the contents with a web server (the script will give you instructions on how to do that with Python).</para>
+<para><hruler/>
+ </para>
+</sect1>
+<sect1 id="md__d___ray_tracing_docs__r_e_a_d_m_e_nacl_1autotoc_md83">
+<title>RWops and nacl_io</title>
+<para><ref refid="struct_s_d_l___r_wops" kindref="compound">SDL_RWops</ref> work transparently with nacl_io. Two functions control the mount points: <verbatim>int mount(const char* source, const char* target, 
+                  const char* filesystemtype, 
+                  unsigned long mountflags, const void *data);
+int umount(const char *target);
+
+For convenience, SDL will by default mount an httpfs tree at / before calling 
+</verbatim> the app&apos;s main function. Such setting can be overridden by calling: <verbatim>umount(&quot;/&quot;);
+</verbatim> And then mounting a different filesystem at /</para>
+<para>It&apos;s important to consider that the asynchronous nature of file operations on a browser is hidden from the application, effectively providing the developer with a set of blocking file operations just like you get in a regular desktop environment, which eases the job of porting to Native Client, but also introduces a set of challenges of its own, in particular when big file sizes and slow connections are involved.</para>
+<para>For more information on how nacl_io and mount points work, see: <verbatim>https://developer.chrome.com/native-client/devguide/coding/nacl_io
+https://src.chromium.org/chrome/trunk/src/native_client_sdk/src/libraries/nacl_io/nacl_io.h
+</verbatim> To be able to save into the directory &quot;/save/&quot; (like backup of game) : <verbatim>mount(&quot;&quot;, &quot;/save&quot;, &quot;html5fs&quot;, 0, &quot;type=PERSISTENT&quot;);
+</verbatim> And add to manifest.json : <verbatim>&quot;permissions&quot;: [
+    &quot;unlimitedStorage&quot;
+]
+</verbatim> ================================================================================ </para>
+</sect1>
+<sect1 id="md__d___ray_tracing_docs__r_e_a_d_m_e_nacl_1autotoc_md84">
+<title>TODO - Known Issues</title>
+<para><itemizedlist>
+<listitem><para>Testing of all systems with a real application (something other than SDL&apos;s tests)</para>
+</listitem><listitem><para>Key events don&apos;t seem to work properly </para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+    </detaileddescription>
+    <location file="D:/RayTracing/docs/README-nacl.md"/>
+  </compounddef>
+</doxygen>

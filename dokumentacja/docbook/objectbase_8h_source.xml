@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_objectbase_8h_source" xml:lang="en-US">
+<title>objectbase.h</title>
+<indexterm><primary>D:/RayTracing/RayTrace/Primitives/objectbase.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;RAYTRACING_OBJECTBASE_H</emphasis>
+2 <emphasis role="preprocessor">#define&#32;RAYTRACING_OBJECTBASE_H</emphasis>
+3 
+4 
+5 <emphasis role="preprocessor">#include&#32;&lt;memory&gt;</emphasis>
+6 <emphasis role="preprocessor">#include&#32;&quot;../qbLinAlg/qbVector.h&quot;</emphasis>
+7 <emphasis role="preprocessor">#include&#32;&quot;../ray.h&quot;</emphasis>
+8 <emphasis role="preprocessor">#include&#32;&quot;../gtfm.h&quot;</emphasis>
+9 
+10 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_r_t">RT</link>&#32;{
+11 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Deklaracja&#32;klasy&#32;MaterialBase</emphasis>
+12 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis>MaterialBase;
+13 
+14 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_class_r_t_1_1_object_base">ObjectBase</link>&#32;{
+15 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+16 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Konstruktor</emphasis>
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_r_t_1_1_object_base_1a2e524afdaa52559af1c9d32b92ab86d7">ObjectBase</link>();
+18 
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Destruktor</emphasis>
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_class_r_t_1_1_object_base_1a483e10e0d0096f29b1a19ebcbc9a8daf">~ObjectBase</link>();
+21 
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Sprawdzanie&#32;przecięcia&#32;się&#32;promienia&#32;z&#32;powierzchnią&#32;obiektu</emphasis>
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_r_t_1_1_object_base_1a1874168fc872f415520ddf7ae05f33a7">TestIntersection</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_r_t_1_1_ray">Ray</link>&#32;&amp;castRay,&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;intPoint,&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;localNormal,
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;localColor);
+25 
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Metoda&#32;ustawiająca&#32;macierz&#32;transformacji</emphasis>
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_r_t_1_1_object_base_1ae49d7664053ba8709645e61f417b22a0">SetTransformMatrix</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_r_t_1_1_g_tform">RT::GTform</link>&#32;&amp;transformMatrix);
+28 
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Metoda&#32;sprawdzająca,&#32;czy&#32;dwie&#32;zmienne&#32;zmiennoprzecinkowe&#32;przechowują&#32;bardzo&#32;podobną&#32;wartość</emphasis>
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_r_t_1_1_object_base_1a3654cf7ddcab4705a656aea8f1156d9c">CloseEnough</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">double</emphasis>&#32;f1,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">double</emphasis>&#32;f2);
+31 
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Metoda&#32;do&#32;przypisywania&#32;tworzywa</emphasis>
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_r_t_1_1_object_base_1a7d143fe3dc376fa9d03eb023dbfd7fb1">AssignMaterial</link>(<emphasis role="keyword">const</emphasis>&#32;std::shared_ptr&lt;RT::MaterialBase&gt;&#32;&amp;objectMaterial);
+34 
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Publiczne&#32;zmienne</emphasis>
+36 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Bazowy&#32;kolor&#32;obiektu</emphasis>
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_object_base_1a59a95426585e31a88e38083ec1a72b7b">m_baseColor</link>{3};
+39 
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Macierz&#32;geometrycznych&#32;przekształceń</emphasis>
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_r_t_1_1_g_tform">RT::GTform</link>&#32;<link linkend="_class_r_t_1_1_object_base_1ac3bdb9ce9f1aace3bc7d008ad3c71f85">m_transformMatrix</link>;
+42 
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Referencja&#32;do&#32;tworzywa&#32;przypisanego&#32;do&#32;tego&#32;obiektu</emphasis>
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::shared_ptr&lt;RT::MaterialBase&gt;&#32;<link linkend="_class_r_t_1_1_object_base_1ae45ec3a9d0cd9f38605dcc8580c65c1c">m_pMaterial</link>;
+45 
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Flaga&#32;informująca&#32;o&#32;tym&#32;czy&#32;ten&#32;obiekt&#32;posiada&#32;przypisane&#32;tworzywo</emphasis>
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_r_t_1_1_object_base_1a96be79a468072fa5b3f72b1084a76278">m_hasMaterial</link>&#32;=&#32;<emphasis role="keyword">false</emphasis>;
+48 
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Przechowaj&#32;współrzędne&#32;(u,v)&#32;z&#32;wykrytego&#32;przecięcia</emphasis>
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_object_base_1a0453a522f36f23f95638312633cf5d81">m_uvCoords</link>&#32;{2};
+51 &#32;&#32;&#32;&#32;};
+52 }
+53 
+54 
+55 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//RAYTRACING_OBJECTBASE_H</emphasis>
+</programlisting></section>

@@ -1,0 +1,220 @@
+.TH "D:/RayTracing/include/SDL_touch.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_touch.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SDL_stdinc\&.h'\fP
+.br
+\fC#include 'SDL_error\&.h'\fP
+.br
+\fC#include 'SDL_video\&.h'\fP
+.br
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBSDL_Finger\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSDL_TOUCH_MOUSEID\fP   ((\fBUint32\fP)\-1)"
+.br
+.ti -1c
+.RI "#define \fBSDL_MOUSE_TOUCHID\fP   ((\fBSint64\fP)\-1)"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBSint64\fP \fBSDL_TouchID\fP"
+.br
+.ti -1c
+.RI "typedef \fBSint64\fP \fBSDL_FingerID\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBSDL_Finger\fP \fBSDL_Finger\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSDL_TouchDeviceType\fP { \fBSDL_TOUCH_DEVICE_INVALID\fP = -1, \fBSDL_TOUCH_DEVICE_DIRECT\fP, \fBSDL_TOUCH_DEVICE_INDIRECT_ABSOLUTE\fP, \fBSDL_TOUCH_DEVICE_INDIRECT_RELATIVE\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_GetNumTouchDevices\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_TouchID\fP \fBSDLCALL\fP \fBSDL_GetTouchDevice\fP (int \fBindex\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_TouchDeviceType\fP \fBSDLCALL\fP \fBSDL_GetTouchDeviceType\fP (\fBSDL_TouchID\fP touchID)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_GetNumTouchFingers\fP (\fBSDL_TouchID\fP touchID)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_Finger\fP *\fBSDLCALL\fP \fBSDL_GetTouchFinger\fP (\fBSDL_TouchID\fP touchID, int \fBindex\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include file for SDL touch event handling\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define SDL_MOUSE_TOUCHID   ((\fBSint64\fP)\-1)"
+
+.SS "#define SDL_TOUCH_MOUSEID   ((\fBUint32\fP)\-1)"
+
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBSDL_Finger\fP \fBSDL_Finger\fP"
+
+.SS "typedef \fBSint64\fP \fBSDL_FingerID\fP"
+
+.SS "typedef \fBSint64\fP \fBSDL_TouchID\fP"
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBSDL_TouchDeviceType\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISDL_TOUCH_DEVICE_INVALID \fP\fP
+.TP
+\fB\fISDL_TOUCH_DEVICE_DIRECT \fP\fP
+.TP
+\fB\fISDL_TOUCH_DEVICE_INDIRECT_ABSOLUTE \fP\fP
+.TP
+\fB\fISDL_TOUCH_DEVICE_INDIRECT_RELATIVE \fP\fP
+.SH "Function Documentation"
+.PP 
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_GetNumTouchDevices (\fBvoid\fP)"
+Get the number of registered touch devices\&.
+.PP
+On some platforms SDL first sees the touch device if it was actually used\&. Therefore \fBSDL_GetNumTouchDevices()\fP may return 0 although devices are available\&. After using all devices at least once the number will be correct\&.
+.PP
+This was fixed for Android in SDL 2\&.0\&.1\&.
+.PP
+\fBReturns\fP
+.RS 4
+the number of registered touch devices\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GetTouchDevice\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_GetNumTouchFingers (\fBSDL_TouchID\fP touchID)"
+Get the number of active fingers for a given touch device\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fItouchID\fP the ID of a touch device 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the number of active fingers for a given touch device on success or 0 on failure; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GetTouchFinger\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_TouchID\fP \fBSDLCALL\fP SDL_GetTouchDevice (int index)"
+Get the touch ID with the given index\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP the touch device index 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the touch ID with the given index on success or 0 if the index is invalid; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GetNumTouchDevices\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_TouchDeviceType\fP \fBSDLCALL\fP SDL_GetTouchDeviceType (\fBSDL_TouchID\fP touchID)"
+Get the type of the given touch device\&.
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.10\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_Finger\fP *\fBSDLCALL\fP SDL_GetTouchFinger (\fBSDL_TouchID\fP touchID, int index)"
+Get the finger object for specified touch device ID and finger index\&.
+.PP
+The returned resource is owned by SDL and should not be deallocated\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fItouchID\fP the ID of the requested touch device 
+.br
+\fIindex\fP the index of the requested finger 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a pointer to the \fBSDL_Finger\fP object or NULL if no object at the given ID and index could be found\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_RecordGesture\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

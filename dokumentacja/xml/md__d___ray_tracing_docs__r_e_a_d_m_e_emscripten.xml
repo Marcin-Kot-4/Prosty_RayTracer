@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="md__d___ray_tracing_docs__r_e_a_d_m_e_emscripten" kind="page">
+    <compoundname>md_D__RayTracing_docs_README_emscripten</compoundname>
+    <title>Emscripten</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Build: <verbatim>$ mkdir build
+$ cd build
+$ emconfigure ../configure --host=asmjs-unknown-emscripten --disable-assembly --disable-threads --disable-cpuinfo CFLAGS=&quot;-O2&quot;
+$ emmake make
+</verbatim> Or with cmake: <verbatim>$ mkdir build
+$ cd build
+$ emcmake cmake ..
+$ emmake make
+</verbatim> To build one of the tests: <verbatim>$ cd test/
+$ emcc -O2 --js-opts 0 -g4 testdraw2.c -I../include ../build/.libs/libSDL2.a ../build/libSDL2_test.a -o a.html
+</verbatim> Uses GLES2 renderer or software</para>
+<para>Some other SDL2 libraries can be easily built (assuming SDL2 is installed somewhere):</para>
+<para>SDL_mixer (<ulink url="http://www.libsdl.org/projects/SDL_mixer/">http://www.libsdl.org/projects/SDL_mixer/</ulink>): <verbatim>$ EMCONFIGURE_JS=1 emconfigure ../configure
+build as usual...
+</verbatim> SDL_gfx (<ulink url="http://cms.ferzkopp.net/index.php/software/13-sdl-gfx">http://cms.ferzkopp.net/index.php/software/13-sdl-gfx</ulink>): <verbatim>$ EMCONFIGURE_JS=1 emconfigure ../configure --disable-mmx
+build as usual...
+</verbatim> </para>
+    </detaileddescription>
+    <location file="D:/RayTracing/docs/README-emscripten.md"/>
+  </compounddef>
+</doxygen>

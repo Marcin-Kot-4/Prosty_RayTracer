@@ -1,0 +1,666 @@
+.TH "D:/RayTracing/include/SDL_log.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_log.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SDL_stdinc\&.h'\fP
+.br
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSDL_MAX_LOG_MESSAGE\fP   4096"
+.br
+.RI "The maximum size of a log message\&. "
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBvoid\fP(\fBSDLCALL\fP * \fBSDL_LogOutputFunction\fP) (\fBvoid\fP *userdata, int category, \fBSDL_LogPriority\fP priority, const char *\fBmessage\fP)"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSDL_LogCategory\fP { \fBSDL_LOG_CATEGORY_APPLICATION\fP, \fBSDL_LOG_CATEGORY_ERROR\fP, \fBSDL_LOG_CATEGORY_ASSERT\fP, \fBSDL_LOG_CATEGORY_SYSTEM\fP, \fBSDL_LOG_CATEGORY_AUDIO\fP, \fBSDL_LOG_CATEGORY_VIDEO\fP, \fBSDL_LOG_CATEGORY_RENDER\fP, \fBSDL_LOG_CATEGORY_INPUT\fP, \fBSDL_LOG_CATEGORY_TEST\fP, \fBSDL_LOG_CATEGORY_RESERVED1\fP, \fBSDL_LOG_CATEGORY_RESERVED2\fP, \fBSDL_LOG_CATEGORY_RESERVED3\fP, \fBSDL_LOG_CATEGORY_RESERVED4\fP, \fBSDL_LOG_CATEGORY_RESERVED5\fP, \fBSDL_LOG_CATEGORY_RESERVED6\fP, \fBSDL_LOG_CATEGORY_RESERVED7\fP, \fBSDL_LOG_CATEGORY_RESERVED8\fP, \fBSDL_LOG_CATEGORY_RESERVED9\fP, \fBSDL_LOG_CATEGORY_RESERVED10\fP, \fBSDL_LOG_CATEGORY_CUSTOM\fP }"
+.br
+.RI "The predefined log categories\&. "
+.ti -1c
+.RI "enum \fBSDL_LogPriority\fP { \fBSDL_LOG_PRIORITY_VERBOSE\fP = 1, \fBSDL_LOG_PRIORITY_DEBUG\fP, \fBSDL_LOG_PRIORITY_INFO\fP, \fBSDL_LOG_PRIORITY_WARN\fP, \fBSDL_LOG_PRIORITY_ERROR\fP, \fBSDL_LOG_PRIORITY_CRITICAL\fP, \fBSDL_NUM_LOG_PRIORITIES\fP }"
+.br
+.RI "The predefined log priorities\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_LogSetAllPriority\fP (\fBSDL_LogPriority\fP priority)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_LogSetPriority\fP (int category, \fBSDL_LogPriority\fP priority)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_LogPriority\fP \fBSDLCALL\fP \fBSDL_LogGetPriority\fP (int category)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_LogResetPriorities\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_Log\fP (\fBSDL_PRINTF_FORMAT_STRING\fP const char *fmt,\&.\&.\&.) \fBSDL_PRINTF_VARARG_FUNC\fP(1)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_LogVerbose\fP (int category, \fBSDL_PRINTF_FORMAT_STRING\fP const char *fmt,\&.\&.\&.) \fBSDL_PRINTF_VARARG_FUNC\fP(2)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_LogDebug\fP (int category, \fBSDL_PRINTF_FORMAT_STRING\fP const char *fmt,\&.\&.\&.) \fBSDL_PRINTF_VARARG_FUNC\fP(2)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_LogInfo\fP (int category, \fBSDL_PRINTF_FORMAT_STRING\fP const char *fmt,\&.\&.\&.) \fBSDL_PRINTF_VARARG_FUNC\fP(2)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_LogWarn\fP (int category, \fBSDL_PRINTF_FORMAT_STRING\fP const char *fmt,\&.\&.\&.) \fBSDL_PRINTF_VARARG_FUNC\fP(2)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_LogError\fP (int category, \fBSDL_PRINTF_FORMAT_STRING\fP const char *fmt,\&.\&.\&.) \fBSDL_PRINTF_VARARG_FUNC\fP(2)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_LogCritical\fP (int category, \fBSDL_PRINTF_FORMAT_STRING\fP const char *fmt,\&.\&.\&.) \fBSDL_PRINTF_VARARG_FUNC\fP(2)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_LogMessage\fP (int category, \fBSDL_LogPriority\fP priority, \fBSDL_PRINTF_FORMAT_STRING\fP const char *fmt,\&.\&.\&.) \fBSDL_PRINTF_VARARG_FUNC\fP(3)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_LogMessageV\fP (int category, \fBSDL_LogPriority\fP priority, const char *fmt, va_list ap)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_LogGetOutputFunction\fP (\fBSDL_LogOutputFunction\fP *callback, \fBvoid\fP **userdata)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_LogSetOutputFunction\fP (\fBSDL_LogOutputFunction\fP callback, \fBvoid\fP *userdata)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Simple log messages with categories and priorities\&.
+.PP
+By default logs are quiet, but if you're debugging SDL you might want: 
+.PP
+.nf
+SDL_LogSetAllPriority(SDL_LOG_PRIORITY_WARN);
+
+.fi
+.PP
+ Here's where the messages go on different platforms: Windows: debug output stream Android: log output Others: standard error output (stderr) 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define SDL_MAX_LOG_MESSAGE   4096"
+
+.PP
+The maximum size of a log message\&. Messages longer than the maximum size will be truncated 
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBvoid\fP(\fBSDLCALL\fP * SDL_LogOutputFunction) (\fBvoid\fP *userdata, int category, \fBSDL_LogPriority\fP priority, const char *\fBmessage\fP)"
+The prototype for the log output callback function\&.
+.PP
+This function is called by SDL when there is new text to be logged\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIuserdata\fP what was passed as \fCuserdata\fP to \fBSDL_LogSetOutputFunction()\fP 
+.br
+\fIcategory\fP the category of the message 
+.br
+\fIpriority\fP the priority of the message 
+.br
+\fImessage\fP the message being output 
+.RE
+.PP
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBSDL_LogCategory\fP"
+
+.PP
+The predefined log categories\&. By default the application category is enabled at the INFO level, the assert category is enabled at the WARN level, test is enabled at the VERBOSE level and all other categories are enabled at the CRITICAL level\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISDL_LOG_CATEGORY_APPLICATION \fP\fP
+.TP
+\fB\fISDL_LOG_CATEGORY_ERROR \fP\fP
+.TP
+\fB\fISDL_LOG_CATEGORY_ASSERT \fP\fP
+.TP
+\fB\fISDL_LOG_CATEGORY_SYSTEM \fP\fP
+.TP
+\fB\fISDL_LOG_CATEGORY_AUDIO \fP\fP
+.TP
+\fB\fISDL_LOG_CATEGORY_VIDEO \fP\fP
+.TP
+\fB\fISDL_LOG_CATEGORY_RENDER \fP\fP
+.TP
+\fB\fISDL_LOG_CATEGORY_INPUT \fP\fP
+.TP
+\fB\fISDL_LOG_CATEGORY_TEST \fP\fP
+.TP
+\fB\fISDL_LOG_CATEGORY_RESERVED1 \fP\fP
+.TP
+\fB\fISDL_LOG_CATEGORY_RESERVED2 \fP\fP
+.TP
+\fB\fISDL_LOG_CATEGORY_RESERVED3 \fP\fP
+.TP
+\fB\fISDL_LOG_CATEGORY_RESERVED4 \fP\fP
+.TP
+\fB\fISDL_LOG_CATEGORY_RESERVED5 \fP\fP
+.TP
+\fB\fISDL_LOG_CATEGORY_RESERVED6 \fP\fP
+.TP
+\fB\fISDL_LOG_CATEGORY_RESERVED7 \fP\fP
+.TP
+\fB\fISDL_LOG_CATEGORY_RESERVED8 \fP\fP
+.TP
+\fB\fISDL_LOG_CATEGORY_RESERVED9 \fP\fP
+.TP
+\fB\fISDL_LOG_CATEGORY_RESERVED10 \fP\fP
+.TP
+\fB\fISDL_LOG_CATEGORY_CUSTOM \fP\fP
+.SS "enum \fBSDL_LogPriority\fP"
+
+.PP
+The predefined log priorities\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISDL_LOG_PRIORITY_VERBOSE \fP\fP
+.TP
+\fB\fISDL_LOG_PRIORITY_DEBUG \fP\fP
+.TP
+\fB\fISDL_LOG_PRIORITY_INFO \fP\fP
+.TP
+\fB\fISDL_LOG_PRIORITY_WARN \fP\fP
+.TP
+\fB\fISDL_LOG_PRIORITY_ERROR \fP\fP
+.TP
+\fB\fISDL_LOG_PRIORITY_CRITICAL \fP\fP
+.TP
+\fB\fISDL_NUM_LOG_PRIORITIES \fP\fP
+.SH "Function Documentation"
+.PP 
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_Log (\fBSDL_PRINTF_FORMAT_STRING\fP const char * fmt,  \&.\&.\&.)"
+Log a message with SDL_LOG_CATEGORY_APPLICATION and SDL_LOG_PRIORITY_INFO\&.
+.PP
+= *
+.PP
+\fBParameters\fP
+.RS 4
+\fIfmt\fP a printf() style message format string
+.br
+\fI\&.\&.\&.\fP additional parameters matching % tokens in the \fCfmt\fP string, if any
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_LogCritical\fP 
+.PP
+\fBSDL_LogDebug\fP 
+.PP
+\fBSDL_LogError\fP 
+.PP
+\fBSDL_LogInfo\fP 
+.PP
+\fBSDL_LogMessage\fP 
+.PP
+\fBSDL_LogMessageV\fP 
+.PP
+\fBSDL_LogVerbose\fP 
+.PP
+\fBSDL_LogWarn\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_LogCritical (int category, \fBSDL_PRINTF_FORMAT_STRING\fP const char * fmt,  \&.\&.\&.)"
+Log a message with SDL_LOG_PRIORITY_CRITICAL\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIcategory\fP the category of the message 
+.br
+\fIfmt\fP a printf() style message format string 
+.br
+\fI\&.\&.\&.\fP additional parameters matching % tokens in the \fBfmt\fP string, if any
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_Log\fP 
+.PP
+\fBSDL_LogDebug\fP 
+.PP
+\fBSDL_LogError\fP 
+.PP
+\fBSDL_LogInfo\fP 
+.PP
+\fBSDL_LogMessage\fP 
+.PP
+\fBSDL_LogMessageV\fP 
+.PP
+\fBSDL_LogVerbose\fP 
+.PP
+\fBSDL_LogWarn\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_LogDebug (int category, \fBSDL_PRINTF_FORMAT_STRING\fP const char * fmt,  \&.\&.\&.)"
+Log a message with SDL_LOG_PRIORITY_DEBUG\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIcategory\fP the category of the message 
+.br
+\fIfmt\fP a printf() style message format string 
+.br
+\fI\&.\&.\&.\fP additional parameters matching % tokens in the \fBfmt\fP string, if any
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_Log\fP 
+.PP
+\fBSDL_LogCritical\fP 
+.PP
+\fBSDL_LogError\fP 
+.PP
+\fBSDL_LogInfo\fP 
+.PP
+\fBSDL_LogMessage\fP 
+.PP
+\fBSDL_LogMessageV\fP 
+.PP
+\fBSDL_LogVerbose\fP 
+.PP
+\fBSDL_LogWarn\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_LogError (int category, \fBSDL_PRINTF_FORMAT_STRING\fP const char * fmt,  \&.\&.\&.)"
+Log a message with SDL_LOG_PRIORITY_ERROR\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIcategory\fP the category of the message 
+.br
+\fIfmt\fP a printf() style message format string 
+.br
+\fI\&.\&.\&.\fP additional parameters matching % tokens in the \fBfmt\fP string, if any
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_Log\fP 
+.PP
+\fBSDL_LogCritical\fP 
+.PP
+\fBSDL_LogDebug\fP 
+.PP
+\fBSDL_LogInfo\fP 
+.PP
+\fBSDL_LogMessage\fP 
+.PP
+\fBSDL_LogMessageV\fP 
+.PP
+\fBSDL_LogVerbose\fP 
+.PP
+\fBSDL_LogWarn\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_LogGetOutputFunction (\fBSDL_LogOutputFunction\fP * callback, \fBvoid\fP ** userdata)"
+Get the current log output function\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIcallback\fP an SDL_LogOutputFunction filled in with the current log callback 
+.br
+\fIuserdata\fP a pointer filled in with the pointer that is passed to \fCcallback\fP
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_LogSetOutputFunction\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_LogPriority\fP \fBSDLCALL\fP SDL_LogGetPriority (int category)"
+Get the priority of a particular log category\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIcategory\fP the category to query 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the SDL_LogPriority for the requested category
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_LogSetPriority\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_LogInfo (int category, \fBSDL_PRINTF_FORMAT_STRING\fP const char * fmt,  \&.\&.\&.)"
+Log a message with SDL_LOG_PRIORITY_INFO\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIcategory\fP the category of the message 
+.br
+\fIfmt\fP a printf() style message format string 
+.br
+\fI\&.\&.\&.\fP additional parameters matching % tokens in the \fBfmt\fP string, if any
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_Log\fP 
+.PP
+\fBSDL_LogCritical\fP 
+.PP
+\fBSDL_LogDebug\fP 
+.PP
+\fBSDL_LogError\fP 
+.PP
+\fBSDL_LogMessage\fP 
+.PP
+\fBSDL_LogMessageV\fP 
+.PP
+\fBSDL_LogVerbose\fP 
+.PP
+\fBSDL_LogWarn\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_LogMessage (int category, \fBSDL_LogPriority\fP priority, \fBSDL_PRINTF_FORMAT_STRING\fP const char * fmt,  \&.\&.\&.)"
+Log a message with the specified category and priority\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIcategory\fP the category of the message 
+.br
+\fIpriority\fP the priority of the message 
+.br
+\fIfmt\fP a printf() style message format string 
+.br
+\fI\&.\&.\&.\fP additional parameters matching % tokens in the \fBfmt\fP string, if any
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_Log\fP 
+.PP
+\fBSDL_LogCritical\fP 
+.PP
+\fBSDL_LogDebug\fP 
+.PP
+\fBSDL_LogError\fP 
+.PP
+\fBSDL_LogInfo\fP 
+.PP
+\fBSDL_LogMessageV\fP 
+.PP
+\fBSDL_LogVerbose\fP 
+.PP
+\fBSDL_LogWarn\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_LogMessageV (int category, \fBSDL_LogPriority\fP priority, const char * fmt, va_list ap)"
+Log a message with the specified category and priority\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIcategory\fP the category of the message 
+.br
+\fIpriority\fP the priority of the message 
+.br
+\fIfmt\fP a printf() style message format string 
+.br
+\fIap\fP a variable argument list
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_Log\fP 
+.PP
+\fBSDL_LogCritical\fP 
+.PP
+\fBSDL_LogDebug\fP 
+.PP
+\fBSDL_LogError\fP 
+.PP
+\fBSDL_LogInfo\fP 
+.PP
+\fBSDL_LogMessage\fP 
+.PP
+\fBSDL_LogVerbose\fP 
+.PP
+\fBSDL_LogWarn\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_LogResetPriorities (\fBvoid\fP)"
+Reset all priorities to default\&.
+.PP
+This is called by \fBSDL_Quit()\fP\&.
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_LogSetAllPriority\fP 
+.PP
+\fBSDL_LogSetPriority\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_LogSetAllPriority (\fBSDL_LogPriority\fP priority)"
+Set the priority of all log categories\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIpriority\fP the SDL_LogPriority to assign
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_LogSetPriority\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_LogSetOutputFunction (\fBSDL_LogOutputFunction\fP callback, \fBvoid\fP * userdata)"
+Replace the default log output function with one of your own\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIcallback\fP an SDL_LogOutputFunction to call instead of the default 
+.br
+\fIuserdata\fP a pointer that is passed to \fCcallback\fP
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_LogGetOutputFunction\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_LogSetPriority (int category, \fBSDL_LogPriority\fP priority)"
+Set the priority of a particular log category\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIcategory\fP the category to assign a priority to 
+.br
+\fIpriority\fP the SDL_LogPriority to assign
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_LogGetPriority\fP 
+.PP
+\fBSDL_LogSetAllPriority\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_LogVerbose (int category, \fBSDL_PRINTF_FORMAT_STRING\fP const char * fmt,  \&.\&.\&.)"
+Log a message with SDL_LOG_PRIORITY_VERBOSE\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIcategory\fP the category of the message 
+.br
+\fIfmt\fP a printf() style message format string 
+.br
+\fI\&.\&.\&.\fP additional parameters matching % tokens in the \fBfmt\fP string, if any
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_Log\fP 
+.PP
+\fBSDL_LogCritical\fP 
+.PP
+\fBSDL_LogDebug\fP 
+.PP
+\fBSDL_LogError\fP 
+.PP
+\fBSDL_LogInfo\fP 
+.PP
+\fBSDL_LogMessage\fP 
+.PP
+\fBSDL_LogMessageV\fP 
+.PP
+\fBSDL_LogWarn\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_LogWarn (int category, \fBSDL_PRINTF_FORMAT_STRING\fP const char * fmt,  \&.\&.\&.)"
+Log a message with SDL_LOG_PRIORITY_WARN\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIcategory\fP the category of the message 
+.br
+\fIfmt\fP a printf() style message format string 
+.br
+\fI\&.\&.\&.\fP additional parameters matching % tokens in the \fBfmt\fP string, if any
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_Log\fP 
+.PP
+\fBSDL_LogCritical\fP 
+.PP
+\fBSDL_LogDebug\fP 
+.PP
+\fBSDL_LogError\fP 
+.PP
+\fBSDL_LogInfo\fP 
+.PP
+\fBSDL_LogMessage\fP 
+.PP
+\fBSDL_LogMessageV\fP 
+.PP
+\fBSDL_LogVerbose\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

@@ -1,0 +1,263 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__test__harness_8h" xml:lang="en-US">
+<title>D:/RayTracing/include/SDL_test_harness.h File Reference</title>
+<indexterm><primary>D:/RayTracing/include/SDL_test_harness.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;begin_code.h&quot;
+#include &quot;close_code.h&quot;
+</programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_s_d_l_test___test_case_reference">SDLTest_TestCaseReference</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_s_d_l_test___test_suite_reference">SDLTest_TestSuiteReference</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__s_d_l__test__harness_8h_1a4404f2feb87e68e20e31bd86ec1728b1">TEST_ENABLED</link>   1</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__test__harness_8h_1ac7b13b8aefdada941436332f7559e5f0">TEST_DISABLED</link>   0</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__test__harness_8h_1ad1b0d362df8510a4a917442ae7173aa1">TEST_ABORTED</link>   -1</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__test__harness_8h_1a24c50cc9207eee59e73f95faff5ef07a">TEST_STARTED</link>   0</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__test__harness_8h_1aa1fcd18bba2a887390bb7e032f177716">TEST_COMPLETED</link>   1</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__test__harness_8h_1adc53d81b0aba42f8a5773a4bd1c3da88">TEST_SKIPPED</link>   2</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__test__harness_8h_1accbb9396b61c19b746505b685275ce82">TEST_RESULT_PASSED</link>   0</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__test__harness_8h_1a25cadd1b04d9f8f342919a53e2b984b7">TEST_RESULT_FAILED</link>   1</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__test__harness_8h_1ab560e79979c20b68710cc24585a2f78f">TEST_RESULT_NO_ASSERT</link>   2</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__test__harness_8h_1aadce13b4d24fe4ac2b58578167e53846">TEST_RESULT_SKIPPED</link>   3</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__test__harness_8h_1aff94de0de0428e277e9c660d755adb1a">TEST_RESULT_SETUP_FAILURE</link>   4</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>(* <link linkend="__s_d_l__test__harness_8h_1acf5b8d5c6dcbf946fdf7bdb1ceb03e45">SDLTest_TestCaseSetUpFp</link>) (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *arg)</para>
+</listitem>
+            <listitem><para>typedef int(* <link linkend="__s_d_l__test__harness_8h_1ae1a62d8f725d57dc95faddcc5409afbb">SDLTest_TestCaseFp</link>) (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *arg)</para>
+</listitem>
+            <listitem><para>typedef <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>(* <link linkend="__s_d_l__test__harness_8h_1a146292b699bf0c95e1c4bcfaced3b1dc">SDLTest_TestCaseTearDownFp</link>) (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *arg)</para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_s_d_l_test___test_case_reference">SDLTest_TestCaseReference</link> <link linkend="__s_d_l__test__harness_8h_1ae02b9535633a86200d7bce94686d1545">SDLTest_TestCaseReference</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_struct_s_d_l_test___test_suite_reference">SDLTest_TestSuiteReference</link> <link linkend="__s_d_l__test__harness_8h_1ae52f136004f974251df5cde2152fc5ad">SDLTest_TestSuiteReference</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>char * <link linkend="__s_d_l__test__harness_8h_1a44e422204aa15c9a33e17ea74b2442ab">SDLTest_GenerateRunSeed</link> (const int <link linkend="__s_d_l__opengl__glext_8h_1ab9c919755bde3b34349e23a32b4e0fa7">length</link>)</para>
+
+<para>Generates a random run seed string for the harness. The generated seed will contain alphanumeric characters (0-9A-Z). </para>
+</listitem>
+            <listitem><para>int <link linkend="__s_d_l__test__harness_8h_1a4999be460499b1cb45e2b2b3bbb582b2">SDLTest_RunSuites</link> (<link linkend="_struct_s_d_l_test___test_suite_reference">SDLTest_TestSuiteReference</link> *testSuites[], const char *userRunSeed, <link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link> userExecKey, const char *<link linkend="__s_d_l__opengl__glext_8h_1a8bed50656d87c3eeed9d8f5e539c6b3e">filter</link>, int testIterations)</para>
+
+<para>Execute a test suite using the given run seed and execution key. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Include file for SDL test framework.</para>
+
+<para>This code is a part of the SDL2_test library, not the main SDL library. </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__s_d_l__test__harness_8h_1ad1b0d362df8510a4a917442ae7173aa1"/><section>
+    <title>TEST_ABORTED</title>
+<indexterm><primary>TEST_ABORTED</primary><secondary>SDL_test_harness.h</secondary></indexterm>
+<indexterm><primary>SDL_test_harness.h</primary><secondary>TEST_ABORTED</secondary></indexterm>
+<para><computeroutput>#define TEST_ABORTED   -1</computeroutput></para></section>
+<anchor xml:id="__s_d_l__test__harness_8h_1aa1fcd18bba2a887390bb7e032f177716"/><section>
+    <title>TEST_COMPLETED</title>
+<indexterm><primary>TEST_COMPLETED</primary><secondary>SDL_test_harness.h</secondary></indexterm>
+<indexterm><primary>SDL_test_harness.h</primary><secondary>TEST_COMPLETED</secondary></indexterm>
+<para><computeroutput>#define TEST_COMPLETED   1</computeroutput></para></section>
+<anchor xml:id="__s_d_l__test__harness_8h_1ac7b13b8aefdada941436332f7559e5f0"/><section>
+    <title>TEST_DISABLED</title>
+<indexterm><primary>TEST_DISABLED</primary><secondary>SDL_test_harness.h</secondary></indexterm>
+<indexterm><primary>SDL_test_harness.h</primary><secondary>TEST_DISABLED</secondary></indexterm>
+<para><computeroutput>#define TEST_DISABLED   0</computeroutput></para></section>
+<anchor xml:id="__s_d_l__test__harness_8h_1a4404f2feb87e68e20e31bd86ec1728b1"/><section>
+    <title>TEST_ENABLED</title>
+<indexterm><primary>TEST_ENABLED</primary><secondary>SDL_test_harness.h</secondary></indexterm>
+<indexterm><primary>SDL_test_harness.h</primary><secondary>TEST_ENABLED</secondary></indexterm>
+<para><computeroutput>#define TEST_ENABLED   1</computeroutput></para></section>
+<anchor xml:id="__s_d_l__test__harness_8h_1a25cadd1b04d9f8f342919a53e2b984b7"/><section>
+    <title>TEST_RESULT_FAILED</title>
+<indexterm><primary>TEST_RESULT_FAILED</primary><secondary>SDL_test_harness.h</secondary></indexterm>
+<indexterm><primary>SDL_test_harness.h</primary><secondary>TEST_RESULT_FAILED</secondary></indexterm>
+<para><computeroutput>#define TEST_RESULT_FAILED   1</computeroutput></para></section>
+<anchor xml:id="__s_d_l__test__harness_8h_1ab560e79979c20b68710cc24585a2f78f"/><section>
+    <title>TEST_RESULT_NO_ASSERT</title>
+<indexterm><primary>TEST_RESULT_NO_ASSERT</primary><secondary>SDL_test_harness.h</secondary></indexterm>
+<indexterm><primary>SDL_test_harness.h</primary><secondary>TEST_RESULT_NO_ASSERT</secondary></indexterm>
+<para><computeroutput>#define TEST_RESULT_NO_ASSERT   2</computeroutput></para></section>
+<anchor xml:id="__s_d_l__test__harness_8h_1accbb9396b61c19b746505b685275ce82"/><section>
+    <title>TEST_RESULT_PASSED</title>
+<indexterm><primary>TEST_RESULT_PASSED</primary><secondary>SDL_test_harness.h</secondary></indexterm>
+<indexterm><primary>SDL_test_harness.h</primary><secondary>TEST_RESULT_PASSED</secondary></indexterm>
+<para><computeroutput>#define TEST_RESULT_PASSED   0</computeroutput></para></section>
+<anchor xml:id="__s_d_l__test__harness_8h_1aff94de0de0428e277e9c660d755adb1a"/><section>
+    <title>TEST_RESULT_SETUP_FAILURE</title>
+<indexterm><primary>TEST_RESULT_SETUP_FAILURE</primary><secondary>SDL_test_harness.h</secondary></indexterm>
+<indexterm><primary>SDL_test_harness.h</primary><secondary>TEST_RESULT_SETUP_FAILURE</secondary></indexterm>
+<para><computeroutput>#define TEST_RESULT_SETUP_FAILURE   4</computeroutput></para></section>
+<anchor xml:id="__s_d_l__test__harness_8h_1aadce13b4d24fe4ac2b58578167e53846"/><section>
+    <title>TEST_RESULT_SKIPPED</title>
+<indexterm><primary>TEST_RESULT_SKIPPED</primary><secondary>SDL_test_harness.h</secondary></indexterm>
+<indexterm><primary>SDL_test_harness.h</primary><secondary>TEST_RESULT_SKIPPED</secondary></indexterm>
+<para><computeroutput>#define TEST_RESULT_SKIPPED   3</computeroutput></para></section>
+<anchor xml:id="__s_d_l__test__harness_8h_1adc53d81b0aba42f8a5773a4bd1c3da88"/><section>
+    <title>TEST_SKIPPED</title>
+<indexterm><primary>TEST_SKIPPED</primary><secondary>SDL_test_harness.h</secondary></indexterm>
+<indexterm><primary>SDL_test_harness.h</primary><secondary>TEST_SKIPPED</secondary></indexterm>
+<para><computeroutput>#define TEST_SKIPPED   2</computeroutput></para></section>
+<anchor xml:id="__s_d_l__test__harness_8h_1a24c50cc9207eee59e73f95faff5ef07a"/><section>
+    <title>TEST_STARTED</title>
+<indexterm><primary>TEST_STARTED</primary><secondary>SDL_test_harness.h</secondary></indexterm>
+<indexterm><primary>SDL_test_harness.h</primary><secondary>TEST_STARTED</secondary></indexterm>
+<para><computeroutput>#define TEST_STARTED   0</computeroutput></para></section>
+</section>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="__s_d_l__test__harness_8h_1ae1a62d8f725d57dc95faddcc5409afbb"/><section>
+    <title>SDLTest_TestCaseFp</title>
+<indexterm><primary>SDLTest_TestCaseFp</primary><secondary>SDL_test_harness.h</secondary></indexterm>
+<indexterm><primary>SDL_test_harness.h</primary><secondary>SDLTest_TestCaseFp</secondary></indexterm>
+<para><computeroutput>typedef int(* SDLTest_TestCaseFp) (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *arg)</computeroutput></para></section>
+<anchor xml:id="__s_d_l__test__harness_8h_1ae02b9535633a86200d7bce94686d1545"/><section>
+    <title>SDLTest_TestCaseReference</title>
+<indexterm><primary>SDLTest_TestCaseReference</primary><secondary>SDL_test_harness.h</secondary></indexterm>
+<indexterm><primary>SDL_test_harness.h</primary><secondary>SDLTest_TestCaseReference</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_s_d_l_test___test_case_reference">SDLTest_TestCaseReference</link> <link linkend="_struct_s_d_l_test___test_case_reference">SDLTest_TestCaseReference</link></computeroutput></para>
+<para>Holds information about a single test case. </para>
+</section>
+<anchor xml:id="__s_d_l__test__harness_8h_1acf5b8d5c6dcbf946fdf7bdb1ceb03e45"/><section>
+    <title>SDLTest_TestCaseSetUpFp</title>
+<indexterm><primary>SDLTest_TestCaseSetUpFp</primary><secondary>SDL_test_harness.h</secondary></indexterm>
+<indexterm><primary>SDL_test_harness.h</primary><secondary>SDLTest_TestCaseSetUpFp</secondary></indexterm>
+<para><computeroutput>typedef <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>(* SDLTest_TestCaseSetUpFp) (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *arg)</computeroutput></para></section>
+<anchor xml:id="__s_d_l__test__harness_8h_1a146292b699bf0c95e1c4bcfaced3b1dc"/><section>
+    <title>SDLTest_TestCaseTearDownFp</title>
+<indexterm><primary>SDLTest_TestCaseTearDownFp</primary><secondary>SDL_test_harness.h</secondary></indexterm>
+<indexterm><primary>SDL_test_harness.h</primary><secondary>SDLTest_TestCaseTearDownFp</secondary></indexterm>
+<para><computeroutput>typedef <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>(* SDLTest_TestCaseTearDownFp) (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *arg)</computeroutput></para></section>
+<anchor xml:id="__s_d_l__test__harness_8h_1ae52f136004f974251df5cde2152fc5ad"/><section>
+    <title>SDLTest_TestSuiteReference</title>
+<indexterm><primary>SDLTest_TestSuiteReference</primary><secondary>SDL_test_harness.h</secondary></indexterm>
+<indexterm><primary>SDL_test_harness.h</primary><secondary>SDLTest_TestSuiteReference</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_struct_s_d_l_test___test_suite_reference">SDLTest_TestSuiteReference</link> <link linkend="_struct_s_d_l_test___test_suite_reference">SDLTest_TestSuiteReference</link></computeroutput></para>
+<para>Holds information about a test suite (multiple test cases). </para>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__s_d_l__test__harness_8h_1a44e422204aa15c9a33e17ea74b2442ab"/><section>
+    <title>SDLTest_GenerateRunSeed()</title>
+<indexterm><primary>SDLTest_GenerateRunSeed</primary><secondary>SDL_test_harness.h</secondary></indexterm>
+<indexterm><primary>SDL_test_harness.h</primary><secondary>SDLTest_GenerateRunSeed</secondary></indexterm>
+<para><computeroutput>char * SDLTest_GenerateRunSeed (const int length)</computeroutput></para><para>
+
+<para>Generates a random run seed string for the harness. The generated seed will contain alphanumeric characters (0-9A-Z). </para>
+</para>
+
+<para>Note: The returned string needs to be deallocated by the caller.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>length</entry><entry>
+<para>The length of the seed string to generate</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the generated seed string </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__test__harness_8h_1a4999be460499b1cb45e2b2b3bbb582b2"/><section>
+    <title>SDLTest_RunSuites()</title>
+<indexterm><primary>SDLTest_RunSuites</primary><secondary>SDL_test_harness.h</secondary></indexterm>
+<indexterm><primary>SDL_test_harness.h</primary><secondary>SDLTest_RunSuites</secondary></indexterm>
+<para><computeroutput>int SDLTest_RunSuites (<link linkend="_struct_s_d_l_test___test_suite_reference">SDLTest_TestSuiteReference</link> * testSuites[], const char * userRunSeed, <link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link> userExecKey, const char * filter, int testIterations)</computeroutput></para><para>
+
+<para>Execute a test suite using the given run seed and execution key. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>testSuites</entry><entry>
+<para>Suites containing the test case. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>userRunSeed</entry><entry>
+<para>Custom run seed provided by user, or NULL to autogenerate one. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>userExecKey</entry><entry>
+<para>Custom execution key provided by user, or 0 to autogenerate one. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>filter</entry><entry>
+<para>Filter specification. NULL disables. Case sensitive. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>testIterations</entry><entry>
+<para>Number of iterations to run each test case.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the test run result: 0 when all tests passed, 1 if any tests failed. </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

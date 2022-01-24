@@ -1,0 +1,67 @@
+(www.\+cmake.\+org)
+
+SDL\textquotesingle{}s build system was traditionally based on autotools. Over time, this approach has suffered from several issues across the different supported platforms. To solve these problems, a new build system based on CMake is under development. It works in parallel to the legacy system, so users can experiment with it without complication. While still experimental, the build system should be usable on the following platforms\+:
+
+
+\begin{DoxyItemize}
+\item Free\+BSD
+\item Linux
+\item VS.\+NET 2010
+\item Min\+GW and Msys
+\item mac\+OS, i\+OS, and tv\+OS, with support for XCode
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+ \hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_cmake_autotoc_md20}{}\doxysection{Usage}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_cmake_autotoc_md20}
+Assuming the source for SDL is located at $\sim$/sdl \begin{DoxyVerb}cd ~
+mkdir build
+cd build
+cmake ../sdl
+\end{DoxyVerb}
+ This will build the static and dynamic versions of SDL in the $\sim$/build directory.
+
+\DoxyHorRuler{0}
+ \hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_cmake_autotoc_md22}{}\doxysection{Usage, i\+OS/tv\+OS}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_cmake_autotoc_md22}
+CMake 3.\+14+ natively includes support for i\+OS and tv\+OS. SDL binaries may be built using Xcode or Make, possibly among other build-\/systems.
+
+When using a recent version of CMake (3.\+14+), it should be possible to\+:
+
+
+\begin{DoxyItemize}
+\item build SDL for i\+OS, both static and dynamic
+\item build SDL test apps (as i\+OS/tv\+OS .app bundles)
+\item generate a working SDL\+\_\+config.\+h for i\+OS (using SDL\+\_\+config.\+h.\+cmake as a basis)
+\end{DoxyItemize}
+
+To use, set the following CMake variables when running CMake\textquotesingle{}s configuration stage\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily CMAKE\+\_\+\+SYSTEM\+\_\+\+NAME=\texorpdfstring{$<$}{<}OS\texorpdfstring{$>$}{>}} (either {\ttfamily i\+OS} or {\ttfamily tv\+OS})
+\item {\ttfamily CMAKE\+\_\+\+OSX\+\_\+\+SYSROOT=\texorpdfstring{$<$}{<}SDK\texorpdfstring{$>$}{>}} (examples\+: {\ttfamily iphoneos}, {\ttfamily iphonesimulator}, {\ttfamily iphoneos12.\+4}, {\ttfamily /full/path/to/i\+Phone\+OS.sdk}, {\ttfamily appletvos}, {\ttfamily appletvsimulator}, {\ttfamily appletvos12.\+4}, {\ttfamily /full/path/to/\+Apple\+TVOS.sdk}, etc.)
+\item {\ttfamily CMAKE\+\_\+\+OSX\+\_\+\+ARCHITECTURES=\texorpdfstring{$<$}{<}semicolon-\/separated list of CPU architectures\texorpdfstring{$>$}{>}} (example\+: \char`\"{}arm64;armv7s;x86\+\_\+64\char`\"{})
+\end{DoxyItemize}\hypertarget{md__d___ray_tracing_docs__r_e_a_d_m_e_cmake_autotoc_md23}{}\doxysubsubsection{Examples (for i\+OS/tv\+OS)\+:}\label{md__d___ray_tracing_docs__r_e_a_d_m_e_cmake_autotoc_md23}
+
+\begin{DoxyItemize}
+\item for i\+OS-\/\+Simulator, using the latest, installed SDK\+:
+
+{\ttfamily cmake $\sim$/sdl -\/DCMAKE\+\_\+\+SYSTEM\+\_\+\+NAME=i\+OS -\/DCMAKE\+\_\+\+OSX\+\_\+\+SYSROOT=iphonesimulator -\/DCMAKE\+\_\+\+OSX\+\_\+\+ARCHITECTURES=x86\+\_\+64}
+\item for i\+OS-\/\+Device, using the latest, installed SDK, 64-\/bit only
+
+{\ttfamily cmake $\sim$/sdl -\/DCMAKE\+\_\+\+SYSTEM\+\_\+\+NAME=i\+OS -\/DCMAKE\+\_\+\+OSX\+\_\+\+SYSROOT=iphoneos -\/DCMAKE\+\_\+\+OSX\+\_\+\+ARCHITECTURES=arm64}
+\item for i\+OS-\/\+Device, using the latest, installed SDK, mixed 32/64 bit
+
+{\ttfamily cmake $\sim$/sdl -\/DCMAKE\+\_\+\+SYSTEM\+\_\+\+NAME=i\+OS -\/DCMAKE\+\_\+\+OSX\+\_\+\+SYSROOT=iphoneos -\/DCMAKE\+\_\+\+OSX\+\_\+\+ARCHITECTURES=\char`\"{}arm64;armv7s\char`\"{}}
+\item for i\+OS-\/\+Device, using a specific SDK revision (i\+OS 12.\+4, in this example)\+:
+
+{\ttfamily cmake $\sim$/sdl -\/DCMAKE\+\_\+\+SYSTEM\+\_\+\+NAME=i\+OS -\/DCMAKE\+\_\+\+OSX\+\_\+\+SYSROOT=iphoneos12.\+4 -\/DCMAKE\+\_\+\+OSX\+\_\+\+ARCHITECTURES=arm64}
+\item for i\+OS-\/\+Simulator, using the latest, installed SDK, and building SDL test apps (as .app bundles)\+:
+
+{\ttfamily cmake $\sim$/sdl -\/DSDL\+\_\+\+TEST=1 -\/DCMAKE\+\_\+\+SYSTEM\+\_\+\+NAME=i\+OS -\/DCMAKE\+\_\+\+OSX\+\_\+\+SYSROOT=iphonesimulator -\/DCMAKE\+\_\+\+OSX\+\_\+\+ARCHITECTURES=x86\+\_\+64}
+\item for tv\+OS-\/\+Simulator, using the latest, installed SDK\+:
+
+{\ttfamily cmake $\sim$/sdl -\/DCMAKE\+\_\+\+SYSTEM\+\_\+\+NAME=tv\+OS -\/DCMAKE\+\_\+\+OSX\+\_\+\+SYSROOT=appletvsimulator -\/DCMAKE\+\_\+\+OSX\+\_\+\+ARCHITECTURES=x86\+\_\+64}
+\item for tv\+OS-\/\+Device, using the latest, installed SDK\+:
+
+{\ttfamily cmake $\sim$/sdl -\/DCMAKE\+\_\+\+SYSTEM\+\_\+\+NAME=tv\+OS -\/DCMAKE\+\_\+\+OSX\+\_\+\+SYSROOT=appletvos -\/DCMAKE\+\_\+\+OSX\+\_\+\+ARCHITECTURES=arm64} 
+\end{DoxyItemize}

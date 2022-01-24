@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e-directfb_8md" kind="file" language="Markdown">
+    <compoundname>README-directfb.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">DirectFB</highlight></codeline>
+<codeline><highlight class="normal">========</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Supports:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Hardware<sp/>YUV<sp/>overlays</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>OpenGL<sp/>-<sp/>software<sp/>only</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2D/3D<sp/>accelerations<sp/>(depends<sp/>on<sp/>directfb<sp/>driver)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>multiple<sp/>displays</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>windows</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">What<sp/>you<sp/>need:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>DirectFB<sp/>1.0.1,<sp/>1.2.x,<sp/>1.3.0</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Kernel-Framebuffer<sp/>support:<sp/>required:<sp/>vesafb,<sp/>radeonfb<sp/>....<sp/></highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Mesa<sp/>7.0.x<sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>optional<sp/>for<sp/>OpenGL</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/etc/directfbrc</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>file<sp/>should<sp/>contain<sp/>the<sp/>following<sp/>lines<sp/>to<sp/>make</highlight></codeline>
+<codeline><highlight class="normal">your<sp/>joystick<sp/>work<sp/>and<sp/>avoid<sp/>crashes:</highlight></codeline>
+<codeline><highlight class="normal">------------------------</highlight></codeline>
+<codeline><highlight class="normal">disable-module=joystick</highlight></codeline>
+<codeline><highlight class="normal">disable-module=cle266</highlight></codeline>
+<codeline><highlight class="normal">disable-module=cyber5k</highlight></codeline>
+<codeline><highlight class="normal">no-linux-input-grab</highlight></codeline>
+<codeline><highlight class="normal">------------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>disable<sp/>to<sp/>use<sp/>x11<sp/>backend<sp/>when<sp/>DISPLAY<sp/>variable<sp/>is<sp/>found<sp/>use</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">export<sp/>SDL_DIRECTFB_X11_CHECK=0</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>disable<sp/>the<sp/>use<sp/>of<sp/>linux<sp/>input<sp/>devices,<sp/>i.e.<sp/>multimice/multikeyboard<sp/>support,</highlight></codeline>
+<codeline><highlight class="normal">use</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">export<sp/>SDL_DIRECTFB_LINUX_INPUT=0</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>use<sp/>hardware<sp/>accelerated<sp/>YUV-overlays<sp/>for<sp/>YUV-textures,<sp/>use:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">export<sp/>SDL_DIRECTFB_YUV_DIRECT=1</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>is<sp/>disabled<sp/>by<sp/>default.<sp/>It<sp/>will<sp/>only<sp/>support<sp/>one<sp/></highlight></codeline>
+<codeline><highlight class="normal">YUV<sp/>texture,<sp/>namely<sp/>the<sp/>first.<sp/>Every<sp/>other<sp/>YUV<sp/>texture<sp/>will<sp/>be</highlight></codeline>
+<codeline><highlight class="normal">rendered<sp/>in<sp/>software.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>addition,<sp/>you<sp/>may<sp/>use<sp/>(directfb-1.2.x)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">export<sp/>SDL_DIRECTFB_YUV_UNDERLAY=1</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">to<sp/>make<sp/>the<sp/>YUV<sp/>texture<sp/>an<sp/>underlay.<sp/>This<sp/>will<sp/>make<sp/>the<sp/>cursor<sp/>to</highlight></codeline>
+<codeline><highlight class="normal">be<sp/>shown.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Simple<sp/>Window<sp/>Manager</highlight></codeline>
+<codeline><highlight class="normal">=====================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>driver<sp/>has<sp/>support<sp/>for<sp/>a<sp/>very,<sp/>very<sp/>basic<sp/>window<sp/>manager<sp/>you<sp/>may</highlight></codeline>
+<codeline><highlight class="normal">want<sp/>to<sp/>use<sp/>when<sp/>running<sp/>with<sp/>&quot;wm=default&quot;.<sp/>Use</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">export<sp/>SDL_DIRECTFB_WM=1</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">to<sp/>enable<sp/>basic<sp/>window<sp/>borders.<sp/>In<sp/>order<sp/>to<sp/>have<sp/>the<sp/>window<sp/>title<sp/>rendered,</highlight></codeline>
+<codeline><highlight class="normal">you<sp/>need<sp/>to<sp/>have<sp/>the<sp/>following<sp/>font<sp/>installed:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/usr/share/fonts/truetype/freefont/FreeSans.ttf</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">OpenGL<sp/>Support</highlight></codeline>
+<codeline><highlight class="normal">==============</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>following<sp/>instructions<sp/>will<sp/>give<sp/>you<sp/>*software*<sp/>OpenGL.<sp/>However<sp/>this</highlight></codeline>
+<codeline><highlight class="normal">works<sp/>at<sp/>least<sp/>on<sp/>all<sp/>directfb<sp/>supported<sp/>platforms.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">As<sp/>of<sp/>this<sp/>writing<sp/>20100802<sp/>you<sp/>need<sp/>to<sp/>pull<sp/>Mesa<sp/>from<sp/>git<sp/>and<sp/>do<sp/>the<sp/>following:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">------------------------</highlight></codeline>
+<codeline><highlight class="normal">git<sp/>clone<sp/>git://anongit.freedesktop.org/git/mesa/mesa</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>mesa<sp/></highlight></codeline>
+<codeline><highlight class="normal">git<sp/>checkout<sp/>2c9fdaf7292423c157fc79b5ce43f0f199dd753a</highlight></codeline>
+<codeline><highlight class="normal">------------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Edit<sp/>configs/linux-directfb<sp/>so<sp/>that<sp/>the<sp/>Directories-section<sp/>looks<sp/>like</highlight></codeline>
+<codeline><highlight class="normal">------------------------</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Directories</highlight></codeline>
+<codeline><highlight class="normal">SRC_DIRS<sp/><sp/><sp/><sp/><sp/>=<sp/>mesa<sp/>glu<sp/></highlight></codeline>
+<codeline><highlight class="normal">GLU_DIRS<sp/><sp/><sp/><sp/><sp/>=<sp/>sgi</highlight></codeline>
+<codeline><highlight class="normal">DRIVER_DIRS<sp/><sp/>=<sp/>directfb</highlight></codeline>
+<codeline><highlight class="normal">PROGRAM_DIRS<sp/>=<sp/></highlight></codeline>
+<codeline><highlight class="normal">------------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">make<sp/>linux-directfb</highlight></codeline>
+<codeline><highlight class="normal">make</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">echo<sp/>Installing<sp/>-<sp/>please<sp/>enter<sp/>sudo<sp/>pw.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">sudo<sp/>make<sp/>install<sp/>INSTALL_DIR=/usr/local/dfb_GL</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>src/mesa/drivers/directfb</highlight></codeline>
+<codeline><highlight class="normal">make</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>make<sp/>install<sp/>INSTALL_DIR=/usr/local/dfb_GL</highlight></codeline>
+<codeline><highlight class="normal">------------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>run<sp/>the<sp/>SDL<sp/>-<sp/>testprograms:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">export<sp/>SDL_VIDEODRIVER=directfb</highlight></codeline>
+<codeline><highlight class="normal">export<sp/>LD_LIBRARY_PATH=/usr/local/dfb_GL/lib</highlight></codeline>
+<codeline><highlight class="normal">export<sp/>LD_PRELOAD=/usr/local/dfb_GL/libGL.so.7</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">./testgl</highlight></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/docs/README-directfb.md"/>
+  </compounddef>
+</doxygen>

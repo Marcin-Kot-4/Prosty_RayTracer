@@ -1,0 +1,311 @@
+\hypertarget{_s_d_l__config_8h_source}{}\doxysection{SDL\+\_\+config.\+h}
+\label{_s_d_l__config_8h_source}\index{D:/RayTracing/include/SDL\_config.h@{D:/RayTracing/include/SDL\_config.h}}
+\mbox{\hyperlink{_s_d_l__config_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{  Simple DirectMedia Layer}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright (C) 1997-\/2022 Sam Lantinga <slouken@libsdl.org>}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{6 \textcolor{comment}{  warranty.  In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{7 \textcolor{comment}{  arising from the use of this software.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{  Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{10 \textcolor{comment}{  including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{11 \textcolor{comment}{  freely, subject to the following restrictions:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{  1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{14 \textcolor{comment}{     claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{15 \textcolor{comment}{     in a product, an acknowledgment in the product documentation would be}}
+\DoxyCodeLine{16 \textcolor{comment}{     appreciated but is not required.}}
+\DoxyCodeLine{17 \textcolor{comment}{  2. Altered source versions must be plainly marked as such, and must not be}}
+\DoxyCodeLine{18 \textcolor{comment}{     misrepresented as being the original software.}}
+\DoxyCodeLine{19 \textcolor{comment}{  3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{20 \textcolor{comment}{*/}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#ifndef SDL\_config\_windows\_h\_}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define SDL\_config\_windows\_h\_}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define SDL\_config\_h\_}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__platform_8h}{SDL\_platform.h}}"{}}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{comment}{/* winsdkver.h defines \_WIN32\_MAXVER for SDK version detection. It is present since at least the Windows 7 SDK,}}
+\DoxyCodeLine{29 \textcolor{comment}{ * but out of caution we'll only use it if the compiler supports \_\_has\_include() to confirm its presence.}}
+\DoxyCodeLine{30 \textcolor{comment}{ * If your compiler doesn't support \_\_has\_include() but you have winsdkver.h, define HAVE\_WINSDKVER\_H.  */}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#if !defined(HAVE\_WINSDKVER\_H) \&\& defined(\_\_has\_include)}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#if \_\_has\_include(<winsdkver.h>)}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#define HAVE\_WINSDKVER\_H 1}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifdef HAVE\_WINSDKVER\_H}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include <winsdkver.h>}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{comment}{/* This is a set of defines to configure the SDL features */}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#if !defined(\_STDINT\_H\_) \&\& (!defined(HAVE\_STDINT\_H) || !\_HAVE\_STDINT\_H)}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#if defined(\_\_GNUC\_\_) || defined(\_\_DMC\_\_) || defined(\_\_WATCOMC\_\_) || defined(\_\_clang\_\_) || defined(\_\_BORLANDC\_\_) || defined(\_\_CODEGEARC\_\_)}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define HAVE\_STDINT\_H   1}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#elif defined(\_MSC\_VER)}}
+\DoxyCodeLine{47 \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \_\_int8 \mbox{\hyperlink{_s_d_l__config_8h_aef44329758059c91c76d334e8fc09700}{int8\_t}};}
+\DoxyCodeLine{48 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \_\_int8 \mbox{\hyperlink{_s_d_l__config_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}};}
+\DoxyCodeLine{49 \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \_\_int16 \mbox{\hyperlink{_s_d_l__config_8h_a269259c924dce846340ddbb810db2e3c}{int16\_t}};}
+\DoxyCodeLine{50 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \_\_int16 \mbox{\hyperlink{_s_d_l__config_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}};}
+\DoxyCodeLine{51 \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \_\_int32 \mbox{\hyperlink{_s_d_l__config_8h_ab1967d8591af1a4e48c37fd2b0f184d0}{int32\_t}};}
+\DoxyCodeLine{52 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \_\_int32 \mbox{\hyperlink{_s_d_l__config_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}};}
+\DoxyCodeLine{53 \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \_\_int64 \mbox{\hyperlink{_s_d_l__config_8h_adec1df1b8b51cb32b77e5b86fff46471}{int64\_t}};}
+\DoxyCodeLine{54 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \_\_int64 \mbox{\hyperlink{_s_d_l__config_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}};}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#ifndef \_UINTPTR\_T\_DEFINED}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#ifdef  \_WIN64}}
+\DoxyCodeLine{57 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \_\_int64 \mbox{\hyperlink{_s_d_l__config_8h_a728e973c799f206f0151c8a3bd1e5699}{uintptr\_t}};}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{59 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__config_8h_a728e973c799f206f0151c8a3bd1e5699}{uintptr\_t}};}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define \_UINTPTR\_T\_DEFINED}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{63 \textcolor{comment}{/* Older Visual C++ headers don't have the Win64-\/compatible typedefs... */}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#if ((\_MSC\_VER <= 1200) \&\& (!defined(DWORD\_PTR)))}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define DWORD\_PTR DWORD}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#if ((\_MSC\_VER <= 1200) \&\& (!defined(LONG\_PTR)))}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define LONG\_PTR LONG}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#else }\textcolor{comment}{/* !\_\_GNUC\_\_ \&\& !\_MSC\_VER */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{71 \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{char} \mbox{\hyperlink{_s_d_l__config_8h_aef44329758059c91c76d334e8fc09700}{int8\_t}};}
+\DoxyCodeLine{72 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \mbox{\hyperlink{_s_d_l__config_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}};}
+\DoxyCodeLine{73 \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{short} \mbox{\hyperlink{_s_d_l__config_8h_a269259c924dce846340ddbb810db2e3c}{int16\_t}};}
+\DoxyCodeLine{74 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{_s_d_l__config_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}};}
+\DoxyCodeLine{75 \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__config_8h_ab1967d8591af1a4e48c37fd2b0f184d0}{int32\_t}};}
+\DoxyCodeLine{76 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__config_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}};}
+\DoxyCodeLine{77 \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \mbox{\hyperlink{_s_d_l__config_8h_adec1df1b8b51cb32b77e5b86fff46471}{int64\_t}};}
+\DoxyCodeLine{78 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \mbox{\hyperlink{_s_d_l__config_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}};}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#ifndef \_SIZE\_T\_DEFINED\_}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define \_SIZE\_T\_DEFINED\_}}
+\DoxyCodeLine{81 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__config_8h_a7c94ea6f8948649f8d181ae55911eeaf}{size\_t}};}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{83 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__config_8h_a728e973c799f206f0151c8a3bd1e5699}{uintptr\_t}};}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_GNUC\_\_ || \_MSC\_VER */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !\_STDINT\_H\_ \&\& !HAVE\_STDINT\_H */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#ifdef \_WIN64}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\# define SIZEOF\_VOIDP 8}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\# define SIZEOF\_VOIDP 4}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define HAVE\_DDRAW\_H 1}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define HAVE\_DINPUT\_H 1}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define HAVE\_DSOUND\_H 1}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define HAVE\_DXGI\_H 1}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define HAVE\_XINPUT\_H 1}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#if defined(\_WIN32\_MAXVER) \&\& \_WIN32\_MAXVER >= 0x0A00  }\textcolor{comment}{/* Windows 10 SDK */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define HAVE\_WINDOWS\_GAMING\_INPUT\_H 1}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#if defined(\_WIN32\_MAXVER) \&\& \_WIN32\_MAXVER >= 0x0602  }\textcolor{comment}{/* Windows 8 SDK */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define HAVE\_D3D11\_H 1}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define HAVE\_MMDEVICEAPI\_H 1}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define HAVE\_AUDIOCLIENT\_H 1}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define HAVE\_TPCSHRD\_H 1}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define HAVE\_SENSORSAPI\_H 1}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#if (defined(\_M\_IX86) || defined(\_M\_X64) || defined(\_M\_AMD64)) \&\& (defined(\_MSC\_VER) \&\& \_MSC\_VER >= 1600)}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define HAVE\_IMMINTRIN\_H 1}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#elif defined(\_\_has\_include) \&\& (defined(\_\_i386\_\_) || defined(\_\_x86\_64))}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\# if \_\_has\_include(<immintrin.h>)}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#   define HAVE\_IMMINTRIN\_H 1}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\# endif}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 \textcolor{comment}{/* This is disabled by default to avoid C runtime dependencies and manifest requirements */}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#ifdef HAVE\_LIBC}}
+\DoxyCodeLine{118 \textcolor{comment}{/* Useful headers */}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#define STDC\_HEADERS 1}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#define HAVE\_CTYPE\_H 1}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#define HAVE\_FLOAT\_H 1}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#define HAVE\_LIMITS\_H 1}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#define HAVE\_MATH\_H 1}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#define HAVE\_SIGNAL\_H 1}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#define HAVE\_STDIO\_H 1}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#define HAVE\_STRING\_H 1}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128 \textcolor{comment}{/* C library functions */}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#define HAVE\_MALLOC 1}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#define HAVE\_CALLOC 1}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#define HAVE\_REALLOC 1}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#define HAVE\_FREE 1}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#define HAVE\_ALLOCA 1}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#define HAVE\_QSORT 1}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#define HAVE\_ABS 1}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define HAVE\_MEMSET 1}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#define HAVE\_MEMCPY 1}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define HAVE\_MEMMOVE 1}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define HAVE\_MEMCMP 1}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#define HAVE\_STRLEN 1}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#define HAVE\_\_STRREV 1}}
+\DoxyCodeLine{142 \textcolor{comment}{/* These functions have security warnings, so we won't use them */}}
+\DoxyCodeLine{143 \textcolor{comment}{/* \#undef HAVE\_\_STRUPR */}}
+\DoxyCodeLine{144 \textcolor{comment}{/* \#undef HAVE\_\_STRLWR */}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#define HAVE\_STRCHR 1}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define HAVE\_STRRCHR 1}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#define HAVE\_STRSTR 1}}
+\DoxyCodeLine{148 \textcolor{comment}{/* \#undef HAVE\_STRTOK\_R */}}
+\DoxyCodeLine{149 \textcolor{comment}{/* These functions have security warnings, so we won't use them */}}
+\DoxyCodeLine{150 \textcolor{comment}{/* \#undef HAVE\_\_LTOA */}}
+\DoxyCodeLine{151 \textcolor{comment}{/* \#undef HAVE\_\_ULTOA */}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#define HAVE\_STRTOL 1}}
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#define HAVE\_STRTOUL 1}}
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#define HAVE\_STRTOD 1}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#define HAVE\_ATOI 1}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#define HAVE\_ATOF 1}}
+\DoxyCodeLine{157 \textcolor{preprocessor}{\#define HAVE\_STRCMP 1}}
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#define HAVE\_STRNCMP 1}}
+\DoxyCodeLine{159 \textcolor{preprocessor}{\#define HAVE\_\_STRICMP 1}}
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#define HAVE\_\_STRNICMP 1}}
+\DoxyCodeLine{161 \textcolor{preprocessor}{\#define HAVE\_\_WCSICMP 1}}
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#define HAVE\_\_WCSNICMP 1}}
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#define HAVE\_\_WCSDUP 1}}
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#define HAVE\_ACOS   1}}
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#define HAVE\_ACOSF  1}}
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#define HAVE\_ASIN   1}}
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#define HAVE\_ASINF  1}}
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#define HAVE\_ATAN   1}}
+\DoxyCodeLine{169 \textcolor{preprocessor}{\#define HAVE\_ATANF  1}}
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#define HAVE\_ATAN2  1}}
+\DoxyCodeLine{171 \textcolor{preprocessor}{\#define HAVE\_ATAN2F 1}}
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#define HAVE\_CEILF  1}}
+\DoxyCodeLine{173 \textcolor{preprocessor}{\#define HAVE\_\_COPYSIGN 1}}
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#define HAVE\_COS    1}}
+\DoxyCodeLine{175 \textcolor{preprocessor}{\#define HAVE\_COSF   1}}
+\DoxyCodeLine{176 \textcolor{preprocessor}{\#define HAVE\_EXP    1}}
+\DoxyCodeLine{177 \textcolor{preprocessor}{\#define HAVE\_EXPF   1}}
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#define HAVE\_FABS   1}}
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#define HAVE\_FABSF  1}}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#define HAVE\_FLOOR  1}}
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#define HAVE\_FLOORF 1}}
+\DoxyCodeLine{182 \textcolor{preprocessor}{\#define HAVE\_FMOD   1}}
+\DoxyCodeLine{183 \textcolor{preprocessor}{\#define HAVE\_FMODF  1}}
+\DoxyCodeLine{184 \textcolor{preprocessor}{\#define HAVE\_LOG    1}}
+\DoxyCodeLine{185 \textcolor{preprocessor}{\#define HAVE\_LOGF   1}}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#define HAVE\_LOG10  1}}
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#define HAVE\_LOG10F 1}}
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#define HAVE\_POW    1}}
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#define HAVE\_POWF   1}}
+\DoxyCodeLine{190 \textcolor{preprocessor}{\#define HAVE\_SIN    1}}
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#define HAVE\_SINF   1}}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#define HAVE\_SQRT   1}}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#define HAVE\_SQRTF  1}}
+\DoxyCodeLine{194 \textcolor{preprocessor}{\#define HAVE\_TAN    1}}
+\DoxyCodeLine{195 \textcolor{preprocessor}{\#define HAVE\_TANF   1}}
+\DoxyCodeLine{196 \textcolor{preprocessor}{\#if defined(\_MSC\_VER)}}
+\DoxyCodeLine{197 \textcolor{comment}{/* These functions were added with the VC++ 2013 C runtime library */}}
+\DoxyCodeLine{198 \textcolor{preprocessor}{\#if \_MSC\_VER >= 1800}}
+\DoxyCodeLine{199 \textcolor{preprocessor}{\#define HAVE\_STRTOLL 1}}
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#define HAVE\_STRTOULL 1}}
+\DoxyCodeLine{201 \textcolor{preprocessor}{\#define HAVE\_VSSCANF 1}}
+\DoxyCodeLine{202 \textcolor{preprocessor}{\#define HAVE\_LROUND 1}}
+\DoxyCodeLine{203 \textcolor{preprocessor}{\#define HAVE\_LROUNDF 1}}
+\DoxyCodeLine{204 \textcolor{preprocessor}{\#define HAVE\_ROUND 1}}
+\DoxyCodeLine{205 \textcolor{preprocessor}{\#define HAVE\_ROUNDF 1}}
+\DoxyCodeLine{206 \textcolor{preprocessor}{\#define HAVE\_SCALBN 1}}
+\DoxyCodeLine{207 \textcolor{preprocessor}{\#define HAVE\_SCALBNF 1}}
+\DoxyCodeLine{208 \textcolor{preprocessor}{\#define HAVE\_TRUNC  1}}
+\DoxyCodeLine{209 \textcolor{preprocessor}{\#define HAVE\_TRUNCF 1}}
+\DoxyCodeLine{210 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{211 \textcolor{comment}{/* This function is available with at least the VC++ 2008 C runtime library */}}
+\DoxyCodeLine{212 \textcolor{preprocessor}{\#if \_MSC\_VER >= 1400}}
+\DoxyCodeLine{213 \textcolor{preprocessor}{\#define HAVE\_\_FSEEKI64 1}}
+\DoxyCodeLine{214 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{215 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{216 \textcolor{preprocessor}{\#if !defined(\_MSC\_VER) || defined(\_USE\_MATH\_DEFINES)}}
+\DoxyCodeLine{217 \textcolor{preprocessor}{\#define HAVE\_M\_PI 1}}
+\DoxyCodeLine{218 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{219 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{220 \textcolor{preprocessor}{\#define HAVE\_STDARG\_H   1}}
+\DoxyCodeLine{221 \textcolor{preprocessor}{\#define HAVE\_STDDEF\_H   1}}
+\DoxyCodeLine{222 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224 \textcolor{comment}{/* Enable various audio drivers */}}
+\DoxyCodeLine{225 \textcolor{preprocessor}{\#define SDL\_AUDIO\_DRIVER\_WASAPI 1}}
+\DoxyCodeLine{226 \textcolor{preprocessor}{\#define SDL\_AUDIO\_DRIVER\_DSOUND 1}}
+\DoxyCodeLine{227 \textcolor{preprocessor}{\#define SDL\_AUDIO\_DRIVER\_WINMM  1}}
+\DoxyCodeLine{228 \textcolor{preprocessor}{\#define SDL\_AUDIO\_DRIVER\_DISK   1}}
+\DoxyCodeLine{229 \textcolor{preprocessor}{\#define SDL\_AUDIO\_DRIVER\_DUMMY  1}}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231 \textcolor{comment}{/* Enable various input drivers */}}
+\DoxyCodeLine{232 \textcolor{preprocessor}{\#define SDL\_JOYSTICK\_DINPUT 1}}
+\DoxyCodeLine{233 \textcolor{preprocessor}{\#define SDL\_JOYSTICK\_HIDAPI 1}}
+\DoxyCodeLine{234 \textcolor{preprocessor}{\#ifndef \_\_WINRT\_\_}}
+\DoxyCodeLine{235 \textcolor{preprocessor}{\#define SDL\_JOYSTICK\_RAWINPUT   1}}
+\DoxyCodeLine{236 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{237 \textcolor{preprocessor}{\#define SDL\_JOYSTICK\_VIRTUAL    1}}
+\DoxyCodeLine{238 \textcolor{preprocessor}{\#ifdef HAVE\_WINDOWS\_GAMING\_INPUT\_H}}
+\DoxyCodeLine{239 \textcolor{preprocessor}{\#define SDL\_JOYSTICK\_WGI    1}}
+\DoxyCodeLine{240 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{241 \textcolor{preprocessor}{\#define SDL\_JOYSTICK\_XINPUT 1}}
+\DoxyCodeLine{242 \textcolor{preprocessor}{\#define SDL\_HAPTIC\_DINPUT   1}}
+\DoxyCodeLine{243 \textcolor{preprocessor}{\#define SDL\_HAPTIC\_XINPUT   1}}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{245 \textcolor{comment}{/* Enable the sensor driver */}}
+\DoxyCodeLine{246 \textcolor{preprocessor}{\#define SDL\_SENSOR\_WINDOWS  1}}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{248 \textcolor{comment}{/* Enable various shared object loading systems */}}
+\DoxyCodeLine{249 \textcolor{preprocessor}{\#define SDL\_LOADSO\_WINDOWS  1}}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{251 \textcolor{comment}{/* Enable various threading systems */}}
+\DoxyCodeLine{252 \textcolor{preprocessor}{\#define SDL\_THREAD\_GENERIC\_COND\_SUFFIX 1}}
+\DoxyCodeLine{253 \textcolor{preprocessor}{\#define SDL\_THREAD\_WINDOWS  1}}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{255 \textcolor{comment}{/* Enable various timer systems */}}
+\DoxyCodeLine{256 \textcolor{preprocessor}{\#define SDL\_TIMER\_WINDOWS   1}}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258 \textcolor{comment}{/* Enable various video drivers */}}
+\DoxyCodeLine{259 \textcolor{preprocessor}{\#define SDL\_VIDEO\_DRIVER\_DUMMY  1}}
+\DoxyCodeLine{260 \textcolor{preprocessor}{\#define SDL\_VIDEO\_DRIVER\_WINDOWS    1}}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262 \textcolor{preprocessor}{\#ifndef SDL\_VIDEO\_RENDER\_D3D}}
+\DoxyCodeLine{263 \textcolor{preprocessor}{\#define SDL\_VIDEO\_RENDER\_D3D    1}}
+\DoxyCodeLine{264 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{265 \textcolor{preprocessor}{\#if !defined(SDL\_VIDEO\_RENDER\_D3D11) \&\& defined(HAVE\_D3D11\_H)}}
+\DoxyCodeLine{266 \textcolor{preprocessor}{\#define SDL\_VIDEO\_RENDER\_D3D11  1}}
+\DoxyCodeLine{267 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269 \textcolor{comment}{/* Enable OpenGL support */}}
+\DoxyCodeLine{270 \textcolor{preprocessor}{\#ifndef SDL\_VIDEO\_OPENGL}}
+\DoxyCodeLine{271 \textcolor{preprocessor}{\#define SDL\_VIDEO\_OPENGL    1}}
+\DoxyCodeLine{272 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{273 \textcolor{preprocessor}{\#ifndef SDL\_VIDEO\_OPENGL\_WGL}}
+\DoxyCodeLine{274 \textcolor{preprocessor}{\#define SDL\_VIDEO\_OPENGL\_WGL    1}}
+\DoxyCodeLine{275 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{276 \textcolor{preprocessor}{\#ifndef SDL\_VIDEO\_RENDER\_OGL}}
+\DoxyCodeLine{277 \textcolor{preprocessor}{\#define SDL\_VIDEO\_RENDER\_OGL    1}}
+\DoxyCodeLine{278 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{279 \textcolor{preprocessor}{\#ifndef SDL\_VIDEO\_RENDER\_OGL\_ES2}}
+\DoxyCodeLine{280 \textcolor{preprocessor}{\#define SDL\_VIDEO\_RENDER\_OGL\_ES2    1}}
+\DoxyCodeLine{281 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{282 \textcolor{preprocessor}{\#ifndef SDL\_VIDEO\_OPENGL\_ES2}}
+\DoxyCodeLine{283 \textcolor{preprocessor}{\#define SDL\_VIDEO\_OPENGL\_ES2    1}}
+\DoxyCodeLine{284 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{285 \textcolor{preprocessor}{\#ifndef SDL\_VIDEO\_OPENGL\_EGL}}
+\DoxyCodeLine{286 \textcolor{preprocessor}{\#define SDL\_VIDEO\_OPENGL\_EGL    1}}
+\DoxyCodeLine{287 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{288 }
+\DoxyCodeLine{289 \textcolor{comment}{/* Enable Vulkan support */}}
+\DoxyCodeLine{290 \textcolor{preprocessor}{\#define SDL\_VIDEO\_VULKAN 1}}
+\DoxyCodeLine{291 }
+\DoxyCodeLine{292 \textcolor{comment}{/* Enable system power support */}}
+\DoxyCodeLine{293 \textcolor{preprocessor}{\#define SDL\_POWER\_WINDOWS 1}}
+\DoxyCodeLine{294 }
+\DoxyCodeLine{295 \textcolor{comment}{/* Enable filesystem support */}}
+\DoxyCodeLine{296 \textcolor{preprocessor}{\#define SDL\_FILESYSTEM\_WINDOWS  1}}
+\DoxyCodeLine{297 }
+\DoxyCodeLine{298 \textcolor{comment}{/* Enable assembly routines (Win64 doesn't have inline asm) */}}
+\DoxyCodeLine{299 \textcolor{preprocessor}{\#ifndef \_WIN64}}
+\DoxyCodeLine{300 \textcolor{preprocessor}{\#define SDL\_ASSEMBLY\_ROUTINES   1}}
+\DoxyCodeLine{301 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{302 }
+\DoxyCodeLine{303 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_config\_windows\_h\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{304 }
+\DoxyCodeLine{305 \textcolor{comment}{/* vi: set ts=4 sw=4 expandtab: */}}
+
+\end{DoxyCode}

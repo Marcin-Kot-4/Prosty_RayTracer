@@ -1,0 +1,87 @@
+.TH "RT::ObjectBase" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RT::ObjectBase
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <objectbase\&.h>\fP
+.PP
+Inherited by \fBRT::Cone\fP, \fBRT::Cylinder\fP, \fBRT::ObjPlane\fP, and \fBRT::ObjSphere\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBObjectBase\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~ObjectBase\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBTestIntersection\fP (const \fBRay\fP &castRay, \fBqbVector\fP< double > &intPoint, \fBqbVector\fP< double > &localNormal, \fBqbVector\fP< double > &localColor)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBSetTransformMatrix\fP (const \fBRT::GTform\fP &transformMatrix)"
+.br
+.ti -1c
+.RI "bool \fBCloseEnough\fP (const double f1, const double f2)"
+.br
+.ti -1c
+.RI "bool \fBAssignMaterial\fP (const std::shared_ptr< \fBRT::MaterialBase\fP > &objectMaterial)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBqbVector\fP< double > \fBm_baseColor\fP {3}"
+.br
+.ti -1c
+.RI "\fBRT::GTform\fP \fBm_transformMatrix\fP"
+.br
+.ti -1c
+.RI "std::shared_ptr< \fBRT::MaterialBase\fP > \fBm_pMaterial\fP"
+.br
+.ti -1c
+.RI "bool \fBm_hasMaterial\fP = false"
+.br
+.ti -1c
+.RI "\fBqbVector\fP< double > \fBm_uvCoords\fP {2}"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RT::ObjectBase::ObjectBase ()"
+
+.SS "RT::ObjectBase::~ObjectBase ()\fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool RT::ObjectBase::AssignMaterial (const std::shared_ptr< \fBRT::MaterialBase\fP > & objectMaterial)"
+
+.SS "bool RT::ObjectBase::CloseEnough (const double f1, const double f2)"
+
+.SS "\fBvoid\fP RT::ObjectBase::SetTransformMatrix (const \fBRT::GTform\fP & transformMatrix)"
+
+.SS "bool RT::ObjectBase::TestIntersection (const \fBRay\fP & castRay, \fBqbVector\fP< double > & intPoint, \fBqbVector\fP< double > & localNormal, \fBqbVector\fP< double > & localColor)\fC [virtual]\fP"
+
+.PP
+Reimplemented in \fBRT::Cone\fP, \fBRT::Cylinder\fP, \fBRT::ObjPlane\fP, and \fBRT::ObjSphere\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBqbVector\fP<double> RT::ObjectBase::m_baseColor {3}"
+
+.SS "bool RT::ObjectBase::m_hasMaterial = false"
+
+.SS "std::shared_ptr<\fBRT::MaterialBase\fP> RT::ObjectBase::m_pMaterial"
+
+.SS "\fBRT::GTform\fP RT::ObjectBase::m_transformMatrix"
+
+.SS "\fBqbVector\fP<double> RT::ObjectBase::m_uvCoords {2}"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

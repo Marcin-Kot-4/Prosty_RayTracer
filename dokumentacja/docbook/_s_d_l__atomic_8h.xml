@@ -1,0 +1,650 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__atomic_8h" xml:lang="en-US">
+<title>D:/RayTracing/include/SDL_atomic.h File Reference</title>
+<indexterm><primary>D:/RayTracing/include/SDL_atomic.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;SDL_stdinc.h&quot;
+#include &quot;SDL_platform.h&quot;
+#include &quot;begin_code.h&quot;
+#include &quot;close_code.h&quot;
+</programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_s_d_l__atomic__t">SDL_atomic_t</link></para>
+
+<para>A type representing an atomic integer value. It is a struct so people don&apos;t accidentally use numeric operations on it. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>SDL AtomicLock    </title>
+
+<para><anchor xml:id="__1amgrpd7e348d61fe61536e787424b5d2866ed"/>The atomic locks are efficient spinlocks using CPU instructions, but are vulnerable to starvation and can spin forever if a thread holding a lock has been terminated. For this reason you should minimize the code executed inside an atomic lock and never do expensive things like API or system calls while holding them.</para>
+
+<para>The atomic locks are not safe to lock recursively.</para>
+
+<para>Porting Note: The spin lock functions and type are required and can not be emulated because they are used in the atomic emulation code. </para>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__s_d_l__atomic_8h_1a36d435d444dc115a5cc11fa7027576ec">SDL_CompilerBarrier</link>()   { <link linkend="__s_d_l__atomic_8h_1a59179ff8d21c65b9d9a544f3c2088e81">SDL_SpinLock</link> _tmp = 0; <link linkend="__s_d_l__atomic_8h_1a95ecd72190ba8e5ed6ed78d5d1b36509">SDL_AtomicLock</link>(&amp;_tmp); <link linkend="__s_d_l__atomic_8h_1a3fb14c56b17347349ac2fb5300205bac">SDL_AtomicUnlock</link>(&amp;_tmp); }</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__atomic_8h_1a041cb5705236fe51b35cb3d59c1fbba7">SDL_MemoryBarrierRelease</link>()   <link linkend="__s_d_l__atomic_8h_1a36d435d444dc115a5cc11fa7027576ec">SDL_CompilerBarrier</link>()</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__atomic_8h_1aa33019d94c637a106218dde56b46a20a">SDL_MemoryBarrierAcquire</link>()   <link linkend="__s_d_l__atomic_8h_1a36d435d444dc115a5cc11fa7027576ec">SDL_CompilerBarrier</link>()</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__atomic_8h_1a9c3b04a6ce4b6907bfb6e2ea4649ff64">SDL_AtomicIncRef</link>(<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>)   <link linkend="__s_d_l__atomic_8h_1a36cadfcf8e2bda1974fbce6afdc6d529">SDL_AtomicAdd</link>(<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>, 1)</para>
+
+<para>Increment an atomic variable used as a reference count. </para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_d_l__atomic_8h_1a1602c33647cfdfa8ae49a2eef10341c9">SDL_AtomicDecRef</link>(<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>)   (<link linkend="__s_d_l__atomic_8h_1a36cadfcf8e2bda1974fbce6afdc6d529">SDL_AtomicAdd</link>(<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>, -1) == 1)</para>
+
+<para>Decrement an atomic variable used as a reference count. </para>
+</listitem>
+            <listitem><para>typedef int <link linkend="__s_d_l__atomic_8h_1a59179ff8d21c65b9d9a544f3c2088e81">SDL_SpinLock</link></para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__atomic_8h_1a5410c5f832f0d862282cd65fc432fc0b">SDL_AtomicTryLock</link> (<link linkend="__s_d_l__atomic_8h_1a59179ff8d21c65b9d9a544f3c2088e81">SDL_SpinLock</link> *lock)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__atomic_8h_1a95ecd72190ba8e5ed6ed78d5d1b36509">SDL_AtomicLock</link> (<link linkend="__s_d_l__atomic_8h_1a59179ff8d21c65b9d9a544f3c2088e81">SDL_SpinLock</link> *lock)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__atomic_8h_1a3fb14c56b17347349ac2fb5300205bac">SDL_AtomicUnlock</link> (<link linkend="__s_d_l__atomic_8h_1a59179ff8d21c65b9d9a544f3c2088e81">SDL_SpinLock</link> *lock)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__atomic_8h_1a4bec96c1fc632536952c309513a0258e">SDL_MemoryBarrierReleaseFunction</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__atomic_8h_1ae911d7eb425a9e83fd34ab1303412cba">SDL_MemoryBarrierAcquireFunction</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__atomic_8h_1ad6b90be91abb896260930d3908c0437b">SDL_AtomicCAS</link> (<link linkend="_struct_s_d_l__atomic__t">SDL_atomic_t</link> *<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>, int oldval, int newval)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__atomic_8h_1a95b659308ebb16226d5c0cbf2188e51d">SDL_AtomicSet</link> (<link linkend="_struct_s_d_l__atomic__t">SDL_atomic_t</link> *<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>, int <link linkend="__s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90">v</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__atomic_8h_1a633c2661709f59c98f128f99aea36d96">SDL_AtomicGet</link> (<link linkend="_struct_s_d_l__atomic__t">SDL_atomic_t</link> *<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__atomic_8h_1a36cadfcf8e2bda1974fbce6afdc6d529">SDL_AtomicAdd</link> (<link linkend="_struct_s_d_l__atomic__t">SDL_atomic_t</link> *<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>, int <link linkend="__s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90">v</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__atomic_8h_1aa3070cf7f391b522e08595822c2f0eba">SDL_AtomicCASPtr</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> **<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>, <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *oldval, <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *newval)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__atomic_8h_1a3207340e57c812760328fa4f15198919">SDL_AtomicSetPtr</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> **<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>, <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *<link linkend="__s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90">v</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__atomic_8h_1abbfdbca42b03cce91ab5a5f7f5078d4d">SDL_AtomicGetPtr</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> **<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Atomic operations.</para>
+
+<para>IMPORTANT: If you are not an expert in concurrent lockless programming, you should only be using the atomic lock and reference counting functions in this file. In all other cases you should be protecting your data structures with full mutexes.</para>
+
+<para>The list of &quot;safe&quot; functions to use are: <link linkend="__s_d_l__atomic_8h_1a95ecd72190ba8e5ed6ed78d5d1b36509">SDL_AtomicLock()</link> <link linkend="__s_d_l__atomic_8h_1a3fb14c56b17347349ac2fb5300205bac">SDL_AtomicUnlock()</link> <link linkend="__s_d_l__atomic_8h_1a9c3b04a6ce4b6907bfb6e2ea4649ff64">SDL_AtomicIncRef()</link> <link linkend="__s_d_l__atomic_8h_1a1602c33647cfdfa8ae49a2eef10341c9">SDL_AtomicDecRef()</link></para>
+
+<para>Seriously, here be dragons! ^^^^^^^^^^^^^^^^^^^^^^^^^^^</para>
+
+<para>You can find out a little more about lockless programming and the subtle issues that can arise here: <link xlink:href="http://msdn.microsoft.com/en-us/library/ee418650%28v=vs.85%29.aspx">http://msdn.microsoft.com/en-us/library/ee418650%28v=vs.85%29.aspx</link></para>
+
+<para>There&apos;s also lots of good information here: <link xlink:href="http://www.1024cores.net/home/lock-free-algorithms">http://www.1024cores.net/home/lock-free-algorithms</link> <link xlink:href="http://preshing.com/">http://preshing.com/</link></para>
+
+<para>These operations may or may not actually be implemented using processor specific atomic operations. When possible they are implemented as true processor specific atomic operations. When that is not possible the are implemented using locks that <emphasis>do</emphasis> use the available atomic operations.</para>
+
+<para>All of the atomic operations that modify memory are full memory barriers. </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__s_d_l__atomic_8h_1a1602c33647cfdfa8ae49a2eef10341c9"/><section>
+    <title>SDL_AtomicDecRef</title>
+<indexterm><primary>SDL_AtomicDecRef</primary><secondary>SDL_atomic.h</secondary></indexterm>
+<indexterm><primary>SDL_atomic.h</primary><secondary>SDL_AtomicDecRef</secondary></indexterm>
+<para><computeroutput>#define SDL_AtomicDecRef( <link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>)   (<link linkend="__s_d_l__atomic_8h_1a36cadfcf8e2bda1974fbce6afdc6d529">SDL_AtomicAdd</link>(<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>, -1) == 1)</computeroutput></para><para>
+
+<para>Decrement an atomic variable used as a reference count. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>SDL_TRUE if the variable reached zero after decrementing, SDL_FALSE otherwise </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__atomic_8h_1a9c3b04a6ce4b6907bfb6e2ea4649ff64"/><section>
+    <title>SDL_AtomicIncRef</title>
+<indexterm><primary>SDL_AtomicIncRef</primary><secondary>SDL_atomic.h</secondary></indexterm>
+<indexterm><primary>SDL_atomic.h</primary><secondary>SDL_AtomicIncRef</secondary></indexterm>
+<para><computeroutput>#define SDL_AtomicIncRef( <link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>)   <link linkend="__s_d_l__atomic_8h_1a36cadfcf8e2bda1974fbce6afdc6d529">SDL_AtomicAdd</link>(<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>, 1)</computeroutput></para><para>
+
+<para>Increment an atomic variable used as a reference count. </para>
+</para>
+</section>
+<anchor xml:id="__s_d_l__atomic_8h_1a36d435d444dc115a5cc11fa7027576ec"/><section>
+    <title>SDL_CompilerBarrier</title>
+<indexterm><primary>SDL_CompilerBarrier</primary><secondary>SDL_atomic.h</secondary></indexterm>
+<indexterm><primary>SDL_atomic.h</primary><secondary>SDL_CompilerBarrier</secondary></indexterm>
+<para><computeroutput>#define SDL_CompilerBarrier( )   { <link linkend="__s_d_l__atomic_8h_1a59179ff8d21c65b9d9a544f3c2088e81">SDL_SpinLock</link> _tmp = 0; <link linkend="__s_d_l__atomic_8h_1a95ecd72190ba8e5ed6ed78d5d1b36509">SDL_AtomicLock</link>(&amp;_tmp); <link linkend="__s_d_l__atomic_8h_1a3fb14c56b17347349ac2fb5300205bac">SDL_AtomicUnlock</link>(&amp;_tmp); }</computeroutput></para>
+<para>The compiler barrier prevents the compiler from reordering reads and writes to globally visible variables across the call. </para>
+</section>
+<anchor xml:id="__s_d_l__atomic_8h_1aa33019d94c637a106218dde56b46a20a"/><section>
+    <title>SDL_MemoryBarrierAcquire</title>
+<indexterm><primary>SDL_MemoryBarrierAcquire</primary><secondary>SDL_atomic.h</secondary></indexterm>
+<indexterm><primary>SDL_atomic.h</primary><secondary>SDL_MemoryBarrierAcquire</secondary></indexterm>
+<para><computeroutput>#define SDL_MemoryBarrierAcquire( )   <link linkend="__s_d_l__atomic_8h_1a36d435d444dc115a5cc11fa7027576ec">SDL_CompilerBarrier</link>()</computeroutput></para></section>
+<anchor xml:id="__s_d_l__atomic_8h_1a041cb5705236fe51b35cb3d59c1fbba7"/><section>
+    <title>SDL_MemoryBarrierRelease</title>
+<indexterm><primary>SDL_MemoryBarrierRelease</primary><secondary>SDL_atomic.h</secondary></indexterm>
+<indexterm><primary>SDL_atomic.h</primary><secondary>SDL_MemoryBarrierRelease</secondary></indexterm>
+<para><computeroutput>#define SDL_MemoryBarrierRelease( )   <link linkend="__s_d_l__atomic_8h_1a36d435d444dc115a5cc11fa7027576ec">SDL_CompilerBarrier</link>()</computeroutput></para></section>
+</section>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="__s_d_l__atomic_8h_1a59179ff8d21c65b9d9a544f3c2088e81"/><section>
+    <title>SDL_SpinLock</title>
+<indexterm><primary>SDL_SpinLock</primary><secondary>SDL_atomic.h</secondary></indexterm>
+<indexterm><primary>SDL_atomic.h</primary><secondary>SDL_SpinLock</secondary></indexterm>
+<para><computeroutput>typedef int <link linkend="__s_d_l__atomic_8h_1a59179ff8d21c65b9d9a544f3c2088e81">SDL_SpinLock</link></computeroutput></para></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__s_d_l__atomic_8h_1a36cadfcf8e2bda1974fbce6afdc6d529"/><section>
+    <title>SDL_AtomicAdd()</title>
+<indexterm><primary>SDL_AtomicAdd</primary><secondary>SDL_atomic.h</secondary></indexterm>
+<indexterm><primary>SDL_atomic.h</primary><secondary>SDL_AtomicAdd</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_AtomicAdd (<link linkend="_struct_s_d_l__atomic__t">SDL_atomic_t</link> * a, int v)</computeroutput></para>
+<para>Add to an atomic variable.</para>
+
+<para>This function also acts as a full memory barrier.</para>
+
+<para><emphasis><emphasis role="bold">Note: If you don&apos;t know what this function is for, you shouldn&apos;t use it!</emphasis></emphasis></para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>a</entry><entry>
+<para>a pointer to an <link linkend="_struct_s_d_l__atomic__t">SDL_atomic_t</link> variable to be modified </para>
+</entry>
+                            </row>
+                            <row>
+<entry>v</entry><entry>
+<para>the desired value to add </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the previous value of the atomic variable.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.2.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__atomic_8h_1a1602c33647cfdfa8ae49a2eef10341c9">SDL_AtomicDecRef</link> </para>
+
+<para><link linkend="__s_d_l__atomic_8h_1a9c3b04a6ce4b6907bfb6e2ea4649ff64">SDL_AtomicIncRef</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__atomic_8h_1ad6b90be91abb896260930d3908c0437b"/><section>
+    <title>SDL_AtomicCAS()</title>
+<indexterm><primary>SDL_AtomicCAS</primary><secondary>SDL_atomic.h</secondary></indexterm>
+<indexterm><primary>SDL_atomic.h</primary><secondary>SDL_AtomicCAS</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_AtomicCAS (<link linkend="_struct_s_d_l__atomic__t">SDL_atomic_t</link> * a, int oldval, int newval)</computeroutput></para>
+<para>Set an atomic variable to a new value if it is currently an old value.</para>
+
+<para><emphasis><emphasis role="bold">Note: If you don&apos;t know what this function is for, you shouldn&apos;t use it!</emphasis></emphasis></para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>a</entry><entry>
+<para>a pointer to an <link linkend="_struct_s_d_l__atomic__t">SDL_atomic_t</link> variable to be modified </para>
+</entry>
+                            </row>
+                            <row>
+<entry>oldval</entry><entry>
+<para>the old value </para>
+</entry>
+                            </row>
+                            <row>
+<entry>newval</entry><entry>
+<para>the new value </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE if the atomic variable was set, SDL_FALSE otherwise.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__atomic_8h_1aa3070cf7f391b522e08595822c2f0eba">SDL_AtomicCASPtr</link> </para>
+
+<para><link linkend="__s_d_l__atomic_8h_1a633c2661709f59c98f128f99aea36d96">SDL_AtomicGet</link> </para>
+
+<para><link linkend="__s_d_l__atomic_8h_1a95b659308ebb16226d5c0cbf2188e51d">SDL_AtomicSet</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__atomic_8h_1aa3070cf7f391b522e08595822c2f0eba"/><section>
+    <title>SDL_AtomicCASPtr()</title>
+<indexterm><primary>SDL_AtomicCASPtr</primary><secondary>SDL_atomic.h</secondary></indexterm>
+<indexterm><primary>SDL_atomic.h</primary><secondary>SDL_AtomicCASPtr</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_AtomicCASPtr (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> ** a, <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> * oldval, <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> * newval)</computeroutput></para>
+<para>Set a pointer to a new value if it is currently an old value.</para>
+
+<para><emphasis><emphasis role="bold">Note: If you don&apos;t know what this function is for, you shouldn&apos;t use it!</emphasis></emphasis></para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>a</entry><entry>
+<para>a pointer to a pointer </para>
+</entry>
+                            </row>
+                            <row>
+<entry>oldval</entry><entry>
+<para>the old pointer value </para>
+</entry>
+                            </row>
+                            <row>
+<entry>newval</entry><entry>
+<para>the new pointer value </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE if the pointer was set, SDL_FALSE otherwise.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__atomic_8h_1ad6b90be91abb896260930d3908c0437b">SDL_AtomicCAS</link> </para>
+
+<para><link linkend="__s_d_l__atomic_8h_1abbfdbca42b03cce91ab5a5f7f5078d4d">SDL_AtomicGetPtr</link> </para>
+
+<para><link linkend="__s_d_l__atomic_8h_1a3207340e57c812760328fa4f15198919">SDL_AtomicSetPtr</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__atomic_8h_1a633c2661709f59c98f128f99aea36d96"/><section>
+    <title>SDL_AtomicGet()</title>
+<indexterm><primary>SDL_AtomicGet</primary><secondary>SDL_atomic.h</secondary></indexterm>
+<indexterm><primary>SDL_atomic.h</primary><secondary>SDL_AtomicGet</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_AtomicGet (<link linkend="_struct_s_d_l__atomic__t">SDL_atomic_t</link> * a)</computeroutput></para>
+<para>Get the value of an atomic variable.</para>
+
+<para><emphasis><emphasis role="bold">Note: If you don&apos;t know what this function is for, you shouldn&apos;t use it!</emphasis></emphasis></para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>a</entry><entry>
+<para>a pointer to an <link linkend="_struct_s_d_l__atomic__t">SDL_atomic_t</link> variable </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the current value of an atomic variable.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.2.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__atomic_8h_1a95b659308ebb16226d5c0cbf2188e51d">SDL_AtomicSet</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__atomic_8h_1abbfdbca42b03cce91ab5a5f7f5078d4d"/><section>
+    <title>SDL_AtomicGetPtr()</title>
+<indexterm><primary>SDL_AtomicGetPtr</primary><secondary>SDL_atomic.h</secondary></indexterm>
+<indexterm><primary>SDL_atomic.h</primary><secondary>SDL_AtomicGetPtr</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_AtomicGetPtr (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> ** a)</computeroutput></para>
+<para>Get the value of a pointer atomically.</para>
+
+<para><emphasis><emphasis role="bold">Note: If you don&apos;t know what this function is for, you shouldn&apos;t use it!</emphasis></emphasis></para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>a</entry><entry>
+<para>a pointer to a pointer </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the current value of a pointer.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.2.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__atomic_8h_1aa3070cf7f391b522e08595822c2f0eba">SDL_AtomicCASPtr</link> </para>
+
+<para><link linkend="__s_d_l__atomic_8h_1a3207340e57c812760328fa4f15198919">SDL_AtomicSetPtr</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__atomic_8h_1a95ecd72190ba8e5ed6ed78d5d1b36509"/><section>
+    <title>SDL_AtomicLock()</title>
+<indexterm><primary>SDL_AtomicLock</primary><secondary>SDL_atomic.h</secondary></indexterm>
+<indexterm><primary>SDL_atomic.h</primary><secondary>SDL_AtomicLock</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_AtomicLock (<link linkend="__s_d_l__atomic_8h_1a59179ff8d21c65b9d9a544f3c2088e81">SDL_SpinLock</link> * lock)</computeroutput></para>
+<para>Lock a spin lock by setting it to a non-zero value.</para>
+
+<para><emphasis><emphasis role="bold">Please note that spinlocks are dangerous if you don&apos;t know what you&apos;re doing. Please be careful using any sort of spinlock!</emphasis></emphasis></para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>lock</entry><entry>
+<para>a pointer to a lock variable</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__atomic_8h_1a5410c5f832f0d862282cd65fc432fc0b">SDL_AtomicTryLock</link> </para>
+
+<para><link linkend="__s_d_l__atomic_8h_1a3fb14c56b17347349ac2fb5300205bac">SDL_AtomicUnlock</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__atomic_8h_1a95b659308ebb16226d5c0cbf2188e51d"/><section>
+    <title>SDL_AtomicSet()</title>
+<indexterm><primary>SDL_AtomicSet</primary><secondary>SDL_atomic.h</secondary></indexterm>
+<indexterm><primary>SDL_atomic.h</primary><secondary>SDL_AtomicSet</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_AtomicSet (<link linkend="_struct_s_d_l__atomic__t">SDL_atomic_t</link> * a, int v)</computeroutput></para>
+<para>Set an atomic variable to a value.</para>
+
+<para>This function also acts as a full memory barrier.</para>
+
+<para><emphasis><emphasis role="bold">Note: If you don&apos;t know what this function is for, you shouldn&apos;t use it!</emphasis></emphasis></para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>a</entry><entry>
+<para>a pointer to an <link linkend="_struct_s_d_l__atomic__t">SDL_atomic_t</link> variable to be modified </para>
+</entry>
+                            </row>
+                            <row>
+<entry>v</entry><entry>
+<para>the desired value </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the previous value of the atomic variable.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.2.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__atomic_8h_1a633c2661709f59c98f128f99aea36d96">SDL_AtomicGet</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__atomic_8h_1a3207340e57c812760328fa4f15198919"/><section>
+    <title>SDL_AtomicSetPtr()</title>
+<indexterm><primary>SDL_AtomicSetPtr</primary><secondary>SDL_atomic.h</secondary></indexterm>
+<indexterm><primary>SDL_atomic.h</primary><secondary>SDL_AtomicSetPtr</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_AtomicSetPtr (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> ** a, <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> * v)</computeroutput></para>
+<para>Set a pointer to a value atomically.</para>
+
+<para><emphasis><emphasis role="bold">Note: If you don&apos;t know what this function is for, you shouldn&apos;t use it!</emphasis></emphasis></para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>a</entry><entry>
+<para>a pointer to a pointer </para>
+</entry>
+                            </row>
+                            <row>
+<entry>v</entry><entry>
+<para>the desired pointer value </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the previous value of the pointer.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.2.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__atomic_8h_1aa3070cf7f391b522e08595822c2f0eba">SDL_AtomicCASPtr</link> </para>
+
+<para><link linkend="__s_d_l__atomic_8h_1abbfdbca42b03cce91ab5a5f7f5078d4d">SDL_AtomicGetPtr</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__atomic_8h_1a5410c5f832f0d862282cd65fc432fc0b"/><section>
+    <title>SDL_AtomicTryLock()</title>
+<indexterm><primary>SDL_AtomicTryLock</primary><secondary>SDL_atomic.h</secondary></indexterm>
+<indexterm><primary>SDL_atomic.h</primary><secondary>SDL_AtomicTryLock</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_AtomicTryLock (<link linkend="__s_d_l__atomic_8h_1a59179ff8d21c65b9d9a544f3c2088e81">SDL_SpinLock</link> * lock)</computeroutput></para>
+<para>Try to lock a spin lock by setting it to a non-zero value.</para>
+
+<para><emphasis><emphasis role="bold">Please note that spinlocks are dangerous if you don&apos;t know what you&apos;re doing. Please be careful using any sort of spinlock!</emphasis></emphasis></para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>lock</entry><entry>
+<para>a pointer to a lock variable </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>SDL_TRUE if the lock succeeded, SDL_FALSE if the lock is already held.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__atomic_8h_1a95ecd72190ba8e5ed6ed78d5d1b36509">SDL_AtomicLock</link> </para>
+
+<para><link linkend="__s_d_l__atomic_8h_1a3fb14c56b17347349ac2fb5300205bac">SDL_AtomicUnlock</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__atomic_8h_1a3fb14c56b17347349ac2fb5300205bac"/><section>
+    <title>SDL_AtomicUnlock()</title>
+<indexterm><primary>SDL_AtomicUnlock</primary><secondary>SDL_atomic.h</secondary></indexterm>
+<indexterm><primary>SDL_atomic.h</primary><secondary>SDL_AtomicUnlock</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_AtomicUnlock (<link linkend="__s_d_l__atomic_8h_1a59179ff8d21c65b9d9a544f3c2088e81">SDL_SpinLock</link> * lock)</computeroutput></para>
+<para>Unlock a spin lock by setting it to 0.</para>
+
+<para>Always returns immediately.</para>
+
+<para><emphasis><emphasis role="bold">Please note that spinlocks are dangerous if you don&apos;t know what you&apos;re doing. Please be careful using any sort of spinlock!</emphasis></emphasis></para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>lock</entry><entry>
+<para>a pointer to a lock variable</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.0.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__atomic_8h_1a95ecd72190ba8e5ed6ed78d5d1b36509">SDL_AtomicLock</link> </para>
+
+<para><link linkend="__s_d_l__atomic_8h_1a5410c5f832f0d862282cd65fc432fc0b">SDL_AtomicTryLock</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__atomic_8h_1ae911d7eb425a9e83fd34ab1303412cba"/><section>
+    <title>SDL_MemoryBarrierAcquireFunction()</title>
+<indexterm><primary>SDL_MemoryBarrierAcquireFunction</primary><secondary>SDL_atomic.h</secondary></indexterm>
+<indexterm><primary>SDL_atomic.h</primary><secondary>SDL_MemoryBarrierAcquireFunction</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_MemoryBarrierAcquireFunction (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para></section>
+<anchor xml:id="__s_d_l__atomic_8h_1a4bec96c1fc632536952c309513a0258e"/><section>
+    <title>SDL_MemoryBarrierReleaseFunction()</title>
+<indexterm><primary>SDL_MemoryBarrierReleaseFunction</primary><secondary>SDL_atomic.h</secondary></indexterm>
+<indexterm><primary>SDL_atomic.h</primary><secondary>SDL_MemoryBarrierReleaseFunction</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_MemoryBarrierReleaseFunction (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para>
+<para>Memory barriers are designed to prevent reads and writes from being reordered by the compiler and being seen out of order on multi-core CPUs.</para>
+
+<para>A typical pattern would be for thread A to write some data and a flag, and for thread B to read the flag and get the data. In this case you would insert a release barrier between writing the data and the flag, guaranteeing that the data write completes no later than the flag is written, and you would insert an acquire barrier between reading the flag and reading the data, to ensure that all the reads associated with the flag have completed.</para>
+
+<para>In this pattern you should always see a release barrier paired with an acquire barrier and you should gate the data reads/writes with a single flag variable.</para>
+
+<para>For more information on these semantics, take a look at the blog post: <link xlink:href="http://preshing.com/20120913/acquire-and-release-semantics">http://preshing.com/20120913/acquire-and-release-semantics</link></para>
+
+<para><formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.6. </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

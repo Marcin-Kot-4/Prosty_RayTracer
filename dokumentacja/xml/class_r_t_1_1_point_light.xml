@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="class_r_t_1_1_point_light" kind="class" language="C++" prot="public">
+    <compoundname>RT::PointLight</compoundname>
+    <basecompoundref refid="class_r_t_1_1_light_base" prot="public" virt="non-virtual">RT::LightBase</basecompoundref>
+    <includes refid="pointlight_8h" local="no">pointlight.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_r_t_1_1_point_light_1a9d77ceb3af9acbc752635005361baae2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RT::PointLight::PointLight</definition>
+        <argsstring>()</argsstring>
+        <name>PointLight</name>
+        <qualifiedname>RT::PointLight::PointLight</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Lights/pointlight.h" line="11" column="9" bodyfile="D:/RayTracing/RayTrace/Lights/pointlight.cpp" bodystart="4" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_point_light_1ace94f3e1e1fae29f5ccce3d708b728e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>RT::PointLight::~PointLight</definition>
+        <argsstring>() override</argsstring>
+        <name>~PointLight</name>
+        <qualifiedname>RT::PointLight::~PointLight</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Lights/pointlight.h" line="14" column="17" bodyfile="D:/RayTracing/RayTrace/Lights/pointlight.cpp" bodystart="10" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_point_light_1a589d51d6e3aecfcaf2a6690ed97e888e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool RT::PointLight::ComputeIllumination</definition>
+        <argsstring>(const qbVector&lt; double &gt; &amp;intPoint, const qbVector&lt; double &gt; &amp;localNormal, const std::vector&lt; std::shared_ptr&lt; RT::ObjectBase &gt; &gt; &amp;objectList, const std::shared_ptr&lt; RT::ObjectBase &gt; &amp;currentObject, qbVector&lt; double &gt; &amp;color, double &amp;intensity) override</argsstring>
+        <name>ComputeIllumination</name>
+        <qualifiedname>RT::PointLight::ComputeIllumination</qualifiedname>
+        <reimplements refid="class_r_t_1_1_light_base_1ae497648bbf44225db5a545e7c152d07a">ComputeIllumination</reimplements>
+        <param>
+          <type>const <ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>intPoint</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>localNormal</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::shared_ptr&lt; <ref refid="class_r_t_1_1_object_base" kindref="compound">RT::ObjectBase</ref> &gt; &gt; &amp;</type>
+          <declname>objectList</declname>
+        </param>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="class_r_t_1_1_object_base" kindref="compound">RT::ObjectBase</ref> &gt; &amp;</type>
+          <declname>currentObject</declname>
+        </param>
+        <param>
+          <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>color</declname>
+        </param>
+        <param>
+          <type>double &amp;</type>
+          <declname>intensity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Lights/pointlight.h" line="17" column="22" bodyfile="D:/RayTracing/RayTrace/Lights/pointlight.cpp" bodystart="15" bodyend="78"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>RT::LightBase</label>
+        <link refid="class_r_t_1_1_light_base"/>
+      </node>
+      <node id="1">
+        <label>RT::PointLight</label>
+        <link refid="class_r_t_1_1_point_light"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>RT::LightBase</label>
+        <link refid="class_r_t_1_1_light_base"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_color</edgelabel>
+          <edgelabel>m_location</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>RT::PointLight</label>
+        <link refid="class_r_t_1_1_point_light"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>qbVector&lt; double &gt;</label>
+        <link refid="classqb_vector"/>
+      </node>
+    </collaborationgraph>
+    <location file="D:/RayTracing/RayTrace/Lights/pointlight.h" line="8" column="5" bodyfile="D:/RayTracing/RayTrace/Lights/pointlight.h" bodystart="8" bodyend="21"/>
+    <listofallmembers>
+      <member refid="class_r_t_1_1_point_light_1a589d51d6e3aecfcaf2a6690ed97e888e" prot="public" virt="virtual"><scope>RT::PointLight</scope><name>ComputeIllumination</name></member>
+      <member refid="class_r_t_1_1_light_base_1a4c1a6d7c5758f9331b42248dd1435cf1" prot="public" virt="non-virtual"><scope>RT::PointLight</scope><name>LightBase</name></member>
+      <member refid="class_r_t_1_1_light_base_1afed58cde187e60119a96761008944268" prot="public" virt="non-virtual"><scope>RT::PointLight</scope><name>m_color</name></member>
+      <member refid="class_r_t_1_1_light_base_1a322ee3ce9c2e01a1b36d6f8cf280a0f3" prot="public" virt="non-virtual"><scope>RT::PointLight</scope><name>m_intensity</name></member>
+      <member refid="class_r_t_1_1_light_base_1a52255d6980ce013a614bb50d51d6a399" prot="public" virt="non-virtual"><scope>RT::PointLight</scope><name>m_location</name></member>
+      <member refid="class_r_t_1_1_point_light_1a9d77ceb3af9acbc752635005361baae2" prot="public" virt="non-virtual"><scope>RT::PointLight</scope><name>PointLight</name></member>
+      <member refid="class_r_t_1_1_light_base_1a53e052503c906f9eaf9ee32b11ba53d4" prot="public" virt="virtual"><scope>RT::PointLight</scope><name>~LightBase</name></member>
+      <member refid="class_r_t_1_1_point_light_1ace94f3e1e1fae29f5ccce3d708b728e3" prot="public" virt="virtual"><scope>RT::PointLight</scope><name>~PointLight</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

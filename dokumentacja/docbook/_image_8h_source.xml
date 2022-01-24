@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__image_8h_source" xml:lang="en-US">
+<title>Image.h</title>
+<indexterm><primary>D:/RayTracing/RayTrace/Image.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;RAYTRACING_IMAGE_H</emphasis>
+2 <emphasis role="preprocessor">#define&#32;RAYTRACING_IMAGE_H</emphasis>
+3 
+4 <emphasis role="preprocessor">#include&#32;&lt;string&gt;</emphasis>
+5 <emphasis role="preprocessor">#include&#32;&lt;vector&gt;</emphasis>
+6 <emphasis role="preprocessor">#include&#32;&quot;../include/SDL.h&quot;</emphasis>
+7 
+8 <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_image">Image</link>&#32;{
+9 <emphasis role="keyword">public</emphasis>:
+10 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Konstruktor</emphasis>
+11 &#32;&#32;&#32;&#32;<link linkend="_class_image_1a58edd1c45b4faeb5f789b0d036d02313">Image</link>();
+12 
+13 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Destruktor</emphasis>
+14 &#32;&#32;&#32;&#32;<link linkend="_class_image_1a0294f63700543e11c0f0da85601c7ae5">~Image</link>();
+15 
+16 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Funkcja&#32;do&#32;inicjalizacji&#32;obrazu</emphasis>
+17 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_image_1af2fb19b6fc4a474441f2a14f46af1719">Initialize</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;xSize,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;ySize,&#32;<link linkend="__s_d_l__render_8h_1aaf0bf7d020754fc614fe06552ea4d5d4">SDL_Renderer</link>&#32;*pRenderer);
+18 
+19 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Funkcja&#32;do&#32;ustawiania&#32;koloru&#32;piksela</emphasis>
+20 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_image_1a991612a2226cec929bce0f61e2a3b2ed">SetPixel</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl_8h_1a1675d9d7bb68e1657ff028643b4037e3">y</link>,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">double</emphasis>&#32;red,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1ac14cda87cf6c751d53b65a3cd41c35a1">green</link>,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a1853b32584a90fa75432925f3e26d0e8">blue</link>);
+21 
+22 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Funkcja&#32;wyświetlająca&#32;obraz</emphasis>
+23 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_image_1a7894d275f3a1c4dda0e998324c26935e">Display</link>();
+24 
+25 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Gettery&#32;do&#32;rozmiaru&#32;obrazu</emphasis>
+26 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_image_1a5513ee1dfcd2579037f2c11d8c5cc8bb">GetXSize</link>();
+27 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_image_1a3ee20d5989d88582ede81c294b00752c">GetYSize</link>();
+28 
+29 <emphasis role="keyword">private</emphasis>:
+30 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Funkcja&#32;przyjmująca&#32;reprezentację&#32;koloru&#32;przez&#32;trzy&#32;zmienna&#32;double&#32;i&#32;zwracająca&#32;reprezentację&#32;tego&#32;koloru</emphasis>
+31 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;w&#32;zmiennej&#32;Uint32&#32;w&#32;8-bitowej&#32;reprezentacji&#32;przestrzeni&#32;barw</emphasis>
+32 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;ConvertColor(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">double</emphasis>&#32;red,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1ac14cda87cf6c751d53b65a3cd41c35a1">green</link>,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a1853b32584a90fa75432925f3e26d0e8">blue</link>);
+33 
+34 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;InitTexture();
+35 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Oblicz&#32;maksymalne&#32;wartości&#32;kolorów</emphasis>
+36 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;ComputeMaxValues();
+37 
+38 <emphasis role="keyword">private</emphasis>:
+39 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Vectory&#32;do&#32;przechowywania&#32;danych&#32;obrazu</emphasis>
+40 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Vektor&#32;zawiera&#32;vektory&#32;zawierające&#32;zmienne&#32;typu&#32;double</emphasis>
+41 &#32;&#32;&#32;&#32;std::vector&lt;std::vector&lt;double&gt;&gt;&#32;m_rChannel;
+42 &#32;&#32;&#32;&#32;std::vector&lt;std::vector&lt;double&gt;&gt;&#32;m_gChannel;
+43 &#32;&#32;&#32;&#32;std::vector&lt;std::vector&lt;double&gt;&gt;&#32;m_bChannel;
+44 
+45 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Wymiary&#32;obrazu</emphasis>
+46 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;m_xSize,&#32;m_ySize;
+47 
+48 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Maksymalne&#32;wartości&#32;kolorów</emphasis>
+49 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;m_maxRed,&#32;m_maxGreen,&#32;m_maxBlue,&#32;m_overallMax;
+50 
+51 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;SDL2</emphasis>
+52 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__render_8h_1aaf0bf7d020754fc614fe06552ea4d5d4">SDL_Renderer</link>&#32;*m_pRenderer;&#32;<emphasis role="comment">//&#32;wskaźnik&#32;na&#32;renderer</emphasis>
+53 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__render_8h_1a17850d7f1f5de457727cb3cf66b3a7f5">SDL_Texture</link>&#32;*m_pTexture;&#32;&#32;&#32;<emphasis role="comment">//&#32;wskaźnik&#32;na&#32;teksturę</emphasis>
+54 };
+55 
+56 
+57 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//RAYTRACING_IMAGE_H</emphasis>
+</programlisting></section>

@@ -1,0 +1,311 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="class_r_t_1_1_g_tform" kind="class" language="C++" prot="public">
+    <compoundname>RT::GTform</compoundname>
+    <includes refid="gtfm_8h" local="no">gtfm.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_r_t_1_1_g_tform_1a3463a88a362bd8349c5c68cc02b2b7c3" prot="private" static="no" mutable="no">
+        <type><ref refid="classqb_matrix2" kindref="compound">qbMatrix2</ref>&lt; double &gt;</type>
+        <definition>qbMatrix2&lt;double&gt; RT::GTform::m_fwdtfm</definition>
+        <argsstring></argsstring>
+        <name>m_fwdtfm</name>
+        <qualifiedname>RT::GTform::m_fwdtfm</qualifiedname>
+        <initializer>{4, 4}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/gtfm.h" line="52" column="19" bodyfile="D:/RayTracing/RayTrace/gtfm.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_r_t_1_1_g_tform_1a0e57984e92edcb94c3c03b23ede59bd5" prot="private" static="no" mutable="no">
+        <type><ref refid="classqb_matrix2" kindref="compound">qbMatrix2</ref>&lt; double &gt;</type>
+        <definition>qbMatrix2&lt;double&gt; RT::GTform::m_bcktfm</definition>
+        <argsstring></argsstring>
+        <name>m_bcktfm</name>
+        <qualifiedname>RT::GTform::m_bcktfm</qualifiedname>
+        <initializer>{4, 4}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/gtfm.h" line="53" column="19" bodyfile="D:/RayTracing/RayTrace/gtfm.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_r_t_1_1_g_tform_1af4a85301e8377010585ab3b9be09b73e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RT::GTform::GTform</definition>
+        <argsstring>()</argsstring>
+        <name>GTform</name>
+        <qualifiedname>RT::GTform::GTform</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/gtfm.h" line="16" column="9" bodyfile="D:/RayTracing/RayTrace/gtfm.cpp" bodystart="4" bodyend="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_g_tform_1ac52387dbc170335f4648b5ba6994834d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RT::GTform::~GTform</definition>
+        <argsstring>()</argsstring>
+        <name>~GTform</name>
+        <qualifiedname>RT::GTform::~GTform</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/gtfm.h" line="19" column="9" bodyfile="D:/RayTracing/RayTrace/gtfm.cpp" bodystart="11" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_g_tform_1a7e4e554e38330d47571b60b408525536" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RT::GTform::GTform</definition>
+        <argsstring>(const qbMatrix2&lt; double &gt; &amp;fwd, const qbMatrix2&lt; double &gt; &amp;bck)</argsstring>
+        <name>GTform</name>
+        <qualifiedname>RT::GTform::GTform</qualifiedname>
+        <param>
+          <type>const <ref refid="classqb_matrix2" kindref="compound">qbMatrix2</ref>&lt; double &gt; &amp;</type>
+          <declname>fwd</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classqb_matrix2" kindref="compound">qbMatrix2</ref>&lt; double &gt; &amp;</type>
+          <declname>bck</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/gtfm.h" line="22" column="9" bodyfile="D:/RayTracing/RayTrace/gtfm.cpp" bodystart="16" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_g_tform_1a54c87058d14d7cf321230ea13523f622" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        <definition>void RT::GTform::SetTransform</definition>
+        <argsstring>(const qbVector&lt; double &gt; &amp;translation, const qbVector&lt; double &gt; &amp;rotation, const qbVector&lt; double &gt; &amp;scale)</argsstring>
+        <name>SetTransform</name>
+        <qualifiedname>RT::GTform::SetTransform</qualifiedname>
+        <param>
+          <type>const <ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>translation</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>rotation</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/gtfm.h" line="25" column="14" bodyfile="D:/RayTracing/RayTrace/gtfm.cpp" bodystart="28" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_g_tform_1a115fa0452dcb2c3fd97577f044986d80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classqb_matrix2" kindref="compound">qbMatrix2</ref>&lt; double &gt;</type>
+        <definition>qbMatrix2&lt; double &gt; RT::GTform::GetForward</definition>
+        <argsstring>()</argsstring>
+        <name>GetForward</name>
+        <qualifiedname>RT::GTform::GetForward</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/gtfm.h" line="30" column="19" bodyfile="D:/RayTracing/RayTrace/gtfm.cpp" bodystart="86" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_g_tform_1adcf5e1799ce160c0793f6ac243cd4cde" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classqb_matrix2" kindref="compound">qbMatrix2</ref>&lt; double &gt;</type>
+        <definition>qbMatrix2&lt; double &gt; RT::GTform::GetBackward</definition>
+        <argsstring>()</argsstring>
+        <name>GetBackward</name>
+        <qualifiedname>RT::GTform::GetBackward</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/gtfm.h" line="31" column="19" bodyfile="D:/RayTracing/RayTrace/gtfm.cpp" bodystart="89" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_g_tform_1a77ea09e51153e6eca97750c38e520eef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_r_t_1_1_ray" kindref="compound">RT::Ray</ref></type>
+        <definition>RT::Ray RT::GTform::Apply</definition>
+        <argsstring>(const RT::Ray &amp;inputRay, bool dirFlag)</argsstring>
+        <name>Apply</name>
+        <qualifiedname>RT::GTform::Apply</qualifiedname>
+        <param>
+          <type>const <ref refid="class_r_t_1_1_ray" kindref="compound">RT::Ray</ref> &amp;</type>
+          <declname>inputRay</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>dirFlag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/gtfm.h" line="34" column="17" bodyfile="D:/RayTracing/RayTrace/gtfm.cpp" bodystart="94" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_g_tform_1aefa4034fcc6e1ff530708f1a810940cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt;</type>
+        <definition>qbVector&lt; double &gt; RT::GTform::Apply</definition>
+        <argsstring>(const qbVector&lt; double &gt; &amp;inputVector, bool dirFlag)</argsstring>
+        <name>Apply</name>
+        <qualifiedname>RT::GTform::Apply</qualifiedname>
+        <param>
+          <type>const <ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>inputVector</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>dirFlag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/gtfm.h" line="35" column="18" bodyfile="D:/RayTracing/RayTrace/gtfm.cpp" bodystart="114" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_g_tform_1a809b7029a456b68e49a109c97a07afa2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_r_t_1_1_g_tform" kindref="compound">GTform</ref></type>
+        <definition>RT::GTform RT::GTform::operator=</definition>
+        <argsstring>(const GTform &amp;rhs)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>RT::GTform::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="class_r_t_1_1_g_tform" kindref="compound">GTform</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/gtfm.h" line="39" column="16" bodyfile="D:/RayTracing/RayTrace/gtfm.cpp" bodystart="159" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_g_tform_1a2169f46803d51938b059da7eb9fa08fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        <definition>void RT::GTform::PrintMatrix</definition>
+        <argsstring>(bool dirFlag)</argsstring>
+        <name>PrintMatrix</name>
+        <qualifiedname>RT::GTform::PrintMatrix</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>dirFlag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/gtfm.h" line="42" column="14" bodyfile="D:/RayTracing/RayTrace/gtfm.cpp" bodystart="170" bodyend="176"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_r_t_1_1_g_tform_1a8b8700192cec8d25c73f40b6e787c77c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_r_t_1_1_g_tform" kindref="compound">GTform</ref></type>
+        <definition>GTform operator*</definition>
+        <argsstring>(const RT::GTform &amp;lhs, const RT::GTform &amp;rhs)</argsstring>
+        <name>operator*</name>
+        <qualifiedname>RT::GTform::operator*</qualifiedname>
+        <param>
+          <type>const <ref refid="class_r_t_1_1_g_tform" kindref="compound">RT::GTform</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_r_t_1_1_g_tform" kindref="compound">RT::GTform</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/gtfm.h" line="38" column="23" bodyfile="D:/RayTracing/RayTrace/gtfm.cpp" bodystart="143" bodyend="155"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_r_t_1_1_g_tform_1a7ed83f7c30e352f5639dd7af0afbfe37" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        <definition>void RT::GTform::PrintVector</definition>
+        <argsstring>(const qbVector&lt; double &gt; &amp;vector)</argsstring>
+        <name>PrintVector</name>
+        <qualifiedname>RT::GTform::PrintVector</qualifiedname>
+        <param>
+          <type>const <ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>vector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/gtfm.h" line="45" column="21" bodyfile="D:/RayTracing/RayTrace/gtfm.cpp" bodystart="190" bodyend="195"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_r_t_1_1_g_tform_1a1e8e1356c25613e416a4d1de4f9e60fd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        <definition>void RT::GTform::Print</definition>
+        <argsstring>(const qbMatrix2&lt; double &gt; &amp;matrix)</argsstring>
+        <name>Print</name>
+        <qualifiedname>RT::GTform::Print</qualifiedname>
+        <param>
+          <type>const <ref refid="classqb_matrix2" kindref="compound">qbMatrix2</ref>&lt; double &gt; &amp;</type>
+          <declname>matrix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/gtfm.h" line="48" column="14" bodyfile="D:/RayTracing/RayTrace/gtfm.cpp" bodystart="178" bodyend="187"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/RayTracing/RayTrace/gtfm.h" line="13" column="5" bodyfile="D:/RayTracing/RayTrace/gtfm.h" bodystart="13" bodyend="54"/>
+    <listofallmembers>
+      <member refid="class_r_t_1_1_g_tform_1a77ea09e51153e6eca97750c38e520eef" prot="public" virt="non-virtual"><scope>RT::GTform</scope><name>Apply</name></member>
+      <member refid="class_r_t_1_1_g_tform_1aefa4034fcc6e1ff530708f1a810940cd" prot="public" virt="non-virtual"><scope>RT::GTform</scope><name>Apply</name></member>
+      <member refid="class_r_t_1_1_g_tform_1adcf5e1799ce160c0793f6ac243cd4cde" prot="public" virt="non-virtual"><scope>RT::GTform</scope><name>GetBackward</name></member>
+      <member refid="class_r_t_1_1_g_tform_1a115fa0452dcb2c3fd97577f044986d80" prot="public" virt="non-virtual"><scope>RT::GTform</scope><name>GetForward</name></member>
+      <member refid="class_r_t_1_1_g_tform_1af4a85301e8377010585ab3b9be09b73e" prot="public" virt="non-virtual"><scope>RT::GTform</scope><name>GTform</name></member>
+      <member refid="class_r_t_1_1_g_tform_1a7e4e554e38330d47571b60b408525536" prot="public" virt="non-virtual"><scope>RT::GTform</scope><name>GTform</name></member>
+      <member refid="class_r_t_1_1_g_tform_1a0e57984e92edcb94c3c03b23ede59bd5" prot="private" virt="non-virtual"><scope>RT::GTform</scope><name>m_bcktfm</name></member>
+      <member refid="class_r_t_1_1_g_tform_1a3463a88a362bd8349c5c68cc02b2b7c3" prot="private" virt="non-virtual"><scope>RT::GTform</scope><name>m_fwdtfm</name></member>
+      <member refid="class_r_t_1_1_g_tform_1a8b8700192cec8d25c73f40b6e787c77c" prot="public" virt="non-virtual"><scope>RT::GTform</scope><name>operator*</name></member>
+      <member refid="class_r_t_1_1_g_tform_1a809b7029a456b68e49a109c97a07afa2" prot="public" virt="non-virtual"><scope>RT::GTform</scope><name>operator=</name></member>
+      <member refid="class_r_t_1_1_g_tform_1a1e8e1356c25613e416a4d1de4f9e60fd" prot="private" virt="non-virtual"><scope>RT::GTform</scope><name>Print</name></member>
+      <member refid="class_r_t_1_1_g_tform_1a2169f46803d51938b059da7eb9fa08fb" prot="public" virt="non-virtual"><scope>RT::GTform</scope><name>PrintMatrix</name></member>
+      <member refid="class_r_t_1_1_g_tform_1a7ed83f7c30e352f5639dd7af0afbfe37" prot="public" virt="non-virtual"><scope>RT::GTform</scope><name>PrintVector</name></member>
+      <member refid="class_r_t_1_1_g_tform_1a54c87058d14d7cf321230ea13523f622" prot="public" virt="non-virtual"><scope>RT::GTform</scope><name>SetTransform</name></member>
+      <member refid="class_r_t_1_1_g_tform_1ac52387dbc170335f4648b5ba6994834d" prot="public" virt="non-virtual"><scope>RT::GTform</scope><name>~GTform</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

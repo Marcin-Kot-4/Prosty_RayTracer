@@ -1,0 +1,42 @@
+\hypertarget{lightbase_8h_source}{}\doxysection{lightbase.\+h}
+\label{lightbase_8h_source}\index{D:/RayTracing/RayTrace/Lights/lightbase.h@{D:/RayTracing/RayTrace/Lights/lightbase.h}}
+\mbox{\hyperlink{lightbase_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef RAYTRACING\_LIGHTBASE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define RAYTRACING\_LIGHTBASE\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}../qbLinAlg/qbVector.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}../ray.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}../Primitives/objectbase.h"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_r_t}{RT}} \{}
+\DoxyCodeLine{11     \textcolor{keyword}{class }\mbox{\hyperlink{class_r_t_1_1_light_base}{LightBase}} \{}
+\DoxyCodeLine{12     \textcolor{keyword}{public}:}
+\DoxyCodeLine{13         \textcolor{comment}{// Konstruktor}}
+\DoxyCodeLine{14         \mbox{\hyperlink{class_r_t_1_1_light_base_a4c1a6d7c5758f9331b42248dd1435cf1}{LightBase}}();}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16         \textcolor{comment}{// Destruktor}}
+\DoxyCodeLine{17         \textcolor{keyword}{virtual} \mbox{\hyperlink{class_r_t_1_1_light_base_a53e052503c906f9eaf9ee32b11ba53d4}{\string~LightBase}}();}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19         \textcolor{comment}{// Metoda do obliczania oświetlenia}}
+\DoxyCodeLine{20         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_r_t_1_1_light_base_ae497648bbf44225db5a545e7c152d07a}{ComputeIllumination}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&intPoint, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&localNormal,}
+\DoxyCodeLine{21                                          \textcolor{keyword}{const} std::vector<std::shared\_ptr<RT::ObjectBase>> \&objectList,}
+\DoxyCodeLine{22                                          \textcolor{keyword}{const} std::shared\_ptr<RT::ObjectBase> \&currentObject,}
+\DoxyCodeLine{23                                          \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3ea846f998d64f079b86052b6c4193a8}{color}}, \textcolor{keywordtype}{double} \&intensity);}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \textcolor{keyword}{public}:}
+\DoxyCodeLine{26         \textcolor{comment}{// Kolor światła}}
+\DoxyCodeLine{27         \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \mbox{\hyperlink{class_r_t_1_1_light_base_afed58cde187e60119a96761008944268}{m\_color}}\{3\};}
+\DoxyCodeLine{28         \textcolor{comment}{// Położenie światła}}
+\DoxyCodeLine{29         \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \mbox{\hyperlink{class_r_t_1_1_light_base_a52255d6980ce013a614bb50d51d6a399}{m\_location}}\{3\};}
+\DoxyCodeLine{30         \textcolor{comment}{// Intensywność światła}}
+\DoxyCodeLine{31         \textcolor{keywordtype}{double} \mbox{\hyperlink{class_r_t_1_1_light_base_a322ee3ce9c2e01a1b36d6f8cf280a0f3}{m\_intensity}};}
+\DoxyCodeLine{32     \};}
+\DoxyCodeLine{33 \}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//RAYTRACING\_LIGHTBASE\_H}}
+
+\end{DoxyCode}

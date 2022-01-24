@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__system_8h_source" xml:lang="en-US">
+<title>SDL_system.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_system.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+28 <emphasis role="preprocessor">#ifndef&#32;SDL_system_h_</emphasis>
+29 <emphasis role="preprocessor">#define&#32;SDL_system_h_</emphasis>
+30 
+31 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__stdinc_8h">SDL_stdinc.h</link>&quot;</emphasis>
+32 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__keyboard_8h">SDL_keyboard.h</link>&quot;</emphasis>
+33 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__render_8h">SDL_render.h</link>&quot;</emphasis>
+34 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__video_8h">SDL_video.h</link>&quot;</emphasis>
+35 
+36 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+37 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+38 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+39 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+40 <emphasis role="preprocessor">#endif</emphasis>
+41 
+42 
+43 <emphasis role="comment">/*&#32;Platform&#32;specific&#32;functions&#32;for&#32;Windows&#32;*/</emphasis>
+44 <emphasis role="preprocessor">#ifdef&#32;__WIN32__</emphasis>
+45 &#32;&#32;&#32;&#32;
+46 <emphasis role="keyword">typedef</emphasis>&#32;<link linkend="__s_d_l__audio_8h_1aa5cb90967788ada2711894ca158ece01">void</link>&#32;(<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;*&#32;SDL_WindowsMessageHook)(<emphasis role="keywordtype">void</emphasis>&#32;*userdata,&#32;<emphasis role="keywordtype">void</emphasis>&#32;*hWnd,&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a7b6161cffb9b8aee272b3b916183d28c">message</link>,&#32;<link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link>&#32;wParam,&#32;<link linkend="__s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</link>&#32;lParam);
+47 
+56 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;SDL_SetWindowsMessageHook(SDL_WindowsMessageHook&#32;callback,&#32;<emphasis role="keywordtype">void</emphasis>&#32;*userdata);
+57 
+71 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;SDL_Direct3D9GetAdapterIndex(&#32;<emphasis role="keywordtype">int</emphasis>&#32;displayIndex&#32;);
+72 
+73 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis>IDirect3DDevice9&#32;IDirect3DDevice9;
+74 
+87 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;IDirect3DDevice9*&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;SDL_RenderGetD3D9Device(<link linkend="__s_d_l__render_8h_1aaf0bf7d020754fc614fe06552ea4d5d4">SDL_Renderer</link>&#32;*&#32;renderer);
+88 
+89 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis>ID3D11Device&#32;ID3D11Device;
+90 
+103 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;ID3D11Device*&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;SDL_RenderGetD3D11Device(<link linkend="__s_d_l__render_8h_1aaf0bf7d020754fc614fe06552ea4d5d4">SDL_Renderer</link>&#32;*&#32;renderer);
+104 
+123 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;SDL_DXGIGetOutputInfo(&#32;<emphasis role="keywordtype">int</emphasis>&#32;displayIndex,&#32;<emphasis role="keywordtype">int</emphasis>&#32;*adapterIndex,&#32;<emphasis role="keywordtype">int</emphasis>&#32;*outputIndex&#32;);
+124 
+125 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;__WIN32__&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+126 
+127 
+128 <emphasis role="comment">/*&#32;Platform&#32;specific&#32;functions&#32;for&#32;Linux&#32;*/</emphasis>
+129 <emphasis role="preprocessor">#ifdef&#32;__LINUX__</emphasis>
+130 
+142 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;SDL_LinuxSetThreadPriority(<link linkend="__s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</link>&#32;threadID,&#32;<emphasis role="keywordtype">int</emphasis>&#32;priority);
+143 
+157 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;SDL_LinuxSetThreadPriorityAndPolicy(<link linkend="__s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</link>&#32;threadID,&#32;<emphasis role="keywordtype">int</emphasis>&#32;sdlPriority,&#32;<emphasis role="keywordtype">int</emphasis>&#32;schedPolicy);
+158 &#32;
+159 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;__LINUX__&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+160 &#32;&#32;&#32;&#32;
+161 <emphasis role="comment">/*&#32;Platform&#32;specific&#32;functions&#32;for&#32;iOS&#32;*/</emphasis>
+162 <emphasis role="preprocessor">#ifdef&#32;__IPHONEOS__</emphasis>
+163 
+164 <emphasis role="preprocessor">#define&#32;SDL_iOSSetAnimationCallback(window,&#32;interval,&#32;callback,&#32;callbackParam)&#32;SDL_iPhoneSetAnimationCallback(window,&#32;interval,&#32;callback,&#32;callbackParam)</emphasis>
+165 
+198 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;SDL_iPhoneSetAnimationCallback(<link linkend="__s_d_l__video_8h_1a55a196c7d3b8497538632c79ae1e6392">SDL_Window</link>&#32;*&#32;window,&#32;<emphasis role="keywordtype">int</emphasis>&#32;interval,&#32;<emphasis role="keywordtype">void</emphasis>&#32;(*callback)(<emphasis role="keywordtype">void</emphasis>*),&#32;<emphasis role="keywordtype">void</emphasis>&#32;*callbackParam);
+199 
+200 <emphasis role="preprocessor">#define&#32;SDL_iOSSetEventPump(enabled)&#32;SDL_iPhoneSetEventPump(enabled)</emphasis>
+201 
+216 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;SDL_iPhoneSetEventPump(<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a0455a397ab5468d21c3021f2efa6dd3c">enabled</link>);
+217 
+218 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;__IPHONEOS__&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+219 
+220 
+221 <emphasis role="comment">/*&#32;Platform&#32;specific&#32;functions&#32;for&#32;Android&#32;*/</emphasis>
+222 <emphasis role="preprocessor">#ifdef&#32;__ANDROID__</emphasis>
+223 
+241 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;*&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;SDL_AndroidGetJNIEnv(<emphasis role="keywordtype">void</emphasis>);
+242 
+263 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;*&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;SDL_AndroidGetActivity(<emphasis role="keywordtype">void</emphasis>);
+264 
+295 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;SDL_GetAndroidSDKVersion(<emphasis role="keywordtype">void</emphasis>);
+296 
+304 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;SDL_IsAndroidTV(<emphasis role="keywordtype">void</emphasis>);
+305 
+313 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;SDL_IsChromebook(<emphasis role="keywordtype">void</emphasis>);
+314 
+322 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;SDL_IsDeXMode(<emphasis role="keywordtype">void</emphasis>);
+323 
+329 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;SDL_AndroidBackButton(<emphasis role="keywordtype">void</emphasis>);
+330 
+335 <emphasis role="preprocessor">#define&#32;SDL_ANDROID_EXTERNAL_STORAGE_READ&#32;&#32;&#32;0x01</emphasis>
+336 <emphasis role="preprocessor">#define&#32;SDL_ANDROID_EXTERNAL_STORAGE_WRITE&#32;&#32;0x02</emphasis>
+337 
+354 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;SDL_AndroidGetInternalStoragePath(<emphasis role="keywordtype">void</emphasis>);
+355 
+371 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;SDL_AndroidGetExternalStorageState(<emphasis role="keywordtype">void</emphasis>);
+372 
+389 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;SDL_AndroidGetExternalStoragePath(<emphasis role="keywordtype">void</emphasis>);
+390 
+401 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;SDL_AndroidRequestPermission(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*permission);
+402 
+426 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;SDL_AndroidShowToast(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="__s_d_l__opengl__glext_8h_1a7b6161cffb9b8aee272b3b916183d28c">message</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;duration,&#32;<emphasis role="keywordtype">int</emphasis>&#32;gravity,&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl_8h_1ac20a0ffebf4c476650fcfa0633066f0e">xoffset</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl_8h_1a76dfb6803dcff61037ba688b7f4242b8">yoffset</link>);
+427 
+428 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;__ANDROID__&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+429 
+430 <emphasis role="comment">/*&#32;Platform&#32;specific&#32;functions&#32;for&#32;WinRT&#32;*/</emphasis>
+431 <emphasis role="preprocessor">#ifdef&#32;__WINRT__</emphasis>
+432 
+436 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+437 {
+440 &#32;&#32;&#32;&#32;SDL_WINRT_PATH_INSTALLED_LOCATION,
+441 
+443 &#32;&#32;&#32;&#32;SDL_WINRT_PATH_LOCAL_FOLDER,
+444 
+449 &#32;&#32;&#32;&#32;SDL_WINRT_PATH_ROAMING_FOLDER,
+450 
+453 &#32;&#32;&#32;&#32;SDL_WINRT_PATH_TEMP_FOLDER
+454 }&#32;SDL_WinRT_Path;
+455 
+456 
+460 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+461 {
+463 &#32;&#32;&#32;&#32;SDL_WINRT_DEVICEFAMILY_UNKNOWN,
+464 
+466 &#32;&#32;&#32;&#32;SDL_WINRT_DEVICEFAMILY_DESKTOP,
+467 
+469 &#32;&#32;&#32;&#32;SDL_WINRT_DEVICEFAMILY_MOBILE,
+470 
+472 &#32;&#32;&#32;&#32;SDL_WINRT_DEVICEFAMILY_XBOX,
+473 }&#32;SDL_WinRT_DeviceFamily;
+474 
+475 
+497 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">wchar_t</emphasis>&#32;*&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;SDL_WinRTGetFSPathUNICODE(SDL_WinRT_Path&#32;pathType);
+498 
+520 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;SDL_WinRTGetFSPathUTF8(SDL_WinRT_Path&#32;pathType);
+521 
+529 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;SDL_WinRT_DeviceFamily&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;SDL_WinRTGetDeviceFamily();
+530 
+531 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;__WINRT__&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+532 
+542 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__system_8h_1a211a146233e8e37c64185105132e6257">SDL_IsTablet</link>(<emphasis role="keywordtype">void</emphasis>);
+543 
+544 <emphasis role="comment">/*&#32;Functions&#32;used&#32;by&#32;iOS&#32;application&#32;delegates&#32;to&#32;notify&#32;SDL&#32;about&#32;state&#32;changes&#32;*/</emphasis>
+545 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__system_8h_1ae3e44a610898157232a49a754fc3ab9a">SDL_OnApplicationWillTerminate</link>(<emphasis role="keywordtype">void</emphasis>);
+546 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__system_8h_1ae0ff6644972f065a06072426a0f1691f">SDL_OnApplicationDidReceiveMemoryWarning</link>(<emphasis role="keywordtype">void</emphasis>);
+547 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__system_8h_1ad8e8c246a466b29a84a9018cb0803a55">SDL_OnApplicationWillResignActive</link>(<emphasis role="keywordtype">void</emphasis>);
+548 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__system_8h_1af10116e8b6a71fb584a0cec7e582f9ec">SDL_OnApplicationDidEnterBackground</link>(<emphasis role="keywordtype">void</emphasis>);
+549 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__system_8h_1a4292c3354aed782e634ee116d23cfd26">SDL_OnApplicationWillEnterForeground</link>(<emphasis role="keywordtype">void</emphasis>);
+550 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__system_8h_1a3e224d35ef257b2a7583e02ac9dabe90">SDL_OnApplicationDidBecomeActive</link>(<emphasis role="keywordtype">void</emphasis>);
+551 <emphasis role="preprocessor">#ifdef&#32;__IPHONEOS__</emphasis>
+552 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;SDL_OnApplicationDidChangeStatusBarOrientation(<emphasis role="keywordtype">void</emphasis>);
+553 <emphasis role="preprocessor">#endif</emphasis>
+554 
+555 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+556 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+557 }
+558 <emphasis role="preprocessor">#endif</emphasis>
+559 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+560 
+561 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_system_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+562 
+563 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

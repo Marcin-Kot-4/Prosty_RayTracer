@@ -1,0 +1,57 @@
+.TH "D:/RayTracing/include/SDL_test_log.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_test_log.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBvoid\fP \fBSDLTest_Log\fP (\fBSDL_PRINTF_FORMAT_STRING\fP const char *fmt,\&.\&.\&.) \fBSDL_PRINTF_VARARG_FUNC\fP(1)"
+.br
+.RI "Prints given message with a timestamp in the TEST category and INFO priority\&. "
+.ti -1c
+.RI "\fBvoid\fP \fBSDLTest_LogError\fP (\fBSDL_PRINTF_FORMAT_STRING\fP const char *fmt,\&.\&.\&.) \fBSDL_PRINTF_VARARG_FUNC\fP(1)"
+.br
+.RI "Prints given message with a timestamp in the TEST category and the ERROR priority\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include file for SDL test framework\&.
+.PP
+This code is a part of the SDL2_test library, not the main SDL library\&. 
+.SH "Function Documentation"
+.PP 
+.SS "\fBvoid\fP SDLTest_Log (\fBSDL_PRINTF_FORMAT_STRING\fP const char * fmt,  \&.\&.\&.)"
+
+.PP
+Prints given message with a timestamp in the TEST category and INFO priority\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfmt\fP Message to be logged 
+.RE
+.PP
+
+.SS "\fBvoid\fP SDLTest_LogError (\fBSDL_PRINTF_FORMAT_STRING\fP const char * fmt,  \&.\&.\&.)"
+
+.PP
+Prints given message with a timestamp in the TEST category and the ERROR priority\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfmt\fP Message to be logged 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

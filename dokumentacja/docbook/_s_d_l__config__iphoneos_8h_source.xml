@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__config__iphoneos_8h_source" xml:lang="en-US">
+<title>SDL_config_iphoneos.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_config_iphoneos.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2017&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+22 <emphasis role="preprocessor">#ifndef&#32;SDL_config_iphoneos_h_</emphasis>
+23 <emphasis role="preprocessor">#define&#32;SDL_config_iphoneos_h_</emphasis>
+24 <emphasis role="preprocessor">#define&#32;SDL_config_h_</emphasis>
+25 
+26 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__platform_8h">SDL_platform.h</link>&quot;</emphasis>
+27 
+28 <emphasis role="preprocessor">#ifdef&#32;__LP64__</emphasis>
+29 <emphasis role="preprocessor">#define&#32;SIZEOF_VOIDP&#32;8</emphasis>
+30 <emphasis role="preprocessor">#else</emphasis>
+31 <emphasis role="preprocessor">#define&#32;SIZEOF_VOIDP&#32;4</emphasis>
+32 <emphasis role="preprocessor">#endif</emphasis>
+33 
+34 <emphasis role="preprocessor">#define&#32;HAVE_GCC_ATOMICS&#32;&#32;&#32;&#32;1</emphasis>
+35 
+36 <emphasis role="preprocessor">#define&#32;HAVE_ALLOCA_H&#32;&#32;&#32;&#32;&#32;&#32;&#32;1</emphasis>
+37 <emphasis role="preprocessor">#define&#32;HAVE_SYS_TYPES_H&#32;&#32;&#32;&#32;1</emphasis>
+38 <emphasis role="preprocessor">#define&#32;HAVE_STDIO_H&#32;&#32;&#32;&#32;1</emphasis>
+39 <emphasis role="preprocessor">#define&#32;STDC_HEADERS&#32;&#32;&#32;&#32;1</emphasis>
+40 <emphasis role="preprocessor">#define&#32;HAVE_STRING_H&#32;&#32;&#32;1</emphasis>
+41 <emphasis role="preprocessor">#define&#32;HAVE_INTTYPES_H&#32;1</emphasis>
+42 <emphasis role="preprocessor">#define&#32;HAVE_STDINT_H&#32;&#32;&#32;1</emphasis>
+43 <emphasis role="preprocessor">#define&#32;HAVE_CTYPE_H&#32;&#32;&#32;&#32;1</emphasis>
+44 <emphasis role="preprocessor">#define&#32;HAVE_MATH_H&#32;1</emphasis>
+45 <emphasis role="preprocessor">#define&#32;HAVE_SIGNAL_H&#32;&#32;&#32;1</emphasis>
+46 
+47 <emphasis role="comment">/*&#32;C&#32;library&#32;functions&#32;*/</emphasis>
+48 <emphasis role="preprocessor">#define&#32;HAVE_MALLOC&#32;1</emphasis>
+49 <emphasis role="preprocessor">#define&#32;HAVE_CALLOC&#32;1</emphasis>
+50 <emphasis role="preprocessor">#define&#32;HAVE_REALLOC&#32;&#32;&#32;&#32;1</emphasis>
+51 <emphasis role="preprocessor">#define&#32;HAVE_FREE&#32;&#32;&#32;1</emphasis>
+52 <emphasis role="preprocessor">#define&#32;HAVE_ALLOCA&#32;1</emphasis>
+53 <emphasis role="preprocessor">#define&#32;HAVE_GETENV&#32;1</emphasis>
+54 <emphasis role="preprocessor">#define&#32;HAVE_SETENV&#32;1</emphasis>
+55 <emphasis role="preprocessor">#define&#32;HAVE_PUTENV&#32;1</emphasis>
+56 <emphasis role="preprocessor">#define&#32;HAVE_SETENV&#32;1</emphasis>
+57 <emphasis role="preprocessor">#define&#32;HAVE_UNSETENV&#32;&#32;&#32;1</emphasis>
+58 <emphasis role="preprocessor">#define&#32;HAVE_QSORT&#32;&#32;1</emphasis>
+59 <emphasis role="preprocessor">#define&#32;HAVE_ABS&#32;&#32;&#32;&#32;1</emphasis>
+60 <emphasis role="preprocessor">#define&#32;HAVE_BCOPY&#32;&#32;1</emphasis>
+61 <emphasis role="preprocessor">#define&#32;HAVE_MEMSET&#32;1</emphasis>
+62 <emphasis role="preprocessor">#define&#32;HAVE_MEMCPY&#32;1</emphasis>
+63 <emphasis role="preprocessor">#define&#32;HAVE_MEMMOVE&#32;&#32;&#32;&#32;1</emphasis>
+64 <emphasis role="preprocessor">#define&#32;HAVE_MEMCMP&#32;1</emphasis>
+65 <emphasis role="preprocessor">#define&#32;HAVE_STRLEN&#32;1</emphasis>
+66 <emphasis role="preprocessor">#define&#32;HAVE_STRLCPY&#32;&#32;&#32;&#32;1</emphasis>
+67 <emphasis role="preprocessor">#define&#32;HAVE_STRLCAT&#32;&#32;&#32;&#32;1</emphasis>
+68 <emphasis role="preprocessor">#define&#32;HAVE_STRDUP&#32;1</emphasis>
+69 <emphasis role="preprocessor">#define&#32;HAVE_STRCHR&#32;1</emphasis>
+70 <emphasis role="preprocessor">#define&#32;HAVE_STRRCHR&#32;&#32;&#32;&#32;1</emphasis>
+71 <emphasis role="preprocessor">#define&#32;HAVE_STRSTR&#32;1</emphasis>
+72 <emphasis role="preprocessor">#define&#32;HAVE_STRTOL&#32;1</emphasis>
+73 <emphasis role="preprocessor">#define&#32;HAVE_STRTOUL&#32;&#32;&#32;&#32;1</emphasis>
+74 <emphasis role="preprocessor">#define&#32;HAVE_STRTOLL&#32;&#32;&#32;&#32;1</emphasis>
+75 <emphasis role="preprocessor">#define&#32;HAVE_STRTOULL&#32;&#32;&#32;1</emphasis>
+76 <emphasis role="preprocessor">#define&#32;HAVE_STRTOD&#32;1</emphasis>
+77 <emphasis role="preprocessor">#define&#32;HAVE_ATOI&#32;&#32;&#32;1</emphasis>
+78 <emphasis role="preprocessor">#define&#32;HAVE_ATOF&#32;&#32;&#32;1</emphasis>
+79 <emphasis role="preprocessor">#define&#32;HAVE_STRCMP&#32;1</emphasis>
+80 <emphasis role="preprocessor">#define&#32;HAVE_STRNCMP&#32;&#32;&#32;&#32;1</emphasis>
+81 <emphasis role="preprocessor">#define&#32;HAVE_STRCASECMP&#32;1</emphasis>
+82 <emphasis role="preprocessor">#define&#32;HAVE_STRNCASECMP&#32;1</emphasis>
+83 <emphasis role="preprocessor">#define&#32;HAVE_VSSCANF&#32;1</emphasis>
+84 <emphasis role="preprocessor">#define&#32;HAVE_VSNPRINTF&#32;&#32;1</emphasis>
+85 <emphasis role="preprocessor">#define&#32;HAVE_M_PI&#32;&#32;&#32;1</emphasis>
+86 <emphasis role="preprocessor">#define&#32;HAVE_ATAN&#32;&#32;&#32;1</emphasis>
+87 <emphasis role="preprocessor">#define&#32;HAVE_ATAN2&#32;&#32;1</emphasis>
+88 <emphasis role="preprocessor">#define&#32;HAVE_ACOS&#32;&#32;1</emphasis>
+89 <emphasis role="preprocessor">#define&#32;HAVE_ASIN&#32;&#32;1</emphasis>
+90 <emphasis role="preprocessor">#define&#32;HAVE_CEIL&#32;&#32;&#32;1</emphasis>
+91 <emphasis role="preprocessor">#define&#32;HAVE_COPYSIGN&#32;&#32;&#32;1</emphasis>
+92 <emphasis role="preprocessor">#define&#32;HAVE_COS&#32;&#32;&#32;&#32;1</emphasis>
+93 <emphasis role="preprocessor">#define&#32;HAVE_COSF&#32;&#32;&#32;1</emphasis>
+94 <emphasis role="preprocessor">#define&#32;HAVE_FABS&#32;&#32;&#32;1</emphasis>
+95 <emphasis role="preprocessor">#define&#32;HAVE_FLOOR&#32;&#32;1</emphasis>
+96 <emphasis role="preprocessor">#define&#32;HAVE_LOG&#32;&#32;&#32;&#32;1</emphasis>
+97 <emphasis role="preprocessor">#define&#32;HAVE_POW&#32;&#32;&#32;&#32;1</emphasis>
+98 <emphasis role="preprocessor">#define&#32;HAVE_SCALBN&#32;1</emphasis>
+99 <emphasis role="preprocessor">#define&#32;HAVE_SIN&#32;&#32;&#32;&#32;1</emphasis>
+100 <emphasis role="preprocessor">#define&#32;HAVE_SINF&#32;&#32;&#32;1</emphasis>
+101 <emphasis role="preprocessor">#define&#32;HAVE_SQRT&#32;&#32;&#32;1</emphasis>
+102 <emphasis role="preprocessor">#define&#32;HAVE_SQRTF&#32;&#32;1</emphasis>
+103 <emphasis role="preprocessor">#define&#32;HAVE_TAN&#32;&#32;&#32;&#32;1</emphasis>
+104 <emphasis role="preprocessor">#define&#32;HAVE_TANF&#32;&#32;&#32;1</emphasis>
+105 <emphasis role="preprocessor">#define&#32;HAVE_SIGACTION&#32;&#32;1</emphasis>
+106 <emphasis role="preprocessor">#define&#32;HAVE_SETJMP&#32;1</emphasis>
+107 <emphasis role="preprocessor">#define&#32;HAVE_NANOSLEEP&#32;&#32;1</emphasis>
+108 <emphasis role="preprocessor">#define&#32;HAVE_SYSCONF&#32;&#32;&#32;&#32;1</emphasis>
+109 <emphasis role="preprocessor">#define&#32;HAVE_SYSCTLBYNAME&#32;1</emphasis>
+110 
+111 <emphasis role="comment">/*&#32;enable&#32;iPhone&#32;version&#32;of&#32;Core&#32;Audio&#32;driver&#32;*/</emphasis>
+112 <emphasis role="preprocessor">#define&#32;SDL_AUDIO_DRIVER_COREAUDIO&#32;1</emphasis>
+113 <emphasis role="comment">/*&#32;Enable&#32;the&#32;dummy&#32;audio&#32;driver&#32;(src/audio/dummy/\*.c)&#32;*/</emphasis>
+114 <emphasis role="preprocessor">#define&#32;SDL_AUDIO_DRIVER_DUMMY&#32;&#32;1</emphasis>
+115 
+116 <emphasis role="comment">/*&#32;Enable&#32;the&#32;stub&#32;haptic&#32;driver&#32;(src/haptic/dummy/\*.c)&#32;*/</emphasis>
+117 <emphasis role="preprocessor">#define&#32;SDL_HAPTIC_DUMMY&#32;1</emphasis>
+118 
+119 <emphasis role="comment">/*&#32;Enable&#32;MFi&#32;joystick&#32;support&#32;*/</emphasis>
+120 <emphasis role="preprocessor">#define&#32;SDL_JOYSTICK_MFI&#32;1</emphasis>
+121 
+122 <emphasis role="comment">/*&#32;Enable&#32;Unix&#32;style&#32;SO&#32;loading&#32;*/</emphasis>
+123 <emphasis role="preprocessor">#define&#32;SDL_LOADSO_DLOPEN&#32;1</emphasis>
+124 
+125 <emphasis role="comment">/*&#32;Enable&#32;various&#32;threading&#32;systems&#32;*/</emphasis>
+126 <emphasis role="preprocessor">#define&#32;SDL_THREAD_PTHREAD&#32;&#32;1</emphasis>
+127 <emphasis role="preprocessor">#define&#32;SDL_THREAD_PTHREAD_RECURSIVE_MUTEX&#32;&#32;1</emphasis>
+128 
+129 <emphasis role="comment">/*&#32;Enable&#32;various&#32;timer&#32;systems&#32;*/</emphasis>
+130 <emphasis role="preprocessor">#define&#32;SDL_TIMER_UNIX&#32;&#32;1</emphasis>
+131 
+132 <emphasis role="comment">/*&#32;Supported&#32;video&#32;drivers&#32;*/</emphasis>
+133 <emphasis role="preprocessor">#define&#32;SDL_VIDEO_DRIVER_UIKIT&#32;&#32;1</emphasis>
+134 <emphasis role="preprocessor">#define&#32;SDL_VIDEO_DRIVER_DUMMY&#32;&#32;1</emphasis>
+135 
+136 <emphasis role="comment">/*&#32;enable&#32;OpenGL&#32;ES&#32;*/</emphasis>
+137 <emphasis role="preprocessor">#define&#32;SDL_VIDEO_OPENGL_ES2&#32;1</emphasis>
+138 <emphasis role="preprocessor">#define&#32;SDL_VIDEO_OPENGL_ES&#32;1</emphasis>
+139 <emphasis role="preprocessor">#define&#32;SDL_VIDEO_RENDER_OGL_ES&#32;1</emphasis>
+140 <emphasis role="preprocessor">#define&#32;SDL_VIDEO_RENDER_OGL_ES2&#32;&#32;&#32;&#32;1</emphasis>
+141 
+142 <emphasis role="comment">/*&#32;Enable&#32;Vulkan&#32;support&#32;*/</emphasis>
+143 <emphasis role="preprocessor">#if&#32;!TARGET_OS_SIMULATOR&#32;&amp;&amp;&#32;!TARGET_CPU_ARM&#32;</emphasis><emphasis role="comment">//&#32;Only&#32;64-bit&#32;devices&#32;have&#32;Metal</emphasis>
+144 <emphasis role="preprocessor">#define&#32;SDL_VIDEO_VULKAN&#32;1</emphasis>
+145 <emphasis role="preprocessor">#else</emphasis>
+146 <emphasis role="preprocessor">#define&#32;SDL_VIDEO_VULKAN&#32;0</emphasis>
+147 <emphasis role="preprocessor">#endif</emphasis>
+148 
+149 <emphasis role="comment">/*&#32;Enable&#32;system&#32;power&#32;support&#32;*/</emphasis>
+150 <emphasis role="preprocessor">#define&#32;SDL_POWER_UIKIT&#32;1</emphasis>
+151 
+152 <emphasis role="comment">/*&#32;enable&#32;iPhone&#32;keyboard&#32;support&#32;*/</emphasis>
+153 <emphasis role="preprocessor">#define&#32;SDL_IPHONE_KEYBOARD&#32;1</emphasis>
+154 
+155 <emphasis role="comment">/*&#32;enable&#32;iOS&#32;extended&#32;launch&#32;screen&#32;*/</emphasis>
+156 <emphasis role="preprocessor">#define&#32;SDL_IPHONE_LAUNCHSCREEN&#32;1</emphasis>
+157 
+158 <emphasis role="comment">/*&#32;Set&#32;max&#32;recognized&#32;G-force&#32;from&#32;accelerometer</emphasis>
+159 <emphasis role="comment">&#32;&#32;&#32;See&#32;src/joystick/uikit/SDL_sysjoystick.m&#32;for&#32;notes&#32;on&#32;why&#32;this&#32;is&#32;needed</emphasis>
+160 <emphasis role="comment">&#32;*/</emphasis>
+161 <emphasis role="preprocessor">#define&#32;SDL_IPHONE_MAX_GFORCE&#32;5.0</emphasis>
+162 
+163 <emphasis role="comment">/*&#32;enable&#32;filesystem&#32;support&#32;*/</emphasis>
+164 <emphasis role="preprocessor">#define&#32;SDL_FILESYSTEM_COCOA&#32;&#32;&#32;1</emphasis>
+165 
+166 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_config_iphoneos_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+</programlisting></section>

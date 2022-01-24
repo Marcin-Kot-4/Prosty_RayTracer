@@ -1,0 +1,330 @@
+.TH "D:/RayTracing/include/SDL.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SDL_main\&.h'\fP
+.br
+\fC#include 'SDL_stdinc\&.h'\fP
+.br
+\fC#include 'SDL_assert\&.h'\fP
+.br
+\fC#include 'SDL_atomic\&.h'\fP
+.br
+\fC#include 'SDL_audio\&.h'\fP
+.br
+\fC#include 'SDL_clipboard\&.h'\fP
+.br
+\fC#include 'SDL_cpuinfo\&.h'\fP
+.br
+\fC#include 'SDL_endian\&.h'\fP
+.br
+\fC#include 'SDL_error\&.h'\fP
+.br
+\fC#include 'SDL_events\&.h'\fP
+.br
+\fC#include 'SDL_filesystem\&.h'\fP
+.br
+\fC#include 'SDL_gamecontroller\&.h'\fP
+.br
+\fC#include 'SDL_haptic\&.h'\fP
+.br
+\fC#include 'SDL_hidapi\&.h'\fP
+.br
+\fC#include 'SDL_hints\&.h'\fP
+.br
+\fC#include 'SDL_joystick\&.h'\fP
+.br
+\fC#include 'SDL_loadso\&.h'\fP
+.br
+\fC#include 'SDL_log\&.h'\fP
+.br
+\fC#include 'SDL_messagebox\&.h'\fP
+.br
+\fC#include 'SDL_metal\&.h'\fP
+.br
+\fC#include 'SDL_mutex\&.h'\fP
+.br
+\fC#include 'SDL_power\&.h'\fP
+.br
+\fC#include 'SDL_render\&.h'\fP
+.br
+\fC#include 'SDL_rwops\&.h'\fP
+.br
+\fC#include 'SDL_sensor\&.h'\fP
+.br
+\fC#include 'SDL_shape\&.h'\fP
+.br
+\fC#include 'SDL_system\&.h'\fP
+.br
+\fC#include 'SDL_thread\&.h'\fP
+.br
+\fC#include 'SDL_timer\&.h'\fP
+.br
+\fC#include 'SDL_version\&.h'\fP
+.br
+\fC#include 'SDL_video\&.h'\fP
+.br
+\fC#include 'SDL_locale\&.h'\fP
+.br
+\fC#include 'SDL_misc\&.h'\fP
+.br
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "SDL_INIT_*"
+These are the flags which may be passed to \fBSDL_Init()\fP\&. You should specify the subsystems which you will be using in your application\&. 
+.in +1c
+.ti -1c
+.RI "#define \fBSDL_INIT_TIMER\fP   0x00000001u"
+.br
+.ti -1c
+.RI "#define \fBSDL_INIT_AUDIO\fP   0x00000010u"
+.br
+.ti -1c
+.RI "#define \fBSDL_INIT_VIDEO\fP   0x00000020u"
+.br
+.ti -1c
+.RI "#define \fBSDL_INIT_JOYSTICK\fP   0x00000200u"
+.br
+.ti -1c
+.RI "#define \fBSDL_INIT_HAPTIC\fP   0x00001000u"
+.br
+.ti -1c
+.RI "#define \fBSDL_INIT_GAMECONTROLLER\fP   0x00002000u"
+.br
+.ti -1c
+.RI "#define \fBSDL_INIT_EVENTS\fP   0x00004000u"
+.br
+.ti -1c
+.RI "#define \fBSDL_INIT_SENSOR\fP   0x00008000u"
+.br
+.ti -1c
+.RI "#define \fBSDL_INIT_NOPARACHUTE\fP   0x00100000u"
+.br
+.ti -1c
+.RI "#define \fBSDL_INIT_EVERYTHING\fP"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_Init\fP (\fBUint32\fP \fBflags\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_InitSubSystem\fP (\fBUint32\fP \fBflags\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_QuitSubSystem\fP (\fBUint32\fP \fBflags\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBUint32\fP \fBSDLCALL\fP \fBSDL_WasInit\fP (\fBUint32\fP \fBflags\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_Quit\fP (\fBvoid\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Main include header for the SDL library 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define SDL_INIT_AUDIO   0x00000010u"
+
+.SS "#define SDL_INIT_EVENTS   0x00004000u"
+
+.SS "#define SDL_INIT_EVERYTHING"
+\fBValue:\fP
+.PP
+.nf
+                ( \
+                SDL_INIT_TIMER | SDL_INIT_AUDIO | SDL_INIT_VIDEO | SDL_INIT_EVENTS | \
+                SDL_INIT_JOYSTICK | SDL_INIT_HAPTIC | SDL_INIT_GAMECONTROLLER | SDL_INIT_SENSOR \
+            )
+.fi
+.SS "#define SDL_INIT_GAMECONTROLLER   0x00002000u"
+SDL_INIT_GAMECONTROLLER implies SDL_INIT_JOYSTICK 
+.SS "#define SDL_INIT_HAPTIC   0x00001000u"
+
+.SS "#define SDL_INIT_JOYSTICK   0x00000200u"
+SDL_INIT_JOYSTICK implies SDL_INIT_EVENTS 
+.SS "#define SDL_INIT_NOPARACHUTE   0x00100000u"
+compatibility; this flag is ignored\&. 
+.SS "#define SDL_INIT_SENSOR   0x00008000u"
+
+.SS "#define SDL_INIT_TIMER   0x00000001u"
+
+.SS "#define SDL_INIT_VIDEO   0x00000020u"
+SDL_INIT_VIDEO implies SDL_INIT_EVENTS 
+.SH "Function Documentation"
+.PP 
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_Init (\fBUint32\fP flags)"
+Initialize the SDL library\&.
+.PP
+\fBSDL_Init()\fP simply forwards to calling \fBSDL_InitSubSystem()\fP\&. Therefore, the two may be used interchangeably\&. Though for readability of your code \fBSDL_InitSubSystem()\fP might be preferred\&.
+.PP
+The file I/O (for example: SDL_RWFromFile) and threading (SDL_CreateThread) subsystems are initialized by default\&. Message boxes (SDL_ShowSimpleMessageBox) also attempt to work without initializing the video subsystem, in hopes of being useful in showing an error dialog when SDL_Init fails\&. You must specifically initialize other subsystems if you use them in your application\&.
+.PP
+Logging (such as SDL_Log) works without initialization, too\&.
+.PP
+\fCflags\fP may be any of the following OR'd together:
+.PP
+.IP "\(bu" 2
+\fCSDL_INIT_TIMER\fP: timer subsystem
+.IP "\(bu" 2
+\fCSDL_INIT_AUDIO\fP: audio subsystem
+.IP "\(bu" 2
+\fCSDL_INIT_VIDEO\fP: video subsystem; automatically initializes the events subsystem
+.IP "\(bu" 2
+\fCSDL_INIT_JOYSTICK\fP: joystick subsystem; automatically initializes the events subsystem
+.IP "\(bu" 2
+\fCSDL_INIT_HAPTIC\fP: haptic (force feedback) subsystem
+.IP "\(bu" 2
+\fCSDL_INIT_GAMECONTROLLER\fP: controller subsystem; automatically initializes the joystick subsystem
+.IP "\(bu" 2
+\fCSDL_INIT_EVENTS\fP: events subsystem
+.IP "\(bu" 2
+\fCSDL_INIT_EVERYTHING\fP: all of the above subsystems
+.IP "\(bu" 2
+\fCSDL_INIT_NOPARACHUTE\fP: compatibility; this flag is ignored
+.PP
+.PP
+Subsystem initialization is ref-counted, you must call \fBSDL_QuitSubSystem()\fP for each \fBSDL_InitSubSystem()\fP to correctly shutdown a subsystem manually (or call \fBSDL_Quit()\fP to force shutdown)\&. If a subsystem is already loaded then this call will increase the ref-count and return\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIflags\fP subsystem initialization flags 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 on success or a negative error code on failure; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_InitSubSystem\fP 
+.PP
+\fBSDL_Quit\fP 
+.PP
+\fBSDL_SetMainReady\fP 
+.PP
+\fBSDL_WasInit\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_InitSubSystem (\fBUint32\fP flags)"
+Compatibility function to initialize the SDL library\&.
+.PP
+In SDL2, this function and \fBSDL_Init()\fP are interchangeable\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIflags\fP any of the flags used by \fBSDL_Init()\fP; see SDL_Init for details\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 on success or a negative error code on failure; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_Init\fP 
+.PP
+\fBSDL_Quit\fP 
+.PP
+\fBSDL_QuitSubSystem\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_Quit (\fBvoid\fP)"
+Clean up all initialized subsystems\&.
+.PP
+You should call this function even if you have already shutdown each initialized subsystem with \fBSDL_QuitSubSystem()\fP\&. It is safe to call this function even in the case of errors in initialization\&.
+.PP
+If you start a subsystem using a call to that subsystem's init function (for example \fBSDL_VideoInit()\fP) instead of \fBSDL_Init()\fP or \fBSDL_InitSubSystem()\fP, then you must use that subsystem's quit function (\fBSDL_VideoQuit()\fP) to shut it down before calling \fBSDL_Quit()\fP\&. But generally, you should not be using those functions directly anyhow; use \fBSDL_Init()\fP instead\&.
+.PP
+You can use this function with atexit() to ensure that it is run when your application is shutdown, but it is not wise to do this from a library or other dynamically loaded code\&.
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_Init\fP 
+.PP
+\fBSDL_QuitSubSystem\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_QuitSubSystem (\fBUint32\fP flags)"
+Shut down specific SDL subsystems\&.
+.PP
+If you start a subsystem using a call to that subsystem's init function (for example \fBSDL_VideoInit()\fP) instead of \fBSDL_Init()\fP or \fBSDL_InitSubSystem()\fP, \fBSDL_QuitSubSystem()\fP and \fBSDL_WasInit()\fP will not work\&. You will need to use that subsystem's quit function (\fBSDL_VideoQuit()\fP) directly instead\&. But generally, you should not be using those functions directly anyhow; use \fBSDL_Init()\fP instead\&.
+.PP
+You still need to call \fBSDL_Quit()\fP even if you close all open subsystems with \fBSDL_QuitSubSystem()\fP\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIflags\fP any of the flags used by \fBSDL_Init()\fP; see SDL_Init for details\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_InitSubSystem\fP 
+.PP
+\fBSDL_Quit\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBUint32\fP \fBSDLCALL\fP SDL_WasInit (\fBUint32\fP flags)"
+Get a mask of the specified subsystems which are currently initialized\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIflags\fP any of the flags used by \fBSDL_Init()\fP; see SDL_Init for details\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a mask of all initialized subsystems if \fCflags\fP is 0, otherwise it returns the initialization status of the specified subsystems\&.
+.RE
+.PP
+The return value does not include SDL_INIT_NOPARACHUTE\&.
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_Init\fP 
+.PP
+\fBSDL_InitSubSystem\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

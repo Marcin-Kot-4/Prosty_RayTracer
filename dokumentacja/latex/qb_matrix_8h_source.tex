@@ -1,0 +1,1260 @@
+\hypertarget{qb_matrix_8h_source}{}\doxysection{qb\+Matrix.\+h}
+\label{qb_matrix_8h_source}\index{D:/RayTracing/RayTrace/qbLinAlg/qbMatrix.h@{D:/RayTracing/RayTrace/qbLinAlg/qbMatrix.h}}
+\mbox{\hyperlink{qb_matrix_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// This file is part of the qbLinAlg linear algebra library.}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#ifndef QBMATRIX2\_H}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define QBMATRIX2\_H}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{comment}{/* *************************************************************************************************}}
+\DoxyCodeLine{7 \textcolor{comment}{    qbMatrix2}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{    Class to provide capability to handle two-\/dimensional matrices.}}
+\DoxyCodeLine{10 \textcolor{comment}{}}
+\DoxyCodeLine{11 \textcolor{comment}{************************************************************************************************* */}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <exception>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{qb_vector_8h}{qbVector.h}}"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{classqb_matrix2}{qbMatrix2}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25     \textcolor{comment}{// Define the various constructors.}}
+\DoxyCodeLine{26     \mbox{\hyperlink{classqb_matrix2_a43751c898aa61a8544b4c65788be72b8}{qbMatrix2}}();}
+\DoxyCodeLine{27     \mbox{\hyperlink{classqb_matrix2_a099d5b0ce60f5ba5a1a9be44050240ba}{qbMatrix2}}(\textcolor{keywordtype}{int} nRows, \textcolor{keywordtype}{int} nCols);}
+\DoxyCodeLine{28     \mbox{\hyperlink{classqb_matrix2_ab247062b9aa26dfadcb1f3af49cdc30d}{qbMatrix2}}(\textcolor{keywordtype}{int} nRows, \textcolor{keywordtype}{int} nCols, \textcolor{keyword}{const} T *inputData);}
+\DoxyCodeLine{29     \mbox{\hyperlink{classqb_matrix2_a9c65f821ae157be87c09c9515cad1b20}{qbMatrix2}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \&inputMatrix);}
+\DoxyCodeLine{30     \mbox{\hyperlink{classqb_matrix2_a0e413d7c719f15f2575cd86f927960ed}{qbMatrix2}}(\textcolor{keywordtype}{int} nRows, \textcolor{keywordtype}{int} nCols, \textcolor{keyword}{const} std::vector<T> \&inputData);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \textcolor{comment}{// And the destructor.}}
+\DoxyCodeLine{33     \mbox{\hyperlink{classqb_matrix2_ab05e67188c6ae2eebdbffe8682cb0890}{\string~qbMatrix2}}();}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \textcolor{comment}{// Configuration methods.}}
+\DoxyCodeLine{36     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classqb_matrix2_aba216f400dda55542b3c06df43cd7c35}{Resize}}(\textcolor{keywordtype}{int} numRows, \textcolor{keywordtype}{int} numCols);}
+\DoxyCodeLine{37     \textcolor{keywordtype}{void} \mbox{\hyperlink{classqb_matrix2_af705ca91a707de5e75c6b074ad152f5e}{SetToIdentity}}();}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     \textcolor{comment}{// Element access methods.}}
+\DoxyCodeLine{40     T \mbox{\hyperlink{classqb_matrix2_a62ddf209105dffe6133461b273a7309f}{GetElement}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}}, \textcolor{keywordtype}{int} col) \textcolor{keyword}{const};}
+\DoxyCodeLine{41     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classqb_matrix2_a1c6693503483942d5a619a0cf470e8b5}{SetElement}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}}, \textcolor{keywordtype}{int} col, T elementValue);}
+\DoxyCodeLine{42     \textcolor{keywordtype}{int} \mbox{\hyperlink{classqb_matrix2_a1626b647c5268a9e64f4651bcc4b8c6e}{GetNumRows}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{43     \textcolor{keywordtype}{int} \mbox{\hyperlink{classqb_matrix2_ab20362d8fc58a4b8da0910f94c3de2c3}{GetNumCols}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \textcolor{comment}{// Manipulation methods.}}
+\DoxyCodeLine{46     \textcolor{comment}{// Compute matrix inverse.}}
+\DoxyCodeLine{47     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classqb_matrix2_aaf71c5642111972501f43b1e225b8a2f}{Inverse}}();}
+\DoxyCodeLine{48     \textcolor{comment}{// Convert to row echelon form.}}
+\DoxyCodeLine{49     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \mbox{\hyperlink{classqb_matrix2_a803f108eff983ea5f97cc752c44c1da2}{RowEchelon}}();}
+\DoxyCodeLine{50     \textcolor{comment}{// Return the transpose.}}
+\DoxyCodeLine{51     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \mbox{\hyperlink{classqb_matrix2_a6235a35daf5fa20a9ebc7ed91d8a94a3}{Transpose}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     \textcolor{comment}{// Compute determinant.}}
+\DoxyCodeLine{54     T \mbox{\hyperlink{classqb_matrix2_aeebab890f8c38f112972ffbcaaba422f}{Determinant}}();}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \textcolor{comment}{// Overload == operator.}}
+\DoxyCodeLine{57     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classqb_matrix2_aab23890007a5a410c57d43d69a347ea1}{operator== }}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}}\& rhs);}
+\DoxyCodeLine{58     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classqb_matrix2_ae9049dba8525b2c3b4f7db1c5a29d06e}{Compare}} (\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}}\& matrix1, \textcolor{keywordtype}{double} tolerance);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{comment}{// Overload the assignment operator.}}
+\DoxyCodeLine{61     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \mbox{\hyperlink{classqb_matrix2_ac6cc3fedd08e2a1bb2ceb097ef4c8e47}{operator= }}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \&rhs);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63     \textcolor{comment}{// Overload +, -\/ and * operators (friends).}}
+\DoxyCodeLine{64     \textcolor{keyword}{template} <\textcolor{keyword}{class} U> \textcolor{keyword}{friend} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<U>}} \mbox{\hyperlink{classqb_matrix2_a1d4315f8c2f967cbf2b25a56201b3591}{operator+ }}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<U>}}\& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<U>}}\& rhs);}
+\DoxyCodeLine{65     \textcolor{keyword}{template} <\textcolor{keyword}{class} U> \textcolor{keyword}{friend} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<U>}} \mbox{\hyperlink{classqb_matrix2_a1d4315f8c2f967cbf2b25a56201b3591}{operator+ }}(\textcolor{keyword}{const} U\& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<U>}}\& rhs);}
+\DoxyCodeLine{66     \textcolor{keyword}{template} <\textcolor{keyword}{class} U> \textcolor{keyword}{friend} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<U>}} \mbox{\hyperlink{classqb_matrix2_a1d4315f8c2f967cbf2b25a56201b3591}{operator+ }}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<U>}}\& lhs, \textcolor{keyword}{const} U\& rhs);}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \textcolor{keyword}{template} <\textcolor{keyword}{class} U> \textcolor{keyword}{friend} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<U>}} \mbox{\hyperlink{classqb_matrix2_a0aee7d5dd114c8f8b44438668dc81f8b}{operator-\/ }}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<U>}}\& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<U>}}\& rhs);}
+\DoxyCodeLine{69     \textcolor{keyword}{template} <\textcolor{keyword}{class} U> \textcolor{keyword}{friend} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<U>}} \mbox{\hyperlink{classqb_matrix2_a0aee7d5dd114c8f8b44438668dc81f8b}{operator-\/ }}(\textcolor{keyword}{const} U\& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<U>}}\& rhs);}
+\DoxyCodeLine{70     \textcolor{keyword}{template} <\textcolor{keyword}{class} U> \textcolor{keyword}{friend} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<U>}} \mbox{\hyperlink{classqb_matrix2_a0aee7d5dd114c8f8b44438668dc81f8b}{operator-\/ }}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<U>}}\& lhs, \textcolor{keyword}{const} U\& rhs);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{keyword}{template} <\textcolor{keyword}{class} U> \textcolor{keyword}{friend} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<U>}} \mbox{\hyperlink{classqb_matrix2_a8a110a74e2674e2b57d9f651d7a863e6}{operator* }}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<U>}}\& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<U>}}\& rhs);}
+\DoxyCodeLine{73     \textcolor{keyword}{template} <\textcolor{keyword}{class} U> \textcolor{keyword}{friend} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<U>}} \mbox{\hyperlink{classqb_matrix2_a8a110a74e2674e2b57d9f651d7a863e6}{operator* }}(\textcolor{keyword}{const} U\& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<U>}}\& rhs);}
+\DoxyCodeLine{74     \textcolor{keyword}{template} <\textcolor{keyword}{class} U> \textcolor{keyword}{friend} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<U>}} \mbox{\hyperlink{classqb_matrix2_a8a110a74e2674e2b57d9f651d7a863e6}{operator* }}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<U>}}\& lhs, \textcolor{keyword}{const} U\& rhs);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     \textcolor{comment}{// qbMatrix2 * qbVector.}}
+\DoxyCodeLine{77     \textcolor{keyword}{template} <\textcolor{keyword}{class} U> \textcolor{keyword}{friend} \mbox{\hyperlink{classqb_vector}{qbVector<U>}} \mbox{\hyperlink{classqb_matrix2_a8a110a74e2674e2b57d9f651d7a863e6}{operator* }}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<U>}}\& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<U>}}\& rhs);}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classqb_matrix2_a3c37c24ae0d265ebf04a8c55a9753ac9}{Separate}}(\mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \&matrix1, \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \&matrix2, \textcolor{keywordtype}{int} colNum);}
+\DoxyCodeLine{80     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classqb_matrix2_a9ba8140ee2c217ffce544657a1f269b8}{Join}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}}\& matrix2);}
+\DoxyCodeLine{81     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \mbox{\hyperlink{classqb_matrix2_a1c913b15492558472b2e271f5a856f3b}{FindSubMatrix}}(\textcolor{keywordtype}{int} rowNum, \textcolor{keywordtype}{int} colNum);}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83     \textcolor{comment}{// Function to return the rank of the matrix.}}
+\DoxyCodeLine{84     \textcolor{keywordtype}{int} \mbox{\hyperlink{classqb_matrix2_aa41b896d3d520de3096530845cbbc9b4}{Rank}}();}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classqb_matrix2_ae3e42b917e3127cab56b7a48faff25c3}{IsSquare}}();}
+\DoxyCodeLine{87     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classqb_matrix2_a44c85a2d4dcbd33b281ce417156d7431}{IsRowEchelon}}();}
+\DoxyCodeLine{88     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classqb_matrix2_a6a9aab698ac6362495a4421f859b3658}{IsNonZero}}();}
+\DoxyCodeLine{89     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classqb_matrix2_a38c5e541fec532600806ac4fd8afecb2}{IsSymmetric}}();}
+\DoxyCodeLine{90     \textcolor{keywordtype}{void} \mbox{\hyperlink{classqb_matrix2_a4bd6d0afe13739e2f7566cbd66b006e5}{PrintMatrix}}();}
+\DoxyCodeLine{91     \textcolor{keywordtype}{void} \mbox{\hyperlink{classqb_matrix2_aaefe2a08fdad8e89690dd1bddcc154d0}{PrintMatrix}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_ae6165268264b393d031f89082216499d}{precision}});}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{keyword}{private}:}
+\DoxyCodeLine{94     \textcolor{keywordtype}{int} Sub2Ind(\textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}}, \textcolor{keywordtype}{int} col) \textcolor{keyword}{const};}
+\DoxyCodeLine{95     \textcolor{keywordtype}{bool} CloseEnough(T f1, T f2);}
+\DoxyCodeLine{96     \textcolor{keywordtype}{void} SwapRow(\textcolor{keywordtype}{int} i, \textcolor{keywordtype}{int} j);}
+\DoxyCodeLine{97     \textcolor{keywordtype}{void} MultAdd(\textcolor{keywordtype}{int} i, \textcolor{keywordtype}{int} j, T multFactor);}
+\DoxyCodeLine{98     \textcolor{keywordtype}{void} MultRow(\textcolor{keywordtype}{int} i, T multFactor);}
+\DoxyCodeLine{99     \textcolor{keywordtype}{int} FindRowWithMaxElement(\textcolor{keywordtype}{int} colNumber, \textcolor{keywordtype}{int} startingRow);}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{keyword}{private}:}
+\DoxyCodeLine{102     T *m\_matrixData;}
+\DoxyCodeLine{103     \textcolor{keywordtype}{int} m\_nRows, m\_nCols, m\_nElements;}
+\DoxyCodeLine{104 \};}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{comment}{/* **************************************************************************************************}}
+\DoxyCodeLine{107 \textcolor{comment}{CONSTRUCTOR / DESTRUCTOR FUNCTIONS}}
+\DoxyCodeLine{108 \textcolor{comment}{/* *************************************************************************************************/}}
+\DoxyCodeLine{109 \textcolor{comment}{// The default constructor.}}
+\DoxyCodeLine{110 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{111 \mbox{\hyperlink{classqb_matrix2_a43751c898aa61a8544b4c65788be72b8}{qbMatrix2<T>::qbMatrix2}}()}
+\DoxyCodeLine{112 \{}
+\DoxyCodeLine{113     m\_nRows = 1;}
+\DoxyCodeLine{114     m\_nCols = 1;}
+\DoxyCodeLine{115     m\_nElements = 1;}
+\DoxyCodeLine{116     m\_matrixData = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{117 \}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \textcolor{comment}{// Construct empty matrix (all elements 0)}}
+\DoxyCodeLine{120 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{121 \mbox{\hyperlink{classqb_matrix2_a43751c898aa61a8544b4c65788be72b8}{qbMatrix2<T>::qbMatrix2}}(\textcolor{keywordtype}{int} nRows, \textcolor{keywordtype}{int} nCols)}
+\DoxyCodeLine{122 \{}
+\DoxyCodeLine{123     m\_nRows = nRows;}
+\DoxyCodeLine{124     m\_nCols = nCols;}
+\DoxyCodeLine{125     m\_nElements = m\_nRows * m\_nCols;}
+\DoxyCodeLine{126     m\_matrixData = \textcolor{keyword}{new} T[m\_nElements];}
+\DoxyCodeLine{127     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<m\_nElements; i++)}
+\DoxyCodeLine{128         m\_matrixData[i] = 0.0;}
+\DoxyCodeLine{129 \}}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131 \textcolor{comment}{// Construct from const linear array.}}
+\DoxyCodeLine{132 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{133 \mbox{\hyperlink{classqb_matrix2_a43751c898aa61a8544b4c65788be72b8}{qbMatrix2<T>::qbMatrix2}}(\textcolor{keywordtype}{int} nRows, \textcolor{keywordtype}{int} nCols, \textcolor{keyword}{const} T *inputData)}
+\DoxyCodeLine{134 \{}
+\DoxyCodeLine{135     m\_nRows = nRows;}
+\DoxyCodeLine{136     m\_nCols = nCols;}
+\DoxyCodeLine{137     m\_nElements = m\_nRows * m\_nCols;}
+\DoxyCodeLine{138     m\_matrixData = \textcolor{keyword}{new} T[m\_nElements];}
+\DoxyCodeLine{139     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<m\_nElements; i++)}
+\DoxyCodeLine{140         m\_matrixData[i] = inputData[i];}
+\DoxyCodeLine{141 \}}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 \textcolor{comment}{// The copy constructor.}}
+\DoxyCodeLine{144 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{145 \mbox{\hyperlink{classqb_matrix2_a43751c898aa61a8544b4c65788be72b8}{qbMatrix2<T>::qbMatrix2}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \&inputMatrix)}
+\DoxyCodeLine{146 \{}
+\DoxyCodeLine{147     m\_nRows = inputMatrix.m\_nRows;}
+\DoxyCodeLine{148     m\_nCols = inputMatrix.m\_nCols;}
+\DoxyCodeLine{149     m\_nElements = inputMatrix.m\_nElements;}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151     m\_matrixData = \textcolor{keyword}{new} T[m\_nElements];}
+\DoxyCodeLine{152     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<m\_nElements; i++)}
+\DoxyCodeLine{153         m\_matrixData[i] = inputMatrix.m\_matrixData[i];}
+\DoxyCodeLine{154 \}}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156 \textcolor{comment}{// Construct from std::vector.}}
+\DoxyCodeLine{157 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{158 \mbox{\hyperlink{classqb_matrix2_a43751c898aa61a8544b4c65788be72b8}{qbMatrix2<T>::qbMatrix2}}(\textcolor{keywordtype}{int} nRows, \textcolor{keywordtype}{int} nCols, \textcolor{keyword}{const} std::vector<T> \&inputData)}
+\DoxyCodeLine{159 \{}
+\DoxyCodeLine{160     m\_nRows = nRows;}
+\DoxyCodeLine{161     m\_nCols = nCols;}
+\DoxyCodeLine{162     m\_nElements = m\_nRows * m\_nCols;}
+\DoxyCodeLine{163     m\_matrixData = \textcolor{keyword}{new} T[m\_nElements];}
+\DoxyCodeLine{164     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<m\_nElements; ++i)}
+\DoxyCodeLine{165         m\_matrixData[i] = inputData.at(i);}
+\DoxyCodeLine{166 \}}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{169 \mbox{\hyperlink{classqb_matrix2_ab05e67188c6ae2eebdbffe8682cb0890}{qbMatrix2<T>::\string~qbMatrix2}}()}
+\DoxyCodeLine{170 \{}
+\DoxyCodeLine{171     \textcolor{comment}{// Destructor.}}
+\DoxyCodeLine{172     \textcolor{keywordflow}{if} (m\_matrixData)}
+\DoxyCodeLine{173         \textcolor{keyword}{delete}[] m\_matrixData;}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175     m\_matrixData = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{176 \}}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178 \textcolor{comment}{/* **************************************************************************************************}}
+\DoxyCodeLine{179 \textcolor{comment}{CONFIGURATION FUNCTIONS}}
+\DoxyCodeLine{180 \textcolor{comment}{/* *************************************************************************************************/}}
+\DoxyCodeLine{181 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{182 \textcolor{keywordtype}{bool} \mbox{\hyperlink{classqb_matrix2_aba216f400dda55542b3c06df43cd7c35}{qbMatrix2<T>::Resize}}(\textcolor{keywordtype}{int} numRows, \textcolor{keywordtype}{int} numCols)}
+\DoxyCodeLine{183 \{}
+\DoxyCodeLine{184     m\_nRows = numRows;}
+\DoxyCodeLine{185     m\_nCols = numCols;}
+\DoxyCodeLine{186     m\_nElements = (m\_nRows * m\_nCols);}
+\DoxyCodeLine{187     \textcolor{keyword}{delete}[] m\_matrixData;}
+\DoxyCodeLine{188     m\_matrixData = \textcolor{keyword}{new} T[m\_nElements];}
+\DoxyCodeLine{189     \textcolor{keywordflow}{if} (m\_matrixData != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{190     \{}
+\DoxyCodeLine{191         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<m\_nElements; i++)}
+\DoxyCodeLine{192             m\_matrixData[i] = 0.0;}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{195     \}}
+\DoxyCodeLine{196     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{197     \{}
+\DoxyCodeLine{198         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{199     \}}
+\DoxyCodeLine{200 \}}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202 \textcolor{comment}{// Function to convert the existing matrix into an identity matrix.}}
+\DoxyCodeLine{203 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{204 \textcolor{keywordtype}{void} \mbox{\hyperlink{classqb_matrix2_af705ca91a707de5e75c6b074ad152f5e}{qbMatrix2<T>::SetToIdentity}}()}
+\DoxyCodeLine{205 \{}
+\DoxyCodeLine{206     \textcolor{keywordflow}{if} (!IsSquare())}
+\DoxyCodeLine{207         \textcolor{keywordflow}{throw} std::invalid\_argument(\textcolor{stringliteral}{"{}Cannot form an identity matrix that is not square."{}});}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}}=0; \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}}<m\_nRows; ++\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}})}
+\DoxyCodeLine{210     \{}
+\DoxyCodeLine{211         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} col=0; col<m\_nCols; ++col)}
+\DoxyCodeLine{212         \{}
+\DoxyCodeLine{213             \textcolor{keywordflow}{if} (col == \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}})}
+\DoxyCodeLine{214                 m\_matrixData[Sub2Ind(\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}},col)] = 1.0;}
+\DoxyCodeLine{215             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{216                 m\_matrixData[Sub2Ind(\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}},col)] = 0.0;}
+\DoxyCodeLine{217         \}}
+\DoxyCodeLine{218     \}}
+\DoxyCodeLine{219 \}}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221 \textcolor{comment}{/* **************************************************************************************************}}
+\DoxyCodeLine{222 \textcolor{comment}{ELEMENT FUNCTIONS}}
+\DoxyCodeLine{223 \textcolor{comment}{/* *************************************************************************************************/}}
+\DoxyCodeLine{224 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{225 T \mbox{\hyperlink{classqb_matrix2_a62ddf209105dffe6133461b273a7309f}{qbMatrix2<T>::GetElement}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}}, \textcolor{keywordtype}{int} col)\textcolor{keyword}{ const}}
+\DoxyCodeLine{226 \textcolor{keyword}{}\{}
+\DoxyCodeLine{227     \textcolor{keywordtype}{int} linearIndex = Sub2Ind(\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}}, col);}
+\DoxyCodeLine{228     \textcolor{keywordflow}{if} (linearIndex >= 0)}
+\DoxyCodeLine{229         \textcolor{keywordflow}{return} m\_matrixData[linearIndex];}
+\DoxyCodeLine{230     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{231         \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{233 \}}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{236 \textcolor{keywordtype}{bool} \mbox{\hyperlink{classqb_matrix2_a1c6693503483942d5a619a0cf470e8b5}{qbMatrix2<T>::SetElement}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}}, \textcolor{keywordtype}{int} col, T elementValue)}
+\DoxyCodeLine{237 \{}
+\DoxyCodeLine{238     \textcolor{keywordtype}{int} linearIndex = Sub2Ind(\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}}, col);}
+\DoxyCodeLine{239     \textcolor{keywordflow}{if} (linearIndex >= 0)}
+\DoxyCodeLine{240     \{}
+\DoxyCodeLine{241         m\_matrixData[linearIndex] = elementValue;}
+\DoxyCodeLine{242         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{243     \}}
+\DoxyCodeLine{244     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{245     \{}
+\DoxyCodeLine{246         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{247     \}}
+\DoxyCodeLine{248 \}}
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{251 \textcolor{keywordtype}{int} \mbox{\hyperlink{classqb_matrix2_a1626b647c5268a9e64f4651bcc4b8c6e}{qbMatrix2<T>::GetNumRows}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{252 \textcolor{keyword}{}\{}
+\DoxyCodeLine{253     \textcolor{keywordflow}{return} m\_nRows;}
+\DoxyCodeLine{254 \}}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{256 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{257 \textcolor{keywordtype}{int} \mbox{\hyperlink{classqb_matrix2_ab20362d8fc58a4b8da0910f94c3de2c3}{qbMatrix2<T>::GetNumCols}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{258 \textcolor{keyword}{}\{}
+\DoxyCodeLine{259     \textcolor{keywordflow}{return} m\_nCols;}
+\DoxyCodeLine{260 \}}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{263 \textcolor{keywordtype}{bool} \mbox{\hyperlink{classqb_matrix2_ae9049dba8525b2c3b4f7db1c5a29d06e}{qbMatrix2<T>::Compare}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}}\& matrix1, \textcolor{keywordtype}{double} tolerance)}
+\DoxyCodeLine{264 \{}
+\DoxyCodeLine{265     \textcolor{comment}{// First, check that the matrices have the same dimensions.}}
+\DoxyCodeLine{266     \textcolor{keywordtype}{int} numRows1 = matrix1.m\_nRows;}
+\DoxyCodeLine{267     \textcolor{keywordtype}{int} numCols1 = matrix1.m\_nCols;}
+\DoxyCodeLine{268     \textcolor{keywordflow}{if} ((numRows1 != m\_nRows) || (numCols1 != m\_nCols))}
+\DoxyCodeLine{269         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271     \textcolor{comment}{// Loop over all the elements and compute the sum-\/of-\/squared-\/differences.}}
+\DoxyCodeLine{272     \textcolor{keywordtype}{double} cumulativeSum = 0.0;}
+\DoxyCodeLine{273     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<m\_nElements; ++i)}
+\DoxyCodeLine{274     \{}
+\DoxyCodeLine{275         T element1 = matrix1.m\_matrixData[i];}
+\DoxyCodeLine{276         T element2 = m\_matrixData[i];}
+\DoxyCodeLine{277         cumulativeSum += ((element1 -\/ element2) * (element1 -\/ element2));}
+\DoxyCodeLine{278     \}}
+\DoxyCodeLine{279     \textcolor{keywordtype}{double} finalValue = sqrt(cumulativeSum / ((numRows1 * numCols1)-\/1));}
+\DoxyCodeLine{280     \textcolor{keywordflow}{if} (finalValue < tolerance)}
+\DoxyCodeLine{281         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{282     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{283         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{284 \}}
+\DoxyCodeLine{285 }
+\DoxyCodeLine{286 \textcolor{comment}{/* **************************************************************************************************}}
+\DoxyCodeLine{287 \textcolor{comment}{OVERLOADED OPERATOR FUNCTIONS}}
+\DoxyCodeLine{288 \textcolor{comment}{/* *************************************************************************************************/}}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{290 \textcolor{comment}{/* **************************************************************************************************}}
+\DoxyCodeLine{291 \textcolor{comment}{THE + OPERATOR}}
+\DoxyCodeLine{292 \textcolor{comment}{/* *************************************************************************************************/}}
+\DoxyCodeLine{293 \textcolor{comment}{// matrix + matrx.}}
+\DoxyCodeLine{294 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{295 \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \mbox{\hyperlink{qb_matrix_8h_a3152cb3afeef9951ce6bd5a7b2e6467c}{operator+ }}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}}\& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}}\& rhs)}
+\DoxyCodeLine{296 \{}
+\DoxyCodeLine{297     \textcolor{keywordtype}{int} numRows = lhs.m\_nRows;}
+\DoxyCodeLine{298     \textcolor{keywordtype}{int} numCols = lhs.m\_nCols;}
+\DoxyCodeLine{299     \textcolor{keywordtype}{int} numElements = numRows * numCols;}
+\DoxyCodeLine{300     T *tempResult = \textcolor{keyword}{new} T[numElements];}
+\DoxyCodeLine{301     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<numElements; i++)}
+\DoxyCodeLine{302         tempResult[i] = lhs.m\_matrixData[i] + rhs.m\_matrixData[i];}
+\DoxyCodeLine{303 }
+\DoxyCodeLine{304     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}}(numRows, numCols, tempResult);}
+\DoxyCodeLine{305     \textcolor{keyword}{delete}[] tempResult;}
+\DoxyCodeLine{306     \textcolor{keywordflow}{return} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}};}
+\DoxyCodeLine{307 \}}
+\DoxyCodeLine{308 }
+\DoxyCodeLine{309 \textcolor{comment}{// scaler + matrix}}
+\DoxyCodeLine{310 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{311 \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \mbox{\hyperlink{qb_matrix_8h_a3152cb3afeef9951ce6bd5a7b2e6467c}{operator+ }}(\textcolor{keyword}{const} T\& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}}\& rhs)}
+\DoxyCodeLine{312 \{}
+\DoxyCodeLine{313     \textcolor{keywordtype}{int} numRows = rhs.m\_nRows;}
+\DoxyCodeLine{314     \textcolor{keywordtype}{int} numCols = rhs.m\_nCols;}
+\DoxyCodeLine{315     \textcolor{keywordtype}{int} numElements = numRows * numCols;}
+\DoxyCodeLine{316     T *tempResult = \textcolor{keyword}{new} T[numElements];}
+\DoxyCodeLine{317     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<numElements; ++i)}
+\DoxyCodeLine{318         tempResult[i] = lhs + rhs.m\_matrixData[i];}
+\DoxyCodeLine{319 }
+\DoxyCodeLine{320     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}}(numRows, numCols, tempResult);}
+\DoxyCodeLine{321     \textcolor{keyword}{delete}[] tempResult;}
+\DoxyCodeLine{322     \textcolor{keywordflow}{return} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}};}
+\DoxyCodeLine{323 \}}
+\DoxyCodeLine{324 }
+\DoxyCodeLine{325 \textcolor{comment}{// matrix + scaler}}
+\DoxyCodeLine{326 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{327 \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \mbox{\hyperlink{qb_matrix_8h_a3152cb3afeef9951ce6bd5a7b2e6467c}{operator+ }}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}}\& lhs, \textcolor{keyword}{const} T\& rhs)}
+\DoxyCodeLine{328 \{}
+\DoxyCodeLine{329     \textcolor{keywordtype}{int} numRows = lhs.m\_nRows;}
+\DoxyCodeLine{330     \textcolor{keywordtype}{int} numCols = lhs.m\_nCols;}
+\DoxyCodeLine{331     \textcolor{keywordtype}{int} numElements = numRows * numCols;}
+\DoxyCodeLine{332     T *tempResult = \textcolor{keyword}{new} T[numElements];}
+\DoxyCodeLine{333     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<numElements; ++i)}
+\DoxyCodeLine{334         tempResult[i] = lhs.m\_matrixData[i] + rhs;}
+\DoxyCodeLine{335 }
+\DoxyCodeLine{336     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}}(numRows, numCols, tempResult);}
+\DoxyCodeLine{337     \textcolor{keyword}{delete}[] tempResult;}
+\DoxyCodeLine{338     \textcolor{keywordflow}{return} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}};}
+\DoxyCodeLine{339 \}}
+\DoxyCodeLine{340 }
+\DoxyCodeLine{341 \textcolor{comment}{/* **************************************************************************************************}}
+\DoxyCodeLine{342 \textcolor{comment}{THE -\/ OPERATOR}}
+\DoxyCodeLine{343 \textcolor{comment}{/* *************************************************************************************************/}}
+\DoxyCodeLine{344 \textcolor{comment}{// matrix -\/ matrix}}
+\DoxyCodeLine{345 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{346 \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \mbox{\hyperlink{qb_matrix_8h_aeb426ac1d5ca8a22e8d0d16c5ff80e05}{operator-\/ }}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}}\& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}}\& rhs)}
+\DoxyCodeLine{347 \{}
+\DoxyCodeLine{348     \textcolor{keywordtype}{int} numRows = lhs.m\_nRows;}
+\DoxyCodeLine{349     \textcolor{keywordtype}{int} numCols = lhs.m\_nCols;}
+\DoxyCodeLine{350     \textcolor{keywordtype}{int} numElements = numRows * numCols;}
+\DoxyCodeLine{351     T *tempResult = \textcolor{keyword}{new} T[numElements];}
+\DoxyCodeLine{352     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<numElements; i++)}
+\DoxyCodeLine{353         tempResult[i] = lhs.m\_matrixData[i] -\/ rhs.m\_matrixData[i];}
+\DoxyCodeLine{354 }
+\DoxyCodeLine{355     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}}(numRows, numCols, tempResult);}
+\DoxyCodeLine{356     \textcolor{keyword}{delete}[] tempResult;}
+\DoxyCodeLine{357     \textcolor{keywordflow}{return} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}};}
+\DoxyCodeLine{358 \}}
+\DoxyCodeLine{359 }
+\DoxyCodeLine{360 \textcolor{comment}{// scaler -\/ matrix}}
+\DoxyCodeLine{361 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{362 \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \mbox{\hyperlink{qb_matrix_8h_aeb426ac1d5ca8a22e8d0d16c5ff80e05}{operator-\/ }}(\textcolor{keyword}{const} T\& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}}\& rhs)}
+\DoxyCodeLine{363 \{}
+\DoxyCodeLine{364     \textcolor{keywordtype}{int} numRows = rhs.m\_nRows;}
+\DoxyCodeLine{365     \textcolor{keywordtype}{int} numCols = rhs.m\_nCols;}
+\DoxyCodeLine{366     \textcolor{keywordtype}{int} numElements = numRows * numCols;}
+\DoxyCodeLine{367     T *tempResult = \textcolor{keyword}{new} T[numElements];}
+\DoxyCodeLine{368     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<numElements; ++i)}
+\DoxyCodeLine{369         tempResult[i] = lhs -\/ rhs.m\_matrixData[i];}
+\DoxyCodeLine{370 }
+\DoxyCodeLine{371     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}}(numRows, numCols, tempResult);}
+\DoxyCodeLine{372     \textcolor{keyword}{delete}[] tempResult;}
+\DoxyCodeLine{373     \textcolor{keywordflow}{return} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}};}
+\DoxyCodeLine{374 \}}
+\DoxyCodeLine{375 }
+\DoxyCodeLine{376 \textcolor{comment}{// matrix -\/ scaler}}
+\DoxyCodeLine{377 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{378 \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \mbox{\hyperlink{qb_matrix_8h_aeb426ac1d5ca8a22e8d0d16c5ff80e05}{operator-\/ }}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}}\& lhs, \textcolor{keyword}{const} T\& rhs)}
+\DoxyCodeLine{379 \{}
+\DoxyCodeLine{380     \textcolor{keywordtype}{int} numRows = lhs.m\_nRows;}
+\DoxyCodeLine{381     \textcolor{keywordtype}{int} numCols = lhs.m\_nCols;}
+\DoxyCodeLine{382     \textcolor{keywordtype}{int} numElements = numRows * numCols;}
+\DoxyCodeLine{383     T *tempResult = \textcolor{keyword}{new} T[numElements];}
+\DoxyCodeLine{384     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<numElements; ++i)}
+\DoxyCodeLine{385         tempResult[i] = lhs.m\_matrixData[i] -\/ rhs;}
+\DoxyCodeLine{386 }
+\DoxyCodeLine{387     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}}(numRows, numCols, tempResult);}
+\DoxyCodeLine{388     \textcolor{keyword}{delete}[] tempResult;}
+\DoxyCodeLine{389     \textcolor{keywordflow}{return} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}};}
+\DoxyCodeLine{390 \}}
+\DoxyCodeLine{391 }
+\DoxyCodeLine{392 \textcolor{comment}{/* **************************************************************************************************}}
+\DoxyCodeLine{393 \textcolor{comment}{THE * OPERATOR}}
+\DoxyCodeLine{394 \textcolor{comment}{/* *************************************************************************************************/}}
+\DoxyCodeLine{395 \textcolor{comment}{// matrix * vector}}
+\DoxyCodeLine{396 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{397 \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \mbox{\hyperlink{qb_matrix_8h_a8a8867562937ce308beeef8be2fd0524}{operator* }}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}}\& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<T>}}\& rhs)}
+\DoxyCodeLine{398 \{}
+\DoxyCodeLine{399     \textcolor{comment}{// Verify the dimensions of the inputs.}}
+\DoxyCodeLine{400     \textcolor{keywordflow}{if} (lhs.m\_nCols != rhs.\mbox{\hyperlink{classqb_vector_a4b1f24a8ae47ef9019109c23c56fc9c4}{GetNumDims}}())}
+\DoxyCodeLine{401         \textcolor{keywordflow}{throw} std::invalid\_argument(\textcolor{stringliteral}{"{}Number of columns in matrix must equal number of rows in vector."{}});}
+\DoxyCodeLine{402 }
+\DoxyCodeLine{403     \textcolor{comment}{// Setup the vector for the output.}}
+\DoxyCodeLine{404     \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}}(lhs.m\_nRows);}
+\DoxyCodeLine{405 }
+\DoxyCodeLine{406     \textcolor{comment}{// Loop over rows and columns and perform the multiplication operation element-\/by-\/element.}}
+\DoxyCodeLine{407     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}}=0; \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}}<lhs.m\_nRows; ++\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}})}
+\DoxyCodeLine{408     \{}
+\DoxyCodeLine{409         T cumulativeSum = \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.0);}
+\DoxyCodeLine{410         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} col=0; col<lhs.m\_nCols; ++col)}
+\DoxyCodeLine{411         \{}
+\DoxyCodeLine{412             cumulativeSum += (lhs.\mbox{\hyperlink{classqb_matrix2_a62ddf209105dffe6133461b273a7309f}{GetElement}}(\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}},col) * rhs.\mbox{\hyperlink{classqb_vector_adadd6ca87273a15f57a5e1d6ae15583b}{GetElement}}(col));}
+\DoxyCodeLine{413         \}}
+\DoxyCodeLine{414         \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}}.SetElement(\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}}, cumulativeSum);}
+\DoxyCodeLine{415     \}}
+\DoxyCodeLine{416 }
+\DoxyCodeLine{417     \textcolor{keywordflow}{return} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}};}
+\DoxyCodeLine{418 \}}
+\DoxyCodeLine{419 }
+\DoxyCodeLine{420 \textcolor{comment}{// scaler * matrix}}
+\DoxyCodeLine{421 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{422 \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \mbox{\hyperlink{qb_matrix_8h_a8a8867562937ce308beeef8be2fd0524}{operator* }}(\textcolor{keyword}{const} T\& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}}\& rhs)}
+\DoxyCodeLine{423 \{}
+\DoxyCodeLine{424     \textcolor{keywordtype}{int} numRows = rhs.m\_nRows;}
+\DoxyCodeLine{425     \textcolor{keywordtype}{int} numCols = rhs.m\_nCols;}
+\DoxyCodeLine{426     \textcolor{keywordtype}{int} numElements = numRows * numCols;}
+\DoxyCodeLine{427     T *tempResult = \textcolor{keyword}{new} T[numElements];}
+\DoxyCodeLine{428     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<numElements; ++i)}
+\DoxyCodeLine{429         tempResult[i] = lhs * rhs.m\_matrixData[i];}
+\DoxyCodeLine{430 }
+\DoxyCodeLine{431     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}}(numRows, numCols, tempResult);}
+\DoxyCodeLine{432     \textcolor{keyword}{delete}[] tempResult;}
+\DoxyCodeLine{433     \textcolor{keywordflow}{return} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}};}
+\DoxyCodeLine{434 \}}
+\DoxyCodeLine{435 }
+\DoxyCodeLine{436 \textcolor{comment}{// matrix * scaler}}
+\DoxyCodeLine{437 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{438 \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \mbox{\hyperlink{qb_matrix_8h_a8a8867562937ce308beeef8be2fd0524}{operator* }}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}}\& lhs, \textcolor{keyword}{const} T\& rhs)}
+\DoxyCodeLine{439 \{}
+\DoxyCodeLine{440     \textcolor{keywordtype}{int} numRows = lhs.m\_nRows;}
+\DoxyCodeLine{441     \textcolor{keywordtype}{int} numCols = lhs.m\_nCols;}
+\DoxyCodeLine{442     \textcolor{keywordtype}{int} numElements = numRows * numCols;}
+\DoxyCodeLine{443     T *tempResult = \textcolor{keyword}{new} T[numElements];}
+\DoxyCodeLine{444     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<numElements; ++i)}
+\DoxyCodeLine{445         tempResult[i] = lhs.m\_matrixData[i] * rhs;}
+\DoxyCodeLine{446 }
+\DoxyCodeLine{447     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}}(numRows, numCols, tempResult);}
+\DoxyCodeLine{448     \textcolor{keyword}{delete}[] tempResult;}
+\DoxyCodeLine{449     \textcolor{keywordflow}{return} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}};}
+\DoxyCodeLine{450 \}}
+\DoxyCodeLine{451 }
+\DoxyCodeLine{452 \textcolor{comment}{// matrix * matrix}}
+\DoxyCodeLine{453 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{454 \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \mbox{\hyperlink{qb_matrix_8h_a8a8867562937ce308beeef8be2fd0524}{operator* }}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}}\& lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}}\& rhs)}
+\DoxyCodeLine{455 \{}
+\DoxyCodeLine{456     \textcolor{keywordtype}{int} r\_numRows = rhs.m\_nRows;}
+\DoxyCodeLine{457     \textcolor{keywordtype}{int} r\_numCols = rhs.m\_nCols;}
+\DoxyCodeLine{458     \textcolor{keywordtype}{int} l\_numRows = lhs.m\_nRows;}
+\DoxyCodeLine{459     \textcolor{keywordtype}{int} l\_numCols = lhs.m\_nCols;}
+\DoxyCodeLine{460 }
+\DoxyCodeLine{461     \textcolor{keywordflow}{if} (l\_numCols == r\_numRows)}
+\DoxyCodeLine{462     \{}
+\DoxyCodeLine{463         \textcolor{comment}{// This is the standard matrix multiplication condition.}}
+\DoxyCodeLine{464         \textcolor{comment}{// The output will be the same size as the RHS.}}
+\DoxyCodeLine{465         T *tempResult = \textcolor{keyword}{new} T[lhs.m\_nRows * rhs.m\_nCols];}
+\DoxyCodeLine{466 }
+\DoxyCodeLine{467         \textcolor{comment}{// Loop through each row of the LHS.}}
+\DoxyCodeLine{468         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} lhsRow=0; lhsRow<l\_numRows; lhsRow++)}
+\DoxyCodeLine{469         \{}
+\DoxyCodeLine{470             \textcolor{comment}{// Loop through each column on the RHS.}}
+\DoxyCodeLine{471             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} rhsCol=0; rhsCol<r\_numCols; rhsCol++)}
+\DoxyCodeLine{472             \{}
+\DoxyCodeLine{473                 T elementResult = \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.0);}
+\DoxyCodeLine{474                 \textcolor{comment}{// Loop through each element of this LHS row.}}
+\DoxyCodeLine{475                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} lhsCol=0; lhsCol<l\_numCols; lhsCol++)}
+\DoxyCodeLine{476                 \{}
+\DoxyCodeLine{477                     \textcolor{comment}{// Compute the LHS linear index.}}
+\DoxyCodeLine{478                     \textcolor{keywordtype}{int} lhsLinearIndex = (lhsRow * l\_numCols) + lhsCol;}
+\DoxyCodeLine{479 }
+\DoxyCodeLine{480                     \textcolor{comment}{// Compute the RHS linear index (based on LHS col).}}
+\DoxyCodeLine{481                     \textcolor{comment}{// rhs row number equal to lhs column number.}}
+\DoxyCodeLine{482                     \textcolor{keywordtype}{int} rhsLinearIndex = (lhsCol * r\_numCols) + rhsCol;}
+\DoxyCodeLine{483 }
+\DoxyCodeLine{484                     \textcolor{comment}{// Perform the calculation on these elements.}}
+\DoxyCodeLine{485                     elementResult += (lhs.m\_matrixData[lhsLinearIndex] * rhs.m\_matrixData[rhsLinearIndex]);}
+\DoxyCodeLine{486                 \}}
+\DoxyCodeLine{487 }
+\DoxyCodeLine{488                 \textcolor{comment}{// Store the result.}}
+\DoxyCodeLine{489                 \textcolor{keywordtype}{int} resultLinearIndex = (lhsRow * r\_numCols) + rhsCol;}
+\DoxyCodeLine{490                 tempResult[resultLinearIndex] = elementResult;}
+\DoxyCodeLine{491             \}}
+\DoxyCodeLine{492         \}}
+\DoxyCodeLine{493         \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}}(l\_numRows, r\_numCols, tempResult);}
+\DoxyCodeLine{494         \textcolor{keyword}{delete}[] tempResult;}
+\DoxyCodeLine{495         \textcolor{keywordflow}{return} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}};}
+\DoxyCodeLine{496     \}}
+\DoxyCodeLine{497     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{498     \{}
+\DoxyCodeLine{499         \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}}(1, 1);}
+\DoxyCodeLine{500         \textcolor{keywordflow}{return} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}};}
+\DoxyCodeLine{501     \}}
+\DoxyCodeLine{502 \}}
+\DoxyCodeLine{503 }
+\DoxyCodeLine{504 \textcolor{comment}{/* **************************************************************************************************}}
+\DoxyCodeLine{505 \textcolor{comment}{THE == OPERATOR}}
+\DoxyCodeLine{506 \textcolor{comment}{/* *************************************************************************************************/}}
+\DoxyCodeLine{507 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{508 \textcolor{keywordtype}{bool} \mbox{\hyperlink{classqb_matrix2_aab23890007a5a410c57d43d69a347ea1}{qbMatrix2<T>::operator== }}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}}\& rhs)}
+\DoxyCodeLine{509 \{}
+\DoxyCodeLine{510     \textcolor{comment}{// Check if the matricies are the same size, if not return false.}}
+\DoxyCodeLine{511     \textcolor{keywordflow}{if} ((this-\/>m\_nRows != rhs.m\_nRows) \&\& (this-\/>m\_nCols != rhs.m\_nCols))}
+\DoxyCodeLine{512         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{513 }
+\DoxyCodeLine{514     \textcolor{comment}{// Check if the elements are equal.}}
+\DoxyCodeLine{515     \textcolor{keywordtype}{bool} flag = \textcolor{keyword}{true};}
+\DoxyCodeLine{516     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<this-\/>m\_nElements; ++i)}
+\DoxyCodeLine{517     \{}
+\DoxyCodeLine{518         \textcolor{comment}{//if (this-\/>m\_matrixData[i] != rhs.m\_matrixData[i])}}
+\DoxyCodeLine{519         \textcolor{keywordflow}{if} (!CloseEnough(this-\/>m\_matrixData[i], rhs.m\_matrixData[i]))}
+\DoxyCodeLine{520             flag = \textcolor{keyword}{false};}
+\DoxyCodeLine{521     \}}
+\DoxyCodeLine{522     \textcolor{keywordflow}{return} flag;}
+\DoxyCodeLine{523 \}}
+\DoxyCodeLine{524 }
+\DoxyCodeLine{525 \textcolor{comment}{/* **************************************************************************************************}}
+\DoxyCodeLine{526 \textcolor{comment}{THE ASSIGNMENT (=) OPERATOR}}
+\DoxyCodeLine{527 \textcolor{comment}{/* *************************************************************************************************/}}
+\DoxyCodeLine{528 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{529 \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \mbox{\hyperlink{classqb_matrix2_ac6cc3fedd08e2a1bb2ceb097ef4c8e47}{qbMatrix2<T>::operator= }}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \&rhs)}
+\DoxyCodeLine{530 \{}
+\DoxyCodeLine{531     \textcolor{comment}{// Make sure we're not assigning to ourself.}}
+\DoxyCodeLine{532     \textcolor{keywordflow}{if} (\textcolor{keyword}{this} != \&rhs)}
+\DoxyCodeLine{533     \{}
+\DoxyCodeLine{534         m\_nRows = rhs.m\_nRows;}
+\DoxyCodeLine{535         m\_nCols = rhs.m\_nCols;}
+\DoxyCodeLine{536         m\_nElements = rhs.m\_nElements;}
+\DoxyCodeLine{537 }
+\DoxyCodeLine{538         \textcolor{keywordflow}{if} (m\_matrixData)}
+\DoxyCodeLine{539             \textcolor{keyword}{delete}[] m\_matrixData;}
+\DoxyCodeLine{540 }
+\DoxyCodeLine{541         m\_matrixData = \textcolor{keyword}{new} T[m\_nElements];}
+\DoxyCodeLine{542         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<m\_nElements; i++)}
+\DoxyCodeLine{543             m\_matrixData[i] = rhs.m\_matrixData[i];}
+\DoxyCodeLine{544     \}}
+\DoxyCodeLine{545 }
+\DoxyCodeLine{546     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{547 \}}
+\DoxyCodeLine{548 }
+\DoxyCodeLine{549 \textcolor{comment}{/* **************************************************************************************************}}
+\DoxyCodeLine{550 \textcolor{comment}{SEPARATE THE MATRIX INTO TWO PARTS, AROUND THE COLUMN NUMBER PROVIDED}}
+\DoxyCodeLine{551 \textcolor{comment}{(Note that the output is returned into the two qbMatrix2<T> pointers in the input argument list)}}
+\DoxyCodeLine{552 \textcolor{comment}{/* *************************************************************************************************/}}
+\DoxyCodeLine{553 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{554 \textcolor{keywordtype}{bool} \mbox{\hyperlink{classqb_matrix2_a3c37c24ae0d265ebf04a8c55a9753ac9}{qbMatrix2<T>::Separate}}(\mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \&matrix1, \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \&matrix2, \textcolor{keywordtype}{int} colNum)}
+\DoxyCodeLine{555 \{}
+\DoxyCodeLine{556     \textcolor{comment}{// Compute the sizes of the new matrices.}}
+\DoxyCodeLine{557     \textcolor{keywordtype}{int} numRows = m\_nRows;}
+\DoxyCodeLine{558     \textcolor{keywordtype}{int} numCols1 = colNum;}
+\DoxyCodeLine{559     \textcolor{keywordtype}{int} numCols2 = m\_nCols -\/ colNum;}
+\DoxyCodeLine{560 }
+\DoxyCodeLine{561     \textcolor{comment}{// Resize the two matrices to the proper dimensions.}}
+\DoxyCodeLine{562     matrix1.\mbox{\hyperlink{classqb_matrix2_aba216f400dda55542b3c06df43cd7c35}{Resize}}(numRows, numCols1);}
+\DoxyCodeLine{563     matrix2.\mbox{\hyperlink{classqb_matrix2_aba216f400dda55542b3c06df43cd7c35}{Resize}}(numRows, numCols1);}
+\DoxyCodeLine{564 }
+\DoxyCodeLine{565     \textcolor{comment}{// Loop over the original matrix and store data into the appropriate elements of the two}}
+\DoxyCodeLine{566     \textcolor{comment}{// output matrices.}}
+\DoxyCodeLine{567     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}}=0; \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}}<m\_nRows; ++\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}})}
+\DoxyCodeLine{568     \{}
+\DoxyCodeLine{569         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} col=0; col<m\_nCols; ++col)}
+\DoxyCodeLine{570         \{}
+\DoxyCodeLine{571             \textcolor{keywordflow}{if} (col < colNum)}
+\DoxyCodeLine{572             \{}
+\DoxyCodeLine{573                 matrix1.\mbox{\hyperlink{classqb_matrix2_a1c6693503483942d5a619a0cf470e8b5}{SetElement}}(\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}}, col, this-\/>GetElement(\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}}, col));}
+\DoxyCodeLine{574             \}}
+\DoxyCodeLine{575             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{576             \{}
+\DoxyCodeLine{577                 matrix2.\mbox{\hyperlink{classqb_matrix2_a1c6693503483942d5a619a0cf470e8b5}{SetElement}}(\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}}, col-\/colNum, this-\/>GetElement(\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}}, col));}
+\DoxyCodeLine{578             \}}
+\DoxyCodeLine{579         \}}
+\DoxyCodeLine{580     \}}
+\DoxyCodeLine{581     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{582 \}}
+\DoxyCodeLine{583 }
+\DoxyCodeLine{584 \textcolor{comment}{/* **************************************************************************************************}}
+\DoxyCodeLine{585 \textcolor{comment}{JOIN TwO MATRICES TOGETHER}}
+\DoxyCodeLine{586 \textcolor{comment}{/* *************************************************************************************************/}}
+\DoxyCodeLine{587 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{588 \textcolor{keywordtype}{bool} \mbox{\hyperlink{classqb_matrix2_a9ba8140ee2c217ffce544657a1f269b8}{qbMatrix2<T>::Join}} (\textcolor{keyword}{const} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}}\& matrix2)}
+\DoxyCodeLine{589 \{}
+\DoxyCodeLine{590     \textcolor{comment}{// Extract the information that we need from both matrices}}
+\DoxyCodeLine{591     \textcolor{keywordtype}{int} numRows1 = m\_nRows;}
+\DoxyCodeLine{592     \textcolor{keywordtype}{int} numRows2 = matrix2.m\_nRows;}
+\DoxyCodeLine{593     \textcolor{keywordtype}{int} numCols1 = m\_nCols;}
+\DoxyCodeLine{594     \textcolor{keywordtype}{int} numCols2 = matrix2.m\_nCols;}
+\DoxyCodeLine{595 }
+\DoxyCodeLine{596     \textcolor{comment}{// If the matrices have different numbers of rows, then this operation makes no sense.}}
+\DoxyCodeLine{597     \textcolor{keywordflow}{if} (numRows1 != numRows2)}
+\DoxyCodeLine{598         \textcolor{keywordflow}{throw} std::invalid\_argument(\textcolor{stringliteral}{"{}Attempt to join matrices with different numbers of rows is invalid."{}});}
+\DoxyCodeLine{599 }
+\DoxyCodeLine{600     \textcolor{comment}{// Allocate memory for the result.}}
+\DoxyCodeLine{601     \textcolor{comment}{// Note that only the number of columns increases.}}
+\DoxyCodeLine{602     T* newMatrixData = \textcolor{keyword}{new} T[numRows1*(numCols1+numCols2)];}
+\DoxyCodeLine{603 }
+\DoxyCodeLine{604     \textcolor{comment}{// Copy the two matrices into the new one.}}
+\DoxyCodeLine{605     \textcolor{keywordtype}{int} linearIndex, resultLinearIndex;}
+\DoxyCodeLine{606     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<numRows1; ++i)}
+\DoxyCodeLine{607     \{}
+\DoxyCodeLine{608         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j<(numCols1+numCols2); ++j)}
+\DoxyCodeLine{609         \{}
+\DoxyCodeLine{610             resultLinearIndex = (i * (numCols1+numCols2)) + j;}
+\DoxyCodeLine{611 }
+\DoxyCodeLine{612             \textcolor{comment}{// If j is in the left hand matrix, we get data from there...}}
+\DoxyCodeLine{613             \textcolor{keywordflow}{if} (j < numCols1)}
+\DoxyCodeLine{614             \{}
+\DoxyCodeLine{615                 linearIndex = (i * numCols1) + j;}
+\DoxyCodeLine{616                 newMatrixData[resultLinearIndex] = m\_matrixData[linearIndex];}
+\DoxyCodeLine{617             \}}
+\DoxyCodeLine{618                 \textcolor{comment}{// Otherwise, j must be in the right hand matrix, so we get data from there...}}
+\DoxyCodeLine{619             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{620             \{}
+\DoxyCodeLine{621                 linearIndex = (i * numCols2) + (j -\/ numCols1);}
+\DoxyCodeLine{622                 newMatrixData[resultLinearIndex] = matrix2.m\_matrixData[linearIndex];}
+\DoxyCodeLine{623             \}}
+\DoxyCodeLine{624         \}}
+\DoxyCodeLine{625     \}}
+\DoxyCodeLine{626 }
+\DoxyCodeLine{627     \textcolor{comment}{// Update the stored data.}}
+\DoxyCodeLine{628     m\_nCols = numCols1+numCols2;}
+\DoxyCodeLine{629     m\_nElements = m\_nRows * m\_nCols;}
+\DoxyCodeLine{630     \textcolor{keyword}{delete}[] m\_matrixData;}
+\DoxyCodeLine{631     m\_matrixData = \textcolor{keyword}{new} T[m\_nElements];}
+\DoxyCodeLine{632     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<m\_nElements; ++i)}
+\DoxyCodeLine{633         m\_matrixData[i] = newMatrixData[i];}
+\DoxyCodeLine{634 }
+\DoxyCodeLine{635     \textcolor{keyword}{delete}[] newMatrixData;}
+\DoxyCodeLine{636     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{637 \}}
+\DoxyCodeLine{638 }
+\DoxyCodeLine{639 \textcolor{comment}{/* **************************************************************************************************}}
+\DoxyCodeLine{640 \textcolor{comment}{COMPUTE MATRIX DETERMINANT}}
+\DoxyCodeLine{641 \textcolor{comment}{/* *************************************************************************************************/}}
+\DoxyCodeLine{642 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{643 T \mbox{\hyperlink{classqb_matrix2_aeebab890f8c38f112972ffbcaaba422f}{qbMatrix2<T>::Determinant}}()}
+\DoxyCodeLine{644 \{}
+\DoxyCodeLine{645     \textcolor{comment}{// Check if the matrix is square.}}
+\DoxyCodeLine{646     \textcolor{keywordflow}{if} (!IsSquare())}
+\DoxyCodeLine{647         \textcolor{keywordflow}{throw} std::invalid\_argument(\textcolor{stringliteral}{"{}Cannot compute the determinant of a matrix that is not square."{}});}
+\DoxyCodeLine{648 }
+\DoxyCodeLine{649     \textcolor{comment}{// If the matrix is 2x2, we can just compute the determinant directly.}}
+\DoxyCodeLine{650     T determinant;}
+\DoxyCodeLine{651     \textcolor{keywordflow}{if} (m\_nRows == 2)}
+\DoxyCodeLine{652     \{}
+\DoxyCodeLine{653         determinant = (m\_matrixData[0] * m\_matrixData[3]) -\/ (m\_matrixData[1] * m\_matrixData[2]);}
+\DoxyCodeLine{654     \}}
+\DoxyCodeLine{655     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{656     \{}
+\DoxyCodeLine{657         \textcolor{comment}{/* Otherwise we extract the sub-\/matrices and then recursively call this function}}
+\DoxyCodeLine{658 \textcolor{comment}{            until we get to 2x2 matrices. */}}
+\DoxyCodeLine{659 }
+\DoxyCodeLine{660         \textcolor{comment}{// We will find the sub-\/matrices for row 0.}}
+\DoxyCodeLine{661         \textcolor{comment}{// So, loop over each column.}}
+\DoxyCodeLine{662         T cumulativeSum = 0.0;}
+\DoxyCodeLine{663         T sign = 1.0;}
+\DoxyCodeLine{664         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j<m\_nCols; ++j)}
+\DoxyCodeLine{665         \{}
+\DoxyCodeLine{666             \textcolor{comment}{// And find the sub-\/matrix for each element.}}
+\DoxyCodeLine{667             \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} subMatrix = this-\/>FindSubMatrix(0, j);}
+\DoxyCodeLine{668 }
+\DoxyCodeLine{669             \textcolor{comment}{/* Cumulatively multiply the determinant of the sub-\/matrix by the}}
+\DoxyCodeLine{670 \textcolor{comment}{                current element of this matrix and the sign variable (note the}}
+\DoxyCodeLine{671 \textcolor{comment}{                recursive calling of the Determinant() method). */}}
+\DoxyCodeLine{672             cumulativeSum += this-\/>GetElement(0, j) * subMatrix.\mbox{\hyperlink{classqb_matrix2_aeebab890f8c38f112972ffbcaaba422f}{Determinant}}() * sign;}
+\DoxyCodeLine{673             sign = -\/sign;}
+\DoxyCodeLine{674         \}}
+\DoxyCodeLine{675         determinant = cumulativeSum;}
+\DoxyCodeLine{676     \}}
+\DoxyCodeLine{677 }
+\DoxyCodeLine{678     \textcolor{keywordflow}{return} determinant;}
+\DoxyCodeLine{679 \}}
+\DoxyCodeLine{680 }
+\DoxyCodeLine{681 \textcolor{comment}{/* **************************************************************************************************}}
+\DoxyCodeLine{682 \textcolor{comment}{COMPUTE MATRIX INVERSE (USING GAUSS-\/JORDAN ELIMINATION)}}
+\DoxyCodeLine{683 \textcolor{comment}{/* *************************************************************************************************/}}
+\DoxyCodeLine{684 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{685 \textcolor{keywordtype}{bool} \mbox{\hyperlink{classqb_matrix2_aaf71c5642111972501f43b1e225b8a2f}{qbMatrix2<T>::Inverse}}()}
+\DoxyCodeLine{686 \{}
+\DoxyCodeLine{687     \textcolor{comment}{// Check if the matrix is square (we cannot compute the inverse if it isn't).}}
+\DoxyCodeLine{688     \textcolor{keywordflow}{if} (!IsSquare())}
+\DoxyCodeLine{689         \textcolor{keywordflow}{throw} std::invalid\_argument(\textcolor{stringliteral}{"{}Cannot compute the inverse of a matrix that is not square."{}});}
+\DoxyCodeLine{690 }
+\DoxyCodeLine{691     \textcolor{comment}{// If we get to here, the matrix is square so we can continue.}}
+\DoxyCodeLine{692 }
+\DoxyCodeLine{693     \textcolor{comment}{// Form an identity matrix with the same dimensions as the matrix we wish to invert.}}
+\DoxyCodeLine{694     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} identityMatrix(m\_nRows, m\_nCols);}
+\DoxyCodeLine{695     identityMatrix.\mbox{\hyperlink{classqb_matrix2_af705ca91a707de5e75c6b074ad152f5e}{SetToIdentity}}();}
+\DoxyCodeLine{696 }
+\DoxyCodeLine{697     \textcolor{comment}{// Join the identity matrix to the existing matrix.}}
+\DoxyCodeLine{698     \textcolor{keywordtype}{int} originalNumCols = m\_nCols;}
+\DoxyCodeLine{699     Join(identityMatrix);}
+\DoxyCodeLine{700 }
+\DoxyCodeLine{701     \textcolor{comment}{// Begin the main part of the process.}}
+\DoxyCodeLine{702     \textcolor{keywordtype}{int} cRow, cCol;}
+\DoxyCodeLine{703     \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a76b486a23d5da07752f89495cdaedcf4}{maxCount}} = 100;}
+\DoxyCodeLine{704     \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl_8h_a619bc20e8198de3bd3f3d7fc34de66b2}{count}} = 0;}
+\DoxyCodeLine{705     \textcolor{keywordtype}{bool} completeFlag = \textcolor{keyword}{false};}
+\DoxyCodeLine{706     \textcolor{keywordflow}{while} ((!completeFlag) \&\& (\mbox{\hyperlink{_s_d_l__opengl_8h_a619bc20e8198de3bd3f3d7fc34de66b2}{count}} < \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a76b486a23d5da07752f89495cdaedcf4}{maxCount}}))}
+\DoxyCodeLine{707     \{}
+\DoxyCodeLine{708         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} diagIndex=0; diagIndex<m\_nRows; ++diagIndex)}
+\DoxyCodeLine{709         \{}
+\DoxyCodeLine{710             \textcolor{comment}{// Loop over the diagonal of the matrix and ensure all diagonal elements are equal to one.}}
+\DoxyCodeLine{711             cRow = diagIndex;}
+\DoxyCodeLine{712             cCol = diagIndex;}
+\DoxyCodeLine{713 }
+\DoxyCodeLine{714             \textcolor{comment}{// Find the index of the maximum element in the current column.}}
+\DoxyCodeLine{715             \textcolor{keywordtype}{int} maxIndex = FindRowWithMaxElement(cCol, cRow);}
+\DoxyCodeLine{716 }
+\DoxyCodeLine{717             \textcolor{comment}{// If this isn't the current row, then swap.}}
+\DoxyCodeLine{718             \textcolor{keywordflow}{if} (maxIndex != cRow)}
+\DoxyCodeLine{719             \{}
+\DoxyCodeLine{720                 \textcolor{comment}{//std::cout << "{}Swap rows "{} << cRow << "{} and "{} << maxIndex << std::endl;}}
+\DoxyCodeLine{721                 SwapRow(cRow, maxIndex);}
+\DoxyCodeLine{722             \}}
+\DoxyCodeLine{723             \textcolor{comment}{// Make sure the value at (cRow,cCol) is equal to one.}}
+\DoxyCodeLine{724             \textcolor{keywordflow}{if} (m\_matrixData[Sub2Ind(cRow,cCol)] != 1.0)}
+\DoxyCodeLine{725             \{}
+\DoxyCodeLine{726                 T multFactor = 1.0 / m\_matrixData[Sub2Ind(cRow,cCol)];}
+\DoxyCodeLine{727                 MultRow(cRow, multFactor);}
+\DoxyCodeLine{728                 \textcolor{comment}{//std::cout << "{}Multiply row "{} << cRow << "{} by "{} << multFactor << std::endl;}}
+\DoxyCodeLine{729             \}}
+\DoxyCodeLine{730 }
+\DoxyCodeLine{731             \textcolor{comment}{// Consider the column.}}
+\DoxyCodeLine{732             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} rowIndex=cRow+1; rowIndex<m\_nRows; ++rowIndex)}
+\DoxyCodeLine{733             \{}
+\DoxyCodeLine{734                 \textcolor{comment}{// If the element is already zero, move on.}}
+\DoxyCodeLine{735                 \textcolor{keywordflow}{if} (!CloseEnough(m\_matrixData[Sub2Ind(rowIndex, cCol)], 0.0))}
+\DoxyCodeLine{736                 \{}
+\DoxyCodeLine{737                     \textcolor{comment}{// Obtain the element to work with from the matrix diagonal.}}
+\DoxyCodeLine{738                     \textcolor{comment}{// As we aim to set all the diagonal elements to one, this should}}
+\DoxyCodeLine{739                     \textcolor{comment}{// always be valid for a matrix that can be inverted.}}
+\DoxyCodeLine{740                     \textcolor{keywordtype}{int} rowOneIndex = cCol;}
+\DoxyCodeLine{741 }
+\DoxyCodeLine{742                     \textcolor{comment}{// Get the value stored at the current element.}}
+\DoxyCodeLine{743                     T currentElementValue = m\_matrixData[Sub2Ind(rowIndex, cCol)];}
+\DoxyCodeLine{744 }
+\DoxyCodeLine{745                     \textcolor{comment}{// Get the value stored at (rowOneIndex, cCol)}}
+\DoxyCodeLine{746                     T rowOneValue = m\_matrixData[Sub2Ind(rowOneIndex, cCol)];}
+\DoxyCodeLine{747 }
+\DoxyCodeLine{748                     \textcolor{comment}{// If this is equal to zero, then just move on.}}
+\DoxyCodeLine{749                     \textcolor{keywordflow}{if} (!CloseEnough(rowOneValue, 0.0))}
+\DoxyCodeLine{750                     \{}
+\DoxyCodeLine{751                         \textcolor{comment}{// Compute the correction factor.}}
+\DoxyCodeLine{752                         \textcolor{comment}{// (required to reduce the element at (rowIndex, cCol) to zero).}}
+\DoxyCodeLine{753                         T correctionFactor = -\/(currentElementValue / rowOneValue);}
+\DoxyCodeLine{754 }
+\DoxyCodeLine{755                         MultAdd(rowIndex, rowOneIndex, correctionFactor);}
+\DoxyCodeLine{756 }
+\DoxyCodeLine{757                         \textcolor{comment}{//std::cout << "{}Multiply row "{} << rowOneIndex << "{} by "{} << correctionFactor <<}}
+\DoxyCodeLine{758                         \textcolor{comment}{//  "{} and add to row "{} << rowIndex << std::endl;}}
+\DoxyCodeLine{759                     \}}
+\DoxyCodeLine{760                 \}}
+\DoxyCodeLine{761             \}}
+\DoxyCodeLine{762 }
+\DoxyCodeLine{763             \textcolor{comment}{// Consider the row.}}
+\DoxyCodeLine{764             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} colIndex=cCol+1; colIndex<originalNumCols; ++colIndex)}
+\DoxyCodeLine{765             \{}
+\DoxyCodeLine{766                 \textcolor{comment}{// If the element is already zero, move on.}}
+\DoxyCodeLine{767                 \textcolor{keywordflow}{if} (!CloseEnough(m\_matrixData[Sub2Ind(cRow, colIndex)], 0.0))}
+\DoxyCodeLine{768                 \{}
+\DoxyCodeLine{769                     \textcolor{comment}{// Obtain the element to work with from the matrix diagonal.}}
+\DoxyCodeLine{770                     \textcolor{comment}{// As we aim to set all the diagonal elements to one, this should}}
+\DoxyCodeLine{771                     \textcolor{comment}{// always be valid for a matrix that can be inverted.}}
+\DoxyCodeLine{772                     \textcolor{keywordtype}{int} rowOneIndex = colIndex;}
+\DoxyCodeLine{773 }
+\DoxyCodeLine{774                     \textcolor{comment}{// Get the value stored at the current element.}}
+\DoxyCodeLine{775                     T currentElementValue = m\_matrixData[Sub2Ind(cRow, colIndex)];}
+\DoxyCodeLine{776 }
+\DoxyCodeLine{777                     \textcolor{comment}{// Get the value stored at (rowOneIndex, colIndex)}}
+\DoxyCodeLine{778                     T rowOneValue = m\_matrixData[Sub2Ind(rowOneIndex, colIndex)];}
+\DoxyCodeLine{779 }
+\DoxyCodeLine{780                     \textcolor{comment}{// If this is equal to zero, then just move on.}}
+\DoxyCodeLine{781                     \textcolor{keywordflow}{if} (!CloseEnough(rowOneValue, 0.0))}
+\DoxyCodeLine{782                     \{}
+\DoxyCodeLine{783 }
+\DoxyCodeLine{784                         \textcolor{comment}{// Compute the correction factor.}}
+\DoxyCodeLine{785                         \textcolor{comment}{// (required to reduce the element at (cRow, colIndex) to zero).}}
+\DoxyCodeLine{786                         T correctionFactor = -\/(currentElementValue / rowOneValue);}
+\DoxyCodeLine{787 }
+\DoxyCodeLine{788                         \textcolor{comment}{// To make this equal to zero, we need to add -\/currentElementValue multiplied by}}
+\DoxyCodeLine{789                         \textcolor{comment}{// the row at rowOneIndex.}}
+\DoxyCodeLine{790                         MultAdd(cRow, rowOneIndex, correctionFactor);}
+\DoxyCodeLine{791 }
+\DoxyCodeLine{792                         \textcolor{comment}{//std::cout << "{}Multiply row "{} << rowOneIndex << "{} by "{} << correctionFactor <<}}
+\DoxyCodeLine{793                         \textcolor{comment}{//  "{} and add to row "{} << cRow << std::endl;}}
+\DoxyCodeLine{794                     \}}
+\DoxyCodeLine{795                 \}}
+\DoxyCodeLine{796             \}}
+\DoxyCodeLine{797         \}}
+\DoxyCodeLine{798 }
+\DoxyCodeLine{799         \textcolor{comment}{// Separate the result into the left and right halves.}}
+\DoxyCodeLine{800         \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} leftHalf;}
+\DoxyCodeLine{801         \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} rightHalf;}
+\DoxyCodeLine{802         this-\/>Separate(leftHalf, rightHalf, originalNumCols);}
+\DoxyCodeLine{803 }
+\DoxyCodeLine{804         \textcolor{comment}{// When the process is complete, the left half should be the identity matrix.}}
+\DoxyCodeLine{805         \textcolor{keywordflow}{if} (leftHalf == identityMatrix)}
+\DoxyCodeLine{806         \{}
+\DoxyCodeLine{807             \textcolor{comment}{// Set completedFlag to true to indicate that the process has completed.}}
+\DoxyCodeLine{808             completeFlag = \textcolor{keyword}{true};}
+\DoxyCodeLine{809 }
+\DoxyCodeLine{810             \textcolor{comment}{// Rebuild the matrix with just the right half, which now contains the result.}}
+\DoxyCodeLine{811             m\_nCols = originalNumCols;}
+\DoxyCodeLine{812             m\_nElements = m\_nRows * m\_nCols;}
+\DoxyCodeLine{813             \textcolor{keyword}{delete}[] m\_matrixData;}
+\DoxyCodeLine{814             m\_matrixData = \textcolor{keyword}{new} T[m\_nElements];}
+\DoxyCodeLine{815             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<m\_nElements; ++i)}
+\DoxyCodeLine{816                 m\_matrixData[i] = rightHalf.m\_matrixData[i];}
+\DoxyCodeLine{817         \}}
+\DoxyCodeLine{818 }
+\DoxyCodeLine{819         \textcolor{comment}{// Increment the counter.}}
+\DoxyCodeLine{820         \mbox{\hyperlink{_s_d_l__opengl_8h_a619bc20e8198de3bd3f3d7fc34de66b2}{count}}++;}
+\DoxyCodeLine{821     \}}
+\DoxyCodeLine{822 }
+\DoxyCodeLine{823     \textcolor{comment}{// Return whether the process succeeded or not.}}
+\DoxyCodeLine{824     \textcolor{keywordflow}{return} completeFlag;}
+\DoxyCodeLine{825 \}}
+\DoxyCodeLine{826 }
+\DoxyCodeLine{827 \textcolor{comment}{/* **************************************************************************************************}}
+\DoxyCodeLine{828 \textcolor{comment}{COMPUTE AND RETURN THE TRANSPOSE}}
+\DoxyCodeLine{829 \textcolor{comment}{/* *************************************************************************************************/}}
+\DoxyCodeLine{830 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{831 \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \mbox{\hyperlink{classqb_matrix2_a6235a35daf5fa20a9ebc7ed91d8a94a3}{qbMatrix2<T>::Transpose}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{832 \textcolor{keyword}{}\{}
+\DoxyCodeLine{833     \textcolor{comment}{// Form the output matrix.}}
+\DoxyCodeLine{834     \textcolor{comment}{// Note that we reverse the order of rows and columns, as this will be the transpose.}}
+\DoxyCodeLine{835     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} resultMatrix(m\_nCols, m\_nRows);}
+\DoxyCodeLine{836 }
+\DoxyCodeLine{837     \textcolor{comment}{// Now loop through the elements and copy in the appropriate order.}}
+\DoxyCodeLine{838     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<m\_nRows; ++i)}
+\DoxyCodeLine{839     \{}
+\DoxyCodeLine{840         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j<m\_nCols; ++j)}
+\DoxyCodeLine{841         \{}
+\DoxyCodeLine{842             resultMatrix.\mbox{\hyperlink{classqb_matrix2_a1c6693503483942d5a619a0cf470e8b5}{SetElement}}(j, i, this-\/>GetElement(i, j));}
+\DoxyCodeLine{843         \}}
+\DoxyCodeLine{844     \}}
+\DoxyCodeLine{845 }
+\DoxyCodeLine{846     \textcolor{keywordflow}{return} resultMatrix;}
+\DoxyCodeLine{847 \}}
+\DoxyCodeLine{848 }
+\DoxyCodeLine{849 \textcolor{comment}{/* **************************************************************************************************}}
+\DoxyCodeLine{850 \textcolor{comment}{CONVERT TO ROW ECHELON FORM (USING GAUSSIAN ELIMINATION)}}
+\DoxyCodeLine{851 \textcolor{comment}{/* *************************************************************************************************/}}
+\DoxyCodeLine{852 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{853 \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \mbox{\hyperlink{classqb_matrix2_a803f108eff983ea5f97cc752c44c1da2}{qbMatrix2<T>::RowEchelon}}()}
+\DoxyCodeLine{854 \{}
+\DoxyCodeLine{855     \textcolor{comment}{/* The current matrix must have at least as many columns as rows, but note that we don't}}
+\DoxyCodeLine{856 \textcolor{comment}{        actually require it to be square since we assume that the user may have combined a}}
+\DoxyCodeLine{857 \textcolor{comment}{        square matrix with a vector. They would do this, for example, if they were trying to}}
+\DoxyCodeLine{858 \textcolor{comment}{        solve a system of linear equations. */}}
+\DoxyCodeLine{859     \textcolor{keywordflow}{if} (m\_nCols < m\_nRows)}
+\DoxyCodeLine{860         \textcolor{keywordflow}{throw} std::invalid\_argument(\textcolor{stringliteral}{"{}The matrix must have at least as many columns as rows."{}});}
+\DoxyCodeLine{861 }
+\DoxyCodeLine{862     \textcolor{comment}{/* Make a copy of the matrix data before we start. We do this because the procedure below}}
+\DoxyCodeLine{863 \textcolor{comment}{        will make changes to the stored matrix data (it operates 'in place') and we don't want}}
+\DoxyCodeLine{864 \textcolor{comment}{        this behaviour. Therefore we take a copy at the beginning and then we will replace the}}
+\DoxyCodeLine{865 \textcolor{comment}{        modified matrix data with this copied data at the end, thus preserving the original. */}}
+\DoxyCodeLine{866     T *tempMatrixData;}
+\DoxyCodeLine{867     tempMatrixData = \textcolor{keyword}{new} T[m\_nRows * m\_nCols];}
+\DoxyCodeLine{868     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<(m\_nRows*m\_nCols); ++i)}
+\DoxyCodeLine{869         tempMatrixData[i] = m\_matrixData[i];}
+\DoxyCodeLine{870 }
+\DoxyCodeLine{871     \textcolor{comment}{// Begin the main part of the process.}}
+\DoxyCodeLine{872     \textcolor{keywordtype}{int} cRow, cCol;}
+\DoxyCodeLine{873     \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a76b486a23d5da07752f89495cdaedcf4}{maxCount}} = 100;}
+\DoxyCodeLine{874     \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl_8h_a619bc20e8198de3bd3f3d7fc34de66b2}{count}} = 0;}
+\DoxyCodeLine{875     \textcolor{keywordtype}{bool} completeFlag = \textcolor{keyword}{false};}
+\DoxyCodeLine{876     \textcolor{keywordflow}{while} ((!completeFlag) \&\& (\mbox{\hyperlink{_s_d_l__opengl_8h_a619bc20e8198de3bd3f3d7fc34de66b2}{count}} < \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a76b486a23d5da07752f89495cdaedcf4}{maxCount}}))}
+\DoxyCodeLine{877     \{}
+\DoxyCodeLine{878         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} diagIndex=0; diagIndex<m\_nRows; ++diagIndex)}
+\DoxyCodeLine{879         \{}
+\DoxyCodeLine{880             \textcolor{comment}{// Loop over the diagonal of the matrix and ensure all diagonal elements are equal to one.}}
+\DoxyCodeLine{881             cRow = diagIndex;}
+\DoxyCodeLine{882             cCol = diagIndex;}
+\DoxyCodeLine{883 }
+\DoxyCodeLine{884             \textcolor{comment}{// Find the index of the maximum element in the current column.}}
+\DoxyCodeLine{885             \textcolor{keywordtype}{int} maxIndex = FindRowWithMaxElement(cCol, cRow);}
+\DoxyCodeLine{886 }
+\DoxyCodeLine{887             \textcolor{comment}{// Now consider the column.}}
+\DoxyCodeLine{888             \textcolor{comment}{// Our aim is to set all elements BELOW the diagonal to zero.}}
+\DoxyCodeLine{889             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} rowIndex=cRow+1; rowIndex<m\_nRows; ++rowIndex)}
+\DoxyCodeLine{890             \{}
+\DoxyCodeLine{891                 \textcolor{comment}{// If the element is already zero, move on.}}
+\DoxyCodeLine{892                 \textcolor{keywordflow}{if} (!CloseEnough(m\_matrixData[Sub2Ind(rowIndex, cCol)], 0.0))}
+\DoxyCodeLine{893                 \{}
+\DoxyCodeLine{894                     \textcolor{keywordtype}{int} rowOneIndex = cCol;}
+\DoxyCodeLine{895 }
+\DoxyCodeLine{896                     \textcolor{comment}{// Get the value stored at the current element.}}
+\DoxyCodeLine{897                     T currentElementValue = m\_matrixData[Sub2Ind(rowIndex, cCol)];}
+\DoxyCodeLine{898 }
+\DoxyCodeLine{899                     \textcolor{comment}{// Get the value stored at (rowOneIndex, cCol)}}
+\DoxyCodeLine{900                     T rowOneValue = m\_matrixData[Sub2Ind(rowOneIndex, cCol)];}
+\DoxyCodeLine{901 }
+\DoxyCodeLine{902                     \textcolor{comment}{// If this is equal to zero, then just move on.}}
+\DoxyCodeLine{903                     \textcolor{keywordflow}{if} (!CloseEnough(rowOneValue, 0.0))}
+\DoxyCodeLine{904                     \{}
+\DoxyCodeLine{905                         \textcolor{comment}{// Compute the correction factor.}}
+\DoxyCodeLine{906                         \textcolor{comment}{// (required to reduce the element at (rowIndex, cCol) to zero).}}
+\DoxyCodeLine{907                         T correctionFactor = -\/(currentElementValue / rowOneValue);}
+\DoxyCodeLine{908                         MultAdd(rowIndex, rowOneIndex, correctionFactor);}
+\DoxyCodeLine{909                     \}}
+\DoxyCodeLine{910                 \}}
+\DoxyCodeLine{911             \}}
+\DoxyCodeLine{912         \}}
+\DoxyCodeLine{913 }
+\DoxyCodeLine{914         \textcolor{comment}{/* Test whether we have achieved the desired result of converting the}}
+\DoxyCodeLine{915 \textcolor{comment}{            matrix into row-\/echelon form. */}}
+\DoxyCodeLine{916         completeFlag = this-\/>IsRowEchelon();}
+\DoxyCodeLine{917 }
+\DoxyCodeLine{918         \textcolor{comment}{// Increment the counter.}}
+\DoxyCodeLine{919         \mbox{\hyperlink{_s_d_l__opengl_8h_a619bc20e8198de3bd3f3d7fc34de66b2}{count}}++;}
+\DoxyCodeLine{920     \}}
+\DoxyCodeLine{921 }
+\DoxyCodeLine{922     \textcolor{comment}{// Form the output matrix.}}
+\DoxyCodeLine{923     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} outputMatrix(m\_nRows, m\_nCols, m\_matrixData);}
+\DoxyCodeLine{924 }
+\DoxyCodeLine{925     \textcolor{comment}{// Restore the original matrix data from the copy.}}
+\DoxyCodeLine{926     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<(m\_nRows * m\_nCols); ++i)}
+\DoxyCodeLine{927         m\_matrixData[i] = tempMatrixData[i];}
+\DoxyCodeLine{928 }
+\DoxyCodeLine{929     \textcolor{comment}{// Delete the copy.}}
+\DoxyCodeLine{930     \textcolor{keyword}{delete}[] tempMatrixData;}
+\DoxyCodeLine{931 }
+\DoxyCodeLine{932     \textcolor{keywordflow}{return} outputMatrix;}
+\DoxyCodeLine{933 \}}
+\DoxyCodeLine{934 }
+\DoxyCodeLine{935 \textcolor{comment}{/* **************************************************************************************************}}
+\DoxyCodeLine{936 \textcolor{comment}{COMPUTE THE RANK OF THE PROVIDED MATRIX}}
+\DoxyCodeLine{937 \textcolor{comment}{/* *************************************************************************************************/}}
+\DoxyCodeLine{938 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{939 \textcolor{keywordtype}{int} \mbox{\hyperlink{classqb_matrix2_aa41b896d3d520de3096530845cbbc9b4}{qbMatrix2<T>::Rank}}()}
+\DoxyCodeLine{940 \{}
+\DoxyCodeLine{941     \textcolor{comment}{// Convert the matrix to row-\/echelon form.}}
+\DoxyCodeLine{942     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} matrixCopy = this-\/>RowEchelon();}
+\DoxyCodeLine{943 }
+\DoxyCodeLine{944     \textcolor{comment}{/* If this didn't work, then we compute the rank by finding}}
+\DoxyCodeLine{945 \textcolor{comment}{        the largest non-\/zero sub-\/matrix with a non-\/zero determinant.}}
+\DoxyCodeLine{946 \textcolor{comment}{}}
+\DoxyCodeLine{947 \textcolor{comment}{        Note that this method is slower for large matrices and therefore}}
+\DoxyCodeLine{948 \textcolor{comment}{        it is better to use the RowEchelon method if possible. */}}
+\DoxyCodeLine{949     \textcolor{keywordtype}{int} numNonZeroRows = 0;}
+\DoxyCodeLine{950     \textcolor{keywordflow}{if} (!matrixCopy.\mbox{\hyperlink{classqb_matrix2_a44c85a2d4dcbd33b281ce417156d7431}{IsRowEchelon}}())}
+\DoxyCodeLine{951     \{}
+\DoxyCodeLine{952         \textcolor{comment}{// Setup a std::vector to store the sub-\/matrices as we go.}}
+\DoxyCodeLine{953         std::vector<qbMatrix2<T>> subMatrixVector;}
+\DoxyCodeLine{954 }
+\DoxyCodeLine{955         \textcolor{comment}{// Store the current matrix into the array first.}}
+\DoxyCodeLine{956         subMatrixVector.push\_back(*\textcolor{keyword}{this});}
+\DoxyCodeLine{957 }
+\DoxyCodeLine{958         \textcolor{comment}{/* Loop through the subMatrixVector until either we have tested every}}
+\DoxyCodeLine{959 \textcolor{comment}{            sub-\/matrix or the completeFlag is set. */}}
+\DoxyCodeLine{960         \textcolor{keywordtype}{bool} completeFlag = \textcolor{keyword}{false};}
+\DoxyCodeLine{961         \textcolor{keywordtype}{int} subMatrixCount = 0;}
+\DoxyCodeLine{962         \textcolor{keywordflow}{while} ((subMatrixCount < subMatrixVector.size()) \&\& (!completeFlag))}
+\DoxyCodeLine{963         \{}
+\DoxyCodeLine{964             \textcolor{comment}{// Extract the currentMatrix to work with.}}
+\DoxyCodeLine{965             \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} currentMatrix = subMatrixVector[subMatrixCount];}
+\DoxyCodeLine{966             subMatrixCount++;}
+\DoxyCodeLine{967 }
+\DoxyCodeLine{968             \textcolor{comment}{// Test if this matrix is non-\/zero.}}
+\DoxyCodeLine{969             \textcolor{keywordflow}{if} (currentMatrix.\mbox{\hyperlink{classqb_matrix2_a6a9aab698ac6362495a4421f859b3658}{IsNonZero}}())}
+\DoxyCodeLine{970             \{}
+\DoxyCodeLine{971                 \textcolor{comment}{// If the determinant is non-\/zero, then we have our result.}}
+\DoxyCodeLine{972                 T currentMatrixDet = currentMatrix.\mbox{\hyperlink{classqb_matrix2_aeebab890f8c38f112972ffbcaaba422f}{Determinant}}();}
+\DoxyCodeLine{973                 \textcolor{keywordflow}{if} (!CloseEnough(currentMatrixDet, 0.0))}
+\DoxyCodeLine{974                 \{}
+\DoxyCodeLine{975                     completeFlag = \textcolor{keyword}{true};}
+\DoxyCodeLine{976                     numNonZeroRows = currentMatrix.\mbox{\hyperlink{classqb_matrix2_a1626b647c5268a9e64f4651bcc4b8c6e}{GetNumRows}}();}
+\DoxyCodeLine{977                 \}}
+\DoxyCodeLine{978                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{979                 \{}
+\DoxyCodeLine{980                     \textcolor{comment}{// Extract and store each sub-\/matrix (if larger than 2x2).}}
+\DoxyCodeLine{981                     \textcolor{keywordflow}{if} ((currentMatrix.\mbox{\hyperlink{classqb_matrix2_a1626b647c5268a9e64f4651bcc4b8c6e}{GetNumRows}}() > 2) \&\& (currentMatrix.\mbox{\hyperlink{classqb_matrix2_ab20362d8fc58a4b8da0910f94c3de2c3}{GetNumCols}}() > 2))}
+\DoxyCodeLine{982                     \{}
+\DoxyCodeLine{983                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<currentMatrix.\mbox{\hyperlink{classqb_matrix2_a1626b647c5268a9e64f4651bcc4b8c6e}{GetNumRows}}(); ++i)}
+\DoxyCodeLine{984                         \{}
+\DoxyCodeLine{985                             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j<currentMatrix.\mbox{\hyperlink{classqb_matrix2_ab20362d8fc58a4b8da0910f94c3de2c3}{GetNumCols}}(); ++j)}
+\DoxyCodeLine{986                             \{}
+\DoxyCodeLine{987                                 \textcolor{comment}{// Extract this sub-\/matrix and store.}}
+\DoxyCodeLine{988                                 subMatrixVector.push\_back(currentMatrix.\mbox{\hyperlink{classqb_matrix2_a1c913b15492558472b2e271f5a856f3b}{FindSubMatrix}}(i,j));}
+\DoxyCodeLine{989                             \}}
+\DoxyCodeLine{990                         \}}
+\DoxyCodeLine{991                     \}}
+\DoxyCodeLine{992                 \}}
+\DoxyCodeLine{993             \}}
+\DoxyCodeLine{994         \}}
+\DoxyCodeLine{995     \}}
+\DoxyCodeLine{996     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{997     \{}
+\DoxyCodeLine{998         \textcolor{comment}{/* Converting to row echelon form did work, so we can simply}}
+\DoxyCodeLine{999 \textcolor{comment}{            count the number of non-\/zero rows to get the rank. */}}
+\DoxyCodeLine{1000 }
+\DoxyCodeLine{1001         \textcolor{comment}{/* If we get to here, then we can assume that the matrix is now}}
+\DoxyCodeLine{1002 \textcolor{comment}{            in row-\/echelon form and we can compute the rank quite easily}}
+\DoxyCodeLine{1003 \textcolor{comment}{            as simply the number of non-\/zero rows. */}}
+\DoxyCodeLine{1004 }
+\DoxyCodeLine{1005         \textcolor{keywordtype}{int} nRows = matrixCopy.\mbox{\hyperlink{classqb_matrix2_a1626b647c5268a9e64f4651bcc4b8c6e}{GetNumRows}}();}
+\DoxyCodeLine{1006         \textcolor{keywordtype}{int} nCols = matrixCopy.\mbox{\hyperlink{classqb_matrix2_ab20362d8fc58a4b8da0910f94c3de2c3}{GetNumCols}}();}
+\DoxyCodeLine{1007 }
+\DoxyCodeLine{1008         \textcolor{comment}{// Loop over each row and test whether it has at least one non-\/zero element.}}
+\DoxyCodeLine{1009         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<nRows; ++i)}
+\DoxyCodeLine{1010         \{}
+\DoxyCodeLine{1011             \textcolor{comment}{// Loop over the columns of this row.}}
+\DoxyCodeLine{1012             \textcolor{keywordtype}{int} colSum = 0;}
+\DoxyCodeLine{1013             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j<nCols; ++j)}
+\DoxyCodeLine{1014             \{}
+\DoxyCodeLine{1015                 \textcolor{keywordflow}{if} (!CloseEnough(matrixCopy.\mbox{\hyperlink{classqb_matrix2_a62ddf209105dffe6133461b273a7309f}{GetElement}}(i,j), 0.0))}
+\DoxyCodeLine{1016                     colSum++;}
+\DoxyCodeLine{1017             \}}
+\DoxyCodeLine{1018             \textcolor{comment}{// If colSum is greater than zero, then increment numNonZeroRows.}}
+\DoxyCodeLine{1019             \textcolor{keywordflow}{if} (colSum > 0)}
+\DoxyCodeLine{1020                 numNonZeroRows++;}
+\DoxyCodeLine{1021         \}}
+\DoxyCodeLine{1022 }
+\DoxyCodeLine{1023     \}}
+\DoxyCodeLine{1024     \textcolor{comment}{// The rank of the matrix is simply the number of non-\/zero rows.}}
+\DoxyCodeLine{1025     \textcolor{keywordflow}{return} numNonZeroRows;}
+\DoxyCodeLine{1026 }
+\DoxyCodeLine{1027 \}}
+\DoxyCodeLine{1028 }
+\DoxyCodeLine{1029 \textcolor{comment}{/* **************************************************************************************************}}
+\DoxyCodeLine{1030 \textcolor{comment}{PRIVATE FUNCTIONS}}
+\DoxyCodeLine{1031 \textcolor{comment}{/* *************************************************************************************************/}}
+\DoxyCodeLine{1032 \textcolor{comment}{// Function to return the linear index corresponding to the supplied row and column values.}}
+\DoxyCodeLine{1033 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{1034 \textcolor{keywordtype}{int} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>::Sub2Ind}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}}, \textcolor{keywordtype}{int} col)\textcolor{keyword}{ const}}
+\DoxyCodeLine{1035 \textcolor{keyword}{}\{}
+\DoxyCodeLine{1036     \textcolor{keywordflow}{if} ((\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}} < m\_nRows) \&\& (\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}} >= 0) \&\& (col < m\_nCols) \&\& (col >= 0))}
+\DoxyCodeLine{1037         \textcolor{keywordflow}{return} (\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}} * m\_nCols) + col;}
+\DoxyCodeLine{1038     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1039         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{1040 \}}
+\DoxyCodeLine{1041 }
+\DoxyCodeLine{1042 \textcolor{comment}{// Function to test whether the matrix is square.}}
+\DoxyCodeLine{1043 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{1044 \textcolor{keywordtype}{bool} \mbox{\hyperlink{classqb_matrix2_ae3e42b917e3127cab56b7a48faff25c3}{qbMatrix2<T>::IsSquare}}()}
+\DoxyCodeLine{1045 \{}
+\DoxyCodeLine{1046     \textcolor{keywordflow}{if} (m\_nCols == m\_nRows)}
+\DoxyCodeLine{1047         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{1048     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{1049         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{1050 \}}
+\DoxyCodeLine{1051 }
+\DoxyCodeLine{1052 \textcolor{comment}{// Function to test whether the matrix is non-\/zero.}}
+\DoxyCodeLine{1053 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{1054 \textcolor{keywordtype}{bool} \mbox{\hyperlink{classqb_matrix2_a6a9aab698ac6362495a4421f859b3658}{qbMatrix2<T>::IsNonZero}}()}
+\DoxyCodeLine{1055 \{}
+\DoxyCodeLine{1056     \textcolor{comment}{// Loop over every element.}}
+\DoxyCodeLine{1057     \textcolor{keywordtype}{int} numNonZero = 0;}
+\DoxyCodeLine{1058     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<m\_nElements; ++i)}
+\DoxyCodeLine{1059     \{}
+\DoxyCodeLine{1060         \textcolor{comment}{// If this element is close enough to zero, then}}
+\DoxyCodeLine{1061         \textcolor{comment}{// increment our numNonZero counter.}}
+\DoxyCodeLine{1062         \textcolor{keywordflow}{if} (!CloseEnough(m\_matrixData[i], 0.0))}
+\DoxyCodeLine{1063             numNonZero++;}
+\DoxyCodeLine{1064     \}}
+\DoxyCodeLine{1065 }
+\DoxyCodeLine{1066     \textcolor{comment}{/* If the numNonZero counter is still equal to zero, then}}
+\DoxyCodeLine{1067 \textcolor{comment}{        the matrix must be all zeros, hence we return false.}}
+\DoxyCodeLine{1068 \textcolor{comment}{        Otherwise we return true. */}}
+\DoxyCodeLine{1069     \textcolor{keywordflow}{return} (numNonZero != 0);}
+\DoxyCodeLine{1070 \}}
+\DoxyCodeLine{1071 }
+\DoxyCodeLine{1072 \textcolor{comment}{// Function to test whether the matrix is in row-\/echelon form.}}
+\DoxyCodeLine{1073 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{1074 \textcolor{keywordtype}{bool} \mbox{\hyperlink{classqb_matrix2_a44c85a2d4dcbd33b281ce417156d7431}{qbMatrix2<T>::IsRowEchelon}}()}
+\DoxyCodeLine{1075 \{}
+\DoxyCodeLine{1076     \textcolor{comment}{/* We do this by testing that the sum of all the elements in the}}
+\DoxyCodeLine{1077 \textcolor{comment}{        lower triangular matrix is zero. */}}
+\DoxyCodeLine{1078     \textcolor{comment}{// Loop over each row, except the first one (which doesn't need to have any zero elements).}}
+\DoxyCodeLine{1079     T cumulativeSum = \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.0);}
+\DoxyCodeLine{1080     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=1; i<m\_nRows; ++i)}
+\DoxyCodeLine{1081     \{}
+\DoxyCodeLine{1082         \textcolor{comment}{/* Loop over the columns that correspond to the lower triangular}}
+\DoxyCodeLine{1083 \textcolor{comment}{            matrix according to the current row. */}}
+\DoxyCodeLine{1084         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j<i; ++j)}
+\DoxyCodeLine{1085         \{}
+\DoxyCodeLine{1086             \textcolor{comment}{// Add this element to the cumulative sum.}}
+\DoxyCodeLine{1087             cumulativeSum += m\_matrixData[Sub2Ind(i, j)];}
+\DoxyCodeLine{1088         \}}
+\DoxyCodeLine{1089     \}}
+\DoxyCodeLine{1090 }
+\DoxyCodeLine{1091     \textcolor{comment}{/* If the matrix is in row-\/echelon form, then cumulative sum should}}
+\DoxyCodeLine{1092 \textcolor{comment}{        still equal zero, otherwise the matrix cannot be in row-\/echelon form. */}}
+\DoxyCodeLine{1093     \textcolor{keywordflow}{return} CloseEnough(cumulativeSum, 0.0);}
+\DoxyCodeLine{1094 \}}
+\DoxyCodeLine{1095 }
+\DoxyCodeLine{1096 \textcolor{comment}{// Function to test whether the matrix is symmetric.}}
+\DoxyCodeLine{1097 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{1098 \textcolor{keywordtype}{bool} \mbox{\hyperlink{classqb_matrix2_a38c5e541fec532600806ac4fd8afecb2}{qbMatrix2<T>::IsSymmetric}}()}
+\DoxyCodeLine{1099 \{}
+\DoxyCodeLine{1100     \textcolor{comment}{/* First test that the matrix is square, if it is}}
+\DoxyCodeLine{1101 \textcolor{comment}{        not, then it cannot by symmetric. */}}
+\DoxyCodeLine{1102     \textcolor{keywordflow}{if} (!this-\/>IsSquare())}
+\DoxyCodeLine{1103         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{1104 }
+\DoxyCodeLine{1105     \textcolor{comment}{// Now test for symmetry about the diagonal.}}
+\DoxyCodeLine{1106     T currentRowElement = \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.0);}
+\DoxyCodeLine{1107     T currentColElement = \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.0);}
+\DoxyCodeLine{1108     \textcolor{keywordtype}{bool} returnFlag = \textcolor{keyword}{true};}
+\DoxyCodeLine{1109     \textcolor{keywordtype}{int} diagIndex = 0;}
+\DoxyCodeLine{1110     \textcolor{keywordflow}{while} ((diagIndex < m\_nCols) \&\& returnFlag)}
+\DoxyCodeLine{1111     \{}
+\DoxyCodeLine{1112         \textcolor{keywordtype}{int} rowIndex = diagIndex + 1;}
+\DoxyCodeLine{1113         \textcolor{keywordflow}{while} ((rowIndex < m\_nRows) \&\& returnFlag)}
+\DoxyCodeLine{1114         \{}
+\DoxyCodeLine{1115             currentRowElement = this-\/>GetElement(rowIndex, diagIndex);}
+\DoxyCodeLine{1116             currentColElement = this-\/>GetElement(diagIndex, rowIndex);}
+\DoxyCodeLine{1117 }
+\DoxyCodeLine{1118             \textcolor{comment}{// Compare the row and column elements.}}
+\DoxyCodeLine{1119             \textcolor{keywordflow}{if} (!CloseEnough(currentRowElement, currentColElement))}
+\DoxyCodeLine{1120                 returnFlag = \textcolor{keyword}{false};}
+\DoxyCodeLine{1121 }
+\DoxyCodeLine{1122             \textcolor{comment}{// Increment row index.}}
+\DoxyCodeLine{1123             rowIndex++;}
+\DoxyCodeLine{1124         \}}
+\DoxyCodeLine{1125 }
+\DoxyCodeLine{1126         \textcolor{comment}{// Increment diagIndex.}}
+\DoxyCodeLine{1127         diagIndex++;}
+\DoxyCodeLine{1128 }
+\DoxyCodeLine{1129     \}}
+\DoxyCodeLine{1130 }
+\DoxyCodeLine{1131     \textcolor{comment}{// Return the result.}}
+\DoxyCodeLine{1132     \textcolor{keywordflow}{return} returnFlag;}
+\DoxyCodeLine{1133 }
+\DoxyCodeLine{1134 \}}
+\DoxyCodeLine{1135 }
+\DoxyCodeLine{1136 \textcolor{comment}{// Function to swap rows i and j (in place).}}
+\DoxyCodeLine{1137 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{1138 \textcolor{keywordtype}{void} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>::SwapRow}}(\textcolor{keywordtype}{int} i, \textcolor{keywordtype}{int} j)}
+\DoxyCodeLine{1139 \{}
+\DoxyCodeLine{1140     \textcolor{comment}{// Store a tempory copy of row i.}}
+\DoxyCodeLine{1141     T *tempRow = \textcolor{keyword}{new} T[m\_nCols];}
+\DoxyCodeLine{1142     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k=0; k<m\_nCols; ++k)}
+\DoxyCodeLine{1143         tempRow[k] = m\_matrixData[Sub2Ind(i,k)];}
+\DoxyCodeLine{1144 }
+\DoxyCodeLine{1145     \textcolor{comment}{// Replace row i with row j.}}
+\DoxyCodeLine{1146     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k=0; k<m\_nCols; ++k)}
+\DoxyCodeLine{1147         m\_matrixData[Sub2Ind(i,k)] = m\_matrixData[Sub2Ind(j,k)];}
+\DoxyCodeLine{1148 }
+\DoxyCodeLine{1149     \textcolor{comment}{// Replace row k with the tempory copy of the original row i.}}
+\DoxyCodeLine{1150     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k=0; k<m\_nCols; ++k)}
+\DoxyCodeLine{1151         m\_matrixData[Sub2Ind(j,k)] = tempRow[k];}
+\DoxyCodeLine{1152 }
+\DoxyCodeLine{1153     \textcolor{comment}{// Tidy up after ourselves.}}
+\DoxyCodeLine{1154     \textcolor{keyword}{delete}[] tempRow;}
+\DoxyCodeLine{1155 \}}
+\DoxyCodeLine{1156 }
+\DoxyCodeLine{1157 \textcolor{comment}{// Function to add a multiple of row j to row i (in place).}}
+\DoxyCodeLine{1158 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{1159 \textcolor{keywordtype}{void} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>::MultAdd}}(\textcolor{keywordtype}{int} i, \textcolor{keywordtype}{int} j, T multFactor)}
+\DoxyCodeLine{1160 \{}
+\DoxyCodeLine{1161     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k=0; k<m\_nCols; ++k)}
+\DoxyCodeLine{1162         m\_matrixData[Sub2Ind(i,k)] += (m\_matrixData[Sub2Ind(j,k)] * multFactor);}
+\DoxyCodeLine{1163 \}}
+\DoxyCodeLine{1164 }
+\DoxyCodeLine{1165 \textcolor{comment}{// Function to the find the row with the maximum element at the column given.}}
+\DoxyCodeLine{1166 \textcolor{comment}{// Returns the row index.}}
+\DoxyCodeLine{1167 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{1168 \textcolor{keywordtype}{int} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>::FindRowWithMaxElement}}(\textcolor{keywordtype}{int} colNumber, \textcolor{keywordtype}{int} startingRow)}
+\DoxyCodeLine{1169 \{}
+\DoxyCodeLine{1170     T tempValue = m\_matrixData[Sub2Ind(startingRow, colNumber)];}
+\DoxyCodeLine{1171     \textcolor{keywordtype}{int} rowIndex = startingRow;}
+\DoxyCodeLine{1172     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k=startingRow+1; k<m\_nRows; ++k)}
+\DoxyCodeLine{1173     \{}
+\DoxyCodeLine{1174         \textcolor{keywordflow}{if} (fabs(m\_matrixData[Sub2Ind(k, colNumber)]) > fabs(tempValue))}
+\DoxyCodeLine{1175         \{}
+\DoxyCodeLine{1176             rowIndex = k;}
+\DoxyCodeLine{1177             tempValue = m\_matrixData[Sub2Ind(k, colNumber)];}
+\DoxyCodeLine{1178         \}}
+\DoxyCodeLine{1179     \}}
+\DoxyCodeLine{1180     \textcolor{keywordflow}{return} rowIndex;}
+\DoxyCodeLine{1181 \}}
+\DoxyCodeLine{1182 }
+\DoxyCodeLine{1183 \textcolor{comment}{// Function to multiply a row by the given value.}}
+\DoxyCodeLine{1184 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{1185 \textcolor{keywordtype}{void} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>::MultRow}}(\textcolor{keywordtype}{int} i, T multFactor)}
+\DoxyCodeLine{1186 \{}
+\DoxyCodeLine{1187     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k=0; k<m\_nCols; ++k)}
+\DoxyCodeLine{1188         m\_matrixData[Sub2Ind(i,k)] *= multFactor;}
+\DoxyCodeLine{1189 \}}
+\DoxyCodeLine{1190 }
+\DoxyCodeLine{1191 \textcolor{comment}{// A simple function to print a matrix to stdout.}}
+\DoxyCodeLine{1192 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{1193 \textcolor{keywordtype}{void} \mbox{\hyperlink{classqb_matrix2_a4bd6d0afe13739e2f7566cbd66b006e5}{qbMatrix2<T>::PrintMatrix}}()}
+\DoxyCodeLine{1194 \{}
+\DoxyCodeLine{1195     \textcolor{keywordtype}{int} nRows = this-\/>GetNumRows();}
+\DoxyCodeLine{1196     \textcolor{keywordtype}{int} nCols = this-\/>GetNumCols();}
+\DoxyCodeLine{1197     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}} = 0; \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}}<nRows; ++\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}})}
+\DoxyCodeLine{1198     \{}
+\DoxyCodeLine{1199         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} col = 0; col<nCols; ++col)}
+\DoxyCodeLine{1200         \{}
+\DoxyCodeLine{1201             std::cout << std::fixed << std::setprecision(3) << this-\/>GetElement(\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}}, col) << \textcolor{stringliteral}{"{}  "{}};}
+\DoxyCodeLine{1202         \}}
+\DoxyCodeLine{1203         std::cout << std::endl;}
+\DoxyCodeLine{1204     \}}
+\DoxyCodeLine{1205 \}}
+\DoxyCodeLine{1206 }
+\DoxyCodeLine{1207 \textcolor{comment}{// A simple function to print a matrix to stdout, with specified precision.}}
+\DoxyCodeLine{1208 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{1209 \textcolor{keywordtype}{void} \mbox{\hyperlink{classqb_matrix2_a4bd6d0afe13739e2f7566cbd66b006e5}{qbMatrix2<T>::PrintMatrix}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_ae6165268264b393d031f89082216499d}{precision}})}
+\DoxyCodeLine{1210 \{}
+\DoxyCodeLine{1211     \textcolor{keywordtype}{int} nRows = this-\/>GetNumRows();}
+\DoxyCodeLine{1212     \textcolor{keywordtype}{int} nCols = this-\/>GetNumCols();}
+\DoxyCodeLine{1213     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}} = 0; \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}}<nRows; ++\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}})}
+\DoxyCodeLine{1214     \{}
+\DoxyCodeLine{1215         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} col = 0; col<nCols; ++col)}
+\DoxyCodeLine{1216         \{}
+\DoxyCodeLine{1217             std::cout << std::fixed << std::setprecision(\mbox{\hyperlink{_s_d_l__opengl__glext_8h_ae6165268264b393d031f89082216499d}{precision}}) << this-\/>GetElement(\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a90d3e7e4182a9630993f640fa0443b0b}{row}}, col) << \textcolor{stringliteral}{"{}  "{}};}
+\DoxyCodeLine{1218         \}}
+\DoxyCodeLine{1219         std::cout << std::endl;}
+\DoxyCodeLine{1220     \}}
+\DoxyCodeLine{1221 \}}
+\DoxyCodeLine{1222 }
+\DoxyCodeLine{1223 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{1224 \textcolor{keywordtype}{bool} \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>::CloseEnough}}(T f1, T f2)}
+\DoxyCodeLine{1225 \{}
+\DoxyCodeLine{1226     \textcolor{keywordflow}{return} fabs(f1-\/f2) < 1e-\/9;}
+\DoxyCodeLine{1227 \}}
+\DoxyCodeLine{1228 }
+\DoxyCodeLine{1229 \textcolor{comment}{// Function to find the sub-\/matrix for the given element.}}
+\DoxyCodeLine{1230 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{1231 \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} \mbox{\hyperlink{classqb_matrix2_a1c913b15492558472b2e271f5a856f3b}{qbMatrix2<T>::FindSubMatrix}}(\textcolor{keywordtype}{int} rowNum, \textcolor{keywordtype}{int} colNum)}
+\DoxyCodeLine{1232 \{}
+\DoxyCodeLine{1233     \textcolor{comment}{// Create a new matrix to store the sub-\/matrix.}}
+\DoxyCodeLine{1234     \textcolor{comment}{// Note that this is one row and one column smaller than the original.}}
+\DoxyCodeLine{1235     \mbox{\hyperlink{classqb_matrix2}{qbMatrix2<T>}} subMatrix(m\_nRows-\/1, m\_nCols-\/1);}
+\DoxyCodeLine{1236 }
+\DoxyCodeLine{1237     \textcolor{comment}{// Loop over the elements of the existing matrix and copy to sub-\/matrix as appropriate.}}
+\DoxyCodeLine{1238     \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl_8h_a619bc20e8198de3bd3f3d7fc34de66b2}{count}} = 0;}
+\DoxyCodeLine{1239     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<m\_nRows; ++i)}
+\DoxyCodeLine{1240     \{}
+\DoxyCodeLine{1241         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j<m\_nCols; ++j)}
+\DoxyCodeLine{1242         \{}
+\DoxyCodeLine{1243             \textcolor{comment}{// If i or j correspond to rowNum or colNum, then ignore this element.}}
+\DoxyCodeLine{1244             \textcolor{keywordflow}{if} ((i != rowNum) \&\& (j != colNum))}
+\DoxyCodeLine{1245             \{}
+\DoxyCodeLine{1246                 subMatrix.m\_matrixData[\mbox{\hyperlink{_s_d_l__opengl_8h_a619bc20e8198de3bd3f3d7fc34de66b2}{count}}] = this-\/>GetElement(i,j);}
+\DoxyCodeLine{1247                 \mbox{\hyperlink{_s_d_l__opengl_8h_a619bc20e8198de3bd3f3d7fc34de66b2}{count}}++;}
+\DoxyCodeLine{1248             \}}
+\DoxyCodeLine{1249         \}}
+\DoxyCodeLine{1250     \}}
+\DoxyCodeLine{1251 }
+\DoxyCodeLine{1252     \textcolor{keywordflow}{return} subMatrix;}
+\DoxyCodeLine{1253 \}}
+\DoxyCodeLine{1254 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e-os2_8md" kind="file" language="Markdown">
+    <compoundname>README-os2.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">Simple<sp/>DirectMedia<sp/>Layer<sp/>2<sp/>for<sp/>OS/2<sp/>&amp;<sp/>eComStation</highlight></codeline>
+<codeline><highlight class="normal">================================================================================</highlight></codeline>
+<codeline><highlight class="normal">SDL<sp/>port<sp/>for<sp/>OS/2,<sp/>authored<sp/>by<sp/>Andrey<sp/>Vasilkin<sp/>&lt;digi@os2.snc.ru&gt;,<sp/>2016</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">OpenGL<sp/>and<sp/>audio<sp/>capture<sp/>not<sp/>supported<sp/>by<sp/>this<sp/>port.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Additional<sp/>optional<sp/>environment<sp/>variables:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SDL_AUDIO_SHARE</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Values:<sp/>0<sp/>or<sp/>1,<sp/>default<sp/>is<sp/>0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Initializes<sp/>the<sp/>device<sp/>as<sp/>shareable<sp/>or<sp/>exclusively<sp/>acquired.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SDL_VIDEODRIVER</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Values:<sp/>DIVE<sp/>or<sp/>VMAN,<sp/>default<sp/>is<sp/>DIVE</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Use<sp/>video<sp/>subsystem:<sp/>Direct<sp/>interface<sp/>video<sp/>extensions<sp/>(DIVE)<sp/>or</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Video<sp/>Manager<sp/>(VMAN).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>may<sp/>significantly<sp/>increase<sp/>video<sp/>output<sp/>speed<sp/>with<sp/>OS4<sp/>kernel<sp/>and<sp/>patched</highlight></codeline>
+<codeline><highlight class="normal">files<sp/>vman.dll<sp/>and<sp/>dive.dll<sp/>or<sp/>with<sp/>latest<sp/>versions<sp/>of<sp/>ACPI<sp/>support<sp/>and<sp/>video</highlight></codeline>
+<codeline><highlight class="normal">driver<sp/>Panorama.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Latest<sp/>versions<sp/>of<sp/>OS/4<sp/>kernel:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>http://gus.biysk.ru/os4/</highlight></codeline>
+<codeline><highlight class="normal"><sp/>(Info:<sp/>https://www.os2world.com/wiki/index.php/Phoenix_OS/4)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Patched<sp/>files<sp/>vman.dll<sp/>and<sp/>dive.dll:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>http://gus.biysk.ru/os4/test/pached_dll/PATCHED_DLL.RAR</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Compiling:</highlight></codeline>
+<codeline><highlight class="normal">----------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Open<sp/>Watcom<sp/>1.9<sp/>or<sp/>newer<sp/>is<sp/>tested.<sp/>For<sp/>the<sp/>new<sp/>Open<sp/>Watcom<sp/>V2<sp/>fork,<sp/>see:</highlight></codeline>
+<codeline><highlight class="normal">https://github.com/open-watcom/<sp/>and<sp/>https://open-watcom.github.io</highlight></codeline>
+<codeline><highlight class="normal">WATCOM<sp/>environment<sp/>variable<sp/>must<sp/>to<sp/>be<sp/>set<sp/>to<sp/>the<sp/>Open<sp/>Watcom<sp/>install</highlight></codeline>
+<codeline><highlight class="normal">directory.<sp/>To<sp/>compile,<sp/>run:<sp/>wmake<sp/>-f<sp/>Makefile.os2</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Installing:</highlight></codeline>
+<codeline><highlight class="normal">-----------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>eComStation:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>If<sp/>you<sp/>have<sp/>previously<sp/>installed<sp/>SDL2,<sp/>make<sp/>a<sp/>Backup<sp/>copy<sp/>of<sp/>SDL2.dll</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>located<sp/>in<sp/>D:\ecs\dll<sp/>(where<sp/>D:<sp/>is<sp/>disk<sp/>on<sp/>which<sp/>installed<sp/>eComStation).</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Stop<sp/>all<sp/>programs<sp/>running<sp/>with<sp/>SDL2.<sp/>Copy<sp/>SDL2.dll<sp/>to<sp/>D:\ecs\dll</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>OS/2:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Copy<sp/>SDL2.dll<sp/>to<sp/>any<sp/>directory<sp/>on<sp/>your<sp/>LIBPATH.<sp/><sp/>If<sp/>you<sp/>have<sp/>a<sp/>previous</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>version<sp/>installed,<sp/>close<sp/>all<sp/>SDL2<sp/>applications<sp/>before<sp/>replacing<sp/>the<sp/>old</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>copy.<sp/><sp/>Also<sp/>make<sp/>sure<sp/>that<sp/>any<sp/>other<sp/>older<sp/>versions<sp/>of<sp/>DLLs<sp/>are<sp/>removed</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>from<sp/>your<sp/>system.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Joysticks<sp/>in<sp/>SDL2:</highlight></codeline>
+<codeline><highlight class="normal">------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>joystick<sp/>code<sp/>in<sp/>SDL2<sp/>is<sp/>a<sp/>direct<sp/>forward-port<sp/>from<sp/>the<sp/>SDL-1.2<sp/>version.</highlight></codeline>
+<codeline><highlight class="normal">Here<sp/>is<sp/>the<sp/>original<sp/>documentation<sp/>from<sp/>SDL-1.2:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>Joystick<sp/>detection<sp/>only<sp/>works<sp/>for<sp/>standard<sp/>joysticks<sp/>(2<sp/>buttons,<sp/>2<sp/>axes</highlight></codeline>
+<codeline><highlight class="normal">and<sp/>the<sp/>like).<sp/>Therefore,<sp/>if<sp/>you<sp/>use<sp/>a<sp/>non-standard<sp/>joystick,<sp/>you<sp/>should</highlight></codeline>
+<codeline><highlight class="normal">specify<sp/>its<sp/>features<sp/>in<sp/>the<sp/>SDL_OS2_JOYSTICK<sp/>environment<sp/>variable<sp/>in<sp/>a<sp/>batch</highlight></codeline>
+<codeline><highlight class="normal">file<sp/>or<sp/>CONFIG.SYS,<sp/>so<sp/>SDL<sp/>applications<sp/>can<sp/>provide<sp/>full<sp/>capability<sp/>to<sp/>your</highlight></codeline>
+<codeline><highlight class="normal">device.<sp/>The<sp/>syntax<sp/>is:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SET<sp/>SDL_OS2_JOYSTICK=[JOYSTICK_NAME]<sp/>[AXES]<sp/>[BUTTONS]<sp/>[HATS]<sp/>[BALLS]</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">So,<sp/>it<sp/>you<sp/>have<sp/>a<sp/>Gravis<sp/>GamePad<sp/>with<sp/>4<sp/>axes,<sp/>2<sp/>buttons,<sp/>2<sp/>hats<sp/>and<sp/>0<sp/>balls,</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>line<sp/>should<sp/>be:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SET<sp/>SDL_OS2_JOYSTICK=Gravis_GamePad<sp/>4<sp/>2<sp/>2<sp/>0</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>want<sp/>to<sp/>add<sp/>spaces<sp/>in<sp/>your<sp/>joystick<sp/>name,<sp/>just<sp/>surround<sp/>it<sp/>with</highlight></codeline>
+<codeline><highlight class="normal">quotes<sp/>or<sp/>double-quotes:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SET<sp/>SDL_OS2_JOYSTICK=&apos;Gravis<sp/>GamePad&apos;<sp/>4<sp/>2<sp/>2<sp/>0</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">or</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SET<sp/>SDL_OS2_JOYSTICK=&quot;Gravis<sp/>GamePad&quot;<sp/>4<sp/>2<sp/>2<sp/>0</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>Note<sp/>however<sp/>that<sp/>Balls<sp/>and<sp/>Hats<sp/>are<sp/>not<sp/>supported<sp/>under<sp/>OS/2,<sp/>and<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">value<sp/>will<sp/>be<sp/>ignored...<sp/>but<sp/>it<sp/>is<sp/>wise<sp/>to<sp/>define<sp/>these<sp/>correctly<sp/>because</highlight></codeline>
+<codeline><highlight class="normal">in<sp/>the<sp/>future<sp/>those<sp/>can<sp/>be<sp/>supported.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>Also<sp/>the<sp/>number<sp/>of<sp/>buttons<sp/>is<sp/>limited<sp/>to<sp/>2<sp/>when<sp/>using<sp/>two<sp/>joysticks,</highlight></codeline>
+<codeline><highlight class="normal">4<sp/>when<sp/>using<sp/>one<sp/>joystick<sp/>with<sp/>4<sp/>axes,<sp/>6<sp/>when<sp/>using<sp/>a<sp/>joystick<sp/>with<sp/>3<sp/>axes</highlight></codeline>
+<codeline><highlight class="normal">and<sp/>8<sp/>when<sp/>using<sp/>a<sp/>joystick<sp/>with<sp/>2<sp/>axes.<sp/>Notice<sp/>however<sp/>these<sp/>are<sp/>limitations</highlight></codeline>
+<codeline><highlight class="normal">of<sp/>the<sp/>Joystick<sp/>Port<sp/>hardware,<sp/>not<sp/>OS/2.</highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/docs/README-os2.md"/>
+  </compounddef>
+</doxygen>

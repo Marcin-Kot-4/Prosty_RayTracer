@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_objsphere_8h_source" xml:lang="en-US">
+<title>objsphere.h</title>
+<indexterm><primary>D:/RayTracing/RayTrace/Primitives/objsphere.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;RAYTRACING_OBJSPHERE_H</emphasis>
+2 <emphasis role="preprocessor">#define&#32;RAYTRACING_OBJSPHERE_H</emphasis>
+3 
+4 
+5 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_objectbase_8h">objectbase.h</link>&quot;</emphasis>
+6 <emphasis role="preprocessor">#include&#32;&quot;../gtfm.h&quot;</emphasis>
+7 
+8 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_r_t">RT</link>&#32;{
+9 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_class_r_t_1_1_obj_sphere">ObjSphere</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_class_r_t_1_1_object_base">ObjectBase</link>&#32;{
+10 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+11 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Domyślny&#32;konstruktor.&#32;Utworzy&#32;sferę&#32;w&#32;środku&#32;układu</emphasis>
+12 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_r_t_1_1_obj_sphere_1acebbd30c9598b1e97f3372d7f0d87e74">ObjSphere</link>();
+13 
+14 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Nadpisanie&#32;destruktora</emphasis>
+15 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_class_r_t_1_1_obj_sphere_1a91db8fe9bbd7ad278d7899221204f300">~ObjSphere</link>()&#32;<emphasis role="keyword">override</emphasis>;
+16 
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Nadpisanie&#32;metody&#32;odpowiedzialnej&#32;za&#32;sprawdzanie&#32;przecięcia&#32;się&#32;promienia&#32;z&#32;powierzchnią&#32;obiektu</emphasis>
+18 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_r_t_1_1_obj_sphere_1ac61205d4e6dc56ad927e84ada7f3a77b">TestIntersection</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_r_t_1_1_ray">RT::Ray</link>&#32;&amp;castRay,&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;intPoint,&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;localNormal,
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;localColor)&#32;<emphasis role="keyword">override</emphasis>;
+20 
+21 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>:
+22 
+23 
+24 &#32;&#32;&#32;&#32;};
+25 }
+26 
+27 
+28 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//RAYTRACING_OBJSPHERE_H</emphasis>
+</programlisting></section>

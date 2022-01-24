@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__test__images_8h_source" xml:lang="en-US">
+<title>SDL_test_images.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_test_images.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+30 <emphasis role="comment">/*</emphasis>
+31 <emphasis role="comment"></emphasis>
+32 <emphasis role="comment">&#32;Defines&#32;some&#32;images&#32;for&#32;tests.</emphasis>
+33 <emphasis role="comment"></emphasis>
+34 <emphasis role="comment">*/</emphasis>
+35 
+36 <emphasis role="preprocessor">#ifndef&#32;SDL_test_images_h_</emphasis>
+37 <emphasis role="preprocessor">#define&#32;SDL_test_images_h_</emphasis>
+38 
+39 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l_8h">SDL.h</link>&quot;</emphasis>
+40 
+41 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+42 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+43 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+44 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+45 <emphasis role="preprocessor">#endif</emphasis>
+46 
+50 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_s_d_l_test___surface_image__s">SDLTest_SurfaceImage_s</link>&#32;{
+51 &#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___surface_image__s_1a3cbacf6b015a22832ab4d3f509719609">width</link>;
+52 &#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___surface_image__s_1a310092874695556e4b7f1f63aec24213">height</link>;
+53 &#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___surface_image__s_1a2daf91bab3d79fb9dfa25e8ade43e606">bytes_per_pixel</link>;&#32;<emphasis role="comment">/*&#32;3:RGB,&#32;4:RGBA&#32;*/</emphasis>
+54 &#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="_struct_s_d_l_test___surface_image__s_1acf2d3006bea5690f564d3003d1512fa7">pixel_data</link>;
+55 }&#32;<link linkend="__s_d_l__test__images_8h_1adb0159145f8c7a1f75dab374a1c0dc33">SDLTest_SurfaceImage_t</link>;
+56 
+57 <emphasis role="comment">/*&#32;Test&#32;images&#32;*/</emphasis>
+58 <link linkend="_struct_s_d_l___surface">SDL_Surface</link>&#32;*<link linkend="__s_d_l__test__images_8h_1aa9a6a2d91e20a069ceac08b8e14a17fb">SDLTest_ImageBlit</link>(<emphasis role="keywordtype">void</emphasis>);
+59 <link linkend="_struct_s_d_l___surface">SDL_Surface</link>&#32;*<link linkend="__s_d_l__test__images_8h_1ae71809b79dd483653888cfc498b5c270">SDLTest_ImageBlitColor</link>(<emphasis role="keywordtype">void</emphasis>);
+60 <link linkend="_struct_s_d_l___surface">SDL_Surface</link>&#32;*<link linkend="__s_d_l__test__images_8h_1ab399aa33e6367cd52377fea22635e9da">SDLTest_ImageBlitAlpha</link>(<emphasis role="keywordtype">void</emphasis>);
+61 <link linkend="_struct_s_d_l___surface">SDL_Surface</link>&#32;*<link linkend="__s_d_l__test__images_8h_1a4777a0625ae484f4f42277c592056c5c">SDLTest_ImageBlitBlendAdd</link>(<emphasis role="keywordtype">void</emphasis>);
+62 <link linkend="_struct_s_d_l___surface">SDL_Surface</link>&#32;*<link linkend="__s_d_l__test__images_8h_1a40a1f0eec0e2528c9a51d8178fde6958">SDLTest_ImageBlitBlend</link>(<emphasis role="keywordtype">void</emphasis>);
+63 <link linkend="_struct_s_d_l___surface">SDL_Surface</link>&#32;*<link linkend="__s_d_l__test__images_8h_1ad0d1d066168cdeeea117125eb81595f1">SDLTest_ImageBlitBlendMod</link>(<emphasis role="keywordtype">void</emphasis>);
+64 <link linkend="_struct_s_d_l___surface">SDL_Surface</link>&#32;*<link linkend="__s_d_l__test__images_8h_1a38c2a1bd1ae7b2546ab236299fa8ff63">SDLTest_ImageBlitBlendNone</link>(<emphasis role="keywordtype">void</emphasis>);
+65 <link linkend="_struct_s_d_l___surface">SDL_Surface</link>&#32;*<link linkend="__s_d_l__test__images_8h_1a550a3418ef67f1b1c8c6fe67c60c83a7">SDLTest_ImageBlitBlendAll</link>(<emphasis role="keywordtype">void</emphasis>);
+66 <link linkend="_struct_s_d_l___surface">SDL_Surface</link>&#32;*<link linkend="__s_d_l__test__images_8h_1a7d8c0c6a1b1deb5b4dae7e2dc5c2ae02">SDLTest_ImageFace</link>(<emphasis role="keywordtype">void</emphasis>);
+67 <link linkend="_struct_s_d_l___surface">SDL_Surface</link>&#32;*<link linkend="__s_d_l__test__images_8h_1ac5669104cb1098d21c852eda36e509a9">SDLTest_ImagePrimitives</link>(<emphasis role="keywordtype">void</emphasis>);
+68 <link linkend="_struct_s_d_l___surface">SDL_Surface</link>&#32;*<link linkend="__s_d_l__test__images_8h_1ae0fbd3f5badc72a5d22a0d1d099b040e">SDLTest_ImagePrimitivesBlend</link>(<emphasis role="keywordtype">void</emphasis>);
+69 
+70 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+71 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+72 }
+73 <emphasis role="preprocessor">#endif</emphasis>
+74 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+75 
+76 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_test_images_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+77 
+78 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

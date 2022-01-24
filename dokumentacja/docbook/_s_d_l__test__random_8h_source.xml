@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__test__random_8h_source" xml:lang="en-US">
+<title>SDL_test_random.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_test_random.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+30 <emphasis role="comment">/*</emphasis>
+31 <emphasis role="comment"></emphasis>
+32 <emphasis role="comment">&#32;A&#32;&quot;32-bit&#32;Multiply&#32;with&#32;carry&#32;random&#32;number&#32;generator.&#32;Very&#32;fast.</emphasis>
+33 <emphasis role="comment">&#32;Includes&#32;a&#32;list&#32;of&#32;recommended&#32;multipliers.</emphasis>
+34 <emphasis role="comment"></emphasis>
+35 <emphasis role="comment">&#32;multiply-with-carry&#32;generator:&#32;x(n)&#32;=&#32;a*x(n-1)&#32;+&#32;carry&#32;mod&#32;2^32.</emphasis>
+36 <emphasis role="comment">&#32;period:&#32;(a*2^31)-1</emphasis>
+37 <emphasis role="comment"></emphasis>
+38 <emphasis role="comment">*/</emphasis>
+39 
+40 <emphasis role="preprocessor">#ifndef&#32;SDL_test_random_h_</emphasis>
+41 <emphasis role="preprocessor">#define&#32;SDL_test_random_h_</emphasis>
+42 
+43 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+44 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+45 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+46 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+47 <emphasis role="preprocessor">#endif</emphasis>
+48 
+49 <emphasis role="comment">/*&#32;---&#32;Definitions&#32;*/</emphasis>
+50 
+51 <emphasis role="comment">/*</emphasis>
+52 <emphasis role="comment">&#32;*&#32;Macros&#32;that&#32;return&#32;a&#32;random&#32;number&#32;in&#32;a&#32;specific&#32;format.</emphasis>
+53 <emphasis role="comment">&#32;*/</emphasis>
+54 <emphasis role="preprocessor">#define&#32;SDLTest_RandomInt(c)&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;((int)SDLTest_Random(c))</emphasis>
+55 
+56 <emphasis role="comment">/*</emphasis>
+57 <emphasis role="comment">&#32;*&#32;Context&#32;structure&#32;for&#32;the&#32;random&#32;number&#32;generator&#32;state.</emphasis>
+58 <emphasis role="comment">&#32;*/</emphasis>
+59 &#32;&#32;<emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis>{
+60 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___random_context_1a24f830d6cb476c96fbe325c99331e45f">a</link>;
+61 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___random_context_1a8bd6d1b4e1677ed1c06f5cc09f1af5b6">x</link>;
+62 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___random_context_1a17a6a7e7b68a33c67d9b74c8c7c33198">c</link>;
+63 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___random_context_1a2c8d2f1ee16cdfd38361b8f03b3fdb85">ah</link>;
+64 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l_test___random_context_1a0e2bccd3611d383d6510c6c828aa54c4">al</link>;
+65 &#32;&#32;}&#32;<link linkend="_struct_s_d_l_test___random_context">SDLTest_RandomContext</link>;
+66 
+67 
+68 <emphasis role="comment">/*&#32;---&#32;Function&#32;prototypes&#32;*/</emphasis>
+69 
+81 &#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__s_d_l__test__random_8h_1ac02d87003e18791250a4f762f8779c4f">SDLTest_RandomInit</link>(<link linkend="_struct_s_d_l_test___random_context">SDLTest_RandomContext</link>&#32;*&#32;rndContext,&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;xi,
+82 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;ci);
+83 
+90 &#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__s_d_l__test__random_8h_1a1d1378845f65b7e471f13cb4f3b1a54e">SDLTest_RandomInitTime</link>(<link linkend="_struct_s_d_l_test___random_context">SDLTest_RandomContext</link>&#32;*rndContext);
+91 
+92 
+104 &#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__test__random_8h_1a7a64ae98b2b7034bf7c38ef5cbc39ead">SDLTest_Random</link>(<link linkend="_struct_s_d_l_test___random_context">SDLTest_RandomContext</link>&#32;*rndContext);
+105 
+106 
+107 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+108 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+109 }
+110 <emphasis role="preprocessor">#endif</emphasis>
+111 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+112 
+113 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_test_random_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+114 
+115 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

@@ -1,0 +1,47 @@
+.TH "RT::Texture::Image" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RT::Texture::Image
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <textureimage\&.h>\fP
+.PP
+Inherits \fBRT::Texture::TextureBase\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBImage\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~Image\fP () override"
+.br
+.ti -1c
+.RI "virtual \fBqbVector\fP< double > \fBGetColor\fP (const \fBqbVector\fP< double > &uvCoords) override"
+.br
+.ti -1c
+.RI "bool \fBLoadImage\fP (\fBstd::string\fP fileName)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Image::Image ()"
+
+.SS "Image::~Image ()\fC [override]\fP, \fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBqbVector\fP< double > Image::GetColor (const \fBqbVector\fP< double > & uvCoords)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBRT::Texture::TextureBase\fP\&.
+.SS "bool Image::LoadImage (\fBstd::string\fP fileName)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

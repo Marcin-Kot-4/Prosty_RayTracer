@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__test__memory_8h" xml:lang="en-US">
+<title>D:/RayTracing/include/SDL_test_memory.h File Reference</title>
+<indexterm><primary>D:/RayTracing/include/SDL_test_memory.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;begin_code.h&quot;
+#include &quot;close_code.h&quot;
+</programlisting><simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="__s_d_l__test__memory_8h_1aa83b2e85883723b069653d8c7bb2c30d">SDLTest_TrackAllocations</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+
+<para>Start tracking SDL memory allocations. </para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="__s_d_l__test__memory_8h_1a184fd271f563e77460e586245c1535c3">SDLTest_LogAllocations</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+
+<para>Print a log of any outstanding allocations. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Include file for SDL test framework.</para>
+
+<para>This code is a part of the SDL2_test library, not the main SDL library. </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__s_d_l__test__memory_8h_1a184fd271f563e77460e586245c1535c3"/><section>
+    <title>SDLTest_LogAllocations()</title>
+<indexterm><primary>SDLTest_LogAllocations</primary><secondary>SDL_test_memory.h</secondary></indexterm>
+<indexterm><primary>SDL_test_memory.h</primary><secondary>SDLTest_LogAllocations</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> SDLTest_LogAllocations (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para><para>
+
+<para>Print a log of any outstanding allocations. </para>
+</para>
+
+<para><note><title>Note</title>
+
+<para>This can be called after <link linkend="__s_d_l_8h_1afdabaf714781099083592051f2d9ac11">SDL_Quit()</link> </para>
+</note>
+</para>
+</section>
+<anchor xml:id="__s_d_l__test__memory_8h_1aa83b2e85883723b069653d8c7bb2c30d"/><section>
+    <title>SDLTest_TrackAllocations()</title>
+<indexterm><primary>SDLTest_TrackAllocations</primary><secondary>SDL_test_memory.h</secondary></indexterm>
+<indexterm><primary>SDL_test_memory.h</primary><secondary>SDLTest_TrackAllocations</secondary></indexterm>
+<para><computeroutput>int SDLTest_TrackAllocations (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para><para>
+
+<para>Start tracking SDL memory allocations. </para>
+</para>
+
+<para><note><title>Note</title>
+
+<para>This should be called before any other SDL functions for complete tracking coverage </para>
+</note>
+</para>
+</section>
+</section>
+</section>

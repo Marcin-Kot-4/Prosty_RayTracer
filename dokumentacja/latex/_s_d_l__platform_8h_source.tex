@@ -1,0 +1,219 @@
+\hypertarget{_s_d_l__platform_8h_source}{}\doxysection{SDL\+\_\+platform.\+h}
+\label{_s_d_l__platform_8h_source}\index{D:/RayTracing/include/SDL\_platform.h@{D:/RayTracing/include/SDL\_platform.h}}
+\mbox{\hyperlink{_s_d_l__platform_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{  Simple DirectMedia Layer}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright (C) 1997-\/2022 Sam Lantinga <slouken@libsdl.org>}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{6 \textcolor{comment}{  warranty.  In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{7 \textcolor{comment}{  arising from the use of this software.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{  Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{10 \textcolor{comment}{  including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{11 \textcolor{comment}{  freely, subject to the following restrictions:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{  1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{14 \textcolor{comment}{     claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{15 \textcolor{comment}{     in a product, an acknowledgment in the product documentation would be}}
+\DoxyCodeLine{16 \textcolor{comment}{     appreciated but is not required.}}
+\DoxyCodeLine{17 \textcolor{comment}{  2. Altered source versions must be plainly marked as such, and must not be}}
+\DoxyCodeLine{18 \textcolor{comment}{     misrepresented as being the original software.}}
+\DoxyCodeLine{19 \textcolor{comment}{  3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{20 \textcolor{comment}{*/}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#ifndef SDL\_platform\_h\_}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define SDL\_platform\_h\_}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#if defined(\_AIX)}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#undef \_\_AIX\_\_}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#define \_\_AIX\_\_     1}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#if defined(\_\_HAIKU\_\_)}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#undef \_\_HAIKU\_\_}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define \_\_HAIKU\_\_   1}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#if defined(bsdi) || defined(\_\_bsdi) || defined(\_\_bsdi\_\_)}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#undef \_\_BSDI\_\_}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define \_\_BSDI\_\_    1}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#if defined(\_arch\_dreamcast)}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#undef \_\_DREAMCAST\_\_}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define \_\_DREAMCAST\_\_   1}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#if defined(\_\_FreeBSD\_\_) || defined(\_\_FreeBSD\_kernel\_\_) || defined(\_\_DragonFly\_\_)}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#undef \_\_FREEBSD\_\_}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define \_\_FREEBSD\_\_ 1}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#if defined(hpux) || defined(\_\_hpux) || defined(\_\_hpux\_\_)}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#undef \_\_HPUX\_\_}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define \_\_HPUX\_\_    1}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#if defined(sgi) || defined(\_\_sgi) || defined(\_\_sgi\_\_) || defined(\_SGI\_SOURCE)}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#undef \_\_IRIX\_\_}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define \_\_IRIX\_\_    1}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#if (defined(linux) || defined(\_\_linux) || defined(\_\_linux\_\_))}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#undef \_\_LINUX\_\_}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define \_\_LINUX\_\_   1}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#if defined(ANDROID) || defined(\_\_ANDROID\_\_)}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#undef \_\_ANDROID\_\_}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#undef \_\_LINUX\_\_ }\textcolor{comment}{/* do we need to do this? */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define \_\_ANDROID\_\_ 1}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#if defined(\_\_APPLE\_\_)}}
+\DoxyCodeLine{70 \textcolor{comment}{/* lets us know what version of Mac OS X we're compiling on */}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#include "{}AvailabilityMacros.h"{}}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#include "{}TargetConditionals.h"{}}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{comment}{/* Fix building with older SDKs that don't define these}}
+\DoxyCodeLine{75 \textcolor{comment}{   See this for more information:}}
+\DoxyCodeLine{76 \textcolor{comment}{   https://stackoverflow.com/questions/12132933/preprocessor-\/macro-\/for-\/os-\/x-\/targets}}
+\DoxyCodeLine{77 \textcolor{comment}{*/}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#ifndef TARGET\_OS\_MACCATALYST}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define TARGET\_OS\_MACCATALYST 0}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#ifndef TARGET\_OS\_IOS}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define TARGET\_OS\_IOS 0}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#ifndef TARGET\_OS\_IPHONE}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define TARGET\_OS\_IPHONE 0}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#ifndef TARGET\_OS\_TV}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define TARGET\_OS\_TV 0}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#ifndef TARGET\_OS\_SIMULATOR}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define TARGET\_OS\_SIMULATOR 0}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#if TARGET\_OS\_TV}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#undef \_\_TVOS\_\_}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define \_\_TVOS\_\_ 1}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#if TARGET\_OS\_IPHONE}}
+\DoxyCodeLine{99 \textcolor{comment}{/* if compiling for iOS */}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#undef \_\_IPHONEOS\_\_}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define \_\_IPHONEOS\_\_ 1}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#undef \_\_MACOSX\_\_}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{104 \textcolor{comment}{/* if not compiling for iOS */}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#undef \_\_MACOSX\_\_}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define \_\_MACOSX\_\_  1}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#if MAC\_OS\_X\_VERSION\_MIN\_REQUIRED < 1060}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\# error SDL for Mac OS X only supports deploying on 10.6 and above.}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* MAC\_OS\_X\_VERSION\_MIN\_REQUIRED < 1060 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* TARGET\_OS\_IPHONE */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* defined(\_\_APPLE\_\_) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#if defined(\_\_NetBSD\_\_)}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#undef \_\_NETBSD\_\_}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#define \_\_NETBSD\_\_  1}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#if defined(\_\_OpenBSD\_\_)}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#undef \_\_OPENBSD\_\_}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#define \_\_OPENBSD\_\_ 1}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#if defined(\_\_OS2\_\_) || defined(\_\_EMX\_\_)}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#undef \_\_OS2\_\_}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#define \_\_OS2\_\_     1}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#if defined(osf) || defined(\_\_osf) || defined(\_\_osf\_\_) || defined(\_OSF\_SOURCE)}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#undef \_\_OSF\_\_}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#define \_\_OSF\_\_     1}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#if defined(\_\_QNXNTO\_\_)}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#undef \_\_QNXNTO\_\_}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#define \_\_QNXNTO\_\_  1}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#if defined(riscos) || defined(\_\_riscos) || defined(\_\_riscos\_\_)}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#undef \_\_RISCOS\_\_}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#define \_\_RISCOS\_\_  1}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#if defined(\_\_sun) \&\& defined(\_\_SVR4)}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#undef \_\_SOLARIS\_\_}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define \_\_SOLARIS\_\_ 1}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#if defined(WIN32) || defined(\_WIN32) || defined(\_\_CYGWIN\_\_) || defined(\_\_MINGW32\_\_)}}
+\DoxyCodeLine{143 \textcolor{comment}{/* Try to find out if we're compiling for WinRT or non-\/WinRT */}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#if defined(\_MSC\_VER) \&\& defined(\_\_has\_include)}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#if \_\_has\_include(<winapifamily.h>)}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define HAVE\_WINAPIFAMILY\_H 1}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#define HAVE\_WINAPIFAMILY\_H 0}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151 \textcolor{comment}{/* If \_USING\_V110\_SDK71\_ is defined it means we are using the Windows XP toolset. */}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#elif defined(\_MSC\_VER) \&\& (\_MSC\_VER >= 1700 \&\& !\_USING\_V110\_SDK71\_)    }\textcolor{comment}{/* \_MSC\_VER == 1700 for Visual Studio 2012 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#define HAVE\_WINAPIFAMILY\_H 1}}
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#define HAVE\_WINAPIFAMILY\_H 0}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#if HAVE\_WINAPIFAMILY\_H}}
+\DoxyCodeLine{159 \textcolor{preprocessor}{\#include <winapifamily.h>}}
+\DoxyCodeLine{160 \textcolor{preprocessor}{\#define WINAPI\_FAMILY\_WINRT (!WINAPI\_FAMILY\_PARTITION(WINAPI\_PARTITION\_DESKTOP) \&\& WINAPI\_FAMILY\_PARTITION(WINAPI\_PARTITION\_APP))}}
+\DoxyCodeLine{161 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#define WINAPI\_FAMILY\_WINRT 0}}
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* HAVE\_WINAPIFAMILY\_H */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#if WINAPI\_FAMILY\_WINRT}}
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#undef \_\_WINRT\_\_}}
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#define \_\_WINRT\_\_ 1}}
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{169 \textcolor{preprocessor}{\#undef \_\_WINDOWS\_\_}}
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#define \_\_WINDOWS\_\_ 1}}
+\DoxyCodeLine{171 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* defined(WIN32) || defined(\_WIN32) || defined(\_\_CYGWIN\_\_) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#if defined(\_\_WINDOWS\_\_)}}
+\DoxyCodeLine{175 \textcolor{preprocessor}{\#undef \_\_WIN32\_\_}}
+\DoxyCodeLine{176 \textcolor{preprocessor}{\#define \_\_WIN32\_\_ 1}}
+\DoxyCodeLine{177 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#if defined(\_\_PSP\_\_)}}
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#undef \_\_PSP\_\_}}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#define \_\_PSP\_\_ 1}}
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183 \textcolor{comment}{/* The NACL compiler defines \_\_native\_client\_\_ and \_\_pnacl\_\_}}
+\DoxyCodeLine{184 \textcolor{comment}{ * Ref: http://www.chromium.org/nativeclient/pnacl/stability-\/of-\/the-\/pnacl-\/bitcode-\/abi}}
+\DoxyCodeLine{185 \textcolor{comment}{ */}}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#if defined(\_\_native\_client\_\_)}}
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#undef \_\_LINUX\_\_}}
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#undef \_\_NACL\_\_}}
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#define \_\_NACL\_\_ 1}}
+\DoxyCodeLine{190 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#if defined(\_\_pnacl\_\_)}}
+\DoxyCodeLine{192 \textcolor{preprocessor}{\#undef \_\_LINUX\_\_}}
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#undef \_\_PNACL\_\_}}
+\DoxyCodeLine{194 \textcolor{preprocessor}{\#define \_\_PNACL\_\_ 1}}
+\DoxyCodeLine{195 \textcolor{comment}{/* PNACL with newlib supports static linking only */}}
+\DoxyCodeLine{196 \textcolor{preprocessor}{\#define \_\_SDL\_NOGETPROCADDR\_\_}}
+\DoxyCodeLine{197 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199 \textcolor{preprocessor}{\#if defined(\_\_vita\_\_)}}
+\DoxyCodeLine{200 \textcolor{preprocessor}{\#define \_\_VITA\_\_ 1}}
+\DoxyCodeLine{201 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{begin__code_8h}{begin\_code.h}}"{}}}
+\DoxyCodeLine{204 \textcolor{comment}{/* Set up for C function definitions, even when using C++ */}}
+\DoxyCodeLine{205 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{206 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{207 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{225 \textcolor{keyword}{extern} \mbox{\hyperlink{begin__code_8h_aa4c7a931f4a968f818b2a1b10a432185}{DECLSPEC}} \textcolor{keyword}{const} \textcolor{keywordtype}{char} * \mbox{\hyperlink{begin__code_8h_a81faf4ba0455dc75f2e0507eddb79401}{SDLCALL}} \mbox{\hyperlink{_s_d_l__platform_8h_a2fde3bb5b1578f29e786289a8d689255}{SDL\_GetPlatform}} (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227 \textcolor{comment}{/* Ends C function definitions when using C++ */}}
+\DoxyCodeLine{228 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{229 \}}
+\DoxyCodeLine{230 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{231 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{close__code_8h}{close\_code.h}}"{}}}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{233 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_platform\_h\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235 \textcolor{comment}{/* vi: set ts=4 sw=4 expandtab: */}}
+
+\end{DoxyCode}

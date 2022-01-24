@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_md__d___ray_tracing_docs__r_e_a_d_m_e_touch" xml:lang="en-US">
+<section xml:id="_md__d___ray_tracing_docs__r_e_a_d_m_e_touch_1autotoc_md105">
+<title>System Specific Notes</title>
+
+<para>Linux: The linux touch system is currently based off event streams, and proc/bus/devices. The active user must be given permissions to read /dev/input/TOUCHDEVICE, where TOUCHDEVICE is the event stream for your device. Currently only Wacom tablets are supported. If you have an unsupported tablet contact me at <link xlink:href="mailto:jim.tla+sdl_touch@gmail.com">jim.tla+sdl_touch@gmail.com</link> and I will help you get support for it.</para>
+
+<para>Mac: The Mac and iPhone APIs are pretty. If your touch device supports them then you&apos;ll be fine. If it doesn&apos;t, then there isn&apos;t much we can do.</para>
+
+<para>iPhone: Works out of box.</para>
+
+<para>Windows: Unfortunately there is no windows support as of yet. Support for Windows 7 is planned, but we currently have no way to test. If you have a Windows 7 WM_TOUCH supported device, and are willing to help test please contact me at <link xlink:href="mailto:jim.tla+sdl_touch@gmail.com">jim.tla+sdl_touch@gmail.com</link></para>
+
+<para><informaltable frame='bottom'><tgroup cols='1'><colspec align='center'/><tbody><row><entry align='center'>
+</entry></row></tbody></tgroup></informaltable>
+ </para>
+</section>
+<section xml:id="_md__d___ray_tracing_docs__r_e_a_d_m_e_touch_1autotoc_md107">
+<title>Events</title>
+
+<para>SDL_FINGERDOWN: Sent when a finger (or stylus) is placed on a touch device. Fields:<itemizedlist>
+<listitem>
+<para>event.tfinger.touchId - the Id of the touch device.</para>
+</listitem><listitem>
+<para>event.tfinger.fingerId - the Id of the finger which just went down.</para>
+</listitem><listitem>
+<para>event.tfinger.x - the x coordinate of the touch (0..1)</para>
+</listitem><listitem>
+<para>event.tfinger.y - the y coordinate of the touch (0..1)</para>
+</listitem><listitem>
+<para>event.tfinger.pressure - the pressure of the touch (0..1)</para>
+</listitem></itemizedlist>
+</para>
+
+<para>SDL_FINGERMOTION: Sent when a finger (or stylus) is moved on the touch device. Fields: Same as SDL_FINGERDOWN but with additional:<itemizedlist>
+<listitem>
+<para>event.tfinger.dx - change in x coordinate during this motion event.</para>
+</listitem><listitem>
+<para>event.tfinger.dy - change in y coordinate during this motion event.</para>
+</listitem></itemizedlist>
+</para>
+
+<para>SDL_FINGERUP: Sent when a finger (or stylus) is lifted from the touch device. Fields: Same as SDL_FINGERDOWN.</para>
+
+<para><informaltable frame='bottom'><tgroup cols='1'><colspec align='center'/><tbody><row><entry align='center'>
+</entry></row></tbody></tgroup></informaltable>
+ </para>
+</section>
+<section xml:id="_md__d___ray_tracing_docs__r_e_a_d_m_e_touch_1autotoc_md109">
+<title>Functions</title>
+
+<para>SDL provides the ability to access the underlying <link linkend="_struct_s_d_l___finger">SDL_Finger</link> structures. These structures should <emphasis>never</emphasis> be modified.</para>
+
+<para>The following functions are included from SDL_touch.h</para>
+
+<para>To get a SDL_TouchID call <link linkend="__s_d_l__touch_8h_1af23f09dc79eace93cdc8dd770eed0d0a">SDL_GetTouchDevice(int index)</link>. This returns a SDL_TouchID. IMPORTANT: If the touch has been removed, or there is no touch with the given index, <link linkend="__s_d_l__touch_8h_1af23f09dc79eace93cdc8dd770eed0d0a">SDL_GetTouchDevice()</link> will return 0. Be sure to check for this!</para>
+
+<para>The number of touch devices can be queried with <link linkend="__s_d_l__touch_8h_1a14a41a2964ddf868a180e42ccfd441d1">SDL_GetNumTouchDevices()</link>.</para>
+
+<para>A SDL_TouchID may be used to get pointers to <link linkend="_struct_s_d_l___finger">SDL_Finger</link>.</para>
+
+<para>SDL_GetNumTouchFingers(touchID) may be used to get the number of fingers currently down on the device.</para>
+
+<para>The most common reason to access <link linkend="_struct_s_d_l___finger">SDL_Finger</link> is to query the fingers outside the event. In most cases accessing the fingers is using the event. This would be accomplished by code like the following: <literallayout><computeroutput>  float x = event.tfinger.x;
+  float y = event.tfinger.y;
+</computeroutput></literallayout></para>
+
+<para>To get a <link linkend="_struct_s_d_l___finger">SDL_Finger</link>, call <link linkend="__s_d_l__touch_8h_1a51f8b790d3c82f53215796d9a043ef90">SDL_GetTouchFinger(SDL_TouchID touchID, int index)</link>, where touchID is a SDL_TouchID, and index is the requested finger. This returns a <link linkend="_struct_s_d_l___finger">SDL_Finger</link> *, or NULL if the finger does not exist, or has been removed. A <link linkend="_struct_s_d_l___finger">SDL_Finger</link> is guaranteed to be persistent for the duration of a touch, but it will be de-allocated as soon as the finger is removed. This occurs when the SDL_FINGERUP event is <emphasis>added</emphasis> to the event queue, and thus <emphasis>before</emphasis> the SDL_FINGERUP event is polled. As a result, be very careful to check for NULL return values.</para>
+
+<para>A <link linkend="_struct_s_d_l___finger">SDL_Finger</link> has the following fields:<itemizedlist>
+<listitem>
+<para>x, y: The current coordinates of the touch.</para>
+</listitem><listitem>
+<para>pressure: The pressure of the touch.</para>
+</listitem></itemizedlist>
+</para>
+
+<para><informaltable frame='bottom'><tgroup cols='1'><colspec align='center'/><tbody><row><entry align='center'>
+</entry></row></tbody></tgroup></informaltable>
+ </para>
+</section>
+<section xml:id="_md__d___ray_tracing_docs__r_e_a_d_m_e_touch_1autotoc_md111">
+<title>Notes</title>
+
+<para>For a complete example see test/testgesture.c</para>
+
+<para>Please direct questions/comments to: <link xlink:href="mailto:jim.tla+sdl_touch@gmail.com">jim.tla+sdl_touch@gmail.com</link> (original author, API was changed since) </para>
+</section>
+</section>

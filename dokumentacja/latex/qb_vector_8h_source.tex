@@ -1,0 +1,277 @@
+\hypertarget{qb_vector_8h_source}{}\doxysection{qb\+Vector.\+h}
+\label{qb_vector_8h_source}\index{D:/RayTracing/RayTrace/qbLinAlg/qbVector.h@{D:/RayTracing/RayTrace/qbLinAlg/qbVector.h}}
+\mbox{\hyperlink{qb_vector_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// This file is part of the qbLinAlg linear algebra library.}}
+\DoxyCodeLine{2 \textcolor{comment}{// Copyright (c) 2021 Michael Bennett}}
+\DoxyCodeLine{3 \textcolor{comment}{// MIT license}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef QBVECTOR\_H}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define QBVECTOR\_H}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{comment}{/* *************************************************************************************************}}
+\DoxyCodeLine{9 \textcolor{comment}{}}
+\DoxyCodeLine{10 \textcolor{comment}{    qbVector}}
+\DoxyCodeLine{11 \textcolor{comment}{    }}
+\DoxyCodeLine{12 \textcolor{comment}{    Class to provide capability to handle vectors.}}
+\DoxyCodeLine{13 \textcolor{comment}{}}
+\DoxyCodeLine{14 \textcolor{comment}{************************************************************************************************* */}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classqb_vector}{qbVector}}}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25     \textcolor{keyword}{public}:}
+\DoxyCodeLine{26         \textcolor{comment}{// Define the various constructors.}}
+\DoxyCodeLine{27         \textcolor{comment}{// Default.}}
+\DoxyCodeLine{28         \mbox{\hyperlink{classqb_vector_a4d3ca712f03d608fd8fa2b765d5af0a3}{qbVector}}();}
+\DoxyCodeLine{29         }
+\DoxyCodeLine{30         \textcolor{comment}{// With a single integer specifying the number of dimensions.}}
+\DoxyCodeLine{31         \mbox{\hyperlink{classqb_vector_abc223bb64e38c0922931c093b2ff99ff}{qbVector}}(\textcolor{keywordtype}{int} numDims);}
+\DoxyCodeLine{32         }
+\DoxyCodeLine{33         \textcolor{comment}{// With input data (std::vector).}}
+\DoxyCodeLine{34         \mbox{\hyperlink{classqb_vector_aa99293e1abd9fce0f6e376afd3d15dc0}{qbVector}}(std::vector<T> inputData);}
+\DoxyCodeLine{35         }
+\DoxyCodeLine{36         \textcolor{comment}{// And the destructor.}}
+\DoxyCodeLine{37         \mbox{\hyperlink{classqb_vector_ab167f00d61598de0e5741254f6f6b9ff}{\string~qbVector}}();   }
+\DoxyCodeLine{38         }
+\DoxyCodeLine{39         \textcolor{comment}{// Functions to return parameters of the vector.}}
+\DoxyCodeLine{40         \textcolor{keywordtype}{int} \mbox{\hyperlink{classqb_vector_a4b1f24a8ae47ef9019109c23c56fc9c4}{GetNumDims}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{41         }
+\DoxyCodeLine{42         \textcolor{comment}{// Functions to handle elements of the vector.}}
+\DoxyCodeLine{43         T \mbox{\hyperlink{classqb_vector_adadd6ca87273a15f57a5e1d6ae15583b}{GetElement}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}}) \textcolor{keyword}{const};}
+\DoxyCodeLine{44         \textcolor{keywordtype}{void} \mbox{\hyperlink{classqb_vector_af828430da5d728b15c70f82f73ff1efd}{SetElement}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}}, T \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8ad81492d410ff2ac11f754f4042150f}{value}});}
+\DoxyCodeLine{45         }
+\DoxyCodeLine{46         \textcolor{comment}{// Functions to perform computations on the vector.}}
+\DoxyCodeLine{47         \textcolor{comment}{// Return the length of the vector.}}
+\DoxyCodeLine{48         T \mbox{\hyperlink{classqb_vector_aa2024c900efb9bbbae752f91b59a786c}{norm}}();}
+\DoxyCodeLine{49         }
+\DoxyCodeLine{50         \textcolor{comment}{// Return a normalized copy of the vector.}}
+\DoxyCodeLine{51         \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \mbox{\hyperlink{classqb_vector_a30cacb02a659ae4885e16243fd849fb6}{Normalized}}();}
+\DoxyCodeLine{52         }
+\DoxyCodeLine{53         \textcolor{comment}{// Normalize the vector in place.}}
+\DoxyCodeLine{54         \textcolor{keywordtype}{void} \mbox{\hyperlink{classqb_vector_a06cc00476d406a772461fc4acd7e9ea8}{Normalize}}();}
+\DoxyCodeLine{55         }
+\DoxyCodeLine{56         \textcolor{comment}{// Overloaded operators.}}
+\DoxyCodeLine{57         \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \mbox{\hyperlink{classqb_vector_a9f2b081b6d16e78aa749e1a7ac6e77a7}{operator+ }}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \&rhs) \textcolor{keyword}{const};       }
+\DoxyCodeLine{58         \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \mbox{\hyperlink{classqb_vector_a3544378181df99c93e4efaafc247ebfe}{operator-\/ }}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \&rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{59         \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \mbox{\hyperlink{classqb_vector_af4cf14f133608188f609dec15f137da1}{operator* }}(\textcolor{keyword}{const} T \&rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{60         }
+\DoxyCodeLine{61         \textcolor{comment}{// Friend functions.}}
+\DoxyCodeLine{62         \textcolor{keyword}{template} <\textcolor{keyword}{class} U> \textcolor{keyword}{friend} \mbox{\hyperlink{classqb_vector}{qbVector<U>}} \mbox{\hyperlink{classqb_vector_af4cf14f133608188f609dec15f137da1}{operator* }}(\textcolor{keyword}{const} U \&lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<U>}} \&rhs);}
+\DoxyCodeLine{63         }
+\DoxyCodeLine{64         \textcolor{comment}{// Static functions.}}
+\DoxyCodeLine{65         \textcolor{keyword}{static} T \mbox{\hyperlink{classqb_vector_a8a3c9123ca342c3499c99112a577db8b}{dot}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \&\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3309789fc188587d666cda5ece79cf82}{a}}, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \&\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a0f71581a41fd2264c8944126dabbd010}{b}});}
+\DoxyCodeLine{66         \textcolor{keyword}{static} \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \mbox{\hyperlink{classqb_vector_af77140337a3e04ff051d346599fe4283}{cross}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \&\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3309789fc188587d666cda5ece79cf82}{a}}, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \&\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a0f71581a41fd2264c8944126dabbd010}{b}});}
+\DoxyCodeLine{67         }
+\DoxyCodeLine{68     \textcolor{keyword}{private}:}
+\DoxyCodeLine{69         std::vector<T> m\_vectorData;}
+\DoxyCodeLine{70         \textcolor{keywordtype}{int} m\_nDims;}
+\DoxyCodeLine{71         }
+\DoxyCodeLine{72 \};}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{comment}{/* **************************************************************************************************}}
+\DoxyCodeLine{75 \textcolor{comment}{CONSTRUCTOR / DESTRUCTOR FUNCTIONS}}
+\DoxyCodeLine{76 \textcolor{comment}{/* *************************************************************************************************/}}
+\DoxyCodeLine{77 \textcolor{comment}{// The default constructor.}}
+\DoxyCodeLine{78 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{79 \mbox{\hyperlink{classqb_vector_a4d3ca712f03d608fd8fa2b765d5af0a3}{qbVector<T>::qbVector}}()}
+\DoxyCodeLine{80 \{}
+\DoxyCodeLine{81     m\_nDims = 0;}
+\DoxyCodeLine{82     m\_vectorData = std::vector<T>();}
+\DoxyCodeLine{83 \}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{86 \mbox{\hyperlink{classqb_vector_a4d3ca712f03d608fd8fa2b765d5af0a3}{qbVector<T>::qbVector}}(\textcolor{keywordtype}{int} numDims)}
+\DoxyCodeLine{87 \{}
+\DoxyCodeLine{88     m\_nDims = numDims;}
+\DoxyCodeLine{89     m\_vectorData = std::vector<T>(numDims, \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.0));}
+\DoxyCodeLine{90 \}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{93 \mbox{\hyperlink{classqb_vector_a4d3ca712f03d608fd8fa2b765d5af0a3}{qbVector<T>::qbVector}}(std::vector<T> inputData)}
+\DoxyCodeLine{94 \{}
+\DoxyCodeLine{95     m\_nDims = inputData.size();}
+\DoxyCodeLine{96     m\_vectorData = inputData;}
+\DoxyCodeLine{97 \}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{100 \mbox{\hyperlink{classqb_vector_ab167f00d61598de0e5741254f6f6b9ff}{qbVector<T>::\string~qbVector}}()}
+\DoxyCodeLine{101 \{}
+\DoxyCodeLine{102     \textcolor{comment}{// For now, we don't need to do anything in the destructor.}}
+\DoxyCodeLine{103 \}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \textcolor{comment}{/* **************************************************************************************************}}
+\DoxyCodeLine{106 \textcolor{comment}{FUNCTIONS TO RETURN PARAMETERS}}
+\DoxyCodeLine{107 \textcolor{comment}{/* *************************************************************************************************/}}
+\DoxyCodeLine{108 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{109 \textcolor{keywordtype}{int} \mbox{\hyperlink{classqb_vector_a4b1f24a8ae47ef9019109c23c56fc9c4}{qbVector<T>::GetNumDims}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{110 \textcolor{keyword}{}\{}
+\DoxyCodeLine{111     \textcolor{keywordflow}{return} m\_nDims;}
+\DoxyCodeLine{112 \}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 \textcolor{comment}{/* **************************************************************************************************}}
+\DoxyCodeLine{115 \textcolor{comment}{FUNCTIONS TO HANDLE ELEMENTS OF THE VECTOR}}
+\DoxyCodeLine{116 \textcolor{comment}{/* *************************************************************************************************/}}
+\DoxyCodeLine{117 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{118 T \mbox{\hyperlink{classqb_vector_adadd6ca87273a15f57a5e1d6ae15583b}{qbVector<T>::GetElement}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}})\textcolor{keyword}{ const}}
+\DoxyCodeLine{119 \textcolor{keyword}{}\{}
+\DoxyCodeLine{120     \textcolor{keywordflow}{return} m\_vectorData[\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}}];}
+\DoxyCodeLine{121 \}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{124 \textcolor{keywordtype}{void} \mbox{\hyperlink{classqb_vector_af828430da5d728b15c70f82f73ff1efd}{qbVector<T>::SetElement}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}}, T \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8ad81492d410ff2ac11f754f4042150f}{value}})}
+\DoxyCodeLine{125 \{}
+\DoxyCodeLine{126     m\_vectorData[\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}}] = \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a8ad81492d410ff2ac11f754f4042150f}{value}};}
+\DoxyCodeLine{127 \}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129 \textcolor{comment}{/* **************************************************************************************************}}
+\DoxyCodeLine{130 \textcolor{comment}{FUNCTIONS TO PERFORM COMPUTATIONS ON THE VECTOR}}
+\DoxyCodeLine{131 \textcolor{comment}{/* *************************************************************************************************/}}
+\DoxyCodeLine{132 \textcolor{comment}{// Compute the length of the vector,known as the 'norm'.}}
+\DoxyCodeLine{133 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{134 T \mbox{\hyperlink{classqb_vector_aa2024c900efb9bbbae752f91b59a786c}{qbVector<T>::norm}}()}
+\DoxyCodeLine{135 \{}
+\DoxyCodeLine{136     T cumulativeSum = \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.0);}
+\DoxyCodeLine{137     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<m\_nDims; ++i)}
+\DoxyCodeLine{138         cumulativeSum += (m\_vectorData.at(i) * m\_vectorData.at(i));}
+\DoxyCodeLine{139         }
+\DoxyCodeLine{140     \textcolor{keywordflow}{return} sqrt(cumulativeSum);}
+\DoxyCodeLine{141 \}}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 \textcolor{comment}{// Return a normalized copy of the vector.}}
+\DoxyCodeLine{144 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{145 \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \mbox{\hyperlink{classqb_vector_a30cacb02a659ae4885e16243fd849fb6}{qbVector<T>::Normalized}}()}
+\DoxyCodeLine{146 \{}
+\DoxyCodeLine{147     \textcolor{comment}{// Compute the vector norm.}}
+\DoxyCodeLine{148     T vecNorm = this-\/>norm();}
+\DoxyCodeLine{149     }
+\DoxyCodeLine{150     \textcolor{comment}{// Compute the normalized version of the vector.}}
+\DoxyCodeLine{151     \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}}(m\_vectorData);}
+\DoxyCodeLine{152     \textcolor{keywordflow}{return} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}} * (\textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1.0) / vecNorm);}
+\DoxyCodeLine{153 \}}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 \textcolor{comment}{// Normalize the vector in place.}}
+\DoxyCodeLine{156 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{157 \textcolor{keywordtype}{void} \mbox{\hyperlink{classqb_vector_a06cc00476d406a772461fc4acd7e9ea8}{qbVector<T>::Normalize}}()}
+\DoxyCodeLine{158 \{}
+\DoxyCodeLine{159     \textcolor{comment}{// Compute the vector norm.}}
+\DoxyCodeLine{160     T vecNorm = this-\/>norm();}
+\DoxyCodeLine{161     }
+\DoxyCodeLine{162     \textcolor{comment}{// Compute the elements of the normalized version of the vector.}}
+\DoxyCodeLine{163     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<m\_nDims; ++i)}
+\DoxyCodeLine{164     \{}
+\DoxyCodeLine{165         T temp = m\_vectorData.at(i) * (\textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1.0) / vecNorm);}
+\DoxyCodeLine{166         m\_vectorData.at(i) = temp;}
+\DoxyCodeLine{167     \}}
+\DoxyCodeLine{168 \}}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170 \textcolor{comment}{/* **************************************************************************************************}}
+\DoxyCodeLine{171 \textcolor{comment}{OVERLOADED OPERATORS}}
+\DoxyCodeLine{172 \textcolor{comment}{/* *************************************************************************************************/}}
+\DoxyCodeLine{173 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{174 \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \mbox{\hyperlink{classqb_vector_a9f2b081b6d16e78aa749e1a7ac6e77a7}{qbVector<T>::operator+ }}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \&rhs)\textcolor{keyword}{ const}}
+\DoxyCodeLine{175 \textcolor{keyword}{}\{}
+\DoxyCodeLine{176     \textcolor{comment}{// Check that the number of dimensions match.}}
+\DoxyCodeLine{177     \textcolor{keywordflow}{if} (m\_nDims != rhs.m\_nDims)}
+\DoxyCodeLine{178         \textcolor{keywordflow}{throw} std::invalid\_argument(\textcolor{stringliteral}{"{}Vector dimensions do not match."{}});}
+\DoxyCodeLine{179     }
+\DoxyCodeLine{180     std::vector<T> resultData;}
+\DoxyCodeLine{181     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<m\_nDims; ++i)}
+\DoxyCodeLine{182         resultData.push\_back(m\_vectorData.at(i) + rhs.m\_vectorData.at(i));}
+\DoxyCodeLine{183         }
+\DoxyCodeLine{184     \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}}(resultData);}
+\DoxyCodeLine{185     \textcolor{keywordflow}{return} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}};}
+\DoxyCodeLine{186 \}}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{189 \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \mbox{\hyperlink{classqb_vector_a3544378181df99c93e4efaafc247ebfe}{qbVector<T>::operator-\/ }}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \&rhs)\textcolor{keyword}{ const}}
+\DoxyCodeLine{190 \textcolor{keyword}{}\{}
+\DoxyCodeLine{191     \textcolor{comment}{// Check that the number of dimensions match.}}
+\DoxyCodeLine{192     \textcolor{keywordflow}{if} (m\_nDims != rhs.m\_nDims)}
+\DoxyCodeLine{193         \textcolor{keywordflow}{throw} std::invalid\_argument(\textcolor{stringliteral}{"{}Vector dimensions do not match."{}});}
+\DoxyCodeLine{194     }
+\DoxyCodeLine{195     std::vector<T> resultData;}
+\DoxyCodeLine{196     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<m\_nDims; ++i)}
+\DoxyCodeLine{197         resultData.push\_back(m\_vectorData.at(i) -\/ rhs.m\_vectorData.at(i));}
+\DoxyCodeLine{198         }
+\DoxyCodeLine{199     \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}}(resultData);}
+\DoxyCodeLine{200     \textcolor{keywordflow}{return} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}};}
+\DoxyCodeLine{201 \}}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{204 \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \mbox{\hyperlink{classqb_vector_af4cf14f133608188f609dec15f137da1}{qbVector<T>::operator* }}(\textcolor{keyword}{const} T \&rhs)\textcolor{keyword}{ const}}
+\DoxyCodeLine{205 \textcolor{keyword}{}\{}
+\DoxyCodeLine{206     \textcolor{comment}{// Perform scalar multiplication.}}
+\DoxyCodeLine{207     std::vector<T> resultData;}
+\DoxyCodeLine{208     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<m\_nDims; ++i)}
+\DoxyCodeLine{209         resultData.push\_back(m\_vectorData.at(i) * rhs);}
+\DoxyCodeLine{210         }
+\DoxyCodeLine{211     \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}}(resultData);}
+\DoxyCodeLine{212     \textcolor{keywordflow}{return} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}};}
+\DoxyCodeLine{213 \}}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215 \textcolor{comment}{/* **************************************************************************************************}}
+\DoxyCodeLine{216 \textcolor{comment}{FRIEND FUNCTIONS}}
+\DoxyCodeLine{217 \textcolor{comment}{/* *************************************************************************************************/}}
+\DoxyCodeLine{218 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{219 \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \mbox{\hyperlink{qb_vector_8h_a07b5fd7eea993be47bce40bb0db51b9f}{operator* }}(\textcolor{keyword}{const} T \&lhs, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \&rhs)}
+\DoxyCodeLine{220 \{}
+\DoxyCodeLine{221     \textcolor{comment}{// Perform scalar multiplication.}}
+\DoxyCodeLine{222     std::vector<T> resultData;}
+\DoxyCodeLine{223     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<rhs.m\_nDims; ++i)}
+\DoxyCodeLine{224         resultData.push\_back(lhs * rhs.m\_vectorData.at(i));}
+\DoxyCodeLine{225         }
+\DoxyCodeLine{226     \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}}(resultData);}
+\DoxyCodeLine{227     \textcolor{keywordflow}{return} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}};}
+\DoxyCodeLine{228 \}}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{230 \textcolor{comment}{/* **************************************************************************************************}}
+\DoxyCodeLine{231 \textcolor{comment}{STATIC FUNCTIONS}}
+\DoxyCodeLine{232 \textcolor{comment}{/* *************************************************************************************************/}}
+\DoxyCodeLine{233 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{234 T \mbox{\hyperlink{classqb_vector_a8a3c9123ca342c3499c99112a577db8b}{qbVector<T>::dot}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \&\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3309789fc188587d666cda5ece79cf82}{a}}, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \&\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a0f71581a41fd2264c8944126dabbd010}{b}})}
+\DoxyCodeLine{235 \{}
+\DoxyCodeLine{236     \textcolor{comment}{// Check that the number of dimensions match.}}
+\DoxyCodeLine{237     \textcolor{keywordflow}{if} (\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3309789fc188587d666cda5ece79cf82}{a}}.m\_nDims != \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a0f71581a41fd2264c8944126dabbd010}{b}}.m\_nDims)}
+\DoxyCodeLine{238         \textcolor{keywordflow}{throw} std::invalid\_argument(\textcolor{stringliteral}{"{}Vector dimensions must match for the dot-\/product to be computed."{}});}
+\DoxyCodeLine{239     }
+\DoxyCodeLine{240     \textcolor{comment}{// Compute the dot product.}}
+\DoxyCodeLine{241     T cumulativeSum = \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.0);}
+\DoxyCodeLine{242     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3309789fc188587d666cda5ece79cf82}{a}}.m\_nDims; ++i)}
+\DoxyCodeLine{243         cumulativeSum += \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3309789fc188587d666cda5ece79cf82}{a}}.m\_vectorData.at(i) * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a0f71581a41fd2264c8944126dabbd010}{b}}.m\_vectorData.at(i);}
+\DoxyCodeLine{244     }
+\DoxyCodeLine{245     \textcolor{keywordflow}{return} cumulativeSum;}
+\DoxyCodeLine{246 \}}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{248 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{249 \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \mbox{\hyperlink{classqb_vector_af77140337a3e04ff051d346599fe4283}{qbVector<T>::cross}}(\textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \&\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3309789fc188587d666cda5ece79cf82}{a}}, \textcolor{keyword}{const} \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \&\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a0f71581a41fd2264c8944126dabbd010}{b}})}
+\DoxyCodeLine{250 \{}
+\DoxyCodeLine{251     \textcolor{comment}{// Check that the number of dimensions match.}}
+\DoxyCodeLine{252     \textcolor{keywordflow}{if} (\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3309789fc188587d666cda5ece79cf82}{a}}.m\_nDims != \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a0f71581a41fd2264c8944126dabbd010}{b}}.m\_nDims)}
+\DoxyCodeLine{253         \textcolor{keywordflow}{throw} std::invalid\_argument(\textcolor{stringliteral}{"{}Vector dimensions must match for the cross-\/product to be computed."{}});}
+\DoxyCodeLine{254     }
+\DoxyCodeLine{255     \textcolor{comment}{// Check that the number of dimensions is 3.}}
+\DoxyCodeLine{256     \textcolor{comment}{/* Although the cross-\/product is also defined for 7 dimensions, we are}}
+\DoxyCodeLine{257 \textcolor{comment}{        not going to consider that case at this time. */}}
+\DoxyCodeLine{258     \textcolor{keywordflow}{if} (\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3309789fc188587d666cda5ece79cf82}{a}}.m\_nDims != 3)}
+\DoxyCodeLine{259         \textcolor{keywordflow}{throw} std::invalid\_argument(\textcolor{stringliteral}{"{}The cross-\/product can only be computed for three-\/dimensional vectors."{}});}
+\DoxyCodeLine{260     }
+\DoxyCodeLine{261     \textcolor{comment}{// Compute the cross product.}}
+\DoxyCodeLine{262     std::vector<T> resultData;}
+\DoxyCodeLine{263     resultData.push\_back((\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3309789fc188587d666cda5ece79cf82}{a}}.m\_vectorData.at(1) * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a0f71581a41fd2264c8944126dabbd010}{b}}.m\_vectorData.at(2)) -\/ (\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3309789fc188587d666cda5ece79cf82}{a}}.m\_vectorData.at(2) * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a0f71581a41fd2264c8944126dabbd010}{b}}.m\_vectorData.at(1)));}
+\DoxyCodeLine{264     resultData.push\_back(-\/((\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3309789fc188587d666cda5ece79cf82}{a}}.m\_vectorData.at(0) * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a0f71581a41fd2264c8944126dabbd010}{b}}.m\_vectorData.at(2)) -\/ (\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3309789fc188587d666cda5ece79cf82}{a}}.m\_vectorData.at(2) * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a0f71581a41fd2264c8944126dabbd010}{b}}.m\_vectorData.at(0))));}
+\DoxyCodeLine{265     resultData.push\_back((\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3309789fc188587d666cda5ece79cf82}{a}}.m\_vectorData.at(0) * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a0f71581a41fd2264c8944126dabbd010}{b}}.m\_vectorData.at(1)) -\/ (\mbox{\hyperlink{_s_d_l__opengl__glext_8h_a3309789fc188587d666cda5ece79cf82}{a}}.m\_vectorData.at(1) * \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a0f71581a41fd2264c8944126dabbd010}{b}}.m\_vectorData.at(0)));}
+\DoxyCodeLine{266 }
+\DoxyCodeLine{267     \mbox{\hyperlink{classqb_vector}{qbVector<T>}} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}}(resultData);}
+\DoxyCodeLine{268     \textcolor{keywordflow}{return} \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a321ff419cd5252e54cf95e64dc6687ee}{result}};}
+\DoxyCodeLine{269 \}}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

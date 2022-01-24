@@ -1,0 +1,1606 @@
+.TH "D:/RayTracing/include/SDL_joystick.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_joystick.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SDL_stdinc\&.h'\fP
+.br
+\fC#include 'SDL_error\&.h'\fP
+.br
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBSDL_JoystickGUID\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSDL_IPHONE_MAX_GFORCE\fP   5\&.0"
+.br
+.ti -1c
+.RI "#define \fBSDL_JOYSTICK_AXIS_MAX\fP   32767"
+.br
+.ti -1c
+.RI "#define \fBSDL_JOYSTICK_AXIS_MIN\fP   \-32768"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct _SDL_Joystick \fBSDL_Joystick\fP"
+.br
+.ti -1c
+.RI "typedef \fBSint32\fP \fBSDL_JoystickID\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSDL_JoystickType\fP { \fBSDL_JOYSTICK_TYPE_UNKNOWN\fP, \fBSDL_JOYSTICK_TYPE_GAMECONTROLLER\fP, \fBSDL_JOYSTICK_TYPE_WHEEL\fP, \fBSDL_JOYSTICK_TYPE_ARCADE_STICK\fP, \fBSDL_JOYSTICK_TYPE_FLIGHT_STICK\fP, \fBSDL_JOYSTICK_TYPE_DANCE_PAD\fP, \fBSDL_JOYSTICK_TYPE_GUITAR\fP, \fBSDL_JOYSTICK_TYPE_DRUM_KIT\fP, \fBSDL_JOYSTICK_TYPE_ARCADE_PAD\fP, \fBSDL_JOYSTICK_TYPE_THROTTLE\fP }"
+.br
+.ti -1c
+.RI "enum \fBSDL_JoystickPowerLevel\fP { \fBSDL_JOYSTICK_POWER_UNKNOWN\fP = -1, \fBSDL_JOYSTICK_POWER_EMPTY\fP, \fBSDL_JOYSTICK_POWER_LOW\fP, \fBSDL_JOYSTICK_POWER_MEDIUM\fP, \fBSDL_JOYSTICK_POWER_FULL\fP, \fBSDL_JOYSTICK_POWER_WIRED\fP, \fBSDL_JOYSTICK_POWER_MAX\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_LockJoysticks\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_UnlockJoysticks\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_NumJoysticks\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP const char *\fBSDLCALL\fP \fBSDL_JoystickNameForIndex\fP (int device_index)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_JoystickGetDevicePlayerIndex\fP (int device_index)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_JoystickGUID\fP \fBSDLCALL\fP \fBSDL_JoystickGetDeviceGUID\fP (int device_index)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBUint16\fP \fBSDLCALL\fP \fBSDL_JoystickGetDeviceVendor\fP (int device_index)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBUint16\fP \fBSDLCALL\fP \fBSDL_JoystickGetDeviceProduct\fP (int device_index)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBUint16\fP \fBSDLCALL\fP \fBSDL_JoystickGetDeviceProductVersion\fP (int device_index)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_JoystickType\fP \fBSDLCALL\fP \fBSDL_JoystickGetDeviceType\fP (int device_index)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_JoystickID\fP \fBSDLCALL\fP \fBSDL_JoystickGetDeviceInstanceID\fP (int device_index)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_Joystick\fP *\fBSDLCALL\fP \fBSDL_JoystickOpen\fP (int device_index)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_Joystick\fP *\fBSDLCALL\fP \fBSDL_JoystickFromInstanceID\fP (\fBSDL_JoystickID\fP instance_id)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_Joystick\fP *\fBSDLCALL\fP \fBSDL_JoystickFromPlayerIndex\fP (int player_index)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_JoystickAttachVirtual\fP (\fBSDL_JoystickType\fP \fBtype\fP, int naxes, int nbuttons, int nhats)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_JoystickDetachVirtual\fP (int device_index)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP \fBSDL_JoystickIsVirtual\fP (int device_index)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_JoystickSetVirtualAxis\fP (\fBSDL_Joystick\fP *joystick, int axis, \fBSint16\fP \fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_JoystickSetVirtualButton\fP (\fBSDL_Joystick\fP *joystick, int button, \fBUint8\fP \fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_JoystickSetVirtualHat\fP (\fBSDL_Joystick\fP *joystick, int hat, \fBUint8\fP \fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP const char *\fBSDLCALL\fP \fBSDL_JoystickName\fP (\fBSDL_Joystick\fP *joystick)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_JoystickGetPlayerIndex\fP (\fBSDL_Joystick\fP *joystick)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_JoystickSetPlayerIndex\fP (\fBSDL_Joystick\fP *joystick, int player_index)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_JoystickGUID\fP \fBSDLCALL\fP \fBSDL_JoystickGetGUID\fP (\fBSDL_Joystick\fP *joystick)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBUint16\fP \fBSDLCALL\fP \fBSDL_JoystickGetVendor\fP (\fBSDL_Joystick\fP *joystick)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBUint16\fP \fBSDLCALL\fP \fBSDL_JoystickGetProduct\fP (\fBSDL_Joystick\fP *joystick)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBUint16\fP \fBSDLCALL\fP \fBSDL_JoystickGetProductVersion\fP (\fBSDL_Joystick\fP *joystick)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP const char *\fBSDLCALL\fP \fBSDL_JoystickGetSerial\fP (\fBSDL_Joystick\fP *joystick)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_JoystickType\fP \fBSDLCALL\fP \fBSDL_JoystickGetType\fP (\fBSDL_Joystick\fP *joystick)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_JoystickGetGUIDString\fP (\fBSDL_JoystickGUID\fP guid, char *pszGUID, int cbGUID)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_JoystickGUID\fP \fBSDLCALL\fP \fBSDL_JoystickGetGUIDFromString\fP (const char *pchGUID)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP \fBSDL_JoystickGetAttached\fP (\fBSDL_Joystick\fP *joystick)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_JoystickID\fP \fBSDLCALL\fP \fBSDL_JoystickInstanceID\fP (\fBSDL_Joystick\fP *joystick)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_JoystickNumAxes\fP (\fBSDL_Joystick\fP *joystick)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_JoystickNumBalls\fP (\fBSDL_Joystick\fP *joystick)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_JoystickNumHats\fP (\fBSDL_Joystick\fP *joystick)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_JoystickNumButtons\fP (\fBSDL_Joystick\fP *joystick)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_JoystickUpdate\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_JoystickEventState\fP (int state)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSint16\fP \fBSDLCALL\fP \fBSDL_JoystickGetAxis\fP (\fBSDL_Joystick\fP *joystick, int axis)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP \fBSDL_JoystickGetAxisInitialState\fP (\fBSDL_Joystick\fP *joystick, int axis, \fBSint16\fP *state)"
+.br
+.in -1c
+.SS "Hat positions"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSDL_HAT_CENTERED\fP   0x00"
+.br
+.ti -1c
+.RI "#define \fBSDL_HAT_UP\fP   0x01"
+.br
+.ti -1c
+.RI "#define \fBSDL_HAT_RIGHT\fP   0x02"
+.br
+.ti -1c
+.RI "#define \fBSDL_HAT_DOWN\fP   0x04"
+.br
+.ti -1c
+.RI "#define \fBSDL_HAT_LEFT\fP   0x08"
+.br
+.ti -1c
+.RI "#define \fBSDL_HAT_RIGHTUP\fP   (\fBSDL_HAT_RIGHT\fP|\fBSDL_HAT_UP\fP)"
+.br
+.ti -1c
+.RI "#define \fBSDL_HAT_RIGHTDOWN\fP   (\fBSDL_HAT_RIGHT\fP|\fBSDL_HAT_DOWN\fP)"
+.br
+.ti -1c
+.RI "#define \fBSDL_HAT_LEFTUP\fP   (\fBSDL_HAT_LEFT\fP|\fBSDL_HAT_UP\fP)"
+.br
+.ti -1c
+.RI "#define \fBSDL_HAT_LEFTDOWN\fP   (\fBSDL_HAT_LEFT\fP|\fBSDL_HAT_DOWN\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBUint8\fP \fBSDLCALL\fP \fBSDL_JoystickGetHat\fP (\fBSDL_Joystick\fP *joystick, int hat)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_JoystickGetBall\fP (\fBSDL_Joystick\fP *joystick, int ball, int *dx, int *dy)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBUint8\fP \fBSDLCALL\fP \fBSDL_JoystickGetButton\fP (\fBSDL_Joystick\fP *joystick, int button)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_JoystickRumble\fP (\fBSDL_Joystick\fP *joystick, \fBUint16\fP low_frequency_rumble, \fBUint16\fP high_frequency_rumble, \fBUint32\fP duration_ms)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_JoystickRumbleTriggers\fP (\fBSDL_Joystick\fP *joystick, \fBUint16\fP left_rumble, \fBUint16\fP right_rumble, \fBUint32\fP duration_ms)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP \fBSDL_JoystickHasLED\fP (\fBSDL_Joystick\fP *joystick)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP \fBSDL_JoystickHasRumble\fP (\fBSDL_Joystick\fP *joystick)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP \fBSDL_JoystickHasRumbleTriggers\fP (\fBSDL_Joystick\fP *joystick)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_JoystickSetLED\fP (\fBSDL_Joystick\fP *joystick, \fBUint8\fP red, \fBUint8\fP \fBgreen\fP, \fBUint8\fP \fBblue\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_JoystickSendEffect\fP (\fBSDL_Joystick\fP *joystick, const \fBvoid\fP *\fBdata\fP, int \fBsize\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_JoystickClose\fP (\fBSDL_Joystick\fP *joystick)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_JoystickPowerLevel\fP \fBSDLCALL\fP \fBSDL_JoystickCurrentPowerLevel\fP (\fBSDL_Joystick\fP *joystick)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include file for SDL joystick event handling
+.PP
+The term 'device_index' identifies currently plugged in joystick devices between 0 and \fBSDL_NumJoysticks()\fP, with the exact joystick behind a device_index changing as joysticks are plugged and unplugged\&.
+.PP
+The term 'instance_id' is the current instantiation of a joystick device in the system, if the joystick is removed and then re-inserted then it will get a new instance_id, instance_id's are monotonically increasing identifiers of a joystick plugged in\&.
+.PP
+The term 'player_index' is the number assigned to a player on a specific controller\&. For XInput controllers this returns the XInput user index\&. Many joysticks will not be able to supply this information\&.
+.PP
+The term JoystickGUID is a stable 128-bit identifier for a joystick device that does not change over time, it identifies class of the device (a X360 wired controller for example)\&. This identifier is platform dependent\&.
+.PP
+In order to use these functions, \fBSDL_Init()\fP must have been called with the \fBSDL_INIT_JOYSTICK\fP flag\&. This causes SDL to scan the system for joysticks, and load appropriate drivers\&.
+.PP
+If you would like to receive joystick updates while the application is in the background, you should set the following hint before calling \fBSDL_Init()\fP: SDL_HINT_JOYSTICK_ALLOW_BACKGROUND_EVENTS 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define SDL_HAT_CENTERED   0x00"
+
+.SS "#define SDL_HAT_DOWN   0x04"
+
+.SS "#define SDL_HAT_LEFT   0x08"
+
+.SS "#define SDL_HAT_LEFTDOWN   (\fBSDL_HAT_LEFT\fP|\fBSDL_HAT_DOWN\fP)"
+
+.SS "#define SDL_HAT_LEFTUP   (\fBSDL_HAT_LEFT\fP|\fBSDL_HAT_UP\fP)"
+
+.SS "#define SDL_HAT_RIGHT   0x02"
+
+.SS "#define SDL_HAT_RIGHTDOWN   (\fBSDL_HAT_RIGHT\fP|\fBSDL_HAT_DOWN\fP)"
+
+.SS "#define SDL_HAT_RIGHTUP   (\fBSDL_HAT_RIGHT\fP|\fBSDL_HAT_UP\fP)"
+
+.SS "#define SDL_HAT_UP   0x01"
+
+.SS "#define SDL_IPHONE_MAX_GFORCE   5\&.0"
+
+.SS "#define SDL_JOYSTICK_AXIS_MAX   32767"
+
+.SS "#define SDL_JOYSTICK_AXIS_MIN   \-32768"
+
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct _SDL_Joystick \fBSDL_Joystick\fP"
+
+.SS "typedef \fBSint32\fP \fBSDL_JoystickID\fP"
+This is a unique ID for a joystick for the time it is connected to the system, and is never reused for the lifetime of the application\&. If the joystick is disconnected and reconnected, it will get a new ID\&.
+.PP
+The ID value starts at 0 and increments from there\&. The value -1 is an invalid ID\&. 
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBSDL_JoystickPowerLevel\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISDL_JOYSTICK_POWER_UNKNOWN \fP\fP
+.TP
+\fB\fISDL_JOYSTICK_POWER_EMPTY \fP\fP
+.TP
+\fB\fISDL_JOYSTICK_POWER_LOW \fP\fP
+.TP
+\fB\fISDL_JOYSTICK_POWER_MEDIUM \fP\fP
+.TP
+\fB\fISDL_JOYSTICK_POWER_FULL \fP\fP
+.TP
+\fB\fISDL_JOYSTICK_POWER_WIRED \fP\fP
+.TP
+\fB\fISDL_JOYSTICK_POWER_MAX \fP\fP
+.SS "enum \fBSDL_JoystickType\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISDL_JOYSTICK_TYPE_UNKNOWN \fP\fP
+.TP
+\fB\fISDL_JOYSTICK_TYPE_GAMECONTROLLER \fP\fP
+.TP
+\fB\fISDL_JOYSTICK_TYPE_WHEEL \fP\fP
+.TP
+\fB\fISDL_JOYSTICK_TYPE_ARCADE_STICK \fP\fP
+.TP
+\fB\fISDL_JOYSTICK_TYPE_FLIGHT_STICK \fP\fP
+.TP
+\fB\fISDL_JOYSTICK_TYPE_DANCE_PAD \fP\fP
+.TP
+\fB\fISDL_JOYSTICK_TYPE_GUITAR \fP\fP
+.TP
+\fB\fISDL_JOYSTICK_TYPE_DRUM_KIT \fP\fP
+.TP
+\fB\fISDL_JOYSTICK_TYPE_ARCADE_PAD \fP\fP
+.TP
+\fB\fISDL_JOYSTICK_TYPE_THROTTLE \fP\fP
+.SH "Function Documentation"
+.PP 
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_JoystickAttachVirtual (\fBSDL_JoystickType\fP type, int naxes, int nbuttons, int nhats)"
+Attach a new virtual joystick\&.
+.PP
+\fBReturns\fP
+.RS 4
+the joystick's device index, or -1 if an error occurred\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.14\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_JoystickClose (\fBSDL_Joystick\fP * joystick)"
+Close a joystick previously opened with \fBSDL_JoystickOpen()\fP\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP The joystick device to close
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_JoystickOpen\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_JoystickPowerLevel\fP \fBSDLCALL\fP SDL_JoystickCurrentPowerLevel (\fBSDL_Joystick\fP * joystick)"
+Get the battery level of a joystick as SDL_JoystickPowerLevel\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP the SDL_Joystick to query 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the current battery level as SDL_JoystickPowerLevel on success or \fCSDL_JOYSTICK_POWER_UNKNOWN\fP if it is unknown
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.4\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_JoystickDetachVirtual (int device_index)"
+Detach a virtual joystick\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIdevice_index\fP a value previously returned from \fBSDL_JoystickAttachVirtual()\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 on success, or -1 if an error occurred\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.14\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_JoystickEventState (int state)"
+Enable/disable joystick event polling\&.
+.PP
+If joystick events are disabled, you must call \fBSDL_JoystickUpdate()\fP yourself and manually check the state of the joystick when you want joystick information\&.
+.PP
+It is recommended that you leave joystick event handling enabled\&.
+.PP
+\fBWARNING\fP: Calling this function may delete all events currently in SDL's event queue\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIstate\fP can be one of \fCSDL_QUERY\fP, \fCSDL_IGNORE\fP, or \fCSDL_ENABLE\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+1 if enabled, 0 if disabled, or a negative error code on failure; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+If \fCstate\fP is \fCSDL_QUERY\fP then the current state is returned, otherwise the new processing state is returned\&.
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GameControllerEventState\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_Joystick\fP *\fBSDLCALL\fP SDL_JoystickFromInstanceID (\fBSDL_JoystickID\fP instance_id)"
+Get the SDL_Joystick associated with an instance id\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIinstance_id\fP the instance id to get the SDL_Joystick for 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+an SDL_Joystick on success or NULL on failure; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.4\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_Joystick\fP *\fBSDLCALL\fP SDL_JoystickFromPlayerIndex (int player_index)"
+Get the SDL_Joystick associated with a player index\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIplayer_index\fP the player index to get the SDL_Joystick for 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+an SDL_Joystick on success or NULL on failure; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.12\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP SDL_JoystickGetAttached (\fBSDL_Joystick\fP * joystick)"
+Get the status of a specified joystick\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP the joystick to query 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+SDL_TRUE if the joystick has been opened, SDL_FALSE if it has not; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_JoystickClose\fP 
+.PP
+\fBSDL_JoystickOpen\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSint16\fP \fBSDLCALL\fP SDL_JoystickGetAxis (\fBSDL_Joystick\fP * joystick, int axis)"
+Get the current state of an axis control on a joystick\&.
+.PP
+SDL makes no promises about what part of the joystick any given axis refers to\&. Your game should have some sort of configuration UI to let users specify what each axis should be bound to\&. Alternately, SDL's higher-level Game Controller API makes a great effort to apply order to this lower-level interface, so you know that a specific axis is the 'left thumb stick,' etc\&.
+.PP
+The value returned by \fBSDL_JoystickGetAxis()\fP is a signed integer (-32768 to 32767) representing the current position of the axis\&. It may be necessary to impose certain tolerances on these values to account for jitter\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP an SDL_Joystick structure containing joystick information 
+.br
+\fIaxis\fP the axis to query; the axis indices start at index 0 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a 16-bit signed integer representing the current position of the axis or 0 on failure; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_JoystickNumAxes\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP SDL_JoystickGetAxisInitialState (\fBSDL_Joystick\fP * joystick, int axis, \fBSint16\fP * state)"
+Get the initial state of an axis control on a joystick\&.
+.PP
+The state is a value ranging from -32768 to 32767\&.
+.PP
+The axis indices start at index 0\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP an SDL_Joystick structure containing joystick information 
+.br
+\fIaxis\fP the axis to query; the axis indices start at index 0 
+.br
+\fIstate\fP Upon return, the initial value is supplied here\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+SDL_TRUE if this axis has any initial value, or SDL_FALSE if not\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.6\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_JoystickGetBall (\fBSDL_Joystick\fP * joystick, int ball, int * dx, int * dy)"
+Get the ball axis change since the last poll\&.
+.PP
+Trackballs can only return relative motion since the last call to \fBSDL_JoystickGetBall()\fP, these motion deltas are placed into \fCdx\fP and \fCdy\fP\&.
+.PP
+Most joysticks do not have trackballs\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP the SDL_Joystick to query 
+.br
+\fIball\fP the ball index to query; ball indices start at index 0 
+.br
+\fIdx\fP stores the difference in the x axis position since the last poll 
+.br
+\fIdy\fP stores the difference in the y axis position since the last poll 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 on success or a negative error code on failure; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_JoystickNumBalls\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBUint8\fP \fBSDLCALL\fP SDL_JoystickGetButton (\fBSDL_Joystick\fP * joystick, int button)"
+Get the current state of a button on a joystick\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP an SDL_Joystick structure containing joystick information 
+.br
+\fIbutton\fP the button index to get the state from; indices start at index 0 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+1 if the specified button is pressed, 0 otherwise\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_JoystickNumButtons\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_JoystickGUID\fP \fBSDLCALL\fP SDL_JoystickGetDeviceGUID (int device_index)"
+Get the implementation-dependent GUID for the joystick at a given device index\&.
+.PP
+This function can be called before any joysticks are opened\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIdevice_index\fP the index of the joystick to query (the N'th joystick on the system 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the GUID of the selected joystick\&. If called on an invalid index, this function returns a zero GUID
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_JoystickGetGUID\fP 
+.PP
+\fBSDL_JoystickGetGUIDString\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_JoystickID\fP \fBSDLCALL\fP SDL_JoystickGetDeviceInstanceID (int device_index)"
+Get the instance ID of a joystick\&.
+.PP
+This can be called before any joysticks are opened\&. If the index is out of range, this function will return -1\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIdevice_index\fP the index of the joystick to query (the N'th joystick on the system 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the instance id of the selected joystick\&. If called on an invalid index, this function returns zero
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.6\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_JoystickGetDevicePlayerIndex (int device_index)"
+Get the player index of a joystick, or -1 if it's not available This can be called before any joysticks are opened\&.
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.9\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBUint16\fP \fBSDLCALL\fP SDL_JoystickGetDeviceProduct (int device_index)"
+Get the USB product ID of a joystick, if available\&.
+.PP
+This can be called before any joysticks are opened\&. If the product ID isn't available this function returns 0\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIdevice_index\fP the index of the joystick to query (the N'th joystick on the system 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the USB product ID of the selected joystick\&. If called on an invalid index, this function returns zero
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.6\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBUint16\fP \fBSDLCALL\fP SDL_JoystickGetDeviceProductVersion (int device_index)"
+Get the product version of a joystick, if available\&.
+.PP
+This can be called before any joysticks are opened\&. If the product version isn't available this function returns 0\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIdevice_index\fP the index of the joystick to query (the N'th joystick on the system 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the product version of the selected joystick\&. If called on an invalid index, this function returns zero
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.6\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_JoystickType\fP \fBSDLCALL\fP SDL_JoystickGetDeviceType (int device_index)"
+Get the type of a joystick, if available\&.
+.PP
+This can be called before any joysticks are opened\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIdevice_index\fP the index of the joystick to query (the N'th joystick on the system 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the SDL_JoystickType of the selected joystick\&. If called on an invalid index, this function returns \fCSDL_JOYSTICK_TYPE_UNKNOWN\fP
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.6\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBUint16\fP \fBSDLCALL\fP SDL_JoystickGetDeviceVendor (int device_index)"
+Get the USB vendor ID of a joystick, if available\&.
+.PP
+This can be called before any joysticks are opened\&. If the vendor ID isn't available this function returns 0\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIdevice_index\fP the index of the joystick to query (the N'th joystick on the system 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the USB vendor ID of the selected joystick\&. If called on an invalid index, this function returns zero
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.6\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_JoystickGUID\fP \fBSDLCALL\fP SDL_JoystickGetGUID (\fBSDL_Joystick\fP * joystick)"
+Get the implementation-dependent GUID for the joystick\&.
+.PP
+This function requires an open joystick\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP the SDL_Joystick obtained from \fBSDL_JoystickOpen()\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the GUID of the given joystick\&. If called on an invalid index, this function returns a zero GUID; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_JoystickGetDeviceGUID\fP 
+.PP
+\fBSDL_JoystickGetGUIDString\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_JoystickGUID\fP \fBSDLCALL\fP SDL_JoystickGetGUIDFromString (const char * pchGUID)"
+Convert a GUID string into a \fBSDL_JoystickGUID\fP structure\&.
+.PP
+Performs no error checking\&. If this function is given a string containing an invalid GUID, the function will silently succeed, but the GUID generated will not be useful\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIpchGUID\fP string containing an ASCII representation of a GUID 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a \fBSDL_JoystickGUID\fP structure\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_JoystickGetGUIDString\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_JoystickGetGUIDString (\fBSDL_JoystickGUID\fP guid, char * pszGUID, int cbGUID)"
+Get an ASCII string representation for a given \fBSDL_JoystickGUID\fP\&.
+.PP
+You should supply at least 33 bytes for pszGUID\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIguid\fP the \fBSDL_JoystickGUID\fP you wish to convert to string 
+.br
+\fIpszGUID\fP buffer in which to write the ASCII string 
+.br
+\fIcbGUID\fP the size of pszGUID
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_JoystickGetDeviceGUID\fP 
+.PP
+\fBSDL_JoystickGetGUID\fP 
+.PP
+\fBSDL_JoystickGetGUIDFromString\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBUint8\fP \fBSDLCALL\fP SDL_JoystickGetHat (\fBSDL_Joystick\fP * joystick, int hat)"
+Get the current state of a POV hat on a joystick\&.
+.PP
+The returned value will be one of the following positions:
+.PP
+.IP "\(bu" 2
+\fCSDL_HAT_CENTERED\fP
+.IP "\(bu" 2
+\fCSDL_HAT_UP\fP
+.IP "\(bu" 2
+\fCSDL_HAT_RIGHT\fP
+.IP "\(bu" 2
+\fCSDL_HAT_DOWN\fP
+.IP "\(bu" 2
+\fCSDL_HAT_LEFT\fP
+.IP "\(bu" 2
+\fCSDL_HAT_RIGHTUP\fP
+.IP "\(bu" 2
+\fCSDL_HAT_RIGHTDOWN\fP
+.IP "\(bu" 2
+\fCSDL_HAT_LEFTUP\fP
+.IP "\(bu" 2
+\fCSDL_HAT_LEFTDOWN\fP
+.PP
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP an SDL_Joystick structure containing joystick information 
+.br
+\fIhat\fP the hat index to get the state from; indices start at index 0 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the current hat position\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_JoystickNumHats\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_JoystickGetPlayerIndex (\fBSDL_Joystick\fP * joystick)"
+Get the player index of an opened joystick\&.
+.PP
+For XInput controllers this returns the XInput user index\&. Many joysticks will not be able to supply this information\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP the SDL_Joystick obtained from \fBSDL_JoystickOpen()\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the player index, or -1 if it's not available\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.9\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBUint16\fP \fBSDLCALL\fP SDL_JoystickGetProduct (\fBSDL_Joystick\fP * joystick)"
+Get the USB product ID of an opened joystick, if available\&.
+.PP
+If the product ID isn't available this function returns 0\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP the SDL_Joystick obtained from \fBSDL_JoystickOpen()\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the USB product ID of the selected joystick, or 0 if unavailable\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.6\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBUint16\fP \fBSDLCALL\fP SDL_JoystickGetProductVersion (\fBSDL_Joystick\fP * joystick)"
+Get the product version of an opened joystick, if available\&.
+.PP
+If the product version isn't available this function returns 0\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP the SDL_Joystick obtained from \fBSDL_JoystickOpen()\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the product version of the selected joystick, or 0 if unavailable\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.6\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP const char *\fBSDLCALL\fP SDL_JoystickGetSerial (\fBSDL_Joystick\fP * joystick)"
+Get the serial number of an opened joystick, if available\&.
+.PP
+Returns the serial number of the joystick, or NULL if it is not available\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP the SDL_Joystick obtained from \fBSDL_JoystickOpen()\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the serial number of the selected joystick, or NULL if unavailable\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.14\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_JoystickType\fP \fBSDLCALL\fP SDL_JoystickGetType (\fBSDL_Joystick\fP * joystick)"
+Get the type of an opened joystick\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP the SDL_Joystick obtained from \fBSDL_JoystickOpen()\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the SDL_JoystickType of the selected joystick\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.6\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBUint16\fP \fBSDLCALL\fP SDL_JoystickGetVendor (\fBSDL_Joystick\fP * joystick)"
+Get the USB vendor ID of an opened joystick, if available\&.
+.PP
+If the vendor ID isn't available this function returns 0\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP the SDL_Joystick obtained from \fBSDL_JoystickOpen()\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the USB vendor ID of the selected joystick, or 0 if unavailable\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.6\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP SDL_JoystickHasLED (\fBSDL_Joystick\fP * joystick)"
+Query whether a joystick has an LED\&.
+.PP
+An example of a joystick LED is the light on the back of a PlayStation 4's DualShock 4 controller\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP The joystick to query 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+SDL_TRUE if the joystick has a modifiable LED, SDL_FALSE otherwise\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.14\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP SDL_JoystickHasRumble (\fBSDL_Joystick\fP * joystick)"
+Query whether a joystick has rumble support\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP The joystick to query 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+SDL_TRUE if the joystick has rumble, SDL_FALSE otherwise\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.18\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_JoystickRumble\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP SDL_JoystickHasRumbleTriggers (\fBSDL_Joystick\fP * joystick)"
+Query whether a joystick has rumble support on triggers\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP The joystick to query 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+SDL_TRUE if the joystick has trigger rumble, SDL_FALSE otherwise\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.18\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_JoystickRumbleTriggers\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_JoystickID\fP \fBSDLCALL\fP SDL_JoystickInstanceID (\fBSDL_Joystick\fP * joystick)"
+Get the instance ID of an opened joystick\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP an SDL_Joystick structure containing joystick information 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the instance ID of the specified joystick on success or a negative error code on failure; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_JoystickOpen\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP SDL_JoystickIsVirtual (int device_index)"
+Query whether or not the joystick at a given device index is virtual\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIdevice_index\fP a joystick device index\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+SDL_TRUE if the joystick is virtual, SDL_FALSE otherwise\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.14\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP const char *\fBSDLCALL\fP SDL_JoystickName (\fBSDL_Joystick\fP * joystick)"
+Get the implementation dependent name of a joystick\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP the SDL_Joystick obtained from \fBSDL_JoystickOpen()\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the name of the selected joystick\&. If no name can be found, this function returns NULL; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_JoystickNameForIndex\fP 
+.PP
+\fBSDL_JoystickOpen\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP const char *\fBSDLCALL\fP SDL_JoystickNameForIndex (int device_index)"
+Get the implementation dependent name of a joystick\&.
+.PP
+This can be called before any joysticks are opened\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIdevice_index\fP the index of the joystick to query (the N'th joystick on the system) 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the name of the selected joystick\&. If no name can be found, this function returns NULL; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_JoystickName\fP 
+.PP
+\fBSDL_JoystickOpen\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_JoystickNumAxes (\fBSDL_Joystick\fP * joystick)"
+Get the number of general axis controls on a joystick\&.
+.PP
+Often, the directional pad on a game controller will either look like 4 separate buttons or a POV hat, and not axes, but all of this is up to the device and platform\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP an SDL_Joystick structure containing joystick information 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the number of axis controls/number of axes on success or a negative error code on failure; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_JoystickGetAxis\fP 
+.PP
+\fBSDL_JoystickOpen\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_JoystickNumBalls (\fBSDL_Joystick\fP * joystick)"
+Get the number of trackballs on a joystick\&.
+.PP
+Joystick trackballs have only relative motion events associated with them and their state cannot be polled\&.
+.PP
+Most joysticks do not have trackballs\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP an SDL_Joystick structure containing joystick information 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the number of trackballs on success or a negative error code on failure; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_JoystickGetBall\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_JoystickNumButtons (\fBSDL_Joystick\fP * joystick)"
+Get the number of buttons on a joystick\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP an SDL_Joystick structure containing joystick information 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the number of buttons on success or a negative error code on failure; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_JoystickGetButton\fP 
+.PP
+\fBSDL_JoystickOpen\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_JoystickNumHats (\fBSDL_Joystick\fP * joystick)"
+Get the number of POV hats on a joystick\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP an SDL_Joystick structure containing joystick information 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the number of POV hats on success or a negative error code on failure; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_JoystickGetHat\fP 
+.PP
+\fBSDL_JoystickOpen\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_Joystick\fP *\fBSDLCALL\fP SDL_JoystickOpen (int device_index)"
+Open a joystick for use\&.
+.PP
+The \fCdevice_index\fP argument refers to the N'th joystick presently recognized by SDL on the system\&. It is \fBNOT\fP the same as the instance ID used to identify the joystick in future events\&. See \fBSDL_JoystickInstanceID()\fP for more details about instance IDs\&.
+.PP
+The joystick subsystem must be initialized before a joystick can be opened for use\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIdevice_index\fP the index of the joystick to query 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a joystick identifier or NULL if an error occurred; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_JoystickClose\fP 
+.PP
+\fBSDL_JoystickInstanceID\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_JoystickRumble (\fBSDL_Joystick\fP * joystick, \fBUint16\fP low_frequency_rumble, \fBUint16\fP high_frequency_rumble, \fBUint32\fP duration_ms)"
+Start a rumble effect\&.
+.PP
+Each call to this function cancels any previous rumble effect, and calling it with 0 intensity stops any rumbling\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP The joystick to vibrate 
+.br
+\fIlow_frequency_rumble\fP The intensity of the low frequency (left) rumble motor, from 0 to 0xFFFF 
+.br
+\fIhigh_frequency_rumble\fP The intensity of the high frequency (right) rumble motor, from 0 to 0xFFFF 
+.br
+\fIduration_ms\fP The duration of the rumble effect, in milliseconds 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0, or -1 if rumble isn't supported on this joystick
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.9\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_JoystickHasRumble\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_JoystickRumbleTriggers (\fBSDL_Joystick\fP * joystick, \fBUint16\fP left_rumble, \fBUint16\fP right_rumble, \fBUint32\fP duration_ms)"
+Start a rumble effect in the joystick's triggers
+.PP
+Each call to this function cancels any previous trigger rumble effect, and calling it with 0 intensity stops any rumbling\&.
+.PP
+Note that this function is for \fItrigger\fP rumble; the first joystick to support this was the PlayStation 5's DualShock 5 controller\&. If you want the (more common) whole-controller rumble, use \fBSDL_JoystickRumble()\fP instead\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP The joystick to vibrate 
+.br
+\fIleft_rumble\fP The intensity of the left trigger rumble motor, from 0 to 0xFFFF 
+.br
+\fIright_rumble\fP The intensity of the right trigger rumble motor, from 0 to 0xFFFF 
+.br
+\fIduration_ms\fP The duration of the rumble effect, in milliseconds 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0, or -1 if trigger rumble isn't supported on this joystick
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.14\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_JoystickHasRumbleTriggers\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_JoystickSendEffect (\fBSDL_Joystick\fP * joystick, const \fBvoid\fP * data, int size)"
+Send a joystick specific effect packet
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP The joystick to affect 
+.br
+\fIdata\fP The data to send to the joystick 
+.br
+\fIsize\fP The size of the data to send to the joystick 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0, or -1 if this joystick or driver doesn't support effect packets
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.16\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_JoystickSetLED (\fBSDL_Joystick\fP * joystick, \fBUint8\fP red, \fBUint8\fP green, \fBUint8\fP blue)"
+Update a joystick's LED color\&.
+.PP
+An example of a joystick LED is the light on the back of a PlayStation 4's DualShock 4 controller\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP The joystick to update 
+.br
+\fIred\fP The intensity of the red LED 
+.br
+\fIgreen\fP The intensity of the green LED 
+.br
+\fIblue\fP The intensity of the blue LED 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 on success, -1 if this joystick does not have a modifiable LED
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.14\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_JoystickSetPlayerIndex (\fBSDL_Joystick\fP * joystick, int player_index)"
+Set the player index of an opened joystick\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP the SDL_Joystick obtained from \fBSDL_JoystickOpen()\fP 
+.br
+\fIplayer_index\fP the player index to set\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.12\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_JoystickSetVirtualAxis (\fBSDL_Joystick\fP * joystick, int axis, \fBSint16\fP value)"
+Set values on an opened, virtual-joystick's axis\&.
+.PP
+Please note that values set here will not be applied until the next call to SDL_JoystickUpdate, which can either be called directly, or can be called indirectly through various other SDL APIs, including, but not limited to the following: SDL_PollEvent, SDL_PumpEvents, SDL_WaitEventTimeout, SDL_WaitEvent\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP the virtual joystick on which to set state\&. 
+.br
+\fIaxis\fP the specific axis on the virtual joystick to set\&. 
+.br
+\fIvalue\fP the new value for the specified axis\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 on success, -1 on error\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.14\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_JoystickSetVirtualButton (\fBSDL_Joystick\fP * joystick, int button, \fBUint8\fP value)"
+Set values on an opened, virtual-joystick's button\&.
+.PP
+Please note that values set here will not be applied until the next call to SDL_JoystickUpdate, which can either be called directly, or can be called indirectly through various other SDL APIs, including, but not limited to the following: SDL_PollEvent, SDL_PumpEvents, SDL_WaitEventTimeout, SDL_WaitEvent\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP the virtual joystick on which to set state\&. 
+.br
+\fIbutton\fP the specific button on the virtual joystick to set\&. 
+.br
+\fIvalue\fP the new value for the specified button\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 on success, -1 on error\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.14\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_JoystickSetVirtualHat (\fBSDL_Joystick\fP * joystick, int hat, \fBUint8\fP value)"
+Set values on an opened, virtual-joystick's hat\&.
+.PP
+Please note that values set here will not be applied until the next call to SDL_JoystickUpdate, which can either be called directly, or can be called indirectly through various other SDL APIs, including, but not limited to the following: SDL_PollEvent, SDL_PumpEvents, SDL_WaitEventTimeout, SDL_WaitEvent\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIjoystick\fP the virtual joystick on which to set state\&. 
+.br
+\fIhat\fP the specific hat on the virtual joystick to set\&. 
+.br
+\fIvalue\fP the new value for the specified hat\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 on success, -1 on error\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.14\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_JoystickUpdate (\fBvoid\fP)"
+Update the current state of the open joysticks\&.
+.PP
+This is called automatically by the event loop if any joystick events are enabled\&.
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_JoystickEventState\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_LockJoysticks (\fBvoid\fP)"
+Locking for multi-threaded access to the joystick API
+.PP
+If you are using the joystick API or handling events from multiple threads you should use these locking functions to protect access to the joysticks\&.
+.PP
+In particular, you are guaranteed that the joystick list won't change, so the API functions that take a joystick index will be valid, and joystick and game controller events will not be delivered\&.
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.7\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_NumJoysticks (\fBvoid\fP)"
+Count the number of joysticks attached to the system\&.
+.PP
+\fBReturns\fP
+.RS 4
+the number of attached joysticks on success or a negative error code on failure; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_JoystickName\fP 
+.PP
+\fBSDL_JoystickOpen\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_UnlockJoysticks (\fBvoid\fP)"
+Unlocking for multi-threaded access to the joystick API
+.PP
+If you are using the joystick API or handling events from multiple threads you should use these locking functions to protect access to the joysticks\&.
+.PP
+In particular, you are guaranteed that the joystick list won't change, so the API functions that take a joystick index will be valid, and joystick and game controller events will not be delivered\&.
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.7\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_qb_l_s_q_8h_source" xml:lang="en-US">
+<title>qbLSQ.h</title>
+<indexterm><primary>D:/RayTracing/RayTrace/qbLinAlg/qbLSQ.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">//&#32;This&#32;file&#32;is&#32;part&#32;of&#32;the&#32;qbLinAlg&#32;linear&#32;algebra&#32;library.</emphasis>
+2 <emphasis role="comment">//&#32;Copyright&#32;(c)&#32;2021&#32;Michael&#32;Bennett</emphasis>
+3 <emphasis role="comment">//&#32;MIT&#32;license</emphasis>
+4 
+5 <emphasis role="preprocessor">#ifndef&#32;QBLSQ_H</emphasis>
+6 <emphasis role="preprocessor">#define&#32;QBLSQ_H</emphasis>
+7 
+8 <emphasis role="comment">/*&#32;*************************************************************************************************</emphasis>
+9 <emphasis role="comment"></emphasis>
+10 <emphasis role="comment">&#32;&#32;&#32;&#32;qbLSQ</emphasis>
+11 <emphasis role="comment">&#32;&#32;&#32;&#32;</emphasis>
+12 <emphasis role="comment">&#32;&#32;&#32;&#32;Function&#32;to&#32;solve&#32;a&#32;system&#32;of&#32;linear&#32;equations&#32;using&#32;a&#32;least&#32;squares&#32;approach&#32;to&#32;handle&#32;systems</emphasis>
+13 <emphasis role="comment">&#32;&#32;&#32;&#32;where&#32;there&#32;are&#32;more&#32;equations&#32;(observations)&#32;than&#32;unknowns.&#32;Assumes&#32;that&#32;the&#32;system&#32;is&#32;in&#32;the</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;form&#32;of&#32;y&#32;=&#32;X*beta.</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;***&#32;INPUTS&#32;***</emphasis>
+17 <emphasis role="comment">&#32;&#32;&#32;&#32;</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;Xin&#32;&#32;&#32;&#32;&#32;qbMatrix2&lt;T&gt;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;The&#32;matrix&#32;of&#32;independent&#32;variables&#32;(X&#32;in&#32;the&#32;above&#32;equation).</emphasis>
+19 <emphasis role="comment">&#32;&#32;&#32;&#32;yin&#32;&#32;&#32;&#32;&#32;qbVector&lt;T&gt;&#32;&#32;&#32;&#32;&#32;The&#32;vector&#32;of&#32;dependent&#32;variables&#32;(y&#32;in&#32;the&#32;above&#32;equation).</emphasis>
+20 <emphasis role="comment">&#32;&#32;&#32;&#32;result&#32;&#32;&#32;&#32;&#32;&#32;qbVector&lt;T&gt;&#32;&#32;&#32;&#32;&#32;The&#32;vector&#32;of&#32;unknown&#32;parameters&#32;(beta&#32;in&#32;the&#32;above&#32;equation).</emphasis>
+21 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;The&#32;final&#32;solution&#32;is&#32;returned&#32;in&#32;this&#32;vector.</emphasis>
+22 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;</emphasis>
+23 <emphasis role="comment">&#32;&#32;&#32;&#32;***&#32;OUTPUTS&#32;***</emphasis>
+24 <emphasis role="comment">&#32;&#32;&#32;&#32;</emphasis>
+25 <emphasis role="comment">&#32;&#32;&#32;&#32;INT&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Flag&#32;indicating&#32;success&#32;or&#32;failure&#32;of&#32;the&#32;process.</emphasis>
+26 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;1&#32;Indicates&#32;success.</emphasis>
+27 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-1&#32;indicates&#32;failure&#32;due&#32;to&#32;there&#32;being&#32;no&#32;computable&#32;inverse.</emphasis>
+28 <emphasis role="comment"></emphasis>
+29 <emphasis role="comment">&#32;&#32;&#32;&#32;*************************************************************************************************&#32;*/</emphasis>
+30 
+31 <emphasis role="preprocessor">#include&#32;&lt;stdexcept&gt;</emphasis>
+32 <emphasis role="preprocessor">#include&#32;&lt;iostream&gt;</emphasis>
+33 <emphasis role="preprocessor">#include&#32;&lt;iomanip&gt;</emphasis>
+34 <emphasis role="preprocessor">#include&#32;&lt;math.h&gt;</emphasis>
+35 <emphasis role="preprocessor">#include&#32;&lt;vector&gt;</emphasis>
+36 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_qb_vector_8h">qbVector.h</link>&quot;</emphasis>
+37 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_qb_matrix_8h">qbMatrix.h</link>&quot;</emphasis>
+38 
+39 <emphasis role="comment">//&#32;Define&#32;error&#32;codes.</emphasis>
+40 <emphasis role="keyword">constexpr</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_qb_l_s_q_8h_1a0f05679b760832fce219ffeebedf5179">QBLSQ_NOINVERSE</link>&#32;=&#32;-1;
+41 
+42 <emphasis role="comment">//&#32;The&#32;qbLSQ&#32;function.</emphasis>
+43 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+44 <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_qb_l_s_q_8h_1ad28351819676752eba609e1e3cfda79e">qbLSQ</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;&amp;Xin,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;&amp;yin,&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;&amp;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>)
+45 {
+46 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Firstly,&#32;make&#32;a&#32;copy&#32;of&#32;X&#32;and&#32;y.</emphasis>
+47 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;X&#32;=&#32;Xin;
+48 &#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;<link linkend="__s_d_l__opengl_8h_1a1675d9d7bb68e1657ff028643b4037e3">y</link>&#32;=&#32;yin;
+49 &#32;&#32;&#32;&#32;
+50 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;the&#32;tranpose&#32;of&#32;X.</emphasis>
+51 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;XT&#32;=&#32;X.<link linkend="_classqb_matrix2_1a6235a35daf5fa20a9ebc7ed91d8a94a3">Transpose</link>();
+52 &#32;&#32;&#32;&#32;
+53 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;XTX.</emphasis>
+54 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;XTX&#32;=&#32;XT&#32;*&#32;X;
+55 &#32;&#32;&#32;&#32;
+56 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;the&#32;inverse&#32;of&#32;this.</emphasis>
+57 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!XTX.<link linkend="_classqb_matrix2_1aaf71c5642111972501f43b1e225b8a2f">Inverse</link>())
+58 &#32;&#32;&#32;&#32;{
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;We&#32;were&#32;unable&#32;to&#32;compute&#32;the&#32;inverse.</emphasis>
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_qb_l_s_q_8h_1a0f05679b760832fce219ffeebedf5179">QBLSQ_NOINVERSE</link>;
+61 &#32;&#32;&#32;&#32;}
+62 &#32;&#32;&#32;&#32;
+63 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Multiply&#32;the&#32;inverse&#32;by&#32;XT.</emphasis>
+64 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;XTXXT&#32;=&#32;XTX&#32;*&#32;XT;
+65 &#32;&#32;&#32;&#32;
+66 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;And&#32;multiply&#32;by&#32;y&#32;to&#32;get&#32;the&#32;final&#32;result.</emphasis>
+67 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>&#32;=&#32;XTXXT&#32;*&#32;<link linkend="__s_d_l__opengl_8h_1a1675d9d7bb68e1657ff028643b4037e3">y</link>;
+68 &#32;&#32;&#32;&#32;
+69 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;1;
+70 }
+71 
+72 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

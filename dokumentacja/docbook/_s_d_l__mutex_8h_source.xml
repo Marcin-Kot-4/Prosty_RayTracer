@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__mutex_8h_source" xml:lang="en-US">
+<title>SDL_mutex.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_mutex.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+22 <emphasis role="preprocessor">#ifndef&#32;SDL_mutex_h_</emphasis>
+23 <emphasis role="preprocessor">#define&#32;SDL_mutex_h_</emphasis>
+24 
+31 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__stdinc_8h">SDL_stdinc.h</link>&quot;</emphasis>
+32 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__error_8h">SDL_error.h</link>&quot;</emphasis>
+33 
+34 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+35 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+36 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+37 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+38 <emphasis role="preprocessor">#endif</emphasis>
+39 
+44 <emphasis role="preprocessor">#define&#32;SDL_MUTEX_TIMEDOUT&#32;&#32;1</emphasis>
+45 
+49 <emphasis role="preprocessor">#define&#32;SDL_MUTEX_MAXWAIT&#32;&#32;&#32;(~(Uint32)0)</emphasis>
+50 
+51 
+55 <emphasis role="comment">/*&#32;@{&#32;*/</emphasis>
+56 
+57 <emphasis role="comment">/*&#32;The&#32;SDL&#32;mutex&#32;structure,&#32;defined&#32;in&#32;SDL_sysmutex.c&#32;*/</emphasis>
+58 <emphasis role="keyword">struct&#32;</emphasis><link linkend="__s_d_l__mutex_8h_1ac085162a7cfb9ebd63e2d05d33c03c17">SDL_mutex</link>;
+59 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="__s_d_l__mutex_8h_1ac085162a7cfb9ebd63e2d05d33c03c17">SDL_mutex</link>&#32;<link linkend="__s_d_l__mutex_8h_1ac085162a7cfb9ebd63e2d05d33c03c17">SDL_mutex</link>;
+60 
+81 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__mutex_8h_1ac085162a7cfb9ebd63e2d05d33c03c17">SDL_mutex</link>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mutex_8h_1a9a47396fe7d67160eb74ef071e1ef668">SDL_CreateMutex</link>(<emphasis role="keywordtype">void</emphasis>);
+82 
+99 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mutex_8h_1a0908c6a7356331d197059fbdc6c66a0f">SDL_LockMutex</link>(<link linkend="__s_d_l__mutex_8h_1ac085162a7cfb9ebd63e2d05d33c03c17">SDL_mutex</link>&#32;*&#32;mutex);
+100 <emphasis role="preprocessor">#define&#32;SDL_mutexP(m)&#32;&#32;&#32;SDL_LockMutex(m)</emphasis>
+101 
+122 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mutex_8h_1a5097fb4c7147d14a4c6df4515ec862e8">SDL_TryLockMutex</link>(<link linkend="__s_d_l__mutex_8h_1ac085162a7cfb9ebd63e2d05d33c03c17">SDL_mutex</link>&#32;*&#32;mutex);
+123 
+141 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mutex_8h_1afee1549c7723ebe13fbfca8ad94f8c9d">SDL_UnlockMutex</link>(<link linkend="__s_d_l__mutex_8h_1ac085162a7cfb9ebd63e2d05d33c03c17">SDL_mutex</link>&#32;*&#32;mutex);
+142 <emphasis role="preprocessor">#define&#32;SDL_mutexV(m)&#32;&#32;&#32;SDL_UnlockMutex(m)</emphasis>
+143 
+162 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mutex_8h_1ad2bbcc4e32ac927af62f0cba671f63fe">SDL_DestroyMutex</link>(<link linkend="__s_d_l__mutex_8h_1ac085162a7cfb9ebd63e2d05d33c03c17">SDL_mutex</link>&#32;*&#32;mutex);
+163 
+164 <emphasis role="comment">/*&#32;@}&#32;*/</emphasis><emphasis role="comment">/*&#32;Mutex&#32;functions&#32;*/</emphasis>
+165 
+166 
+170 <emphasis role="comment">/*&#32;@{&#32;*/</emphasis>
+171 
+172 <emphasis role="comment">/*&#32;The&#32;SDL&#32;semaphore&#32;structure,&#32;defined&#32;in&#32;SDL_syssem.c&#32;*/</emphasis>
+173 <emphasis role="keyword">struct&#32;</emphasis>SDL_semaphore;
+174 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis>SDL_semaphore&#32;<link linkend="__s_d_l__mutex_8h_1aa7d56df841e98eed229d1d4b17327d29">SDL_sem</link>;
+175 
+198 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__mutex_8h_1aa7d56df841e98eed229d1d4b17327d29">SDL_sem</link>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mutex_8h_1adf777c6c386966b58a00185726572d17">SDL_CreateSemaphore</link>(<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;initial_value);
+199 
+217 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mutex_8h_1a23deb3b7e29a5137d804e4be3453a768">SDL_DestroySemaphore</link>(<link linkend="__s_d_l__mutex_8h_1aa7d56df841e98eed229d1d4b17327d29">SDL_sem</link>&#32;*&#32;sem);
+218 
+244 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mutex_8h_1af51d75d18cb90f28b35c31e853b04792">SDL_SemWait</link>(<link linkend="__s_d_l__mutex_8h_1aa7d56df841e98eed229d1d4b17327d29">SDL_sem</link>&#32;*&#32;sem);
+245 
+268 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mutex_8h_1a517288aaa856ce2264e8420636e85c4a">SDL_SemTryWait</link>(<link linkend="__s_d_l__mutex_8h_1aa7d56df841e98eed229d1d4b17327d29">SDL_sem</link>&#32;*&#32;sem);
+269 
+293 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mutex_8h_1a4ea1acfaf722895626174e1e37c497da">SDL_SemWaitTimeout</link>(<link linkend="__s_d_l__mutex_8h_1aa7d56df841e98eed229d1d4b17327d29">SDL_sem</link>&#32;*&#32;sem,&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;ms);
+294 
+311 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mutex_8h_1a0c50f774babf7a44c381238a1f780595">SDL_SemPost</link>(<link linkend="__s_d_l__mutex_8h_1aa7d56df841e98eed229d1d4b17327d29">SDL_sem</link>&#32;*&#32;sem);
+312 
+323 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mutex_8h_1ae66390dca585fdab8de871fe32935768">SDL_SemValue</link>(<link linkend="__s_d_l__mutex_8h_1aa7d56df841e98eed229d1d4b17327d29">SDL_sem</link>&#32;*&#32;sem);
+324 
+325 <emphasis role="comment">/*&#32;@}&#32;*/</emphasis><emphasis role="comment">/*&#32;Semaphore&#32;functions&#32;*/</emphasis>
+326 
+327 
+331 <emphasis role="comment">/*&#32;@{&#32;*/</emphasis>
+332 
+333 <emphasis role="comment">/*&#32;The&#32;SDL&#32;condition&#32;variable&#32;structure,&#32;defined&#32;in&#32;SDL_syscond.c&#32;*/</emphasis>
+334 <emphasis role="keyword">struct&#32;</emphasis><link linkend="__s_d_l__mutex_8h_1ac50401d1b84d806a0c927c8cf454f96a">SDL_cond</link>;
+335 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="__s_d_l__mutex_8h_1ac50401d1b84d806a0c927c8cf454f96a">SDL_cond</link>&#32;<link linkend="__s_d_l__mutex_8h_1ac50401d1b84d806a0c927c8cf454f96a">SDL_cond</link>;
+336 
+351 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__mutex_8h_1ac50401d1b84d806a0c927c8cf454f96a">SDL_cond</link>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mutex_8h_1a05cd070a02f5ce6eb0abbec4379468a8">SDL_CreateCond</link>(<emphasis role="keywordtype">void</emphasis>);
+352 
+366 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mutex_8h_1a8843feeb270845e07fc23f692707540f">SDL_DestroyCond</link>(<link linkend="__s_d_l__mutex_8h_1ac50401d1b84d806a0c927c8cf454f96a">SDL_cond</link>&#32;*&#32;cond);
+367 
+383 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mutex_8h_1a1037a8274b0b13118fc78eeb417a1397">SDL_CondSignal</link>(<link linkend="__s_d_l__mutex_8h_1ac50401d1b84d806a0c927c8cf454f96a">SDL_cond</link>&#32;*&#32;cond);
+384 
+400 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mutex_8h_1a2ffd0b45ebdc44057007a59857ba46b3">SDL_CondBroadcast</link>(<link linkend="__s_d_l__mutex_8h_1ac50401d1b84d806a0c927c8cf454f96a">SDL_cond</link>&#32;*&#32;cond);
+401 
+428 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mutex_8h_1af759b2fe1c5507f47854c1edf1ecbabd">SDL_CondWait</link>(<link linkend="__s_d_l__mutex_8h_1ac50401d1b84d806a0c927c8cf454f96a">SDL_cond</link>&#32;*&#32;cond,&#32;<link linkend="__s_d_l__mutex_8h_1ac085162a7cfb9ebd63e2d05d33c03c17">SDL_mutex</link>&#32;*&#32;mutex);
+429 
+457 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__mutex_8h_1aa57013f95a9c608cf24a5100b841e863">SDL_CondWaitTimeout</link>(<link linkend="__s_d_l__mutex_8h_1ac50401d1b84d806a0c927c8cf454f96a">SDL_cond</link>&#32;*&#32;cond,
+458 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__mutex_8h_1ac085162a7cfb9ebd63e2d05d33c03c17">SDL_mutex</link>&#32;*&#32;mutex,&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;ms);
+459 
+460 <emphasis role="comment">/*&#32;@}&#32;*/</emphasis><emphasis role="comment">/*&#32;Condition&#32;variable&#32;functions&#32;*/</emphasis>
+461 
+462 
+463 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+464 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+465 }
+466 <emphasis role="preprocessor">#endif</emphasis>
+467 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+468 
+469 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_mutex_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+470 
+471 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

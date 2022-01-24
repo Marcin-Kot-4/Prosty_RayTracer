@@ -1,0 +1,216 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__rwops_8h_source" xml:lang="en-US">
+<title>SDL_rwops.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_rwops.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+29 <emphasis role="preprocessor">#ifndef&#32;SDL_rwops_h_</emphasis>
+30 <emphasis role="preprocessor">#define&#32;SDL_rwops_h_</emphasis>
+31 
+32 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__stdinc_8h">SDL_stdinc.h</link>&quot;</emphasis>
+33 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__error_8h">SDL_error.h</link>&quot;</emphasis>
+34 
+35 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+36 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+37 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+38 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+39 <emphasis role="preprocessor">#endif</emphasis>
+40 
+41 <emphasis role="comment">/*&#32;RWops&#32;Types&#32;*/</emphasis>
+42 <emphasis role="preprocessor">#define&#32;SDL_RWOPS_UNKNOWN&#32;&#32;&#32;0U&#32;&#32;</emphasis>
+43 <emphasis role="preprocessor">#define&#32;SDL_RWOPS_WINFILE&#32;&#32;&#32;1U&#32;&#32;</emphasis>
+44 <emphasis role="preprocessor">#define&#32;SDL_RWOPS_STDFILE&#32;&#32;&#32;2U&#32;&#32;</emphasis>
+45 <emphasis role="preprocessor">#define&#32;SDL_RWOPS_JNIFILE&#32;&#32;&#32;3U&#32;&#32;</emphasis>
+46 <emphasis role="preprocessor">#define&#32;SDL_RWOPS_MEMORY&#32;&#32;&#32;&#32;4U&#32;&#32;</emphasis>
+47 <emphasis role="preprocessor">#define&#32;SDL_RWOPS_MEMORY_RO&#32;5U&#32;&#32;</emphasis>
+48 <emphasis role="preprocessor">#if&#32;defined(__VITA__)</emphasis>
+49 <emphasis role="preprocessor">#define&#32;SDL_RWOPS_VITAFILE&#32;&#32;6U&#32;&#32;</emphasis>
+50 <emphasis role="preprocessor">#endif</emphasis>
+51 
+55 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>
+56 {
+60 &#32;&#32;&#32;&#32;<link linkend="_struct_s_d_l___r_wops_1a45f66dbb683a88281d96f83ca18c525f">Sint64</link>&#32;(<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;*&#32;<link linkend="__s_d_l__opengl__glext_8h_1a3d1e3edfcf61ca2d831883e1afbad89e">size</link>)&#32;(<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*&#32;context);
+61 
+68 &#32;&#32;&#32;&#32;<link linkend="_struct_s_d_l___r_wops_1a45f66dbb683a88281d96f83ca18c525f">Sint64</link>&#32;(<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;*&#32;seek)&#32;(<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*&#32;context,&#32;<link linkend="__s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</link>&#32;<link linkend="_struct_s_d_l___r_wops_1ab1ee9d9e4f61b3b30f26160c282ae416">offset</link>,
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l___r_wops_1a95b96dcc6690897bfaf2d059f4378ed2">whence</link>);
+70 
+77 &#32;&#32;&#32;&#32;<link linkend="_struct_s_d_l___r_wops_1acd9a3c6e840d285c1e30cadaf99097b2">size_t</link>&#32;(<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;*&#32;read)&#32;(<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*&#32;context,&#32;<emphasis role="keywordtype">void</emphasis>&#32;*<link linkend="_struct_s_d_l___r_wops_1a3f68b93789331775de802d51a2934f0a">ptr</link>,
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="_struct_s_d_l___r_wops_1ab078bcf43a916d469ff550c60ab4b3f2">size</link>,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="_struct_s_d_l___r_wops_1a7786282ec28451085908f70048ee32c8">maxnum</link>);
+79 
+86 &#32;&#32;&#32;&#32;<link linkend="_struct_s_d_l___r_wops_1acd9a3c6e840d285c1e30cadaf99097b2">size_t</link>&#32;(<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;*&#32;write)&#32;(<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*&#32;context,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;*<link linkend="_struct_s_d_l___r_wops_1a51baff579726790887a4ca41ce14873c">ptr</link>,
+87 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="_struct_s_d_l___r_wops_1ab078bcf43a916d469ff550c60ab4b3f2">size</link>,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="_struct_s_d_l___r_wops_1a630921d5c84cf48a4a10f9a75e1caa10">num</link>);
+88 
+94 &#32;&#32;&#32;&#32;<link linkend="_struct_s_d_l___r_wops_1ab303bcbb0f6742a141ba8b2998923f47">int</link>&#32;(<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;*&#32;close)&#32;(<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*&#32;context);
+95 
+96 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="_struct_s_d_l___r_wops_1a099017bfceaac24ced0e4d08a4e0a023">type</link>;
+97 &#32;&#32;&#32;&#32;<emphasis role="keyword">union</emphasis>
+98 &#32;&#32;&#32;&#32;{
+99 <emphasis role="preprocessor">#if&#32;defined(__ANDROID__)</emphasis>
+100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">struct</emphasis>
+101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;*asset;
+103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;androidio;
+104 <emphasis role="preprocessor">#elif&#32;defined(__WIN32__)</emphasis>
+105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">struct</emphasis>
+106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;append;
+108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1afa0fb1b5e976920c0abeff2dca3ed774">h</link>;
+109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">struct</emphasis>
+110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;*<link linkend="__s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a">data</link>;
+112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="_struct_s_d_l___r_wops_1ab078bcf43a916d469ff550c60ab4b3f2">size</link>;
+113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a85b8f6c07fbc1fb5d77c2ae090f21995">left</link>;
+114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<link linkend="__s_d_l__opengl__glext_8h_1a76461e97a098d2c9ae20ac193d3825ae">buffer</link>;
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;windowsio;
+116 <emphasis role="preprocessor">#elif&#32;defined(__VITA__)</emphasis>
+117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">struct</emphasis>
+118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1afa0fb1b5e976920c0abeff2dca3ed774">h</link>;
+120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">struct</emphasis>
+121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;*<link linkend="__s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a">data</link>;
+123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="_struct_s_d_l___r_wops_1ab078bcf43a916d469ff550c60ab4b3f2">size</link>;
+124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a85b8f6c07fbc1fb5d77c2ae090f21995">left</link>;
+125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<link linkend="__s_d_l__opengl__glext_8h_1a76461e97a098d2c9ae20ac193d3825ae">buffer</link>;
+126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;vitaio;
+127 <emphasis role="preprocessor">#endif</emphasis>
+128 
+129 <emphasis role="preprocessor">#ifdef&#32;HAVE_STDIO_H</emphasis>
+130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">struct</emphasis>
+131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;autoclose;
+133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;FILE&#32;*fp;
+134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;stdio;
+135 <emphasis role="preprocessor">#endif</emphasis>
+136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">struct</emphasis>
+137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link>&#32;*<link linkend="_struct_s_d_l___r_wops_1af9b489d7342296ce197b911cfa93b2ab">base</link>;
+139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link>&#32;*<link linkend="_struct_s_d_l___r_wops_1a6fc84601c17e347c6ef24c63a79deb57">here</link>;
+140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link>&#32;*<link linkend="_struct_s_d_l___r_wops_1a4108a41afa8b62e75b0f160de4b56103">stop</link>;
+141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<link linkend="_struct_s_d_l___r_wops_1a0243203420e29fab68b949cec27425f8">mem</link>;
+142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">struct</emphasis>
+143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;*<link linkend="_struct_s_d_l___r_wops_1ab89d27b4312c0b9d664c81bc92917fc8">data1</link>;
+145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;*<link linkend="_struct_s_d_l___r_wops_1aca073130e2e262eb11e86e1be993e215">data2</link>;
+146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<link linkend="_struct_s_d_l___r_wops_1ad225b02055230209c0f25d24cb8a8588">unknown</link>;
+147 &#32;&#32;&#32;&#32;}&#32;<link linkend="_struct_s_d_l___r_wops_1ac39b920843b21701aa755f10cc1faad2">hidden</link>;
+148 
+149 }&#32;<link linkend="__s_d_l__rwops_8h_1a74ae02b3c98390e2792749c53329cc23">SDL_RWops</link>;
+150 
+151 
+157 <emphasis role="comment">/*&#32;@{&#32;*/</emphasis>
+158 
+220 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rwops_8h_1a898d9ad749f054f6b6780bff411fd33a">SDL_RWFromFile</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*file,
+221 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1a1e71d9c196e4683cc06c4b54d53f7ef5">mode</link>);
+222 
+223 <emphasis role="preprocessor">#ifdef&#32;HAVE_STDIO_H</emphasis>
+224 
+225 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rwops_8h_1ac97cd440488d5985ee24b981169b94c6">SDL_RWFromFP</link>(FILE&#32;*&#32;fp,&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;autoclose);
+226 
+227 <emphasis role="preprocessor">#else</emphasis>
+228 
+259 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rwops_8h_1ac97cd440488d5985ee24b981169b94c6">SDL_RWFromFP</link>(<emphasis role="keywordtype">void</emphasis>&#32;*&#32;fp,
+260 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;autoclose);
+261 <emphasis role="preprocessor">#endif</emphasis>
+262 
+294 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rwops_8h_1a71dcee62581049097e1a6e2966849b85">SDL_RWFromMem</link>(<emphasis role="keywordtype">void</emphasis>&#32;*<link linkend="_struct_s_d_l___r_wops_1a0243203420e29fab68b949cec27425f8">mem</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a3d1e3edfcf61ca2d831883e1afbad89e">size</link>);
+295 
+328 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rwops_8h_1aafa955069a970575dfa1cab7db167c54">SDL_RWFromConstMem</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;*<link linkend="_struct_s_d_l___r_wops_1a0243203420e29fab68b949cec27425f8">mem</link>,
+329 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a3d1e3edfcf61ca2d831883e1afbad89e">size</link>);
+330 
+331 <emphasis role="comment">/*&#32;@}&#32;*/</emphasis><emphasis role="comment">/*&#32;RWFrom&#32;functions&#32;*/</emphasis>
+332 
+333 
+357 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rwops_8h_1a2fa1222f94ca8a89b0719be6ef391856">SDL_AllocRW</link>(<emphasis role="keywordtype">void</emphasis>);
+358 
+381 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rwops_8h_1ac4c87c7bed186ea1a98531164ff1acfa">SDL_FreeRW</link>(<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*&#32;area);
+382 
+383 <emphasis role="preprocessor">#define&#32;RW_SEEK_SET&#32;0&#32;&#32;&#32;&#32;&#32;&#32;&#32;</emphasis>
+384 <emphasis role="preprocessor">#define&#32;RW_SEEK_CUR&#32;1&#32;&#32;&#32;&#32;&#32;&#32;&#32;</emphasis>
+385 <emphasis role="preprocessor">#define&#32;RW_SEEK_END&#32;2&#32;&#32;&#32;&#32;&#32;&#32;&#32;</emphasis>
+399 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rwops_8h_1ab311e9e01e66dde338349b5988008f79">SDL_RWsize</link>(<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*context);
+400 
+436 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rwops_8h_1a2bd3bfec48d375b5e761a5f7f3138766">SDL_RWseek</link>(<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*context,
+437 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1ac915cd848f42b26af51745f204a3b9af">offset</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_struct_s_d_l___r_wops_1a95b96dcc6690897bfaf2d059f4378ed2">whence</link>);
+438 
+464 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a2c1a61d5c466bb74680be0a8cc1b455d">Sint64</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rwops_8h_1aade1cc6bf5cd0972c64f1bc032bdece6">SDL_RWtell</link>(<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*context);
+465 
+496 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rwops_8h_1a7496ce8759fe964ee40cd6fbfa4b82f9">SDL_RWread</link>(<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*context,
+497 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;*<link linkend="_struct_s_d_l___r_wops_1a3f68b93789331775de802d51a2934f0a">ptr</link>,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a3d1e3edfcf61ca2d831883e1afbad89e">size</link>,
+498 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="_struct_s_d_l___r_wops_1a7786282ec28451085908f70048ee32c8">maxnum</link>);
+499 
+530 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rwops_8h_1ada3c6d29d2fc5f0367abdcbfc2f2896a">SDL_RWwrite</link>(<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*context,
+531 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;*<link linkend="_struct_s_d_l___r_wops_1a3f68b93789331775de802d51a2934f0a">ptr</link>,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a3d1e3edfcf61ca2d831883e1afbad89e">size</link>,
+532 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1abb50fc1ead3a02a46fb52daa2045f95c">num</link>);
+533 
+561 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rwops_8h_1a4e432d6d008ad176b7653b4797de12e9">SDL_RWclose</link>(<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*context);
+562 
+579 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rwops_8h_1ade6af59bde1d4dd05ee5cff900bd3429">SDL_LoadFile_RW</link>(<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*<link linkend="__s_d_l__opengl__glext_8h_1a72e0fdf0f845ded60b1fada9e9195cd7">src</link>,
+580 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;*datasize,
+581 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;freesrc);
+582 
+601 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rwops_8h_1a2ba73f182958405663c8511885c0740c">SDL_LoadFile</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*file,&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;*datasize);
+602 
+608 <emphasis role="comment">/*&#32;@{&#32;*/</emphasis>
+609 
+621 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rwops_8h_1ab864094eb6b80fbf0c77d34ecdde7907">SDL_ReadU8</link>(<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*&#32;<link linkend="__s_d_l__opengl__glext_8h_1a72e0fdf0f845ded60b1fada9e9195cd7">src</link>);
+622 
+637 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rwops_8h_1a7274f5c4b6f22a6b742ec6ef4f9d390b">SDL_ReadLE16</link>(<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*&#32;<link linkend="__s_d_l__opengl__glext_8h_1a72e0fdf0f845ded60b1fada9e9195cd7">src</link>);
+638 
+653 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rwops_8h_1a3cdf85a50e40dc58536930429b7b4d09">SDL_ReadBE16</link>(<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*&#32;<link linkend="__s_d_l__opengl__glext_8h_1a72e0fdf0f845ded60b1fada9e9195cd7">src</link>);
+654 
+669 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rwops_8h_1a8320334c299a3631fd6beb9937c30f04">SDL_ReadLE32</link>(<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*&#32;<link linkend="__s_d_l__opengl__glext_8h_1a72e0fdf0f845ded60b1fada9e9195cd7">src</link>);
+670 
+685 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rwops_8h_1af023e134e3ae87b1595306e5faeaab76">SDL_ReadBE32</link>(<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*&#32;<link linkend="__s_d_l__opengl__glext_8h_1a72e0fdf0f845ded60b1fada9e9195cd7">src</link>);
+686 
+701 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rwops_8h_1af7e5d9b56874b8bd3a8a6a0c5393c33d">SDL_ReadLE64</link>(<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*&#32;<link linkend="__s_d_l__opengl__glext_8h_1a72e0fdf0f845ded60b1fada9e9195cd7">src</link>);
+702 
+717 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rwops_8h_1a4917dc584d162bc5f28b63843557214e">SDL_ReadBE64</link>(<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*&#32;<link linkend="__s_d_l__opengl__glext_8h_1a72e0fdf0f845ded60b1fada9e9195cd7">src</link>);
+718 <emphasis role="comment">/*&#32;@}&#32;*/</emphasis><emphasis role="comment">/*&#32;Read&#32;endian&#32;functions&#32;*/</emphasis>
+719 
+725 <emphasis role="comment">/*&#32;@{&#32;*/</emphasis>
+726 
+739 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rwops_8h_1a07c817f8360ddc8c8983d12373306555">SDL_WriteU8</link>(<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*&#32;<link linkend="__s_d_l__opengl__glext_8h_1a92034251bfd455d524a9b5610cddba00">dst</link>,&#32;<link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f">value</link>);
+740 
+757 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rwops_8h_1aa4a7df8d967c5751e3f0974743b9c2d4">SDL_WriteLE16</link>(<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*&#32;<link linkend="__s_d_l__opengl__glext_8h_1a92034251bfd455d524a9b5610cddba00">dst</link>,&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f">value</link>);
+758 
+774 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rwops_8h_1ab84ea778a5f8f76cd73a52216c2c08f5">SDL_WriteBE16</link>(<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*&#32;<link linkend="__s_d_l__opengl__glext_8h_1a92034251bfd455d524a9b5610cddba00">dst</link>,&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f">value</link>);
+775 
+792 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rwops_8h_1a84f37961925773fe8b06ea09ed144568">SDL_WriteLE32</link>(<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*&#32;<link linkend="__s_d_l__opengl__glext_8h_1a92034251bfd455d524a9b5610cddba00">dst</link>,&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f">value</link>);
+793 
+809 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rwops_8h_1a5debf04eeed819018ddd9a2f70d32c89">SDL_WriteBE32</link>(<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*&#32;<link linkend="__s_d_l__opengl__glext_8h_1a92034251bfd455d524a9b5610cddba00">dst</link>,&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f">value</link>);
+810 
+827 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rwops_8h_1ae4f9b45fbb3bf4a40f3f308419307e6b">SDL_WriteLE64</link>(<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*&#32;<link linkend="__s_d_l__opengl__glext_8h_1a92034251bfd455d524a9b5610cddba00">dst</link>,&#32;<link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f">value</link>);
+828 
+844 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">size_t</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__rwops_8h_1a0422f79e1889750cf99310e968cb76fc">SDL_WriteBE64</link>(<link linkend="_struct_s_d_l___r_wops">SDL_RWops</link>&#32;*&#32;<link linkend="__s_d_l__opengl__glext_8h_1a92034251bfd455d524a9b5610cddba00">dst</link>,&#32;<link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f">value</link>);
+845 <emphasis role="comment">/*&#32;@}&#32;*/</emphasis><emphasis role="comment">/*&#32;Write&#32;endian&#32;functions&#32;*/</emphasis>
+846 
+847 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+848 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+849 }
+850 <emphasis role="preprocessor">#endif</emphasis>
+851 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+852 
+853 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_rwops_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+854 
+855 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

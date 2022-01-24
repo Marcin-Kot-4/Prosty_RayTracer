@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespaceqb_p_c_a" xml:lang="en-US">
+<title>qbPCA Namespace Reference</title>
+<indexterm><primary>qbPCA</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;typename T &gt; </para><para>std::vector&lt; T &gt; <link linkend="_namespaceqb_p_c_a_1ade6a2d48ed6e5d5bbd7db9dc515fbfa2">ComputeColumnMeans</link> (const <link linkend="_classqb_matrix2">qbMatrix2</link>&lt; T &gt; &amp;inputData)</para>
+</listitem>
+            <listitem><para>template&lt;typename T &gt; </para><para><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_namespaceqb_p_c_a_1a5a22357f0fe78194175135e2adc1045e">SubtractColumnMeans</link> (<link linkend="_classqb_matrix2">qbMatrix2</link>&lt; T &gt; &amp;inputData, std::vector&lt; T &gt; &amp;columnMeans)</para>
+</listitem>
+            <listitem><para>template&lt;typename T &gt; </para><para><link linkend="_classqb_matrix2">qbMatrix2</link>&lt; T &gt; <link linkend="_namespaceqb_p_c_a_1a393fa03dff91c84ac6c53aa8bd4141b7">ComputeCovariance</link> (const <link linkend="_classqb_matrix2">qbMatrix2</link>&lt; T &gt; &amp;X)</para>
+</listitem>
+            <listitem><para>template&lt;typename T &gt; </para><para>int <link linkend="_namespaceqb_p_c_a_1aa00b5e4dee58ccfa5ce763a873b96c2f">ComputeEigenvectors</link> (const <link linkend="_classqb_matrix2">qbMatrix2</link>&lt; T &gt; &amp;covarianceMatrix, <link linkend="_classqb_matrix2">qbMatrix2</link>&lt; T &gt; &amp;eigenvectors)</para>
+</listitem>
+            <listitem><para>template&lt;typename T &gt; </para><para>int <link linkend="_namespaceqb_p_c_a_1aa99d4f272173791d49b268a9dd151fc6">qbPCA</link> (const <link linkend="_classqb_matrix2">qbMatrix2</link>&lt; T &gt; &amp;inputData, <link linkend="_classqb_matrix2">qbMatrix2</link>&lt; T &gt; &amp;outputComponents)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_namespaceqb_p_c_a_1ade6a2d48ed6e5d5bbd7db9dc515fbfa2"/><section>
+    <title>ComputeColumnMeans()</title>
+<indexterm><primary>ComputeColumnMeans</primary><secondary>qbPCA</secondary></indexterm>
+<indexterm><primary>qbPCA</primary><secondary>ComputeColumnMeans</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>std::vector&lt; T &gt; qbPCA::ComputeColumnMeans (const <link linkend="_classqb_matrix2">qbMatrix2</link>&lt; T &gt; &amp; inputData)</computeroutput></para></section>
+<anchor xml:id="_namespaceqb_p_c_a_1a393fa03dff91c84ac6c53aa8bd4141b7"/><section>
+    <title>ComputeCovariance()</title>
+<indexterm><primary>ComputeCovariance</primary><secondary>qbPCA</secondary></indexterm>
+<indexterm><primary>qbPCA</primary><secondary>ComputeCovariance</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="_classqb_matrix2">qbMatrix2</link>&lt; T &gt; qbPCA::ComputeCovariance (const <link linkend="_classqb_matrix2">qbMatrix2</link>&lt; T &gt; &amp; X)</computeroutput></para></section>
+<anchor xml:id="_namespaceqb_p_c_a_1aa00b5e4dee58ccfa5ce763a873b96c2f"/><section>
+    <title>ComputeEigenvectors()</title>
+<indexterm><primary>ComputeEigenvectors</primary><secondary>qbPCA</secondary></indexterm>
+<indexterm><primary>qbPCA</primary><secondary>ComputeEigenvectors</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>int qbPCA::ComputeEigenvectors (const <link linkend="_classqb_matrix2">qbMatrix2</link>&lt; T &gt; &amp; covarianceMatrix, <link linkend="_classqb_matrix2">qbMatrix2</link>&lt; T &gt; &amp; eigenvectors)</computeroutput></para></section>
+<anchor xml:id="_namespaceqb_p_c_a_1aa99d4f272173791d49b268a9dd151fc6"/><section>
+    <title>qbPCA()</title>
+<indexterm><primary>qbPCA</primary><secondary>qbPCA</secondary></indexterm>
+<indexterm><primary>qbPCA</primary><secondary>qbPCA</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput>int qbPCA::qbPCA (const <link linkend="_classqb_matrix2">qbMatrix2</link>&lt; T &gt; &amp; inputData, <link linkend="_classqb_matrix2">qbMatrix2</link>&lt; T &gt; &amp; outputComponents)</computeroutput></para></section>
+<anchor xml:id="_namespaceqb_p_c_a_1a5a22357f0fe78194175135e2adc1045e"/><section>
+    <title>SubtractColumnMeans()</title>
+<indexterm><primary>SubtractColumnMeans</primary><secondary>qbPCA</secondary></indexterm>
+<indexterm><primary>qbPCA</primary><secondary>SubtractColumnMeans</secondary></indexterm>
+<computeroutput>template&lt;typename T &gt; </computeroutput><para><computeroutput><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> qbPCA::SubtractColumnMeans (<link linkend="_classqb_matrix2">qbMatrix2</link>&lt; T &gt; &amp; inputData, std::vector&lt; T &gt; &amp; columnMeans)</computeroutput></para></section>
+</section>
+</section>

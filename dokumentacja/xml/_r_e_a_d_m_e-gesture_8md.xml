@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e-gesture_8md" kind="file" language="Markdown">
+    <compoundname>README-gesture.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">Dollar<sp/>Gestures</highlight></codeline>
+<codeline><highlight class="normal">===========================================================================</highlight></codeline>
+<codeline><highlight class="normal">SDL<sp/>provides<sp/>an<sp/>implementation<sp/>of<sp/>the<sp/>$1<sp/>gesture<sp/>recognition<sp/>system.<sp/>This<sp/>allows<sp/>for<sp/>recording,<sp/>saving,<sp/>loading,<sp/>and<sp/>performing<sp/>single<sp/>stroke<sp/>gestures.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Gestures<sp/>can<sp/>be<sp/>performed<sp/>with<sp/>any<sp/>number<sp/>of<sp/>fingers<sp/>(the<sp/>centroid<sp/>of<sp/>the<sp/>fingers<sp/>must<sp/>follow<sp/>the<sp/>path<sp/>of<sp/>the<sp/>gesture),<sp/>but<sp/>the<sp/>number<sp/>of<sp/>fingers<sp/>must<sp/>be<sp/>constant<sp/>(a<sp/>finger<sp/>cannot<sp/>go<sp/>down<sp/>in<sp/>the<sp/>middle<sp/>of<sp/>a<sp/>gesture).<sp/>The<sp/>path<sp/>of<sp/>a<sp/>gesture<sp/>is<sp/>considered<sp/>the<sp/>path<sp/>from<sp/>the<sp/>time<sp/>when<sp/>the<sp/>final<sp/>finger<sp/>went<sp/>down,<sp/>to<sp/>the<sp/>first<sp/>time<sp/>any<sp/>finger<sp/>comes<sp/>up.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Dollar<sp/>gestures<sp/>are<sp/>assigned<sp/>an<sp/>Id<sp/>based<sp/>on<sp/>a<sp/>hash<sp/>function.<sp/>This<sp/>is<sp/>guaranteed<sp/>to<sp/>remain<sp/>constant<sp/>for<sp/>a<sp/>given<sp/>gesture.<sp/>There<sp/>is<sp/>a<sp/>(small)<sp/>chance<sp/>that<sp/>two<sp/>different<sp/>gestures<sp/>will<sp/>be<sp/>assigned<sp/>the<sp/>same<sp/>ID.<sp/>In<sp/>this<sp/>case,<sp/>simply<sp/>re-recording<sp/>one<sp/>of<sp/>the<sp/>gestures<sp/>should<sp/>result<sp/>in<sp/>a<sp/>different<sp/>ID.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Recording:</highlight></codeline>
+<codeline><highlight class="normal">----------</highlight></codeline>
+<codeline><highlight class="normal">To<sp/>begin<sp/>recording<sp/>on<sp/>a<sp/>touch<sp/>device<sp/>call:</highlight></codeline>
+<codeline><highlight class="normal">SDL_RecordGesture(SDL_TouchID<sp/>touchId),<sp/>where<sp/>touchId<sp/>is<sp/>the<sp/>id<sp/>of<sp/>the<sp/>touch<sp/>device<sp/>you<sp/>wish<sp/>to<sp/>record<sp/>on,<sp/>or<sp/>-1<sp/>to<sp/>record<sp/>on<sp/>all<sp/>connected<sp/>devices.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Recording<sp/>terminates<sp/>as<sp/>soon<sp/>as<sp/>a<sp/>finger<sp/>comes<sp/>up.<sp/>Recording<sp/>is<sp/>acknowledged<sp/>by<sp/>an<sp/>SDL_DOLLARRECORD<sp/>event.</highlight></codeline>
+<codeline><highlight class="normal">A<sp/>SDL_DOLLARRECORD<sp/>event<sp/>is<sp/>a<sp/>dgesture<sp/>with<sp/>the<sp/>following<sp/>fields:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>event.dgesture.touchId<sp/><sp/><sp/>-<sp/>the<sp/>Id<sp/>of<sp/>the<sp/>touch<sp/>used<sp/>to<sp/>record<sp/>the<sp/>gesture.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>event.dgesture.gestureId<sp/>-<sp/>the<sp/>unique<sp/>id<sp/>of<sp/>the<sp/>recorded<sp/>gesture.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Performing:</highlight></codeline>
+<codeline><highlight class="normal">-----------</highlight></codeline>
+<codeline><highlight class="normal">As<sp/>long<sp/>as<sp/>there<sp/>is<sp/>a<sp/>dollar<sp/>gesture<sp/>assigned<sp/>to<sp/>a<sp/>touch,<sp/>every<sp/>finger-up<sp/>event<sp/>will<sp/>also<sp/>cause<sp/>an<sp/>SDL_DOLLARGESTURE<sp/>event<sp/>with<sp/>the<sp/>following<sp/>fields:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>event.dgesture.touchId<sp/><sp/><sp/><sp/>-<sp/>the<sp/>Id<sp/>of<sp/>the<sp/>touch<sp/>which<sp/>performed<sp/>the<sp/>gesture.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>event.dgesture.gestureId<sp/><sp/>-<sp/>the<sp/>unique<sp/>id<sp/>of<sp/>the<sp/>closest<sp/>gesture<sp/>to<sp/>the<sp/>performed<sp/>stroke.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>event.dgesture.error<sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>the<sp/>difference<sp/>between<sp/>the<sp/>gesture<sp/>template<sp/>and<sp/>the<sp/>actual<sp/>performed<sp/>gesture.<sp/>Lower<sp/>error<sp/>is<sp/>a<sp/>better<sp/>match.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>event.dgesture.numFingers<sp/>-<sp/>the<sp/>number<sp/>of<sp/>fingers<sp/>used<sp/>to<sp/>draw<sp/>the<sp/>stroke.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Most<sp/>programs<sp/>will<sp/>want<sp/>to<sp/>define<sp/>an<sp/>appropriate<sp/>error<sp/>threshold<sp/>and<sp/>check<sp/>to<sp/>be<sp/>sure<sp/>that<sp/>the<sp/>error<sp/>of<sp/>a<sp/>gesture<sp/>is<sp/>not<sp/>abnormally<sp/>high<sp/>(an<sp/>indicator<sp/>that<sp/>no<sp/>gesture<sp/>was<sp/>performed).</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Saving:</highlight></codeline>
+<codeline><highlight class="normal">-------</highlight></codeline>
+<codeline><highlight class="normal">To<sp/>save<sp/>a<sp/>template,<sp/>call<sp/>SDL_SaveDollarTemplate(gestureId,<sp/>dst)<sp/>where<sp/>gestureId<sp/>is<sp/>the<sp/>id<sp/>of<sp/>the<sp/>gesture<sp/>you<sp/>want<sp/>to<sp/>save,<sp/>and<sp/>dst<sp/>is<sp/>an<sp/>SDL_RWops<sp/>pointer<sp/>to<sp/>the<sp/>file<sp/>where<sp/>the<sp/>gesture<sp/>will<sp/>be<sp/>stored.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>save<sp/>all<sp/>currently<sp/>loaded<sp/>templates,<sp/>call<sp/>SDL_SaveAllDollarTemplates(dst)<sp/>where<sp/>dst<sp/>is<sp/>an<sp/>SDL_RWops<sp/>pointer<sp/>to<sp/>the<sp/>file<sp/>where<sp/>the<sp/>gesture<sp/>will<sp/>be<sp/>stored.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Both<sp/>functions<sp/>return<sp/>the<sp/>number<sp/>of<sp/>gestures<sp/>successfully<sp/>saved.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Loading:</highlight></codeline>
+<codeline><highlight class="normal">--------</highlight></codeline>
+<codeline><highlight class="normal">To<sp/>load<sp/>templates<sp/>from<sp/>a<sp/>file,<sp/>call<sp/>SDL_LoadDollarTemplates(touchId,src)<sp/>where<sp/>touchId<sp/>is<sp/>the<sp/>id<sp/>of<sp/>the<sp/>touch<sp/>to<sp/>load<sp/>to<sp/>(or<sp/>-1<sp/>to<sp/>load<sp/>to<sp/>all<sp/>touch<sp/>devices),<sp/>and<sp/>src<sp/>is<sp/>an<sp/>SDL_RWops<sp/>pointer<sp/>to<sp/>a<sp/>gesture<sp/>save<sp/>file.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SDL_LoadDollarTemplates<sp/>returns<sp/>the<sp/>number<sp/>of<sp/>templates<sp/>successfully<sp/>loaded.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">===========================================================================</highlight></codeline>
+<codeline><highlight class="normal">Multi<sp/>Gestures</highlight></codeline>
+<codeline><highlight class="normal">===========================================================================</highlight></codeline>
+<codeline><highlight class="normal">SDL<sp/>provides<sp/>simple<sp/>support<sp/>for<sp/>pinch/rotate/swipe<sp/>gestures.<sp/></highlight></codeline>
+<codeline><highlight class="normal">Every<sp/>time<sp/>a<sp/>finger<sp/>is<sp/>moved<sp/>an<sp/>SDL_MULTIGESTURE<sp/>event<sp/>is<sp/>sent<sp/>with<sp/>the<sp/>following<sp/>fields:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>event.mgesture.touchId<sp/>-<sp/>the<sp/>Id<sp/>of<sp/>the<sp/>touch<sp/>on<sp/>which<sp/>the<sp/>gesture<sp/>was<sp/>performed.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>event.mgesture.x<sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>the<sp/>normalized<sp/>x<sp/>coordinate<sp/>of<sp/>the<sp/>gesture.<sp/>(0..1)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>event.mgesture.y<sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>the<sp/>normalized<sp/>y<sp/>coordinate<sp/>of<sp/>the<sp/>gesture.<sp/>(0..1)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>event.mgesture.dTheta<sp/><sp/>-<sp/>the<sp/>amount<sp/>that<sp/>the<sp/>fingers<sp/>rotated<sp/>during<sp/>this<sp/>motion.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>event.mgesture.dDist<sp/><sp/><sp/>-<sp/>the<sp/>amount<sp/>that<sp/>the<sp/>fingers<sp/>pinched<sp/>during<sp/>this<sp/>motion.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>event.mgesture.numFingers<sp/>-<sp/>the<sp/>number<sp/>of<sp/>fingers<sp/>used<sp/>in<sp/>the<sp/>gesture.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">===========================================================================</highlight></codeline>
+<codeline><highlight class="normal">Notes</highlight></codeline>
+<codeline><highlight class="normal">===========================================================================</highlight></codeline>
+<codeline><highlight class="normal">For<sp/>a<sp/>complete<sp/>example<sp/>see<sp/>test/testgesture.c</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Please<sp/>direct<sp/>questions/comments<sp/>to:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>jim.tla+sdl_touch@gmail.com</highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/docs/README-gesture.md"/>
+  </compounddef>
+</doxygen>

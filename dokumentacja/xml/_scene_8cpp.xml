@@ -1,0 +1,1196 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_scene_8cpp" kind="file" language="C++">
+    <compoundname>Scene.cpp</compoundname>
+    <includes refid="_scene_8h" local="yes">Scene.h</includes>
+    <includes refid="simplematerial_8h" local="yes">./Materials/simplematerial.h</includes>
+    <includes refid="checker_8h" local="yes">./Textures/checker.h</includes>
+    <includes refid="textureimage_8h" local="yes">Textures/textureimage.h</includes>
+    <includes refid="simplerefractive_8h" local="yes">Materials/simplerefractive.h</includes>
+    <incdepgraph>
+      <node id="56">
+        <label>Image.h</label>
+        <link refid="_image_8h"/>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="74">
+        <label>lightbase.h</label>
+        <link refid="lightbase_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+      </node>
+      <node id="73">
+        <label>Lights/pointlight.h</label>
+        <link refid="pointlight_8h"/>
+        <childnode refid="74" relation="include">
+        </childnode>
+      </node>
+      <node id="76">
+        <label>materialbase.h</label>
+        <link refid="materialbase_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+      </node>
+      <node id="75">
+        <label>./Materials/simplematerial.h</label>
+        <link refid="simplematerial_8h"/>
+        <childnode refid="76" relation="include">
+        </childnode>
+      </node>
+      <node id="80">
+        <label>Materials/simplerefractive.h</label>
+        <link refid="simplerefractive_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+      </node>
+      <node id="72">
+        <label>Primitives/cone.h</label>
+        <link refid="cone_8h"/>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+      </node>
+      <node id="71">
+        <label>Primitives/cylinder.h</label>
+        <link refid="cylinder_8h"/>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>objectbase.h</label>
+        <link refid="objectbase_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+      </node>
+      <node id="70">
+        <label>Primitives/objplane.h</label>
+        <link refid="objplane_8h"/>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+      </node>
+      <node id="65">
+        <label>Primitives/objsphere.h</label>
+        <link refid="objsphere_8h"/>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/RayTracing/RayTrace/Scene.cpp</label>
+        <link refid="_scene_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Scene.h</label>
+        <link refid="_scene_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+      </node>
+      <node id="78">
+        <label>./Textures/checker.h</label>
+        <link refid="checker_8h"/>
+        <childnode refid="77" relation="include">
+        </childnode>
+      </node>
+      <node id="77">
+        <label>../Textures/texturebase.h</label>
+        <link refid="texturebase_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+      </node>
+      <node id="79">
+        <label>Textures/textureimage.h</label>
+        <link refid="textureimage_8h"/>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>camera.h</label>
+        <link refid="camera_8h"/>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+      </node>
+      <node id="67">
+        <label>../gtfm.h</label>
+        <link refid="gtfm_8h"/>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>./qbLinAlg/qbMatrix.h</label>
+        <link refid="qb_matrix_8h"/>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+      </node>
+      <node id="59">
+        <label>./qbLinAlg/qbVector.h</label>
+        <link refid="qb_vector_8h"/>
+        <childnode refid="60" relation="include">
+        </childnode>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="64">
+        <label>ray.h</label>
+        <link refid="ray_8h"/>
+        <childnode refid="59" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>../include/SDL.h</label>
+        <link refid="_s_d_l_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>SDL_assert.h</label>
+        <link refid="_s_d_l__assert_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>SDL_atomic.h</label>
+        <link refid="_s_d_l__atomic_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>SDL_audio.h</label>
+        <link refid="_s_d_l__audio_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>SDL_blendmode.h</label>
+        <link refid="_s_d_l__blendmode_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>SDL_clipboard.h</label>
+        <link refid="_s_d_l__clipboard_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>SDL_config.h</label>
+        <link refid="_s_d_l__config_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>SDL_cpuinfo.h</label>
+        <link refid="_s_d_l__cpuinfo_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>SDL_endian.h</label>
+        <link refid="_s_d_l__endian_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>SDL_error.h</label>
+        <link refid="_s_d_l__error_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>SDL_events.h</label>
+        <link refid="_s_d_l__events_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>SDL_filesystem.h</label>
+        <link refid="_s_d_l__filesystem_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>SDL_gamecontroller.h</label>
+        <link refid="_s_d_l__gamecontroller_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>SDL_gesture.h</label>
+        <link refid="_s_d_l__gesture_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>SDL_haptic.h</label>
+        <link refid="_s_d_l__haptic_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>SDL_hidapi.h</label>
+        <link refid="_s_d_l__hidapi_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>SDL_hints.h</label>
+        <link refid="_s_d_l__hints_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>SDL_joystick.h</label>
+        <link refid="_s_d_l__joystick_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>SDL_keyboard.h</label>
+        <link refid="_s_d_l__keyboard_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>SDL_keycode.h</label>
+        <link refid="_s_d_l__keycode_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>SDL_loadso.h</label>
+        <link refid="_s_d_l__loadso_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>SDL_locale.h</label>
+        <link refid="_s_d_l__locale_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>SDL_log.h</label>
+        <link refid="_s_d_l__log_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>SDL_main.h</label>
+        <link refid="_s_d_l__main_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>SDL_messagebox.h</label>
+        <link refid="_s_d_l__messagebox_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>SDL_metal.h</label>
+        <link refid="_s_d_l__metal_8h"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>SDL_misc.h</label>
+        <link refid="_s_d_l__misc_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>SDL_mouse.h</label>
+        <link refid="_s_d_l__mouse_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>SDL_mutex.h</label>
+        <link refid="_s_d_l__mutex_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>SDL_pixels.h</label>
+        <link refid="_s_d_l__pixels_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>SDL_platform.h</label>
+        <link refid="_s_d_l__platform_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>SDL_power.h</label>
+        <link refid="_s_d_l__power_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>SDL_quit.h</label>
+        <link refid="_s_d_l__quit_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>SDL_rect.h</label>
+        <link refid="_s_d_l__rect_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>SDL_render.h</label>
+        <link refid="_s_d_l__render_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>SDL_rwops.h</label>
+        <link refid="_s_d_l__rwops_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>SDL_scancode.h</label>
+        <link refid="_s_d_l__scancode_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>SDL_sensor.h</label>
+        <link refid="_s_d_l__sensor_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>SDL_shape.h</label>
+        <link refid="_s_d_l__shape_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>SDL_stdinc.h</label>
+        <link refid="_s_d_l__stdinc_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>SDL_surface.h</label>
+        <link refid="_s_d_l__surface_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>SDL_system.h</label>
+        <link refid="_s_d_l__system_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>SDL_thread.h</label>
+        <link refid="_s_d_l__thread_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>SDL_timer.h</label>
+        <link refid="_s_d_l__timer_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>SDL_touch.h</label>
+        <link refid="_s_d_l__touch_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>SDL_version.h</label>
+        <link refid="_s_d_l__version_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>SDL_video.h</label>
+        <link refid="_s_d_l__video_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>begin_code.h</label>
+        <link refid="begin__code_8h"/>
+      </node>
+      <node id="11">
+        <label>close_code.h</label>
+        <link refid="close__code_8h"/>
+      </node>
+      <node id="69">
+        <label>exception</label>
+      </node>
+      <node id="62">
+        <label>iomanip</label>
+      </node>
+      <node id="61">
+        <label>iostream</label>
+      </node>
+      <node id="63">
+        <label>math.h</label>
+      </node>
+      <node id="3">
+        <label>memory</label>
+      </node>
+      <node id="13">
+        <label>stdarg.h</label>
+      </node>
+      <node id="12">
+        <label>stddef.h</label>
+      </node>
+      <node id="60">
+        <label>stdexcept</label>
+      </node>
+      <node id="57">
+        <label>string</label>
+      </node>
+      <node id="4">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_scene_8h" kindref="compound">Scene.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="simplematerial_8h" kindref="compound">./Materials/simplematerial.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="checker_8h" kindref="compound">./Textures/checker.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="textureimage_8h" kindref="compound">Textures/textureimage.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="simplerefractive_8h" kindref="compound">Materials/simplerefractive.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Konstruktor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><ref refid="class_r_t_1_1_scene_1a5bc05579d6758fff4f3dc15f55f998bd" kindref="member">RT::Scene::Scene</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Konfiguracja<sp/>kamery</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>m_camera.<ref refid="class_r_t_1_1_camera_1a7a08c60fb7a07929897e3148e798976e" kindref="member">SetPosition</ref>(<ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.0,<sp/>-10.0,<sp/>-1.0}});</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>m_camera.<ref refid="class_r_t_1_1_camera_1a303252f454230eb67fef370256aa806f" kindref="member">SetLookAt</ref>(<ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.0,<sp/>0.0,<sp/>0.0}});</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>m_camera.<ref refid="class_r_t_1_1_camera_1ab60600a74e7a9f82ea763321a3f7210e" kindref="member">SetUp</ref>(<ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.0,<sp/>0.0,<sp/>1.0}});</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>m_camera.<ref refid="class_r_t_1_1_camera_1aad8f50f59189b1ddf6b36e19a957c2ba" kindref="member">SetHorzSize</ref>(0.25);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>m_camera.<ref refid="class_r_t_1_1_camera_1a2b782b4aab7480489298d78fa602d06f" kindref="member">SetAspect</ref>(16.0<sp/>/<sp/>9.0);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>m_camera.<ref refid="class_r_t_1_1_camera_1ac58d2976470b32493c5645d548e2a0c4" kindref="member">UpdateCameraGeometry</ref>();</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Ustawienie<sp/>oświetlenia<sp/>otoczenia</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_r_t_1_1_material_base_1a97579f592fb17d8077e16e2b48d6e826" kindref="member">RT::MaterialBase::m_ambientColor</ref><sp/>=<sp/>std::vector&lt;double&gt;{1.0,<sp/>1.0,<sp/>1.0};<sp/></highlight><highlight class="comment">//<sp/>kolor<sp/>biały</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_r_t_1_1_material_base_1a6297b836279524bc2772b3a066f1a5d8" kindref="member">RT::MaterialBase::m_ambientIntensity</ref><sp/>=<sp/>0.2;<sp/></highlight><highlight class="comment">//<sp/>jasność</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Utwórz<sp/>tekstury</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>floorTexture<sp/>=<sp/>std::make_shared&lt;RT::Texture::Checker&gt;(<ref refid="class_r_t_1_1_texture_1_1_checker" kindref="compound">RT::Texture::Checker</ref>());</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>sphereTexture<sp/>=<sp/>std::make_shared&lt;RT::Texture::Checker&gt;(<ref refid="class_r_t_1_1_texture_1_1_checker" kindref="compound">RT::Texture::Checker</ref>());</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>cylinderTexture<sp/>=<sp/>std::make_shared&lt;RT::Texture::Checker&gt;(<ref refid="class_r_t_1_1_texture_1_1_checker" kindref="compound">RT::Texture::Checker</ref>());</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>coneTexture<sp/>=<sp/>std::make_shared&lt;RT::Texture::Checker&gt;(<ref refid="class_r_t_1_1_texture_1_1_checker" kindref="compound">RT::Texture::Checker</ref>());</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>imageTexture<sp/>=<sp/>std::make_shared&lt;RT::Texture::Image&gt;(<ref refid="class_r_t_1_1_texture_1_1_image" kindref="compound">RT::Texture::Image</ref>());</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Skonfiguruj<sp/>tekstury</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>floorTexture-&gt;SetTransform(<ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.0,<sp/>0.0}},</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0,</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{16.0,<sp/>16.0}});</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>sphereTexture-&gt;SetColor(<ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.2,<sp/>0.2,<sp/>0.8}},</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.8,<sp/>0.8,<sp/>0.2}});</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>sphereTexture-&gt;SetTransform(<ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.0,<sp/>0.0}},</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0,</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{16.0,<sp/>16.0}});</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>cylinderTexture-&gt;SetColor(<ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{1.0,<sp/>0.5,<sp/>0.0}},</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.8,<sp/>0.8,<sp/>0.2}});</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>cylinderTexture-&gt;SetTransform(<ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.0,<sp/>0.0}},</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{4.0<sp/>*<sp/><ref refid="_s_d_l__stdinc_8h_1ae71449b1cc6e6250b91f539153a7a0d3" kindref="member">M_PI</ref>,<sp/>4.0}});</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>coneTexture-&gt;SetColor(<ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.2,<sp/>0.2,<sp/>0.8}},</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{1.0,<sp/>0.5,<sp/>0.0}});</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>coneTexture-&gt;SetTransform(<ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.0,<sp/>0.0}},</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0,</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{8.0<sp/>*<sp/>(<ref refid="_s_d_l__stdinc_8h_1ae71449b1cc6e6250b91f539153a7a0d3" kindref="member">M_PI</ref><sp/>/<sp/>2.0),<sp/>8.0}});</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>imageTexture-&gt;LoadImage(</highlight><highlight class="stringliteral">&quot;testImage.bmp&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>imageTexture-&gt;SetTransform(<ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.0,<sp/>0.0}},</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{1.0,<sp/>1.0}});</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Utwórz<sp/>tworzywa</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>silverMetal<sp/>=<sp/>std::make_shared&lt;RT::SimpleMaterial&gt;(<ref refid="class_r_t_1_1_simple_material" kindref="compound">RT::SimpleMaterial</ref>());</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>goldMetal<sp/>=<sp/>std::make_shared&lt;RT::SimpleMaterial&gt;(<ref refid="class_r_t_1_1_simple_material" kindref="compound">RT::SimpleMaterial</ref>());</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>blueDiffuse<sp/>=<sp/>std::make_shared&lt;RT::SimpleMaterial&gt;(<ref refid="class_r_t_1_1_simple_material" kindref="compound">RT::SimpleMaterial</ref>());</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>yellowDiffuse<sp/>=<sp/>std::make_shared&lt;RT::SimpleMaterial&gt;(<ref refid="class_r_t_1_1_simple_material" kindref="compound">RT::SimpleMaterial</ref>());</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>orangeDiffuse<sp/>=<sp/>std::make_shared&lt;RT::SimpleMaterial&gt;(<ref refid="class_r_t_1_1_simple_material" kindref="compound">RT::SimpleMaterial</ref>());</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>floorMaterial<sp/>=<sp/>std::make_shared&lt;RT::SimpleMaterial&gt;(<ref refid="class_r_t_1_1_simple_material" kindref="compound">RT::SimpleMaterial</ref>());</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>wallMaterial<sp/>=<sp/>std::make_shared&lt;RT::SimpleMaterial&gt;(<ref refid="class_r_t_1_1_simple_material" kindref="compound">RT::SimpleMaterial</ref>());</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>imageMaterial<sp/>=<sp/>std::make_shared&lt;RT::SimpleMaterial&gt;(<ref refid="class_r_t_1_1_simple_material" kindref="compound">RT::SimpleMaterial</ref>());</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>glassMaterial<sp/>=<sp/>std::make_shared&lt;RT::SimpleRefractive&gt;<sp/>(<ref refid="class_r_t_1_1_simple_refractive" kindref="compound">RT::SimpleRefractive</ref>());</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Skonfiguruj<sp/>tworzywa</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>silverMetal-&gt;m_baseColor<sp/>=<sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.5,<sp/>0.5,<sp/>0.8}};</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>silverMetal-&gt;m_reflectivity<sp/>=<sp/>0.5;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>silverMetal-&gt;m_shininess<sp/>=<sp/>20.0;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>goldMetal-&gt;m_baseColor<sp/>=<sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.8,<sp/>0.8,<sp/>0.3}};</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>goldMetal-&gt;m_reflectivity<sp/>=<sp/>0.25;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>goldMetal-&gt;m_shininess<sp/>=<sp/>20.0;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>blueDiffuse-&gt;m_baseColor<sp/>=<sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.2,<sp/>0.2,<sp/>0.8}};</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>blueDiffuse-&gt;m_reflectivity<sp/>=<sp/>0.05;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>blueDiffuse-&gt;m_shininess<sp/>=<sp/>5.0;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>blueDiffuse-&gt;AssignTexture(coneTexture);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>yellowDiffuse-&gt;m_baseColor<sp/>=<sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.8,<sp/>0.8,<sp/>0.2}};</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>yellowDiffuse-&gt;m_reflectivity<sp/>=<sp/>0.05;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>yellowDiffuse-&gt;m_shininess<sp/>=<sp/>20.0;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>yellowDiffuse-&gt;AssignTexture(sphereTexture);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>orangeDiffuse-&gt;m_baseColor<sp/>=<sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{1.0,<sp/>0.5,<sp/>0.0}};</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>orangeDiffuse-&gt;m_reflectivity<sp/>=<sp/>0.05;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>orangeDiffuse-&gt;m_shininess<sp/>=<sp/>5.0;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>orangeDiffuse-&gt;AssignTexture(cylinderTexture);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>wallMaterial-&gt;m_baseColor<sp/>=<sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{1.0,<sp/>0.125,<sp/>0.125}};</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>wallMaterial-&gt;m_reflectivity<sp/>=<sp/>0.75;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>wallMaterial-&gt;m_shininess<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>floorMaterial-&gt;m_baseColor<sp/>=<sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{1.0,<sp/>1.0,<sp/>1.0}};</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>floorMaterial-&gt;m_reflectivity<sp/>=<sp/>0.2;<sp/></highlight><highlight class="comment">//<sp/>odbicia</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>floorMaterial-&gt;m_shininess<sp/>=<sp/>10.0;<sp/></highlight><highlight class="comment">//<sp/>połysk<sp/>(widoczne<sp/>źródła<sp/>światła<sp/>na<sp/>kuli)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>połysk<sp/>jest<sp/>zależny<sp/>od<sp/>kąta<sp/>odbicia<sp/>światła<sp/>i<sp/>kąta<sp/>promienia<sp/>rzuconego<sp/>z<sp/>kamery</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>floorMaterial-&gt;AssignTexture(floorTexture);<sp/></highlight><highlight class="comment">//<sp/>przypisanie<sp/>tekstury<sp/>do<sp/>tworzywa</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>imageMaterial<sp/>-&gt;<sp/>m_baseColor<sp/>=<sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{1.0,<sp/>0.125,<sp/>0.125}};</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>imageMaterial<sp/>-&gt;<sp/>m_reflectivity<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>imageMaterial<sp/>-&gt;<sp/>m_shininess<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>imageMaterial<sp/>-&gt;<sp/>AssignTexture(imageTexture);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>glassMaterial<sp/>-&gt;<sp/>m_baseColor<sp/>=<sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{1.0,<sp/>1.0,<sp/>1.0}};</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>glassMaterial<sp/>-&gt;<sp/>m_reflectivity<sp/>=<sp/>0.99;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>glassMaterial<sp/>-&gt;<sp/>m_shininess<sp/>=<sp/>40.0;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>glassMaterial<sp/>-&gt;<sp/>m_translucency<sp/>=<sp/>0.99;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>glassMaterial<sp/>-&gt;<sp/>m_ior<sp/>=<sp/>1.009;<sp/></highlight><highlight class="comment">//<sp/>współczynnik<sp/>załamania<sp/>światła<sp/>(1.333<sp/>woda)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Utwórz<sp/>obiekty</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>m_objectList.push_back(std::make_shared&lt;RT::ObjSphere&gt;(<ref refid="class_r_t_1_1_obj_sphere" kindref="compound">RT::ObjSphere</ref>()));<sp/></highlight><highlight class="comment">//<sp/>sfera</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>m_objectList.push_back(std::make_shared&lt;RT::Cylinder&gt;(<ref refid="class_r_t_1_1_cylinder" kindref="compound">RT::Cylinder</ref>()));<sp/></highlight><highlight class="comment">//<sp/>cylinder</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>m_objectList.push_back(std::make_shared&lt;RT::Cone&gt;(<ref refid="class_r_t_1_1_cone" kindref="compound">RT::Cone</ref>()));<sp/></highlight><highlight class="comment">//<sp/>stożek</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Utwórz<sp/>testową<sp/>płaszczyznę</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>m_objectList.push_back(std::make_shared&lt;RT::ObjPlane&gt;(<ref refid="class_r_t_1_1_obj_plane" kindref="compound">RT::ObjPlane</ref>()));</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>m_objectList.at(3)-&gt;m_baseColor<sp/>=<sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.5,<sp/>0.5,<sp/>0.5}};</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Utwórz<sp/>transformacje<sp/>dla<sp/>płaszczyzny</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_r_t_1_1_g_tform" kindref="compound">RT::GTform</ref><sp/>planeMatrix;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>planeMatrix.<ref refid="class_r_t_1_1_g_tform_1a54c87058d14d7cf321230ea13523f622" kindref="member">SetTransform</ref>(<ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.0,<sp/>0.0,<sp/>0.75}},</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.0,<sp/>0.0,<sp/>0.0}},</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{4.0,<sp/>4.0,<sp/>1.0}});</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Zastosuj<sp/>transformacje<sp/>płaszczyzny</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>m_objectList.at(3)-&gt;SetTransformMatrix(planeMatrix);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Modyfikacja<sp/>sfer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_r_t_1_1_g_tform" kindref="compound">RT::GTform</ref><sp/>testMatrix1,<sp/>testMatrix2,<sp/>testMatrix3;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>testMatrix1.<ref refid="class_r_t_1_1_g_tform_1a54c87058d14d7cf321230ea13523f622" kindref="member">SetTransform</ref>(<ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{-2.0,<sp/>0.0,<sp/>0.0}},<sp/></highlight><highlight class="comment">//<sp/>transformacja</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.0,<sp/>0.0,<sp/>0.0}},<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>rotacja</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.5,<sp/>0.5,<sp/>0.75}});<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>skalowanie</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>testMatrix2.<ref refid="class_r_t_1_1_g_tform_1a54c87058d14d7cf321230ea13523f622" kindref="member">SetTransform</ref>(<ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.0,<sp/>0.0,<sp/>0.2}},</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.0,<sp/>0.0,<sp/>0.0}},</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.5,<sp/>1.0,<sp/>0.5}});</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>testMatrix3.<ref refid="class_r_t_1_1_g_tform_1a54c87058d14d7cf321230ea13523f622" kindref="member">SetTransform</ref>(<ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{2.0,<sp/>0.0,<sp/>0.0}},</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.0,<sp/>-<ref refid="_s_d_l__stdinc_8h_1ae71449b1cc6e6250b91f539153a7a0d3" kindref="member">M_PI</ref><sp/>/<sp/>8.0,<sp/>0.0}},</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.75,<sp/>1.5,<sp/>0.75}});</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>m_objectList.at(0)-&gt;SetTransformMatrix(testMatrix1);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>m_objectList.at(1)-&gt;SetTransformMatrix(testMatrix2);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>m_objectList.at(2)-&gt;SetTransformMatrix(testMatrix3);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Przypisz<sp/>tworzywa<sp/>do<sp/>obiektów</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>m_objectList.at(0)-&gt;AssignMaterial(glassMaterial);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>m_objectList.at(1)-&gt;AssignMaterial(silverMetal);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>m_objectList.at(2)-&gt;AssignMaterial(blueDiffuse);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>m_objectList.at(3)-&gt;AssignMaterial(floorMaterial);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Utwórz<sp/>testowe<sp/>źródło<sp/>światła</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Tworzy<sp/>źródło<sp/>światła<sp/>i<sp/>dodaje<sp/>je<sp/>do<sp/>listy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>m_lightList.push_back(std::make_shared&lt;RT::PointLight&gt;(<ref refid="class_r_t_1_1_point_light" kindref="compound">RT::PointLight</ref>()));</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Modyfikuje<sp/>położenie<sp/>źródła<sp/>światła</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>x(prawo,<sp/>lewo)<sp/>y(dalej,<sp/>bliżej<sp/>od<sp/>kamery)<sp/>z(dół,<sp/>góra)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>m_lightList.at(0)-&gt;m_location<sp/>=<sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{5.0,<sp/>-10.0,<sp/>-5.0}};</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Modyfikuje<sp/>kolor<sp/>źródła<sp/>światła</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>m_lightList.at(0)-&gt;m_color<sp/>=<sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.0,<sp/>0.0,<sp/>1.0}};</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>m_lightList.push_back(std::make_shared&lt;RT::PointLight&gt;(<ref refid="class_r_t_1_1_point_light" kindref="compound">RT::PointLight</ref>()));</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>m_lightList.at(1)-&gt;m_location<sp/>=<sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{-5.0,<sp/>-10.0,<sp/>-5.0}};</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>m_lightList.at(1)-&gt;m_color<sp/>=<sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{1.0,<sp/>0.0,<sp/>0.0}};</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>m_lightList.push_back(std::make_shared&lt;RT::PointLight&gt;(<ref refid="class_r_t_1_1_point_light" kindref="compound">RT::PointLight</ref>()));</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>m_lightList.at(2)-&gt;m_location<sp/>=<sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.0,<sp/>-10.0,<sp/>-5.0}};</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>m_lightList.at(2)-&gt;m_color<sp/>=<sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref>{std::vector&lt;double&gt;{0.0,<sp/>1.0,<sp/>0.0}};</highlight></codeline>
+<codeline lineno="167"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Funkcja<sp/>renderująca</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_scene_1a75c7c042384cac0d24d1bb66b89da3af" kindref="member">RT::Scene::Render</ref>(<ref refid="class_image" kindref="compound">Image</ref><sp/>&amp;outputImage)<sp/>{</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Pobiera<sp/>wymiary<sp/>obrazu</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>xSize<sp/>=<sp/>outputImage.<ref refid="class_image_1a5513ee1dfcd2579037f2c11d8c5cc8bb" kindref="member">GetXSize</ref>();</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ySize<sp/>=<sp/>outputImage.<ref refid="class_image_1a3ee20d5989d88582ede81c294b00752c" kindref="member">GetYSize</ref>();</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Pętla<sp/>przez<sp/>wszystkie<sp/>piksele<sp/>obrazu</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_r_t_1_1_ray" kindref="compound">RT::Ray</ref><sp/>cameraRay;<sp/></highlight><highlight class="comment">//<sp/>do<sp/>przechowywania<sp/>promienia<sp/>dla<sp/>każdego<sp/>piksela<sp/>w<sp/>pętli</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>intPoint(3);<sp/></highlight><highlight class="comment">//<sp/>intersection<sp/>point<sp/>(punkt<sp/>przecięcia)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>localNormal(3);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>localColor(3);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>xFact<sp/>=<sp/>1.0<sp/>/<sp/>(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(xSize)<sp/>/<sp/>2.0);<sp/></highlight><highlight class="comment">//<sp/>wartość<sp/>zawarta<sp/>w<sp/>xFact<sp/>reprezentuje<sp/>w<sp/>przedziale<sp/>&lt;0;<sp/>2&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>różnicę<sp/>wartości<sp/>położenia<sp/>pomiędzy<sp/>kolejnymi<sp/>pikselami<sp/>na<sp/>osi<sp/>x</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>yFact<sp/>=<sp/>1.0<sp/>/<sp/>(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(ySize)<sp/>/<sp/>2.0);<sp/></highlight><highlight class="comment">//<sp/>wartość<sp/>zawarta<sp/>w<sp/>yFact<sp/>reprezentuje<sp/>w<sp/>przedziale<sp/>&lt;0;<sp/>2&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>różnicę<sp/>wartości<sp/>położenia<sp/>pomiędzy<sp/>kolejnymi<sp/>pikselami<sp/>na<sp/>osi<sp/>y</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>minDist<sp/>=<sp/>1e6;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>maxDist<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__opengl_8h_1a1675d9d7bb68e1657ff028643b4037e3" kindref="member">y</ref><sp/>=<sp/>0;<sp/><ref refid="_s_d_l__opengl_8h_1a1675d9d7bb68e1657ff028643b4037e3" kindref="member">y</ref><sp/>&lt;<sp/>ySize;<sp/>++<ref refid="_s_d_l__opengl_8h_1a1675d9d7bb68e1657ff028643b4037e3" kindref="member">y</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Wyświetl<sp/>indykator<sp/>postępu</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Przetwarzanie<sp/>linii<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="_s_d_l__opengl_8h_1a1675d9d7bb68e1657ff028643b4037e3" kindref="member">y</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>z<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>ySize<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout.flush();</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47" kindref="member">x</ref><sp/>=<sp/>0;<sp/><ref refid="_s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47" kindref="member">x</ref><sp/>&lt;<sp/>xSize;<sp/>++<ref refid="_s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47" kindref="member">x</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Normalizacja<sp/>współrzędnych<sp/>x<sp/>i<sp/>y.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>normX<sp/>=<sp/>(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="_s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47" kindref="member">x</ref>)<sp/>*<sp/>xFact)<sp/>-<sp/>1.0;<sp/></highlight><highlight class="comment">//<sp/>Otrzymujemy<sp/>wartość<sp/>z<sp/>przedziału<sp/>&lt;-1;<sp/>1&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>normY<sp/>=<sp/>(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="_s_d_l__opengl_8h_1a1675d9d7bb68e1657ff028643b4037e3" kindref="member">y</ref>)<sp/>*<sp/>yFact)<sp/>-<sp/>1.0;<sp/></highlight><highlight class="comment">//<sp/>Otrzymujemy<sp/>wartość<sp/>z<sp/>przedziału<sp/>&lt;-1;<sp/>1&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Wygeneruj<sp/>promień<sp/>dla<sp/>tego<sp/>piksela</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_camera.GenerateRay(normX,<sp/>normY,<sp/>cameraRay);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Sprawdź<sp/>przecięcia<sp/>promienia<sp/>ze<sp/>wszystkimi<sp/>obiektami<sp/>na<sp/>scenie</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;RT::ObjectBase&gt;<sp/>closestObject;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>closestIntPoint{3};</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>closestLocalNormal{3};</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>closestLocalColor{3};</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>intersectionFound<sp/>=<sp/>CastRay(cameraRay,<sp/>closestObject,<sp/>closestIntPoint,<sp/>closestLocalNormal,</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>closestLocalColor);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Oblicz<sp/>oświetlenie<sp/>dla<sp/>najbliżej<sp/>położonego<sp/>obiektu,<sp/>jeśli<sp/>znaleziono<sp/>przecięcie</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(intersectionFound)<sp/>{</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Sprawdź,<sp/>czy<sp/>obiekt<sp/>posiada<sp/>tworzywo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(closestObject-&gt;m_hasMaterial)<sp/>{</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Wyzeruj<sp/>licznik<sp/>odbić<sp/>(dla<sp/>każdego<sp/>piksela)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_r_t_1_1_material_base_1acb27faf3834b1db091139c8a970ea4bc" kindref="member">RT::MaterialBase::m_reflectionRayCount</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Wykorzystaj<sp/>tworzywo<sp/>do<sp/>obliczania<sp/>koloru</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/><ref refid="_s_d_l__opengl__glext_8h_1a3ea846f998d64f079b86052b6c4193a8" kindref="member">color</ref><sp/>=<sp/>closestObject-&gt;m_pMaterial-&gt;ComputeColor(m_objectList,<sp/>m_lightList,</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>closestObject,<sp/>closestIntPoint,</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>closestLocalNormal,<sp/>cameraRay);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Ustaw<sp/>kolor<sp/>piksela</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>outputImage.<ref refid="class_image_1a991612a2226cec929bce0f61e2a3b2ed" kindref="member">SetPixel</ref>(<ref refid="_s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47" kindref="member">x</ref>,<sp/><ref refid="_s_d_l__opengl_8h_1a1675d9d7bb68e1657ff028643b4037e3" kindref="member">y</ref>,<sp/><ref refid="_s_d_l__opengl__glext_8h_1a3ea846f998d64f079b86052b6c4193a8" kindref="member">color</ref>.GetElement(0),<sp/><ref refid="_s_d_l__opengl__glext_8h_1a3ea846f998d64f079b86052b6c4193a8" kindref="member">color</ref>.GetElement(1),<sp/><ref refid="_s_d_l__opengl__glext_8h_1a3ea846f998d64f079b86052b6c4193a8" kindref="member">color</ref>.GetElement(2));</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Użyj<sp/>zwykłej<sp/>metody<sp/>obliczania<sp/>koloru</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>matColor<sp/>=<sp/><ref refid="class_r_t_1_1_material_base_1a2a8f6d812302097b550388ed3deed6b7" kindref="member">RT::MaterialBase::ComputeDiffuseColor</ref>(m_objectList,<sp/>m_lightList,</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>closestObject,<sp/>closestIntPoint,</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>closestLocalNormal,</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>closestObject-&gt;m_baseColor);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Ustaw<sp/>kolor<sp/>piksela</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>outputImage.<ref refid="class_image_1a991612a2226cec929bce0f61e2a3b2ed" kindref="member">SetPixel</ref>(<ref refid="_s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47" kindref="member">x</ref>,<sp/><ref refid="_s_d_l__opengl_8h_1a1675d9d7bb68e1657ff028643b4037e3" kindref="member">y</ref>,<sp/>matColor.<ref refid="classqb_vector_1adadd6ca87273a15f57a5e1d6ae15583b" kindref="member">GetElement</ref>(0),<sp/>matColor.<ref refid="classqb_vector_1adadd6ca87273a15f57a5e1d6ae15583b" kindref="member">GetElement</ref>(1),<sp/>matColor.<ref refid="classqb_vector_1adadd6ca87273a15f57a5e1d6ae15583b" kindref="member">GetElement</ref>(2));</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Metoda<sp/>rzucająca<sp/>promień<sp/>na<sp/>scene</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_scene_1a45a144d37be643349a7f3623038240b3" kindref="member">RT::Scene::CastRay</ref>(<ref refid="class_r_t_1_1_ray" kindref="compound">RT::Ray</ref><sp/>&amp;castRay,<sp/>std::shared_ptr&lt;RT::ObjectBase&gt;<sp/>&amp;closestObject,</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>&amp;closestIntPoint,<sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>&amp;closestLocalNormal,</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>&amp;closestLocalColor)<sp/>{</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>intPoint{3};</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>localNormal{3};</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>localColor{3};</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>minDist<sp/>=<sp/>1e6;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>intersectionFound<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>currentObject:<sp/>m_objectList)<sp/>{</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>validInt<sp/>=<sp/>currentObject-&gt;TestIntersection(castRay,<sp/>intPoint,<sp/>localNormal,<sp/>localColor);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Jeśli<sp/>występuje<sp/>przecięcie<sp/>promienia<sp/>z<sp/>obiektem</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(validInt)<sp/>{</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Ustaw<sp/>flagę<sp/>oznaczającą<sp/>znalezienie<sp/>przecięcia</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>intersectionFound<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Oblicz<sp/>dystans<sp/>pomiędzy<sp/>kamerą<sp/>i<sp/>punktem<sp/>przecięcia<sp/>z<sp/>powierzchnią<sp/>obiektu</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dist<sp/>=<sp/>(intPoint<sp/>-<sp/>castRay.<ref refid="class_r_t_1_1_ray_1a4421d6cade1151cda334b75ba47d7396" kindref="member">m_point1</ref>).norm();</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Jeśli<sp/>obiekt<sp/>jest<sp/>bliżej<sp/>niż<sp/>wszystkie<sp/>poprzednio<sp/>sprawdzane,<sp/>przechowaj<sp/>referencje<sp/>do<sp/>niego</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dist<sp/>&lt;<sp/>minDist)<sp/>{</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>minDist<sp/>=<sp/>dist;</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>closestObject<sp/>=<sp/>currentObject;</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>closestIntPoint<sp/>=<sp/>intPoint;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>closestLocalNormal<sp/>=<sp/>localNormal;</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>closestLocalColor<sp/>=<sp/>localColor;</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Zwróć<sp/>flagę<sp/>oznaczającą<sp/>czy<sp/>odnaleziono<sp/>przecięcie</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>intersectionFound;</highlight></codeline>
+<codeline lineno="268"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/RayTrace/Scene.cpp"/>
+  </compounddef>
+</doxygen>

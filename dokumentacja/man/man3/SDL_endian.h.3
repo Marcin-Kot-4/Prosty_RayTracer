@@ -1,0 +1,135 @@
+.TH "D:/RayTracing/include/SDL_endian.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_endian.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SDL_stdinc\&.h'\fP
+.br
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Macros"
+
+.PP
+.RI "\fBSwap to native\fP"
+.br
+Byteswap item from the specified endianness to the native endianness\&. 
+.PP
+.in +1c
+.in +1c
+.ti -1c
+.RI "#define \fBSDL_SwapLE16\fP(X)   (X)"
+.br
+.ti -1c
+.RI "#define \fBSDL_SwapLE32\fP(X)   (X)"
+.br
+.ti -1c
+.RI "#define \fBSDL_SwapLE64\fP(X)   (X)"
+.br
+.ti -1c
+.RI "#define \fBSDL_SwapFloatLE\fP(X)   (X)"
+.br
+.ti -1c
+.RI "#define \fBSDL_SwapBE16\fP(X)   \fBSDL_Swap16\fP(X)"
+.br
+.ti -1c
+.RI "#define \fBSDL_SwapBE32\fP(X)   \fBSDL_Swap32\fP(X)"
+.br
+.ti -1c
+.RI "#define \fBSDL_SwapBE64\fP(X)   \fBSDL_Swap64\fP(X)"
+.br
+.ti -1c
+.RI "#define \fBSDL_SwapFloatBE\fP(X)   \fBSDL_SwapFloat\fP(X)"
+.br
+.in -1c
+.in -1c
+.SS "The two types of endianness"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSDL_LIL_ENDIAN\fP   1234"
+.br
+.ti -1c
+.RI "#define \fBSDL_BIG_ENDIAN\fP   4321"
+.br
+.ti -1c
+.RI "#define \fBSDL_BYTEORDER\fP   \fBSDL_LIL_ENDIAN\fP"
+.br
+.ti -1c
+.RI "#define \fBHAS_BUILTIN_BSWAP16\fP   0"
+.br
+.ti -1c
+.RI "#define \fBHAS_BUILTIN_BSWAP32\fP   0"
+.br
+.ti -1c
+.RI "#define \fBHAS_BUILTIN_BSWAP64\fP   0"
+.br
+.ti -1c
+.RI "#define \fBHAS_BROKEN_BSWAP\fP   0"
+.br
+.ti -1c
+.RI "\fBSDL_FORCE_INLINE\fP \fBUint16\fP \fBSDL_Swap16\fP (\fBUint16\fP \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBSDL_FORCE_INLINE\fP \fBUint32\fP \fBSDL_Swap32\fP (\fBUint32\fP \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBSDL_FORCE_INLINE\fP \fBUint64\fP \fBSDL_Swap64\fP (\fBUint64\fP \fBx\fP)"
+.br
+.ti -1c
+.RI "\fBSDL_FORCE_INLINE\fP float \fBSDL_SwapFloat\fP (float \fBx\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Functions for reading and writing endian-specific values
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define HAS_BROKEN_BSWAP   0"
+
+.SS "#define HAS_BUILTIN_BSWAP16   0"
+
+.SS "#define HAS_BUILTIN_BSWAP32   0"
+
+.SS "#define HAS_BUILTIN_BSWAP64   0"
+
+.SS "#define SDL_BIG_ENDIAN   4321"
+
+.SS "#define SDL_BYTEORDER   \fBSDL_LIL_ENDIAN\fP"
+
+.SS "#define SDL_LIL_ENDIAN   1234"
+
+.SS "#define SDL_SwapBE16(X)   \fBSDL_Swap16\fP(X)"
+
+.SS "#define SDL_SwapBE32(X)   \fBSDL_Swap32\fP(X)"
+
+.SS "#define SDL_SwapBE64(X)   \fBSDL_Swap64\fP(X)"
+
+.SS "#define SDL_SwapFloatBE(X)   \fBSDL_SwapFloat\fP(X)"
+
+.SS "#define SDL_SwapFloatLE(X)   (X)"
+
+.SS "#define SDL_SwapLE16(X)   (X)"
+
+.SS "#define SDL_SwapLE32(X)   (X)"
+
+.SS "#define SDL_SwapLE64(X)   (X)"
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBSDL_FORCE_INLINE\fP \fBUint16\fP SDL_Swap16 (\fBUint16\fP x)"
+
+.SS "\fBSDL_FORCE_INLINE\fP \fBUint32\fP SDL_Swap32 (\fBUint32\fP x)"
+
+.SS "\fBSDL_FORCE_INLINE\fP \fBUint64\fP SDL_Swap64 (\fBUint64\fP x)"
+
+.SS "\fBSDL_FORCE_INLINE\fP float SDL_SwapFloat (float x)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

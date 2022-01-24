@@ -1,0 +1,71 @@
+.TH "SDL_SysWMinfo" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SDL_SysWMinfo
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SDL_syswm\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSDL_version\fP \fBversion\fP"
+.br
+.ti -1c
+.RI "\fBSDL_SYSWM_TYPE\fP \fBsubsystem\fP"
+.br
+.ti -1c
+.RI "union {"
+.br
+.ti -1c
+.RI "   struct {"
+.br
+.ti -1c
+.RI "      HWND \fBwindow\fP"
+.br
+.ti -1c
+.RI "      HDC \fBhdc\fP"
+.br
+.ti -1c
+.RI "      HINSTANCE \fBhinstance\fP"
+.br
+.ti -1c
+.RI "   } \fBwin\fP"
+.br
+.ti -1c
+.RI "   \fBUint8\fP \fBdummy\fP [64]"
+.br
+.ti -1c
+.RI "} \fBinfo\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The custom window manager information structure\&.
+.PP
+When this structure is returned, it holds information about which low level system it is using, and will be one of SDL_SYSWM_TYPE\&. 
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBUint8\fP SDL_SysWMinfo::dummy[64]"
+
+.SS "HDC SDL_SysWMinfo::hdc"
+The window device context 
+.SS "HINSTANCE SDL_SysWMinfo::hinstance"
+The instance handle 
+.SS "union  { \&.\&.\&. }  SDL_SysWMinfo::info"
+
+.SS "\fBSDL_SYSWM_TYPE\fP SDL_SysWMinfo::subsystem"
+
+.SS "\fBSDL_version\fP SDL_SysWMinfo::version"
+
+.SS "struct  { \&.\&.\&. }  SDL_SysWMinfo::win"
+
+.SS "HWND SDL_SysWMinfo::window"
+The window handle 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

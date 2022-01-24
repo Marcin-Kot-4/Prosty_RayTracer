@@ -1,0 +1,33 @@
+\hypertarget{cylinder_8h_source}{}\doxysection{cylinder.\+h}
+\label{cylinder_8h_source}\index{D:/RayTracing/RayTrace/Primitives/cylinder.h@{D:/RayTracing/RayTrace/Primitives/cylinder.h}}
+\mbox{\hyperlink{cylinder_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef RAYTRACING\_CYLINDER\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define RAYTRACING\_CYLINDER\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{objectbase_8h}{objectbase.h}}"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}../gtfm.h"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_r_t}{RT}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10     \textcolor{keyword}{class }\mbox{\hyperlink{class_r_t_1_1_cylinder}{Cylinder}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_r_t_1_1_object_base}{ObjectBase}}}
+\DoxyCodeLine{11     \{}
+\DoxyCodeLine{12     \textcolor{keyword}{public}:}
+\DoxyCodeLine{13         \textcolor{comment}{// Domyślny konstruktor}}
+\DoxyCodeLine{14         \mbox{\hyperlink{class_r_t_1_1_cylinder_a33570b4dfcc1f25ee45ad0bc02d74258}{Cylinder}}();}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16         \textcolor{comment}{// Nadpisany destruktor}}
+\DoxyCodeLine{17         \textcolor{keyword}{virtual} \mbox{\hyperlink{class_r_t_1_1_cylinder_ac4c3c2f77f3f74f97519d7e8d360e36f}{\string~Cylinder}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19         \textcolor{comment}{// Nadpisana metoda do sprawdzania przecięcia promienia z obiektem}}
+\DoxyCodeLine{20         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_r_t_1_1_cylinder_af651d28a24101803fc4fe1a12f9d0730}{TestIntersection}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_r_t_1_1_ray}{RT::Ray}} \&castRay, \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&intPoint,}
+\DoxyCodeLine{21                                       \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&localNormal, \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&localColor) \textcolor{keyword}{override};}
+\DoxyCodeLine{22     \};}
+\DoxyCodeLine{23 \}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//RAYTRACING\_CYLINDER\_H}}
+
+\end{DoxyCode}

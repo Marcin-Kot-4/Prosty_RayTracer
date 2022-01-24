@@ -1,0 +1,164 @@
+.TH "D:/RayTracing/include/SDL_gesture.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_gesture.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SDL_stdinc\&.h'\fP
+.br
+\fC#include 'SDL_error\&.h'\fP
+.br
+\fC#include 'SDL_video\&.h'\fP
+.br
+\fC#include 'SDL_touch\&.h'\fP
+.br
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBSint64\fP \fBSDL_GestureID\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_RecordGesture\fP (\fBSDL_TouchID\fP touchId)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_SaveAllDollarTemplates\fP (\fBSDL_RWops\fP *\fBdst\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_SaveDollarTemplate\fP (\fBSDL_GestureID\fP gestureId, \fBSDL_RWops\fP *\fBdst\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_LoadDollarTemplates\fP (\fBSDL_TouchID\fP touchId, \fBSDL_RWops\fP *\fBsrc\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Include file for SDL gesture event handling\&. 
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBSint64\fP \fBSDL_GestureID\fP"
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_LoadDollarTemplates (\fBSDL_TouchID\fP touchId, \fBSDL_RWops\fP * src)"
+Load Dollar Gesture templates from a file\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fItouchId\fP a touch id 
+.br
+\fIsrc\fP a \fBSDL_RWops\fP to load from 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the number of loaded templates on success or a negative error code (or 0) on failure; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_SaveAllDollarTemplates\fP 
+.PP
+\fBSDL_SaveDollarTemplate\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_RecordGesture (\fBSDL_TouchID\fP touchId)"
+Begin recording a gesture on a specified touch device or all touch devices\&.
+.PP
+If the parameter \fCtouchId\fP is -1 (i\&.e\&., all devices), this function will always return 1, regardless of whether there actually are any devices\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fItouchId\fP the touch device id, or -1 for all touch devices 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+1 on success or 0 if the specified device could not be found\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GetTouchDevice\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_SaveAllDollarTemplates (\fBSDL_RWops\fP * dst)"
+Save all currently loaded Dollar Gesture templates\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIdst\fP a \fBSDL_RWops\fP to save to 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the number of saved templates on success or 0 on failure; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_LoadDollarTemplates\fP 
+.PP
+\fBSDL_SaveDollarTemplate\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_SaveDollarTemplate (\fBSDL_GestureID\fP gestureId, \fBSDL_RWops\fP * dst)"
+Save a currently loaded Dollar Gesture template\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIgestureId\fP a gesture id 
+.br
+\fIdst\fP a \fBSDL_RWops\fP to save to 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+1 on success or 0 on failure; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_LoadDollarTemplates\fP 
+.PP
+\fBSDL_SaveAllDollarTemplates\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

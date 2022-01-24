@@ -1,0 +1,305 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__endian_8h_source" xml:lang="en-US">
+<title>SDL_endian.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_endian.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+28 <emphasis role="preprocessor">#ifndef&#32;SDL_endian_h_</emphasis>
+29 <emphasis role="preprocessor">#define&#32;SDL_endian_h_</emphasis>
+30 
+31 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__stdinc_8h">SDL_stdinc.h</link>&quot;</emphasis>
+32 
+33 <emphasis role="preprocessor">#if&#32;defined(_MSC_VER)&#32;&amp;&amp;&#32;(_MSC_VER&#32;&gt;=&#32;1400)</emphasis>
+34 <emphasis role="comment">/*&#32;As&#32;of&#32;Clang&#32;11,&#32;&apos;_m_prefetchw&apos;&#32;is&#32;conflicting&#32;with&#32;the&#32;winnt.h&apos;s&#32;version,</emphasis>
+35 <emphasis role="comment">&#32;&#32;&#32;so&#32;we&#32;define&#32;the&#32;needed&#32;&apos;_m_prefetch&apos;&#32;here&#32;as&#32;a&#32;pseudo-header,&#32;until&#32;the&#32;issue&#32;is&#32;fixed.&#32;*/</emphasis>
+36 <emphasis role="preprocessor">#ifdef&#32;__clang__</emphasis>
+37 <emphasis role="preprocessor">#ifndef&#32;__PRFCHWINTRIN_H</emphasis>
+38 <emphasis role="preprocessor">#define&#32;__PRFCHWINTRIN_H</emphasis>
+39 <emphasis role="keyword">static</emphasis>&#32;<link linkend="_begin__code_8h_1a9f04218fe09e6ee659e045b2f11542ed">__inline__</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;__attribute__((__always_inline__,&#32;__nodebug__))
+40 _m_prefetch(<emphasis role="keywordtype">void</emphasis>&#32;*__P)
+41 {
+42 &#32;&#32;__builtin_prefetch&#32;(__P,&#32;0,&#32;3&#32;<emphasis role="comment">/*&#32;_MM_HINT_T0&#32;*/</emphasis>);
+43 }
+44 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;__PRFCHWINTRIN_H&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+45 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;__clang__&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+46 
+47 <emphasis role="preprocessor">#include&#32;&lt;intrin.h&gt;</emphasis>
+48 <emphasis role="preprocessor">#endif</emphasis>
+49 
+53 <emphasis role="comment">/*&#32;@{&#32;*/</emphasis>
+54 <emphasis role="preprocessor">#define&#32;SDL_LIL_ENDIAN&#32;&#32;1234</emphasis>
+55 <emphasis role="preprocessor">#define&#32;SDL_BIG_ENDIAN&#32;&#32;4321</emphasis>
+56 <emphasis role="comment">/*&#32;@}&#32;*/</emphasis>
+57 
+58 <emphasis role="preprocessor">#ifndef&#32;SDL_BYTEORDER&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;</emphasis><emphasis role="comment">/*&#32;Not&#32;defined&#32;in&#32;SDL_config.h?&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+59 <emphasis role="preprocessor">#ifdef&#32;__linux__</emphasis>
+60 <emphasis role="preprocessor">#include&#32;&lt;endian.h&gt;</emphasis>
+61 <emphasis role="preprocessor">#define&#32;SDL_BYTEORDER&#32;&#32;__BYTE_ORDER</emphasis>
+62 <emphasis role="preprocessor">#elif&#32;defined(__OpenBSD__)</emphasis>
+63 <emphasis role="preprocessor">#include&#32;&lt;endian.h&gt;</emphasis>
+64 <emphasis role="preprocessor">#define&#32;SDL_BYTEORDER&#32;&#32;BYTE_ORDER</emphasis>
+65 <emphasis role="preprocessor">#elif&#32;defined(__FreeBSD__)&#32;||&#32;defined(__NetBSD__)</emphasis>
+66 <emphasis role="preprocessor">#include&#32;&lt;sys/endian.h&gt;</emphasis>
+67 <emphasis role="preprocessor">#define&#32;SDL_BYTEORDER&#32;&#32;BYTE_ORDER</emphasis>
+68 <emphasis role="preprocessor">#else</emphasis>
+69 <emphasis role="preprocessor">#if&#32;defined(__hppa__)&#32;||&#32;\</emphasis>
+70 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;defined(__m68k__)&#32;||&#32;defined(mc68000)&#32;||&#32;defined(_M_M68K)&#32;||&#32;\</emphasis>
+71 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;(defined(__MIPS__)&#32;&amp;&amp;&#32;defined(__MIPSEB__))&#32;||&#32;\</emphasis>
+72 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;defined(__ppc__)&#32;||&#32;defined(__POWERPC__)&#32;||&#32;defined(_M_PPC)&#32;||&#32;\</emphasis>
+73 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;defined(__sparc__)</emphasis>
+74 <emphasis role="preprocessor">#define&#32;SDL_BYTEORDER&#32;&#32;&#32;SDL_BIG_ENDIAN</emphasis>
+75 <emphasis role="preprocessor">#else</emphasis>
+76 <emphasis role="preprocessor">#define&#32;SDL_BYTEORDER&#32;&#32;&#32;SDL_LIL_ENDIAN</emphasis>
+77 <emphasis role="preprocessor">#endif</emphasis>
+78 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;__linux__&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+79 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;!SDL_BYTEORDER&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+80 
+81 
+82 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+83 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+84 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+85 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+86 <emphasis role="preprocessor">#endif</emphasis>
+87 
+92 <emphasis role="comment">/*&#32;various&#32;modern&#32;compilers&#32;may&#32;have&#32;builtin&#32;swap&#32;*/</emphasis>
+93 <emphasis role="preprocessor">#if&#32;defined(__GNUC__)&#32;||&#32;defined(__clang__)</emphasis>
+94 <emphasis role="preprocessor">#&#32;&#32;&#32;define&#32;HAS_BUILTIN_BSWAP16&#32;(_SDL_HAS_BUILTIN(__builtin_bswap16))&#32;||&#32;\</emphasis>
+95 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(__GNUC__&#32;&gt;&#32;4&#32;||&#32;(__GNUC__&#32;==&#32;4&#32;&amp;&amp;&#32;__GNUC_MINOR__&#32;&gt;=&#32;8))</emphasis>
+96 <emphasis role="preprocessor">#&#32;&#32;&#32;define&#32;HAS_BUILTIN_BSWAP32&#32;(_SDL_HAS_BUILTIN(__builtin_bswap32))&#32;||&#32;\</emphasis>
+97 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(__GNUC__&#32;&gt;&#32;4&#32;||&#32;(__GNUC__&#32;==&#32;4&#32;&amp;&amp;&#32;__GNUC_MINOR__&#32;&gt;=&#32;3))</emphasis>
+98 <emphasis role="preprocessor">#&#32;&#32;&#32;define&#32;HAS_BUILTIN_BSWAP64&#32;(_SDL_HAS_BUILTIN(__builtin_bswap64))&#32;||&#32;\</emphasis>
+99 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(__GNUC__&#32;&gt;&#32;4&#32;||&#32;(__GNUC__&#32;==&#32;4&#32;&amp;&amp;&#32;__GNUC_MINOR__&#32;&gt;=&#32;3))</emphasis>
+100 
+101 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;this&#32;one&#32;is&#32;broken&#32;*/</emphasis>
+102 <emphasis role="preprocessor">#&#32;&#32;&#32;define&#32;HAS_BROKEN_BSWAP&#32;(__GNUC__&#32;==&#32;2&#32;&amp;&amp;&#32;__GNUC_MINOR__&#32;&lt;=&#32;95)</emphasis>
+103 <emphasis role="preprocessor">#else</emphasis>
+104 <emphasis role="preprocessor">#&#32;&#32;&#32;define&#32;HAS_BUILTIN_BSWAP16&#32;0</emphasis>
+105 <emphasis role="preprocessor">#&#32;&#32;&#32;define&#32;HAS_BUILTIN_BSWAP32&#32;0</emphasis>
+106 <emphasis role="preprocessor">#&#32;&#32;&#32;define&#32;HAS_BUILTIN_BSWAP64&#32;0</emphasis>
+107 <emphasis role="preprocessor">#&#32;&#32;&#32;define&#32;HAS_BROKEN_BSWAP&#32;0</emphasis>
+108 <emphasis role="preprocessor">#endif</emphasis>
+109 
+110 <emphasis role="preprocessor">#if&#32;HAS_BUILTIN_BSWAP16</emphasis>
+111 <emphasis role="preprocessor">#define&#32;SDL_Swap16(x)&#32;__builtin_bswap16(x)</emphasis>
+112 <emphasis role="preprocessor">#elif&#32;defined(_MSC_VER)&#32;&amp;&amp;&#32;(_MSC_VER&#32;&gt;=&#32;1400)</emphasis>
+113 <emphasis role="preprocessor">#pragma&#32;intrinsic(_byteswap_ushort)</emphasis>
+114 <emphasis role="preprocessor">#define&#32;SDL_Swap16(x)&#32;_byteswap_ushort(x)</emphasis>
+115 <emphasis role="preprocessor">#elif&#32;defined(__i386__)&#32;&amp;&amp;&#32;!HAS_BROKEN_BSWAP</emphasis>
+116 <link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>
+117 <link linkend="__s_d_l__endian_8h_1a157cb22d3cc4b3f623822b15c3921e54">SDL_Swap16</link>(<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>)
+118 {
+119 &#32;&#32;__asm__(<emphasis role="stringliteral">&quot;xchgb&#32;%b0,%h0&quot;</emphasis>:&#32;<emphasis role="stringliteral">&quot;=q&quot;</emphasis>(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>):<emphasis role="stringliteral">&quot;0&quot;</emphasis>(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>));
+120 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>;
+121 }
+122 <emphasis role="preprocessor">#elif&#32;defined(__x86_64__)</emphasis>
+123 <link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>
+124 <link linkend="__s_d_l__endian_8h_1a157cb22d3cc4b3f623822b15c3921e54">SDL_Swap16</link>(<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>)
+125 {
+126 &#32;&#32;__asm__(<emphasis role="stringliteral">&quot;xchgb&#32;%b0,%h0&quot;</emphasis>:&#32;<emphasis role="stringliteral">&quot;=Q&quot;</emphasis>(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>):<emphasis role="stringliteral">&quot;0&quot;</emphasis>(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>));
+127 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>;
+128 }
+129 <emphasis role="preprocessor">#elif&#32;(defined(__powerpc__)&#32;||&#32;defined(__ppc__))</emphasis>
+130 <link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>
+131 <link linkend="__s_d_l__endian_8h_1a157cb22d3cc4b3f623822b15c3921e54">SDL_Swap16</link>(<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>)
+132 {
+133 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>;
+134 
+135 &#32;&#32;__asm__(<emphasis role="stringliteral">&quot;rlwimi&#32;%0,%2,8,16,23&quot;</emphasis>:&#32;<emphasis role="stringliteral">&quot;=&amp;r&quot;</emphasis>(<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>):<emphasis role="stringliteral">&quot;0&quot;</emphasis>(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>&#32;&gt;&gt;&#32;8),&#32;<emphasis role="stringliteral">&quot;r&quot;</emphasis>(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>));
+136 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>)<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>;
+137 }
+138 <emphasis role="preprocessor">#elif&#32;(defined(__m68k__)&#32;&amp;&amp;&#32;!defined(__mcoldfire__))</emphasis>
+139 <link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>
+140 <link linkend="__s_d_l__endian_8h_1a157cb22d3cc4b3f623822b15c3921e54">SDL_Swap16</link>(<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>)
+141 {
+142 &#32;&#32;__asm__(<emphasis role="stringliteral">&quot;rorw&#32;#8,%0&quot;</emphasis>:&#32;<emphasis role="stringliteral">&quot;=d&quot;</emphasis>(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>):&#32;<emphasis role="stringliteral">&quot;0&quot;</emphasis>(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>):<emphasis role="stringliteral">&quot;cc&quot;</emphasis>);
+143 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>;
+144 }
+145 <emphasis role="preprocessor">#elif&#32;defined(__WATCOMC__)&#32;&amp;&amp;&#32;defined(__386__)</emphasis>
+146 <emphasis role="keyword">extern</emphasis>&#32;__inline&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="__s_d_l__endian_8h_1a157cb22d3cc4b3f623822b15c3921e54">SDL_Swap16</link>(<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>);
+147 <emphasis role="preprocessor">#pragma&#32;aux&#32;SDL_Swap16&#32;=&#32;\</emphasis>
+148 <emphasis role="preprocessor">&#32;&#32;&quot;xchg&#32;al,&#32;ah&quot;</emphasis>&#32;\
+149 &#32;&#32;parm&#32;&#32;&#32;[ax]&#32;&#32;&#32;\
+150 &#32;&#32;modify&#32;[ax];
+151 <emphasis role="preprocessor">#else</emphasis>
+152 <link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>
+153 <link linkend="__s_d_l__endian_8h_1a157cb22d3cc4b3f623822b15c3921e54">SDL_Swap16</link>(<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>)
+154 {
+155 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__stdinc_8h_1a774ea048cf20bd5f86f31da56d2937ff">SDL_static_cast</link>(<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>,&#32;((<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>&#32;&lt;&lt;&#32;8)&#32;|&#32;(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>&#32;&gt;&gt;&#32;8)));
+156 }
+157 <emphasis role="preprocessor">#endif</emphasis>
+158 
+159 <emphasis role="preprocessor">#if&#32;HAS_BUILTIN_BSWAP32</emphasis>
+160 <emphasis role="preprocessor">#define&#32;SDL_Swap32(x)&#32;__builtin_bswap32(x)</emphasis>
+161 <emphasis role="preprocessor">#elif&#32;defined(_MSC_VER)&#32;&amp;&amp;&#32;(_MSC_VER&#32;&gt;=&#32;1400)</emphasis>
+162 <emphasis role="preprocessor">#pragma&#32;intrinsic(_byteswap_ulong)</emphasis>
+163 <emphasis role="preprocessor">#define&#32;SDL_Swap32(x)&#32;_byteswap_ulong(x)</emphasis>
+164 <emphasis role="preprocessor">#elif&#32;defined(__i386__)&#32;&amp;&amp;&#32;!HAS_BROKEN_BSWAP</emphasis>
+165 <link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link>&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>
+166 <link linkend="__s_d_l__endian_8h_1a0f516a794e03b48778c9fcf41ddfe026">SDL_Swap32</link>(<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>)
+167 {
+168 &#32;&#32;__asm__(<emphasis role="stringliteral">&quot;bswap&#32;%0&quot;</emphasis>:&#32;<emphasis role="stringliteral">&quot;=r&quot;</emphasis>(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>):<emphasis role="stringliteral">&quot;0&quot;</emphasis>(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>));
+169 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>;
+170 }
+171 <emphasis role="preprocessor">#elif&#32;defined(__x86_64__)</emphasis>
+172 <link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link>&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>
+173 <link linkend="__s_d_l__endian_8h_1a0f516a794e03b48778c9fcf41ddfe026">SDL_Swap32</link>(<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>)
+174 {
+175 &#32;&#32;__asm__(<emphasis role="stringliteral">&quot;bswapl&#32;%0&quot;</emphasis>:&#32;<emphasis role="stringliteral">&quot;=r&quot;</emphasis>(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>):<emphasis role="stringliteral">&quot;0&quot;</emphasis>(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>));
+176 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>;
+177 }
+178 <emphasis role="preprocessor">#elif&#32;(defined(__powerpc__)&#32;||&#32;defined(__ppc__))</emphasis>
+179 <link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link>&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>
+180 <link linkend="__s_d_l__endian_8h_1a0f516a794e03b48778c9fcf41ddfe026">SDL_Swap32</link>(<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>)
+181 {
+182 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>;
+183 
+184 &#32;&#32;__asm__(<emphasis role="stringliteral">&quot;rlwimi&#32;%0,%2,24,16,23&quot;</emphasis>:&#32;<emphasis role="stringliteral">&quot;=&amp;r&quot;</emphasis>(<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>):&#32;<emphasis role="stringliteral">&quot;0&quot;</emphasis>&#32;(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>&gt;&gt;24),&#32;&#32;<emphasis role="stringliteral">&quot;r&quot;</emphasis>(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>));
+185 &#32;&#32;__asm__(<emphasis role="stringliteral">&quot;rlwimi&#32;%0,%2,8,8,15&quot;</emphasis>&#32;&#32;:&#32;<emphasis role="stringliteral">&quot;=&amp;r&quot;</emphasis>(<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>):&#32;<emphasis role="stringliteral">&quot;0&quot;</emphasis>&#32;(<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>),&#32;<emphasis role="stringliteral">&quot;r&quot;</emphasis>(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>));
+186 &#32;&#32;__asm__(<emphasis role="stringliteral">&quot;rlwimi&#32;%0,%2,24,0,7&quot;</emphasis>&#32;&#32;:&#32;<emphasis role="stringliteral">&quot;=&amp;r&quot;</emphasis>(<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>):&#32;<emphasis role="stringliteral">&quot;0&quot;</emphasis>&#32;(<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>),&#32;<emphasis role="stringliteral">&quot;r&quot;</emphasis>(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>));
+187 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a321ff419cd5252e54cf95e64dc6687ee">result</link>;
+188 }
+189 <emphasis role="preprocessor">#elif&#32;(defined(__m68k__)&#32;&amp;&amp;&#32;!defined(__mcoldfire__))</emphasis>
+190 <link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link>&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>
+191 <link linkend="__s_d_l__endian_8h_1a0f516a794e03b48778c9fcf41ddfe026">SDL_Swap32</link>(<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>)
+192 {
+193 &#32;&#32;__asm__(<emphasis role="stringliteral">&quot;rorw&#32;#8,%0\n\tswap&#32;%0\n\trorw&#32;#8,%0&quot;</emphasis>:&#32;<emphasis role="stringliteral">&quot;=d&quot;</emphasis>(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>):&#32;<emphasis role="stringliteral">&quot;0&quot;</emphasis>(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>):<emphasis role="stringliteral">&quot;cc&quot;</emphasis>);
+194 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>;
+195 }
+196 <emphasis role="preprocessor">#elif&#32;defined(__WATCOMC__)&#32;&amp;&amp;&#32;defined(__386__)</emphasis>
+197 <emphasis role="keyword">extern</emphasis>&#32;__inline&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="__s_d_l__endian_8h_1a0f516a794e03b48778c9fcf41ddfe026">SDL_Swap32</link>(<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>);
+198 <emphasis role="preprocessor">#pragma&#32;aux&#32;SDL_Swap32&#32;=&#32;\</emphasis>
+199 <emphasis role="preprocessor">&#32;&#32;&quot;bswap&#32;eax&quot;</emphasis>&#32;&#32;\
+200 &#32;&#32;parm&#32;&#32;&#32;[eax]&#32;\
+201 &#32;&#32;modify&#32;[eax];
+202 <emphasis role="preprocessor">#else</emphasis>
+203 <link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link>&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>
+204 <link linkend="__s_d_l__endian_8h_1a0f516a794e03b48778c9fcf41ddfe026">SDL_Swap32</link>(<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>)
+205 {
+206 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__stdinc_8h_1a774ea048cf20bd5f86f31da56d2937ff">SDL_static_cast</link>(<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>,&#32;((<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>&#32;&lt;&lt;&#32;24)&#32;|&#32;((<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>&#32;&lt;&lt;&#32;8)&#32;&amp;&#32;0x00FF0000)&#32;|
+207 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;((<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>&#32;&gt;&gt;&#32;8)&#32;&amp;&#32;0x0000FF00)&#32;|&#32;(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>&#32;&gt;&gt;&#32;24)));
+208 }
+209 <emphasis role="preprocessor">#endif</emphasis>
+210 
+211 <emphasis role="preprocessor">#if&#32;HAS_BUILTIN_BSWAP64</emphasis>
+212 <emphasis role="preprocessor">#define&#32;SDL_Swap64(x)&#32;__builtin_bswap64(x)</emphasis>
+213 <emphasis role="preprocessor">#elif&#32;defined(_MSC_VER)&#32;&amp;&amp;&#32;(_MSC_VER&#32;&gt;=&#32;1400)</emphasis>
+214 <emphasis role="preprocessor">#pragma&#32;intrinsic(_byteswap_uint64)</emphasis>
+215 <emphasis role="preprocessor">#define&#32;SDL_Swap64(x)&#32;_byteswap_uint64(x)</emphasis>
+216 <emphasis role="preprocessor">#elif&#32;defined(__i386__)&#32;&amp;&amp;&#32;!HAS_BROKEN_BSWAP</emphasis>
+217 <link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link>&#32;<link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link>
+218 <link linkend="__s_d_l__endian_8h_1a5ffaae586753b46ec5df4e601702324a">SDL_Swap64</link>(<link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link>&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>)
+219 {
+220 &#32;&#32;&#32;&#32;<emphasis role="keyword">union&#32;</emphasis>{
+221 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">struct&#32;</emphasis>{
+222 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82">a</link>,&#32;<link linkend="__s_d_l__opengl__glext_8h_1a0f71581a41fd2264c8944126dabbd010">b</link>;
+223 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<link linkend="__s_d_l__opengl_8h_1a4af680a6c683f88ed67b76f207f2e6e4">s</link>;
+224 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link>&#32;u;
+225 &#32;&#32;&#32;&#32;}&#32;<link linkend="__s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90">v</link>;
+226 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90">v</link>.u&#32;=&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>;
+227 &#32;&#32;__asm__(<emphasis role="stringliteral">&quot;bswapl&#32;%0&#32;;&#32;bswapl&#32;%1&#32;;&#32;xchgl&#32;%0,%1&quot;</emphasis>
+228 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<emphasis role="stringliteral">&quot;=r&quot;</emphasis>(<link linkend="__s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90">v</link>.s.a),&#32;<emphasis role="stringliteral">&quot;=r&quot;</emphasis>(<link linkend="__s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90">v</link>.s.b)
+229 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<emphasis role="stringliteral">&quot;0&quot;</emphasis>&#32;(<link linkend="__s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90">v</link>.s.a),&#32;&#32;<emphasis role="stringliteral">&quot;1&quot;</emphasis>(<link linkend="__s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90">v</link>.s.b));
+230 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90">v</link>.u;
+231 }
+232 <emphasis role="preprocessor">#elif&#32;defined(__x86_64__)</emphasis>
+233 <link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link>&#32;<link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link>
+234 <link linkend="__s_d_l__endian_8h_1a5ffaae586753b46ec5df4e601702324a">SDL_Swap64</link>(<link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link>&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>)
+235 {
+236 &#32;&#32;__asm__(<emphasis role="stringliteral">&quot;bswapq&#32;%0&quot;</emphasis>:&#32;<emphasis role="stringliteral">&quot;=r&quot;</emphasis>(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>):<emphasis role="stringliteral">&quot;0&quot;</emphasis>(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>));
+237 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>;
+238 }
+239 <emphasis role="preprocessor">#elif&#32;defined(__WATCOMC__)&#32;&amp;&amp;&#32;defined(__386__)</emphasis>
+240 <emphasis role="keyword">extern</emphasis>&#32;__inline&#32;<link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link>&#32;<link linkend="__s_d_l__endian_8h_1a5ffaae586753b46ec5df4e601702324a">SDL_Swap64</link>(<link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link>);
+241 <emphasis role="preprocessor">#pragma&#32;aux&#32;SDL_Swap64&#32;=&#32;\</emphasis>
+242 <emphasis role="preprocessor">&#32;&#32;&quot;bswap&#32;eax&quot;</emphasis>&#32;&#32;&#32;&#32;&#32;\
+243 &#32;&#32;&quot;bswap&#32;edx&quot;&#32;&#32;&#32;&#32;&#32;\
+244 &#32;&#32;&quot;xchg&#32;eax,edx&quot;&#32;&#32;\
+245 &#32;&#32;parm&#32;[eax&#32;edx]&#32;&#32;\
+246 &#32;&#32;modify&#32;[eax&#32;edx];
+247 <emphasis role="preprocessor">#else</emphasis>
+248 <link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link>&#32;<link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link>
+249 <link linkend="__s_d_l__endian_8h_1a5ffaae586753b46ec5df4e601702324a">SDL_Swap64</link>(<link linkend="__s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13">Uint64</link>&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>)
+250 {
+251 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;hi,&#32;lo;
+252 
+253 &#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Separate&#32;into&#32;high&#32;and&#32;low&#32;32-bit&#32;values&#32;and&#32;swap&#32;them&#32;*/</emphasis>
+254 &#32;&#32;&#32;&#32;lo&#32;=&#32;<link linkend="__s_d_l__stdinc_8h_1a774ea048cf20bd5f86f31da56d2937ff">SDL_static_cast</link>(<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>,&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>&#32;&amp;&#32;0xFFFFFFFF);
+255 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>&#32;&gt;&gt;=&#32;32;
+256 &#32;&#32;&#32;&#32;hi&#32;=&#32;<link linkend="__s_d_l__stdinc_8h_1a774ea048cf20bd5f86f31da56d2937ff">SDL_static_cast</link>(<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>,&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>&#32;&amp;&#32;0xFFFFFFFF);
+257 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>&#32;=&#32;<link linkend="__s_d_l__endian_8h_1a0f516a794e03b48778c9fcf41ddfe026">SDL_Swap32</link>(lo);
+258 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>&#32;&lt;&lt;=&#32;32;
+259 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>&#32;|=&#32;<link linkend="__s_d_l__endian_8h_1a0f516a794e03b48778c9fcf41ddfe026">SDL_Swap32</link>(hi);
+260 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>);
+261 }
+262 <emphasis role="preprocessor">#endif</emphasis>
+263 
+264 
+265 <link linkend="_begin__code_8h_1addf1f12c70f89102cc187297860c5961">SDL_FORCE_INLINE</link>&#32;<emphasis role="keywordtype">float</emphasis>
+266 <link linkend="__s_d_l__endian_8h_1a5f0f2d51e5ca5b27627ffc46ec892ce2">SDL_SwapFloat</link>(<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>)
+267 {
+268 &#32;&#32;&#32;&#32;<emphasis role="keyword">union&#32;</emphasis>{
+269 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">float</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a691492ec0bd6383f91200e49f6ae40ed">f</link>;
+270 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;ui32;
+271 &#32;&#32;&#32;&#32;}&#32;swapper;
+272 &#32;&#32;&#32;&#32;swapper.f&#32;=&#32;<link linkend="__s_d_l__opengl_8h_1ad0e63d0edcdbd3d79554076bf309fd47">x</link>;
+273 &#32;&#32;&#32;&#32;swapper.ui32&#32;=&#32;<link linkend="__s_d_l__endian_8h_1a0f516a794e03b48778c9fcf41ddfe026">SDL_Swap32</link>(swapper.ui32);
+274 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;swapper.f;
+275 }
+276 
+277 <emphasis role="comment">/*&#32;remove&#32;extra&#32;macros&#32;*/</emphasis>
+278 <emphasis role="preprocessor">#undef&#32;HAS_BROKEN_BSWAP</emphasis>
+279 <emphasis role="preprocessor">#undef&#32;HAS_BUILTIN_BSWAP16</emphasis>
+280 <emphasis role="preprocessor">#undef&#32;HAS_BUILTIN_BSWAP32</emphasis>
+281 <emphasis role="preprocessor">#undef&#32;HAS_BUILTIN_BSWAP64</emphasis>
+282 
+287 <emphasis role="comment">/*&#32;@{&#32;*/</emphasis>
+288 <emphasis role="preprocessor">#if&#32;SDL_BYTEORDER&#32;==&#32;SDL_LIL_ENDIAN</emphasis>
+289 <emphasis role="preprocessor">#define&#32;SDL_SwapLE16(X)&#32;&#32;&#32;&#32;&#32;(X)</emphasis>
+290 <emphasis role="preprocessor">#define&#32;SDL_SwapLE32(X)&#32;&#32;&#32;&#32;&#32;(X)</emphasis>
+291 <emphasis role="preprocessor">#define&#32;SDL_SwapLE64(X)&#32;&#32;&#32;&#32;&#32;(X)</emphasis>
+292 <emphasis role="preprocessor">#define&#32;SDL_SwapFloatLE(X)&#32;&#32;(X)</emphasis>
+293 <emphasis role="preprocessor">#define&#32;SDL_SwapBE16(X)&#32;&#32;&#32;&#32;&#32;SDL_Swap16(X)</emphasis>
+294 <emphasis role="preprocessor">#define&#32;SDL_SwapBE32(X)&#32;&#32;&#32;&#32;&#32;SDL_Swap32(X)</emphasis>
+295 <emphasis role="preprocessor">#define&#32;SDL_SwapBE64(X)&#32;&#32;&#32;&#32;&#32;SDL_Swap64(X)</emphasis>
+296 <emphasis role="preprocessor">#define&#32;SDL_SwapFloatBE(X)&#32;&#32;SDL_SwapFloat(X)</emphasis>
+297 <emphasis role="preprocessor">#else</emphasis>
+298 <emphasis role="preprocessor">#define&#32;SDL_SwapLE16(X)&#32;&#32;&#32;&#32;&#32;SDL_Swap16(X)</emphasis>
+299 <emphasis role="preprocessor">#define&#32;SDL_SwapLE32(X)&#32;&#32;&#32;&#32;&#32;SDL_Swap32(X)</emphasis>
+300 <emphasis role="preprocessor">#define&#32;SDL_SwapLE64(X)&#32;&#32;&#32;&#32;&#32;SDL_Swap64(X)</emphasis>
+301 <emphasis role="preprocessor">#define&#32;SDL_SwapFloatLE(X)&#32;&#32;SDL_SwapFloat(X)</emphasis>
+302 <emphasis role="preprocessor">#define&#32;SDL_SwapBE16(X)&#32;&#32;&#32;&#32;&#32;(X)</emphasis>
+303 <emphasis role="preprocessor">#define&#32;SDL_SwapBE32(X)&#32;&#32;&#32;&#32;&#32;(X)</emphasis>
+304 <emphasis role="preprocessor">#define&#32;SDL_SwapBE64(X)&#32;&#32;&#32;&#32;&#32;(X)</emphasis>
+305 <emphasis role="preprocessor">#define&#32;SDL_SwapFloatBE(X)&#32;&#32;(X)</emphasis>
+306 <emphasis role="preprocessor">#endif</emphasis>
+307 <emphasis role="comment">/*&#32;@}&#32;*/</emphasis><emphasis role="comment">/*&#32;Swap&#32;to&#32;native&#32;*/</emphasis>
+308 
+309 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+310 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+311 }
+312 <emphasis role="preprocessor">#endif</emphasis>
+313 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+314 
+315 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_endian_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+316 
+317 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

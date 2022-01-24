@@ -1,0 +1,1143 @@
+.TH "D:/RayTracing/include/SDL_rwops.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_rwops.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SDL_stdinc\&.h'\fP
+.br
+\fC#include 'SDL_error\&.h'\fP
+.br
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBSDL_RWops\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSDL_RWOPS_UNKNOWN\fP   0U"
+.br
+.ti -1c
+.RI "#define \fBSDL_RWOPS_WINFILE\fP   1U"
+.br
+.ti -1c
+.RI "#define \fBSDL_RWOPS_STDFILE\fP   2U"
+.br
+.ti -1c
+.RI "#define \fBSDL_RWOPS_JNIFILE\fP   3U"
+.br
+.ti -1c
+.RI "#define \fBSDL_RWOPS_MEMORY\fP   4U"
+.br
+.ti -1c
+.RI "#define \fBSDL_RWOPS_MEMORY_RO\fP   5U"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBSDL_RWops\fP \fBSDL_RWops\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.PP
+.RI "\fBRead endian functions\fP"
+.br
+Read an item of the specified endianness and return in native format\&. 
+.PP
+.in +1c
+.in +1c
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBUint8\fP \fBSDLCALL\fP \fBSDL_ReadU8\fP (\fBSDL_RWops\fP *\fBsrc\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBUint16\fP \fBSDLCALL\fP \fBSDL_ReadLE16\fP (\fBSDL_RWops\fP *\fBsrc\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBUint16\fP \fBSDLCALL\fP \fBSDL_ReadBE16\fP (\fBSDL_RWops\fP *\fBsrc\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBUint32\fP \fBSDLCALL\fP \fBSDL_ReadLE32\fP (\fBSDL_RWops\fP *\fBsrc\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBUint32\fP \fBSDLCALL\fP \fBSDL_ReadBE32\fP (\fBSDL_RWops\fP *\fBsrc\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBUint64\fP \fBSDLCALL\fP \fBSDL_ReadLE64\fP (\fBSDL_RWops\fP *\fBsrc\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBUint64\fP \fBSDLCALL\fP \fBSDL_ReadBE64\fP (\fBSDL_RWops\fP *\fBsrc\fP)"
+.br
+.in -1c
+.in -1c
+.PP
+.RI "\fBWrite endian functions\fP"
+.br
+Write an item of native format to the specified endianness\&. 
+.PP
+.in +1c
+.in +1c
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP \fBSDL_WriteU8\fP (\fBSDL_RWops\fP *\fBdst\fP, \fBUint8\fP \fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP \fBSDL_WriteLE16\fP (\fBSDL_RWops\fP *\fBdst\fP, \fBUint16\fP \fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP \fBSDL_WriteBE16\fP (\fBSDL_RWops\fP *\fBdst\fP, \fBUint16\fP \fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP \fBSDL_WriteLE32\fP (\fBSDL_RWops\fP *\fBdst\fP, \fBUint32\fP \fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP \fBSDL_WriteBE32\fP (\fBSDL_RWops\fP *\fBdst\fP, \fBUint32\fP \fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP \fBSDL_WriteLE64\fP (\fBSDL_RWops\fP *\fBdst\fP, \fBUint64\fP \fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP \fBSDL_WriteBE64\fP (\fBSDL_RWops\fP *\fBdst\fP, \fBUint64\fP \fBvalue\fP)"
+.br
+.in -1c
+.in -1c
+.SS "RWFrom functions"
+Functions to create \fBSDL_RWops\fP structures from various data streams\&. 
+.in +1c
+.ti -1c
+.RI "#define \fBRW_SEEK_SET\fP   0"
+.br
+.ti -1c
+.RI "#define \fBRW_SEEK_CUR\fP   1"
+.br
+.ti -1c
+.RI "#define \fBRW_SEEK_END\fP   2"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_RWops\fP *\fBSDLCALL\fP \fBSDL_RWFromFile\fP (const char *file, const char *\fBmode\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_RWops\fP *\fBSDLCALL\fP \fBSDL_RWFromFP\fP (\fBvoid\fP *fp, \fBSDL_bool\fP autoclose)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_RWops\fP *\fBSDLCALL\fP \fBSDL_RWFromMem\fP (\fBvoid\fP *mem, int \fBsize\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_RWops\fP *\fBSDLCALL\fP \fBSDL_RWFromConstMem\fP (const \fBvoid\fP *mem, int \fBsize\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_RWops\fP *\fBSDLCALL\fP \fBSDL_AllocRW\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_FreeRW\fP (\fBSDL_RWops\fP *area)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSint64\fP \fBSDLCALL\fP \fBSDL_RWsize\fP (\fBSDL_RWops\fP *context)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSint64\fP \fBSDLCALL\fP \fBSDL_RWseek\fP (\fBSDL_RWops\fP *context, \fBSint64\fP \fBoffset\fP, int whence)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSint64\fP \fBSDLCALL\fP \fBSDL_RWtell\fP (\fBSDL_RWops\fP *context)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP \fBSDL_RWread\fP (\fBSDL_RWops\fP *context, \fBvoid\fP *ptr, \fBsize_t\fP \fBsize\fP, \fBsize_t\fP maxnum)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP \fBSDL_RWwrite\fP (\fBSDL_RWops\fP *context, const \fBvoid\fP *ptr, \fBsize_t\fP \fBsize\fP, \fBsize_t\fP \fBnum\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP int \fBSDLCALL\fP \fBSDL_RWclose\fP (\fBSDL_RWops\fP *context)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP *\fBSDLCALL\fP \fBSDL_LoadFile_RW\fP (\fBSDL_RWops\fP *\fBsrc\fP, \fBsize_t\fP *datasize, int freesrc)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP *\fBSDLCALL\fP \fBSDL_LoadFile\fP (const char *file, \fBsize_t\fP *datasize)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This file provides a general interface for SDL to read and write data streams\&. It can easily be extended to files, memory, etc\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define RW_SEEK_CUR   1"
+Seek relative to current read point 
+.SS "#define RW_SEEK_END   2"
+Seek relative to the end of data 
+.SS "#define RW_SEEK_SET   0"
+Seek from the beginning of data 
+.SS "#define SDL_RWOPS_JNIFILE   3U"
+Android asset 
+.SS "#define SDL_RWOPS_MEMORY   4U"
+Memory stream 
+.SS "#define SDL_RWOPS_MEMORY_RO   5U"
+Read-Only memory stream 
+.SS "#define SDL_RWOPS_STDFILE   2U"
+Stdio file 
+.SS "#define SDL_RWOPS_UNKNOWN   0U"
+Unknown stream type 
+.SS "#define SDL_RWOPS_WINFILE   1U"
+Win32 file 
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBSDL_RWops\fP \fBSDL_RWops\fP"
+This is the read/write operation structure -- very basic\&. 
+.SH "Function Documentation"
+.PP 
+.SS "\fBDECLSPEC\fP \fBSDL_RWops\fP *\fBSDLCALL\fP SDL_AllocRW (\fBvoid\fP)"
+Use this function to allocate an empty, unpopulated \fBSDL_RWops\fP structure\&.
+.PP
+Applications do not need to use this function unless they are providing their own \fBSDL_RWops\fP implementation\&. If you just need a \fBSDL_RWops\fP to read/write a common data source, you should use the built-in implementations in SDL, like \fBSDL_RWFromFile()\fP or \fBSDL_RWFromMem()\fP, etc\&.
+.PP
+You must free the returned pointer with \fBSDL_FreeRW()\fP\&. Depending on your operating system and compiler, there may be a difference between the malloc() and free() your program uses and the versions SDL calls internally\&. Trying to mix the two can cause crashing such as segmentation faults\&. Since all \fBSDL_RWops\fP must free themselves when their \fBclose\fP method is called, all \fBSDL_RWops\fP must be allocated through this function, so they can all be freed correctly with \fBSDL_FreeRW()\fP\&.
+.PP
+\fBReturns\fP
+.RS 4
+a pointer to the allocated memory on success, or NULL on failure; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_FreeRW\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_FreeRW (\fBSDL_RWops\fP * area)"
+Use this function to free an \fBSDL_RWops\fP structure allocated by \fBSDL_AllocRW()\fP\&.
+.PP
+Applications do not need to use this function unless they are providing their own \fBSDL_RWops\fP implementation\&. If you just need a \fBSDL_RWops\fP to read/write a common data source, you should use the built-in implementations in SDL, like \fBSDL_RWFromFile()\fP or \fBSDL_RWFromMem()\fP, etc, and call the \fBclose\fP method on those \fBSDL_RWops\fP pointers when you are done with them\&.
+.PP
+Only use \fBSDL_FreeRW()\fP on pointers returned by \fBSDL_AllocRW()\fP\&. The pointer is invalid as soon as this function returns\&. Any extra memory allocated during creation of the \fBSDL_RWops\fP is not freed by \fBSDL_FreeRW()\fP; the programmer must be responsible for managing that memory in their \fBclose\fP method\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIarea\fP the \fBSDL_RWops\fP structure to be freed
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_AllocRW\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP *\fBSDLCALL\fP SDL_LoadFile (const char * file, \fBsize_t\fP * datasize)"
+Load all the data from a file path\&.
+.PP
+The data is allocated with a zero byte at the end (null terminated) for convenience\&. This extra byte is not included in the value reported via \fCdatasize\fP\&.
+.PP
+The data should be freed with \fBSDL_free()\fP\&.
+.PP
+Prior to SDL 2\&.0\&.10, this function was a macro wrapping around SDL_LoadFile_RW\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIfile\fP the path to read all available data from 
+.br
+\fIdatasize\fP if not NULL, will store the number of bytes read 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the data, or NULL if there was an error\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.10\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP *\fBSDLCALL\fP SDL_LoadFile_RW (\fBSDL_RWops\fP * src, \fBsize_t\fP * datasize, int freesrc)"
+Load all the data from an SDL data stream\&.
+.PP
+The data is allocated with a zero byte at the end (null terminated) for convenience\&. This extra byte is not included in the value reported via \fCdatasize\fP\&.
+.PP
+The data should be freed with \fBSDL_free()\fP\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIsrc\fP the \fBSDL_RWops\fP to read all available data from 
+.br
+\fIdatasize\fP if not NULL, will store the number of bytes read 
+.br
+\fIfreesrc\fP if non-zero, calls \fBSDL_RWclose()\fP on \fCsrc\fP before returning 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the data, or NULL if there was an error\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.6\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBUint16\fP \fBSDLCALL\fP SDL_ReadBE16 (\fBSDL_RWops\fP * src)"
+Use this function to read 16 bits of big-endian data from an \fBSDL_RWops\fP and return in native format\&.
+.PP
+SDL byteswaps the data only if necessary, so the data returned will be in the native byte order\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIsrc\fP the stream from which to read data 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+16 bits of data in the native byte order of the platform\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_ReadLE16\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBUint32\fP \fBSDLCALL\fP SDL_ReadBE32 (\fBSDL_RWops\fP * src)"
+Use this function to read 32 bits of big-endian data from an \fBSDL_RWops\fP and return in native format\&.
+.PP
+SDL byteswaps the data only if necessary, so the data returned will be in the native byte order\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIsrc\fP the stream from which to read data 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+32 bits of data in the native byte order of the platform\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_ReadLE32\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBUint64\fP \fBSDLCALL\fP SDL_ReadBE64 (\fBSDL_RWops\fP * src)"
+Use this function to read 64 bits of big-endian data from an \fBSDL_RWops\fP and return in native format\&.
+.PP
+SDL byteswaps the data only if necessary, so the data returned will be in the native byte order\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIsrc\fP the stream from which to read data 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+64 bits of data in the native byte order of the platform\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_ReadLE64\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBUint16\fP \fBSDLCALL\fP SDL_ReadLE16 (\fBSDL_RWops\fP * src)"
+Use this function to read 16 bits of little-endian data from an \fBSDL_RWops\fP and return in native format\&.
+.PP
+SDL byteswaps the data only if necessary, so the data returned will be in the native byte order\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIsrc\fP the stream from which to read data 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+16 bits of data in the native byte order of the platform\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_ReadBE16\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBUint32\fP \fBSDLCALL\fP SDL_ReadLE32 (\fBSDL_RWops\fP * src)"
+Use this function to read 32 bits of little-endian data from an \fBSDL_RWops\fP and return in native format\&.
+.PP
+SDL byteswaps the data only if necessary, so the data returned will be in the native byte order\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIsrc\fP the stream from which to read data 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+32 bits of data in the native byte order of the platform\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_ReadBE32\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBUint64\fP \fBSDLCALL\fP SDL_ReadLE64 (\fBSDL_RWops\fP * src)"
+Use this function to read 64 bits of little-endian data from an \fBSDL_RWops\fP and return in native format\&.
+.PP
+SDL byteswaps the data only if necessary, so the data returned will be in the native byte order\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIsrc\fP the stream from which to read data 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+64 bits of data in the native byte order of the platform\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_ReadBE64\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBUint8\fP \fBSDLCALL\fP SDL_ReadU8 (\fBSDL_RWops\fP * src)"
+Use this function to read a byte from an \fBSDL_RWops\fP\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIsrc\fP the \fBSDL_RWops\fP to read from 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the read byte on success or 0 on failure; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_WriteU8\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP int \fBSDLCALL\fP SDL_RWclose (\fBSDL_RWops\fP * context)"
+Close and free an allocated \fBSDL_RWops\fP structure\&.
+.PP
+\fBSDL_RWclose()\fP closes and cleans up the \fBSDL_RWops\fP stream\&. It releases any resources used by the stream and frees the \fBSDL_RWops\fP itself with \fBSDL_FreeRW()\fP\&. This returns 0 on success, or -1 if the stream failed to flush to its output (e\&.g\&. to disk)\&.
+.PP
+Note that if this fails to flush the stream to disk, this function reports an error, but the \fBSDL_RWops\fP is still invalid once this function returns\&.
+.PP
+Prior to SDL 2\&.0\&.10, this function was a macro\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIcontext\fP \fBSDL_RWops\fP structure to close 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 on success or a negative error code on failure; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.10\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_RWFromConstMem\fP 
+.PP
+\fBSDL_RWFromFile\fP 
+.PP
+\fBSDL_RWFromFP\fP 
+.PP
+\fBSDL_RWFromMem\fP 
+.PP
+\fBSDL_RWread\fP 
+.PP
+\fBSDL_RWseek\fP 
+.PP
+\fBSDL_RWwrite\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_RWops\fP *\fBSDLCALL\fP SDL_RWFromConstMem (const \fBvoid\fP * mem, int size)"
+Use this function to prepare a read-only memory buffer for use with RWops\&.
+.PP
+This function sets up an \fBSDL_RWops\fP struct based on a memory area of a certain size\&. It assumes the memory area is not writable\&.
+.PP
+Attempting to write to this RWops stream will report an error without writing to the memory buffer\&.
+.PP
+This memory buffer is not copied by the RWops; the pointer you provide must remain valid until you close the stream\&. Closing the stream will not free the original buffer\&.
+.PP
+If you need to write to a memory buffer, you should use \fBSDL_RWFromMem()\fP with a writable buffer of memory instead\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImem\fP a pointer to a read-only buffer to feed an \fBSDL_RWops\fP stream 
+.br
+\fIsize\fP the buffer size, in bytes 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a pointer to a new \fBSDL_RWops\fP structure, or NULL if it fails; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_RWclose\fP 
+.PP
+\fBSDL_RWFromConstMem\fP 
+.PP
+\fBSDL_RWFromFile\fP 
+.PP
+\fBSDL_RWFromFP\fP 
+.PP
+\fBSDL_RWFromMem\fP 
+.PP
+\fBSDL_RWread\fP 
+.PP
+\fBSDL_RWseek\fP 
+.PP
+\fBSDL_RWtell\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_RWops\fP *\fBSDLCALL\fP SDL_RWFromFile (const char * file, const char * mode)"
+Use this function to create a new \fBSDL_RWops\fP structure for reading from and/or writing to a named file\&.
+.PP
+The \fCmode\fP string is treated roughly the same as in a call to the C library's fopen(), even if SDL doesn't happen to use fopen() behind the scenes\&.
+.PP
+Available \fCmode\fP strings:
+.PP
+.IP "\(bu" 2
+'r': Open a file for reading\&. The file must exist\&.
+.IP "\(bu" 2
+'w': Create an empty file for writing\&. If a file with the same name already exists its content is erased and the file is treated as a new empty file\&.
+.IP "\(bu" 2
+'a': Append to a file\&. Writing operations append data at the end of the file\&. The file is created if it does not exist\&.
+.IP "\(bu" 2
+'r+': Open a file for update both reading and writing\&. The file must exist\&.
+.IP "\(bu" 2
+'w+': Create an empty file for both reading and writing\&. If a file with the same name already exists its content is erased and the file is treated as a new empty file\&.
+.IP "\(bu" 2
+'a+': Open a file for reading and appending\&. All writing operations are performed at the end of the file, protecting the previous content to be overwritten\&. You can reposition (fseek, rewind) the internal pointer to anywhere in the file for reading, but writing operations will move it back to the end of file\&. The file is created if it does not exist\&.
+.PP
+.PP
+\fBNOTE\fP: In order to open a file as a binary file, a 'b' character has to be included in the \fCmode\fP string\&. This additional 'b' character can either be appended at the end of the string (thus making the following compound modes: 'rb', 'wb', 'ab', 'r+b', 'w+b', 'a+b') or be inserted between the letter and the '+' sign for the mixed modes ('rb+', 'wb+', 'ab+')\&. Additional characters may follow the sequence, although they should have no effect\&. For example, 't' is sometimes appended to make explicit the file is a text file\&.
+.PP
+This function supports Unicode filenames, but they must be encoded in UTF-8 format, regardless of the underlying operating system\&.
+.PP
+As a fallback, \fBSDL_RWFromFile()\fP will transparently open a matching filename in an Android app's \fCassets\fP\&.
+.PP
+Closing the \fBSDL_RWops\fP will close the file handle SDL is holding internally\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIfile\fP a UTF-8 string representing the filename to open 
+.br
+\fImode\fP an ASCII string representing the mode to be used for opening the file\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a pointer to the \fBSDL_RWops\fP structure that is created, or NULL on failure; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_RWclose\fP 
+.PP
+\fBSDL_RWFromConstMem\fP 
+.PP
+\fBSDL_RWFromFP\fP 
+.PP
+\fBSDL_RWFromMem\fP 
+.PP
+\fBSDL_RWread\fP 
+.PP
+\fBSDL_RWseek\fP 
+.PP
+\fBSDL_RWtell\fP 
+.PP
+\fBSDL_RWwrite\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_RWops\fP *\fBSDLCALL\fP SDL_RWFromFP (\fBvoid\fP * fp, \fBSDL_bool\fP autoclose)"
+Use this function to create an \fBSDL_RWops\fP structure from a standard I/O file pointer (stdio\&.h's \fCFILE*\fP)\&.
+.PP
+This function is not available on Windows, since files opened in an application on that platform cannot be used by a dynamically linked library\&.
+.PP
+On some platforms, the first parameter is a \fCvoid*\fP, on others, it's a \fCFILE*\fP, depending on what system headers are available to SDL\&. It is always intended to be the \fCFILE*\fP type from the C runtime's stdio\&.h\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIfp\fP the \fCFILE*\fP that feeds the \fBSDL_RWops\fP stream 
+.br
+\fIautoclose\fP SDL_TRUE to close the \fCFILE*\fP when closing the \fBSDL_RWops\fP, SDL_FALSE to leave the \fCFILE*\fP open when the RWops is closed 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a pointer to the \fBSDL_RWops\fP structure that is created, or NULL on failure; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_RWclose\fP 
+.PP
+\fBSDL_RWFromConstMem\fP 
+.PP
+\fBSDL_RWFromFile\fP 
+.PP
+\fBSDL_RWFromMem\fP 
+.PP
+\fBSDL_RWread\fP 
+.PP
+\fBSDL_RWseek\fP 
+.PP
+\fBSDL_RWtell\fP 
+.PP
+\fBSDL_RWwrite\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_RWops\fP *\fBSDLCALL\fP SDL_RWFromMem (\fBvoid\fP * mem, int size)"
+Use this function to prepare a read-write memory buffer for use with \fBSDL_RWops\fP\&.
+.PP
+This function sets up an \fBSDL_RWops\fP struct based on a memory area of a certain size, for both read and write access\&.
+.PP
+This memory buffer is not copied by the RWops; the pointer you provide must remain valid until you close the stream\&. Closing the stream will not free the original buffer\&.
+.PP
+If you need to make sure the RWops never writes to the memory buffer, you should use \fBSDL_RWFromConstMem()\fP with a read-only buffer of memory instead\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImem\fP a pointer to a buffer to feed an \fBSDL_RWops\fP stream 
+.br
+\fIsize\fP the buffer size, in bytes 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a pointer to a new \fBSDL_RWops\fP structure, or NULL if it fails; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_RWclose\fP 
+.PP
+\fBSDL_RWFromConstMem\fP 
+.PP
+\fBSDL_RWFromFile\fP 
+.PP
+\fBSDL_RWFromFP\fP 
+.PP
+\fBSDL_RWFromMem\fP 
+.PP
+\fBSDL_RWread\fP 
+.PP
+\fBSDL_RWseek\fP 
+.PP
+\fBSDL_RWtell\fP 
+.PP
+\fBSDL_RWwrite\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP SDL_RWread (\fBSDL_RWops\fP * context, \fBvoid\fP * ptr, \fBsize_t\fP size, \fBsize_t\fP maxnum)"
+Read from a data source\&.
+.PP
+This function reads up to \fCmaxnum\fP objects each of size \fCsize\fP from the data source to the area pointed at by \fCptr\fP\&. This function may read less objects than requested\&. It will return zero when there has been an error or the data stream is completely read\&.
+.PP
+\fBSDL_RWread()\fP is actually a function wrapper that calls the \fBSDL_RWops\fP's \fCread\fP method appropriately, to simplify application development\&.
+.PP
+Prior to SDL 2\&.0\&.10, this function was a macro\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIcontext\fP a pointer to an \fBSDL_RWops\fP structure 
+.br
+\fIptr\fP a pointer to a buffer to read data into 
+.br
+\fIsize\fP the size of each object to read, in bytes 
+.br
+\fImaxnum\fP the maximum number of objects to be read 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the number of objects read, or 0 at error or end of file; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.10\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_RWclose\fP 
+.PP
+\fBSDL_RWFromConstMem\fP 
+.PP
+\fBSDL_RWFromFile\fP 
+.PP
+\fBSDL_RWFromFP\fP 
+.PP
+\fBSDL_RWFromMem\fP 
+.PP
+\fBSDL_RWseek\fP 
+.PP
+\fBSDL_RWwrite\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSint64\fP \fBSDLCALL\fP SDL_RWseek (\fBSDL_RWops\fP * context, \fBSint64\fP offset, int whence)"
+Seek within an \fBSDL_RWops\fP data stream\&.
+.PP
+This function seeks to byte \fCoffset\fP, relative to \fCwhence\fP\&.
+.PP
+\fCwhence\fP may be any of the following values:
+.PP
+.IP "\(bu" 2
+\fCRW_SEEK_SET\fP: seek from the beginning of data
+.IP "\(bu" 2
+\fCRW_SEEK_CUR\fP: seek relative to current read point
+.IP "\(bu" 2
+\fCRW_SEEK_END\fP: seek relative to the end of data
+.PP
+.PP
+If this stream can not seek, it will return -1\&.
+.PP
+\fBSDL_RWseek()\fP is actually a wrapper function that calls the \fBSDL_RWops\fP's \fCseek\fP method appropriately, to simplify application development\&.
+.PP
+Prior to SDL 2\&.0\&.10, this function was a macro\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIcontext\fP a pointer to an \fBSDL_RWops\fP structure 
+.br
+\fIoffset\fP an offset in bytes, relative to \fBwhence\fP location; can be negative 
+.br
+\fIwhence\fP any of \fCRW_SEEK_SET\fP, \fCRW_SEEK_CUR\fP, \fCRW_SEEK_END\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the final offset in the data stream after the seek or -1 on error\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.10\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_RWclose\fP 
+.PP
+\fBSDL_RWFromConstMem\fP 
+.PP
+\fBSDL_RWFromFile\fP 
+.PP
+\fBSDL_RWFromFP\fP 
+.PP
+\fBSDL_RWFromMem\fP 
+.PP
+\fBSDL_RWread\fP 
+.PP
+\fBSDL_RWtell\fP 
+.PP
+\fBSDL_RWwrite\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSint64\fP \fBSDLCALL\fP SDL_RWsize (\fBSDL_RWops\fP * context)"
+Use this function to get the size of the data stream in an \fBSDL_RWops\fP\&.
+.PP
+Prior to SDL 2\&.0\&.10, this function was a macro\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIcontext\fP the \fBSDL_RWops\fP to get the size of the data stream from 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the size of the data stream in the \fBSDL_RWops\fP on success, -1 if unknown or a negative error code on failure; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.10\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSint64\fP \fBSDLCALL\fP SDL_RWtell (\fBSDL_RWops\fP * context)"
+Determine the current read/write offset in an \fBSDL_RWops\fP data stream\&.
+.PP
+SDL_RWtell is actually a wrapper function that calls the \fBSDL_RWops\fP's \fCseek\fP method, with an offset of 0 bytes from \fCRW_SEEK_CUR\fP, to simplify application development\&.
+.PP
+Prior to SDL 2\&.0\&.10, this function was a macro\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIcontext\fP a \fBSDL_RWops\fP data stream object from which to get the current offset 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the current offset in the stream, or -1 if the information can not be determined\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.10\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_RWclose\fP 
+.PP
+\fBSDL_RWFromConstMem\fP 
+.PP
+\fBSDL_RWFromFile\fP 
+.PP
+\fBSDL_RWFromFP\fP 
+.PP
+\fBSDL_RWFromMem\fP 
+.PP
+\fBSDL_RWread\fP 
+.PP
+\fBSDL_RWseek\fP 
+.PP
+\fBSDL_RWwrite\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP SDL_RWwrite (\fBSDL_RWops\fP * context, const \fBvoid\fP * ptr, \fBsize_t\fP size, \fBsize_t\fP num)"
+Write to an \fBSDL_RWops\fP data stream\&.
+.PP
+This function writes exactly \fCnum\fP objects each of size \fCsize\fP from the area pointed at by \fCptr\fP to the stream\&. If this fails for any reason, it'll return less than \fCnum\fP to demonstrate how far the write progressed\&. On success, it returns \fCnum\fP\&.
+.PP
+SDL_RWwrite is actually a function wrapper that calls the \fBSDL_RWops\fP's \fCwrite\fP method appropriately, to simplify application development\&.
+.PP
+Prior to SDL 2\&.0\&.10, this function was a macro\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIcontext\fP a pointer to an \fBSDL_RWops\fP structure 
+.br
+\fIptr\fP a pointer to a buffer containing data to write 
+.br
+\fIsize\fP the size of an object to write, in bytes 
+.br
+\fInum\fP the number of objects to write 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+the number of objects written, which will be less than \fBnum\fP on error; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.10\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_RWclose\fP 
+.PP
+\fBSDL_RWFromConstMem\fP 
+.PP
+\fBSDL_RWFromFile\fP 
+.PP
+\fBSDL_RWFromFP\fP 
+.PP
+\fBSDL_RWFromMem\fP 
+.PP
+\fBSDL_RWread\fP 
+.PP
+\fBSDL_RWseek\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP SDL_WriteBE16 (\fBSDL_RWops\fP * dst, \fBUint16\fP value)"
+Use this function to write 16 bits in native format to a \fBSDL_RWops\fP as big-endian data\&.
+.PP
+SDL byteswaps the data only if necessary, so the application always specifies native format, and the data written will be in big-endian format\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIdst\fP the stream to which data will be written 
+.br
+\fIvalue\fP the data to be written, in native format 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+1 on successful write, 0 on error\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_WriteLE16\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP SDL_WriteBE32 (\fBSDL_RWops\fP * dst, \fBUint32\fP value)"
+Use this function to write 32 bits in native format to a \fBSDL_RWops\fP as big-endian data\&.
+.PP
+SDL byteswaps the data only if necessary, so the application always specifies native format, and the data written will be in big-endian format\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIdst\fP the stream to which data will be written 
+.br
+\fIvalue\fP the data to be written, in native format 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+1 on successful write, 0 on error\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_WriteLE32\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP SDL_WriteBE64 (\fBSDL_RWops\fP * dst, \fBUint64\fP value)"
+Use this function to write 64 bits in native format to a \fBSDL_RWops\fP as big-endian data\&.
+.PP
+SDL byteswaps the data only if necessary, so the application always specifies native format, and the data written will be in big-endian format\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIdst\fP the stream to which data will be written 
+.br
+\fIvalue\fP the data to be written, in native format 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+1 on successful write, 0 on error\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_WriteLE64\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP SDL_WriteLE16 (\fBSDL_RWops\fP * dst, \fBUint16\fP value)"
+Use this function to write 16 bits in native format to a \fBSDL_RWops\fP as little-endian data\&.
+.PP
+SDL byteswaps the data only if necessary, so the application always specifies native format, and the data written will be in little-endian format\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIdst\fP the stream to which data will be written 
+.br
+\fIvalue\fP the data to be written, in native format 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+1 on successful write, 0 on error\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_WriteBE16\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP SDL_WriteLE32 (\fBSDL_RWops\fP * dst, \fBUint32\fP value)"
+Use this function to write 32 bits in native format to a \fBSDL_RWops\fP as little-endian data\&.
+.PP
+SDL byteswaps the data only if necessary, so the application always specifies native format, and the data written will be in little-endian format\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIdst\fP the stream to which data will be written 
+.br
+\fIvalue\fP the data to be written, in native format 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+1 on successful write, 0 on error\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_WriteBE32\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP SDL_WriteLE64 (\fBSDL_RWops\fP * dst, \fBUint64\fP value)"
+Use this function to write 64 bits in native format to a \fBSDL_RWops\fP as little-endian data\&.
+.PP
+SDL byteswaps the data only if necessary, so the application always specifies native format, and the data written will be in little-endian format\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIdst\fP the stream to which data will be written 
+.br
+\fIvalue\fP the data to be written, in native format 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+1 on successful write, 0 on error\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_WriteBE64\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBsize_t\fP \fBSDLCALL\fP SDL_WriteU8 (\fBSDL_RWops\fP * dst, \fBUint8\fP value)"
+Use this function to write a byte to an \fBSDL_RWops\fP\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIdst\fP the \fBSDL_RWops\fP to write to 
+.br
+\fIvalue\fP the byte value to write 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+1 on success or 0 on failure; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_ReadU8\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

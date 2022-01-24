@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__joystick_8h_source" xml:lang="en-US">
+<title>SDL_joystick.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_joystick.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2022&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+41 <emphasis role="preprocessor">#ifndef&#32;SDL_joystick_h_</emphasis>
+42 <emphasis role="preprocessor">#define&#32;SDL_joystick_h_</emphasis>
+43 
+44 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__stdinc_8h">SDL_stdinc.h</link>&quot;</emphasis>
+45 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__error_8h">SDL_error.h</link>&quot;</emphasis>
+46 
+47 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_begin__code_8h">begin_code.h</link>&quot;</emphasis>
+48 <emphasis role="comment">/*&#32;Set&#32;up&#32;for&#32;C&#32;function&#32;definitions,&#32;even&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+49 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+50 <emphasis role="keyword">extern</emphasis>&#32;<emphasis role="stringliteral">&quot;C&quot;</emphasis>&#32;{
+51 <emphasis role="preprocessor">#endif</emphasis>
+52 
+68 <emphasis role="keyword">struct&#32;</emphasis>_SDL_Joystick;
+69 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis>_SDL_Joystick&#32;<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>;
+70 
+71 <emphasis role="comment">/*&#32;A&#32;structure&#32;that&#32;encodes&#32;the&#32;stable&#32;unique&#32;id&#32;for&#32;a&#32;joystick&#32;device&#32;*/</emphasis>
+72 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">struct&#32;</emphasis>{
+73 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link>&#32;<link linkend="__s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a">data</link>[16];
+74 }&#32;<link linkend="_struct_s_d_l___joystick_g_u_i_d">SDL_JoystickGUID</link>;
+75 
+83 <emphasis role="keyword">typedef</emphasis>&#32;<link linkend="__s_d_l__stdinc_8h_1a7a90b941db9d4582e9ad7abb9940ff7e">Sint32</link>&#32;<link linkend="__s_d_l__joystick_8h_1a3c3d32500cb08f76ee8077983912c0bd">SDL_JoystickID</link>;
+84 
+85 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+86 {
+87 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2eaa75dd0ff09f40f46f2558852840c4c5f5">SDL_JOYSTICK_TYPE_UNKNOWN</link>,
+88 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2eaac9fd28d66ae0b3e31faca357823955cd">SDL_JOYSTICK_TYPE_GAMECONTROLLER</link>,
+89 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2eaa8805ad382637dbffd54e2aed0b9bf4eb">SDL_JOYSTICK_TYPE_WHEEL</link>,
+90 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2eaa767f0e4bec3e03a50cd61952f3627b7f">SDL_JOYSTICK_TYPE_ARCADE_STICK</link>,
+91 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2eaac858031ce3be0248e46b538f536548d4">SDL_JOYSTICK_TYPE_FLIGHT_STICK</link>,
+92 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2eaa00190ed35e476fe91ff5ca23c82116fc">SDL_JOYSTICK_TYPE_DANCE_PAD</link>,
+93 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2eaa9b2061e66c2dbd6683bbea3d1bc7f73d">SDL_JOYSTICK_TYPE_GUITAR</link>,
+94 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2eaaedd82419201a9f73081398709ed4d5ea">SDL_JOYSTICK_TYPE_DRUM_KIT</link>,
+95 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2eaa3d7a52c076bb13f177da3ac9051ffca9">SDL_JOYSTICK_TYPE_ARCADE_PAD</link>,
+96 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2eaa89b1053067e73f56c2354bf5a24ce038">SDL_JOYSTICK_TYPE_THROTTLE</link>
+97 }&#32;<link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2ea">SDL_JoystickType</link>;
+98 
+99 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+100 {
+101 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__joystick_8h_1a293471a907265fb92ea12caf5bcc8065abdec428b76e198adbaf36d0f2d6a3807">SDL_JOYSTICK_POWER_UNKNOWN</link>&#32;=&#32;-1,
+102 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__joystick_8h_1a293471a907265fb92ea12caf5bcc8065abbb610fd44dc06d7452b6c479eb58cb8">SDL_JOYSTICK_POWER_EMPTY</link>,&#32;&#32;&#32;<emphasis role="comment">/*&#32;&lt;=&#32;5%&#32;*/</emphasis>
+103 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__joystick_8h_1a293471a907265fb92ea12caf5bcc8065ae9c916910a524e577d1e4df6197773f7">SDL_JOYSTICK_POWER_LOW</link>,&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;&lt;=&#32;20%&#32;*/</emphasis>
+104 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__joystick_8h_1a293471a907265fb92ea12caf5bcc8065a7405e87795b790ef10faf47e40f8b908">SDL_JOYSTICK_POWER_MEDIUM</link>,&#32;&#32;<emphasis role="comment">/*&#32;&lt;=&#32;70%&#32;*/</emphasis>
+105 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__joystick_8h_1a293471a907265fb92ea12caf5bcc8065a225ba474db36e95f79000543df2f3634">SDL_JOYSTICK_POWER_FULL</link>,&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;&lt;=&#32;100%&#32;*/</emphasis>
+106 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__joystick_8h_1a293471a907265fb92ea12caf5bcc8065abe065a7a24f1fb49826cdaeea765f2d9">SDL_JOYSTICK_POWER_WIRED</link>,
+107 &#32;&#32;&#32;&#32;<link linkend="__s_d_l__joystick_8h_1a293471a907265fb92ea12caf5bcc8065a0f6495dc8ac09096b13d9c546a88bfa4">SDL_JOYSTICK_POWER_MAX</link>
+108 }&#32;<link linkend="__s_d_l__joystick_8h_1a293471a907265fb92ea12caf5bcc8065">SDL_JoystickPowerLevel</link>;
+109 
+110 <emphasis role="comment">/*&#32;Set&#32;max&#32;recognized&#32;G-force&#32;from&#32;accelerometer</emphasis>
+111 <emphasis role="comment">&#32;&#32;&#32;See&#32;src/joystick/uikit/SDL_sysjoystick.m&#32;for&#32;notes&#32;on&#32;why&#32;this&#32;is&#32;needed</emphasis>
+112 <emphasis role="comment">&#32;*/</emphasis>
+113 <emphasis role="preprocessor">#define&#32;SDL_IPHONE_MAX_GFORCE&#32;5.0</emphasis>
+114 
+115 
+116 <emphasis role="comment">/*&#32;Function&#32;prototypes&#32;*/</emphasis>
+117 
+130 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a4a2e0bedda1b7d0ac957607e944bfba0">SDL_LockJoysticks</link>(<emphasis role="keywordtype">void</emphasis>);
+131 
+132 
+145 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1add3a6baa4646469b34c42df028c59be0">SDL_UnlockJoysticks</link>(<emphasis role="keywordtype">void</emphasis>);
+146 
+158 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a2ab130eaa28f8e3bd544a5432041a311">SDL_NumJoysticks</link>(<emphasis role="keywordtype">void</emphasis>);
+159 
+175 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a7b146627cc69693b6ab6acd9b39a94c9">SDL_JoystickNameForIndex</link>(<emphasis role="keywordtype">int</emphasis>&#32;device_index);
+176 
+183 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1ad882a8dd3fe4278725a7fc212b755db7">SDL_JoystickGetDevicePlayerIndex</link>(<emphasis role="keywordtype">int</emphasis>&#32;device_index);
+184 
+201 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="_struct_s_d_l___joystick_g_u_i_d">SDL_JoystickGUID</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1afdbf5289ff5452afb1bd869ffcf250b5">SDL_JoystickGetDeviceGUID</link>(<emphasis role="keywordtype">int</emphasis>&#32;device_index);
+202 
+216 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1afb8ba88559debca4ab2c702b8500d5fe">SDL_JoystickGetDeviceVendor</link>(<emphasis role="keywordtype">int</emphasis>&#32;device_index);
+217 
+231 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a6330470720659333e6ef60994942a855">SDL_JoystickGetDeviceProduct</link>(<emphasis role="keywordtype">int</emphasis>&#32;device_index);
+232 
+246 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a10972ad002df75e76ed68c18e1188e5e">SDL_JoystickGetDeviceProductVersion</link>(<emphasis role="keywordtype">int</emphasis>&#32;device_index);
+247 
+260 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2ea">SDL_JoystickType</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a368a06b0fd51d453bb4692dcc2c42b69">SDL_JoystickGetDeviceType</link>(<emphasis role="keywordtype">int</emphasis>&#32;device_index);
+261 
+275 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__joystick_8h_1a3c3d32500cb08f76ee8077983912c0bd">SDL_JoystickID</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a6c46ea976c7a65d49b38d31b42d11652">SDL_JoystickGetDeviceInstanceID</link>(<emphasis role="keywordtype">int</emphasis>&#32;device_index);
+276 
+297 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a69452f7f7e11db54292f64db9a629029">SDL_JoystickOpen</link>(<emphasis role="keywordtype">int</emphasis>&#32;device_index);
+298 
+308 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a16e92e23a46579db3a3419f784f2a026">SDL_JoystickFromInstanceID</link>(<link linkend="__s_d_l__joystick_8h_1a3c3d32500cb08f76ee8077983912c0bd">SDL_JoystickID</link>&#32;instance_id);
+309 
+319 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1ab872247fcafb96d4e3f71ac8ab98cc45">SDL_JoystickFromPlayerIndex</link>(<emphasis role="keywordtype">int</emphasis>&#32;player_index);
+320 
+328 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1ac72e7fbcf14ab9d1d061b48b60ee63f1">SDL_JoystickAttachVirtual</link>(<link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2ea">SDL_JoystickType</link>&#32;<link linkend="__s_d_l__opengl_8h_1ad5ddf6fca7b585646515660e810e0188">type</link>,
+329 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;naxes,
+330 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;nbuttons,
+331 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;nhats);
+332 
+342 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1ae1cff0f737264b2d885bff05a9c5b33f">SDL_JoystickDetachVirtual</link>(<emphasis role="keywordtype">int</emphasis>&#32;device_index);
+343 
+352 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a718be0fe686e838f1d0db00d523ff47a">SDL_JoystickIsVirtual</link>(<emphasis role="keywordtype">int</emphasis>&#32;device_index);
+353 
+370 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a68d808bc0054c5cd068b0d0ff7c5ef7d">SDL_JoystickSetVirtualAxis</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick,&#32;<emphasis role="keywordtype">int</emphasis>&#32;axis,&#32;<link linkend="__s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5">Sint16</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f">value</link>);
+371 
+388 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1aa895270395be528f6658006a5c02a799">SDL_JoystickSetVirtualButton</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick,&#32;<emphasis role="keywordtype">int</emphasis>&#32;button,&#32;<link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f">value</link>);
+389 
+406 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a3f1bcde55e0486bee726f7748c1ca971">SDL_JoystickSetVirtualHat</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick,&#32;<emphasis role="keywordtype">int</emphasis>&#32;hat,&#32;<link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a8ad81492d410ff2ac11f754f4042150f">value</link>);
+407 
+420 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a6f3a290c0367a7607d6ebbaa50721eec">SDL_JoystickName</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick);
+421 
+433 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a1b3543511c1839f9c06aeea65b574e77">SDL_JoystickGetPlayerIndex</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick);
+434 
+443 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a552d1be1bccb9cd81191ddf5f576fa31">SDL_JoystickSetPlayerIndex</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick,&#32;<emphasis role="keywordtype">int</emphasis>&#32;player_index);
+444 
+460 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="_struct_s_d_l___joystick_g_u_i_d">SDL_JoystickGUID</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1acc85c770af41eae76948e11c678f92ca">SDL_JoystickGetGUID</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick);
+461 
+472 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a13d9a1e3c5cbe2591cd5214aad48fed8">SDL_JoystickGetVendor</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick);
+473 
+484 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a0f4732dffd2a769a2346f4091b2f3199">SDL_JoystickGetProduct</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick);
+485 
+496 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1afe6bbdbc0c81170d237fae42bec05665">SDL_JoystickGetProductVersion</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick);
+497 
+509 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1afd37d9ca54a83fec1ba34b103047ad61">SDL_JoystickGetSerial</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick);
+510 
+519 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__joystick_8h_1a01a289030d76adc1666951fd6021c2ea">SDL_JoystickType</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1ad21afdbdd915c013cacefb7e79bfe3bf">SDL_JoystickGetType</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick);
+520 
+536 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a7f615ef8040e7e9de3af6482d8d9908c">SDL_JoystickGetGUIDString</link>(<link linkend="_struct_s_d_l___joystick_g_u_i_d">SDL_JoystickGUID</link>&#32;guid,&#32;<emphasis role="keywordtype">char</emphasis>&#32;*pszGUID,&#32;<emphasis role="keywordtype">int</emphasis>&#32;cbGUID);
+537 
+552 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="_struct_s_d_l___joystick_g_u_i_d">SDL_JoystickGUID</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1aef9d131a6a6838847731cf8094944b46">SDL_JoystickGetGUIDFromString</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*pchGUID);
+553 
+566 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a222cd2d664acbea2dad78b891df4b89a">SDL_JoystickGetAttached</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick);
+567 
+579 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__joystick_8h_1a3c3d32500cb08f76ee8077983912c0bd">SDL_JoystickID</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1ab38dfc6428e15c2476478418075d4c83">SDL_JoystickInstanceID</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick);
+580 
+598 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a865c2e087fe69a3a30c87243729ecdea">SDL_JoystickNumAxes</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick);
+599 
+616 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a755d087bb16270087bfced7501656a6d">SDL_JoystickNumBalls</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick);
+617 
+630 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1aa62ea91c7c4ca2d12804a9fb3760e448">SDL_JoystickNumHats</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick);
+631 
+644 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1adfc662e571011ae7ec303101ab34e53a">SDL_JoystickNumButtons</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick);
+645 
+656 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a3ea23a9504ea56f2778147dbf39a029f">SDL_JoystickUpdate</link>(<emphasis role="keywordtype">void</emphasis>);
+657 
+681 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a51ba353843fd4477f6a485ac4ef35d00">SDL_JoystickEventState</link>(<emphasis role="keywordtype">int</emphasis>&#32;state);
+682 
+683 <emphasis role="preprocessor">#define&#32;SDL_JOYSTICK_AXIS_MAX&#32;&#32;&#32;32767</emphasis>
+684 <emphasis role="preprocessor">#define&#32;SDL_JOYSTICK_AXIS_MIN&#32;&#32;&#32;-32768</emphasis>
+685 
+708 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5">Sint16</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1ac6fbda13b93679bedfc34733d4b2e748">SDL_JoystickGetAxis</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick,
+709 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;axis);
+710 
+725 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a3b87809500c342149471e1abf0ace40c">SDL_JoystickGetAxisInitialState</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick,
+726 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;axis,&#32;<link linkend="__s_d_l__stdinc_8h_1a9d0257032c0e146ab6121bf0122712f5">Sint16</link>&#32;*state);
+727 
+731 <emphasis role="comment">/*&#32;@{&#32;*/</emphasis>
+732 <emphasis role="preprocessor">#define&#32;SDL_HAT_CENTERED&#32;&#32;&#32;&#32;0x00</emphasis>
+733 <emphasis role="preprocessor">#define&#32;SDL_HAT_UP&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x01</emphasis>
+734 <emphasis role="preprocessor">#define&#32;SDL_HAT_RIGHT&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x02</emphasis>
+735 <emphasis role="preprocessor">#define&#32;SDL_HAT_DOWN&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x04</emphasis>
+736 <emphasis role="preprocessor">#define&#32;SDL_HAT_LEFT&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x08</emphasis>
+737 <emphasis role="preprocessor">#define&#32;SDL_HAT_RIGHTUP&#32;&#32;&#32;&#32;&#32;(SDL_HAT_RIGHT|SDL_HAT_UP)</emphasis>
+738 <emphasis role="preprocessor">#define&#32;SDL_HAT_RIGHTDOWN&#32;&#32;&#32;(SDL_HAT_RIGHT|SDL_HAT_DOWN)</emphasis>
+739 <emphasis role="preprocessor">#define&#32;SDL_HAT_LEFTUP&#32;&#32;&#32;&#32;&#32;&#32;(SDL_HAT_LEFT|SDL_HAT_UP)</emphasis>
+740 <emphasis role="preprocessor">#define&#32;SDL_HAT_LEFTDOWN&#32;&#32;&#32;&#32;(SDL_HAT_LEFT|SDL_HAT_DOWN)</emphasis>
+741 <emphasis role="comment">/*&#32;@}&#32;*/</emphasis>
+742 
+766 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a2215030cf283295569fee41fd0251e01">SDL_JoystickGetHat</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick,
+767 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;hat);
+768 
+788 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1ac7a5a4c17f6a5a4ef9f5bc78e50913df">SDL_JoystickGetBall</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick,
+789 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;ball,&#32;<emphasis role="keywordtype">int</emphasis>&#32;*dx,&#32;<emphasis role="keywordtype">int</emphasis>&#32;*dy);
+790 
+803 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1aaf7789eb03bc42525691e075e2a36131">SDL_JoystickGetButton</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick,
+804 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;button);
+805 
+824 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a307c87a4de5aec2d1ca22856d94930fa">SDL_JoystickRumble</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick,&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;low_frequency_rumble,&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;high_frequency_rumble,&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;duration_ms);
+825 
+849 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a0d248aa2e25ac62d30444583180ff539">SDL_JoystickRumbleTriggers</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick,&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;left_rumble,&#32;<link linkend="__s_d_l__stdinc_8h_1a31fcc0a076c9068668173ee26d33e42b">Uint16</link>&#32;right_rumble,&#32;<link linkend="__s_d_l__stdinc_8h_1add440eff171ea5f55cb00c4a9ab8672d">Uint32</link>&#32;duration_ms);
+850 
+862 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a7a5a92f4eb93dde4e58d5155ce22b7a7">SDL_JoystickHasLED</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick);
+863 
+874 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1afa0e29b3b5738184da3cc281de3e4896">SDL_JoystickHasRumble</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick);
+875 
+886 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b">SDL_bool</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a815f02f2cbced249cb4b0018dfd3a777">SDL_JoystickHasRumbleTriggers</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick);
+887 
+902 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a4e3e052e175f47fe02c63e92a59f4b04">SDL_JoystickSetLED</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick,&#32;<link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link>&#32;red,&#32;<link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1ac14cda87cf6c751d53b65a3cd41c35a1">green</link>,&#32;<link linkend="__s_d_l__stdinc_8h_1a2944638813a090aa23e62f4da842c3e2">Uint8</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a1853b32584a90fa75432925f3e26d0e8">blue</link>);
+903 
+914 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a16c10474f6a3d861babfe1ae424cb1a5">SDL_JoystickSendEffect</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;*<link linkend="__s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a">data</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a3d1e3edfcf61ca2d831883e1afbad89e">size</link>);
+915 
+925 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1aafa0951b40ec2e200c098495c3dd4943">SDL_JoystickClose</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick);
+926 
+936 <emphasis role="keyword">extern</emphasis>&#32;<link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link>&#32;<link linkend="__s_d_l__joystick_8h_1a293471a907265fb92ea12caf5bcc8065">SDL_JoystickPowerLevel</link>&#32;<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link>&#32;<link linkend="__s_d_l__joystick_8h_1a192bbea3553394a6e9c80f77e431fd76">SDL_JoystickCurrentPowerLevel</link>(<link linkend="__s_d_l__joystick_8h_1a1246a982e91df301042a77e65c694987">SDL_Joystick</link>&#32;*joystick);
+937 
+938 <emphasis role="comment">/*&#32;Ends&#32;C&#32;function&#32;definitions&#32;when&#32;using&#32;C++&#32;*/</emphasis>
+939 <emphasis role="preprocessor">#ifdef&#32;__cplusplus</emphasis>
+940 }
+941 <emphasis role="preprocessor">#endif</emphasis>
+942 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_close__code_8h">close_code.h</link>&quot;</emphasis>
+943 
+944 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_joystick_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+945 
+946 <emphasis role="comment">/*&#32;vi:&#32;set&#32;ts=4&#32;sw=4&#32;expandtab:&#32;*/</emphasis>
+</programlisting></section>

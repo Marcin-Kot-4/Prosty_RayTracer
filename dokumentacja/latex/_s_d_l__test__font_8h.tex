@@ -1,0 +1,93 @@
+\hypertarget{_s_d_l__test__font_8h}{}\doxysection{D\+:/\+Ray\+Tracing/include/\+SDL\+\_\+test\+\_\+font.h File Reference}
+\label{_s_d_l__test__font_8h}\index{D:/RayTracing/include/SDL\_test\_font.h@{D:/RayTracing/include/SDL\_test\_font.h}}
+{\ttfamily \#include \char`\"{}begin\+\_\+code.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}close\+\_\+code.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_s_d_l__test__font_8h_a82fc3703abee6ebcdd3684365e1d06c9}{FONT\+\_\+\+CHARACTER\+\_\+\+SIZE}}~8
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_s_d_l__test__font_8h_aa7dc58388352aa14c537ac959220aa89}{SDLTest\+\_\+\+Draw\+Character}} (\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\+\_\+\+Renderer}} $\ast$renderer, int \mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}}, int \mbox{\hyperlink{_s_d_l__opengl_8h_a1675d9d7bb68e1657ff028643b4037e3}{y}}, char \mbox{\hyperlink{_s_d_l__opengl__glext_8h_a1f2d7f8147412c43ba2303a56f97ee73}{c}})
+\begin{DoxyCompactList}\small\item\em Draw a string in the currently set font. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_s_d_l__test__font_8h_ac5ece4b232de5964c2565360a7318a77}{SDLTest\+\_\+\+Draw\+String}} (\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\+\_\+\+Renderer}} $\ast$renderer, int \mbox{\hyperlink{_s_d_l__opengl_8h_ad0e63d0edcdbd3d79554076bf309fd47}{x}}, int \mbox{\hyperlink{_s_d_l__opengl_8h_a1675d9d7bb68e1657ff028643b4037e3}{y}}, const char $\ast$\mbox{\hyperlink{_s_d_l__opengl_8h_a4af680a6c683f88ed67b76f207f2e6e4}{s}})
+\begin{DoxyCompactList}\small\item\em Draw a string in the currently set font. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_d_l__opengles2__gl2ext_8h_ae5d8fa23ad07c48bb609509eae494c95}{void}} \mbox{\hyperlink{_s_d_l__test__font_8h_aeec32d6261ad6e10e8b0d2f714a10aef}{SDLTest\+\_\+\+Cleanup\+Text\+Drawing}} (\mbox{\hyperlink{_s_d_l__opengles2__gl2ext_8h_ae5d8fa23ad07c48bb609509eae494c95}{void}})
+\begin{DoxyCompactList}\small\item\em Cleanup textures used by font drawing functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Include file for SDL test framework.
+
+This code is a part of the SDL2\+\_\+test library, not the main SDL library. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_s_d_l__test__font_8h_a82fc3703abee6ebcdd3684365e1d06c9}\label{_s_d_l__test__font_8h_a82fc3703abee6ebcdd3684365e1d06c9}} 
+\index{SDL\_test\_font.h@{SDL\_test\_font.h}!FONT\_CHARACTER\_SIZE@{FONT\_CHARACTER\_SIZE}}
+\index{FONT\_CHARACTER\_SIZE@{FONT\_CHARACTER\_SIZE}!SDL\_test\_font.h@{SDL\_test\_font.h}}
+\doxysubsubsection{\texorpdfstring{FONT\_CHARACTER\_SIZE}{FONT\_CHARACTER\_SIZE}}
+{\footnotesize\ttfamily \#define FONT\+\_\+\+CHARACTER\+\_\+\+SIZE~8}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_s_d_l__test__font_8h_aeec32d6261ad6e10e8b0d2f714a10aef}\label{_s_d_l__test__font_8h_aeec32d6261ad6e10e8b0d2f714a10aef}} 
+\index{SDL\_test\_font.h@{SDL\_test\_font.h}!SDLTest\_CleanupTextDrawing@{SDLTest\_CleanupTextDrawing}}
+\index{SDLTest\_CleanupTextDrawing@{SDLTest\_CleanupTextDrawing}!SDL\_test\_font.h@{SDL\_test\_font.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_CleanupTextDrawing()}{SDLTest\_CleanupTextDrawing()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_d_l__opengles2__gl2ext_8h_ae5d8fa23ad07c48bb609509eae494c95}{void}} SDLTest\+\_\+\+Cleanup\+Text\+Drawing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__opengles2__gl2ext_8h_ae5d8fa23ad07c48bb609509eae494c95}{void}}}]{ }\end{DoxyParamCaption})}
+
+
+
+Cleanup textures used by font drawing functions. 
+
+\mbox{\Hypertarget{_s_d_l__test__font_8h_aa7dc58388352aa14c537ac959220aa89}\label{_s_d_l__test__font_8h_aa7dc58388352aa14c537ac959220aa89}} 
+\index{SDL\_test\_font.h@{SDL\_test\_font.h}!SDLTest\_DrawCharacter@{SDLTest\_DrawCharacter}}
+\index{SDLTest\_DrawCharacter@{SDLTest\_DrawCharacter}!SDL\_test\_font.h@{SDL\_test\_font.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_DrawCharacter()}{SDLTest\_DrawCharacter()}}
+{\footnotesize\ttfamily int SDLTest\+\_\+\+Draw\+Character (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\+\_\+\+Renderer}} $\ast$}]{renderer,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+Draw a string in the currently set font. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & The renderer to draw on. \\
+\hline
+{\em x} & The X coordinate of the upper left corner of the character. \\
+\hline
+{\em y} & The Y coordinate of the upper left corner of the character. \\
+\hline
+{\em c} & The character to draw.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, -\/1 on failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_s_d_l__test__font_8h_ac5ece4b232de5964c2565360a7318a77}\label{_s_d_l__test__font_8h_ac5ece4b232de5964c2565360a7318a77}} 
+\index{SDL\_test\_font.h@{SDL\_test\_font.h}!SDLTest\_DrawString@{SDLTest\_DrawString}}
+\index{SDLTest\_DrawString@{SDLTest\_DrawString}!SDL\_test\_font.h@{SDL\_test\_font.h}}
+\doxysubsubsection{\texorpdfstring{SDLTest\_DrawString()}{SDLTest\_DrawString()}}
+{\footnotesize\ttfamily int SDLTest\+\_\+\+Draw\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_d_l__render_8h_aaf0bf7d020754fc614fe06552ea4d5d4}{SDL\+\_\+\+Renderer}} $\ast$}]{renderer,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{const char $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+Draw a string in the currently set font. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & The renderer to draw on. \\
+\hline
+{\em x} & The X coordinate of the upper left corner of the string. \\
+\hline
+{\em y} & The Y coordinate of the upper left corner of the string. \\
+\hline
+{\em s} & The string to draw.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, -\/1 on failure. 
+\end{DoxyReturn}

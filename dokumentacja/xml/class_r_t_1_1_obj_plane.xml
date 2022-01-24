@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="class_r_t_1_1_obj_plane" kind="class" language="C++" prot="public">
+    <compoundname>RT::ObjPlane</compoundname>
+    <basecompoundref refid="class_r_t_1_1_object_base" prot="public" virt="non-virtual">RT::ObjectBase</basecompoundref>
+    <includes refid="objplane_8h" local="no">objplane.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_r_t_1_1_obj_plane_1ae9544dd9451f2bf53fc9dc1c2361e50c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RT::ObjPlane::ObjPlane</definition>
+        <argsstring>()</argsstring>
+        <name>ObjPlane</name>
+        <qualifiedname>RT::ObjPlane::ObjPlane</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Primitives/objplane.h" line="12" column="9" bodyfile="D:/RayTracing/RayTrace/Primitives/objplane.cpp" bodystart="5" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_obj_plane_1a4fa7bd4a0a03c70c2ab79d8118af21e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>RT::ObjPlane::~ObjPlane</definition>
+        <argsstring>() override</argsstring>
+        <name>~ObjPlane</name>
+        <qualifiedname>RT::ObjPlane::~ObjPlane</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Primitives/objplane.h" line="15" column="17" bodyfile="D:/RayTracing/RayTrace/Primitives/objplane.cpp" bodystart="10" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_r_t_1_1_obj_plane_1a7bf64e3ec94953a0a6c8c1da14c4e79d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool RT::ObjPlane::TestIntersection</definition>
+        <argsstring>(const RT::Ray &amp;castRay, qbVector&lt; double &gt; &amp;intPoint, qbVector&lt; double &gt; &amp;localNormal, qbVector&lt; double &gt; &amp;localColor) override</argsstring>
+        <name>TestIntersection</name>
+        <qualifiedname>RT::ObjPlane::TestIntersection</qualifiedname>
+        <reimplements refid="class_r_t_1_1_object_base_1a1874168fc872f415520ddf7ae05f33a7">TestIntersection</reimplements>
+        <param>
+          <type>const <ref refid="class_r_t_1_1_ray" kindref="compound">RT::Ray</ref> &amp;</type>
+          <declname>castRay</declname>
+        </param>
+        <param>
+          <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>intPoint</declname>
+        </param>
+        <param>
+          <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>localNormal</declname>
+        </param>
+        <param>
+          <type><ref refid="classqb_vector" kindref="compound">qbVector</ref>&lt; double &gt; &amp;</type>
+          <declname>localColor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/RayTrace/Primitives/objplane.h" line="18" column="22" bodyfile="D:/RayTracing/RayTrace/Primitives/objplane.cpp" bodystart="15" bodyend="70"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>RT::ObjPlane</label>
+        <link refid="class_r_t_1_1_obj_plane"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>RT::ObjectBase</label>
+        <link refid="class_r_t_1_1_object_base"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4">
+        <label>RT::GTform</label>
+        <link refid="class_r_t_1_1_g_tform"/>
+      </node>
+      <node id="1">
+        <label>RT::ObjPlane</label>
+        <link refid="class_r_t_1_1_obj_plane"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>RT::ObjectBase</label>
+        <link refid="class_r_t_1_1_object_base"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_baseColor</edgelabel>
+          <edgelabel>m_uvCoords</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>m_transformMatrix</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>qbVector&lt; double &gt;</label>
+        <link refid="classqb_vector"/>
+      </node>
+    </collaborationgraph>
+    <location file="D:/RayTracing/RayTrace/Primitives/objplane.h" line="9" column="5" bodyfile="D:/RayTracing/RayTrace/Primitives/objplane.h" bodystart="9" bodyend="24"/>
+    <listofallmembers>
+      <member refid="class_r_t_1_1_object_base_1a7d143fe3dc376fa9d03eb023dbfd7fb1" prot="public" virt="non-virtual"><scope>RT::ObjPlane</scope><name>AssignMaterial</name></member>
+      <member refid="class_r_t_1_1_object_base_1a3654cf7ddcab4705a656aea8f1156d9c" prot="public" virt="non-virtual"><scope>RT::ObjPlane</scope><name>CloseEnough</name></member>
+      <member refid="class_r_t_1_1_object_base_1a59a95426585e31a88e38083ec1a72b7b" prot="public" virt="non-virtual"><scope>RT::ObjPlane</scope><name>m_baseColor</name></member>
+      <member refid="class_r_t_1_1_object_base_1a96be79a468072fa5b3f72b1084a76278" prot="public" virt="non-virtual"><scope>RT::ObjPlane</scope><name>m_hasMaterial</name></member>
+      <member refid="class_r_t_1_1_object_base_1ae45ec3a9d0cd9f38605dcc8580c65c1c" prot="public" virt="non-virtual"><scope>RT::ObjPlane</scope><name>m_pMaterial</name></member>
+      <member refid="class_r_t_1_1_object_base_1ac3bdb9ce9f1aace3bc7d008ad3c71f85" prot="public" virt="non-virtual"><scope>RT::ObjPlane</scope><name>m_transformMatrix</name></member>
+      <member refid="class_r_t_1_1_object_base_1a0453a522f36f23f95638312633cf5d81" prot="public" virt="non-virtual"><scope>RT::ObjPlane</scope><name>m_uvCoords</name></member>
+      <member refid="class_r_t_1_1_object_base_1a2e524afdaa52559af1c9d32b92ab86d7" prot="public" virt="non-virtual"><scope>RT::ObjPlane</scope><name>ObjectBase</name></member>
+      <member refid="class_r_t_1_1_obj_plane_1ae9544dd9451f2bf53fc9dc1c2361e50c" prot="public" virt="non-virtual"><scope>RT::ObjPlane</scope><name>ObjPlane</name></member>
+      <member refid="class_r_t_1_1_object_base_1ae49d7664053ba8709645e61f417b22a0" prot="public" virt="non-virtual"><scope>RT::ObjPlane</scope><name>SetTransformMatrix</name></member>
+      <member refid="class_r_t_1_1_obj_plane_1a7bf64e3ec94953a0a6c8c1da14c4e79d" prot="public" virt="virtual"><scope>RT::ObjPlane</scope><name>TestIntersection</name></member>
+      <member refid="class_r_t_1_1_object_base_1a483e10e0d0096f29b1a19ebcbc9a8daf" prot="public" virt="virtual"><scope>RT::ObjPlane</scope><name>~ObjectBase</name></member>
+      <member refid="class_r_t_1_1_obj_plane_1a4fa7bd4a0a03c70c2ab79d8118af21e9" prot="public" virt="virtual"><scope>RT::ObjPlane</scope><name>~ObjPlane</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,74 @@
+.TH "SDL_SysWMmsg" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SDL_SysWMmsg
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SDL_syswm\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSDL_version\fP \fBversion\fP"
+.br
+.ti -1c
+.RI "\fBSDL_SYSWM_TYPE\fP \fBsubsystem\fP"
+.br
+.ti -1c
+.RI "union {"
+.br
+.ti -1c
+.RI "   struct {"
+.br
+.ti -1c
+.RI "      HWND \fBhwnd\fP"
+.br
+.ti -1c
+.RI "      UINT \fBmsg\fP"
+.br
+.ti -1c
+.RI "      WPARAM \fBwParam\fP"
+.br
+.ti -1c
+.RI "      LPARAM \fBlParam\fP"
+.br
+.ti -1c
+.RI "   } \fBwin\fP"
+.br
+.ti -1c
+.RI "   int \fBdummy\fP"
+.br
+.ti -1c
+.RI "} \fBmsg\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The custom event structure\&. 
+.SH "Member Data Documentation"
+.PP 
+.SS "int SDL_SysWMmsg::dummy"
+
+.SS "HWND SDL_SysWMmsg::hwnd"
+The window for the message 
+.SS "LPARAM SDL_SysWMmsg::lParam"
+LONG message parameter 
+.SS "UINT SDL_SysWMmsg::msg"
+The type of message 
+.SS "union  { \&.\&.\&. }  SDL_SysWMmsg::msg"
+
+.SS "\fBSDL_SYSWM_TYPE\fP SDL_SysWMmsg::subsystem"
+
+.SS "\fBSDL_version\fP SDL_SysWMmsg::version"
+
+.SS "struct  { \&.\&.\&. }  SDL_SysWMmsg::win"
+
+.SS "WPARAM SDL_SysWMmsg::wParam"
+WORD message parameter 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

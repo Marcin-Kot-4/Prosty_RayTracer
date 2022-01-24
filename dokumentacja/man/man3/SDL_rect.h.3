@@ -1,0 +1,272 @@
+.TH "D:/RayTracing/include/SDL_rect.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_rect.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SDL_stdinc\&.h'\fP
+.br
+\fC#include 'SDL_error\&.h'\fP
+.br
+\fC#include 'SDL_pixels\&.h'\fP
+.br
+\fC#include 'SDL_rwops\&.h'\fP
+.br
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBSDL_Point\fP"
+.br
+.ti -1c
+.RI "struct \fBSDL_FPoint\fP"
+.br
+.ti -1c
+.RI "struct \fBSDL_Rect\fP"
+.br
+.ti -1c
+.RI "struct \fBSDL_FRect\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBSDL_Point\fP \fBSDL_Point\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBSDL_FPoint\fP \fBSDL_FPoint\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBSDL_Rect\fP \fBSDL_Rect\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBSDL_FRect\fP \fBSDL_FRect\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSDL_FORCE_INLINE\fP \fBSDL_bool\fP \fBSDL_PointInRect\fP (const \fBSDL_Point\fP *\fBp\fP, const \fBSDL_Rect\fP *\fBr\fP)"
+.br
+.ti -1c
+.RI "\fBSDL_FORCE_INLINE\fP \fBSDL_bool\fP \fBSDL_RectEmpty\fP (const \fBSDL_Rect\fP *\fBr\fP)"
+.br
+.ti -1c
+.RI "\fBSDL_FORCE_INLINE\fP \fBSDL_bool\fP \fBSDL_RectEquals\fP (const \fBSDL_Rect\fP *\fBa\fP, const \fBSDL_Rect\fP *\fBb\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP \fBSDL_HasIntersection\fP (const \fBSDL_Rect\fP *A, const \fBSDL_Rect\fP *B)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP \fBSDL_IntersectRect\fP (const \fBSDL_Rect\fP *A, const \fBSDL_Rect\fP *B, \fBSDL_Rect\fP *\fBresult\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_UnionRect\fP (const \fBSDL_Rect\fP *A, const \fBSDL_Rect\fP *B, \fBSDL_Rect\fP *\fBresult\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP \fBSDL_EnclosePoints\fP (const \fBSDL_Point\fP *\fBpoints\fP, int \fBcount\fP, const \fBSDL_Rect\fP *clip, \fBSDL_Rect\fP *\fBresult\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP \fBSDL_IntersectRectAndLine\fP (const \fBSDL_Rect\fP *rect, int *X1, int *Y1, int *X2, int *Y2)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Header file for SDL_rect definition and management functions\&. 
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBSDL_FPoint\fP \fBSDL_FPoint\fP"
+The structure that defines a point (floating point)
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_EnclosePoints\fP 
+.PP
+\fBSDL_PointInRect\fP 
+.RE
+.PP
+
+.SS "typedef struct \fBSDL_FRect\fP \fBSDL_FRect\fP"
+A rectangle, with the origin at the upper left (floating point)\&. 
+.SS "typedef struct \fBSDL_Point\fP \fBSDL_Point\fP"
+The structure that defines a point (integer)
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_EnclosePoints\fP 
+.PP
+\fBSDL_PointInRect\fP 
+.RE
+.PP
+
+.SS "typedef struct \fBSDL_Rect\fP \fBSDL_Rect\fP"
+A rectangle, with the origin at the upper left (integer)\&.
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_RectEmpty\fP 
+.PP
+\fBSDL_RectEquals\fP 
+.PP
+\fBSDL_HasIntersection\fP 
+.PP
+\fBSDL_IntersectRect\fP 
+.PP
+\fBSDL_UnionRect\fP 
+.PP
+\fBSDL_EnclosePoints\fP 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP SDL_EnclosePoints (const \fBSDL_Point\fP * points, int count, const \fBSDL_Rect\fP * clip, \fBSDL_Rect\fP * result)"
+Calculate a minimal rectangle enclosing a set of points\&.
+.PP
+If \fCclip\fP is not NULL then only points inside of the clipping rectangle are considered\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIpoints\fP an array of \fBSDL_Point\fP structures representing points to be enclosed 
+.br
+\fIcount\fP the number of structures in the \fCpoints\fP array 
+.br
+\fIclip\fP an \fBSDL_Rect\fP used for clipping or NULL to enclose all points 
+.br
+\fIresult\fP an \fBSDL_Rect\fP structure filled in with the minimal enclosing rectangle 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+SDL_TRUE if any points were enclosed or SDL_FALSE if all the points were outside of the clipping rectangle\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP SDL_HasIntersection (const \fBSDL_Rect\fP * A, const \fBSDL_Rect\fP * B)"
+Determine whether two rectangles intersect\&.
+.PP
+If either pointer is NULL the function will return SDL_FALSE\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIA\fP an \fBSDL_Rect\fP structure representing the first rectangle 
+.br
+\fIB\fP an \fBSDL_Rect\fP structure representing the second rectangle 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+SDL_TRUE if there is an intersection, SDL_FALSE otherwise\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_IntersectRect\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP SDL_IntersectRect (const \fBSDL_Rect\fP * A, const \fBSDL_Rect\fP * B, \fBSDL_Rect\fP * result)"
+Calculate the intersection of two rectangles\&.
+.PP
+If \fCresult\fP is NULL then this function will return SDL_FALSE\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIA\fP an \fBSDL_Rect\fP structure representing the first rectangle 
+.br
+\fIB\fP an \fBSDL_Rect\fP structure representing the second rectangle 
+.br
+\fIresult\fP an \fBSDL_Rect\fP structure filled in with the intersection of rectangles \fCA\fP and \fCB\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+SDL_TRUE if there is an intersection, SDL_FALSE otherwise\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_HasIntersection\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP SDL_IntersectRectAndLine (const \fBSDL_Rect\fP * rect, int * X1, int * Y1, int * X2, int * Y2)"
+Calculate the intersection of a rectangle and line segment\&.
+.PP
+This function is used to clip a line segment to a rectangle\&. A line segment contained entirely within the rectangle or that does not intersect will remain unchanged\&. A line segment that crosses the rectangle at either or both ends will be clipped to the boundary of the rectangle and the new coordinates saved in \fCX1\fP, \fCY1\fP, \fCX2\fP, and/or \fCY2\fP as necessary\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIrect\fP an \fBSDL_Rect\fP structure representing the rectangle to intersect 
+.br
+\fIX1\fP a pointer to the starting X-coordinate of the line 
+.br
+\fIY1\fP a pointer to the starting Y-coordinate of the line 
+.br
+\fIX2\fP a pointer to the ending X-coordinate of the line 
+.br
+\fIY2\fP a pointer to the ending Y-coordinate of the line 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+SDL_TRUE if there is an intersection, SDL_FALSE otherwise\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&. 
+.RE
+.PP
+
+.SS "\fBSDL_FORCE_INLINE\fP \fBSDL_bool\fP SDL_PointInRect (const \fBSDL_Point\fP * p, const \fBSDL_Rect\fP * r)"
+Returns true if point resides inside a rectangle\&. 
+.SS "\fBSDL_FORCE_INLINE\fP \fBSDL_bool\fP SDL_RectEmpty (const \fBSDL_Rect\fP * r)"
+Returns true if the rectangle has no area\&. 
+.SS "\fBSDL_FORCE_INLINE\fP \fBSDL_bool\fP SDL_RectEquals (const \fBSDL_Rect\fP * a, const \fBSDL_Rect\fP * b)"
+Returns true if the two rectangles are equal\&. 
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_UnionRect (const \fBSDL_Rect\fP * A, const \fBSDL_Rect\fP * B, \fBSDL_Rect\fP * result)"
+Calculate the union of two rectangles\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIA\fP an \fBSDL_Rect\fP structure representing the first rectangle 
+.br
+\fIB\fP an \fBSDL_Rect\fP structure representing the second rectangle 
+.br
+\fIresult\fP an \fBSDL_Rect\fP structure filled in with the union of rectangles \fCA\fP and \fCB\fP
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

@@ -1,0 +1,336 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="gtfm_8h" kind="file" language="C++">
+    <compoundname>gtfm.h</compoundname>
+    <includes refid="qb_vector_8h" local="yes">./qbLinAlg/qbVector.h</includes>
+    <includes refid="qb_matrix_8h" local="yes">./qbLinAlg/qbMatrix.h</includes>
+    <includes refid="ray_8h" local="yes">ray.h</includes>
+    <includedby refid="cone_8h" local="yes">D:/RayTracing/RayTrace/Primitives/cone.h</includedby>
+    <includedby refid="cylinder_8h" local="yes">D:/RayTracing/RayTrace/Primitives/cylinder.h</includedby>
+    <includedby refid="objectbase_8h" local="yes">D:/RayTracing/RayTrace/Primitives/objectbase.h</includedby>
+    <includedby refid="objplane_8h" local="yes">D:/RayTracing/RayTrace/Primitives/objplane.h</includedby>
+    <includedby refid="objsphere_8h" local="yes">D:/RayTracing/RayTrace/Primitives/objsphere.h</includedby>
+    <includedby refid="gtfm_8cpp" local="yes">D:/RayTracing/RayTrace/gtfm.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>D:/RayTracing/RayTrace/gtfm.h</label>
+        <link refid="gtfm_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>./qbLinAlg/qbMatrix.h</label>
+        <link refid="qb_matrix_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>./qbLinAlg/qbVector.h</label>
+        <link refid="qb_vector_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>ray.h</label>
+        <link refid="ray_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>exception</label>
+      </node>
+      <node id="5">
+        <label>iomanip</label>
+      </node>
+      <node id="4">
+        <label>iostream</label>
+      </node>
+      <node id="6">
+        <label>math.h</label>
+      </node>
+      <node id="3">
+        <label>stdexcept</label>
+      </node>
+      <node id="7">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="6">
+        <label>D:/RayTracing/CApp.cpp</label>
+        <link refid="_c_app_8cpp"/>
+      </node>
+      <node id="5">
+        <label>D:/RayTracing/CApp.h</label>
+        <link refid="_c_app_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>D:/RayTracing/RayTrace/Lights/lightbase.cpp</label>
+        <link refid="lightbase_8cpp"/>
+      </node>
+      <node id="13">
+        <label>D:/RayTracing/RayTrace/Lights/lightbase.h</label>
+        <link refid="lightbase_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>D:/RayTracing/RayTrace/Lights/pointlight.cpp</label>
+        <link refid="pointlight_8cpp"/>
+      </node>
+      <node id="14">
+        <label>D:/RayTracing/RayTrace/Lights/pointlight.h</label>
+        <link refid="pointlight_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>D:/RayTracing/RayTrace/Materials/materialbase.cpp</label>
+        <link refid="materialbase_8cpp"/>
+      </node>
+      <node id="16">
+        <label>D:/RayTracing/RayTrace/Materials/materialbase.h</label>
+        <link refid="materialbase_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>D:/RayTracing/RayTrace/Materials/simplematerial.cpp</label>
+        <link refid="simplematerial_8cpp"/>
+      </node>
+      <node id="18">
+        <label>D:/RayTracing/RayTrace/Materials/simplematerial.h</label>
+        <link refid="simplematerial_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>D:/RayTracing/RayTrace/Materials/simplerefractive.cpp</label>
+        <link refid="simplerefractive_8cpp"/>
+      </node>
+      <node id="20">
+        <label>D:/RayTracing/RayTrace/Materials/simplerefractive.h</label>
+        <link refid="simplerefractive_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>D:/RayTracing/RayTrace/Primitives/cone.cpp</label>
+        <link refid="cone_8cpp"/>
+      </node>
+      <node id="2">
+        <label>D:/RayTracing/RayTrace/Primitives/cone.h</label>
+        <link refid="cone_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>D:/RayTracing/RayTrace/Primitives/cylinder.cpp</label>
+        <link refid="cylinder_8cpp"/>
+      </node>
+      <node id="9">
+        <label>D:/RayTracing/RayTrace/Primitives/cylinder.h</label>
+        <link refid="cylinder_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>D:/RayTracing/RayTrace/Primitives/objectbase.cpp</label>
+        <link refid="objectbase_8cpp"/>
+      </node>
+      <node id="11">
+        <label>D:/RayTracing/RayTrace/Primitives/objectbase.h</label>
+        <link refid="objectbase_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>D:/RayTracing/RayTrace/Primitives/objplane.cpp</label>
+        <link refid="objplane_8cpp"/>
+      </node>
+      <node id="23">
+        <label>D:/RayTracing/RayTrace/Primitives/objplane.h</label>
+        <link refid="objplane_8h"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>D:/RayTracing/RayTrace/Primitives/objsphere.cpp</label>
+        <link refid="objsphere_8cpp"/>
+      </node>
+      <node id="25">
+        <label>D:/RayTracing/RayTrace/Primitives/objsphere.h</label>
+        <link refid="objsphere_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>D:/RayTracing/RayTrace/Scene.cpp</label>
+        <link refid="_scene_8cpp"/>
+      </node>
+      <node id="4">
+        <label>D:/RayTracing/RayTrace/Scene.h</label>
+        <link refid="_scene_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>D:/RayTracing/RayTrace/gtfm.cpp</label>
+        <link refid="gtfm_8cpp"/>
+      </node>
+      <node id="1">
+        <label>D:/RayTracing/RayTrace/gtfm.h</label>
+        <link refid="gtfm_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>D:/RayTracing/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_r_t_1_1_g_tform" prot="public">RT::GTform</innerclass>
+    <innernamespace refid="namespace_r_t">RT</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>RAYTRACING_GTFM_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RAYTRACING_GTFM_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="qb_vector_8h" kindref="compound">./qbLinAlg/qbVector.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="qb_matrix_8h" kindref="compound">./qbLinAlg/qbMatrix.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ray_8h" kindref="compound">ray.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_r_t" kindref="compound">RT</ref><sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Definicja<sp/>flag<sp/>kierunków<sp/>transformacji</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="namespace_r_t_1aaac17f4135aafa89d5b75f9b48ba61eb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespace_r_t_1aaac17f4135aafa89d5b75f9b48ba61eb" kindref="member">FWDTFORM</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>forward<sp/>transform</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="namespace_r_t_1a6d7c00f7bd41a6734521d58797804e84" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespace_r_t_1a6d7c00f7bd41a6734521d58797804e84" kindref="member">BCKTFORM</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>backward<sp/>transform</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="class_r_t_1_1_g_tform" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_r_t_1_1_g_tform" kindref="compound">GTform</ref><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Konstruktor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_r_t_1_1_g_tform_1af4a85301e8377010585ab3b9be09b73e" kindref="member">GTform</ref>();</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Destruktor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_r_t_1_1_g_tform_1ac52387dbc170335f4648b5ba6994834d" kindref="member">~GTform</ref>();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Konstruktor<sp/>wykorzystujący<sp/>dwie<sp/>macierze</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_r_t_1_1_g_tform_1af4a85301e8377010585ab3b9be09b73e" kindref="member">GTform</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classqb_matrix2" kindref="compound">qbMatrix2&lt;double&gt;</ref><sp/>&amp;fwd,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classqb_matrix2" kindref="compound">qbMatrix2&lt;double&gt;</ref><sp/>&amp;bck);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Metoda<sp/>do<sp/>ustawiania<sp/>komponentów<sp/>translacji,<sp/>rotacji<sp/>i<sp/>skalowania</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_g_tform_1a54c87058d14d7cf321230ea13523f622" kindref="member">SetTransform</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>&amp;translation,</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>&amp;rotation,</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>&amp;<ref refid="_s_d_l__opengl__glext_8h_1a281421b881aa7a1266842b73a3bc7655" kindref="member">scale</ref>);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Metody<sp/>zwracające<sp/>matryce<sp/>transformacji</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_matrix2" kindref="compound">qbMatrix2&lt;double&gt;</ref><sp/><ref refid="class_r_t_1_1_g_tform_1a115fa0452dcb2c3fd97577f044986d80" kindref="member">GetForward</ref>();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_matrix2" kindref="compound">qbMatrix2&lt;double&gt;</ref><sp/><ref refid="class_r_t_1_1_g_tform_1adcf5e1799ce160c0793f6ac243cd4cde" kindref="member">GetBackward</ref>();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Metody<sp/>do<sp/>transformacji</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_r_t_1_1_ray" kindref="compound">RT::Ray</ref><sp/><ref refid="class_r_t_1_1_g_tform_1a77ea09e51153e6eca97750c38e520eef" kindref="member">Apply</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_ray" kindref="compound">RT::Ray</ref><sp/>&amp;inputRay,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>dirFlag);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/><ref refid="class_r_t_1_1_g_tform_1a77ea09e51153e6eca97750c38e520eef" kindref="member">Apply</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>&amp;inputVector,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>dirFlag);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Przeciążenie<sp/>operatorów</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_g_tform" kindref="compound">GTform</ref><sp/><ref refid="class_r_t_1_1_g_tform_1a8b8700192cec8d25c73f40b6e787c77c" kindref="member">operator*</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_g_tform" kindref="compound">RT::GTform</ref><sp/>&amp;lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_g_tform" kindref="compound">RT::GTform</ref><sp/>&amp;rhs);<sp/></highlight><highlight class="comment">//<sp/>left<sp/>hand<sp/>side,<sp/>right<sp/>hand<sp/>side</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_r_t_1_1_g_tform" kindref="compound">GTform</ref><sp/><ref refid="class_r_t_1_1_g_tform_1a809b7029a456b68e49a109c97a07afa2" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_g_tform" kindref="compound">GTform</ref><sp/>&amp;rhs);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Metoda<sp/>wypisująca<sp/>macierze</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_g_tform_1a2169f46803d51938b059da7eb9fa08fb" kindref="member">PrintMatrix</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>dirFlag);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Metoda<sp/>umożliwiająca<sp/>wypisywanie<sp/>wektorów</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_r_t_1_1_g_tform_1a7ed83f7c30e352f5639dd7af0afbfe37" kindref="member">PrintVector</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classqb_vector" kindref="compound">qbVector&lt;double&gt;</ref><sp/>&amp;vector);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Print(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classqb_matrix2" kindref="compound">qbMatrix2&lt;double&gt;</ref><sp/>&amp;<ref refid="_s_d_l__opengl__glext_8h_1a7b24a3f2f56eb1244ae69dacb4fecb6f" kindref="member">matrix</ref>);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>macierze<sp/>jednorodne<sp/>4<sp/>x<sp/>4<sp/>pozwalają<sp/>na<sp/>przeprowadzenie<sp/>operacji<sp/>translacji,<sp/>rotacji<sp/>i<sp/>skalowania<sp/>za<sp/>jednym<sp/>zamachem</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_matrix2" kindref="compound">qbMatrix2&lt;double&gt;</ref><sp/>m_fwdtfm{4,<sp/>4};</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classqb_matrix2" kindref="compound">qbMatrix2&lt;double&gt;</ref><sp/>m_bcktfm{4,<sp/>4};</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//RAYTRACING_GTFM_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/RayTrace/gtfm.h"/>
+  </compounddef>
+</doxygen>

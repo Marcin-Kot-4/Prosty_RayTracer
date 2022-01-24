@@ -1,0 +1,333 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__blendmode_8h" xml:lang="en-US">
+<title>D:/RayTracing/include/SDL_blendmode.h File Reference</title>
+<indexterm><primary>D:/RayTracing/include/SDL_blendmode.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;begin_code.h&quot;
+#include &quot;close_code.h&quot;
+</programlisting><simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="__s_d_l__blendmode_8h_1a850d3c67a878fd6698a1c8dbb1eabf1e">SDL_BlendMode</link> { 
+<link linkend="__s_d_l__blendmode_8h_1a850d3c67a878fd6698a1c8dbb1eabf1ea417f2736f69e38ae734e75afa04c57ac">SDL_BLENDMODE_NONE</link> = 0x00000000
+, <link linkend="__s_d_l__blendmode_8h_1a850d3c67a878fd6698a1c8dbb1eabf1eae421984ebfeedd59dfea21e1bdda1883">SDL_BLENDMODE_BLEND</link> = 0x00000001
+, <link linkend="__s_d_l__blendmode_8h_1a850d3c67a878fd6698a1c8dbb1eabf1ea4af39da8d41a1765fb26425a3ca4391e">SDL_BLENDMODE_ADD</link> = 0x00000002
+, <link linkend="__s_d_l__blendmode_8h_1a850d3c67a878fd6698a1c8dbb1eabf1eaf7714323757a614d3e506be37cd28c43">SDL_BLENDMODE_MOD</link> = 0x00000004
+, 
+<link linkend="__s_d_l__blendmode_8h_1a850d3c67a878fd6698a1c8dbb1eabf1eae52e77421c29b374f9442f162e357d50">SDL_BLENDMODE_MUL</link> = 0x00000008
+, <link linkend="__s_d_l__blendmode_8h_1a850d3c67a878fd6698a1c8dbb1eabf1eae478ff9a0e5e1a5d1418c69d28061e82">SDL_BLENDMODE_INVALID</link> = 0x7FFFFFFF
+ }</para>
+
+<para>The blend mode used in <link linkend="__s_d_l__render_8h_1a4b6c2353384c7b7128fd5960b24f2ae6">SDL_RenderCopy()</link> and drawing operations. </para>
+</listitem>
+            <listitem><para>enum <link linkend="__s_d_l__blendmode_8h_1a54ae8d3f832db7354f4fda522835f502">SDL_BlendOperation</link> { 
+<link linkend="__s_d_l__blendmode_8h_1a54ae8d3f832db7354f4fda522835f502a79c1a3992734df94dc21b0dd2eaf9cc3">SDL_BLENDOPERATION_ADD</link> = 0x1
+, <link linkend="__s_d_l__blendmode_8h_1a54ae8d3f832db7354f4fda522835f502acd41cbbe8ee275638a8c9ef97de2eae5">SDL_BLENDOPERATION_SUBTRACT</link> = 0x2
+, <link linkend="__s_d_l__blendmode_8h_1a54ae8d3f832db7354f4fda522835f502a6f55ae40255c3d8c9927a85ea836d518">SDL_BLENDOPERATION_REV_SUBTRACT</link> = 0x3
+, <link linkend="__s_d_l__blendmode_8h_1a54ae8d3f832db7354f4fda522835f502a49762d60e4bf6edcf42c7f7aa3c51fbd">SDL_BLENDOPERATION_MINIMUM</link> = 0x4
+, 
+<link linkend="__s_d_l__blendmode_8h_1a54ae8d3f832db7354f4fda522835f502a236541634d3e80b4932b6c8a6b278f2a">SDL_BLENDOPERATION_MAXIMUM</link> = 0x5
+ }</para>
+
+<para>The blend operation used when combining source and destination pixel components. </para>
+</listitem>
+            <listitem><para>enum <link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605c">SDL_BlendFactor</link> { 
+<link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605ca1729e63b0e2643241b7fb83b5e00a618">SDL_BLENDFACTOR_ZERO</link> = 0x1
+, <link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605caf2f9f66f01b413de3802f6764125a273">SDL_BLENDFACTOR_ONE</link> = 0x2
+, <link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605ca2ae2717da790b7616c9512cd5a031b06">SDL_BLENDFACTOR_SRC_COLOR</link> = 0x3
+, <link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605ca0ef57a3ec7cfbe5a4b6d7e6aab3d7612">SDL_BLENDFACTOR_ONE_MINUS_SRC_COLOR</link> = 0x4
+, 
+<link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605ca6709090055ddc6033c4ce7a63ac26fe5">SDL_BLENDFACTOR_SRC_ALPHA</link> = 0x5
+, <link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605ca99342bc66f17946d8b6ef26452a8b010">SDL_BLENDFACTOR_ONE_MINUS_SRC_ALPHA</link> = 0x6
+, <link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605cadcd2cc1da2d79b0f696a2f79350c96fc">SDL_BLENDFACTOR_DST_COLOR</link> = 0x7
+, <link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605ca7238a9b5d18911b67ca3e6975bc66f73">SDL_BLENDFACTOR_ONE_MINUS_DST_COLOR</link> = 0x8
+, 
+<link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605cabb3330092906beea2a5d1e275f338e42">SDL_BLENDFACTOR_DST_ALPHA</link> = 0x9
+, <link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605ca7419eb5c0c94094f26f1f5183438c9e2">SDL_BLENDFACTOR_ONE_MINUS_DST_ALPHA</link> = 0xA
+ }</para>
+
+<para>The normalized factor used to multiply pixel components. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__blendmode_8h_1a850d3c67a878fd6698a1c8dbb1eabf1e">SDL_BlendMode</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__blendmode_8h_1a68566100acaa096e94f213a9768c6b6d">SDL_ComposeCustomBlendMode</link> (<link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605c">SDL_BlendFactor</link> srcColorFactor, <link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605c">SDL_BlendFactor</link> dstColorFactor, <link linkend="__s_d_l__blendmode_8h_1a54ae8d3f832db7354f4fda522835f502">SDL_BlendOperation</link> colorOperation, <link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605c">SDL_BlendFactor</link> srcAlphaFactor, <link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605c">SDL_BlendFactor</link> dstAlphaFactor, <link linkend="__s_d_l__blendmode_8h_1a54ae8d3f832db7354f4fda522835f502">SDL_BlendOperation</link> alphaOperation)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Header file declaring the SDL_BlendMode enumeration </para>
+</section>
+<section>
+<title>Enumeration Type Documentation</title>
+<anchor xml:id="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605c"/><section>
+    <title>SDL_BlendFactor</title>
+<indexterm><primary>SDL_BlendFactor</primary><secondary>SDL_blendmode.h</secondary></indexterm>
+<indexterm><primary>SDL_blendmode.h</primary><secondary>SDL_BlendFactor</secondary></indexterm>
+<para><computeroutput>enum <link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605c">SDL_BlendFactor</link></computeroutput></para><para>
+
+<para>The normalized factor used to multiply pixel components. </para>
+</para>
+<informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SDL_BLENDFACTOR_ZERO</primary><secondary>SDL_blendmode.h</secondary></indexterm>
+<indexterm><primary>SDL_blendmode.h</primary><secondary>SDL_BLENDFACTOR_ZERO</secondary></indexterm>
+<anchor xml:id="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605ca1729e63b0e2643241b7fb83b5e00a618"/>SDL_BLENDFACTOR_ZERO</entry><entry>
+<para>0, 0, 0, 0 </para>
+</entry></row><row><entry><indexterm><primary>SDL_BLENDFACTOR_ONE</primary><secondary>SDL_blendmode.h</secondary></indexterm>
+<indexterm><primary>SDL_blendmode.h</primary><secondary>SDL_BLENDFACTOR_ONE</secondary></indexterm>
+<anchor xml:id="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605caf2f9f66f01b413de3802f6764125a273"/>SDL_BLENDFACTOR_ONE</entry><entry>
+<para>1, 1, 1, 1 </para>
+</entry></row><row><entry><indexterm><primary>SDL_BLENDFACTOR_SRC_COLOR</primary><secondary>SDL_blendmode.h</secondary></indexterm>
+<indexterm><primary>SDL_blendmode.h</primary><secondary>SDL_BLENDFACTOR_SRC_COLOR</secondary></indexterm>
+<anchor xml:id="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605ca2ae2717da790b7616c9512cd5a031b06"/>SDL_BLENDFACTOR_SRC_COLOR</entry><entry>
+<para>srcR, srcG, srcB, srcA </para>
+</entry></row><row><entry><indexterm><primary>SDL_BLENDFACTOR_ONE_MINUS_SRC_COLOR</primary><secondary>SDL_blendmode.h</secondary></indexterm>
+<indexterm><primary>SDL_blendmode.h</primary><secondary>SDL_BLENDFACTOR_ONE_MINUS_SRC_COLOR</secondary></indexterm>
+<anchor xml:id="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605ca0ef57a3ec7cfbe5a4b6d7e6aab3d7612"/>SDL_BLENDFACTOR_ONE_MINUS_SRC_COLOR</entry><entry>
+<para>1-srcR, 1-srcG, 1-srcB, 1-srcA </para>
+</entry></row><row><entry><indexterm><primary>SDL_BLENDFACTOR_SRC_ALPHA</primary><secondary>SDL_blendmode.h</secondary></indexterm>
+<indexterm><primary>SDL_blendmode.h</primary><secondary>SDL_BLENDFACTOR_SRC_ALPHA</secondary></indexterm>
+<anchor xml:id="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605ca6709090055ddc6033c4ce7a63ac26fe5"/>SDL_BLENDFACTOR_SRC_ALPHA</entry><entry>
+<para>srcA, srcA, srcA, srcA </para>
+</entry></row><row><entry><indexterm><primary>SDL_BLENDFACTOR_ONE_MINUS_SRC_ALPHA</primary><secondary>SDL_blendmode.h</secondary></indexterm>
+<indexterm><primary>SDL_blendmode.h</primary><secondary>SDL_BLENDFACTOR_ONE_MINUS_SRC_ALPHA</secondary></indexterm>
+<anchor xml:id="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605ca99342bc66f17946d8b6ef26452a8b010"/>SDL_BLENDFACTOR_ONE_MINUS_SRC_ALPHA</entry><entry>
+<para>1-srcA, 1-srcA, 1-srcA, 1-srcA </para>
+</entry></row><row><entry><indexterm><primary>SDL_BLENDFACTOR_DST_COLOR</primary><secondary>SDL_blendmode.h</secondary></indexterm>
+<indexterm><primary>SDL_blendmode.h</primary><secondary>SDL_BLENDFACTOR_DST_COLOR</secondary></indexterm>
+<anchor xml:id="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605cadcd2cc1da2d79b0f696a2f79350c96fc"/>SDL_BLENDFACTOR_DST_COLOR</entry><entry>
+<para>dstR, dstG, dstB, dstA </para>
+</entry></row><row><entry><indexterm><primary>SDL_BLENDFACTOR_ONE_MINUS_DST_COLOR</primary><secondary>SDL_blendmode.h</secondary></indexterm>
+<indexterm><primary>SDL_blendmode.h</primary><secondary>SDL_BLENDFACTOR_ONE_MINUS_DST_COLOR</secondary></indexterm>
+<anchor xml:id="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605ca7238a9b5d18911b67ca3e6975bc66f73"/>SDL_BLENDFACTOR_ONE_MINUS_DST_COLOR</entry><entry>
+<para>1-dstR, 1-dstG, 1-dstB, 1-dstA </para>
+</entry></row><row><entry><indexterm><primary>SDL_BLENDFACTOR_DST_ALPHA</primary><secondary>SDL_blendmode.h</secondary></indexterm>
+<indexterm><primary>SDL_blendmode.h</primary><secondary>SDL_BLENDFACTOR_DST_ALPHA</secondary></indexterm>
+<anchor xml:id="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605cabb3330092906beea2a5d1e275f338e42"/>SDL_BLENDFACTOR_DST_ALPHA</entry><entry>
+<para>dstA, dstA, dstA, dstA </para>
+</entry></row><row><entry><indexterm><primary>SDL_BLENDFACTOR_ONE_MINUS_DST_ALPHA</primary><secondary>SDL_blendmode.h</secondary></indexterm>
+<indexterm><primary>SDL_blendmode.h</primary><secondary>SDL_BLENDFACTOR_ONE_MINUS_DST_ALPHA</secondary></indexterm>
+<anchor xml:id="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605ca7419eb5c0c94094f26f1f5183438c9e2"/>SDL_BLENDFACTOR_ONE_MINUS_DST_ALPHA</entry><entry>
+<para>1-dstA, 1-dstA, 1-dstA, 1-dstA </para>
+</entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+<anchor xml:id="__s_d_l__blendmode_8h_1a850d3c67a878fd6698a1c8dbb1eabf1e"/><section>
+    <title>SDL_BlendMode</title>
+<indexterm><primary>SDL_BlendMode</primary><secondary>SDL_blendmode.h</secondary></indexterm>
+<indexterm><primary>SDL_blendmode.h</primary><secondary>SDL_BlendMode</secondary></indexterm>
+<para><computeroutput>enum <link linkend="__s_d_l__blendmode_8h_1a850d3c67a878fd6698a1c8dbb1eabf1e">SDL_BlendMode</link></computeroutput></para><para>
+
+<para>The blend mode used in <link linkend="__s_d_l__render_8h_1a4b6c2353384c7b7128fd5960b24f2ae6">SDL_RenderCopy()</link> and drawing operations. </para>
+</para>
+<informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SDL_BLENDMODE_NONE</primary><secondary>SDL_blendmode.h</secondary></indexterm>
+<indexterm><primary>SDL_blendmode.h</primary><secondary>SDL_BLENDMODE_NONE</secondary></indexterm>
+<anchor xml:id="__s_d_l__blendmode_8h_1a850d3c67a878fd6698a1c8dbb1eabf1ea417f2736f69e38ae734e75afa04c57ac"/>SDL_BLENDMODE_NONE</entry><entry>
+<para>no blending dstRGBA = srcRGBA </para>
+</entry></row><row><entry><indexterm><primary>SDL_BLENDMODE_BLEND</primary><secondary>SDL_blendmode.h</secondary></indexterm>
+<indexterm><primary>SDL_blendmode.h</primary><secondary>SDL_BLENDMODE_BLEND</secondary></indexterm>
+<anchor xml:id="__s_d_l__blendmode_8h_1a850d3c67a878fd6698a1c8dbb1eabf1eae421984ebfeedd59dfea21e1bdda1883"/>SDL_BLENDMODE_BLEND</entry><entry>
+<para>alpha blending dstRGB = (srcRGB * srcA) + (dstRGB * (1-srcA)) dstA = srcA + (dstA * (1-srcA)) </para>
+</entry></row><row><entry><indexterm><primary>SDL_BLENDMODE_ADD</primary><secondary>SDL_blendmode.h</secondary></indexterm>
+<indexterm><primary>SDL_blendmode.h</primary><secondary>SDL_BLENDMODE_ADD</secondary></indexterm>
+<anchor xml:id="__s_d_l__blendmode_8h_1a850d3c67a878fd6698a1c8dbb1eabf1ea4af39da8d41a1765fb26425a3ca4391e"/>SDL_BLENDMODE_ADD</entry><entry>
+<para>additive blending dstRGB = (srcRGB * srcA) + dstRGB dstA = dstA </para>
+</entry></row><row><entry><indexterm><primary>SDL_BLENDMODE_MOD</primary><secondary>SDL_blendmode.h</secondary></indexterm>
+<indexterm><primary>SDL_blendmode.h</primary><secondary>SDL_BLENDMODE_MOD</secondary></indexterm>
+<anchor xml:id="__s_d_l__blendmode_8h_1a850d3c67a878fd6698a1c8dbb1eabf1eaf7714323757a614d3e506be37cd28c43"/>SDL_BLENDMODE_MOD</entry><entry>
+<para>color modulate dstRGB = srcRGB * dstRGB dstA = dstA </para>
+</entry></row><row><entry><indexterm><primary>SDL_BLENDMODE_MUL</primary><secondary>SDL_blendmode.h</secondary></indexterm>
+<indexterm><primary>SDL_blendmode.h</primary><secondary>SDL_BLENDMODE_MUL</secondary></indexterm>
+<anchor xml:id="__s_d_l__blendmode_8h_1a850d3c67a878fd6698a1c8dbb1eabf1eae52e77421c29b374f9442f162e357d50"/>SDL_BLENDMODE_MUL</entry><entry>
+<para>color multiply dstRGB = (srcRGB * dstRGB) + (dstRGB * (1-srcA)) dstA = (srcA * dstA) + (dstA * (1-srcA)) </para>
+</entry></row><row><entry><indexterm><primary>SDL_BLENDMODE_INVALID</primary><secondary>SDL_blendmode.h</secondary></indexterm>
+<indexterm><primary>SDL_blendmode.h</primary><secondary>SDL_BLENDMODE_INVALID</secondary></indexterm>
+<anchor xml:id="__s_d_l__blendmode_8h_1a850d3c67a878fd6698a1c8dbb1eabf1eae478ff9a0e5e1a5d1418c69d28061e82"/>SDL_BLENDMODE_INVALID</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+<anchor xml:id="__s_d_l__blendmode_8h_1a54ae8d3f832db7354f4fda522835f502"/><section>
+    <title>SDL_BlendOperation</title>
+<indexterm><primary>SDL_BlendOperation</primary><secondary>SDL_blendmode.h</secondary></indexterm>
+<indexterm><primary>SDL_blendmode.h</primary><secondary>SDL_BlendOperation</secondary></indexterm>
+<para><computeroutput>enum <link linkend="__s_d_l__blendmode_8h_1a54ae8d3f832db7354f4fda522835f502">SDL_BlendOperation</link></computeroutput></para><para>
+
+<para>The blend operation used when combining source and destination pixel components. </para>
+</para>
+<informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SDL_BLENDOPERATION_ADD</primary><secondary>SDL_blendmode.h</secondary></indexterm>
+<indexterm><primary>SDL_blendmode.h</primary><secondary>SDL_BLENDOPERATION_ADD</secondary></indexterm>
+<anchor xml:id="__s_d_l__blendmode_8h_1a54ae8d3f832db7354f4fda522835f502a79c1a3992734df94dc21b0dd2eaf9cc3"/>SDL_BLENDOPERATION_ADD</entry><entry>
+<para>dst + src: supported by all renderers </para>
+</entry></row><row><entry><indexterm><primary>SDL_BLENDOPERATION_SUBTRACT</primary><secondary>SDL_blendmode.h</secondary></indexterm>
+<indexterm><primary>SDL_blendmode.h</primary><secondary>SDL_BLENDOPERATION_SUBTRACT</secondary></indexterm>
+<anchor xml:id="__s_d_l__blendmode_8h_1a54ae8d3f832db7354f4fda522835f502acd41cbbe8ee275638a8c9ef97de2eae5"/>SDL_BLENDOPERATION_SUBTRACT</entry><entry>
+<para>dst - src : supported by D3D9, D3D11, OpenGL, OpenGLES </para>
+</entry></row><row><entry><indexterm><primary>SDL_BLENDOPERATION_REV_SUBTRACT</primary><secondary>SDL_blendmode.h</secondary></indexterm>
+<indexterm><primary>SDL_blendmode.h</primary><secondary>SDL_BLENDOPERATION_REV_SUBTRACT</secondary></indexterm>
+<anchor xml:id="__s_d_l__blendmode_8h_1a54ae8d3f832db7354f4fda522835f502a6f55ae40255c3d8c9927a85ea836d518"/>SDL_BLENDOPERATION_REV_SUBTRACT</entry><entry>
+<para>src - dst : supported by D3D9, D3D11, OpenGL, OpenGLES </para>
+</entry></row><row><entry><indexterm><primary>SDL_BLENDOPERATION_MINIMUM</primary><secondary>SDL_blendmode.h</secondary></indexterm>
+<indexterm><primary>SDL_blendmode.h</primary><secondary>SDL_BLENDOPERATION_MINIMUM</secondary></indexterm>
+<anchor xml:id="__s_d_l__blendmode_8h_1a54ae8d3f832db7354f4fda522835f502a49762d60e4bf6edcf42c7f7aa3c51fbd"/>SDL_BLENDOPERATION_MINIMUM</entry><entry>
+<para>min(dst, src) : supported by D3D11 </para>
+</entry></row><row><entry><indexterm><primary>SDL_BLENDOPERATION_MAXIMUM</primary><secondary>SDL_blendmode.h</secondary></indexterm>
+<indexterm><primary>SDL_blendmode.h</primary><secondary>SDL_BLENDOPERATION_MAXIMUM</secondary></indexterm>
+<anchor xml:id="__s_d_l__blendmode_8h_1a54ae8d3f832db7354f4fda522835f502a236541634d3e80b4932b6c8a6b278f2a"/>SDL_BLENDOPERATION_MAXIMUM</entry><entry>
+<para>max(dst, src) : supported by D3D11 </para>
+</entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__s_d_l__blendmode_8h_1a68566100acaa096e94f213a9768c6b6d"/><section>
+    <title>SDL_ComposeCustomBlendMode()</title>
+<indexterm><primary>SDL_ComposeCustomBlendMode</primary><secondary>SDL_blendmode.h</secondary></indexterm>
+<indexterm><primary>SDL_blendmode.h</primary><secondary>SDL_ComposeCustomBlendMode</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__blendmode_8h_1a850d3c67a878fd6698a1c8dbb1eabf1e">SDL_BlendMode</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_ComposeCustomBlendMode (<link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605c">SDL_BlendFactor</link> srcColorFactor, <link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605c">SDL_BlendFactor</link> dstColorFactor, <link linkend="__s_d_l__blendmode_8h_1a54ae8d3f832db7354f4fda522835f502">SDL_BlendOperation</link> colorOperation, <link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605c">SDL_BlendFactor</link> srcAlphaFactor, <link linkend="__s_d_l__blendmode_8h_1ae7649e376a461512af328b39f3d9605c">SDL_BlendFactor</link> dstAlphaFactor, <link linkend="__s_d_l__blendmode_8h_1a54ae8d3f832db7354f4fda522835f502">SDL_BlendOperation</link> alphaOperation)</computeroutput></para>
+<para>Compose a custom blend mode for renderers.</para>
+
+<para>The functions SDL_SetRenderDrawBlendMode and SDL_SetTextureBlendMode accept the SDL_BlendMode returned by this function if the renderer supports it.</para>
+
+<para>A blend mode controls how the pixels from a drawing operation (source) get combined with the pixels from the render target (destination). First, the components of the source and destination pixels get multiplied with their blend factors. Then, the blend operation takes the two products and calculates the result that will get stored in the render target.</para>
+
+<para>Expressed in pseudocode, it would look like this:</para>
+
+<para><literallayout><computeroutput><link linkend="__s_d_l__opengl__glext_8h_1a8478d3d20676ffe27bbd88c39e848b8a">dstRGB</link>&#32;=&#32;colorOperation(<link linkend="__s_d_l__opengl__glext_8h_1a4cba9e3eefbff9fb837e4ae0fcc727c4">srcRGB</link>&#32;*&#32;srcColorFactor,&#32;<link linkend="__s_d_l__opengl__glext_8h_1a8478d3d20676ffe27bbd88c39e848b8a">dstRGB</link>&#32;*&#32;dstColorFactor);
+dstA&#32;=&#32;alphaOperation(srcA&#32;*&#32;srcAlphaFactor,&#32;dstA&#32;*&#32;dstAlphaFactor);
+</computeroutput></literallayout></para>
+
+<para>Where the functions <computeroutput>colorOperation(src, dst)</computeroutput> and <computeroutput>alphaOperation(src,
+dst)</computeroutput> can return one of the following:</para>
+
+<para><itemizedlist>
+<listitem>
+<para><computeroutput>src + dst</computeroutput></para>
+</listitem><listitem>
+<para><computeroutput>src - dst</computeroutput></para>
+</listitem><listitem>
+<para><computeroutput>dst - src</computeroutput></para>
+</listitem><listitem>
+<para><computeroutput>min(src, dst)</computeroutput></para>
+</listitem><listitem>
+<para><computeroutput>max(src, dst)</computeroutput></para>
+</listitem></itemizedlist>
+</para>
+
+<para>The red, green, and blue components are always multiplied with the first, second, and third components of the SDL_BlendFactor, respectively. The fourth component is not used.</para>
+
+<para>The alpha component is always multiplied with the fourth component of the SDL_BlendFactor. The other components are not used in the alpha calculation.</para>
+
+<para>Support for these blend modes varies for each renderer. To check if a specific SDL_BlendMode is supported, create a renderer and pass it to either SDL_SetRenderDrawBlendMode or SDL_SetTextureBlendMode. They will return with an error if the blend mode is not supported.</para>
+
+<para>This list describes the support of custom blend modes for each renderer in SDL 2.0.6. All renderers support the four blend modes listed in the SDL_BlendMode enumeration.</para>
+
+<para><itemizedlist>
+<listitem>
+<para><emphasis role="bold">direct3d</emphasis>: Supports <computeroutput>SDL_BLENDOPERATION_ADD</computeroutput> with all factors.</para>
+</listitem><listitem>
+<para><emphasis role="bold">direct3d11</emphasis>: Supports all operations with all factors. However, some factors produce unexpected results with <computeroutput>SDL_BLENDOPERATION_MINIMUM</computeroutput> and <computeroutput>SDL_BLENDOPERATION_MAXIMUM</computeroutput>.</para>
+</listitem><listitem>
+<para><emphasis role="bold">opengl</emphasis>: Supports the <computeroutput>SDL_BLENDOPERATION_ADD</computeroutput> operation with all factors. OpenGL versions 1.1, 1.2, and 1.3 do not work correctly with SDL 2.0.6.</para>
+</listitem><listitem>
+<para><emphasis role="bold">opengles</emphasis>: Supports the <computeroutput>SDL_BLENDOPERATION_ADD</computeroutput> operation with all factors. Color and alpha factors need to be the same. OpenGL ES 1 implementation specific: May also support <computeroutput>SDL_BLENDOPERATION_SUBTRACT</computeroutput> and <computeroutput>SDL_BLENDOPERATION_REV_SUBTRACT</computeroutput>. May support color and alpha operations being different from each other. May support color and alpha factors being different from each other.</para>
+</listitem><listitem>
+<para><emphasis role="bold">opengles2</emphasis>: Supports the <computeroutput>SDL_BLENDOPERATION_ADD</computeroutput>, <computeroutput>SDL_BLENDOPERATION_SUBTRACT</computeroutput>, <computeroutput>SDL_BLENDOPERATION_REV_SUBTRACT</computeroutput> operations with all factors.</para>
+</listitem><listitem>
+<para><emphasis role="bold">psp</emphasis>: No custom blend mode support.</para>
+</listitem><listitem>
+<para><emphasis role="bold">software</emphasis>: No custom blend mode support.</para>
+</listitem></itemizedlist>
+</para>
+
+<para>Some renderers do not provide an alpha component for the default render target. The <computeroutput>SDL_BLENDFACTOR_DST_ALPHA</computeroutput> and <computeroutput>SDL_BLENDFACTOR_ONE_MINUS_DST_ALPHA</computeroutput> factors do not have an effect in this case.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>srcColorFactor</entry><entry>
+<para>the SDL_BlendFactor applied to the red, green, and blue components of the source pixels </para>
+</entry>
+                            </row>
+                            <row>
+<entry>dstColorFactor</entry><entry>
+<para>the SDL_BlendFactor applied to the red, green, and blue components of the destination pixels </para>
+</entry>
+                            </row>
+                            <row>
+<entry>colorOperation</entry><entry>
+<para>the SDL_BlendOperation used to combine the red, green, and blue components of the source and destination pixels </para>
+</entry>
+                            </row>
+                            <row>
+<entry>srcAlphaFactor</entry><entry>
+<para>the SDL_BlendFactor applied to the alpha component of the source pixels </para>
+</entry>
+                            </row>
+                            <row>
+<entry>dstAlphaFactor</entry><entry>
+<para>the SDL_BlendFactor applied to the alpha component of the destination pixels </para>
+</entry>
+                            </row>
+                            <row>
+<entry>alphaOperation</entry><entry>
+<para>the SDL_BlendOperation used to combine the alpha component of the source and destination pixels </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>an SDL_BlendMode that represents the chosen factors and operations.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.6.</para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__render_8h_1a37e6e440b995756c9cc8a20fe3ca2385">SDL_SetRenderDrawBlendMode</link> </para>
+
+<para><link linkend="__s_d_l__render_8h_1a384109767532e9703652233571a0d3cf">SDL_GetRenderDrawBlendMode</link> </para>
+
+<para><link linkend="__s_d_l__render_8h_1af8b9cb77ca18f76c18f39d29ed960de8">SDL_SetTextureBlendMode</link> </para>
+
+<para><link linkend="__s_d_l__render_8h_1a2595ee57e6f3a4882f3ae4062ca420c4">SDL_GetTextureBlendMode</link> </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

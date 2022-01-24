@@ -1,0 +1,264 @@
+.TH "D:/RayTracing/include/SDL_timer.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/include/SDL_timer.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'SDL_stdinc\&.h'\fP
+.br
+\fC#include 'SDL_error\&.h'\fP
+.br
+\fC#include 'begin_code\&.h'\fP
+.br
+\fC#include 'close_code\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSDL_TICKS_PASSED\fP(A,  B)   ((\fBSint32\fP)((B) \- (A)) <= 0)"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBUint32\fP(\fBSDLCALL\fP * \fBSDL_TimerCallback\fP) (\fBUint32\fP interval, \fBvoid\fP *\fBparam\fP)"
+.br
+.ti -1c
+.RI "typedef int \fBSDL_TimerID\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBUint32\fP \fBSDLCALL\fP \fBSDL_GetTicks\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBUint64\fP \fBSDLCALL\fP \fBSDL_GetTicks64\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBUint64\fP \fBSDLCALL\fP \fBSDL_GetPerformanceCounter\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBUint64\fP \fBSDLCALL\fP \fBSDL_GetPerformanceFrequency\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP \fBSDL_Delay\fP (\fBUint32\fP ms)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_TimerID\fP \fBSDLCALL\fP \fBSDL_AddTimer\fP (\fBUint32\fP interval, \fBSDL_TimerCallback\fP callback, \fBvoid\fP *\fBparam\fP)"
+.br
+.ti -1c
+.RI "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP \fBSDL_RemoveTimer\fP (\fBSDL_TimerID\fP \fBid\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Header for the SDL time management routines\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define SDL_TICKS_PASSED(A, B)   ((\fBSint32\fP)((B) \- (A)) <= 0)"
+Compare 32-bit SDL ticks values, and return true if \fCA\fP has passed \fCB\fP\&.
+.PP
+This should be used with results from \fBSDL_GetTicks()\fP, as this macro attempts to deal with the 32-bit counter wrapping back to zero every ~49 days, but should \fInot\fP be used with \fBSDL_GetTicks64()\fP, which does not have that problem\&.
+.PP
+For example, with \fBSDL_GetTicks()\fP, if you want to wait 100 ms, you could do this:
+.PP
+.PP
+.nf
+const Uint32 timeout = SDL_GetTicks() + 100;
+while (!SDL_TICKS_PASSED(SDL_GetTicks(), timeout)) {
+    // \&.\&.\&. do work until timeout has elapsed
+}
+.fi
+.PP
+.PP
+Note that this does not handle tick differences greater than 2^31 so take care when using the above kind of code with large timeout delays (tens of days)\&. 
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBUint32\fP(\fBSDLCALL\fP * SDL_TimerCallback) (\fBUint32\fP interval, \fBvoid\fP *\fBparam\fP)"
+Function prototype for the timer callback function\&.
+.PP
+The callback function is passed the current timer interval and returns the next timer interval\&. If the returned value is the same as the one passed in, the periodic alarm continues, otherwise a new alarm is scheduled\&. If the callback returns 0, the periodic alarm is cancelled\&. 
+.SS "typedef int \fBSDL_TimerID\fP"
+Definition of the timer ID type\&. 
+.SH "Function Documentation"
+.PP 
+.SS "\fBDECLSPEC\fP \fBSDL_TimerID\fP \fBSDLCALL\fP SDL_AddTimer (\fBUint32\fP interval, \fBSDL_TimerCallback\fP callback, \fBvoid\fP * param)"
+Call a callback function at a future time\&.
+.PP
+If you use this function, you must pass \fCSDL_INIT_TIMER\fP to \fBSDL_Init()\fP\&.
+.PP
+The callback function is passed the current timer interval and the user supplied parameter from the \fBSDL_AddTimer()\fP call and should return the next timer interval\&. If the value returned from the callback is 0, the timer is canceled\&.
+.PP
+The callback is run on a separate thread\&.
+.PP
+Timers take into account the amount of time it took to execute the callback\&. For example, if the callback took 250 ms to execute and returned 1000 (ms), the timer would only wait another 750 ms before its next iteration\&.
+.PP
+Timing may be inexact due to OS scheduling\&. Be sure to note the current time with \fBSDL_GetTicks()\fP or \fBSDL_GetPerformanceCounter()\fP in case your callback needs to adjust for variances\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIinterval\fP the timer delay, in milliseconds, passed to \fCcallback\fP 
+.br
+\fIcallback\fP the SDL_TimerCallback function to call when the specified \fCinterval\fP elapses 
+.br
+\fIparam\fP a pointer that is passed to \fCcallback\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+a timer ID or 0 if an error occurs; call \fBSDL_GetError()\fP for more information\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_RemoveTimer\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBvoid\fP \fBSDLCALL\fP SDL_Delay (\fBUint32\fP ms)"
+Wait a specified number of milliseconds before returning\&.
+.PP
+This function waits a specified number of milliseconds before returning\&. It waits at least the specified time, but possibly longer due to OS scheduling\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIms\fP the number of milliseconds to delay
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBUint64\fP \fBSDLCALL\fP SDL_GetPerformanceCounter (\fBvoid\fP)"
+Get the current value of the high resolution counter\&.
+.PP
+This function is typically used for profiling\&.
+.PP
+The counter values are only meaningful relative to each other\&. Differences between values can be converted to times by using \fBSDL_GetPerformanceFrequency()\fP\&.
+.PP
+\fBReturns\fP
+.RS 4
+the current counter value\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GetPerformanceFrequency\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBUint64\fP \fBSDLCALL\fP SDL_GetPerformanceFrequency (\fBvoid\fP)"
+Get the count per second of the high resolution counter\&.
+.PP
+\fBReturns\fP
+.RS 4
+a platform-specific count per second\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_GetPerformanceCounter\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBUint32\fP \fBSDLCALL\fP SDL_GetTicks (\fBvoid\fP)"
+Get the number of milliseconds since SDL library initialization\&.
+.PP
+This value wraps if the program runs for more than ~49 days\&.
+.PP
+This function is not recommended as of SDL 2\&.0\&.18; use \fBSDL_GetTicks64()\fP instead, where the value doesn't wrap every ~49 days\&. There are places in SDL where we provide a 32-bit timestamp that can not change without breaking binary compatibility, though, so this function isn't officially deprecated\&.
+.PP
+\fBReturns\fP
+.RS 4
+an unsigned 32-bit value representing the number of milliseconds since the SDL library initialized\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_TICKS_PASSED\fP 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBUint64\fP \fBSDLCALL\fP SDL_GetTicks64 (\fBvoid\fP)"
+Get the number of milliseconds since SDL library initialization\&.
+.PP
+Note that you should not use the SDL_TICKS_PASSED macro with values returned by this function, as that macro does clever math to compensate for the 32-bit overflow every ~49 days that \fBSDL_GetTicks()\fP suffers from\&. 64-bit values from this function can be safely compared directly\&.
+.PP
+For example, if you want to wait 100 ms, you could do this:
+.PP
+.PP
+.nf
+const Uint64 timeout = SDL_GetTicks64() + 100;
+while (SDL_GetTicks64() < timeout) {
+    // \&.\&.\&. do work until timeout has elapsed
+}
+.fi
+.PP
+.PP
+\fBReturns\fP
+.RS 4
+an unsigned 64-bit value representing the number of milliseconds since the SDL library initialized\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.18\&. 
+.RE
+.PP
+
+.SS "\fBDECLSPEC\fP \fBSDL_bool\fP \fBSDLCALL\fP SDL_RemoveTimer (\fBSDL_TimerID\fP id)"
+Remove a timer created with \fBSDL_AddTimer()\fP\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIid\fP the ID of the timer to remove 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+SDL_TRUE if the timer is removed or SDL_FALSE if the timer wasn't found\&.
+.RE
+.PP
+\fBSince\fP
+.RS 4
+This function is available since SDL 2\&.0\&.0\&.
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBSDL_AddTimer\fP 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

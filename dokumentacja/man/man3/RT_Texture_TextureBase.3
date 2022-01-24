@@ -1,0 +1,60 @@
+.TH "RT::Texture::TextureBase" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RT::Texture::TextureBase
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <texturebase\&.h>\fP
+.PP
+Inherited by \fBRT::Texture::Checker\fP, \fBRT::Texture::Flat\fP, and \fBRT::Texture::Image\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTextureBase\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~TextureBase\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBqbVector\fP< double > \fBGetColor\fP (const \fBqbVector\fP< double > &uvCoords)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBSetTransform\fP (const \fBqbVector\fP< double > &translation, const double &rotation, const \fBqbVector\fP< double > &\fBscale\fP)"
+.br
+.ti -1c
+.RI "\fBqbVector\fP< double > \fBApplyTransform\fP (const \fBqbVector\fP< double > &inputVector)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBqbVector\fP< double > \fBBlendColors\fP (const std::vector< \fBqbVector\fP< double > > &inputColorList)"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RT::Texture::TextureBase::TextureBase ()"
+
+.SS "RT::Texture::TextureBase::~TextureBase ()\fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBqbVector\fP< double > RT::Texture::TextureBase::ApplyTransform (const \fBqbVector\fP< double > & inputVector)"
+
+.SS "\fBqbVector\fP< double > RT::Texture::TextureBase::BlendColors (const std::vector< \fBqbVector\fP< double > > & inputColorList)\fC [static]\fP"
+
+.SS "\fBqbVector\fP< double > RT::Texture::TextureBase::GetColor (const \fBqbVector\fP< double > & uvCoords)\fC [virtual]\fP"
+
+.PP
+Reimplemented in \fBRT::Texture::Checker\fP, \fBRT::Texture::Flat\fP, and \fBRT::Texture::Image\fP\&.
+.SS "\fBvoid\fP RT::Texture::TextureBase::SetTransform (const \fBqbVector\fP< double > & translation, const double & rotation, const \fBqbVector\fP< double > & scale)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

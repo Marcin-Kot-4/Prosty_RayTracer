@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_simplematerial_8h_source" xml:lang="en-US">
+<title>simplematerial.h</title>
+<indexterm><primary>D:/RayTracing/RayTrace/Materials/simplematerial.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;RAYTRACING_SIMPLEMATERIAL_H</emphasis>
+2 <emphasis role="preprocessor">#define&#32;RAYTRACING_SIMPLEMATERIAL_H</emphasis>
+3 
+4 
+5 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_materialbase_8h">materialbase.h</link>&quot;</emphasis>
+6 
+7 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_r_t">RT</link>
+8 {
+9 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_class_r_t_1_1_simple_material">SimpleMaterial</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_class_r_t_1_1_material_base">MaterialBase</link>
+10 &#32;&#32;&#32;&#32;{
+11 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+12 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Konstruktor</emphasis>
+13 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_r_t_1_1_simple_material_1a1af9f0fb42b931218787ad09cc6a9f39">SimpleMaterial</link>();
+14 
+15 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Destruktor</emphasis>
+16 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_class_r_t_1_1_simple_material_1ae702de698964afca3cf1b9fc2dab493e">~SimpleMaterial</link>()&#32;<emphasis role="keyword">override</emphasis>;
+17 
+18 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Zwróć&#32;kolor&#32;obiektu</emphasis>
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_simple_material_1a27119202e1ef25225faa2b425bd681e4">ComputeColor</link>(&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;std::vector&lt;std::shared_ptr&lt;RT::ObjectBase&gt;&gt;&#32;&amp;objectList,
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;std::vector&lt;std::shared_ptr&lt;RT::LightBase&gt;&gt;&#32;&amp;lightList,
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;std::shared_ptr&lt;RT::ObjectBase&gt;&#32;&amp;currentObject,
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;intPoint,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;localNormal,
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_r_t_1_1_ray">RT::Ray</link>&#32;&amp;cameraRay)&#32;<emphasis role="keyword">override</emphasis>;
+24 
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Metoda&#32;do&#32;obliczania&#32;refleksów</emphasis>
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_simple_material_1aa64e1515ada26e975cdbcc42c2fe3042">ComputeSpecular</link>(&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;std::vector&lt;std::shared_ptr&lt;RT::ObjectBase&gt;&gt;&#32;&amp;objectList,
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;std::vector&lt;std::shared_ptr&lt;RT::LightBase&gt;&gt;&#32;&amp;lightList,
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;intPoint,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;localNormal,
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_r_t_1_1_ray">RT::Ray</link>&#32;&amp;cameraRay);
+30 
+31 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Kolor&#32;tworzywa</emphasis>
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_simple_material_1a62020aa0f4b5958f82ce958901a87bf4">m_baseColor</link>&#32;{std::vector&lt;double&gt;&#32;{1.0,&#32;0.0,&#32;1.0}};
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_class_r_t_1_1_simple_material_1a38611deb48380fd60c94e270064a66bc">m_reflectivity</link>&#32;=&#32;0.0;
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_class_r_t_1_1_simple_material_1a570216c81c930713e5c22f6b1b6f8e84">m_shininess</link>&#32;=&#32;0.0;
+36 &#32;&#32;&#32;&#32;};
+37 }
+38 
+39 
+40 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//RAYTRACING_SIMPLEMATERIAL_H</emphasis>
+</programlisting></section>

@@ -1,0 +1,89 @@
+.TH "D:/RayTracing/RayTrace/qbLinAlg/qbMatrix.h" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/RayTracing/RayTrace/qbLinAlg/qbMatrix.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdexcept>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <iomanip>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <exception>\fP
+.br
+\fC#include 'qbVector\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBqbMatrix2< T >\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<class T > \fBqbMatrix2\fP< T > \fBoperator+\fP (const \fBqbMatrix2\fP< T > &lhs, const \fBqbMatrix2\fP< T > &rhs)"
+.br
+.ti -1c
+.RI "template<class T > \fBqbMatrix2\fP< T > \fBoperator+\fP (const T &lhs, const \fBqbMatrix2\fP< T > &rhs)"
+.br
+.ti -1c
+.RI "template<class T > \fBqbMatrix2\fP< T > \fBoperator+\fP (const \fBqbMatrix2\fP< T > &lhs, const T &rhs)"
+.br
+.ti -1c
+.RI "template<class T > \fBqbMatrix2\fP< T > \fBoperator\-\fP (const \fBqbMatrix2\fP< T > &lhs, const \fBqbMatrix2\fP< T > &rhs)"
+.br
+.ti -1c
+.RI "template<class T > \fBqbMatrix2\fP< T > \fBoperator\-\fP (const T &lhs, const \fBqbMatrix2\fP< T > &rhs)"
+.br
+.ti -1c
+.RI "template<class T > \fBqbMatrix2\fP< T > \fBoperator\-\fP (const \fBqbMatrix2\fP< T > &lhs, const T &rhs)"
+.br
+.ti -1c
+.RI "template<class T > \fBqbVector\fP< T > \fBoperator*\fP (const \fBqbMatrix2\fP< T > &lhs, const \fBqbVector\fP< T > &rhs)"
+.br
+.ti -1c
+.RI "template<class T > \fBqbMatrix2\fP< T > \fBoperator*\fP (const T &lhs, const \fBqbMatrix2\fP< T > &rhs)"
+.br
+.ti -1c
+.RI "template<class T > \fBqbMatrix2\fP< T > \fBoperator*\fP (const \fBqbMatrix2\fP< T > &lhs, const T &rhs)"
+.br
+.ti -1c
+.RI "template<class T > \fBqbMatrix2\fP< T > \fBoperator*\fP (const \fBqbMatrix2\fP< T > &lhs, const \fBqbMatrix2\fP< T > &rhs)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "template<class T > \fBqbMatrix2\fP< T > operator* (const \fBqbMatrix2\fP< T > & lhs, const \fBqbMatrix2\fP< T > & rhs)"
+
+.SS "template<class T > \fBqbVector\fP< T > operator* (const \fBqbMatrix2\fP< T > & lhs, const \fBqbVector\fP< T > & rhs)"
+
+.SS "template<class T > \fBqbMatrix2\fP< T > operator* (const \fBqbMatrix2\fP< T > & lhs, const T & rhs)"
+
+.SS "template<class T > \fBqbMatrix2\fP< T > operator* (const T & lhs, const \fBqbMatrix2\fP< T > & rhs)"
+
+.SS "template<class T > \fBqbMatrix2\fP< T > operator+ (const \fBqbMatrix2\fP< T > & lhs, const \fBqbMatrix2\fP< T > & rhs)"
+
+.SS "template<class T > \fBqbMatrix2\fP< T > operator+ (const \fBqbMatrix2\fP< T > & lhs, const T & rhs)"
+
+.SS "template<class T > \fBqbMatrix2\fP< T > operator+ (const T & lhs, const \fBqbMatrix2\fP< T > & rhs)"
+
+.SS "template<class T > \fBqbMatrix2\fP< T > operator\- (const \fBqbMatrix2\fP< T > & lhs, const \fBqbMatrix2\fP< T > & rhs)"
+
+.SS "template<class T > \fBqbMatrix2\fP< T > operator\- (const \fBqbMatrix2\fP< T > & lhs, const T & rhs)"
+
+.SS "template<class T > \fBqbMatrix2\fP< T > operator\- (const T & lhs, const \fBqbMatrix2\fP< T > & rhs)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RayTracer from the source code\&.

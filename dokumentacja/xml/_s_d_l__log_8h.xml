@@ -1,0 +1,1453 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_s_d_l__log_8h" kind="file" language="C++">
+    <compoundname>SDL_log.h</compoundname>
+    <includes refid="_s_d_l__stdinc_8h" local="yes">SDL_stdinc.h</includes>
+    <includes refid="begin__code_8h" local="yes">begin_code.h</includes>
+    <includes refid="close__code_8h" local="yes">close_code.h</includes>
+    <includedby refid="_s_d_l_8h" local="yes">D:/RayTracing/include/SDL.h</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>SDL_config.h</label>
+        <link refid="_s_d_l__config_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/RayTracing/include/SDL_log.h</label>
+        <link refid="_s_d_l__log_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>SDL_platform.h</label>
+        <link refid="_s_d_l__platform_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SDL_stdinc.h</label>
+        <link refid="_s_d_l__stdinc_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>begin_code.h</label>
+        <link refid="begin__code_8h"/>
+      </node>
+      <node id="6">
+        <label>close_code.h</label>
+        <link refid="close__code_8h"/>
+      </node>
+      <node id="8">
+        <label>stdarg.h</label>
+      </node>
+      <node id="7">
+        <label>stddef.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>D:/RayTracing/CApp.cpp</label>
+        <link refid="_c_app_8cpp"/>
+      </node>
+      <node id="3">
+        <label>D:/RayTracing/CApp.h</label>
+        <link refid="_c_app_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>D:/RayTracing/RayTrace/Image.cpp</label>
+        <link refid="_image_8cpp"/>
+      </node>
+      <node id="6">
+        <label>D:/RayTracing/RayTrace/Image.h</label>
+        <link refid="_image_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>D:/RayTracing/RayTrace/Scene.cpp</label>
+        <link refid="_scene_8cpp"/>
+      </node>
+      <node id="8">
+        <label>D:/RayTracing/RayTrace/Scene.h</label>
+        <link refid="_scene_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>D:/RayTracing/RayTrace/Textures/textureimage.cpp</label>
+        <link refid="textureimage_8cpp"/>
+      </node>
+      <node id="10">
+        <label>D:/RayTracing/RayTrace/Textures/textureimage.h</label>
+        <link refid="textureimage_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>D:/RayTracing/include/SDL.h</label>
+        <link refid="_s_d_l_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/RayTracing/include/SDL_log.h</label>
+        <link refid="_s_d_l__log_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>D:/RayTracing/include/SDL_test.h</label>
+        <link refid="_s_d_l__test_8h"/>
+      </node>
+      <node id="13">
+        <label>D:/RayTracing/include/SDL_test_common.h</label>
+        <link refid="_s_d_l__test__common_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>D:/RayTracing/include/SDL_test_compare.h</label>
+        <link refid="_s_d_l__test__compare_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>D:/RayTracing/include/SDL_test_images.h</label>
+        <link refid="_s_d_l__test__images_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>D:/RayTracing/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_s_d_l__log_8h_1a06c6de264730f257cdba6188b6aaae12" prot="public" static="no">
+        <name>SDL_MAX_LOG_MESSAGE</name>
+        <initializer>4096</initializer>
+        <briefdescription>
+<para>The maximum size of a log message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Messages longer than the maximum size will be truncated </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_log.h" line="54" column="9" bodyfile="D:/RayTracing/include/SDL_log.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039d" prot="public" static="no" strong="no">
+        <type></type>
+        <name>SDL_LogCategory</name>
+        <enumvalue id="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039dad935a8d66d570a56f5602656bf5ab86f" prot="public">
+          <name>SDL_LOG_CATEGORY_APPLICATION</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da4f1ff7aab71e227c136cd79bdf4f95d7" prot="public">
+          <name>SDL_LOG_CATEGORY_ERROR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039daf4cea58981b24a0f46f42d331f903262" prot="public">
+          <name>SDL_LOG_CATEGORY_ASSERT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039daa003de08bde1c358f3337e0467d9d137" prot="public">
+          <name>SDL_LOG_CATEGORY_SYSTEM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039dadb323c0430f6f2c9ad01122c8e93e2e8" prot="public">
+          <name>SDL_LOG_CATEGORY_AUDIO</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039dafe90f10726bb6003c2be3774c2e6364e" prot="public">
+          <name>SDL_LOG_CATEGORY_VIDEO</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da64898138eb04f896c8dfdfc26c744f01" prot="public">
+          <name>SDL_LOG_CATEGORY_RENDER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da830125a18166ebf0f2be7322bbbc8023" prot="public">
+          <name>SDL_LOG_CATEGORY_INPUT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da835639e029589fca6bca492621aa50ca" prot="public">
+          <name>SDL_LOG_CATEGORY_TEST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da272bbcb6018cdf75f17e2735f61ea865" prot="public">
+          <name>SDL_LOG_CATEGORY_RESERVED1</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039daff302253b31dd0a7d1a77600e0c0002e" prot="public">
+          <name>SDL_LOG_CATEGORY_RESERVED2</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da8146d078adbd8ddaecd03189e05f3985" prot="public">
+          <name>SDL_LOG_CATEGORY_RESERVED3</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039dac029542e8e6a0fcfe875dd45ba57c4cf" prot="public">
+          <name>SDL_LOG_CATEGORY_RESERVED4</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da7cff610f08ff2d574a2a1c97540f41d1" prot="public">
+          <name>SDL_LOG_CATEGORY_RESERVED5</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da489fcde9c542f04d596bcf4ef89f5543" prot="public">
+          <name>SDL_LOG_CATEGORY_RESERVED6</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039daf23a00f3f22b1d783bd8fd34ca81a623" prot="public">
+          <name>SDL_LOG_CATEGORY_RESERVED7</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da3e1df5ba911ba1fe13d90e958da08197" prot="public">
+          <name>SDL_LOG_CATEGORY_RESERVED8</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da8b9783fc555d653f8a86e944ec5c8ecd" prot="public">
+          <name>SDL_LOG_CATEGORY_RESERVED9</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039daa18a8bb3b4281419c45368d4d3be87ce" prot="public">
+          <name>SDL_LOG_CATEGORY_RESERVED10</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da1d20eb92f25c3221dc1caefeb90e886c" prot="public">
+          <name>SDL_LOG_CATEGORY_CUSTOM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The predefined log categories. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>By default the application category is enabled at the INFO level, the assert category is enabled at the WARN level, test is enabled at the VERBOSE level and all other categories are enabled at the CRITICAL level. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_log.h" line="64" column="1" bodyfile="D:/RayTracing/include/SDL_log.h" bodystart="65" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="enum" id="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946" prot="public" static="no" strong="no">
+        <type></type>
+        <name>SDL_LogPriority</name>
+        <enumvalue id="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946a7332e05c3849e0e163a4f87c9c355197" prot="public">
+          <name>SDL_LOG_PRIORITY_VERBOSE</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946aaffb80b31616030c5be9c54d089bf700" prot="public">
+          <name>SDL_LOG_PRIORITY_DEBUG</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946a515f0b6ce5ae9a09c1cd57f0a9b78f2c" prot="public">
+          <name>SDL_LOG_PRIORITY_INFO</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946af3a97eb566d09e2c1faef406c587bf5b" prot="public">
+          <name>SDL_LOG_PRIORITY_WARN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946ae1dfd82ebd75e1b9fd437882ed5e319b" prot="public">
+          <name>SDL_LOG_PRIORITY_ERROR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946a66c3a67e6e152703bc986b8600b2e471" prot="public">
+          <name>SDL_LOG_PRIORITY_CRITICAL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946a3ccd64f96923e7168bcb731326abcd18" prot="public">
+          <name>SDL_NUM_LOG_PRIORITIES</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The predefined log priorities. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_log.h" line="102" column="1" bodyfile="D:/RayTracing/include/SDL_log.h" bodystart="103" bodyend="111"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_s_d_l__log_8h_1a11c2a5b3bbfd910cf18fbc70cf513e24" prot="public" static="no">
+        <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref>(<ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref> *</type>
+        <definition>typedef void(SDLCALL * SDL_LogOutputFunction) (void *userdata, int category, SDL_LogPriority priority, const char *message)</definition>
+        <argsstring>)(void *userdata, int category, SDL_LogPriority priority, const char *message)</argsstring>
+        <name>SDL_LogOutputFunction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The prototype for the log output callback function.</para>
+<para>This function is called by SDL when there is new text to be logged.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>userdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>what was passed as <computeroutput>userdata</computeroutput> to <ref refid="_s_d_l__log_8h_1a229eb1fdf797f548b20ee98ca8acaac6" kindref="member">SDL_LogSetOutputFunction()</ref> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>category</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the category of the message </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>priority</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the priority of the message </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the message being output </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_log.h" line="367" column="9" bodyfile="D:/RayTracing/include/SDL_log.h" bodystart="367" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_s_d_l__log_8h_1a8f54656094d10994fdb5399f271906ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC void SDLCALL SDL_LogSetAllPriority</definition>
+        <argsstring>(SDL_LogPriority priority)</argsstring>
+        <name>SDL_LogSetAllPriority</name>
+        <param>
+          <type><ref refid="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946" kindref="member">SDL_LogPriority</ref></type>
+          <declname>priority</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the priority of all log categories.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>priority</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the SDL_LogPriority to assign</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a9a4809ac7942e029d0bf17f380d23f73" kindref="member">SDL_LogSetPriority</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_log.h" line="123" column="30" declfile="D:/RayTracing/include/SDL_log.h" declline="123" declcolumn="30"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__log_8h_1a9a4809ac7942e029d0bf17f380d23f73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC void SDLCALL SDL_LogSetPriority</definition>
+        <argsstring>(int category, SDL_LogPriority priority)</argsstring>
+        <name>SDL_LogSetPriority</name>
+        <param>
+          <type>int</type>
+          <declname>category</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946" kindref="member">SDL_LogPriority</ref></type>
+          <declname>priority</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set the priority of a particular log category.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>category</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the category to assign a priority to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>priority</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the SDL_LogPriority to assign</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a26f0cff24dadd97d09808b6aaad3f5f4" kindref="member">SDL_LogGetPriority</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a8f54656094d10994fdb5399f271906ef" kindref="member">SDL_LogSetAllPriority</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_log.h" line="136" column="30" declfile="D:/RayTracing/include/SDL_log.h" declline="136" declcolumn="30"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__log_8h_1a26f0cff24dadd97d09808b6aaad3f5f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946" kindref="member">SDL_LogPriority</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC SDL_LogPriority SDLCALL SDL_LogGetPriority</definition>
+        <argsstring>(int category)</argsstring>
+        <name>SDL_LogGetPriority</name>
+        <param>
+          <type>int</type>
+          <declname>category</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the priority of a particular log category.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>category</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the category to query </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the SDL_LogPriority for the requested category</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a9a4809ac7942e029d0bf17f380d23f73" kindref="member">SDL_LogSetPriority</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_log.h" line="149" column="41" declfile="D:/RayTracing/include/SDL_log.h" declline="149" declcolumn="41"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__log_8h_1acf17b4ea6a83e308c815fd4d50544eba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC void SDLCALL SDL_LogResetPriorities</definition>
+        <argsstring>(void)</argsstring>
+        <name>SDL_LogResetPriorities</name>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reset all priorities to default.</para>
+<para>This is called by <ref refid="_s_d_l_8h_1afdabaf714781099083592051f2d9ac11" kindref="member">SDL_Quit()</ref>.</para>
+<para><simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a8f54656094d10994fdb5399f271906ef" kindref="member">SDL_LogSetAllPriority</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a9a4809ac7942e029d0bf17f380d23f73" kindref="member">SDL_LogSetPriority</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_log.h" line="161" column="30" declfile="D:/RayTracing/include/SDL_log.h" declline="161" declcolumn="30"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__log_8h_1a712dc42164c67b7f9e23dc0e3b15bd92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC void SDLCALL SDL_Log</definition>
+        <argsstring>(SDL_PRINTF_FORMAT_STRING const char *fmt,...) SDL_PRINTF_VARARG_FUNC(1)</argsstring>
+        <name>SDL_Log</name>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb" kindref="member">SDL_PRINTF_FORMAT_STRING</ref> const char *</type>
+          <declname>fmt</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Log a message with SDL_LOG_CATEGORY_APPLICATION and SDL_LOG_PRIORITY_INFO.</para>
+<para>= *<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fmt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a printf() style message format string</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>additional parameters matching % tokens in the <computeroutput>fmt</computeroutput> string, if any</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a3600cf500a030f892d41a61d9d30de19" kindref="member">SDL_LogCritical</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a0749fe47180b98c04bd82aca7235d703" kindref="member">SDL_LogDebug</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1acabe956be51b7a4c877dbfcb0489a02f" kindref="member">SDL_LogError</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a81c8956ea1a84ad325c3f5ecd2094515" kindref="member">SDL_LogInfo</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a7fcfeca9c95069b6432bf1cdb01d0ba4" kindref="member">SDL_LogMessage</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a2cacafd4d8e6d258da40e97a3cb3f80b" kindref="member">SDL_LogMessageV</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a34a7d9211a9ced1c1a6db4be0f3fbb7e" kindref="member">SDL_LogVerbose</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a91a7a09fec470638f028138626b3d126" kindref="member">SDL_LogWarn</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_log.h" line="182" column="30" declfile="D:/RayTracing/include/SDL_log.h" declline="182" declcolumn="30"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__log_8h_1a34a7d9211a9ced1c1a6db4be0f3fbb7e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC void SDLCALL SDL_LogVerbose</definition>
+        <argsstring>(int category, SDL_PRINTF_FORMAT_STRING const char *fmt,...) SDL_PRINTF_VARARG_FUNC(2)</argsstring>
+        <name>SDL_LogVerbose</name>
+        <param>
+          <type>int</type>
+          <declname>category</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb" kindref="member">SDL_PRINTF_FORMAT_STRING</ref> const char *</type>
+          <declname>fmt</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Log a message with SDL_LOG_PRIORITY_VERBOSE.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>category</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the category of the message </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fmt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a printf() style message format string </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>additional parameters matching % tokens in the <bold>fmt</bold> string, if any</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a712dc42164c67b7f9e23dc0e3b15bd92" kindref="member">SDL_Log</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a3600cf500a030f892d41a61d9d30de19" kindref="member">SDL_LogCritical</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a0749fe47180b98c04bd82aca7235d703" kindref="member">SDL_LogDebug</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1acabe956be51b7a4c877dbfcb0489a02f" kindref="member">SDL_LogError</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a81c8956ea1a84ad325c3f5ecd2094515" kindref="member">SDL_LogInfo</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a7fcfeca9c95069b6432bf1cdb01d0ba4" kindref="member">SDL_LogMessage</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a2cacafd4d8e6d258da40e97a3cb3f80b" kindref="member">SDL_LogMessageV</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a91a7a09fec470638f028138626b3d126" kindref="member">SDL_LogWarn</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_log.h" line="203" column="30" declfile="D:/RayTracing/include/SDL_log.h" declline="203" declcolumn="30"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__log_8h_1a0749fe47180b98c04bd82aca7235d703" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC void SDLCALL SDL_LogDebug</definition>
+        <argsstring>(int category, SDL_PRINTF_FORMAT_STRING const char *fmt,...) SDL_PRINTF_VARARG_FUNC(2)</argsstring>
+        <name>SDL_LogDebug</name>
+        <param>
+          <type>int</type>
+          <declname>category</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb" kindref="member">SDL_PRINTF_FORMAT_STRING</ref> const char *</type>
+          <declname>fmt</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Log a message with SDL_LOG_PRIORITY_DEBUG.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>category</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the category of the message </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fmt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a printf() style message format string </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>additional parameters matching % tokens in the <bold>fmt</bold> string, if any</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a712dc42164c67b7f9e23dc0e3b15bd92" kindref="member">SDL_Log</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a3600cf500a030f892d41a61d9d30de19" kindref="member">SDL_LogCritical</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1acabe956be51b7a4c877dbfcb0489a02f" kindref="member">SDL_LogError</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a81c8956ea1a84ad325c3f5ecd2094515" kindref="member">SDL_LogInfo</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a7fcfeca9c95069b6432bf1cdb01d0ba4" kindref="member">SDL_LogMessage</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a2cacafd4d8e6d258da40e97a3cb3f80b" kindref="member">SDL_LogMessageV</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a34a7d9211a9ced1c1a6db4be0f3fbb7e" kindref="member">SDL_LogVerbose</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a91a7a09fec470638f028138626b3d126" kindref="member">SDL_LogWarn</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_log.h" line="224" column="30" declfile="D:/RayTracing/include/SDL_log.h" declline="224" declcolumn="30"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__log_8h_1a81c8956ea1a84ad325c3f5ecd2094515" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC void SDLCALL SDL_LogInfo</definition>
+        <argsstring>(int category, SDL_PRINTF_FORMAT_STRING const char *fmt,...) SDL_PRINTF_VARARG_FUNC(2)</argsstring>
+        <name>SDL_LogInfo</name>
+        <param>
+          <type>int</type>
+          <declname>category</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb" kindref="member">SDL_PRINTF_FORMAT_STRING</ref> const char *</type>
+          <declname>fmt</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Log a message with SDL_LOG_PRIORITY_INFO.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>category</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the category of the message </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fmt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a printf() style message format string </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>additional parameters matching % tokens in the <bold>fmt</bold> string, if any</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a712dc42164c67b7f9e23dc0e3b15bd92" kindref="member">SDL_Log</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a3600cf500a030f892d41a61d9d30de19" kindref="member">SDL_LogCritical</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a0749fe47180b98c04bd82aca7235d703" kindref="member">SDL_LogDebug</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1acabe956be51b7a4c877dbfcb0489a02f" kindref="member">SDL_LogError</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a7fcfeca9c95069b6432bf1cdb01d0ba4" kindref="member">SDL_LogMessage</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a2cacafd4d8e6d258da40e97a3cb3f80b" kindref="member">SDL_LogMessageV</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a34a7d9211a9ced1c1a6db4be0f3fbb7e" kindref="member">SDL_LogVerbose</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a91a7a09fec470638f028138626b3d126" kindref="member">SDL_LogWarn</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_log.h" line="245" column="30" declfile="D:/RayTracing/include/SDL_log.h" declline="245" declcolumn="30"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__log_8h_1a91a7a09fec470638f028138626b3d126" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC void SDLCALL SDL_LogWarn</definition>
+        <argsstring>(int category, SDL_PRINTF_FORMAT_STRING const char *fmt,...) SDL_PRINTF_VARARG_FUNC(2)</argsstring>
+        <name>SDL_LogWarn</name>
+        <param>
+          <type>int</type>
+          <declname>category</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb" kindref="member">SDL_PRINTF_FORMAT_STRING</ref> const char *</type>
+          <declname>fmt</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Log a message with SDL_LOG_PRIORITY_WARN.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>category</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the category of the message </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fmt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a printf() style message format string </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>additional parameters matching % tokens in the <bold>fmt</bold> string, if any</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a712dc42164c67b7f9e23dc0e3b15bd92" kindref="member">SDL_Log</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a3600cf500a030f892d41a61d9d30de19" kindref="member">SDL_LogCritical</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a0749fe47180b98c04bd82aca7235d703" kindref="member">SDL_LogDebug</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1acabe956be51b7a4c877dbfcb0489a02f" kindref="member">SDL_LogError</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a81c8956ea1a84ad325c3f5ecd2094515" kindref="member">SDL_LogInfo</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a7fcfeca9c95069b6432bf1cdb01d0ba4" kindref="member">SDL_LogMessage</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a2cacafd4d8e6d258da40e97a3cb3f80b" kindref="member">SDL_LogMessageV</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a34a7d9211a9ced1c1a6db4be0f3fbb7e" kindref="member">SDL_LogVerbose</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_log.h" line="266" column="30" declfile="D:/RayTracing/include/SDL_log.h" declline="266" declcolumn="30"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__log_8h_1acabe956be51b7a4c877dbfcb0489a02f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC void SDLCALL SDL_LogError</definition>
+        <argsstring>(int category, SDL_PRINTF_FORMAT_STRING const char *fmt,...) SDL_PRINTF_VARARG_FUNC(2)</argsstring>
+        <name>SDL_LogError</name>
+        <param>
+          <type>int</type>
+          <declname>category</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb" kindref="member">SDL_PRINTF_FORMAT_STRING</ref> const char *</type>
+          <declname>fmt</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Log a message with SDL_LOG_PRIORITY_ERROR.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>category</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the category of the message </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fmt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a printf() style message format string </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>additional parameters matching % tokens in the <bold>fmt</bold> string, if any</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a712dc42164c67b7f9e23dc0e3b15bd92" kindref="member">SDL_Log</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a3600cf500a030f892d41a61d9d30de19" kindref="member">SDL_LogCritical</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a0749fe47180b98c04bd82aca7235d703" kindref="member">SDL_LogDebug</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a81c8956ea1a84ad325c3f5ecd2094515" kindref="member">SDL_LogInfo</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a7fcfeca9c95069b6432bf1cdb01d0ba4" kindref="member">SDL_LogMessage</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a2cacafd4d8e6d258da40e97a3cb3f80b" kindref="member">SDL_LogMessageV</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a34a7d9211a9ced1c1a6db4be0f3fbb7e" kindref="member">SDL_LogVerbose</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a91a7a09fec470638f028138626b3d126" kindref="member">SDL_LogWarn</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_log.h" line="287" column="30" declfile="D:/RayTracing/include/SDL_log.h" declline="287" declcolumn="30"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__log_8h_1a3600cf500a030f892d41a61d9d30de19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC void SDLCALL SDL_LogCritical</definition>
+        <argsstring>(int category, SDL_PRINTF_FORMAT_STRING const char *fmt,...) SDL_PRINTF_VARARG_FUNC(2)</argsstring>
+        <name>SDL_LogCritical</name>
+        <param>
+          <type>int</type>
+          <declname>category</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb" kindref="member">SDL_PRINTF_FORMAT_STRING</ref> const char *</type>
+          <declname>fmt</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Log a message with SDL_LOG_PRIORITY_CRITICAL.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>category</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the category of the message </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fmt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a printf() style message format string </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>additional parameters matching % tokens in the <bold>fmt</bold> string, if any</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a712dc42164c67b7f9e23dc0e3b15bd92" kindref="member">SDL_Log</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a0749fe47180b98c04bd82aca7235d703" kindref="member">SDL_LogDebug</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1acabe956be51b7a4c877dbfcb0489a02f" kindref="member">SDL_LogError</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a81c8956ea1a84ad325c3f5ecd2094515" kindref="member">SDL_LogInfo</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a7fcfeca9c95069b6432bf1cdb01d0ba4" kindref="member">SDL_LogMessage</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a2cacafd4d8e6d258da40e97a3cb3f80b" kindref="member">SDL_LogMessageV</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a34a7d9211a9ced1c1a6db4be0f3fbb7e" kindref="member">SDL_LogVerbose</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a91a7a09fec470638f028138626b3d126" kindref="member">SDL_LogWarn</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_log.h" line="308" column="30" declfile="D:/RayTracing/include/SDL_log.h" declline="308" declcolumn="30"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__log_8h_1a7fcfeca9c95069b6432bf1cdb01d0ba4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC void SDLCALL SDL_LogMessage</definition>
+        <argsstring>(int category, SDL_LogPriority priority, SDL_PRINTF_FORMAT_STRING const char *fmt,...) SDL_PRINTF_VARARG_FUNC(3)</argsstring>
+        <name>SDL_LogMessage</name>
+        <param>
+          <type>int</type>
+          <declname>category</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946" kindref="member">SDL_LogPriority</ref></type>
+          <declname>priority</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb" kindref="member">SDL_PRINTF_FORMAT_STRING</ref> const char *</type>
+          <declname>fmt</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Log a message with the specified category and priority.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>category</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the category of the message </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>priority</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the priority of the message </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fmt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a printf() style message format string </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>additional parameters matching % tokens in the <bold>fmt</bold> string, if any</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a712dc42164c67b7f9e23dc0e3b15bd92" kindref="member">SDL_Log</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a3600cf500a030f892d41a61d9d30de19" kindref="member">SDL_LogCritical</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a0749fe47180b98c04bd82aca7235d703" kindref="member">SDL_LogDebug</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1acabe956be51b7a4c877dbfcb0489a02f" kindref="member">SDL_LogError</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a81c8956ea1a84ad325c3f5ecd2094515" kindref="member">SDL_LogInfo</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a2cacafd4d8e6d258da40e97a3cb3f80b" kindref="member">SDL_LogMessageV</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a34a7d9211a9ced1c1a6db4be0f3fbb7e" kindref="member">SDL_LogVerbose</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a91a7a09fec470638f028138626b3d126" kindref="member">SDL_LogWarn</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_log.h" line="330" column="30" declfile="D:/RayTracing/include/SDL_log.h" declline="330" declcolumn="30"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__log_8h_1a2cacafd4d8e6d258da40e97a3cb3f80b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC void SDLCALL SDL_LogMessageV</definition>
+        <argsstring>(int category, SDL_LogPriority priority, const char *fmt, va_list ap)</argsstring>
+        <name>SDL_LogMessageV</name>
+        <param>
+          <type>int</type>
+          <declname>category</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946" kindref="member">SDL_LogPriority</ref></type>
+          <declname>priority</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>fmt</declname>
+        </param>
+        <param>
+          <type>va_list</type>
+          <declname>ap</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Log a message with the specified category and priority.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>category</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the category of the message </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>priority</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the priority of the message </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fmt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a printf() style message format string </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a variable argument list</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a712dc42164c67b7f9e23dc0e3b15bd92" kindref="member">SDL_Log</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a3600cf500a030f892d41a61d9d30de19" kindref="member">SDL_LogCritical</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a0749fe47180b98c04bd82aca7235d703" kindref="member">SDL_LogDebug</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1acabe956be51b7a4c877dbfcb0489a02f" kindref="member">SDL_LogError</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a81c8956ea1a84ad325c3f5ecd2094515" kindref="member">SDL_LogInfo</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a7fcfeca9c95069b6432bf1cdb01d0ba4" kindref="member">SDL_LogMessage</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a34a7d9211a9ced1c1a6db4be0f3fbb7e" kindref="member">SDL_LogVerbose</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a91a7a09fec470638f028138626b3d126" kindref="member">SDL_LogWarn</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_log.h" line="353" column="30" declfile="D:/RayTracing/include/SDL_log.h" declline="353" declcolumn="30"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__log_8h_1a074ce8cf644b09454ec112084f9f399e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC void SDLCALL SDL_LogGetOutputFunction</definition>
+        <argsstring>(SDL_LogOutputFunction *callback, void **userdata)</argsstring>
+        <name>SDL_LogGetOutputFunction</name>
+        <param>
+          <type><ref refid="_s_d_l__log_8h_1a11c2a5b3bbfd910cf18fbc70cf513e24" kindref="member">SDL_LogOutputFunction</ref> *</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> **</type>
+          <declname>userdata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the current log output function.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an SDL_LogOutputFunction filled in with the current log callback </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>userdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer filled in with the pointer that is passed to <computeroutput>callback</computeroutput></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a229eb1fdf797f548b20ee98ca8acaac6" kindref="member">SDL_LogSetOutputFunction</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_log.h" line="381" column="30" declfile="D:/RayTracing/include/SDL_log.h" declline="381" declcolumn="30"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__log_8h_1a229eb1fdf797f548b20ee98ca8acaac6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC void SDLCALL SDL_LogSetOutputFunction</definition>
+        <argsstring>(SDL_LogOutputFunction callback, void *userdata)</argsstring>
+        <name>SDL_LogSetOutputFunction</name>
+        <param>
+          <type><ref refid="_s_d_l__log_8h_1a11c2a5b3bbfd910cf18fbc70cf513e24" kindref="member">SDL_LogOutputFunction</ref></type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> *</type>
+          <declname>userdata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Replace the default log output function with one of your own.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an SDL_LogOutputFunction to call instead of the default </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>userdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer that is passed to <computeroutput>callback</computeroutput></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__log_8h_1a074ce8cf644b09454ec112084f9f399e" kindref="member">SDL_LogGetOutputFunction</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_log.h" line="393" column="30" declfile="D:/RayTracing/include/SDL_log.h" declline="393" declcolumn="30"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Simple log messages with categories and priorities.</para>
+<para>By default logs are quiet, but if you&apos;re debugging SDL you might want: <verbatim>SDL_LogSetAllPriority(SDL_LOG_PRIORITY_WARN);
+</verbatim> Here&apos;s where the messages go on different platforms: Windows: debug output stream Android: log output Others: standard error output (stderr) </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/>Simple<sp/>DirectMedia<sp/>Layer</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/>Copyright<sp/>(C)<sp/>1997-2022<sp/>Sam<sp/>Lantinga<sp/>&lt;slouken@libsdl.org&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/>This<sp/>software<sp/>is<sp/>provided<sp/>&apos;as-is&apos;,<sp/>without<sp/>any<sp/>express<sp/>or<sp/>implied</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/>warranty.<sp/><sp/>In<sp/>no<sp/>event<sp/>will<sp/>the<sp/>authors<sp/>be<sp/>held<sp/>liable<sp/>for<sp/>any<sp/>damages</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/>arising<sp/>from<sp/>the<sp/>use<sp/>of<sp/>this<sp/>software.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/>Permission<sp/>is<sp/>granted<sp/>to<sp/>anyone<sp/>to<sp/>use<sp/>this<sp/>software<sp/>for<sp/>any<sp/>purpose,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/>including<sp/>commercial<sp/>applications,<sp/>and<sp/>to<sp/>alter<sp/>it<sp/>and<sp/>redistribute<sp/>it</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/>freely,<sp/>subject<sp/>to<sp/>the<sp/>following<sp/>restrictions:</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"></highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/>1.<sp/>The<sp/>origin<sp/>of<sp/>this<sp/>software<sp/>must<sp/>not<sp/>be<sp/>misrepresented;<sp/>you<sp/>must<sp/>not</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>claim<sp/>that<sp/>you<sp/>wrote<sp/>the<sp/>original<sp/>software.<sp/>If<sp/>you<sp/>use<sp/>this<sp/>software</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>in<sp/>a<sp/>product,<sp/>an<sp/>acknowledgment<sp/>in<sp/>the<sp/>product<sp/>documentation<sp/>would<sp/>be</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>appreciated<sp/>but<sp/>is<sp/>not<sp/>required.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/>2.<sp/>Altered<sp/>source<sp/>versions<sp/>must<sp/>be<sp/>plainly<sp/>marked<sp/>as<sp/>such,<sp/>and<sp/>must<sp/>not<sp/>be</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>misrepresented<sp/>as<sp/>being<sp/>the<sp/>original<sp/>software.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/>3.<sp/>This<sp/>notice<sp/>may<sp/>not<sp/>be<sp/>removed<sp/>or<sp/>altered<sp/>from<sp/>any<sp/>source<sp/>distribution.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SDL_log_h_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_log_h_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_s_d_l__stdinc_8h" kindref="compound">SDL_stdinc.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="begin__code_8h" kindref="compound">begin_code.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Set<sp/>up<sp/>for<sp/>C<sp/>function<sp/>definitions,<sp/>even<sp/>when<sp/>using<sp/>C++<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="_s_d_l__log_8h_1a06c6de264730f257cdba6188b6aaae12" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_MAX_LOG_MESSAGE<sp/>4096</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="66" refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039dad935a8d66d570a56f5602656bf5ab86f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039dad935a8d66d570a56f5602656bf5ab86f" kindref="member">SDL_LOG_CATEGORY_APPLICATION</ref>,</highlight></codeline>
+<codeline lineno="67" refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da4f1ff7aab71e227c136cd79bdf4f95d7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da4f1ff7aab71e227c136cd79bdf4f95d7" kindref="member">SDL_LOG_CATEGORY_ERROR</ref>,</highlight></codeline>
+<codeline lineno="68" refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039daf4cea58981b24a0f46f42d331f903262" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039daf4cea58981b24a0f46f42d331f903262" kindref="member">SDL_LOG_CATEGORY_ASSERT</ref>,</highlight></codeline>
+<codeline lineno="69" refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039daa003de08bde1c358f3337e0467d9d137" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039daa003de08bde1c358f3337e0467d9d137" kindref="member">SDL_LOG_CATEGORY_SYSTEM</ref>,</highlight></codeline>
+<codeline lineno="70" refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039dadb323c0430f6f2c9ad01122c8e93e2e8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039dadb323c0430f6f2c9ad01122c8e93e2e8" kindref="member">SDL_LOG_CATEGORY_AUDIO</ref>,</highlight></codeline>
+<codeline lineno="71" refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039dafe90f10726bb6003c2be3774c2e6364e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039dafe90f10726bb6003c2be3774c2e6364e" kindref="member">SDL_LOG_CATEGORY_VIDEO</ref>,</highlight></codeline>
+<codeline lineno="72" refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da64898138eb04f896c8dfdfc26c744f01" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da64898138eb04f896c8dfdfc26c744f01" kindref="member">SDL_LOG_CATEGORY_RENDER</ref>,</highlight></codeline>
+<codeline lineno="73" refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da830125a18166ebf0f2be7322bbbc8023" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da830125a18166ebf0f2be7322bbbc8023" kindref="member">SDL_LOG_CATEGORY_INPUT</ref>,</highlight></codeline>
+<codeline lineno="74" refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da835639e029589fca6bca492621aa50ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da835639e029589fca6bca492621aa50ca" kindref="member">SDL_LOG_CATEGORY_TEST</ref>,</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Reserved<sp/>for<sp/>future<sp/>SDL<sp/>library<sp/>use<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da272bbcb6018cdf75f17e2735f61ea865" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da272bbcb6018cdf75f17e2735f61ea865" kindref="member">SDL_LOG_CATEGORY_RESERVED1</ref>,</highlight></codeline>
+<codeline lineno="78" refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039daff302253b31dd0a7d1a77600e0c0002e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039daff302253b31dd0a7d1a77600e0c0002e" kindref="member">SDL_LOG_CATEGORY_RESERVED2</ref>,</highlight></codeline>
+<codeline lineno="79" refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da8146d078adbd8ddaecd03189e05f3985" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da8146d078adbd8ddaecd03189e05f3985" kindref="member">SDL_LOG_CATEGORY_RESERVED3</ref>,</highlight></codeline>
+<codeline lineno="80" refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039dac029542e8e6a0fcfe875dd45ba57c4cf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039dac029542e8e6a0fcfe875dd45ba57c4cf" kindref="member">SDL_LOG_CATEGORY_RESERVED4</ref>,</highlight></codeline>
+<codeline lineno="81" refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da7cff610f08ff2d574a2a1c97540f41d1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da7cff610f08ff2d574a2a1c97540f41d1" kindref="member">SDL_LOG_CATEGORY_RESERVED5</ref>,</highlight></codeline>
+<codeline lineno="82" refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da489fcde9c542f04d596bcf4ef89f5543" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da489fcde9c542f04d596bcf4ef89f5543" kindref="member">SDL_LOG_CATEGORY_RESERVED6</ref>,</highlight></codeline>
+<codeline lineno="83" refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039daf23a00f3f22b1d783bd8fd34ca81a623" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039daf23a00f3f22b1d783bd8fd34ca81a623" kindref="member">SDL_LOG_CATEGORY_RESERVED7</ref>,</highlight></codeline>
+<codeline lineno="84" refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da3e1df5ba911ba1fe13d90e958da08197" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da3e1df5ba911ba1fe13d90e958da08197" kindref="member">SDL_LOG_CATEGORY_RESERVED8</ref>,</highlight></codeline>
+<codeline lineno="85" refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da8b9783fc555d653f8a86e944ec5c8ecd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da8b9783fc555d653f8a86e944ec5c8ecd" kindref="member">SDL_LOG_CATEGORY_RESERVED9</ref>,</highlight></codeline>
+<codeline lineno="86" refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039daa18a8bb3b4281419c45368d4d3be87ce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039daa18a8bb3b4281419c45368d4d3be87ce" kindref="member">SDL_LOG_CATEGORY_RESERVED10</ref>,</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Beyond<sp/>this<sp/>point<sp/>is<sp/>reserved<sp/>for<sp/>application<sp/>use,<sp/>e.g.</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enum<sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MYAPP_CATEGORY_AWESOME1<sp/>=<sp/>SDL_LOG_CATEGORY_CUSTOM,</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MYAPP_CATEGORY_AWESOME2,</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MYAPP_CATEGORY_AWESOME3,</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da1d20eb92f25c3221dc1caefeb90e886c" kindref="member">SDL_LOG_CATEGORY_CUSTOM</ref></highlight></codeline>
+<codeline lineno="97" refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039da1d20eb92f25c3221dc1caefeb90e886c" refkind="member"><highlight class="normal">}<sp/><ref refid="_s_d_l__log_8h_1ad221d23d6438fe99a781fb04b118039d" kindref="member">SDL_LogCategory</ref>;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="104" refid="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946a7332e05c3849e0e163a4f87c9c355197" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946a7332e05c3849e0e163a4f87c9c355197" kindref="member">SDL_LOG_PRIORITY_VERBOSE</ref><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="105" refid="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946aaffb80b31616030c5be9c54d089bf700" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946aaffb80b31616030c5be9c54d089bf700" kindref="member">SDL_LOG_PRIORITY_DEBUG</ref>,</highlight></codeline>
+<codeline lineno="106" refid="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946a515f0b6ce5ae9a09c1cd57f0a9b78f2c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946a515f0b6ce5ae9a09c1cd57f0a9b78f2c" kindref="member">SDL_LOG_PRIORITY_INFO</ref>,</highlight></codeline>
+<codeline lineno="107" refid="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946af3a97eb566d09e2c1faef406c587bf5b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946af3a97eb566d09e2c1faef406c587bf5b" kindref="member">SDL_LOG_PRIORITY_WARN</ref>,</highlight></codeline>
+<codeline lineno="108" refid="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946ae1dfd82ebd75e1b9fd437882ed5e319b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946ae1dfd82ebd75e1b9fd437882ed5e319b" kindref="member">SDL_LOG_PRIORITY_ERROR</ref>,</highlight></codeline>
+<codeline lineno="109" refid="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946a66c3a67e6e152703bc986b8600b2e471" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946a66c3a67e6e152703bc986b8600b2e471" kindref="member">SDL_LOG_PRIORITY_CRITICAL</ref>,</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946a3ccd64f96923e7168bcb731326abcd18" kindref="member">SDL_NUM_LOG_PRIORITIES</ref></highlight></codeline>
+<codeline lineno="111" refid="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946a3ccd64f96923e7168bcb731326abcd18" refkind="member"><highlight class="normal">}<sp/><ref refid="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946" kindref="member">SDL_LogPriority</ref>;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123" refid="_s_d_l__log_8h_1a8f54656094d10994fdb5399f271906ef" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__log_8h_1a8f54656094d10994fdb5399f271906ef" kindref="member">SDL_LogSetAllPriority</ref>(<ref refid="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946" kindref="member">SDL_LogPriority</ref><sp/>priority);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136" refid="_s_d_l__log_8h_1a9a4809ac7942e029d0bf17f380d23f73" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__log_8h_1a9a4809ac7942e029d0bf17f380d23f73" kindref="member">SDL_LogSetPriority</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>category,</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946" kindref="member">SDL_LogPriority</ref><sp/>priority);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="_s_d_l__log_8h_1a26f0cff24dadd97d09808b6aaad3f5f4" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/><ref refid="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946" kindref="member">SDL_LogPriority</ref><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__log_8h_1a26f0cff24dadd97d09808b6aaad3f5f4" kindref="member">SDL_LogGetPriority</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>category);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161" refid="_s_d_l__log_8h_1acf17b4ea6a83e308c815fd4d50544eba" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__log_8h_1acf17b4ea6a83e308c815fd4d50544eba" kindref="member">SDL_LogResetPriorities</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182" refid="_s_d_l__log_8h_1a712dc42164c67b7f9e23dc0e3b15bd92" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__log_8h_1a712dc42164c67b7f9e23dc0e3b15bd92" kindref="member">SDL_Log</ref>(<ref refid="_s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb" kindref="member">SDL_PRINTF_FORMAT_STRING</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*fmt,<sp/>...)<sp/><ref refid="_s_d_l__stdinc_8h_1ab974676e45d9edeef6598d601d4fdd6a" kindref="member">SDL_PRINTF_VARARG_FUNC</ref>(1);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203" refid="_s_d_l__log_8h_1a34a7d9211a9ced1c1a6db4be0f3fbb7e" refkind="member"><highlight class="normal">extern<sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__log_8h_1a34a7d9211a9ced1c1a6db4be0f3fbb7e" kindref="member">SDL_LogVerbose</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>category,<sp/><ref refid="_s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb" kindref="member">SDL_PRINTF_FORMAT_STRING</ref><sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*fmt,<sp/>...)<sp/><ref refid="_s_d_l__stdinc_8h_1ab974676e45d9edeef6598d601d4fdd6a" kindref="member">SDL_PRINTF_VARARG_FUNC</ref>(2);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224" refid="_s_d_l__log_8h_1a0749fe47180b98c04bd82aca7235d703" refkind="member"><highlight class="normal">extern<sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__log_8h_1a0749fe47180b98c04bd82aca7235d703" kindref="member">SDL_LogDebug</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>category,<sp/><ref refid="_s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb" kindref="member">SDL_PRINTF_FORMAT_STRING</ref><sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*fmt,<sp/>...)<sp/><ref refid="_s_d_l__stdinc_8h_1ab974676e45d9edeef6598d601d4fdd6a" kindref="member">SDL_PRINTF_VARARG_FUNC</ref>(2);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245" refid="_s_d_l__log_8h_1a81c8956ea1a84ad325c3f5ecd2094515" refkind="member"><highlight class="normal">extern<sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__log_8h_1a81c8956ea1a84ad325c3f5ecd2094515" kindref="member">SDL_LogInfo</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>category,<sp/><ref refid="_s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb" kindref="member">SDL_PRINTF_FORMAT_STRING</ref><sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*fmt,<sp/>...)<sp/><ref refid="_s_d_l__stdinc_8h_1ab974676e45d9edeef6598d601d4fdd6a" kindref="member">SDL_PRINTF_VARARG_FUNC</ref>(2);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266" refid="_s_d_l__log_8h_1a91a7a09fec470638f028138626b3d126" refkind="member"><highlight class="normal">extern<sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__log_8h_1a91a7a09fec470638f028138626b3d126" kindref="member">SDL_LogWarn</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>category,<sp/><ref refid="_s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb" kindref="member">SDL_PRINTF_FORMAT_STRING</ref><sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*fmt,<sp/>...)<sp/><ref refid="_s_d_l__stdinc_8h_1ab974676e45d9edeef6598d601d4fdd6a" kindref="member">SDL_PRINTF_VARARG_FUNC</ref>(2);</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="287" refid="_s_d_l__log_8h_1acabe956be51b7a4c877dbfcb0489a02f" refkind="member"><highlight class="normal">extern<sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__log_8h_1acabe956be51b7a4c877dbfcb0489a02f" kindref="member">SDL_LogError</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>category,<sp/><ref refid="_s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb" kindref="member">SDL_PRINTF_FORMAT_STRING</ref><sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*fmt,<sp/>...)<sp/><ref refid="_s_d_l__stdinc_8h_1ab974676e45d9edeef6598d601d4fdd6a" kindref="member">SDL_PRINTF_VARARG_FUNC</ref>(2);</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight></codeline>
+<codeline lineno="308" refid="_s_d_l__log_8h_1a3600cf500a030f892d41a61d9d30de19" refkind="member"><highlight class="normal">extern<sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__log_8h_1a3600cf500a030f892d41a61d9d30de19" kindref="member">SDL_LogCritical</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>category,<sp/><ref refid="_s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb" kindref="member">SDL_PRINTF_FORMAT_STRING</ref><sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*fmt,<sp/>...)<sp/><ref refid="_s_d_l__stdinc_8h_1ab974676e45d9edeef6598d601d4fdd6a" kindref="member">SDL_PRINTF_VARARG_FUNC</ref>(2);</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight></codeline>
+<codeline lineno="330" refid="_s_d_l__log_8h_1a7fcfeca9c95069b6432bf1cdb01d0ba4" refkind="member"><highlight class="normal">extern<sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__log_8h_1a7fcfeca9c95069b6432bf1cdb01d0ba4" kindref="member">SDL_LogMessage</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>category,</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946" kindref="member">SDL_LogPriority</ref><sp/>priority,</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_s_d_l__stdinc_8h_1ab13a729d2e3e2d1e1b3b2dc0bfb858eb" kindref="member">SDL_PRINTF_FORMAT_STRING</ref><sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*fmt,<sp/>...)<sp/><ref refid="_s_d_l__stdinc_8h_1ab974676e45d9edeef6598d601d4fdd6a" kindref="member">SDL_PRINTF_VARARG_FUNC</ref>(3);</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight></codeline>
+<codeline lineno="353" refid="_s_d_l__log_8h_1a2cacafd4d8e6d258da40e97a3cb3f80b" refkind="member"><highlight class="normal">extern<sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__log_8h_1a2cacafd4d8e6d258da40e97a3cb3f80b" kindref="member">SDL_LogMessageV</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>category,</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946" kindref="member">SDL_LogPriority</ref><sp/>priority,</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*fmt,<sp/>va_list<sp/>ap);</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"></highlight></codeline>
+<codeline lineno="367" refid="_s_d_l__log_8h_1a11c2a5b3bbfd910cf18fbc70cf513e24" refkind="member"><highlight class="normal">typedef<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(<ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/>*<ref refid="_s_d_l__log_8h_1a11c2a5b3bbfd910cf18fbc70cf513e24" kindref="member">SDL_LogOutputFunction</ref>)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*userdata,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>category,<sp/><ref refid="_s_d_l__log_8h_1a09e04f1d062a71901f59592c276ad946" kindref="member">SDL_LogPriority</ref><sp/>priority,<sp/>const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="_s_d_l__opengl__glext_8h_1a7b6161cffb9b8aee272b3b916183d28c" kindref="member">message</ref>);</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"></highlight></codeline>
+<codeline lineno="381" refid="_s_d_l__log_8h_1a074ce8cf644b09454ec112084f9f399e" refkind="member"><highlight class="normal">extern<sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__log_8h_1a074ce8cf644b09454ec112084f9f399e" kindref="member">SDL_LogGetOutputFunction</ref>(<ref refid="_s_d_l__log_8h_1a11c2a5b3bbfd910cf18fbc70cf513e24" kindref="member">SDL_LogOutputFunction</ref><sp/>*callback,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**userdata);</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"></highlight></codeline>
+<codeline lineno="393" refid="_s_d_l__log_8h_1a229eb1fdf797f548b20ee98ca8acaac6" refkind="member"><highlight class="normal">extern<sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__log_8h_1a229eb1fdf797f548b20ee98ca8acaac6" kindref="member">SDL_LogSetOutputFunction</ref>(<ref refid="_s_d_l__log_8h_1a11c2a5b3bbfd910cf18fbc70cf513e24" kindref="member">SDL_LogOutputFunction</ref><sp/>callback,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*userdata);</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"></highlight></codeline>
+<codeline lineno="395"><highlight class="normal"></highlight></codeline>
+<codeline lineno="396"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Ends<sp/>C<sp/>function<sp/>definitions<sp/>when<sp/>using<sp/>C++<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="397"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="398"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="400"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="close__code_8h" kindref="compound">close_code.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="401"><highlight class="normal"></highlight></codeline>
+<codeline lineno="402"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>SDL_log_h_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="403"><highlight class="normal"></highlight></codeline>
+<codeline lineno="404"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>vi:<sp/>set<sp/>ts=4<sp/>sw=4<sp/>expandtab:<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/include/SDL_log.h"/>
+  </compounddef>
+</doxygen>

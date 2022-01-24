@@ -1,0 +1,937 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_s_d_l__atomic_8h" kind="file" language="C++">
+    <compoundname>SDL_atomic.h</compoundname>
+    <includes refid="_s_d_l__stdinc_8h" local="yes">SDL_stdinc.h</includes>
+    <includes refid="_s_d_l__platform_8h" local="yes">SDL_platform.h</includes>
+    <includes refid="begin__code_8h" local="yes">begin_code.h</includes>
+    <includes refid="close__code_8h" local="yes">close_code.h</includes>
+    <includedby refid="_s_d_l_8h" local="yes">D:/RayTracing/include/SDL.h</includedby>
+    <includedby refid="_s_d_l__thread_8h" local="yes">D:/RayTracing/include/SDL_thread.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>D:/RayTracing/include/SDL_atomic.h</label>
+        <link refid="_s_d_l__atomic_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>SDL_config.h</label>
+        <link refid="_s_d_l__config_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>SDL_platform.h</label>
+        <link refid="_s_d_l__platform_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SDL_stdinc.h</label>
+        <link refid="_s_d_l__stdinc_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>begin_code.h</label>
+        <link refid="begin__code_8h"/>
+      </node>
+      <node id="6">
+        <label>close_code.h</label>
+        <link refid="close__code_8h"/>
+      </node>
+      <node id="8">
+        <label>stdarg.h</label>
+      </node>
+      <node id="7">
+        <label>stddef.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>D:/RayTracing/CApp.cpp</label>
+        <link refid="_c_app_8cpp"/>
+      </node>
+      <node id="3">
+        <label>D:/RayTracing/CApp.h</label>
+        <link refid="_c_app_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>D:/RayTracing/RayTrace/Image.cpp</label>
+        <link refid="_image_8cpp"/>
+      </node>
+      <node id="6">
+        <label>D:/RayTracing/RayTrace/Image.h</label>
+        <link refid="_image_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>D:/RayTracing/RayTrace/Scene.cpp</label>
+        <link refid="_scene_8cpp"/>
+      </node>
+      <node id="8">
+        <label>D:/RayTracing/RayTrace/Scene.h</label>
+        <link refid="_scene_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>D:/RayTracing/RayTrace/Textures/textureimage.cpp</label>
+        <link refid="textureimage_8cpp"/>
+      </node>
+      <node id="10">
+        <label>D:/RayTracing/RayTrace/Textures/textureimage.h</label>
+        <link refid="textureimage_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>D:/RayTracing/include/SDL.h</label>
+        <link refid="_s_d_l_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>D:/RayTracing/include/SDL_atomic.h</label>
+        <link refid="_s_d_l__atomic_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>D:/RayTracing/include/SDL_audio.h</label>
+        <link refid="_s_d_l__audio_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>D:/RayTracing/include/SDL_test.h</label>
+        <link refid="_s_d_l__test_8h"/>
+      </node>
+      <node id="13">
+        <label>D:/RayTracing/include/SDL_test_common.h</label>
+        <link refid="_s_d_l__test__common_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>D:/RayTracing/include/SDL_test_compare.h</label>
+        <link refid="_s_d_l__test__compare_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>D:/RayTracing/include/SDL_test_images.h</label>
+        <link refid="_s_d_l__test__images_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>D:/RayTracing/include/SDL_thread.h</label>
+        <link refid="_s_d_l__thread_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>D:/RayTracing/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_s_d_l__atomic__t" prot="public">SDL_atomic_t</innerclass>
+      <sectiondef kind="user-defined">
+      <header>SDL AtomicLock</header>
+      <description><para>The atomic locks are efficient spinlocks using CPU instructions, but are vulnerable to starvation and can spin forever if a thread holding a lock has been terminated. For this reason you should minimize the code executed inside an atomic lock and never do expensive things like API or system calls while holding them.</para>
+<para>The atomic locks are not safe to lock recursively.</para>
+<para>Porting Note: The spin lock functions and type are required and can not be emulated because they are used in the atomic emulation code. </para>
+</description>
+      <memberdef kind="define" id="_s_d_l__atomic_8h_1a36d435d444dc115a5cc11fa7027576ec" prot="public" static="no">
+        <name>SDL_CompilerBarrier</name>
+        <param></param>
+        <initializer>{ <ref refid="_s_d_l__atomic_8h_1a59179ff8d21c65b9d9a544f3c2088e81" kindref="member">SDL_SpinLock</ref> _tmp = 0; <ref refid="_s_d_l__atomic_8h_1a95ecd72190ba8e5ed6ed78d5d1b36509" kindref="member">SDL_AtomicLock</ref>(&amp;_tmp); <ref refid="_s_d_l__atomic_8h_1a3fb14c56b17347349ac2fb5300205bac" kindref="member">SDL_AtomicUnlock</ref>(&amp;_tmp); }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The compiler barrier prevents the compiler from reordering reads and writes to globally visible variables across the call. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_atomic.h" line="158" column="10" bodyfile="D:/RayTracing/include/SDL_atomic.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__atomic_8h_1a041cb5705236fe51b35cb3d59c1fbba7" prot="public" static="no">
+        <name>SDL_MemoryBarrierRelease</name>
+        <param></param>
+        <initializer><ref refid="_s_d_l__atomic_8h_1a36d435d444dc115a5cc11fa7027576ec" kindref="member">SDL_CompilerBarrier</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_atomic.h" line="235" column="9" bodyfile="D:/RayTracing/include/SDL_atomic.h" bodystart="235" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__atomic_8h_1aa33019d94c637a106218dde56b46a20a" prot="public" static="no">
+        <name>SDL_MemoryBarrierAcquire</name>
+        <param></param>
+        <initializer><ref refid="_s_d_l__atomic_8h_1a36d435d444dc115a5cc11fa7027576ec" kindref="member">SDL_CompilerBarrier</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_atomic.h" line="236" column="9" bodyfile="D:/RayTracing/include/SDL_atomic.h" bodystart="236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__atomic_8h_1a9c3b04a6ce4b6907bfb6e2ea4649ff64" prot="public" static="no">
+        <name>SDL_AtomicIncRef</name>
+        <param><defname>a</defname></param>
+        <initializer><ref refid="_s_d_l__atomic_8h_1a36cadfcf8e2bda1974fbce6afdc6d529" kindref="member">SDL_AtomicAdd</ref>(<ref refid="_s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82" kindref="member">a</ref>, 1)</initializer>
+        <briefdescription>
+<para>Increment an atomic variable used as a reference count. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_atomic.h" line="321" column="9" bodyfile="D:/RayTracing/include/SDL_atomic.h" bodystart="321" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__atomic_8h_1a1602c33647cfdfa8ae49a2eef10341c9" prot="public" static="no">
+        <name>SDL_AtomicDecRef</name>
+        <param><defname>a</defname></param>
+        <initializer>(<ref refid="_s_d_l__atomic_8h_1a36cadfcf8e2bda1974fbce6afdc6d529" kindref="member">SDL_AtomicAdd</ref>(<ref refid="_s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82" kindref="member">a</ref>, -1) == 1)</initializer>
+        <briefdescription>
+<para>Decrement an atomic variable used as a reference count. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>SDL_TRUE if the variable reached zero after decrementing, SDL_FALSE otherwise </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_atomic.h" line="331" column="9" bodyfile="D:/RayTracing/include/SDL_atomic.h" bodystart="331" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_s_d_l__atomic_8h_1a59179ff8d21c65b9d9a544f3c2088e81" prot="public" static="no">
+        <type>int</type>
+        <definition>typedef int SDL_SpinLock</definition>
+        <argsstring></argsstring>
+        <name>SDL_SpinLock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_atomic.h" line="89" column="13" bodyfile="D:/RayTracing/include/SDL_atomic.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__atomic_8h_1a5410c5f832f0d862282cd65fc432fc0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b" kindref="member">SDL_bool</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC SDL_bool SDLCALL SDL_AtomicTryLock</definition>
+        <argsstring>(SDL_SpinLock *lock)</argsstring>
+        <name>SDL_AtomicTryLock</name>
+        <param>
+          <type><ref refid="_s_d_l__atomic_8h_1a59179ff8d21c65b9d9a544f3c2088e81" kindref="member">SDL_SpinLock</ref> *</type>
+          <declname>lock</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Try to lock a spin lock by setting it to a non-zero value.</para>
+<para><emphasis><bold>Please note that spinlocks are dangerous if you don&apos;t know what you&apos;re doing. Please be careful using any sort of spinlock!</bold></emphasis></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lock</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to a lock variable </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>SDL_TRUE if the lock succeeded, SDL_FALSE if the lock is already held.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__atomic_8h_1a95ecd72190ba8e5ed6ed78d5d1b36509" kindref="member">SDL_AtomicLock</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__atomic_8h_1a3fb14c56b17347349ac2fb5300205bac" kindref="member">SDL_AtomicUnlock</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_atomic.h" line="106" column="34" declfile="D:/RayTracing/include/SDL_atomic.h" declline="106" declcolumn="34"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__atomic_8h_1a95ecd72190ba8e5ed6ed78d5d1b36509" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC void SDLCALL SDL_AtomicLock</definition>
+        <argsstring>(SDL_SpinLock *lock)</argsstring>
+        <name>SDL_AtomicLock</name>
+        <param>
+          <type><ref refid="_s_d_l__atomic_8h_1a59179ff8d21c65b9d9a544f3c2088e81" kindref="member">SDL_SpinLock</ref> *</type>
+          <declname>lock</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Lock a spin lock by setting it to a non-zero value.</para>
+<para><emphasis><bold>Please note that spinlocks are dangerous if you don&apos;t know what you&apos;re doing. Please be careful using any sort of spinlock!</bold></emphasis></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lock</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to a lock variable</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__atomic_8h_1a5410c5f832f0d862282cd65fc432fc0b" kindref="member">SDL_AtomicTryLock</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__atomic_8h_1a3fb14c56b17347349ac2fb5300205bac" kindref="member">SDL_AtomicUnlock</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_atomic.h" line="121" column="30" declfile="D:/RayTracing/include/SDL_atomic.h" declline="121" declcolumn="30"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__atomic_8h_1a3fb14c56b17347349ac2fb5300205bac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC void SDLCALL SDL_AtomicUnlock</definition>
+        <argsstring>(SDL_SpinLock *lock)</argsstring>
+        <name>SDL_AtomicUnlock</name>
+        <param>
+          <type><ref refid="_s_d_l__atomic_8h_1a59179ff8d21c65b9d9a544f3c2088e81" kindref="member">SDL_SpinLock</ref> *</type>
+          <declname>lock</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unlock a spin lock by setting it to 0.</para>
+<para>Always returns immediately.</para>
+<para><emphasis><bold>Please note that spinlocks are dangerous if you don&apos;t know what you&apos;re doing. Please be careful using any sort of spinlock!</bold></emphasis></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lock</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to a lock variable</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__atomic_8h_1a95ecd72190ba8e5ed6ed78d5d1b36509" kindref="member">SDL_AtomicLock</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__atomic_8h_1a5410c5f832f0d862282cd65fc432fc0b" kindref="member">SDL_AtomicTryLock</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_atomic.h" line="138" column="30" declfile="D:/RayTracing/include/SDL_atomic.h" declline="138" declcolumn="30"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__atomic_8h_1a4bec96c1fc632536952c309513a0258e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC void SDLCALL SDL_MemoryBarrierReleaseFunction</definition>
+        <argsstring>(void)</argsstring>
+        <name>SDL_MemoryBarrierReleaseFunction</name>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Memory barriers are designed to prevent reads and writes from being reordered by the compiler and being seen out of order on multi-core CPUs.</para>
+<para>A typical pattern would be for thread A to write some data and a flag, and for thread B to read the flag and get the data. In this case you would insert a release barrier between writing the data and the flag, guaranteeing that the data write completes no later than the flag is written, and you would insert an acquire barrier between reading the flag and reading the data, to ensure that all the reads associated with the flag have completed.</para>
+<para>In this pattern you should always see a release barrier paired with an acquire barrier and you should gate the data reads/writes with a single flag variable.</para>
+<para>For more information on these semantics, take a look at the blog post: <ulink url="http://preshing.com/20120913/acquire-and-release-semantics">http://preshing.com/20120913/acquire-and-release-semantics</ulink></para>
+<para><simplesect kind="since"><para>This function is available since SDL 2.0.6. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_atomic.h" line="183" column="30" declfile="D:/RayTracing/include/SDL_atomic.h" declline="183" declcolumn="30"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__atomic_8h_1ae911d7eb425a9e83fd34ab1303412cba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC void SDLCALL SDL_MemoryBarrierAcquireFunction</definition>
+        <argsstring>(void)</argsstring>
+        <name>SDL_MemoryBarrierAcquireFunction</name>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_atomic.h" line="184" column="30" declfile="D:/RayTracing/include/SDL_atomic.h" declline="184" declcolumn="30"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__atomic_8h_1ad6b90be91abb896260930d3908c0437b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b" kindref="member">SDL_bool</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC SDL_bool SDLCALL SDL_AtomicCAS</definition>
+        <argsstring>(SDL_atomic_t *a, int oldval, int newval)</argsstring>
+        <name>SDL_AtomicCAS</name>
+        <param>
+          <type><ref refid="struct_s_d_l__atomic__t" kindref="compound">SDL_atomic_t</ref> *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>oldval</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>newval</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set an atomic variable to a new value if it is currently an old value.</para>
+<para><emphasis><bold>Note: If you don&apos;t know what this function is for, you shouldn&apos;t use it!</bold></emphasis></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to an <ref refid="struct_s_d_l__atomic__t" kindref="compound">SDL_atomic_t</ref> variable to be modified </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>oldval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the old value </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>newval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the new value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>SDL_TRUE if the atomic variable was set, SDL_FALSE otherwise.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__atomic_8h_1aa3070cf7f391b522e08595822c2f0eba" kindref="member">SDL_AtomicCASPtr</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__atomic_8h_1a633c2661709f59c98f128f99aea36d96" kindref="member">SDL_AtomicGet</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__atomic_8h_1a95b659308ebb16226d5c0cbf2188e51d" kindref="member">SDL_AtomicSet</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_atomic.h" line="263" column="34" declfile="D:/RayTracing/include/SDL_atomic.h" declline="263" declcolumn="34"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__atomic_8h_1a95b659308ebb16226d5c0cbf2188e51d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> int <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC int SDLCALL SDL_AtomicSet</definition>
+        <argsstring>(SDL_atomic_t *a, int v)</argsstring>
+        <name>SDL_AtomicSet</name>
+        <param>
+          <type><ref refid="struct_s_d_l__atomic__t" kindref="compound">SDL_atomic_t</ref> *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set an atomic variable to a value.</para>
+<para>This function also acts as a full memory barrier.</para>
+<para><emphasis><bold>Note: If you don&apos;t know what this function is for, you shouldn&apos;t use it!</bold></emphasis></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to an <ref refid="struct_s_d_l__atomic__t" kindref="compound">SDL_atomic_t</ref> variable to be modified </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the desired value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the previous value of the atomic variable.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.2.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__atomic_8h_1a633c2661709f59c98f128f99aea36d96" kindref="member">SDL_AtomicGet</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_atomic.h" line="281" column="29" declfile="D:/RayTracing/include/SDL_atomic.h" declline="281" declcolumn="29"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__atomic_8h_1a633c2661709f59c98f128f99aea36d96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> int <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC int SDLCALL SDL_AtomicGet</definition>
+        <argsstring>(SDL_atomic_t *a)</argsstring>
+        <name>SDL_AtomicGet</name>
+        <param>
+          <type><ref refid="struct_s_d_l__atomic__t" kindref="compound">SDL_atomic_t</ref> *</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the value of an atomic variable.</para>
+<para><emphasis><bold>Note: If you don&apos;t know what this function is for, you shouldn&apos;t use it!</bold></emphasis></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to an <ref refid="struct_s_d_l__atomic__t" kindref="compound">SDL_atomic_t</ref> variable </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the current value of an atomic variable.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.2.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__atomic_8h_1a95b659308ebb16226d5c0cbf2188e51d" kindref="member">SDL_AtomicSet</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_atomic.h" line="296" column="29" declfile="D:/RayTracing/include/SDL_atomic.h" declline="296" declcolumn="29"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__atomic_8h_1a36cadfcf8e2bda1974fbce6afdc6d529" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> int <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC int SDLCALL SDL_AtomicAdd</definition>
+        <argsstring>(SDL_atomic_t *a, int v)</argsstring>
+        <name>SDL_AtomicAdd</name>
+        <param>
+          <type><ref refid="struct_s_d_l__atomic__t" kindref="compound">SDL_atomic_t</ref> *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add to an atomic variable.</para>
+<para>This function also acts as a full memory barrier.</para>
+<para><emphasis><bold>Note: If you don&apos;t know what this function is for, you shouldn&apos;t use it!</bold></emphasis></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to an <ref refid="struct_s_d_l__atomic__t" kindref="compound">SDL_atomic_t</ref> variable to be modified </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the desired value to add </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the previous value of the atomic variable.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.2.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__atomic_8h_1a1602c33647cfdfa8ae49a2eef10341c9" kindref="member">SDL_AtomicDecRef</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__atomic_8h_1a9c3b04a6ce4b6907bfb6e2ea4649ff64" kindref="member">SDL_AtomicIncRef</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_atomic.h" line="315" column="29" declfile="D:/RayTracing/include/SDL_atomic.h" declline="315" declcolumn="29"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__atomic_8h_1aa3070cf7f391b522e08595822c2f0eba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b" kindref="member">SDL_bool</ref> <ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC SDL_bool SDLCALL SDL_AtomicCASPtr</definition>
+        <argsstring>(void **a, void *oldval, void *newval)</argsstring>
+        <name>SDL_AtomicCASPtr</name>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> **</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> *</type>
+          <declname>oldval</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> *</type>
+          <declname>newval</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set a pointer to a new value if it is currently an old value.</para>
+<para><emphasis><bold>Note: If you don&apos;t know what this function is for, you shouldn&apos;t use it!</bold></emphasis></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to a pointer </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>oldval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the old pointer value </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>newval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the new pointer value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>SDL_TRUE if the pointer was set, SDL_FALSE otherwise.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.0.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__atomic_8h_1ad6b90be91abb896260930d3908c0437b" kindref="member">SDL_AtomicCAS</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__atomic_8h_1abbfdbca42b03cce91ab5a5f7f5078d4d" kindref="member">SDL_AtomicGetPtr</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__atomic_8h_1a3207340e57c812760328fa4f15198919" kindref="member">SDL_AtomicSetPtr</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_atomic.h" line="351" column="34" declfile="D:/RayTracing/include/SDL_atomic.h" declline="351" declcolumn="34"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__atomic_8h_1a3207340e57c812760328fa4f15198919" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> *<ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC void *SDLCALL SDL_AtomicSetPtr</definition>
+        <argsstring>(void **a, void *v)</argsstring>
+        <name>SDL_AtomicSetPtr</name>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> **</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set a pointer to a value atomically.</para>
+<para><emphasis><bold>Note: If you don&apos;t know what this function is for, you shouldn&apos;t use it!</bold></emphasis></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to a pointer </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the desired pointer value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the previous value of the pointer.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.2.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__atomic_8h_1aa3070cf7f391b522e08595822c2f0eba" kindref="member">SDL_AtomicCASPtr</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__atomic_8h_1abbfdbca42b03cce91ab5a5f7f5078d4d" kindref="member">SDL_AtomicGetPtr</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_atomic.h" line="368" column="30" declfile="D:/RayTracing/include/SDL_atomic.h" declline="368" declcolumn="30"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__atomic_8h_1abbfdbca42b03cce91ab5a5f7f5078d4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref> <ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> *<ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref></type>
+        <definition>DECLSPEC void *SDLCALL SDL_AtomicGetPtr</definition>
+        <argsstring>(void **a)</argsstring>
+        <name>SDL_AtomicGetPtr</name>
+        <param>
+          <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref> **</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the value of a pointer atomically.</para>
+<para><emphasis><bold>Note: If you don&apos;t know what this function is for, you shouldn&apos;t use it!</bold></emphasis></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to a pointer </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the current value of a pointer.</para>
+</simplesect>
+<simplesect kind="since"><para>This function is available since SDL 2.0.2.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__atomic_8h_1aa3070cf7f391b522e08595822c2f0eba" kindref="member">SDL_AtomicCASPtr</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="_s_d_l__atomic_8h_1a3207340e57c812760328fa4f15198919" kindref="member">SDL_AtomicSetPtr</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_atomic.h" line="384" column="30" declfile="D:/RayTracing/include/SDL_atomic.h" declline="384" declcolumn="30"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Atomic operations.</para>
+<para>IMPORTANT: If you are not an expert in concurrent lockless programming, you should only be using the atomic lock and reference counting functions in this file. In all other cases you should be protecting your data structures with full mutexes.</para>
+<para>The list of &quot;safe&quot; functions to use are: <ref refid="_s_d_l__atomic_8h_1a95ecd72190ba8e5ed6ed78d5d1b36509" kindref="member">SDL_AtomicLock()</ref> <ref refid="_s_d_l__atomic_8h_1a3fb14c56b17347349ac2fb5300205bac" kindref="member">SDL_AtomicUnlock()</ref> <ref refid="_s_d_l__atomic_8h_1a9c3b04a6ce4b6907bfb6e2ea4649ff64" kindref="member">SDL_AtomicIncRef()</ref> <ref refid="_s_d_l__atomic_8h_1a1602c33647cfdfa8ae49a2eef10341c9" kindref="member">SDL_AtomicDecRef()</ref></para>
+<para>Seriously, here be dragons! ^^^^^^^^^^^^^^^^^^^^^^^^^^^</para>
+<para>You can find out a little more about lockless programming and the subtle issues that can arise here: <ulink url="http://msdn.microsoft.com/en-us/library/ee418650%28v=vs.85%29.aspx">http://msdn.microsoft.com/en-us/library/ee418650%28v=vs.85%29.aspx</ulink></para>
+<para>There&apos;s also lots of good information here: <ulink url="http://www.1024cores.net/home/lock-free-algorithms">http://www.1024cores.net/home/lock-free-algorithms</ulink> <ulink url="http://preshing.com/">http://preshing.com/</ulink></para>
+<para>These operations may or may not actually be implemented using processor specific atomic operations. When possible they are implemented as true processor specific atomic operations. When that is not possible the are implemented using locks that <emphasis>do</emphasis> use the available atomic operations.</para>
+<para>All of the atomic operations that modify memory are full memory barriers. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/>Simple<sp/>DirectMedia<sp/>Layer</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/>Copyright<sp/>(C)<sp/>1997-2022<sp/>Sam<sp/>Lantinga<sp/>&lt;slouken@libsdl.org&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/>This<sp/>software<sp/>is<sp/>provided<sp/>&apos;as-is&apos;,<sp/>without<sp/>any<sp/>express<sp/>or<sp/>implied</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/>warranty.<sp/><sp/>In<sp/>no<sp/>event<sp/>will<sp/>the<sp/>authors<sp/>be<sp/>held<sp/>liable<sp/>for<sp/>any<sp/>damages</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/>arising<sp/>from<sp/>the<sp/>use<sp/>of<sp/>this<sp/>software.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/>Permission<sp/>is<sp/>granted<sp/>to<sp/>anyone<sp/>to<sp/>use<sp/>this<sp/>software<sp/>for<sp/>any<sp/>purpose,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/>including<sp/>commercial<sp/>applications,<sp/>and<sp/>to<sp/>alter<sp/>it<sp/>and<sp/>redistribute<sp/>it</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/>freely,<sp/>subject<sp/>to<sp/>the<sp/>following<sp/>restrictions:</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"></highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/>1.<sp/>The<sp/>origin<sp/>of<sp/>this<sp/>software<sp/>must<sp/>not<sp/>be<sp/>misrepresented;<sp/>you<sp/>must<sp/>not</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>claim<sp/>that<sp/>you<sp/>wrote<sp/>the<sp/>original<sp/>software.<sp/>If<sp/>you<sp/>use<sp/>this<sp/>software</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>in<sp/>a<sp/>product,<sp/>an<sp/>acknowledgment<sp/>in<sp/>the<sp/>product<sp/>documentation<sp/>would<sp/>be</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>appreciated<sp/>but<sp/>is<sp/>not<sp/>required.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/>2.<sp/>Altered<sp/>source<sp/>versions<sp/>must<sp/>be<sp/>plainly<sp/>marked<sp/>as<sp/>such,<sp/>and<sp/>must<sp/>not<sp/>be</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>misrepresented<sp/>as<sp/>being<sp/>the<sp/>original<sp/>software.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/>3.<sp/>This<sp/>notice<sp/>may<sp/>not<sp/>be<sp/>removed<sp/>or<sp/>altered<sp/>from<sp/>any<sp/>source<sp/>distribution.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SDL_atomic_h_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_atomic_h_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_s_d_l__stdinc_8h" kindref="compound">SDL_stdinc.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_s_d_l__platform_8h" kindref="compound">SDL_platform.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="begin__code_8h" kindref="compound">begin_code.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Set<sp/>up<sp/>for<sp/>C<sp/>function<sp/>definitions,<sp/>even<sp/>when<sp/>using<sp/>C++<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>@{<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="_s_d_l__atomic_8h_1a59179ff8d21c65b9d9a544f3c2088e81" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__atomic_8h_1a59179ff8d21c65b9d9a544f3c2088e81" kindref="member">SDL_SpinLock</ref>;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="_s_d_l__atomic_8h_1a5410c5f832f0d862282cd65fc432fc0b" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/><ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b" kindref="member">SDL_bool</ref><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__atomic_8h_1a5410c5f832f0d862282cd65fc432fc0b" kindref="member">SDL_AtomicTryLock</ref>(<ref refid="_s_d_l__atomic_8h_1a59179ff8d21c65b9d9a544f3c2088e81" kindref="member">SDL_SpinLock</ref><sp/>*lock);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="_s_d_l__atomic_8h_1a95ecd72190ba8e5ed6ed78d5d1b36509" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__atomic_8h_1a95ecd72190ba8e5ed6ed78d5d1b36509" kindref="member">SDL_AtomicLock</ref>(<ref refid="_s_d_l__atomic_8h_1a59179ff8d21c65b9d9a544f3c2088e81" kindref="member">SDL_SpinLock</ref><sp/>*lock);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="_s_d_l__atomic_8h_1a3fb14c56b17347349ac2fb5300205bac" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__atomic_8h_1a3fb14c56b17347349ac2fb5300205bac" kindref="member">SDL_AtomicUnlock</ref>(<ref refid="_s_d_l__atomic_8h_1a59179ff8d21c65b9d9a544f3c2088e81" kindref="member">SDL_SpinLock</ref><sp/>*lock);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>@}<sp/>*/</highlight><highlight class="comment">/*<sp/>SDL<sp/>AtomicLock<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_MSC_VER)<sp/>&amp;&amp;<sp/>(_MSC_VER<sp/>&gt;<sp/>1200)<sp/>&amp;&amp;<sp/>!defined(__clang__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>_ReadWriteBarrier(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>intrinsic(_ReadWriteBarrier)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_CompilerBarrier()<sp/><sp/><sp/>_ReadWriteBarrier()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>(defined(__GNUC__)<sp/>&amp;&amp;<sp/>!defined(__EMSCRIPTEN__))<sp/>||<sp/>(defined(__SUNPRO_C)<sp/>&amp;&amp;<sp/>(__SUNPRO_C<sp/>&gt;=<sp/>0x5120))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>This<sp/>is<sp/>correct<sp/>for<sp/>all<sp/>CPUs<sp/>when<sp/>using<sp/>GCC<sp/>or<sp/>Solaris<sp/>Studio<sp/>12.1+.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_CompilerBarrier()<sp/><sp/><sp/>__asm__<sp/>__volatile__<sp/>(&quot;&quot;</highlight><highlight class="normal"><sp/>:<sp/>:<sp/>:<sp/>&quot;memory&quot;)</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__WATCOMC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>__inline<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__atomic_8h_1a36d435d444dc115a5cc11fa7027576ec" kindref="member">SDL_CompilerBarrier</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>aux<sp/>SDL_CompilerBarrier<sp/>=<sp/>&quot;&quot;</highlight><highlight class="normal"><sp/>parm<sp/>[]<sp/>modify<sp/>exact<sp/>[];</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158" refid="_s_d_l__atomic_8h_1a36d435d444dc115a5cc11fa7027576ec" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_CompilerBarrier()<sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="159"><highlight class="preprocessor">{<sp/>SDL_SpinLock<sp/>_tmp<sp/>=<sp/>0;<sp/>SDL_AtomicLock(&amp;_tmp);<sp/>SDL_AtomicUnlock(&amp;_tmp);<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183" refid="_s_d_l__atomic_8h_1a4bec96c1fc632536952c309513a0258e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__atomic_8h_1a4bec96c1fc632536952c309513a0258e" kindref="member">SDL_MemoryBarrierReleaseFunction</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="184" refid="_s_d_l__atomic_8h_1ae911d7eb425a9e83fd34ab1303412cba" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__atomic_8h_1ae911d7eb425a9e83fd34ab1303412cba" kindref="member">SDL_MemoryBarrierAcquireFunction</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__GNUC__)<sp/>&amp;&amp;<sp/>(defined(__powerpc__)<sp/>||<sp/>defined(__ppc__))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_MemoryBarrierRelease()<sp/><sp/><sp/>__asm__<sp/>__volatile__<sp/>(&quot;lwsync&quot;</highlight><highlight class="normal"><sp/>:<sp/>:<sp/>:<sp/>&quot;memory&quot;)</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_MemoryBarrierAcquire()<sp/><sp/><sp/>__asm__<sp/>__volatile__<sp/>(&quot;lwsync&quot;</highlight><highlight class="normal"><sp/>:<sp/>:<sp/>:<sp/>&quot;memory&quot;)</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__GNUC__)<sp/>&amp;&amp;<sp/>defined(__aarch64__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_MemoryBarrierRelease()<sp/><sp/><sp/>__asm__<sp/>__volatile__<sp/>(&quot;dmb<sp/>ish&quot;</highlight><highlight class="normal"><sp/>:<sp/>:<sp/>:<sp/>&quot;memory&quot;)</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_MemoryBarrierAcquire()<sp/><sp/><sp/>__asm__<sp/>__volatile__<sp/>(&quot;dmb<sp/>ish&quot;</highlight><highlight class="normal"><sp/>:<sp/>:<sp/>:<sp/>&quot;memory&quot;)</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__GNUC__)<sp/>&amp;&amp;<sp/>defined(__arm__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>0<sp/></highlight><highlight class="comment">/*<sp/>defined(__LINUX__)<sp/>||<sp/>defined(__ANDROID__)<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Information<sp/>from:</highlight></codeline>
+<codeline lineno="195"><highlight class="comment"><sp/><sp/><sp/>https://chromium.googlesource.com/chromium/chromium/+/trunk/base/atomicops_internals_arm_gcc.h#19</highlight></codeline>
+<codeline lineno="196"><highlight class="comment"></highlight></codeline>
+<codeline lineno="197"><highlight class="comment"><sp/><sp/><sp/>The<sp/>Linux<sp/>kernel<sp/>provides<sp/>a<sp/>helper<sp/>function<sp/>which<sp/>provides<sp/>the<sp/>right<sp/>code<sp/>for<sp/>a<sp/>memory<sp/>barrier,</highlight></codeline>
+<codeline lineno="198"><highlight class="comment"><sp/><sp/><sp/>hard-coded<sp/>at<sp/>address<sp/>0xffff0fa0</highlight></codeline>
+<codeline lineno="199"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__audio_8h_1aa5cb90967788ada2711894ca158ece01" kindref="member">void</ref><sp/>(*SDL_KernelMemoryBarrierFunc)();</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_MemoryBarrierRelease()<sp/><sp/>((SDL_KernelMemoryBarrierFunc)0xffff0fa0)()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_MemoryBarrierAcquire()<sp/><sp/>((SDL_KernelMemoryBarrierFunc)0xffff0fa0)()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>0<sp/></highlight><highlight class="comment">/*<sp/>defined(__QNXNTO__)<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/cpuinline.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_MemoryBarrierRelease()<sp/><sp/><sp/>__cpu_membarrier()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_MemoryBarrierAcquire()<sp/><sp/><sp/>__cpu_membarrier()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__ARM_ARCH_7__)<sp/>||<sp/>defined(__ARM_ARCH_7A__)<sp/>||<sp/>defined(__ARM_ARCH_7EM__)<sp/>||<sp/>defined(__ARM_ARCH_7R__)<sp/>||<sp/>defined(__ARM_ARCH_7M__)<sp/>||<sp/>defined(__ARM_ARCH_7S__)<sp/>||<sp/>defined(__ARM_ARCH_8A__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_MemoryBarrierRelease()<sp/><sp/><sp/>__asm__<sp/>__volatile__<sp/>(&quot;dmb<sp/>ish&quot;</highlight><highlight class="normal"><sp/>:<sp/>:<sp/>:<sp/>&quot;memory&quot;)</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_MemoryBarrierAcquire()<sp/><sp/><sp/>__asm__<sp/>__volatile__<sp/>(&quot;dmb<sp/>ish&quot;</highlight><highlight class="normal"><sp/>:<sp/>:<sp/>:<sp/>&quot;memory&quot;)</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__ARM_ARCH_6__)<sp/>||<sp/>defined(__ARM_ARCH_6J__)<sp/>||<sp/>defined(__ARM_ARCH_6K__)<sp/>||<sp/>defined(__ARM_ARCH_6T2__)<sp/>||<sp/>defined(__ARM_ARCH_6Z__)<sp/>||<sp/>defined(__ARM_ARCH_6ZK__)<sp/>||<sp/>defined(__ARM_ARCH_5TE__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__thumb__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>The<sp/>mcr<sp/>instruction<sp/>isn&apos;t<sp/>available<sp/>in<sp/>thumb<sp/>mode,<sp/>use<sp/>real<sp/>functions<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_MEMORY_BARRIER_USES_FUNCTION</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_MemoryBarrierRelease()<sp/><sp/><sp/>SDL_MemoryBarrierReleaseFunction()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_MemoryBarrierAcquire()<sp/><sp/><sp/>SDL_MemoryBarrierAcquireFunction()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_MemoryBarrierRelease()<sp/><sp/><sp/>__asm__<sp/>__volatile__<sp/>(&quot;mcr<sp/>p15,<sp/>0,<sp/>%0,<sp/>c7,<sp/>c10,<sp/>5&quot;</highlight><highlight class="normal"><sp/>:<sp/>:<sp/>&quot;r&quot;(0)<sp/>:<sp/>&quot;memory&quot;)</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_MemoryBarrierAcquire()<sp/><sp/><sp/>__asm__<sp/>__volatile__<sp/>(&quot;mcr<sp/>p15,<sp/>0,<sp/>%0,<sp/>c7,<sp/>c10,<sp/>5&quot;</highlight><highlight class="normal"><sp/>:<sp/>:<sp/>&quot;r&quot;(0)<sp/>:<sp/>&quot;memory&quot;)</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>__thumb__<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_MemoryBarrierRelease()<sp/><sp/><sp/>__asm__<sp/>__volatile__<sp/>(&quot;&quot;</highlight><highlight class="normal"><sp/>:<sp/>:<sp/>:<sp/>&quot;memory&quot;)</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_MemoryBarrierAcquire()<sp/><sp/><sp/>__asm__<sp/>__volatile__<sp/>(&quot;&quot;</highlight><highlight class="normal"><sp/>:<sp/>:<sp/>:<sp/>&quot;memory&quot;)</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>__LINUX__<sp/>||<sp/>__ANDROID__<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>__GNUC__<sp/>&amp;&amp;<sp/>__arm__<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(defined(__SUNPRO_C)<sp/>&amp;&amp;<sp/>(__SUNPRO_C<sp/>&gt;=<sp/>0x5120))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>This<sp/>is<sp/>correct<sp/>for<sp/>all<sp/>CPUs<sp/>on<sp/>Solaris<sp/>when<sp/>using<sp/>Solaris<sp/>Studio<sp/>12.1+.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mbarrier.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_MemoryBarrierRelease()<sp/><sp/>__machine_rel_barrier()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_MemoryBarrierAcquire()<sp/><sp/>__machine_acq_barrier()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>This<sp/>is<sp/>correct<sp/>for<sp/>the<sp/>x86<sp/>and<sp/>x64<sp/>CPUs,<sp/>and<sp/>we&apos;ll<sp/>expand<sp/>this<sp/>over<sp/>time.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235" refid="_s_d_l__atomic_8h_1a041cb5705236fe51b35cb3d59c1fbba7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_MemoryBarrierRelease()<sp/><sp/>SDL_CompilerBarrier()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236" refid="_s_d_l__atomic_8h_1aa33019d94c637a106218dde56b46a20a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_MemoryBarrierAcquire()<sp/><sp/>SDL_CompilerBarrier()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244" refid="struct_s_d_l__atomic__t_1a0d09ddf3cc5798c709edb7cea104203a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_l__atomic__t_1a0d09ddf3cc5798c709edb7cea104203a" kindref="member">value</ref>;<sp/>}<sp/><ref refid="struct_s_d_l__atomic__t" kindref="compound">SDL_atomic_t</ref>;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263" refid="_s_d_l__atomic_8h_1ad6b90be91abb896260930d3908c0437b" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/><ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b" kindref="member">SDL_bool</ref><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__atomic_8h_1ad6b90be91abb896260930d3908c0437b" kindref="member">SDL_AtomicCAS</ref>(<ref refid="struct_s_d_l__atomic__t" kindref="compound">SDL_atomic_t</ref><sp/>*<ref refid="_s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82" kindref="member">a</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>oldval,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>newval);</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281" refid="_s_d_l__atomic_8h_1a95b659308ebb16226d5c0cbf2188e51d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__atomic_8h_1a95b659308ebb16226d5c0cbf2188e51d" kindref="member">SDL_AtomicSet</ref>(<ref refid="struct_s_d_l__atomic__t" kindref="compound">SDL_atomic_t</ref><sp/>*<ref refid="_s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82" kindref="member">a</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90" kindref="member">v</ref>);</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296" refid="_s_d_l__atomic_8h_1a633c2661709f59c98f128f99aea36d96" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__atomic_8h_1a633c2661709f59c98f128f99aea36d96" kindref="member">SDL_AtomicGet</ref>(<ref refid="struct_s_d_l__atomic__t" kindref="compound">SDL_atomic_t</ref><sp/>*<ref refid="_s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82" kindref="member">a</ref>);</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight></codeline>
+<codeline lineno="315" refid="_s_d_l__atomic_8h_1a36cadfcf8e2bda1974fbce6afdc6d529" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__atomic_8h_1a36cadfcf8e2bda1974fbce6afdc6d529" kindref="member">SDL_AtomicAdd</ref>(<ref refid="struct_s_d_l__atomic__t" kindref="compound">SDL_atomic_t</ref><sp/>*<ref refid="_s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82" kindref="member">a</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90" kindref="member">v</ref>);</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SDL_AtomicIncRef</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="321" refid="_s_d_l__atomic_8h_1a9c3b04a6ce4b6907bfb6e2ea4649ff64" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_AtomicIncRef(a)<sp/><sp/><sp/><sp/>SDL_AtomicAdd(a,<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SDL_AtomicDecRef</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="331" refid="_s_d_l__atomic_8h_1a1602c33647cfdfa8ae49a2eef10341c9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_AtomicDecRef(a)<sp/><sp/><sp/><sp/>(SDL_AtomicAdd(a,<sp/>-1)<sp/>==<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight></codeline>
+<codeline lineno="351" refid="_s_d_l__atomic_8h_1aa3070cf7f391b522e08595822c2f0eba" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/><ref refid="_s_d_l__stdinc_8h_1a8fca68df0f976765230fe589a7c7733b" kindref="member">SDL_bool</ref><sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__atomic_8h_1aa3070cf7f391b522e08595822c2f0eba" kindref="member">SDL_AtomicCASPtr</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**<ref refid="_s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82" kindref="member">a</ref>,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*oldval,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*newval);</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"></highlight></codeline>
+<codeline lineno="368" refid="_s_d_l__atomic_8h_1a3207340e57c812760328fa4f15198919" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__atomic_8h_1a3207340e57c812760328fa4f15198919" kindref="member">SDL_AtomicSetPtr</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**<ref refid="_s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82" kindref="member">a</ref>,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="_s_d_l__opengl_8h_1a10a82eabcb59d2fcd74acee063775f90" kindref="member">v</ref>);</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight></codeline>
+<codeline lineno="384" refid="_s_d_l__atomic_8h_1abbfdbca42b03cce91ab5a5f7f5078d4d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185" kindref="member">DECLSPEC</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401" kindref="member">SDLCALL</ref><sp/><ref refid="_s_d_l__atomic_8h_1abbfdbca42b03cce91ab5a5f7f5078d4d" kindref="member">SDL_AtomicGetPtr</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**<ref refid="_s_d_l__opengl__glext_8h_1a3309789fc188587d666cda5ece79cf82" kindref="member">a</ref>);</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"></highlight></codeline>
+<codeline lineno="386"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Ends<sp/>C<sp/>function<sp/>definitions<sp/>when<sp/>using<sp/>C++<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="387"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="388"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="390"><highlight class="normal"></highlight></codeline>
+<codeline lineno="391"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="close__code_8h" kindref="compound">close_code.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="392"><highlight class="normal"></highlight></codeline>
+<codeline lineno="393"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>SDL_atomic_h_<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="394"><highlight class="normal"></highlight></codeline>
+<codeline lineno="395"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>vi:<sp/>set<sp/>ts=4<sp/>sw=4<sp/>expandtab:<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/include/SDL_atomic.h"/>
+  </compounddef>
+</doxygen>

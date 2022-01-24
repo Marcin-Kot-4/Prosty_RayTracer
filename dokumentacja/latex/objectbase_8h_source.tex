@@ -1,0 +1,61 @@
+\hypertarget{objectbase_8h_source}{}\doxysection{objectbase.\+h}
+\label{objectbase_8h_source}\index{D:/RayTracing/RayTrace/Primitives/objectbase.h@{D:/RayTracing/RayTrace/Primitives/objectbase.h}}
+\mbox{\hyperlink{objectbase_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef RAYTRACING\_OBJECTBASE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define RAYTRACING\_OBJECTBASE\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}../qbLinAlg/qbVector.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}../ray.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}../gtfm.h"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_r_t}{RT}} \{}
+\DoxyCodeLine{11     \textcolor{comment}{// Deklaracja klasy MaterialBase}}
+\DoxyCodeLine{12     \textcolor{keyword}{class }MaterialBase;}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14     \textcolor{keyword}{class }\mbox{\hyperlink{class_r_t_1_1_object_base}{ObjectBase}} \{}
+\DoxyCodeLine{15     \textcolor{keyword}{public}:}
+\DoxyCodeLine{16         \textcolor{comment}{// Konstruktor}}
+\DoxyCodeLine{17         \mbox{\hyperlink{class_r_t_1_1_object_base_a2e524afdaa52559af1c9d32b92ab86d7}{ObjectBase}}();}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19         \textcolor{comment}{// Destruktor}}
+\DoxyCodeLine{20         \textcolor{keyword}{virtual} \mbox{\hyperlink{class_r_t_1_1_object_base_a483e10e0d0096f29b1a19ebcbc9a8daf}{\string~ObjectBase}}();}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22         \textcolor{comment}{// Sprawdzanie przecięcia się promienia z powierzchnią obiektu}}
+\DoxyCodeLine{23         \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_r_t_1_1_object_base_a1874168fc872f415520ddf7ae05f33a7}{TestIntersection}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_r_t_1_1_ray}{Ray}} \&castRay, \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&intPoint, \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&localNormal,}
+\DoxyCodeLine{24                                       \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \&localColor);}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26         \textcolor{comment}{// Metoda ustawiająca macierz transformacji}}
+\DoxyCodeLine{27         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_r_t_1_1_object_base_ae49d7664053ba8709645e61f417b22a0}{SetTransformMatrix}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_r_t_1_1_g_tform}{RT::GTform}} \&transformMatrix);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29         \textcolor{comment}{// Metoda sprawdzająca, czy dwie zmienne zmiennoprzecinkowe przechowują bardzo podobną wartość}}
+\DoxyCodeLine{30         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_r_t_1_1_object_base_a3654cf7ddcab4705a656aea8f1156d9c}{CloseEnough}}(\textcolor{keyword}{const} \textcolor{keywordtype}{double} f1, \textcolor{keyword}{const} \textcolor{keywordtype}{double} f2);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32         \textcolor{comment}{// Metoda do przypisywania tworzywa}}
+\DoxyCodeLine{33         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_r_t_1_1_object_base_a7d143fe3dc376fa9d03eb023dbfd7fb1}{AssignMaterial}}(\textcolor{keyword}{const} std::shared\_ptr<RT::MaterialBase> \&objectMaterial);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35         \textcolor{comment}{// Publiczne zmienne}}
+\DoxyCodeLine{36     \textcolor{keyword}{public}:}
+\DoxyCodeLine{37         \textcolor{comment}{// Bazowy kolor obiektu}}
+\DoxyCodeLine{38         \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \mbox{\hyperlink{class_r_t_1_1_object_base_a59a95426585e31a88e38083ec1a72b7b}{m\_baseColor}}\{3\};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40         \textcolor{comment}{// Macierz geometrycznych przekształceń}}
+\DoxyCodeLine{41         \mbox{\hyperlink{class_r_t_1_1_g_tform}{RT::GTform}} \mbox{\hyperlink{class_r_t_1_1_object_base_ac3bdb9ce9f1aace3bc7d008ad3c71f85}{m\_transformMatrix}};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43         \textcolor{comment}{// Referencja do tworzywa przypisanego do tego obiektu}}
+\DoxyCodeLine{44         std::shared\_ptr<RT::MaterialBase> \mbox{\hyperlink{class_r_t_1_1_object_base_ae45ec3a9d0cd9f38605dcc8580c65c1c}{m\_pMaterial}};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46         \textcolor{comment}{// Flaga informująca o tym czy ten obiekt posiada przypisane tworzywo}}
+\DoxyCodeLine{47         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_r_t_1_1_object_base_a96be79a468072fa5b3f72b1084a76278}{m\_hasMaterial}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49         \textcolor{comment}{// Przechowaj współrzędne (u,v) z wykrytego przecięcia}}
+\DoxyCodeLine{50         \mbox{\hyperlink{classqb_vector}{qbVector<double>}} \mbox{\hyperlink{class_r_t_1_1_object_base_a0453a522f36f23f95638312633cf5d81}{m\_uvCoords}} \{2\};}
+\DoxyCodeLine{51     \};}
+\DoxyCodeLine{52 \}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//RAYTRACING\_OBJECTBASE\_H}}
+
+\end{DoxyCode}

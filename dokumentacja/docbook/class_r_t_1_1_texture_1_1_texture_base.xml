@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_r_t_1_1_texture_1_1_texture_base" xml:lang="en-US">
+<title>RT::Texture::TextureBase Class Reference</title>
+<indexterm><primary>RT::Texture::TextureBase</primary></indexterm>
+<para>
+<computeroutput>#include &lt;texturebase.h&gt;</computeroutput>
+</para>
+<para>Inheritance diagram for RT::Texture::TextureBase:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_r_t_1_1_texture_1_1_texture_base.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_r_t_1_1_texture_1_1_texture_base_1ae046182c6617ac3b962a1c452b398277">TextureBase</link> ()</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_class_r_t_1_1_texture_1_1_texture_base_1a560385094ebf77878884bdeddf37bf81">~TextureBase</link> ()</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; <link linkend="_class_r_t_1_1_texture_1_1_texture_base_1ac25b90bf7dac218a2840c998ffbd5512">GetColor</link> (const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp;uvCoords)</para>
+</listitem>
+            <listitem><para><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_class_r_t_1_1_texture_1_1_texture_base_1a55a425e9fce5762c95ecb59728b1b870">SetTransform</link> (const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp;translation, const double &amp;rotation, const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp;<link linkend="__s_d_l__opengl__glext_8h_1a281421b881aa7a1266842b73a3bc7655">scale</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; <link linkend="_class_r_t_1_1_texture_1_1_texture_base_1a97805aaa693a5caf219f30b0ee53b530">ApplyTransform</link> (const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp;inputVector)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; <link linkend="_class_r_t_1_1_texture_1_1_texture_base_1a909e3180400fc19655abab504790cb06">BlendColors</link> (const std::vector&lt; <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &gt; &amp;inputColorList)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_r_t_1_1_texture_1_1_texture_base_1ae046182c6617ac3b962a1c452b398277"/><section>
+    <title>TextureBase()</title>
+<indexterm><primary>TextureBase</primary><secondary>RT::Texture::TextureBase</secondary></indexterm>
+<indexterm><primary>RT::Texture::TextureBase</primary><secondary>TextureBase</secondary></indexterm>
+<para><computeroutput>RT::Texture::TextureBase::TextureBase ( )</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_texture_1_1_texture_base_1a560385094ebf77878884bdeddf37bf81"/><section>
+    <title>~TextureBase()</title>
+<indexterm><primary>~TextureBase</primary><secondary>RT::Texture::TextureBase</secondary></indexterm>
+<indexterm><primary>RT::Texture::TextureBase</primary><secondary>~TextureBase</secondary></indexterm>
+<para><computeroutput>RT::Texture::TextureBase::~TextureBase ( )<computeroutput>[virtual]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_r_t_1_1_texture_1_1_texture_base_1a97805aaa693a5caf219f30b0ee53b530"/><section>
+    <title>ApplyTransform()</title>
+<indexterm><primary>ApplyTransform</primary><secondary>RT::Texture::TextureBase</secondary></indexterm>
+<indexterm><primary>RT::Texture::TextureBase</primary><secondary>ApplyTransform</secondary></indexterm>
+<para><computeroutput><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; RT::Texture::TextureBase::ApplyTransform (const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp; inputVector)</computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_texture_1_1_texture_base_1a909e3180400fc19655abab504790cb06"/><section>
+    <title>BlendColors()</title>
+<indexterm><primary>BlendColors</primary><secondary>RT::Texture::TextureBase</secondary></indexterm>
+<indexterm><primary>RT::Texture::TextureBase</primary><secondary>BlendColors</secondary></indexterm>
+<para><computeroutput><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; RT::Texture::TextureBase::BlendColors (const std::vector&lt; <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &gt; &amp; inputColorList)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_r_t_1_1_texture_1_1_texture_base_1ac25b90bf7dac218a2840c998ffbd5512"/><section>
+    <title>GetColor()</title>
+<indexterm><primary>GetColor</primary><secondary>RT::Texture::TextureBase</secondary></indexterm>
+<indexterm><primary>RT::Texture::TextureBase</primary><secondary>GetColor</secondary></indexterm>
+<para><computeroutput><link linkend="_classqb_vector">qbVector</link>&lt; double &gt; RT::Texture::TextureBase::GetColor (const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp; uvCoords)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Reimplemented in <link linkend="_class_r_t_1_1_texture_1_1_checker_1a9faa9a7f9e46523dd2ba34d63207ee2d">RT::Texture::Checker</link>, <link linkend="_class_r_t_1_1_texture_1_1_flat_1a322a9a935bb8a5699caf544ed0fabd30">RT::Texture::Flat</link>, and <link linkend="_class_r_t_1_1_texture_1_1_image_1a5a1347445b86ee91c4393488da5b50d0">RT::Texture::Image</link>.</para>
+</section>
+<anchor xml:id="_class_r_t_1_1_texture_1_1_texture_base_1a55a425e9fce5762c95ecb59728b1b870"/><section>
+    <title>SetTransform()</title>
+<indexterm><primary>SetTransform</primary><secondary>RT::Texture::TextureBase</secondary></indexterm>
+<indexterm><primary>RT::Texture::TextureBase</primary><secondary>SetTransform</secondary></indexterm>
+<para><computeroutput><link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> RT::Texture::TextureBase::SetTransform (const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp; translation, const double &amp; rotation, const <link linkend="_classqb_vector">qbVector</link>&lt; double &gt; &amp; scale)</computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following files:</para>
+D:/RayTracing/RayTrace/Textures/<link linkend="_texturebase_8h">texturebase.h</link>D:/RayTracing/RayTrace/Textures/<link linkend="_texturebase_8cpp">texturebase.cpp</link></section>
+</section>

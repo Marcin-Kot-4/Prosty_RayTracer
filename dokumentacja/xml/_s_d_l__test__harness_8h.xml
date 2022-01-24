@@ -1,0 +1,454 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_s_d_l__test__harness_8h" kind="file" language="C++">
+    <compoundname>SDL_test_harness.h</compoundname>
+    <includes refid="begin__code_8h" local="yes">begin_code.h</includes>
+    <includes refid="close__code_8h" local="yes">close_code.h</includes>
+    <includedby refid="_s_d_l__test_8h" local="yes">D:/RayTracing/include/SDL_test.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>D:/RayTracing/include/SDL_test_harness.h</label>
+        <link refid="_s_d_l__test__harness_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>begin_code.h</label>
+        <link refid="begin__code_8h"/>
+      </node>
+      <node id="3">
+        <label>close_code.h</label>
+        <link refid="close__code_8h"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>D:/RayTracing/include/SDL_test.h</label>
+        <link refid="_s_d_l__test_8h"/>
+      </node>
+      <node id="1">
+        <label>D:/RayTracing/include/SDL_test_harness.h</label>
+        <link refid="_s_d_l__test__harness_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_s_d_l_test___test_case_reference" prot="public">SDLTest_TestCaseReference</innerclass>
+    <innerclass refid="struct_s_d_l_test___test_suite_reference" prot="public">SDLTest_TestSuiteReference</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_s_d_l__test__harness_8h_1a4404f2feb87e68e20e31bd86ec1728b1" prot="public" static="no">
+        <name>TEST_ENABLED</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_harness.h" line="47" column="9" bodyfile="D:/RayTracing/include/SDL_test_harness.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__test__harness_8h_1ac7b13b8aefdada941436332f7559e5f0" prot="public" static="no">
+        <name>TEST_DISABLED</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_harness.h" line="48" column="9" bodyfile="D:/RayTracing/include/SDL_test_harness.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__test__harness_8h_1ad1b0d362df8510a4a917442ae7173aa1" prot="public" static="no">
+        <name>TEST_ABORTED</name>
+        <initializer>-1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_harness.h" line="51" column="9" bodyfile="D:/RayTracing/include/SDL_test_harness.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__test__harness_8h_1a24c50cc9207eee59e73f95faff5ef07a" prot="public" static="no">
+        <name>TEST_STARTED</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_harness.h" line="52" column="9" bodyfile="D:/RayTracing/include/SDL_test_harness.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__test__harness_8h_1aa1fcd18bba2a887390bb7e032f177716" prot="public" static="no">
+        <name>TEST_COMPLETED</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_harness.h" line="53" column="9" bodyfile="D:/RayTracing/include/SDL_test_harness.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__test__harness_8h_1adc53d81b0aba42f8a5773a4bd1c3da88" prot="public" static="no">
+        <name>TEST_SKIPPED</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_harness.h" line="54" column="9" bodyfile="D:/RayTracing/include/SDL_test_harness.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__test__harness_8h_1accbb9396b61c19b746505b685275ce82" prot="public" static="no">
+        <name>TEST_RESULT_PASSED</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_harness.h" line="57" column="9" bodyfile="D:/RayTracing/include/SDL_test_harness.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__test__harness_8h_1a25cadd1b04d9f8f342919a53e2b984b7" prot="public" static="no">
+        <name>TEST_RESULT_FAILED</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_harness.h" line="58" column="9" bodyfile="D:/RayTracing/include/SDL_test_harness.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__test__harness_8h_1ab560e79979c20b68710cc24585a2f78f" prot="public" static="no">
+        <name>TEST_RESULT_NO_ASSERT</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_harness.h" line="59" column="9" bodyfile="D:/RayTracing/include/SDL_test_harness.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__test__harness_8h_1aadce13b4d24fe4ac2b58578167e53846" prot="public" static="no">
+        <name>TEST_RESULT_SKIPPED</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_harness.h" line="60" column="9" bodyfile="D:/RayTracing/include/SDL_test_harness.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_d_l__test__harness_8h_1aff94de0de0428e277e9c660d755adb1a" prot="public" static="no">
+        <name>TEST_RESULT_SETUP_FAILURE</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_harness.h" line="61" column="9" bodyfile="D:/RayTracing/include/SDL_test_harness.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_s_d_l__test__harness_8h_1acf5b8d5c6dcbf946fdf7bdb1ceb03e45" prot="public" static="no">
+        <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref>(*</type>
+        <definition>typedef void(* SDLTest_TestCaseSetUpFp) (void *arg)</definition>
+        <argsstring>)(void *arg)</argsstring>
+        <name>SDLTest_TestCaseSetUpFp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_harness.h" line="64" column="9" bodyfile="D:/RayTracing/include/SDL_test_harness.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_s_d_l__test__harness_8h_1ae1a62d8f725d57dc95faddcc5409afbb" prot="public" static="no">
+        <type>int(*</type>
+        <definition>typedef int(* SDLTest_TestCaseFp) (void *arg)</definition>
+        <argsstring>)(void *arg)</argsstring>
+        <name>SDLTest_TestCaseFp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_harness.h" line="67" column="9" bodyfile="D:/RayTracing/include/SDL_test_harness.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_s_d_l__test__harness_8h_1a146292b699bf0c95e1c4bcfaced3b1dc" prot="public" static="no">
+        <type><ref refid="_s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95" kindref="member">void</ref>(*</type>
+        <definition>typedef void(* SDLTest_TestCaseTearDownFp) (void *arg)</definition>
+        <argsstring>)(void *arg)</argsstring>
+        <name>SDLTest_TestCaseTearDownFp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_harness.h" line="70" column="9" bodyfile="D:/RayTracing/include/SDL_test_harness.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_s_d_l__test__harness_8h_1ae02b9535633a86200d7bce94686d1545" prot="public" static="no">
+        <type>struct <ref refid="struct_s_d_l_test___test_case_reference" kindref="compound">SDLTest_TestCaseReference</ref></type>
+        <definition>typedef struct SDLTest_TestCaseReference SDLTest_TestCaseReference</definition>
+        <argsstring></argsstring>
+        <name>SDLTest_TestCaseReference</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Holds information about a single test case. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_harness.h" line="84" column="27"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_s_d_l__test__harness_8h_1ae52f136004f974251df5cde2152fc5ad" prot="public" static="no">
+        <type>struct <ref refid="struct_s_d_l_test___test_suite_reference" kindref="compound">SDLTest_TestSuiteReference</ref></type>
+        <definition>typedef struct SDLTest_TestSuiteReference SDLTest_TestSuiteReference</definition>
+        <argsstring></argsstring>
+        <name>SDLTest_TestSuiteReference</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Holds information about a test suite (multiple test cases). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_harness.h" line="98" column="28"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_s_d_l__test__harness_8h_1a44e422204aa15c9a33e17ea74b2442ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * SDLTest_GenerateRunSeed</definition>
+        <argsstring>(const int length)</argsstring>
+        <name>SDLTest_GenerateRunSeed</name>
+        <param>
+          <type>const int</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para>Generates a random run seed string for the harness. The generated seed will contain alphanumeric characters (0-9A-Z). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Note: The returned string needs to be deallocated by the caller.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of the seed string to generate</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the generated seed string </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_harness.h" line="110" column="6" declfile="D:/RayTracing/include/SDL_test_harness.h" declline="110" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="_s_d_l__test__harness_8h_1a4999be460499b1cb45e2b2b3bbb582b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SDLTest_RunSuites</definition>
+        <argsstring>(SDLTest_TestSuiteReference *testSuites[], const char *userRunSeed, Uint64 userExecKey, const char *filter, int testIterations)</argsstring>
+        <name>SDLTest_RunSuites</name>
+        <param>
+          <type><ref refid="struct_s_d_l_test___test_suite_reference" kindref="compound">SDLTest_TestSuiteReference</ref> *</type>
+          <declname>testSuites</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>userRunSeed</declname>
+        </param>
+        <param>
+          <type><ref refid="_s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13" kindref="member">Uint64</ref></type>
+          <declname>userExecKey</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>filter</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>testIterations</declname>
+        </param>
+        <briefdescription>
+<para>Execute a test suite using the given run seed and execution key. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>testSuites</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Suites containing the test case. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>userRunSeed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Custom run seed provided by user, or NULL to autogenerate one. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>userExecKey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Custom execution key provided by user, or 0 to autogenerate one. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Filter specification. NULL disables. Case sensitive. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>testIterations</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of iterations to run each test case.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the test run result: 0 when all tests passed, 1 if any tests failed. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/RayTracing/include/SDL_test_harness.h" line="123" column="5" declfile="D:/RayTracing/include/SDL_test_harness.h" declline="123" declcolumn="5"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Include file for SDL test framework.</para>
+<para>This code is a part of the SDL2_test library, not the main SDL library. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/>Simple<sp/>DirectMedia<sp/>Layer</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/>Copyright<sp/>(C)<sp/>1997-2022<sp/>Sam<sp/>Lantinga<sp/>&lt;slouken@libsdl.org&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/>This<sp/>software<sp/>is<sp/>provided<sp/>&apos;as-is&apos;,<sp/>without<sp/>any<sp/>express<sp/>or<sp/>implied</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/>warranty.<sp/><sp/>In<sp/>no<sp/>event<sp/>will<sp/>the<sp/>authors<sp/>be<sp/>held<sp/>liable<sp/>for<sp/>any<sp/>damages</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/>arising<sp/>from<sp/>the<sp/>use<sp/>of<sp/>this<sp/>software.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/>Permission<sp/>is<sp/>granted<sp/>to<sp/>anyone<sp/>to<sp/>use<sp/>this<sp/>software<sp/>for<sp/>any<sp/>purpose,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/>including<sp/>commercial<sp/>applications,<sp/>and<sp/>to<sp/>alter<sp/>it<sp/>and<sp/>redistribute<sp/>it</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/>freely,<sp/>subject<sp/>to<sp/>the<sp/>following<sp/>restrictions:</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"></highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/>1.<sp/>The<sp/>origin<sp/>of<sp/>this<sp/>software<sp/>must<sp/>not<sp/>be<sp/>misrepresented;<sp/>you<sp/>must<sp/>not</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>claim<sp/>that<sp/>you<sp/>wrote<sp/>the<sp/>original<sp/>software.<sp/>If<sp/>you<sp/>use<sp/>this<sp/>software</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>in<sp/>a<sp/>product,<sp/>an<sp/>acknowledgment<sp/>in<sp/>the<sp/>product<sp/>documentation<sp/>would<sp/>be</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>appreciated<sp/>but<sp/>is<sp/>not<sp/>required.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/>2.<sp/>Altered<sp/>source<sp/>versions<sp/>must<sp/>be<sp/>plainly<sp/>marked<sp/>as<sp/>such,<sp/>and<sp/>must<sp/>not<sp/>be</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>misrepresented<sp/>as<sp/>being<sp/>the<sp/>original<sp/>software.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/>3.<sp/>This<sp/>notice<sp/>may<sp/>not<sp/>be<sp/>removed<sp/>or<sp/>altered<sp/>from<sp/>any<sp/>source<sp/>distribution.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/><sp/>Defines<sp/>types<sp/>for<sp/>test<sp/>case<sp/>definitions<sp/>and<sp/>the<sp/>test<sp/>execution<sp/>harness<sp/>API.</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"></highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/><sp/>Based<sp/>on<sp/>original<sp/>GSOC<sp/>code<sp/>by<sp/>Markus<sp/>Kauppila<sp/>&lt;markus.kauppila@gmail.com&gt;</highlight></codeline>
+<codeline lineno="34"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SDL_test_h_arness_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDL_test_h_arness_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="begin__code_8h" kindref="compound">begin_code.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Set<sp/>up<sp/>for<sp/>C<sp/>function<sp/>definitions,<sp/>even<sp/>when<sp/>using<sp/>C++<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>!<sp/>Definitions<sp/>for<sp/>test<sp/>case<sp/>structures<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="_s_d_l__test__harness_8h_1a4404f2feb87e68e20e31bd86ec1728b1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TEST_ENABLED<sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="_s_d_l__test__harness_8h_1ac7b13b8aefdada941436332f7559e5f0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TEST_DISABLED<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>!<sp/>Definition<sp/>of<sp/>all<sp/>the<sp/>possible<sp/>test<sp/>return<sp/>values<sp/>of<sp/>the<sp/>test<sp/>case<sp/>method<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="_s_d_l__test__harness_8h_1ad1b0d362df8510a4a917442ae7173aa1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TEST_ABORTED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="_s_d_l__test__harness_8h_1a24c50cc9207eee59e73f95faff5ef07a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TEST_STARTED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="_s_d_l__test__harness_8h_1aa1fcd18bba2a887390bb7e032f177716" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TEST_COMPLETED<sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="_s_d_l__test__harness_8h_1adc53d81b0aba42f8a5773a4bd1c3da88" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TEST_SKIPPED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>!<sp/>Definition<sp/>of<sp/>all<sp/>the<sp/>possible<sp/>test<sp/>results<sp/>for<sp/>the<sp/>harness<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="_s_d_l__test__harness_8h_1accbb9396b61c19b746505b685275ce82" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TEST_RESULT_PASSED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="_s_d_l__test__harness_8h_1a25cadd1b04d9f8f342919a53e2b984b7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TEST_RESULT_FAILED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="_s_d_l__test__harness_8h_1ab560e79979c20b68710cc24585a2f78f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TEST_RESULT_NO_ASSERT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="_s_d_l__test__harness_8h_1aadce13b4d24fe4ac2b58578167e53846" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TEST_RESULT_SKIPPED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="_s_d_l__test__harness_8h_1aff94de0de0428e277e9c660d755adb1a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TEST_RESULT_SETUP_FAILURE<sp/><sp/><sp/><sp/><sp/><sp/><sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>!&lt;<sp/>Function<sp/>pointer<sp/>to<sp/>a<sp/>test<sp/>case<sp/>setup<sp/>function<sp/>(run<sp/>before<sp/>every<sp/>test)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="_s_d_l__test__harness_8h_1acf5b8d5c6dcbf946fdf7bdb1ceb03e45" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__audio_8h_1aa5cb90967788ada2711894ca158ece01" kindref="member">void</ref><sp/>(*<ref refid="_s_d_l__test__harness_8h_1acf5b8d5c6dcbf946fdf7bdb1ceb03e45" kindref="member">SDLTest_TestCaseSetUpFp</ref>)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>!&lt;<sp/>Function<sp/>pointer<sp/>to<sp/>a<sp/>test<sp/>case<sp/>function<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="_s_d_l__test__harness_8h_1ae1a62d8f725d57dc95faddcc5409afbb" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>int<sp/>(*<ref refid="_s_d_l__test__harness_8h_1ae1a62d8f725d57dc95faddcc5409afbb" kindref="member">SDLTest_TestCaseFp</ref>)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>!&lt;<sp/>Function<sp/>pointer<sp/>to<sp/>a<sp/>test<sp/>case<sp/>teardown<sp/>function<sp/>(run<sp/>after<sp/>every<sp/>test)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="_s_d_l__test__harness_8h_1a146292b699bf0c95e1c4bcfaced3b1dc" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__audio_8h_1aa5cb90967788ada2711894ca158ece01" kindref="member">void</ref><sp/><sp/>(*<ref refid="_s_d_l__test__harness_8h_1a146292b699bf0c95e1c4bcfaced3b1dc" kindref="member">SDLTest_TestCaseTearDownFp</ref>)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="struct_s_d_l_test___test_case_reference" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_s_d_l_test___test_case_reference" kindref="compound">SDLTest_TestCaseReference</ref><sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>!&lt;<sp/>Func2Stress<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="struct_s_d_l_test___test_case_reference_1af9472f0c421a2845b540fc28fb30a3ef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__test__harness_8h_1ae1a62d8f725d57dc95faddcc5409afbb" kindref="member">SDLTest_TestCaseFp</ref><sp/><ref refid="struct_s_d_l_test___test_case_reference_1af9472f0c421a2845b540fc28fb30a3ef" kindref="member">testCase</ref>;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>!&lt;<sp/>Short<sp/>name<sp/>(or<sp/>function<sp/>name)<sp/>&quot;Func2Stress&quot;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="struct_s_d_l_test___test_case_reference_1a02bcd31636644ce291dae6520304a112" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="struct_s_d_l_test___test_case_reference_1a02bcd31636644ce291dae6520304a112" kindref="member">name</ref>;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>!&lt;<sp/>Long<sp/>name<sp/>or<sp/>full<sp/>description<sp/>&quot;This<sp/>test<sp/>pushes<sp/>func2()<sp/>to<sp/>the<sp/>limit.&quot;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="struct_s_d_l_test___test_case_reference_1a5bfe4df076e488b8773beab882f42614" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="struct_s_d_l_test___test_case_reference_1a5bfe4df076e488b8773beab882f42614" kindref="member">description</ref>;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>!&lt;<sp/>Set<sp/>to<sp/>TEST_ENABLED<sp/>or<sp/>TEST_DISABLED<sp/>(test<sp/>won&apos;t<sp/>be<sp/>run)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="struct_s_d_l_test___test_case_reference_1a15168c85e38cae7557b4beb477ef6f9a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_l_test___test_case_reference_1a15168c85e38cae7557b4beb477ef6f9a" kindref="member">enabled</ref>;</highlight></codeline>
+<codeline lineno="84" refid="_s_d_l__test__harness_8h_1ae02b9535633a86200d7bce94686d1545" refkind="member"><highlight class="normal">}<sp/><ref refid="_s_d_l__test__harness_8h_1ae02b9535633a86200d7bce94686d1545" kindref="member">SDLTest_TestCaseReference</ref>;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="struct_s_d_l_test___test_suite_reference" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_s_d_l_test___test_suite_reference" kindref="compound">SDLTest_TestSuiteReference</ref><sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>!&lt;<sp/>&quot;PlatformSuite&quot;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="struct_s_d_l_test___test_suite_reference_1a01b702b83dad3dc15cfe535554527418" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="struct_s_d_l_test___test_suite_reference_1a01b702b83dad3dc15cfe535554527418" kindref="member">name</ref>;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>!&lt;<sp/>The<sp/>function<sp/>that<sp/>is<sp/>run<sp/>before<sp/>each<sp/>test.<sp/>NULL<sp/>skips.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="struct_s_d_l_test___test_suite_reference_1a8aa788b982efb93c93c2ab01202e0007" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__test__harness_8h_1acf5b8d5c6dcbf946fdf7bdb1ceb03e45" kindref="member">SDLTest_TestCaseSetUpFp</ref><sp/><ref refid="struct_s_d_l_test___test_suite_reference_1a8aa788b982efb93c93c2ab01202e0007" kindref="member">testSetUp</ref>;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>!&lt;<sp/>The<sp/>test<sp/>cases<sp/>that<sp/>are<sp/>run<sp/>as<sp/>part<sp/>of<sp/>the<sp/>suite.<sp/>Last<sp/>item<sp/>should<sp/>be<sp/>NULL.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="struct_s_d_l_test___test_suite_reference_1a06d97ce5bcf9ceb1300cc4aa39c028d3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_s_d_l_test___test_case_reference" kindref="compound">SDLTest_TestCaseReference</ref><sp/>**<ref refid="struct_s_d_l_test___test_suite_reference_1a06d97ce5bcf9ceb1300cc4aa39c028d3" kindref="member">testCases</ref>;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>!&lt;<sp/>The<sp/>function<sp/>that<sp/>is<sp/>run<sp/>after<sp/>each<sp/>test.<sp/>NULL<sp/>skips.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="struct_s_d_l_test___test_suite_reference_1ad66abaf20653fd7361d28c69f88ac702" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_d_l__test__harness_8h_1a146292b699bf0c95e1c4bcfaced3b1dc" kindref="member">SDLTest_TestCaseTearDownFp</ref><sp/><ref refid="struct_s_d_l_test___test_suite_reference_1ad66abaf20653fd7361d28c69f88ac702" kindref="member">testTearDown</ref>;</highlight></codeline>
+<codeline lineno="98" refid="_s_d_l__test__harness_8h_1ae52f136004f974251df5cde2152fc5ad" refkind="member"><highlight class="normal">}<sp/><ref refid="_s_d_l__test__harness_8h_1ae52f136004f974251df5cde2152fc5ad" kindref="member">SDLTest_TestSuiteReference</ref>;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="_s_d_l__test__harness_8h_1a44e422204aa15c9a33e17ea74b2442ab" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="_s_d_l__test__harness_8h_1a44e422204aa15c9a33e17ea74b2442ab" kindref="member">SDLTest_GenerateRunSeed</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__opengl__glext_8h_1ab9c919755bde3b34349e23a32b4e0fa7" kindref="member">length</ref>);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123" refid="_s_d_l__test__harness_8h_1a4999be460499b1cb45e2b2b3bbb582b2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_s_d_l__test__harness_8h_1a4999be460499b1cb45e2b2b3bbb582b2" kindref="member">SDLTest_RunSuites</ref>(<ref refid="struct_s_d_l_test___test_suite_reference" kindref="compound">SDLTest_TestSuiteReference</ref><sp/>*testSuites[],<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*userRunSeed,<sp/><ref refid="_s_d_l__stdinc_8h_1ac006cf2bd55a42a9cc8ae9f123aa7e13" kindref="member">Uint64</ref><sp/>userExecKey,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="_s_d_l__opengl__glext_8h_1a8bed50656d87c3eeed9d8f5e539c6b3e" kindref="member">filter</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>testIterations);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Ends<sp/>C<sp/>function<sp/>definitions<sp/>when<sp/>using<sp/>C++<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="close__code_8h" kindref="compound">close_code.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>SDL_test_h_arness_h<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>vi:<sp/>set<sp/>ts=4<sp/>sw=4<sp/>expandtab:<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/include/SDL_test_harness.h"/>
+  </compounddef>
+</doxygen>

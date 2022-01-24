@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_gtfm_8h_source" xml:lang="en-US">
+<title>gtfm.h</title>
+<indexterm><primary>D:/RayTracing/RayTrace/gtfm.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;RAYTRACING_GTFM_H</emphasis>
+2 <emphasis role="preprocessor">#define&#32;RAYTRACING_GTFM_H</emphasis>
+3 
+4 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_qb_vector_8h">./qbLinAlg/qbVector.h</link>&quot;</emphasis>
+5 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_qb_matrix_8h">./qbLinAlg/qbMatrix.h</link>&quot;</emphasis>
+6 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_ray_8h">ray.h</link>&quot;</emphasis>
+7 
+8 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_r_t">RT</link>&#32;{
+9 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Definicja&#32;flag&#32;kierunków&#32;transformacji</emphasis>
+10 &#32;&#32;&#32;&#32;<emphasis role="keyword">constexpr</emphasis>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_namespace_r_t_1aaac17f4135aafa89d5b75f9b48ba61eb">FWDTFORM</link>&#32;=&#32;<emphasis role="keyword">true</emphasis>;&#32;<emphasis role="comment">//&#32;forward&#32;transform</emphasis>
+11 &#32;&#32;&#32;&#32;<emphasis role="keyword">constexpr</emphasis>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_namespace_r_t_1a6d7c00f7bd41a6734521d58797804e84">BCKTFORM</link>&#32;=&#32;<emphasis role="keyword">false</emphasis>;&#32;<emphasis role="comment">//&#32;backward&#32;transform</emphasis>
+12 
+13 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_class_r_t_1_1_g_tform">GTform</link>&#32;{
+14 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+15 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Konstruktor</emphasis>
+16 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_r_t_1_1_g_tform_1af4a85301e8377010585ab3b9be09b73e">GTform</link>();
+17 
+18 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Destruktor</emphasis>
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_r_t_1_1_g_tform_1ac52387dbc170335f4648b5ba6994834d">~GTform</link>();
+20 
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Konstruktor&#32;wykorzystujący&#32;dwie&#32;macierze</emphasis>
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_r_t_1_1_g_tform_1af4a85301e8377010585ab3b9be09b73e">GTform</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;double&gt;</link>&#32;&amp;fwd,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;double&gt;</link>&#32;&amp;bck);
+23 
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Metoda&#32;do&#32;ustawiania&#32;komponentów&#32;translacji,&#32;rotacji&#32;i&#32;skalowania</emphasis>
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_r_t_1_1_g_tform_1a54c87058d14d7cf321230ea13523f622">SetTransform</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;translation,
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;rotation,
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;<link linkend="__s_d_l__opengl__glext_8h_1a281421b881aa7a1266842b73a3bc7655">scale</link>);
+28 
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Metody&#32;zwracające&#32;matryce&#32;transformacji</emphasis>
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_g_tform_1a115fa0452dcb2c3fd97577f044986d80">GetForward</link>();
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_g_tform_1adcf5e1799ce160c0793f6ac243cd4cde">GetBackward</link>();
+32 
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Metody&#32;do&#32;transformacji</emphasis>
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_r_t_1_1_ray">RT::Ray</link>&#32;<link linkend="_class_r_t_1_1_g_tform_1a77ea09e51153e6eca97750c38e520eef">Apply</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_r_t_1_1_ray">RT::Ray</link>&#32;&amp;inputRay,&#32;<emphasis role="keywordtype">bool</emphasis>&#32;dirFlag);
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;<link linkend="_class_r_t_1_1_g_tform_1a77ea09e51153e6eca97750c38e520eef">Apply</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;inputVector,&#32;<emphasis role="keywordtype">bool</emphasis>&#32;dirFlag);
+36 
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Przeciążenie&#32;operatorów</emphasis>
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">friend</emphasis>&#32;<link linkend="_class_r_t_1_1_g_tform">GTform</link>&#32;<link linkend="_class_r_t_1_1_g_tform_1a8b8700192cec8d25c73f40b6e787c77c">operator*</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_r_t_1_1_g_tform">RT::GTform</link>&#32;&amp;lhs,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_r_t_1_1_g_tform">RT::GTform</link>&#32;&amp;rhs);&#32;<emphasis role="comment">//&#32;left&#32;hand&#32;side,&#32;right&#32;hand&#32;side</emphasis>
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_r_t_1_1_g_tform">GTform</link>&#32;<link linkend="_class_r_t_1_1_g_tform_1a809b7029a456b68e49a109c97a07afa2">operator=</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_r_t_1_1_g_tform">GTform</link>&#32;&amp;rhs);
+40 
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Metoda&#32;wypisująca&#32;macierze</emphasis>
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_r_t_1_1_g_tform_1a2169f46803d51938b059da7eb9fa08fb">PrintMatrix</link>(<emphasis role="keywordtype">bool</emphasis>&#32;dirFlag);
+43 
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Metoda&#32;umożliwiająca&#32;wypisywanie&#32;wektorów</emphasis>
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_r_t_1_1_g_tform_1a7ed83f7c30e352f5639dd7af0afbfe37">PrintVector</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_vector">qbVector&lt;double&gt;</link>&#32;&amp;vector);
+46 
+47 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>:
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;Print(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;double&gt;</link>&#32;&amp;<link linkend="__s_d_l__opengl__glext_8h_1a7b24a3f2f56eb1244ae69dacb4fecb6f">matrix</link>);
+49 
+50 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>:
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;macierze&#32;jednorodne&#32;4&#32;x&#32;4&#32;pozwalają&#32;na&#32;przeprowadzenie&#32;operacji&#32;translacji,&#32;rotacji&#32;i&#32;skalowania&#32;za&#32;jednym&#32;zamachem</emphasis>
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;double&gt;</link>&#32;m_fwdtfm{4,&#32;4};
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;double&gt;</link>&#32;m_bcktfm{4,&#32;4};
+54 &#32;&#32;&#32;&#32;};
+55 }
+56 
+57 
+58 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//RAYTRACING_GTFM_H</emphasis>
+</programlisting></section>

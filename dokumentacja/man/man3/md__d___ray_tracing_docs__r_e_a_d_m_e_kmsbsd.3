@@ -1,0 +1,29 @@
+.TH "md__d___ray_tracing_docs__r_e_a_d_m_e_kmsbsd" 3 "Mon Jan 24 2022" "Version 1.0" "RayTracer" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__d___ray_tracing_docs__r_e_a_d_m_e_kmsbsd \- KMSDRM on *BSD 
+KMSDRM is supported on FreeBSD and OpenBSD\&. DragonFlyBSD works but requires being a root user\&. NetBSD isn't supported yet because the application will crash when creating the KMSDRM screen\&.
+.PP
+WSCONS support has been brought back, but only as an input backend\&. It will not be brought back as a video backend to ease maintenance\&.
+.PP
+OpenBSD note: Note that the video backend assumes that the user has read/write permissions to the /dev/drm* devices\&.
+.SH "SDL2 WSCONS input backend features"
+.PP
+.IP "1." 4
+It is keymap-aware; it will work properly with different keymaps\&.
+.IP "2." 4
+It has mouse support\&.
+.IP "3." 4
+Accent input is supported\&.
+.IP "4." 4
+Compose keys are supported\&.
+.IP "5." 4
+AltGr and Meta Shift keys work as intended\&.
+.PP
+.SH "Partially working or no input on OpenBSD/NetBSD\&."
+.PP
+The WSCONS input backend needs read/write access to the /dev/wskbd* devices, without which it will not work properly\&. /dev/wsmouse must also be read/write accessible, otherwise mouse input will not work\&.
+.SH "Partially working or no input on FreeBSD\&."
+.PP
+The evdev devices are only accessible to the root user by default\&. Edit devfs rules to allow access to such devices\&. The /dev/kbd* devices are also only accessible to the root user by default\&. Edit devfs rules to allow access to such devices\&. 

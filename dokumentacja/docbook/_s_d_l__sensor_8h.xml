@@ -1,0 +1,675 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__sensor_8h" xml:lang="en-US">
+<title>D:/RayTracing/include/SDL_sensor.h File Reference</title>
+<indexterm><primary>D:/RayTracing/include/SDL_sensor.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;SDL_stdinc.h&quot;
+#include &quot;SDL_error.h&quot;
+#include &quot;begin_code.h&quot;
+#include &quot;close_code.h&quot;
+</programlisting><simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__s_d_l__sensor_8h_1a577adbb3be3bab2814caf71e9995f177">SDL_STANDARD_GRAVITY</link>   9.80665<link linkend="__s_d_l__opengl__glext_8h_1a691492ec0bd6383f91200e49f6ae40ed">f</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>typedef struct _SDL_Sensor <link linkend="__s_d_l__sensor_8h_1a33718f4ef5c3f4ea306ddecf3ae3e3ad">SDL_Sensor</link></para>
+</listitem>
+            <listitem><para>typedef <link linkend="__s_d_l__stdinc_8h_1a7a90b941db9d4582e9ad7abb9940ff7e">Sint32</link> <link linkend="__s_d_l__sensor_8h_1a0cca37d0b39c2db41841f54308aee65b">SDL_SensorID</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="__s_d_l__sensor_8h_1a94a441696f7d053dd541ec0b7e00e33a">SDL_SensorType</link> { <link linkend="__s_d_l__sensor_8h_1a94a441696f7d053dd541ec0b7e00e33aa473fc0b4fcd77e59c39260888a0fb6ed">SDL_SENSOR_INVALID</link> = -1
+, <link linkend="__s_d_l__sensor_8h_1a94a441696f7d053dd541ec0b7e00e33aaa657e6c2ff14bfd73ec9cacc940d433f">SDL_SENSOR_UNKNOWN</link>
+, <link linkend="__s_d_l__sensor_8h_1a94a441696f7d053dd541ec0b7e00e33aabb4f72e33919c7d6689ac33605fb3bc7">SDL_SENSOR_ACCEL</link>
+, <link linkend="__s_d_l__sensor_8h_1a94a441696f7d053dd541ec0b7e00e33aa6f5ff988acabc5ac39635976f1c1ac56">SDL_SENSOR_GYRO</link>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__sensor_8h_1a047fa18746e6ac5be4d20f6b7c481578">SDL_LockSensors</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__sensor_8h_1a1cabc17ed80337c304b2f7719928e7db">SDL_UnlockSensors</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__sensor_8h_1a398fee521f652c9c51b8865ea0c2aa02">SDL_NumSensors</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__sensor_8h_1af44595dc1382022ac23bf208ee759976">SDL_SensorGetDeviceName</link> (int device_index)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__sensor_8h_1a94a441696f7d053dd541ec0b7e00e33a">SDL_SensorType</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__sensor_8h_1a2183f938cafa6fdd9363025c76502e61">SDL_SensorGetDeviceType</link> (int device_index)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__sensor_8h_1a735c61476c9cff3db9499dc258096096">SDL_SensorGetDeviceNonPortableType</link> (int device_index)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__sensor_8h_1a0cca37d0b39c2db41841f54308aee65b">SDL_SensorID</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__sensor_8h_1a52d83f263e764e3fe77932bd748d34e8">SDL_SensorGetDeviceInstanceID</link> (int device_index)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__sensor_8h_1a33718f4ef5c3f4ea306ddecf3ae3e3ad">SDL_Sensor</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__sensor_8h_1a44812626ba1cf80f9c027cf86959065b">SDL_SensorOpen</link> (int device_index)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__sensor_8h_1a33718f4ef5c3f4ea306ddecf3ae3e3ad">SDL_Sensor</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__sensor_8h_1ad02b1e47c2e2e78817f93b3ce7e49609">SDL_SensorFromInstanceID</link> (<link linkend="__s_d_l__sensor_8h_1a0cca37d0b39c2db41841f54308aee65b">SDL_SensorID</link> instance_id)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__sensor_8h_1a870ea62d8a824fb70b0b6540978ad8f1">SDL_SensorGetName</link> (<link linkend="__s_d_l__sensor_8h_1a33718f4ef5c3f4ea306ddecf3ae3e3ad">SDL_Sensor</link> *sensor)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__sensor_8h_1a94a441696f7d053dd541ec0b7e00e33a">SDL_SensorType</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__sensor_8h_1a3d8e4d70062a1af56dea369a2a017907">SDL_SensorGetType</link> (<link linkend="__s_d_l__sensor_8h_1a33718f4ef5c3f4ea306ddecf3ae3e3ad">SDL_Sensor</link> *sensor)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__sensor_8h_1a98fe8a0c2dbefb69f59f0a07edefc129">SDL_SensorGetNonPortableType</link> (<link linkend="__s_d_l__sensor_8h_1a33718f4ef5c3f4ea306ddecf3ae3e3ad">SDL_Sensor</link> *sensor)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__sensor_8h_1a0cca37d0b39c2db41841f54308aee65b">SDL_SensorID</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__sensor_8h_1a94c4aaff92e0421a52bfbb0a2ac0129f">SDL_SensorGetInstanceID</link> (<link linkend="__s_d_l__sensor_8h_1a33718f4ef5c3f4ea306ddecf3ae3e3ad">SDL_Sensor</link> *sensor)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__sensor_8h_1a22466ee6b7af791937ebf1f7b76ed56b">SDL_SensorGetData</link> (<link linkend="__s_d_l__sensor_8h_1a33718f4ef5c3f4ea306ddecf3ae3e3ad">SDL_Sensor</link> *sensor, float *<link linkend="__s_d_l__opengl_8h_1a2e335d56e2846b0fea47eed068b2d34a">data</link>, int num_values)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__sensor_8h_1a4ff6e8813bb524a17f1d9b07d2a26005">SDL_SensorClose</link> (<link linkend="__s_d_l__sensor_8h_1a33718f4ef5c3f4ea306ddecf3ae3e3ad">SDL_Sensor</link> *sensor)</para>
+</listitem>
+            <listitem><para><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> <link linkend="__s_d_l__sensor_8h_1a23afdba77827b8ad6c212eedce5c2069">SDL_SensorUpdate</link> (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link>)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Include file for SDL sensor event handling </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__s_d_l__sensor_8h_1a577adbb3be3bab2814caf71e9995f177"/><section>
+    <title>SDL_STANDARD_GRAVITY</title>
+<indexterm><primary>SDL_STANDARD_GRAVITY</primary><secondary>SDL_sensor.h</secondary></indexterm>
+<indexterm><primary>SDL_sensor.h</primary><secondary>SDL_STANDARD_GRAVITY</secondary></indexterm>
+<para><computeroutput>#define SDL_STANDARD_GRAVITY   9.80665<link linkend="__s_d_l__opengl__glext_8h_1a691492ec0bd6383f91200e49f6ae40ed">f</link></computeroutput></para>
+<para>Accelerometer sensor</para>
+
+<para>The accelerometer returns the current acceleration in SI meters per second squared. This measurement includes the force of gravity, so a device at rest will have an value of SDL_STANDARD_GRAVITY away from the center of the earth.</para>
+
+<para>values[0]: Acceleration on the x axis values[1]: Acceleration on the y axis values[2]: Acceleration on the z axis</para>
+
+<para>For phones held in portrait mode and game controllers held in front of you, the axes are defined as follows: -X ... +X : left ... right -Y ... +Y : bottom ... top -Z ... +Z : farther ... closer</para>
+
+<para>The axis data is not changed when the phone is rotated.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__video_8h_1a6540db01a424ced1847376e583361ecb">SDL_GetDisplayOrientation()</link> </para>
+</formalpara>
+</para>
+</section>
+</section>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="__s_d_l__sensor_8h_1a33718f4ef5c3f4ea306ddecf3ae3e3ad"/><section>
+    <title>SDL_Sensor</title>
+<indexterm><primary>SDL_Sensor</primary><secondary>SDL_sensor.h</secondary></indexterm>
+<indexterm><primary>SDL_sensor.h</primary><secondary>SDL_Sensor</secondary></indexterm>
+<para><computeroutput>typedef struct _SDL_Sensor <link linkend="__s_d_l__sensor_8h_1a33718f4ef5c3f4ea306ddecf3ae3e3ad">SDL_Sensor</link></computeroutput></para></section>
+<anchor xml:id="__s_d_l__sensor_8h_1a0cca37d0b39c2db41841f54308aee65b"/><section>
+    <title>SDL_SensorID</title>
+<indexterm><primary>SDL_SensorID</primary><secondary>SDL_sensor.h</secondary></indexterm>
+<indexterm><primary>SDL_sensor.h</primary><secondary>SDL_SensorID</secondary></indexterm>
+<para><computeroutput>typedef <link linkend="__s_d_l__stdinc_8h_1a7a90b941db9d4582e9ad7abb9940ff7e">Sint32</link> <link linkend="__s_d_l__sensor_8h_1a0cca37d0b39c2db41841f54308aee65b">SDL_SensorID</link></computeroutput></para>
+<para>This is a unique ID for a sensor for the time it is connected to the system, and is never reused for the lifetime of the application.</para>
+
+<para>The ID value starts at 0 and increments from there. The value -1 is an invalid ID. </para>
+</section>
+</section>
+<section>
+<title>Enumeration Type Documentation</title>
+<anchor xml:id="__s_d_l__sensor_8h_1a94a441696f7d053dd541ec0b7e00e33a"/><section>
+    <title>SDL_SensorType</title>
+<indexterm><primary>SDL_SensorType</primary><secondary>SDL_sensor.h</secondary></indexterm>
+<indexterm><primary>SDL_sensor.h</primary><secondary>SDL_SensorType</secondary></indexterm>
+<para><computeroutput>enum <link linkend="__s_d_l__sensor_8h_1a94a441696f7d053dd541ec0b7e00e33a">SDL_SensorType</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>SDL_SENSOR_INVALID</primary><secondary>SDL_sensor.h</secondary></indexterm>
+<indexterm><primary>SDL_sensor.h</primary><secondary>SDL_SENSOR_INVALID</secondary></indexterm>
+<anchor xml:id="__s_d_l__sensor_8h_1a94a441696f7d053dd541ec0b7e00e33aa473fc0b4fcd77e59c39260888a0fb6ed"/>SDL_SENSOR_INVALID</entry><entry>
+<para>Returned for an invalid sensor </para>
+</entry></row><row><entry><indexterm><primary>SDL_SENSOR_UNKNOWN</primary><secondary>SDL_sensor.h</secondary></indexterm>
+<indexterm><primary>SDL_sensor.h</primary><secondary>SDL_SENSOR_UNKNOWN</secondary></indexterm>
+<anchor xml:id="__s_d_l__sensor_8h_1a94a441696f7d053dd541ec0b7e00e33aaa657e6c2ff14bfd73ec9cacc940d433f"/>SDL_SENSOR_UNKNOWN</entry><entry>
+<para>Unknown sensor type </para>
+</entry></row><row><entry><indexterm><primary>SDL_SENSOR_ACCEL</primary><secondary>SDL_sensor.h</secondary></indexterm>
+<indexterm><primary>SDL_sensor.h</primary><secondary>SDL_SENSOR_ACCEL</secondary></indexterm>
+<anchor xml:id="__s_d_l__sensor_8h_1a94a441696f7d053dd541ec0b7e00e33aabb4f72e33919c7d6689ac33605fb3bc7"/>SDL_SENSOR_ACCEL</entry><entry>
+<para>Accelerometer </para>
+</entry></row><row><entry><indexterm><primary>SDL_SENSOR_GYRO</primary><secondary>SDL_sensor.h</secondary></indexterm>
+<indexterm><primary>SDL_sensor.h</primary><secondary>SDL_SENSOR_GYRO</secondary></indexterm>
+<anchor xml:id="__s_d_l__sensor_8h_1a94a441696f7d053dd541ec0b7e00e33aa6f5ff988acabc5ac39635976f1c1ac56"/>SDL_SENSOR_GYRO</entry><entry>
+<para>Gyroscope </para>
+</entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__s_d_l__sensor_8h_1a047fa18746e6ac5be4d20f6b7c481578"/><section>
+    <title>SDL_LockSensors()</title>
+<indexterm><primary>SDL_LockSensors</primary><secondary>SDL_sensor.h</secondary></indexterm>
+<indexterm><primary>SDL_sensor.h</primary><secondary>SDL_LockSensors</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_LockSensors (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para>
+<para>Gyroscope sensor</para>
+
+<para>The gyroscope returns the current rate of rotation in radians per second. The rotation is positive in the counter-clockwise direction. That is, an observer looking from a positive location on one of the axes would see positive rotation on that axis when it appeared to be rotating counter-clockwise.</para>
+
+<para>values[0]: Angular speed around the x axis (pitch) values[1]: Angular speed around the y axis (yaw) values[2]: Angular speed around the z axis (roll)</para>
+
+<para>For phones held in portrait mode and game controllers held in front of you, the axes are defined as follows: -X ... +X : left ... right -Y ... +Y : bottom ... top -Z ... +Z : farther ... closer</para>
+
+<para>The axis data is not changed when the phone or controller is rotated.</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="__s_d_l__video_8h_1a6540db01a424ced1847376e583361ecb">SDL_GetDisplayOrientation()</link> Locking for multi-threaded <link linkend="__s_d_l__opengl__glext_8h_1a9fb81ef401f3cb865f7b2f1bb059f7d7">access</link> to the sensor API</para>
+</formalpara>
+If you are using the sensor API or handling events from multiple threads you should use these locking functions to protect access to the sensors.</para>
+
+<para>In particular, you are guaranteed that the sensor list won&apos;t change, so the API functions that take a sensor index will be valid, and sensor events will not be delivered.</para>
+
+<para><formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.14. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__sensor_8h_1a398fee521f652c9c51b8865ea0c2aa02"/><section>
+    <title>SDL_NumSensors()</title>
+<indexterm><primary>SDL_NumSensors</primary><secondary>SDL_sensor.h</secondary></indexterm>
+<indexterm><primary>SDL_sensor.h</primary><secondary>SDL_NumSensors</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_NumSensors (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para>
+<para>Count the number of sensors attached to the system right now.</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>the number of sensors detected.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.9. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__sensor_8h_1a4ff6e8813bb524a17f1d9b07d2a26005"/><section>
+    <title>SDL_SensorClose()</title>
+<indexterm><primary>SDL_SensorClose</primary><secondary>SDL_sensor.h</secondary></indexterm>
+<indexterm><primary>SDL_sensor.h</primary><secondary>SDL_SensorClose</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_SensorClose (<link linkend="__s_d_l__sensor_8h_1a33718f4ef5c3f4ea306ddecf3ae3e3ad">SDL_Sensor</link> * sensor)</computeroutput></para>
+<para>Close a sensor previously opened with <link linkend="__s_d_l__sensor_8h_1a44812626ba1cf80f9c027cf86959065b">SDL_SensorOpen()</link>.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>sensor</entry><entry>
+<para>The SDL_Sensor object to close</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.9. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__sensor_8h_1ad02b1e47c2e2e78817f93b3ce7e49609"/><section>
+    <title>SDL_SensorFromInstanceID()</title>
+<indexterm><primary>SDL_SensorFromInstanceID</primary><secondary>SDL_sensor.h</secondary></indexterm>
+<indexterm><primary>SDL_sensor.h</primary><secondary>SDL_SensorFromInstanceID</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__sensor_8h_1a33718f4ef5c3f4ea306ddecf3ae3e3ad">SDL_Sensor</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_SensorFromInstanceID (<link linkend="__s_d_l__sensor_8h_1a0cca37d0b39c2db41841f54308aee65b">SDL_SensorID</link> instance_id)</computeroutput></para>
+<para>Return the SDL_Sensor associated with an instance id.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>instance_id</entry><entry>
+<para>The sensor from instance id </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>an SDL_Sensor object.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.9. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__sensor_8h_1a22466ee6b7af791937ebf1f7b76ed56b"/><section>
+    <title>SDL_SensorGetData()</title>
+<indexterm><primary>SDL_SensorGetData</primary><secondary>SDL_sensor.h</secondary></indexterm>
+<indexterm><primary>SDL_sensor.h</primary><secondary>SDL_SensorGetData</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_SensorGetData (<link linkend="__s_d_l__sensor_8h_1a33718f4ef5c3f4ea306ddecf3ae3e3ad">SDL_Sensor</link> * sensor, float * data, int num_values)</computeroutput></para>
+<para>Get the current state of an opened sensor.</para>
+
+<para>The number of values and interpretation of the data is sensor dependent.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>sensor</entry><entry>
+<para>The SDL_Sensor object to query </para>
+</entry>
+                            </row>
+                            <row>
+<entry>data</entry><entry>
+<para>A pointer filled with the current sensor state </para>
+</entry>
+                            </row>
+                            <row>
+<entry>num_values</entry><entry>
+<para>The number of values to write to data </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 or -1 if an error occurred.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.9. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__sensor_8h_1a52d83f263e764e3fe77932bd748d34e8"/><section>
+    <title>SDL_SensorGetDeviceInstanceID()</title>
+<indexterm><primary>SDL_SensorGetDeviceInstanceID</primary><secondary>SDL_sensor.h</secondary></indexterm>
+<indexterm><primary>SDL_sensor.h</primary><secondary>SDL_SensorGetDeviceInstanceID</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__sensor_8h_1a0cca37d0b39c2db41841f54308aee65b">SDL_SensorID</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_SensorGetDeviceInstanceID (int device_index)</computeroutput></para>
+<para>Get the instance ID of a sensor.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>device_index</entry><entry>
+<para>The sensor to get instance id from </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the sensor instance ID, or -1 if <computeroutput>device_index</computeroutput> is out of range.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.9. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__sensor_8h_1af44595dc1382022ac23bf208ee759976"/><section>
+    <title>SDL_SensorGetDeviceName()</title>
+<indexterm><primary>SDL_SensorGetDeviceName</primary><secondary>SDL_sensor.h</secondary></indexterm>
+<indexterm><primary>SDL_sensor.h</primary><secondary>SDL_SensorGetDeviceName</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_SensorGetDeviceName (int device_index)</computeroutput></para>
+<para>Get the implementation dependent name of a sensor.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>device_index</entry><entry>
+<para>The sensor to obtain name from </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the sensor name, or NULL if <computeroutput>device_index</computeroutput> is out of range.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.9. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__sensor_8h_1a735c61476c9cff3db9499dc258096096"/><section>
+    <title>SDL_SensorGetDeviceNonPortableType()</title>
+<indexterm><primary>SDL_SensorGetDeviceNonPortableType</primary><secondary>SDL_sensor.h</secondary></indexterm>
+<indexterm><primary>SDL_sensor.h</primary><secondary>SDL_SensorGetDeviceNonPortableType</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_SensorGetDeviceNonPortableType (int device_index)</computeroutput></para>
+<para>Get the platform dependent type of a sensor.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>device_index</entry><entry>
+<para>The sensor to check </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the sensor platform dependent type, or -1 if <computeroutput>device_index</computeroutput> is out of range.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.9. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__sensor_8h_1a2183f938cafa6fdd9363025c76502e61"/><section>
+    <title>SDL_SensorGetDeviceType()</title>
+<indexterm><primary>SDL_SensorGetDeviceType</primary><secondary>SDL_sensor.h</secondary></indexterm>
+<indexterm><primary>SDL_sensor.h</primary><secondary>SDL_SensorGetDeviceType</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__sensor_8h_1a94a441696f7d053dd541ec0b7e00e33a">SDL_SensorType</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_SensorGetDeviceType (int device_index)</computeroutput></para>
+<para>Get the type of a sensor.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>device_index</entry><entry>
+<para>The sensor to get the type from </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the SDL_SensorType, or <computeroutput>SDL_SENSOR_INVALID</computeroutput> if <computeroutput>device_index</computeroutput> is out of range.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.9. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__sensor_8h_1a94c4aaff92e0421a52bfbb0a2ac0129f"/><section>
+    <title>SDL_SensorGetInstanceID()</title>
+<indexterm><primary>SDL_SensorGetInstanceID</primary><secondary>SDL_sensor.h</secondary></indexterm>
+<indexterm><primary>SDL_sensor.h</primary><secondary>SDL_SensorGetInstanceID</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__sensor_8h_1a0cca37d0b39c2db41841f54308aee65b">SDL_SensorID</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_SensorGetInstanceID (<link linkend="__s_d_l__sensor_8h_1a33718f4ef5c3f4ea306ddecf3ae3e3ad">SDL_Sensor</link> * sensor)</computeroutput></para>
+<para>Get the instance ID of a sensor.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>sensor</entry><entry>
+<para>The SDL_Sensor object to inspect </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the sensor instance ID, or -1 if <computeroutput>sensor</computeroutput> is NULL.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.9. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__sensor_8h_1a870ea62d8a824fb70b0b6540978ad8f1"/><section>
+    <title>SDL_SensorGetName()</title>
+<indexterm><primary>SDL_SensorGetName</primary><secondary>SDL_sensor.h</secondary></indexterm>
+<indexterm><primary>SDL_sensor.h</primary><secondary>SDL_SensorGetName</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> const char *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_SensorGetName (<link linkend="__s_d_l__sensor_8h_1a33718f4ef5c3f4ea306ddecf3ae3e3ad">SDL_Sensor</link> * sensor)</computeroutput></para>
+<para>Get the implementation dependent name of a sensor</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>sensor</entry><entry>
+<para>The SDL_Sensor object </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the sensor name, or NULL if <computeroutput>sensor</computeroutput> is NULL.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.9. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__sensor_8h_1a98fe8a0c2dbefb69f59f0a07edefc129"/><section>
+    <title>SDL_SensorGetNonPortableType()</title>
+<indexterm><primary>SDL_SensorGetNonPortableType</primary><secondary>SDL_sensor.h</secondary></indexterm>
+<indexterm><primary>SDL_sensor.h</primary><secondary>SDL_SensorGetNonPortableType</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> int <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_SensorGetNonPortableType (<link linkend="__s_d_l__sensor_8h_1a33718f4ef5c3f4ea306ddecf3ae3e3ad">SDL_Sensor</link> * sensor)</computeroutput></para>
+<para>Get the platform dependent type of a sensor.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>sensor</entry><entry>
+<para>The SDL_Sensor object to inspect </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the sensor platform dependent type, or -1 if <computeroutput>sensor</computeroutput> is NULL.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.9. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__sensor_8h_1a3d8e4d70062a1af56dea369a2a017907"/><section>
+    <title>SDL_SensorGetType()</title>
+<indexterm><primary>SDL_SensorGetType</primary><secondary>SDL_sensor.h</secondary></indexterm>
+<indexterm><primary>SDL_sensor.h</primary><secondary>SDL_SensorGetType</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__sensor_8h_1a94a441696f7d053dd541ec0b7e00e33a">SDL_SensorType</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_SensorGetType (<link linkend="__s_d_l__sensor_8h_1a33718f4ef5c3f4ea306ddecf3ae3e3ad">SDL_Sensor</link> * sensor)</computeroutput></para>
+<para>Get the type of a sensor.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>sensor</entry><entry>
+<para>The SDL_Sensor object to inspect </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>the SDL_SensorType type, or <computeroutput>SDL_SENSOR_INVALID</computeroutput> if <computeroutput>sensor</computeroutput> is NULL.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.9. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__sensor_8h_1a44812626ba1cf80f9c027cf86959065b"/><section>
+    <title>SDL_SensorOpen()</title>
+<indexterm><primary>SDL_SensorOpen</primary><secondary>SDL_sensor.h</secondary></indexterm>
+<indexterm><primary>SDL_sensor.h</primary><secondary>SDL_SensorOpen</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__sensor_8h_1a33718f4ef5c3f4ea306ddecf3ae3e3ad">SDL_Sensor</link> *<link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_SensorOpen (int device_index)</computeroutput></para>
+<para>Open a sensor for use.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>device_index</entry><entry>
+<para>The sensor to open </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>an SDL_Sensor sensor object, or NULL if an error occurred.</para>
+</formalpara>
+<formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.9. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__sensor_8h_1a23afdba77827b8ad6c212eedce5c2069"/><section>
+    <title>SDL_SensorUpdate()</title>
+<indexterm><primary>SDL_SensorUpdate</primary><secondary>SDL_sensor.h</secondary></indexterm>
+<indexterm><primary>SDL_sensor.h</primary><secondary>SDL_SensorUpdate</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_SensorUpdate (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para>
+<para>Update the current state of the open sensors.</para>
+
+<para>This is called automatically by the event loop if sensor events are enabled.</para>
+
+<para>This needs to be called from the thread that initialized the sensor subsystem.</para>
+
+<para><formalpara><title>Since</title>
+
+<para>This function is available since SDL 2.0.9. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__s_d_l__sensor_8h_1a1cabc17ed80337c304b2f7719928e7db"/><section>
+    <title>SDL_UnlockSensors()</title>
+<indexterm><primary>SDL_UnlockSensors</primary><secondary>SDL_sensor.h</secondary></indexterm>
+<indexterm><primary>SDL_sensor.h</primary><secondary>SDL_UnlockSensors</secondary></indexterm>
+<para><computeroutput><link linkend="_begin__code_8h_1aa4c7a931f4a968f818b2a1b10a432185">DECLSPEC</link> <link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> <link linkend="_begin__code_8h_1a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</link> SDL_UnlockSensors (<link linkend="__s_d_l__opengles2__gl2ext_8h_1ae5d8fa23ad07c48bb609509eae494c95">void</link> )</computeroutput></para></section>
+</section>
+</section>

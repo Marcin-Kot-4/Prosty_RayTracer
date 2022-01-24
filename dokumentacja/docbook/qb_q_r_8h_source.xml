@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_qb_q_r_8h_source" xml:lang="en-US">
+<title>qbQR.h</title>
+<indexterm><primary>D:/RayTracing/RayTrace/qbLinAlg/qbQR.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">//&#32;This&#32;file&#32;is&#32;part&#32;of&#32;the&#32;qbLinAlg&#32;linear&#32;algebra&#32;library.</emphasis>
+2 <emphasis role="comment">//&#32;Copyright&#32;(c)&#32;2021&#32;Michael&#32;Bennett</emphasis>
+3 <emphasis role="comment">//&#32;MIT&#32;license</emphasis>
+4 
+5 <emphasis role="preprocessor">#ifndef&#32;QBQR_H</emphasis>
+6 <emphasis role="preprocessor">#define&#32;QBQR_H</emphasis>
+7 
+8 <emphasis role="comment">/*&#32;*************************************************************************************************</emphasis>
+9 <emphasis role="comment"></emphasis>
+10 <emphasis role="comment">&#32;&#32;&#32;&#32;qbQR</emphasis>
+11 <emphasis role="comment">&#32;&#32;&#32;&#32;</emphasis>
+12 <emphasis role="comment">&#32;&#32;&#32;&#32;Function&#32;to&#32;perform&#32;QR&#32;decomposition&#32;on&#32;a&#32;given&#32;input&#32;matrix.</emphasis>
+13 <emphasis role="comment">&#32;&#32;&#32;&#32;</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;***&#32;INPUTS&#32;***</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;A&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;qbMatrix2&lt;T&gt;&#32;&#32;&#32;&#32;The&#32;matrix&#32;on&#32;which&#32;to&#32;perform&#32;QR&#32;decomposition.</emphasis>
+17 <emphasis role="comment">&#32;&#32;&#32;&#32;Q&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;qbMatrix2&lt;T&gt;&#32;&#32;&#32;&#32;The&#32;output&#32;Q&#32;matrix.</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;R&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;qbMatrix2&lt;T&gt;&#32;&#32;&#32;&#32;The&#32;output&#32;R&#32;matrix.</emphasis>
+19 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;</emphasis>
+20 <emphasis role="comment">&#32;&#32;&#32;&#32;***&#32;OUTPUTS&#32;***</emphasis>
+21 <emphasis role="comment">&#32;&#32;&#32;&#32;</emphasis>
+22 <emphasis role="comment">&#32;&#32;&#32;&#32;INT&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Flag&#32;indicating&#32;success&#32;or&#32;failure&#32;of&#32;the&#32;process.</emphasis>
+23 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;1&#32;Indicates&#32;success.</emphasis>
+24 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;-1&#32;indicates&#32;failure&#32;due&#32;to&#32;a&#32;non-square&#32;input&#32;matrix.</emphasis>
+25 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;</emphasis>
+26 <emphasis role="comment">&#32;&#32;&#32;&#32;Uses&#32;an&#32;implementation&#32;of&#32;Householder&#32;reflections&#32;to&#32;perform&#32;QR&#32;decomposition.</emphasis>
+27 <emphasis role="comment"></emphasis>
+28 <emphasis role="comment">&#32;&#32;&#32;&#32;*************************************************************************************************&#32;*/</emphasis>
+29 
+30 <emphasis role="preprocessor">#include&#32;&lt;stdexcept&gt;</emphasis>
+31 <emphasis role="preprocessor">#include&#32;&lt;iostream&gt;</emphasis>
+32 <emphasis role="preprocessor">#include&#32;&lt;iomanip&gt;</emphasis>
+33 <emphasis role="preprocessor">#include&#32;&lt;math.h&gt;</emphasis>
+34 <emphasis role="preprocessor">#include&#32;&lt;vector&gt;</emphasis>
+35 
+36 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_qb_matrix_8h">qbMatrix.h</link>&quot;</emphasis>
+37 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_qb_vector_8h">qbVector.h</link>&quot;</emphasis>
+38 
+39 <emphasis role="comment">//&#32;Define&#32;error&#32;codes.</emphasis>
+40 <emphasis role="keyword">constexpr</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_qb_q_r_8h_1a2ec59b73bc03540c71f7c50c2e9b98c6">QBQR_MATRIXNOTSQUARE</link>&#32;=&#32;-1;
+41 
+42 <emphasis role="comment">//&#32;The&#32;qbQR&#32;function.</emphasis>
+43 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">typename</emphasis>&#32;T&gt;
+44 <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_qb_q_r_8h_1a6a831083d2a1e9bcb81b882ac01087a9">qbQR</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;&amp;A,&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;&amp;Q,&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;&amp;R)
+45 {
+46 
+47 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Make&#32;a&#32;copy&#32;of&#32;the&#32;input&#32;matrix.</emphasis>
+48 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;inputMatrix&#32;=&#32;A;
+49 
+50 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Verify&#32;that&#32;the&#32;input&#32;matrix&#32;is&#32;square.</emphasis>
+51 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!inputMatrix.<link linkend="_classqb_matrix2_1ae3e42b917e3127cab56b7a48faff25c3">IsSquare</link>())
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_qb_q_r_8h_1a2ec59b73bc03540c71f7c50c2e9b98c6">QBQR_MATRIXNOTSQUARE</link>;
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+54 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Determine&#32;the&#32;number&#32;of&#32;columns&#32;(and&#32;rows,&#32;since&#32;the&#32;matrix&#32;is&#32;square).</emphasis>
+55 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numCols&#32;=&#32;inputMatrix.<link linkend="_classqb_matrix2_1ab20362d8fc58a4b8da0910f94c3de2c3">GetNumCols</link>();
+56 &#32;&#32;&#32;&#32;
+57 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Create&#32;a&#32;vector&#32;to&#32;store&#32;the&#32;P&#32;matrices&#32;for&#32;each&#32;column.</emphasis>
+58 &#32;&#32;&#32;&#32;std::vector&lt;qbMatrix2&lt;T&gt;&gt;&#32;Plist;
+59 &#32;&#32;&#32;&#32;
+60 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Loop&#32;through&#32;each&#32;column.</emphasis>
+61 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;j=0;&#32;j&lt;(numCols-1);&#32;++j)
+62 &#32;&#32;&#32;&#32;{
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Create&#32;the&#32;a1&#32;and&#32;b1&#32;vectors.</emphasis>
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;a1&#32;is&#32;the&#32;column&#32;vector&#32;from&#32;A.</emphasis>
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;b1&#32;is&#32;the&#32;vector&#32;onto&#32;which&#32;we&#32;wish&#32;to&#32;reflect&#32;a1.</emphasis>
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;a1&#32;(numCols-j);
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;b1&#32;(numCols-j);
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=j;&#32;i&lt;numCols;&#32;++i)
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;a1.<link linkend="_classqb_vector_1af828430da5d728b15c70f82f73ff1efd">SetElement</link>(i-j,&#32;inputMatrix.<link linkend="_classqb_matrix2_1a62ddf209105dffe6133461b273a7309f">GetElement</link>(i,j));
+71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;b1.<link linkend="_classqb_vector_1af828430da5d728b15c70f82f73ff1efd">SetElement</link>(i-j,&#32;<emphasis role="keyword">static_cast&lt;</emphasis>T<emphasis role="keyword">&gt;</emphasis>(0.0));
+72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;b1.<link linkend="_classqb_vector_1af828430da5d728b15c70f82f73ff1efd">SetElement</link>(0,&#32;<emphasis role="keyword">static_cast&lt;</emphasis>T<emphasis role="keyword">&gt;</emphasis>(1.0));
+74 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+75 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;the&#32;norm&#32;of&#32;the&#32;a1&#32;vector.</emphasis>
+76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T&#32;a1norm&#32;=&#32;a1.<link linkend="_classqb_vector_1aa2024c900efb9bbbae752f91b59a786c">norm</link>();
+77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;the&#32;sign&#32;we&#32;will&#32;use.</emphasis>
+79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;sgn&#32;=&#32;-1;
+80 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(a1.<link linkend="_classqb_vector_1adadd6ca87273a15f57a5e1d6ae15583b">GetElement</link>(0)&#32;&lt;&#32;<emphasis role="keyword">static_cast&lt;</emphasis>T<emphasis role="keyword">&gt;</emphasis>(0.0))
+81 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sgn&#32;=&#32;1;
+82 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+83 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;the&#32;u-vector.</emphasis>
+84 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;u&#32;=&#32;a1&#32;-&#32;(sgn&#32;*&#32;a1norm&#32;*&#32;b1);
+85 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+86 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;the&#32;n-vector.</emphasis>
+87 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_vector">qbVector&lt;T&gt;</link>&#32;<link linkend="__s_d_l__opengl__glext_8h_1ae2b4646468bc89d0ba646f5cf838e051">n</link>&#32;=&#32;u.<link linkend="_classqb_vector_1a30cacb02a659ae4885e16243fd849fb6">Normalized</link>();
+88 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Convert&#32;n&#32;to&#32;a&#32;matrix&#32;so&#32;that&#32;we&#32;can&#32;transpose&#32;it.</emphasis>
+90 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;nMat&#32;(numCols-j,&#32;1);
+91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=0;&#32;i&lt;(numCols-j);&#32;++i)
+92 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;nMat.<link linkend="_classqb_matrix2_1a1c6693503483942d5a619a0cf470e8b5">SetElement</link>(i,&#32;0,&#32;<link linkend="__s_d_l__opengl__glext_8h_1ae2b4646468bc89d0ba646f5cf838e051">n</link>.GetElement(i));
+93 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Transpose&#32;nMat.</emphasis>
+95 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;nMatT&#32;=&#32;nMat.<link linkend="_classqb_matrix2_1a6235a35daf5fa20a9ebc7ed91d8a94a3">Transpose</link>();
+96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+97 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Create&#32;an&#32;identity&#32;matrix&#32;of&#32;the&#32;appropriate&#32;size.</emphasis>
+98 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;I&#32;(numCols-j,&#32;numCols-j);
+99 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;I.<link linkend="_classqb_matrix2_1af705ca91a707de5e75c6b074ad152f5e">SetToIdentity</link>();
+100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;Ptemp.</emphasis>
+102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;Ptemp&#32;=&#32;I&#32;-&#32;<emphasis role="keyword">static_cast&lt;</emphasis>T<emphasis role="keyword">&gt;</emphasis>(2.0)&#32;*&#32;nMat&#32;*&#32;nMatT;
+103 
+104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Form&#32;the&#32;P&#32;matrix&#32;with&#32;the&#32;original&#32;dimensions.</emphasis>
+105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;P&#32;(numCols,&#32;numCols);
+106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;P.SetToIdentity();
+107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>=j;&#32;<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>&lt;numCols;&#32;++<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>)
+108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;col=j;&#32;col&lt;numCols;&#32;++col)
+110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;P.SetElement(<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>,&#32;col,&#32;Ptemp.<link linkend="_classqb_matrix2_1a62ddf209105dffe6133461b273a7309f">GetElement</link>(<link linkend="__s_d_l__opengl__glext_8h_1a90d3e7e4182a9630993f640fa0443b0b">row</link>-j,&#32;col-j));
+112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;&#32;&#32;
+114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Store&#32;the&#32;result&#32;into&#32;the&#32;Plist&#32;vector.</emphasis>
+116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Plist.push_back(P);
+117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Apply&#32;this&#32;transform&#32;matrix&#32;to&#32;inputMatrix&#32;and&#32;use&#32;this&#32;result</emphasis>
+119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;next&#32;time&#32;through&#32;the&#32;loop.</emphasis>
+120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;inputMatrix&#32;=&#32;P&#32;*&#32;inputMatrix;
+121 &#32;&#32;&#32;&#32;}
+122 &#32;&#32;&#32;&#32;
+123 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;Q.</emphasis>
+124 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;Qmat&#32;=&#32;Plist.at(0);
+125 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=1;&#32;i&lt;(numCols-1);&#32;++i)
+126 &#32;&#32;&#32;&#32;{
+127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Qmat&#32;=&#32;Qmat&#32;*&#32;Plist.at(i).<link linkend="_classqb_matrix2_1a6235a35daf5fa20a9ebc7ed91d8a94a3">Transpose</link>();
+128 &#32;&#32;&#32;&#32;}
+129 &#32;&#32;&#32;&#32;
+130 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Return&#32;the&#32;Q&#32;matrix.</emphasis>
+131 &#32;&#32;&#32;&#32;Q&#32;=&#32;Qmat;
+132 &#32;&#32;&#32;&#32;
+133 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Compute&#32;R.</emphasis>
+134 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numElements&#32;=&#32;Plist.size();
+135 &#32;&#32;&#32;&#32;<link linkend="_classqb_matrix2">qbMatrix2&lt;T&gt;</link>&#32;Rmat&#32;=&#32;Plist.at(numElements-1);
+136 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;i=(numElements-2);&#32;i&gt;=0;&#32;--i)
+137 &#32;&#32;&#32;&#32;{
+138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Rmat&#32;=&#32;Rmat&#32;*&#32;Plist.at(i);
+139 &#32;&#32;&#32;&#32;}
+140 &#32;&#32;&#32;&#32;Rmat&#32;=&#32;Rmat&#32;*&#32;A;
+141 &#32;&#32;&#32;&#32;
+142 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;And&#32;return&#32;the&#32;R&#32;matrix.</emphasis>
+143 &#32;&#32;&#32;&#32;R&#32;=&#32;Rmat;
+144 &#32;&#32;&#32;&#32;
+145 }
+146 
+147 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

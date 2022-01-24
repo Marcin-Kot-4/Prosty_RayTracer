@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_d_l__config__minimal_8h_source" xml:lang="en-US">
+<title>SDL_config_minimal.h</title>
+<indexterm><primary>D:/RayTracing/include/SDL_config_minimal.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;&#32;Simple&#32;DirectMedia&#32;Layer</emphasis>
+3 <emphasis role="comment">&#32;&#32;Copyright&#32;(C)&#32;1997-2017&#32;Sam&#32;Lantinga&#32;&lt;slouken@libsdl.org&gt;</emphasis>
+4 <emphasis role="comment"></emphasis>
+5 <emphasis role="comment">&#32;&#32;This&#32;software&#32;is&#32;provided&#32;&apos;as-is&apos;,&#32;without&#32;any&#32;express&#32;or&#32;implied</emphasis>
+6 <emphasis role="comment">&#32;&#32;warranty.&#32;&#32;In&#32;no&#32;event&#32;will&#32;the&#32;authors&#32;be&#32;held&#32;liable&#32;for&#32;any&#32;damages</emphasis>
+7 <emphasis role="comment">&#32;&#32;arising&#32;from&#32;the&#32;use&#32;of&#32;this&#32;software.</emphasis>
+8 <emphasis role="comment"></emphasis>
+9 <emphasis role="comment">&#32;&#32;Permission&#32;is&#32;granted&#32;to&#32;anyone&#32;to&#32;use&#32;this&#32;software&#32;for&#32;any&#32;purpose,</emphasis>
+10 <emphasis role="comment">&#32;&#32;including&#32;commercial&#32;applications,&#32;and&#32;to&#32;alter&#32;it&#32;and&#32;redistribute&#32;it</emphasis>
+11 <emphasis role="comment">&#32;&#32;freely,&#32;subject&#32;to&#32;the&#32;following&#32;restrictions:</emphasis>
+12 <emphasis role="comment"></emphasis>
+13 <emphasis role="comment">&#32;&#32;1.&#32;The&#32;origin&#32;of&#32;this&#32;software&#32;must&#32;not&#32;be&#32;misrepresented;&#32;you&#32;must&#32;not</emphasis>
+14 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;claim&#32;that&#32;you&#32;wrote&#32;the&#32;original&#32;software.&#32;If&#32;you&#32;use&#32;this&#32;software</emphasis>
+15 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;in&#32;a&#32;product,&#32;an&#32;acknowledgment&#32;in&#32;the&#32;product&#32;documentation&#32;would&#32;be</emphasis>
+16 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;appreciated&#32;but&#32;is&#32;not&#32;required.</emphasis>
+17 <emphasis role="comment">&#32;&#32;2.&#32;Altered&#32;source&#32;versions&#32;must&#32;be&#32;plainly&#32;marked&#32;as&#32;such,&#32;and&#32;must&#32;not&#32;be</emphasis>
+18 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;misrepresented&#32;as&#32;being&#32;the&#32;original&#32;software.</emphasis>
+19 <emphasis role="comment">&#32;&#32;3.&#32;This&#32;notice&#32;may&#32;not&#32;be&#32;removed&#32;or&#32;altered&#32;from&#32;any&#32;source&#32;distribution.</emphasis>
+20 <emphasis role="comment">*/</emphasis>
+21 
+22 <emphasis role="preprocessor">#ifndef&#32;SDL_config_minimal_h_</emphasis>
+23 <emphasis role="preprocessor">#define&#32;SDL_config_minimal_h_</emphasis>
+24 <emphasis role="preprocessor">#define&#32;SDL_config_h_</emphasis>
+25 
+26 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_d_l__platform_8h">SDL_platform.h</link>&quot;</emphasis>
+27 
+34 <emphasis role="preprocessor">#define&#32;HAVE_STDARG_H&#32;&#32;&#32;1</emphasis>
+35 <emphasis role="preprocessor">#define&#32;HAVE_STDDEF_H&#32;&#32;&#32;1</emphasis>
+36 
+37 <emphasis role="comment">/*&#32;Most&#32;everything&#32;except&#32;Visual&#32;Studio&#32;2008&#32;and&#32;earlier&#32;has&#32;stdint.h&#32;now&#32;*/</emphasis>
+38 <emphasis role="preprocessor">#if&#32;defined(_MSC_VER)&#32;&amp;&amp;&#32;(_MSC_VER&#32;&lt;&#32;1600)</emphasis>
+39 <emphasis role="comment">/*&#32;Here&#32;are&#32;some&#32;reasonable&#32;defaults&#32;*/</emphasis>
+40 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__config_8h_1a7c94ea6f8948649f8d181ae55911eeaf">size_t</link>;
+41 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">signed</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;<link linkend="__s_d_l__config_8h_1aef44329758059c91c76d334e8fc09700">int8_t</link>;
+42 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;<link linkend="__s_d_l__config_8h_1aba7bc1797add20fe3efdf37ced1182c5">uint8_t</link>;
+43 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">signed</emphasis>&#32;<emphasis role="keywordtype">short</emphasis>&#32;<link linkend="__s_d_l__config_8h_1a269259c924dce846340ddbb810db2e3c">int16_t</link>;
+44 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">short</emphasis>&#32;<link linkend="__s_d_l__config_8h_1a273cf69d639a59973b6019625df33e30">uint16_t</link>;
+45 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">signed</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__config_8h_1ab1967d8591af1a4e48c37fd2b0f184d0">int32_t</link>;
+46 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_d_l__config_8h_1a435d1572bf3f880d55459d9805097f62">uint32_t</link>;
+47 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">signed</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;<link linkend="__s_d_l__config_8h_1adec1df1b8b51cb32b77e5b86fff46471">int64_t</link>;
+48 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;<link linkend="__s_d_l__config_8h_1aaa5d1cd013383c889537491c3cfd9aad">uint64_t</link>;
+49 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;<link linkend="__s_d_l__config_8h_1a728e973c799f206f0151c8a3bd1e5699">uintptr_t</link>;
+50 <emphasis role="preprocessor">#else</emphasis>
+51 <emphasis role="preprocessor">#define&#32;HAVE_STDINT_H&#32;1</emphasis>
+52 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;Visual&#32;Studio&#32;2008&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+53 
+54 <emphasis role="preprocessor">#ifdef&#32;__GNUC__</emphasis>
+55 <emphasis role="preprocessor">#define&#32;HAVE_GCC_SYNC_LOCK_TEST_AND_SET&#32;1</emphasis>
+56 <emphasis role="preprocessor">#endif</emphasis>
+57 
+58 <emphasis role="comment">/*&#32;Enable&#32;the&#32;dummy&#32;audio&#32;driver&#32;(src/audio/dummy/\*.c)&#32;*/</emphasis>
+59 <emphasis role="preprocessor">#define&#32;SDL_AUDIO_DRIVER_DUMMY&#32;&#32;1</emphasis>
+60 
+61 <emphasis role="comment">/*&#32;Enable&#32;the&#32;stub&#32;joystick&#32;driver&#32;(src/joystick/dummy/\*.c)&#32;*/</emphasis>
+62 <emphasis role="preprocessor">#define&#32;SDL_JOYSTICK_DISABLED&#32;&#32;&#32;1</emphasis>
+63 
+64 <emphasis role="comment">/*&#32;Enable&#32;the&#32;stub&#32;haptic&#32;driver&#32;(src/haptic/dummy/\*.c)&#32;*/</emphasis>
+65 <emphasis role="preprocessor">#define&#32;SDL_HAPTIC_DISABLED&#32;1</emphasis>
+66 
+67 <emphasis role="comment">/*&#32;Enable&#32;the&#32;stub&#32;shared&#32;object&#32;loader&#32;(src/loadso/dummy/\*.c)&#32;*/</emphasis>
+68 <emphasis role="preprocessor">#define&#32;SDL_LOADSO_DISABLED&#32;1</emphasis>
+69 
+70 <emphasis role="comment">/*&#32;Enable&#32;the&#32;stub&#32;thread&#32;support&#32;(src/thread/generic/\*.c)&#32;*/</emphasis>
+71 <emphasis role="preprocessor">#define&#32;SDL_THREADS_DISABLED&#32;&#32;&#32;&#32;1</emphasis>
+72 
+73 <emphasis role="comment">/*&#32;Enable&#32;the&#32;stub&#32;timer&#32;support&#32;(src/timer/dummy/\*.c)&#32;*/</emphasis>
+74 <emphasis role="preprocessor">#define&#32;SDL_TIMERS_DISABLED&#32;1</emphasis>
+75 
+76 <emphasis role="comment">/*&#32;Enable&#32;the&#32;dummy&#32;video&#32;driver&#32;(src/video/dummy/\*.c)&#32;*/</emphasis>
+77 <emphasis role="preprocessor">#define&#32;SDL_VIDEO_DRIVER_DUMMY&#32;&#32;1</emphasis>
+78 
+79 <emphasis role="comment">/*&#32;Enable&#32;the&#32;dummy&#32;filesystem&#32;driver&#32;(src/filesystem/dummy/\*.c)&#32;*/</emphasis>
+80 <emphasis role="preprocessor">#define&#32;SDL_FILESYSTEM_DUMMY&#32;&#32;1</emphasis>
+81 
+82 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;SDL_config_minimal_h_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+</programlisting></section>

@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.3" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e-kmsbsd_8md" kind="file" language="Markdown">
+    <compoundname>README-kmsbsd.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">KMSDRM<sp/>on<sp/>*BSD</highlight></codeline>
+<codeline><highlight class="normal">==================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">KMSDRM<sp/>is<sp/>supported<sp/>on<sp/>FreeBSD<sp/>and<sp/>OpenBSD.<sp/>DragonFlyBSD<sp/>works<sp/>but<sp/>requires<sp/>being<sp/>a<sp/>root<sp/>user.<sp/>NetBSD<sp/>isn&apos;t<sp/>supported<sp/>yet<sp/>because<sp/>the<sp/>application<sp/>will<sp/>crash<sp/>when<sp/>creating<sp/>the<sp/>KMSDRM<sp/>screen.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">WSCONS<sp/>support<sp/>has<sp/>been<sp/>brought<sp/>back,<sp/>but<sp/>only<sp/>as<sp/>an<sp/>input<sp/>backend.<sp/>It<sp/>will<sp/>not<sp/>be<sp/>brought<sp/>back<sp/>as<sp/>a<sp/>video<sp/>backend<sp/>to<sp/>ease<sp/>maintenance.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">OpenBSD<sp/>note:<sp/>Note<sp/>that<sp/>the<sp/>video<sp/>backend<sp/>assumes<sp/>that<sp/>the<sp/>user<sp/>has<sp/>read/write<sp/>permissions<sp/>to<sp/>the<sp/>/dev/drm*<sp/>devices.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SDL2<sp/>WSCONS<sp/>input<sp/>backend<sp/>features</highlight></codeline>
+<codeline><highlight class="normal">===================================================</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>It<sp/>is<sp/>keymap-aware;<sp/>it<sp/>will<sp/>work<sp/>properly<sp/>with<sp/>different<sp/>keymaps.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>It<sp/>has<sp/>mouse<sp/>support.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Accent<sp/>input<sp/>is<sp/>supported.</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>Compose<sp/>keys<sp/>are<sp/>supported.</highlight></codeline>
+<codeline><highlight class="normal">5.<sp/>AltGr<sp/>and<sp/>Meta<sp/>Shift<sp/>keys<sp/>work<sp/>as<sp/>intended.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Partially<sp/>working<sp/>or<sp/>no<sp/>input<sp/>on<sp/>OpenBSD/NetBSD.</highlight></codeline>
+<codeline><highlight class="normal">==================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>WSCONS<sp/>input<sp/>backend<sp/>needs<sp/>read/write<sp/>access<sp/>to<sp/>the<sp/>/dev/wskbd*<sp/>devices,<sp/>without<sp/>which<sp/>it<sp/>will<sp/>not<sp/>work<sp/>properly.<sp/>/dev/wsmouse<sp/>must<sp/>also<sp/>be<sp/>read/write<sp/>accessible,<sp/>otherwise<sp/>mouse<sp/>input<sp/>will<sp/>not<sp/>work.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Partially<sp/>working<sp/>or<sp/>no<sp/>input<sp/>on<sp/>FreeBSD.</highlight></codeline>
+<codeline><highlight class="normal">==================================================</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>evdev<sp/>devices<sp/>are<sp/>only<sp/>accessible<sp/>to<sp/>the<sp/>root<sp/>user<sp/>by<sp/>default.<sp/>Edit<sp/>devfs<sp/>rules<sp/>to<sp/>allow<sp/>access<sp/>to<sp/>such<sp/>devices.<sp/>The<sp/>/dev/kbd*<sp/>devices<sp/>are<sp/>also<sp/>only<sp/>accessible<sp/>to<sp/>the<sp/>root<sp/>user<sp/>by<sp/>default.<sp/>Edit<sp/>devfs<sp/>rules<sp/>to<sp/>allow<sp/>access<sp/>to<sp/>such<sp/>devices.</highlight></codeline>
+    </programlisting>
+    <location file="D:/RayTracing/docs/README-kmsbsd.md"/>
+  </compounddef>
+</doxygen>

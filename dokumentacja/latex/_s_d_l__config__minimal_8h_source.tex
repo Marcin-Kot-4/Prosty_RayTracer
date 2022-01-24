@@ -1,0 +1,82 @@
+\hypertarget{_s_d_l__config__minimal_8h_source}{}\doxysection{SDL\+\_\+config\+\_\+minimal.\+h}
+\label{_s_d_l__config__minimal_8h_source}\index{D:/RayTracing/include/SDL\_config\_minimal.h@{D:/RayTracing/include/SDL\_config\_minimal.h}}
+\mbox{\hyperlink{_s_d_l__config__minimal_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{  Simple DirectMedia Layer}}
+\DoxyCodeLine{3 \textcolor{comment}{  Copyright (C) 1997-\/2017 Sam Lantinga <slouken@libsdl.org>}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{  This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{6 \textcolor{comment}{  warranty.  In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{7 \textcolor{comment}{  arising from the use of this software.}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{  Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{10 \textcolor{comment}{  including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{11 \textcolor{comment}{  freely, subject to the following restrictions:}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{  1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{14 \textcolor{comment}{     claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{15 \textcolor{comment}{     in a product, an acknowledgment in the product documentation would be}}
+\DoxyCodeLine{16 \textcolor{comment}{     appreciated but is not required.}}
+\DoxyCodeLine{17 \textcolor{comment}{  2. Altered source versions must be plainly marked as such, and must not be}}
+\DoxyCodeLine{18 \textcolor{comment}{     misrepresented as being the original software.}}
+\DoxyCodeLine{19 \textcolor{comment}{  3. This notice may not be removed or altered from any source distribution.}}
+\DoxyCodeLine{20 \textcolor{comment}{*/}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#ifndef SDL\_config\_minimal\_h\_}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define SDL\_config\_minimal\_h\_}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define SDL\_config\_h\_}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_d_l__platform_8h}{SDL\_platform.h}}"{}}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define HAVE\_STDARG\_H   1}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define HAVE\_STDDEF\_H   1}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{comment}{/* Most everything except Visual Studio 2008 and earlier has stdint.h now */}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#if defined(\_MSC\_VER) \&\& (\_MSC\_VER < 1600)}}
+\DoxyCodeLine{39 \textcolor{comment}{/* Here are some reasonable defaults */}}
+\DoxyCodeLine{40 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__config_8h_a7c94ea6f8948649f8d181ae55911eeaf}{size\_t}};}
+\DoxyCodeLine{41 \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{char} \mbox{\hyperlink{_s_d_l__config_8h_aef44329758059c91c76d334e8fc09700}{int8\_t}};}
+\DoxyCodeLine{42 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \mbox{\hyperlink{_s_d_l__config_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}};}
+\DoxyCodeLine{43 \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{short} \mbox{\hyperlink{_s_d_l__config_8h_a269259c924dce846340ddbb810db2e3c}{int16\_t}};}
+\DoxyCodeLine{44 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{_s_d_l__config_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}};}
+\DoxyCodeLine{45 \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__config_8h_ab1967d8591af1a4e48c37fd2b0f184d0}{int32\_t}};}
+\DoxyCodeLine{46 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{_s_d_l__config_8h_a435d1572bf3f880d55459d9805097f62}{uint32\_t}};}
+\DoxyCodeLine{47 \textcolor{keyword}{typedef} \textcolor{keywordtype}{signed} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \mbox{\hyperlink{_s_d_l__config_8h_adec1df1b8b51cb32b77e5b86fff46471}{int64\_t}};}
+\DoxyCodeLine{48 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \mbox{\hyperlink{_s_d_l__config_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}};}
+\DoxyCodeLine{49 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{_s_d_l__config_8h_a728e973c799f206f0151c8a3bd1e5699}{uintptr\_t}};}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define HAVE\_STDINT\_H 1}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* Visual Studio 2008 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#ifdef \_\_GNUC\_\_}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define HAVE\_GCC\_SYNC\_LOCK\_TEST\_AND\_SET 1}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{comment}{/* Enable the dummy audio driver (src/audio/dummy/\(\backslash\)*.c) */}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define SDL\_AUDIO\_DRIVER\_DUMMY  1}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{comment}{/* Enable the stub joystick driver (src/joystick/dummy/\(\backslash\)*.c) */}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define SDL\_JOYSTICK\_DISABLED   1}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{comment}{/* Enable the stub haptic driver (src/haptic/dummy/\(\backslash\)*.c) */}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define SDL\_HAPTIC\_DISABLED 1}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{comment}{/* Enable the stub shared object loader (src/loadso/dummy/\(\backslash\)*.c) */}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define SDL\_LOADSO\_DISABLED 1}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{comment}{/* Enable the stub thread support (src/thread/generic/\(\backslash\)*.c) */}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define SDL\_THREADS\_DISABLED    1}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{comment}{/* Enable the stub timer support (src/timer/dummy/\(\backslash\)*.c) */}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define SDL\_TIMERS\_DISABLED 1}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{comment}{/* Enable the dummy video driver (src/video/dummy/\(\backslash\)*.c) */}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define SDL\_VIDEO\_DRIVER\_DUMMY  1}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{comment}{/* Enable the dummy filesystem driver (src/filesystem/dummy/\(\backslash\)*.c) */}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define SDL\_FILESYSTEM\_DUMMY  1}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* SDL\_config\_minimal\_h\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}
